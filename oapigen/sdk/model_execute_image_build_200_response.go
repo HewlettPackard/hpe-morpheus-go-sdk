@@ -26,44 +26,12 @@ type ExecuteImageBuild200Response struct {
 
 type _ExecuteImageBuild200Response ExecuteImageBuild200Response
 
-// NewExecuteImageBuild200Response instantiates a new ExecuteImageBuild200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewExecuteImageBuild200Response() *ExecuteImageBuild200Response {
-	this := ExecuteImageBuild200Response{}
-	return &this
-}
-
 // NewExecuteImageBuild200ResponseWithDefaults instantiates a new ExecuteImageBuild200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewExecuteImageBuild200ResponseWithDefaults() *ExecuteImageBuild200Response {
 	this := ExecuteImageBuild200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *ExecuteImageBuild200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteImageBuild200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *ExecuteImageBuild200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o ExecuteImageBuild200Response) MarshalJSON() ([]byte, error) {

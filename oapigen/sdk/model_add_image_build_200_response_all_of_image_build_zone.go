@@ -27,67 +27,12 @@ type AddImageBuild200ResponseAllOfImageBuildZone struct {
 
 type _AddImageBuild200ResponseAllOfImageBuildZone AddImageBuild200ResponseAllOfImageBuildZone
 
-// NewAddImageBuild200ResponseAllOfImageBuildZone instantiates a new AddImageBuild200ResponseAllOfImageBuildZone object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddImageBuild200ResponseAllOfImageBuildZone() *AddImageBuild200ResponseAllOfImageBuildZone {
-	this := AddImageBuild200ResponseAllOfImageBuildZone{}
-	return &this
-}
-
 // NewAddImageBuild200ResponseAllOfImageBuildZoneWithDefaults instantiates a new AddImageBuild200ResponseAllOfImageBuildZone object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddImageBuild200ResponseAllOfImageBuildZoneWithDefaults() *AddImageBuild200ResponseAllOfImageBuildZone {
 	this := AddImageBuild200ResponseAllOfImageBuildZone{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildZone) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildZone) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddImageBuild200ResponseAllOfImageBuildZone) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildZone) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildZone) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddImageBuild200ResponseAllOfImageBuildZone) SetName(v string) {
-	o.Name = &v
 }
 
 func (o AddImageBuild200ResponseAllOfImageBuildZone) MarshalJSON() ([]byte, error) {

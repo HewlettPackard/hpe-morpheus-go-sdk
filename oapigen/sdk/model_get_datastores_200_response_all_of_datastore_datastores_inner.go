@@ -29,67 +29,12 @@ type GetDatastores200ResponseAllOfDatastoreDatastoresInner struct {
 
 type _GetDatastores200ResponseAllOfDatastoreDatastoresInner GetDatastores200ResponseAllOfDatastoreDatastoresInner
 
-// NewGetDatastores200ResponseAllOfDatastoreDatastoresInner instantiates a new GetDatastores200ResponseAllOfDatastoreDatastoresInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetDatastores200ResponseAllOfDatastoreDatastoresInner() *GetDatastores200ResponseAllOfDatastoreDatastoresInner {
-	this := GetDatastores200ResponseAllOfDatastoreDatastoresInner{}
-	return &this
-}
-
 // NewGetDatastores200ResponseAllOfDatastoreDatastoresInnerWithDefaults instantiates a new GetDatastores200ResponseAllOfDatastoreDatastoresInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetDatastores200ResponseAllOfDatastoreDatastoresInnerWithDefaults() *GetDatastores200ResponseAllOfDatastoreDatastoresInner {
 	this := GetDatastores200ResponseAllOfDatastoreDatastoresInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoresInner) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoresInner) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoresInner) SetId(v int32) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoresInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoresInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoresInner) SetName(v string) {
-	o.Name = &v
 }
 
 func (o GetDatastores200ResponseAllOfDatastoreDatastoresInner) MarshalJSON() ([]byte, error) {

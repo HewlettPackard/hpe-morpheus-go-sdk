@@ -26,44 +26,12 @@ type ListActivity5XXResponse struct {
 
 type _ListActivity5XXResponse ListActivity5XXResponse
 
-// NewListActivity5XXResponse instantiates a new ListActivity5XXResponse object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListActivity5XXResponse() *ListActivity5XXResponse {
-	this := ListActivity5XXResponse{}
-	return &this
-}
-
 // NewListActivity5XXResponseWithDefaults instantiates a new ListActivity5XXResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListActivity5XXResponseWithDefaults() *ListActivity5XXResponse {
 	this := ListActivity5XXResponse{}
 	return &this
-}
-
-// GetMsg returns the Msg field value if set, zero value otherwise.
-func (o *ListActivity5XXResponse) GetMsg() string {
-	if o == nil || IsNil(o.Msg) {
-		var ret string
-		return ret
-	}
-	return *o.Msg
-}
-
-// GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListActivity5XXResponse) GetMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.Msg) {
-		return nil, false
-	}
-	return o.Msg, true
-}
-
-// SetMsg gets a reference to the given string and assigns it to the Msg field.
-func (o *ListActivity5XXResponse) SetMsg(v string) {
-	o.Msg = &v
 }
 
 func (o ListActivity5XXResponse) MarshalJSON() ([]byte, error) {

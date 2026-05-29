@@ -27,67 +27,12 @@ type UpdateIdentitySourceSubdomains200Response struct {
 
 type _UpdateIdentitySourceSubdomains200Response UpdateIdentitySourceSubdomains200Response
 
-// NewUpdateIdentitySourceSubdomains200Response instantiates a new UpdateIdentitySourceSubdomains200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIdentitySourceSubdomains200Response() *UpdateIdentitySourceSubdomains200Response {
-	this := UpdateIdentitySourceSubdomains200Response{}
-	return &this
-}
-
 // NewUpdateIdentitySourceSubdomains200ResponseWithDefaults instantiates a new UpdateIdentitySourceSubdomains200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateIdentitySourceSubdomains200ResponseWithDefaults() *UpdateIdentitySourceSubdomains200Response {
 	this := UpdateIdentitySourceSubdomains200Response{}
 	return &this
-}
-
-// GetUserSource returns the UserSource field value if set, zero value otherwise.
-func (o *UpdateIdentitySourceSubdomains200Response) GetUserSource() UpdateIdentitySourceSubdomains200ResponseAllOfUserSource {
-	if o == nil || IsNil(o.UserSource) {
-		var ret UpdateIdentitySourceSubdomains200ResponseAllOfUserSource
-		return ret
-	}
-	return *o.UserSource
-}
-
-// GetUserSourceOk returns a tuple with the UserSource field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourceSubdomains200Response) GetUserSourceOk() (*UpdateIdentitySourceSubdomains200ResponseAllOfUserSource, bool) {
-	if o == nil || IsNil(o.UserSource) {
-		return nil, false
-	}
-	return o.UserSource, true
-}
-
-// SetUserSource gets a reference to the given UpdateIdentitySourceSubdomains200ResponseAllOfUserSource and assigns it to the UserSource field.
-func (o *UpdateIdentitySourceSubdomains200Response) SetUserSource(v UpdateIdentitySourceSubdomains200ResponseAllOfUserSource) {
-	o.UserSource = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateIdentitySourceSubdomains200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourceSubdomains200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateIdentitySourceSubdomains200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateIdentitySourceSubdomains200Response) MarshalJSON() ([]byte, error) {

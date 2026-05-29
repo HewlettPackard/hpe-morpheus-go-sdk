@@ -26,44 +26,12 @@ type AddEmailTemplateRequest struct {
 
 type _AddEmailTemplateRequest AddEmailTemplateRequest
 
-// NewAddEmailTemplateRequest instantiates a new AddEmailTemplateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddEmailTemplateRequest() *AddEmailTemplateRequest {
-	this := AddEmailTemplateRequest{}
-	return &this
-}
-
 // NewAddEmailTemplateRequestWithDefaults instantiates a new AddEmailTemplateRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddEmailTemplateRequestWithDefaults() *AddEmailTemplateRequest {
 	this := AddEmailTemplateRequest{}
 	return &this
-}
-
-// GetEmailTemplate returns the EmailTemplate field value if set, zero value otherwise.
-func (o *AddEmailTemplateRequest) GetEmailTemplate() AddEmailTemplateRequestEmailTemplate {
-	if o == nil || IsNil(o.EmailTemplate) {
-		var ret AddEmailTemplateRequestEmailTemplate
-		return ret
-	}
-	return *o.EmailTemplate
-}
-
-// GetEmailTemplateOk returns a tuple with the EmailTemplate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddEmailTemplateRequest) GetEmailTemplateOk() (*AddEmailTemplateRequestEmailTemplate, bool) {
-	if o == nil || IsNil(o.EmailTemplate) {
-		return nil, false
-	}
-	return o.EmailTemplate, true
-}
-
-// SetEmailTemplate gets a reference to the given AddEmailTemplateRequestEmailTemplate and assigns it to the EmailTemplate field.
-func (o *AddEmailTemplateRequest) SetEmailTemplate(v AddEmailTemplateRequestEmailTemplate) {
-	o.EmailTemplate = &v
 }
 
 func (o AddEmailTemplateRequest) MarshalJSON() ([]byte, error) {

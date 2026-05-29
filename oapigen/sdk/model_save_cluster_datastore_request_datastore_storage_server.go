@@ -26,44 +26,12 @@ type SaveClusterDatastoreRequestDatastoreStorageServer struct {
 
 type _SaveClusterDatastoreRequestDatastoreStorageServer SaveClusterDatastoreRequestDatastoreStorageServer
 
-// NewSaveClusterDatastoreRequestDatastoreStorageServer instantiates a new SaveClusterDatastoreRequestDatastoreStorageServer object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSaveClusterDatastoreRequestDatastoreStorageServer() *SaveClusterDatastoreRequestDatastoreStorageServer {
-	this := SaveClusterDatastoreRequestDatastoreStorageServer{}
-	return &this
-}
-
 // NewSaveClusterDatastoreRequestDatastoreStorageServerWithDefaults instantiates a new SaveClusterDatastoreRequestDatastoreStorageServer object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSaveClusterDatastoreRequestDatastoreStorageServerWithDefaults() *SaveClusterDatastoreRequestDatastoreStorageServer {
 	this := SaveClusterDatastoreRequestDatastoreStorageServer{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SaveClusterDatastoreRequestDatastoreStorageServer) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveClusterDatastoreRequestDatastoreStorageServer) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *SaveClusterDatastoreRequestDatastoreStorageServer) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o SaveClusterDatastoreRequestDatastoreStorageServer) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner struct {
 
 type _ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner
 
-// NewListStorageServers200ResponseAllOfStorageServersInnerTenantsInner instantiates a new ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListStorageServers200ResponseAllOfStorageServersInnerTenantsInner() *ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner {
-	this := ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner{}
-	return &this
-}
-
 // NewListStorageServers200ResponseAllOfStorageServersInnerTenantsInnerWithDefaults instantiates a new ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListStorageServers200ResponseAllOfStorageServersInnerTenantsInnerWithDefaults() *ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner {
 	this := ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner) SetName(v string) {
-	o.Name = &v
 }
 
 func (o ListStorageServers200ResponseAllOfStorageServersInnerTenantsInner) MarshalJSON() ([]byte, error) {

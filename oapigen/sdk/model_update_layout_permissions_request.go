@@ -26,44 +26,12 @@ type UpdateLayoutPermissionsRequest struct {
 
 type _UpdateLayoutPermissionsRequest UpdateLayoutPermissionsRequest
 
-// NewUpdateLayoutPermissionsRequest instantiates a new UpdateLayoutPermissionsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateLayoutPermissionsRequest() *UpdateLayoutPermissionsRequest {
-	this := UpdateLayoutPermissionsRequest{}
-	return &this
-}
-
 // NewUpdateLayoutPermissionsRequestWithDefaults instantiates a new UpdateLayoutPermissionsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateLayoutPermissionsRequestWithDefaults() *UpdateLayoutPermissionsRequest {
 	this := UpdateLayoutPermissionsRequest{}
 	return &this
-}
-
-// GetInstanceTypeLayout returns the InstanceTypeLayout field value if set, zero value otherwise.
-func (o *UpdateLayoutPermissionsRequest) GetInstanceTypeLayout() UpdateLayoutPermissionsRequestInstanceTypeLayout {
-	if o == nil || IsNil(o.InstanceTypeLayout) {
-		var ret UpdateLayoutPermissionsRequestInstanceTypeLayout
-		return ret
-	}
-	return *o.InstanceTypeLayout
-}
-
-// GetInstanceTypeLayoutOk returns a tuple with the InstanceTypeLayout field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateLayoutPermissionsRequest) GetInstanceTypeLayoutOk() (*UpdateLayoutPermissionsRequestInstanceTypeLayout, bool) {
-	if o == nil || IsNil(o.InstanceTypeLayout) {
-		return nil, false
-	}
-	return o.InstanceTypeLayout, true
-}
-
-// SetInstanceTypeLayout gets a reference to the given UpdateLayoutPermissionsRequestInstanceTypeLayout and assigns it to the InstanceTypeLayout field.
-func (o *UpdateLayoutPermissionsRequest) SetInstanceTypeLayout(v UpdateLayoutPermissionsRequestInstanceTypeLayout) {
-	o.InstanceTypeLayout = &v
 }
 
 func (o UpdateLayoutPermissionsRequest) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type ClusterCreateServerConfigAnyOfOneOf2WorkerPlan struct {
 
 type _ClusterCreateServerConfigAnyOfOneOf2WorkerPlan ClusterCreateServerConfigAnyOfOneOf2WorkerPlan
 
-// NewClusterCreateServerConfigAnyOfOneOf2WorkerPlan instantiates a new ClusterCreateServerConfigAnyOfOneOf2WorkerPlan object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterCreateServerConfigAnyOfOneOf2WorkerPlan() *ClusterCreateServerConfigAnyOfOneOf2WorkerPlan {
-	this := ClusterCreateServerConfigAnyOfOneOf2WorkerPlan{}
-	return &this
-}
-
 // NewClusterCreateServerConfigAnyOfOneOf2WorkerPlanWithDefaults instantiates a new ClusterCreateServerConfigAnyOfOneOf2WorkerPlan object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClusterCreateServerConfigAnyOfOneOf2WorkerPlanWithDefaults() *ClusterCreateServerConfigAnyOfOneOf2WorkerPlan {
 	this := ClusterCreateServerConfigAnyOfOneOf2WorkerPlan{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf2WorkerPlan) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf2WorkerPlan) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ClusterCreateServerConfigAnyOfOneOf2WorkerPlan) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o ClusterCreateServerConfigAnyOfOneOf2WorkerPlan) MarshalJSON() ([]byte, error) {

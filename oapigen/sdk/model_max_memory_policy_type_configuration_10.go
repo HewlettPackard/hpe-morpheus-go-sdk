@@ -27,18 +27,6 @@ type MaxMemoryPolicyTypeConfiguration10 struct {
 
 type _MaxMemoryPolicyTypeConfiguration10 MaxMemoryPolicyTypeConfiguration10
 
-// NewMaxMemoryPolicyTypeConfiguration10 instantiates a new MaxMemoryPolicyTypeConfiguration10 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMaxMemoryPolicyTypeConfiguration10(maxMemory string) *MaxMemoryPolicyTypeConfiguration10 {
-	this := MaxMemoryPolicyTypeConfiguration10{}
-	this.MaxMemory = maxMemory
-	var excludeContainers string = "off"
-	this.ExcludeContainers = &excludeContainers
-	return &this
-}
-
 // NewMaxMemoryPolicyTypeConfiguration10WithDefaults instantiates a new MaxMemoryPolicyTypeConfiguration10 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -47,53 +35,6 @@ func NewMaxMemoryPolicyTypeConfiguration10WithDefaults() *MaxMemoryPolicyTypeCon
 	var excludeContainers string = "off"
 	this.ExcludeContainers = &excludeContainers
 	return &this
-}
-
-// GetMaxMemory returns the MaxMemory field value
-func (o *MaxMemoryPolicyTypeConfiguration10) GetMaxMemory() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MaxMemory
-}
-
-// GetMaxMemoryOk returns a tuple with the MaxMemory field value
-// and a boolean to check if the value has been set.
-func (o *MaxMemoryPolicyTypeConfiguration10) GetMaxMemoryOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MaxMemory, true
-}
-
-// SetMaxMemory sets field value
-func (o *MaxMemoryPolicyTypeConfiguration10) SetMaxMemory(v string) {
-	o.MaxMemory = v
-}
-
-// GetExcludeContainers returns the ExcludeContainers field value if set, zero value otherwise.
-func (o *MaxMemoryPolicyTypeConfiguration10) GetExcludeContainers() string {
-	if o == nil || IsNil(o.ExcludeContainers) {
-		var ret string
-		return ret
-	}
-	return *o.ExcludeContainers
-}
-
-// GetExcludeContainersOk returns a tuple with the ExcludeContainers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MaxMemoryPolicyTypeConfiguration10) GetExcludeContainersOk() (*string, bool) {
-	if o == nil || IsNil(o.ExcludeContainers) {
-		return nil, false
-	}
-	return o.ExcludeContainers, true
-}
-
-// SetExcludeContainers gets a reference to the given string and assigns it to the ExcludeContainers field.
-func (o *MaxMemoryPolicyTypeConfiguration10) SetExcludeContainers(v string) {
-	o.ExcludeContainers = &v
 }
 
 func (o MaxMemoryPolicyTypeConfiguration10) MarshalJSON() ([]byte, error) {

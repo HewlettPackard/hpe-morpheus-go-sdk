@@ -28,90 +28,12 @@ type UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings struct {
 
 type _UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings
 
-// NewUpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings instantiates a new UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings() *UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings {
-	this := UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings{}
-	return &this
-}
-
 // NewUpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettingsWithDefaults instantiates a new UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettingsWithDefaults() *UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings {
 	this := UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings{}
 	return &this
-}
-
-// GetEntityId returns the EntityId field value if set, zero value otherwise.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings) GetEntityId() string {
-	if o == nil || IsNil(o.EntityId) {
-		var ret string
-		return ret
-	}
-	return *o.EntityId
-}
-
-// GetEntityIdOk returns a tuple with the EntityId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings) GetEntityIdOk() (*string, bool) {
-	if o == nil || IsNil(o.EntityId) {
-		return nil, false
-	}
-	return o.EntityId, true
-}
-
-// SetEntityId gets a reference to the given string and assigns it to the EntityId field.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings) SetEntityId(v string) {
-	o.EntityId = &v
-}
-
-// GetAcsUrl returns the AcsUrl field value if set, zero value otherwise.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings) GetAcsUrl() string {
-	if o == nil || IsNil(o.AcsUrl) {
-		var ret string
-		return ret
-	}
-	return *o.AcsUrl
-}
-
-// GetAcsUrlOk returns a tuple with the AcsUrl field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings) GetAcsUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.AcsUrl) {
-		return nil, false
-	}
-	return o.AcsUrl, true
-}
-
-// SetAcsUrl gets a reference to the given string and assigns it to the AcsUrl field.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings) SetAcsUrl(v string) {
-	o.AcsUrl = &v
-}
-
-// GetSpMetadata returns the SpMetadata field value if set, zero value otherwise.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings) GetSpMetadata() string {
-	if o == nil || IsNil(o.SpMetadata) {
-		var ret string
-		return ret
-	}
-	return *o.SpMetadata
-}
-
-// GetSpMetadataOk returns a tuple with the SpMetadata field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings) GetSpMetadataOk() (*string, bool) {
-	if o == nil || IsNil(o.SpMetadata) {
-		return nil, false
-	}
-	return o.SpMetadata, true
-}
-
-// SetSpMetadata gets a reference to the given string and assigns it to the SpMetadata field.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings) SetSpMetadata(v string) {
-	o.SpMetadata = &v
 }
 
 func (o UpdateIdentitySources200ResponseAllOfTaskOneOf6ProviderSettings) MarshalJSON() ([]byte, error) {

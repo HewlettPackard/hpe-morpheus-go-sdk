@@ -26,44 +26,12 @@ type PolicyGroupUpdatePolicyTypeConfigOneOf20 struct {
 
 type _PolicyGroupUpdatePolicyTypeConfigOneOf20 PolicyGroupUpdatePolicyTypeConfigOneOf20
 
-// NewPolicyGroupUpdatePolicyTypeConfigOneOf20 instantiates a new PolicyGroupUpdatePolicyTypeConfigOneOf20 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPolicyGroupUpdatePolicyTypeConfigOneOf20() *PolicyGroupUpdatePolicyTypeConfigOneOf20 {
-	this := PolicyGroupUpdatePolicyTypeConfigOneOf20{}
-	return &this
-}
-
 // NewPolicyGroupUpdatePolicyTypeConfigOneOf20WithDefaults instantiates a new PolicyGroupUpdatePolicyTypeConfigOneOf20 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPolicyGroupUpdatePolicyTypeConfigOneOf20WithDefaults() *PolicyGroupUpdatePolicyTypeConfigOneOf20 {
 	this := PolicyGroupUpdatePolicyTypeConfigOneOf20{}
 	return &this
-}
-
-// GetMaxVms returns the MaxVms field value if set, zero value otherwise.
-func (o *PolicyGroupUpdatePolicyTypeConfigOneOf20) GetMaxVms() string {
-	if o == nil || IsNil(o.MaxVms) {
-		var ret string
-		return ret
-	}
-	return *o.MaxVms
-}
-
-// GetMaxVmsOk returns a tuple with the MaxVms field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyGroupUpdatePolicyTypeConfigOneOf20) GetMaxVmsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxVms) {
-		return nil, false
-	}
-	return o.MaxVms, true
-}
-
-// SetMaxVms gets a reference to the given string and assigns it to the MaxVms field.
-func (o *PolicyGroupUpdatePolicyTypeConfigOneOf20) SetMaxVms(v string) {
-	o.MaxVms = &v
 }
 
 func (o PolicyGroupUpdatePolicyTypeConfigOneOf20) MarshalJSON() ([]byte, error) {

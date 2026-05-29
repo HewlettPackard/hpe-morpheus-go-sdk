@@ -29,113 +29,12 @@ type GetGuidanceStats200ResponseStatsSeverity struct {
 
 type _GetGuidanceStats200ResponseStatsSeverity GetGuidanceStats200ResponseStatsSeverity
 
-// NewGetGuidanceStats200ResponseStatsSeverity instantiates a new GetGuidanceStats200ResponseStatsSeverity object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetGuidanceStats200ResponseStatsSeverity() *GetGuidanceStats200ResponseStatsSeverity {
-	this := GetGuidanceStats200ResponseStatsSeverity{}
-	return &this
-}
-
 // NewGetGuidanceStats200ResponseStatsSeverityWithDefaults instantiates a new GetGuidanceStats200ResponseStatsSeverity object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetGuidanceStats200ResponseStatsSeverityWithDefaults() *GetGuidanceStats200ResponseStatsSeverity {
 	this := GetGuidanceStats200ResponseStatsSeverity{}
 	return &this
-}
-
-// GetLow returns the Low field value if set, zero value otherwise.
-func (o *GetGuidanceStats200ResponseStatsSeverity) GetLow() int64 {
-	if o == nil || IsNil(o.Low) {
-		var ret int64
-		return ret
-	}
-	return *o.Low
-}
-
-// GetLowOk returns a tuple with the Low field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidanceStats200ResponseStatsSeverity) GetLowOk() (*int64, bool) {
-	if o == nil || IsNil(o.Low) {
-		return nil, false
-	}
-	return o.Low, true
-}
-
-// SetLow gets a reference to the given int64 and assigns it to the Low field.
-func (o *GetGuidanceStats200ResponseStatsSeverity) SetLow(v int64) {
-	o.Low = &v
-}
-
-// GetInfo returns the Info field value if set, zero value otherwise.
-func (o *GetGuidanceStats200ResponseStatsSeverity) GetInfo() int64 {
-	if o == nil || IsNil(o.Info) {
-		var ret int64
-		return ret
-	}
-	return *o.Info
-}
-
-// GetInfoOk returns a tuple with the Info field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidanceStats200ResponseStatsSeverity) GetInfoOk() (*int64, bool) {
-	if o == nil || IsNil(o.Info) {
-		return nil, false
-	}
-	return o.Info, true
-}
-
-// SetInfo gets a reference to the given int64 and assigns it to the Info field.
-func (o *GetGuidanceStats200ResponseStatsSeverity) SetInfo(v int64) {
-	o.Info = &v
-}
-
-// GetWarning returns the Warning field value if set, zero value otherwise.
-func (o *GetGuidanceStats200ResponseStatsSeverity) GetWarning() int64 {
-	if o == nil || IsNil(o.Warning) {
-		var ret int64
-		return ret
-	}
-	return *o.Warning
-}
-
-// GetWarningOk returns a tuple with the Warning field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidanceStats200ResponseStatsSeverity) GetWarningOk() (*int64, bool) {
-	if o == nil || IsNil(o.Warning) {
-		return nil, false
-	}
-	return o.Warning, true
-}
-
-// SetWarning gets a reference to the given int64 and assigns it to the Warning field.
-func (o *GetGuidanceStats200ResponseStatsSeverity) SetWarning(v int64) {
-	o.Warning = &v
-}
-
-// GetCritical returns the Critical field value if set, zero value otherwise.
-func (o *GetGuidanceStats200ResponseStatsSeverity) GetCritical() int64 {
-	if o == nil || IsNil(o.Critical) {
-		var ret int64
-		return ret
-	}
-	return *o.Critical
-}
-
-// GetCriticalOk returns a tuple with the Critical field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidanceStats200ResponseStatsSeverity) GetCriticalOk() (*int64, bool) {
-	if o == nil || IsNil(o.Critical) {
-		return nil, false
-	}
-	return o.Critical, true
-}
-
-// SetCritical gets a reference to the given int64 and assigns it to the Critical field.
-func (o *GetGuidanceStats200ResponseStatsSeverity) SetCritical(v int64) {
-	o.Critical = &v
 }
 
 func (o GetGuidanceStats200ResponseStatsSeverity) MarshalJSON() ([]byte, error) {

@@ -29,69 +29,12 @@ type AlletraMPHVMDatastoreConfiguration1 struct {
 
 type _AlletraMPHVMDatastoreConfiguration1 AlletraMPHVMDatastoreConfiguration1
 
-// NewAlletraMPHVMDatastoreConfiguration1 instantiates a new AlletraMPHVMDatastoreConfiguration1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAlletraMPHVMDatastoreConfiguration1(protocolType string) *AlletraMPHVMDatastoreConfiguration1 {
-	this := AlletraMPHVMDatastoreConfiguration1{}
-	this.ProtocolType = protocolType
-	return &this
-}
-
 // NewAlletraMPHVMDatastoreConfiguration1WithDefaults instantiates a new AlletraMPHVMDatastoreConfiguration1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAlletraMPHVMDatastoreConfiguration1WithDefaults() *AlletraMPHVMDatastoreConfiguration1 {
 	this := AlletraMPHVMDatastoreConfiguration1{}
 	return &this
-}
-
-// GetEnableransomware returns the Enableransomware field value if set, zero value otherwise.
-func (o *AlletraMPHVMDatastoreConfiguration1) GetEnableransomware() string {
-	if o == nil || IsNil(o.Enableransomware) {
-		var ret string
-		return ret
-	}
-	return *o.Enableransomware
-}
-
-// GetEnableransomwareOk returns a tuple with the Enableransomware field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AlletraMPHVMDatastoreConfiguration1) GetEnableransomwareOk() (*string, bool) {
-	if o == nil || IsNil(o.Enableransomware) {
-		return nil, false
-	}
-	return o.Enableransomware, true
-}
-
-// SetEnableransomware gets a reference to the given string and assigns it to the Enableransomware field.
-func (o *AlletraMPHVMDatastoreConfiguration1) SetEnableransomware(v string) {
-	o.Enableransomware = &v
-}
-
-// GetProtocolType returns the ProtocolType field value
-func (o *AlletraMPHVMDatastoreConfiguration1) GetProtocolType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProtocolType
-}
-
-// GetProtocolTypeOk returns a tuple with the ProtocolType field value
-// and a boolean to check if the value has been set.
-func (o *AlletraMPHVMDatastoreConfiguration1) GetProtocolTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProtocolType, true
-}
-
-// SetProtocolType sets field value
-func (o *AlletraMPHVMDatastoreConfiguration1) SetProtocolType(v string) {
-	o.ProtocolType = v
 }
 
 func (o AlletraMPHVMDatastoreConfiguration1) MarshalJSON() ([]byte, error) {

@@ -26,13 +26,6 @@ type ZoneCreateConfigAnyOf3RpcMode struct {
 	String *string
 }
 
-// stringAsZoneCreateConfigAnyOf3RpcMode is a convenience function that returns string wrapped in ZoneCreateConfigAnyOf3RpcMode
-func StringAsZoneCreateConfigAnyOf3RpcMode(v *string) ZoneCreateConfigAnyOf3RpcMode {
-	return ZoneCreateConfigAnyOf3RpcMode{
-		String: v,
-	}
-}
-
 func (dst *ZoneCreateConfigAnyOf3RpcMode) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ZoneCreateConfigAnyOf3RpcMode{}

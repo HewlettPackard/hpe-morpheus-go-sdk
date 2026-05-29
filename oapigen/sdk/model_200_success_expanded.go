@@ -31,17 +31,6 @@ type Model200SuccessExpanded struct {
 
 type _Model200SuccessExpanded Model200SuccessExpanded
 
-// NewModel200SuccessExpanded instantiates a new Model200SuccessExpanded object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewModel200SuccessExpanded() *Model200SuccessExpanded {
-	this := Model200SuccessExpanded{}
-	var success bool = true
-	this.Success = &success
-	return &this
-}
-
 // NewModel200SuccessExpandedWithDefaults instantiates a new Model200SuccessExpanded object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -50,77 +39,6 @@ func NewModel200SuccessExpandedWithDefaults() *Model200SuccessExpanded {
 	var success bool = true
 	this.Success = &success
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *Model200SuccessExpanded) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Model200SuccessExpanded) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *Model200SuccessExpanded) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetMsg returns the Msg field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Model200SuccessExpanded) GetMsg() string {
-	if o == nil || IsNil(o.Msg.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Msg.Get()
-}
-
-// GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Model200SuccessExpanded) GetMsgOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Msg.Get(), o.Msg.IsSet()
-}
-
-// SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
-func (o *Model200SuccessExpanded) SetMsg(v string) {
-	o.Msg.Set(&v)
-}
-
-// GetErrors returns the Errors field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Model200SuccessExpanded) GetErrors() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Errors
-}
-
-// GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Model200SuccessExpanded) GetErrorsOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Errors) {
-		return map[string]interface{}{}, false
-	}
-	return o.Errors, true
-}
-
-// SetErrors gets a reference to the given map[string]interface{} and assigns it to the Errors field.
-func (o *Model200SuccessExpanded) SetErrors(v map[string]interface{}) {
-	o.Errors = v
 }
 
 func (o Model200SuccessExpanded) MarshalJSON() ([]byte, error) {

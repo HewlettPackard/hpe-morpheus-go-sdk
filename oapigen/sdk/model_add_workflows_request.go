@@ -26,46 +26,12 @@ type AddWorkflowsRequest struct {
 
 type _AddWorkflowsRequest AddWorkflowsRequest
 
-// NewAddWorkflowsRequest instantiates a new AddWorkflowsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddWorkflowsRequest(taskSet AddWorkflowsRequestTaskSet) *AddWorkflowsRequest {
-	this := AddWorkflowsRequest{}
-	this.TaskSet = taskSet
-	return &this
-}
-
 // NewAddWorkflowsRequestWithDefaults instantiates a new AddWorkflowsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddWorkflowsRequestWithDefaults() *AddWorkflowsRequest {
 	this := AddWorkflowsRequest{}
 	return &this
-}
-
-// GetTaskSet returns the TaskSet field value
-func (o *AddWorkflowsRequest) GetTaskSet() AddWorkflowsRequestTaskSet {
-	if o == nil {
-		var ret AddWorkflowsRequestTaskSet
-		return ret
-	}
-
-	return o.TaskSet
-}
-
-// GetTaskSetOk returns a tuple with the TaskSet field value
-// and a boolean to check if the value has been set.
-func (o *AddWorkflowsRequest) GetTaskSetOk() (*AddWorkflowsRequestTaskSet, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TaskSet, true
-}
-
-// SetTaskSet sets field value
-func (o *AddWorkflowsRequest) SetTaskSet(v AddWorkflowsRequestTaskSet) {
-	o.TaskSet = v
 }
 
 func (o AddWorkflowsRequest) MarshalJSON() ([]byte, error) {

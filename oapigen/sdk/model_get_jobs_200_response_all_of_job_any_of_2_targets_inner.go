@@ -29,113 +29,12 @@ type GetJobs200ResponseAllOfJobAnyOf2TargetsInner struct {
 
 type _GetJobs200ResponseAllOfJobAnyOf2TargetsInner GetJobs200ResponseAllOfJobAnyOf2TargetsInner
 
-// NewGetJobs200ResponseAllOfJobAnyOf2TargetsInner instantiates a new GetJobs200ResponseAllOfJobAnyOf2TargetsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetJobs200ResponseAllOfJobAnyOf2TargetsInner() *GetJobs200ResponseAllOfJobAnyOf2TargetsInner {
-	this := GetJobs200ResponseAllOfJobAnyOf2TargetsInner{}
-	return &this
-}
-
 // NewGetJobs200ResponseAllOfJobAnyOf2TargetsInnerWithDefaults instantiates a new GetJobs200ResponseAllOfJobAnyOf2TargetsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetJobs200ResponseAllOfJobAnyOf2TargetsInnerWithDefaults() *GetJobs200ResponseAllOfJobAnyOf2TargetsInner {
 	this := GetJobs200ResponseAllOfJobAnyOf2TargetsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetJobs200ResponseAllOfJobAnyOf2TargetsInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetJobs200ResponseAllOfJobAnyOf2TargetsInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetJobs200ResponseAllOfJobAnyOf2TargetsInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetJobs200ResponseAllOfJobAnyOf2TargetsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetJobs200ResponseAllOfJobAnyOf2TargetsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetJobs200ResponseAllOfJobAnyOf2TargetsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetTargetType returns the TargetType field value if set, zero value otherwise.
-func (o *GetJobs200ResponseAllOfJobAnyOf2TargetsInner) GetTargetType() string {
-	if o == nil || IsNil(o.TargetType) {
-		var ret string
-		return ret
-	}
-	return *o.TargetType
-}
-
-// GetTargetTypeOk returns a tuple with the TargetType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetJobs200ResponseAllOfJobAnyOf2TargetsInner) GetTargetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetType) {
-		return nil, false
-	}
-	return o.TargetType, true
-}
-
-// SetTargetType gets a reference to the given string and assigns it to the TargetType field.
-func (o *GetJobs200ResponseAllOfJobAnyOf2TargetsInner) SetTargetType(v string) {
-	o.TargetType = &v
-}
-
-// GetRefId returns the RefId field value if set, zero value otherwise.
-func (o *GetJobs200ResponseAllOfJobAnyOf2TargetsInner) GetRefId() int64 {
-	if o == nil || IsNil(o.RefId) {
-		var ret int64
-		return ret
-	}
-	return *o.RefId
-}
-
-// GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetJobs200ResponseAllOfJobAnyOf2TargetsInner) GetRefIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.RefId) {
-		return nil, false
-	}
-	return o.RefId, true
-}
-
-// SetRefId gets a reference to the given int64 and assigns it to the RefId field.
-func (o *GetJobs200ResponseAllOfJobAnyOf2TargetsInner) SetRefId(v int64) {
-	o.RefId = &v
 }
 
 func (o GetJobs200ResponseAllOfJobAnyOf2TargetsInner) MarshalJSON() ([]byte, error) {

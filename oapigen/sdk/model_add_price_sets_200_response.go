@@ -27,67 +27,12 @@ type AddPriceSets200Response struct {
 
 type _AddPriceSets200Response AddPriceSets200Response
 
-// NewAddPriceSets200Response instantiates a new AddPriceSets200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPriceSets200Response() *AddPriceSets200Response {
-	this := AddPriceSets200Response{}
-	return &this
-}
-
 // NewAddPriceSets200ResponseWithDefaults instantiates a new AddPriceSets200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddPriceSets200ResponseWithDefaults() *AddPriceSets200Response {
 	this := AddPriceSets200Response{}
 	return &this
-}
-
-// GetBudget returns the Budget field value if set, zero value otherwise.
-func (o *AddPriceSets200Response) GetBudget() AddPriceSets200ResponseAllOfBudget {
-	if o == nil || IsNil(o.Budget) {
-		var ret AddPriceSets200ResponseAllOfBudget
-		return ret
-	}
-	return *o.Budget
-}
-
-// GetBudgetOk returns a tuple with the Budget field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPriceSets200Response) GetBudgetOk() (*AddPriceSets200ResponseAllOfBudget, bool) {
-	if o == nil || IsNil(o.Budget) {
-		return nil, false
-	}
-	return o.Budget, true
-}
-
-// SetBudget gets a reference to the given AddPriceSets200ResponseAllOfBudget and assigns it to the Budget field.
-func (o *AddPriceSets200Response) SetBudget(v AddPriceSets200ResponseAllOfBudget) {
-	o.Budget = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddPriceSets200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPriceSets200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddPriceSets200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddPriceSets200Response) MarshalJSON() ([]byte, error) {

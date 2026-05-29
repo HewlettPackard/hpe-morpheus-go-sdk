@@ -31,18 +31,6 @@ type NetworkRouterFirewallRuleCreate struct {
 
 type _NetworkRouterFirewallRuleCreate NetworkRouterFirewallRuleCreate
 
-// NewNetworkRouterFirewallRuleCreate instantiates a new NetworkRouterFirewallRuleCreate object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkRouterFirewallRuleCreate(name string) *NetworkRouterFirewallRuleCreate {
-	this := NetworkRouterFirewallRuleCreate{}
-	this.Name = name
-	var enabled bool = true
-	this.Enabled = &enabled
-	return &this
-}
-
 // NewNetworkRouterFirewallRuleCreateWithDefaults instantiates a new NetworkRouterFirewallRuleCreate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -51,76 +39,6 @@ func NewNetworkRouterFirewallRuleCreateWithDefaults() *NetworkRouterFirewallRule
 	var enabled bool = true
 	this.Enabled = &enabled
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *NetworkRouterFirewallRuleCreate) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *NetworkRouterFirewallRuleCreate) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *NetworkRouterFirewallRuleCreate) SetName(v string) {
-	o.Name = v
-}
-
-// GetEnabled returns the Enabled field value if set, zero value otherwise.
-func (o *NetworkRouterFirewallRuleCreate) GetEnabled() bool {
-	if o == nil || IsNil(o.Enabled) {
-		var ret bool
-		return ret
-	}
-	return *o.Enabled
-}
-
-// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkRouterFirewallRuleCreate) GetEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.Enabled) {
-		return nil, false
-	}
-	return o.Enabled, true
-}
-
-// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
-func (o *NetworkRouterFirewallRuleCreate) SetEnabled(v bool) {
-	o.Enabled = &v
-}
-
-// GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *NetworkRouterFirewallRuleCreate) GetPriority() int64 {
-	if o == nil || IsNil(o.Priority) {
-		var ret int64
-		return ret
-	}
-	return *o.Priority
-}
-
-// GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkRouterFirewallRuleCreate) GetPriorityOk() (*int64, bool) {
-	if o == nil || IsNil(o.Priority) {
-		return nil, false
-	}
-	return o.Priority, true
-}
-
-// SetPriority gets a reference to the given int64 and assigns it to the Priority field.
-func (o *NetworkRouterFirewallRuleCreate) SetPriority(v int64) {
-	o.Priority = &v
 }
 
 func (o NetworkRouterFirewallRuleCreate) MarshalJSON() ([]byte, error) {

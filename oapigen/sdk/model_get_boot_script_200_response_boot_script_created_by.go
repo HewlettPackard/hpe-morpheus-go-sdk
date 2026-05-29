@@ -26,44 +26,12 @@ type GetBootScript200ResponseBootScriptCreatedBy struct {
 
 type _GetBootScript200ResponseBootScriptCreatedBy GetBootScript200ResponseBootScriptCreatedBy
 
-// NewGetBootScript200ResponseBootScriptCreatedBy instantiates a new GetBootScript200ResponseBootScriptCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetBootScript200ResponseBootScriptCreatedBy() *GetBootScript200ResponseBootScriptCreatedBy {
-	this := GetBootScript200ResponseBootScriptCreatedBy{}
-	return &this
-}
-
 // NewGetBootScript200ResponseBootScriptCreatedByWithDefaults instantiates a new GetBootScript200ResponseBootScriptCreatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetBootScript200ResponseBootScriptCreatedByWithDefaults() *GetBootScript200ResponseBootScriptCreatedBy {
 	this := GetBootScript200ResponseBootScriptCreatedBy{}
 	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *GetBootScript200ResponseBootScriptCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetBootScript200ResponseBootScriptCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *GetBootScript200ResponseBootScriptCreatedBy) SetUsername(v string) {
-	o.Username = &v
 }
 
 func (o GetBootScript200ResponseBootScriptCreatedBy) MarshalJSON() ([]byte, error) {

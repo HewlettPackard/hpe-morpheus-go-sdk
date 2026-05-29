@@ -29,71 +29,12 @@ type UpdateRoleRequestRoleTaskSetPermissionsInner struct {
 
 type _UpdateRoleRequestRoleTaskSetPermissionsInner UpdateRoleRequestRoleTaskSetPermissionsInner
 
-// NewUpdateRoleRequestRoleTaskSetPermissionsInner instantiates a new UpdateRoleRequestRoleTaskSetPermissionsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateRoleRequestRoleTaskSetPermissionsInner(id int64, access string) *UpdateRoleRequestRoleTaskSetPermissionsInner {
-	this := UpdateRoleRequestRoleTaskSetPermissionsInner{}
-	this.Id = id
-	this.Access = access
-	return &this
-}
-
 // NewUpdateRoleRequestRoleTaskSetPermissionsInnerWithDefaults instantiates a new UpdateRoleRequestRoleTaskSetPermissionsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateRoleRequestRoleTaskSetPermissionsInnerWithDefaults() *UpdateRoleRequestRoleTaskSetPermissionsInner {
 	this := UpdateRoleRequestRoleTaskSetPermissionsInner{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *UpdateRoleRequestRoleTaskSetPermissionsInner) GetId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRoleTaskSetPermissionsInner) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *UpdateRoleRequestRoleTaskSetPermissionsInner) SetId(v int64) {
-	o.Id = v
-}
-
-// GetAccess returns the Access field value
-func (o *UpdateRoleRequestRoleTaskSetPermissionsInner) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRoleTaskSetPermissionsInner) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *UpdateRoleRequestRoleTaskSetPermissionsInner) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o UpdateRoleRequestRoleTaskSetPermissionsInner) MarshalJSON() ([]byte, error) {

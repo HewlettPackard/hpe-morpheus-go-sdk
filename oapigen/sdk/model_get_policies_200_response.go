@@ -26,44 +26,12 @@ type GetPolicies200Response struct {
 
 type _GetPolicies200Response GetPolicies200Response
 
-// NewGetPolicies200Response instantiates a new GetPolicies200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetPolicies200Response() *GetPolicies200Response {
-	this := GetPolicies200Response{}
-	return &this
-}
-
 // NewGetPolicies200ResponseWithDefaults instantiates a new GetPolicies200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetPolicies200ResponseWithDefaults() *GetPolicies200Response {
 	this := GetPolicies200Response{}
 	return &this
-}
-
-// GetPolicy returns the Policy field value if set, zero value otherwise.
-func (o *GetPolicies200Response) GetPolicy() GetPolicies200ResponseAllOfPolicy {
-	if o == nil || IsNil(o.Policy) {
-		var ret GetPolicies200ResponseAllOfPolicy
-		return ret
-	}
-	return *o.Policy
-}
-
-// GetPolicyOk returns a tuple with the Policy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPolicies200Response) GetPolicyOk() (*GetPolicies200ResponseAllOfPolicy, bool) {
-	if o == nil || IsNil(o.Policy) {
-		return nil, false
-	}
-	return o.Policy, true
-}
-
-// SetPolicy gets a reference to the given GetPolicies200ResponseAllOfPolicy and assigns it to the Policy field.
-func (o *GetPolicies200Response) SetPolicy(v GetPolicies200ResponseAllOfPolicy) {
-	o.Policy = &v
 }
 
 func (o GetPolicies200Response) MarshalJSON() ([]byte, error) {

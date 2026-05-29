@@ -26,44 +26,12 @@ type Model403Error struct {
 
 type _Model403Error Model403Error
 
-// NewModel403Error instantiates a new Model403Error object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewModel403Error() *Model403Error {
-	this := Model403Error{}
-	return &this
-}
-
 // NewModel403ErrorWithDefaults instantiates a new Model403Error object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewModel403ErrorWithDefaults() *Model403Error {
 	this := Model403Error{}
 	return &this
-}
-
-// GetMsg returns the Msg field value if set, zero value otherwise.
-func (o *Model403Error) GetMsg() string {
-	if o == nil || IsNil(o.Msg) {
-		var ret string
-		return ret
-	}
-	return *o.Msg
-}
-
-// GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Model403Error) GetMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.Msg) {
-		return nil, false
-	}
-	return o.Msg, true
-}
-
-// SetMsg gets a reference to the given string and assigns it to the Msg field.
-func (o *Model403Error) SetMsg(v string) {
-	o.Msg = &v
 }
 
 func (o Model403Error) MarshalJSON() ([]byte, error) {

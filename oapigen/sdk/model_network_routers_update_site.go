@@ -26,44 +26,12 @@ type NetworkRoutersUpdateSite struct {
 
 type _NetworkRoutersUpdateSite NetworkRoutersUpdateSite
 
-// NewNetworkRoutersUpdateSite instantiates a new NetworkRoutersUpdateSite object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkRoutersUpdateSite() *NetworkRoutersUpdateSite {
-	this := NetworkRoutersUpdateSite{}
-	return &this
-}
-
 // NewNetworkRoutersUpdateSiteWithDefaults instantiates a new NetworkRoutersUpdateSite object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkRoutersUpdateSiteWithDefaults() *NetworkRoutersUpdateSite {
 	this := NetworkRoutersUpdateSite{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *NetworkRoutersUpdateSite) GetId() NetworkRoutersUpdateSiteId {
-	if o == nil || IsNil(o.Id) {
-		var ret NetworkRoutersUpdateSiteId
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkRoutersUpdateSite) GetIdOk() (*NetworkRoutersUpdateSiteId, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given NetworkRoutersUpdateSiteId and assigns it to the Id field.
-func (o *NetworkRoutersUpdateSite) SetId(v NetworkRoutersUpdateSiteId) {
-	o.Id = &v
 }
 
 func (o NetworkRoutersUpdateSite) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type ServerBaremetalCreate struct {
 
 type _ServerBaremetalCreate ServerBaremetalCreate
 
-// NewServerBaremetalCreate instantiates a new ServerBaremetalCreate object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewServerBaremetalCreate() *ServerBaremetalCreate {
-	this := ServerBaremetalCreate{}
-	return &this
-}
-
 // NewServerBaremetalCreateWithDefaults instantiates a new ServerBaremetalCreate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewServerBaremetalCreateWithDefaults() *ServerBaremetalCreate {
 	this := ServerBaremetalCreate{}
 	return &this
-}
-
-// GetServer returns the Server field value if set, zero value otherwise.
-func (o *ServerBaremetalCreate) GetServer() ServerBaremetalCreateServer {
-	if o == nil || IsNil(o.Server) {
-		var ret ServerBaremetalCreateServer
-		return ret
-	}
-	return *o.Server
-}
-
-// GetServerOk returns a tuple with the Server field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServerBaremetalCreate) GetServerOk() (*ServerBaremetalCreateServer, bool) {
-	if o == nil || IsNil(o.Server) {
-		return nil, false
-	}
-	return o.Server, true
-}
-
-// SetServer gets a reference to the given ServerBaremetalCreateServer and assigns it to the Server field.
-func (o *ServerBaremetalCreate) SetServer(v ServerBaremetalCreateServer) {
-	o.Server = &v
 }
 
 func (o ServerBaremetalCreate) MarshalJSON() ([]byte, error) {

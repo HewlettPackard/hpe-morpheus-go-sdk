@@ -27,44 +27,12 @@ type UpdateDeployRequestAppDeploy struct {
 
 type _UpdateDeployRequestAppDeploy UpdateDeployRequestAppDeploy
 
-// NewUpdateDeployRequestAppDeploy instantiates a new UpdateDeployRequestAppDeploy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateDeployRequestAppDeploy() *UpdateDeployRequestAppDeploy {
-	this := UpdateDeployRequestAppDeploy{}
-	return &this
-}
-
 // NewUpdateDeployRequestAppDeployWithDefaults instantiates a new UpdateDeployRequestAppDeploy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateDeployRequestAppDeployWithDefaults() *UpdateDeployRequestAppDeploy {
 	this := UpdateDeployRequestAppDeploy{}
 	return &this
-}
-
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *UpdateDeployRequestAppDeploy) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDeployRequestAppDeploy) GetConfigOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
-	}
-	return o.Config, true
-}
-
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *UpdateDeployRequestAppDeploy) SetConfig(v map[string]interface{}) {
-	o.Config = v
 }
 
 func (o UpdateDeployRequestAppDeploy) MarshalJSON() ([]byte, error) {

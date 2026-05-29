@@ -26,44 +26,12 @@ type UpdateMigration200Response struct {
 
 type _UpdateMigration200Response UpdateMigration200Response
 
-// NewUpdateMigration200Response instantiates a new UpdateMigration200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateMigration200Response() *UpdateMigration200Response {
-	this := UpdateMigration200Response{}
-	return &this
-}
-
 // NewUpdateMigration200ResponseWithDefaults instantiates a new UpdateMigration200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateMigration200ResponseWithDefaults() *UpdateMigration200Response {
 	this := UpdateMigration200Response{}
 	return &this
-}
-
-// GetMigration returns the Migration field value if set, zero value otherwise.
-func (o *UpdateMigration200Response) GetMigration() GetMigration200ResponseMigration {
-	if o == nil || IsNil(o.Migration) {
-		var ret GetMigration200ResponseMigration
-		return ret
-	}
-	return *o.Migration
-}
-
-// GetMigrationOk returns a tuple with the Migration field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateMigration200Response) GetMigrationOk() (*GetMigration200ResponseMigration, bool) {
-	if o == nil || IsNil(o.Migration) {
-		return nil, false
-	}
-	return o.Migration, true
-}
-
-// SetMigration gets a reference to the given GetMigration200ResponseMigration and assigns it to the Migration field.
-func (o *UpdateMigration200Response) SetMigration(v GetMigration200ResponseMigration) {
-	o.Migration = &v
 }
 
 func (o UpdateMigration200Response) MarshalJSON() ([]byte, error) {

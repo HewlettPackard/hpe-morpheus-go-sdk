@@ -26,44 +26,12 @@ type AddDeploymentFile200Response struct {
 
 type _AddDeploymentFile200Response AddDeploymentFile200Response
 
-// NewAddDeploymentFile200Response instantiates a new AddDeploymentFile200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddDeploymentFile200Response() *AddDeploymentFile200Response {
-	this := AddDeploymentFile200Response{}
-	return &this
-}
-
 // NewAddDeploymentFile200ResponseWithDefaults instantiates a new AddDeploymentFile200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddDeploymentFile200ResponseWithDefaults() *AddDeploymentFile200Response {
 	this := AddDeploymentFile200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddDeploymentFile200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddDeploymentFile200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddDeploymentFile200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddDeploymentFile200Response) MarshalJSON() ([]byte, error) {

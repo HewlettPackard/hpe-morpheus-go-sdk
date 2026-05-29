@@ -29,90 +29,12 @@ type AddStorageServers200ResponseAllOfStorageServerCredential struct {
 
 type _AddStorageServers200ResponseAllOfStorageServerCredential AddStorageServers200ResponseAllOfStorageServerCredential
 
-// NewAddStorageServers200ResponseAllOfStorageServerCredential instantiates a new AddStorageServers200ResponseAllOfStorageServerCredential object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddStorageServers200ResponseAllOfStorageServerCredential() *AddStorageServers200ResponseAllOfStorageServerCredential {
-	this := AddStorageServers200ResponseAllOfStorageServerCredential{}
-	return &this
-}
-
 // NewAddStorageServers200ResponseAllOfStorageServerCredentialWithDefaults instantiates a new AddStorageServers200ResponseAllOfStorageServerCredential object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddStorageServers200ResponseAllOfStorageServerCredentialWithDefaults() *AddStorageServers200ResponseAllOfStorageServerCredential {
 	this := AddStorageServers200ResponseAllOfStorageServerCredential{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddStorageServers200ResponseAllOfStorageServerCredential) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServerCredential) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddStorageServers200ResponseAllOfStorageServerCredential) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddStorageServers200ResponseAllOfStorageServerCredential) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServerCredential) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddStorageServers200ResponseAllOfStorageServerCredential) SetName(v string) {
-	o.Name = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *AddStorageServers200ResponseAllOfStorageServerCredential) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServerCredential) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *AddStorageServers200ResponseAllOfStorageServerCredential) SetType(v string) {
-	o.Type = &v
 }
 
 func (o AddStorageServers200ResponseAllOfStorageServerCredential) MarshalJSON() ([]byte, error) {

@@ -34,115 +34,12 @@ type GenerateSupportBundleRequest struct {
 
 type _GenerateSupportBundleRequest GenerateSupportBundleRequest
 
-// NewGenerateSupportBundleRequest instantiates a new GenerateSupportBundleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGenerateSupportBundleRequest(startDate time.Time) *GenerateSupportBundleRequest {
-	this := GenerateSupportBundleRequest{}
-	this.StartDate = startDate
-	return &this
-}
-
 // NewGenerateSupportBundleRequestWithDefaults instantiates a new GenerateSupportBundleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGenerateSupportBundleRequestWithDefaults() *GenerateSupportBundleRequest {
 	this := GenerateSupportBundleRequest{}
 	return &this
-}
-
-// GetStorageProviderId returns the StorageProviderId field value if set, zero value otherwise.
-func (o *GenerateSupportBundleRequest) GetStorageProviderId() int64 {
-	if o == nil || IsNil(o.StorageProviderId) {
-		var ret int64
-		return ret
-	}
-	return *o.StorageProviderId
-}
-
-// GetStorageProviderIdOk returns a tuple with the StorageProviderId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GenerateSupportBundleRequest) GetStorageProviderIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.StorageProviderId) {
-		return nil, false
-	}
-	return o.StorageProviderId, true
-}
-
-// SetStorageProviderId gets a reference to the given int64 and assigns it to the StorageProviderId field.
-func (o *GenerateSupportBundleRequest) SetStorageProviderId(v int64) {
-	o.StorageProviderId = &v
-}
-
-// GetStartDate returns the StartDate field value
-func (o *GenerateSupportBundleRequest) GetStartDate() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.StartDate
-}
-
-// GetStartDateOk returns a tuple with the StartDate field value
-// and a boolean to check if the value has been set.
-func (o *GenerateSupportBundleRequest) GetStartDateOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.StartDate, true
-}
-
-// SetStartDate sets field value
-func (o *GenerateSupportBundleRequest) SetStartDate(v time.Time) {
-	o.StartDate = v
-}
-
-// GetEndDate returns the EndDate field value if set, zero value otherwise.
-func (o *GenerateSupportBundleRequest) GetEndDate() time.Time {
-	if o == nil || IsNil(o.EndDate) {
-		var ret time.Time
-		return ret
-	}
-	return *o.EndDate
-}
-
-// GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GenerateSupportBundleRequest) GetEndDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EndDate) {
-		return nil, false
-	}
-	return o.EndDate, true
-}
-
-// SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
-func (o *GenerateSupportBundleRequest) SetEndDate(v time.Time) {
-	o.EndDate = &v
-}
-
-// GetContents returns the Contents field value if set, zero value otherwise.
-func (o *GenerateSupportBundleRequest) GetContents() []GenerateSupportBundleRequestContentsInner {
-	if o == nil || IsNil(o.Contents) {
-		var ret []GenerateSupportBundleRequestContentsInner
-		return ret
-	}
-	return o.Contents
-}
-
-// GetContentsOk returns a tuple with the Contents field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GenerateSupportBundleRequest) GetContentsOk() ([]GenerateSupportBundleRequestContentsInner, bool) {
-	if o == nil || IsNil(o.Contents) {
-		return nil, false
-	}
-	return o.Contents, true
-}
-
-// SetContents gets a reference to the given []GenerateSupportBundleRequestContentsInner and assigns it to the Contents field.
-func (o *GenerateSupportBundleRequest) SetContents(v []GenerateSupportBundleRequestContentsInner) {
-	o.Contents = v
 }
 
 func (o GenerateSupportBundleRequest) MarshalJSON() ([]byte, error) {

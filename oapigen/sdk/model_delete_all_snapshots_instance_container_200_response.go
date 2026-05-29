@@ -26,44 +26,12 @@ type DeleteAllSnapshotsInstanceContainer200Response struct {
 
 type _DeleteAllSnapshotsInstanceContainer200Response DeleteAllSnapshotsInstanceContainer200Response
 
-// NewDeleteAllSnapshotsInstanceContainer200Response instantiates a new DeleteAllSnapshotsInstanceContainer200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewDeleteAllSnapshotsInstanceContainer200Response() *DeleteAllSnapshotsInstanceContainer200Response {
-	this := DeleteAllSnapshotsInstanceContainer200Response{}
-	return &this
-}
-
 // NewDeleteAllSnapshotsInstanceContainer200ResponseWithDefaults instantiates a new DeleteAllSnapshotsInstanceContainer200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewDeleteAllSnapshotsInstanceContainer200ResponseWithDefaults() *DeleteAllSnapshotsInstanceContainer200Response {
 	this := DeleteAllSnapshotsInstanceContainer200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *DeleteAllSnapshotsInstanceContainer200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeleteAllSnapshotsInstanceContainer200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *DeleteAllSnapshotsInstanceContainer200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o DeleteAllSnapshotsInstanceContainer200Response) MarshalJSON() ([]byte, error) {

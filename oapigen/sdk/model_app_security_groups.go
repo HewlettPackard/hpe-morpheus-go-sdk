@@ -29,113 +29,12 @@ type AppSecurityGroups struct {
 
 type _AppSecurityGroups AppSecurityGroups
 
-// NewAppSecurityGroups instantiates a new AppSecurityGroups object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAppSecurityGroups() *AppSecurityGroups {
-	this := AppSecurityGroups{}
-	return &this
-}
-
 // NewAppSecurityGroupsWithDefaults instantiates a new AppSecurityGroups object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAppSecurityGroupsWithDefaults() *AppSecurityGroups {
 	this := AppSecurityGroups{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AppSecurityGroups) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppSecurityGroups) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AppSecurityGroups) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetAccountId returns the AccountId field value if set, zero value otherwise.
-func (o *AppSecurityGroups) GetAccountId() int64 {
-	if o == nil || IsNil(o.AccountId) {
-		var ret int64
-		return ret
-	}
-	return *o.AccountId
-}
-
-// GetAccountIdOk returns a tuple with the AccountId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppSecurityGroups) GetAccountIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.AccountId) {
-		return nil, false
-	}
-	return o.AccountId, true
-}
-
-// SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
-func (o *AppSecurityGroups) SetAccountId(v int64) {
-	o.AccountId = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AppSecurityGroups) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppSecurityGroups) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AppSecurityGroups) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *AppSecurityGroups) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
-		var ret string
-		return ret
-	}
-	return *o.Description
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppSecurityGroups) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
-		return nil, false
-	}
-	return o.Description, true
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *AppSecurityGroups) SetDescription(v string) {
-	o.Description = &v
 }
 
 func (o AppSecurityGroups) MarshalJSON() ([]byte, error) {

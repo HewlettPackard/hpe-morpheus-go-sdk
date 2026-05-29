@@ -35,17 +35,6 @@ type EnableMaintenanceModeRequestServer struct {
 
 type _EnableMaintenanceModeRequestServer EnableMaintenanceModeRequestServer
 
-// NewEnableMaintenanceModeRequestServer instantiates a new EnableMaintenanceModeRequestServer object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewEnableMaintenanceModeRequestServer() *EnableMaintenanceModeRequestServer {
-	this := EnableMaintenanceModeRequestServer{}
-	var movePoweredOff bool = true
-	this.MovePoweredOff = &movePoweredOff
-	return &this
-}
-
 // NewEnableMaintenanceModeRequestServerWithDefaults instantiates a new EnableMaintenanceModeRequestServer object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -54,121 +43,6 @@ func NewEnableMaintenanceModeRequestServerWithDefaults() *EnableMaintenanceModeR
 	var movePoweredOff bool = true
 	this.MovePoweredOff = &movePoweredOff
 	return &this
-}
-
-// GetIgnoreDaemonsets returns the IgnoreDaemonsets field value if set, zero value otherwise.
-func (o *EnableMaintenanceModeRequestServer) GetIgnoreDaemonsets() bool {
-	if o == nil || IsNil(o.IgnoreDaemonsets) {
-		var ret bool
-		return ret
-	}
-	return *o.IgnoreDaemonsets
-}
-
-// GetIgnoreDaemonsetsOk returns a tuple with the IgnoreDaemonsets field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EnableMaintenanceModeRequestServer) GetIgnoreDaemonsetsOk() (*bool, bool) {
-	if o == nil || IsNil(o.IgnoreDaemonsets) {
-		return nil, false
-	}
-	return o.IgnoreDaemonsets, true
-}
-
-// SetIgnoreDaemonsets gets a reference to the given bool and assigns it to the IgnoreDaemonsets field.
-func (o *EnableMaintenanceModeRequestServer) SetIgnoreDaemonsets(v bool) {
-	o.IgnoreDaemonsets = &v
-}
-
-// GetForce returns the Force field value if set, zero value otherwise.
-func (o *EnableMaintenanceModeRequestServer) GetForce() bool {
-	if o == nil || IsNil(o.Force) {
-		var ret bool
-		return ret
-	}
-	return *o.Force
-}
-
-// GetForceOk returns a tuple with the Force field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EnableMaintenanceModeRequestServer) GetForceOk() (*bool, bool) {
-	if o == nil || IsNil(o.Force) {
-		return nil, false
-	}
-	return o.Force, true
-}
-
-// SetForce gets a reference to the given bool and assigns it to the Force field.
-func (o *EnableMaintenanceModeRequestServer) SetForce(v bool) {
-	o.Force = &v
-}
-
-// GetDeleteEmptyDir returns the DeleteEmptyDir field value if set, zero value otherwise.
-func (o *EnableMaintenanceModeRequestServer) GetDeleteEmptyDir() bool {
-	if o == nil || IsNil(o.DeleteEmptyDir) {
-		var ret bool
-		return ret
-	}
-	return *o.DeleteEmptyDir
-}
-
-// GetDeleteEmptyDirOk returns a tuple with the DeleteEmptyDir field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EnableMaintenanceModeRequestServer) GetDeleteEmptyDirOk() (*bool, bool) {
-	if o == nil || IsNil(o.DeleteEmptyDir) {
-		return nil, false
-	}
-	return o.DeleteEmptyDir, true
-}
-
-// SetDeleteEmptyDir gets a reference to the given bool and assigns it to the DeleteEmptyDir field.
-func (o *EnableMaintenanceModeRequestServer) SetDeleteEmptyDir(v bool) {
-	o.DeleteEmptyDir = &v
-}
-
-// GetDeleteLocalData returns the DeleteLocalData field value if set, zero value otherwise.
-func (o *EnableMaintenanceModeRequestServer) GetDeleteLocalData() bool {
-	if o == nil || IsNil(o.DeleteLocalData) {
-		var ret bool
-		return ret
-	}
-	return *o.DeleteLocalData
-}
-
-// GetDeleteLocalDataOk returns a tuple with the DeleteLocalData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EnableMaintenanceModeRequestServer) GetDeleteLocalDataOk() (*bool, bool) {
-	if o == nil || IsNil(o.DeleteLocalData) {
-		return nil, false
-	}
-	return o.DeleteLocalData, true
-}
-
-// SetDeleteLocalData gets a reference to the given bool and assigns it to the DeleteLocalData field.
-func (o *EnableMaintenanceModeRequestServer) SetDeleteLocalData(v bool) {
-	o.DeleteLocalData = &v
-}
-
-// GetMovePoweredOff returns the MovePoweredOff field value if set, zero value otherwise.
-func (o *EnableMaintenanceModeRequestServer) GetMovePoweredOff() bool {
-	if o == nil || IsNil(o.MovePoweredOff) {
-		var ret bool
-		return ret
-	}
-	return *o.MovePoweredOff
-}
-
-// GetMovePoweredOffOk returns a tuple with the MovePoweredOff field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EnableMaintenanceModeRequestServer) GetMovePoweredOffOk() (*bool, bool) {
-	if o == nil || IsNil(o.MovePoweredOff) {
-		return nil, false
-	}
-	return o.MovePoweredOff, true
-}
-
-// SetMovePoweredOff gets a reference to the given bool and assigns it to the MovePoweredOff field.
-func (o *EnableMaintenanceModeRequestServer) SetMovePoweredOff(v bool) {
-	o.MovePoweredOff = &v
 }
 
 func (o EnableMaintenanceModeRequestServer) MarshalJSON() ([]byte, error) {

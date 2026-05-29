@@ -26,46 +26,12 @@ type UpdateBackupJobsRequest struct {
 
 type _UpdateBackupJobsRequest UpdateBackupJobsRequest
 
-// NewUpdateBackupJobsRequest instantiates a new UpdateBackupJobsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateBackupJobsRequest(job UpdateBackupJobsRequestJob) *UpdateBackupJobsRequest {
-	this := UpdateBackupJobsRequest{}
-	this.Job = job
-	return &this
-}
-
 // NewUpdateBackupJobsRequestWithDefaults instantiates a new UpdateBackupJobsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateBackupJobsRequestWithDefaults() *UpdateBackupJobsRequest {
 	this := UpdateBackupJobsRequest{}
 	return &this
-}
-
-// GetJob returns the Job field value
-func (o *UpdateBackupJobsRequest) GetJob() UpdateBackupJobsRequestJob {
-	if o == nil {
-		var ret UpdateBackupJobsRequestJob
-		return ret
-	}
-
-	return o.Job
-}
-
-// GetJobOk returns a tuple with the Job field value
-// and a boolean to check if the value has been set.
-func (o *UpdateBackupJobsRequest) GetJobOk() (*UpdateBackupJobsRequestJob, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Job, true
-}
-
-// SetJob sets field value
-func (o *UpdateBackupJobsRequest) SetJob(v UpdateBackupJobsRequestJob) {
-	o.Job = v
 }
 
 func (o UpdateBackupJobsRequest) MarshalJSON() ([]byte, error) {

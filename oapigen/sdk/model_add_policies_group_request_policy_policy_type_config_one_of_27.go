@@ -27,67 +27,12 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 struct {
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27
 
-// NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 {
-	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27{}
-	return &this
-}
-
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27WithDefaults instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27WithDefaults() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 {
 	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27{}
 	return &this
-}
-
-// GetStorageServerId returns the StorageServerId field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetStorageServerId() string {
-	if o == nil || IsNil(o.StorageServerId) {
-		var ret string
-		return ret
-	}
-	return *o.StorageServerId
-}
-
-// GetStorageServerIdOk returns a tuple with the StorageServerId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetStorageServerIdOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageServerId) {
-		return nil, false
-	}
-	return o.StorageServerId, true
-}
-
-// SetStorageServerId gets a reference to the given string and assigns it to the StorageServerId field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) SetStorageServerId(v string) {
-	o.StorageServerId = &v
-}
-
-// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetMaxStorage() string {
-	if o == nil || IsNil(o.MaxStorage) {
-		var ret string
-		return ret
-	}
-	return *o.MaxStorage
-}
-
-// GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetMaxStorageOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxStorage) {
-		return nil, false
-	}
-	return o.MaxStorage, true
-}
-
-// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) SetMaxStorage(v string) {
-	o.MaxStorage = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) MarshalJSON() ([]byte, error) {

@@ -32,113 +32,12 @@ type NetworkPoolCreate struct {
 
 type _NetworkPoolCreate NetworkPoolCreate
 
-// NewNetworkPoolCreate instantiates a new NetworkPoolCreate object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkPoolCreate() *NetworkPoolCreate {
-	this := NetworkPoolCreate{}
-	return &this
-}
-
 // NewNetworkPoolCreateWithDefaults instantiates a new NetworkPoolCreate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkPoolCreateWithDefaults() *NetworkPoolCreate {
 	this := NetworkPoolCreate{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *NetworkPoolCreate) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkPoolCreate) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *NetworkPoolCreate) SetName(v string) {
-	o.Name = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *NetworkPoolCreate) GetType() NetworkPoolCreateType {
-	if o == nil || IsNil(o.Type) {
-		var ret NetworkPoolCreateType
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkPoolCreate) GetTypeOk() (*NetworkPoolCreateType, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given NetworkPoolCreateType and assigns it to the Type field.
-func (o *NetworkPoolCreate) SetType(v NetworkPoolCreateType) {
-	o.Type = &v
-}
-
-// GetIpRanges returns the IpRanges field value if set, zero value otherwise.
-func (o *NetworkPoolCreate) GetIpRanges() []NetworkPoolCreateIpRangesInner {
-	if o == nil || IsNil(o.IpRanges) {
-		var ret []NetworkPoolCreateIpRangesInner
-		return ret
-	}
-	return o.IpRanges
-}
-
-// GetIpRangesOk returns a tuple with the IpRanges field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkPoolCreate) GetIpRangesOk() ([]NetworkPoolCreateIpRangesInner, bool) {
-	if o == nil || IsNil(o.IpRanges) {
-		return nil, false
-	}
-	return o.IpRanges, true
-}
-
-// SetIpRanges gets a reference to the given []NetworkPoolCreateIpRangesInner and assigns it to the IpRanges field.
-func (o *NetworkPoolCreate) SetIpRanges(v []NetworkPoolCreateIpRangesInner) {
-	o.IpRanges = v
-}
-
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *NetworkPoolCreate) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkPoolCreate) GetConfigOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
-	}
-	return o.Config, true
-}
-
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *NetworkPoolCreate) SetConfig(v map[string]interface{}) {
-	o.Config = v
 }
 
 func (o NetworkPoolCreate) MarshalJSON() ([]byte, error) {

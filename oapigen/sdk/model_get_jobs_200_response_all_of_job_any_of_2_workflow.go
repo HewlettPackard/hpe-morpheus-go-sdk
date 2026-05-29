@@ -26,44 +26,12 @@ type GetJobs200ResponseAllOfJobAnyOf2Workflow struct {
 
 type _GetJobs200ResponseAllOfJobAnyOf2Workflow GetJobs200ResponseAllOfJobAnyOf2Workflow
 
-// NewGetJobs200ResponseAllOfJobAnyOf2Workflow instantiates a new GetJobs200ResponseAllOfJobAnyOf2Workflow object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetJobs200ResponseAllOfJobAnyOf2Workflow() *GetJobs200ResponseAllOfJobAnyOf2Workflow {
-	this := GetJobs200ResponseAllOfJobAnyOf2Workflow{}
-	return &this
-}
-
 // NewGetJobs200ResponseAllOfJobAnyOf2WorkflowWithDefaults instantiates a new GetJobs200ResponseAllOfJobAnyOf2Workflow object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetJobs200ResponseAllOfJobAnyOf2WorkflowWithDefaults() *GetJobs200ResponseAllOfJobAnyOf2Workflow {
 	this := GetJobs200ResponseAllOfJobAnyOf2Workflow{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetJobs200ResponseAllOfJobAnyOf2Workflow) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetJobs200ResponseAllOfJobAnyOf2Workflow) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetJobs200ResponseAllOfJobAnyOf2Workflow) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o GetJobs200ResponseAllOfJobAnyOf2Workflow) MarshalJSON() ([]byte, error) {

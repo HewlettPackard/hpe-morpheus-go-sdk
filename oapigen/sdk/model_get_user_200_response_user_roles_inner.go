@@ -29,114 +29,12 @@ type GetUser200ResponseUserRolesInner struct {
 
 type _GetUser200ResponseUserRolesInner GetUser200ResponseUserRolesInner
 
-// NewGetUser200ResponseUserRolesInner instantiates a new GetUser200ResponseUserRolesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetUser200ResponseUserRolesInner() *GetUser200ResponseUserRolesInner {
-	this := GetUser200ResponseUserRolesInner{}
-	return &this
-}
-
 // NewGetUser200ResponseUserRolesInnerWithDefaults instantiates a new GetUser200ResponseUserRolesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetUser200ResponseUserRolesInnerWithDefaults() *GetUser200ResponseUserRolesInner {
 	this := GetUser200ResponseUserRolesInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetUser200ResponseUserRolesInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetUser200ResponseUserRolesInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetUser200ResponseUserRolesInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetUser200ResponseUserRolesInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetUser200ResponseUserRolesInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetUser200ResponseUserRolesInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetAuthority returns the Authority field value if set, zero value otherwise.
-func (o *GetUser200ResponseUserRolesInner) GetAuthority() string {
-	if o == nil || IsNil(o.Authority) {
-		var ret string
-		return ret
-	}
-	return *o.Authority
-}
-
-// GetAuthorityOk returns a tuple with the Authority field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetUser200ResponseUserRolesInner) GetAuthorityOk() (*string, bool) {
-	if o == nil || IsNil(o.Authority) {
-		return nil, false
-	}
-	return o.Authority, true
-}
-
-// SetAuthority gets a reference to the given string and assigns it to the Authority field.
-func (o *GetUser200ResponseUserRolesInner) SetAuthority(v string) {
-	o.Authority = &v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetUser200ResponseUserRolesInner) GetDescription() string {
-	if o == nil || IsNil(o.Description.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Description.Get()
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetUser200ResponseUserRolesInner) GetDescriptionOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Description.Get(), o.Description.IsSet()
-}
-
-// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
-func (o *GetUser200ResponseUserRolesInner) SetDescription(v string) {
-	o.Description.Set(&v)
 }
 
 func (o GetUser200ResponseUserRolesInner) MarshalJSON() ([]byte, error) {

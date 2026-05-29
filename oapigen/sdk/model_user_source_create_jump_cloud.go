@@ -33,17 +33,6 @@ type UserSourceCreateJumpCloud struct {
 
 type _UserSourceCreateJumpCloud UserSourceCreateJumpCloud
 
-// NewUserSourceCreateJumpCloud instantiates a new UserSourceCreateJumpCloud object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserSourceCreateJumpCloud() *UserSourceCreateJumpCloud {
-	this := UserSourceCreateJumpCloud{}
-	var organizationId bool = false
-	this.OrganizationId = &organizationId
-	return &this
-}
-
 // NewUserSourceCreateJumpCloudWithDefaults instantiates a new UserSourceCreateJumpCloud object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -52,98 +41,6 @@ func NewUserSourceCreateJumpCloudWithDefaults() *UserSourceCreateJumpCloud {
 	var organizationId bool = false
 	this.OrganizationId = &organizationId
 	return &this
-}
-
-// GetOrganizationId returns the OrganizationId field value if set, zero value otherwise.
-func (o *UserSourceCreateJumpCloud) GetOrganizationId() bool {
-	if o == nil || IsNil(o.OrganizationId) {
-		var ret bool
-		return ret
-	}
-	return *o.OrganizationId
-}
-
-// GetOrganizationIdOk returns a tuple with the OrganizationId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateJumpCloud) GetOrganizationIdOk() (*bool, bool) {
-	if o == nil || IsNil(o.OrganizationId) {
-		return nil, false
-	}
-	return o.OrganizationId, true
-}
-
-// SetOrganizationId gets a reference to the given bool and assigns it to the OrganizationId field.
-func (o *UserSourceCreateJumpCloud) SetOrganizationId(v bool) {
-	o.OrganizationId = &v
-}
-
-// GetBindingUsername returns the BindingUsername field value if set, zero value otherwise.
-func (o *UserSourceCreateJumpCloud) GetBindingUsername() string {
-	if o == nil || IsNil(o.BindingUsername) {
-		var ret string
-		return ret
-	}
-	return *o.BindingUsername
-}
-
-// GetBindingUsernameOk returns a tuple with the BindingUsername field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateJumpCloud) GetBindingUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.BindingUsername) {
-		return nil, false
-	}
-	return o.BindingUsername, true
-}
-
-// SetBindingUsername gets a reference to the given string and assigns it to the BindingUsername field.
-func (o *UserSourceCreateJumpCloud) SetBindingUsername(v string) {
-	o.BindingUsername = &v
-}
-
-// GetBindingPassword returns the BindingPassword field value if set, zero value otherwise.
-func (o *UserSourceCreateJumpCloud) GetBindingPassword() string {
-	if o == nil || IsNil(o.BindingPassword) {
-		var ret string
-		return ret
-	}
-	return *o.BindingPassword
-}
-
-// GetBindingPasswordOk returns a tuple with the BindingPassword field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateJumpCloud) GetBindingPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.BindingPassword) {
-		return nil, false
-	}
-	return o.BindingPassword, true
-}
-
-// SetBindingPassword gets a reference to the given string and assigns it to the BindingPassword field.
-func (o *UserSourceCreateJumpCloud) SetBindingPassword(v string) {
-	o.BindingPassword = &v
-}
-
-// GetRequiredRole returns the RequiredRole field value if set, zero value otherwise.
-func (o *UserSourceCreateJumpCloud) GetRequiredRole() string {
-	if o == nil || IsNil(o.RequiredRole) {
-		var ret string
-		return ret
-	}
-	return *o.RequiredRole
-}
-
-// GetRequiredRoleOk returns a tuple with the RequiredRole field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateJumpCloud) GetRequiredRoleOk() (*string, bool) {
-	if o == nil || IsNil(o.RequiredRole) {
-		return nil, false
-	}
-	return o.RequiredRole, true
-}
-
-// SetRequiredRole gets a reference to the given string and assigns it to the RequiredRole field.
-func (o *UserSourceCreateJumpCloud) SetRequiredRole(v string) {
-	o.RequiredRole = &v
 }
 
 func (o UserSourceCreateJumpCloud) MarshalJSON() ([]byte, error) {

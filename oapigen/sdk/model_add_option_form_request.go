@@ -26,44 +26,12 @@ type AddOptionFormRequest struct {
 
 type _AddOptionFormRequest AddOptionFormRequest
 
-// NewAddOptionFormRequest instantiates a new AddOptionFormRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddOptionFormRequest() *AddOptionFormRequest {
-	this := AddOptionFormRequest{}
-	return &this
-}
-
 // NewAddOptionFormRequestWithDefaults instantiates a new AddOptionFormRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddOptionFormRequestWithDefaults() *AddOptionFormRequest {
 	this := AddOptionFormRequest{}
 	return &this
-}
-
-// GetOptionTypeForm returns the OptionTypeForm field value if set, zero value otherwise.
-func (o *AddOptionFormRequest) GetOptionTypeForm() AddOptionFormRequestOptionTypeForm {
-	if o == nil || IsNil(o.OptionTypeForm) {
-		var ret AddOptionFormRequestOptionTypeForm
-		return ret
-	}
-	return *o.OptionTypeForm
-}
-
-// GetOptionTypeFormOk returns a tuple with the OptionTypeForm field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddOptionFormRequest) GetOptionTypeFormOk() (*AddOptionFormRequestOptionTypeForm, bool) {
-	if o == nil || IsNil(o.OptionTypeForm) {
-		return nil, false
-	}
-	return o.OptionTypeForm, true
-}
-
-// SetOptionTypeForm gets a reference to the given AddOptionFormRequestOptionTypeForm and assigns it to the OptionTypeForm field.
-func (o *AddOptionFormRequest) SetOptionTypeForm(v AddOptionFormRequestOptionTypeForm) {
-	o.OptionTypeForm = &v
 }
 
 func (o AddOptionFormRequest) MarshalJSON() ([]byte, error) {

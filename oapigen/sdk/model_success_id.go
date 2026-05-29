@@ -27,68 +27,12 @@ type SuccessId struct {
 
 type _SuccessId SuccessId
 
-// NewSuccessId instantiates a new SuccessId object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSuccessId() *SuccessId {
-	this := SuccessId{}
-	return &this
-}
-
 // NewSuccessIdWithDefaults instantiates a new SuccessId object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSuccessIdWithDefaults() *SuccessId {
 	this := SuccessId{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *SuccessId) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SuccessId) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *SuccessId) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SuccessId) GetId() int64 {
-	if o == nil || IsNil(o.Id.Get()) {
-		var ret int64
-		return ret
-	}
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SuccessId) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
-func (o *SuccessId) SetId(v int64) {
-	o.Id.Set(&v)
 }
 
 func (o SuccessId) MarshalJSON() ([]byte, error) {

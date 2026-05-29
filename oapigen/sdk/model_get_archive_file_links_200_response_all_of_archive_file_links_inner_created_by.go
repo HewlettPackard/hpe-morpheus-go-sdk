@@ -26,44 +26,12 @@ type GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy struct {
 
 type _GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy
 
-// NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy instantiates a new GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy() *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy {
-	this := GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy{}
-	return &this
-}
-
 // NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedByWithDefaults instantiates a new GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedByWithDefaults() *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy {
 	this := GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy{}
 	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy) SetUsername(v string) {
-	o.Username = &v
 }
 
 func (o GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy) MarshalJSON() ([]byte, error) {

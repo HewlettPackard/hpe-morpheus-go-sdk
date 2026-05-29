@@ -26,44 +26,12 @@ type GetIntegrationInventory200Response struct {
 
 type _GetIntegrationInventory200Response GetIntegrationInventory200Response
 
-// NewGetIntegrationInventory200Response instantiates a new GetIntegrationInventory200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetIntegrationInventory200Response() *GetIntegrationInventory200Response {
-	this := GetIntegrationInventory200Response{}
-	return &this
-}
-
 // NewGetIntegrationInventory200ResponseWithDefaults instantiates a new GetIntegrationInventory200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetIntegrationInventory200ResponseWithDefaults() *GetIntegrationInventory200Response {
 	this := GetIntegrationInventory200Response{}
 	return &this
-}
-
-// GetInventory returns the Inventory field value if set, zero value otherwise.
-func (o *GetIntegrationInventory200Response) GetInventory() GetIntegrationInventory200ResponseInventory {
-	if o == nil || IsNil(o.Inventory) {
-		var ret GetIntegrationInventory200ResponseInventory
-		return ret
-	}
-	return *o.Inventory
-}
-
-// GetInventoryOk returns a tuple with the Inventory field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetIntegrationInventory200Response) GetInventoryOk() (*GetIntegrationInventory200ResponseInventory, bool) {
-	if o == nil || IsNil(o.Inventory) {
-		return nil, false
-	}
-	return o.Inventory, true
-}
-
-// SetInventory gets a reference to the given GetIntegrationInventory200ResponseInventory and assigns it to the Inventory field.
-func (o *GetIntegrationInventory200Response) SetInventory(v GetIntegrationInventory200ResponseInventory) {
-	o.Inventory = &v
 }
 
 func (o GetIntegrationInventory200Response) MarshalJSON() ([]byte, error) {

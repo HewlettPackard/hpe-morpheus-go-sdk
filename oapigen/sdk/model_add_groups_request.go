@@ -26,46 +26,12 @@ type AddGroupsRequest struct {
 
 type _AddGroupsRequest AddGroupsRequest
 
-// NewAddGroupsRequest instantiates a new AddGroupsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddGroupsRequest(group AddGroupsRequestGroup) *AddGroupsRequest {
-	this := AddGroupsRequest{}
-	this.Group = group
-	return &this
-}
-
 // NewAddGroupsRequestWithDefaults instantiates a new AddGroupsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddGroupsRequestWithDefaults() *AddGroupsRequest {
 	this := AddGroupsRequest{}
 	return &this
-}
-
-// GetGroup returns the Group field value
-func (o *AddGroupsRequest) GetGroup() AddGroupsRequestGroup {
-	if o == nil {
-		var ret AddGroupsRequestGroup
-		return ret
-	}
-
-	return o.Group
-}
-
-// GetGroupOk returns a tuple with the Group field value
-// and a boolean to check if the value has been set.
-func (o *AddGroupsRequest) GetGroupOk() (*AddGroupsRequestGroup, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Group, true
-}
-
-// SetGroup sets field value
-func (o *AddGroupsRequest) SetGroup(v AddGroupsRequestGroup) {
-	o.Group = v
 }
 
 func (o AddGroupsRequest) MarshalJSON() ([]byte, error) {

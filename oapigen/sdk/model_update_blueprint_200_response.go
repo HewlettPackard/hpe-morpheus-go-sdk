@@ -26,44 +26,12 @@ type UpdateBlueprint200Response struct {
 
 type _UpdateBlueprint200Response UpdateBlueprint200Response
 
-// NewUpdateBlueprint200Response instantiates a new UpdateBlueprint200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateBlueprint200Response() *UpdateBlueprint200Response {
-	this := UpdateBlueprint200Response{}
-	return &this
-}
-
 // NewUpdateBlueprint200ResponseWithDefaults instantiates a new UpdateBlueprint200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateBlueprint200ResponseWithDefaults() *UpdateBlueprint200Response {
 	this := UpdateBlueprint200Response{}
 	return &this
-}
-
-// GetBlueprint returns the Blueprint field value if set, zero value otherwise.
-func (o *UpdateBlueprint200Response) GetBlueprint() UpdateBlueprint200ResponseBlueprint {
-	if o == nil || IsNil(o.Blueprint) {
-		var ret UpdateBlueprint200ResponseBlueprint
-		return ret
-	}
-	return *o.Blueprint
-}
-
-// GetBlueprintOk returns a tuple with the Blueprint field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateBlueprint200Response) GetBlueprintOk() (*UpdateBlueprint200ResponseBlueprint, bool) {
-	if o == nil || IsNil(o.Blueprint) {
-		return nil, false
-	}
-	return o.Blueprint, true
-}
-
-// SetBlueprint gets a reference to the given UpdateBlueprint200ResponseBlueprint and assigns it to the Blueprint field.
-func (o *UpdateBlueprint200Response) SetBlueprint(v UpdateBlueprint200ResponseBlueprint) {
-	o.Blueprint = &v
 }
 
 func (o UpdateBlueprint200Response) MarshalJSON() ([]byte, error) {

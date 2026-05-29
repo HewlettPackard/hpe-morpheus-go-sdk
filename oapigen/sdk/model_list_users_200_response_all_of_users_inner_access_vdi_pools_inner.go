@@ -28,90 +28,12 @@ type ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner struct {
 
 type _ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner
 
-// NewListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner instantiates a new ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner() *ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner {
-	this := ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner{}
-	return &this
-}
-
 // NewListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInnerWithDefaults instantiates a new ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInnerWithDefaults() *ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner {
 	this := ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetAccess returns the Access field value if set, zero value otherwise.
-func (o *ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner) GetAccess() string {
-	if o == nil || IsNil(o.Access) {
-		var ret string
-		return ret
-	}
-	return *o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner) GetAccessOk() (*string, bool) {
-	if o == nil || IsNil(o.Access) {
-		return nil, false
-	}
-	return o.Access, true
-}
-
-// SetAccess gets a reference to the given string and assigns it to the Access field.
-func (o *ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner) SetAccess(v string) {
-	o.Access = &v
 }
 
 func (o ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type GetVdi200Response struct {
 
 type _GetVdi200Response GetVdi200Response
 
-// NewGetVdi200Response instantiates a new GetVdi200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetVdi200Response() *GetVdi200Response {
-	this := GetVdi200Response{}
-	return &this
-}
-
 // NewGetVdi200ResponseWithDefaults instantiates a new GetVdi200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetVdi200ResponseWithDefaults() *GetVdi200Response {
 	this := GetVdi200Response{}
 	return &this
-}
-
-// GetDesktop returns the Desktop field value if set, zero value otherwise.
-func (o *GetVdi200Response) GetDesktop() GetVdi200ResponseDesktop {
-	if o == nil || IsNil(o.Desktop) {
-		var ret GetVdi200ResponseDesktop
-		return ret
-	}
-	return *o.Desktop
-}
-
-// GetDesktopOk returns a tuple with the Desktop field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetVdi200Response) GetDesktopOk() (*GetVdi200ResponseDesktop, bool) {
-	if o == nil || IsNil(o.Desktop) {
-		return nil, false
-	}
-	return o.Desktop, true
-}
-
-// SetDesktop gets a reference to the given GetVdi200ResponseDesktop and assigns it to the Desktop field.
-func (o *GetVdi200Response) SetDesktop(v GetVdi200ResponseDesktop) {
-	o.Desktop = &v
 }
 
 func (o GetVdi200Response) MarshalJSON() ([]byte, error) {

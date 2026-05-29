@@ -27,44 +27,12 @@ type BlueprintCreateSuccessConfigOneOf5Config struct {
 
 type _BlueprintCreateSuccessConfigOneOf5Config BlueprintCreateSuccessConfigOneOf5Config
 
-// NewBlueprintCreateSuccessConfigOneOf5Config instantiates a new BlueprintCreateSuccessConfigOneOf5Config object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBlueprintCreateSuccessConfigOneOf5Config() *BlueprintCreateSuccessConfigOneOf5Config {
-	this := BlueprintCreateSuccessConfigOneOf5Config{}
-	return &this
-}
-
 // NewBlueprintCreateSuccessConfigOneOf5ConfigWithDefaults instantiates a new BlueprintCreateSuccessConfigOneOf5Config object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBlueprintCreateSuccessConfigOneOf5ConfigWithDefaults() *BlueprintCreateSuccessConfigOneOf5Config {
 	this := BlueprintCreateSuccessConfigOneOf5Config{}
 	return &this
-}
-
-// GetSpecs returns the Specs field value if set, zero value otherwise.
-func (o *BlueprintCreateSuccessConfigOneOf5Config) GetSpecs() []BlueprintCreateSuccessConfigOneOf5ConfigSpecsInner {
-	if o == nil || IsNil(o.Specs) {
-		var ret []BlueprintCreateSuccessConfigOneOf5ConfigSpecsInner
-		return ret
-	}
-	return o.Specs
-}
-
-// GetSpecsOk returns a tuple with the Specs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintCreateSuccessConfigOneOf5Config) GetSpecsOk() ([]BlueprintCreateSuccessConfigOneOf5ConfigSpecsInner, bool) {
-	if o == nil || IsNil(o.Specs) {
-		return nil, false
-	}
-	return o.Specs, true
-}
-
-// SetSpecs gets a reference to the given []BlueprintCreateSuccessConfigOneOf5ConfigSpecsInner and assigns it to the Specs field.
-func (o *BlueprintCreateSuccessConfigOneOf5Config) SetSpecs(v []BlueprintCreateSuccessConfigOneOf5ConfigSpecsInner) {
-	o.Specs = v
 }
 
 func (o BlueprintCreateSuccessConfigOneOf5Config) MarshalJSON() ([]byte, error) {

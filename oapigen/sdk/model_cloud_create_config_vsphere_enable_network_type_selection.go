@@ -26,13 +26,6 @@ type CloudCreateConfigVsphereEnableNetworkTypeSelection struct {
 	String *string
 }
 
-// stringAsCloudCreateConfigVsphereEnableNetworkTypeSelection is a convenience function that returns string wrapped in CloudCreateConfigVsphereEnableNetworkTypeSelection
-func StringAsCloudCreateConfigVsphereEnableNetworkTypeSelection(v *string) CloudCreateConfigVsphereEnableNetworkTypeSelection {
-	return CloudCreateConfigVsphereEnableNetworkTypeSelection{
-		String: v,
-	}
-}
-
 func (dst *CloudCreateConfigVsphereEnableNetworkTypeSelection) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &CloudCreateConfigVsphereEnableNetworkTypeSelection{}

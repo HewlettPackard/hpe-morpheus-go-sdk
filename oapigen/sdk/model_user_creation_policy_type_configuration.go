@@ -27,69 +27,12 @@ type UserCreationPolicyTypeConfiguration struct {
 
 type _UserCreationPolicyTypeConfiguration UserCreationPolicyTypeConfiguration
 
-// NewUserCreationPolicyTypeConfiguration instantiates a new UserCreationPolicyTypeConfiguration object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserCreationPolicyTypeConfiguration(createUserType string) *UserCreationPolicyTypeConfiguration {
-	this := UserCreationPolicyTypeConfiguration{}
-	this.CreateUserType = createUserType
-	return &this
-}
-
 // NewUserCreationPolicyTypeConfigurationWithDefaults instantiates a new UserCreationPolicyTypeConfiguration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUserCreationPolicyTypeConfigurationWithDefaults() *UserCreationPolicyTypeConfiguration {
 	this := UserCreationPolicyTypeConfiguration{}
 	return &this
-}
-
-// GetCreateUserType returns the CreateUserType field value
-func (o *UserCreationPolicyTypeConfiguration) GetCreateUserType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CreateUserType
-}
-
-// GetCreateUserTypeOk returns a tuple with the CreateUserType field value
-// and a boolean to check if the value has been set.
-func (o *UserCreationPolicyTypeConfiguration) GetCreateUserTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CreateUserType, true
-}
-
-// SetCreateUserType sets field value
-func (o *UserCreationPolicyTypeConfiguration) SetCreateUserType(v string) {
-	o.CreateUserType = v
-}
-
-// GetCreateUser returns the CreateUser field value if set, zero value otherwise.
-func (o *UserCreationPolicyTypeConfiguration) GetCreateUser() bool {
-	if o == nil || IsNil(o.CreateUser) {
-		var ret bool
-		return ret
-	}
-	return *o.CreateUser
-}
-
-// GetCreateUserOk returns a tuple with the CreateUser field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserCreationPolicyTypeConfiguration) GetCreateUserOk() (*bool, bool) {
-	if o == nil || IsNil(o.CreateUser) {
-		return nil, false
-	}
-	return o.CreateUser, true
-}
-
-// SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
-func (o *UserCreationPolicyTypeConfiguration) SetCreateUser(v bool) {
-	o.CreateUser = &v
 }
 
 func (o UserCreationPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {

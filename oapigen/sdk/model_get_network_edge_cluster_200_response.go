@@ -26,44 +26,12 @@ type GetNetworkEdgeCluster200Response struct {
 
 type _GetNetworkEdgeCluster200Response GetNetworkEdgeCluster200Response
 
-// NewGetNetworkEdgeCluster200Response instantiates a new GetNetworkEdgeCluster200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkEdgeCluster200Response() *GetNetworkEdgeCluster200Response {
-	this := GetNetworkEdgeCluster200Response{}
-	return &this
-}
-
 // NewGetNetworkEdgeCluster200ResponseWithDefaults instantiates a new GetNetworkEdgeCluster200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkEdgeCluster200ResponseWithDefaults() *GetNetworkEdgeCluster200Response {
 	this := GetNetworkEdgeCluster200Response{}
 	return &this
-}
-
-// GetNetworkEdgeCluster returns the NetworkEdgeCluster field value if set, zero value otherwise.
-func (o *GetNetworkEdgeCluster200Response) GetNetworkEdgeCluster() GetNetworkEdgeCluster200ResponseNetworkEdgeCluster {
-	if o == nil || IsNil(o.NetworkEdgeCluster) {
-		var ret GetNetworkEdgeCluster200ResponseNetworkEdgeCluster
-		return ret
-	}
-	return *o.NetworkEdgeCluster
-}
-
-// GetNetworkEdgeClusterOk returns a tuple with the NetworkEdgeCluster field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkEdgeCluster200Response) GetNetworkEdgeClusterOk() (*GetNetworkEdgeCluster200ResponseNetworkEdgeCluster, bool) {
-	if o == nil || IsNil(o.NetworkEdgeCluster) {
-		return nil, false
-	}
-	return o.NetworkEdgeCluster, true
-}
-
-// SetNetworkEdgeCluster gets a reference to the given GetNetworkEdgeCluster200ResponseNetworkEdgeCluster and assigns it to the NetworkEdgeCluster field.
-func (o *GetNetworkEdgeCluster200Response) SetNetworkEdgeCluster(v GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) {
-	o.NetworkEdgeCluster = &v
 }
 
 func (o GetNetworkEdgeCluster200Response) MarshalJSON() ([]byte, error) {

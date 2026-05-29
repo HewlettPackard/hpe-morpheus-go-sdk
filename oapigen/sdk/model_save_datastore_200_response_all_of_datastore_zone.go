@@ -26,44 +26,12 @@ type SaveDatastore200ResponseAllOfDatastoreZone struct {
 
 type _SaveDatastore200ResponseAllOfDatastoreZone SaveDatastore200ResponseAllOfDatastoreZone
 
-// NewSaveDatastore200ResponseAllOfDatastoreZone instantiates a new SaveDatastore200ResponseAllOfDatastoreZone object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSaveDatastore200ResponseAllOfDatastoreZone() *SaveDatastore200ResponseAllOfDatastoreZone {
-	this := SaveDatastore200ResponseAllOfDatastoreZone{}
-	return &this
-}
-
 // NewSaveDatastore200ResponseAllOfDatastoreZoneWithDefaults instantiates a new SaveDatastore200ResponseAllOfDatastoreZone object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSaveDatastore200ResponseAllOfDatastoreZoneWithDefaults() *SaveDatastore200ResponseAllOfDatastoreZone {
 	this := SaveDatastore200ResponseAllOfDatastoreZone{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SaveDatastore200ResponseAllOfDatastoreZone) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveDatastore200ResponseAllOfDatastoreZone) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *SaveDatastore200ResponseAllOfDatastoreZone) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o SaveDatastore200ResponseAllOfDatastoreZone) MarshalJSON() ([]byte, error) {

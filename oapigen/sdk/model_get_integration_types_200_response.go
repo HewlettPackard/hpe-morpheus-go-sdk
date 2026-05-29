@@ -26,44 +26,12 @@ type GetIntegrationTypes200Response struct {
 
 type _GetIntegrationTypes200Response GetIntegrationTypes200Response
 
-// NewGetIntegrationTypes200Response instantiates a new GetIntegrationTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetIntegrationTypes200Response() *GetIntegrationTypes200Response {
-	this := GetIntegrationTypes200Response{}
-	return &this
-}
-
 // NewGetIntegrationTypes200ResponseWithDefaults instantiates a new GetIntegrationTypes200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetIntegrationTypes200ResponseWithDefaults() *GetIntegrationTypes200Response {
 	this := GetIntegrationTypes200Response{}
 	return &this
-}
-
-// GetIntegrationType returns the IntegrationType field value if set, zero value otherwise.
-func (o *GetIntegrationTypes200Response) GetIntegrationType() GetIntegrationTypes200ResponseIntegrationType {
-	if o == nil || IsNil(o.IntegrationType) {
-		var ret GetIntegrationTypes200ResponseIntegrationType
-		return ret
-	}
-	return *o.IntegrationType
-}
-
-// GetIntegrationTypeOk returns a tuple with the IntegrationType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetIntegrationTypes200Response) GetIntegrationTypeOk() (*GetIntegrationTypes200ResponseIntegrationType, bool) {
-	if o == nil || IsNil(o.IntegrationType) {
-		return nil, false
-	}
-	return o.IntegrationType, true
-}
-
-// SetIntegrationType gets a reference to the given GetIntegrationTypes200ResponseIntegrationType and assigns it to the IntegrationType field.
-func (o *GetIntegrationTypes200Response) SetIntegrationType(v GetIntegrationTypes200ResponseIntegrationType) {
-	o.IntegrationType = &v
 }
 
 func (o GetIntegrationTypes200Response) MarshalJSON() ([]byte, error) {

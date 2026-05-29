@@ -27,67 +27,12 @@ type ListServerServicePlans200ResponsePlansInnerDatastores struct {
 
 type _ListServerServicePlans200ResponsePlansInnerDatastores ListServerServicePlans200ResponsePlansInnerDatastores
 
-// NewListServerServicePlans200ResponsePlansInnerDatastores instantiates a new ListServerServicePlans200ResponsePlansInnerDatastores object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListServerServicePlans200ResponsePlansInnerDatastores() *ListServerServicePlans200ResponsePlansInnerDatastores {
-	this := ListServerServicePlans200ResponsePlansInnerDatastores{}
-	return &this
-}
-
 // NewListServerServicePlans200ResponsePlansInnerDatastoresWithDefaults instantiates a new ListServerServicePlans200ResponsePlansInnerDatastores object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListServerServicePlans200ResponsePlansInnerDatastoresWithDefaults() *ListServerServicePlans200ResponsePlansInnerDatastores {
 	this := ListServerServicePlans200ResponsePlansInnerDatastores{}
 	return &this
-}
-
-// GetCluster returns the Cluster field value if set, zero value otherwise.
-func (o *ListServerServicePlans200ResponsePlansInnerDatastores) GetCluster() []map[string]interface{} {
-	if o == nil || IsNil(o.Cluster) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Cluster
-}
-
-// GetClusterOk returns a tuple with the Cluster field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListServerServicePlans200ResponsePlansInnerDatastores) GetClusterOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Cluster) {
-		return nil, false
-	}
-	return o.Cluster, true
-}
-
-// SetCluster gets a reference to the given []map[string]interface{} and assigns it to the Cluster field.
-func (o *ListServerServicePlans200ResponsePlansInnerDatastores) SetCluster(v []map[string]interface{}) {
-	o.Cluster = v
-}
-
-// GetStore returns the Store field value if set, zero value otherwise.
-func (o *ListServerServicePlans200ResponsePlansInnerDatastores) GetStore() []map[string]interface{} {
-	if o == nil || IsNil(o.Store) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Store
-}
-
-// GetStoreOk returns a tuple with the Store field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListServerServicePlans200ResponsePlansInnerDatastores) GetStoreOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Store) {
-		return nil, false
-	}
-	return o.Store, true
-}
-
-// SetStore gets a reference to the given []map[string]interface{} and assigns it to the Store field.
-func (o *ListServerServicePlans200ResponsePlansInnerDatastores) SetStore(v []map[string]interface{}) {
-	o.Store = v
 }
 
 func (o ListServerServicePlans200ResponsePlansInnerDatastores) MarshalJSON() ([]byte, error) {

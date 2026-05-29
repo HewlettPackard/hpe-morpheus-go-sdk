@@ -26,44 +26,12 @@ type GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig struct {
 
 type _GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig
 
-// NewGetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig instantiates a new GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig() *GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig {
-	this := GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig{}
-	return &this
-}
-
 // NewGetCloudTypes200ResponseZoneTypeOptionTypesInnerConfigWithDefaults instantiates a new GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetCloudTypes200ResponseZoneTypeOptionTypesInnerConfigWithDefaults() *GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig {
 	this := GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig{}
 	return &this
-}
-
-// GetCredentialTypes returns the CredentialTypes field value if set, zero value otherwise.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig) GetCredentialTypes() []string {
-	if o == nil || IsNil(o.CredentialTypes) {
-		var ret []string
-		return ret
-	}
-	return o.CredentialTypes
-}
-
-// GetCredentialTypesOk returns a tuple with the CredentialTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig) GetCredentialTypesOk() ([]string, bool) {
-	if o == nil || IsNil(o.CredentialTypes) {
-		return nil, false
-	}
-	return o.CredentialTypes, true
-}
-
-// SetCredentialTypes gets a reference to the given []string and assigns it to the CredentialTypes field.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig) SetCredentialTypes(v []string) {
-	o.CredentialTypes = v
 }
 
 func (o GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig) MarshalJSON() ([]byte, error) {

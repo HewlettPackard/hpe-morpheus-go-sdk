@@ -28,90 +28,12 @@ type AddUserTenant200ResponseAllOfUserDefaultPersona struct {
 
 type _AddUserTenant200ResponseAllOfUserDefaultPersona AddUserTenant200ResponseAllOfUserDefaultPersona
 
-// NewAddUserTenant200ResponseAllOfUserDefaultPersona instantiates a new AddUserTenant200ResponseAllOfUserDefaultPersona object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddUserTenant200ResponseAllOfUserDefaultPersona() *AddUserTenant200ResponseAllOfUserDefaultPersona {
-	this := AddUserTenant200ResponseAllOfUserDefaultPersona{}
-	return &this
-}
-
 // NewAddUserTenant200ResponseAllOfUserDefaultPersonaWithDefaults instantiates a new AddUserTenant200ResponseAllOfUserDefaultPersona object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddUserTenant200ResponseAllOfUserDefaultPersonaWithDefaults() *AddUserTenant200ResponseAllOfUserDefaultPersona {
 	this := AddUserTenant200ResponseAllOfUserDefaultPersona{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserDefaultPersona) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserDefaultPersona) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddUserTenant200ResponseAllOfUserDefaultPersona) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserDefaultPersona) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserDefaultPersona) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *AddUserTenant200ResponseAllOfUserDefaultPersona) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserDefaultPersona) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserDefaultPersona) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddUserTenant200ResponseAllOfUserDefaultPersona) SetName(v string) {
-	o.Name = &v
 }
 
 func (o AddUserTenant200ResponseAllOfUserDefaultPersona) MarshalJSON() ([]byte, error) {

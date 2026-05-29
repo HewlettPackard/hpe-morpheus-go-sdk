@@ -30,113 +30,12 @@ type GetHealthAlarms200ResponseAllOfAlarm struct {
 
 type _GetHealthAlarms200ResponseAllOfAlarm GetHealthAlarms200ResponseAllOfAlarm
 
-// NewGetHealthAlarms200ResponseAllOfAlarm instantiates a new GetHealthAlarms200ResponseAllOfAlarm object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetHealthAlarms200ResponseAllOfAlarm() *GetHealthAlarms200ResponseAllOfAlarm {
-	this := GetHealthAlarms200ResponseAllOfAlarm{}
-	return &this
-}
-
 // NewGetHealthAlarms200ResponseAllOfAlarmWithDefaults instantiates a new GetHealthAlarms200ResponseAllOfAlarm object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetHealthAlarms200ResponseAllOfAlarmWithDefaults() *GetHealthAlarms200ResponseAllOfAlarm {
 	this := GetHealthAlarms200ResponseAllOfAlarm{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDateCreated returns the DateCreated field value if set, zero value otherwise.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) GetDateCreated() time.Time {
-	if o == nil || IsNil(o.DateCreated) {
-		var ret time.Time
-		return ret
-	}
-	return *o.DateCreated
-}
-
-// GetDateCreatedOk returns a tuple with the DateCreated field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) GetDateCreatedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.DateCreated) {
-		return nil, false
-	}
-	return o.DateCreated, true
-}
-
-// SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) SetDateCreated(v time.Time) {
-	o.DateCreated = &v
-}
-
-// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) GetLastUpdated() time.Time {
-	if o == nil || IsNil(o.LastUpdated) {
-		var ret time.Time
-		return ret
-	}
-	return *o.LastUpdated
-}
-
-// GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) GetLastUpdatedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastUpdated) {
-		return nil, false
-	}
-	return o.LastUpdated, true
-}
-
-// SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) SetLastUpdated(v time.Time) {
-	o.LastUpdated = &v
 }
 
 func (o GetHealthAlarms200ResponseAllOfAlarm) MarshalJSON() ([]byte, error) {

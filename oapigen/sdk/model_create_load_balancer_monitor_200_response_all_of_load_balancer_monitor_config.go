@@ -28,68 +28,12 @@ type CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig struct {
 
 type _CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig
 
-// NewCreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig instantiates a new CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig() *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig {
-	this := CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig{}
-	return &this
-}
-
 // NewCreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigWithDefaults instantiates a new CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigWithDefaults() *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig {
 	this := CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig{}
 	return &this
-}
-
-// GetMonitor returns the Monitor field value if set, zero value otherwise.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig) GetMonitor() CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitor {
-	if o == nil || IsNil(o.Monitor) {
-		var ret CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitor
-		return ret
-	}
-	return *o.Monitor
-}
-
-// GetMonitorOk returns a tuple with the Monitor field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig) GetMonitorOk() (*CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitor, bool) {
-	if o == nil || IsNil(o.Monitor) {
-		return nil, false
-	}
-	return o.Monitor, true
-}
-
-// SetMonitor gets a reference to the given CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitor and assigns it to the Monitor field.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig) SetMonitor(v CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitor) {
-	o.Monitor = &v
-}
-
-// GetMonitorConfig returns the MonitorConfig field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig) GetMonitorConfig() string {
-	if o == nil || IsNil(o.MonitorConfig.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.MonitorConfig.Get()
-}
-
-// GetMonitorConfigOk returns a tuple with the MonitorConfig field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig) GetMonitorConfigOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.MonitorConfig.Get(), o.MonitorConfig.IsSet()
-}
-
-// SetMonitorConfig gets a reference to the given NullableString and assigns it to the MonitorConfig field.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig) SetMonitorConfig(v string) {
-	o.MonitorConfig.Set(&v)
 }
 
 func (o CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type UpdateClusterNamespaceRequest struct {
 
 type _UpdateClusterNamespaceRequest UpdateClusterNamespaceRequest
 
-// NewUpdateClusterNamespaceRequest instantiates a new UpdateClusterNamespaceRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterNamespaceRequest() *UpdateClusterNamespaceRequest {
-	this := UpdateClusterNamespaceRequest{}
-	return &this
-}
-
 // NewUpdateClusterNamespaceRequestWithDefaults instantiates a new UpdateClusterNamespaceRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateClusterNamespaceRequestWithDefaults() *UpdateClusterNamespaceRequest {
 	this := UpdateClusterNamespaceRequest{}
 	return &this
-}
-
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *UpdateClusterNamespaceRequest) GetNamespace() UpdateClusterNamespaceRequestNamespace {
-	if o == nil || IsNil(o.Namespace) {
-		var ret UpdateClusterNamespaceRequestNamespace
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterNamespaceRequest) GetNamespaceOk() (*UpdateClusterNamespaceRequestNamespace, bool) {
-	if o == nil || IsNil(o.Namespace) {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// SetNamespace gets a reference to the given UpdateClusterNamespaceRequestNamespace and assigns it to the Namespace field.
-func (o *UpdateClusterNamespaceRequest) SetNamespace(v UpdateClusterNamespaceRequestNamespace) {
-	o.Namespace = &v
 }
 
 func (o UpdateClusterNamespaceRequest) MarshalJSON() ([]byte, error) {

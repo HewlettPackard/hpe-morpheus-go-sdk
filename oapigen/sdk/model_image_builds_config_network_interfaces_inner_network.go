@@ -29,113 +29,12 @@ type ImageBuildsConfigNetworkInterfacesInnerNetwork struct {
 
 type _ImageBuildsConfigNetworkInterfacesInnerNetwork ImageBuildsConfigNetworkInterfacesInnerNetwork
 
-// NewImageBuildsConfigNetworkInterfacesInnerNetwork instantiates a new ImageBuildsConfigNetworkInterfacesInnerNetwork object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewImageBuildsConfigNetworkInterfacesInnerNetwork() *ImageBuildsConfigNetworkInterfacesInnerNetwork {
-	this := ImageBuildsConfigNetworkInterfacesInnerNetwork{}
-	return &this
-}
-
 // NewImageBuildsConfigNetworkInterfacesInnerNetworkWithDefaults instantiates a new ImageBuildsConfigNetworkInterfacesInnerNetwork object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewImageBuildsConfigNetworkInterfacesInnerNetworkWithDefaults() *ImageBuildsConfigNetworkInterfacesInnerNetwork {
 	this := ImageBuildsConfigNetworkInterfacesInnerNetwork{}
 	return &this
-}
-
-// GetIdName returns the IdName field value if set, zero value otherwise.
-func (o *ImageBuildsConfigNetworkInterfacesInnerNetwork) GetIdName() string {
-	if o == nil || IsNil(o.IdName) {
-		var ret string
-		return ret
-	}
-	return *o.IdName
-}
-
-// GetIdNameOk returns a tuple with the IdName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ImageBuildsConfigNetworkInterfacesInnerNetwork) GetIdNameOk() (*string, bool) {
-	if o == nil || IsNil(o.IdName) {
-		return nil, false
-	}
-	return o.IdName, true
-}
-
-// SetIdName gets a reference to the given string and assigns it to the IdName field.
-func (o *ImageBuildsConfigNetworkInterfacesInnerNetwork) SetIdName(v string) {
-	o.IdName = &v
-}
-
-// GetPool returns the Pool field value if set, zero value otherwise.
-func (o *ImageBuildsConfigNetworkInterfacesInnerNetwork) GetPool() ImageBuildsConfigNetworkInterfacesInnerNetworkPool {
-	if o == nil || IsNil(o.Pool) {
-		var ret ImageBuildsConfigNetworkInterfacesInnerNetworkPool
-		return ret
-	}
-	return *o.Pool
-}
-
-// GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ImageBuildsConfigNetworkInterfacesInnerNetwork) GetPoolOk() (*ImageBuildsConfigNetworkInterfacesInnerNetworkPool, bool) {
-	if o == nil || IsNil(o.Pool) {
-		return nil, false
-	}
-	return o.Pool, true
-}
-
-// SetPool gets a reference to the given ImageBuildsConfigNetworkInterfacesInnerNetworkPool and assigns it to the Pool field.
-func (o *ImageBuildsConfigNetworkInterfacesInnerNetwork) SetPool(v ImageBuildsConfigNetworkInterfacesInnerNetworkPool) {
-	o.Pool = &v
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ImageBuildsConfigNetworkInterfacesInnerNetwork) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ImageBuildsConfigNetworkInterfacesInnerNetwork) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *ImageBuildsConfigNetworkInterfacesInnerNetwork) SetId(v string) {
-	o.Id = &v
-}
-
-// GetHasPool returns the HasPool field value if set, zero value otherwise.
-func (o *ImageBuildsConfigNetworkInterfacesInnerNetwork) GetHasPool() bool {
-	if o == nil || IsNil(o.HasPool) {
-		var ret bool
-		return ret
-	}
-	return *o.HasPool
-}
-
-// GetHasPoolOk returns a tuple with the HasPool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ImageBuildsConfigNetworkInterfacesInnerNetwork) GetHasPoolOk() (*bool, bool) {
-	if o == nil || IsNil(o.HasPool) {
-		return nil, false
-	}
-	return o.HasPool, true
-}
-
-// SetHasPool gets a reference to the given bool and assigns it to the HasPool field.
-func (o *ImageBuildsConfigNetworkInterfacesInnerNetwork) SetHasPool(v bool) {
-	o.HasPool = &v
 }
 
 func (o ImageBuildsConfigNetworkInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {

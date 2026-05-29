@@ -28,91 +28,12 @@ type ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerConta
 
 type _ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner
 
-// NewListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner instantiates a new ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner() *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner {
-	this := ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner{}
-	return &this
-}
-
 // NewListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInnerWithDefaults instantiates a new ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInnerWithDefaults() *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner {
 	this := ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetPort returns the Port field value if set, zero value otherwise.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) GetPort() int64 {
-	if o == nil || IsNil(o.Port) {
-		var ret int64
-		return ret
-	}
-	return *o.Port
-}
-
-// GetPortOk returns a tuple with the Port field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) GetPortOk() (*int64, bool) {
-	if o == nil || IsNil(o.Port) {
-		return nil, false
-	}
-	return o.Port, true
-}
-
-// SetPort gets a reference to the given int64 and assigns it to the Port field.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) SetPort(v int64) {
-	o.Port = &v
-}
-
-// GetLoadBalanceProtocol returns the LoadBalanceProtocol field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) GetLoadBalanceProtocol() string {
-	if o == nil || IsNil(o.LoadBalanceProtocol.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.LoadBalanceProtocol.Get()
-}
-
-// GetLoadBalanceProtocolOk returns a tuple with the LoadBalanceProtocol field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) GetLoadBalanceProtocolOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.LoadBalanceProtocol.Get(), o.LoadBalanceProtocol.IsSet()
-}
-
-// SetLoadBalanceProtocol gets a reference to the given NullableString and assigns it to the LoadBalanceProtocol field.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) SetLoadBalanceProtocol(v string) {
-	o.LoadBalanceProtocol.Set(&v)
 }
 
 func (o ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type AddScriptRequest struct {
 
 type _AddScriptRequest AddScriptRequest
 
-// NewAddScriptRequest instantiates a new AddScriptRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddScriptRequest() *AddScriptRequest {
-	this := AddScriptRequest{}
-	return &this
-}
-
 // NewAddScriptRequestWithDefaults instantiates a new AddScriptRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddScriptRequestWithDefaults() *AddScriptRequest {
 	this := AddScriptRequest{}
 	return &this
-}
-
-// GetContainerScript returns the ContainerScript field value if set, zero value otherwise.
-func (o *AddScriptRequest) GetContainerScript() AddScriptRequestContainerScript {
-	if o == nil || IsNil(o.ContainerScript) {
-		var ret AddScriptRequestContainerScript
-		return ret
-	}
-	return *o.ContainerScript
-}
-
-// GetContainerScriptOk returns a tuple with the ContainerScript field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddScriptRequest) GetContainerScriptOk() (*AddScriptRequestContainerScript, bool) {
-	if o == nil || IsNil(o.ContainerScript) {
-		return nil, false
-	}
-	return o.ContainerScript, true
-}
-
-// SetContainerScript gets a reference to the given AddScriptRequestContainerScript and assigns it to the ContainerScript field.
-func (o *AddScriptRequest) SetContainerScript(v AddScriptRequestContainerScript) {
-	o.ContainerScript = &v
 }
 
 func (o AddScriptRequest) MarshalJSON() ([]byte, error) {

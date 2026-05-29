@@ -29,71 +29,12 @@ type RolePermissionGroupAll struct {
 
 type _RolePermissionGroupAll RolePermissionGroupAll
 
-// NewRolePermissionGroupAll instantiates a new RolePermissionGroupAll object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRolePermissionGroupAll(allGroups bool, access string) *RolePermissionGroupAll {
-	this := RolePermissionGroupAll{}
-	this.AllGroups = allGroups
-	this.Access = access
-	return &this
-}
-
 // NewRolePermissionGroupAllWithDefaults instantiates a new RolePermissionGroupAll object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRolePermissionGroupAllWithDefaults() *RolePermissionGroupAll {
 	this := RolePermissionGroupAll{}
 	return &this
-}
-
-// GetAllGroups returns the AllGroups field value
-func (o *RolePermissionGroupAll) GetAllGroups() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AllGroups
-}
-
-// GetAllGroupsOk returns a tuple with the AllGroups field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionGroupAll) GetAllGroupsOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AllGroups, true
-}
-
-// SetAllGroups sets field value
-func (o *RolePermissionGroupAll) SetAllGroups(v bool) {
-	o.AllGroups = v
-}
-
-// GetAccess returns the Access field value
-func (o *RolePermissionGroupAll) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionGroupAll) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *RolePermissionGroupAll) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o RolePermissionGroupAll) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type UpdateMigrationRequest struct {
 
 type _UpdateMigrationRequest UpdateMigrationRequest
 
-// NewUpdateMigrationRequest instantiates a new UpdateMigrationRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateMigrationRequest() *UpdateMigrationRequest {
-	this := UpdateMigrationRequest{}
-	return &this
-}
-
 // NewUpdateMigrationRequestWithDefaults instantiates a new UpdateMigrationRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateMigrationRequestWithDefaults() *UpdateMigrationRequest {
 	this := UpdateMigrationRequest{}
 	return &this
-}
-
-// GetMigration returns the Migration field value if set, zero value otherwise.
-func (o *UpdateMigrationRequest) GetMigration() UpdateMigrationRequestMigration {
-	if o == nil || IsNil(o.Migration) {
-		var ret UpdateMigrationRequestMigration
-		return ret
-	}
-	return *o.Migration
-}
-
-// GetMigrationOk returns a tuple with the Migration field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateMigrationRequest) GetMigrationOk() (*UpdateMigrationRequestMigration, bool) {
-	if o == nil || IsNil(o.Migration) {
-		return nil, false
-	}
-	return o.Migration, true
-}
-
-// SetMigration gets a reference to the given UpdateMigrationRequestMigration and assigns it to the Migration field.
-func (o *UpdateMigrationRequest) SetMigration(v UpdateMigrationRequestMigration) {
-	o.Migration = &v
 }
 
 func (o UpdateMigrationRequest) MarshalJSON() ([]byte, error) {

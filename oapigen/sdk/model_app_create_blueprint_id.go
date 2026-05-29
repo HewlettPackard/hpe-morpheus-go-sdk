@@ -27,20 +27,6 @@ type AppCreateBlueprintId struct {
 	String *string
 }
 
-// int64AsAppCreateBlueprintId is a convenience function that returns int64 wrapped in AppCreateBlueprintId
-func Int64AsAppCreateBlueprintId(v *int64) AppCreateBlueprintId {
-	return AppCreateBlueprintId{
-		Int64: v,
-	}
-}
-
-// stringAsAppCreateBlueprintId is a convenience function that returns string wrapped in AppCreateBlueprintId
-func StringAsAppCreateBlueprintId(v *string) AppCreateBlueprintId {
-	return AppCreateBlueprintId{
-		String: v,
-	}
-}
-
 func (dst *AppCreateBlueprintId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AppCreateBlueprintId{}

@@ -26,44 +26,12 @@ type GetCloudAffinityGroup200Response struct {
 
 type _GetCloudAffinityGroup200Response GetCloudAffinityGroup200Response
 
-// NewGetCloudAffinityGroup200Response instantiates a new GetCloudAffinityGroup200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCloudAffinityGroup200Response() *GetCloudAffinityGroup200Response {
-	this := GetCloudAffinityGroup200Response{}
-	return &this
-}
-
 // NewGetCloudAffinityGroup200ResponseWithDefaults instantiates a new GetCloudAffinityGroup200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetCloudAffinityGroup200ResponseWithDefaults() *GetCloudAffinityGroup200Response {
 	this := GetCloudAffinityGroup200Response{}
 	return &this
-}
-
-// GetAffinityGroup returns the AffinityGroup field value if set, zero value otherwise.
-func (o *GetCloudAffinityGroup200Response) GetAffinityGroup() GetCloudAffinityGroup200ResponseAffinityGroup {
-	if o == nil || IsNil(o.AffinityGroup) {
-		var ret GetCloudAffinityGroup200ResponseAffinityGroup
-		return ret
-	}
-	return *o.AffinityGroup
-}
-
-// GetAffinityGroupOk returns a tuple with the AffinityGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCloudAffinityGroup200Response) GetAffinityGroupOk() (*GetCloudAffinityGroup200ResponseAffinityGroup, bool) {
-	if o == nil || IsNil(o.AffinityGroup) {
-		return nil, false
-	}
-	return o.AffinityGroup, true
-}
-
-// SetAffinityGroup gets a reference to the given GetCloudAffinityGroup200ResponseAffinityGroup and assigns it to the AffinityGroup field.
-func (o *GetCloudAffinityGroup200Response) SetAffinityGroup(v GetCloudAffinityGroup200ResponseAffinityGroup) {
-	o.AffinityGroup = &v
 }
 
 func (o GetCloudAffinityGroup200Response) MarshalJSON() ([]byte, error) {

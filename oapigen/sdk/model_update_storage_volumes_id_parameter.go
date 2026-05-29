@@ -27,20 +27,6 @@ type UpdateStorageVolumesIdParameter struct {
 	String *string
 }
 
-// int64AsUpdateStorageVolumesIdParameter is a convenience function that returns int64 wrapped in UpdateStorageVolumesIdParameter
-func Int64AsUpdateStorageVolumesIdParameter(v *int64) UpdateStorageVolumesIdParameter {
-	return UpdateStorageVolumesIdParameter{
-		Int64: v,
-	}
-}
-
-// stringAsUpdateStorageVolumesIdParameter is a convenience function that returns string wrapped in UpdateStorageVolumesIdParameter
-func StringAsUpdateStorageVolumesIdParameter(v *string) UpdateStorageVolumesIdParameter {
-	return UpdateStorageVolumesIdParameter{
-		String: v,
-	}
-}
-
 func (dst *UpdateStorageVolumesIdParameter) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateStorageVolumesIdParameter{}

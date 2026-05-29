@@ -27,20 +27,6 @@ type AddVDIPoolsRequestVdiPool struct {
 	AddVDIPoolsRequestVdiPoolOneOf1 *AddVDIPoolsRequestVdiPoolOneOf1
 }
 
-// AddVDIPoolsRequestVdiPoolOneOfAsAddVDIPoolsRequestVdiPool is a convenience function that returns AddVDIPoolsRequestVdiPoolOneOf wrapped in AddVDIPoolsRequestVdiPool
-func AddVDIPoolsRequestVdiPoolOneOfAsAddVDIPoolsRequestVdiPool(v *AddVDIPoolsRequestVdiPoolOneOf) AddVDIPoolsRequestVdiPool {
-	return AddVDIPoolsRequestVdiPool{
-		AddVDIPoolsRequestVdiPoolOneOf: v,
-	}
-}
-
-// AddVDIPoolsRequestVdiPoolOneOf1AsAddVDIPoolsRequestVdiPool is a convenience function that returns AddVDIPoolsRequestVdiPoolOneOf1 wrapped in AddVDIPoolsRequestVdiPool
-func AddVDIPoolsRequestVdiPoolOneOf1AsAddVDIPoolsRequestVdiPool(v *AddVDIPoolsRequestVdiPoolOneOf1) AddVDIPoolsRequestVdiPool {
-	return AddVDIPoolsRequestVdiPool{
-		AddVDIPoolsRequestVdiPoolOneOf1: v,
-	}
-}
-
 func (dst *AddVDIPoolsRequestVdiPool) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddVDIPoolsRequestVdiPool{}

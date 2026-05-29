@@ -27,67 +27,12 @@ type Ping200Response struct {
 
 type _Ping200Response Ping200Response
 
-// NewPing200Response instantiates a new Ping200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPing200Response() *Ping200Response {
-	this := Ping200Response{}
-	return &this
-}
-
 // NewPing200ResponseWithDefaults instantiates a new Ping200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPing200ResponseWithDefaults() *Ping200Response {
 	this := Ping200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *Ping200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Ping200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *Ping200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetBuildVersion returns the BuildVersion field value if set, zero value otherwise.
-func (o *Ping200Response) GetBuildVersion() string {
-	if o == nil || IsNil(o.BuildVersion) {
-		var ret string
-		return ret
-	}
-	return *o.BuildVersion
-}
-
-// GetBuildVersionOk returns a tuple with the BuildVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Ping200Response) GetBuildVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.BuildVersion) {
-		return nil, false
-	}
-	return o.BuildVersion, true
-}
-
-// SetBuildVersion gets a reference to the given string and assigns it to the BuildVersion field.
-func (o *Ping200Response) SetBuildVersion(v string) {
-	o.BuildVersion = &v
 }
 
 func (o Ping200Response) MarshalJSON() ([]byte, error) {

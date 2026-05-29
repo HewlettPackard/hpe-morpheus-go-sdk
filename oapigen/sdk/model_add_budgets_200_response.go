@@ -27,67 +27,12 @@ type AddBudgets200Response struct {
 
 type _AddBudgets200Response AddBudgets200Response
 
-// NewAddBudgets200Response instantiates a new AddBudgets200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBudgets200Response() *AddBudgets200Response {
-	this := AddBudgets200Response{}
-	return &this
-}
-
 // NewAddBudgets200ResponseWithDefaults instantiates a new AddBudgets200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddBudgets200ResponseWithDefaults() *AddBudgets200Response {
 	this := AddBudgets200Response{}
 	return &this
-}
-
-// GetBudget returns the Budget field value if set, zero value otherwise.
-func (o *AddBudgets200Response) GetBudget() AddBudgets200ResponseAllOfBudget {
-	if o == nil || IsNil(o.Budget) {
-		var ret AddBudgets200ResponseAllOfBudget
-		return ret
-	}
-	return *o.Budget
-}
-
-// GetBudgetOk returns a tuple with the Budget field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBudgets200Response) GetBudgetOk() (*AddBudgets200ResponseAllOfBudget, bool) {
-	if o == nil || IsNil(o.Budget) {
-		return nil, false
-	}
-	return o.Budget, true
-}
-
-// SetBudget gets a reference to the given AddBudgets200ResponseAllOfBudget and assigns it to the Budget field.
-func (o *AddBudgets200Response) SetBudget(v AddBudgets200ResponseAllOfBudget) {
-	o.Budget = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddBudgets200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBudgets200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddBudgets200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddBudgets200Response) MarshalJSON() ([]byte, error) {

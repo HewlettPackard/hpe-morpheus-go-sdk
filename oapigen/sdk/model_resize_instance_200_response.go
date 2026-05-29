@@ -30,118 +30,12 @@ type ResizeInstance200Response struct {
 
 type _ResizeInstance200Response ResizeInstance200Response
 
-// NewResizeInstance200Response instantiates a new ResizeInstance200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewResizeInstance200Response(instance ResizeInstance200ResponseAllOfOneOfInstance, zoneId int64) *ResizeInstance200Response {
-	this := ResizeInstance200Response{}
-	this.Instance = instance
-	this.ZoneId = zoneId
-	return &this
-}
-
 // NewResizeInstance200ResponseWithDefaults instantiates a new ResizeInstance200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewResizeInstance200ResponseWithDefaults() *ResizeInstance200Response {
 	this := ResizeInstance200Response{}
 	return &this
-}
-
-// GetInstance returns the Instance field value
-func (o *ResizeInstance200Response) GetInstance() ResizeInstance200ResponseAllOfOneOfInstance {
-	if o == nil {
-		var ret ResizeInstance200ResponseAllOfOneOfInstance
-		return ret
-	}
-
-	return o.Instance
-}
-
-// GetInstanceOk returns a tuple with the Instance field value
-// and a boolean to check if the value has been set.
-func (o *ResizeInstance200Response) GetInstanceOk() (*ResizeInstance200ResponseAllOfOneOfInstance, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Instance, true
-}
-
-// SetInstance sets field value
-func (o *ResizeInstance200Response) SetInstance(v ResizeInstance200ResponseAllOfOneOfInstance) {
-	o.Instance = v
-}
-
-// GetZoneId returns the ZoneId field value
-func (o *ResizeInstance200Response) GetZoneId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.ZoneId
-}
-
-// GetZoneIdOk returns a tuple with the ZoneId field value
-// and a boolean to check if the value has been set.
-func (o *ResizeInstance200Response) GetZoneIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ZoneId, true
-}
-
-// SetZoneId sets field value
-func (o *ResizeInstance200Response) SetZoneId(v int64) {
-	o.ZoneId = v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *ResizeInstance200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResizeInstance200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *ResizeInstance200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetErrors returns the Errors field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ResizeInstance200Response) GetErrors() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Errors
-}
-
-// GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ResizeInstance200Response) GetErrorsOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Errors) {
-		return map[string]interface{}{}, false
-	}
-	return o.Errors, true
-}
-
-// SetErrors gets a reference to the given map[string]interface{} and assigns it to the Errors field.
-func (o *ResizeInstance200Response) SetErrors(v map[string]interface{}) {
-	o.Errors = v
 }
 
 func (o ResizeInstance200Response) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type GetClusterNamespaces200Response struct {
 
 type _GetClusterNamespaces200Response GetClusterNamespaces200Response
 
-// NewGetClusterNamespaces200Response instantiates a new GetClusterNamespaces200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetClusterNamespaces200Response() *GetClusterNamespaces200Response {
-	this := GetClusterNamespaces200Response{}
-	return &this
-}
-
 // NewGetClusterNamespaces200ResponseWithDefaults instantiates a new GetClusterNamespaces200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetClusterNamespaces200ResponseWithDefaults() *GetClusterNamespaces200Response {
 	this := GetClusterNamespaces200Response{}
 	return &this
-}
-
-// GetNamespaces returns the Namespaces field value if set, zero value otherwise.
-func (o *GetClusterNamespaces200Response) GetNamespaces() []GetClusterNamespaces200ResponseAllOfNamespacesInner {
-	if o == nil || IsNil(o.Namespaces) {
-		var ret []GetClusterNamespaces200ResponseAllOfNamespacesInner
-		return ret
-	}
-	return o.Namespaces
-}
-
-// GetNamespacesOk returns a tuple with the Namespaces field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClusterNamespaces200Response) GetNamespacesOk() ([]GetClusterNamespaces200ResponseAllOfNamespacesInner, bool) {
-	if o == nil || IsNil(o.Namespaces) {
-		return nil, false
-	}
-	return o.Namespaces, true
-}
-
-// SetNamespaces gets a reference to the given []GetClusterNamespaces200ResponseAllOfNamespacesInner and assigns it to the Namespaces field.
-func (o *GetClusterNamespaces200Response) SetNamespaces(v []GetClusterNamespaces200ResponseAllOfNamespacesInner) {
-	o.Namespaces = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *GetClusterNamespaces200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClusterNamespaces200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *GetClusterNamespaces200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o GetClusterNamespaces200Response) MarshalJSON() ([]byte, error) {

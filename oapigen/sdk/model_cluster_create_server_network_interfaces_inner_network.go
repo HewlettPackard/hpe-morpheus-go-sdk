@@ -26,46 +26,12 @@ type ClusterCreateServerNetworkInterfacesInnerNetwork struct {
 
 type _ClusterCreateServerNetworkInterfacesInnerNetwork ClusterCreateServerNetworkInterfacesInnerNetwork
 
-// NewClusterCreateServerNetworkInterfacesInnerNetwork instantiates a new ClusterCreateServerNetworkInterfacesInnerNetwork object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterCreateServerNetworkInterfacesInnerNetwork(id ClusterCreateServerNetworkInterfacesInnerNetworkId) *ClusterCreateServerNetworkInterfacesInnerNetwork {
-	this := ClusterCreateServerNetworkInterfacesInnerNetwork{}
-	this.Id = id
-	return &this
-}
-
 // NewClusterCreateServerNetworkInterfacesInnerNetworkWithDefaults instantiates a new ClusterCreateServerNetworkInterfacesInnerNetwork object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClusterCreateServerNetworkInterfacesInnerNetworkWithDefaults() *ClusterCreateServerNetworkInterfacesInnerNetwork {
 	this := ClusterCreateServerNetworkInterfacesInnerNetwork{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ClusterCreateServerNetworkInterfacesInnerNetwork) GetId() ClusterCreateServerNetworkInterfacesInnerNetworkId {
-	if o == nil {
-		var ret ClusterCreateServerNetworkInterfacesInnerNetworkId
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerNetworkInterfacesInnerNetwork) GetIdOk() (*ClusterCreateServerNetworkInterfacesInnerNetworkId, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ClusterCreateServerNetworkInterfacesInnerNetwork) SetId(v ClusterCreateServerNetworkInterfacesInnerNetworkId) {
-	o.Id = v
 }
 
 func (o ClusterCreateServerNetworkInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {

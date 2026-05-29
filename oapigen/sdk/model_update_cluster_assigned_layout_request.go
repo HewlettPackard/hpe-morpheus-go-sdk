@@ -26,46 +26,12 @@ type UpdateClusterAssignedLayoutRequest struct {
 
 type _UpdateClusterAssignedLayoutRequest UpdateClusterAssignedLayoutRequest
 
-// NewUpdateClusterAssignedLayoutRequest instantiates a new UpdateClusterAssignedLayoutRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterAssignedLayoutRequest(layoutId int64) *UpdateClusterAssignedLayoutRequest {
-	this := UpdateClusterAssignedLayoutRequest{}
-	this.LayoutId = layoutId
-	return &this
-}
-
 // NewUpdateClusterAssignedLayoutRequestWithDefaults instantiates a new UpdateClusterAssignedLayoutRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateClusterAssignedLayoutRequestWithDefaults() *UpdateClusterAssignedLayoutRequest {
 	this := UpdateClusterAssignedLayoutRequest{}
 	return &this
-}
-
-// GetLayoutId returns the LayoutId field value
-func (o *UpdateClusterAssignedLayoutRequest) GetLayoutId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.LayoutId
-}
-
-// GetLayoutIdOk returns a tuple with the LayoutId field value
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterAssignedLayoutRequest) GetLayoutIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.LayoutId, true
-}
-
-// SetLayoutId sets field value
-func (o *UpdateClusterAssignedLayoutRequest) SetLayoutId(v int64) {
-	o.LayoutId = v
 }
 
 func (o UpdateClusterAssignedLayoutRequest) MarshalJSON() ([]byte, error) {

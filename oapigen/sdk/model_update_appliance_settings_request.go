@@ -26,44 +26,12 @@ type UpdateApplianceSettingsRequest struct {
 
 type _UpdateApplianceSettingsRequest UpdateApplianceSettingsRequest
 
-// NewUpdateApplianceSettingsRequest instantiates a new UpdateApplianceSettingsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateApplianceSettingsRequest() *UpdateApplianceSettingsRequest {
-	this := UpdateApplianceSettingsRequest{}
-	return &this
-}
-
 // NewUpdateApplianceSettingsRequestWithDefaults instantiates a new UpdateApplianceSettingsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateApplianceSettingsRequestWithDefaults() *UpdateApplianceSettingsRequest {
 	this := UpdateApplianceSettingsRequest{}
 	return &this
-}
-
-// GetApplianceSettings returns the ApplianceSettings field value if set, zero value otherwise.
-func (o *UpdateApplianceSettingsRequest) GetApplianceSettings() UpdateApplianceSettingsRequestApplianceSettings {
-	if o == nil || IsNil(o.ApplianceSettings) {
-		var ret UpdateApplianceSettingsRequestApplianceSettings
-		return ret
-	}
-	return *o.ApplianceSettings
-}
-
-// GetApplianceSettingsOk returns a tuple with the ApplianceSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateApplianceSettingsRequest) GetApplianceSettingsOk() (*UpdateApplianceSettingsRequestApplianceSettings, bool) {
-	if o == nil || IsNil(o.ApplianceSettings) {
-		return nil, false
-	}
-	return o.ApplianceSettings, true
-}
-
-// SetApplianceSettings gets a reference to the given UpdateApplianceSettingsRequestApplianceSettings and assigns it to the ApplianceSettings field.
-func (o *UpdateApplianceSettingsRequest) SetApplianceSettings(v UpdateApplianceSettingsRequestApplianceSettings) {
-	o.ApplianceSettings = &v
 }
 
 func (o UpdateApplianceSettingsRequest) MarshalJSON() ([]byte, error) {

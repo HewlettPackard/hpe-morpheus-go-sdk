@@ -26,13 +26,6 @@ type AddVDIGatewaysRequestVdiGateway struct {
 	AddVDIGatewaysRequestVdiGatewayOneOf *AddVDIGatewaysRequestVdiGatewayOneOf
 }
 
-// AddVDIGatewaysRequestVdiGatewayOneOfAsAddVDIGatewaysRequestVdiGateway is a convenience function that returns AddVDIGatewaysRequestVdiGatewayOneOf wrapped in AddVDIGatewaysRequestVdiGateway
-func AddVDIGatewaysRequestVdiGatewayOneOfAsAddVDIGatewaysRequestVdiGateway(v *AddVDIGatewaysRequestVdiGatewayOneOf) AddVDIGatewaysRequestVdiGateway {
-	return AddVDIGatewaysRequestVdiGateway{
-		AddVDIGatewaysRequestVdiGatewayOneOf: v,
-	}
-}
-
 func (dst *AddVDIGatewaysRequestVdiGateway) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddVDIGatewaysRequestVdiGateway{}

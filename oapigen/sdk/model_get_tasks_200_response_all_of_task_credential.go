@@ -26,44 +26,12 @@ type GetTasks200ResponseAllOfTaskCredential struct {
 
 type _GetTasks200ResponseAllOfTaskCredential GetTasks200ResponseAllOfTaskCredential
 
-// NewGetTasks200ResponseAllOfTaskCredential instantiates a new GetTasks200ResponseAllOfTaskCredential object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetTasks200ResponseAllOfTaskCredential() *GetTasks200ResponseAllOfTaskCredential {
-	this := GetTasks200ResponseAllOfTaskCredential{}
-	return &this
-}
-
 // NewGetTasks200ResponseAllOfTaskCredentialWithDefaults instantiates a new GetTasks200ResponseAllOfTaskCredential object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetTasks200ResponseAllOfTaskCredentialWithDefaults() *GetTasks200ResponseAllOfTaskCredential {
 	this := GetTasks200ResponseAllOfTaskCredential{}
 	return &this
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *GetTasks200ResponseAllOfTaskCredential) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetTasks200ResponseAllOfTaskCredential) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *GetTasks200ResponseAllOfTaskCredential) SetType(v string) {
-	o.Type = &v
 }
 
 func (o GetTasks200ResponseAllOfTaskCredential) MarshalJSON() ([]byte, error) {

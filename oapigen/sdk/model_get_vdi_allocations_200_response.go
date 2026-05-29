@@ -26,44 +26,12 @@ type GetVDIAllocations200Response struct {
 
 type _GetVDIAllocations200Response GetVDIAllocations200Response
 
-// NewGetVDIAllocations200Response instantiates a new GetVDIAllocations200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetVDIAllocations200Response() *GetVDIAllocations200Response {
-	this := GetVDIAllocations200Response{}
-	return &this
-}
-
 // NewGetVDIAllocations200ResponseWithDefaults instantiates a new GetVDIAllocations200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetVDIAllocations200ResponseWithDefaults() *GetVDIAllocations200Response {
 	this := GetVDIAllocations200Response{}
 	return &this
-}
-
-// GetVdiAllocation returns the VdiAllocation field value if set, zero value otherwise.
-func (o *GetVDIAllocations200Response) GetVdiAllocation() GetVDIAllocations200ResponseVdiAllocation {
-	if o == nil || IsNil(o.VdiAllocation) {
-		var ret GetVDIAllocations200ResponseVdiAllocation
-		return ret
-	}
-	return *o.VdiAllocation
-}
-
-// GetVdiAllocationOk returns a tuple with the VdiAllocation field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetVDIAllocations200Response) GetVdiAllocationOk() (*GetVDIAllocations200ResponseVdiAllocation, bool) {
-	if o == nil || IsNil(o.VdiAllocation) {
-		return nil, false
-	}
-	return o.VdiAllocation, true
-}
-
-// SetVdiAllocation gets a reference to the given GetVDIAllocations200ResponseVdiAllocation and assigns it to the VdiAllocation field.
-func (o *GetVDIAllocations200Response) SetVdiAllocation(v GetVDIAllocations200ResponseVdiAllocation) {
-	o.VdiAllocation = &v
 }
 
 func (o GetVDIAllocations200Response) MarshalJSON() ([]byte, error) {

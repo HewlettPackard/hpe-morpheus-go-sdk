@@ -29,71 +29,12 @@ type UpdateRolePersonaAccessRequestOneOf1 struct {
 
 type _UpdateRolePersonaAccessRequestOneOf1 UpdateRolePersonaAccessRequestOneOf1
 
-// NewUpdateRolePersonaAccessRequestOneOf1 instantiates a new UpdateRolePersonaAccessRequestOneOf1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateRolePersonaAccessRequestOneOf1(allPersonas bool, access string) *UpdateRolePersonaAccessRequestOneOf1 {
-	this := UpdateRolePersonaAccessRequestOneOf1{}
-	this.AllPersonas = allPersonas
-	this.Access = access
-	return &this
-}
-
 // NewUpdateRolePersonaAccessRequestOneOf1WithDefaults instantiates a new UpdateRolePersonaAccessRequestOneOf1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateRolePersonaAccessRequestOneOf1WithDefaults() *UpdateRolePersonaAccessRequestOneOf1 {
 	this := UpdateRolePersonaAccessRequestOneOf1{}
 	return &this
-}
-
-// GetAllPersonas returns the AllPersonas field value
-func (o *UpdateRolePersonaAccessRequestOneOf1) GetAllPersonas() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AllPersonas
-}
-
-// GetAllPersonasOk returns a tuple with the AllPersonas field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRolePersonaAccessRequestOneOf1) GetAllPersonasOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AllPersonas, true
-}
-
-// SetAllPersonas sets field value
-func (o *UpdateRolePersonaAccessRequestOneOf1) SetAllPersonas(v bool) {
-	o.AllPersonas = v
-}
-
-// GetAccess returns the Access field value
-func (o *UpdateRolePersonaAccessRequestOneOf1) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRolePersonaAccessRequestOneOf1) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *UpdateRolePersonaAccessRequestOneOf1) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o UpdateRolePersonaAccessRequestOneOf1) MarshalJSON() ([]byte, error) {

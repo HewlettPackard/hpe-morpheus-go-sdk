@@ -26,44 +26,12 @@ type GetClusterAffinityGroup200Response struct {
 
 type _GetClusterAffinityGroup200Response GetClusterAffinityGroup200Response
 
-// NewGetClusterAffinityGroup200Response instantiates a new GetClusterAffinityGroup200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetClusterAffinityGroup200Response() *GetClusterAffinityGroup200Response {
-	this := GetClusterAffinityGroup200Response{}
-	return &this
-}
-
 // NewGetClusterAffinityGroup200ResponseWithDefaults instantiates a new GetClusterAffinityGroup200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetClusterAffinityGroup200ResponseWithDefaults() *GetClusterAffinityGroup200Response {
 	this := GetClusterAffinityGroup200Response{}
 	return &this
-}
-
-// GetAffinityGroup returns the AffinityGroup field value if set, zero value otherwise.
-func (o *GetClusterAffinityGroup200Response) GetAffinityGroup() GetClusterAffinityGroup200ResponseAffinityGroup {
-	if o == nil || IsNil(o.AffinityGroup) {
-		var ret GetClusterAffinityGroup200ResponseAffinityGroup
-		return ret
-	}
-	return *o.AffinityGroup
-}
-
-// GetAffinityGroupOk returns a tuple with the AffinityGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClusterAffinityGroup200Response) GetAffinityGroupOk() (*GetClusterAffinityGroup200ResponseAffinityGroup, bool) {
-	if o == nil || IsNil(o.AffinityGroup) {
-		return nil, false
-	}
-	return o.AffinityGroup, true
-}
-
-// SetAffinityGroup gets a reference to the given GetClusterAffinityGroup200ResponseAffinityGroup and assigns it to the AffinityGroup field.
-func (o *GetClusterAffinityGroup200Response) SetAffinityGroup(v GetClusterAffinityGroup200ResponseAffinityGroup) {
-	o.AffinityGroup = &v
 }
 
 func (o GetClusterAffinityGroup200Response) MarshalJSON() ([]byte, error) {

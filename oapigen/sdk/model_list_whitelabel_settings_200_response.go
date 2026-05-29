@@ -26,44 +26,12 @@ type ListWhitelabelSettings200Response struct {
 
 type _ListWhitelabelSettings200Response ListWhitelabelSettings200Response
 
-// NewListWhitelabelSettings200Response instantiates a new ListWhitelabelSettings200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListWhitelabelSettings200Response() *ListWhitelabelSettings200Response {
-	this := ListWhitelabelSettings200Response{}
-	return &this
-}
-
 // NewListWhitelabelSettings200ResponseWithDefaults instantiates a new ListWhitelabelSettings200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListWhitelabelSettings200ResponseWithDefaults() *ListWhitelabelSettings200Response {
 	this := ListWhitelabelSettings200Response{}
 	return &this
-}
-
-// GetWhitelabelSettings returns the WhitelabelSettings field value if set, zero value otherwise.
-func (o *ListWhitelabelSettings200Response) GetWhitelabelSettings() ListWhitelabelSettings200ResponseWhitelabelSettings {
-	if o == nil || IsNil(o.WhitelabelSettings) {
-		var ret ListWhitelabelSettings200ResponseWhitelabelSettings
-		return ret
-	}
-	return *o.WhitelabelSettings
-}
-
-// GetWhitelabelSettingsOk returns a tuple with the WhitelabelSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListWhitelabelSettings200Response) GetWhitelabelSettingsOk() (*ListWhitelabelSettings200ResponseWhitelabelSettings, bool) {
-	if o == nil || IsNil(o.WhitelabelSettings) {
-		return nil, false
-	}
-	return o.WhitelabelSettings, true
-}
-
-// SetWhitelabelSettings gets a reference to the given ListWhitelabelSettings200ResponseWhitelabelSettings and assigns it to the WhitelabelSettings field.
-func (o *ListWhitelabelSettings200Response) SetWhitelabelSettings(v ListWhitelabelSettings200ResponseWhitelabelSettings) {
-	o.WhitelabelSettings = &v
 }
 
 func (o ListWhitelabelSettings200Response) MarshalJSON() ([]byte, error) {

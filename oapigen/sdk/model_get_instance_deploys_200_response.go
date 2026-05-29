@@ -27,67 +27,12 @@ type GetInstanceDeploys200Response struct {
 
 type _GetInstanceDeploys200Response GetInstanceDeploys200Response
 
-// NewGetInstanceDeploys200Response instantiates a new GetInstanceDeploys200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceDeploys200Response() *GetInstanceDeploys200Response {
-	this := GetInstanceDeploys200Response{}
-	return &this
-}
-
 // NewGetInstanceDeploys200ResponseWithDefaults instantiates a new GetInstanceDeploys200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstanceDeploys200ResponseWithDefaults() *GetInstanceDeploys200Response {
 	this := GetInstanceDeploys200Response{}
 	return &this
-}
-
-// GetAppDeploys returns the AppDeploys field value if set, zero value otherwise.
-func (o *GetInstanceDeploys200Response) GetAppDeploys() []GetInstanceDeploys200ResponseAllOfAppDeploysInner {
-	if o == nil || IsNil(o.AppDeploys) {
-		var ret []GetInstanceDeploys200ResponseAllOfAppDeploysInner
-		return ret
-	}
-	return o.AppDeploys
-}
-
-// GetAppDeploysOk returns a tuple with the AppDeploys field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceDeploys200Response) GetAppDeploysOk() ([]GetInstanceDeploys200ResponseAllOfAppDeploysInner, bool) {
-	if o == nil || IsNil(o.AppDeploys) {
-		return nil, false
-	}
-	return o.AppDeploys, true
-}
-
-// SetAppDeploys gets a reference to the given []GetInstanceDeploys200ResponseAllOfAppDeploysInner and assigns it to the AppDeploys field.
-func (o *GetInstanceDeploys200Response) SetAppDeploys(v []GetInstanceDeploys200ResponseAllOfAppDeploysInner) {
-	o.AppDeploys = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *GetInstanceDeploys200Response) GetMeta() GetInstanceDeploys200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret GetInstanceDeploys200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceDeploys200Response) GetMetaOk() (*GetInstanceDeploys200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given GetInstanceDeploys200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *GetInstanceDeploys200Response) SetMeta(v GetInstanceDeploys200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o GetInstanceDeploys200Response) MarshalJSON() ([]byte, error) {

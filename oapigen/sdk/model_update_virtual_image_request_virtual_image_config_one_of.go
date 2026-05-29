@@ -33,121 +33,12 @@ type UpdateVirtualImageRequestVirtualImageConfigOneOf struct {
 
 type _UpdateVirtualImageRequestVirtualImageConfigOneOf UpdateVirtualImageRequestVirtualImageConfigOneOf
 
-// NewUpdateVirtualImageRequestVirtualImageConfigOneOf instantiates a new UpdateVirtualImageRequestVirtualImageConfigOneOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateVirtualImageRequestVirtualImageConfigOneOf(publisher string, offer string, sku string, version string) *UpdateVirtualImageRequestVirtualImageConfigOneOf {
-	this := UpdateVirtualImageRequestVirtualImageConfigOneOf{}
-	this.Publisher = publisher
-	this.Offer = offer
-	this.Sku = sku
-	this.Version = version
-	return &this
-}
-
 // NewUpdateVirtualImageRequestVirtualImageConfigOneOfWithDefaults instantiates a new UpdateVirtualImageRequestVirtualImageConfigOneOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateVirtualImageRequestVirtualImageConfigOneOfWithDefaults() *UpdateVirtualImageRequestVirtualImageConfigOneOf {
 	this := UpdateVirtualImageRequestVirtualImageConfigOneOf{}
 	return &this
-}
-
-// GetPublisher returns the Publisher field value
-func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetPublisher() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Publisher
-}
-
-// GetPublisherOk returns a tuple with the Publisher field value
-// and a boolean to check if the value has been set.
-func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetPublisherOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Publisher, true
-}
-
-// SetPublisher sets field value
-func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) SetPublisher(v string) {
-	o.Publisher = v
-}
-
-// GetOffer returns the Offer field value
-func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetOffer() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Offer
-}
-
-// GetOfferOk returns a tuple with the Offer field value
-// and a boolean to check if the value has been set.
-func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetOfferOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Offer, true
-}
-
-// SetOffer sets field value
-func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) SetOffer(v string) {
-	o.Offer = v
-}
-
-// GetSku returns the Sku field value
-func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetSku() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Sku
-}
-
-// GetSkuOk returns a tuple with the Sku field value
-// and a boolean to check if the value has been set.
-func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetSkuOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Sku, true
-}
-
-// SetSku sets field value
-func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) SetSku(v string) {
-	o.Sku = v
-}
-
-// GetVersion returns the Version field value
-func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetVersion() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Version
-}
-
-// GetVersionOk returns a tuple with the Version field value
-// and a boolean to check if the value has been set.
-func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetVersionOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Version, true
-}
-
-// SetVersion sets field value
-func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) SetVersion(v string) {
-	o.Version = v
 }
 
 func (o UpdateVirtualImageRequestVirtualImageConfigOneOf) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type AddBootScript200ResponseAllOfBootScriptCreatedBy struct {
 
 type _AddBootScript200ResponseAllOfBootScriptCreatedBy AddBootScript200ResponseAllOfBootScriptCreatedBy
 
-// NewAddBootScript200ResponseAllOfBootScriptCreatedBy instantiates a new AddBootScript200ResponseAllOfBootScriptCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBootScript200ResponseAllOfBootScriptCreatedBy() *AddBootScript200ResponseAllOfBootScriptCreatedBy {
-	this := AddBootScript200ResponseAllOfBootScriptCreatedBy{}
-	return &this
-}
-
 // NewAddBootScript200ResponseAllOfBootScriptCreatedByWithDefaults instantiates a new AddBootScript200ResponseAllOfBootScriptCreatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddBootScript200ResponseAllOfBootScriptCreatedByWithDefaults() *AddBootScript200ResponseAllOfBootScriptCreatedBy {
 	this := AddBootScript200ResponseAllOfBootScriptCreatedBy{}
 	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *AddBootScript200ResponseAllOfBootScriptCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBootScript200ResponseAllOfBootScriptCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *AddBootScript200ResponseAllOfBootScriptCreatedBy) SetUsername(v string) {
-	o.Username = &v
 }
 
 func (o AddBootScript200ResponseAllOfBootScriptCreatedBy) MarshalJSON() ([]byte, error) {

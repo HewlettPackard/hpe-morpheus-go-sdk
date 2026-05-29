@@ -27,67 +27,12 @@ type ProvisioningLicenseReservations struct {
 
 type _ProvisioningLicenseReservations ProvisioningLicenseReservations
 
-// NewProvisioningLicenseReservations instantiates a new ProvisioningLicenseReservations object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewProvisioningLicenseReservations() *ProvisioningLicenseReservations {
-	this := ProvisioningLicenseReservations{}
-	return &this
-}
-
 // NewProvisioningLicenseReservationsWithDefaults instantiates a new ProvisioningLicenseReservations object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewProvisioningLicenseReservationsWithDefaults() *ProvisioningLicenseReservations {
 	this := ProvisioningLicenseReservations{}
 	return &this
-}
-
-// GetResourceId returns the ResourceId field value if set, zero value otherwise.
-func (o *ProvisioningLicenseReservations) GetResourceId() int64 {
-	if o == nil || IsNil(o.ResourceId) {
-		var ret int64
-		return ret
-	}
-	return *o.ResourceId
-}
-
-// GetResourceIdOk returns a tuple with the ResourceId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProvisioningLicenseReservations) GetResourceIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.ResourceId) {
-		return nil, false
-	}
-	return o.ResourceId, true
-}
-
-// SetResourceId gets a reference to the given int64 and assigns it to the ResourceId field.
-func (o *ProvisioningLicenseReservations) SetResourceId(v int64) {
-	o.ResourceId = &v
-}
-
-// GetResourceType returns the ResourceType field value if set, zero value otherwise.
-func (o *ProvisioningLicenseReservations) GetResourceType() string {
-	if o == nil || IsNil(o.ResourceType) {
-		var ret string
-		return ret
-	}
-	return *o.ResourceType
-}
-
-// GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProvisioningLicenseReservations) GetResourceTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceType) {
-		return nil, false
-	}
-	return o.ResourceType, true
-}
-
-// SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
-func (o *ProvisioningLicenseReservations) SetResourceType(v string) {
-	o.ResourceType = &v
 }
 
 func (o ProvisioningLicenseReservations) MarshalJSON() ([]byte, error) {

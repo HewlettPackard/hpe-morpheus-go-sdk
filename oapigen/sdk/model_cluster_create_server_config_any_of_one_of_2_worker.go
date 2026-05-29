@@ -29,113 +29,12 @@ type ClusterCreateServerConfigAnyOfOneOf2Worker struct {
 
 type _ClusterCreateServerConfigAnyOfOneOf2Worker ClusterCreateServerConfigAnyOfOneOf2Worker
 
-// NewClusterCreateServerConfigAnyOfOneOf2Worker instantiates a new ClusterCreateServerConfigAnyOfOneOf2Worker object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterCreateServerConfigAnyOfOneOf2Worker() *ClusterCreateServerConfigAnyOfOneOf2Worker {
-	this := ClusterCreateServerConfigAnyOfOneOf2Worker{}
-	return &this
-}
-
 // NewClusterCreateServerConfigAnyOfOneOf2WorkerWithDefaults instantiates a new ClusterCreateServerConfigAnyOfOneOf2Worker object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClusterCreateServerConfigAnyOfOneOf2WorkerWithDefaults() *ClusterCreateServerConfigAnyOfOneOf2Worker {
 	this := ClusterCreateServerConfigAnyOfOneOf2Worker{}
 	return &this
-}
-
-// GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) GetNetwork() ClusterCreateServerConfigAnyOfOneOf2WorkerNetwork {
-	if o == nil || IsNil(o.Network) {
-		var ret ClusterCreateServerConfigAnyOfOneOf2WorkerNetwork
-		return ret
-	}
-	return *o.Network
-}
-
-// GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) GetNetworkOk() (*ClusterCreateServerConfigAnyOfOneOf2WorkerNetwork, bool) {
-	if o == nil || IsNil(o.Network) {
-		return nil, false
-	}
-	return o.Network, true
-}
-
-// SetNetwork gets a reference to the given ClusterCreateServerConfigAnyOfOneOf2WorkerNetwork and assigns it to the Network field.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) SetNetwork(v ClusterCreateServerConfigAnyOfOneOf2WorkerNetwork) {
-	o.Network = &v
-}
-
-// GetSecurityGroup returns the SecurityGroup field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) GetSecurityGroup() ClusterCreateServerConfigAnyOfOneOf2WorkerSecurityGroup {
-	if o == nil || IsNil(o.SecurityGroup) {
-		var ret ClusterCreateServerConfigAnyOfOneOf2WorkerSecurityGroup
-		return ret
-	}
-	return *o.SecurityGroup
-}
-
-// GetSecurityGroupOk returns a tuple with the SecurityGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) GetSecurityGroupOk() (*ClusterCreateServerConfigAnyOfOneOf2WorkerSecurityGroup, bool) {
-	if o == nil || IsNil(o.SecurityGroup) {
-		return nil, false
-	}
-	return o.SecurityGroup, true
-}
-
-// SetSecurityGroup gets a reference to the given ClusterCreateServerConfigAnyOfOneOf2WorkerSecurityGroup and assigns it to the SecurityGroup field.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) SetSecurityGroup(v ClusterCreateServerConfigAnyOfOneOf2WorkerSecurityGroup) {
-	o.SecurityGroup = &v
-}
-
-// GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) GetPlan() ClusterCreateServerConfigAnyOfOneOf2WorkerPlan {
-	if o == nil || IsNil(o.Plan) {
-		var ret ClusterCreateServerConfigAnyOfOneOf2WorkerPlan
-		return ret
-	}
-	return *o.Plan
-}
-
-// GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) GetPlanOk() (*ClusterCreateServerConfigAnyOfOneOf2WorkerPlan, bool) {
-	if o == nil || IsNil(o.Plan) {
-		return nil, false
-	}
-	return o.Plan, true
-}
-
-// SetPlan gets a reference to the given ClusterCreateServerConfigAnyOfOneOf2WorkerPlan and assigns it to the Plan field.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) SetPlan(v ClusterCreateServerConfigAnyOfOneOf2WorkerPlan) {
-	o.Plan = &v
-}
-
-// GetRole returns the Role field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) GetRole() ClusterCreateServerConfigAnyOfOneOf2WorkerRole {
-	if o == nil || IsNil(o.Role) {
-		var ret ClusterCreateServerConfigAnyOfOneOf2WorkerRole
-		return ret
-	}
-	return *o.Role
-}
-
-// GetRoleOk returns a tuple with the Role field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) GetRoleOk() (*ClusterCreateServerConfigAnyOfOneOf2WorkerRole, bool) {
-	if o == nil || IsNil(o.Role) {
-		return nil, false
-	}
-	return o.Role, true
-}
-
-// SetRole gets a reference to the given ClusterCreateServerConfigAnyOfOneOf2WorkerRole and assigns it to the Role field.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) SetRole(v ClusterCreateServerConfigAnyOfOneOf2WorkerRole) {
-	o.Role = &v
 }
 
 func (o ClusterCreateServerConfigAnyOfOneOf2Worker) MarshalJSON() ([]byte, error) {

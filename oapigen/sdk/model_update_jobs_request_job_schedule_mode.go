@@ -27,20 +27,6 @@ type UpdateJobsRequestJobScheduleMode struct {
 	String *string
 }
 
-// int64AsUpdateJobsRequestJobScheduleMode is a convenience function that returns int64 wrapped in UpdateJobsRequestJobScheduleMode
-func Int64AsUpdateJobsRequestJobScheduleMode(v *int64) UpdateJobsRequestJobScheduleMode {
-	return UpdateJobsRequestJobScheduleMode{
-		Int64: v,
-	}
-}
-
-// stringAsUpdateJobsRequestJobScheduleMode is a convenience function that returns string wrapped in UpdateJobsRequestJobScheduleMode
-func StringAsUpdateJobsRequestJobScheduleMode(v *string) UpdateJobsRequestJobScheduleMode {
-	return UpdateJobsRequestJobScheduleMode{
-		String: v,
-	}
-}
-
 func (dst *UpdateJobsRequestJobScheduleMode) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateJobsRequestJobScheduleMode{}

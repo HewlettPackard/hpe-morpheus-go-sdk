@@ -28,90 +28,12 @@ type RunDeploy200ResponseAppDeployDeploymentVersion struct {
 
 type _RunDeploy200ResponseAppDeployDeploymentVersion RunDeploy200ResponseAppDeployDeploymentVersion
 
-// NewRunDeploy200ResponseAppDeployDeploymentVersion instantiates a new RunDeploy200ResponseAppDeployDeploymentVersion object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRunDeploy200ResponseAppDeployDeploymentVersion() *RunDeploy200ResponseAppDeployDeploymentVersion {
-	this := RunDeploy200ResponseAppDeployDeploymentVersion{}
-	return &this
-}
-
 // NewRunDeploy200ResponseAppDeployDeploymentVersionWithDefaults instantiates a new RunDeploy200ResponseAppDeployDeploymentVersion object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRunDeploy200ResponseAppDeployDeploymentVersionWithDefaults() *RunDeploy200ResponseAppDeployDeploymentVersion {
 	this := RunDeploy200ResponseAppDeployDeploymentVersion{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *RunDeploy200ResponseAppDeployDeploymentVersion) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RunDeploy200ResponseAppDeployDeploymentVersion) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *RunDeploy200ResponseAppDeployDeploymentVersion) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetUserVersion returns the UserVersion field value if set, zero value otherwise.
-func (o *RunDeploy200ResponseAppDeployDeploymentVersion) GetUserVersion() string {
-	if o == nil || IsNil(o.UserVersion) {
-		var ret string
-		return ret
-	}
-	return *o.UserVersion
-}
-
-// GetUserVersionOk returns a tuple with the UserVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RunDeploy200ResponseAppDeployDeploymentVersion) GetUserVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.UserVersion) {
-		return nil, false
-	}
-	return o.UserVersion, true
-}
-
-// SetUserVersion gets a reference to the given string and assigns it to the UserVersion field.
-func (o *RunDeploy200ResponseAppDeployDeploymentVersion) SetUserVersion(v string) {
-	o.UserVersion = &v
-}
-
-// GetDeployType returns the DeployType field value if set, zero value otherwise.
-func (o *RunDeploy200ResponseAppDeployDeploymentVersion) GetDeployType() string {
-	if o == nil || IsNil(o.DeployType) {
-		var ret string
-		return ret
-	}
-	return *o.DeployType
-}
-
-// GetDeployTypeOk returns a tuple with the DeployType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RunDeploy200ResponseAppDeployDeploymentVersion) GetDeployTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.DeployType) {
-		return nil, false
-	}
-	return o.DeployType, true
-}
-
-// SetDeployType gets a reference to the given string and assigns it to the DeployType field.
-func (o *RunDeploy200ResponseAppDeployDeploymentVersion) SetDeployType(v string) {
-	o.DeployType = &v
 }
 
 func (o RunDeploy200ResponseAppDeployDeploymentVersion) MarshalJSON() ([]byte, error) {

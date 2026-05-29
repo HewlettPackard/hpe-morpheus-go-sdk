@@ -33,113 +33,12 @@ type UpdateTenantSubtenantGroupRequestGroup struct {
 
 type _UpdateTenantSubtenantGroupRequestGroup UpdateTenantSubtenantGroupRequestGroup
 
-// NewUpdateTenantSubtenantGroupRequestGroup instantiates a new UpdateTenantSubtenantGroupRequestGroup object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateTenantSubtenantGroupRequestGroup() *UpdateTenantSubtenantGroupRequestGroup {
-	this := UpdateTenantSubtenantGroupRequestGroup{}
-	return &this
-}
-
 // NewUpdateTenantSubtenantGroupRequestGroupWithDefaults instantiates a new UpdateTenantSubtenantGroupRequestGroup object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateTenantSubtenantGroupRequestGroupWithDefaults() *UpdateTenantSubtenantGroupRequestGroup {
 	this := UpdateTenantSubtenantGroupRequestGroup{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdateTenantSubtenantGroupRequestGroup) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateTenantSubtenantGroupRequestGroup) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdateTenantSubtenantGroupRequestGroup) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *UpdateTenantSubtenantGroupRequestGroup) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
-		var ret string
-		return ret
-	}
-	return *o.Description
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateTenantSubtenantGroupRequestGroup) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
-		return nil, false
-	}
-	return o.Description, true
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *UpdateTenantSubtenantGroupRequestGroup) SetDescription(v string) {
-	o.Description = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *UpdateTenantSubtenantGroupRequestGroup) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateTenantSubtenantGroupRequestGroup) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *UpdateTenantSubtenantGroupRequestGroup) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetLocation returns the Location field value if set, zero value otherwise.
-func (o *UpdateTenantSubtenantGroupRequestGroup) GetLocation() string {
-	if o == nil || IsNil(o.Location) {
-		var ret string
-		return ret
-	}
-	return *o.Location
-}
-
-// GetLocationOk returns a tuple with the Location field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateTenantSubtenantGroupRequestGroup) GetLocationOk() (*string, bool) {
-	if o == nil || IsNil(o.Location) {
-		return nil, false
-	}
-	return o.Location, true
-}
-
-// SetLocation gets a reference to the given string and assigns it to the Location field.
-func (o *UpdateTenantSubtenantGroupRequestGroup) SetLocation(v string) {
-	o.Location = &v
 }
 
 func (o UpdateTenantSubtenantGroupRequestGroup) MarshalJSON() ([]byte, error) {

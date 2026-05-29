@@ -27,67 +27,12 @@ type ListStorageVolumes200Response struct {
 
 type _ListStorageVolumes200Response ListStorageVolumes200Response
 
-// NewListStorageVolumes200Response instantiates a new ListStorageVolumes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListStorageVolumes200Response() *ListStorageVolumes200Response {
-	this := ListStorageVolumes200Response{}
-	return &this
-}
-
 // NewListStorageVolumes200ResponseWithDefaults instantiates a new ListStorageVolumes200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListStorageVolumes200ResponseWithDefaults() *ListStorageVolumes200Response {
 	this := ListStorageVolumes200Response{}
 	return &this
-}
-
-// GetStorageVolumes returns the StorageVolumes field value if set, zero value otherwise.
-func (o *ListStorageVolumes200Response) GetStorageVolumes() []ListStorageVolumes200ResponseAllOfStorageVolumesInner {
-	if o == nil || IsNil(o.StorageVolumes) {
-		var ret []ListStorageVolumes200ResponseAllOfStorageVolumesInner
-		return ret
-	}
-	return o.StorageVolumes
-}
-
-// GetStorageVolumesOk returns a tuple with the StorageVolumes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListStorageVolumes200Response) GetStorageVolumesOk() ([]ListStorageVolumes200ResponseAllOfStorageVolumesInner, bool) {
-	if o == nil || IsNil(o.StorageVolumes) {
-		return nil, false
-	}
-	return o.StorageVolumes, true
-}
-
-// SetStorageVolumes gets a reference to the given []ListStorageVolumes200ResponseAllOfStorageVolumesInner and assigns it to the StorageVolumes field.
-func (o *ListStorageVolumes200Response) SetStorageVolumes(v []ListStorageVolumes200ResponseAllOfStorageVolumesInner) {
-	o.StorageVolumes = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListStorageVolumes200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListStorageVolumes200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListStorageVolumes200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListStorageVolumes200Response) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 struct {
 
 type _UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9
 
-// NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 instantiates a new UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9() *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 {
-	this := UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9{}
-	return &this
-}
-
 // NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9WithDefaults instantiates a new UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9WithDefaults() *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 {
 	this := UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9{}
 	return &this
-}
-
-// GetHostNamingType returns the HostNamingType field value if set, zero value otherwise.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) GetHostNamingType() string {
-	if o == nil || IsNil(o.HostNamingType) {
-		var ret string
-		return ret
-	}
-	return *o.HostNamingType
-}
-
-// GetHostNamingTypeOk returns a tuple with the HostNamingType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) GetHostNamingTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.HostNamingType) {
-		return nil, false
-	}
-	return o.HostNamingType, true
-}
-
-// SetHostNamingType gets a reference to the given string and assigns it to the HostNamingType field.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) SetHostNamingType(v string) {
-	o.HostNamingType = &v
-}
-
-// GetHostNamingPattern returns the HostNamingPattern field value if set, zero value otherwise.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) GetHostNamingPattern() string {
-	if o == nil || IsNil(o.HostNamingPattern) {
-		var ret string
-		return ret
-	}
-	return *o.HostNamingPattern
-}
-
-// GetHostNamingPatternOk returns a tuple with the HostNamingPattern field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) GetHostNamingPatternOk() (*string, bool) {
-	if o == nil || IsNil(o.HostNamingPattern) {
-		return nil, false
-	}
-	return o.HostNamingPattern, true
-}
-
-// SetHostNamingPattern gets a reference to the given string and assigns it to the HostNamingPattern field.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) SetHostNamingPattern(v string) {
-	o.HostNamingPattern = &v
 }
 
 func (o UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) MarshalJSON() ([]byte, error) {

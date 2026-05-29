@@ -29,113 +29,12 @@ type BillingZonesZonesInnerComputeServers struct {
 
 type _BillingZonesZonesInnerComputeServers BillingZonesZonesInnerComputeServers
 
-// NewBillingZonesZonesInnerComputeServers instantiates a new BillingZonesZonesInnerComputeServers object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBillingZonesZonesInnerComputeServers() *BillingZonesZonesInnerComputeServers {
-	this := BillingZonesZonesInnerComputeServers{}
-	return &this
-}
-
 // NewBillingZonesZonesInnerComputeServersWithDefaults instantiates a new BillingZonesZonesInnerComputeServers object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBillingZonesZonesInnerComputeServersWithDefaults() *BillingZonesZonesInnerComputeServers {
 	this := BillingZonesZonesInnerComputeServers{}
 	return &this
-}
-
-// GetPrice returns the Price field value if set, zero value otherwise.
-func (o *BillingZonesZonesInnerComputeServers) GetPrice() float32 {
-	if o == nil || IsNil(o.Price) {
-		var ret float32
-		return ret
-	}
-	return *o.Price
-}
-
-// GetPriceOk returns a tuple with the Price field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingZonesZonesInnerComputeServers) GetPriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.Price) {
-		return nil, false
-	}
-	return o.Price, true
-}
-
-// SetPrice gets a reference to the given float32 and assigns it to the Price field.
-func (o *BillingZonesZonesInnerComputeServers) SetPrice(v float32) {
-	o.Price = &v
-}
-
-// GetCost returns the Cost field value if set, zero value otherwise.
-func (o *BillingZonesZonesInnerComputeServers) GetCost() float32 {
-	if o == nil || IsNil(o.Cost) {
-		var ret float32
-		return ret
-	}
-	return *o.Cost
-}
-
-// GetCostOk returns a tuple with the Cost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingZonesZonesInnerComputeServers) GetCostOk() (*float32, bool) {
-	if o == nil || IsNil(o.Cost) {
-		return nil, false
-	}
-	return o.Cost, true
-}
-
-// SetCost gets a reference to the given float32 and assigns it to the Cost field.
-func (o *BillingZonesZonesInnerComputeServers) SetCost(v float32) {
-	o.Cost = &v
-}
-
-// GetServers returns the Servers field value if set, zero value otherwise.
-func (o *BillingZonesZonesInnerComputeServers) GetServers() []map[string]interface{} {
-	if o == nil || IsNil(o.Servers) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Servers
-}
-
-// GetServersOk returns a tuple with the Servers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingZonesZonesInnerComputeServers) GetServersOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Servers) {
-		return nil, false
-	}
-	return o.Servers, true
-}
-
-// SetServers gets a reference to the given []map[string]interface{} and assigns it to the Servers field.
-func (o *BillingZonesZonesInnerComputeServers) SetServers(v []map[string]interface{}) {
-	o.Servers = v
-}
-
-// GetCount returns the Count field value if set, zero value otherwise.
-func (o *BillingZonesZonesInnerComputeServers) GetCount() int64 {
-	if o == nil || IsNil(o.Count) {
-		var ret int64
-		return ret
-	}
-	return *o.Count
-}
-
-// GetCountOk returns a tuple with the Count field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingZonesZonesInnerComputeServers) GetCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.Count) {
-		return nil, false
-	}
-	return o.Count, true
-}
-
-// SetCount gets a reference to the given int64 and assigns it to the Count field.
-func (o *BillingZonesZonesInnerComputeServers) SetCount(v int64) {
-	o.Count = &v
 }
 
 func (o BillingZonesZonesInnerComputeServers) MarshalJSON() ([]byte, error) {

@@ -26,13 +26,6 @@ type ZoneCreateConfigAnyOf3HideHostSelection struct {
 	String *string
 }
 
-// stringAsZoneCreateConfigAnyOf3HideHostSelection is a convenience function that returns string wrapped in ZoneCreateConfigAnyOf3HideHostSelection
-func StringAsZoneCreateConfigAnyOf3HideHostSelection(v *string) ZoneCreateConfigAnyOf3HideHostSelection {
-	return ZoneCreateConfigAnyOf3HideHostSelection{
-		String: v,
-	}
-}
-
 func (dst *ZoneCreateConfigAnyOf3HideHostSelection) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ZoneCreateConfigAnyOf3HideHostSelection{}

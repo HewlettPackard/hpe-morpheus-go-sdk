@@ -26,44 +26,12 @@ type UpdateCatalogItemTypeRequest struct {
 
 type _UpdateCatalogItemTypeRequest UpdateCatalogItemTypeRequest
 
-// NewUpdateCatalogItemTypeRequest instantiates a new UpdateCatalogItemTypeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCatalogItemTypeRequest() *UpdateCatalogItemTypeRequest {
-	this := UpdateCatalogItemTypeRequest{}
-	return &this
-}
-
 // NewUpdateCatalogItemTypeRequestWithDefaults instantiates a new UpdateCatalogItemTypeRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateCatalogItemTypeRequestWithDefaults() *UpdateCatalogItemTypeRequest {
 	this := UpdateCatalogItemTypeRequest{}
 	return &this
-}
-
-// GetCatalogItemType returns the CatalogItemType field value if set, zero value otherwise.
-func (o *UpdateCatalogItemTypeRequest) GetCatalogItemType() UpdateCatalogItemTypeRequestCatalogItemType {
-	if o == nil || IsNil(o.CatalogItemType) {
-		var ret UpdateCatalogItemTypeRequestCatalogItemType
-		return ret
-	}
-	return *o.CatalogItemType
-}
-
-// GetCatalogItemTypeOk returns a tuple with the CatalogItemType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCatalogItemTypeRequest) GetCatalogItemTypeOk() (*UpdateCatalogItemTypeRequestCatalogItemType, bool) {
-	if o == nil || IsNil(o.CatalogItemType) {
-		return nil, false
-	}
-	return o.CatalogItemType, true
-}
-
-// SetCatalogItemType gets a reference to the given UpdateCatalogItemTypeRequestCatalogItemType and assigns it to the CatalogItemType field.
-func (o *UpdateCatalogItemTypeRequest) SetCatalogItemType(v UpdateCatalogItemTypeRequestCatalogItemType) {
-	o.CatalogItemType = &v
 }
 
 func (o UpdateCatalogItemTypeRequest) MarshalJSON() ([]byte, error) {

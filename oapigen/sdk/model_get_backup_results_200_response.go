@@ -26,44 +26,12 @@ type GetBackupResults200Response struct {
 
 type _GetBackupResults200Response GetBackupResults200Response
 
-// NewGetBackupResults200Response instantiates a new GetBackupResults200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetBackupResults200Response() *GetBackupResults200Response {
-	this := GetBackupResults200Response{}
-	return &this
-}
-
 // NewGetBackupResults200ResponseWithDefaults instantiates a new GetBackupResults200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetBackupResults200ResponseWithDefaults() *GetBackupResults200Response {
 	this := GetBackupResults200Response{}
 	return &this
-}
-
-// GetResult returns the Result field value if set, zero value otherwise.
-func (o *GetBackupResults200Response) GetResult() GetBackupResults200ResponseResult {
-	if o == nil || IsNil(o.Result) {
-		var ret GetBackupResults200ResponseResult
-		return ret
-	}
-	return *o.Result
-}
-
-// GetResultOk returns a tuple with the Result field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetBackupResults200Response) GetResultOk() (*GetBackupResults200ResponseResult, bool) {
-	if o == nil || IsNil(o.Result) {
-		return nil, false
-	}
-	return o.Result, true
-}
-
-// SetResult gets a reference to the given GetBackupResults200ResponseResult and assigns it to the Result field.
-func (o *GetBackupResults200Response) SetResult(v GetBackupResults200ResponseResult) {
-	o.Result = &v
 }
 
 func (o GetBackupResults200Response) MarshalJSON() ([]byte, error) {

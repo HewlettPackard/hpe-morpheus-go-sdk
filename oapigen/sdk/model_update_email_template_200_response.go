@@ -26,44 +26,12 @@ type UpdateEmailTemplate200Response struct {
 
 type _UpdateEmailTemplate200Response UpdateEmailTemplate200Response
 
-// NewUpdateEmailTemplate200Response instantiates a new UpdateEmailTemplate200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateEmailTemplate200Response() *UpdateEmailTemplate200Response {
-	this := UpdateEmailTemplate200Response{}
-	return &this
-}
-
 // NewUpdateEmailTemplate200ResponseWithDefaults instantiates a new UpdateEmailTemplate200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateEmailTemplate200ResponseWithDefaults() *UpdateEmailTemplate200Response {
 	this := UpdateEmailTemplate200Response{}
 	return &this
-}
-
-// GetEmailTemplate returns the EmailTemplate field value if set, zero value otherwise.
-func (o *UpdateEmailTemplate200Response) GetEmailTemplate() AddEmailTemplate200ResponseEmailTemplate {
-	if o == nil || IsNil(o.EmailTemplate) {
-		var ret AddEmailTemplate200ResponseEmailTemplate
-		return ret
-	}
-	return *o.EmailTemplate
-}
-
-// GetEmailTemplateOk returns a tuple with the EmailTemplate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateEmailTemplate200Response) GetEmailTemplateOk() (*AddEmailTemplate200ResponseEmailTemplate, bool) {
-	if o == nil || IsNil(o.EmailTemplate) {
-		return nil, false
-	}
-	return o.EmailTemplate, true
-}
-
-// SetEmailTemplate gets a reference to the given AddEmailTemplate200ResponseEmailTemplate and assigns it to the EmailTemplate field.
-func (o *UpdateEmailTemplate200Response) SetEmailTemplate(v AddEmailTemplate200ResponseEmailTemplate) {
-	o.EmailTemplate = &v
 }
 
 func (o UpdateEmailTemplate200Response) MarshalJSON() ([]byte, error) {

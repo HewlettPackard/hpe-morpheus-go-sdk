@@ -27,67 +27,12 @@ type ListClusterWorkers200ResponseAllOfWorkersInnerOwner struct {
 
 type _ListClusterWorkers200ResponseAllOfWorkersInnerOwner ListClusterWorkers200ResponseAllOfWorkersInnerOwner
 
-// NewListClusterWorkers200ResponseAllOfWorkersInnerOwner instantiates a new ListClusterWorkers200ResponseAllOfWorkersInnerOwner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListClusterWorkers200ResponseAllOfWorkersInnerOwner() *ListClusterWorkers200ResponseAllOfWorkersInnerOwner {
-	this := ListClusterWorkers200ResponseAllOfWorkersInnerOwner{}
-	return &this
-}
-
 // NewListClusterWorkers200ResponseAllOfWorkersInnerOwnerWithDefaults instantiates a new ListClusterWorkers200ResponseAllOfWorkersInnerOwner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListClusterWorkers200ResponseAllOfWorkersInnerOwnerWithDefaults() *ListClusterWorkers200ResponseAllOfWorkersInnerOwner {
 	this := ListClusterWorkers200ResponseAllOfWorkersInnerOwner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListClusterWorkers200ResponseAllOfWorkersInnerOwner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterWorkers200ResponseAllOfWorkersInnerOwner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListClusterWorkers200ResponseAllOfWorkersInnerOwner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *ListClusterWorkers200ResponseAllOfWorkersInnerOwner) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterWorkers200ResponseAllOfWorkersInnerOwner) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *ListClusterWorkers200ResponseAllOfWorkersInnerOwner) SetUsername(v string) {
-	o.Username = &v
 }
 
 func (o ListClusterWorkers200ResponseAllOfWorkersInnerOwner) MarshalJSON() ([]byte, error) {

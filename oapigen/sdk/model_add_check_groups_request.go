@@ -26,46 +26,12 @@ type AddCheckGroupsRequest struct {
 
 type _AddCheckGroupsRequest AddCheckGroupsRequest
 
-// NewAddCheckGroupsRequest instantiates a new AddCheckGroupsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCheckGroupsRequest(checkGroup AddCheckGroupsRequestCheckGroup) *AddCheckGroupsRequest {
-	this := AddCheckGroupsRequest{}
-	this.CheckGroup = checkGroup
-	return &this
-}
-
 // NewAddCheckGroupsRequestWithDefaults instantiates a new AddCheckGroupsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddCheckGroupsRequestWithDefaults() *AddCheckGroupsRequest {
 	this := AddCheckGroupsRequest{}
 	return &this
-}
-
-// GetCheckGroup returns the CheckGroup field value
-func (o *AddCheckGroupsRequest) GetCheckGroup() AddCheckGroupsRequestCheckGroup {
-	if o == nil {
-		var ret AddCheckGroupsRequestCheckGroup
-		return ret
-	}
-
-	return o.CheckGroup
-}
-
-// GetCheckGroupOk returns a tuple with the CheckGroup field value
-// and a boolean to check if the value has been set.
-func (o *AddCheckGroupsRequest) GetCheckGroupOk() (*AddCheckGroupsRequestCheckGroup, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CheckGroup, true
-}
-
-// SetCheckGroup sets field value
-func (o *AddCheckGroupsRequest) SetCheckGroup(v AddCheckGroupsRequestCheckGroup) {
-	o.CheckGroup = v
 }
 
 func (o AddCheckGroupsRequest) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type UpdateScript200ResponseContainerScript struct {
 
 type _UpdateScript200ResponseContainerScript UpdateScript200ResponseContainerScript
 
-// NewUpdateScript200ResponseContainerScript instantiates a new UpdateScript200ResponseContainerScript object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateScript200ResponseContainerScript() *UpdateScript200ResponseContainerScript {
-	this := UpdateScript200ResponseContainerScript{}
-	return &this
-}
-
 // NewUpdateScript200ResponseContainerScriptWithDefaults instantiates a new UpdateScript200ResponseContainerScript object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateScript200ResponseContainerScriptWithDefaults() *UpdateScript200ResponseContainerScript {
 	this := UpdateScript200ResponseContainerScript{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *UpdateScript200ResponseContainerScript) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateScript200ResponseContainerScript) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *UpdateScript200ResponseContainerScript) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o UpdateScript200ResponseContainerScript) MarshalJSON() ([]byte, error) {

@@ -27,20 +27,6 @@ type GetStorageVolumesIdParameter struct {
 	String *string
 }
 
-// int64AsGetStorageVolumesIdParameter is a convenience function that returns int64 wrapped in GetStorageVolumesIdParameter
-func Int64AsGetStorageVolumesIdParameter(v *int64) GetStorageVolumesIdParameter {
-	return GetStorageVolumesIdParameter{
-		Int64: v,
-	}
-}
-
-// stringAsGetStorageVolumesIdParameter is a convenience function that returns string wrapped in GetStorageVolumesIdParameter
-func StringAsGetStorageVolumesIdParameter(v *string) GetStorageVolumesIdParameter {
-	return GetStorageVolumesIdParameter{
-		String: v,
-	}
-}
-
 func (dst *GetStorageVolumesIdParameter) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &GetStorageVolumesIdParameter{}

@@ -29,113 +29,12 @@ type UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner struct {
 
 type _UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner
 
-// NewUpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner instantiates a new UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner() *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner {
-	this := UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner{}
-	return &this
-}
-
 // NewUpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInnerWithDefaults instantiates a new UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInnerWithDefaults() *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner {
 	this := UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetIpMode returns the IpMode field value if set, zero value otherwise.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) GetIpMode() string {
-	if o == nil || IsNil(o.IpMode) {
-		var ret string
-		return ret
-	}
-	return *o.IpMode
-}
-
-// GetIpModeOk returns a tuple with the IpMode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) GetIpModeOk() (*string, bool) {
-	if o == nil || IsNil(o.IpMode) {
-		return nil, false
-	}
-	return o.IpMode, true
-}
-
-// SetIpMode gets a reference to the given string and assigns it to the IpMode field.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) SetIpMode(v string) {
-	o.IpMode = &v
-}
-
-// GetPool returns the Pool field value if set, zero value otherwise.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) GetPool() UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInnerPool {
-	if o == nil || IsNil(o.Pool) {
-		var ret UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInnerPool
-		return ret
-	}
-	return *o.Pool
-}
-
-// GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) GetPoolOk() (*UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInnerPool, bool) {
-	if o == nil || IsNil(o.Pool) {
-		return nil, false
-	}
-	return o.Pool, true
-}
-
-// SetPool gets a reference to the given UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInnerPool and assigns it to the Pool field.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) SetPool(v UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInnerPool) {
-	o.Pool = &v
-}
-
-// GetUsePool returns the UsePool field value if set, zero value otherwise.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) GetUsePool() bool {
-	if o == nil || IsNil(o.UsePool) {
-		var ret bool
-		return ret
-	}
-	return *o.UsePool
-}
-
-// GetUsePoolOk returns a tuple with the UsePool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) GetUsePoolOk() (*bool, bool) {
-	if o == nil || IsNil(o.UsePool) {
-		return nil, false
-	}
-	return o.UsePool, true
-}
-
-// SetUsePool gets a reference to the given bool and assigns it to the UsePool field.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) SetUsePool(v bool) {
-	o.UsePool = &v
 }
 
 func (o UpdateVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) MarshalJSON() ([]byte, error) {

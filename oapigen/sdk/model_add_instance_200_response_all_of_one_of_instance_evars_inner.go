@@ -29,113 +29,12 @@ type AddInstance200ResponseAllOfOneOfInstanceEvarsInner struct {
 
 type _AddInstance200ResponseAllOfOneOfInstanceEvarsInner AddInstance200ResponseAllOfOneOfInstanceEvarsInner
 
-// NewAddInstance200ResponseAllOfOneOfInstanceEvarsInner instantiates a new AddInstance200ResponseAllOfOneOfInstanceEvarsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddInstance200ResponseAllOfOneOfInstanceEvarsInner() *AddInstance200ResponseAllOfOneOfInstanceEvarsInner {
-	this := AddInstance200ResponseAllOfOneOfInstanceEvarsInner{}
-	return &this
-}
-
 // NewAddInstance200ResponseAllOfOneOfInstanceEvarsInnerWithDefaults instantiates a new AddInstance200ResponseAllOfOneOfInstanceEvarsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddInstance200ResponseAllOfOneOfInstanceEvarsInnerWithDefaults() *AddInstance200ResponseAllOfOneOfInstanceEvarsInner {
 	this := AddInstance200ResponseAllOfOneOfInstanceEvarsInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) GetValue() AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue {
-	if o == nil || IsNil(o.Value) {
-		var ret AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) GetValueOk() (*AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// SetValue gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue and assigns it to the Value field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) SetValue(v AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue) {
-	o.Value = &v
-}
-
-// GetExport returns the Export field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) GetExport() bool {
-	if o == nil || IsNil(o.Export) {
-		var ret bool
-		return ret
-	}
-	return *o.Export
-}
-
-// GetExportOk returns a tuple with the Export field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) GetExportOk() (*bool, bool) {
-	if o == nil || IsNil(o.Export) {
-		return nil, false
-	}
-	return o.Export, true
-}
-
-// SetExport gets a reference to the given bool and assigns it to the Export field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) SetExport(v bool) {
-	o.Export = &v
-}
-
-// GetMasked returns the Masked field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) GetMasked() bool {
-	if o == nil || IsNil(o.Masked) {
-		var ret bool
-		return ret
-	}
-	return *o.Masked
-}
-
-// GetMaskedOk returns a tuple with the Masked field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) GetMaskedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Masked) {
-		return nil, false
-	}
-	return o.Masked, true
-}
-
-// SetMasked gets a reference to the given bool and assigns it to the Masked field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) SetMasked(v bool) {
-	o.Masked = &v
 }
 
 func (o AddInstance200ResponseAllOfOneOfInstanceEvarsInner) MarshalJSON() ([]byte, error) {

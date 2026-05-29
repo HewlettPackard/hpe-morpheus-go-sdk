@@ -26,13 +26,6 @@ type ZoneCreateConfigAnyOf3EnableDiskTypeSelection struct {
 	String *string
 }
 
-// stringAsZoneCreateConfigAnyOf3EnableDiskTypeSelection is a convenience function that returns string wrapped in ZoneCreateConfigAnyOf3EnableDiskTypeSelection
-func StringAsZoneCreateConfigAnyOf3EnableDiskTypeSelection(v *string) ZoneCreateConfigAnyOf3EnableDiskTypeSelection {
-	return ZoneCreateConfigAnyOf3EnableDiskTypeSelection{
-		String: v,
-	}
-}
-
 func (dst *ZoneCreateConfigAnyOf3EnableDiskTypeSelection) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ZoneCreateConfigAnyOf3EnableDiskTypeSelection{}

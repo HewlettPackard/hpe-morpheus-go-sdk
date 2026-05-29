@@ -28,90 +28,12 @@ type SaveDatastore200Response struct {
 
 type _SaveDatastore200Response SaveDatastore200Response
 
-// NewSaveDatastore200Response instantiates a new SaveDatastore200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSaveDatastore200Response() *SaveDatastore200Response {
-	this := SaveDatastore200Response{}
-	return &this
-}
-
 // NewSaveDatastore200ResponseWithDefaults instantiates a new SaveDatastore200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSaveDatastore200ResponseWithDefaults() *SaveDatastore200Response {
 	this := SaveDatastore200Response{}
 	return &this
-}
-
-// GetDatastore returns the Datastore field value if set, zero value otherwise.
-func (o *SaveDatastore200Response) GetDatastore() SaveDatastore200ResponseAllOfDatastore {
-	if o == nil || IsNil(o.Datastore) {
-		var ret SaveDatastore200ResponseAllOfDatastore
-		return ret
-	}
-	return *o.Datastore
-}
-
-// GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveDatastore200Response) GetDatastoreOk() (*SaveDatastore200ResponseAllOfDatastore, bool) {
-	if o == nil || IsNil(o.Datastore) {
-		return nil, false
-	}
-	return o.Datastore, true
-}
-
-// SetDatastore gets a reference to the given SaveDatastore200ResponseAllOfDatastore and assigns it to the Datastore field.
-func (o *SaveDatastore200Response) SetDatastore(v SaveDatastore200ResponseAllOfDatastore) {
-	o.Datastore = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *SaveDatastore200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveDatastore200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *SaveDatastore200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetExecutionId returns the ExecutionId field value if set, zero value otherwise.
-func (o *SaveDatastore200Response) GetExecutionId() string {
-	if o == nil || IsNil(o.ExecutionId) {
-		var ret string
-		return ret
-	}
-	return *o.ExecutionId
-}
-
-// GetExecutionIdOk returns a tuple with the ExecutionId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveDatastore200Response) GetExecutionIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExecutionId) {
-		return nil, false
-	}
-	return o.ExecutionId, true
-}
-
-// SetExecutionId gets a reference to the given string and assigns it to the ExecutionId field.
-func (o *SaveDatastore200Response) SetExecutionId(v string) {
-	o.ExecutionId = &v
 }
 
 func (o SaveDatastore200Response) MarshalJSON() ([]byte, error) {

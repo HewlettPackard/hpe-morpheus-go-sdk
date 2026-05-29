@@ -27,67 +27,12 @@ type UpdateCloudAffinityGroup200Response struct {
 
 type _UpdateCloudAffinityGroup200Response UpdateCloudAffinityGroup200Response
 
-// NewUpdateCloudAffinityGroup200Response instantiates a new UpdateCloudAffinityGroup200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCloudAffinityGroup200Response() *UpdateCloudAffinityGroup200Response {
-	this := UpdateCloudAffinityGroup200Response{}
-	return &this
-}
-
 // NewUpdateCloudAffinityGroup200ResponseWithDefaults instantiates a new UpdateCloudAffinityGroup200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateCloudAffinityGroup200ResponseWithDefaults() *UpdateCloudAffinityGroup200Response {
 	this := UpdateCloudAffinityGroup200Response{}
 	return &this
-}
-
-// GetAffinityGroup returns the AffinityGroup field value if set, zero value otherwise.
-func (o *UpdateCloudAffinityGroup200Response) GetAffinityGroup() UpdateCloudAffinityGroup200ResponseAllOfAffinityGroup {
-	if o == nil || IsNil(o.AffinityGroup) {
-		var ret UpdateCloudAffinityGroup200ResponseAllOfAffinityGroup
-		return ret
-	}
-	return *o.AffinityGroup
-}
-
-// GetAffinityGroupOk returns a tuple with the AffinityGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudAffinityGroup200Response) GetAffinityGroupOk() (*UpdateCloudAffinityGroup200ResponseAllOfAffinityGroup, bool) {
-	if o == nil || IsNil(o.AffinityGroup) {
-		return nil, false
-	}
-	return o.AffinityGroup, true
-}
-
-// SetAffinityGroup gets a reference to the given UpdateCloudAffinityGroup200ResponseAllOfAffinityGroup and assigns it to the AffinityGroup field.
-func (o *UpdateCloudAffinityGroup200Response) SetAffinityGroup(v UpdateCloudAffinityGroup200ResponseAllOfAffinityGroup) {
-	o.AffinityGroup = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateCloudAffinityGroup200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudAffinityGroup200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateCloudAffinityGroup200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateCloudAffinityGroup200Response) MarshalJSON() ([]byte, error) {

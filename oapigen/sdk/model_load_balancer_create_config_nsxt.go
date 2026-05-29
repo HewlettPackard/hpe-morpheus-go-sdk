@@ -33,113 +33,12 @@ type LoadBalancerCreateConfigNSXT struct {
 
 type _LoadBalancerCreateConfigNSXT LoadBalancerCreateConfigNSXT
 
-// NewLoadBalancerCreateConfigNSXT instantiates a new LoadBalancerCreateConfigNSXT object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewLoadBalancerCreateConfigNSXT() *LoadBalancerCreateConfigNSXT {
-	this := LoadBalancerCreateConfigNSXT{}
-	return &this
-}
-
 // NewLoadBalancerCreateConfigNSXTWithDefaults instantiates a new LoadBalancerCreateConfigNSXT object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewLoadBalancerCreateConfigNSXTWithDefaults() *LoadBalancerCreateConfigNSXT {
 	this := LoadBalancerCreateConfigNSXT{}
 	return &this
-}
-
-// GetAdminState returns the AdminState field value if set, zero value otherwise.
-func (o *LoadBalancerCreateConfigNSXT) GetAdminState() bool {
-	if o == nil || IsNil(o.AdminState) {
-		var ret bool
-		return ret
-	}
-	return *o.AdminState
-}
-
-// GetAdminStateOk returns a tuple with the AdminState field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoadBalancerCreateConfigNSXT) GetAdminStateOk() (*bool, bool) {
-	if o == nil || IsNil(o.AdminState) {
-		return nil, false
-	}
-	return o.AdminState, true
-}
-
-// SetAdminState gets a reference to the given bool and assigns it to the AdminState field.
-func (o *LoadBalancerCreateConfigNSXT) SetAdminState(v bool) {
-	o.AdminState = &v
-}
-
-// GetSize returns the Size field value if set, zero value otherwise.
-func (o *LoadBalancerCreateConfigNSXT) GetSize() string {
-	if o == nil || IsNil(o.Size) {
-		var ret string
-		return ret
-	}
-	return *o.Size
-}
-
-// GetSizeOk returns a tuple with the Size field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoadBalancerCreateConfigNSXT) GetSizeOk() (*string, bool) {
-	if o == nil || IsNil(o.Size) {
-		return nil, false
-	}
-	return o.Size, true
-}
-
-// SetSize gets a reference to the given string and assigns it to the Size field.
-func (o *LoadBalancerCreateConfigNSXT) SetSize(v string) {
-	o.Size = &v
-}
-
-// GetTier1 returns the Tier1 field value if set, zero value otherwise.
-func (o *LoadBalancerCreateConfigNSXT) GetTier1() string {
-	if o == nil || IsNil(o.Tier1) {
-		var ret string
-		return ret
-	}
-	return *o.Tier1
-}
-
-// GetTier1Ok returns a tuple with the Tier1 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoadBalancerCreateConfigNSXT) GetTier1Ok() (*string, bool) {
-	if o == nil || IsNil(o.Tier1) {
-		return nil, false
-	}
-	return o.Tier1, true
-}
-
-// SetTier1 gets a reference to the given string and assigns it to the Tier1 field.
-func (o *LoadBalancerCreateConfigNSXT) SetTier1(v string) {
-	o.Tier1 = &v
-}
-
-// GetLoglevel returns the Loglevel field value if set, zero value otherwise.
-func (o *LoadBalancerCreateConfigNSXT) GetLoglevel() string {
-	if o == nil || IsNil(o.Loglevel) {
-		var ret string
-		return ret
-	}
-	return *o.Loglevel
-}
-
-// GetLoglevelOk returns a tuple with the Loglevel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoadBalancerCreateConfigNSXT) GetLoglevelOk() (*string, bool) {
-	if o == nil || IsNil(o.Loglevel) {
-		return nil, false
-	}
-	return o.Loglevel, true
-}
-
-// SetLoglevel gets a reference to the given string and assigns it to the Loglevel field.
-func (o *LoadBalancerCreateConfigNSXT) SetLoglevel(v string) {
-	o.Loglevel = &v
 }
 
 func (o LoadBalancerCreateConfigNSXT) MarshalJSON() ([]byte, error) {

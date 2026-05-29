@@ -26,44 +26,12 @@ type SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount str
 
 type _SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount
 
-// NewSaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount instantiates a new SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount() *SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount {
-	this := SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount{}
-	return &this
-}
-
 // NewSaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccountWithDefaults instantiates a new SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccountWithDefaults() *SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount {
 	this := SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount) MarshalJSON() ([]byte, error) {

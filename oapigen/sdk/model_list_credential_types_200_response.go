@@ -27,67 +27,12 @@ type ListCredentialTypes200Response struct {
 
 type _ListCredentialTypes200Response ListCredentialTypes200Response
 
-// NewListCredentialTypes200Response instantiates a new ListCredentialTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListCredentialTypes200Response() *ListCredentialTypes200Response {
-	this := ListCredentialTypes200Response{}
-	return &this
-}
-
 // NewListCredentialTypes200ResponseWithDefaults instantiates a new ListCredentialTypes200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListCredentialTypes200ResponseWithDefaults() *ListCredentialTypes200Response {
 	this := ListCredentialTypes200Response{}
 	return &this
-}
-
-// GetCredentialTypes returns the CredentialTypes field value if set, zero value otherwise.
-func (o *ListCredentialTypes200Response) GetCredentialTypes() []ListCredentialTypes200ResponseAllOfCredentialTypesInner {
-	if o == nil || IsNil(o.CredentialTypes) {
-		var ret []ListCredentialTypes200ResponseAllOfCredentialTypesInner
-		return ret
-	}
-	return o.CredentialTypes
-}
-
-// GetCredentialTypesOk returns a tuple with the CredentialTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCredentialTypes200Response) GetCredentialTypesOk() ([]ListCredentialTypes200ResponseAllOfCredentialTypesInner, bool) {
-	if o == nil || IsNil(o.CredentialTypes) {
-		return nil, false
-	}
-	return o.CredentialTypes, true
-}
-
-// SetCredentialTypes gets a reference to the given []ListCredentialTypes200ResponseAllOfCredentialTypesInner and assigns it to the CredentialTypes field.
-func (o *ListCredentialTypes200Response) SetCredentialTypes(v []ListCredentialTypes200ResponseAllOfCredentialTypesInner) {
-	o.CredentialTypes = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListCredentialTypes200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCredentialTypes200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListCredentialTypes200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListCredentialTypes200Response) MarshalJSON() ([]byte, error) {

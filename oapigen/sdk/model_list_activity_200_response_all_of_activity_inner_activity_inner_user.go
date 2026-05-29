@@ -27,67 +27,12 @@ type ListActivity200ResponseAllOfActivityInnerActivityInnerUser struct {
 
 type _ListActivity200ResponseAllOfActivityInnerActivityInnerUser ListActivity200ResponseAllOfActivityInnerActivityInnerUser
 
-// NewListActivity200ResponseAllOfActivityInnerActivityInnerUser instantiates a new ListActivity200ResponseAllOfActivityInnerActivityInnerUser object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListActivity200ResponseAllOfActivityInnerActivityInnerUser() *ListActivity200ResponseAllOfActivityInnerActivityInnerUser {
-	this := ListActivity200ResponseAllOfActivityInnerActivityInnerUser{}
-	return &this
-}
-
 // NewListActivity200ResponseAllOfActivityInnerActivityInnerUserWithDefaults instantiates a new ListActivity200ResponseAllOfActivityInnerActivityInnerUser object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListActivity200ResponseAllOfActivityInnerActivityInnerUserWithDefaults() *ListActivity200ResponseAllOfActivityInnerActivityInnerUser {
 	this := ListActivity200ResponseAllOfActivityInnerActivityInnerUser{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListActivity200ResponseAllOfActivityInnerActivityInnerUser) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListActivity200ResponseAllOfActivityInnerActivityInnerUser) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListActivity200ResponseAllOfActivityInnerActivityInnerUser) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *ListActivity200ResponseAllOfActivityInnerActivityInnerUser) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListActivity200ResponseAllOfActivityInnerActivityInnerUser) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *ListActivity200ResponseAllOfActivityInnerActivityInnerUser) SetUsername(v string) {
-	o.Username = &v
 }
 
 func (o ListActivity200ResponseAllOfActivityInnerActivityInnerUser) MarshalJSON() ([]byte, error) {

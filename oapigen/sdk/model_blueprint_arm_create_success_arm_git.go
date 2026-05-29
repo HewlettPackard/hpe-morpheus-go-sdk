@@ -33,121 +33,12 @@ type BlueprintARMCreateSuccessArmGit struct {
 
 type _BlueprintARMCreateSuccessArmGit BlueprintARMCreateSuccessArmGit
 
-// NewBlueprintARMCreateSuccessArmGit instantiates a new BlueprintARMCreateSuccessArmGit object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBlueprintARMCreateSuccessArmGit(repoId int64, path string, integrationId int64, branch string) *BlueprintARMCreateSuccessArmGit {
-	this := BlueprintARMCreateSuccessArmGit{}
-	this.RepoId = repoId
-	this.Path = path
-	this.IntegrationId = integrationId
-	this.Branch = branch
-	return &this
-}
-
 // NewBlueprintARMCreateSuccessArmGitWithDefaults instantiates a new BlueprintARMCreateSuccessArmGit object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBlueprintARMCreateSuccessArmGitWithDefaults() *BlueprintARMCreateSuccessArmGit {
 	this := BlueprintARMCreateSuccessArmGit{}
 	return &this
-}
-
-// GetRepoId returns the RepoId field value
-func (o *BlueprintARMCreateSuccessArmGit) GetRepoId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.RepoId
-}
-
-// GetRepoIdOk returns a tuple with the RepoId field value
-// and a boolean to check if the value has been set.
-func (o *BlueprintARMCreateSuccessArmGit) GetRepoIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.RepoId, true
-}
-
-// SetRepoId sets field value
-func (o *BlueprintARMCreateSuccessArmGit) SetRepoId(v int64) {
-	o.RepoId = v
-}
-
-// GetPath returns the Path field value
-func (o *BlueprintARMCreateSuccessArmGit) GetPath() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Path
-}
-
-// GetPathOk returns a tuple with the Path field value
-// and a boolean to check if the value has been set.
-func (o *BlueprintARMCreateSuccessArmGit) GetPathOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Path, true
-}
-
-// SetPath sets field value
-func (o *BlueprintARMCreateSuccessArmGit) SetPath(v string) {
-	o.Path = v
-}
-
-// GetIntegrationId returns the IntegrationId field value
-func (o *BlueprintARMCreateSuccessArmGit) GetIntegrationId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.IntegrationId
-}
-
-// GetIntegrationIdOk returns a tuple with the IntegrationId field value
-// and a boolean to check if the value has been set.
-func (o *BlueprintARMCreateSuccessArmGit) GetIntegrationIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.IntegrationId, true
-}
-
-// SetIntegrationId sets field value
-func (o *BlueprintARMCreateSuccessArmGit) SetIntegrationId(v int64) {
-	o.IntegrationId = v
-}
-
-// GetBranch returns the Branch field value
-func (o *BlueprintARMCreateSuccessArmGit) GetBranch() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Branch
-}
-
-// GetBranchOk returns a tuple with the Branch field value
-// and a boolean to check if the value has been set.
-func (o *BlueprintARMCreateSuccessArmGit) GetBranchOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Branch, true
-}
-
-// SetBranch sets field value
-func (o *BlueprintARMCreateSuccessArmGit) SetBranch(v string) {
-	o.Branch = v
 }
 
 func (o BlueprintARMCreateSuccessArmGit) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type GetVirtualImage200ResponseVirtualImageTagsInner struct {
 
 type _GetVirtualImage200ResponseVirtualImageTagsInner GetVirtualImage200ResponseVirtualImageTagsInner
 
-// NewGetVirtualImage200ResponseVirtualImageTagsInner instantiates a new GetVirtualImage200ResponseVirtualImageTagsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetVirtualImage200ResponseVirtualImageTagsInner() *GetVirtualImage200ResponseVirtualImageTagsInner {
-	this := GetVirtualImage200ResponseVirtualImageTagsInner{}
-	return &this
-}
-
 // NewGetVirtualImage200ResponseVirtualImageTagsInnerWithDefaults instantiates a new GetVirtualImage200ResponseVirtualImageTagsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetVirtualImage200ResponseVirtualImageTagsInnerWithDefaults() *GetVirtualImage200ResponseVirtualImageTagsInner {
 	this := GetVirtualImage200ResponseVirtualImageTagsInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetVirtualImage200ResponseVirtualImageTagsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetVirtualImage200ResponseVirtualImageTagsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetVirtualImage200ResponseVirtualImageTagsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *GetVirtualImage200ResponseVirtualImageTagsInner) GetValue() string {
-	if o == nil || IsNil(o.Value) {
-		var ret string
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetVirtualImage200ResponseVirtualImageTagsInner) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *GetVirtualImage200ResponseVirtualImageTagsInner) SetValue(v string) {
-	o.Value = &v
 }
 
 func (o GetVirtualImage200ResponseVirtualImageTagsInner) MarshalJSON() ([]byte, error) {

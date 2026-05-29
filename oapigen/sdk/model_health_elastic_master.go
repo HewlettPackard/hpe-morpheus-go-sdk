@@ -29,113 +29,12 @@ type HealthElasticMaster struct {
 
 type _HealthElasticMaster HealthElasticMaster
 
-// NewHealthElasticMaster instantiates a new HealthElasticMaster object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewHealthElasticMaster() *HealthElasticMaster {
-	this := HealthElasticMaster{}
-	return &this
-}
-
 // NewHealthElasticMasterWithDefaults instantiates a new HealthElasticMaster object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewHealthElasticMasterWithDefaults() *HealthElasticMaster {
 	this := HealthElasticMaster{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *HealthElasticMaster) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HealthElasticMaster) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *HealthElasticMaster) SetId(v string) {
-	o.Id = &v
-}
-
-// GetHost returns the Host field value if set, zero value otherwise.
-func (o *HealthElasticMaster) GetHost() string {
-	if o == nil || IsNil(o.Host) {
-		var ret string
-		return ret
-	}
-	return *o.Host
-}
-
-// GetHostOk returns a tuple with the Host field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HealthElasticMaster) GetHostOk() (*string, bool) {
-	if o == nil || IsNil(o.Host) {
-		return nil, false
-	}
-	return o.Host, true
-}
-
-// SetHost gets a reference to the given string and assigns it to the Host field.
-func (o *HealthElasticMaster) SetHost(v string) {
-	o.Host = &v
-}
-
-// GetIp returns the Ip field value if set, zero value otherwise.
-func (o *HealthElasticMaster) GetIp() string {
-	if o == nil || IsNil(o.Ip) {
-		var ret string
-		return ret
-	}
-	return *o.Ip
-}
-
-// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HealthElasticMaster) GetIpOk() (*string, bool) {
-	if o == nil || IsNil(o.Ip) {
-		return nil, false
-	}
-	return o.Ip, true
-}
-
-// SetIp gets a reference to the given string and assigns it to the Ip field.
-func (o *HealthElasticMaster) SetIp(v string) {
-	o.Ip = &v
-}
-
-// GetNode returns the Node field value if set, zero value otherwise.
-func (o *HealthElasticMaster) GetNode() string {
-	if o == nil || IsNil(o.Node) {
-		var ret string
-		return ret
-	}
-	return *o.Node
-}
-
-// GetNodeOk returns a tuple with the Node field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HealthElasticMaster) GetNodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Node) {
-		return nil, false
-	}
-	return o.Node, true
-}
-
-// SetNode gets a reference to the given string and assigns it to the Node field.
-func (o *HealthElasticMaster) SetNode(v string) {
-	o.Node = &v
 }
 
 func (o HealthElasticMaster) MarshalJSON() ([]byte, error) {

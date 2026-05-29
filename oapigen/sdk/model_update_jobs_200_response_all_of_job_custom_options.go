@@ -26,44 +26,12 @@ type UpdateJobs200ResponseAllOfJobCustomOptions struct {
 
 type _UpdateJobs200ResponseAllOfJobCustomOptions UpdateJobs200ResponseAllOfJobCustomOptions
 
-// NewUpdateJobs200ResponseAllOfJobCustomOptions instantiates a new UpdateJobs200ResponseAllOfJobCustomOptions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateJobs200ResponseAllOfJobCustomOptions() *UpdateJobs200ResponseAllOfJobCustomOptions {
-	this := UpdateJobs200ResponseAllOfJobCustomOptions{}
-	return &this
-}
-
 // NewUpdateJobs200ResponseAllOfJobCustomOptionsWithDefaults instantiates a new UpdateJobs200ResponseAllOfJobCustomOptions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateJobs200ResponseAllOfJobCustomOptionsWithDefaults() *UpdateJobs200ResponseAllOfJobCustomOptions {
 	this := UpdateJobs200ResponseAllOfJobCustomOptions{}
 	return &this
-}
-
-// GetCheckTime returns the CheckTime field value if set, zero value otherwise.
-func (o *UpdateJobs200ResponseAllOfJobCustomOptions) GetCheckTime() int64 {
-	if o == nil || IsNil(o.CheckTime) {
-		var ret int64
-		return ret
-	}
-	return *o.CheckTime
-}
-
-// GetCheckTimeOk returns a tuple with the CheckTime field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateJobs200ResponseAllOfJobCustomOptions) GetCheckTimeOk() (*int64, bool) {
-	if o == nil || IsNil(o.CheckTime) {
-		return nil, false
-	}
-	return o.CheckTime, true
-}
-
-// SetCheckTime gets a reference to the given int64 and assigns it to the CheckTime field.
-func (o *UpdateJobs200ResponseAllOfJobCustomOptions) SetCheckTime(v int64) {
-	o.CheckTime = &v
 }
 
 func (o UpdateJobs200ResponseAllOfJobCustomOptions) MarshalJSON() ([]byte, error) {

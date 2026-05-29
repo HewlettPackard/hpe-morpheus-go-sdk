@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the Search200ResponseHitsInner type satisfies the MappedNullable interface at compile time
@@ -36,185 +35,12 @@ type Search200ResponseHitsInner struct {
 
 type _Search200ResponseHitsInner Search200ResponseHitsInner
 
-// NewSearch200ResponseHitsInner instantiates a new Search200ResponseHitsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSearch200ResponseHitsInner() *Search200ResponseHitsInner {
-	this := Search200ResponseHitsInner{}
-	return &this
-}
-
 // NewSearch200ResponseHitsInnerWithDefaults instantiates a new Search200ResponseHitsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSearch200ResponseHitsInnerWithDefaults() *Search200ResponseHitsInner {
 	this := Search200ResponseHitsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *Search200ResponseHitsInner) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Search200ResponseHitsInner) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *Search200ResponseHitsInner) SetId(v string) {
-	o.Id = &v
-}
-
-// GetUuid returns the Uuid field value if set, zero value otherwise.
-func (o *Search200ResponseHitsInner) GetUuid() string {
-	if o == nil || IsNil(o.Uuid) {
-		var ret string
-		return ret
-	}
-	return *o.Uuid
-}
-
-// GetUuidOk returns a tuple with the Uuid field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Search200ResponseHitsInner) GetUuidOk() (*string, bool) {
-	if o == nil || IsNil(o.Uuid) {
-		return nil, false
-	}
-	return o.Uuid, true
-}
-
-// SetUuid gets a reference to the given string and assigns it to the Uuid field.
-func (o *Search200ResponseHitsInner) SetUuid(v string) {
-	o.Uuid = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *Search200ResponseHitsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Search200ResponseHitsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *Search200ResponseHitsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Search200ResponseHitsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Description.Get()
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Search200ResponseHitsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Description.Get(), o.Description.IsSet()
-}
-
-// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
-func (o *Search200ResponseHitsInner) SetDescription(v string) {
-	o.Description.Set(&v)
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *Search200ResponseHitsInner) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Search200ResponseHitsInner) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *Search200ResponseHitsInner) SetType(v string) {
-	o.Type = &v
-}
-
-// GetDateCreated returns the DateCreated field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Search200ResponseHitsInner) GetDateCreated() time.Time {
-	if o == nil || IsNil(o.DateCreated.Get()) {
-		var ret time.Time
-		return ret
-	}
-	return *o.DateCreated.Get()
-}
-
-// GetDateCreatedOk returns a tuple with the DateCreated field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Search200ResponseHitsInner) GetDateCreatedOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.DateCreated.Get(), o.DateCreated.IsSet()
-}
-
-// SetDateCreated gets a reference to the given NullableTime and assigns it to the DateCreated field.
-func (o *Search200ResponseHitsInner) SetDateCreated(v time.Time) {
-	o.DateCreated.Set(&v)
-}
-
-// GetScore returns the Score field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Search200ResponseHitsInner) GetScore() float32 {
-	if o == nil || IsNil(o.Score.Get()) {
-		var ret float32
-		return ret
-	}
-	return *o.Score.Get()
-}
-
-// GetScoreOk returns a tuple with the Score field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Search200ResponseHitsInner) GetScoreOk() (*float32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Score.Get(), o.Score.IsSet()
-}
-
-// SetScore gets a reference to the given NullableFloat32 and assigns it to the Score field.
-func (o *Search200ResponseHitsInner) SetScore(v float32) {
-	o.Score.Set(&v)
 }
 
 func (o Search200ResponseHitsInner) MarshalJSON() ([]byte, error) {

@@ -33,23 +33,6 @@ type GetNetworkPoolIp200ResponseAllOfMeta struct {
 
 type _GetNetworkPoolIp200ResponseAllOfMeta GetNetworkPoolIp200ResponseAllOfMeta
 
-// NewGetNetworkPoolIp200ResponseAllOfMeta instantiates a new GetNetworkPoolIp200ResponseAllOfMeta object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkPoolIp200ResponseAllOfMeta() *GetNetworkPoolIp200ResponseAllOfMeta {
-	this := GetNetworkPoolIp200ResponseAllOfMeta{}
-	var offset int64 = 0
-	this.Offset = &offset
-	var max int64 = 25
-	this.Max = &max
-	var size int64 = 0
-	this.Size = &size
-	var total int64 = 0
-	this.Total = &total
-	return &this
-}
-
 // NewGetNetworkPoolIp200ResponseAllOfMetaWithDefaults instantiates a new GetNetworkPoolIp200ResponseAllOfMeta object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -64,98 +47,6 @@ func NewGetNetworkPoolIp200ResponseAllOfMetaWithDefaults() *GetNetworkPoolIp200R
 	var total int64 = 0
 	this.Total = &total
 	return &this
-}
-
-// GetOffset returns the Offset field value if set, zero value otherwise.
-func (o *GetNetworkPoolIp200ResponseAllOfMeta) GetOffset() int64 {
-	if o == nil || IsNil(o.Offset) {
-		var ret int64
-		return ret
-	}
-	return *o.Offset
-}
-
-// GetOffsetOk returns a tuple with the Offset field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkPoolIp200ResponseAllOfMeta) GetOffsetOk() (*int64, bool) {
-	if o == nil || IsNil(o.Offset) {
-		return nil, false
-	}
-	return o.Offset, true
-}
-
-// SetOffset gets a reference to the given int64 and assigns it to the Offset field.
-func (o *GetNetworkPoolIp200ResponseAllOfMeta) SetOffset(v int64) {
-	o.Offset = &v
-}
-
-// GetMax returns the Max field value if set, zero value otherwise.
-func (o *GetNetworkPoolIp200ResponseAllOfMeta) GetMax() int64 {
-	if o == nil || IsNil(o.Max) {
-		var ret int64
-		return ret
-	}
-	return *o.Max
-}
-
-// GetMaxOk returns a tuple with the Max field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkPoolIp200ResponseAllOfMeta) GetMaxOk() (*int64, bool) {
-	if o == nil || IsNil(o.Max) {
-		return nil, false
-	}
-	return o.Max, true
-}
-
-// SetMax gets a reference to the given int64 and assigns it to the Max field.
-func (o *GetNetworkPoolIp200ResponseAllOfMeta) SetMax(v int64) {
-	o.Max = &v
-}
-
-// GetSize returns the Size field value if set, zero value otherwise.
-func (o *GetNetworkPoolIp200ResponseAllOfMeta) GetSize() int64 {
-	if o == nil || IsNil(o.Size) {
-		var ret int64
-		return ret
-	}
-	return *o.Size
-}
-
-// GetSizeOk returns a tuple with the Size field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkPoolIp200ResponseAllOfMeta) GetSizeOk() (*int64, bool) {
-	if o == nil || IsNil(o.Size) {
-		return nil, false
-	}
-	return o.Size, true
-}
-
-// SetSize gets a reference to the given int64 and assigns it to the Size field.
-func (o *GetNetworkPoolIp200ResponseAllOfMeta) SetSize(v int64) {
-	o.Size = &v
-}
-
-// GetTotal returns the Total field value if set, zero value otherwise.
-func (o *GetNetworkPoolIp200ResponseAllOfMeta) GetTotal() int64 {
-	if o == nil || IsNil(o.Total) {
-		var ret int64
-		return ret
-	}
-	return *o.Total
-}
-
-// GetTotalOk returns a tuple with the Total field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkPoolIp200ResponseAllOfMeta) GetTotalOk() (*int64, bool) {
-	if o == nil || IsNil(o.Total) {
-		return nil, false
-	}
-	return o.Total, true
-}
-
-// SetTotal gets a reference to the given int64 and assigns it to the Total field.
-func (o *GetNetworkPoolIp200ResponseAllOfMeta) SetTotal(v int64) {
-	o.Total = &v
 }
 
 func (o GetNetworkPoolIp200ResponseAllOfMeta) MarshalJSON() ([]byte, error) {

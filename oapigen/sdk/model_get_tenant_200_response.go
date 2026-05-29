@@ -26,44 +26,12 @@ type GetTenant200Response struct {
 
 type _GetTenant200Response GetTenant200Response
 
-// NewGetTenant200Response instantiates a new GetTenant200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetTenant200Response() *GetTenant200Response {
-	this := GetTenant200Response{}
-	return &this
-}
-
 // NewGetTenant200ResponseWithDefaults instantiates a new GetTenant200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetTenant200ResponseWithDefaults() *GetTenant200Response {
 	this := GetTenant200Response{}
 	return &this
-}
-
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *GetTenant200Response) GetAccount() GetTenant200ResponseAccount {
-	if o == nil || IsNil(o.Account) {
-		var ret GetTenant200ResponseAccount
-		return ret
-	}
-	return *o.Account
-}
-
-// GetAccountOk returns a tuple with the Account field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetTenant200Response) GetAccountOk() (*GetTenant200ResponseAccount, bool) {
-	if o == nil || IsNil(o.Account) {
-		return nil, false
-	}
-	return o.Account, true
-}
-
-// SetAccount gets a reference to the given GetTenant200ResponseAccount and assigns it to the Account field.
-func (o *GetTenant200Response) SetAccount(v GetTenant200ResponseAccount) {
-	o.Account = &v
 }
 
 func (o GetTenant200Response) MarshalJSON() ([]byte, error) {

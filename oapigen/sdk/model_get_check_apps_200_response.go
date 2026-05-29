@@ -29,113 +29,12 @@ type GetCheckApps200Response struct {
 
 type _GetCheckApps200Response GetCheckApps200Response
 
-// NewGetCheckApps200Response instantiates a new GetCheckApps200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCheckApps200Response() *GetCheckApps200Response {
-	this := GetCheckApps200Response{}
-	return &this
-}
-
 // NewGetCheckApps200ResponseWithDefaults instantiates a new GetCheckApps200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetCheckApps200ResponseWithDefaults() *GetCheckApps200Response {
 	this := GetCheckApps200Response{}
 	return &this
-}
-
-// GetMonitorApp returns the MonitorApp field value if set, zero value otherwise.
-func (o *GetCheckApps200Response) GetMonitorApp() GetCheckApps200ResponseMonitorApp {
-	if o == nil || IsNil(o.MonitorApp) {
-		var ret GetCheckApps200ResponseMonitorApp
-		return ret
-	}
-	return *o.MonitorApp
-}
-
-// GetMonitorAppOk returns a tuple with the MonitorApp field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCheckApps200Response) GetMonitorAppOk() (*GetCheckApps200ResponseMonitorApp, bool) {
-	if o == nil || IsNil(o.MonitorApp) {
-		return nil, false
-	}
-	return o.MonitorApp, true
-}
-
-// SetMonitorApp gets a reference to the given GetCheckApps200ResponseMonitorApp and assigns it to the MonitorApp field.
-func (o *GetCheckApps200Response) SetMonitorApp(v GetCheckApps200ResponseMonitorApp) {
-	o.MonitorApp = &v
-}
-
-// GetCheckGroups returns the CheckGroups field value if set, zero value otherwise.
-func (o *GetCheckApps200Response) GetCheckGroups() []GetCheckApps200ResponseCheckGroupsInner {
-	if o == nil || IsNil(o.CheckGroups) {
-		var ret []GetCheckApps200ResponseCheckGroupsInner
-		return ret
-	}
-	return o.CheckGroups
-}
-
-// GetCheckGroupsOk returns a tuple with the CheckGroups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCheckApps200Response) GetCheckGroupsOk() ([]GetCheckApps200ResponseCheckGroupsInner, bool) {
-	if o == nil || IsNil(o.CheckGroups) {
-		return nil, false
-	}
-	return o.CheckGroups, true
-}
-
-// SetCheckGroups gets a reference to the given []GetCheckApps200ResponseCheckGroupsInner and assigns it to the CheckGroups field.
-func (o *GetCheckApps200Response) SetCheckGroups(v []GetCheckApps200ResponseCheckGroupsInner) {
-	o.CheckGroups = v
-}
-
-// GetChecks returns the Checks field value if set, zero value otherwise.
-func (o *GetCheckApps200Response) GetChecks() []GetCheckApps200ResponseChecksInner {
-	if o == nil || IsNil(o.Checks) {
-		var ret []GetCheckApps200ResponseChecksInner
-		return ret
-	}
-	return o.Checks
-}
-
-// GetChecksOk returns a tuple with the Checks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCheckApps200Response) GetChecksOk() ([]GetCheckApps200ResponseChecksInner, bool) {
-	if o == nil || IsNil(o.Checks) {
-		return nil, false
-	}
-	return o.Checks, true
-}
-
-// SetChecks gets a reference to the given []GetCheckApps200ResponseChecksInner and assigns it to the Checks field.
-func (o *GetCheckApps200Response) SetChecks(v []GetCheckApps200ResponseChecksInner) {
-	o.Checks = v
-}
-
-// GetOpenIncidents returns the OpenIncidents field value if set, zero value otherwise.
-func (o *GetCheckApps200Response) GetOpenIncidents() []GetCheckApps200ResponseOpenIncidentsInner {
-	if o == nil || IsNil(o.OpenIncidents) {
-		var ret []GetCheckApps200ResponseOpenIncidentsInner
-		return ret
-	}
-	return o.OpenIncidents
-}
-
-// GetOpenIncidentsOk returns a tuple with the OpenIncidents field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCheckApps200Response) GetOpenIncidentsOk() ([]GetCheckApps200ResponseOpenIncidentsInner, bool) {
-	if o == nil || IsNil(o.OpenIncidents) {
-		return nil, false
-	}
-	return o.OpenIncidents, true
-}
-
-// SetOpenIncidents gets a reference to the given []GetCheckApps200ResponseOpenIncidentsInner and assigns it to the OpenIncidents field.
-func (o *GetCheckApps200Response) SetOpenIncidents(v []GetCheckApps200ResponseOpenIncidentsInner) {
-	o.OpenIncidents = v
 }
 
 func (o GetCheckApps200Response) MarshalJSON() ([]byte, error) {

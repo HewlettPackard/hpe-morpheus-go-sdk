@@ -26,44 +26,12 @@ type GetWorkflows200Response struct {
 
 type _GetWorkflows200Response GetWorkflows200Response
 
-// NewGetWorkflows200Response instantiates a new GetWorkflows200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetWorkflows200Response() *GetWorkflows200Response {
-	this := GetWorkflows200Response{}
-	return &this
-}
-
 // NewGetWorkflows200ResponseWithDefaults instantiates a new GetWorkflows200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetWorkflows200ResponseWithDefaults() *GetWorkflows200Response {
 	this := GetWorkflows200Response{}
 	return &this
-}
-
-// GetTaskSet returns the TaskSet field value if set, zero value otherwise.
-func (o *GetWorkflows200Response) GetTaskSet() GetWorkflows200ResponseAllOfTaskSet {
-	if o == nil || IsNil(o.TaskSet) {
-		var ret GetWorkflows200ResponseAllOfTaskSet
-		return ret
-	}
-	return *o.TaskSet
-}
-
-// GetTaskSetOk returns a tuple with the TaskSet field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetWorkflows200Response) GetTaskSetOk() (*GetWorkflows200ResponseAllOfTaskSet, bool) {
-	if o == nil || IsNil(o.TaskSet) {
-		return nil, false
-	}
-	return o.TaskSet, true
-}
-
-// SetTaskSet gets a reference to the given GetWorkflows200ResponseAllOfTaskSet and assigns it to the TaskSet field.
-func (o *GetWorkflows200Response) SetTaskSet(v GetWorkflows200ResponseAllOfTaskSet) {
-	o.TaskSet = &v
 }
 
 func (o GetWorkflows200Response) MarshalJSON() ([]byte, error) {

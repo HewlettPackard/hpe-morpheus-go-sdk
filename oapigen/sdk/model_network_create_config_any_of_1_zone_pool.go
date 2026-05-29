@@ -27,46 +27,12 @@ type NetworkCreateConfigAnyOf1ZonePool struct {
 
 type _NetworkCreateConfigAnyOf1ZonePool NetworkCreateConfigAnyOf1ZonePool
 
-// NewNetworkCreateConfigAnyOf1ZonePool instantiates a new NetworkCreateConfigAnyOf1ZonePool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkCreateConfigAnyOf1ZonePool(id int32) *NetworkCreateConfigAnyOf1ZonePool {
-	this := NetworkCreateConfigAnyOf1ZonePool{}
-	this.Id = id
-	return &this
-}
-
 // NewNetworkCreateConfigAnyOf1ZonePoolWithDefaults instantiates a new NetworkCreateConfigAnyOf1ZonePool object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkCreateConfigAnyOf1ZonePoolWithDefaults() *NetworkCreateConfigAnyOf1ZonePool {
 	this := NetworkCreateConfigAnyOf1ZonePool{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *NetworkCreateConfigAnyOf1ZonePool) GetId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *NetworkCreateConfigAnyOf1ZonePool) GetIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *NetworkCreateConfigAnyOf1ZonePool) SetId(v int32) {
-	o.Id = v
 }
 
 func (o NetworkCreateConfigAnyOf1ZonePool) MarshalJSON() ([]byte, error) {

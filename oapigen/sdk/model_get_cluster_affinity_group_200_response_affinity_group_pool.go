@@ -26,44 +26,12 @@ type GetClusterAffinityGroup200ResponseAffinityGroupPool struct {
 
 type _GetClusterAffinityGroup200ResponseAffinityGroupPool GetClusterAffinityGroup200ResponseAffinityGroupPool
 
-// NewGetClusterAffinityGroup200ResponseAffinityGroupPool instantiates a new GetClusterAffinityGroup200ResponseAffinityGroupPool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetClusterAffinityGroup200ResponseAffinityGroupPool() *GetClusterAffinityGroup200ResponseAffinityGroupPool {
-	this := GetClusterAffinityGroup200ResponseAffinityGroupPool{}
-	return &this
-}
-
 // NewGetClusterAffinityGroup200ResponseAffinityGroupPoolWithDefaults instantiates a new GetClusterAffinityGroup200ResponseAffinityGroupPool object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetClusterAffinityGroup200ResponseAffinityGroupPoolWithDefaults() *GetClusterAffinityGroup200ResponseAffinityGroupPool {
 	this := GetClusterAffinityGroup200ResponseAffinityGroupPool{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetClusterAffinityGroup200ResponseAffinityGroupPool) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClusterAffinityGroup200ResponseAffinityGroupPool) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetClusterAffinityGroup200ResponseAffinityGroupPool) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o GetClusterAffinityGroup200ResponseAffinityGroupPool) MarshalJSON() ([]byte, error) {

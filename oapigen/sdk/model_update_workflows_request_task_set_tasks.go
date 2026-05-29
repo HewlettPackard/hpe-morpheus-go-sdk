@@ -29,17 +29,6 @@ type UpdateWorkflowsRequestTaskSetTasks struct {
 
 type _UpdateWorkflowsRequestTaskSetTasks UpdateWorkflowsRequestTaskSetTasks
 
-// NewUpdateWorkflowsRequestTaskSetTasks instantiates a new UpdateWorkflowsRequestTaskSetTasks object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateWorkflowsRequestTaskSetTasks() *UpdateWorkflowsRequestTaskSetTasks {
-	this := UpdateWorkflowsRequestTaskSetTasks{}
-	var taskPhase string = "provision"
-	this.TaskPhase = &taskPhase
-	return &this
-}
-
 // NewUpdateWorkflowsRequestTaskSetTasksWithDefaults instantiates a new UpdateWorkflowsRequestTaskSetTasks object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -48,52 +37,6 @@ func NewUpdateWorkflowsRequestTaskSetTasksWithDefaults() *UpdateWorkflowsRequest
 	var taskPhase string = "provision"
 	this.TaskPhase = &taskPhase
 	return &this
-}
-
-// GetTaskId returns the TaskId field value if set, zero value otherwise.
-func (o *UpdateWorkflowsRequestTaskSetTasks) GetTaskId() int64 {
-	if o == nil || IsNil(o.TaskId) {
-		var ret int64
-		return ret
-	}
-	return *o.TaskId
-}
-
-// GetTaskIdOk returns a tuple with the TaskId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateWorkflowsRequestTaskSetTasks) GetTaskIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.TaskId) {
-		return nil, false
-	}
-	return o.TaskId, true
-}
-
-// SetTaskId gets a reference to the given int64 and assigns it to the TaskId field.
-func (o *UpdateWorkflowsRequestTaskSetTasks) SetTaskId(v int64) {
-	o.TaskId = &v
-}
-
-// GetTaskPhase returns the TaskPhase field value if set, zero value otherwise.
-func (o *UpdateWorkflowsRequestTaskSetTasks) GetTaskPhase() string {
-	if o == nil || IsNil(o.TaskPhase) {
-		var ret string
-		return ret
-	}
-	return *o.TaskPhase
-}
-
-// GetTaskPhaseOk returns a tuple with the TaskPhase field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateWorkflowsRequestTaskSetTasks) GetTaskPhaseOk() (*string, bool) {
-	if o == nil || IsNil(o.TaskPhase) {
-		return nil, false
-	}
-	return o.TaskPhase, true
-}
-
-// SetTaskPhase gets a reference to the given string and assigns it to the TaskPhase field.
-func (o *UpdateWorkflowsRequestTaskSetTasks) SetTaskPhase(v string) {
-	o.TaskPhase = &v
 }
 
 func (o UpdateWorkflowsRequestTaskSetTasks) MarshalJSON() ([]byte, error) {

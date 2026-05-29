@@ -30,96 +30,12 @@ type GetDatastores200ResponseAllOfDatastoreDatastoreType struct {
 
 type _GetDatastores200ResponseAllOfDatastoreDatastoreType GetDatastores200ResponseAllOfDatastoreDatastoreType
 
-// NewGetDatastores200ResponseAllOfDatastoreDatastoreType instantiates a new GetDatastores200ResponseAllOfDatastoreDatastoreType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetDatastores200ResponseAllOfDatastoreDatastoreType(id int64, code string, name string) *GetDatastores200ResponseAllOfDatastoreDatastoreType {
-	this := GetDatastores200ResponseAllOfDatastoreDatastoreType{}
-	this.Id = id
-	this.Code = code
-	this.Name = name
-	return &this
-}
-
 // NewGetDatastores200ResponseAllOfDatastoreDatastoreTypeWithDefaults instantiates a new GetDatastores200ResponseAllOfDatastoreDatastoreType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetDatastores200ResponseAllOfDatastoreDatastoreTypeWithDefaults() *GetDatastores200ResponseAllOfDatastoreDatastoreType {
 	this := GetDatastores200ResponseAllOfDatastoreDatastoreType{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoreType) GetId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoreType) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoreType) SetId(v int64) {
-	o.Id = v
-}
-
-// GetCode returns the Code field value
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoreType) GetCode() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value
-// and a boolean to check if the value has been set.
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoreType) GetCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Code, true
-}
-
-// SetCode sets field value
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoreType) SetCode(v string) {
-	o.Code = v
-}
-
-// GetName returns the Name field value
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoreType) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoreType) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *GetDatastores200ResponseAllOfDatastoreDatastoreType) SetName(v string) {
-	o.Name = v
 }
 
 func (o GetDatastores200ResponseAllOfDatastoreDatastoreType) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type GetCredentials200Response struct {
 
 type _GetCredentials200Response GetCredentials200Response
 
-// NewGetCredentials200Response instantiates a new GetCredentials200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCredentials200Response() *GetCredentials200Response {
-	this := GetCredentials200Response{}
-	return &this
-}
-
 // NewGetCredentials200ResponseWithDefaults instantiates a new GetCredentials200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetCredentials200ResponseWithDefaults() *GetCredentials200Response {
 	this := GetCredentials200Response{}
 	return &this
-}
-
-// GetCredential returns the Credential field value if set, zero value otherwise.
-func (o *GetCredentials200Response) GetCredential() GetCredentials200ResponseCredential {
-	if o == nil || IsNil(o.Credential) {
-		var ret GetCredentials200ResponseCredential
-		return ret
-	}
-	return *o.Credential
-}
-
-// GetCredentialOk returns a tuple with the Credential field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCredentials200Response) GetCredentialOk() (*GetCredentials200ResponseCredential, bool) {
-	if o == nil || IsNil(o.Credential) {
-		return nil, false
-	}
-	return o.Credential, true
-}
-
-// SetCredential gets a reference to the given GetCredentials200ResponseCredential and assigns it to the Credential field.
-func (o *GetCredentials200Response) SetCredential(v GetCredentials200ResponseCredential) {
-	o.Credential = &v
 }
 
 func (o GetCredentials200Response) MarshalJSON() ([]byte, error) {

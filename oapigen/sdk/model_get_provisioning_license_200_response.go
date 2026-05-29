@@ -26,44 +26,12 @@ type GetProvisioningLicense200Response struct {
 
 type _GetProvisioningLicense200Response GetProvisioningLicense200Response
 
-// NewGetProvisioningLicense200Response instantiates a new GetProvisioningLicense200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetProvisioningLicense200Response() *GetProvisioningLicense200Response {
-	this := GetProvisioningLicense200Response{}
-	return &this
-}
-
 // NewGetProvisioningLicense200ResponseWithDefaults instantiates a new GetProvisioningLicense200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetProvisioningLicense200ResponseWithDefaults() *GetProvisioningLicense200Response {
 	this := GetProvisioningLicense200Response{}
 	return &this
-}
-
-// GetLicense returns the License field value if set, zero value otherwise.
-func (o *GetProvisioningLicense200Response) GetLicense() GetProvisioningLicense200ResponseLicense {
-	if o == nil || IsNil(o.License) {
-		var ret GetProvisioningLicense200ResponseLicense
-		return ret
-	}
-	return *o.License
-}
-
-// GetLicenseOk returns a tuple with the License field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetProvisioningLicense200Response) GetLicenseOk() (*GetProvisioningLicense200ResponseLicense, bool) {
-	if o == nil || IsNil(o.License) {
-		return nil, false
-	}
-	return o.License, true
-}
-
-// SetLicense gets a reference to the given GetProvisioningLicense200ResponseLicense and assigns it to the License field.
-func (o *GetProvisioningLicense200Response) SetLicense(v GetProvisioningLicense200ResponseLicense) {
-	o.License = &v
 }
 
 func (o GetProvisioningLicense200Response) MarshalJSON() ([]byte, error) {

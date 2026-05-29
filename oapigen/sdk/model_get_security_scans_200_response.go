@@ -26,44 +26,12 @@ type GetSecurityScans200Response struct {
 
 type _GetSecurityScans200Response GetSecurityScans200Response
 
-// NewGetSecurityScans200Response instantiates a new GetSecurityScans200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetSecurityScans200Response() *GetSecurityScans200Response {
-	this := GetSecurityScans200Response{}
-	return &this
-}
-
 // NewGetSecurityScans200ResponseWithDefaults instantiates a new GetSecurityScans200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetSecurityScans200ResponseWithDefaults() *GetSecurityScans200Response {
 	this := GetSecurityScans200Response{}
 	return &this
-}
-
-// GetSecurityScan returns the SecurityScan field value if set, zero value otherwise.
-func (o *GetSecurityScans200Response) GetSecurityScan() GetSecurityScans200ResponseAllOfSecurityScan {
-	if o == nil || IsNil(o.SecurityScan) {
-		var ret GetSecurityScans200ResponseAllOfSecurityScan
-		return ret
-	}
-	return *o.SecurityScan
-}
-
-// GetSecurityScanOk returns a tuple with the SecurityScan field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetSecurityScans200Response) GetSecurityScanOk() (*GetSecurityScans200ResponseAllOfSecurityScan, bool) {
-	if o == nil || IsNil(o.SecurityScan) {
-		return nil, false
-	}
-	return o.SecurityScan, true
-}
-
-// SetSecurityScan gets a reference to the given GetSecurityScans200ResponseAllOfSecurityScan and assigns it to the SecurityScan field.
-func (o *GetSecurityScans200Response) SetSecurityScan(v GetSecurityScans200ResponseAllOfSecurityScan) {
-	o.SecurityScan = &v
 }
 
 func (o GetSecurityScans200Response) MarshalJSON() ([]byte, error) {

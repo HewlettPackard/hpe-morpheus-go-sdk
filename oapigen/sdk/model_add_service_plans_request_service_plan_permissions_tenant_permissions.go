@@ -27,44 +27,12 @@ type AddServicePlansRequestServicePlanPermissionsTenantPermissions struct {
 
 type _AddServicePlansRequestServicePlanPermissionsTenantPermissions AddServicePlansRequestServicePlanPermissionsTenantPermissions
 
-// NewAddServicePlansRequestServicePlanPermissionsTenantPermissions instantiates a new AddServicePlansRequestServicePlanPermissionsTenantPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddServicePlansRequestServicePlanPermissionsTenantPermissions() *AddServicePlansRequestServicePlanPermissionsTenantPermissions {
-	this := AddServicePlansRequestServicePlanPermissionsTenantPermissions{}
-	return &this
-}
-
 // NewAddServicePlansRequestServicePlanPermissionsTenantPermissionsWithDefaults instantiates a new AddServicePlansRequestServicePlanPermissionsTenantPermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddServicePlansRequestServicePlanPermissionsTenantPermissionsWithDefaults() *AddServicePlansRequestServicePlanPermissionsTenantPermissions {
 	this := AddServicePlansRequestServicePlanPermissionsTenantPermissions{}
 	return &this
-}
-
-// GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *AddServicePlansRequestServicePlanPermissionsTenantPermissions) GetAccounts() []int64 {
-	if o == nil || IsNil(o.Accounts) {
-		var ret []int64
-		return ret
-	}
-	return o.Accounts
-}
-
-// GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddServicePlansRequestServicePlanPermissionsTenantPermissions) GetAccountsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.Accounts) {
-		return nil, false
-	}
-	return o.Accounts, true
-}
-
-// SetAccounts gets a reference to the given []int64 and assigns it to the Accounts field.
-func (o *AddServicePlansRequestServicePlanPermissionsTenantPermissions) SetAccounts(v []int64) {
-	o.Accounts = v
 }
 
 func (o AddServicePlansRequestServicePlanPermissionsTenantPermissions) MarshalJSON() ([]byte, error) {

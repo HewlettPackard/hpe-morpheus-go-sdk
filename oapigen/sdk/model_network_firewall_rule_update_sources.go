@@ -26,44 +26,12 @@ type NetworkFirewallRuleUpdateSources struct {
 
 type _NetworkFirewallRuleUpdateSources NetworkFirewallRuleUpdateSources
 
-// NewNetworkFirewallRuleUpdateSources instantiates a new NetworkFirewallRuleUpdateSources object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkFirewallRuleUpdateSources() *NetworkFirewallRuleUpdateSources {
-	this := NetworkFirewallRuleUpdateSources{}
-	return &this
-}
-
 // NewNetworkFirewallRuleUpdateSourcesWithDefaults instantiates a new NetworkFirewallRuleUpdateSources object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkFirewallRuleUpdateSourcesWithDefaults() *NetworkFirewallRuleUpdateSources {
 	this := NetworkFirewallRuleUpdateSources{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *NetworkFirewallRuleUpdateSources) GetId() []string {
-	if o == nil || IsNil(o.Id) {
-		var ret []string
-		return ret
-	}
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkFirewallRuleUpdateSources) GetIdOk() ([]string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given []string and assigns it to the Id field.
-func (o *NetworkFirewallRuleUpdateSources) SetId(v []string) {
-	o.Id = v
 }
 
 func (o NetworkFirewallRuleUpdateSources) MarshalJSON() ([]byte, error) {

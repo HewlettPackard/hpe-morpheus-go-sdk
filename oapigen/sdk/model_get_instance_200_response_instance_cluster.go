@@ -28,90 +28,12 @@ type GetInstance200ResponseInstanceCluster struct {
 
 type _GetInstance200ResponseInstanceCluster GetInstance200ResponseInstanceCluster
 
-// NewGetInstance200ResponseInstanceCluster instantiates a new GetInstance200ResponseInstanceCluster object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstance200ResponseInstanceCluster() *GetInstance200ResponseInstanceCluster {
-	this := GetInstance200ResponseInstanceCluster{}
-	return &this
-}
-
 // NewGetInstance200ResponseInstanceClusterWithDefaults instantiates a new GetInstance200ResponseInstanceCluster object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstance200ResponseInstanceClusterWithDefaults() *GetInstance200ResponseInstanceCluster {
 	this := GetInstance200ResponseInstanceCluster{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetInstance200ResponseInstanceCluster) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstance200ResponseInstanceCluster) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetInstance200ResponseInstanceCluster) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetInstance200ResponseInstanceCluster) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstance200ResponseInstanceCluster) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetInstance200ResponseInstanceCluster) SetName(v string) {
-	o.Name = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *GetInstance200ResponseInstanceCluster) GetType() AddInstance200ResponseAllOfOneOfInstanceClusterType {
-	if o == nil || IsNil(o.Type) {
-		var ret AddInstance200ResponseAllOfOneOfInstanceClusterType
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstance200ResponseInstanceCluster) GetTypeOk() (*AddInstance200ResponseAllOfOneOfInstanceClusterType, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceClusterType and assigns it to the Type field.
-func (o *GetInstance200ResponseInstanceCluster) SetType(v AddInstance200ResponseAllOfOneOfInstanceClusterType) {
-	o.Type = &v
 }
 
 func (o GetInstance200ResponseInstanceCluster) MarshalJSON() ([]byte, error) {

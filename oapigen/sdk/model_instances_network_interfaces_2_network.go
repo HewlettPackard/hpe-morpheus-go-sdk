@@ -28,69 +28,12 @@ type InstancesNetworkInterfaces2Network struct {
 
 type _InstancesNetworkInterfaces2Network InstancesNetworkInterfaces2Network
 
-// NewInstancesNetworkInterfaces2Network instantiates a new InstancesNetworkInterfaces2Network object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstancesNetworkInterfaces2Network(id string) *InstancesNetworkInterfaces2Network {
-	this := InstancesNetworkInterfaces2Network{}
-	this.Id = id
-	return &this
-}
-
 // NewInstancesNetworkInterfaces2NetworkWithDefaults instantiates a new InstancesNetworkInterfaces2Network object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstancesNetworkInterfaces2NetworkWithDefaults() *InstancesNetworkInterfaces2Network {
 	this := InstancesNetworkInterfaces2Network{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *InstancesNetworkInterfaces2Network) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *InstancesNetworkInterfaces2Network) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *InstancesNetworkInterfaces2Network) SetId(v string) {
-	o.Id = v
-}
-
-// GetPool returns the Pool field value if set, zero value otherwise.
-func (o *InstancesNetworkInterfaces2Network) GetPool() InstancesNetworkInterfaces2NetworkPool {
-	if o == nil || IsNil(o.Pool) {
-		var ret InstancesNetworkInterfaces2NetworkPool
-		return ret
-	}
-	return *o.Pool
-}
-
-// GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstancesNetworkInterfaces2Network) GetPoolOk() (*InstancesNetworkInterfaces2NetworkPool, bool) {
-	if o == nil || IsNil(o.Pool) {
-		return nil, false
-	}
-	return o.Pool, true
-}
-
-// SetPool gets a reference to the given InstancesNetworkInterfaces2NetworkPool and assigns it to the Pool field.
-func (o *InstancesNetworkInterfaces2Network) SetPool(v InstancesNetworkInterfaces2NetworkPool) {
-	o.Pool = &v
 }
 
 func (o InstancesNetworkInterfaces2Network) MarshalJSON() ([]byte, error) {

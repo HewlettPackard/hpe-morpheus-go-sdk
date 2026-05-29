@@ -29,113 +29,12 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType struct {
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType
 
-// NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType {
-	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType{}
-	return &this
-}
-
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfTypeWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfTypeWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType {
 	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) SetName(v string) {
-	o.Name = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetTitle returns the Title field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) GetTitle() string {
-	if o == nil || IsNil(o.Title) {
-		var ret string
-		return ret
-	}
-	return *o.Title
-}
-
-// GetTitleOk returns a tuple with the Title field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) GetTitleOk() (*string, bool) {
-	if o == nil || IsNil(o.Title) {
-		return nil, false
-	}
-	return o.Title, true
-}
-
-// SetTitle gets a reference to the given string and assigns it to the Title field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) SetTitle(v string) {
-	o.Title = &v
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) MarshalJSON() ([]byte, error) {

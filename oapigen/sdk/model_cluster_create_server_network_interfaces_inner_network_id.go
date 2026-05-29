@@ -27,20 +27,6 @@ type ClusterCreateServerNetworkInterfacesInnerNetworkId struct {
 	String *string
 }
 
-// int64AsClusterCreateServerNetworkInterfacesInnerNetworkId is a convenience function that returns int64 wrapped in ClusterCreateServerNetworkInterfacesInnerNetworkId
-func Int64AsClusterCreateServerNetworkInterfacesInnerNetworkId(v *int64) ClusterCreateServerNetworkInterfacesInnerNetworkId {
-	return ClusterCreateServerNetworkInterfacesInnerNetworkId{
-		Int64: v,
-	}
-}
-
-// stringAsClusterCreateServerNetworkInterfacesInnerNetworkId is a convenience function that returns string wrapped in ClusterCreateServerNetworkInterfacesInnerNetworkId
-func StringAsClusterCreateServerNetworkInterfacesInnerNetworkId(v *string) ClusterCreateServerNetworkInterfacesInnerNetworkId {
-	return ClusterCreateServerNetworkInterfacesInnerNetworkId{
-		String: v,
-	}
-}
-
 func (dst *ClusterCreateServerNetworkInterfacesInnerNetworkId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ClusterCreateServerNetworkInterfacesInnerNetworkId{}

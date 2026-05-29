@@ -26,44 +26,12 @@ type GetSpecTemplate200Response struct {
 
 type _GetSpecTemplate200Response GetSpecTemplate200Response
 
-// NewGetSpecTemplate200Response instantiates a new GetSpecTemplate200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetSpecTemplate200Response() *GetSpecTemplate200Response {
-	this := GetSpecTemplate200Response{}
-	return &this
-}
-
 // NewGetSpecTemplate200ResponseWithDefaults instantiates a new GetSpecTemplate200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetSpecTemplate200ResponseWithDefaults() *GetSpecTemplate200Response {
 	this := GetSpecTemplate200Response{}
 	return &this
-}
-
-// GetSpecTemplate returns the SpecTemplate field value if set, zero value otherwise.
-func (o *GetSpecTemplate200Response) GetSpecTemplate() GetSpecTemplate200ResponseSpecTemplate {
-	if o == nil || IsNil(o.SpecTemplate) {
-		var ret GetSpecTemplate200ResponseSpecTemplate
-		return ret
-	}
-	return *o.SpecTemplate
-}
-
-// GetSpecTemplateOk returns a tuple with the SpecTemplate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetSpecTemplate200Response) GetSpecTemplateOk() (*GetSpecTemplate200ResponseSpecTemplate, bool) {
-	if o == nil || IsNil(o.SpecTemplate) {
-		return nil, false
-	}
-	return o.SpecTemplate, true
-}
-
-// SetSpecTemplate gets a reference to the given GetSpecTemplate200ResponseSpecTemplate and assigns it to the SpecTemplate field.
-func (o *GetSpecTemplate200Response) SetSpecTemplate(v GetSpecTemplate200ResponseSpecTemplate) {
-	o.SpecTemplate = &v
 }
 
 func (o GetSpecTemplate200Response) MarshalJSON() ([]byte, error) {

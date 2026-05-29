@@ -29,71 +29,12 @@ type UpdateRoleTaskAccessRequestOneOf1 struct {
 
 type _UpdateRoleTaskAccessRequestOneOf1 UpdateRoleTaskAccessRequestOneOf1
 
-// NewUpdateRoleTaskAccessRequestOneOf1 instantiates a new UpdateRoleTaskAccessRequestOneOf1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateRoleTaskAccessRequestOneOf1(allTasks bool, access string) *UpdateRoleTaskAccessRequestOneOf1 {
-	this := UpdateRoleTaskAccessRequestOneOf1{}
-	this.AllTasks = allTasks
-	this.Access = access
-	return &this
-}
-
 // NewUpdateRoleTaskAccessRequestOneOf1WithDefaults instantiates a new UpdateRoleTaskAccessRequestOneOf1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateRoleTaskAccessRequestOneOf1WithDefaults() *UpdateRoleTaskAccessRequestOneOf1 {
 	this := UpdateRoleTaskAccessRequestOneOf1{}
 	return &this
-}
-
-// GetAllTasks returns the AllTasks field value
-func (o *UpdateRoleTaskAccessRequestOneOf1) GetAllTasks() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AllTasks
-}
-
-// GetAllTasksOk returns a tuple with the AllTasks field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleTaskAccessRequestOneOf1) GetAllTasksOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AllTasks, true
-}
-
-// SetAllTasks sets field value
-func (o *UpdateRoleTaskAccessRequestOneOf1) SetAllTasks(v bool) {
-	o.AllTasks = v
-}
-
-// GetAccess returns the Access field value
-func (o *UpdateRoleTaskAccessRequestOneOf1) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleTaskAccessRequestOneOf1) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *UpdateRoleTaskAccessRequestOneOf1) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o UpdateRoleTaskAccessRequestOneOf1) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type ServerServicePlansDatastores struct {
 
 type _ServerServicePlansDatastores ServerServicePlansDatastores
 
-// NewServerServicePlansDatastores instantiates a new ServerServicePlansDatastores object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewServerServicePlansDatastores() *ServerServicePlansDatastores {
-	this := ServerServicePlansDatastores{}
-	return &this
-}
-
 // NewServerServicePlansDatastoresWithDefaults instantiates a new ServerServicePlansDatastores object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewServerServicePlansDatastoresWithDefaults() *ServerServicePlansDatastores {
 	this := ServerServicePlansDatastores{}
 	return &this
-}
-
-// GetCluster returns the Cluster field value if set, zero value otherwise.
-func (o *ServerServicePlansDatastores) GetCluster() []map[string]interface{} {
-	if o == nil || IsNil(o.Cluster) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Cluster
-}
-
-// GetClusterOk returns a tuple with the Cluster field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServerServicePlansDatastores) GetClusterOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Cluster) {
-		return nil, false
-	}
-	return o.Cluster, true
-}
-
-// SetCluster gets a reference to the given []map[string]interface{} and assigns it to the Cluster field.
-func (o *ServerServicePlansDatastores) SetCluster(v []map[string]interface{}) {
-	o.Cluster = v
-}
-
-// GetStore returns the Store field value if set, zero value otherwise.
-func (o *ServerServicePlansDatastores) GetStore() []map[string]interface{} {
-	if o == nil || IsNil(o.Store) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Store
-}
-
-// GetStoreOk returns a tuple with the Store field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServerServicePlansDatastores) GetStoreOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Store) {
-		return nil, false
-	}
-	return o.Store, true
-}
-
-// SetStore gets a reference to the given []map[string]interface{} and assigns it to the Store field.
-func (o *ServerServicePlansDatastores) SetStore(v []map[string]interface{}) {
-	o.Store = v
 }
 
 func (o ServerServicePlansDatastores) MarshalJSON() ([]byte, error) {

@@ -26,46 +26,12 @@ type UpdateServicePlansRequest struct {
 
 type _UpdateServicePlansRequest UpdateServicePlansRequest
 
-// NewUpdateServicePlansRequest instantiates a new UpdateServicePlansRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateServicePlansRequest(servicePlan UpdateServicePlansRequestServicePlan) *UpdateServicePlansRequest {
-	this := UpdateServicePlansRequest{}
-	this.ServicePlan = servicePlan
-	return &this
-}
-
 // NewUpdateServicePlansRequestWithDefaults instantiates a new UpdateServicePlansRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateServicePlansRequestWithDefaults() *UpdateServicePlansRequest {
 	this := UpdateServicePlansRequest{}
 	return &this
-}
-
-// GetServicePlan returns the ServicePlan field value
-func (o *UpdateServicePlansRequest) GetServicePlan() UpdateServicePlansRequestServicePlan {
-	if o == nil {
-		var ret UpdateServicePlansRequestServicePlan
-		return ret
-	}
-
-	return o.ServicePlan
-}
-
-// GetServicePlanOk returns a tuple with the ServicePlan field value
-// and a boolean to check if the value has been set.
-func (o *UpdateServicePlansRequest) GetServicePlanOk() (*UpdateServicePlansRequestServicePlan, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ServicePlan, true
-}
-
-// SetServicePlan sets field value
-func (o *UpdateServicePlansRequest) SetServicePlan(v UpdateServicePlansRequestServicePlan) {
-	o.ServicePlan = v
 }
 
 func (o UpdateServicePlansRequest) MarshalJSON() ([]byte, error) {

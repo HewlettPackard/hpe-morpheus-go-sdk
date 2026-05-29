@@ -27,44 +27,12 @@ type UpdateMigrationRequestMigrationNetworksInnerSourceNetwork struct {
 
 type _UpdateMigrationRequestMigrationNetworksInnerSourceNetwork UpdateMigrationRequestMigrationNetworksInnerSourceNetwork
 
-// NewUpdateMigrationRequestMigrationNetworksInnerSourceNetwork instantiates a new UpdateMigrationRequestMigrationNetworksInnerSourceNetwork object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateMigrationRequestMigrationNetworksInnerSourceNetwork() *UpdateMigrationRequestMigrationNetworksInnerSourceNetwork {
-	this := UpdateMigrationRequestMigrationNetworksInnerSourceNetwork{}
-	return &this
-}
-
 // NewUpdateMigrationRequestMigrationNetworksInnerSourceNetworkWithDefaults instantiates a new UpdateMigrationRequestMigrationNetworksInnerSourceNetwork object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateMigrationRequestMigrationNetworksInnerSourceNetworkWithDefaults() *UpdateMigrationRequestMigrationNetworksInnerSourceNetwork {
 	this := UpdateMigrationRequestMigrationNetworksInnerSourceNetwork{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *UpdateMigrationRequestMigrationNetworksInnerSourceNetwork) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateMigrationRequestMigrationNetworksInnerSourceNetwork) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *UpdateMigrationRequestMigrationNetworksInnerSourceNetwork) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o UpdateMigrationRequestMigrationNetworksInnerSourceNetwork) MarshalJSON() ([]byte, error) {

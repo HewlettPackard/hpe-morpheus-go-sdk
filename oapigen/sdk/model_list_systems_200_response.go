@@ -26,44 +26,12 @@ type ListSystems200Response struct {
 
 type _ListSystems200Response ListSystems200Response
 
-// NewListSystems200Response instantiates a new ListSystems200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListSystems200Response() *ListSystems200Response {
-	this := ListSystems200Response{}
-	return &this
-}
-
 // NewListSystems200ResponseWithDefaults instantiates a new ListSystems200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListSystems200ResponseWithDefaults() *ListSystems200Response {
 	this := ListSystems200Response{}
 	return &this
-}
-
-// GetSystems returns the Systems field value if set, zero value otherwise.
-func (o *ListSystems200Response) GetSystems() []ListSystems200ResponseSystemsInner {
-	if o == nil || IsNil(o.Systems) {
-		var ret []ListSystems200ResponseSystemsInner
-		return ret
-	}
-	return o.Systems
-}
-
-// GetSystemsOk returns a tuple with the Systems field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListSystems200Response) GetSystemsOk() ([]ListSystems200ResponseSystemsInner, bool) {
-	if o == nil || IsNil(o.Systems) {
-		return nil, false
-	}
-	return o.Systems, true
-}
-
-// SetSystems gets a reference to the given []ListSystems200ResponseSystemsInner and assigns it to the Systems field.
-func (o *ListSystems200Response) SetSystems(v []ListSystems200ResponseSystemsInner) {
-	o.Systems = v
 }
 
 func (o ListSystems200Response) MarshalJSON() ([]byte, error) {

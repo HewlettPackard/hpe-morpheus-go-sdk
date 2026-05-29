@@ -26,44 +26,12 @@ type CreateNetworkPoolIp404Response struct {
 
 type _CreateNetworkPoolIp404Response CreateNetworkPoolIp404Response
 
-// NewCreateNetworkPoolIp404Response instantiates a new CreateNetworkPoolIp404Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkPoolIp404Response() *CreateNetworkPoolIp404Response {
-	this := CreateNetworkPoolIp404Response{}
-	return &this
-}
-
 // NewCreateNetworkPoolIp404ResponseWithDefaults instantiates a new CreateNetworkPoolIp404Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkPoolIp404ResponseWithDefaults() *CreateNetworkPoolIp404Response {
 	this := CreateNetworkPoolIp404Response{}
 	return &this
-}
-
-// GetMsg returns the Msg field value if set, zero value otherwise.
-func (o *CreateNetworkPoolIp404Response) GetMsg() string {
-	if o == nil || IsNil(o.Msg) {
-		var ret string
-		return ret
-	}
-	return *o.Msg
-}
-
-// GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkPoolIp404Response) GetMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.Msg) {
-		return nil, false
-	}
-	return o.Msg, true
-}
-
-// SetMsg gets a reference to the given string and assigns it to the Msg field.
-func (o *CreateNetworkPoolIp404Response) SetMsg(v string) {
-	o.Msg = &v
 }
 
 func (o CreateNetworkPoolIp404Response) MarshalJSON() ([]byte, error) {

@@ -29,113 +29,12 @@ type GuidanceStats struct {
 
 type _GuidanceStats GuidanceStats
 
-// NewGuidanceStats instantiates a new GuidanceStats object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGuidanceStats() *GuidanceStats {
-	this := GuidanceStats{}
-	return &this
-}
-
 // NewGuidanceStatsWithDefaults instantiates a new GuidanceStats object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGuidanceStatsWithDefaults() *GuidanceStats {
 	this := GuidanceStats{}
 	return &this
-}
-
-// GetTotal returns the Total field value if set, zero value otherwise.
-func (o *GuidanceStats) GetTotal() int64 {
-	if o == nil || IsNil(o.Total) {
-		var ret int64
-		return ret
-	}
-	return *o.Total
-}
-
-// GetTotalOk returns a tuple with the Total field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceStats) GetTotalOk() (*int64, bool) {
-	if o == nil || IsNil(o.Total) {
-		return nil, false
-	}
-	return o.Total, true
-}
-
-// SetTotal gets a reference to the given int64 and assigns it to the Total field.
-func (o *GuidanceStats) SetTotal(v int64) {
-	o.Total = &v
-}
-
-// GetSavings returns the Savings field value if set, zero value otherwise.
-func (o *GuidanceStats) GetSavings() GuidanceStatsSavings {
-	if o == nil || IsNil(o.Savings) {
-		var ret GuidanceStatsSavings
-		return ret
-	}
-	return *o.Savings
-}
-
-// GetSavingsOk returns a tuple with the Savings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceStats) GetSavingsOk() (*GuidanceStatsSavings, bool) {
-	if o == nil || IsNil(o.Savings) {
-		return nil, false
-	}
-	return o.Savings, true
-}
-
-// SetSavings gets a reference to the given GuidanceStatsSavings and assigns it to the Savings field.
-func (o *GuidanceStats) SetSavings(v GuidanceStatsSavings) {
-	o.Savings = &v
-}
-
-// GetSeverity returns the Severity field value if set, zero value otherwise.
-func (o *GuidanceStats) GetSeverity() GuidanceStatsSeverity {
-	if o == nil || IsNil(o.Severity) {
-		var ret GuidanceStatsSeverity
-		return ret
-	}
-	return *o.Severity
-}
-
-// GetSeverityOk returns a tuple with the Severity field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceStats) GetSeverityOk() (*GuidanceStatsSeverity, bool) {
-	if o == nil || IsNil(o.Severity) {
-		return nil, false
-	}
-	return o.Severity, true
-}
-
-// SetSeverity gets a reference to the given GuidanceStatsSeverity and assigns it to the Severity field.
-func (o *GuidanceStats) SetSeverity(v GuidanceStatsSeverity) {
-	o.Severity = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *GuidanceStats) GetType() GuidanceStatsType {
-	if o == nil || IsNil(o.Type) {
-		var ret GuidanceStatsType
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceStats) GetTypeOk() (*GuidanceStatsType, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given GuidanceStatsType and assigns it to the Type field.
-func (o *GuidanceStats) SetType(v GuidanceStatsType) {
-	o.Type = &v
 }
 
 func (o GuidanceStats) MarshalJSON() ([]byte, error) {

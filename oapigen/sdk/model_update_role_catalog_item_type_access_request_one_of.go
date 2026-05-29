@@ -29,71 +29,12 @@ type UpdateRoleCatalogItemTypeAccessRequestOneOf struct {
 
 type _UpdateRoleCatalogItemTypeAccessRequestOneOf UpdateRoleCatalogItemTypeAccessRequestOneOf
 
-// NewUpdateRoleCatalogItemTypeAccessRequestOneOf instantiates a new UpdateRoleCatalogItemTypeAccessRequestOneOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateRoleCatalogItemTypeAccessRequestOneOf(catalogItemTypeId int32, access string) *UpdateRoleCatalogItemTypeAccessRequestOneOf {
-	this := UpdateRoleCatalogItemTypeAccessRequestOneOf{}
-	this.CatalogItemTypeId = catalogItemTypeId
-	this.Access = access
-	return &this
-}
-
 // NewUpdateRoleCatalogItemTypeAccessRequestOneOfWithDefaults instantiates a new UpdateRoleCatalogItemTypeAccessRequestOneOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateRoleCatalogItemTypeAccessRequestOneOfWithDefaults() *UpdateRoleCatalogItemTypeAccessRequestOneOf {
 	this := UpdateRoleCatalogItemTypeAccessRequestOneOf{}
 	return &this
-}
-
-// GetCatalogItemTypeId returns the CatalogItemTypeId field value
-func (o *UpdateRoleCatalogItemTypeAccessRequestOneOf) GetCatalogItemTypeId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.CatalogItemTypeId
-}
-
-// GetCatalogItemTypeIdOk returns a tuple with the CatalogItemTypeId field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleCatalogItemTypeAccessRequestOneOf) GetCatalogItemTypeIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CatalogItemTypeId, true
-}
-
-// SetCatalogItemTypeId sets field value
-func (o *UpdateRoleCatalogItemTypeAccessRequestOneOf) SetCatalogItemTypeId(v int32) {
-	o.CatalogItemTypeId = v
-}
-
-// GetAccess returns the Access field value
-func (o *UpdateRoleCatalogItemTypeAccessRequestOneOf) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleCatalogItemTypeAccessRequestOneOf) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *UpdateRoleCatalogItemTypeAccessRequestOneOf) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o UpdateRoleCatalogItemTypeAccessRequestOneOf) MarshalJSON() ([]byte, error) {

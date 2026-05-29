@@ -26,44 +26,12 @@ type ListUsersAvailableRoles200Response struct {
 
 type _ListUsersAvailableRoles200Response ListUsersAvailableRoles200Response
 
-// NewListUsersAvailableRoles200Response instantiates a new ListUsersAvailableRoles200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListUsersAvailableRoles200Response() *ListUsersAvailableRoles200Response {
-	this := ListUsersAvailableRoles200Response{}
-	return &this
-}
-
 // NewListUsersAvailableRoles200ResponseWithDefaults instantiates a new ListUsersAvailableRoles200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListUsersAvailableRoles200ResponseWithDefaults() *ListUsersAvailableRoles200Response {
 	this := ListUsersAvailableRoles200Response{}
 	return &this
-}
-
-// GetRoles returns the Roles field value if set, zero value otherwise.
-func (o *ListUsersAvailableRoles200Response) GetRoles() []ListUsersAvailableRoles200ResponseRolesInner {
-	if o == nil || IsNil(o.Roles) {
-		var ret []ListUsersAvailableRoles200ResponseRolesInner
-		return ret
-	}
-	return o.Roles
-}
-
-// GetRolesOk returns a tuple with the Roles field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListUsersAvailableRoles200Response) GetRolesOk() ([]ListUsersAvailableRoles200ResponseRolesInner, bool) {
-	if o == nil || IsNil(o.Roles) {
-		return nil, false
-	}
-	return o.Roles, true
-}
-
-// SetRoles gets a reference to the given []ListUsersAvailableRoles200ResponseRolesInner and assigns it to the Roles field.
-func (o *ListUsersAvailableRoles200Response) SetRoles(v []ListUsersAvailableRoles200ResponseRolesInner) {
-	o.Roles = v
 }
 
 func (o ListUsersAvailableRoles200Response) MarshalJSON() ([]byte, error) {

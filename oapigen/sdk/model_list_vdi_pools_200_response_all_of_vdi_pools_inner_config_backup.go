@@ -29,113 +29,12 @@ type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup struct {
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup
 
-// NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup {
-	this := ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup{}
-	return &this
-}
-
 // NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackupWithDefaults instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackupWithDefaults() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup {
 	this := ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup{}
 	return &this
-}
-
-// GetCreateBackup returns the CreateBackup field value if set, zero value otherwise.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) GetCreateBackup() bool {
-	if o == nil || IsNil(o.CreateBackup) {
-		var ret bool
-		return ret
-	}
-	return *o.CreateBackup
-}
-
-// GetCreateBackupOk returns a tuple with the CreateBackup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) GetCreateBackupOk() (*bool, bool) {
-	if o == nil || IsNil(o.CreateBackup) {
-		return nil, false
-	}
-	return o.CreateBackup, true
-}
-
-// SetCreateBackup gets a reference to the given bool and assigns it to the CreateBackup field.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) SetCreateBackup(v bool) {
-	o.CreateBackup = &v
-}
-
-// GetJobAction returns the JobAction field value if set, zero value otherwise.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) GetJobAction() string {
-	if o == nil || IsNil(o.JobAction) {
-		var ret string
-		return ret
-	}
-	return *o.JobAction
-}
-
-// GetJobActionOk returns a tuple with the JobAction field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) GetJobActionOk() (*string, bool) {
-	if o == nil || IsNil(o.JobAction) {
-		return nil, false
-	}
-	return o.JobAction, true
-}
-
-// SetJobAction gets a reference to the given string and assigns it to the JobAction field.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) SetJobAction(v string) {
-	o.JobAction = &v
-}
-
-// GetJobRetentionCount returns the JobRetentionCount field value if set, zero value otherwise.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) GetJobRetentionCount() string {
-	if o == nil || IsNil(o.JobRetentionCount) {
-		var ret string
-		return ret
-	}
-	return *o.JobRetentionCount
-}
-
-// GetJobRetentionCountOk returns a tuple with the JobRetentionCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) GetJobRetentionCountOk() (*string, bool) {
-	if o == nil || IsNil(o.JobRetentionCount) {
-		return nil, false
-	}
-	return o.JobRetentionCount, true
-}
-
-// SetJobRetentionCount gets a reference to the given string and assigns it to the JobRetentionCount field.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) SetJobRetentionCount(v string) {
-	o.JobRetentionCount = &v
-}
-
-// GetProviderBackupType returns the ProviderBackupType field value if set, zero value otherwise.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) GetProviderBackupType() int64 {
-	if o == nil || IsNil(o.ProviderBackupType) {
-		var ret int64
-		return ret
-	}
-	return *o.ProviderBackupType
-}
-
-// GetProviderBackupTypeOk returns a tuple with the ProviderBackupType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) GetProviderBackupTypeOk() (*int64, bool) {
-	if o == nil || IsNil(o.ProviderBackupType) {
-		return nil, false
-	}
-	return o.ProviderBackupType, true
-}
-
-// SetProviderBackupType gets a reference to the given int64 and assigns it to the ProviderBackupType field.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) SetProviderBackupType(v int64) {
-	o.ProviderBackupType = &v
 }
 
 func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) MarshalJSON() ([]byte, error) {

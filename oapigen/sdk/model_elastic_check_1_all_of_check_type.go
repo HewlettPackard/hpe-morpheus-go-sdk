@@ -26,44 +26,12 @@ type ElasticCheck1AllOfCheckType struct {
 
 type _ElasticCheck1AllOfCheckType ElasticCheck1AllOfCheckType
 
-// NewElasticCheck1AllOfCheckType instantiates a new ElasticCheck1AllOfCheckType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewElasticCheck1AllOfCheckType() *ElasticCheck1AllOfCheckType {
-	this := ElasticCheck1AllOfCheckType{}
-	return &this
-}
-
 // NewElasticCheck1AllOfCheckTypeWithDefaults instantiates a new ElasticCheck1AllOfCheckType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewElasticCheck1AllOfCheckTypeWithDefaults() *ElasticCheck1AllOfCheckType {
 	this := ElasticCheck1AllOfCheckType{}
 	return &this
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *ElasticCheck1AllOfCheckType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ElasticCheck1AllOfCheckType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *ElasticCheck1AllOfCheckType) SetCode(v string) {
-	o.Code = &v
 }
 
 func (o ElasticCheck1AllOfCheckType) MarshalJSON() ([]byte, error) {

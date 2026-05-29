@@ -26,46 +26,12 @@ type UpdateStorageVolumesRequest struct {
 
 type _UpdateStorageVolumesRequest UpdateStorageVolumesRequest
 
-// NewUpdateStorageVolumesRequest instantiates a new UpdateStorageVolumesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateStorageVolumesRequest(storageVolume UpdateStorageVolumesRequestStorageVolume) *UpdateStorageVolumesRequest {
-	this := UpdateStorageVolumesRequest{}
-	this.StorageVolume = storageVolume
-	return &this
-}
-
 // NewUpdateStorageVolumesRequestWithDefaults instantiates a new UpdateStorageVolumesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateStorageVolumesRequestWithDefaults() *UpdateStorageVolumesRequest {
 	this := UpdateStorageVolumesRequest{}
 	return &this
-}
-
-// GetStorageVolume returns the StorageVolume field value
-func (o *UpdateStorageVolumesRequest) GetStorageVolume() UpdateStorageVolumesRequestStorageVolume {
-	if o == nil {
-		var ret UpdateStorageVolumesRequestStorageVolume
-		return ret
-	}
-
-	return o.StorageVolume
-}
-
-// GetStorageVolumeOk returns a tuple with the StorageVolume field value
-// and a boolean to check if the value has been set.
-func (o *UpdateStorageVolumesRequest) GetStorageVolumeOk() (*UpdateStorageVolumesRequestStorageVolume, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.StorageVolume, true
-}
-
-// SetStorageVolume sets field value
-func (o *UpdateStorageVolumesRequest) SetStorageVolume(v UpdateStorageVolumesRequestStorageVolume) {
-	o.StorageVolume = v
 }
 
 func (o UpdateStorageVolumesRequest) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type UpdateVDIApps200ResponseAnyOf struct {
 
 type _UpdateVDIApps200ResponseAnyOf UpdateVDIApps200ResponseAnyOf
 
-// NewUpdateVDIApps200ResponseAnyOf instantiates a new UpdateVDIApps200ResponseAnyOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateVDIApps200ResponseAnyOf() *UpdateVDIApps200ResponseAnyOf {
-	this := UpdateVDIApps200ResponseAnyOf{}
-	return &this
-}
-
 // NewUpdateVDIApps200ResponseAnyOfWithDefaults instantiates a new UpdateVDIApps200ResponseAnyOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateVDIApps200ResponseAnyOfWithDefaults() *UpdateVDIApps200ResponseAnyOf {
 	this := UpdateVDIApps200ResponseAnyOf{}
 	return &this
-}
-
-// GetVdiApp returns the VdiApp field value if set, zero value otherwise.
-func (o *UpdateVDIApps200ResponseAnyOf) GetVdiApp() UpdateVDIApps200ResponseAnyOfVdiApp {
-	if o == nil || IsNil(o.VdiApp) {
-		var ret UpdateVDIApps200ResponseAnyOfVdiApp
-		return ret
-	}
-	return *o.VdiApp
-}
-
-// GetVdiAppOk returns a tuple with the VdiApp field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIApps200ResponseAnyOf) GetVdiAppOk() (*UpdateVDIApps200ResponseAnyOfVdiApp, bool) {
-	if o == nil || IsNil(o.VdiApp) {
-		return nil, false
-	}
-	return o.VdiApp, true
-}
-
-// SetVdiApp gets a reference to the given UpdateVDIApps200ResponseAnyOfVdiApp and assigns it to the VdiApp field.
-func (o *UpdateVDIApps200ResponseAnyOf) SetVdiApp(v UpdateVDIApps200ResponseAnyOfVdiApp) {
-	o.VdiApp = &v
 }
 
 func (o UpdateVDIApps200ResponseAnyOf) MarshalJSON() ([]byte, error) {

@@ -29,114 +29,12 @@ type RunReports200ResponseAllOfReportResultConfig struct {
 
 type _RunReports200ResponseAllOfReportResultConfig RunReports200ResponseAllOfReportResultConfig
 
-// NewRunReports200ResponseAllOfReportResultConfig instantiates a new RunReports200ResponseAllOfReportResultConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRunReports200ResponseAllOfReportResultConfig() *RunReports200ResponseAllOfReportResultConfig {
-	this := RunReports200ResponseAllOfReportResultConfig{}
-	return &this
-}
-
 // NewRunReports200ResponseAllOfReportResultConfigWithDefaults instantiates a new RunReports200ResponseAllOfReportResultConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRunReports200ResponseAllOfReportResultConfigWithDefaults() *RunReports200ResponseAllOfReportResultConfig {
 	this := RunReports200ResponseAllOfReportResultConfig{}
 	return &this
-}
-
-// GetReportType returns the ReportType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RunReports200ResponseAllOfReportResultConfig) GetReportType() string {
-	if o == nil || IsNil(o.ReportType.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.ReportType.Get()
-}
-
-// GetReportTypeOk returns a tuple with the ReportType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RunReports200ResponseAllOfReportResultConfig) GetReportTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ReportType.Get(), o.ReportType.IsSet()
-}
-
-// SetReportType gets a reference to the given NullableString and assigns it to the ReportType field.
-func (o *RunReports200ResponseAllOfReportResultConfig) SetReportType(v string) {
-	o.ReportType.Set(&v)
-}
-
-// GetStartDate returns the StartDate field value if set, zero value otherwise.
-func (o *RunReports200ResponseAllOfReportResultConfig) GetStartDate() string {
-	if o == nil || IsNil(o.StartDate) {
-		var ret string
-		return ret
-	}
-	return *o.StartDate
-}
-
-// GetStartDateOk returns a tuple with the StartDate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RunReports200ResponseAllOfReportResultConfig) GetStartDateOk() (*string, bool) {
-	if o == nil || IsNil(o.StartDate) {
-		return nil, false
-	}
-	return o.StartDate, true
-}
-
-// SetStartDate gets a reference to the given string and assigns it to the StartDate field.
-func (o *RunReports200ResponseAllOfReportResultConfig) SetStartDate(v string) {
-	o.StartDate = &v
-}
-
-// GetEndDate returns the EndDate field value if set, zero value otherwise.
-func (o *RunReports200ResponseAllOfReportResultConfig) GetEndDate() string {
-	if o == nil || IsNil(o.EndDate) {
-		var ret string
-		return ret
-	}
-	return *o.EndDate
-}
-
-// GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RunReports200ResponseAllOfReportResultConfig) GetEndDateOk() (*string, bool) {
-	if o == nil || IsNil(o.EndDate) {
-		return nil, false
-	}
-	return o.EndDate, true
-}
-
-// SetEndDate gets a reference to the given string and assigns it to the EndDate field.
-func (o *RunReports200ResponseAllOfReportResultConfig) SetEndDate(v string) {
-	o.EndDate = &v
-}
-
-// GetCloudId returns the CloudId field value if set, zero value otherwise.
-func (o *RunReports200ResponseAllOfReportResultConfig) GetCloudId() string {
-	if o == nil || IsNil(o.CloudId) {
-		var ret string
-		return ret
-	}
-	return *o.CloudId
-}
-
-// GetCloudIdOk returns a tuple with the CloudId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RunReports200ResponseAllOfReportResultConfig) GetCloudIdOk() (*string, bool) {
-	if o == nil || IsNil(o.CloudId) {
-		return nil, false
-	}
-	return o.CloudId, true
-}
-
-// SetCloudId gets a reference to the given string and assigns it to the CloudId field.
-func (o *RunReports200ResponseAllOfReportResultConfig) SetCloudId(v string) {
-	o.CloudId = &v
 }
 
 func (o RunReports200ResponseAllOfReportResultConfig) MarshalJSON() ([]byte, error) {

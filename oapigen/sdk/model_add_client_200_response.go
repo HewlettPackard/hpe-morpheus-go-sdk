@@ -27,67 +27,12 @@ type AddClient200Response struct {
 
 type _AddClient200Response AddClient200Response
 
-// NewAddClient200Response instantiates a new AddClient200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClient200Response() *AddClient200Response {
-	this := AddClient200Response{}
-	return &this
-}
-
 // NewAddClient200ResponseWithDefaults instantiates a new AddClient200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddClient200ResponseWithDefaults() *AddClient200Response {
 	this := AddClient200Response{}
 	return &this
-}
-
-// GetClient returns the Client field value if set, zero value otherwise.
-func (o *AddClient200Response) GetClient() AddClient200ResponseAllOfClient {
-	if o == nil || IsNil(o.Client) {
-		var ret AddClient200ResponseAllOfClient
-		return ret
-	}
-	return *o.Client
-}
-
-// GetClientOk returns a tuple with the Client field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClient200Response) GetClientOk() (*AddClient200ResponseAllOfClient, bool) {
-	if o == nil || IsNil(o.Client) {
-		return nil, false
-	}
-	return o.Client, true
-}
-
-// SetClient gets a reference to the given AddClient200ResponseAllOfClient and assigns it to the Client field.
-func (o *AddClient200Response) SetClient(v AddClient200ResponseAllOfClient) {
-	o.Client = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddClient200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClient200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddClient200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddClient200Response) MarshalJSON() ([]byte, error) {

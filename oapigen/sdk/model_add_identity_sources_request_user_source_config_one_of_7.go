@@ -33,113 +33,12 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf7 struct {
 
 type _AddIdentitySourcesRequestUserSourceConfigOneOf7 AddIdentitySourcesRequestUserSourceConfigOneOf7
 
-// NewAddIdentitySourcesRequestUserSourceConfigOneOf7 instantiates a new AddIdentitySourcesRequestUserSourceConfigOneOf7 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIdentitySourcesRequestUserSourceConfigOneOf7() *AddIdentitySourcesRequestUserSourceConfigOneOf7 {
-	this := AddIdentitySourcesRequestUserSourceConfigOneOf7{}
-	return &this
-}
-
 // NewAddIdentitySourcesRequestUserSourceConfigOneOf7WithDefaults instantiates a new AddIdentitySourcesRequestUserSourceConfigOneOf7 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddIdentitySourcesRequestUserSourceConfigOneOf7WithDefaults() *AddIdentitySourcesRequestUserSourceConfigOneOf7 {
 	this := AddIdentitySourcesRequestUserSourceConfigOneOf7{}
 	return &this
-}
-
-// GetEndpoint returns the Endpoint field value if set, zero value otherwise.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) GetEndpoint() string {
-	if o == nil || IsNil(o.Endpoint) {
-		var ret string
-		return ret
-	}
-	return *o.Endpoint
-}
-
-// GetEndpointOk returns a tuple with the Endpoint field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) GetEndpointOk() (*string, bool) {
-	if o == nil || IsNil(o.Endpoint) {
-		return nil, false
-	}
-	return o.Endpoint, true
-}
-
-// SetEndpoint gets a reference to the given string and assigns it to the Endpoint field.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) SetEndpoint(v string) {
-	o.Endpoint = &v
-}
-
-// GetApiStyle returns the ApiStyle field value if set, zero value otherwise.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) GetApiStyle() string {
-	if o == nil || IsNil(o.ApiStyle) {
-		var ret string
-		return ret
-	}
-	return *o.ApiStyle
-}
-
-// GetApiStyleOk returns a tuple with the ApiStyle field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) GetApiStyleOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiStyle) {
-		return nil, false
-	}
-	return o.ApiStyle, true
-}
-
-// SetApiStyle gets a reference to the given string and assigns it to the ApiStyle field.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) SetApiStyle(v string) {
-	o.ApiStyle = &v
-}
-
-// GetEncryptionAlgo returns the EncryptionAlgo field value if set, zero value otherwise.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) GetEncryptionAlgo() string {
-	if o == nil || IsNil(o.EncryptionAlgo) {
-		var ret string
-		return ret
-	}
-	return *o.EncryptionAlgo
-}
-
-// GetEncryptionAlgoOk returns a tuple with the EncryptionAlgo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) GetEncryptionAlgoOk() (*string, bool) {
-	if o == nil || IsNil(o.EncryptionAlgo) {
-		return nil, false
-	}
-	return o.EncryptionAlgo, true
-}
-
-// SetEncryptionAlgo gets a reference to the given string and assigns it to the EncryptionAlgo field.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) SetEncryptionAlgo(v string) {
-	o.EncryptionAlgo = &v
-}
-
-// GetEncryptionKey returns the EncryptionKey field value if set, zero value otherwise.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) GetEncryptionKey() string {
-	if o == nil || IsNil(o.EncryptionKey) {
-		var ret string
-		return ret
-	}
-	return *o.EncryptionKey
-}
-
-// GetEncryptionKeyOk returns a tuple with the EncryptionKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) GetEncryptionKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.EncryptionKey) {
-		return nil, false
-	}
-	return o.EncryptionKey, true
-}
-
-// SetEncryptionKey gets a reference to the given string and assigns it to the EncryptionKey field.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) SetEncryptionKey(v string) {
-	o.EncryptionKey = &v
 }
 
 func (o AddIdentitySourcesRequestUserSourceConfigOneOf7) MarshalJSON() ([]byte, error) {

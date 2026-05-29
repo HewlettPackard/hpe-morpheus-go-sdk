@@ -27,67 +27,12 @@ type AddCluster200Response struct {
 
 type _AddCluster200Response AddCluster200Response
 
-// NewAddCluster200Response instantiates a new AddCluster200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCluster200Response() *AddCluster200Response {
-	this := AddCluster200Response{}
-	return &this
-}
-
 // NewAddCluster200ResponseWithDefaults instantiates a new AddCluster200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddCluster200ResponseWithDefaults() *AddCluster200Response {
 	this := AddCluster200Response{}
 	return &this
-}
-
-// GetCluster returns the Cluster field value if set, zero value otherwise.
-func (o *AddCluster200Response) GetCluster() AddCluster200ResponseAllOfCluster {
-	if o == nil || IsNil(o.Cluster) {
-		var ret AddCluster200ResponseAllOfCluster
-		return ret
-	}
-	return *o.Cluster
-}
-
-// GetClusterOk returns a tuple with the Cluster field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCluster200Response) GetClusterOk() (*AddCluster200ResponseAllOfCluster, bool) {
-	if o == nil || IsNil(o.Cluster) {
-		return nil, false
-	}
-	return o.Cluster, true
-}
-
-// SetCluster gets a reference to the given AddCluster200ResponseAllOfCluster and assigns it to the Cluster field.
-func (o *AddCluster200Response) SetCluster(v AddCluster200ResponseAllOfCluster) {
-	o.Cluster = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddCluster200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCluster200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddCluster200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddCluster200Response) MarshalJSON() ([]byte, error) {

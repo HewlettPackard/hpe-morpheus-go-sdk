@@ -26,44 +26,12 @@ type GetCloudDatastores200Response struct {
 
 type _GetCloudDatastores200Response GetCloudDatastores200Response
 
-// NewGetCloudDatastores200Response instantiates a new GetCloudDatastores200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCloudDatastores200Response() *GetCloudDatastores200Response {
-	this := GetCloudDatastores200Response{}
-	return &this
-}
-
 // NewGetCloudDatastores200ResponseWithDefaults instantiates a new GetCloudDatastores200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetCloudDatastores200ResponseWithDefaults() *GetCloudDatastores200Response {
 	this := GetCloudDatastores200Response{}
 	return &this
-}
-
-// GetDatastore returns the Datastore field value if set, zero value otherwise.
-func (o *GetCloudDatastores200Response) GetDatastore() GetCloudDatastores200ResponseAllOfDatastore {
-	if o == nil || IsNil(o.Datastore) {
-		var ret GetCloudDatastores200ResponseAllOfDatastore
-		return ret
-	}
-	return *o.Datastore
-}
-
-// GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCloudDatastores200Response) GetDatastoreOk() (*GetCloudDatastores200ResponseAllOfDatastore, bool) {
-	if o == nil || IsNil(o.Datastore) {
-		return nil, false
-	}
-	return o.Datastore, true
-}
-
-// SetDatastore gets a reference to the given GetCloudDatastores200ResponseAllOfDatastore and assigns it to the Datastore field.
-func (o *GetCloudDatastores200Response) SetDatastore(v GetCloudDatastores200ResponseAllOfDatastore) {
-	o.Datastore = &v
 }
 
 func (o GetCloudDatastores200Response) MarshalJSON() ([]byte, error) {

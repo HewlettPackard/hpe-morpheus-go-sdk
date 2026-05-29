@@ -27,20 +27,6 @@ type AddBaremetalHost200ResponseServerConfigResourcePoolId struct {
 	String *string
 }
 
-// int64AsAddBaremetalHost200ResponseServerConfigResourcePoolId is a convenience function that returns int64 wrapped in AddBaremetalHost200ResponseServerConfigResourcePoolId
-func Int64AsAddBaremetalHost200ResponseServerConfigResourcePoolId(v *int64) AddBaremetalHost200ResponseServerConfigResourcePoolId {
-	return AddBaremetalHost200ResponseServerConfigResourcePoolId{
-		Int64: v,
-	}
-}
-
-// stringAsAddBaremetalHost200ResponseServerConfigResourcePoolId is a convenience function that returns string wrapped in AddBaremetalHost200ResponseServerConfigResourcePoolId
-func StringAsAddBaremetalHost200ResponseServerConfigResourcePoolId(v *string) AddBaremetalHost200ResponseServerConfigResourcePoolId {
-	return AddBaremetalHost200ResponseServerConfigResourcePoolId{
-		String: v,
-	}
-}
-
 func (dst *AddBaremetalHost200ResponseServerConfigResourcePoolId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddBaremetalHost200ResponseServerConfigResourcePoolId{}

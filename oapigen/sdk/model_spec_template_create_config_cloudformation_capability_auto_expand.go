@@ -27,20 +27,6 @@ type SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND struct {
 	String *string
 }
 
-// boolAsSpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND is a convenience function that returns bool wrapped in SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND
-func BoolAsSpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND(v *bool) SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND {
-	return SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND{
-		Bool: v,
-	}
-}
-
-// stringAsSpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND is a convenience function that returns string wrapped in SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND
-func StringAsSpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND(v *string) SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND {
-	return SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND{
-		String: v,
-	}
-}
-
 func (dst *SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND{}

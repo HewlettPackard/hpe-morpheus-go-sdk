@@ -27,67 +27,12 @@ type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance struct {
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance
 
-// NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance {
-	this := ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance{}
-	return &this
-}
-
 // NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceWithDefaults instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceWithDefaults() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance {
 	this := ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance{}
 	return &this
-}
-
-// GetUserGroup returns the UserGroup field value if set, zero value otherwise.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroup() ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup {
-	if o == nil || IsNil(o.UserGroup) {
-		var ret ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup
-		return ret
-	}
-	return *o.UserGroup
-}
-
-// GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroupOk() (*ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup, bool) {
-	if o == nil || IsNil(o.UserGroup) {
-		return nil, false
-	}
-	return o.UserGroup, true
-}
-
-// SetUserGroup gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup and assigns it to the UserGroup field.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) SetUserGroup(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup) {
-	o.UserGroup = &v
-}
-
-// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetNetworkDomain() ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceNetworkDomain {
-	if o == nil || IsNil(o.NetworkDomain) {
-		var ret ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceNetworkDomain
-		return ret
-	}
-	return *o.NetworkDomain
-}
-
-// GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetNetworkDomainOk() (*ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceNetworkDomain, bool) {
-	if o == nil || IsNil(o.NetworkDomain) {
-		return nil, false
-	}
-	return o.NetworkDomain, true
-}
-
-// SetNetworkDomain gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceNetworkDomain and assigns it to the NetworkDomain field.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) SetNetworkDomain(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceNetworkDomain) {
-	o.NetworkDomain = &v
 }
 
 func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) MarshalJSON() ([]byte, error) {

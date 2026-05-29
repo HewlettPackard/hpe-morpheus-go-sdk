@@ -29,114 +29,12 @@ type AddUserTenant200ResponseAllOfUserAccessTaskSetsInner struct {
 
 type _AddUserTenant200ResponseAllOfUserAccessTaskSetsInner AddUserTenant200ResponseAllOfUserAccessTaskSetsInner
 
-// NewAddUserTenant200ResponseAllOfUserAccessTaskSetsInner instantiates a new AddUserTenant200ResponseAllOfUserAccessTaskSetsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddUserTenant200ResponseAllOfUserAccessTaskSetsInner() *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner {
-	this := AddUserTenant200ResponseAllOfUserAccessTaskSetsInner{}
-	return &this
-}
-
 // NewAddUserTenant200ResponseAllOfUserAccessTaskSetsInnerWithDefaults instantiates a new AddUserTenant200ResponseAllOfUserAccessTaskSetsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddUserTenant200ResponseAllOfUserAccessTaskSetsInnerWithDefaults() *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner {
 	this := AddUserTenant200ResponseAllOfUserAccessTaskSetsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) GetCode() string {
-	if o == nil || IsNil(o.Code.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Code.Get()
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) GetCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Code.Get(), o.Code.IsSet()
-}
-
-// SetCode gets a reference to the given NullableString and assigns it to the Code field.
-func (o *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) SetCode(v string) {
-	o.Code.Set(&v)
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetAccess returns the Access field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) GetAccess() string {
-	if o == nil || IsNil(o.Access) {
-		var ret string
-		return ret
-	}
-	return *o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) GetAccessOk() (*string, bool) {
-	if o == nil || IsNil(o.Access) {
-		return nil, false
-	}
-	return o.Access, true
-}
-
-// SetAccess gets a reference to the given string and assigns it to the Access field.
-func (o *AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) SetAccess(v string) {
-	o.Access = &v
 }
 
 func (o AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) MarshalJSON() ([]byte, error) {

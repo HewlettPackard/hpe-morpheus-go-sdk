@@ -27,68 +27,12 @@ type EjectContainerAction200Response struct {
 
 type _EjectContainerAction200Response EjectContainerAction200Response
 
-// NewEjectContainerAction200Response instantiates a new EjectContainerAction200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewEjectContainerAction200Response() *EjectContainerAction200Response {
-	this := EjectContainerAction200Response{}
-	return &this
-}
-
 // NewEjectContainerAction200ResponseWithDefaults instantiates a new EjectContainerAction200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewEjectContainerAction200ResponseWithDefaults() *EjectContainerAction200Response {
 	this := EjectContainerAction200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *EjectContainerAction200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EjectContainerAction200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *EjectContainerAction200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetMsg returns the Msg field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *EjectContainerAction200Response) GetMsg() string {
-	if o == nil || IsNil(o.Msg.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Msg.Get()
-}
-
-// GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EjectContainerAction200Response) GetMsgOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Msg.Get(), o.Msg.IsSet()
-}
-
-// SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
-func (o *EjectContainerAction200Response) SetMsg(v string) {
-	o.Msg.Set(&v)
 }
 
 func (o EjectContainerAction200Response) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type ListTaskTypes200Response struct {
 
 type _ListTaskTypes200Response ListTaskTypes200Response
 
-// NewListTaskTypes200Response instantiates a new ListTaskTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListTaskTypes200Response() *ListTaskTypes200Response {
-	this := ListTaskTypes200Response{}
-	return &this
-}
-
 // NewListTaskTypes200ResponseWithDefaults instantiates a new ListTaskTypes200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListTaskTypes200ResponseWithDefaults() *ListTaskTypes200Response {
 	this := ListTaskTypes200Response{}
 	return &this
-}
-
-// GetTaskTypes returns the TaskTypes field value if set, zero value otherwise.
-func (o *ListTaskTypes200Response) GetTaskTypes() []ListTaskTypes200ResponseTaskTypesInner {
-	if o == nil || IsNil(o.TaskTypes) {
-		var ret []ListTaskTypes200ResponseTaskTypesInner
-		return ret
-	}
-	return o.TaskTypes
-}
-
-// GetTaskTypesOk returns a tuple with the TaskTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListTaskTypes200Response) GetTaskTypesOk() ([]ListTaskTypes200ResponseTaskTypesInner, bool) {
-	if o == nil || IsNil(o.TaskTypes) {
-		return nil, false
-	}
-	return o.TaskTypes, true
-}
-
-// SetTaskTypes gets a reference to the given []ListTaskTypes200ResponseTaskTypesInner and assigns it to the TaskTypes field.
-func (o *ListTaskTypes200Response) SetTaskTypes(v []ListTaskTypes200ResponseTaskTypesInner) {
-	o.TaskTypes = v
 }
 
 func (o ListTaskTypes200Response) MarshalJSON() ([]byte, error) {

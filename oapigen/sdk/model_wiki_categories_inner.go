@@ -27,67 +27,12 @@ type WikiCategoriesInner struct {
 
 type _WikiCategoriesInner WikiCategoriesInner
 
-// NewWikiCategoriesInner instantiates a new WikiCategoriesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewWikiCategoriesInner() *WikiCategoriesInner {
-	this := WikiCategoriesInner{}
-	return &this
-}
-
 // NewWikiCategoriesInnerWithDefaults instantiates a new WikiCategoriesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewWikiCategoriesInnerWithDefaults() *WikiCategoriesInner {
 	this := WikiCategoriesInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *WikiCategoriesInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *WikiCategoriesInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *WikiCategoriesInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetPageCount returns the PageCount field value if set, zero value otherwise.
-func (o *WikiCategoriesInner) GetPageCount() int64 {
-	if o == nil || IsNil(o.PageCount) {
-		var ret int64
-		return ret
-	}
-	return *o.PageCount
-}
-
-// GetPageCountOk returns a tuple with the PageCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *WikiCategoriesInner) GetPageCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.PageCount) {
-		return nil, false
-	}
-	return o.PageCount, true
-}
-
-// SetPageCount gets a reference to the given int64 and assigns it to the PageCount field.
-func (o *WikiCategoriesInner) SetPageCount(v int64) {
-	o.PageCount = &v
 }
 
 func (o WikiCategoriesInner) MarshalJSON() ([]byte, error) {

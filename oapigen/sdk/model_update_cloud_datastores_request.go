@@ -26,46 +26,12 @@ type UpdateCloudDatastoresRequest struct {
 
 type _UpdateCloudDatastoresRequest UpdateCloudDatastoresRequest
 
-// NewUpdateCloudDatastoresRequest instantiates a new UpdateCloudDatastoresRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCloudDatastoresRequest(datastore UpdateCloudDatastoresRequestDatastore) *UpdateCloudDatastoresRequest {
-	this := UpdateCloudDatastoresRequest{}
-	this.Datastore = datastore
-	return &this
-}
-
 // NewUpdateCloudDatastoresRequestWithDefaults instantiates a new UpdateCloudDatastoresRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateCloudDatastoresRequestWithDefaults() *UpdateCloudDatastoresRequest {
 	this := UpdateCloudDatastoresRequest{}
 	return &this
-}
-
-// GetDatastore returns the Datastore field value
-func (o *UpdateCloudDatastoresRequest) GetDatastore() UpdateCloudDatastoresRequestDatastore {
-	if o == nil {
-		var ret UpdateCloudDatastoresRequestDatastore
-		return ret
-	}
-
-	return o.Datastore
-}
-
-// GetDatastoreOk returns a tuple with the Datastore field value
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudDatastoresRequest) GetDatastoreOk() (*UpdateCloudDatastoresRequestDatastore, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Datastore, true
-}
-
-// SetDatastore sets field value
-func (o *UpdateCloudDatastoresRequest) SetDatastore(v UpdateCloudDatastoresRequestDatastore) {
-	o.Datastore = v
 }
 
 func (o UpdateCloudDatastoresRequest) MarshalJSON() ([]byte, error) {

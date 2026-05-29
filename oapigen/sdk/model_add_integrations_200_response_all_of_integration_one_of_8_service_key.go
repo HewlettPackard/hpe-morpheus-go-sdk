@@ -27,67 +27,12 @@ type AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey struct {
 
 type _AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey
 
-// NewAddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey instantiates a new AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey() *AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey {
-	this := AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey{}
-	return &this
-}
-
 // NewAddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKeyWithDefaults instantiates a new AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKeyWithDefaults() *AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey {
 	this := AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey) SetName(v string) {
-	o.Name = &v
 }
 
 func (o AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey) MarshalJSON() ([]byte, error) {

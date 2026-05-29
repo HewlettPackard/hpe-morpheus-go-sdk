@@ -26,44 +26,12 @@ type GetOsType200Response struct {
 
 type _GetOsType200Response GetOsType200Response
 
-// NewGetOsType200Response instantiates a new GetOsType200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetOsType200Response() *GetOsType200Response {
-	this := GetOsType200Response{}
-	return &this
-}
-
 // NewGetOsType200ResponseWithDefaults instantiates a new GetOsType200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetOsType200ResponseWithDefaults() *GetOsType200Response {
 	this := GetOsType200Response{}
 	return &this
-}
-
-// GetOsType returns the OsType field value if set, zero value otherwise.
-func (o *GetOsType200Response) GetOsType() GetOsType200ResponseOsType {
-	if o == nil || IsNil(o.OsType) {
-		var ret GetOsType200ResponseOsType
-		return ret
-	}
-	return *o.OsType
-}
-
-// GetOsTypeOk returns a tuple with the OsType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetOsType200Response) GetOsTypeOk() (*GetOsType200ResponseOsType, bool) {
-	if o == nil || IsNil(o.OsType) {
-		return nil, false
-	}
-	return o.OsType, true
-}
-
-// SetOsType gets a reference to the given GetOsType200ResponseOsType and assigns it to the OsType field.
-func (o *GetOsType200Response) SetOsType(v GetOsType200ResponseOsType) {
-	o.OsType = &v
 }
 
 func (o GetOsType200Response) MarshalJSON() ([]byte, error) {

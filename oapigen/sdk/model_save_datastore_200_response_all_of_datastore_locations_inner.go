@@ -31,113 +31,12 @@ type SaveDatastore200ResponseAllOfDatastoreLocationsInner struct {
 
 type _SaveDatastore200ResponseAllOfDatastoreLocationsInner SaveDatastore200ResponseAllOfDatastoreLocationsInner
 
-// NewSaveDatastore200ResponseAllOfDatastoreLocationsInner instantiates a new SaveDatastore200ResponseAllOfDatastoreLocationsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSaveDatastore200ResponseAllOfDatastoreLocationsInner() *SaveDatastore200ResponseAllOfDatastoreLocationsInner {
-	this := SaveDatastore200ResponseAllOfDatastoreLocationsInner{}
-	return &this
-}
-
 // NewSaveDatastore200ResponseAllOfDatastoreLocationsInnerWithDefaults instantiates a new SaveDatastore200ResponseAllOfDatastoreLocationsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSaveDatastore200ResponseAllOfDatastoreLocationsInnerWithDefaults() *SaveDatastore200ResponseAllOfDatastoreLocationsInner {
 	this := SaveDatastore200ResponseAllOfDatastoreLocationsInner{}
 	return &this
-}
-
-// GetRefType returns the RefType field value if set, zero value otherwise.
-func (o *SaveDatastore200ResponseAllOfDatastoreLocationsInner) GetRefType() string {
-	if o == nil || IsNil(o.RefType) {
-		var ret string
-		return ret
-	}
-	return *o.RefType
-}
-
-// GetRefTypeOk returns a tuple with the RefType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveDatastore200ResponseAllOfDatastoreLocationsInner) GetRefTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.RefType) {
-		return nil, false
-	}
-	return o.RefType, true
-}
-
-// SetRefType gets a reference to the given string and assigns it to the RefType field.
-func (o *SaveDatastore200ResponseAllOfDatastoreLocationsInner) SetRefType(v string) {
-	o.RefType = &v
-}
-
-// GetRefId returns the RefId field value if set, zero value otherwise.
-func (o *SaveDatastore200ResponseAllOfDatastoreLocationsInner) GetRefId() int64 {
-	if o == nil || IsNil(o.RefId) {
-		var ret int64
-		return ret
-	}
-	return *o.RefId
-}
-
-// GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveDatastore200ResponseAllOfDatastoreLocationsInner) GetRefIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.RefId) {
-		return nil, false
-	}
-	return o.RefId, true
-}
-
-// SetRefId gets a reference to the given int64 and assigns it to the RefId field.
-func (o *SaveDatastore200ResponseAllOfDatastoreLocationsInner) SetRefId(v int64) {
-	o.RefId = &v
-}
-
-// GetStatus returns the Status field value if set, zero value otherwise.
-func (o *SaveDatastore200ResponseAllOfDatastoreLocationsInner) GetStatus() string {
-	if o == nil || IsNil(o.Status) {
-		var ret string
-		return ret
-	}
-	return *o.Status
-}
-
-// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveDatastore200ResponseAllOfDatastoreLocationsInner) GetStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.Status) {
-		return nil, false
-	}
-	return o.Status, true
-}
-
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *SaveDatastore200ResponseAllOfDatastoreLocationsInner) SetStatus(v string) {
-	o.Status = &v
-}
-
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
-func (o *SaveDatastore200ResponseAllOfDatastoreLocationsInner) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
-		var ret string
-		return ret
-	}
-	return *o.StatusMessage
-}
-
-// GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveDatastore200ResponseAllOfDatastoreLocationsInner) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
-		return nil, false
-	}
-	return o.StatusMessage, true
-}
-
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
-func (o *SaveDatastore200ResponseAllOfDatastoreLocationsInner) SetStatusMessage(v string) {
-	o.StatusMessage = &v
 }
 
 func (o SaveDatastore200ResponseAllOfDatastoreLocationsInner) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type ListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions struct {
 
 type _ListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions ListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions
 
-// NewListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions instantiates a new ListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions() *ListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions {
-	this := ListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions{}
-	return &this
-}
-
 // NewListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptionsWithDefaults instantiates a new ListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptionsWithDefaults() *ListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions {
 	this := ListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions{}
 	return &this
-}
-
-// GetCheckTime returns the CheckTime field value if set, zero value otherwise.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions) GetCheckTime() int64 {
-	if o == nil || IsNil(o.CheckTime) {
-		var ret int64
-		return ret
-	}
-	return *o.CheckTime
-}
-
-// GetCheckTimeOk returns a tuple with the CheckTime field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions) GetCheckTimeOk() (*int64, bool) {
-	if o == nil || IsNil(o.CheckTime) {
-		return nil, false
-	}
-	return o.CheckTime, true
-}
-
-// SetCheckTime gets a reference to the given int64 and assigns it to the CheckTime field.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions) SetCheckTime(v int64) {
-	o.CheckTime = &v
 }
 
 func (o ListJobs200ResponseAllOfJobsInnerAnyOf1CustomOptions) MarshalJSON() ([]byte, error) {

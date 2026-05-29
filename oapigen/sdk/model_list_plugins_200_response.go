@@ -27,67 +27,12 @@ type ListPlugins200Response struct {
 
 type _ListPlugins200Response ListPlugins200Response
 
-// NewListPlugins200Response instantiates a new ListPlugins200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListPlugins200Response() *ListPlugins200Response {
-	this := ListPlugins200Response{}
-	return &this
-}
-
 // NewListPlugins200ResponseWithDefaults instantiates a new ListPlugins200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListPlugins200ResponseWithDefaults() *ListPlugins200Response {
 	this := ListPlugins200Response{}
 	return &this
-}
-
-// GetPlugins returns the Plugins field value if set, zero value otherwise.
-func (o *ListPlugins200Response) GetPlugins() []ListPlugins200ResponseAllOfPluginsInner {
-	if o == nil || IsNil(o.Plugins) {
-		var ret []ListPlugins200ResponseAllOfPluginsInner
-		return ret
-	}
-	return o.Plugins
-}
-
-// GetPluginsOk returns a tuple with the Plugins field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPlugins200Response) GetPluginsOk() ([]ListPlugins200ResponseAllOfPluginsInner, bool) {
-	if o == nil || IsNil(o.Plugins) {
-		return nil, false
-	}
-	return o.Plugins, true
-}
-
-// SetPlugins gets a reference to the given []ListPlugins200ResponseAllOfPluginsInner and assigns it to the Plugins field.
-func (o *ListPlugins200Response) SetPlugins(v []ListPlugins200ResponseAllOfPluginsInner) {
-	o.Plugins = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListPlugins200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPlugins200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListPlugins200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListPlugins200Response) MarshalJSON() ([]byte, error) {

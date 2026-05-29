@@ -27,67 +27,12 @@ type GetCloudResourcePools200ResponseAllOfResourcePoolParent struct {
 
 type _GetCloudResourcePools200ResponseAllOfResourcePoolParent GetCloudResourcePools200ResponseAllOfResourcePoolParent
 
-// NewGetCloudResourcePools200ResponseAllOfResourcePoolParent instantiates a new GetCloudResourcePools200ResponseAllOfResourcePoolParent object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCloudResourcePools200ResponseAllOfResourcePoolParent() *GetCloudResourcePools200ResponseAllOfResourcePoolParent {
-	this := GetCloudResourcePools200ResponseAllOfResourcePoolParent{}
-	return &this
-}
-
 // NewGetCloudResourcePools200ResponseAllOfResourcePoolParentWithDefaults instantiates a new GetCloudResourcePools200ResponseAllOfResourcePoolParent object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetCloudResourcePools200ResponseAllOfResourcePoolParentWithDefaults() *GetCloudResourcePools200ResponseAllOfResourcePoolParent {
 	this := GetCloudResourcePools200ResponseAllOfResourcePoolParent{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePoolParent) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePoolParent) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePoolParent) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePoolParent) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePoolParent) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePoolParent) SetName(v string) {
-	o.Name = &v
 }
 
 func (o GetCloudResourcePools200ResponseAllOfResourcePoolParent) MarshalJSON() ([]byte, error) {

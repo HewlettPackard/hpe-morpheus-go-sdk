@@ -26,44 +26,12 @@ type ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy struct {
 
 type _ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy
 
-// NewListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy instantiates a new ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy() *ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy {
-	this := ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy{}
-	return &this
-}
-
 // NewListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedByWithDefaults instantiates a new ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedByWithDefaults() *ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy {
 	this := ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy{}
 	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy) SetUsername(v string) {
-	o.Username = &v
 }
 
 func (o ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy) MarshalJSON() ([]byte, error) {

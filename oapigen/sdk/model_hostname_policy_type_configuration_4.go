@@ -27,67 +27,12 @@ type HostnamePolicyTypeConfiguration4 struct {
 
 type _HostnamePolicyTypeConfiguration4 HostnamePolicyTypeConfiguration4
 
-// NewHostnamePolicyTypeConfiguration4 instantiates a new HostnamePolicyTypeConfiguration4 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewHostnamePolicyTypeConfiguration4() *HostnamePolicyTypeConfiguration4 {
-	this := HostnamePolicyTypeConfiguration4{}
-	return &this
-}
-
 // NewHostnamePolicyTypeConfiguration4WithDefaults instantiates a new HostnamePolicyTypeConfiguration4 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewHostnamePolicyTypeConfiguration4WithDefaults() *HostnamePolicyTypeConfiguration4 {
 	this := HostnamePolicyTypeConfiguration4{}
 	return &this
-}
-
-// GetHostNamingType returns the HostNamingType field value if set, zero value otherwise.
-func (o *HostnamePolicyTypeConfiguration4) GetHostNamingType() string {
-	if o == nil || IsNil(o.HostNamingType) {
-		var ret string
-		return ret
-	}
-	return *o.HostNamingType
-}
-
-// GetHostNamingTypeOk returns a tuple with the HostNamingType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HostnamePolicyTypeConfiguration4) GetHostNamingTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.HostNamingType) {
-		return nil, false
-	}
-	return o.HostNamingType, true
-}
-
-// SetHostNamingType gets a reference to the given string and assigns it to the HostNamingType field.
-func (o *HostnamePolicyTypeConfiguration4) SetHostNamingType(v string) {
-	o.HostNamingType = &v
-}
-
-// GetHostNamingPattern returns the HostNamingPattern field value if set, zero value otherwise.
-func (o *HostnamePolicyTypeConfiguration4) GetHostNamingPattern() string {
-	if o == nil || IsNil(o.HostNamingPattern) {
-		var ret string
-		return ret
-	}
-	return *o.HostNamingPattern
-}
-
-// GetHostNamingPatternOk returns a tuple with the HostNamingPattern field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HostnamePolicyTypeConfiguration4) GetHostNamingPatternOk() (*string, bool) {
-	if o == nil || IsNil(o.HostNamingPattern) {
-		return nil, false
-	}
-	return o.HostNamingPattern, true
-}
-
-// SetHostNamingPattern gets a reference to the given string and assigns it to the HostNamingPattern field.
-func (o *HostnamePolicyTypeConfiguration4) SetHostNamingPattern(v string) {
-	o.HostNamingPattern = &v
 }
 
 func (o HostnamePolicyTypeConfiguration4) MarshalJSON() ([]byte, error) {

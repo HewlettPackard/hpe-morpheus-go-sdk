@@ -27,20 +27,6 @@ type UpdateRoleBlueprintAccessRequest struct {
 	UpdateRoleBlueprintAccessRequestOneOf1 *UpdateRoleBlueprintAccessRequestOneOf1
 }
 
-// UpdateRoleBlueprintAccessRequestOneOfAsUpdateRoleBlueprintAccessRequest is a convenience function that returns UpdateRoleBlueprintAccessRequestOneOf wrapped in UpdateRoleBlueprintAccessRequest
-func UpdateRoleBlueprintAccessRequestOneOfAsUpdateRoleBlueprintAccessRequest(v *UpdateRoleBlueprintAccessRequestOneOf) UpdateRoleBlueprintAccessRequest {
-	return UpdateRoleBlueprintAccessRequest{
-		UpdateRoleBlueprintAccessRequestOneOf: v,
-	}
-}
-
-// UpdateRoleBlueprintAccessRequestOneOf1AsUpdateRoleBlueprintAccessRequest is a convenience function that returns UpdateRoleBlueprintAccessRequestOneOf1 wrapped in UpdateRoleBlueprintAccessRequest
-func UpdateRoleBlueprintAccessRequestOneOf1AsUpdateRoleBlueprintAccessRequest(v *UpdateRoleBlueprintAccessRequestOneOf1) UpdateRoleBlueprintAccessRequest {
-	return UpdateRoleBlueprintAccessRequest{
-		UpdateRoleBlueprintAccessRequestOneOf1: v,
-	}
-}
-
 func (dst *UpdateRoleBlueprintAccessRequest) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateRoleBlueprintAccessRequest{}

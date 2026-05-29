@@ -26,46 +26,12 @@ type AddCredentialsRequest struct {
 
 type _AddCredentialsRequest AddCredentialsRequest
 
-// NewAddCredentialsRequest instantiates a new AddCredentialsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCredentialsRequest(credential AddCredentialsRequestCredential) *AddCredentialsRequest {
-	this := AddCredentialsRequest{}
-	this.Credential = credential
-	return &this
-}
-
 // NewAddCredentialsRequestWithDefaults instantiates a new AddCredentialsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddCredentialsRequestWithDefaults() *AddCredentialsRequest {
 	this := AddCredentialsRequest{}
 	return &this
-}
-
-// GetCredential returns the Credential field value
-func (o *AddCredentialsRequest) GetCredential() AddCredentialsRequestCredential {
-	if o == nil {
-		var ret AddCredentialsRequestCredential
-		return ret
-	}
-
-	return o.Credential
-}
-
-// GetCredentialOk returns a tuple with the Credential field value
-// and a boolean to check if the value has been set.
-func (o *AddCredentialsRequest) GetCredentialOk() (*AddCredentialsRequestCredential, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Credential, true
-}
-
-// SetCredential sets field value
-func (o *AddCredentialsRequest) SetCredential(v AddCredentialsRequestCredential) {
-	o.Credential = v
 }
 
 func (o AddCredentialsRequest) MarshalJSON() ([]byte, error) {

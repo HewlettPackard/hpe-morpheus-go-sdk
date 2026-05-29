@@ -26,44 +26,12 @@ type AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup struct {
 
 type _AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup
 
-// NewAddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup instantiates a new AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup() *AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup {
-	this := AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup{}
-	return &this
-}
-
 // NewAddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroupWithDefaults instantiates a new AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroupWithDefaults() *AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup {
 	this := AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup{}
 	return &this
-}
-
-// GetProviderMethod returns the ProviderMethod field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup) GetProviderMethod() string {
-	if o == nil || IsNil(o.ProviderMethod) {
-		var ret string
-		return ret
-	}
-	return *o.ProviderMethod
-}
-
-// GetProviderMethodOk returns a tuple with the ProviderMethod field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup) GetProviderMethodOk() (*string, bool) {
-	if o == nil || IsNil(o.ProviderMethod) {
-		return nil, false
-	}
-	return o.ProviderMethod, true
-}
-
-// SetProviderMethod gets a reference to the given string and assigns it to the ProviderMethod field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup) SetProviderMethod(v string) {
-	o.ProviderMethod = &v
 }
 
 func (o AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup) MarshalJSON() ([]byte, error) {

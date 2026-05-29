@@ -27,67 +27,12 @@ type ListClusterWorkers200Response struct {
 
 type _ListClusterWorkers200Response ListClusterWorkers200Response
 
-// NewListClusterWorkers200Response instantiates a new ListClusterWorkers200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListClusterWorkers200Response() *ListClusterWorkers200Response {
-	this := ListClusterWorkers200Response{}
-	return &this
-}
-
 // NewListClusterWorkers200ResponseWithDefaults instantiates a new ListClusterWorkers200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListClusterWorkers200ResponseWithDefaults() *ListClusterWorkers200Response {
 	this := ListClusterWorkers200Response{}
 	return &this
-}
-
-// GetWorkers returns the Workers field value if set, zero value otherwise.
-func (o *ListClusterWorkers200Response) GetWorkers() []ListClusterWorkers200ResponseAllOfWorkersInner {
-	if o == nil || IsNil(o.Workers) {
-		var ret []ListClusterWorkers200ResponseAllOfWorkersInner
-		return ret
-	}
-	return o.Workers
-}
-
-// GetWorkersOk returns a tuple with the Workers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterWorkers200Response) GetWorkersOk() ([]ListClusterWorkers200ResponseAllOfWorkersInner, bool) {
-	if o == nil || IsNil(o.Workers) {
-		return nil, false
-	}
-	return o.Workers, true
-}
-
-// SetWorkers gets a reference to the given []ListClusterWorkers200ResponseAllOfWorkersInner and assigns it to the Workers field.
-func (o *ListClusterWorkers200Response) SetWorkers(v []ListClusterWorkers200ResponseAllOfWorkersInner) {
-	o.Workers = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListClusterWorkers200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterWorkers200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListClusterWorkers200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListClusterWorkers200Response) MarshalJSON() ([]byte, error) {

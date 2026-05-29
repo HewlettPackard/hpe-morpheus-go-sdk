@@ -27,67 +27,12 @@ type ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Acc
 
 type _ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account
 
-// NewListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account instantiates a new ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account() *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account {
-	this := ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account{}
-	return &this
-}
-
 // NewListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5AccountWithDefaults instantiates a new ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5AccountWithDefaults() *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account {
 	this := ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account) SetName(v string) {
-	o.Name = &v
 }
 
 func (o ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Account) MarshalJSON() ([]byte, error) {

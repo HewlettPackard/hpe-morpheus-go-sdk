@@ -27,68 +27,12 @@ type InstanceUpdateInstanceRemoveTagsInner struct {
 
 type _InstanceUpdateInstanceRemoveTagsInner InstanceUpdateInstanceRemoveTagsInner
 
-// NewInstanceUpdateInstanceRemoveTagsInner instantiates a new InstanceUpdateInstanceRemoveTagsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceUpdateInstanceRemoveTagsInner() *InstanceUpdateInstanceRemoveTagsInner {
-	this := InstanceUpdateInstanceRemoveTagsInner{}
-	return &this
-}
-
 // NewInstanceUpdateInstanceRemoveTagsInnerWithDefaults instantiates a new InstanceUpdateInstanceRemoveTagsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceUpdateInstanceRemoveTagsInnerWithDefaults() *InstanceUpdateInstanceRemoveTagsInner {
 	this := InstanceUpdateInstanceRemoveTagsInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *InstanceUpdateInstanceRemoveTagsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceUpdateInstanceRemoveTagsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *InstanceUpdateInstanceRemoveTagsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InstanceUpdateInstanceRemoveTagsInner) GetValue() string {
-	if o == nil || IsNil(o.Value.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Value.Get()
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InstanceUpdateInstanceRemoveTagsInner) GetValueOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Value.Get(), o.Value.IsSet()
-}
-
-// SetValue gets a reference to the given NullableString and assigns it to the Value field.
-func (o *InstanceUpdateInstanceRemoveTagsInner) SetValue(v string) {
-	o.Value.Set(&v)
 }
 
 func (o InstanceUpdateInstanceRemoveTagsInner) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type GetGroups200ResponseGroupZonesInner struct {
 
 type _GetGroups200ResponseGroupZonesInner GetGroups200ResponseGroupZonesInner
 
-// NewGetGroups200ResponseGroupZonesInner instantiates a new GetGroups200ResponseGroupZonesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetGroups200ResponseGroupZonesInner() *GetGroups200ResponseGroupZonesInner {
-	this := GetGroups200ResponseGroupZonesInner{}
-	return &this
-}
-
 // NewGetGroups200ResponseGroupZonesInnerWithDefaults instantiates a new GetGroups200ResponseGroupZonesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetGroups200ResponseGroupZonesInnerWithDefaults() *GetGroups200ResponseGroupZonesInner {
 	this := GetGroups200ResponseGroupZonesInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetGroups200ResponseGroupZonesInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGroups200ResponseGroupZonesInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetGroups200ResponseGroupZonesInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetGroups200ResponseGroupZonesInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGroups200ResponseGroupZonesInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetGroups200ResponseGroupZonesInner) SetName(v string) {
-	o.Name = &v
 }
 
 func (o GetGroups200ResponseGroupZonesInner) MarshalJSON() ([]byte, error) {

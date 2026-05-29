@@ -26,44 +26,12 @@ type GetClusterHistoryEventDetail200Response struct {
 
 type _GetClusterHistoryEventDetail200Response GetClusterHistoryEventDetail200Response
 
-// NewGetClusterHistoryEventDetail200Response instantiates a new GetClusterHistoryEventDetail200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetClusterHistoryEventDetail200Response() *GetClusterHistoryEventDetail200Response {
-	this := GetClusterHistoryEventDetail200Response{}
-	return &this
-}
-
 // NewGetClusterHistoryEventDetail200ResponseWithDefaults instantiates a new GetClusterHistoryEventDetail200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetClusterHistoryEventDetail200ResponseWithDefaults() *GetClusterHistoryEventDetail200Response {
 	this := GetClusterHistoryEventDetail200Response{}
 	return &this
-}
-
-// GetProcessEvent returns the ProcessEvent field value if set, zero value otherwise.
-func (o *GetClusterHistoryEventDetail200Response) GetProcessEvent() GetClusterHistoryEventDetail200ResponseProcessEvent {
-	if o == nil || IsNil(o.ProcessEvent) {
-		var ret GetClusterHistoryEventDetail200ResponseProcessEvent
-		return ret
-	}
-	return *o.ProcessEvent
-}
-
-// GetProcessEventOk returns a tuple with the ProcessEvent field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClusterHistoryEventDetail200Response) GetProcessEventOk() (*GetClusterHistoryEventDetail200ResponseProcessEvent, bool) {
-	if o == nil || IsNil(o.ProcessEvent) {
-		return nil, false
-	}
-	return o.ProcessEvent, true
-}
-
-// SetProcessEvent gets a reference to the given GetClusterHistoryEventDetail200ResponseProcessEvent and assigns it to the ProcessEvent field.
-func (o *GetClusterHistoryEventDetail200Response) SetProcessEvent(v GetClusterHistoryEventDetail200ResponseProcessEvent) {
-	o.ProcessEvent = &v
 }
 
 func (o GetClusterHistoryEventDetail200Response) MarshalJSON() ([]byte, error) {

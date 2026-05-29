@@ -28,17 +28,6 @@ type InstanceWorkflow struct {
 
 type _InstanceWorkflow InstanceWorkflow
 
-// NewInstanceWorkflow instantiates a new InstanceWorkflow object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceWorkflow() *InstanceWorkflow {
-	this := InstanceWorkflow{}
-	var taskPhase string = "provision"
-	this.TaskPhase = &taskPhase
-	return &this
-}
-
 // NewInstanceWorkflowWithDefaults instantiates a new InstanceWorkflow object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -47,52 +36,6 @@ func NewInstanceWorkflowWithDefaults() *InstanceWorkflow {
 	var taskPhase string = "provision"
 	this.TaskPhase = &taskPhase
 	return &this
-}
-
-// GetTaskSet returns the TaskSet field value if set, zero value otherwise.
-func (o *InstanceWorkflow) GetTaskSet() InstanceWorkflowTaskSet {
-	if o == nil || IsNil(o.TaskSet) {
-		var ret InstanceWorkflowTaskSet
-		return ret
-	}
-	return *o.TaskSet
-}
-
-// GetTaskSetOk returns a tuple with the TaskSet field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceWorkflow) GetTaskSetOk() (*InstanceWorkflowTaskSet, bool) {
-	if o == nil || IsNil(o.TaskSet) {
-		return nil, false
-	}
-	return o.TaskSet, true
-}
-
-// SetTaskSet gets a reference to the given InstanceWorkflowTaskSet and assigns it to the TaskSet field.
-func (o *InstanceWorkflow) SetTaskSet(v InstanceWorkflowTaskSet) {
-	o.TaskSet = &v
-}
-
-// GetTaskPhase returns the TaskPhase field value if set, zero value otherwise.
-func (o *InstanceWorkflow) GetTaskPhase() string {
-	if o == nil || IsNil(o.TaskPhase) {
-		var ret string
-		return ret
-	}
-	return *o.TaskPhase
-}
-
-// GetTaskPhaseOk returns a tuple with the TaskPhase field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceWorkflow) GetTaskPhaseOk() (*string, bool) {
-	if o == nil || IsNil(o.TaskPhase) {
-		return nil, false
-	}
-	return o.TaskPhase, true
-}
-
-// SetTaskPhase gets a reference to the given string and assigns it to the TaskPhase field.
-func (o *InstanceWorkflow) SetTaskPhase(v string) {
-	o.TaskPhase = &v
 }
 
 func (o InstanceWorkflow) MarshalJSON() ([]byte, error) {

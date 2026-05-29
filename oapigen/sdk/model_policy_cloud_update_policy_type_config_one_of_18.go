@@ -27,67 +27,12 @@ type PolicyCloudUpdatePolicyTypeConfigOneOf18 struct {
 
 type _PolicyCloudUpdatePolicyTypeConfigOneOf18 PolicyCloudUpdatePolicyTypeConfigOneOf18
 
-// NewPolicyCloudUpdatePolicyTypeConfigOneOf18 instantiates a new PolicyCloudUpdatePolicyTypeConfigOneOf18 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPolicyCloudUpdatePolicyTypeConfigOneOf18() *PolicyCloudUpdatePolicyTypeConfigOneOf18 {
-	this := PolicyCloudUpdatePolicyTypeConfigOneOf18{}
-	return &this
-}
-
 // NewPolicyCloudUpdatePolicyTypeConfigOneOf18WithDefaults instantiates a new PolicyCloudUpdatePolicyTypeConfigOneOf18 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPolicyCloudUpdatePolicyTypeConfigOneOf18WithDefaults() *PolicyCloudUpdatePolicyTypeConfigOneOf18 {
 	this := PolicyCloudUpdatePolicyTypeConfigOneOf18{}
 	return &this
-}
-
-// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf18) GetMaxStorage() string {
-	if o == nil || IsNil(o.MaxStorage) {
-		var ret string
-		return ret
-	}
-	return *o.MaxStorage
-}
-
-// GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf18) GetMaxStorageOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxStorage) {
-		return nil, false
-	}
-	return o.MaxStorage, true
-}
-
-// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf18) SetMaxStorage(v string) {
-	o.MaxStorage = &v
-}
-
-// GetExcludeContainers returns the ExcludeContainers field value if set, zero value otherwise.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf18) GetExcludeContainers() bool {
-	if o == nil || IsNil(o.ExcludeContainers) {
-		var ret bool
-		return ret
-	}
-	return *o.ExcludeContainers
-}
-
-// GetExcludeContainersOk returns a tuple with the ExcludeContainers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf18) GetExcludeContainersOk() (*bool, bool) {
-	if o == nil || IsNil(o.ExcludeContainers) {
-		return nil, false
-	}
-	return o.ExcludeContainers, true
-}
-
-// SetExcludeContainers gets a reference to the given bool and assigns it to the ExcludeContainers field.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf18) SetExcludeContainers(v bool) {
-	o.ExcludeContainers = &v
 }
 
 func (o PolicyCloudUpdatePolicyTypeConfigOneOf18) MarshalJSON() ([]byte, error) {

@@ -29,67 +29,12 @@ type UpdatePreseedScriptRequestPreseedScript struct {
 
 type _UpdatePreseedScriptRequestPreseedScript UpdatePreseedScriptRequestPreseedScript
 
-// NewUpdatePreseedScriptRequestPreseedScript instantiates a new UpdatePreseedScriptRequestPreseedScript object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePreseedScriptRequestPreseedScript() *UpdatePreseedScriptRequestPreseedScript {
-	this := UpdatePreseedScriptRequestPreseedScript{}
-	return &this
-}
-
 // NewUpdatePreseedScriptRequestPreseedScriptWithDefaults instantiates a new UpdatePreseedScriptRequestPreseedScript object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdatePreseedScriptRequestPreseedScriptWithDefaults() *UpdatePreseedScriptRequestPreseedScript {
 	this := UpdatePreseedScriptRequestPreseedScript{}
 	return &this
-}
-
-// GetFileName returns the FileName field value if set, zero value otherwise.
-func (o *UpdatePreseedScriptRequestPreseedScript) GetFileName() string {
-	if o == nil || IsNil(o.FileName) {
-		var ret string
-		return ret
-	}
-	return *o.FileName
-}
-
-// GetFileNameOk returns a tuple with the FileName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePreseedScriptRequestPreseedScript) GetFileNameOk() (*string, bool) {
-	if o == nil || IsNil(o.FileName) {
-		return nil, false
-	}
-	return o.FileName, true
-}
-
-// SetFileName gets a reference to the given string and assigns it to the FileName field.
-func (o *UpdatePreseedScriptRequestPreseedScript) SetFileName(v string) {
-	o.FileName = &v
-}
-
-// GetContent returns the Content field value if set, zero value otherwise.
-func (o *UpdatePreseedScriptRequestPreseedScript) GetContent() string {
-	if o == nil || IsNil(o.Content) {
-		var ret string
-		return ret
-	}
-	return *o.Content
-}
-
-// GetContentOk returns a tuple with the Content field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePreseedScriptRequestPreseedScript) GetContentOk() (*string, bool) {
-	if o == nil || IsNil(o.Content) {
-		return nil, false
-	}
-	return o.Content, true
-}
-
-// SetContent gets a reference to the given string and assigns it to the Content field.
-func (o *UpdatePreseedScriptRequestPreseedScript) SetContent(v string) {
-	o.Content = &v
 }
 
 func (o UpdatePreseedScriptRequestPreseedScript) MarshalJSON() ([]byte, error) {

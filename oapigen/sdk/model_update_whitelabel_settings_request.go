@@ -26,44 +26,12 @@ type UpdateWhitelabelSettingsRequest struct {
 
 type _UpdateWhitelabelSettingsRequest UpdateWhitelabelSettingsRequest
 
-// NewUpdateWhitelabelSettingsRequest instantiates a new UpdateWhitelabelSettingsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateWhitelabelSettingsRequest() *UpdateWhitelabelSettingsRequest {
-	this := UpdateWhitelabelSettingsRequest{}
-	return &this
-}
-
 // NewUpdateWhitelabelSettingsRequestWithDefaults instantiates a new UpdateWhitelabelSettingsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateWhitelabelSettingsRequestWithDefaults() *UpdateWhitelabelSettingsRequest {
 	this := UpdateWhitelabelSettingsRequest{}
 	return &this
-}
-
-// GetWhitelabelSettings returns the WhitelabelSettings field value if set, zero value otherwise.
-func (o *UpdateWhitelabelSettingsRequest) GetWhitelabelSettings() UpdateWhitelabelSettingsRequestWhitelabelSettings {
-	if o == nil || IsNil(o.WhitelabelSettings) {
-		var ret UpdateWhitelabelSettingsRequestWhitelabelSettings
-		return ret
-	}
-	return *o.WhitelabelSettings
-}
-
-// GetWhitelabelSettingsOk returns a tuple with the WhitelabelSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateWhitelabelSettingsRequest) GetWhitelabelSettingsOk() (*UpdateWhitelabelSettingsRequestWhitelabelSettings, bool) {
-	if o == nil || IsNil(o.WhitelabelSettings) {
-		return nil, false
-	}
-	return o.WhitelabelSettings, true
-}
-
-// SetWhitelabelSettings gets a reference to the given UpdateWhitelabelSettingsRequestWhitelabelSettings and assigns it to the WhitelabelSettings field.
-func (o *UpdateWhitelabelSettingsRequest) SetWhitelabelSettings(v UpdateWhitelabelSettingsRequestWhitelabelSettings) {
-	o.WhitelabelSettings = &v
 }
 
 func (o UpdateWhitelabelSettingsRequest) MarshalJSON() ([]byte, error) {

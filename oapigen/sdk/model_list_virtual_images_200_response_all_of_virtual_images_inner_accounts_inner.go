@@ -27,67 +27,12 @@ type ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner struct {
 
 type _ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner
 
-// NewListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner instantiates a new ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner() *ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner {
-	this := ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner{}
-	return &this
-}
-
 // NewListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInnerWithDefaults instantiates a new ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInnerWithDefaults() *ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner {
 	this := ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner) SetName(v string) {
-	o.Name = &v
 }
 
 func (o ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner) MarshalJSON() ([]byte, error) {

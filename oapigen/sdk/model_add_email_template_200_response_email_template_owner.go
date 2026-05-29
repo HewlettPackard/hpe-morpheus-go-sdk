@@ -27,69 +27,12 @@ type AddEmailTemplate200ResponseEmailTemplateOwner struct {
 
 type _AddEmailTemplate200ResponseEmailTemplateOwner AddEmailTemplate200ResponseEmailTemplateOwner
 
-// NewAddEmailTemplate200ResponseEmailTemplateOwner instantiates a new AddEmailTemplate200ResponseEmailTemplateOwner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddEmailTemplate200ResponseEmailTemplateOwner() *AddEmailTemplate200ResponseEmailTemplateOwner {
-	this := AddEmailTemplate200ResponseEmailTemplateOwner{}
-	return &this
-}
-
 // NewAddEmailTemplate200ResponseEmailTemplateOwnerWithDefaults instantiates a new AddEmailTemplate200ResponseEmailTemplateOwner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddEmailTemplate200ResponseEmailTemplateOwnerWithDefaults() *AddEmailTemplate200ResponseEmailTemplateOwner {
 	this := AddEmailTemplate200ResponseEmailTemplateOwner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddEmailTemplate200ResponseEmailTemplateOwner) GetId() int64 {
-	if o == nil || IsNil(o.Id.Get()) {
-		var ret int64
-		return ret
-	}
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddEmailTemplate200ResponseEmailTemplateOwner) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
-func (o *AddEmailTemplate200ResponseEmailTemplateOwner) SetId(v int64) {
-	o.Id.Set(&v)
-}
-
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddEmailTemplate200ResponseEmailTemplateOwner) GetName() string {
-	if o == nil || IsNil(o.Name.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Name.Get()
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddEmailTemplate200ResponseEmailTemplateOwner) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Name.Get(), o.Name.IsSet()
-}
-
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
-func (o *AddEmailTemplate200ResponseEmailTemplateOwner) SetName(v string) {
-	o.Name.Set(&v)
 }
 
 func (o AddEmailTemplate200ResponseEmailTemplateOwner) MarshalJSON() ([]byte, error) {

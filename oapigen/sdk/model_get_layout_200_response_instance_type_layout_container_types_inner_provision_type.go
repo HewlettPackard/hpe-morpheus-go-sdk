@@ -28,90 +28,12 @@ type GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType stru
 
 type _GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType
 
-// NewGetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType instantiates a new GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType() *GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType {
-	this := GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType{}
-	return &this
-}
-
 // NewGetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionTypeWithDefaults instantiates a new GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionTypeWithDefaults() *GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType {
 	this := GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType) SetId(v int32) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType) SetName(v string) {
-	o.Name = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType) SetCode(v string) {
-	o.Code = &v
 }
 
 func (o GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerProvisionType) MarshalJSON() ([]byte, error) {

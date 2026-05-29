@@ -33,113 +33,12 @@ type CreateNetworkPoolIpRequestNetworkPoolIp struct {
 
 type _CreateNetworkPoolIpRequestNetworkPoolIp CreateNetworkPoolIpRequestNetworkPoolIp
 
-// NewCreateNetworkPoolIpRequestNetworkPoolIp instantiates a new CreateNetworkPoolIpRequestNetworkPoolIp object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkPoolIpRequestNetworkPoolIp() *CreateNetworkPoolIpRequestNetworkPoolIp {
-	this := CreateNetworkPoolIpRequestNetworkPoolIp{}
-	return &this
-}
-
 // NewCreateNetworkPoolIpRequestNetworkPoolIpWithDefaults instantiates a new CreateNetworkPoolIpRequestNetworkPoolIp object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkPoolIpRequestNetworkPoolIpWithDefaults() *CreateNetworkPoolIpRequestNetworkPoolIp {
 	this := CreateNetworkPoolIpRequestNetworkPoolIp{}
 	return &this
-}
-
-// GetIpAddress returns the IpAddress field value if set, zero value otherwise.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) GetIpAddress() string {
-	if o == nil || IsNil(o.IpAddress) {
-		var ret string
-		return ret
-	}
-	return *o.IpAddress
-}
-
-// GetIpAddressOk returns a tuple with the IpAddress field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) GetIpAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.IpAddress) {
-		return nil, false
-	}
-	return o.IpAddress, true
-}
-
-// SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) SetIpAddress(v string) {
-	o.IpAddress = &v
-}
-
-// GetHostname returns the Hostname field value if set, zero value otherwise.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) GetHostname() string {
-	if o == nil || IsNil(o.Hostname) {
-		var ret string
-		return ret
-	}
-	return *o.Hostname
-}
-
-// GetHostnameOk returns a tuple with the Hostname field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) GetHostnameOk() (*string, bool) {
-	if o == nil || IsNil(o.Hostname) {
-		return nil, false
-	}
-	return o.Hostname, true
-}
-
-// SetHostname gets a reference to the given string and assigns it to the Hostname field.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) SetHostname(v string) {
-	o.Hostname = &v
-}
-
-// GetRefType returns the RefType field value if set, zero value otherwise.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) GetRefType() string {
-	if o == nil || IsNil(o.RefType) {
-		var ret string
-		return ret
-	}
-	return *o.RefType
-}
-
-// GetRefTypeOk returns a tuple with the RefType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) GetRefTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.RefType) {
-		return nil, false
-	}
-	return o.RefType, true
-}
-
-// SetRefType gets a reference to the given string and assigns it to the RefType field.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) SetRefType(v string) {
-	o.RefType = &v
-}
-
-// GetRefId returns the RefId field value if set, zero value otherwise.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) GetRefId() int64 {
-	if o == nil || IsNil(o.RefId) {
-		var ret int64
-		return ret
-	}
-	return *o.RefId
-}
-
-// GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) GetRefIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.RefId) {
-		return nil, false
-	}
-	return o.RefId, true
-}
-
-// SetRefId gets a reference to the given int64 and assigns it to the RefId field.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) SetRefId(v int64) {
-	o.RefId = &v
 }
 
 func (o CreateNetworkPoolIpRequestNetworkPoolIp) MarshalJSON() ([]byte, error) {

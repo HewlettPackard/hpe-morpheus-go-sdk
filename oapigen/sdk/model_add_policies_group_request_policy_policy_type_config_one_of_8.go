@@ -26,44 +26,12 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8 struct {
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8
 
-// NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8 {
-	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8{}
-	return &this
-}
-
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8WithDefaults instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8WithDefaults() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8 {
 	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8{}
 	return &this
-}
-
-// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8) GetMaxStorage() string {
-	if o == nil || IsNil(o.MaxStorage) {
-		var ret string
-		return ret
-	}
-	return *o.MaxStorage
-}
-
-// GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8) GetMaxStorageOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxStorage) {
-		return nil, false
-	}
-	return o.MaxStorage, true
-}
-
-// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8) SetMaxStorage(v string) {
-	o.MaxStorage = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8) MarshalJSON() ([]byte, error) {

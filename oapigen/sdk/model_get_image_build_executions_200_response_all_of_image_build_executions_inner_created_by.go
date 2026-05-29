@@ -26,44 +26,12 @@ type GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy s
 
 type _GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy
 
-// NewGetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy instantiates a new GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy() *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy {
-	this := GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy{}
-	return &this
-}
-
 // NewGetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedByWithDefaults instantiates a new GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedByWithDefaults() *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy {
 	this := GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy{}
 	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy) SetUsername(v string) {
-	o.Username = &v
 }
 
 func (o GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerCreatedBy) MarshalJSON() ([]byte, error) {

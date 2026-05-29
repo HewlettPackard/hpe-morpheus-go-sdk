@@ -27,44 +27,12 @@ type GetNetwork200ResponseNetworkNetworkProxy struct {
 
 type _GetNetwork200ResponseNetworkNetworkProxy GetNetwork200ResponseNetworkNetworkProxy
 
-// NewGetNetwork200ResponseNetworkNetworkProxy instantiates a new GetNetwork200ResponseNetworkNetworkProxy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetwork200ResponseNetworkNetworkProxy() *GetNetwork200ResponseNetworkNetworkProxy {
-	this := GetNetwork200ResponseNetworkNetworkProxy{}
-	return &this
-}
-
 // NewGetNetwork200ResponseNetworkNetworkProxyWithDefaults instantiates a new GetNetwork200ResponseNetworkNetworkProxy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetwork200ResponseNetworkNetworkProxyWithDefaults() *GetNetwork200ResponseNetworkNetworkProxy {
 	this := GetNetwork200ResponseNetworkNetworkProxy{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetNetwork200ResponseNetworkNetworkProxy) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetwork200ResponseNetworkNetworkProxy) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetNetwork200ResponseNetworkNetworkProxy) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o GetNetwork200ResponseNetworkNetworkProxy) MarshalJSON() ([]byte, error) {

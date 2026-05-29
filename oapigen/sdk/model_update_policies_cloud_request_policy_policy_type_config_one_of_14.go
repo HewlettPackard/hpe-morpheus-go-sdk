@@ -26,44 +26,12 @@ type UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14 struct {
 
 type _UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14 UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14
 
-// NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14 instantiates a new UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14() *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14 {
-	this := UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14{}
-	return &this
-}
-
 // NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14WithDefaults instantiates a new UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14WithDefaults() *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14 {
 	this := UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14{}
 	return &this
-}
-
-// GetMaxPools returns the MaxPools field value if set, zero value otherwise.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14) GetMaxPools() string {
-	if o == nil || IsNil(o.MaxPools) {
-		var ret string
-		return ret
-	}
-	return *o.MaxPools
-}
-
-// GetMaxPoolsOk returns a tuple with the MaxPools field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14) GetMaxPoolsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxPools) {
-		return nil, false
-	}
-	return o.MaxPools, true
-}
-
-// SetMaxPools gets a reference to the given string and assigns it to the MaxPools field.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14) SetMaxPools(v string) {
-	o.MaxPools = &v
 }
 
 func (o UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf14) MarshalJSON() ([]byte, error) {

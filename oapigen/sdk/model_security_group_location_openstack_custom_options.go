@@ -27,44 +27,12 @@ type SecurityGroupLocationOpenstackCustomOptions struct {
 
 type _SecurityGroupLocationOpenstackCustomOptions SecurityGroupLocationOpenstackCustomOptions
 
-// NewSecurityGroupLocationOpenstackCustomOptions instantiates a new SecurityGroupLocationOpenstackCustomOptions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSecurityGroupLocationOpenstackCustomOptions() *SecurityGroupLocationOpenstackCustomOptions {
-	this := SecurityGroupLocationOpenstackCustomOptions{}
-	return &this
-}
-
 // NewSecurityGroupLocationOpenstackCustomOptionsWithDefaults instantiates a new SecurityGroupLocationOpenstackCustomOptions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSecurityGroupLocationOpenstackCustomOptionsWithDefaults() *SecurityGroupLocationOpenstackCustomOptions {
 	this := SecurityGroupLocationOpenstackCustomOptions{}
 	return &this
-}
-
-// GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
-func (o *SecurityGroupLocationOpenstackCustomOptions) GetResourcePoolId() int64 {
-	if o == nil || IsNil(o.ResourcePoolId) {
-		var ret int64
-		return ret
-	}
-	return *o.ResourcePoolId
-}
-
-// GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SecurityGroupLocationOpenstackCustomOptions) GetResourcePoolIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.ResourcePoolId) {
-		return nil, false
-	}
-	return o.ResourcePoolId, true
-}
-
-// SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
-func (o *SecurityGroupLocationOpenstackCustomOptions) SetResourcePoolId(v int64) {
-	o.ResourcePoolId = &v
 }
 
 func (o SecurityGroupLocationOpenstackCustomOptions) MarshalJSON() ([]byte, error) {

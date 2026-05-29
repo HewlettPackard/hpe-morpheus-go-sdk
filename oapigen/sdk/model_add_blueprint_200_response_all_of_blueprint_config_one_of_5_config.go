@@ -27,44 +27,12 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config struct {
 
 type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config
 
-// NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config {
-	this := AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config{}
-	return &this
-}
-
 // NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf5ConfigWithDefaults instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf5ConfigWithDefaults() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config {
 	this := AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config{}
 	return &this
-}
-
-// GetSpecs returns the Specs field value if set, zero value otherwise.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config) GetSpecs() []AddBlueprint200ResponseAllOfBlueprintConfigOneOf5ConfigSpecsInner {
-	if o == nil || IsNil(o.Specs) {
-		var ret []AddBlueprint200ResponseAllOfBlueprintConfigOneOf5ConfigSpecsInner
-		return ret
-	}
-	return o.Specs
-}
-
-// GetSpecsOk returns a tuple with the Specs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config) GetSpecsOk() ([]AddBlueprint200ResponseAllOfBlueprintConfigOneOf5ConfigSpecsInner, bool) {
-	if o == nil || IsNil(o.Specs) {
-		return nil, false
-	}
-	return o.Specs, true
-}
-
-// SetSpecs gets a reference to the given []AddBlueprint200ResponseAllOfBlueprintConfigOneOf5ConfigSpecsInner and assigns it to the Specs field.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config) SetSpecs(v []AddBlueprint200ResponseAllOfBlueprintConfigOneOf5ConfigSpecsInner) {
-	o.Specs = v
 }
 
 func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Config) MarshalJSON() ([]byte, error) {

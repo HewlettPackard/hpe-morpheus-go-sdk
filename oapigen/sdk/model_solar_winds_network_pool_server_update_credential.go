@@ -27,67 +27,12 @@ type SolarWindsNetworkPoolServerUpdateCredential struct {
 
 type _SolarWindsNetworkPoolServerUpdateCredential SolarWindsNetworkPoolServerUpdateCredential
 
-// NewSolarWindsNetworkPoolServerUpdateCredential instantiates a new SolarWindsNetworkPoolServerUpdateCredential object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSolarWindsNetworkPoolServerUpdateCredential() *SolarWindsNetworkPoolServerUpdateCredential {
-	this := SolarWindsNetworkPoolServerUpdateCredential{}
-	return &this
-}
-
 // NewSolarWindsNetworkPoolServerUpdateCredentialWithDefaults instantiates a new SolarWindsNetworkPoolServerUpdateCredential object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSolarWindsNetworkPoolServerUpdateCredentialWithDefaults() *SolarWindsNetworkPoolServerUpdateCredential {
 	this := SolarWindsNetworkPoolServerUpdateCredential{}
 	return &this
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *SolarWindsNetworkPoolServerUpdateCredential) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SolarWindsNetworkPoolServerUpdateCredential) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *SolarWindsNetworkPoolServerUpdateCredential) SetType(v string) {
-	o.Type = &v
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SolarWindsNetworkPoolServerUpdateCredential) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SolarWindsNetworkPoolServerUpdateCredential) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *SolarWindsNetworkPoolServerUpdateCredential) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o SolarWindsNetworkPoolServerUpdateCredential) MarshalJSON() ([]byte, error) {

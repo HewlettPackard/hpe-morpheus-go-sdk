@@ -29,71 +29,12 @@ type RolePermissionDefaultTaskSet struct {
 
 type _RolePermissionDefaultTaskSet RolePermissionDefaultTaskSet
 
-// NewRolePermissionDefaultTaskSet instantiates a new RolePermissionDefaultTaskSet object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRolePermissionDefaultTaskSet(permissionCode string, access string) *RolePermissionDefaultTaskSet {
-	this := RolePermissionDefaultTaskSet{}
-	this.PermissionCode = permissionCode
-	this.Access = access
-	return &this
-}
-
 // NewRolePermissionDefaultTaskSetWithDefaults instantiates a new RolePermissionDefaultTaskSet object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRolePermissionDefaultTaskSetWithDefaults() *RolePermissionDefaultTaskSet {
 	this := RolePermissionDefaultTaskSet{}
 	return &this
-}
-
-// GetPermissionCode returns the PermissionCode field value
-func (o *RolePermissionDefaultTaskSet) GetPermissionCode() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PermissionCode
-}
-
-// GetPermissionCodeOk returns a tuple with the PermissionCode field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionDefaultTaskSet) GetPermissionCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PermissionCode, true
-}
-
-// SetPermissionCode sets field value
-func (o *RolePermissionDefaultTaskSet) SetPermissionCode(v string) {
-	o.PermissionCode = v
-}
-
-// GetAccess returns the Access field value
-func (o *RolePermissionDefaultTaskSet) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionDefaultTaskSet) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *RolePermissionDefaultTaskSet) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o RolePermissionDefaultTaskSet) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type AddIntegrationSnowObjects200Response struct {
 
 type _AddIntegrationSnowObjects200Response AddIntegrationSnowObjects200Response
 
-// NewAddIntegrationSnowObjects200Response instantiates a new AddIntegrationSnowObjects200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIntegrationSnowObjects200Response() *AddIntegrationSnowObjects200Response {
-	this := AddIntegrationSnowObjects200Response{}
-	return &this
-}
-
 // NewAddIntegrationSnowObjects200ResponseWithDefaults instantiates a new AddIntegrationSnowObjects200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddIntegrationSnowObjects200ResponseWithDefaults() *AddIntegrationSnowObjects200Response {
 	this := AddIntegrationSnowObjects200Response{}
 	return &this
-}
-
-// GetObject returns the Object field value if set, zero value otherwise.
-func (o *AddIntegrationSnowObjects200Response) GetObject() AddIntegrationSnowObjects200ResponseAllOfObject {
-	if o == nil || IsNil(o.Object) {
-		var ret AddIntegrationSnowObjects200ResponseAllOfObject
-		return ret
-	}
-	return *o.Object
-}
-
-// GetObjectOk returns a tuple with the Object field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIntegrationSnowObjects200Response) GetObjectOk() (*AddIntegrationSnowObjects200ResponseAllOfObject, bool) {
-	if o == nil || IsNil(o.Object) {
-		return nil, false
-	}
-	return o.Object, true
-}
-
-// SetObject gets a reference to the given AddIntegrationSnowObjects200ResponseAllOfObject and assigns it to the Object field.
-func (o *AddIntegrationSnowObjects200Response) SetObject(v AddIntegrationSnowObjects200ResponseAllOfObject) {
-	o.Object = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddIntegrationSnowObjects200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIntegrationSnowObjects200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddIntegrationSnowObjects200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddIntegrationSnowObjects200Response) MarshalJSON() ([]byte, error) {

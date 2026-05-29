@@ -28,92 +28,12 @@ type ServicePlanRowConfig struct {
 
 type _ServicePlanRowConfig ServicePlanRowConfig
 
-// NewServicePlanRowConfig instantiates a new ServicePlanRowConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewServicePlanRowConfig() *ServicePlanRowConfig {
-	this := ServicePlanRowConfig{}
-	return &this
-}
-
 // NewServicePlanRowConfigWithDefaults instantiates a new ServicePlanRowConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewServicePlanRowConfigWithDefaults() *ServicePlanRowConfig {
 	this := ServicePlanRowConfig{}
 	return &this
-}
-
-// GetStorageSizeType returns the StorageSizeType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ServicePlanRowConfig) GetStorageSizeType() string {
-	if o == nil || IsNil(o.StorageSizeType.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.StorageSizeType.Get()
-}
-
-// GetStorageSizeTypeOk returns a tuple with the StorageSizeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ServicePlanRowConfig) GetStorageSizeTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.StorageSizeType.Get(), o.StorageSizeType.IsSet()
-}
-
-// SetStorageSizeType gets a reference to the given NullableString and assigns it to the StorageSizeType field.
-func (o *ServicePlanRowConfig) SetStorageSizeType(v string) {
-	o.StorageSizeType.Set(&v)
-}
-
-// GetMemorySizeType returns the MemorySizeType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ServicePlanRowConfig) GetMemorySizeType() string {
-	if o == nil || IsNil(o.MemorySizeType.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.MemorySizeType.Get()
-}
-
-// GetMemorySizeTypeOk returns a tuple with the MemorySizeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ServicePlanRowConfig) GetMemorySizeTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.MemorySizeType.Get(), o.MemorySizeType.IsSet()
-}
-
-// SetMemorySizeType gets a reference to the given NullableString and assigns it to the MemorySizeType field.
-func (o *ServicePlanRowConfig) SetMemorySizeType(v string) {
-	o.MemorySizeType.Set(&v)
-}
-
-// GetRanges returns the Ranges field value if set, zero value otherwise.
-func (o *ServicePlanRowConfig) GetRanges() ServicePlanRowConfigRanges {
-	if o == nil || IsNil(o.Ranges) {
-		var ret ServicePlanRowConfigRanges
-		return ret
-	}
-	return *o.Ranges
-}
-
-// GetRangesOk returns a tuple with the Ranges field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServicePlanRowConfig) GetRangesOk() (*ServicePlanRowConfigRanges, bool) {
-	if o == nil || IsNil(o.Ranges) {
-		return nil, false
-	}
-	return o.Ranges, true
-}
-
-// SetRanges gets a reference to the given ServicePlanRowConfigRanges and assigns it to the Ranges field.
-func (o *ServicePlanRowConfig) SetRanges(v ServicePlanRowConfigRanges) {
-	o.Ranges = &v
 }
 
 func (o ServicePlanRowConfig) MarshalJSON() ([]byte, error) {

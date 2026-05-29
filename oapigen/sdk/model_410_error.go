@@ -26,44 +26,12 @@ type Model410Error struct {
 
 type _Model410Error Model410Error
 
-// NewModel410Error instantiates a new Model410Error object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewModel410Error() *Model410Error {
-	this := Model410Error{}
-	return &this
-}
-
 // NewModel410ErrorWithDefaults instantiates a new Model410Error object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewModel410ErrorWithDefaults() *Model410Error {
 	this := Model410Error{}
 	return &this
-}
-
-// GetMsg returns the Msg field value if set, zero value otherwise.
-func (o *Model410Error) GetMsg() string {
-	if o == nil || IsNil(o.Msg) {
-		var ret string
-		return ret
-	}
-	return *o.Msg
-}
-
-// GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Model410Error) GetMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.Msg) {
-		return nil, false
-	}
-	return o.Msg, true
-}
-
-// SetMsg gets a reference to the given string and assigns it to the Msg field.
-func (o *Model410Error) SetMsg(v string) {
-	o.Msg = &v
 }
 
 func (o Model410Error) MarshalJSON() ([]byte, error) {

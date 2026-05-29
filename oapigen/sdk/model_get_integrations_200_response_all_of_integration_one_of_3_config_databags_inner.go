@@ -27,67 +27,12 @@ type GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner struct 
 
 type _GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner
 
-// NewGetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner instantiates a new GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner() *GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner {
-	this := GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner{}
-	return &this
-}
-
 // NewGetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInnerWithDefaults instantiates a new GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInnerWithDefaults() *GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner {
 	this := GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner{}
 	return &this
-}
-
-// GetPath returns the Path field value if set, zero value otherwise.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner) GetPath() string {
-	if o == nil || IsNil(o.Path) {
-		var ret string
-		return ret
-	}
-	return *o.Path
-}
-
-// GetPathOk returns a tuple with the Path field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner) GetPathOk() (*string, bool) {
-	if o == nil || IsNil(o.Path) {
-		return nil, false
-	}
-	return o.Path, true
-}
-
-// SetPath gets a reference to the given string and assigns it to the Path field.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner) SetPath(v string) {
-	o.Path = &v
-}
-
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
-		return ret
-	}
-	return *o.Key
-}
-
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
-		return nil, false
-	}
-	return o.Key, true
-}
-
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner) SetKey(v string) {
-	o.Key = &v
 }
 
 func (o GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner) MarshalJSON() ([]byte, error) {

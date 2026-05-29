@@ -27,67 +27,12 @@ type AddTenant200ResponseAllOfAccountStats struct {
 
 type _AddTenant200ResponseAllOfAccountStats AddTenant200ResponseAllOfAccountStats
 
-// NewAddTenant200ResponseAllOfAccountStats instantiates a new AddTenant200ResponseAllOfAccountStats object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddTenant200ResponseAllOfAccountStats() *AddTenant200ResponseAllOfAccountStats {
-	this := AddTenant200ResponseAllOfAccountStats{}
-	return &this
-}
-
 // NewAddTenant200ResponseAllOfAccountStatsWithDefaults instantiates a new AddTenant200ResponseAllOfAccountStats object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddTenant200ResponseAllOfAccountStatsWithDefaults() *AddTenant200ResponseAllOfAccountStats {
 	this := AddTenant200ResponseAllOfAccountStats{}
 	return &this
-}
-
-// GetInstanceCount returns the InstanceCount field value if set, zero value otherwise.
-func (o *AddTenant200ResponseAllOfAccountStats) GetInstanceCount() int64 {
-	if o == nil || IsNil(o.InstanceCount) {
-		var ret int64
-		return ret
-	}
-	return *o.InstanceCount
-}
-
-// GetInstanceCountOk returns a tuple with the InstanceCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddTenant200ResponseAllOfAccountStats) GetInstanceCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.InstanceCount) {
-		return nil, false
-	}
-	return o.InstanceCount, true
-}
-
-// SetInstanceCount gets a reference to the given int64 and assigns it to the InstanceCount field.
-func (o *AddTenant200ResponseAllOfAccountStats) SetInstanceCount(v int64) {
-	o.InstanceCount = &v
-}
-
-// GetUserCount returns the UserCount field value if set, zero value otherwise.
-func (o *AddTenant200ResponseAllOfAccountStats) GetUserCount() int64 {
-	if o == nil || IsNil(o.UserCount) {
-		var ret int64
-		return ret
-	}
-	return *o.UserCount
-}
-
-// GetUserCountOk returns a tuple with the UserCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddTenant200ResponseAllOfAccountStats) GetUserCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.UserCount) {
-		return nil, false
-	}
-	return o.UserCount, true
-}
-
-// SetUserCount gets a reference to the given int64 and assigns it to the UserCount field.
-func (o *AddTenant200ResponseAllOfAccountStats) SetUserCount(v int64) {
-	o.UserCount = &v
 }
 
 func (o AddTenant200ResponseAllOfAccountStats) MarshalJSON() ([]byte, error) {

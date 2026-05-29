@@ -26,44 +26,12 @@ type GetScript200Response struct {
 
 type _GetScript200Response GetScript200Response
 
-// NewGetScript200Response instantiates a new GetScript200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetScript200Response() *GetScript200Response {
-	this := GetScript200Response{}
-	return &this
-}
-
 // NewGetScript200ResponseWithDefaults instantiates a new GetScript200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetScript200ResponseWithDefaults() *GetScript200Response {
 	this := GetScript200Response{}
 	return &this
-}
-
-// GetContainerScript returns the ContainerScript field value if set, zero value otherwise.
-func (o *GetScript200Response) GetContainerScript() GetScript200ResponseContainerScript {
-	if o == nil || IsNil(o.ContainerScript) {
-		var ret GetScript200ResponseContainerScript
-		return ret
-	}
-	return *o.ContainerScript
-}
-
-// GetContainerScriptOk returns a tuple with the ContainerScript field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetScript200Response) GetContainerScriptOk() (*GetScript200ResponseContainerScript, bool) {
-	if o == nil || IsNil(o.ContainerScript) {
-		return nil, false
-	}
-	return o.ContainerScript, true
-}
-
-// SetContainerScript gets a reference to the given GetScript200ResponseContainerScript and assigns it to the ContainerScript field.
-func (o *GetScript200Response) SetContainerScript(v GetScript200ResponseContainerScript) {
-	o.ContainerScript = &v
 }
 
 func (o GetScript200Response) MarshalJSON() ([]byte, error) {

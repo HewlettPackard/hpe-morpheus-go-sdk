@@ -27,46 +27,12 @@ type UpdateGroupsZonesRequestGroup struct {
 
 type _UpdateGroupsZonesRequestGroup UpdateGroupsZonesRequestGroup
 
-// NewUpdateGroupsZonesRequestGroup instantiates a new UpdateGroupsZonesRequestGroup object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateGroupsZonesRequestGroup(zones []map[string]interface{}) *UpdateGroupsZonesRequestGroup {
-	this := UpdateGroupsZonesRequestGroup{}
-	this.Zones = zones
-	return &this
-}
-
 // NewUpdateGroupsZonesRequestGroupWithDefaults instantiates a new UpdateGroupsZonesRequestGroup object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateGroupsZonesRequestGroupWithDefaults() *UpdateGroupsZonesRequestGroup {
 	this := UpdateGroupsZonesRequestGroup{}
 	return &this
-}
-
-// GetZones returns the Zones field value
-func (o *UpdateGroupsZonesRequestGroup) GetZones() []map[string]interface{} {
-	if o == nil {
-		var ret []map[string]interface{}
-		return ret
-	}
-
-	return o.Zones
-}
-
-// GetZonesOk returns a tuple with the Zones field value
-// and a boolean to check if the value has been set.
-func (o *UpdateGroupsZonesRequestGroup) GetZonesOk() ([]map[string]interface{}, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Zones, true
-}
-
-// SetZones sets field value
-func (o *UpdateGroupsZonesRequestGroup) SetZones(v []map[string]interface{}) {
-	o.Zones = v
 }
 
 func (o UpdateGroupsZonesRequestGroup) MarshalJSON() ([]byte, error) {

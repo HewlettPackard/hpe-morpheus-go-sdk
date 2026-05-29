@@ -28,90 +28,12 @@ type AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole stru
 
 type _AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole
 
-// NewAddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole instantiates a new AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole() *AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole {
-	this := AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole{}
-	return &this
-}
-
 // NewAddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRoleWithDefaults instantiates a new AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRoleWithDefaults() *AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole {
 	this := AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole) SetName(v string) {
-	o.Name = &v
-}
-
-// GetAuthority returns the Authority field value if set, zero value otherwise.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole) GetAuthority() string {
-	if o == nil || IsNil(o.Authority) {
-		var ret string
-		return ret
-	}
-	return *o.Authority
-}
-
-// GetAuthorityOk returns a tuple with the Authority field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole) GetAuthorityOk() (*string, bool) {
-	if o == nil || IsNil(o.Authority) {
-		return nil, false
-	}
-	return o.Authority, true
-}
-
-// SetAuthority gets a reference to the given string and assigns it to the Authority field.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole) SetAuthority(v string) {
-	o.Authority = &v
 }
 
 func (o AddIdentitySources200ResponseAllOfTaskOneOfRoleMappingsInnerMappedRole) MarshalJSON() ([]byte, error) {

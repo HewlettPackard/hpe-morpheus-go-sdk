@@ -26,44 +26,12 @@ type GetClients200Response struct {
 
 type _GetClients200Response GetClients200Response
 
-// NewGetClients200Response instantiates a new GetClients200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetClients200Response() *GetClients200Response {
-	this := GetClients200Response{}
-	return &this
-}
-
 // NewGetClients200ResponseWithDefaults instantiates a new GetClients200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetClients200ResponseWithDefaults() *GetClients200Response {
 	this := GetClients200Response{}
 	return &this
-}
-
-// GetClient returns the Client field value if set, zero value otherwise.
-func (o *GetClients200Response) GetClient() GetClients200ResponseAllOfClient {
-	if o == nil || IsNil(o.Client) {
-		var ret GetClients200ResponseAllOfClient
-		return ret
-	}
-	return *o.Client
-}
-
-// GetClientOk returns a tuple with the Client field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClients200Response) GetClientOk() (*GetClients200ResponseAllOfClient, bool) {
-	if o == nil || IsNil(o.Client) {
-		return nil, false
-	}
-	return o.Client, true
-}
-
-// SetClient gets a reference to the given GetClients200ResponseAllOfClient and assigns it to the Client field.
-func (o *GetClients200Response) SetClient(v GetClients200ResponseAllOfClient) {
-	o.Client = &v
 }
 
 func (o GetClients200Response) MarshalJSON() ([]byte, error) {

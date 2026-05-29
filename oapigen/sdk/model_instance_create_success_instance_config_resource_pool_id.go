@@ -27,20 +27,6 @@ type InstanceCreateSuccessInstanceConfigResourcePoolId struct {
 	String *string
 }
 
-// int64AsInstanceCreateSuccessInstanceConfigResourcePoolId is a convenience function that returns int64 wrapped in InstanceCreateSuccessInstanceConfigResourcePoolId
-func Int64AsInstanceCreateSuccessInstanceConfigResourcePoolId(v *int64) InstanceCreateSuccessInstanceConfigResourcePoolId {
-	return InstanceCreateSuccessInstanceConfigResourcePoolId{
-		Int64: v,
-	}
-}
-
-// stringAsInstanceCreateSuccessInstanceConfigResourcePoolId is a convenience function that returns string wrapped in InstanceCreateSuccessInstanceConfigResourcePoolId
-func StringAsInstanceCreateSuccessInstanceConfigResourcePoolId(v *string) InstanceCreateSuccessInstanceConfigResourcePoolId {
-	return InstanceCreateSuccessInstanceConfigResourcePoolId{
-		String: v,
-	}
-}
-
 func (dst *InstanceCreateSuccessInstanceConfigResourcePoolId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &InstanceCreateSuccessInstanceConfigResourcePoolId{}

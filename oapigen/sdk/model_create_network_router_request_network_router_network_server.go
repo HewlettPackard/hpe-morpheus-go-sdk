@@ -27,46 +27,12 @@ type CreateNetworkRouterRequestNetworkRouterNetworkServer struct {
 
 type _CreateNetworkRouterRequestNetworkRouterNetworkServer CreateNetworkRouterRequestNetworkRouterNetworkServer
 
-// NewCreateNetworkRouterRequestNetworkRouterNetworkServer instantiates a new CreateNetworkRouterRequestNetworkRouterNetworkServer object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkRouterRequestNetworkRouterNetworkServer(id int64) *CreateNetworkRouterRequestNetworkRouterNetworkServer {
-	this := CreateNetworkRouterRequestNetworkRouterNetworkServer{}
-	this.Id = id
-	return &this
-}
-
 // NewCreateNetworkRouterRequestNetworkRouterNetworkServerWithDefaults instantiates a new CreateNetworkRouterRequestNetworkRouterNetworkServer object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkRouterRequestNetworkRouterNetworkServerWithDefaults() *CreateNetworkRouterRequestNetworkRouterNetworkServer {
 	this := CreateNetworkRouterRequestNetworkRouterNetworkServer{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *CreateNetworkRouterRequestNetworkRouterNetworkServer) GetId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterNetworkServer) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CreateNetworkRouterRequestNetworkRouterNetworkServer) SetId(v int64) {
-	o.Id = v
 }
 
 func (o CreateNetworkRouterRequestNetworkRouterNetworkServer) MarshalJSON() ([]byte, error) {

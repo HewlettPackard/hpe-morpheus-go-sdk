@@ -33,17 +33,6 @@ type ResizeInstanceRequest struct {
 
 type _ResizeInstanceRequest ResizeInstanceRequest
 
-// NewResizeInstanceRequest instantiates a new ResizeInstanceRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewResizeInstanceRequest() *ResizeInstanceRequest {
-	this := ResizeInstanceRequest{}
-	var deleteOriginalVolumes bool = false
-	this.DeleteOriginalVolumes = &deleteOriginalVolumes
-	return &this
-}
-
 // NewResizeInstanceRequestWithDefaults instantiates a new ResizeInstanceRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -52,121 +41,6 @@ func NewResizeInstanceRequestWithDefaults() *ResizeInstanceRequest {
 	var deleteOriginalVolumes bool = false
 	this.DeleteOriginalVolumes = &deleteOriginalVolumes
 	return &this
-}
-
-// GetInstance returns the Instance field value if set, zero value otherwise.
-func (o *ResizeInstanceRequest) GetInstance() ResizeInstanceRequestInstance {
-	if o == nil || IsNil(o.Instance) {
-		var ret ResizeInstanceRequestInstance
-		return ret
-	}
-	return *o.Instance
-}
-
-// GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequest) GetInstanceOk() (*ResizeInstanceRequestInstance, bool) {
-	if o == nil || IsNil(o.Instance) {
-		return nil, false
-	}
-	return o.Instance, true
-}
-
-// SetInstance gets a reference to the given ResizeInstanceRequestInstance and assigns it to the Instance field.
-func (o *ResizeInstanceRequest) SetInstance(v ResizeInstanceRequestInstance) {
-	o.Instance = &v
-}
-
-// GetServicePlanOptions returns the ServicePlanOptions field value if set, zero value otherwise.
-func (o *ResizeInstanceRequest) GetServicePlanOptions() ResizeInstanceRequestServicePlanOptions {
-	if o == nil || IsNil(o.ServicePlanOptions) {
-		var ret ResizeInstanceRequestServicePlanOptions
-		return ret
-	}
-	return *o.ServicePlanOptions
-}
-
-// GetServicePlanOptionsOk returns a tuple with the ServicePlanOptions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequest) GetServicePlanOptionsOk() (*ResizeInstanceRequestServicePlanOptions, bool) {
-	if o == nil || IsNil(o.ServicePlanOptions) {
-		return nil, false
-	}
-	return o.ServicePlanOptions, true
-}
-
-// SetServicePlanOptions gets a reference to the given ResizeInstanceRequestServicePlanOptions and assigns it to the ServicePlanOptions field.
-func (o *ResizeInstanceRequest) SetServicePlanOptions(v ResizeInstanceRequestServicePlanOptions) {
-	o.ServicePlanOptions = &v
-}
-
-// GetVolumes returns the Volumes field value if set, zero value otherwise.
-func (o *ResizeInstanceRequest) GetVolumes() []ResizeInstanceRequestVolumesInner {
-	if o == nil || IsNil(o.Volumes) {
-		var ret []ResizeInstanceRequestVolumesInner
-		return ret
-	}
-	return o.Volumes
-}
-
-// GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequest) GetVolumesOk() ([]ResizeInstanceRequestVolumesInner, bool) {
-	if o == nil || IsNil(o.Volumes) {
-		return nil, false
-	}
-	return o.Volumes, true
-}
-
-// SetVolumes gets a reference to the given []ResizeInstanceRequestVolumesInner and assigns it to the Volumes field.
-func (o *ResizeInstanceRequest) SetVolumes(v []ResizeInstanceRequestVolumesInner) {
-	o.Volumes = v
-}
-
-// GetDeleteOriginalVolumes returns the DeleteOriginalVolumes field value if set, zero value otherwise.
-func (o *ResizeInstanceRequest) GetDeleteOriginalVolumes() bool {
-	if o == nil || IsNil(o.DeleteOriginalVolumes) {
-		var ret bool
-		return ret
-	}
-	return *o.DeleteOriginalVolumes
-}
-
-// GetDeleteOriginalVolumesOk returns a tuple with the DeleteOriginalVolumes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequest) GetDeleteOriginalVolumesOk() (*bool, bool) {
-	if o == nil || IsNil(o.DeleteOriginalVolumes) {
-		return nil, false
-	}
-	return o.DeleteOriginalVolumes, true
-}
-
-// SetDeleteOriginalVolumes gets a reference to the given bool and assigns it to the DeleteOriginalVolumes field.
-func (o *ResizeInstanceRequest) SetDeleteOriginalVolumes(v bool) {
-	o.DeleteOriginalVolumes = &v
-}
-
-// GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *ResizeInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces3 {
-	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []InstancesNetworkInterfaces3
-		return ret
-	}
-	return o.NetworkInterfaces
-}
-
-// GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequest) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces3, bool) {
-	if o == nil || IsNil(o.NetworkInterfaces) {
-		return nil, false
-	}
-	return o.NetworkInterfaces, true
-}
-
-// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces3 and assigns it to the NetworkInterfaces field.
-func (o *ResizeInstanceRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces3) {
-	o.NetworkInterfaces = v
 }
 
 func (o ResizeInstanceRequest) MarshalJSON() ([]byte, error) {

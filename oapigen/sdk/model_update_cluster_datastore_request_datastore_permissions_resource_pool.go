@@ -27,44 +27,12 @@ type UpdateClusterDatastoreRequestDatastorePermissionsResourcePool struct {
 
 type _UpdateClusterDatastoreRequestDatastorePermissionsResourcePool UpdateClusterDatastoreRequestDatastorePermissionsResourcePool
 
-// NewUpdateClusterDatastoreRequestDatastorePermissionsResourcePool instantiates a new UpdateClusterDatastoreRequestDatastorePermissionsResourcePool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterDatastoreRequestDatastorePermissionsResourcePool() *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool {
-	this := UpdateClusterDatastoreRequestDatastorePermissionsResourcePool{}
-	return &this
-}
-
 // NewUpdateClusterDatastoreRequestDatastorePermissionsResourcePoolWithDefaults instantiates a new UpdateClusterDatastoreRequestDatastorePermissionsResourcePool object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateClusterDatastoreRequestDatastorePermissionsResourcePoolWithDefaults() *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool {
 	this := UpdateClusterDatastoreRequestDatastorePermissionsResourcePool{}
 	return &this
-}
-
-// GetVisibility returns the Visibility field value if set, zero value otherwise.
-func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) GetVisibility() string {
-	if o == nil || IsNil(o.Visibility) {
-		var ret string
-		return ret
-	}
-	return *o.Visibility
-}
-
-// GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) GetVisibilityOk() (*string, bool) {
-	if o == nil || IsNil(o.Visibility) {
-		return nil, false
-	}
-	return o.Visibility, true
-}
-
-// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
-func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) SetVisibility(v string) {
-	o.Visibility = &v
 }
 
 func (o UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) MarshalJSON() ([]byte, error) {

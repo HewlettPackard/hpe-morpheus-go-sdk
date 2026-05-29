@@ -27,67 +27,12 @@ type UpdatePlugin200Response struct {
 
 type _UpdatePlugin200Response UpdatePlugin200Response
 
-// NewUpdatePlugin200Response instantiates a new UpdatePlugin200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePlugin200Response() *UpdatePlugin200Response {
-	this := UpdatePlugin200Response{}
-	return &this
-}
-
 // NewUpdatePlugin200ResponseWithDefaults instantiates a new UpdatePlugin200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdatePlugin200ResponseWithDefaults() *UpdatePlugin200Response {
 	this := UpdatePlugin200Response{}
 	return &this
-}
-
-// GetPlugin returns the Plugin field value if set, zero value otherwise.
-func (o *UpdatePlugin200Response) GetPlugin() UpdatePlugin200ResponseAllOfPlugin {
-	if o == nil || IsNil(o.Plugin) {
-		var ret UpdatePlugin200ResponseAllOfPlugin
-		return ret
-	}
-	return *o.Plugin
-}
-
-// GetPluginOk returns a tuple with the Plugin field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePlugin200Response) GetPluginOk() (*UpdatePlugin200ResponseAllOfPlugin, bool) {
-	if o == nil || IsNil(o.Plugin) {
-		return nil, false
-	}
-	return o.Plugin, true
-}
-
-// SetPlugin gets a reference to the given UpdatePlugin200ResponseAllOfPlugin and assigns it to the Plugin field.
-func (o *UpdatePlugin200Response) SetPlugin(v UpdatePlugin200ResponseAllOfPlugin) {
-	o.Plugin = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdatePlugin200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePlugin200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdatePlugin200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdatePlugin200Response) MarshalJSON() ([]byte, error) {

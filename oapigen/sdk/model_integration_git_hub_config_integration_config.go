@@ -27,44 +27,12 @@ type IntegrationGitHubConfigIntegrationConfig struct {
 
 type _IntegrationGitHubConfigIntegrationConfig IntegrationGitHubConfigIntegrationConfig
 
-// NewIntegrationGitHubConfigIntegrationConfig instantiates a new IntegrationGitHubConfigIntegrationConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIntegrationGitHubConfigIntegrationConfig() *IntegrationGitHubConfigIntegrationConfig {
-	this := IntegrationGitHubConfigIntegrationConfig{}
-	return &this
-}
-
 // NewIntegrationGitHubConfigIntegrationConfigWithDefaults instantiates a new IntegrationGitHubConfigIntegrationConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIntegrationGitHubConfigIntegrationConfigWithDefaults() *IntegrationGitHubConfigIntegrationConfig {
 	this := IntegrationGitHubConfigIntegrationConfig{}
 	return &this
-}
-
-// GetCacheEnabled returns the CacheEnabled field value if set, zero value otherwise.
-func (o *IntegrationGitHubConfigIntegrationConfig) GetCacheEnabled() bool {
-	if o == nil || IsNil(o.CacheEnabled) {
-		var ret bool
-		return ret
-	}
-	return *o.CacheEnabled
-}
-
-// GetCacheEnabledOk returns a tuple with the CacheEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *IntegrationGitHubConfigIntegrationConfig) GetCacheEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.CacheEnabled) {
-		return nil, false
-	}
-	return o.CacheEnabled, true
-}
-
-// SetCacheEnabled gets a reference to the given bool and assigns it to the CacheEnabled field.
-func (o *IntegrationGitHubConfigIntegrationConfig) SetCacheEnabled(v bool) {
-	o.CacheEnabled = &v
 }
 
 func (o IntegrationGitHubConfigIntegrationConfig) MarshalJSON() ([]byte, error) {

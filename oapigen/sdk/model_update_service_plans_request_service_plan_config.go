@@ -30,19 +30,6 @@ type UpdateServicePlansRequestServicePlanConfig struct {
 
 type _UpdateServicePlansRequestServicePlanConfig UpdateServicePlansRequestServicePlanConfig
 
-// NewUpdateServicePlansRequestServicePlanConfig instantiates a new UpdateServicePlansRequestServicePlanConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateServicePlansRequestServicePlanConfig() *UpdateServicePlansRequestServicePlanConfig {
-	this := UpdateServicePlansRequestServicePlanConfig{}
-	var storageSizeType string = "gb"
-	this.StorageSizeType = &storageSizeType
-	var memorySizeType string = "mb"
-	this.MemorySizeType = &memorySizeType
-	return &this
-}
-
 // NewUpdateServicePlansRequestServicePlanConfigWithDefaults instantiates a new UpdateServicePlansRequestServicePlanConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -53,75 +40,6 @@ func NewUpdateServicePlansRequestServicePlanConfigWithDefaults() *UpdateServiceP
 	var memorySizeType string = "mb"
 	this.MemorySizeType = &memorySizeType
 	return &this
-}
-
-// GetStorageSizeType returns the StorageSizeType field value if set, zero value otherwise.
-func (o *UpdateServicePlansRequestServicePlanConfig) GetStorageSizeType() string {
-	if o == nil || IsNil(o.StorageSizeType) {
-		var ret string
-		return ret
-	}
-	return *o.StorageSizeType
-}
-
-// GetStorageSizeTypeOk returns a tuple with the StorageSizeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateServicePlansRequestServicePlanConfig) GetStorageSizeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageSizeType) {
-		return nil, false
-	}
-	return o.StorageSizeType, true
-}
-
-// SetStorageSizeType gets a reference to the given string and assigns it to the StorageSizeType field.
-func (o *UpdateServicePlansRequestServicePlanConfig) SetStorageSizeType(v string) {
-	o.StorageSizeType = &v
-}
-
-// GetMemorySizeType returns the MemorySizeType field value if set, zero value otherwise.
-func (o *UpdateServicePlansRequestServicePlanConfig) GetMemorySizeType() string {
-	if o == nil || IsNil(o.MemorySizeType) {
-		var ret string
-		return ret
-	}
-	return *o.MemorySizeType
-}
-
-// GetMemorySizeTypeOk returns a tuple with the MemorySizeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateServicePlansRequestServicePlanConfig) GetMemorySizeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.MemorySizeType) {
-		return nil, false
-	}
-	return o.MemorySizeType, true
-}
-
-// SetMemorySizeType gets a reference to the given string and assigns it to the MemorySizeType field.
-func (o *UpdateServicePlansRequestServicePlanConfig) SetMemorySizeType(v string) {
-	o.MemorySizeType = &v
-}
-
-// GetRanges returns the Ranges field value if set, zero value otherwise.
-func (o *UpdateServicePlansRequestServicePlanConfig) GetRanges() UpdateServicePlansRequestServicePlanConfigRanges {
-	if o == nil || IsNil(o.Ranges) {
-		var ret UpdateServicePlansRequestServicePlanConfigRanges
-		return ret
-	}
-	return *o.Ranges
-}
-
-// GetRangesOk returns a tuple with the Ranges field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateServicePlansRequestServicePlanConfig) GetRangesOk() (*UpdateServicePlansRequestServicePlanConfigRanges, bool) {
-	if o == nil || IsNil(o.Ranges) {
-		return nil, false
-	}
-	return o.Ranges, true
-}
-
-// SetRanges gets a reference to the given UpdateServicePlansRequestServicePlanConfigRanges and assigns it to the Ranges field.
-func (o *UpdateServicePlansRequestServicePlanConfig) SetRanges(v UpdateServicePlansRequestServicePlanConfigRanges) {
-	o.Ranges = &v
 }
 
 func (o UpdateServicePlansRequestServicePlanConfig) MarshalJSON() ([]byte, error) {

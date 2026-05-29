@@ -31,90 +31,12 @@ type UserSourceCreateOkta struct {
 
 type _UserSourceCreateOkta UserSourceCreateOkta
 
-// NewUserSourceCreateOkta instantiates a new UserSourceCreateOkta object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserSourceCreateOkta() *UserSourceCreateOkta {
-	this := UserSourceCreateOkta{}
-	return &this
-}
-
 // NewUserSourceCreateOktaWithDefaults instantiates a new UserSourceCreateOkta object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUserSourceCreateOktaWithDefaults() *UserSourceCreateOkta {
 	this := UserSourceCreateOkta{}
 	return &this
-}
-
-// GetUrl returns the Url field value if set, zero value otherwise.
-func (o *UserSourceCreateOkta) GetUrl() string {
-	if o == nil || IsNil(o.Url) {
-		var ret string
-		return ret
-	}
-	return *o.Url
-}
-
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateOkta) GetUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.Url) {
-		return nil, false
-	}
-	return o.Url, true
-}
-
-// SetUrl gets a reference to the given string and assigns it to the Url field.
-func (o *UserSourceCreateOkta) SetUrl(v string) {
-	o.Url = &v
-}
-
-// GetAdministratorAPIToken returns the AdministratorAPIToken field value if set, zero value otherwise.
-func (o *UserSourceCreateOkta) GetAdministratorAPIToken() string {
-	if o == nil || IsNil(o.AdministratorAPIToken) {
-		var ret string
-		return ret
-	}
-	return *o.AdministratorAPIToken
-}
-
-// GetAdministratorAPITokenOk returns a tuple with the AdministratorAPIToken field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateOkta) GetAdministratorAPITokenOk() (*string, bool) {
-	if o == nil || IsNil(o.AdministratorAPIToken) {
-		return nil, false
-	}
-	return o.AdministratorAPIToken, true
-}
-
-// SetAdministratorAPIToken gets a reference to the given string and assigns it to the AdministratorAPIToken field.
-func (o *UserSourceCreateOkta) SetAdministratorAPIToken(v string) {
-	o.AdministratorAPIToken = &v
-}
-
-// GetRequiredGroup returns the RequiredGroup field value if set, zero value otherwise.
-func (o *UserSourceCreateOkta) GetRequiredGroup() string {
-	if o == nil || IsNil(o.RequiredGroup) {
-		var ret string
-		return ret
-	}
-	return *o.RequiredGroup
-}
-
-// GetRequiredGroupOk returns a tuple with the RequiredGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateOkta) GetRequiredGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.RequiredGroup) {
-		return nil, false
-	}
-	return o.RequiredGroup, true
-}
-
-// SetRequiredGroup gets a reference to the given string and assigns it to the RequiredGroup field.
-func (o *UserSourceCreateOkta) SetRequiredGroup(v string) {
-	o.RequiredGroup = &v
 }
 
 func (o UserSourceCreateOkta) MarshalJSON() ([]byte, error) {

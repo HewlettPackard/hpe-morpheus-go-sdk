@@ -26,48 +26,12 @@ type CreateNetworkRouterNatRequestNetworkRouterNAT struct {
 
 type _CreateNetworkRouterNatRequestNetworkRouterNAT CreateNetworkRouterNatRequestNetworkRouterNAT
 
-// NewCreateNetworkRouterNatRequestNetworkRouterNAT instantiates a new CreateNetworkRouterNatRequestNetworkRouterNAT object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkRouterNatRequestNetworkRouterNAT(name interface{}) *CreateNetworkRouterNatRequestNetworkRouterNAT {
-	this := CreateNetworkRouterNatRequestNetworkRouterNAT{}
-	this.Name = name
-	return &this
-}
-
 // NewCreateNetworkRouterNatRequestNetworkRouterNATWithDefaults instantiates a new CreateNetworkRouterNatRequestNetworkRouterNAT object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkRouterNatRequestNetworkRouterNATWithDefaults() *CreateNetworkRouterNatRequestNetworkRouterNAT {
 	this := CreateNetworkRouterNatRequestNetworkRouterNAT{}
 	return &this
-}
-
-// GetName returns the Name field value
-// If the value is explicit nil, the zero value for interface{} will be returned
-func (o *CreateNetworkRouterNatRequestNetworkRouterNAT) GetName() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateNetworkRouterNatRequestNetworkRouterNAT) GetNameOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *CreateNetworkRouterNatRequestNetworkRouterNAT) SetName(v interface{}) {
-	o.Name = v
 }
 
 func (o CreateNetworkRouterNatRequestNetworkRouterNAT) MarshalJSON() ([]byte, error) {

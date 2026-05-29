@@ -27,20 +27,6 @@ type AppStateInputDataInnerName struct {
 	String            *string
 }
 
-// map[string]interface{}AsAppStateInputDataInnerName is a convenience function that returns map[string]interface{} wrapped in AppStateInputDataInnerName
-func MapmapOfStringAnyAsAppStateInputDataInnerName(v *map[string]interface{}) AppStateInputDataInnerName {
-	return AppStateInputDataInnerName{
-		MapmapOfStringAny: v,
-	}
-}
-
-// stringAsAppStateInputDataInnerName is a convenience function that returns string wrapped in AppStateInputDataInnerName
-func StringAsAppStateInputDataInnerName(v *string) AppStateInputDataInnerName {
-	return AppStateInputDataInnerName{
-		String: v,
-	}
-}
-
 func (dst *AppStateInputDataInnerName) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AppStateInputDataInnerName{}

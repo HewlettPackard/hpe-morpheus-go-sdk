@@ -27,67 +27,12 @@ type HAProxyLoadBalancerConfigObject struct {
 
 type _HAProxyLoadBalancerConfigObject HAProxyLoadBalancerConfigObject
 
-// NewHAProxyLoadBalancerConfigObject instantiates a new HAProxyLoadBalancerConfigObject object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewHAProxyLoadBalancerConfigObject() *HAProxyLoadBalancerConfigObject {
-	this := HAProxyLoadBalancerConfigObject{}
-	return &this
-}
-
 // NewHAProxyLoadBalancerConfigObjectWithDefaults instantiates a new HAProxyLoadBalancerConfigObject object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewHAProxyLoadBalancerConfigObjectWithDefaults() *HAProxyLoadBalancerConfigObject {
 	this := HAProxyLoadBalancerConfigObject{}
 	return &this
-}
-
-// GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *HAProxyLoadBalancerConfigObject) GetPlan() HAProxyLoadBalancerConfigObjectPlan {
-	if o == nil || IsNil(o.Plan) {
-		var ret HAProxyLoadBalancerConfigObjectPlan
-		return ret
-	}
-	return *o.Plan
-}
-
-// GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HAProxyLoadBalancerConfigObject) GetPlanOk() (*HAProxyLoadBalancerConfigObjectPlan, bool) {
-	if o == nil || IsNil(o.Plan) {
-		return nil, false
-	}
-	return o.Plan, true
-}
-
-// SetPlan gets a reference to the given HAProxyLoadBalancerConfigObjectPlan and assigns it to the Plan field.
-func (o *HAProxyLoadBalancerConfigObject) SetPlan(v HAProxyLoadBalancerConfigObjectPlan) {
-	o.Plan = &v
-}
-
-// GetPool returns the Pool field value if set, zero value otherwise.
-func (o *HAProxyLoadBalancerConfigObject) GetPool() HAProxyLoadBalancerConfigObjectPool {
-	if o == nil || IsNil(o.Pool) {
-		var ret HAProxyLoadBalancerConfigObjectPool
-		return ret
-	}
-	return *o.Pool
-}
-
-// GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HAProxyLoadBalancerConfigObject) GetPoolOk() (*HAProxyLoadBalancerConfigObjectPool, bool) {
-	if o == nil || IsNil(o.Pool) {
-		return nil, false
-	}
-	return o.Pool, true
-}
-
-// SetPool gets a reference to the given HAProxyLoadBalancerConfigObjectPool and assigns it to the Pool field.
-func (o *HAProxyLoadBalancerConfigObject) SetPool(v HAProxyLoadBalancerConfigObjectPool) {
-	o.Pool = &v
 }
 
 func (o HAProxyLoadBalancerConfigObject) MarshalJSON() ([]byte, error) {

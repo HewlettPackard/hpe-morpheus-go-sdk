@@ -27,46 +27,12 @@ type UpdateTenantSubtenantGroupZonesRequestGroup struct {
 
 type _UpdateTenantSubtenantGroupZonesRequestGroup UpdateTenantSubtenantGroupZonesRequestGroup
 
-// NewUpdateTenantSubtenantGroupZonesRequestGroup instantiates a new UpdateTenantSubtenantGroupZonesRequestGroup object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateTenantSubtenantGroupZonesRequestGroup(zones []UpdateTenantSubtenantGroupZonesRequestGroupZonesInner) *UpdateTenantSubtenantGroupZonesRequestGroup {
-	this := UpdateTenantSubtenantGroupZonesRequestGroup{}
-	this.Zones = zones
-	return &this
-}
-
 // NewUpdateTenantSubtenantGroupZonesRequestGroupWithDefaults instantiates a new UpdateTenantSubtenantGroupZonesRequestGroup object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateTenantSubtenantGroupZonesRequestGroupWithDefaults() *UpdateTenantSubtenantGroupZonesRequestGroup {
 	this := UpdateTenantSubtenantGroupZonesRequestGroup{}
 	return &this
-}
-
-// GetZones returns the Zones field value
-func (o *UpdateTenantSubtenantGroupZonesRequestGroup) GetZones() []UpdateTenantSubtenantGroupZonesRequestGroupZonesInner {
-	if o == nil {
-		var ret []UpdateTenantSubtenantGroupZonesRequestGroupZonesInner
-		return ret
-	}
-
-	return o.Zones
-}
-
-// GetZonesOk returns a tuple with the Zones field value
-// and a boolean to check if the value has been set.
-func (o *UpdateTenantSubtenantGroupZonesRequestGroup) GetZonesOk() ([]UpdateTenantSubtenantGroupZonesRequestGroupZonesInner, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Zones, true
-}
-
-// SetZones sets field value
-func (o *UpdateTenantSubtenantGroupZonesRequestGroup) SetZones(v []UpdateTenantSubtenantGroupZonesRequestGroupZonesInner) {
-	o.Zones = v
 }
 
 func (o UpdateTenantSubtenantGroupZonesRequestGroup) MarshalJSON() ([]byte, error) {

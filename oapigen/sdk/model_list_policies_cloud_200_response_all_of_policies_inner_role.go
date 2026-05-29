@@ -27,67 +27,12 @@ type ListPoliciesCloud200ResponseAllOfPoliciesInnerRole struct {
 
 type _ListPoliciesCloud200ResponseAllOfPoliciesInnerRole ListPoliciesCloud200ResponseAllOfPoliciesInnerRole
 
-// NewListPoliciesCloud200ResponseAllOfPoliciesInnerRole instantiates a new ListPoliciesCloud200ResponseAllOfPoliciesInnerRole object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListPoliciesCloud200ResponseAllOfPoliciesInnerRole() *ListPoliciesCloud200ResponseAllOfPoliciesInnerRole {
-	this := ListPoliciesCloud200ResponseAllOfPoliciesInnerRole{}
-	return &this
-}
-
 // NewListPoliciesCloud200ResponseAllOfPoliciesInnerRoleWithDefaults instantiates a new ListPoliciesCloud200ResponseAllOfPoliciesInnerRole object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListPoliciesCloud200ResponseAllOfPoliciesInnerRoleWithDefaults() *ListPoliciesCloud200ResponseAllOfPoliciesInnerRole {
 	this := ListPoliciesCloud200ResponseAllOfPoliciesInnerRole{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListPoliciesCloud200ResponseAllOfPoliciesInnerRole) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPoliciesCloud200ResponseAllOfPoliciesInnerRole) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListPoliciesCloud200ResponseAllOfPoliciesInnerRole) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetAuthority returns the Authority field value if set, zero value otherwise.
-func (o *ListPoliciesCloud200ResponseAllOfPoliciesInnerRole) GetAuthority() string {
-	if o == nil || IsNil(o.Authority) {
-		var ret string
-		return ret
-	}
-	return *o.Authority
-}
-
-// GetAuthorityOk returns a tuple with the Authority field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPoliciesCloud200ResponseAllOfPoliciesInnerRole) GetAuthorityOk() (*string, bool) {
-	if o == nil || IsNil(o.Authority) {
-		return nil, false
-	}
-	return o.Authority, true
-}
-
-// SetAuthority gets a reference to the given string and assigns it to the Authority field.
-func (o *ListPoliciesCloud200ResponseAllOfPoliciesInnerRole) SetAuthority(v string) {
-	o.Authority = &v
 }
 
 func (o ListPoliciesCloud200ResponseAllOfPoliciesInnerRole) MarshalJSON() ([]byte, error) {

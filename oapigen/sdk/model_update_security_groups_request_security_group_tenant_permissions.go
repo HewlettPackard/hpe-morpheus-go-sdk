@@ -29,67 +29,12 @@ type UpdateSecurityGroupsRequestSecurityGroupTenantPermissions struct {
 
 type _UpdateSecurityGroupsRequestSecurityGroupTenantPermissions UpdateSecurityGroupsRequestSecurityGroupTenantPermissions
 
-// NewUpdateSecurityGroupsRequestSecurityGroupTenantPermissions instantiates a new UpdateSecurityGroupsRequestSecurityGroupTenantPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateSecurityGroupsRequestSecurityGroupTenantPermissions() *UpdateSecurityGroupsRequestSecurityGroupTenantPermissions {
-	this := UpdateSecurityGroupsRequestSecurityGroupTenantPermissions{}
-	return &this
-}
-
 // NewUpdateSecurityGroupsRequestSecurityGroupTenantPermissionsWithDefaults instantiates a new UpdateSecurityGroupsRequestSecurityGroupTenantPermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateSecurityGroupsRequestSecurityGroupTenantPermissionsWithDefaults() *UpdateSecurityGroupsRequestSecurityGroupTenantPermissions {
 	this := UpdateSecurityGroupsRequestSecurityGroupTenantPermissions{}
 	return &this
-}
-
-// GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *UpdateSecurityGroupsRequestSecurityGroupTenantPermissions) GetAccounts() []int64 {
-	if o == nil || IsNil(o.Accounts) {
-		var ret []int64
-		return ret
-	}
-	return o.Accounts
-}
-
-// GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateSecurityGroupsRequestSecurityGroupTenantPermissions) GetAccountsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.Accounts) {
-		return nil, false
-	}
-	return o.Accounts, true
-}
-
-// SetAccounts gets a reference to the given []int64 and assigns it to the Accounts field.
-func (o *UpdateSecurityGroupsRequestSecurityGroupTenantPermissions) SetAccounts(v []int64) {
-	o.Accounts = v
-}
-
-// GetCanManageAccounts returns the CanManageAccounts field value if set, zero value otherwise.
-func (o *UpdateSecurityGroupsRequestSecurityGroupTenantPermissions) GetCanManageAccounts() []int64 {
-	if o == nil || IsNil(o.CanManageAccounts) {
-		var ret []int64
-		return ret
-	}
-	return o.CanManageAccounts
-}
-
-// GetCanManageAccountsOk returns a tuple with the CanManageAccounts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateSecurityGroupsRequestSecurityGroupTenantPermissions) GetCanManageAccountsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.CanManageAccounts) {
-		return nil, false
-	}
-	return o.CanManageAccounts, true
-}
-
-// SetCanManageAccounts gets a reference to the given []int64 and assigns it to the CanManageAccounts field.
-func (o *UpdateSecurityGroupsRequestSecurityGroupTenantPermissions) SetCanManageAccounts(v []int64) {
-	o.CanManageAccounts = v
 }
 
 func (o UpdateSecurityGroupsRequestSecurityGroupTenantPermissions) MarshalJSON() ([]byte, error) {

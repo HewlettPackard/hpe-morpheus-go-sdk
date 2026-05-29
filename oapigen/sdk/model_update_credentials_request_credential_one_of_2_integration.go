@@ -26,44 +26,12 @@ type UpdateCredentialsRequestCredentialOneOf2Integration struct {
 
 type _UpdateCredentialsRequestCredentialOneOf2Integration UpdateCredentialsRequestCredentialOneOf2Integration
 
-// NewUpdateCredentialsRequestCredentialOneOf2Integration instantiates a new UpdateCredentialsRequestCredentialOneOf2Integration object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCredentialsRequestCredentialOneOf2Integration() *UpdateCredentialsRequestCredentialOneOf2Integration {
-	this := UpdateCredentialsRequestCredentialOneOf2Integration{}
-	return &this
-}
-
 // NewUpdateCredentialsRequestCredentialOneOf2IntegrationWithDefaults instantiates a new UpdateCredentialsRequestCredentialOneOf2Integration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateCredentialsRequestCredentialOneOf2IntegrationWithDefaults() *UpdateCredentialsRequestCredentialOneOf2Integration {
 	this := UpdateCredentialsRequestCredentialOneOf2Integration{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *UpdateCredentialsRequestCredentialOneOf2Integration) GetId() UpdateCredentialsRequestCredentialOneOf2IntegrationId {
-	if o == nil || IsNil(o.Id) {
-		var ret UpdateCredentialsRequestCredentialOneOf2IntegrationId
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCredentialsRequestCredentialOneOf2Integration) GetIdOk() (*UpdateCredentialsRequestCredentialOneOf2IntegrationId, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given UpdateCredentialsRequestCredentialOneOf2IntegrationId and assigns it to the Id field.
-func (o *UpdateCredentialsRequestCredentialOneOf2Integration) SetId(v UpdateCredentialsRequestCredentialOneOf2IntegrationId) {
-	o.Id = &v
 }
 
 func (o UpdateCredentialsRequestCredentialOneOf2Integration) MarshalJSON() ([]byte, error) {

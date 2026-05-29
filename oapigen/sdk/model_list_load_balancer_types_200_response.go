@@ -27,67 +27,12 @@ type ListLoadBalancerTypes200Response struct {
 
 type _ListLoadBalancerTypes200Response ListLoadBalancerTypes200Response
 
-// NewListLoadBalancerTypes200Response instantiates a new ListLoadBalancerTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListLoadBalancerTypes200Response() *ListLoadBalancerTypes200Response {
-	this := ListLoadBalancerTypes200Response{}
-	return &this
-}
-
 // NewListLoadBalancerTypes200ResponseWithDefaults instantiates a new ListLoadBalancerTypes200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListLoadBalancerTypes200ResponseWithDefaults() *ListLoadBalancerTypes200Response {
 	this := ListLoadBalancerTypes200Response{}
 	return &this
-}
-
-// GetLoadBalancerTypes returns the LoadBalancerTypes field value if set, zero value otherwise.
-func (o *ListLoadBalancerTypes200Response) GetLoadBalancerTypes() []ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner {
-	if o == nil || IsNil(o.LoadBalancerTypes) {
-		var ret []ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner
-		return ret
-	}
-	return o.LoadBalancerTypes
-}
-
-// GetLoadBalancerTypesOk returns a tuple with the LoadBalancerTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListLoadBalancerTypes200Response) GetLoadBalancerTypesOk() ([]ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner, bool) {
-	if o == nil || IsNil(o.LoadBalancerTypes) {
-		return nil, false
-	}
-	return o.LoadBalancerTypes, true
-}
-
-// SetLoadBalancerTypes gets a reference to the given []ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner and assigns it to the LoadBalancerTypes field.
-func (o *ListLoadBalancerTypes200Response) SetLoadBalancerTypes(v []ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) {
-	o.LoadBalancerTypes = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListLoadBalancerTypes200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListLoadBalancerTypes200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListLoadBalancerTypes200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListLoadBalancerTypes200Response) MarshalJSON() ([]byte, error) {

@@ -33,113 +33,12 @@ type SystemTypeLayoutSummary struct {
 
 type _SystemTypeLayoutSummary SystemTypeLayoutSummary
 
-// NewSystemTypeLayoutSummary instantiates a new SystemTypeLayoutSummary object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemTypeLayoutSummary() *SystemTypeLayoutSummary {
-	this := SystemTypeLayoutSummary{}
-	return &this
-}
-
 // NewSystemTypeLayoutSummaryWithDefaults instantiates a new SystemTypeLayoutSummary object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemTypeLayoutSummaryWithDefaults() *SystemTypeLayoutSummary {
 	this := SystemTypeLayoutSummary{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SystemTypeLayoutSummary) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SystemTypeLayoutSummary) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *SystemTypeLayoutSummary) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *SystemTypeLayoutSummary) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SystemTypeLayoutSummary) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *SystemTypeLayoutSummary) SetName(v string) {
-	o.Name = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *SystemTypeLayoutSummary) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SystemTypeLayoutSummary) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *SystemTypeLayoutSummary) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetComponentTypes returns the ComponentTypes field value if set, zero value otherwise.
-func (o *SystemTypeLayoutSummary) GetComponentTypes() []SystemTypeLayoutSummaryComponentTypesInner {
-	if o == nil || IsNil(o.ComponentTypes) {
-		var ret []SystemTypeLayoutSummaryComponentTypesInner
-		return ret
-	}
-	return o.ComponentTypes
-}
-
-// GetComponentTypesOk returns a tuple with the ComponentTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SystemTypeLayoutSummary) GetComponentTypesOk() ([]SystemTypeLayoutSummaryComponentTypesInner, bool) {
-	if o == nil || IsNil(o.ComponentTypes) {
-		return nil, false
-	}
-	return o.ComponentTypes, true
-}
-
-// SetComponentTypes gets a reference to the given []SystemTypeLayoutSummaryComponentTypesInner and assigns it to the ComponentTypes field.
-func (o *SystemTypeLayoutSummary) SetComponentTypes(v []SystemTypeLayoutSummaryComponentTypesInner) {
-	o.ComponentTypes = v
 }
 
 func (o SystemTypeLayoutSummary) MarshalJSON() ([]byte, error) {

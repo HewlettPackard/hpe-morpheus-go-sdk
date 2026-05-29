@@ -29,113 +29,12 @@ type GetBudgets200ResponseAllOfBudgetStats struct {
 
 type _GetBudgets200ResponseAllOfBudgetStats GetBudgets200ResponseAllOfBudgetStats
 
-// NewGetBudgets200ResponseAllOfBudgetStats instantiates a new GetBudgets200ResponseAllOfBudgetStats object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetBudgets200ResponseAllOfBudgetStats() *GetBudgets200ResponseAllOfBudgetStats {
-	this := GetBudgets200ResponseAllOfBudgetStats{}
-	return &this
-}
-
 // NewGetBudgets200ResponseAllOfBudgetStatsWithDefaults instantiates a new GetBudgets200ResponseAllOfBudgetStats object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetBudgets200ResponseAllOfBudgetStatsWithDefaults() *GetBudgets200ResponseAllOfBudgetStats {
 	this := GetBudgets200ResponseAllOfBudgetStats{}
 	return &this
-}
-
-// GetCurrency returns the Currency field value if set, zero value otherwise.
-func (o *GetBudgets200ResponseAllOfBudgetStats) GetCurrency() string {
-	if o == nil || IsNil(o.Currency) {
-		var ret string
-		return ret
-	}
-	return *o.Currency
-}
-
-// GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetBudgets200ResponseAllOfBudgetStats) GetCurrencyOk() (*string, bool) {
-	if o == nil || IsNil(o.Currency) {
-		return nil, false
-	}
-	return o.Currency, true
-}
-
-// SetCurrency gets a reference to the given string and assigns it to the Currency field.
-func (o *GetBudgets200ResponseAllOfBudgetStats) SetCurrency(v string) {
-	o.Currency = &v
-}
-
-// GetConversionRate returns the ConversionRate field value if set, zero value otherwise.
-func (o *GetBudgets200ResponseAllOfBudgetStats) GetConversionRate() int64 {
-	if o == nil || IsNil(o.ConversionRate) {
-		var ret int64
-		return ret
-	}
-	return *o.ConversionRate
-}
-
-// GetConversionRateOk returns a tuple with the ConversionRate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetBudgets200ResponseAllOfBudgetStats) GetConversionRateOk() (*int64, bool) {
-	if o == nil || IsNil(o.ConversionRate) {
-		return nil, false
-	}
-	return o.ConversionRate, true
-}
-
-// SetConversionRate gets a reference to the given int64 and assigns it to the ConversionRate field.
-func (o *GetBudgets200ResponseAllOfBudgetStats) SetConversionRate(v int64) {
-	o.ConversionRate = &v
-}
-
-// GetIntervals returns the Intervals field value if set, zero value otherwise.
-func (o *GetBudgets200ResponseAllOfBudgetStats) GetIntervals() []GetBudgets200ResponseAllOfBudgetStatsIntervalsInner {
-	if o == nil || IsNil(o.Intervals) {
-		var ret []GetBudgets200ResponseAllOfBudgetStatsIntervalsInner
-		return ret
-	}
-	return o.Intervals
-}
-
-// GetIntervalsOk returns a tuple with the Intervals field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetBudgets200ResponseAllOfBudgetStats) GetIntervalsOk() ([]GetBudgets200ResponseAllOfBudgetStatsIntervalsInner, bool) {
-	if o == nil || IsNil(o.Intervals) {
-		return nil, false
-	}
-	return o.Intervals, true
-}
-
-// SetIntervals gets a reference to the given []GetBudgets200ResponseAllOfBudgetStatsIntervalsInner and assigns it to the Intervals field.
-func (o *GetBudgets200ResponseAllOfBudgetStats) SetIntervals(v []GetBudgets200ResponseAllOfBudgetStatsIntervalsInner) {
-	o.Intervals = v
-}
-
-// GetCurrent returns the Current field value if set, zero value otherwise.
-func (o *GetBudgets200ResponseAllOfBudgetStats) GetCurrent() GetBudgets200ResponseAllOfBudgetStatsCurrent {
-	if o == nil || IsNil(o.Current) {
-		var ret GetBudgets200ResponseAllOfBudgetStatsCurrent
-		return ret
-	}
-	return *o.Current
-}
-
-// GetCurrentOk returns a tuple with the Current field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetBudgets200ResponseAllOfBudgetStats) GetCurrentOk() (*GetBudgets200ResponseAllOfBudgetStatsCurrent, bool) {
-	if o == nil || IsNil(o.Current) {
-		return nil, false
-	}
-	return o.Current, true
-}
-
-// SetCurrent gets a reference to the given GetBudgets200ResponseAllOfBudgetStatsCurrent and assigns it to the Current field.
-func (o *GetBudgets200ResponseAllOfBudgetStats) SetCurrent(v GetBudgets200ResponseAllOfBudgetStatsCurrent) {
-	o.Current = &v
 }
 
 func (o GetBudgets200ResponseAllOfBudgetStats) MarshalJSON() ([]byte, error) {

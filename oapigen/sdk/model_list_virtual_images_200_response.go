@@ -27,67 +27,12 @@ type ListVirtualImages200Response struct {
 
 type _ListVirtualImages200Response ListVirtualImages200Response
 
-// NewListVirtualImages200Response instantiates a new ListVirtualImages200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListVirtualImages200Response() *ListVirtualImages200Response {
-	this := ListVirtualImages200Response{}
-	return &this
-}
-
 // NewListVirtualImages200ResponseWithDefaults instantiates a new ListVirtualImages200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListVirtualImages200ResponseWithDefaults() *ListVirtualImages200Response {
 	this := ListVirtualImages200Response{}
 	return &this
-}
-
-// GetVirtualImages returns the VirtualImages field value if set, zero value otherwise.
-func (o *ListVirtualImages200Response) GetVirtualImages() []ListVirtualImages200ResponseAllOfVirtualImagesInner {
-	if o == nil || IsNil(o.VirtualImages) {
-		var ret []ListVirtualImages200ResponseAllOfVirtualImagesInner
-		return ret
-	}
-	return o.VirtualImages
-}
-
-// GetVirtualImagesOk returns a tuple with the VirtualImages field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListVirtualImages200Response) GetVirtualImagesOk() ([]ListVirtualImages200ResponseAllOfVirtualImagesInner, bool) {
-	if o == nil || IsNil(o.VirtualImages) {
-		return nil, false
-	}
-	return o.VirtualImages, true
-}
-
-// SetVirtualImages gets a reference to the given []ListVirtualImages200ResponseAllOfVirtualImagesInner and assigns it to the VirtualImages field.
-func (o *ListVirtualImages200Response) SetVirtualImages(v []ListVirtualImages200ResponseAllOfVirtualImagesInner) {
-	o.VirtualImages = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListVirtualImages200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListVirtualImages200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListVirtualImages200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListVirtualImages200Response) MarshalJSON() ([]byte, error) {

@@ -27,44 +27,12 @@ type RunWorkflowInstanceRequestTaskSet struct {
 
 type _RunWorkflowInstanceRequestTaskSet RunWorkflowInstanceRequestTaskSet
 
-// NewRunWorkflowInstanceRequestTaskSet instantiates a new RunWorkflowInstanceRequestTaskSet object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRunWorkflowInstanceRequestTaskSet() *RunWorkflowInstanceRequestTaskSet {
-	this := RunWorkflowInstanceRequestTaskSet{}
-	return &this
-}
-
 // NewRunWorkflowInstanceRequestTaskSetWithDefaults instantiates a new RunWorkflowInstanceRequestTaskSet object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRunWorkflowInstanceRequestTaskSetWithDefaults() *RunWorkflowInstanceRequestTaskSet {
 	this := RunWorkflowInstanceRequestTaskSet{}
 	return &this
-}
-
-// GetCustomOptions returns the CustomOptions field value if set, zero value otherwise.
-func (o *RunWorkflowInstanceRequestTaskSet) GetCustomOptions() map[string]interface{} {
-	if o == nil || IsNil(o.CustomOptions) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.CustomOptions
-}
-
-// GetCustomOptionsOk returns a tuple with the CustomOptions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RunWorkflowInstanceRequestTaskSet) GetCustomOptionsOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.CustomOptions) {
-		return map[string]interface{}{}, false
-	}
-	return o.CustomOptions, true
-}
-
-// SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
-func (o *RunWorkflowInstanceRequestTaskSet) SetCustomOptions(v map[string]interface{}) {
-	o.CustomOptions = v
 }
 
 func (o RunWorkflowInstanceRequestTaskSet) MarshalJSON() ([]byte, error) {

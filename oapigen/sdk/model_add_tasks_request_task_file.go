@@ -34,16 +34,6 @@ type AddTasksRequestTaskFile struct {
 
 type _AddTasksRequestTaskFile AddTasksRequestTaskFile
 
-// NewAddTasksRequestTaskFile instantiates a new AddTasksRequestTaskFile object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddTasksRequestTaskFile(sourceType string) *AddTasksRequestTaskFile {
-	this := AddTasksRequestTaskFile{}
-	this.SourceType = sourceType
-	return &this
-}
-
 // NewAddTasksRequestTaskFileWithDefaults instantiates a new AddTasksRequestTaskFile object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -52,122 +42,6 @@ func NewAddTasksRequestTaskFileWithDefaults() *AddTasksRequestTaskFile {
 	var sourceType string = "local"
 	this.SourceType = sourceType
 	return &this
-}
-
-// GetSourceType returns the SourceType field value
-func (o *AddTasksRequestTaskFile) GetSourceType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SourceType
-}
-
-// GetSourceTypeOk returns a tuple with the SourceType field value
-// and a boolean to check if the value has been set.
-func (o *AddTasksRequestTaskFile) GetSourceTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SourceType, true
-}
-
-// SetSourceType sets field value
-func (o *AddTasksRequestTaskFile) SetSourceType(v string) {
-	o.SourceType = v
-}
-
-// GetContent returns the Content field value if set, zero value otherwise.
-func (o *AddTasksRequestTaskFile) GetContent() string {
-	if o == nil || IsNil(o.Content) {
-		var ret string
-		return ret
-	}
-	return *o.Content
-}
-
-// GetContentOk returns a tuple with the Content field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddTasksRequestTaskFile) GetContentOk() (*string, bool) {
-	if o == nil || IsNil(o.Content) {
-		return nil, false
-	}
-	return o.Content, true
-}
-
-// SetContent gets a reference to the given string and assigns it to the Content field.
-func (o *AddTasksRequestTaskFile) SetContent(v string) {
-	o.Content = &v
-}
-
-// GetContentPath returns the ContentPath field value if set, zero value otherwise.
-func (o *AddTasksRequestTaskFile) GetContentPath() string {
-	if o == nil || IsNil(o.ContentPath) {
-		var ret string
-		return ret
-	}
-	return *o.ContentPath
-}
-
-// GetContentPathOk returns a tuple with the ContentPath field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddTasksRequestTaskFile) GetContentPathOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentPath) {
-		return nil, false
-	}
-	return o.ContentPath, true
-}
-
-// SetContentPath gets a reference to the given string and assigns it to the ContentPath field.
-func (o *AddTasksRequestTaskFile) SetContentPath(v string) {
-	o.ContentPath = &v
-}
-
-// GetContentRef returns the ContentRef field value if set, zero value otherwise.
-func (o *AddTasksRequestTaskFile) GetContentRef() string {
-	if o == nil || IsNil(o.ContentRef) {
-		var ret string
-		return ret
-	}
-	return *o.ContentRef
-}
-
-// GetContentRefOk returns a tuple with the ContentRef field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddTasksRequestTaskFile) GetContentRefOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentRef) {
-		return nil, false
-	}
-	return o.ContentRef, true
-}
-
-// SetContentRef gets a reference to the given string and assigns it to the ContentRef field.
-func (o *AddTasksRequestTaskFile) SetContentRef(v string) {
-	o.ContentRef = &v
-}
-
-// GetRepository returns the Repository field value if set, zero value otherwise.
-func (o *AddTasksRequestTaskFile) GetRepository() AddTasksRequestTaskFileRepository {
-	if o == nil || IsNil(o.Repository) {
-		var ret AddTasksRequestTaskFileRepository
-		return ret
-	}
-	return *o.Repository
-}
-
-// GetRepositoryOk returns a tuple with the Repository field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddTasksRequestTaskFile) GetRepositoryOk() (*AddTasksRequestTaskFileRepository, bool) {
-	if o == nil || IsNil(o.Repository) {
-		return nil, false
-	}
-	return o.Repository, true
-}
-
-// SetRepository gets a reference to the given AddTasksRequestTaskFileRepository and assigns it to the Repository field.
-func (o *AddTasksRequestTaskFile) SetRepository(v AddTasksRequestTaskFileRepository) {
-	o.Repository = &v
 }
 
 func (o AddTasksRequestTaskFile) MarshalJSON() ([]byte, error) {

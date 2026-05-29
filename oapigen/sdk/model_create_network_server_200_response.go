@@ -27,67 +27,12 @@ type CreateNetworkServer200Response struct {
 
 type _CreateNetworkServer200Response CreateNetworkServer200Response
 
-// NewCreateNetworkServer200Response instantiates a new CreateNetworkServer200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkServer200Response() *CreateNetworkServer200Response {
-	this := CreateNetworkServer200Response{}
-	return &this
-}
-
 // NewCreateNetworkServer200ResponseWithDefaults instantiates a new CreateNetworkServer200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkServer200ResponseWithDefaults() *CreateNetworkServer200Response {
 	this := CreateNetworkServer200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *CreateNetworkServer200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkServer200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *CreateNetworkServer200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
-func (o *CreateNetworkServer200Response) GetNetworkServer() CreateNetworkServer200ResponseAllOfNetworkServer {
-	if o == nil || IsNil(o.NetworkServer) {
-		var ret CreateNetworkServer200ResponseAllOfNetworkServer
-		return ret
-	}
-	return *o.NetworkServer
-}
-
-// GetNetworkServerOk returns a tuple with the NetworkServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkServer200Response) GetNetworkServerOk() (*CreateNetworkServer200ResponseAllOfNetworkServer, bool) {
-	if o == nil || IsNil(o.NetworkServer) {
-		return nil, false
-	}
-	return o.NetworkServer, true
-}
-
-// SetNetworkServer gets a reference to the given CreateNetworkServer200ResponseAllOfNetworkServer and assigns it to the NetworkServer field.
-func (o *CreateNetworkServer200Response) SetNetworkServer(v CreateNetworkServer200ResponseAllOfNetworkServer) {
-	o.NetworkServer = &v
 }
 
 func (o CreateNetworkServer200Response) MarshalJSON() ([]byte, error) {

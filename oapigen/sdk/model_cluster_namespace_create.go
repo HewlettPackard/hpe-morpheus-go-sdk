@@ -32,18 +32,6 @@ type ClusterNamespaceCreate struct {
 
 type _ClusterNamespaceCreate ClusterNamespaceCreate
 
-// NewClusterNamespaceCreate instantiates a new ClusterNamespaceCreate object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterNamespaceCreate(name string) *ClusterNamespaceCreate {
-	this := ClusterNamespaceCreate{}
-	this.Name = name
-	var active bool = false
-	this.Active = &active
-	return &this
-}
-
 // NewClusterNamespaceCreateWithDefaults instantiates a new ClusterNamespaceCreate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -52,99 +40,6 @@ func NewClusterNamespaceCreateWithDefaults() *ClusterNamespaceCreate {
 	var active bool = false
 	this.Active = &active
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *ClusterNamespaceCreate) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *ClusterNamespaceCreate) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *ClusterNamespaceCreate) SetName(v string) {
-	o.Name = v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *ClusterNamespaceCreate) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
-		var ret string
-		return ret
-	}
-	return *o.Description
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterNamespaceCreate) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
-		return nil, false
-	}
-	return o.Description, true
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *ClusterNamespaceCreate) SetDescription(v string) {
-	o.Description = &v
-}
-
-// GetActive returns the Active field value if set, zero value otherwise.
-func (o *ClusterNamespaceCreate) GetActive() bool {
-	if o == nil || IsNil(o.Active) {
-		var ret bool
-		return ret
-	}
-	return *o.Active
-}
-
-// GetActiveOk returns a tuple with the Active field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterNamespaceCreate) GetActiveOk() (*bool, bool) {
-	if o == nil || IsNil(o.Active) {
-		return nil, false
-	}
-	return o.Active, true
-}
-
-// SetActive gets a reference to the given bool and assigns it to the Active field.
-func (o *ClusterNamespaceCreate) SetActive(v bool) {
-	o.Active = &v
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *ClusterNamespaceCreate) GetResourcePermissions() ClusterNamespaceCreateResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret ClusterNamespaceCreateResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterNamespaceCreate) GetResourcePermissionsOk() (*ClusterNamespaceCreateResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// SetResourcePermissions gets a reference to the given ClusterNamespaceCreateResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *ClusterNamespaceCreate) SetResourcePermissions(v ClusterNamespaceCreateResourcePermissions) {
-	o.ResourcePermissions = &v
 }
 
 func (o ClusterNamespaceCreate) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type ContainersAttachFloatingIpRequest struct {
 
 type _ContainersAttachFloatingIpRequest ContainersAttachFloatingIpRequest
 
-// NewContainersAttachFloatingIpRequest instantiates a new ContainersAttachFloatingIpRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewContainersAttachFloatingIpRequest() *ContainersAttachFloatingIpRequest {
-	this := ContainersAttachFloatingIpRequest{}
-	return &this
-}
-
 // NewContainersAttachFloatingIpRequestWithDefaults instantiates a new ContainersAttachFloatingIpRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewContainersAttachFloatingIpRequestWithDefaults() *ContainersAttachFloatingIpRequest {
 	this := ContainersAttachFloatingIpRequest{}
 	return &this
-}
-
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *ContainersAttachFloatingIpRequest) GetConfig() ContainersAttachFloatingIpRequestConfig {
-	if o == nil || IsNil(o.Config) {
-		var ret ContainersAttachFloatingIpRequestConfig
-		return ret
-	}
-	return *o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ContainersAttachFloatingIpRequest) GetConfigOk() (*ContainersAttachFloatingIpRequestConfig, bool) {
-	if o == nil || IsNil(o.Config) {
-		return nil, false
-	}
-	return o.Config, true
-}
-
-// SetConfig gets a reference to the given ContainersAttachFloatingIpRequestConfig and assigns it to the Config field.
-func (o *ContainersAttachFloatingIpRequest) SetConfig(v ContainersAttachFloatingIpRequestConfig) {
-	o.Config = &v
 }
 
 func (o ContainersAttachFloatingIpRequest) MarshalJSON() ([]byte, error) {

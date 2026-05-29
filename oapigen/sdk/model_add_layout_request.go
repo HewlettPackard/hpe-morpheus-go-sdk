@@ -26,44 +26,12 @@ type AddLayoutRequest struct {
 
 type _AddLayoutRequest AddLayoutRequest
 
-// NewAddLayoutRequest instantiates a new AddLayoutRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddLayoutRequest() *AddLayoutRequest {
-	this := AddLayoutRequest{}
-	return &this
-}
-
 // NewAddLayoutRequestWithDefaults instantiates a new AddLayoutRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddLayoutRequestWithDefaults() *AddLayoutRequest {
 	this := AddLayoutRequest{}
 	return &this
-}
-
-// GetInstanceTypeLayout returns the InstanceTypeLayout field value if set, zero value otherwise.
-func (o *AddLayoutRequest) GetInstanceTypeLayout() AddLayoutRequestInstanceTypeLayout {
-	if o == nil || IsNil(o.InstanceTypeLayout) {
-		var ret AddLayoutRequestInstanceTypeLayout
-		return ret
-	}
-	return *o.InstanceTypeLayout
-}
-
-// GetInstanceTypeLayoutOk returns a tuple with the InstanceTypeLayout field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddLayoutRequest) GetInstanceTypeLayoutOk() (*AddLayoutRequestInstanceTypeLayout, bool) {
-	if o == nil || IsNil(o.InstanceTypeLayout) {
-		return nil, false
-	}
-	return o.InstanceTypeLayout, true
-}
-
-// SetInstanceTypeLayout gets a reference to the given AddLayoutRequestInstanceTypeLayout and assigns it to the InstanceTypeLayout field.
-func (o *AddLayoutRequest) SetInstanceTypeLayout(v AddLayoutRequestInstanceTypeLayout) {
-	o.InstanceTypeLayout = &v
 }
 
 func (o AddLayoutRequest) MarshalJSON() ([]byte, error) {

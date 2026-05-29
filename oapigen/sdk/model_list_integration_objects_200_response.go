@@ -26,44 +26,12 @@ type ListIntegrationObjects200Response struct {
 
 type _ListIntegrationObjects200Response ListIntegrationObjects200Response
 
-// NewListIntegrationObjects200Response instantiates a new ListIntegrationObjects200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListIntegrationObjects200Response() *ListIntegrationObjects200Response {
-	this := ListIntegrationObjects200Response{}
-	return &this
-}
-
 // NewListIntegrationObjects200ResponseWithDefaults instantiates a new ListIntegrationObjects200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListIntegrationObjects200ResponseWithDefaults() *ListIntegrationObjects200Response {
 	this := ListIntegrationObjects200Response{}
 	return &this
-}
-
-// GetObjects returns the Objects field value if set, zero value otherwise.
-func (o *ListIntegrationObjects200Response) GetObjects() []ListIntegrationObjects200ResponseObjectsInner {
-	if o == nil || IsNil(o.Objects) {
-		var ret []ListIntegrationObjects200ResponseObjectsInner
-		return ret
-	}
-	return o.Objects
-}
-
-// GetObjectsOk returns a tuple with the Objects field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListIntegrationObjects200Response) GetObjectsOk() ([]ListIntegrationObjects200ResponseObjectsInner, bool) {
-	if o == nil || IsNil(o.Objects) {
-		return nil, false
-	}
-	return o.Objects, true
-}
-
-// SetObjects gets a reference to the given []ListIntegrationObjects200ResponseObjectsInner and assigns it to the Objects field.
-func (o *ListIntegrationObjects200Response) SetObjects(v []ListIntegrationObjects200ResponseObjectsInner) {
-	o.Objects = v
 }
 
 func (o ListIntegrationObjects200Response) MarshalJSON() ([]byte, error) {

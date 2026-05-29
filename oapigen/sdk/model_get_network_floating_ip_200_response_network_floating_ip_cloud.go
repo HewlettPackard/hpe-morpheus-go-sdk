@@ -31,90 +31,12 @@ type GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud struct {
 
 type _GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud
 
-// NewGetNetworkFloatingIp200ResponseNetworkFloatingIpCloud instantiates a new GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkFloatingIp200ResponseNetworkFloatingIpCloud() *GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud {
-	this := GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud{}
-	return &this
-}
-
 // NewGetNetworkFloatingIp200ResponseNetworkFloatingIpCloudWithDefaults instantiates a new GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkFloatingIp200ResponseNetworkFloatingIpCloudWithDefaults() *GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud {
 	this := GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud) SetName(v string) {
-	o.Name = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud) SetType(v string) {
-	o.Type = &v
 }
 
 func (o GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud) MarshalJSON() ([]byte, error) {

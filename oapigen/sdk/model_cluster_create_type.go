@@ -27,20 +27,6 @@ type ClusterCreateType struct {
 	String                 *string
 }
 
-// ClusterCreateTypeOneOfAsClusterCreateType is a convenience function that returns ClusterCreateTypeOneOf wrapped in ClusterCreateType
-func ClusterCreateTypeOneOfAsClusterCreateType(v *ClusterCreateTypeOneOf) ClusterCreateType {
-	return ClusterCreateType{
-		ClusterCreateTypeOneOf: v,
-	}
-}
-
-// stringAsClusterCreateType is a convenience function that returns string wrapped in ClusterCreateType
-func StringAsClusterCreateType(v *string) ClusterCreateType {
-	return ClusterCreateType{
-		String: v,
-	}
-}
-
 func (dst *ClusterCreateType) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ClusterCreateType{}

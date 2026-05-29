@@ -26,46 +26,12 @@ type AddAlertsRequest struct {
 
 type _AddAlertsRequest AddAlertsRequest
 
-// NewAddAlertsRequest instantiates a new AddAlertsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddAlertsRequest(alert AddAlertsRequestAlert) *AddAlertsRequest {
-	this := AddAlertsRequest{}
-	this.Alert = alert
-	return &this
-}
-
 // NewAddAlertsRequestWithDefaults instantiates a new AddAlertsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddAlertsRequestWithDefaults() *AddAlertsRequest {
 	this := AddAlertsRequest{}
 	return &this
-}
-
-// GetAlert returns the Alert field value
-func (o *AddAlertsRequest) GetAlert() AddAlertsRequestAlert {
-	if o == nil {
-		var ret AddAlertsRequestAlert
-		return ret
-	}
-
-	return o.Alert
-}
-
-// GetAlertOk returns a tuple with the Alert field value
-// and a boolean to check if the value has been set.
-func (o *AddAlertsRequest) GetAlertOk() (*AddAlertsRequestAlert, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Alert, true
-}
-
-// SetAlert sets field value
-func (o *AddAlertsRequest) SetAlert(v AddAlertsRequestAlert) {
-	o.Alert = v
 }
 
 func (o AddAlertsRequest) MarshalJSON() ([]byte, error) {

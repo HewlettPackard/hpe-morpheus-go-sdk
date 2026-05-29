@@ -26,46 +26,12 @@ type UpdateIncidentsRequest struct {
 
 type _UpdateIncidentsRequest UpdateIncidentsRequest
 
-// NewUpdateIncidentsRequest instantiates a new UpdateIncidentsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIncidentsRequest(incident UpdateIncidentsRequestIncident) *UpdateIncidentsRequest {
-	this := UpdateIncidentsRequest{}
-	this.Incident = incident
-	return &this
-}
-
 // NewUpdateIncidentsRequestWithDefaults instantiates a new UpdateIncidentsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateIncidentsRequestWithDefaults() *UpdateIncidentsRequest {
 	this := UpdateIncidentsRequest{}
 	return &this
-}
-
-// GetIncident returns the Incident field value
-func (o *UpdateIncidentsRequest) GetIncident() UpdateIncidentsRequestIncident {
-	if o == nil {
-		var ret UpdateIncidentsRequestIncident
-		return ret
-	}
-
-	return o.Incident
-}
-
-// GetIncidentOk returns a tuple with the Incident field value
-// and a boolean to check if the value has been set.
-func (o *UpdateIncidentsRequest) GetIncidentOk() (*UpdateIncidentsRequestIncident, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Incident, true
-}
-
-// SetIncident sets field value
-func (o *UpdateIncidentsRequest) SetIncident(v UpdateIncidentsRequestIncident) {
-	o.Incident = v
 }
 
 func (o UpdateIncidentsRequest) MarshalJSON() ([]byte, error) {

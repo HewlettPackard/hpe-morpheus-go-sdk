@@ -31,91 +31,12 @@ type InstanceConfigObject2PortsInner struct {
 
 type _InstanceConfigObject2PortsInner InstanceConfigObject2PortsInner
 
-// NewInstanceConfigObject2PortsInner instantiates a new InstanceConfigObject2PortsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceConfigObject2PortsInner() *InstanceConfigObject2PortsInner {
-	this := InstanceConfigObject2PortsInner{}
-	return &this
-}
-
 // NewInstanceConfigObject2PortsInnerWithDefaults instantiates a new InstanceConfigObject2PortsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceConfigObject2PortsInnerWithDefaults() *InstanceConfigObject2PortsInner {
 	this := InstanceConfigObject2PortsInner{}
 	return &this
-}
-
-// GetPort returns the Port field value if set, zero value otherwise.
-func (o *InstanceConfigObject2PortsInner) GetPort() int64 {
-	if o == nil || IsNil(o.Port) {
-		var ret int64
-		return ret
-	}
-	return *o.Port
-}
-
-// GetPortOk returns a tuple with the Port field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceConfigObject2PortsInner) GetPortOk() (*int64, bool) {
-	if o == nil || IsNil(o.Port) {
-		return nil, false
-	}
-	return o.Port, true
-}
-
-// SetPort gets a reference to the given int64 and assigns it to the Port field.
-func (o *InstanceConfigObject2PortsInner) SetPort(v int64) {
-	o.Port = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *InstanceConfigObject2PortsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceConfigObject2PortsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *InstanceConfigObject2PortsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetLb returns the Lb field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InstanceConfigObject2PortsInner) GetLb() string {
-	if o == nil || IsNil(o.Lb.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Lb.Get()
-}
-
-// GetLbOk returns a tuple with the Lb field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InstanceConfigObject2PortsInner) GetLbOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Lb.Get(), o.Lb.IsSet()
-}
-
-// SetLb gets a reference to the given NullableString and assigns it to the Lb field.
-func (o *InstanceConfigObject2PortsInner) SetLb(v string) {
-	o.Lb.Set(&v)
 }
 
 func (o InstanceConfigObject2PortsInner) MarshalJSON() ([]byte, error) {

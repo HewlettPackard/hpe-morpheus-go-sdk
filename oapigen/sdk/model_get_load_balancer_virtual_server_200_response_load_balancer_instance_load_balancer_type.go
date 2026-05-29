@@ -28,90 +28,12 @@ type GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType
 
 type _GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType
 
-// NewGetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType instantiates a new GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType() *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType {
-	this := GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType{}
-	return &this
-}
-
 // NewGetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerTypeWithDefaults instantiates a new GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerTypeWithDefaults() *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType {
 	this := GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType) SetName(v string) {
-	o.Name = &v
 }
 
 func (o GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType) MarshalJSON() ([]byte, error) {

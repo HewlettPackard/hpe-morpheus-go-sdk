@@ -26,44 +26,12 @@ type MaxContainersPolicyTypeConfiguration4 struct {
 
 type _MaxContainersPolicyTypeConfiguration4 MaxContainersPolicyTypeConfiguration4
 
-// NewMaxContainersPolicyTypeConfiguration4 instantiates a new MaxContainersPolicyTypeConfiguration4 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMaxContainersPolicyTypeConfiguration4() *MaxContainersPolicyTypeConfiguration4 {
-	this := MaxContainersPolicyTypeConfiguration4{}
-	return &this
-}
-
 // NewMaxContainersPolicyTypeConfiguration4WithDefaults instantiates a new MaxContainersPolicyTypeConfiguration4 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewMaxContainersPolicyTypeConfiguration4WithDefaults() *MaxContainersPolicyTypeConfiguration4 {
 	this := MaxContainersPolicyTypeConfiguration4{}
 	return &this
-}
-
-// GetMaxContainers returns the MaxContainers field value if set, zero value otherwise.
-func (o *MaxContainersPolicyTypeConfiguration4) GetMaxContainers() string {
-	if o == nil || IsNil(o.MaxContainers) {
-		var ret string
-		return ret
-	}
-	return *o.MaxContainers
-}
-
-// GetMaxContainersOk returns a tuple with the MaxContainers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MaxContainersPolicyTypeConfiguration4) GetMaxContainersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxContainers) {
-		return nil, false
-	}
-	return o.MaxContainers, true
-}
-
-// SetMaxContainers gets a reference to the given string and assigns it to the MaxContainers field.
-func (o *MaxContainersPolicyTypeConfiguration4) SetMaxContainers(v string) {
-	o.MaxContainers = &v
 }
 
 func (o MaxContainersPolicyTypeConfiguration4) MarshalJSON() ([]byte, error) {

@@ -28,67 +28,12 @@ type AddSystem200Response struct {
 
 type _AddSystem200Response AddSystem200Response
 
-// NewAddSystem200Response instantiates a new AddSystem200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddSystem200Response() *AddSystem200Response {
-	this := AddSystem200Response{}
-	return &this
-}
-
 // NewAddSystem200ResponseWithDefaults instantiates a new AddSystem200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddSystem200ResponseWithDefaults() *AddSystem200Response {
 	this := AddSystem200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddSystem200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSystem200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddSystem200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddSystem200Response) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSystem200Response) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddSystem200Response) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o AddSystem200Response) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy struct {
 
 type _AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy
 
-// NewAddPreseedScript200ResponseAllOfPreseedScriptCreatedBy instantiates a new AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPreseedScript200ResponseAllOfPreseedScriptCreatedBy() *AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy {
-	this := AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy{}
-	return &this
-}
-
 // NewAddPreseedScript200ResponseAllOfPreseedScriptCreatedByWithDefaults instantiates a new AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddPreseedScript200ResponseAllOfPreseedScriptCreatedByWithDefaults() *AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy {
 	this := AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy{}
 	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy) SetUsername(v string) {
-	o.Username = &v
 }
 
 func (o AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy) MarshalJSON() ([]byte, error) {

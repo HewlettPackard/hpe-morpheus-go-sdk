@@ -29,115 +29,12 @@ type LogSettings struct {
 
 type _LogSettings LogSettings
 
-// NewLogSettings instantiates a new LogSettings object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewLogSettings() *LogSettings {
-	this := LogSettings{}
-	return &this
-}
-
 // NewLogSettingsWithDefaults instantiates a new LogSettings object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewLogSettingsWithDefaults() *LogSettings {
 	this := LogSettings{}
 	return &this
-}
-
-// GetEnabled returns the Enabled field value if set, zero value otherwise.
-func (o *LogSettings) GetEnabled() bool {
-	if o == nil || IsNil(o.Enabled) {
-		var ret bool
-		return ret
-	}
-	return *o.Enabled
-}
-
-// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LogSettings) GetEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.Enabled) {
-		return nil, false
-	}
-	return o.Enabled, true
-}
-
-// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
-func (o *LogSettings) SetEnabled(v bool) {
-	o.Enabled = &v
-}
-
-// GetRetentionDays returns the RetentionDays field value if set, zero value otherwise.
-func (o *LogSettings) GetRetentionDays() string {
-	if o == nil || IsNil(o.RetentionDays) {
-		var ret string
-		return ret
-	}
-	return *o.RetentionDays
-}
-
-// GetRetentionDaysOk returns a tuple with the RetentionDays field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LogSettings) GetRetentionDaysOk() (*string, bool) {
-	if o == nil || IsNil(o.RetentionDays) {
-		return nil, false
-	}
-	return o.RetentionDays, true
-}
-
-// SetRetentionDays gets a reference to the given string and assigns it to the RetentionDays field.
-func (o *LogSettings) SetRetentionDays(v string) {
-	o.RetentionDays = &v
-}
-
-// GetSyslogRules returns the SyslogRules field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LogSettings) GetSyslogRules() []map[string]interface{} {
-	if o == nil {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.SyslogRules
-}
-
-// GetSyslogRulesOk returns a tuple with the SyslogRules field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LogSettings) GetSyslogRulesOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.SyslogRules) {
-		return nil, false
-	}
-	return o.SyslogRules, true
-}
-
-// SetSyslogRules gets a reference to the given []map[string]interface{} and assigns it to the SyslogRules field.
-func (o *LogSettings) SetSyslogRules(v []map[string]interface{}) {
-	o.SyslogRules = v
-}
-
-// GetIntegrations returns the Integrations field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LogSettings) GetIntegrations() []map[string]interface{} {
-	if o == nil {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Integrations
-}
-
-// GetIntegrationsOk returns a tuple with the Integrations field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LogSettings) GetIntegrationsOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Integrations) {
-		return nil, false
-	}
-	return o.Integrations, true
-}
-
-// SetIntegrations gets a reference to the given []map[string]interface{} and assigns it to the Integrations field.
-func (o *LogSettings) SetIntegrations(v []map[string]interface{}) {
-	o.Integrations = v
 }
 
 func (o LogSettings) MarshalJSON() ([]byte, error) {

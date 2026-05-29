@@ -27,67 +27,12 @@ type ClusterHistoryEventsInnerProcessType struct {
 
 type _ClusterHistoryEventsInnerProcessType ClusterHistoryEventsInnerProcessType
 
-// NewClusterHistoryEventsInnerProcessType instantiates a new ClusterHistoryEventsInnerProcessType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterHistoryEventsInnerProcessType() *ClusterHistoryEventsInnerProcessType {
-	this := ClusterHistoryEventsInnerProcessType{}
-	return &this
-}
-
 // NewClusterHistoryEventsInnerProcessTypeWithDefaults instantiates a new ClusterHistoryEventsInnerProcessType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClusterHistoryEventsInnerProcessTypeWithDefaults() *ClusterHistoryEventsInnerProcessType {
 	this := ClusterHistoryEventsInnerProcessType{}
 	return &this
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *ClusterHistoryEventsInnerProcessType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterHistoryEventsInnerProcessType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *ClusterHistoryEventsInnerProcessType) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ClusterHistoryEventsInnerProcessType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterHistoryEventsInnerProcessType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ClusterHistoryEventsInnerProcessType) SetName(v string) {
-	o.Name = &v
 }
 
 func (o ClusterHistoryEventsInnerProcessType) MarshalJSON() ([]byte, error) {

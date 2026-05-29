@@ -27,20 +27,6 @@ type GetAppState200ResponseAllOfInputDataInnerName struct {
 	String            *string
 }
 
-// map[string]interface{}AsGetAppState200ResponseAllOfInputDataInnerName is a convenience function that returns map[string]interface{} wrapped in GetAppState200ResponseAllOfInputDataInnerName
-func MapmapOfStringAnyAsGetAppState200ResponseAllOfInputDataInnerName(v *map[string]interface{}) GetAppState200ResponseAllOfInputDataInnerName {
-	return GetAppState200ResponseAllOfInputDataInnerName{
-		MapmapOfStringAny: v,
-	}
-}
-
-// stringAsGetAppState200ResponseAllOfInputDataInnerName is a convenience function that returns string wrapped in GetAppState200ResponseAllOfInputDataInnerName
-func StringAsGetAppState200ResponseAllOfInputDataInnerName(v *string) GetAppState200ResponseAllOfInputDataInnerName {
-	return GetAppState200ResponseAllOfInputDataInnerName{
-		String: v,
-	}
-}
-
 func (dst *GetAppState200ResponseAllOfInputDataInnerName) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &GetAppState200ResponseAllOfInputDataInnerName{}

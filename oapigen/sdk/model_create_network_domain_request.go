@@ -26,44 +26,12 @@ type CreateNetworkDomainRequest struct {
 
 type _CreateNetworkDomainRequest CreateNetworkDomainRequest
 
-// NewCreateNetworkDomainRequest instantiates a new CreateNetworkDomainRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkDomainRequest() *CreateNetworkDomainRequest {
-	this := CreateNetworkDomainRequest{}
-	return &this
-}
-
 // NewCreateNetworkDomainRequestWithDefaults instantiates a new CreateNetworkDomainRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkDomainRequestWithDefaults() *CreateNetworkDomainRequest {
 	this := CreateNetworkDomainRequest{}
 	return &this
-}
-
-// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
-func (o *CreateNetworkDomainRequest) GetNetworkDomain() CreateNetworkDomainRequestNetworkDomain {
-	if o == nil || IsNil(o.NetworkDomain) {
-		var ret CreateNetworkDomainRequestNetworkDomain
-		return ret
-	}
-	return *o.NetworkDomain
-}
-
-// GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkDomainRequest) GetNetworkDomainOk() (*CreateNetworkDomainRequestNetworkDomain, bool) {
-	if o == nil || IsNil(o.NetworkDomain) {
-		return nil, false
-	}
-	return o.NetworkDomain, true
-}
-
-// SetNetworkDomain gets a reference to the given CreateNetworkDomainRequestNetworkDomain and assigns it to the NetworkDomain field.
-func (o *CreateNetworkDomainRequest) SetNetworkDomain(v CreateNetworkDomainRequestNetworkDomain) {
-	o.NetworkDomain = &v
 }
 
 func (o CreateNetworkDomainRequest) MarshalJSON() ([]byte, error) {

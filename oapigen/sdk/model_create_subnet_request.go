@@ -27,67 +27,12 @@ type CreateSubnetRequest struct {
 
 type _CreateSubnetRequest CreateSubnetRequest
 
-// NewCreateSubnetRequest instantiates a new CreateSubnetRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateSubnetRequest() *CreateSubnetRequest {
-	this := CreateSubnetRequest{}
-	return &this
-}
-
 // NewCreateSubnetRequestWithDefaults instantiates a new CreateSubnetRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateSubnetRequestWithDefaults() *CreateSubnetRequest {
 	this := CreateSubnetRequest{}
 	return &this
-}
-
-// GetSubnet returns the Subnet field value if set, zero value otherwise.
-func (o *CreateSubnetRequest) GetSubnet() CreateSubnetRequestSubnet {
-	if o == nil || IsNil(o.Subnet) {
-		var ret CreateSubnetRequestSubnet
-		return ret
-	}
-	return *o.Subnet
-}
-
-// GetSubnetOk returns a tuple with the Subnet field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateSubnetRequest) GetSubnetOk() (*CreateSubnetRequestSubnet, bool) {
-	if o == nil || IsNil(o.Subnet) {
-		return nil, false
-	}
-	return o.Subnet, true
-}
-
-// SetSubnet gets a reference to the given CreateSubnetRequestSubnet and assigns it to the Subnet field.
-func (o *CreateSubnetRequest) SetSubnet(v CreateSubnetRequestSubnet) {
-	o.Subnet = &v
-}
-
-// GetResourcePermission returns the ResourcePermission field value if set, zero value otherwise.
-func (o *CreateSubnetRequest) GetResourcePermission() CreateSubnetRequestResourcePermission {
-	if o == nil || IsNil(o.ResourcePermission) {
-		var ret CreateSubnetRequestResourcePermission
-		return ret
-	}
-	return *o.ResourcePermission
-}
-
-// GetResourcePermissionOk returns a tuple with the ResourcePermission field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateSubnetRequest) GetResourcePermissionOk() (*CreateSubnetRequestResourcePermission, bool) {
-	if o == nil || IsNil(o.ResourcePermission) {
-		return nil, false
-	}
-	return o.ResourcePermission, true
-}
-
-// SetResourcePermission gets a reference to the given CreateSubnetRequestResourcePermission and assigns it to the ResourcePermission field.
-func (o *CreateSubnetRequest) SetResourcePermission(v CreateSubnetRequestResourcePermission) {
-	o.ResourcePermission = &v
 }
 
 func (o CreateSubnetRequest) MarshalJSON() ([]byte, error) {

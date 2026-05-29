@@ -26,44 +26,12 @@ type GetLoadBalancerPoolNode200Response struct {
 
 type _GetLoadBalancerPoolNode200Response GetLoadBalancerPoolNode200Response
 
-// NewGetLoadBalancerPoolNode200Response instantiates a new GetLoadBalancerPoolNode200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetLoadBalancerPoolNode200Response() *GetLoadBalancerPoolNode200Response {
-	this := GetLoadBalancerPoolNode200Response{}
-	return &this
-}
-
 // NewGetLoadBalancerPoolNode200ResponseWithDefaults instantiates a new GetLoadBalancerPoolNode200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetLoadBalancerPoolNode200ResponseWithDefaults() *GetLoadBalancerPoolNode200Response {
 	this := GetLoadBalancerPoolNode200Response{}
 	return &this
-}
-
-// GetLoadBalancerNode returns the LoadBalancerNode field value if set, zero value otherwise.
-func (o *GetLoadBalancerPoolNode200Response) GetLoadBalancerNode() GetLoadBalancerPoolNode200ResponseLoadBalancerNode {
-	if o == nil || IsNil(o.LoadBalancerNode) {
-		var ret GetLoadBalancerPoolNode200ResponseLoadBalancerNode
-		return ret
-	}
-	return *o.LoadBalancerNode
-}
-
-// GetLoadBalancerNodeOk returns a tuple with the LoadBalancerNode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLoadBalancerPoolNode200Response) GetLoadBalancerNodeOk() (*GetLoadBalancerPoolNode200ResponseLoadBalancerNode, bool) {
-	if o == nil || IsNil(o.LoadBalancerNode) {
-		return nil, false
-	}
-	return o.LoadBalancerNode, true
-}
-
-// SetLoadBalancerNode gets a reference to the given GetLoadBalancerPoolNode200ResponseLoadBalancerNode and assigns it to the LoadBalancerNode field.
-func (o *GetLoadBalancerPoolNode200Response) SetLoadBalancerNode(v GetLoadBalancerPoolNode200ResponseLoadBalancerNode) {
-	o.LoadBalancerNode = &v
 }
 
 func (o GetLoadBalancerPoolNode200Response) MarshalJSON() ([]byte, error) {

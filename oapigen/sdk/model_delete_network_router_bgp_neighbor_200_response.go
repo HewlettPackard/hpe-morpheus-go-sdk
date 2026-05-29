@@ -26,44 +26,12 @@ type DeleteNetworkRouterBgpNeighbor200Response struct {
 
 type _DeleteNetworkRouterBgpNeighbor200Response DeleteNetworkRouterBgpNeighbor200Response
 
-// NewDeleteNetworkRouterBgpNeighbor200Response instantiates a new DeleteNetworkRouterBgpNeighbor200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewDeleteNetworkRouterBgpNeighbor200Response() *DeleteNetworkRouterBgpNeighbor200Response {
-	this := DeleteNetworkRouterBgpNeighbor200Response{}
-	return &this
-}
-
 // NewDeleteNetworkRouterBgpNeighbor200ResponseWithDefaults instantiates a new DeleteNetworkRouterBgpNeighbor200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewDeleteNetworkRouterBgpNeighbor200ResponseWithDefaults() *DeleteNetworkRouterBgpNeighbor200Response {
 	this := DeleteNetworkRouterBgpNeighbor200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *DeleteNetworkRouterBgpNeighbor200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeleteNetworkRouterBgpNeighbor200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *DeleteNetworkRouterBgpNeighbor200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o DeleteNetworkRouterBgpNeighbor200Response) MarshalJSON() ([]byte, error) {

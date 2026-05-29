@@ -31,92 +31,12 @@ type UpdateNetworkFirewallRuleGroupRequestRuleGroup struct {
 
 type _UpdateNetworkFirewallRuleGroupRequestRuleGroup UpdateNetworkFirewallRuleGroupRequestRuleGroup
 
-// NewUpdateNetworkFirewallRuleGroupRequestRuleGroup instantiates a new UpdateNetworkFirewallRuleGroupRequestRuleGroup object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkFirewallRuleGroupRequestRuleGroup() *UpdateNetworkFirewallRuleGroupRequestRuleGroup {
-	this := UpdateNetworkFirewallRuleGroupRequestRuleGroup{}
-	return &this
-}
-
 // NewUpdateNetworkFirewallRuleGroupRequestRuleGroupWithDefaults instantiates a new UpdateNetworkFirewallRuleGroupRequestRuleGroup object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateNetworkFirewallRuleGroupRequestRuleGroupWithDefaults() *UpdateNetworkFirewallRuleGroupRequestRuleGroup {
 	this := UpdateNetworkFirewallRuleGroupRequestRuleGroup{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) GetDescription() string {
-	if o == nil || IsNil(o.Description.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Description.Get()
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) GetDescriptionOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Description.Get(), o.Description.IsSet()
-}
-
-// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) SetDescription(v string) {
-	o.Description.Set(&v)
-}
-
-// GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) GetPriority() int64 {
-	if o == nil || IsNil(o.Priority.Get()) {
-		var ret int64
-		return ret
-	}
-	return *o.Priority.Get()
-}
-
-// GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) GetPriorityOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Priority.Get(), o.Priority.IsSet()
-}
-
-// SetPriority gets a reference to the given NullableInt64 and assigns it to the Priority field.
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) SetPriority(v int64) {
-	o.Priority.Set(&v)
 }
 
 func (o UpdateNetworkFirewallRuleGroupRequestRuleGroup) MarshalJSON() ([]byte, error) {

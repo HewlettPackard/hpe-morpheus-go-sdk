@@ -26,44 +26,12 @@ type GetInput200Response struct {
 
 type _GetInput200Response GetInput200Response
 
-// NewGetInput200Response instantiates a new GetInput200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInput200Response() *GetInput200Response {
-	this := GetInput200Response{}
-	return &this
-}
-
 // NewGetInput200ResponseWithDefaults instantiates a new GetInput200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInput200ResponseWithDefaults() *GetInput200Response {
 	this := GetInput200Response{}
 	return &this
-}
-
-// GetOptionType returns the OptionType field value if set, zero value otherwise.
-func (o *GetInput200Response) GetOptionType() GetInput200ResponseOptionType {
-	if o == nil || IsNil(o.OptionType) {
-		var ret GetInput200ResponseOptionType
-		return ret
-	}
-	return *o.OptionType
-}
-
-// GetOptionTypeOk returns a tuple with the OptionType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInput200Response) GetOptionTypeOk() (*GetInput200ResponseOptionType, bool) {
-	if o == nil || IsNil(o.OptionType) {
-		return nil, false
-	}
-	return o.OptionType, true
-}
-
-// SetOptionType gets a reference to the given GetInput200ResponseOptionType and assigns it to the OptionType field.
-func (o *GetInput200Response) SetOptionType(v GetInput200ResponseOptionType) {
-	o.OptionType = &v
 }
 
 func (o GetInput200Response) MarshalJSON() ([]byte, error) {

@@ -27,68 +27,12 @@ type ExecuteWorkflows200ResponseAllOfJobExecution struct {
 
 type _ExecuteWorkflows200ResponseAllOfJobExecution ExecuteWorkflows200ResponseAllOfJobExecution
 
-// NewExecuteWorkflows200ResponseAllOfJobExecution instantiates a new ExecuteWorkflows200ResponseAllOfJobExecution object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewExecuteWorkflows200ResponseAllOfJobExecution() *ExecuteWorkflows200ResponseAllOfJobExecution {
-	this := ExecuteWorkflows200ResponseAllOfJobExecution{}
-	return &this
-}
-
 // NewExecuteWorkflows200ResponseAllOfJobExecutionWithDefaults instantiates a new ExecuteWorkflows200ResponseAllOfJobExecution object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewExecuteWorkflows200ResponseAllOfJobExecutionWithDefaults() *ExecuteWorkflows200ResponseAllOfJobExecution {
 	this := ExecuteWorkflows200ResponseAllOfJobExecution{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ExecuteWorkflows200ResponseAllOfJobExecution) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteWorkflows200ResponseAllOfJobExecution) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ExecuteWorkflows200ResponseAllOfJobExecution) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetProcessId returns the ProcessId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ExecuteWorkflows200ResponseAllOfJobExecution) GetProcessId() string {
-	if o == nil || IsNil(o.ProcessId.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.ProcessId.Get()
-}
-
-// GetProcessIdOk returns a tuple with the ProcessId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ExecuteWorkflows200ResponseAllOfJobExecution) GetProcessIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ProcessId.Get(), o.ProcessId.IsSet()
-}
-
-// SetProcessId gets a reference to the given NullableString and assigns it to the ProcessId field.
-func (o *ExecuteWorkflows200ResponseAllOfJobExecution) SetProcessId(v string) {
-	o.ProcessId.Set(&v)
 }
 
 func (o ExecuteWorkflows200ResponseAllOfJobExecution) MarshalJSON() ([]byte, error) {

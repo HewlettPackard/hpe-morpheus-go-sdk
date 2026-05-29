@@ -29,67 +29,12 @@ type UpdateHostCloudRequest struct {
 
 type _UpdateHostCloudRequest UpdateHostCloudRequest
 
-// NewUpdateHostCloudRequest instantiates a new UpdateHostCloudRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateHostCloudRequest() *UpdateHostCloudRequest {
-	this := UpdateHostCloudRequest{}
-	return &this
-}
-
 // NewUpdateHostCloudRequestWithDefaults instantiates a new UpdateHostCloudRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateHostCloudRequestWithDefaults() *UpdateHostCloudRequest {
 	this := UpdateHostCloudRequest{}
 	return &this
-}
-
-// GetCloudId returns the CloudId field value if set, zero value otherwise.
-func (o *UpdateHostCloudRequest) GetCloudId() int64 {
-	if o == nil || IsNil(o.CloudId) {
-		var ret int64
-		return ret
-	}
-	return *o.CloudId
-}
-
-// GetCloudIdOk returns a tuple with the CloudId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostCloudRequest) GetCloudIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.CloudId) {
-		return nil, false
-	}
-	return o.CloudId, true
-}
-
-// SetCloudId gets a reference to the given int64 and assigns it to the CloudId field.
-func (o *UpdateHostCloudRequest) SetCloudId(v int64) {
-	o.CloudId = &v
-}
-
-// GetServers returns the Servers field value if set, zero value otherwise.
-func (o *UpdateHostCloudRequest) GetServers() []UpdateHostCloudRequestServersInner {
-	if o == nil || IsNil(o.Servers) {
-		var ret []UpdateHostCloudRequestServersInner
-		return ret
-	}
-	return o.Servers
-}
-
-// GetServersOk returns a tuple with the Servers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostCloudRequest) GetServersOk() ([]UpdateHostCloudRequestServersInner, bool) {
-	if o == nil || IsNil(o.Servers) {
-		return nil, false
-	}
-	return o.Servers, true
-}
-
-// SetServers gets a reference to the given []UpdateHostCloudRequestServersInner and assigns it to the Servers field.
-func (o *UpdateHostCloudRequest) SetServers(v []UpdateHostCloudRequestServersInner) {
-	o.Servers = v
 }
 
 func (o UpdateHostCloudRequest) MarshalJSON() ([]byte, error) {

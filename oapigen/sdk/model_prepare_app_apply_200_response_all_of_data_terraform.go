@@ -29,113 +29,12 @@ type PrepareAppApply200ResponseAllOfDataTerraform struct {
 
 type _PrepareAppApply200ResponseAllOfDataTerraform PrepareAppApply200ResponseAllOfDataTerraform
 
-// NewPrepareAppApply200ResponseAllOfDataTerraform instantiates a new PrepareAppApply200ResponseAllOfDataTerraform object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPrepareAppApply200ResponseAllOfDataTerraform() *PrepareAppApply200ResponseAllOfDataTerraform {
-	this := PrepareAppApply200ResponseAllOfDataTerraform{}
-	return &this
-}
-
 // NewPrepareAppApply200ResponseAllOfDataTerraformWithDefaults instantiates a new PrepareAppApply200ResponseAllOfDataTerraform object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPrepareAppApply200ResponseAllOfDataTerraformWithDefaults() *PrepareAppApply200ResponseAllOfDataTerraform {
 	this := PrepareAppApply200ResponseAllOfDataTerraform{}
 	return &this
-}
-
-// GetRefreshMode returns the RefreshMode field value if set, zero value otherwise.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) GetRefreshMode() string {
-	if o == nil || IsNil(o.RefreshMode) {
-		var ret string
-		return ret
-	}
-	return *o.RefreshMode
-}
-
-// GetRefreshModeOk returns a tuple with the RefreshMode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) GetRefreshModeOk() (*string, bool) {
-	if o == nil || IsNil(o.RefreshMode) {
-		return nil, false
-	}
-	return o.RefreshMode, true
-}
-
-// SetRefreshMode gets a reference to the given string and assigns it to the RefreshMode field.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) SetRefreshMode(v string) {
-	o.RefreshMode = &v
-}
-
-// GetBackendType returns the BackendType field value if set, zero value otherwise.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) GetBackendType() string {
-	if o == nil || IsNil(o.BackendType) {
-		var ret string
-		return ret
-	}
-	return *o.BackendType
-}
-
-// GetBackendTypeOk returns a tuple with the BackendType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) GetBackendTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.BackendType) {
-		return nil, false
-	}
-	return o.BackendType, true
-}
-
-// SetBackendType gets a reference to the given string and assigns it to the BackendType field.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) SetBackendType(v string) {
-	o.BackendType = &v
-}
-
-// GetTimeoutMode returns the TimeoutMode field value if set, zero value otherwise.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) GetTimeoutMode() string {
-	if o == nil || IsNil(o.TimeoutMode) {
-		var ret string
-		return ret
-	}
-	return *o.TimeoutMode
-}
-
-// GetTimeoutModeOk returns a tuple with the TimeoutMode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) GetTimeoutModeOk() (*string, bool) {
-	if o == nil || IsNil(o.TimeoutMode) {
-		return nil, false
-	}
-	return o.TimeoutMode, true
-}
-
-// SetTimeoutMode gets a reference to the given string and assigns it to the TimeoutMode field.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) SetTimeoutMode(v string) {
-	o.TimeoutMode = &v
-}
-
-// GetConfigType returns the ConfigType field value if set, zero value otherwise.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) GetConfigType() string {
-	if o == nil || IsNil(o.ConfigType) {
-		var ret string
-		return ret
-	}
-	return *o.ConfigType
-}
-
-// GetConfigTypeOk returns a tuple with the ConfigType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) GetConfigTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ConfigType) {
-		return nil, false
-	}
-	return o.ConfigType, true
-}
-
-// SetConfigType gets a reference to the given string and assigns it to the ConfigType field.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) SetConfigType(v string) {
-	o.ConfigType = &v
 }
 
 func (o PrepareAppApply200ResponseAllOfDataTerraform) MarshalJSON() ([]byte, error) {

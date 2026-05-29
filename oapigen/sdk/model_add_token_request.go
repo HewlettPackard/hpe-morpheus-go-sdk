@@ -26,46 +26,12 @@ type AddTokenRequest struct {
 
 type _AddTokenRequest AddTokenRequest
 
-// NewAddTokenRequest instantiates a new AddTokenRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddTokenRequest(token AddTokenRequestToken) *AddTokenRequest {
-	this := AddTokenRequest{}
-	this.Token = token
-	return &this
-}
-
 // NewAddTokenRequestWithDefaults instantiates a new AddTokenRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddTokenRequestWithDefaults() *AddTokenRequest {
 	this := AddTokenRequest{}
 	return &this
-}
-
-// GetToken returns the Token field value
-func (o *AddTokenRequest) GetToken() AddTokenRequestToken {
-	if o == nil {
-		var ret AddTokenRequestToken
-		return ret
-	}
-
-	return o.Token
-}
-
-// GetTokenOk returns a tuple with the Token field value
-// and a boolean to check if the value has been set.
-func (o *AddTokenRequest) GetTokenOk() (*AddTokenRequestToken, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Token, true
-}
-
-// SetToken sets field value
-func (o *AddTokenRequest) SetToken(v AddTokenRequestToken) {
-	o.Token = v
 }
 
 func (o AddTokenRequest) MarshalJSON() ([]byte, error) {

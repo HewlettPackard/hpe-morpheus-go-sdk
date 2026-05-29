@@ -26,44 +26,12 @@ type GetUserSettingsApiClients200Response struct {
 
 type _GetUserSettingsApiClients200Response GetUserSettingsApiClients200Response
 
-// NewGetUserSettingsApiClients200Response instantiates a new GetUserSettingsApiClients200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetUserSettingsApiClients200Response() *GetUserSettingsApiClients200Response {
-	this := GetUserSettingsApiClients200Response{}
-	return &this
-}
-
 // NewGetUserSettingsApiClients200ResponseWithDefaults instantiates a new GetUserSettingsApiClients200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetUserSettingsApiClients200ResponseWithDefaults() *GetUserSettingsApiClients200Response {
 	this := GetUserSettingsApiClients200Response{}
 	return &this
-}
-
-// GetClients returns the Clients field value if set, zero value otherwise.
-func (o *GetUserSettingsApiClients200Response) GetClients() []GetUserSettingsApiClients200ResponseClientsInner {
-	if o == nil || IsNil(o.Clients) {
-		var ret []GetUserSettingsApiClients200ResponseClientsInner
-		return ret
-	}
-	return o.Clients
-}
-
-// GetClientsOk returns a tuple with the Clients field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetUserSettingsApiClients200Response) GetClientsOk() ([]GetUserSettingsApiClients200ResponseClientsInner, bool) {
-	if o == nil || IsNil(o.Clients) {
-		return nil, false
-	}
-	return o.Clients, true
-}
-
-// SetClients gets a reference to the given []GetUserSettingsApiClients200ResponseClientsInner and assigns it to the Clients field.
-func (o *GetUserSettingsApiClients200Response) SetClients(v []GetUserSettingsApiClients200ResponseClientsInner) {
-	o.Clients = v
 }
 
 func (o GetUserSettingsApiClients200Response) MarshalJSON() ([]byte, error) {

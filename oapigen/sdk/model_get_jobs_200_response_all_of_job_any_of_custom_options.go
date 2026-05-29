@@ -26,44 +26,12 @@ type GetJobs200ResponseAllOfJobAnyOfCustomOptions struct {
 
 type _GetJobs200ResponseAllOfJobAnyOfCustomOptions GetJobs200ResponseAllOfJobAnyOfCustomOptions
 
-// NewGetJobs200ResponseAllOfJobAnyOfCustomOptions instantiates a new GetJobs200ResponseAllOfJobAnyOfCustomOptions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetJobs200ResponseAllOfJobAnyOfCustomOptions() *GetJobs200ResponseAllOfJobAnyOfCustomOptions {
-	this := GetJobs200ResponseAllOfJobAnyOfCustomOptions{}
-	return &this
-}
-
 // NewGetJobs200ResponseAllOfJobAnyOfCustomOptionsWithDefaults instantiates a new GetJobs200ResponseAllOfJobAnyOfCustomOptions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetJobs200ResponseAllOfJobAnyOfCustomOptionsWithDefaults() *GetJobs200ResponseAllOfJobAnyOfCustomOptions {
 	this := GetJobs200ResponseAllOfJobAnyOfCustomOptions{}
 	return &this
-}
-
-// GetCheckTime returns the CheckTime field value if set, zero value otherwise.
-func (o *GetJobs200ResponseAllOfJobAnyOfCustomOptions) GetCheckTime() int64 {
-	if o == nil || IsNil(o.CheckTime) {
-		var ret int64
-		return ret
-	}
-	return *o.CheckTime
-}
-
-// GetCheckTimeOk returns a tuple with the CheckTime field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetJobs200ResponseAllOfJobAnyOfCustomOptions) GetCheckTimeOk() (*int64, bool) {
-	if o == nil || IsNil(o.CheckTime) {
-		return nil, false
-	}
-	return o.CheckTime, true
-}
-
-// SetCheckTime gets a reference to the given int64 and assigns it to the CheckTime field.
-func (o *GetJobs200ResponseAllOfJobAnyOfCustomOptions) SetCheckTime(v int64) {
-	o.CheckTime = &v
 }
 
 func (o GetJobs200ResponseAllOfJobAnyOfCustomOptions) MarshalJSON() ([]byte, error) {

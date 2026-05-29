@@ -26,44 +26,12 @@ type ListOptionLists200ResponseAllOfOptionTypesInnerConfig struct {
 
 type _ListOptionLists200ResponseAllOfOptionTypesInnerConfig ListOptionLists200ResponseAllOfOptionTypesInnerConfig
 
-// NewListOptionLists200ResponseAllOfOptionTypesInnerConfig instantiates a new ListOptionLists200ResponseAllOfOptionTypesInnerConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListOptionLists200ResponseAllOfOptionTypesInnerConfig() *ListOptionLists200ResponseAllOfOptionTypesInnerConfig {
-	this := ListOptionLists200ResponseAllOfOptionTypesInnerConfig{}
-	return &this
-}
-
 // NewListOptionLists200ResponseAllOfOptionTypesInnerConfigWithDefaults instantiates a new ListOptionLists200ResponseAllOfOptionTypesInnerConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListOptionLists200ResponseAllOfOptionTypesInnerConfigWithDefaults() *ListOptionLists200ResponseAllOfOptionTypesInnerConfig {
 	this := ListOptionLists200ResponseAllOfOptionTypesInnerConfig{}
 	return &this
-}
-
-// GetSourceHeaders returns the SourceHeaders field value if set, zero value otherwise.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfig) GetSourceHeaders() []ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner {
-	if o == nil || IsNil(o.SourceHeaders) {
-		var ret []ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner
-		return ret
-	}
-	return o.SourceHeaders
-}
-
-// GetSourceHeadersOk returns a tuple with the SourceHeaders field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfig) GetSourceHeadersOk() ([]ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner, bool) {
-	if o == nil || IsNil(o.SourceHeaders) {
-		return nil, false
-	}
-	return o.SourceHeaders, true
-}
-
-// SetSourceHeaders gets a reference to the given []ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner and assigns it to the SourceHeaders field.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfig) SetSourceHeaders(v []ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) {
-	o.SourceHeaders = v
 }
 
 func (o ListOptionLists200ResponseAllOfOptionTypesInnerConfig) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type MigrationUpdateNetworksInner struct {
 
 type _MigrationUpdateNetworksInner MigrationUpdateNetworksInner
 
-// NewMigrationUpdateNetworksInner instantiates a new MigrationUpdateNetworksInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMigrationUpdateNetworksInner() *MigrationUpdateNetworksInner {
-	this := MigrationUpdateNetworksInner{}
-	return &this
-}
-
 // NewMigrationUpdateNetworksInnerWithDefaults instantiates a new MigrationUpdateNetworksInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewMigrationUpdateNetworksInnerWithDefaults() *MigrationUpdateNetworksInner {
 	this := MigrationUpdateNetworksInner{}
 	return &this
-}
-
-// GetSourceNetwork returns the SourceNetwork field value if set, zero value otherwise.
-func (o *MigrationUpdateNetworksInner) GetSourceNetwork() MigrationUpdateNetworksInnerSourceNetwork {
-	if o == nil || IsNil(o.SourceNetwork) {
-		var ret MigrationUpdateNetworksInnerSourceNetwork
-		return ret
-	}
-	return *o.SourceNetwork
-}
-
-// GetSourceNetworkOk returns a tuple with the SourceNetwork field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MigrationUpdateNetworksInner) GetSourceNetworkOk() (*MigrationUpdateNetworksInnerSourceNetwork, bool) {
-	if o == nil || IsNil(o.SourceNetwork) {
-		return nil, false
-	}
-	return o.SourceNetwork, true
-}
-
-// SetSourceNetwork gets a reference to the given MigrationUpdateNetworksInnerSourceNetwork and assigns it to the SourceNetwork field.
-func (o *MigrationUpdateNetworksInner) SetSourceNetwork(v MigrationUpdateNetworksInnerSourceNetwork) {
-	o.SourceNetwork = &v
-}
-
-// GetDestinationNetwork returns the DestinationNetwork field value if set, zero value otherwise.
-func (o *MigrationUpdateNetworksInner) GetDestinationNetwork() MigrationUpdateNetworksInnerDestinationNetwork {
-	if o == nil || IsNil(o.DestinationNetwork) {
-		var ret MigrationUpdateNetworksInnerDestinationNetwork
-		return ret
-	}
-	return *o.DestinationNetwork
-}
-
-// GetDestinationNetworkOk returns a tuple with the DestinationNetwork field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MigrationUpdateNetworksInner) GetDestinationNetworkOk() (*MigrationUpdateNetworksInnerDestinationNetwork, bool) {
-	if o == nil || IsNil(o.DestinationNetwork) {
-		return nil, false
-	}
-	return o.DestinationNetwork, true
-}
-
-// SetDestinationNetwork gets a reference to the given MigrationUpdateNetworksInnerDestinationNetwork and assigns it to the DestinationNetwork field.
-func (o *MigrationUpdateNetworksInner) SetDestinationNetwork(v MigrationUpdateNetworksInnerDestinationNetwork) {
-	o.DestinationNetwork = &v
 }
 
 func (o MigrationUpdateNetworksInner) MarshalJSON() ([]byte, error) {

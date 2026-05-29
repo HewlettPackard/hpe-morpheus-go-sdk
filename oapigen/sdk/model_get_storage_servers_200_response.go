@@ -26,44 +26,12 @@ type GetStorageServers200Response struct {
 
 type _GetStorageServers200Response GetStorageServers200Response
 
-// NewGetStorageServers200Response instantiates a new GetStorageServers200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetStorageServers200Response() *GetStorageServers200Response {
-	this := GetStorageServers200Response{}
-	return &this
-}
-
 // NewGetStorageServers200ResponseWithDefaults instantiates a new GetStorageServers200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetStorageServers200ResponseWithDefaults() *GetStorageServers200Response {
 	this := GetStorageServers200Response{}
 	return &this
-}
-
-// GetStorageServer returns the StorageServer field value if set, zero value otherwise.
-func (o *GetStorageServers200Response) GetStorageServer() GetStorageServers200ResponseStorageServer {
-	if o == nil || IsNil(o.StorageServer) {
-		var ret GetStorageServers200ResponseStorageServer
-		return ret
-	}
-	return *o.StorageServer
-}
-
-// GetStorageServerOk returns a tuple with the StorageServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetStorageServers200Response) GetStorageServerOk() (*GetStorageServers200ResponseStorageServer, bool) {
-	if o == nil || IsNil(o.StorageServer) {
-		return nil, false
-	}
-	return o.StorageServer, true
-}
-
-// SetStorageServer gets a reference to the given GetStorageServers200ResponseStorageServer and assigns it to the StorageServer field.
-func (o *GetStorageServers200Response) SetStorageServer(v GetStorageServers200ResponseStorageServer) {
-	o.StorageServer = &v
 }
 
 func (o GetStorageServers200Response) MarshalJSON() ([]byte, error) {

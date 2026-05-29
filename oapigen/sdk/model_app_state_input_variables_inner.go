@@ -29,114 +29,12 @@ type AppStateInputVariablesInner struct {
 
 type _AppStateInputVariablesInner AppStateInputVariablesInner
 
-// NewAppStateInputVariablesInner instantiates a new AppStateInputVariablesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAppStateInputVariablesInner() *AppStateInputVariablesInner {
-	this := AppStateInputVariablesInner{}
-	return &this
-}
-
 // NewAppStateInputVariablesInnerWithDefaults instantiates a new AppStateInputVariablesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAppStateInputVariablesInnerWithDefaults() *AppStateInputVariablesInner {
 	this := AppStateInputVariablesInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AppStateInputVariablesInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppStateInputVariablesInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AppStateInputVariablesInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AppStateInputVariablesInner) GetValue() string {
-	if o == nil || IsNil(o.Value.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Value.Get()
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AppStateInputVariablesInner) GetValueOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Value.Get(), o.Value.IsSet()
-}
-
-// SetValue gets a reference to the given NullableString and assigns it to the Value field.
-func (o *AppStateInputVariablesInner) SetValue(v string) {
-	o.Value.Set(&v)
-}
-
-// GetSensitive returns the Sensitive field value if set, zero value otherwise.
-func (o *AppStateInputVariablesInner) GetSensitive() bool {
-	if o == nil || IsNil(o.Sensitive) {
-		var ret bool
-		return ret
-	}
-	return *o.Sensitive
-}
-
-// GetSensitiveOk returns a tuple with the Sensitive field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppStateInputVariablesInner) GetSensitiveOk() (*bool, bool) {
-	if o == nil || IsNil(o.Sensitive) {
-		return nil, false
-	}
-	return o.Sensitive, true
-}
-
-// SetSensitive gets a reference to the given bool and assigns it to the Sensitive field.
-func (o *AppStateInputVariablesInner) SetSensitive(v bool) {
-	o.Sensitive = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *AppStateInputVariablesInner) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppStateInputVariablesInner) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *AppStateInputVariablesInner) SetType(v string) {
-	o.Type = &v
 }
 
 func (o AppStateInputVariablesInner) MarshalJSON() ([]byte, error) {

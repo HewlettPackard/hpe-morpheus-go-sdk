@@ -28,91 +28,12 @@ type ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumes
 
 type _ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner
 
-// NewListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner instantiates a new ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner() *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner {
-	this := ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner{}
-	return &this
-}
-
 // NewListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInnerWithDefaults instantiates a new ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInnerWithDefaults() *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner {
 	this := ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner{}
 	return &this
-}
-
-// GetSize returns the Size field value if set, zero value otherwise.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) GetSize() int64 {
-	if o == nil || IsNil(o.Size) {
-		var ret int64
-		return ret
-	}
-	return *o.Size
-}
-
-// GetSizeOk returns a tuple with the Size field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) GetSizeOk() (*int64, bool) {
-	if o == nil || IsNil(o.Size) {
-		return nil, false
-	}
-	return o.Size, true
-}
-
-// SetSize gets a reference to the given int64 and assigns it to the Size field.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) SetSize(v int64) {
-	o.Size = &v
-}
-
-// GetTypeCode returns the TypeCode field value if set, zero value otherwise.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) GetTypeCode() string {
-	if o == nil || IsNil(o.TypeCode) {
-		var ret string
-		return ret
-	}
-	return *o.TypeCode
-}
-
-// GetTypeCodeOk returns a tuple with the TypeCode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) GetTypeCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.TypeCode) {
-		return nil, false
-	}
-	return o.TypeCode, true
-}
-
-// SetTypeCode gets a reference to the given string and assigns it to the TypeCode field.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) SetTypeCode(v string) {
-	o.TypeCode = &v
-}
-
-// GetDatastore returns the Datastore field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) GetDatastore() string {
-	if o == nil || IsNil(o.Datastore.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Datastore.Get()
-}
-
-// GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) GetDatastoreOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Datastore.Get(), o.Datastore.IsSet()
-}
-
-// SetDatastore gets a reference to the given NullableString and assigns it to the Datastore field.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) SetDatastore(v string) {
-	o.Datastore.Set(&v)
 }
 
 func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) MarshalJSON() ([]byte, error) {

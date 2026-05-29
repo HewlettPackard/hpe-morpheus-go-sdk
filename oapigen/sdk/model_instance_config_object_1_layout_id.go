@@ -27,20 +27,6 @@ type InstanceConfigObject1LayoutId struct {
 	String *string
 }
 
-// int64AsInstanceConfigObject1LayoutId is a convenience function that returns int64 wrapped in InstanceConfigObject1LayoutId
-func Int64AsInstanceConfigObject1LayoutId(v *int64) InstanceConfigObject1LayoutId {
-	return InstanceConfigObject1LayoutId{
-		Int64: v,
-	}
-}
-
-// stringAsInstanceConfigObject1LayoutId is a convenience function that returns string wrapped in InstanceConfigObject1LayoutId
-func StringAsInstanceConfigObject1LayoutId(v *string) InstanceConfigObject1LayoutId {
-	return InstanceConfigObject1LayoutId{
-		String: v,
-	}
-}
-
 func (dst *InstanceConfigObject1LayoutId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &InstanceConfigObject1LayoutId{}

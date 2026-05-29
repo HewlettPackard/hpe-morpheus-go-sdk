@@ -26,44 +26,12 @@ type RunDeployRequest struct {
 
 type _RunDeployRequest RunDeployRequest
 
-// NewRunDeployRequest instantiates a new RunDeployRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRunDeployRequest() *RunDeployRequest {
-	this := RunDeployRequest{}
-	return &this
-}
-
 // NewRunDeployRequestWithDefaults instantiates a new RunDeployRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRunDeployRequestWithDefaults() *RunDeployRequest {
 	this := RunDeployRequest{}
 	return &this
-}
-
-// GetAppDeploy returns the AppDeploy field value if set, zero value otherwise.
-func (o *RunDeployRequest) GetAppDeploy() RunDeployRequestAppDeploy {
-	if o == nil || IsNil(o.AppDeploy) {
-		var ret RunDeployRequestAppDeploy
-		return ret
-	}
-	return *o.AppDeploy
-}
-
-// GetAppDeployOk returns a tuple with the AppDeploy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RunDeployRequest) GetAppDeployOk() (*RunDeployRequestAppDeploy, bool) {
-	if o == nil || IsNil(o.AppDeploy) {
-		return nil, false
-	}
-	return o.AppDeploy, true
-}
-
-// SetAppDeploy gets a reference to the given RunDeployRequestAppDeploy and assigns it to the AppDeploy field.
-func (o *RunDeployRequest) SetAppDeploy(v RunDeployRequestAppDeploy) {
-	o.AppDeploy = &v
 }
 
 func (o RunDeployRequest) MarshalJSON() ([]byte, error) {

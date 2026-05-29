@@ -27,67 +27,12 @@ type AddTasks200ResponseAllOfTaskFileRepository struct {
 
 type _AddTasks200ResponseAllOfTaskFileRepository AddTasks200ResponseAllOfTaskFileRepository
 
-// NewAddTasks200ResponseAllOfTaskFileRepository instantiates a new AddTasks200ResponseAllOfTaskFileRepository object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddTasks200ResponseAllOfTaskFileRepository() *AddTasks200ResponseAllOfTaskFileRepository {
-	this := AddTasks200ResponseAllOfTaskFileRepository{}
-	return &this
-}
-
 // NewAddTasks200ResponseAllOfTaskFileRepositoryWithDefaults instantiates a new AddTasks200ResponseAllOfTaskFileRepository object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddTasks200ResponseAllOfTaskFileRepositoryWithDefaults() *AddTasks200ResponseAllOfTaskFileRepository {
 	this := AddTasks200ResponseAllOfTaskFileRepository{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddTasks200ResponseAllOfTaskFileRepository) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddTasks200ResponseAllOfTaskFileRepository) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddTasks200ResponseAllOfTaskFileRepository) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddTasks200ResponseAllOfTaskFileRepository) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddTasks200ResponseAllOfTaskFileRepository) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddTasks200ResponseAllOfTaskFileRepository) SetName(v string) {
-	o.Name = &v
 }
 
 func (o AddTasks200ResponseAllOfTaskFileRepository) MarshalJSON() ([]byte, error) {

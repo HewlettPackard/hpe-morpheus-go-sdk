@@ -27,67 +27,12 @@ type GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner struct {
 
 type _GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner
 
-// NewGetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner instantiates a new GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner() *GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner {
-	this := GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner{}
-	return &this
-}
-
 // NewGetImageBuild200ResponseImageBuildConfigNetworkInterfacesInnerWithDefaults instantiates a new GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetImageBuild200ResponseImageBuildConfigNetworkInterfacesInnerWithDefaults() *GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner {
 	this := GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner{}
 	return &this
-}
-
-// GetPrimaryInterface returns the PrimaryInterface field value if set, zero value otherwise.
-func (o *GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner) GetPrimaryInterface() bool {
-	if o == nil || IsNil(o.PrimaryInterface) {
-		var ret bool
-		return ret
-	}
-	return *o.PrimaryInterface
-}
-
-// GetPrimaryInterfaceOk returns a tuple with the PrimaryInterface field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner) GetPrimaryInterfaceOk() (*bool, bool) {
-	if o == nil || IsNil(o.PrimaryInterface) {
-		return nil, false
-	}
-	return o.PrimaryInterface, true
-}
-
-// SetPrimaryInterface gets a reference to the given bool and assigns it to the PrimaryInterface field.
-func (o *GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner) SetPrimaryInterface(v bool) {
-	o.PrimaryInterface = &v
-}
-
-// GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner) GetNetwork() GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInnerNetwork {
-	if o == nil || IsNil(o.Network) {
-		var ret GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInnerNetwork
-		return ret
-	}
-	return *o.Network
-}
-
-// GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner) GetNetworkOk() (*GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInnerNetwork, bool) {
-	if o == nil || IsNil(o.Network) {
-		return nil, false
-	}
-	return o.Network, true
-}
-
-// SetNetwork gets a reference to the given GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInnerNetwork and assigns it to the Network field.
-func (o *GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner) SetNetwork(v GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInnerNetwork) {
-	o.Network = &v
 }
 
 func (o GetImageBuild200ResponseImageBuildConfigNetworkInterfacesInner) MarshalJSON() ([]byte, error) {

@@ -26,46 +26,12 @@ type CreateTenantSubtenantGroupRequest struct {
 
 type _CreateTenantSubtenantGroupRequest CreateTenantSubtenantGroupRequest
 
-// NewCreateTenantSubtenantGroupRequest instantiates a new CreateTenantSubtenantGroupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateTenantSubtenantGroupRequest(group CreateTenantSubtenantGroupRequestGroup) *CreateTenantSubtenantGroupRequest {
-	this := CreateTenantSubtenantGroupRequest{}
-	this.Group = group
-	return &this
-}
-
 // NewCreateTenantSubtenantGroupRequestWithDefaults instantiates a new CreateTenantSubtenantGroupRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateTenantSubtenantGroupRequestWithDefaults() *CreateTenantSubtenantGroupRequest {
 	this := CreateTenantSubtenantGroupRequest{}
 	return &this
-}
-
-// GetGroup returns the Group field value
-func (o *CreateTenantSubtenantGroupRequest) GetGroup() CreateTenantSubtenantGroupRequestGroup {
-	if o == nil {
-		var ret CreateTenantSubtenantGroupRequestGroup
-		return ret
-	}
-
-	return o.Group
-}
-
-// GetGroupOk returns a tuple with the Group field value
-// and a boolean to check if the value has been set.
-func (o *CreateTenantSubtenantGroupRequest) GetGroupOk() (*CreateTenantSubtenantGroupRequestGroup, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Group, true
-}
-
-// SetGroup sets field value
-func (o *CreateTenantSubtenantGroupRequest) SetGroup(v CreateTenantSubtenantGroupRequestGroup) {
-	o.Group = v
 }
 
 func (o CreateTenantSubtenantGroupRequest) MarshalJSON() ([]byte, error) {

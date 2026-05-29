@@ -28,18 +28,6 @@ type ClusterLayoutCreateMastersInner struct {
 
 type _ClusterLayoutCreateMastersInner ClusterLayoutCreateMastersInner
 
-// NewClusterLayoutCreateMastersInner instantiates a new ClusterLayoutCreateMastersInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterLayoutCreateMastersInner(containerType ClusterLayoutCreateMastersInnerContainerType) *ClusterLayoutCreateMastersInner {
-	this := ClusterLayoutCreateMastersInner{}
-	var nodeCount int64 = 1
-	this.NodeCount = &nodeCount
-	this.ContainerType = containerType
-	return &this
-}
-
 // NewClusterLayoutCreateMastersInnerWithDefaults instantiates a new ClusterLayoutCreateMastersInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -48,53 +36,6 @@ func NewClusterLayoutCreateMastersInnerWithDefaults() *ClusterLayoutCreateMaster
 	var nodeCount int64 = 1
 	this.NodeCount = &nodeCount
 	return &this
-}
-
-// GetNodeCount returns the NodeCount field value if set, zero value otherwise.
-func (o *ClusterLayoutCreateMastersInner) GetNodeCount() int64 {
-	if o == nil || IsNil(o.NodeCount) {
-		var ret int64
-		return ret
-	}
-	return *o.NodeCount
-}
-
-// GetNodeCountOk returns a tuple with the NodeCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterLayoutCreateMastersInner) GetNodeCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.NodeCount) {
-		return nil, false
-	}
-	return o.NodeCount, true
-}
-
-// SetNodeCount gets a reference to the given int64 and assigns it to the NodeCount field.
-func (o *ClusterLayoutCreateMastersInner) SetNodeCount(v int64) {
-	o.NodeCount = &v
-}
-
-// GetContainerType returns the ContainerType field value
-func (o *ClusterLayoutCreateMastersInner) GetContainerType() ClusterLayoutCreateMastersInnerContainerType {
-	if o == nil {
-		var ret ClusterLayoutCreateMastersInnerContainerType
-		return ret
-	}
-
-	return o.ContainerType
-}
-
-// GetContainerTypeOk returns a tuple with the ContainerType field value
-// and a boolean to check if the value has been set.
-func (o *ClusterLayoutCreateMastersInner) GetContainerTypeOk() (*ClusterLayoutCreateMastersInnerContainerType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ContainerType, true
-}
-
-// SetContainerType sets field value
-func (o *ClusterLayoutCreateMastersInner) SetContainerType(v ClusterLayoutCreateMastersInnerContainerType) {
-	o.ContainerType = v
 }
 
 func (o ClusterLayoutCreateMastersInner) MarshalJSON() ([]byte, error) {

@@ -29,17 +29,6 @@ type NetworkTypeGcpConfig struct {
 
 type _NetworkTypeGcpConfig NetworkTypeGcpConfig
 
-// NewNetworkTypeGcpConfig instantiates a new NetworkTypeGcpConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkTypeGcpConfig(mtu string, autoCreate bool) *NetworkTypeGcpConfig {
-	this := NetworkTypeGcpConfig{}
-	this.Mtu = mtu
-	this.AutoCreate = autoCreate
-	return &this
-}
-
 // NewNetworkTypeGcpConfigWithDefaults instantiates a new NetworkTypeGcpConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -50,54 +39,6 @@ func NewNetworkTypeGcpConfigWithDefaults() *NetworkTypeGcpConfig {
 	var autoCreate bool = true
 	this.AutoCreate = autoCreate
 	return &this
-}
-
-// GetMtu returns the Mtu field value
-func (o *NetworkTypeGcpConfig) GetMtu() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Mtu
-}
-
-// GetMtuOk returns a tuple with the Mtu field value
-// and a boolean to check if the value has been set.
-func (o *NetworkTypeGcpConfig) GetMtuOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Mtu, true
-}
-
-// SetMtu sets field value
-func (o *NetworkTypeGcpConfig) SetMtu(v string) {
-	o.Mtu = v
-}
-
-// GetAutoCreate returns the AutoCreate field value
-func (o *NetworkTypeGcpConfig) GetAutoCreate() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AutoCreate
-}
-
-// GetAutoCreateOk returns a tuple with the AutoCreate field value
-// and a boolean to check if the value has been set.
-func (o *NetworkTypeGcpConfig) GetAutoCreateOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AutoCreate, true
-}
-
-// SetAutoCreate sets field value
-func (o *NetworkTypeGcpConfig) SetAutoCreate(v bool) {
-	o.AutoCreate = v
 }
 
 func (o NetworkTypeGcpConfig) MarshalJSON() ([]byte, error) {

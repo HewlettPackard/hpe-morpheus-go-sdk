@@ -29,113 +29,12 @@ type SaveCloudDatastoreRequestDatastoreTenantsInner struct {
 
 type _SaveCloudDatastoreRequestDatastoreTenantsInner SaveCloudDatastoreRequestDatastoreTenantsInner
 
-// NewSaveCloudDatastoreRequestDatastoreTenantsInner instantiates a new SaveCloudDatastoreRequestDatastoreTenantsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSaveCloudDatastoreRequestDatastoreTenantsInner() *SaveCloudDatastoreRequestDatastoreTenantsInner {
-	this := SaveCloudDatastoreRequestDatastoreTenantsInner{}
-	return &this
-}
-
 // NewSaveCloudDatastoreRequestDatastoreTenantsInnerWithDefaults instantiates a new SaveCloudDatastoreRequestDatastoreTenantsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSaveCloudDatastoreRequestDatastoreTenantsInnerWithDefaults() *SaveCloudDatastoreRequestDatastoreTenantsInner {
 	this := SaveCloudDatastoreRequestDatastoreTenantsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SaveCloudDatastoreRequestDatastoreTenantsInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveCloudDatastoreRequestDatastoreTenantsInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *SaveCloudDatastoreRequestDatastoreTenantsInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *SaveCloudDatastoreRequestDatastoreTenantsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveCloudDatastoreRequestDatastoreTenantsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *SaveCloudDatastoreRequestDatastoreTenantsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDefaultStore returns the DefaultStore field value if set, zero value otherwise.
-func (o *SaveCloudDatastoreRequestDatastoreTenantsInner) GetDefaultStore() bool {
-	if o == nil || IsNil(o.DefaultStore) {
-		var ret bool
-		return ret
-	}
-	return *o.DefaultStore
-}
-
-// GetDefaultStoreOk returns a tuple with the DefaultStore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveCloudDatastoreRequestDatastoreTenantsInner) GetDefaultStoreOk() (*bool, bool) {
-	if o == nil || IsNil(o.DefaultStore) {
-		return nil, false
-	}
-	return o.DefaultStore, true
-}
-
-// SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
-func (o *SaveCloudDatastoreRequestDatastoreTenantsInner) SetDefaultStore(v bool) {
-	o.DefaultStore = &v
-}
-
-// GetDefaultTarget returns the DefaultTarget field value if set, zero value otherwise.
-func (o *SaveCloudDatastoreRequestDatastoreTenantsInner) GetDefaultTarget() bool {
-	if o == nil || IsNil(o.DefaultTarget) {
-		var ret bool
-		return ret
-	}
-	return *o.DefaultTarget
-}
-
-// GetDefaultTargetOk returns a tuple with the DefaultTarget field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveCloudDatastoreRequestDatastoreTenantsInner) GetDefaultTargetOk() (*bool, bool) {
-	if o == nil || IsNil(o.DefaultTarget) {
-		return nil, false
-	}
-	return o.DefaultTarget, true
-}
-
-// SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
-func (o *SaveCloudDatastoreRequestDatastoreTenantsInner) SetDefaultTarget(v bool) {
-	o.DefaultTarget = &v
 }
 
 func (o SaveCloudDatastoreRequestDatastoreTenantsInner) MarshalJSON() ([]byte, error) {

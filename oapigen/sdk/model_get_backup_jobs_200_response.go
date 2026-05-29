@@ -26,44 +26,12 @@ type GetBackupJobs200Response struct {
 
 type _GetBackupJobs200Response GetBackupJobs200Response
 
-// NewGetBackupJobs200Response instantiates a new GetBackupJobs200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetBackupJobs200Response() *GetBackupJobs200Response {
-	this := GetBackupJobs200Response{}
-	return &this
-}
-
 // NewGetBackupJobs200ResponseWithDefaults instantiates a new GetBackupJobs200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetBackupJobs200ResponseWithDefaults() *GetBackupJobs200Response {
 	this := GetBackupJobs200Response{}
 	return &this
-}
-
-// GetJob returns the Job field value if set, zero value otherwise.
-func (o *GetBackupJobs200Response) GetJob() GetBackupJobs200ResponseJob {
-	if o == nil || IsNil(o.Job) {
-		var ret GetBackupJobs200ResponseJob
-		return ret
-	}
-	return *o.Job
-}
-
-// GetJobOk returns a tuple with the Job field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetBackupJobs200Response) GetJobOk() (*GetBackupJobs200ResponseJob, bool) {
-	if o == nil || IsNil(o.Job) {
-		return nil, false
-	}
-	return o.Job, true
-}
-
-// SetJob gets a reference to the given GetBackupJobs200ResponseJob and assigns it to the Job field.
-func (o *GetBackupJobs200Response) SetJob(v GetBackupJobs200ResponseJob) {
-	o.Job = &v
 }
 
 func (o GetBackupJobs200Response) MarshalJSON() ([]byte, error) {

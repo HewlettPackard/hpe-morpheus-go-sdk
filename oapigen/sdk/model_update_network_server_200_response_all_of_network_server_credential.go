@@ -29,116 +29,12 @@ type UpdateNetworkServer200ResponseAllOfNetworkServerCredential struct {
 
 type _UpdateNetworkServer200ResponseAllOfNetworkServerCredential UpdateNetworkServer200ResponseAllOfNetworkServerCredential
 
-// NewUpdateNetworkServer200ResponseAllOfNetworkServerCredential instantiates a new UpdateNetworkServer200ResponseAllOfNetworkServerCredential object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkServer200ResponseAllOfNetworkServerCredential() *UpdateNetworkServer200ResponseAllOfNetworkServerCredential {
-	this := UpdateNetworkServer200ResponseAllOfNetworkServerCredential{}
-	return &this
-}
-
 // NewUpdateNetworkServer200ResponseAllOfNetworkServerCredentialWithDefaults instantiates a new UpdateNetworkServer200ResponseAllOfNetworkServerCredential object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateNetworkServer200ResponseAllOfNetworkServerCredentialWithDefaults() *UpdateNetworkServer200ResponseAllOfNetworkServerCredential {
 	this := UpdateNetworkServer200ResponseAllOfNetworkServerCredential{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateNetworkServer200ResponseAllOfNetworkServerCredential) GetId() int64 {
-	if o == nil || IsNil(o.Id.Get()) {
-		var ret int64
-		return ret
-	}
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateNetworkServer200ResponseAllOfNetworkServerCredential) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
-func (o *UpdateNetworkServer200ResponseAllOfNetworkServerCredential) SetId(v int64) {
-	o.Id.Set(&v)
-}
-
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateNetworkServer200ResponseAllOfNetworkServerCredential) GetName() string {
-	if o == nil || IsNil(o.Name.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Name.Get()
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateNetworkServer200ResponseAllOfNetworkServerCredential) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Name.Get(), o.Name.IsSet()
-}
-
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
-func (o *UpdateNetworkServer200ResponseAllOfNetworkServerCredential) SetName(v string) {
-	o.Name.Set(&v)
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *UpdateNetworkServer200ResponseAllOfNetworkServerCredential) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkServer200ResponseAllOfNetworkServerCredential) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *UpdateNetworkServer200ResponseAllOfNetworkServerCredential) SetType(v string) {
-	o.Type = &v
-}
-
-// GetTypes returns the Types field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateNetworkServer200ResponseAllOfNetworkServerCredential) GetTypes() []string {
-	if o == nil {
-		var ret []string
-		return ret
-	}
-	return o.Types
-}
-
-// GetTypesOk returns a tuple with the Types field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateNetworkServer200ResponseAllOfNetworkServerCredential) GetTypesOk() ([]string, bool) {
-	if o == nil || IsNil(o.Types) {
-		return nil, false
-	}
-	return o.Types, true
-}
-
-// SetTypes gets a reference to the given []string and assigns it to the Types field.
-func (o *UpdateNetworkServer200ResponseAllOfNetworkServerCredential) SetTypes(v []string) {
-	o.Types = v
 }
 
 func (o UpdateNetworkServer200ResponseAllOfNetworkServerCredential) MarshalJSON() ([]byte, error) {

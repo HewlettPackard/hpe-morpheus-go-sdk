@@ -29,113 +29,12 @@ type GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig struct {
 
 type _GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig
 
-// NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig instantiates a new GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig() *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig {
-	this := GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig{}
-	return &this
-}
-
 // NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfigWithDefaults instantiates a new GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfigWithDefaults() *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig {
 	this := GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig{}
 	return &this
-}
-
-// GetClusterProfileBindings returns the ClusterProfileBindings field value if set, zero value otherwise.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) GetClusterProfileBindings() string {
-	if o == nil || IsNil(o.ClusterProfileBindings) {
-		var ret string
-		return ret
-	}
-	return *o.ClusterProfileBindings
-}
-
-// GetClusterProfileBindingsOk returns a tuple with the ClusterProfileBindings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) GetClusterProfileBindingsOk() (*string, bool) {
-	if o == nil || IsNil(o.ClusterProfileBindings) {
-		return nil, false
-	}
-	return o.ClusterProfileBindings, true
-}
-
-// SetClusterProfileBindings gets a reference to the given string and assigns it to the ClusterProfileBindings field.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) SetClusterProfileBindings(v string) {
-	o.ClusterProfileBindings = &v
-}
-
-// GetMembers returns the Members field value if set, zero value otherwise.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) GetMembers() int32 {
-	if o == nil || IsNil(o.Members) {
-		var ret int32
-		return ret
-	}
-	return *o.Members
-}
-
-// GetMembersOk returns a tuple with the Members field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) GetMembersOk() (*int32, bool) {
-	if o == nil || IsNil(o.Members) {
-		return nil, false
-	}
-	return o.Members, true
-}
-
-// SetMembers gets a reference to the given int32 and assigns it to the Members field.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) SetMembers(v int32) {
-	o.Members = &v
-}
-
-// GetDeploymentType returns the DeploymentType field value if set, zero value otherwise.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) GetDeploymentType() string {
-	if o == nil || IsNil(o.DeploymentType) {
-		var ret string
-		return ret
-	}
-	return *o.DeploymentType
-}
-
-// GetDeploymentTypeOk returns a tuple with the DeploymentType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) GetDeploymentTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.DeploymentType) {
-		return nil, false
-	}
-	return o.DeploymentType, true
-}
-
-// SetDeploymentType gets a reference to the given string and assigns it to the DeploymentType field.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) SetDeploymentType(v string) {
-	o.DeploymentType = &v
-}
-
-// GetMemberNodeType returns the MemberNodeType field value if set, zero value otherwise.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) GetMemberNodeType() string {
-	if o == nil || IsNil(o.MemberNodeType) {
-		var ret string
-		return ret
-	}
-	return *o.MemberNodeType
-}
-
-// GetMemberNodeTypeOk returns a tuple with the MemberNodeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) GetMemberNodeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.MemberNodeType) {
-		return nil, false
-	}
-	return o.MemberNodeType, true
-}
-
-// SetMemberNodeType gets a reference to the given string and assigns it to the MemberNodeType field.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) SetMemberNodeType(v string) {
-	o.MemberNodeType = &v
 }
 
 func (o GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) MarshalJSON() ([]byte, error) {

@@ -28,90 +28,12 @@ type UpdateBlueprintRequestOneOf3ConfigSpecsInner struct {
 
 type _UpdateBlueprintRequestOneOf3ConfigSpecsInner UpdateBlueprintRequestOneOf3ConfigSpecsInner
 
-// NewUpdateBlueprintRequestOneOf3ConfigSpecsInner instantiates a new UpdateBlueprintRequestOneOf3ConfigSpecsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateBlueprintRequestOneOf3ConfigSpecsInner() *UpdateBlueprintRequestOneOf3ConfigSpecsInner {
-	this := UpdateBlueprintRequestOneOf3ConfigSpecsInner{}
-	return &this
-}
-
 // NewUpdateBlueprintRequestOneOf3ConfigSpecsInnerWithDefaults instantiates a new UpdateBlueprintRequestOneOf3ConfigSpecsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateBlueprintRequestOneOf3ConfigSpecsInnerWithDefaults() *UpdateBlueprintRequestOneOf3ConfigSpecsInner {
 	this := UpdateBlueprintRequestOneOf3ConfigSpecsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) GetValue() int64 {
-	if o == nil || IsNil(o.Value) {
-		var ret int64
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) GetValueOk() (*int64, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// SetValue gets a reference to the given int64 and assigns it to the Value field.
-func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) SetValue(v int64) {
-	o.Value = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) SetName(v string) {
-	o.Name = &v
 }
 
 func (o UpdateBlueprintRequestOneOf3ConfigSpecsInner) MarshalJSON() ([]byte, error) {

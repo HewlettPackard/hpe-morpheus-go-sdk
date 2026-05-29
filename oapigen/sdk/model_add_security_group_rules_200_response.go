@@ -27,67 +27,12 @@ type AddSecurityGroupRules200Response struct {
 
 type _AddSecurityGroupRules200Response AddSecurityGroupRules200Response
 
-// NewAddSecurityGroupRules200Response instantiates a new AddSecurityGroupRules200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddSecurityGroupRules200Response() *AddSecurityGroupRules200Response {
-	this := AddSecurityGroupRules200Response{}
-	return &this
-}
-
 // NewAddSecurityGroupRules200ResponseWithDefaults instantiates a new AddSecurityGroupRules200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddSecurityGroupRules200ResponseWithDefaults() *AddSecurityGroupRules200Response {
 	this := AddSecurityGroupRules200Response{}
 	return &this
-}
-
-// GetRule returns the Rule field value if set, zero value otherwise.
-func (o *AddSecurityGroupRules200Response) GetRule() AddSecurityGroupRules200ResponseAllOfRule {
-	if o == nil || IsNil(o.Rule) {
-		var ret AddSecurityGroupRules200ResponseAllOfRule
-		return ret
-	}
-	return *o.Rule
-}
-
-// GetRuleOk returns a tuple with the Rule field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSecurityGroupRules200Response) GetRuleOk() (*AddSecurityGroupRules200ResponseAllOfRule, bool) {
-	if o == nil || IsNil(o.Rule) {
-		return nil, false
-	}
-	return o.Rule, true
-}
-
-// SetRule gets a reference to the given AddSecurityGroupRules200ResponseAllOfRule and assigns it to the Rule field.
-func (o *AddSecurityGroupRules200Response) SetRule(v AddSecurityGroupRules200ResponseAllOfRule) {
-	o.Rule = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddSecurityGroupRules200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSecurityGroupRules200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddSecurityGroupRules200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddSecurityGroupRules200Response) MarshalJSON() ([]byte, error) {

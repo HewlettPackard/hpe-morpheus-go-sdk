@@ -27,67 +27,12 @@ type CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration struct 
 
 type _CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration
 
-// NewCreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration instantiates a new CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration() *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration {
-	this := CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration{}
-	return &this
-}
-
 // NewCreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegrationWithDefaults instantiates a new CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegrationWithDefaults() *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration {
 	this := CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration) SetName(v string) {
-	o.Name = &v
 }
 
 func (o CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration) MarshalJSON() ([]byte, error) {

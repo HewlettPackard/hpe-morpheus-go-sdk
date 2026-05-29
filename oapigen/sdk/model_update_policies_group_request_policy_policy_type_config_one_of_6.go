@@ -26,44 +26,12 @@ type UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 struct {
 
 type _UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6
 
-// NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 instantiates a new UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6() *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 {
-	this := UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6{}
-	return &this
-}
-
 // NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6WithDefaults instantiates a new UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6WithDefaults() *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 {
 	this := UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6{}
 	return &this
-}
-
-// GetRemovalAge returns the RemovalAge field value if set, zero value otherwise.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) GetRemovalAge() string {
-	if o == nil || IsNil(o.RemovalAge) {
-		var ret string
-		return ret
-	}
-	return *o.RemovalAge
-}
-
-// GetRemovalAgeOk returns a tuple with the RemovalAge field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) GetRemovalAgeOk() (*string, bool) {
-	if o == nil || IsNil(o.RemovalAge) {
-		return nil, false
-	}
-	return o.RemovalAge, true
-}
-
-// SetRemovalAge gets a reference to the given string and assigns it to the RemovalAge field.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) SetRemovalAge(v string) {
-	o.RemovalAge = &v
 }
 
 func (o UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) MarshalJSON() ([]byte, error) {

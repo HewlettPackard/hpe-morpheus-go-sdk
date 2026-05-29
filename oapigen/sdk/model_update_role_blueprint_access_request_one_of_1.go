@@ -29,71 +29,12 @@ type UpdateRoleBlueprintAccessRequestOneOf1 struct {
 
 type _UpdateRoleBlueprintAccessRequestOneOf1 UpdateRoleBlueprintAccessRequestOneOf1
 
-// NewUpdateRoleBlueprintAccessRequestOneOf1 instantiates a new UpdateRoleBlueprintAccessRequestOneOf1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateRoleBlueprintAccessRequestOneOf1(allAppTemplates bool, access string) *UpdateRoleBlueprintAccessRequestOneOf1 {
-	this := UpdateRoleBlueprintAccessRequestOneOf1{}
-	this.AllAppTemplates = allAppTemplates
-	this.Access = access
-	return &this
-}
-
 // NewUpdateRoleBlueprintAccessRequestOneOf1WithDefaults instantiates a new UpdateRoleBlueprintAccessRequestOneOf1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateRoleBlueprintAccessRequestOneOf1WithDefaults() *UpdateRoleBlueprintAccessRequestOneOf1 {
 	this := UpdateRoleBlueprintAccessRequestOneOf1{}
 	return &this
-}
-
-// GetAllAppTemplates returns the AllAppTemplates field value
-func (o *UpdateRoleBlueprintAccessRequestOneOf1) GetAllAppTemplates() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AllAppTemplates
-}
-
-// GetAllAppTemplatesOk returns a tuple with the AllAppTemplates field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleBlueprintAccessRequestOneOf1) GetAllAppTemplatesOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AllAppTemplates, true
-}
-
-// SetAllAppTemplates sets field value
-func (o *UpdateRoleBlueprintAccessRequestOneOf1) SetAllAppTemplates(v bool) {
-	o.AllAppTemplates = v
-}
-
-// GetAccess returns the Access field value
-func (o *UpdateRoleBlueprintAccessRequestOneOf1) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleBlueprintAccessRequestOneOf1) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *UpdateRoleBlueprintAccessRequestOneOf1) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o UpdateRoleBlueprintAccessRequestOneOf1) MarshalJSON() ([]byte, error) {

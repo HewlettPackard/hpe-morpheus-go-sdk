@@ -26,44 +26,12 @@ type DeleteClusterNamespace200Response struct {
 
 type _DeleteClusterNamespace200Response DeleteClusterNamespace200Response
 
-// NewDeleteClusterNamespace200Response instantiates a new DeleteClusterNamespace200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewDeleteClusterNamespace200Response() *DeleteClusterNamespace200Response {
-	this := DeleteClusterNamespace200Response{}
-	return &this
-}
-
 // NewDeleteClusterNamespace200ResponseWithDefaults instantiates a new DeleteClusterNamespace200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewDeleteClusterNamespace200ResponseWithDefaults() *DeleteClusterNamespace200Response {
 	this := DeleteClusterNamespace200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *DeleteClusterNamespace200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeleteClusterNamespace200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *DeleteClusterNamespace200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o DeleteClusterNamespace200Response) MarshalJSON() ([]byte, error) {

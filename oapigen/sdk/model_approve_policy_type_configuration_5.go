@@ -29,115 +29,12 @@ type ApprovePolicyTypeConfiguration5 struct {
 
 type _ApprovePolicyTypeConfiguration5 ApprovePolicyTypeConfiguration5
 
-// NewApprovePolicyTypeConfiguration5 instantiates a new ApprovePolicyTypeConfiguration5 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApprovePolicyTypeConfiguration5(accountIntegrationId string) *ApprovePolicyTypeConfiguration5 {
-	this := ApprovePolicyTypeConfiguration5{}
-	this.AccountIntegrationId = accountIntegrationId
-	return &this
-}
-
 // NewApprovePolicyTypeConfiguration5WithDefaults instantiates a new ApprovePolicyTypeConfiguration5 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApprovePolicyTypeConfiguration5WithDefaults() *ApprovePolicyTypeConfiguration5 {
 	this := ApprovePolicyTypeConfiguration5{}
 	return &this
-}
-
-// GetAccountIntegrationId returns the AccountIntegrationId field value
-func (o *ApprovePolicyTypeConfiguration5) GetAccountIntegrationId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AccountIntegrationId
-}
-
-// GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field value
-// and a boolean to check if the value has been set.
-func (o *ApprovePolicyTypeConfiguration5) GetAccountIntegrationIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AccountIntegrationId, true
-}
-
-// SetAccountIntegrationId sets field value
-func (o *ApprovePolicyTypeConfiguration5) SetAccountIntegrationId(v string) {
-	o.AccountIntegrationId = v
-}
-
-// GetWorkflowId returns the WorkflowId field value if set, zero value otherwise.
-func (o *ApprovePolicyTypeConfiguration5) GetWorkflowId() string {
-	if o == nil || IsNil(o.WorkflowId) {
-		var ret string
-		return ret
-	}
-	return *o.WorkflowId
-}
-
-// GetWorkflowIdOk returns a tuple with the WorkflowId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApprovePolicyTypeConfiguration5) GetWorkflowIdOk() (*string, bool) {
-	if o == nil || IsNil(o.WorkflowId) {
-		return nil, false
-	}
-	return o.WorkflowId, true
-}
-
-// SetWorkflowId gets a reference to the given string and assigns it to the WorkflowId field.
-func (o *ApprovePolicyTypeConfiguration5) SetWorkflowId(v string) {
-	o.WorkflowId = &v
-}
-
-// GetFlowId returns the FlowId field value if set, zero value otherwise.
-func (o *ApprovePolicyTypeConfiguration5) GetFlowId() string {
-	if o == nil || IsNil(o.FlowId) {
-		var ret string
-		return ret
-	}
-	return *o.FlowId
-}
-
-// GetFlowIdOk returns a tuple with the FlowId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApprovePolicyTypeConfiguration5) GetFlowIdOk() (*string, bool) {
-	if o == nil || IsNil(o.FlowId) {
-		return nil, false
-	}
-	return o.FlowId, true
-}
-
-// SetFlowId gets a reference to the given string and assigns it to the FlowId field.
-func (o *ApprovePolicyTypeConfiguration5) SetFlowId(v string) {
-	o.FlowId = &v
-}
-
-// GetWorkflowType returns the WorkflowType field value if set, zero value otherwise.
-func (o *ApprovePolicyTypeConfiguration5) GetWorkflowType() string {
-	if o == nil || IsNil(o.WorkflowType) {
-		var ret string
-		return ret
-	}
-	return *o.WorkflowType
-}
-
-// GetWorkflowTypeOk returns a tuple with the WorkflowType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApprovePolicyTypeConfiguration5) GetWorkflowTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.WorkflowType) {
-		return nil, false
-	}
-	return o.WorkflowType, true
-}
-
-// SetWorkflowType gets a reference to the given string and assigns it to the WorkflowType field.
-func (o *ApprovePolicyTypeConfiguration5) SetWorkflowType(v string) {
-	o.WorkflowType = &v
 }
 
 func (o ApprovePolicyTypeConfiguration5) MarshalJSON() ([]byte, error) {

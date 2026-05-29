@@ -27,67 +27,12 @@ type ExecuteBackups200Response struct {
 
 type _ExecuteBackups200Response ExecuteBackups200Response
 
-// NewExecuteBackups200Response instantiates a new ExecuteBackups200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewExecuteBackups200Response() *ExecuteBackups200Response {
-	this := ExecuteBackups200Response{}
-	return &this
-}
-
 // NewExecuteBackups200ResponseWithDefaults instantiates a new ExecuteBackups200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewExecuteBackups200ResponseWithDefaults() *ExecuteBackups200Response {
 	this := ExecuteBackups200Response{}
 	return &this
-}
-
-// GetBackup returns the Backup field value if set, zero value otherwise.
-func (o *ExecuteBackups200Response) GetBackup() ExecuteBackups200ResponseAllOfBackup {
-	if o == nil || IsNil(o.Backup) {
-		var ret ExecuteBackups200ResponseAllOfBackup
-		return ret
-	}
-	return *o.Backup
-}
-
-// GetBackupOk returns a tuple with the Backup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteBackups200Response) GetBackupOk() (*ExecuteBackups200ResponseAllOfBackup, bool) {
-	if o == nil || IsNil(o.Backup) {
-		return nil, false
-	}
-	return o.Backup, true
-}
-
-// SetBackup gets a reference to the given ExecuteBackups200ResponseAllOfBackup and assigns it to the Backup field.
-func (o *ExecuteBackups200Response) SetBackup(v ExecuteBackups200ResponseAllOfBackup) {
-	o.Backup = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *ExecuteBackups200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteBackups200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *ExecuteBackups200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o ExecuteBackups200Response) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type UpdateNetworkRouterFirewallRuleRequest struct {
 
 type _UpdateNetworkRouterFirewallRuleRequest UpdateNetworkRouterFirewallRuleRequest
 
-// NewUpdateNetworkRouterFirewallRuleRequest instantiates a new UpdateNetworkRouterFirewallRuleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkRouterFirewallRuleRequest() *UpdateNetworkRouterFirewallRuleRequest {
-	this := UpdateNetworkRouterFirewallRuleRequest{}
-	return &this
-}
-
 // NewUpdateNetworkRouterFirewallRuleRequestWithDefaults instantiates a new UpdateNetworkRouterFirewallRuleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateNetworkRouterFirewallRuleRequestWithDefaults() *UpdateNetworkRouterFirewallRuleRequest {
 	this := UpdateNetworkRouterFirewallRuleRequest{}
 	return &this
-}
-
-// GetRule returns the Rule field value if set, zero value otherwise.
-func (o *UpdateNetworkRouterFirewallRuleRequest) GetRule() UpdateNetworkRouterFirewallRuleRequestRule {
-	if o == nil || IsNil(o.Rule) {
-		var ret UpdateNetworkRouterFirewallRuleRequestRule
-		return ret
-	}
-	return *o.Rule
-}
-
-// GetRuleOk returns a tuple with the Rule field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkRouterFirewallRuleRequest) GetRuleOk() (*UpdateNetworkRouterFirewallRuleRequestRule, bool) {
-	if o == nil || IsNil(o.Rule) {
-		return nil, false
-	}
-	return o.Rule, true
-}
-
-// SetRule gets a reference to the given UpdateNetworkRouterFirewallRuleRequestRule and assigns it to the Rule field.
-func (o *UpdateNetworkRouterFirewallRuleRequest) SetRule(v UpdateNetworkRouterFirewallRuleRequestRule) {
-	o.Rule = &v
 }
 
 func (o UpdateNetworkRouterFirewallRuleRequest) MarshalJSON() ([]byte, error) {

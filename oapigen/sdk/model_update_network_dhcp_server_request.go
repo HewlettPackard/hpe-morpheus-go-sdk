@@ -26,44 +26,12 @@ type UpdateNetworkDhcpServerRequest struct {
 
 type _UpdateNetworkDhcpServerRequest UpdateNetworkDhcpServerRequest
 
-// NewUpdateNetworkDhcpServerRequest instantiates a new UpdateNetworkDhcpServerRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkDhcpServerRequest() *UpdateNetworkDhcpServerRequest {
-	this := UpdateNetworkDhcpServerRequest{}
-	return &this
-}
-
 // NewUpdateNetworkDhcpServerRequestWithDefaults instantiates a new UpdateNetworkDhcpServerRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateNetworkDhcpServerRequestWithDefaults() *UpdateNetworkDhcpServerRequest {
 	this := UpdateNetworkDhcpServerRequest{}
 	return &this
-}
-
-// GetNetworkDhcpServer returns the NetworkDhcpServer field value if set, zero value otherwise.
-func (o *UpdateNetworkDhcpServerRequest) GetNetworkDhcpServer() map[string]interface{} {
-	if o == nil || IsNil(o.NetworkDhcpServer) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.NetworkDhcpServer
-}
-
-// GetNetworkDhcpServerOk returns a tuple with the NetworkDhcpServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkDhcpServerRequest) GetNetworkDhcpServerOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.NetworkDhcpServer) {
-		return map[string]interface{}{}, false
-	}
-	return o.NetworkDhcpServer, true
-}
-
-// SetNetworkDhcpServer gets a reference to the given map[string]interface{} and assigns it to the NetworkDhcpServer field.
-func (o *UpdateNetworkDhcpServerRequest) SetNetworkDhcpServer(v map[string]interface{}) {
-	o.NetworkDhcpServer = v
 }
 
 func (o UpdateNetworkDhcpServerRequest) MarshalJSON() ([]byte, error) {

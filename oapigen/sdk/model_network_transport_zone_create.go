@@ -33,116 +33,12 @@ type NetworkTransportZoneCreate struct {
 
 type _NetworkTransportZoneCreate NetworkTransportZoneCreate
 
-// NewNetworkTransportZoneCreate instantiates a new NetworkTransportZoneCreate object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkTransportZoneCreate(name string) *NetworkTransportZoneCreate {
-	this := NetworkTransportZoneCreate{}
-	this.Name = name
-	return &this
-}
-
 // NewNetworkTransportZoneCreateWithDefaults instantiates a new NetworkTransportZoneCreate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkTransportZoneCreateWithDefaults() *NetworkTransportZoneCreate {
 	this := NetworkTransportZoneCreate{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *NetworkTransportZoneCreate) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *NetworkTransportZoneCreate) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *NetworkTransportZoneCreate) SetName(v string) {
-	o.Name = v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NetworkTransportZoneCreate) GetDescription() string {
-	if o == nil || IsNil(o.Description.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Description.Get()
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NetworkTransportZoneCreate) GetDescriptionOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Description.Get(), o.Description.IsSet()
-}
-
-// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
-func (o *NetworkTransportZoneCreate) SetDescription(v string) {
-	o.Description.Set(&v)
-}
-
-// GetVisibility returns the Visibility field value if set, zero value otherwise.
-func (o *NetworkTransportZoneCreate) GetVisibility() string {
-	if o == nil || IsNil(o.Visibility) {
-		var ret string
-		return ret
-	}
-	return *o.Visibility
-}
-
-// GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkTransportZoneCreate) GetVisibilityOk() (*string, bool) {
-	if o == nil || IsNil(o.Visibility) {
-		return nil, false
-	}
-	return o.Visibility, true
-}
-
-// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
-func (o *NetworkTransportZoneCreate) SetVisibility(v string) {
-	o.Visibility = &v
-}
-
-// GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *NetworkTransportZoneCreate) GetTenants() []UpdateNetworkTransportZoneRequestNetworkScopeTenantsInner {
-	if o == nil || IsNil(o.Tenants) {
-		var ret []UpdateNetworkTransportZoneRequestNetworkScopeTenantsInner
-		return ret
-	}
-	return o.Tenants
-}
-
-// GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkTransportZoneCreate) GetTenantsOk() ([]UpdateNetworkTransportZoneRequestNetworkScopeTenantsInner, bool) {
-	if o == nil || IsNil(o.Tenants) {
-		return nil, false
-	}
-	return o.Tenants, true
-}
-
-// SetTenants gets a reference to the given []UpdateNetworkTransportZoneRequestNetworkScopeTenantsInner and assigns it to the Tenants field.
-func (o *NetworkTransportZoneCreate) SetTenants(v []UpdateNetworkTransportZoneRequestNetworkScopeTenantsInner) {
-	o.Tenants = v
 }
 
 func (o NetworkTransportZoneCreate) MarshalJSON() ([]byte, error) {

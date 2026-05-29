@@ -27,67 +27,12 @@ type GetBillingServersIdentifier200Response struct {
 
 type _GetBillingServersIdentifier200Response GetBillingServersIdentifier200Response
 
-// NewGetBillingServersIdentifier200Response instantiates a new GetBillingServersIdentifier200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetBillingServersIdentifier200Response() *GetBillingServersIdentifier200Response {
-	this := GetBillingServersIdentifier200Response{}
-	return &this
-}
-
 // NewGetBillingServersIdentifier200ResponseWithDefaults instantiates a new GetBillingServersIdentifier200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetBillingServersIdentifier200ResponseWithDefaults() *GetBillingServersIdentifier200Response {
 	this := GetBillingServersIdentifier200Response{}
 	return &this
-}
-
-// GetBillingInfo returns the BillingInfo field value if set, zero value otherwise.
-func (o *GetBillingServersIdentifier200Response) GetBillingInfo() GetBillingServersIdentifier200ResponseAllOfBillingInfo {
-	if o == nil || IsNil(o.BillingInfo) {
-		var ret GetBillingServersIdentifier200ResponseAllOfBillingInfo
-		return ret
-	}
-	return *o.BillingInfo
-}
-
-// GetBillingInfoOk returns a tuple with the BillingInfo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetBillingServersIdentifier200Response) GetBillingInfoOk() (*GetBillingServersIdentifier200ResponseAllOfBillingInfo, bool) {
-	if o == nil || IsNil(o.BillingInfo) {
-		return nil, false
-	}
-	return o.BillingInfo, true
-}
-
-// SetBillingInfo gets a reference to the given GetBillingServersIdentifier200ResponseAllOfBillingInfo and assigns it to the BillingInfo field.
-func (o *GetBillingServersIdentifier200Response) SetBillingInfo(v GetBillingServersIdentifier200ResponseAllOfBillingInfo) {
-	o.BillingInfo = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *GetBillingServersIdentifier200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetBillingServersIdentifier200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *GetBillingServersIdentifier200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o GetBillingServersIdentifier200Response) MarshalJSON() ([]byte, error) {

@@ -29,67 +29,12 @@ type UpdatePluginRequestPlugin struct {
 
 type _UpdatePluginRequestPlugin UpdatePluginRequestPlugin
 
-// NewUpdatePluginRequestPlugin instantiates a new UpdatePluginRequestPlugin object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePluginRequestPlugin() *UpdatePluginRequestPlugin {
-	this := UpdatePluginRequestPlugin{}
-	return &this
-}
-
 // NewUpdatePluginRequestPluginWithDefaults instantiates a new UpdatePluginRequestPlugin object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdatePluginRequestPluginWithDefaults() *UpdatePluginRequestPlugin {
 	this := UpdatePluginRequestPlugin{}
 	return &this
-}
-
-// GetEnabled returns the Enabled field value if set, zero value otherwise.
-func (o *UpdatePluginRequestPlugin) GetEnabled() bool {
-	if o == nil || IsNil(o.Enabled) {
-		var ret bool
-		return ret
-	}
-	return *o.Enabled
-}
-
-// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePluginRequestPlugin) GetEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.Enabled) {
-		return nil, false
-	}
-	return o.Enabled, true
-}
-
-// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
-func (o *UpdatePluginRequestPlugin) SetEnabled(v bool) {
-	o.Enabled = &v
-}
-
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *UpdatePluginRequestPlugin) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePluginRequestPlugin) GetConfigOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
-	}
-	return o.Config, true
-}
-
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *UpdatePluginRequestPlugin) SetConfig(v map[string]interface{}) {
-	o.Config = v
 }
 
 func (o UpdatePluginRequestPlugin) MarshalJSON() ([]byte, error) {

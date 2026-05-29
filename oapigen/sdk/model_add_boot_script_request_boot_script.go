@@ -29,67 +29,12 @@ type AddBootScriptRequestBootScript struct {
 
 type _AddBootScriptRequestBootScript AddBootScriptRequestBootScript
 
-// NewAddBootScriptRequestBootScript instantiates a new AddBootScriptRequestBootScript object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBootScriptRequestBootScript() *AddBootScriptRequestBootScript {
-	this := AddBootScriptRequestBootScript{}
-	return &this
-}
-
 // NewAddBootScriptRequestBootScriptWithDefaults instantiates a new AddBootScriptRequestBootScript object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddBootScriptRequestBootScriptWithDefaults() *AddBootScriptRequestBootScript {
 	this := AddBootScriptRequestBootScript{}
 	return &this
-}
-
-// GetFileName returns the FileName field value if set, zero value otherwise.
-func (o *AddBootScriptRequestBootScript) GetFileName() string {
-	if o == nil || IsNil(o.FileName) {
-		var ret string
-		return ret
-	}
-	return *o.FileName
-}
-
-// GetFileNameOk returns a tuple with the FileName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBootScriptRequestBootScript) GetFileNameOk() (*string, bool) {
-	if o == nil || IsNil(o.FileName) {
-		return nil, false
-	}
-	return o.FileName, true
-}
-
-// SetFileName gets a reference to the given string and assigns it to the FileName field.
-func (o *AddBootScriptRequestBootScript) SetFileName(v string) {
-	o.FileName = &v
-}
-
-// GetContent returns the Content field value if set, zero value otherwise.
-func (o *AddBootScriptRequestBootScript) GetContent() string {
-	if o == nil || IsNil(o.Content) {
-		var ret string
-		return ret
-	}
-	return *o.Content
-}
-
-// GetContentOk returns a tuple with the Content field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBootScriptRequestBootScript) GetContentOk() (*string, bool) {
-	if o == nil || IsNil(o.Content) {
-		return nil, false
-	}
-	return o.Content, true
-}
-
-// SetContent gets a reference to the given string and assigns it to the Content field.
-func (o *AddBootScriptRequestBootScript) SetContent(v string) {
-	o.Content = &v
 }
 
 func (o AddBootScriptRequestBootScript) MarshalJSON() ([]byte, error) {

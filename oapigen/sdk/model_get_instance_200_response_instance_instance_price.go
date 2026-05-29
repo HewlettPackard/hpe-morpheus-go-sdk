@@ -29,113 +29,12 @@ type GetInstance200ResponseInstanceInstancePrice struct {
 
 type _GetInstance200ResponseInstanceInstancePrice GetInstance200ResponseInstanceInstancePrice
 
-// NewGetInstance200ResponseInstanceInstancePrice instantiates a new GetInstance200ResponseInstanceInstancePrice object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstance200ResponseInstanceInstancePrice() *GetInstance200ResponseInstanceInstancePrice {
-	this := GetInstance200ResponseInstanceInstancePrice{}
-	return &this
-}
-
 // NewGetInstance200ResponseInstanceInstancePriceWithDefaults instantiates a new GetInstance200ResponseInstanceInstancePrice object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstance200ResponseInstanceInstancePriceWithDefaults() *GetInstance200ResponseInstanceInstancePrice {
 	this := GetInstance200ResponseInstanceInstancePrice{}
 	return &this
-}
-
-// GetPrice returns the Price field value if set, zero value otherwise.
-func (o *GetInstance200ResponseInstanceInstancePrice) GetPrice() float32 {
-	if o == nil || IsNil(o.Price) {
-		var ret float32
-		return ret
-	}
-	return *o.Price
-}
-
-// GetPriceOk returns a tuple with the Price field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstance200ResponseInstanceInstancePrice) GetPriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.Price) {
-		return nil, false
-	}
-	return o.Price, true
-}
-
-// SetPrice gets a reference to the given float32 and assigns it to the Price field.
-func (o *GetInstance200ResponseInstanceInstancePrice) SetPrice(v float32) {
-	o.Price = &v
-}
-
-// GetCost returns the Cost field value if set, zero value otherwise.
-func (o *GetInstance200ResponseInstanceInstancePrice) GetCost() float32 {
-	if o == nil || IsNil(o.Cost) {
-		var ret float32
-		return ret
-	}
-	return *o.Cost
-}
-
-// GetCostOk returns a tuple with the Cost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstance200ResponseInstanceInstancePrice) GetCostOk() (*float32, bool) {
-	if o == nil || IsNil(o.Cost) {
-		return nil, false
-	}
-	return o.Cost, true
-}
-
-// SetCost gets a reference to the given float32 and assigns it to the Cost field.
-func (o *GetInstance200ResponseInstanceInstancePrice) SetCost(v float32) {
-	o.Cost = &v
-}
-
-// GetCurrency returns the Currency field value if set, zero value otherwise.
-func (o *GetInstance200ResponseInstanceInstancePrice) GetCurrency() string {
-	if o == nil || IsNil(o.Currency) {
-		var ret string
-		return ret
-	}
-	return *o.Currency
-}
-
-// GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstance200ResponseInstanceInstancePrice) GetCurrencyOk() (*string, bool) {
-	if o == nil || IsNil(o.Currency) {
-		return nil, false
-	}
-	return o.Currency, true
-}
-
-// SetCurrency gets a reference to the given string and assigns it to the Currency field.
-func (o *GetInstance200ResponseInstanceInstancePrice) SetCurrency(v string) {
-	o.Currency = &v
-}
-
-// GetUnit returns the Unit field value if set, zero value otherwise.
-func (o *GetInstance200ResponseInstanceInstancePrice) GetUnit() string {
-	if o == nil || IsNil(o.Unit) {
-		var ret string
-		return ret
-	}
-	return *o.Unit
-}
-
-// GetUnitOk returns a tuple with the Unit field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstance200ResponseInstanceInstancePrice) GetUnitOk() (*string, bool) {
-	if o == nil || IsNil(o.Unit) {
-		return nil, false
-	}
-	return o.Unit, true
-}
-
-// SetUnit gets a reference to the given string and assigns it to the Unit field.
-func (o *GetInstance200ResponseInstanceInstancePrice) SetUnit(v string) {
-	o.Unit = &v
 }
 
 func (o GetInstance200ResponseInstanceInstancePrice) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type CloneImageInstance200Response struct {
 
 type _CloneImageInstance200Response CloneImageInstance200Response
 
-// NewCloneImageInstance200Response instantiates a new CloneImageInstance200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCloneImageInstance200Response() *CloneImageInstance200Response {
-	this := CloneImageInstance200Response{}
-	return &this
-}
-
 // NewCloneImageInstance200ResponseWithDefaults instantiates a new CloneImageInstance200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCloneImageInstance200ResponseWithDefaults() *CloneImageInstance200Response {
 	this := CloneImageInstance200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *CloneImageInstance200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CloneImageInstance200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *CloneImageInstance200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o CloneImageInstance200Response) MarshalJSON() ([]byte, error) {

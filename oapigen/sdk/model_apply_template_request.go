@@ -31,90 +31,12 @@ type ApplyTemplateRequest struct {
 
 type _ApplyTemplateRequest ApplyTemplateRequest
 
-// NewApplyTemplateRequest instantiates a new ApplyTemplateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApplyTemplateRequest() *ApplyTemplateRequest {
-	this := ApplyTemplateRequest{}
-	return &this
-}
-
 // NewApplyTemplateRequestWithDefaults instantiates a new ApplyTemplateRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApplyTemplateRequestWithDefaults() *ApplyTemplateRequest {
 	this := ApplyTemplateRequest{}
 	return &this
-}
-
-// GetServiceUrl returns the ServiceUrl field value if set, zero value otherwise.
-func (o *ApplyTemplateRequest) GetServiceUrl() string {
-	if o == nil || IsNil(o.ServiceUrl) {
-		var ret string
-		return ret
-	}
-	return *o.ServiceUrl
-}
-
-// GetServiceUrlOk returns a tuple with the ServiceUrl field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApplyTemplateRequest) GetServiceUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceUrl) {
-		return nil, false
-	}
-	return o.ServiceUrl, true
-}
-
-// SetServiceUrl gets a reference to the given string and assigns it to the ServiceUrl field.
-func (o *ApplyTemplateRequest) SetServiceUrl(v string) {
-	o.ServiceUrl = &v
-}
-
-// GetSpecTemplate returns the SpecTemplate field value if set, zero value otherwise.
-func (o *ApplyTemplateRequest) GetSpecTemplate() string {
-	if o == nil || IsNil(o.SpecTemplate) {
-		var ret string
-		return ret
-	}
-	return *o.SpecTemplate
-}
-
-// GetSpecTemplateOk returns a tuple with the SpecTemplate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApplyTemplateRequest) GetSpecTemplateOk() (*string, bool) {
-	if o == nil || IsNil(o.SpecTemplate) {
-		return nil, false
-	}
-	return o.SpecTemplate, true
-}
-
-// SetSpecTemplate gets a reference to the given string and assigns it to the SpecTemplate field.
-func (o *ApplyTemplateRequest) SetSpecTemplate(v string) {
-	o.SpecTemplate = &v
-}
-
-// GetSpecYaml returns the SpecYaml field value if set, zero value otherwise.
-func (o *ApplyTemplateRequest) GetSpecYaml() string {
-	if o == nil || IsNil(o.SpecYaml) {
-		var ret string
-		return ret
-	}
-	return *o.SpecYaml
-}
-
-// GetSpecYamlOk returns a tuple with the SpecYaml field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApplyTemplateRequest) GetSpecYamlOk() (*string, bool) {
-	if o == nil || IsNil(o.SpecYaml) {
-		return nil, false
-	}
-	return o.SpecYaml, true
-}
-
-// SetSpecYaml gets a reference to the given string and assigns it to the SpecYaml field.
-func (o *ApplyTemplateRequest) SetSpecYaml(v string) {
-	o.SpecYaml = &v
 }
 
 func (o ApplyTemplateRequest) MarshalJSON() ([]byte, error) {

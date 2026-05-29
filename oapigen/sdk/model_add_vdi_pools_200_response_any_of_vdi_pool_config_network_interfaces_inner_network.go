@@ -29,113 +29,12 @@ type AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork struc
 
 type _AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork
 
-// NewAddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork instantiates a new AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork() *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork {
-	this := AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork{}
-	return &this
-}
-
 // NewAddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetworkWithDefaults instantiates a new AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetworkWithDefaults() *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork {
 	this := AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork{}
 	return &this
-}
-
-// GetIdName returns the IdName field value if set, zero value otherwise.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) GetIdName() string {
-	if o == nil || IsNil(o.IdName) {
-		var ret string
-		return ret
-	}
-	return *o.IdName
-}
-
-// GetIdNameOk returns a tuple with the IdName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) GetIdNameOk() (*string, bool) {
-	if o == nil || IsNil(o.IdName) {
-		return nil, false
-	}
-	return o.IdName, true
-}
-
-// SetIdName gets a reference to the given string and assigns it to the IdName field.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) SetIdName(v string) {
-	o.IdName = &v
-}
-
-// GetPool returns the Pool field value if set, zero value otherwise.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) GetPool() AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetworkPool {
-	if o == nil || IsNil(o.Pool) {
-		var ret AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetworkPool
-		return ret
-	}
-	return *o.Pool
-}
-
-// GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) GetPoolOk() (*AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetworkPool, bool) {
-	if o == nil || IsNil(o.Pool) {
-		return nil, false
-	}
-	return o.Pool, true
-}
-
-// SetPool gets a reference to the given AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetworkPool and assigns it to the Pool field.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) SetPool(v AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetworkPool) {
-	o.Pool = &v
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) SetId(v string) {
-	o.Id = &v
-}
-
-// GetHasPool returns the HasPool field value if set, zero value otherwise.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) GetHasPool() bool {
-	if o == nil || IsNil(o.HasPool) {
-		var ret bool
-		return ret
-	}
-	return *o.HasPool
-}
-
-// GetHasPoolOk returns a tuple with the HasPool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) GetHasPoolOk() (*bool, bool) {
-	if o == nil || IsNil(o.HasPool) {
-		return nil, false
-	}
-	return o.HasPool, true
-}
-
-// SetHasPool gets a reference to the given bool and assigns it to the HasPool field.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) SetHasPool(v bool) {
-	o.HasPool = &v
 }
 
 func (o AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {

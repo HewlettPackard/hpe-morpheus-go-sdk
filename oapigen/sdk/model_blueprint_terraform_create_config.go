@@ -27,44 +27,12 @@ type BlueprintTerraformCreateConfig struct {
 
 type _BlueprintTerraformCreateConfig BlueprintTerraformCreateConfig
 
-// NewBlueprintTerraformCreateConfig instantiates a new BlueprintTerraformCreateConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBlueprintTerraformCreateConfig() *BlueprintTerraformCreateConfig {
-	this := BlueprintTerraformCreateConfig{}
-	return &this
-}
-
 // NewBlueprintTerraformCreateConfigWithDefaults instantiates a new BlueprintTerraformCreateConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBlueprintTerraformCreateConfigWithDefaults() *BlueprintTerraformCreateConfig {
 	this := BlueprintTerraformCreateConfig{}
 	return &this
-}
-
-// GetSpecs returns the Specs field value if set, zero value otherwise.
-func (o *BlueprintTerraformCreateConfig) GetSpecs() []BlueprintTerraformCreateConfigSpecsInner {
-	if o == nil || IsNil(o.Specs) {
-		var ret []BlueprintTerraformCreateConfigSpecsInner
-		return ret
-	}
-	return o.Specs
-}
-
-// GetSpecsOk returns a tuple with the Specs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintTerraformCreateConfig) GetSpecsOk() ([]BlueprintTerraformCreateConfigSpecsInner, bool) {
-	if o == nil || IsNil(o.Specs) {
-		return nil, false
-	}
-	return o.Specs, true
-}
-
-// SetSpecs gets a reference to the given []BlueprintTerraformCreateConfigSpecsInner and assigns it to the Specs field.
-func (o *BlueprintTerraformCreateConfig) SetSpecs(v []BlueprintTerraformCreateConfigSpecsInner) {
-	o.Specs = v
 }
 
 func (o BlueprintTerraformCreateConfig) MarshalJSON() ([]byte, error) {

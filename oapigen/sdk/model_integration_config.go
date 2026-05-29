@@ -26,46 +26,12 @@ type IntegrationConfig struct {
 
 type _IntegrationConfig IntegrationConfig
 
-// NewIntegrationConfig instantiates a new IntegrationConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIntegrationConfig(integration IntegrationConfigIntegration) *IntegrationConfig {
-	this := IntegrationConfig{}
-	this.Integration = integration
-	return &this
-}
-
 // NewIntegrationConfigWithDefaults instantiates a new IntegrationConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIntegrationConfigWithDefaults() *IntegrationConfig {
 	this := IntegrationConfig{}
 	return &this
-}
-
-// GetIntegration returns the Integration field value
-func (o *IntegrationConfig) GetIntegration() IntegrationConfigIntegration {
-	if o == nil {
-		var ret IntegrationConfigIntegration
-		return ret
-	}
-
-	return o.Integration
-}
-
-// GetIntegrationOk returns a tuple with the Integration field value
-// and a boolean to check if the value has been set.
-func (o *IntegrationConfig) GetIntegrationOk() (*IntegrationConfigIntegration, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Integration, true
-}
-
-// SetIntegration sets field value
-func (o *IntegrationConfig) SetIntegration(v IntegrationConfigIntegration) {
-	o.Integration = v
 }
 
 func (o IntegrationConfig) MarshalJSON() ([]byte, error) {

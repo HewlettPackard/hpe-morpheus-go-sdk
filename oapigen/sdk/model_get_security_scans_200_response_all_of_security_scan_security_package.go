@@ -28,90 +28,12 @@ type GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage struct {
 
 type _GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage
 
-// NewGetSecurityScans200ResponseAllOfSecurityScanSecurityPackage instantiates a new GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetSecurityScans200ResponseAllOfSecurityScanSecurityPackage() *GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage {
-	this := GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage{}
-	return &this
-}
-
 // NewGetSecurityScans200ResponseAllOfSecurityScanSecurityPackageWithDefaults instantiates a new GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetSecurityScans200ResponseAllOfSecurityScanSecurityPackageWithDefaults() *GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage {
 	this := GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage) SetName(v string) {
-	o.Name = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage) GetType() GetSecurityScans200ResponseAllOfSecurityScanSecurityPackageType {
-	if o == nil || IsNil(o.Type) {
-		var ret GetSecurityScans200ResponseAllOfSecurityScanSecurityPackageType
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage) GetTypeOk() (*GetSecurityScans200ResponseAllOfSecurityScanSecurityPackageType, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given GetSecurityScans200ResponseAllOfSecurityScanSecurityPackageType and assigns it to the Type field.
-func (o *GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage) SetType(v GetSecurityScans200ResponseAllOfSecurityScanSecurityPackageType) {
-	o.Type = &v
 }
 
 func (o GetSecurityScans200ResponseAllOfSecurityScanSecurityPackage) MarshalJSON() ([]byte, error) {

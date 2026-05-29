@@ -31,90 +31,12 @@ type UpdateBackupsRequestBackup struct {
 
 type _UpdateBackupsRequestBackup UpdateBackupsRequestBackup
 
-// NewUpdateBackupsRequestBackup instantiates a new UpdateBackupsRequestBackup object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateBackupsRequestBackup() *UpdateBackupsRequestBackup {
-	this := UpdateBackupsRequestBackup{}
-	return &this
-}
-
 // NewUpdateBackupsRequestBackupWithDefaults instantiates a new UpdateBackupsRequestBackup object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateBackupsRequestBackupWithDefaults() *UpdateBackupsRequestBackup {
 	this := UpdateBackupsRequestBackup{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdateBackupsRequestBackup) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateBackupsRequestBackup) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdateBackupsRequestBackup) SetName(v string) {
-	o.Name = &v
-}
-
-// GetJobId returns the JobId field value if set, zero value otherwise.
-func (o *UpdateBackupsRequestBackup) GetJobId() int64 {
-	if o == nil || IsNil(o.JobId) {
-		var ret int64
-		return ret
-	}
-	return *o.JobId
-}
-
-// GetJobIdOk returns a tuple with the JobId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateBackupsRequestBackup) GetJobIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.JobId) {
-		return nil, false
-	}
-	return o.JobId, true
-}
-
-// SetJobId gets a reference to the given int64 and assigns it to the JobId field.
-func (o *UpdateBackupsRequestBackup) SetJobId(v int64) {
-	o.JobId = &v
-}
-
-// GetEnabled returns the Enabled field value if set, zero value otherwise.
-func (o *UpdateBackupsRequestBackup) GetEnabled() bool {
-	if o == nil || IsNil(o.Enabled) {
-		var ret bool
-		return ret
-	}
-	return *o.Enabled
-}
-
-// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateBackupsRequestBackup) GetEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.Enabled) {
-		return nil, false
-	}
-	return o.Enabled, true
-}
-
-// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
-func (o *UpdateBackupsRequestBackup) SetEnabled(v bool) {
-	o.Enabled = &v
 }
 
 func (o UpdateBackupsRequestBackup) MarshalJSON() ([]byte, error) {

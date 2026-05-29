@@ -28,90 +28,12 @@ type ListClusterJobs200Response struct {
 
 type _ListClusterJobs200Response ListClusterJobs200Response
 
-// NewListClusterJobs200Response instantiates a new ListClusterJobs200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListClusterJobs200Response() *ListClusterJobs200Response {
-	this := ListClusterJobs200Response{}
-	return &this
-}
-
 // NewListClusterJobs200ResponseWithDefaults instantiates a new ListClusterJobs200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListClusterJobs200ResponseWithDefaults() *ListClusterJobs200Response {
 	this := ListClusterJobs200Response{}
 	return &this
-}
-
-// GetJobs returns the Jobs field value if set, zero value otherwise.
-func (o *ListClusterJobs200Response) GetJobs() []ListClusterJobs200ResponseAllOfJobsInner {
-	if o == nil || IsNil(o.Jobs) {
-		var ret []ListClusterJobs200ResponseAllOfJobsInner
-		return ret
-	}
-	return o.Jobs
-}
-
-// GetJobsOk returns a tuple with the Jobs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterJobs200Response) GetJobsOk() ([]ListClusterJobs200ResponseAllOfJobsInner, bool) {
-	if o == nil || IsNil(o.Jobs) {
-		return nil, false
-	}
-	return o.Jobs, true
-}
-
-// SetJobs gets a reference to the given []ListClusterJobs200ResponseAllOfJobsInner and assigns it to the Jobs field.
-func (o *ListClusterJobs200Response) SetJobs(v []ListClusterJobs200ResponseAllOfJobsInner) {
-	o.Jobs = v
-}
-
-// GetStats returns the Stats field value if set, zero value otherwise.
-func (o *ListClusterJobs200Response) GetStats() map[string]interface{} {
-	if o == nil || IsNil(o.Stats) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Stats
-}
-
-// GetStatsOk returns a tuple with the Stats field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterJobs200Response) GetStatsOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Stats) {
-		return map[string]interface{}{}, false
-	}
-	return o.Stats, true
-}
-
-// SetStats gets a reference to the given map[string]interface{} and assigns it to the Stats field.
-func (o *ListClusterJobs200Response) SetStats(v map[string]interface{}) {
-	o.Stats = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListClusterJobs200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterJobs200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListClusterJobs200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListClusterJobs200Response) MarshalJSON() ([]byte, error) {

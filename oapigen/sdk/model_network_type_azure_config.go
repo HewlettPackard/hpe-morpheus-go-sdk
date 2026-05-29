@@ -31,96 +31,12 @@ type NetworkTypeAzureConfig struct {
 
 type _NetworkTypeAzureConfig NetworkTypeAzureConfig
 
-// NewNetworkTypeAzureConfig instantiates a new NetworkTypeAzureConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkTypeAzureConfig(resourceGroupId string, subnetName string, subnetCidr string) *NetworkTypeAzureConfig {
-	this := NetworkTypeAzureConfig{}
-	this.ResourceGroupId = resourceGroupId
-	this.SubnetName = subnetName
-	this.SubnetCidr = subnetCidr
-	return &this
-}
-
 // NewNetworkTypeAzureConfigWithDefaults instantiates a new NetworkTypeAzureConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkTypeAzureConfigWithDefaults() *NetworkTypeAzureConfig {
 	this := NetworkTypeAzureConfig{}
 	return &this
-}
-
-// GetResourceGroupId returns the ResourceGroupId field value
-func (o *NetworkTypeAzureConfig) GetResourceGroupId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ResourceGroupId
-}
-
-// GetResourceGroupIdOk returns a tuple with the ResourceGroupId field value
-// and a boolean to check if the value has been set.
-func (o *NetworkTypeAzureConfig) GetResourceGroupIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ResourceGroupId, true
-}
-
-// SetResourceGroupId sets field value
-func (o *NetworkTypeAzureConfig) SetResourceGroupId(v string) {
-	o.ResourceGroupId = v
-}
-
-// GetSubnetName returns the SubnetName field value
-func (o *NetworkTypeAzureConfig) GetSubnetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SubnetName
-}
-
-// GetSubnetNameOk returns a tuple with the SubnetName field value
-// and a boolean to check if the value has been set.
-func (o *NetworkTypeAzureConfig) GetSubnetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SubnetName, true
-}
-
-// SetSubnetName sets field value
-func (o *NetworkTypeAzureConfig) SetSubnetName(v string) {
-	o.SubnetName = v
-}
-
-// GetSubnetCidr returns the SubnetCidr field value
-func (o *NetworkTypeAzureConfig) GetSubnetCidr() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SubnetCidr
-}
-
-// GetSubnetCidrOk returns a tuple with the SubnetCidr field value
-// and a boolean to check if the value has been set.
-func (o *NetworkTypeAzureConfig) GetSubnetCidrOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SubnetCidr, true
-}
-
-// SetSubnetCidr sets field value
-func (o *NetworkTypeAzureConfig) SetSubnetCidr(v string) {
-	o.SubnetCidr = v
 }
 
 func (o NetworkTypeAzureConfig) MarshalJSON() ([]byte, error) {

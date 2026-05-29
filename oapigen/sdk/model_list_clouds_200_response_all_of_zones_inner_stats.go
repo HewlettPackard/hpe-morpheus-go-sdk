@@ -26,44 +26,12 @@ type ListClouds200ResponseAllOfZonesInnerStats struct {
 
 type _ListClouds200ResponseAllOfZonesInnerStats ListClouds200ResponseAllOfZonesInnerStats
 
-// NewListClouds200ResponseAllOfZonesInnerStats instantiates a new ListClouds200ResponseAllOfZonesInnerStats object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListClouds200ResponseAllOfZonesInnerStats() *ListClouds200ResponseAllOfZonesInnerStats {
-	this := ListClouds200ResponseAllOfZonesInnerStats{}
-	return &this
-}
-
 // NewListClouds200ResponseAllOfZonesInnerStatsWithDefaults instantiates a new ListClouds200ResponseAllOfZonesInnerStats object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListClouds200ResponseAllOfZonesInnerStatsWithDefaults() *ListClouds200ResponseAllOfZonesInnerStats {
 	this := ListClouds200ResponseAllOfZonesInnerStats{}
 	return &this
-}
-
-// GetServerCounts returns the ServerCounts field value if set, zero value otherwise.
-func (o *ListClouds200ResponseAllOfZonesInnerStats) GetServerCounts() ListClouds200ResponseAllOfZonesInnerStatsServerCounts {
-	if o == nil || IsNil(o.ServerCounts) {
-		var ret ListClouds200ResponseAllOfZonesInnerStatsServerCounts
-		return ret
-	}
-	return *o.ServerCounts
-}
-
-// GetServerCountsOk returns a tuple with the ServerCounts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerStats) GetServerCountsOk() (*ListClouds200ResponseAllOfZonesInnerStatsServerCounts, bool) {
-	if o == nil || IsNil(o.ServerCounts) {
-		return nil, false
-	}
-	return o.ServerCounts, true
-}
-
-// SetServerCounts gets a reference to the given ListClouds200ResponseAllOfZonesInnerStatsServerCounts and assigns it to the ServerCounts field.
-func (o *ListClouds200ResponseAllOfZonesInnerStats) SetServerCounts(v ListClouds200ResponseAllOfZonesInnerStatsServerCounts) {
-	o.ServerCounts = &v
 }
 
 func (o ListClouds200ResponseAllOfZonesInnerStats) MarshalJSON() ([]byte, error) {

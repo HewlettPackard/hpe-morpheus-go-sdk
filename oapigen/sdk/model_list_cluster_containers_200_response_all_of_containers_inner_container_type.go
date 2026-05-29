@@ -29,114 +29,12 @@ type ListClusterContainers200ResponseAllOfContainersInnerContainerType struct {
 
 type _ListClusterContainers200ResponseAllOfContainersInnerContainerType ListClusterContainers200ResponseAllOfContainersInnerContainerType
 
-// NewListClusterContainers200ResponseAllOfContainersInnerContainerType instantiates a new ListClusterContainers200ResponseAllOfContainersInnerContainerType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListClusterContainers200ResponseAllOfContainersInnerContainerType() *ListClusterContainers200ResponseAllOfContainersInnerContainerType {
-	this := ListClusterContainers200ResponseAllOfContainersInnerContainerType{}
-	return &this
-}
-
 // NewListClusterContainers200ResponseAllOfContainersInnerContainerTypeWithDefaults instantiates a new ListClusterContainers200ResponseAllOfContainersInnerContainerType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListClusterContainers200ResponseAllOfContainersInnerContainerTypeWithDefaults() *ListClusterContainers200ResponseAllOfContainersInnerContainerType {
 	this := ListClusterContainers200ResponseAllOfContainersInnerContainerType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) GetCategory() string {
-	if o == nil || IsNil(o.Category.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Category.Get()
-}
-
-// GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) GetCategoryOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Category.Get(), o.Category.IsSet()
-}
-
-// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) SetCategory(v string) {
-	o.Category.Set(&v)
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) SetName(v string) {
-	o.Name = &v
 }
 
 func (o ListClusterContainers200ResponseAllOfContainersInnerContainerType) MarshalJSON() ([]byte, error) {

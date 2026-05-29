@@ -26,44 +26,12 @@ type GetVirtualImage200Response struct {
 
 type _GetVirtualImage200Response GetVirtualImage200Response
 
-// NewGetVirtualImage200Response instantiates a new GetVirtualImage200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetVirtualImage200Response() *GetVirtualImage200Response {
-	this := GetVirtualImage200Response{}
-	return &this
-}
-
 // NewGetVirtualImage200ResponseWithDefaults instantiates a new GetVirtualImage200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetVirtualImage200ResponseWithDefaults() *GetVirtualImage200Response {
 	this := GetVirtualImage200Response{}
 	return &this
-}
-
-// GetVirtualImage returns the VirtualImage field value if set, zero value otherwise.
-func (o *GetVirtualImage200Response) GetVirtualImage() GetVirtualImage200ResponseVirtualImage {
-	if o == nil || IsNil(o.VirtualImage) {
-		var ret GetVirtualImage200ResponseVirtualImage
-		return ret
-	}
-	return *o.VirtualImage
-}
-
-// GetVirtualImageOk returns a tuple with the VirtualImage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetVirtualImage200Response) GetVirtualImageOk() (*GetVirtualImage200ResponseVirtualImage, bool) {
-	if o == nil || IsNil(o.VirtualImage) {
-		return nil, false
-	}
-	return o.VirtualImage, true
-}
-
-// SetVirtualImage gets a reference to the given GetVirtualImage200ResponseVirtualImage and assigns it to the VirtualImage field.
-func (o *GetVirtualImage200Response) SetVirtualImage(v GetVirtualImage200ResponseVirtualImage) {
-	o.VirtualImage = &v
 }
 
 func (o GetVirtualImage200Response) MarshalJSON() ([]byte, error) {

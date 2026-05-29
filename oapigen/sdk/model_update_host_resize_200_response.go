@@ -27,67 +27,12 @@ type UpdateHostResize200Response struct {
 
 type _UpdateHostResize200Response UpdateHostResize200Response
 
-// NewUpdateHostResize200Response instantiates a new UpdateHostResize200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateHostResize200Response() *UpdateHostResize200Response {
-	this := UpdateHostResize200Response{}
-	return &this
-}
-
 // NewUpdateHostResize200ResponseWithDefaults instantiates a new UpdateHostResize200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateHostResize200ResponseWithDefaults() *UpdateHostResize200Response {
 	this := UpdateHostResize200Response{}
 	return &this
-}
-
-// GetServer returns the Server field value if set, zero value otherwise.
-func (o *UpdateHostResize200Response) GetServer() UpdateHostResize200ResponseAllOfServer {
-	if o == nil || IsNil(o.Server) {
-		var ret UpdateHostResize200ResponseAllOfServer
-		return ret
-	}
-	return *o.Server
-}
-
-// GetServerOk returns a tuple with the Server field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostResize200Response) GetServerOk() (*UpdateHostResize200ResponseAllOfServer, bool) {
-	if o == nil || IsNil(o.Server) {
-		return nil, false
-	}
-	return o.Server, true
-}
-
-// SetServer gets a reference to the given UpdateHostResize200ResponseAllOfServer and assigns it to the Server field.
-func (o *UpdateHostResize200Response) SetServer(v UpdateHostResize200ResponseAllOfServer) {
-	o.Server = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateHostResize200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostResize200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateHostResize200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateHostResize200Response) MarshalJSON() ([]byte, error) {

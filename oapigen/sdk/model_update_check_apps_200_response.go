@@ -27,67 +27,12 @@ type UpdateCheckApps200Response struct {
 
 type _UpdateCheckApps200Response UpdateCheckApps200Response
 
-// NewUpdateCheckApps200Response instantiates a new UpdateCheckApps200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCheckApps200Response() *UpdateCheckApps200Response {
-	this := UpdateCheckApps200Response{}
-	return &this
-}
-
 // NewUpdateCheckApps200ResponseWithDefaults instantiates a new UpdateCheckApps200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateCheckApps200ResponseWithDefaults() *UpdateCheckApps200Response {
 	this := UpdateCheckApps200Response{}
 	return &this
-}
-
-// GetMonitorApp returns the MonitorApp field value if set, zero value otherwise.
-func (o *UpdateCheckApps200Response) GetMonitorApp() UpdateCheckApps200ResponseAllOfMonitorApp {
-	if o == nil || IsNil(o.MonitorApp) {
-		var ret UpdateCheckApps200ResponseAllOfMonitorApp
-		return ret
-	}
-	return *o.MonitorApp
-}
-
-// GetMonitorAppOk returns a tuple with the MonitorApp field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCheckApps200Response) GetMonitorAppOk() (*UpdateCheckApps200ResponseAllOfMonitorApp, bool) {
-	if o == nil || IsNil(o.MonitorApp) {
-		return nil, false
-	}
-	return o.MonitorApp, true
-}
-
-// SetMonitorApp gets a reference to the given UpdateCheckApps200ResponseAllOfMonitorApp and assigns it to the MonitorApp field.
-func (o *UpdateCheckApps200Response) SetMonitorApp(v UpdateCheckApps200ResponseAllOfMonitorApp) {
-	o.MonitorApp = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateCheckApps200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCheckApps200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateCheckApps200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateCheckApps200Response) MarshalJSON() ([]byte, error) {

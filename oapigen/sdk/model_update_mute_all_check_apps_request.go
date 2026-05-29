@@ -27,16 +27,6 @@ type UpdateMuteAllCheckAppsRequest struct {
 
 type _UpdateMuteAllCheckAppsRequest UpdateMuteAllCheckAppsRequest
 
-// NewUpdateMuteAllCheckAppsRequest instantiates a new UpdateMuteAllCheckAppsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateMuteAllCheckAppsRequest(muted bool) *UpdateMuteAllCheckAppsRequest {
-	this := UpdateMuteAllCheckAppsRequest{}
-	this.Muted = muted
-	return &this
-}
-
 // NewUpdateMuteAllCheckAppsRequestWithDefaults instantiates a new UpdateMuteAllCheckAppsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -45,30 +35,6 @@ func NewUpdateMuteAllCheckAppsRequestWithDefaults() *UpdateMuteAllCheckAppsReque
 	var muted bool = true
 	this.Muted = muted
 	return &this
-}
-
-// GetMuted returns the Muted field value
-func (o *UpdateMuteAllCheckAppsRequest) GetMuted() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.Muted
-}
-
-// GetMutedOk returns a tuple with the Muted field value
-// and a boolean to check if the value has been set.
-func (o *UpdateMuteAllCheckAppsRequest) GetMutedOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Muted, true
-}
-
-// SetMuted sets field value
-func (o *UpdateMuteAllCheckAppsRequest) SetMuted(v bool) {
-	o.Muted = v
 }
 
 func (o UpdateMuteAllCheckAppsRequest) MarshalJSON() ([]byte, error) {

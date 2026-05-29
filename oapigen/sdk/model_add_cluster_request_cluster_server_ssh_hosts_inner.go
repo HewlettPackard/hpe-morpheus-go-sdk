@@ -29,67 +29,12 @@ type AddClusterRequestClusterServerSshHostsInner struct {
 
 type _AddClusterRequestClusterServerSshHostsInner AddClusterRequestClusterServerSshHostsInner
 
-// NewAddClusterRequestClusterServerSshHostsInner instantiates a new AddClusterRequestClusterServerSshHostsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterRequestClusterServerSshHostsInner() *AddClusterRequestClusterServerSshHostsInner {
-	this := AddClusterRequestClusterServerSshHostsInner{}
-	return &this
-}
-
 // NewAddClusterRequestClusterServerSshHostsInnerWithDefaults instantiates a new AddClusterRequestClusterServerSshHostsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddClusterRequestClusterServerSshHostsInnerWithDefaults() *AddClusterRequestClusterServerSshHostsInner {
 	this := AddClusterRequestClusterServerSshHostsInner{}
 	return &this
-}
-
-// GetIp returns the Ip field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerSshHostsInner) GetIp() string {
-	if o == nil || IsNil(o.Ip) {
-		var ret string
-		return ret
-	}
-	return *o.Ip
-}
-
-// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerSshHostsInner) GetIpOk() (*string, bool) {
-	if o == nil || IsNil(o.Ip) {
-		return nil, false
-	}
-	return o.Ip, true
-}
-
-// SetIp gets a reference to the given string and assigns it to the Ip field.
-func (o *AddClusterRequestClusterServerSshHostsInner) SetIp(v string) {
-	o.Ip = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerSshHostsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerSshHostsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddClusterRequestClusterServerSshHostsInner) SetName(v string) {
-	o.Name = &v
 }
 
 func (o AddClusterRequestClusterServerSshHostsInner) MarshalJSON() ([]byte, error) {

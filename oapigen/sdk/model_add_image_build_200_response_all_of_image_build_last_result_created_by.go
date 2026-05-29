@@ -26,44 +26,12 @@ type AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy struct {
 
 type _AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy
 
-// NewAddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy instantiates a new AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy() *AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy {
-	this := AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy{}
-	return &this
-}
-
 // NewAddImageBuild200ResponseAllOfImageBuildLastResultCreatedByWithDefaults instantiates a new AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddImageBuild200ResponseAllOfImageBuildLastResultCreatedByWithDefaults() *AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy {
 	this := AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy{}
 	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy) SetUsername(v string) {
-	o.Username = &v
 }
 
 func (o AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy) MarshalJSON() ([]byte, error) {

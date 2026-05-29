@@ -26,44 +26,12 @@ type AddProvisioningLicenseRequest struct {
 
 type _AddProvisioningLicenseRequest AddProvisioningLicenseRequest
 
-// NewAddProvisioningLicenseRequest instantiates a new AddProvisioningLicenseRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddProvisioningLicenseRequest() *AddProvisioningLicenseRequest {
-	this := AddProvisioningLicenseRequest{}
-	return &this
-}
-
 // NewAddProvisioningLicenseRequestWithDefaults instantiates a new AddProvisioningLicenseRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddProvisioningLicenseRequestWithDefaults() *AddProvisioningLicenseRequest {
 	this := AddProvisioningLicenseRequest{}
 	return &this
-}
-
-// GetLicense returns the License field value if set, zero value otherwise.
-func (o *AddProvisioningLicenseRequest) GetLicense() AddProvisioningLicenseRequestLicense {
-	if o == nil || IsNil(o.License) {
-		var ret AddProvisioningLicenseRequestLicense
-		return ret
-	}
-	return *o.License
-}
-
-// GetLicenseOk returns a tuple with the License field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddProvisioningLicenseRequest) GetLicenseOk() (*AddProvisioningLicenseRequestLicense, bool) {
-	if o == nil || IsNil(o.License) {
-		return nil, false
-	}
-	return o.License, true
-}
-
-// SetLicense gets a reference to the given AddProvisioningLicenseRequestLicense and assigns it to the License field.
-func (o *AddProvisioningLicenseRequest) SetLicense(v AddProvisioningLicenseRequestLicense) {
-	o.License = &v
 }
 
 func (o AddProvisioningLicenseRequest) MarshalJSON() ([]byte, error) {

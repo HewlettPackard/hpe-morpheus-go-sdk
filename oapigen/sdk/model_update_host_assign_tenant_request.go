@@ -27,17 +27,6 @@ type UpdateHostAssignTenantRequest struct {
 
 type _UpdateHostAssignTenantRequest UpdateHostAssignTenantRequest
 
-// NewUpdateHostAssignTenantRequest instantiates a new UpdateHostAssignTenantRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateHostAssignTenantRequest() *UpdateHostAssignTenantRequest {
-	this := UpdateHostAssignTenantRequest{}
-	var moveAssociatedInstances bool = true
-	this.MoveAssociatedInstances = &moveAssociatedInstances
-	return &this
-}
-
 // NewUpdateHostAssignTenantRequestWithDefaults instantiates a new UpdateHostAssignTenantRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -46,29 +35,6 @@ func NewUpdateHostAssignTenantRequestWithDefaults() *UpdateHostAssignTenantReque
 	var moveAssociatedInstances bool = true
 	this.MoveAssociatedInstances = &moveAssociatedInstances
 	return &this
-}
-
-// GetMoveAssociatedInstances returns the MoveAssociatedInstances field value if set, zero value otherwise.
-func (o *UpdateHostAssignTenantRequest) GetMoveAssociatedInstances() bool {
-	if o == nil || IsNil(o.MoveAssociatedInstances) {
-		var ret bool
-		return ret
-	}
-	return *o.MoveAssociatedInstances
-}
-
-// GetMoveAssociatedInstancesOk returns a tuple with the MoveAssociatedInstances field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostAssignTenantRequest) GetMoveAssociatedInstancesOk() (*bool, bool) {
-	if o == nil || IsNil(o.MoveAssociatedInstances) {
-		return nil, false
-	}
-	return o.MoveAssociatedInstances, true
-}
-
-// SetMoveAssociatedInstances gets a reference to the given bool and assigns it to the MoveAssociatedInstances field.
-func (o *UpdateHostAssignTenantRequest) SetMoveAssociatedInstances(v bool) {
-	o.MoveAssociatedInstances = &v
 }
 
 func (o UpdateHostAssignTenantRequest) MarshalJSON() ([]byte, error) {

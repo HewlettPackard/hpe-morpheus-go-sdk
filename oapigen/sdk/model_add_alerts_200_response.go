@@ -27,67 +27,12 @@ type AddAlerts200Response struct {
 
 type _AddAlerts200Response AddAlerts200Response
 
-// NewAddAlerts200Response instantiates a new AddAlerts200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddAlerts200Response() *AddAlerts200Response {
-	this := AddAlerts200Response{}
-	return &this
-}
-
 // NewAddAlerts200ResponseWithDefaults instantiates a new AddAlerts200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddAlerts200ResponseWithDefaults() *AddAlerts200Response {
 	this := AddAlerts200Response{}
 	return &this
-}
-
-// GetAlert returns the Alert field value if set, zero value otherwise.
-func (o *AddAlerts200Response) GetAlert() AddAlerts200ResponseAllOfAlert {
-	if o == nil || IsNil(o.Alert) {
-		var ret AddAlerts200ResponseAllOfAlert
-		return ret
-	}
-	return *o.Alert
-}
-
-// GetAlertOk returns a tuple with the Alert field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddAlerts200Response) GetAlertOk() (*AddAlerts200ResponseAllOfAlert, bool) {
-	if o == nil || IsNil(o.Alert) {
-		return nil, false
-	}
-	return o.Alert, true
-}
-
-// SetAlert gets a reference to the given AddAlerts200ResponseAllOfAlert and assigns it to the Alert field.
-func (o *AddAlerts200Response) SetAlert(v AddAlerts200ResponseAllOfAlert) {
-	o.Alert = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddAlerts200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddAlerts200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddAlerts200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddAlerts200Response) MarshalJSON() ([]byte, error) {

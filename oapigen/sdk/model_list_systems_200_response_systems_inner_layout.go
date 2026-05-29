@@ -28,90 +28,12 @@ type ListSystems200ResponseSystemsInnerLayout struct {
 
 type _ListSystems200ResponseSystemsInnerLayout ListSystems200ResponseSystemsInnerLayout
 
-// NewListSystems200ResponseSystemsInnerLayout instantiates a new ListSystems200ResponseSystemsInnerLayout object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListSystems200ResponseSystemsInnerLayout() *ListSystems200ResponseSystemsInnerLayout {
-	this := ListSystems200ResponseSystemsInnerLayout{}
-	return &this
-}
-
 // NewListSystems200ResponseSystemsInnerLayoutWithDefaults instantiates a new ListSystems200ResponseSystemsInnerLayout object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListSystems200ResponseSystemsInnerLayoutWithDefaults() *ListSystems200ResponseSystemsInnerLayout {
 	this := ListSystems200ResponseSystemsInnerLayout{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListSystems200ResponseSystemsInnerLayout) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListSystems200ResponseSystemsInnerLayout) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListSystems200ResponseSystemsInnerLayout) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *ListSystems200ResponseSystemsInnerLayout) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListSystems200ResponseSystemsInnerLayout) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *ListSystems200ResponseSystemsInnerLayout) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListSystems200ResponseSystemsInnerLayout) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListSystems200ResponseSystemsInnerLayout) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListSystems200ResponseSystemsInnerLayout) SetName(v string) {
-	o.Name = &v
 }
 
 func (o ListSystems200ResponseSystemsInnerLayout) MarshalJSON() ([]byte, error) {

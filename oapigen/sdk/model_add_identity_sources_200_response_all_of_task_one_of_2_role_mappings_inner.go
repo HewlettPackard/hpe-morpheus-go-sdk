@@ -28,90 +28,12 @@ type AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner struct {
 
 type _AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner
 
-// NewAddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner instantiates a new AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner() *AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner {
-	this := AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner{}
-	return &this
-}
-
 // NewAddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInnerWithDefaults instantiates a new AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInnerWithDefaults() *AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner {
 	this := AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner{}
 	return &this
-}
-
-// GetSourceRoleName returns the SourceRoleName field value if set, zero value otherwise.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner) GetSourceRoleName() string {
-	if o == nil || IsNil(o.SourceRoleName) {
-		var ret string
-		return ret
-	}
-	return *o.SourceRoleName
-}
-
-// GetSourceRoleNameOk returns a tuple with the SourceRoleName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner) GetSourceRoleNameOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceRoleName) {
-		return nil, false
-	}
-	return o.SourceRoleName, true
-}
-
-// SetSourceRoleName gets a reference to the given string and assigns it to the SourceRoleName field.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner) SetSourceRoleName(v string) {
-	o.SourceRoleName = &v
-}
-
-// GetSourceRoleFqn returns the SourceRoleFqn field value if set, zero value otherwise.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner) GetSourceRoleFqn() string {
-	if o == nil || IsNil(o.SourceRoleFqn) {
-		var ret string
-		return ret
-	}
-	return *o.SourceRoleFqn
-}
-
-// GetSourceRoleFqnOk returns a tuple with the SourceRoleFqn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner) GetSourceRoleFqnOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceRoleFqn) {
-		return nil, false
-	}
-	return o.SourceRoleFqn, true
-}
-
-// SetSourceRoleFqn gets a reference to the given string and assigns it to the SourceRoleFqn field.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner) SetSourceRoleFqn(v string) {
-	o.SourceRoleFqn = &v
-}
-
-// GetMappedRole returns the MappedRole field value if set, zero value otherwise.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner) GetMappedRole() AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInnerMappedRole {
-	if o == nil || IsNil(o.MappedRole) {
-		var ret AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInnerMappedRole
-		return ret
-	}
-	return *o.MappedRole
-}
-
-// GetMappedRoleOk returns a tuple with the MappedRole field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner) GetMappedRoleOk() (*AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInnerMappedRole, bool) {
-	if o == nil || IsNil(o.MappedRole) {
-		return nil, false
-	}
-	return o.MappedRole, true
-}
-
-// SetMappedRole gets a reference to the given AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInnerMappedRole and assigns it to the MappedRole field.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner) SetMappedRole(v AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInnerMappedRole) {
-	o.MappedRole = &v
 }
 
 func (o AddIdentitySources200ResponseAllOfTaskOneOf2RoleMappingsInner) MarshalJSON() ([]byte, error) {

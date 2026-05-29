@@ -27,67 +27,12 @@ type UpdateCredentials200Response struct {
 
 type _UpdateCredentials200Response UpdateCredentials200Response
 
-// NewUpdateCredentials200Response instantiates a new UpdateCredentials200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCredentials200Response() *UpdateCredentials200Response {
-	this := UpdateCredentials200Response{}
-	return &this
-}
-
 // NewUpdateCredentials200ResponseWithDefaults instantiates a new UpdateCredentials200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateCredentials200ResponseWithDefaults() *UpdateCredentials200Response {
 	this := UpdateCredentials200Response{}
 	return &this
-}
-
-// GetCredential returns the Credential field value if set, zero value otherwise.
-func (o *UpdateCredentials200Response) GetCredential() UpdateCredentials200ResponseAllOfCredential {
-	if o == nil || IsNil(o.Credential) {
-		var ret UpdateCredentials200ResponseAllOfCredential
-		return ret
-	}
-	return *o.Credential
-}
-
-// GetCredentialOk returns a tuple with the Credential field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCredentials200Response) GetCredentialOk() (*UpdateCredentials200ResponseAllOfCredential, bool) {
-	if o == nil || IsNil(o.Credential) {
-		return nil, false
-	}
-	return o.Credential, true
-}
-
-// SetCredential gets a reference to the given UpdateCredentials200ResponseAllOfCredential and assigns it to the Credential field.
-func (o *UpdateCredentials200Response) SetCredential(v UpdateCredentials200ResponseAllOfCredential) {
-	o.Credential = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateCredentials200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCredentials200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateCredentials200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateCredentials200Response) MarshalJSON() ([]byte, error) {

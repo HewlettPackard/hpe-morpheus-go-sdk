@@ -29,71 +29,12 @@ type UpdateStaticRouteRequestNetworkRoute struct {
 
 type _UpdateStaticRouteRequestNetworkRoute UpdateStaticRouteRequestNetworkRoute
 
-// NewUpdateStaticRouteRequestNetworkRoute instantiates a new UpdateStaticRouteRequestNetworkRoute object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateStaticRouteRequestNetworkRoute(source string, destination string) *UpdateStaticRouteRequestNetworkRoute {
-	this := UpdateStaticRouteRequestNetworkRoute{}
-	this.Source = source
-	this.Destination = destination
-	return &this
-}
-
 // NewUpdateStaticRouteRequestNetworkRouteWithDefaults instantiates a new UpdateStaticRouteRequestNetworkRoute object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateStaticRouteRequestNetworkRouteWithDefaults() *UpdateStaticRouteRequestNetworkRoute {
 	this := UpdateStaticRouteRequestNetworkRoute{}
 	return &this
-}
-
-// GetSource returns the Source field value
-func (o *UpdateStaticRouteRequestNetworkRoute) GetSource() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Source
-}
-
-// GetSourceOk returns a tuple with the Source field value
-// and a boolean to check if the value has been set.
-func (o *UpdateStaticRouteRequestNetworkRoute) GetSourceOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Source, true
-}
-
-// SetSource sets field value
-func (o *UpdateStaticRouteRequestNetworkRoute) SetSource(v string) {
-	o.Source = v
-}
-
-// GetDestination returns the Destination field value
-func (o *UpdateStaticRouteRequestNetworkRoute) GetDestination() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Destination
-}
-
-// GetDestinationOk returns a tuple with the Destination field value
-// and a boolean to check if the value has been set.
-func (o *UpdateStaticRouteRequestNetworkRoute) GetDestinationOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Destination, true
-}
-
-// SetDestination sets field value
-func (o *UpdateStaticRouteRequestNetworkRoute) SetDestination(v string) {
-	o.Destination = v
 }
 
 func (o UpdateStaticRouteRequestNetworkRoute) MarshalJSON() ([]byte, error) {

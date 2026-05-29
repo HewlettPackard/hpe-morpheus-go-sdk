@@ -27,67 +27,12 @@ type AddBaremetalHost200Response struct {
 
 type _AddBaremetalHost200Response AddBaremetalHost200Response
 
-// NewAddBaremetalHost200Response instantiates a new AddBaremetalHost200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBaremetalHost200Response() *AddBaremetalHost200Response {
-	this := AddBaremetalHost200Response{}
-	return &this
-}
-
 // NewAddBaremetalHost200ResponseWithDefaults instantiates a new AddBaremetalHost200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddBaremetalHost200ResponseWithDefaults() *AddBaremetalHost200Response {
 	this := AddBaremetalHost200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddBaremetalHost200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBaremetalHost200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddBaremetalHost200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetServer returns the Server field value if set, zero value otherwise.
-func (o *AddBaremetalHost200Response) GetServer() AddBaremetalHost200ResponseServer {
-	if o == nil || IsNil(o.Server) {
-		var ret AddBaremetalHost200ResponseServer
-		return ret
-	}
-	return *o.Server
-}
-
-// GetServerOk returns a tuple with the Server field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBaremetalHost200Response) GetServerOk() (*AddBaremetalHost200ResponseServer, bool) {
-	if o == nil || IsNil(o.Server) {
-		return nil, false
-	}
-	return o.Server, true
-}
-
-// SetServer gets a reference to the given AddBaremetalHost200ResponseServer and assigns it to the Server field.
-func (o *AddBaremetalHost200Response) SetServer(v AddBaremetalHost200ResponseServer) {
-	o.Server = &v
 }
 
 func (o AddBaremetalHost200Response) MarshalJSON() ([]byte, error) {

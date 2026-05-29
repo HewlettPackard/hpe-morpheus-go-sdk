@@ -29,67 +29,12 @@ type AllocateNetworkFloatingIpRequest struct {
 
 type _AllocateNetworkFloatingIpRequest AllocateNetworkFloatingIpRequest
 
-// NewAllocateNetworkFloatingIpRequest instantiates a new AllocateNetworkFloatingIpRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAllocateNetworkFloatingIpRequest() *AllocateNetworkFloatingIpRequest {
-	this := AllocateNetworkFloatingIpRequest{}
-	return &this
-}
-
 // NewAllocateNetworkFloatingIpRequestWithDefaults instantiates a new AllocateNetworkFloatingIpRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAllocateNetworkFloatingIpRequestWithDefaults() *AllocateNetworkFloatingIpRequest {
 	this := AllocateNetworkFloatingIpRequest{}
 	return &this
-}
-
-// GetNetworkServerId returns the NetworkServerId field value if set, zero value otherwise.
-func (o *AllocateNetworkFloatingIpRequest) GetNetworkServerId() int64 {
-	if o == nil || IsNil(o.NetworkServerId) {
-		var ret int64
-		return ret
-	}
-	return *o.NetworkServerId
-}
-
-// GetNetworkServerIdOk returns a tuple with the NetworkServerId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AllocateNetworkFloatingIpRequest) GetNetworkServerIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.NetworkServerId) {
-		return nil, false
-	}
-	return o.NetworkServerId, true
-}
-
-// SetNetworkServerId gets a reference to the given int64 and assigns it to the NetworkServerId field.
-func (o *AllocateNetworkFloatingIpRequest) SetNetworkServerId(v int64) {
-	o.NetworkServerId = &v
-}
-
-// GetFloatingIpPoolId returns the FloatingIpPoolId field value if set, zero value otherwise.
-func (o *AllocateNetworkFloatingIpRequest) GetFloatingIpPoolId() int64 {
-	if o == nil || IsNil(o.FloatingIpPoolId) {
-		var ret int64
-		return ret
-	}
-	return *o.FloatingIpPoolId
-}
-
-// GetFloatingIpPoolIdOk returns a tuple with the FloatingIpPoolId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AllocateNetworkFloatingIpRequest) GetFloatingIpPoolIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.FloatingIpPoolId) {
-		return nil, false
-	}
-	return o.FloatingIpPoolId, true
-}
-
-// SetFloatingIpPoolId gets a reference to the given int64 and assigns it to the FloatingIpPoolId field.
-func (o *AllocateNetworkFloatingIpRequest) SetFloatingIpPoolId(v int64) {
-	o.FloatingIpPoolId = &v
 }
 
 func (o AllocateNetworkFloatingIpRequest) MarshalJSON() ([]byte, error) {

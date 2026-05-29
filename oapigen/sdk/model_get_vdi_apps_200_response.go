@@ -26,44 +26,12 @@ type GetVDIApps200Response struct {
 
 type _GetVDIApps200Response GetVDIApps200Response
 
-// NewGetVDIApps200Response instantiates a new GetVDIApps200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetVDIApps200Response() *GetVDIApps200Response {
-	this := GetVDIApps200Response{}
-	return &this
-}
-
 // NewGetVDIApps200ResponseWithDefaults instantiates a new GetVDIApps200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetVDIApps200ResponseWithDefaults() *GetVDIApps200Response {
 	this := GetVDIApps200Response{}
 	return &this
-}
-
-// GetVdiApp returns the VdiApp field value if set, zero value otherwise.
-func (o *GetVDIApps200Response) GetVdiApp() GetVDIApps200ResponseVdiApp {
-	if o == nil || IsNil(o.VdiApp) {
-		var ret GetVDIApps200ResponseVdiApp
-		return ret
-	}
-	return *o.VdiApp
-}
-
-// GetVdiAppOk returns a tuple with the VdiApp field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetVDIApps200Response) GetVdiAppOk() (*GetVDIApps200ResponseVdiApp, bool) {
-	if o == nil || IsNil(o.VdiApp) {
-		return nil, false
-	}
-	return o.VdiApp, true
-}
-
-// SetVdiApp gets a reference to the given GetVDIApps200ResponseVdiApp and assigns it to the VdiApp field.
-func (o *GetVDIApps200Response) SetVdiApp(v GetVDIApps200ResponseVdiApp) {
-	o.VdiApp = &v
 }
 
 func (o GetVDIApps200Response) MarshalJSON() ([]byte, error) {

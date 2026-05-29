@@ -28,93 +28,12 @@ type ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet struct
 
 type _ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet
 
-// NewListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet instantiates a new ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet() *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet {
-	this := ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet{}
-	return &this
-}
-
 // NewListClusterContainers200ResponseAllOfContainersInnerContainerTypeSetWithDefaults instantiates a new ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListClusterContainers200ResponseAllOfContainersInnerContainerTypeSetWithDefaults() *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet {
 	this := ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetId() string {
-	if o == nil || IsNil(o.Id.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId gets a reference to the given NullableString and assigns it to the Id field.
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCode() string {
-	if o == nil || IsNil(o.Code.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Code.Get()
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Code.Get(), o.Code.IsSet()
-}
-
-// SetCode gets a reference to the given NullableString and assigns it to the Code field.
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) SetCode(v string) {
-	o.Code.Set(&v)
-}
-
-// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCategory() string {
-	if o == nil || IsNil(o.Category.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Category.Get()
-}
-
-// GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCategoryOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Category.Get(), o.Category.IsSet()
-}
-
-// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
-func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) SetCategory(v string) {
-	o.Category.Set(&v)
 }
 
 func (o ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) MarshalJSON() ([]byte, error) {

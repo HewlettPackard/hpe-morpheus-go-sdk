@@ -31,90 +31,12 @@ type AddMigration200ResponseAnyOfMigrationServersInnerSourceServer struct {
 
 type _AddMigration200ResponseAnyOfMigrationServersInnerSourceServer AddMigration200ResponseAnyOfMigrationServersInnerSourceServer
 
-// NewAddMigration200ResponseAnyOfMigrationServersInnerSourceServer instantiates a new AddMigration200ResponseAnyOfMigrationServersInnerSourceServer object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddMigration200ResponseAnyOfMigrationServersInnerSourceServer() *AddMigration200ResponseAnyOfMigrationServersInnerSourceServer {
-	this := AddMigration200ResponseAnyOfMigrationServersInnerSourceServer{}
-	return &this
-}
-
 // NewAddMigration200ResponseAnyOfMigrationServersInnerSourceServerWithDefaults instantiates a new AddMigration200ResponseAnyOfMigrationServersInnerSourceServer object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddMigration200ResponseAnyOfMigrationServersInnerSourceServerWithDefaults() *AddMigration200ResponseAnyOfMigrationServersInnerSourceServer {
 	this := AddMigration200ResponseAnyOfMigrationServersInnerSourceServer{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddMigration200ResponseAnyOfMigrationServersInnerSourceServer) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddMigration200ResponseAnyOfMigrationServersInnerSourceServer) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddMigration200ResponseAnyOfMigrationServersInnerSourceServer) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddMigration200ResponseAnyOfMigrationServersInnerSourceServer) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddMigration200ResponseAnyOfMigrationServersInnerSourceServer) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddMigration200ResponseAnyOfMigrationServersInnerSourceServer) SetName(v string) {
-	o.Name = &v
-}
-
-// GetStatus returns the Status field value if set, zero value otherwise.
-func (o *AddMigration200ResponseAnyOfMigrationServersInnerSourceServer) GetStatus() string {
-	if o == nil || IsNil(o.Status) {
-		var ret string
-		return ret
-	}
-	return *o.Status
-}
-
-// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddMigration200ResponseAnyOfMigrationServersInnerSourceServer) GetStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.Status) {
-		return nil, false
-	}
-	return o.Status, true
-}
-
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *AddMigration200ResponseAnyOfMigrationServersInnerSourceServer) SetStatus(v string) {
-	o.Status = &v
 }
 
 func (o AddMigration200ResponseAnyOfMigrationServersInnerSourceServer) MarshalJSON() ([]byte, error) {

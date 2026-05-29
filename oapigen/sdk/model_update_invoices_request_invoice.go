@@ -31,90 +31,12 @@ type UpdateInvoicesRequestInvoice struct {
 
 type _UpdateInvoicesRequestInvoice UpdateInvoicesRequestInvoice
 
-// NewUpdateInvoicesRequestInvoice instantiates a new UpdateInvoicesRequestInvoice object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateInvoicesRequestInvoice() *UpdateInvoicesRequestInvoice {
-	this := UpdateInvoicesRequestInvoice{}
-	return &this
-}
-
 // NewUpdateInvoicesRequestInvoiceWithDefaults instantiates a new UpdateInvoicesRequestInvoice object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateInvoicesRequestInvoiceWithDefaults() *UpdateInvoicesRequestInvoice {
 	this := UpdateInvoicesRequestInvoice{}
 	return &this
-}
-
-// GetTags returns the Tags field value if set, zero value otherwise.
-func (o *UpdateInvoicesRequestInvoice) GetTags() []map[string]interface{} {
-	if o == nil || IsNil(o.Tags) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Tags
-}
-
-// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateInvoicesRequestInvoice) GetTagsOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Tags) {
-		return nil, false
-	}
-	return o.Tags, true
-}
-
-// SetTags gets a reference to the given []map[string]interface{} and assigns it to the Tags field.
-func (o *UpdateInvoicesRequestInvoice) SetTags(v []map[string]interface{}) {
-	o.Tags = v
-}
-
-// GetAddTags returns the AddTags field value if set, zero value otherwise.
-func (o *UpdateInvoicesRequestInvoice) GetAddTags() []map[string]interface{} {
-	if o == nil || IsNil(o.AddTags) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.AddTags
-}
-
-// GetAddTagsOk returns a tuple with the AddTags field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateInvoicesRequestInvoice) GetAddTagsOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.AddTags) {
-		return nil, false
-	}
-	return o.AddTags, true
-}
-
-// SetAddTags gets a reference to the given []map[string]interface{} and assigns it to the AddTags field.
-func (o *UpdateInvoicesRequestInvoice) SetAddTags(v []map[string]interface{}) {
-	o.AddTags = v
-}
-
-// GetRemoveTags returns the RemoveTags field value if set, zero value otherwise.
-func (o *UpdateInvoicesRequestInvoice) GetRemoveTags() []map[string]interface{} {
-	if o == nil || IsNil(o.RemoveTags) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.RemoveTags
-}
-
-// GetRemoveTagsOk returns a tuple with the RemoveTags field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateInvoicesRequestInvoice) GetRemoveTagsOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.RemoveTags) {
-		return nil, false
-	}
-	return o.RemoveTags, true
-}
-
-// SetRemoveTags gets a reference to the given []map[string]interface{} and assigns it to the RemoveTags field.
-func (o *UpdateInvoicesRequestInvoice) SetRemoveTags(v []map[string]interface{}) {
-	o.RemoveTags = v
 }
 
 func (o UpdateInvoicesRequestInvoice) MarshalJSON() ([]byte, error) {

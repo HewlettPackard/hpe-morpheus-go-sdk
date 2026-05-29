@@ -27,20 +27,6 @@ type BlueprintCreateSuccessConfigOneOf1CloudFormationIAM struct {
 	String *string
 }
 
-// boolAsBlueprintCreateSuccessConfigOneOf1CloudFormationIAM is a convenience function that returns bool wrapped in BlueprintCreateSuccessConfigOneOf1CloudFormationIAM
-func BoolAsBlueprintCreateSuccessConfigOneOf1CloudFormationIAM(v *bool) BlueprintCreateSuccessConfigOneOf1CloudFormationIAM {
-	return BlueprintCreateSuccessConfigOneOf1CloudFormationIAM{
-		Bool: v,
-	}
-}
-
-// stringAsBlueprintCreateSuccessConfigOneOf1CloudFormationIAM is a convenience function that returns string wrapped in BlueprintCreateSuccessConfigOneOf1CloudFormationIAM
-func StringAsBlueprintCreateSuccessConfigOneOf1CloudFormationIAM(v *string) BlueprintCreateSuccessConfigOneOf1CloudFormationIAM {
-	return BlueprintCreateSuccessConfigOneOf1CloudFormationIAM{
-		String: v,
-	}
-}
-
 func (dst *BlueprintCreateSuccessConfigOneOf1CloudFormationIAM) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &BlueprintCreateSuccessConfigOneOf1CloudFormationIAM{}

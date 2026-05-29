@@ -26,44 +26,12 @@ type ImageBuildsLastResultCreatedBy struct {
 
 type _ImageBuildsLastResultCreatedBy ImageBuildsLastResultCreatedBy
 
-// NewImageBuildsLastResultCreatedBy instantiates a new ImageBuildsLastResultCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewImageBuildsLastResultCreatedBy() *ImageBuildsLastResultCreatedBy {
-	this := ImageBuildsLastResultCreatedBy{}
-	return &this
-}
-
 // NewImageBuildsLastResultCreatedByWithDefaults instantiates a new ImageBuildsLastResultCreatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewImageBuildsLastResultCreatedByWithDefaults() *ImageBuildsLastResultCreatedBy {
 	this := ImageBuildsLastResultCreatedBy{}
 	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *ImageBuildsLastResultCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ImageBuildsLastResultCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *ImageBuildsLastResultCreatedBy) SetUsername(v string) {
-	o.Username = &v
 }
 
 func (o ImageBuildsLastResultCreatedBy) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup struct {
 
 type _AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup
 
-// NewAddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup instantiates a new AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup() *AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup {
-	this := AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup{}
-	return &this
-}
-
 // NewAddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroupWithDefaults instantiates a new AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroupWithDefaults() *AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup {
 	this := AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup) GetId() []string {
-	if o == nil || IsNil(o.Id) {
-		var ret []string
-		return ret
-	}
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup) GetIdOk() ([]string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given []string and assigns it to the Id field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup) SetId(v []string) {
-	o.Id = v
 }
 
 func (o AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup) MarshalJSON() ([]byte, error) {

@@ -28,90 +28,12 @@ type InstanceStateInput struct {
 
 type _InstanceStateInput InstanceStateInput
 
-// NewInstanceStateInput instantiates a new InstanceStateInput object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceStateInput() *InstanceStateInput {
-	this := InstanceStateInput{}
-	return &this
-}
-
 // NewInstanceStateInputWithDefaults instantiates a new InstanceStateInput object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceStateInputWithDefaults() *InstanceStateInput {
 	this := InstanceStateInput{}
 	return &this
-}
-
-// GetVariables returns the Variables field value if set, zero value otherwise.
-func (o *InstanceStateInput) GetVariables() []map[string]interface{} {
-	if o == nil || IsNil(o.Variables) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Variables
-}
-
-// GetVariablesOk returns a tuple with the Variables field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceStateInput) GetVariablesOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Variables) {
-		return nil, false
-	}
-	return o.Variables, true
-}
-
-// SetVariables gets a reference to the given []map[string]interface{} and assigns it to the Variables field.
-func (o *InstanceStateInput) SetVariables(v []map[string]interface{}) {
-	o.Variables = v
-}
-
-// GetProviders returns the Providers field value if set, zero value otherwise.
-func (o *InstanceStateInput) GetProviders() []map[string]interface{} {
-	if o == nil || IsNil(o.Providers) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Providers
-}
-
-// GetProvidersOk returns a tuple with the Providers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceStateInput) GetProvidersOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Providers) {
-		return nil, false
-	}
-	return o.Providers, true
-}
-
-// SetProviders gets a reference to the given []map[string]interface{} and assigns it to the Providers field.
-func (o *InstanceStateInput) SetProviders(v []map[string]interface{}) {
-	o.Providers = v
-}
-
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *InstanceStateInput) GetData() []map[string]interface{} {
-	if o == nil || IsNil(o.Data) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Data
-}
-
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceStateInput) GetDataOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Data) {
-		return nil, false
-	}
-	return o.Data, true
-}
-
-// SetData gets a reference to the given []map[string]interface{} and assigns it to the Data field.
-func (o *InstanceStateInput) SetData(v []map[string]interface{}) {
-	o.Data = v
 }
 
 func (o InstanceStateInput) MarshalJSON() ([]byte, error) {

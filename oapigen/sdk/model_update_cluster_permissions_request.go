@@ -26,46 +26,12 @@ type UpdateClusterPermissionsRequest struct {
 
 type _UpdateClusterPermissionsRequest UpdateClusterPermissionsRequest
 
-// NewUpdateClusterPermissionsRequest instantiates a new UpdateClusterPermissionsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterPermissionsRequest(permissions UpdateClusterPermissionsRequestPermissions) *UpdateClusterPermissionsRequest {
-	this := UpdateClusterPermissionsRequest{}
-	this.Permissions = permissions
-	return &this
-}
-
 // NewUpdateClusterPermissionsRequestWithDefaults instantiates a new UpdateClusterPermissionsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateClusterPermissionsRequestWithDefaults() *UpdateClusterPermissionsRequest {
 	this := UpdateClusterPermissionsRequest{}
 	return &this
-}
-
-// GetPermissions returns the Permissions field value
-func (o *UpdateClusterPermissionsRequest) GetPermissions() UpdateClusterPermissionsRequestPermissions {
-	if o == nil {
-		var ret UpdateClusterPermissionsRequestPermissions
-		return ret
-	}
-
-	return o.Permissions
-}
-
-// GetPermissionsOk returns a tuple with the Permissions field value
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterPermissionsRequest) GetPermissionsOk() (*UpdateClusterPermissionsRequestPermissions, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Permissions, true
-}
-
-// SetPermissions sets field value
-func (o *UpdateClusterPermissionsRequest) SetPermissions(v UpdateClusterPermissionsRequestPermissions) {
-	o.Permissions = v
 }
 
 func (o UpdateClusterPermissionsRequest) MarshalJSON() ([]byte, error) {

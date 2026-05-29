@@ -26,44 +26,12 @@ type GetPrepareApplyInstance200ResponseAllOfData struct {
 
 type _GetPrepareApplyInstance200ResponseAllOfData GetPrepareApplyInstance200ResponseAllOfData
 
-// NewGetPrepareApplyInstance200ResponseAllOfData instantiates a new GetPrepareApplyInstance200ResponseAllOfData object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetPrepareApplyInstance200ResponseAllOfData() *GetPrepareApplyInstance200ResponseAllOfData {
-	this := GetPrepareApplyInstance200ResponseAllOfData{}
-	return &this
-}
-
 // NewGetPrepareApplyInstance200ResponseAllOfDataWithDefaults instantiates a new GetPrepareApplyInstance200ResponseAllOfData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetPrepareApplyInstance200ResponseAllOfDataWithDefaults() *GetPrepareApplyInstance200ResponseAllOfData {
 	this := GetPrepareApplyInstance200ResponseAllOfData{}
 	return &this
-}
-
-// GetTemplateParameter returns the TemplateParameter field value if set, zero value otherwise.
-func (o *GetPrepareApplyInstance200ResponseAllOfData) GetTemplateParameter() map[string]interface{} {
-	if o == nil || IsNil(o.TemplateParameter) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.TemplateParameter
-}
-
-// GetTemplateParameterOk returns a tuple with the TemplateParameter field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPrepareApplyInstance200ResponseAllOfData) GetTemplateParameterOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.TemplateParameter) {
-		return map[string]interface{}{}, false
-	}
-	return o.TemplateParameter, true
-}
-
-// SetTemplateParameter gets a reference to the given map[string]interface{} and assigns it to the TemplateParameter field.
-func (o *GetPrepareApplyInstance200ResponseAllOfData) SetTemplateParameter(v map[string]interface{}) {
-	o.TemplateParameter = v
 }
 
 func (o GetPrepareApplyInstance200ResponseAllOfData) MarshalJSON() ([]byte, error) {

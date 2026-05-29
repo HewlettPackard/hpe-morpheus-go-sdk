@@ -27,67 +27,12 @@ type GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestin
 
 type _GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner
 
-// NewGetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner instantiates a new GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner() *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner {
-	this := GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner{}
-	return &this
-}
-
 // NewGetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInnerWithDefaults instantiates a new GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInnerWithDefaults() *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner {
 	this := GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner) SetId(v string) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner) SetName(v string) {
-	o.Name = &v
 }
 
 func (o GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerDestinationsInner) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type ListGuidances200Response struct {
 
 type _ListGuidances200Response ListGuidances200Response
 
-// NewListGuidances200Response instantiates a new ListGuidances200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListGuidances200Response() *ListGuidances200Response {
-	this := ListGuidances200Response{}
-	return &this
-}
-
 // NewListGuidances200ResponseWithDefaults instantiates a new ListGuidances200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListGuidances200ResponseWithDefaults() *ListGuidances200Response {
 	this := ListGuidances200Response{}
 	return &this
-}
-
-// GetDiscoveries returns the Discoveries field value if set, zero value otherwise.
-func (o *ListGuidances200Response) GetDiscoveries() []ListGuidances200ResponseAllOfDiscoveriesInner {
-	if o == nil || IsNil(o.Discoveries) {
-		var ret []ListGuidances200ResponseAllOfDiscoveriesInner
-		return ret
-	}
-	return o.Discoveries
-}
-
-// GetDiscoveriesOk returns a tuple with the Discoveries field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200Response) GetDiscoveriesOk() ([]ListGuidances200ResponseAllOfDiscoveriesInner, bool) {
-	if o == nil || IsNil(o.Discoveries) {
-		return nil, false
-	}
-	return o.Discoveries, true
-}
-
-// SetDiscoveries gets a reference to the given []ListGuidances200ResponseAllOfDiscoveriesInner and assigns it to the Discoveries field.
-func (o *ListGuidances200Response) SetDiscoveries(v []ListGuidances200ResponseAllOfDiscoveriesInner) {
-	o.Discoveries = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListGuidances200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListGuidances200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListGuidances200Response) MarshalJSON() ([]byte, error) {

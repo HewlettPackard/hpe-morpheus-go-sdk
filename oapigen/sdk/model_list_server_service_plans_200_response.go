@@ -26,44 +26,12 @@ type ListServerServicePlans200Response struct {
 
 type _ListServerServicePlans200Response ListServerServicePlans200Response
 
-// NewListServerServicePlans200Response instantiates a new ListServerServicePlans200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListServerServicePlans200Response() *ListServerServicePlans200Response {
-	this := ListServerServicePlans200Response{}
-	return &this
-}
-
 // NewListServerServicePlans200ResponseWithDefaults instantiates a new ListServerServicePlans200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListServerServicePlans200ResponseWithDefaults() *ListServerServicePlans200Response {
 	this := ListServerServicePlans200Response{}
 	return &this
-}
-
-// GetPlans returns the Plans field value if set, zero value otherwise.
-func (o *ListServerServicePlans200Response) GetPlans() []ListServerServicePlans200ResponsePlansInner {
-	if o == nil || IsNil(o.Plans) {
-		var ret []ListServerServicePlans200ResponsePlansInner
-		return ret
-	}
-	return o.Plans
-}
-
-// GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListServerServicePlans200Response) GetPlansOk() ([]ListServerServicePlans200ResponsePlansInner, bool) {
-	if o == nil || IsNil(o.Plans) {
-		return nil, false
-	}
-	return o.Plans, true
-}
-
-// SetPlans gets a reference to the given []ListServerServicePlans200ResponsePlansInner and assigns it to the Plans field.
-func (o *ListServerServicePlans200Response) SetPlans(v []ListServerServicePlans200ResponsePlansInner) {
-	o.Plans = v
 }
 
 func (o ListServerServicePlans200Response) MarshalJSON() ([]byte, error) {

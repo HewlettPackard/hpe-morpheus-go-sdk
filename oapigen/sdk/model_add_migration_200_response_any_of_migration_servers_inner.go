@@ -31,114 +31,12 @@ type AddMigration200ResponseAnyOfMigrationServersInner struct {
 
 type _AddMigration200ResponseAnyOfMigrationServersInner AddMigration200ResponseAnyOfMigrationServersInner
 
-// NewAddMigration200ResponseAnyOfMigrationServersInner instantiates a new AddMigration200ResponseAnyOfMigrationServersInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddMigration200ResponseAnyOfMigrationServersInner() *AddMigration200ResponseAnyOfMigrationServersInner {
-	this := AddMigration200ResponseAnyOfMigrationServersInner{}
-	return &this
-}
-
 // NewAddMigration200ResponseAnyOfMigrationServersInnerWithDefaults instantiates a new AddMigration200ResponseAnyOfMigrationServersInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddMigration200ResponseAnyOfMigrationServersInnerWithDefaults() *AddMigration200ResponseAnyOfMigrationServersInner {
 	this := AddMigration200ResponseAnyOfMigrationServersInner{}
 	return &this
-}
-
-// GetStatus returns the Status field value if set, zero value otherwise.
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetStatus() string {
-	if o == nil || IsNil(o.Status) {
-		var ret string
-		return ret
-	}
-	return *o.Status
-}
-
-// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.Status) {
-		return nil, false
-	}
-	return o.Status, true
-}
-
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) SetStatus(v string) {
-	o.Status = &v
-}
-
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.StatusMessage.Get()
-}
-
-// GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetStatusMessageOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
-}
-
-// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) SetStatusMessage(v string) {
-	o.StatusMessage.Set(&v)
-}
-
-// GetSourceServer returns the SourceServer field value if set, zero value otherwise.
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetSourceServer() AddMigration200ResponseAnyOfMigrationServersInnerSourceServer {
-	if o == nil || IsNil(o.SourceServer) {
-		var ret AddMigration200ResponseAnyOfMigrationServersInnerSourceServer
-		return ret
-	}
-	return *o.SourceServer
-}
-
-// GetSourceServerOk returns a tuple with the SourceServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetSourceServerOk() (*AddMigration200ResponseAnyOfMigrationServersInnerSourceServer, bool) {
-	if o == nil || IsNil(o.SourceServer) {
-		return nil, false
-	}
-	return o.SourceServer, true
-}
-
-// SetSourceServer gets a reference to the given AddMigration200ResponseAnyOfMigrationServersInnerSourceServer and assigns it to the SourceServer field.
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) SetSourceServer(v AddMigration200ResponseAnyOfMigrationServersInnerSourceServer) {
-	o.SourceServer = &v
-}
-
-// GetDestinationServer returns the DestinationServer field value if set, zero value otherwise.
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetDestinationServer() AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer {
-	if o == nil || IsNil(o.DestinationServer) {
-		var ret AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer
-		return ret
-	}
-	return *o.DestinationServer
-}
-
-// GetDestinationServerOk returns a tuple with the DestinationServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetDestinationServerOk() (*AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer, bool) {
-	if o == nil || IsNil(o.DestinationServer) {
-		return nil, false
-	}
-	return o.DestinationServer, true
-}
-
-// SetDestinationServer gets a reference to the given AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer and assigns it to the DestinationServer field.
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) SetDestinationServer(v AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer) {
-	o.DestinationServer = &v
 }
 
 func (o AddMigration200ResponseAnyOfMigrationServersInner) MarshalJSON() ([]byte, error) {

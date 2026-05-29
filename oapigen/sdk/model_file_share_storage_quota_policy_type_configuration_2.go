@@ -26,44 +26,12 @@ type FileShareStorageQuotaPolicyTypeConfiguration2 struct {
 
 type _FileShareStorageQuotaPolicyTypeConfiguration2 FileShareStorageQuotaPolicyTypeConfiguration2
 
-// NewFileShareStorageQuotaPolicyTypeConfiguration2 instantiates a new FileShareStorageQuotaPolicyTypeConfiguration2 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewFileShareStorageQuotaPolicyTypeConfiguration2() *FileShareStorageQuotaPolicyTypeConfiguration2 {
-	this := FileShareStorageQuotaPolicyTypeConfiguration2{}
-	return &this
-}
-
 // NewFileShareStorageQuotaPolicyTypeConfiguration2WithDefaults instantiates a new FileShareStorageQuotaPolicyTypeConfiguration2 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewFileShareStorageQuotaPolicyTypeConfiguration2WithDefaults() *FileShareStorageQuotaPolicyTypeConfiguration2 {
 	this := FileShareStorageQuotaPolicyTypeConfiguration2{}
 	return &this
-}
-
-// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
-func (o *FileShareStorageQuotaPolicyTypeConfiguration2) GetMaxStorage() string {
-	if o == nil || IsNil(o.MaxStorage) {
-		var ret string
-		return ret
-	}
-	return *o.MaxStorage
-}
-
-// GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *FileShareStorageQuotaPolicyTypeConfiguration2) GetMaxStorageOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxStorage) {
-		return nil, false
-	}
-	return o.MaxStorage, true
-}
-
-// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
-func (o *FileShareStorageQuotaPolicyTypeConfiguration2) SetMaxStorage(v string) {
-	o.MaxStorage = &v
 }
 
 func (o FileShareStorageQuotaPolicyTypeConfiguration2) MarshalJSON() ([]byte, error) {

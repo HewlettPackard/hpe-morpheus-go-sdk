@@ -29,113 +29,12 @@ type ListOptionZoneTypesOptions200ResponseAllOfDataInner struct {
 
 type _ListOptionZoneTypesOptions200ResponseAllOfDataInner ListOptionZoneTypesOptions200ResponseAllOfDataInner
 
-// NewListOptionZoneTypesOptions200ResponseAllOfDataInner instantiates a new ListOptionZoneTypesOptions200ResponseAllOfDataInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListOptionZoneTypesOptions200ResponseAllOfDataInner() *ListOptionZoneTypesOptions200ResponseAllOfDataInner {
-	this := ListOptionZoneTypesOptions200ResponseAllOfDataInner{}
-	return &this
-}
-
 // NewListOptionZoneTypesOptions200ResponseAllOfDataInnerWithDefaults instantiates a new ListOptionZoneTypesOptions200ResponseAllOfDataInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListOptionZoneTypesOptions200ResponseAllOfDataInnerWithDefaults() *ListOptionZoneTypesOptions200ResponseAllOfDataInner {
 	this := ListOptionZoneTypesOptions200ResponseAllOfDataInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) GetValue() string {
-	if o == nil || IsNil(o.Value) {
-		var ret string
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) SetValue(v string) {
-	o.Value = &v
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) SetCode(v string) {
-	o.Code = &v
 }
 
 func (o ListOptionZoneTypesOptions200ResponseAllOfDataInner) MarshalJSON() ([]byte, error) {

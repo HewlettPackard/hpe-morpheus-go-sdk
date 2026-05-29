@@ -28,67 +28,12 @@ type AddServicePlans200Response struct {
 
 type _AddServicePlans200Response AddServicePlans200Response
 
-// NewAddServicePlans200Response instantiates a new AddServicePlans200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddServicePlans200Response() *AddServicePlans200Response {
-	this := AddServicePlans200Response{}
-	return &this
-}
-
 // NewAddServicePlans200ResponseWithDefaults instantiates a new AddServicePlans200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddServicePlans200ResponseWithDefaults() *AddServicePlans200Response {
 	this := AddServicePlans200Response{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddServicePlans200Response) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddServicePlans200Response) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddServicePlans200Response) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddServicePlans200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddServicePlans200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddServicePlans200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddServicePlans200Response) MarshalJSON() ([]byte, error) {

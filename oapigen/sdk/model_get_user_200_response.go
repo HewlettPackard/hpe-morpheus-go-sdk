@@ -26,44 +26,12 @@ type GetUser200Response struct {
 
 type _GetUser200Response GetUser200Response
 
-// NewGetUser200Response instantiates a new GetUser200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetUser200Response() *GetUser200Response {
-	this := GetUser200Response{}
-	return &this
-}
-
 // NewGetUser200ResponseWithDefaults instantiates a new GetUser200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetUser200ResponseWithDefaults() *GetUser200Response {
 	this := GetUser200Response{}
 	return &this
-}
-
-// GetUser returns the User field value if set, zero value otherwise.
-func (o *GetUser200Response) GetUser() GetUser200ResponseUser {
-	if o == nil || IsNil(o.User) {
-		var ret GetUser200ResponseUser
-		return ret
-	}
-	return *o.User
-}
-
-// GetUserOk returns a tuple with the User field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetUser200Response) GetUserOk() (*GetUser200ResponseUser, bool) {
-	if o == nil || IsNil(o.User) {
-		return nil, false
-	}
-	return o.User, true
-}
-
-// SetUser gets a reference to the given GetUser200ResponseUser and assigns it to the User field.
-func (o *GetUser200Response) SetUser(v GetUser200ResponseUser) {
-	o.User = &v
 }
 
 func (o GetUser200Response) MarshalJSON() ([]byte, error) {

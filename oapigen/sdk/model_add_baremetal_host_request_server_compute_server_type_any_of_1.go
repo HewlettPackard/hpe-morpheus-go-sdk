@@ -27,44 +27,12 @@ type AddBaremetalHostRequestServerComputeServerTypeAnyOf1 struct {
 
 type _AddBaremetalHostRequestServerComputeServerTypeAnyOf1 AddBaremetalHostRequestServerComputeServerTypeAnyOf1
 
-// NewAddBaremetalHostRequestServerComputeServerTypeAnyOf1 instantiates a new AddBaremetalHostRequestServerComputeServerTypeAnyOf1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBaremetalHostRequestServerComputeServerTypeAnyOf1() *AddBaremetalHostRequestServerComputeServerTypeAnyOf1 {
-	this := AddBaremetalHostRequestServerComputeServerTypeAnyOf1{}
-	return &this
-}
-
 // NewAddBaremetalHostRequestServerComputeServerTypeAnyOf1WithDefaults instantiates a new AddBaremetalHostRequestServerComputeServerTypeAnyOf1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddBaremetalHostRequestServerComputeServerTypeAnyOf1WithDefaults() *AddBaremetalHostRequestServerComputeServerTypeAnyOf1 {
 	this := AddBaremetalHostRequestServerComputeServerTypeAnyOf1{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddBaremetalHostRequestServerComputeServerTypeAnyOf1) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBaremetalHostRequestServerComputeServerTypeAnyOf1) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *AddBaremetalHostRequestServerComputeServerTypeAnyOf1) SetId(v int32) {
-	o.Id = &v
 }
 
 func (o AddBaremetalHostRequestServerComputeServerTypeAnyOf1) MarshalJSON() ([]byte, error) {

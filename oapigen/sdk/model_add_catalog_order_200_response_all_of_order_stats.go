@@ -28,90 +28,12 @@ type AddCatalogOrder200ResponseAllOfOrderStats struct {
 
 type _AddCatalogOrder200ResponseAllOfOrderStats AddCatalogOrder200ResponseAllOfOrderStats
 
-// NewAddCatalogOrder200ResponseAllOfOrderStats instantiates a new AddCatalogOrder200ResponseAllOfOrderStats object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCatalogOrder200ResponseAllOfOrderStats() *AddCatalogOrder200ResponseAllOfOrderStats {
-	this := AddCatalogOrder200ResponseAllOfOrderStats{}
-	return &this
-}
-
 // NewAddCatalogOrder200ResponseAllOfOrderStatsWithDefaults instantiates a new AddCatalogOrder200ResponseAllOfOrderStats object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddCatalogOrder200ResponseAllOfOrderStatsWithDefaults() *AddCatalogOrder200ResponseAllOfOrderStats {
 	this := AddCatalogOrder200ResponseAllOfOrderStats{}
 	return &this
-}
-
-// GetPrice returns the Price field value if set, zero value otherwise.
-func (o *AddCatalogOrder200ResponseAllOfOrderStats) GetPrice() float32 {
-	if o == nil || IsNil(o.Price) {
-		var ret float32
-		return ret
-	}
-	return *o.Price
-}
-
-// GetPriceOk returns a tuple with the Price field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderStats) GetPriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.Price) {
-		return nil, false
-	}
-	return o.Price, true
-}
-
-// SetPrice gets a reference to the given float32 and assigns it to the Price field.
-func (o *AddCatalogOrder200ResponseAllOfOrderStats) SetPrice(v float32) {
-	o.Price = &v
-}
-
-// GetCurrency returns the Currency field value if set, zero value otherwise.
-func (o *AddCatalogOrder200ResponseAllOfOrderStats) GetCurrency() string {
-	if o == nil || IsNil(o.Currency) {
-		var ret string
-		return ret
-	}
-	return *o.Currency
-}
-
-// GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderStats) GetCurrencyOk() (*string, bool) {
-	if o == nil || IsNil(o.Currency) {
-		return nil, false
-	}
-	return o.Currency, true
-}
-
-// SetCurrency gets a reference to the given string and assigns it to the Currency field.
-func (o *AddCatalogOrder200ResponseAllOfOrderStats) SetCurrency(v string) {
-	o.Currency = &v
-}
-
-// GetUnit returns the Unit field value if set, zero value otherwise.
-func (o *AddCatalogOrder200ResponseAllOfOrderStats) GetUnit() string {
-	if o == nil || IsNil(o.Unit) {
-		var ret string
-		return ret
-	}
-	return *o.Unit
-}
-
-// GetUnitOk returns a tuple with the Unit field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderStats) GetUnitOk() (*string, bool) {
-	if o == nil || IsNil(o.Unit) {
-		return nil, false
-	}
-	return o.Unit, true
-}
-
-// SetUnit gets a reference to the given string and assigns it to the Unit field.
-func (o *AddCatalogOrder200ResponseAllOfOrderStats) SetUnit(v string) {
-	o.Unit = &v
 }
 
 func (o AddCatalogOrder200ResponseAllOfOrderStats) MarshalJSON() ([]byte, error) {

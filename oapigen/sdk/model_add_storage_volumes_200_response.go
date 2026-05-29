@@ -27,67 +27,12 @@ type AddStorageVolumes200Response struct {
 
 type _AddStorageVolumes200Response AddStorageVolumes200Response
 
-// NewAddStorageVolumes200Response instantiates a new AddStorageVolumes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddStorageVolumes200Response() *AddStorageVolumes200Response {
-	this := AddStorageVolumes200Response{}
-	return &this
-}
-
 // NewAddStorageVolumes200ResponseWithDefaults instantiates a new AddStorageVolumes200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddStorageVolumes200ResponseWithDefaults() *AddStorageVolumes200Response {
 	this := AddStorageVolumes200Response{}
 	return &this
-}
-
-// GetStorageVolume returns the StorageVolume field value if set, zero value otherwise.
-func (o *AddStorageVolumes200Response) GetStorageVolume() AddStorageVolumes200ResponseAllOfStorageVolume {
-	if o == nil || IsNil(o.StorageVolume) {
-		var ret AddStorageVolumes200ResponseAllOfStorageVolume
-		return ret
-	}
-	return *o.StorageVolume
-}
-
-// GetStorageVolumeOk returns a tuple with the StorageVolume field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageVolumes200Response) GetStorageVolumeOk() (*AddStorageVolumes200ResponseAllOfStorageVolume, bool) {
-	if o == nil || IsNil(o.StorageVolume) {
-		return nil, false
-	}
-	return o.StorageVolume, true
-}
-
-// SetStorageVolume gets a reference to the given AddStorageVolumes200ResponseAllOfStorageVolume and assigns it to the StorageVolume field.
-func (o *AddStorageVolumes200Response) SetStorageVolume(v AddStorageVolumes200ResponseAllOfStorageVolume) {
-	o.StorageVolume = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddStorageVolumes200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageVolumes200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddStorageVolumes200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddStorageVolumes200Response) MarshalJSON() ([]byte, error) {

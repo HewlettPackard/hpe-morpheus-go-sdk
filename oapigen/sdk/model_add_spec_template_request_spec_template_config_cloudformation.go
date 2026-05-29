@@ -28,96 +28,12 @@ type AddSpecTemplateRequestSpecTemplateConfigCloudformation struct {
 
 type _AddSpecTemplateRequestSpecTemplateConfigCloudformation AddSpecTemplateRequestSpecTemplateConfigCloudformation
 
-// NewAddSpecTemplateRequestSpecTemplateConfigCloudformation instantiates a new AddSpecTemplateRequestSpecTemplateConfigCloudformation object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddSpecTemplateRequestSpecTemplateConfigCloudformation(iAM AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM, cAPABILITYNAMEDIAM AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM, cAPABILITYAUTOEXPAND AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND) *AddSpecTemplateRequestSpecTemplateConfigCloudformation {
-	this := AddSpecTemplateRequestSpecTemplateConfigCloudformation{}
-	this.IAM = iAM
-	this.CAPABILITY_NAMED_IAM = cAPABILITYNAMEDIAM
-	this.CAPABILITY_AUTO_EXPAND = cAPABILITYAUTOEXPAND
-	return &this
-}
-
 // NewAddSpecTemplateRequestSpecTemplateConfigCloudformationWithDefaults instantiates a new AddSpecTemplateRequestSpecTemplateConfigCloudformation object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddSpecTemplateRequestSpecTemplateConfigCloudformationWithDefaults() *AddSpecTemplateRequestSpecTemplateConfigCloudformation {
 	this := AddSpecTemplateRequestSpecTemplateConfigCloudformation{}
 	return &this
-}
-
-// GetIAM returns the IAM field value
-func (o *AddSpecTemplateRequestSpecTemplateConfigCloudformation) GetIAM() AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM {
-	if o == nil {
-		var ret AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM
-		return ret
-	}
-
-	return o.IAM
-}
-
-// GetIAMOk returns a tuple with the IAM field value
-// and a boolean to check if the value has been set.
-func (o *AddSpecTemplateRequestSpecTemplateConfigCloudformation) GetIAMOk() (*AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.IAM, true
-}
-
-// SetIAM sets field value
-func (o *AddSpecTemplateRequestSpecTemplateConfigCloudformation) SetIAM(v AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM) {
-	o.IAM = v
-}
-
-// GetCAPABILITY_NAMED_IAM returns the CAPABILITY_NAMED_IAM field value
-func (o *AddSpecTemplateRequestSpecTemplateConfigCloudformation) GetCAPABILITY_NAMED_IAM() AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM {
-	if o == nil {
-		var ret AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM
-		return ret
-	}
-
-	return o.CAPABILITY_NAMED_IAM
-}
-
-// GetCAPABILITY_NAMED_IAMOk returns a tuple with the CAPABILITY_NAMED_IAM field value
-// and a boolean to check if the value has been set.
-func (o *AddSpecTemplateRequestSpecTemplateConfigCloudformation) GetCAPABILITY_NAMED_IAMOk() (*AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CAPABILITY_NAMED_IAM, true
-}
-
-// SetCAPABILITY_NAMED_IAM sets field value
-func (o *AddSpecTemplateRequestSpecTemplateConfigCloudformation) SetCAPABILITY_NAMED_IAM(v AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM) {
-	o.CAPABILITY_NAMED_IAM = v
-}
-
-// GetCAPABILITY_AUTO_EXPAND returns the CAPABILITY_AUTO_EXPAND field value
-func (o *AddSpecTemplateRequestSpecTemplateConfigCloudformation) GetCAPABILITY_AUTO_EXPAND() AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND {
-	if o == nil {
-		var ret AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND
-		return ret
-	}
-
-	return o.CAPABILITY_AUTO_EXPAND
-}
-
-// GetCAPABILITY_AUTO_EXPANDOk returns a tuple with the CAPABILITY_AUTO_EXPAND field value
-// and a boolean to check if the value has been set.
-func (o *AddSpecTemplateRequestSpecTemplateConfigCloudformation) GetCAPABILITY_AUTO_EXPANDOk() (*AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CAPABILITY_AUTO_EXPAND, true
-}
-
-// SetCAPABILITY_AUTO_EXPAND sets field value
-func (o *AddSpecTemplateRequestSpecTemplateConfigCloudformation) SetCAPABILITY_AUTO_EXPAND(v AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND) {
-	o.CAPABILITY_AUTO_EXPAND = v
 }
 
 func (o AddSpecTemplateRequestSpecTemplateConfigCloudformation) MarshalJSON() ([]byte, error) {

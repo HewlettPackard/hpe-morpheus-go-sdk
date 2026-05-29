@@ -34,115 +34,12 @@ type AddVDIAppsRequestVdiAppOneOf struct {
 
 type _AddVDIAppsRequestVdiAppOneOf AddVDIAppsRequestVdiAppOneOf
 
-// NewAddVDIAppsRequestVdiAppOneOf instantiates a new AddVDIAppsRequestVdiAppOneOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddVDIAppsRequestVdiAppOneOf(name string) *AddVDIAppsRequestVdiAppOneOf {
-	this := AddVDIAppsRequestVdiAppOneOf{}
-	this.Name = name
-	return &this
-}
-
 // NewAddVDIAppsRequestVdiAppOneOfWithDefaults instantiates a new AddVDIAppsRequestVdiAppOneOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddVDIAppsRequestVdiAppOneOfWithDefaults() *AddVDIAppsRequestVdiAppOneOf {
 	this := AddVDIAppsRequestVdiAppOneOf{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *AddVDIAppsRequestVdiAppOneOf) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *AddVDIAppsRequestVdiAppOneOf) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *AddVDIAppsRequestVdiAppOneOf) SetName(v string) {
-	o.Name = v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *AddVDIAppsRequestVdiAppOneOf) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
-		var ret string
-		return ret
-	}
-	return *o.Description
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddVDIAppsRequestVdiAppOneOf) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
-		return nil, false
-	}
-	return o.Description, true
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *AddVDIAppsRequestVdiAppOneOf) SetDescription(v string) {
-	o.Description = &v
-}
-
-// GetIconPath returns the IconPath field value if set, zero value otherwise.
-func (o *AddVDIAppsRequestVdiAppOneOf) GetIconPath() *os.File {
-	if o == nil || IsNil(o.IconPath) {
-		var ret *os.File
-		return ret
-	}
-	return *o.IconPath
-}
-
-// GetIconPathOk returns a tuple with the IconPath field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddVDIAppsRequestVdiAppOneOf) GetIconPathOk() (**os.File, bool) {
-	if o == nil || IsNil(o.IconPath) {
-		return nil, false
-	}
-	return o.IconPath, true
-}
-
-// SetIconPath gets a reference to the given *os.File and assigns it to the IconPath field.
-func (o *AddVDIAppsRequestVdiAppOneOf) SetIconPath(v *os.File) {
-	o.IconPath = &v
-}
-
-// GetLaunchPrefix returns the LaunchPrefix field value if set, zero value otherwise.
-func (o *AddVDIAppsRequestVdiAppOneOf) GetLaunchPrefix() string {
-	if o == nil || IsNil(o.LaunchPrefix) {
-		var ret string
-		return ret
-	}
-	return *o.LaunchPrefix
-}
-
-// GetLaunchPrefixOk returns a tuple with the LaunchPrefix field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddVDIAppsRequestVdiAppOneOf) GetLaunchPrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.LaunchPrefix) {
-		return nil, false
-	}
-	return o.LaunchPrefix, true
-}
-
-// SetLaunchPrefix gets a reference to the given string and assigns it to the LaunchPrefix field.
-func (o *AddVDIAppsRequestVdiAppOneOf) SetLaunchPrefix(v string) {
-	o.LaunchPrefix = &v
 }
 
 func (o AddVDIAppsRequestVdiAppOneOf) MarshalJSON() ([]byte, error) {

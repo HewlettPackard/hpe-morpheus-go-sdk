@@ -28,92 +28,12 @@ type InstanceNamePolicyTypeConfiguration11 struct {
 
 type _InstanceNamePolicyTypeConfiguration11 InstanceNamePolicyTypeConfiguration11
 
-// NewInstanceNamePolicyTypeConfiguration11 instantiates a new InstanceNamePolicyTypeConfiguration11 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceNamePolicyTypeConfiguration11(namingType string) *InstanceNamePolicyTypeConfiguration11 {
-	this := InstanceNamePolicyTypeConfiguration11{}
-	this.NamingType = namingType
-	return &this
-}
-
 // NewInstanceNamePolicyTypeConfiguration11WithDefaults instantiates a new InstanceNamePolicyTypeConfiguration11 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceNamePolicyTypeConfiguration11WithDefaults() *InstanceNamePolicyTypeConfiguration11 {
 	this := InstanceNamePolicyTypeConfiguration11{}
 	return &this
-}
-
-// GetNamingType returns the NamingType field value
-func (o *InstanceNamePolicyTypeConfiguration11) GetNamingType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.NamingType
-}
-
-// GetNamingTypeOk returns a tuple with the NamingType field value
-// and a boolean to check if the value has been set.
-func (o *InstanceNamePolicyTypeConfiguration11) GetNamingTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NamingType, true
-}
-
-// SetNamingType sets field value
-func (o *InstanceNamePolicyTypeConfiguration11) SetNamingType(v string) {
-	o.NamingType = v
-}
-
-// GetNamingPattern returns the NamingPattern field value if set, zero value otherwise.
-func (o *InstanceNamePolicyTypeConfiguration11) GetNamingPattern() string {
-	if o == nil || IsNil(o.NamingPattern) {
-		var ret string
-		return ret
-	}
-	return *o.NamingPattern
-}
-
-// GetNamingPatternOk returns a tuple with the NamingPattern field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceNamePolicyTypeConfiguration11) GetNamingPatternOk() (*string, bool) {
-	if o == nil || IsNil(o.NamingPattern) {
-		return nil, false
-	}
-	return o.NamingPattern, true
-}
-
-// SetNamingPattern gets a reference to the given string and assigns it to the NamingPattern field.
-func (o *InstanceNamePolicyTypeConfiguration11) SetNamingPattern(v string) {
-	o.NamingPattern = &v
-}
-
-// GetNamingConflict returns the NamingConflict field value if set, zero value otherwise.
-func (o *InstanceNamePolicyTypeConfiguration11) GetNamingConflict() bool {
-	if o == nil || IsNil(o.NamingConflict) {
-		var ret bool
-		return ret
-	}
-	return *o.NamingConflict
-}
-
-// GetNamingConflictOk returns a tuple with the NamingConflict field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceNamePolicyTypeConfiguration11) GetNamingConflictOk() (*bool, bool) {
-	if o == nil || IsNil(o.NamingConflict) {
-		return nil, false
-	}
-	return o.NamingConflict, true
-}
-
-// SetNamingConflict gets a reference to the given bool and assigns it to the NamingConflict field.
-func (o *InstanceNamePolicyTypeConfiguration11) SetNamingConflict(v bool) {
-	o.NamingConflict = &v
 }
 
 func (o InstanceNamePolicyTypeConfiguration11) MarshalJSON() ([]byte, error) {

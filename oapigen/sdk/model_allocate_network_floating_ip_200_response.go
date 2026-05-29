@@ -27,67 +27,12 @@ type AllocateNetworkFloatingIp200Response struct {
 
 type _AllocateNetworkFloatingIp200Response AllocateNetworkFloatingIp200Response
 
-// NewAllocateNetworkFloatingIp200Response instantiates a new AllocateNetworkFloatingIp200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAllocateNetworkFloatingIp200Response() *AllocateNetworkFloatingIp200Response {
-	this := AllocateNetworkFloatingIp200Response{}
-	return &this
-}
-
 // NewAllocateNetworkFloatingIp200ResponseWithDefaults instantiates a new AllocateNetworkFloatingIp200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAllocateNetworkFloatingIp200ResponseWithDefaults() *AllocateNetworkFloatingIp200Response {
 	this := AllocateNetworkFloatingIp200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AllocateNetworkFloatingIp200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AllocateNetworkFloatingIp200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AllocateNetworkFloatingIp200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetNetworkFloatingIp returns the NetworkFloatingIp field value if set, zero value otherwise.
-func (o *AllocateNetworkFloatingIp200Response) GetNetworkFloatingIp() AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp {
-	if o == nil || IsNil(o.NetworkFloatingIp) {
-		var ret AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp
-		return ret
-	}
-	return *o.NetworkFloatingIp
-}
-
-// GetNetworkFloatingIpOk returns a tuple with the NetworkFloatingIp field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AllocateNetworkFloatingIp200Response) GetNetworkFloatingIpOk() (*AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp, bool) {
-	if o == nil || IsNil(o.NetworkFloatingIp) {
-		return nil, false
-	}
-	return o.NetworkFloatingIp, true
-}
-
-// SetNetworkFloatingIp gets a reference to the given AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp and assigns it to the NetworkFloatingIp field.
-func (o *AllocateNetworkFloatingIp200Response) SetNetworkFloatingIp(v AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) {
-	o.NetworkFloatingIp = &v
 }
 
 func (o AllocateNetworkFloatingIp200Response) MarshalJSON() ([]byte, error) {

@@ -26,46 +26,12 @@ type AddPricesRequest struct {
 
 type _AddPricesRequest AddPricesRequest
 
-// NewAddPricesRequest instantiates a new AddPricesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPricesRequest(price AddPricesRequestPrice) *AddPricesRequest {
-	this := AddPricesRequest{}
-	this.Price = price
-	return &this
-}
-
 // NewAddPricesRequestWithDefaults instantiates a new AddPricesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddPricesRequestWithDefaults() *AddPricesRequest {
 	this := AddPricesRequest{}
 	return &this
-}
-
-// GetPrice returns the Price field value
-func (o *AddPricesRequest) GetPrice() AddPricesRequestPrice {
-	if o == nil {
-		var ret AddPricesRequestPrice
-		return ret
-	}
-
-	return o.Price
-}
-
-// GetPriceOk returns a tuple with the Price field value
-// and a boolean to check if the value has been set.
-func (o *AddPricesRequest) GetPriceOk() (*AddPricesRequestPrice, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Price, true
-}
-
-// SetPrice sets field value
-func (o *AddPricesRequest) SetPrice(v AddPricesRequestPrice) {
-	o.Price = v
 }
 
 func (o AddPricesRequest) MarshalJSON() ([]byte, error) {

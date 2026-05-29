@@ -26,44 +26,12 @@ type UpdateWikiClusterRequest struct {
 
 type _UpdateWikiClusterRequest UpdateWikiClusterRequest
 
-// NewUpdateWikiClusterRequest instantiates a new UpdateWikiClusterRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateWikiClusterRequest() *UpdateWikiClusterRequest {
-	this := UpdateWikiClusterRequest{}
-	return &this
-}
-
 // NewUpdateWikiClusterRequestWithDefaults instantiates a new UpdateWikiClusterRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateWikiClusterRequestWithDefaults() *UpdateWikiClusterRequest {
 	this := UpdateWikiClusterRequest{}
 	return &this
-}
-
-// GetPage returns the Page field value if set, zero value otherwise.
-func (o *UpdateWikiClusterRequest) GetPage() UpdateWikiClusterRequestPage {
-	if o == nil || IsNil(o.Page) {
-		var ret UpdateWikiClusterRequestPage
-		return ret
-	}
-	return *o.Page
-}
-
-// GetPageOk returns a tuple with the Page field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateWikiClusterRequest) GetPageOk() (*UpdateWikiClusterRequestPage, bool) {
-	if o == nil || IsNil(o.Page) {
-		return nil, false
-	}
-	return o.Page, true
-}
-
-// SetPage gets a reference to the given UpdateWikiClusterRequestPage and assigns it to the Page field.
-func (o *UpdateWikiClusterRequest) SetPage(v UpdateWikiClusterRequestPage) {
-	o.Page = &v
 }
 
 func (o UpdateWikiClusterRequest) MarshalJSON() ([]byte, error) {

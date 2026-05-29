@@ -26,44 +26,12 @@ type ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions struct {
 
 type _ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions
 
-// NewListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions instantiates a new ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions() *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions {
-	this := ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions{}
-	return &this
-}
-
 // NewListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsWithDefaults instantiates a new ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsWithDefaults() *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions {
 	this := ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions{}
 	return &this
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions) GetResourcePermissions() ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions) GetResourcePermissionsOk() (*ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// SetResourcePermissions gets a reference to the given ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions) SetResourcePermissions(v ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissions) {
-	o.ResourcePermissions = &v
 }
 
 func (o ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissions) MarshalJSON() ([]byte, error) {

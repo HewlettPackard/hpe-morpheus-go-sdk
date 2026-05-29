@@ -28,90 +28,12 @@ type InstanceContainerServerSourceImage struct {
 
 type _InstanceContainerServerSourceImage InstanceContainerServerSourceImage
 
-// NewInstanceContainerServerSourceImage instantiates a new InstanceContainerServerSourceImage object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceContainerServerSourceImage() *InstanceContainerServerSourceImage {
-	this := InstanceContainerServerSourceImage{}
-	return &this
-}
-
 // NewInstanceContainerServerSourceImageWithDefaults instantiates a new InstanceContainerServerSourceImage object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceContainerServerSourceImageWithDefaults() *InstanceContainerServerSourceImage {
 	this := InstanceContainerServerSourceImage{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *InstanceContainerServerSourceImage) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceContainerServerSourceImage) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *InstanceContainerServerSourceImage) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *InstanceContainerServerSourceImage) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceContainerServerSourceImage) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *InstanceContainerServerSourceImage) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *InstanceContainerServerSourceImage) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceContainerServerSourceImage) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *InstanceContainerServerSourceImage) SetName(v string) {
-	o.Name = &v
 }
 
 func (o InstanceContainerServerSourceImage) MarshalJSON() ([]byte, error) {

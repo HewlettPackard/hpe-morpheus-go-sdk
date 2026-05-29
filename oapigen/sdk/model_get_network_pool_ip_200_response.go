@@ -27,68 +27,12 @@ type GetNetworkPoolIp200Response struct {
 
 type _GetNetworkPoolIp200Response GetNetworkPoolIp200Response
 
-// NewGetNetworkPoolIp200Response instantiates a new GetNetworkPoolIp200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkPoolIp200Response() *GetNetworkPoolIp200Response {
-	this := GetNetworkPoolIp200Response{}
-	return &this
-}
-
 // NewGetNetworkPoolIp200ResponseWithDefaults instantiates a new GetNetworkPoolIp200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkPoolIp200ResponseWithDefaults() *GetNetworkPoolIp200Response {
 	this := GetNetworkPoolIp200Response{}
 	return &this
-}
-
-// GetNetworkPoolIps returns the NetworkPoolIps field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetNetworkPoolIp200Response) GetNetworkPoolIps() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.NetworkPoolIps
-}
-
-// GetNetworkPoolIpsOk returns a tuple with the NetworkPoolIps field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetNetworkPoolIp200Response) GetNetworkPoolIpsOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.NetworkPoolIps) {
-		return nil, false
-	}
-	return &o.NetworkPoolIps, true
-}
-
-// SetNetworkPoolIps gets a reference to the given interface{} and assigns it to the NetworkPoolIps field.
-func (o *GetNetworkPoolIp200Response) SetNetworkPoolIps(v interface{}) {
-	o.NetworkPoolIps = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *GetNetworkPoolIp200Response) GetMeta() GetNetworkPoolIp200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret GetNetworkPoolIp200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkPoolIp200Response) GetMetaOk() (*GetNetworkPoolIp200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given GetNetworkPoolIp200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *GetNetworkPoolIp200Response) SetMeta(v GetNetworkPoolIp200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o GetNetworkPoolIp200Response) MarshalJSON() ([]byte, error) {

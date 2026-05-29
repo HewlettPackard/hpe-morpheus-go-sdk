@@ -28,90 +28,12 @@ type GuidanceAzureReservationsConfigServicesAzureVms struct {
 
 type _GuidanceAzureReservationsConfigServicesAzureVms GuidanceAzureReservationsConfigServicesAzureVms
 
-// NewGuidanceAzureReservationsConfigServicesAzureVms instantiates a new GuidanceAzureReservationsConfigServicesAzureVms object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGuidanceAzureReservationsConfigServicesAzureVms() *GuidanceAzureReservationsConfigServicesAzureVms {
-	this := GuidanceAzureReservationsConfigServicesAzureVms{}
-	return &this
-}
-
 // NewGuidanceAzureReservationsConfigServicesAzureVmsWithDefaults instantiates a new GuidanceAzureReservationsConfigServicesAzureVms object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGuidanceAzureReservationsConfigServicesAzureVmsWithDefaults() *GuidanceAzureReservationsConfigServicesAzureVms {
 	this := GuidanceAzureReservationsConfigServicesAzureVms{}
 	return &this
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *GuidanceAzureReservationsConfigServicesAzureVms) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceAzureReservationsConfigServicesAzureVms) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *GuidanceAzureReservationsConfigServicesAzureVms) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GuidanceAzureReservationsConfigServicesAzureVms) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceAzureReservationsConfigServicesAzureVms) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GuidanceAzureReservationsConfigServicesAzureVms) SetName(v string) {
-	o.Name = &v
-}
-
-// GetPaymentOptions returns the PaymentOptions field value if set, zero value otherwise.
-func (o *GuidanceAzureReservationsConfigServicesAzureVms) GetPaymentOptions() map[string]GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValue {
-	if o == nil || IsNil(o.PaymentOptions) {
-		var ret map[string]GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValue
-		return ret
-	}
-	return o.PaymentOptions
-}
-
-// GetPaymentOptionsOk returns a tuple with the PaymentOptions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceAzureReservationsConfigServicesAzureVms) GetPaymentOptionsOk() (map[string]GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValue, bool) {
-	if o == nil || IsNil(o.PaymentOptions) {
-		return map[string]GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValue{}, false
-	}
-	return o.PaymentOptions, true
-}
-
-// SetPaymentOptions gets a reference to the given map[string]GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValue and assigns it to the PaymentOptions field.
-func (o *GuidanceAzureReservationsConfigServicesAzureVms) SetPaymentOptions(v map[string]GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValue) {
-	o.PaymentOptions = v
 }
 
 func (o GuidanceAzureReservationsConfigServicesAzureVms) MarshalJSON() ([]byte, error) {

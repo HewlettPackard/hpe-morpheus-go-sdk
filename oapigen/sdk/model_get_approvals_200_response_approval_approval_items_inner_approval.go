@@ -26,44 +26,12 @@ type GetApprovals200ResponseApprovalApprovalItemsInnerApproval struct {
 
 type _GetApprovals200ResponseApprovalApprovalItemsInnerApproval GetApprovals200ResponseApprovalApprovalItemsInnerApproval
 
-// NewGetApprovals200ResponseApprovalApprovalItemsInnerApproval instantiates a new GetApprovals200ResponseApprovalApprovalItemsInnerApproval object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetApprovals200ResponseApprovalApprovalItemsInnerApproval() *GetApprovals200ResponseApprovalApprovalItemsInnerApproval {
-	this := GetApprovals200ResponseApprovalApprovalItemsInnerApproval{}
-	return &this
-}
-
 // NewGetApprovals200ResponseApprovalApprovalItemsInnerApprovalWithDefaults instantiates a new GetApprovals200ResponseApprovalApprovalItemsInnerApproval object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetApprovals200ResponseApprovalApprovalItemsInnerApprovalWithDefaults() *GetApprovals200ResponseApprovalApprovalItemsInnerApproval {
 	this := GetApprovals200ResponseApprovalApprovalItemsInnerApproval{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetApprovals200ResponseApprovalApprovalItemsInnerApproval) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetApprovals200ResponseApprovalApprovalItemsInnerApproval) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetApprovals200ResponseApprovalApprovalItemsInnerApproval) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o GetApprovals200ResponseApprovalApprovalItemsInnerApproval) MarshalJSON() ([]byte, error) {

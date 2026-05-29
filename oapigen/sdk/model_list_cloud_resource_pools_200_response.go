@@ -27,67 +27,12 @@ type ListCloudResourcePools200Response struct {
 
 type _ListCloudResourcePools200Response ListCloudResourcePools200Response
 
-// NewListCloudResourcePools200Response instantiates a new ListCloudResourcePools200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListCloudResourcePools200Response() *ListCloudResourcePools200Response {
-	this := ListCloudResourcePools200Response{}
-	return &this
-}
-
 // NewListCloudResourcePools200ResponseWithDefaults instantiates a new ListCloudResourcePools200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListCloudResourcePools200ResponseWithDefaults() *ListCloudResourcePools200Response {
 	this := ListCloudResourcePools200Response{}
 	return &this
-}
-
-// GetResourcePools returns the ResourcePools field value if set, zero value otherwise.
-func (o *ListCloudResourcePools200Response) GetResourcePools() []ListCloudResourcePools200ResponseAllOfResourcePoolsInner {
-	if o == nil || IsNil(o.ResourcePools) {
-		var ret []ListCloudResourcePools200ResponseAllOfResourcePoolsInner
-		return ret
-	}
-	return o.ResourcePools
-}
-
-// GetResourcePoolsOk returns a tuple with the ResourcePools field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCloudResourcePools200Response) GetResourcePoolsOk() ([]ListCloudResourcePools200ResponseAllOfResourcePoolsInner, bool) {
-	if o == nil || IsNil(o.ResourcePools) {
-		return nil, false
-	}
-	return o.ResourcePools, true
-}
-
-// SetResourcePools gets a reference to the given []ListCloudResourcePools200ResponseAllOfResourcePoolsInner and assigns it to the ResourcePools field.
-func (o *ListCloudResourcePools200Response) SetResourcePools(v []ListCloudResourcePools200ResponseAllOfResourcePoolsInner) {
-	o.ResourcePools = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListCloudResourcePools200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCloudResourcePools200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListCloudResourcePools200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListCloudResourcePools200Response) MarshalJSON() ([]byte, error) {

@@ -28,92 +28,12 @@ type GetPowerSchedules200Response struct {
 
 type _GetPowerSchedules200Response GetPowerSchedules200Response
 
-// NewGetPowerSchedules200Response instantiates a new GetPowerSchedules200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetPowerSchedules200Response() *GetPowerSchedules200Response {
-	this := GetPowerSchedules200Response{}
-	return &this
-}
-
 // NewGetPowerSchedules200ResponseWithDefaults instantiates a new GetPowerSchedules200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetPowerSchedules200ResponseWithDefaults() *GetPowerSchedules200Response {
 	this := GetPowerSchedules200Response{}
 	return &this
-}
-
-// GetInstances returns the Instances field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetPowerSchedules200Response) GetInstances() []GetPowerSchedules200ResponseAllOfInstancesInner {
-	if o == nil {
-		var ret []GetPowerSchedules200ResponseAllOfInstancesInner
-		return ret
-	}
-	return o.Instances
-}
-
-// GetInstancesOk returns a tuple with the Instances field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetPowerSchedules200Response) GetInstancesOk() ([]GetPowerSchedules200ResponseAllOfInstancesInner, bool) {
-	if o == nil || IsNil(o.Instances) {
-		return nil, false
-	}
-	return o.Instances, true
-}
-
-// SetInstances gets a reference to the given []GetPowerSchedules200ResponseAllOfInstancesInner and assigns it to the Instances field.
-func (o *GetPowerSchedules200Response) SetInstances(v []GetPowerSchedules200ResponseAllOfInstancesInner) {
-	o.Instances = v
-}
-
-// GetServers returns the Servers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetPowerSchedules200Response) GetServers() []GetPowerSchedules200ResponseAllOfServersInner {
-	if o == nil {
-		var ret []GetPowerSchedules200ResponseAllOfServersInner
-		return ret
-	}
-	return o.Servers
-}
-
-// GetServersOk returns a tuple with the Servers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetPowerSchedules200Response) GetServersOk() ([]GetPowerSchedules200ResponseAllOfServersInner, bool) {
-	if o == nil || IsNil(o.Servers) {
-		return nil, false
-	}
-	return o.Servers, true
-}
-
-// SetServers gets a reference to the given []GetPowerSchedules200ResponseAllOfServersInner and assigns it to the Servers field.
-func (o *GetPowerSchedules200Response) SetServers(v []GetPowerSchedules200ResponseAllOfServersInner) {
-	o.Servers = v
-}
-
-// GetSchedule returns the Schedule field value if set, zero value otherwise.
-func (o *GetPowerSchedules200Response) GetSchedule() GetPowerSchedules200ResponseAllOfSchedule {
-	if o == nil || IsNil(o.Schedule) {
-		var ret GetPowerSchedules200ResponseAllOfSchedule
-		return ret
-	}
-	return *o.Schedule
-}
-
-// GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPowerSchedules200Response) GetScheduleOk() (*GetPowerSchedules200ResponseAllOfSchedule, bool) {
-	if o == nil || IsNil(o.Schedule) {
-		return nil, false
-	}
-	return o.Schedule, true
-}
-
-// SetSchedule gets a reference to the given GetPowerSchedules200ResponseAllOfSchedule and assigns it to the Schedule field.
-func (o *GetPowerSchedules200Response) SetSchedule(v GetPowerSchedules200ResponseAllOfSchedule) {
-	o.Schedule = &v
 }
 
 func (o GetPowerSchedules200Response) MarshalJSON() ([]byte, error) {

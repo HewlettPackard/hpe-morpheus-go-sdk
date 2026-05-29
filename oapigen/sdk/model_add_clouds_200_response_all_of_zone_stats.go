@@ -26,44 +26,12 @@ type AddClouds200ResponseAllOfZoneStats struct {
 
 type _AddClouds200ResponseAllOfZoneStats AddClouds200ResponseAllOfZoneStats
 
-// NewAddClouds200ResponseAllOfZoneStats instantiates a new AddClouds200ResponseAllOfZoneStats object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClouds200ResponseAllOfZoneStats() *AddClouds200ResponseAllOfZoneStats {
-	this := AddClouds200ResponseAllOfZoneStats{}
-	return &this
-}
-
 // NewAddClouds200ResponseAllOfZoneStatsWithDefaults instantiates a new AddClouds200ResponseAllOfZoneStats object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddClouds200ResponseAllOfZoneStatsWithDefaults() *AddClouds200ResponseAllOfZoneStats {
 	this := AddClouds200ResponseAllOfZoneStats{}
 	return &this
-}
-
-// GetServerCounts returns the ServerCounts field value if set, zero value otherwise.
-func (o *AddClouds200ResponseAllOfZoneStats) GetServerCounts() AddClouds200ResponseAllOfZoneStatsServerCounts {
-	if o == nil || IsNil(o.ServerCounts) {
-		var ret AddClouds200ResponseAllOfZoneStatsServerCounts
-		return ret
-	}
-	return *o.ServerCounts
-}
-
-// GetServerCountsOk returns a tuple with the ServerCounts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClouds200ResponseAllOfZoneStats) GetServerCountsOk() (*AddClouds200ResponseAllOfZoneStatsServerCounts, bool) {
-	if o == nil || IsNil(o.ServerCounts) {
-		return nil, false
-	}
-	return o.ServerCounts, true
-}
-
-// SetServerCounts gets a reference to the given AddClouds200ResponseAllOfZoneStatsServerCounts and assigns it to the ServerCounts field.
-func (o *AddClouds200ResponseAllOfZoneStats) SetServerCounts(v AddClouds200ResponseAllOfZoneStatsServerCounts) {
-	o.ServerCounts = &v
 }
 
 func (o AddClouds200ResponseAllOfZoneStats) MarshalJSON() ([]byte, error) {

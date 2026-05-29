@@ -28,69 +28,12 @@ type AttachServerVolumeRequest struct {
 
 type _AttachServerVolumeRequest AttachServerVolumeRequest
 
-// NewAttachServerVolumeRequest instantiates a new AttachServerVolumeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAttachServerVolumeRequest(mountPoint AttachServerVolumeRequestMountPoint) *AttachServerVolumeRequest {
-	this := AttachServerVolumeRequest{}
-	this.MountPoint = mountPoint
-	return &this
-}
-
 // NewAttachServerVolumeRequestWithDefaults instantiates a new AttachServerVolumeRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAttachServerVolumeRequestWithDefaults() *AttachServerVolumeRequest {
 	this := AttachServerVolumeRequest{}
 	return &this
-}
-
-// GetMountPoint returns the MountPoint field value
-func (o *AttachServerVolumeRequest) GetMountPoint() AttachServerVolumeRequestMountPoint {
-	if o == nil {
-		var ret AttachServerVolumeRequestMountPoint
-		return ret
-	}
-
-	return o.MountPoint
-}
-
-// GetMountPointOk returns a tuple with the MountPoint field value
-// and a boolean to check if the value has been set.
-func (o *AttachServerVolumeRequest) GetMountPointOk() (*AttachServerVolumeRequestMountPoint, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MountPoint, true
-}
-
-// SetMountPoint sets field value
-func (o *AttachServerVolumeRequest) SetMountPoint(v AttachServerVolumeRequestMountPoint) {
-	o.MountPoint = v
-}
-
-// GetRootVolume returns the RootVolume field value if set, zero value otherwise.
-func (o *AttachServerVolumeRequest) GetRootVolume() bool {
-	if o == nil || IsNil(o.RootVolume) {
-		var ret bool
-		return ret
-	}
-	return *o.RootVolume
-}
-
-// GetRootVolumeOk returns a tuple with the RootVolume field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AttachServerVolumeRequest) GetRootVolumeOk() (*bool, bool) {
-	if o == nil || IsNil(o.RootVolume) {
-		return nil, false
-	}
-	return o.RootVolume, true
-}
-
-// SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
-func (o *AttachServerVolumeRequest) SetRootVolume(v bool) {
-	o.RootVolume = &v
 }
 
 func (o AttachServerVolumeRequest) MarshalJSON() ([]byte, error) {

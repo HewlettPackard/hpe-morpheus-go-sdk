@@ -27,46 +27,12 @@ type InstanceCreateInstanceInstanceType struct {
 
 type _InstanceCreateInstanceInstanceType InstanceCreateInstanceInstanceType
 
-// NewInstanceCreateInstanceInstanceType instantiates a new InstanceCreateInstanceInstanceType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceCreateInstanceInstanceType(code string) *InstanceCreateInstanceInstanceType {
-	this := InstanceCreateInstanceInstanceType{}
-	this.Code = code
-	return &this
-}
-
 // NewInstanceCreateInstanceInstanceTypeWithDefaults instantiates a new InstanceCreateInstanceInstanceType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceCreateInstanceInstanceTypeWithDefaults() *InstanceCreateInstanceInstanceType {
 	this := InstanceCreateInstanceInstanceType{}
 	return &this
-}
-
-// GetCode returns the Code field value
-func (o *InstanceCreateInstanceInstanceType) GetCode() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value
-// and a boolean to check if the value has been set.
-func (o *InstanceCreateInstanceInstanceType) GetCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Code, true
-}
-
-// SetCode sets field value
-func (o *InstanceCreateInstanceInstanceType) SetCode(v string) {
-	o.Code = v
 }
 
 func (o InstanceCreateInstanceInstanceType) MarshalJSON() ([]byte, error) {

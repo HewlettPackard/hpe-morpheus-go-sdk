@@ -26,46 +26,12 @@ type MaxVirtualServersPolicyTypeConfiguration struct {
 
 type _MaxVirtualServersPolicyTypeConfiguration MaxVirtualServersPolicyTypeConfiguration
 
-// NewMaxVirtualServersPolicyTypeConfiguration instantiates a new MaxVirtualServersPolicyTypeConfiguration object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMaxVirtualServersPolicyTypeConfiguration(maxVirtualServers string) *MaxVirtualServersPolicyTypeConfiguration {
-	this := MaxVirtualServersPolicyTypeConfiguration{}
-	this.MaxVirtualServers = maxVirtualServers
-	return &this
-}
-
 // NewMaxVirtualServersPolicyTypeConfigurationWithDefaults instantiates a new MaxVirtualServersPolicyTypeConfiguration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewMaxVirtualServersPolicyTypeConfigurationWithDefaults() *MaxVirtualServersPolicyTypeConfiguration {
 	this := MaxVirtualServersPolicyTypeConfiguration{}
 	return &this
-}
-
-// GetMaxVirtualServers returns the MaxVirtualServers field value
-func (o *MaxVirtualServersPolicyTypeConfiguration) GetMaxVirtualServers() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MaxVirtualServers
-}
-
-// GetMaxVirtualServersOk returns a tuple with the MaxVirtualServers field value
-// and a boolean to check if the value has been set.
-func (o *MaxVirtualServersPolicyTypeConfiguration) GetMaxVirtualServersOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MaxVirtualServers, true
-}
-
-// SetMaxVirtualServers sets field value
-func (o *MaxVirtualServersPolicyTypeConfiguration) SetMaxVirtualServers(v string) {
-	o.MaxVirtualServers = v
 }
 
 func (o MaxVirtualServersPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {

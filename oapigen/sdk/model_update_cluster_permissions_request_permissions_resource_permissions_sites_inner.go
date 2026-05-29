@@ -27,67 +27,12 @@ type UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner str
 
 type _UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner
 
-// NewUpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner instantiates a new UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner() *UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner {
-	this := UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner{}
-	return &this
-}
-
 // NewUpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInnerWithDefaults instantiates a new UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInnerWithDefaults() *UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner {
 	this := UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetDefault returns the Default field value if set, zero value otherwise.
-func (o *UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner) GetDefault() bool {
-	if o == nil || IsNil(o.Default) {
-		var ret bool
-		return ret
-	}
-	return *o.Default
-}
-
-// GetDefaultOk returns a tuple with the Default field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner) GetDefaultOk() (*bool, bool) {
-	if o == nil || IsNil(o.Default) {
-		return nil, false
-	}
-	return o.Default, true
-}
-
-// SetDefault gets a reference to the given bool and assigns it to the Default field.
-func (o *UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner) SetDefault(v bool) {
-	o.Default = &v
 }
 
 func (o UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner) MarshalJSON() ([]byte, error) {

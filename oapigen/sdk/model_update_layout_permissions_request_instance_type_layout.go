@@ -26,44 +26,12 @@ type UpdateLayoutPermissionsRequestInstanceTypeLayout struct {
 
 type _UpdateLayoutPermissionsRequestInstanceTypeLayout UpdateLayoutPermissionsRequestInstanceTypeLayout
 
-// NewUpdateLayoutPermissionsRequestInstanceTypeLayout instantiates a new UpdateLayoutPermissionsRequestInstanceTypeLayout object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateLayoutPermissionsRequestInstanceTypeLayout() *UpdateLayoutPermissionsRequestInstanceTypeLayout {
-	this := UpdateLayoutPermissionsRequestInstanceTypeLayout{}
-	return &this
-}
-
 // NewUpdateLayoutPermissionsRequestInstanceTypeLayoutWithDefaults instantiates a new UpdateLayoutPermissionsRequestInstanceTypeLayout object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateLayoutPermissionsRequestInstanceTypeLayoutWithDefaults() *UpdateLayoutPermissionsRequestInstanceTypeLayout {
 	this := UpdateLayoutPermissionsRequestInstanceTypeLayout{}
 	return &this
-}
-
-// GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *UpdateLayoutPermissionsRequestInstanceTypeLayout) GetPermissions() UpdateLayoutPermissionsRequestInstanceTypeLayoutPermissions {
-	if o == nil || IsNil(o.Permissions) {
-		var ret UpdateLayoutPermissionsRequestInstanceTypeLayoutPermissions
-		return ret
-	}
-	return *o.Permissions
-}
-
-// GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateLayoutPermissionsRequestInstanceTypeLayout) GetPermissionsOk() (*UpdateLayoutPermissionsRequestInstanceTypeLayoutPermissions, bool) {
-	if o == nil || IsNil(o.Permissions) {
-		return nil, false
-	}
-	return o.Permissions, true
-}
-
-// SetPermissions gets a reference to the given UpdateLayoutPermissionsRequestInstanceTypeLayoutPermissions and assigns it to the Permissions field.
-func (o *UpdateLayoutPermissionsRequestInstanceTypeLayout) SetPermissions(v UpdateLayoutPermissionsRequestInstanceTypeLayoutPermissions) {
-	o.Permissions = &v
 }
 
 func (o UpdateLayoutPermissionsRequestInstanceTypeLayout) MarshalJSON() ([]byte, error) {

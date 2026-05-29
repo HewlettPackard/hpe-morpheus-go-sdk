@@ -26,44 +26,12 @@ type CreateNetworkPoolServerRequest struct {
 
 type _CreateNetworkPoolServerRequest CreateNetworkPoolServerRequest
 
-// NewCreateNetworkPoolServerRequest instantiates a new CreateNetworkPoolServerRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkPoolServerRequest() *CreateNetworkPoolServerRequest {
-	this := CreateNetworkPoolServerRequest{}
-	return &this
-}
-
 // NewCreateNetworkPoolServerRequestWithDefaults instantiates a new CreateNetworkPoolServerRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkPoolServerRequestWithDefaults() *CreateNetworkPoolServerRequest {
 	this := CreateNetworkPoolServerRequest{}
 	return &this
-}
-
-// GetNetworkPoolServer returns the NetworkPoolServer field value if set, zero value otherwise.
-func (o *CreateNetworkPoolServerRequest) GetNetworkPoolServer() CreateNetworkPoolServerRequestNetworkPoolServer {
-	if o == nil || IsNil(o.NetworkPoolServer) {
-		var ret CreateNetworkPoolServerRequestNetworkPoolServer
-		return ret
-	}
-	return *o.NetworkPoolServer
-}
-
-// GetNetworkPoolServerOk returns a tuple with the NetworkPoolServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkPoolServerRequest) GetNetworkPoolServerOk() (*CreateNetworkPoolServerRequestNetworkPoolServer, bool) {
-	if o == nil || IsNil(o.NetworkPoolServer) {
-		return nil, false
-	}
-	return o.NetworkPoolServer, true
-}
-
-// SetNetworkPoolServer gets a reference to the given CreateNetworkPoolServerRequestNetworkPoolServer and assigns it to the NetworkPoolServer field.
-func (o *CreateNetworkPoolServerRequest) SetNetworkPoolServer(v CreateNetworkPoolServerRequestNetworkPoolServer) {
-	o.NetworkPoolServer = &v
 }
 
 func (o CreateNetworkPoolServerRequest) MarshalJSON() ([]byte, error) {

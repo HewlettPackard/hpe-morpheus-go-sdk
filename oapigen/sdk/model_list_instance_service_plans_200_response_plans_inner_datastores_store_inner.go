@@ -27,67 +27,12 @@ type ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner struct {
 
 type _ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner
 
-// NewListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner instantiates a new ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner() *ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner {
-	this := ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner{}
-	return &this
-}
-
 // NewListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInnerWithDefaults instantiates a new ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInnerWithDefaults() *ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner {
 	this := ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner) SetId(v int32) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner) SetName(v string) {
-	o.Name = &v
 }
 
 func (o ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner) MarshalJSON() ([]byte, error) {

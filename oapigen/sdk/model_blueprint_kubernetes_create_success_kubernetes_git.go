@@ -33,113 +33,12 @@ type BlueprintKubernetesCreateSuccessKubernetesGit struct {
 
 type _BlueprintKubernetesCreateSuccessKubernetesGit BlueprintKubernetesCreateSuccessKubernetesGit
 
-// NewBlueprintKubernetesCreateSuccessKubernetesGit instantiates a new BlueprintKubernetesCreateSuccessKubernetesGit object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBlueprintKubernetesCreateSuccessKubernetesGit() *BlueprintKubernetesCreateSuccessKubernetesGit {
-	this := BlueprintKubernetesCreateSuccessKubernetesGit{}
-	return &this
-}
-
 // NewBlueprintKubernetesCreateSuccessKubernetesGitWithDefaults instantiates a new BlueprintKubernetesCreateSuccessKubernetesGit object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBlueprintKubernetesCreateSuccessKubernetesGitWithDefaults() *BlueprintKubernetesCreateSuccessKubernetesGit {
 	this := BlueprintKubernetesCreateSuccessKubernetesGit{}
 	return &this
-}
-
-// GetRepoId returns the RepoId field value if set, zero value otherwise.
-func (o *BlueprintKubernetesCreateSuccessKubernetesGit) GetRepoId() int64 {
-	if o == nil || IsNil(o.RepoId) {
-		var ret int64
-		return ret
-	}
-	return *o.RepoId
-}
-
-// GetRepoIdOk returns a tuple with the RepoId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintKubernetesCreateSuccessKubernetesGit) GetRepoIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.RepoId) {
-		return nil, false
-	}
-	return o.RepoId, true
-}
-
-// SetRepoId gets a reference to the given int64 and assigns it to the RepoId field.
-func (o *BlueprintKubernetesCreateSuccessKubernetesGit) SetRepoId(v int64) {
-	o.RepoId = &v
-}
-
-// GetPath returns the Path field value if set, zero value otherwise.
-func (o *BlueprintKubernetesCreateSuccessKubernetesGit) GetPath() string {
-	if o == nil || IsNil(o.Path) {
-		var ret string
-		return ret
-	}
-	return *o.Path
-}
-
-// GetPathOk returns a tuple with the Path field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintKubernetesCreateSuccessKubernetesGit) GetPathOk() (*string, bool) {
-	if o == nil || IsNil(o.Path) {
-		return nil, false
-	}
-	return o.Path, true
-}
-
-// SetPath gets a reference to the given string and assigns it to the Path field.
-func (o *BlueprintKubernetesCreateSuccessKubernetesGit) SetPath(v string) {
-	o.Path = &v
-}
-
-// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise.
-func (o *BlueprintKubernetesCreateSuccessKubernetesGit) GetIntegrationId() int64 {
-	if o == nil || IsNil(o.IntegrationId) {
-		var ret int64
-		return ret
-	}
-	return *o.IntegrationId
-}
-
-// GetIntegrationIdOk returns a tuple with the IntegrationId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintKubernetesCreateSuccessKubernetesGit) GetIntegrationIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.IntegrationId) {
-		return nil, false
-	}
-	return o.IntegrationId, true
-}
-
-// SetIntegrationId gets a reference to the given int64 and assigns it to the IntegrationId field.
-func (o *BlueprintKubernetesCreateSuccessKubernetesGit) SetIntegrationId(v int64) {
-	o.IntegrationId = &v
-}
-
-// GetBranch returns the Branch field value if set, zero value otherwise.
-func (o *BlueprintKubernetesCreateSuccessKubernetesGit) GetBranch() string {
-	if o == nil || IsNil(o.Branch) {
-		var ret string
-		return ret
-	}
-	return *o.Branch
-}
-
-// GetBranchOk returns a tuple with the Branch field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintKubernetesCreateSuccessKubernetesGit) GetBranchOk() (*string, bool) {
-	if o == nil || IsNil(o.Branch) {
-		return nil, false
-	}
-	return o.Branch, true
-}
-
-// SetBranch gets a reference to the given string and assigns it to the Branch field.
-func (o *BlueprintKubernetesCreateSuccessKubernetesGit) SetBranch(v string) {
-	o.Branch = &v
 }
 
 func (o BlueprintKubernetesCreateSuccessKubernetesGit) MarshalJSON() ([]byte, error) {

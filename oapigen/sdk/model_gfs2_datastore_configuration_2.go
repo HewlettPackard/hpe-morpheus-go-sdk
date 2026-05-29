@@ -29,69 +29,12 @@ type GFS2DatastoreConfiguration2 struct {
 
 type _GFS2DatastoreConfiguration2 GFS2DatastoreConfiguration2
 
-// NewGFS2DatastoreConfiguration2 instantiates a new GFS2DatastoreConfiguration2 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGFS2DatastoreConfiguration2(blockDevice string) *GFS2DatastoreConfiguration2 {
-	this := GFS2DatastoreConfiguration2{}
-	this.BlockDevice = blockDevice
-	return &this
-}
-
 // NewGFS2DatastoreConfiguration2WithDefaults instantiates a new GFS2DatastoreConfiguration2 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGFS2DatastoreConfiguration2WithDefaults() *GFS2DatastoreConfiguration2 {
 	this := GFS2DatastoreConfiguration2{}
 	return &this
-}
-
-// GetBlockDevice returns the BlockDevice field value
-func (o *GFS2DatastoreConfiguration2) GetBlockDevice() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.BlockDevice
-}
-
-// GetBlockDeviceOk returns a tuple with the BlockDevice field value
-// and a boolean to check if the value has been set.
-func (o *GFS2DatastoreConfiguration2) GetBlockDeviceOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.BlockDevice, true
-}
-
-// SetBlockDevice sets field value
-func (o *GFS2DatastoreConfiguration2) SetBlockDevice(v string) {
-	o.BlockDevice = v
-}
-
-// GetAllowReformat returns the AllowReformat field value if set, zero value otherwise.
-func (o *GFS2DatastoreConfiguration2) GetAllowReformat() bool {
-	if o == nil || IsNil(o.AllowReformat) {
-		var ret bool
-		return ret
-	}
-	return *o.AllowReformat
-}
-
-// GetAllowReformatOk returns a tuple with the AllowReformat field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GFS2DatastoreConfiguration2) GetAllowReformatOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllowReformat) {
-		return nil, false
-	}
-	return o.AllowReformat, true
-}
-
-// SetAllowReformat gets a reference to the given bool and assigns it to the AllowReformat field.
-func (o *GFS2DatastoreConfiguration2) SetAllowReformat(v bool) {
-	o.AllowReformat = &v
 }
 
 func (o GFS2DatastoreConfiguration2) MarshalJSON() ([]byte, error) {

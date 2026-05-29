@@ -27,67 +27,12 @@ type AddCluster200ResponseAllOfClusterPermissions struct {
 
 type _AddCluster200ResponseAllOfClusterPermissions AddCluster200ResponseAllOfClusterPermissions
 
-// NewAddCluster200ResponseAllOfClusterPermissions instantiates a new AddCluster200ResponseAllOfClusterPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCluster200ResponseAllOfClusterPermissions() *AddCluster200ResponseAllOfClusterPermissions {
-	this := AddCluster200ResponseAllOfClusterPermissions{}
-	return &this
-}
-
 // NewAddCluster200ResponseAllOfClusterPermissionsWithDefaults instantiates a new AddCluster200ResponseAllOfClusterPermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddCluster200ResponseAllOfClusterPermissionsWithDefaults() *AddCluster200ResponseAllOfClusterPermissions {
 	this := AddCluster200ResponseAllOfClusterPermissions{}
 	return &this
-}
-
-// GetResourcePool returns the ResourcePool field value if set, zero value otherwise.
-func (o *AddCluster200ResponseAllOfClusterPermissions) GetResourcePool() AddCluster200ResponseAllOfClusterPermissionsResourcePool {
-	if o == nil || IsNil(o.ResourcePool) {
-		var ret AddCluster200ResponseAllOfClusterPermissionsResourcePool
-		return ret
-	}
-	return *o.ResourcePool
-}
-
-// GetResourcePoolOk returns a tuple with the ResourcePool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCluster200ResponseAllOfClusterPermissions) GetResourcePoolOk() (*AddCluster200ResponseAllOfClusterPermissionsResourcePool, bool) {
-	if o == nil || IsNil(o.ResourcePool) {
-		return nil, false
-	}
-	return o.ResourcePool, true
-}
-
-// SetResourcePool gets a reference to the given AddCluster200ResponseAllOfClusterPermissionsResourcePool and assigns it to the ResourcePool field.
-func (o *AddCluster200ResponseAllOfClusterPermissions) SetResourcePool(v AddCluster200ResponseAllOfClusterPermissionsResourcePool) {
-	o.ResourcePool = &v
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *AddCluster200ResponseAllOfClusterPermissions) GetResourcePermissions() AddCluster200ResponseAllOfClusterPermissionsResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret AddCluster200ResponseAllOfClusterPermissionsResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCluster200ResponseAllOfClusterPermissions) GetResourcePermissionsOk() (*AddCluster200ResponseAllOfClusterPermissionsResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// SetResourcePermissions gets a reference to the given AddCluster200ResponseAllOfClusterPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *AddCluster200ResponseAllOfClusterPermissions) SetResourcePermissions(v AddCluster200ResponseAllOfClusterPermissionsResourcePermissions) {
-	o.ResourcePermissions = &v
 }
 
 func (o AddCluster200ResponseAllOfClusterPermissions) MarshalJSON() ([]byte, error) {

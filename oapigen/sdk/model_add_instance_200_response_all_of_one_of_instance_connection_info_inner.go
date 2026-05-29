@@ -28,90 +28,12 @@ type AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner struct {
 
 type _AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner
 
-// NewAddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner instantiates a new AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner() *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner {
-	this := AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner{}
-	return &this
-}
-
 // NewAddInstance200ResponseAllOfOneOfInstanceConnectionInfoInnerWithDefaults instantiates a new AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddInstance200ResponseAllOfOneOfInstanceConnectionInfoInnerWithDefaults() *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner {
 	this := AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner{}
 	return &this
-}
-
-// GetIp returns the Ip field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetIp() string {
-	if o == nil || IsNil(o.Ip) {
-		var ret string
-		return ret
-	}
-	return *o.Ip
-}
-
-// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetIpOk() (*string, bool) {
-	if o == nil || IsNil(o.Ip) {
-		return nil, false
-	}
-	return o.Ip, true
-}
-
-// SetIp gets a reference to the given string and assigns it to the Ip field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetIp(v string) {
-	o.Ip = &v
-}
-
-// GetPort returns the Port field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPort() int64 {
-	if o == nil || IsNil(o.Port) {
-		var ret int64
-		return ret
-	}
-	return *o.Port
-}
-
-// GetPortOk returns a tuple with the Port field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPortOk() (*int64, bool) {
-	if o == nil || IsNil(o.Port) {
-		return nil, false
-	}
-	return o.Port, true
-}
-
-// SetPort gets a reference to the given int64 and assigns it to the Port field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetPort(v int64) {
-	o.Port = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetName(v string) {
-	o.Name = &v
 }
 
 func (o AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) MarshalJSON() ([]byte, error) {

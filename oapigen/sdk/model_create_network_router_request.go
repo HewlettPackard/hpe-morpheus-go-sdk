@@ -26,44 +26,12 @@ type CreateNetworkRouterRequest struct {
 
 type _CreateNetworkRouterRequest CreateNetworkRouterRequest
 
-// NewCreateNetworkRouterRequest instantiates a new CreateNetworkRouterRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkRouterRequest() *CreateNetworkRouterRequest {
-	this := CreateNetworkRouterRequest{}
-	return &this
-}
-
 // NewCreateNetworkRouterRequestWithDefaults instantiates a new CreateNetworkRouterRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkRouterRequestWithDefaults() *CreateNetworkRouterRequest {
 	this := CreateNetworkRouterRequest{}
 	return &this
-}
-
-// GetNetworkRouter returns the NetworkRouter field value if set, zero value otherwise.
-func (o *CreateNetworkRouterRequest) GetNetworkRouter() CreateNetworkRouterRequestNetworkRouter {
-	if o == nil || IsNil(o.NetworkRouter) {
-		var ret CreateNetworkRouterRequestNetworkRouter
-		return ret
-	}
-	return *o.NetworkRouter
-}
-
-// GetNetworkRouterOk returns a tuple with the NetworkRouter field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkRouterRequest) GetNetworkRouterOk() (*CreateNetworkRouterRequestNetworkRouter, bool) {
-	if o == nil || IsNil(o.NetworkRouter) {
-		return nil, false
-	}
-	return o.NetworkRouter, true
-}
-
-// SetNetworkRouter gets a reference to the given CreateNetworkRouterRequestNetworkRouter and assigns it to the NetworkRouter field.
-func (o *CreateNetworkRouterRequest) SetNetworkRouter(v CreateNetworkRouterRequestNetworkRouter) {
-	o.NetworkRouter = &v
 }
 
 func (o CreateNetworkRouterRequest) MarshalJSON() ([]byte, error) {

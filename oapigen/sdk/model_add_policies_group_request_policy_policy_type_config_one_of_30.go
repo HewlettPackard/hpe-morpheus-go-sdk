@@ -26,44 +26,12 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30 struct {
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30
 
-// NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30 {
-	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30{}
-	return &this
-}
-
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30WithDefaults instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30WithDefaults() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30 {
 	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30{}
 	return &this
-}
-
-// GetUserGroup returns the UserGroup field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30) GetUserGroup() string {
-	if o == nil || IsNil(o.UserGroup) {
-		var ret string
-		return ret
-	}
-	return *o.UserGroup
-}
-
-// GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30) GetUserGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.UserGroup) {
-		return nil, false
-	}
-	return o.UserGroup, true
-}
-
-// SetUserGroup gets a reference to the given string and assigns it to the UserGroup field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30) SetUserGroup(v string) {
-	o.UserGroup = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30) MarshalJSON() ([]byte, error) {

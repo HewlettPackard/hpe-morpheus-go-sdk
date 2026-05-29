@@ -30,90 +30,12 @@ type UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner struct {
 
 type _UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner
 
-// NewUpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner instantiates a new UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner() *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner {
-	this := UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner{}
-	return &this
-}
-
 // NewUpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerWithDefaults instantiates a new UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerWithDefaults() *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner {
 	this := UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner{}
 	return &this
-}
-
-// GetMappedRole returns the MappedRole field value if set, zero value otherwise.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) GetMappedRole() UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole {
-	if o == nil || IsNil(o.MappedRole) {
-		var ret UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole
-		return ret
-	}
-	return *o.MappedRole
-}
-
-// GetMappedRoleOk returns a tuple with the MappedRole field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) GetMappedRoleOk() (*UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole, bool) {
-	if o == nil || IsNil(o.MappedRole) {
-		return nil, false
-	}
-	return o.MappedRole, true
-}
-
-// SetMappedRole gets a reference to the given UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole and assigns it to the MappedRole field.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) SetMappedRole(v UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) {
-	o.MappedRole = &v
-}
-
-// GetSourceRoleFqn returns the SourceRoleFqn field value if set, zero value otherwise.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) GetSourceRoleFqn() string {
-	if o == nil || IsNil(o.SourceRoleFqn) {
-		var ret string
-		return ret
-	}
-	return *o.SourceRoleFqn
-}
-
-// GetSourceRoleFqnOk returns a tuple with the SourceRoleFqn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) GetSourceRoleFqnOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceRoleFqn) {
-		return nil, false
-	}
-	return o.SourceRoleFqn, true
-}
-
-// SetSourceRoleFqn gets a reference to the given string and assigns it to the SourceRoleFqn field.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) SetSourceRoleFqn(v string) {
-	o.SourceRoleFqn = &v
-}
-
-// GetSourceRoleName returns the SourceRoleName field value if set, zero value otherwise.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) GetSourceRoleName() string {
-	if o == nil || IsNil(o.SourceRoleName) {
-		var ret string
-		return ret
-	}
-	return *o.SourceRoleName
-}
-
-// GetSourceRoleNameOk returns a tuple with the SourceRoleName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) GetSourceRoleNameOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceRoleName) {
-		return nil, false
-	}
-	return o.SourceRoleName, true
-}
-
-// SetSourceRoleName gets a reference to the given string and assigns it to the SourceRoleName field.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) SetSourceRoleName(v string) {
-	o.SourceRoleName = &v
 }
 
 func (o UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) MarshalJSON() ([]byte, error) {

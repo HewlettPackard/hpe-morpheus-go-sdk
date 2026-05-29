@@ -27,67 +27,12 @@ type UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan struct {
 
 type _UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan
 
-// NewUpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan instantiates a new UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan() *UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan {
-	this := UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan{}
-	return &this
-}
-
 // NewUpdateVDIPools200ResponseAnyOfVdiPoolConfigPlanWithDefaults instantiates a new UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateVDIPools200ResponseAnyOfVdiPoolConfigPlanWithDefaults() *UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan {
 	this := UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan{}
 	return &this
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o UpdateVDIPools200ResponseAnyOfVdiPoolConfigPlan) MarshalJSON() ([]byte, error) {

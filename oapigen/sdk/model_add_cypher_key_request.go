@@ -28,67 +28,12 @@ type AddCypherKeyRequest struct {
 
 type _AddCypherKeyRequest AddCypherKeyRequest
 
-// NewAddCypherKeyRequest instantiates a new AddCypherKeyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCypherKeyRequest() *AddCypherKeyRequest {
-	this := AddCypherKeyRequest{}
-	return &this
-}
-
 // NewAddCypherKeyRequestWithDefaults instantiates a new AddCypherKeyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddCypherKeyRequestWithDefaults() *AddCypherKeyRequest {
 	this := AddCypherKeyRequest{}
 	return &this
-}
-
-// GetTtl returns the Ttl field value if set, zero value otherwise.
-func (o *AddCypherKeyRequest) GetTtl() AddCypherKeyRequestTtl {
-	if o == nil || IsNil(o.Ttl) {
-		var ret AddCypherKeyRequestTtl
-		return ret
-	}
-	return *o.Ttl
-}
-
-// GetTtlOk returns a tuple with the Ttl field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCypherKeyRequest) GetTtlOk() (*AddCypherKeyRequestTtl, bool) {
-	if o == nil || IsNil(o.Ttl) {
-		return nil, false
-	}
-	return o.Ttl, true
-}
-
-// SetTtl gets a reference to the given AddCypherKeyRequestTtl and assigns it to the Ttl field.
-func (o *AddCypherKeyRequest) SetTtl(v AddCypherKeyRequestTtl) {
-	o.Ttl = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *AddCypherKeyRequest) GetValue() string {
-	if o == nil || IsNil(o.Value) {
-		var ret string
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCypherKeyRequest) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *AddCypherKeyRequest) SetValue(v string) {
-	o.Value = &v
 }
 
 func (o AddCypherKeyRequest) MarshalJSON() ([]byte, error) {

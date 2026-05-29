@@ -26,44 +26,12 @@ type UserSettingsApiClientsInner struct {
 
 type _UserSettingsApiClientsInner UserSettingsApiClientsInner
 
-// NewUserSettingsApiClientsInner instantiates a new UserSettingsApiClientsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserSettingsApiClientsInner() *UserSettingsApiClientsInner {
-	this := UserSettingsApiClientsInner{}
-	return &this
-}
-
 // NewUserSettingsApiClientsInnerWithDefaults instantiates a new UserSettingsApiClientsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUserSettingsApiClientsInnerWithDefaults() *UserSettingsApiClientsInner {
 	this := UserSettingsApiClientsInner{}
 	return &this
-}
-
-// GetClientId returns the ClientId field value if set, zero value otherwise.
-func (o *UserSettingsApiClientsInner) GetClientId() string {
-	if o == nil || IsNil(o.ClientId) {
-		var ret string
-		return ret
-	}
-	return *o.ClientId
-}
-
-// GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSettingsApiClientsInner) GetClientIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ClientId) {
-		return nil, false
-	}
-	return o.ClientId, true
-}
-
-// SetClientId gets a reference to the given string and assigns it to the ClientId field.
-func (o *UserSettingsApiClientsInner) SetClientId(v string) {
-	o.ClientId = &v
 }
 
 func (o UserSettingsApiClientsInner) MarshalJSON() ([]byte, error) {

@@ -27,46 +27,12 @@ type ResizeInstance200ResponseAllOfOneOfInstanceInstanceType struct {
 
 type _ResizeInstance200ResponseAllOfOneOfInstanceInstanceType ResizeInstance200ResponseAllOfOneOfInstanceInstanceType
 
-// NewResizeInstance200ResponseAllOfOneOfInstanceInstanceType instantiates a new ResizeInstance200ResponseAllOfOneOfInstanceInstanceType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewResizeInstance200ResponseAllOfOneOfInstanceInstanceType(code string) *ResizeInstance200ResponseAllOfOneOfInstanceInstanceType {
-	this := ResizeInstance200ResponseAllOfOneOfInstanceInstanceType{}
-	this.Code = code
-	return &this
-}
-
 // NewResizeInstance200ResponseAllOfOneOfInstanceInstanceTypeWithDefaults instantiates a new ResizeInstance200ResponseAllOfOneOfInstanceInstanceType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewResizeInstance200ResponseAllOfOneOfInstanceInstanceTypeWithDefaults() *ResizeInstance200ResponseAllOfOneOfInstanceInstanceType {
 	this := ResizeInstance200ResponseAllOfOneOfInstanceInstanceType{}
 	return &this
-}
-
-// GetCode returns the Code field value
-func (o *ResizeInstance200ResponseAllOfOneOfInstanceInstanceType) GetCode() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value
-// and a boolean to check if the value has been set.
-func (o *ResizeInstance200ResponseAllOfOneOfInstanceInstanceType) GetCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Code, true
-}
-
-// SetCode sets field value
-func (o *ResizeInstance200ResponseAllOfOneOfInstanceInstanceType) SetCode(v string) {
-	o.Code = v
 }
 
 func (o ResizeInstance200ResponseAllOfOneOfInstanceInstanceType) MarshalJSON() ([]byte, error) {

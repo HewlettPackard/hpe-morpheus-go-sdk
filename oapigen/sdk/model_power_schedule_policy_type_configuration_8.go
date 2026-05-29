@@ -28,92 +28,12 @@ type PowerSchedulePolicyTypeConfiguration8 struct {
 
 type _PowerSchedulePolicyTypeConfiguration8 PowerSchedulePolicyTypeConfiguration8
 
-// NewPowerSchedulePolicyTypeConfiguration8 instantiates a new PowerSchedulePolicyTypeConfiguration8 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPowerSchedulePolicyTypeConfiguration8(powerScheduleType string) *PowerSchedulePolicyTypeConfiguration8 {
-	this := PowerSchedulePolicyTypeConfiguration8{}
-	this.PowerScheduleType = powerScheduleType
-	return &this
-}
-
 // NewPowerSchedulePolicyTypeConfiguration8WithDefaults instantiates a new PowerSchedulePolicyTypeConfiguration8 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPowerSchedulePolicyTypeConfiguration8WithDefaults() *PowerSchedulePolicyTypeConfiguration8 {
 	this := PowerSchedulePolicyTypeConfiguration8{}
 	return &this
-}
-
-// GetPowerScheduleType returns the PowerScheduleType field value
-func (o *PowerSchedulePolicyTypeConfiguration8) GetPowerScheduleType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PowerScheduleType
-}
-
-// GetPowerScheduleTypeOk returns a tuple with the PowerScheduleType field value
-// and a boolean to check if the value has been set.
-func (o *PowerSchedulePolicyTypeConfiguration8) GetPowerScheduleTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PowerScheduleType, true
-}
-
-// SetPowerScheduleType sets field value
-func (o *PowerSchedulePolicyTypeConfiguration8) SetPowerScheduleType(v string) {
-	o.PowerScheduleType = v
-}
-
-// GetPowerSchedule returns the PowerSchedule field value if set, zero value otherwise.
-func (o *PowerSchedulePolicyTypeConfiguration8) GetPowerSchedule() string {
-	if o == nil || IsNil(o.PowerSchedule) {
-		var ret string
-		return ret
-	}
-	return *o.PowerSchedule
-}
-
-// GetPowerScheduleOk returns a tuple with the PowerSchedule field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PowerSchedulePolicyTypeConfiguration8) GetPowerScheduleOk() (*string, bool) {
-	if o == nil || IsNil(o.PowerSchedule) {
-		return nil, false
-	}
-	return o.PowerSchedule, true
-}
-
-// SetPowerSchedule gets a reference to the given string and assigns it to the PowerSchedule field.
-func (o *PowerSchedulePolicyTypeConfiguration8) SetPowerSchedule(v string) {
-	o.PowerSchedule = &v
-}
-
-// GetPowerScheduleHideFixed returns the PowerScheduleHideFixed field value if set, zero value otherwise.
-func (o *PowerSchedulePolicyTypeConfiguration8) GetPowerScheduleHideFixed() bool {
-	if o == nil || IsNil(o.PowerScheduleHideFixed) {
-		var ret bool
-		return ret
-	}
-	return *o.PowerScheduleHideFixed
-}
-
-// GetPowerScheduleHideFixedOk returns a tuple with the PowerScheduleHideFixed field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PowerSchedulePolicyTypeConfiguration8) GetPowerScheduleHideFixedOk() (*bool, bool) {
-	if o == nil || IsNil(o.PowerScheduleHideFixed) {
-		return nil, false
-	}
-	return o.PowerScheduleHideFixed, true
-}
-
-// SetPowerScheduleHideFixed gets a reference to the given bool and assigns it to the PowerScheduleHideFixed field.
-func (o *PowerSchedulePolicyTypeConfiguration8) SetPowerScheduleHideFixed(v bool) {
-	o.PowerScheduleHideFixed = &v
 }
 
 func (o PowerSchedulePolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {

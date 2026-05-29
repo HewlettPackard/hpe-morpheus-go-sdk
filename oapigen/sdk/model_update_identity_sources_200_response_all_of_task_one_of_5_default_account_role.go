@@ -28,90 +28,12 @@ type UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole struct {
 
 type _UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole
 
-// NewUpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole instantiates a new UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole() *UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole {
-	this := UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole{}
-	return &this
-}
-
 // NewUpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRoleWithDefaults instantiates a new UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRoleWithDefaults() *UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole {
 	this := UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole) SetName(v string) {
-	o.Name = &v
-}
-
-// GetAuthority returns the Authority field value if set, zero value otherwise.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole) GetAuthority() string {
-	if o == nil || IsNil(o.Authority) {
-		var ret string
-		return ret
-	}
-	return *o.Authority
-}
-
-// GetAuthorityOk returns a tuple with the Authority field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole) GetAuthorityOk() (*string, bool) {
-	if o == nil || IsNil(o.Authority) {
-		return nil, false
-	}
-	return o.Authority, true
-}
-
-// SetAuthority gets a reference to the given string and assigns it to the Authority field.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole) SetAuthority(v string) {
-	o.Authority = &v
 }
 
 func (o UpdateIdentitySources200ResponseAllOfTaskOneOf5DefaultAccountRole) MarshalJSON() ([]byte, error) {

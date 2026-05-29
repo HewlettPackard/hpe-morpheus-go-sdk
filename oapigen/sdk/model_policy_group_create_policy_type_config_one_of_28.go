@@ -29,113 +29,12 @@ type PolicyGroupCreatePolicyTypeConfigOneOf28 struct {
 
 type _PolicyGroupCreatePolicyTypeConfigOneOf28 PolicyGroupCreatePolicyTypeConfigOneOf28
 
-// NewPolicyGroupCreatePolicyTypeConfigOneOf28 instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf28 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPolicyGroupCreatePolicyTypeConfigOneOf28() *PolicyGroupCreatePolicyTypeConfigOneOf28 {
-	this := PolicyGroupCreatePolicyTypeConfigOneOf28{}
-	return &this
-}
-
 // NewPolicyGroupCreatePolicyTypeConfigOneOf28WithDefaults instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf28 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPolicyGroupCreatePolicyTypeConfigOneOf28WithDefaults() *PolicyGroupCreatePolicyTypeConfigOneOf28 {
 	this := PolicyGroupCreatePolicyTypeConfigOneOf28{}
 	return &this
-}
-
-// GetStrict returns the Strict field value if set, zero value otherwise.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf28) GetStrict() bool {
-	if o == nil || IsNil(o.Strict) {
-		var ret bool
-		return ret
-	}
-	return *o.Strict
-}
-
-// GetStrictOk returns a tuple with the Strict field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf28) GetStrictOk() (*bool, bool) {
-	if o == nil || IsNil(o.Strict) {
-		return nil, false
-	}
-	return o.Strict, true
-}
-
-// SetStrict gets a reference to the given bool and assigns it to the Strict field.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf28) SetStrict(v bool) {
-	o.Strict = &v
-}
-
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf28) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
-		return ret
-	}
-	return *o.Key
-}
-
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf28) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
-		return nil, false
-	}
-	return o.Key, true
-}
-
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf28) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetValueListId returns the ValueListId field value if set, zero value otherwise.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf28) GetValueListId() string {
-	if o == nil || IsNil(o.ValueListId) {
-		var ret string
-		return ret
-	}
-	return *o.ValueListId
-}
-
-// GetValueListIdOk returns a tuple with the ValueListId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf28) GetValueListIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ValueListId) {
-		return nil, false
-	}
-	return o.ValueListId, true
-}
-
-// SetValueListId gets a reference to the given string and assigns it to the ValueListId field.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf28) SetValueListId(v string) {
-	o.ValueListId = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf28) GetValue() string {
-	if o == nil || IsNil(o.Value) {
-		var ret string
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf28) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf28) SetValue(v string) {
-	o.Value = &v
 }
 
 func (o PolicyGroupCreatePolicyTypeConfigOneOf28) MarshalJSON() ([]byte, error) {

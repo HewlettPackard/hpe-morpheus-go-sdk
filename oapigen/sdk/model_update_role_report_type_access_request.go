@@ -27,20 +27,6 @@ type UpdateRoleReportTypeAccessRequest struct {
 	UpdateRoleReportTypeAccessRequestOneOf1 *UpdateRoleReportTypeAccessRequestOneOf1
 }
 
-// UpdateRoleReportTypeAccessRequestOneOfAsUpdateRoleReportTypeAccessRequest is a convenience function that returns UpdateRoleReportTypeAccessRequestOneOf wrapped in UpdateRoleReportTypeAccessRequest
-func UpdateRoleReportTypeAccessRequestOneOfAsUpdateRoleReportTypeAccessRequest(v *UpdateRoleReportTypeAccessRequestOneOf) UpdateRoleReportTypeAccessRequest {
-	return UpdateRoleReportTypeAccessRequest{
-		UpdateRoleReportTypeAccessRequestOneOf: v,
-	}
-}
-
-// UpdateRoleReportTypeAccessRequestOneOf1AsUpdateRoleReportTypeAccessRequest is a convenience function that returns UpdateRoleReportTypeAccessRequestOneOf1 wrapped in UpdateRoleReportTypeAccessRequest
-func UpdateRoleReportTypeAccessRequestOneOf1AsUpdateRoleReportTypeAccessRequest(v *UpdateRoleReportTypeAccessRequestOneOf1) UpdateRoleReportTypeAccessRequest {
-	return UpdateRoleReportTypeAccessRequest{
-		UpdateRoleReportTypeAccessRequestOneOf1: v,
-	}
-}
-
 func (dst *UpdateRoleReportTypeAccessRequest) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateRoleReportTypeAccessRequest{}

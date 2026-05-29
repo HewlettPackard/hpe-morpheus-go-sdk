@@ -31,90 +31,12 @@ type ClusterDatastoreUpdatePermissionsTenantPermissions struct {
 
 type _ClusterDatastoreUpdatePermissionsTenantPermissions ClusterDatastoreUpdatePermissionsTenantPermissions
 
-// NewClusterDatastoreUpdatePermissionsTenantPermissions instantiates a new ClusterDatastoreUpdatePermissionsTenantPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterDatastoreUpdatePermissionsTenantPermissions() *ClusterDatastoreUpdatePermissionsTenantPermissions {
-	this := ClusterDatastoreUpdatePermissionsTenantPermissions{}
-	return &this
-}
-
 // NewClusterDatastoreUpdatePermissionsTenantPermissionsWithDefaults instantiates a new ClusterDatastoreUpdatePermissionsTenantPermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClusterDatastoreUpdatePermissionsTenantPermissionsWithDefaults() *ClusterDatastoreUpdatePermissionsTenantPermissions {
 	this := ClusterDatastoreUpdatePermissionsTenantPermissions{}
 	return &this
-}
-
-// GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) GetAccounts() []int64 {
-	if o == nil || IsNil(o.Accounts) {
-		var ret []int64
-		return ret
-	}
-	return o.Accounts
-}
-
-// GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) GetAccountsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.Accounts) {
-		return nil, false
-	}
-	return o.Accounts, true
-}
-
-// SetAccounts gets a reference to the given []int64 and assigns it to the Accounts field.
-func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) SetAccounts(v []int64) {
-	o.Accounts = v
-}
-
-// GetDefaultTarget returns the DefaultTarget field value if set, zero value otherwise.
-func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) GetDefaultTarget() []int64 {
-	if o == nil || IsNil(o.DefaultTarget) {
-		var ret []int64
-		return ret
-	}
-	return o.DefaultTarget
-}
-
-// GetDefaultTargetOk returns a tuple with the DefaultTarget field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) GetDefaultTargetOk() ([]int64, bool) {
-	if o == nil || IsNil(o.DefaultTarget) {
-		return nil, false
-	}
-	return o.DefaultTarget, true
-}
-
-// SetDefaultTarget gets a reference to the given []int64 and assigns it to the DefaultTarget field.
-func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) SetDefaultTarget(v []int64) {
-	o.DefaultTarget = v
-}
-
-// GetDefaultStore returns the DefaultStore field value if set, zero value otherwise.
-func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) GetDefaultStore() []int64 {
-	if o == nil || IsNil(o.DefaultStore) {
-		var ret []int64
-		return ret
-	}
-	return o.DefaultStore
-}
-
-// GetDefaultStoreOk returns a tuple with the DefaultStore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) GetDefaultStoreOk() ([]int64, bool) {
-	if o == nil || IsNil(o.DefaultStore) {
-		return nil, false
-	}
-	return o.DefaultStore, true
-}
-
-// SetDefaultStore gets a reference to the given []int64 and assigns it to the DefaultStore field.
-func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) SetDefaultStore(v []int64) {
-	o.DefaultStore = v
 }
 
 func (o ClusterDatastoreUpdatePermissionsTenantPermissions) MarshalJSON() ([]byte, error) {

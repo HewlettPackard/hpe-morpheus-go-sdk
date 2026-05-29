@@ -27,20 +27,6 @@ type ListHosts200ResponseAllOfServersInnerConfigCreateUser struct {
 	String *string
 }
 
-// boolAsListHosts200ResponseAllOfServersInnerConfigCreateUser is a convenience function that returns bool wrapped in ListHosts200ResponseAllOfServersInnerConfigCreateUser
-func BoolAsListHosts200ResponseAllOfServersInnerConfigCreateUser(v *bool) ListHosts200ResponseAllOfServersInnerConfigCreateUser {
-	return ListHosts200ResponseAllOfServersInnerConfigCreateUser{
-		Bool: v,
-	}
-}
-
-// stringAsListHosts200ResponseAllOfServersInnerConfigCreateUser is a convenience function that returns string wrapped in ListHosts200ResponseAllOfServersInnerConfigCreateUser
-func StringAsListHosts200ResponseAllOfServersInnerConfigCreateUser(v *string) ListHosts200ResponseAllOfServersInnerConfigCreateUser {
-	return ListHosts200ResponseAllOfServersInnerConfigCreateUser{
-		String: v,
-	}
-}
-
 func (dst *ListHosts200ResponseAllOfServersInnerConfigCreateUser) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ListHosts200ResponseAllOfServersInnerConfigCreateUser{}

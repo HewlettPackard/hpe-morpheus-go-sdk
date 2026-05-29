@@ -27,67 +27,12 @@ type AddGroups200Response struct {
 
 type _AddGroups200Response AddGroups200Response
 
-// NewAddGroups200Response instantiates a new AddGroups200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddGroups200Response() *AddGroups200Response {
-	this := AddGroups200Response{}
-	return &this
-}
-
 // NewAddGroups200ResponseWithDefaults instantiates a new AddGroups200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddGroups200ResponseWithDefaults() *AddGroups200Response {
 	this := AddGroups200Response{}
 	return &this
-}
-
-// GetGroup returns the Group field value if set, zero value otherwise.
-func (o *AddGroups200Response) GetGroup() AddGroups200ResponseAllOfGroup {
-	if o == nil || IsNil(o.Group) {
-		var ret AddGroups200ResponseAllOfGroup
-		return ret
-	}
-	return *o.Group
-}
-
-// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddGroups200Response) GetGroupOk() (*AddGroups200ResponseAllOfGroup, bool) {
-	if o == nil || IsNil(o.Group) {
-		return nil, false
-	}
-	return o.Group, true
-}
-
-// SetGroup gets a reference to the given AddGroups200ResponseAllOfGroup and assigns it to the Group field.
-func (o *AddGroups200Response) SetGroup(v AddGroups200ResponseAllOfGroup) {
-	o.Group = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddGroups200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddGroups200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddGroups200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddGroups200Response) MarshalJSON() ([]byte, error) {

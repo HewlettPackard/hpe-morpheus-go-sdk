@@ -26,44 +26,12 @@ type GetNetworkPoolServer200Response struct {
 
 type _GetNetworkPoolServer200Response GetNetworkPoolServer200Response
 
-// NewGetNetworkPoolServer200Response instantiates a new GetNetworkPoolServer200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkPoolServer200Response() *GetNetworkPoolServer200Response {
-	this := GetNetworkPoolServer200Response{}
-	return &this
-}
-
 // NewGetNetworkPoolServer200ResponseWithDefaults instantiates a new GetNetworkPoolServer200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkPoolServer200ResponseWithDefaults() *GetNetworkPoolServer200Response {
 	this := GetNetworkPoolServer200Response{}
 	return &this
-}
-
-// GetNetworkPoolServer returns the NetworkPoolServer field value if set, zero value otherwise.
-func (o *GetNetworkPoolServer200Response) GetNetworkPoolServer() GetNetworkPoolServer200ResponseNetworkPoolServer {
-	if o == nil || IsNil(o.NetworkPoolServer) {
-		var ret GetNetworkPoolServer200ResponseNetworkPoolServer
-		return ret
-	}
-	return *o.NetworkPoolServer
-}
-
-// GetNetworkPoolServerOk returns a tuple with the NetworkPoolServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkPoolServer200Response) GetNetworkPoolServerOk() (*GetNetworkPoolServer200ResponseNetworkPoolServer, bool) {
-	if o == nil || IsNil(o.NetworkPoolServer) {
-		return nil, false
-	}
-	return o.NetworkPoolServer, true
-}
-
-// SetNetworkPoolServer gets a reference to the given GetNetworkPoolServer200ResponseNetworkPoolServer and assigns it to the NetworkPoolServer field.
-func (o *GetNetworkPoolServer200Response) SetNetworkPoolServer(v GetNetworkPoolServer200ResponseNetworkPoolServer) {
-	o.NetworkPoolServer = &v
 }
 
 func (o GetNetworkPoolServer200Response) MarshalJSON() ([]byte, error) {

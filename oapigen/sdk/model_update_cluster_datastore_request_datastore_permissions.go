@@ -28,90 +28,12 @@ type UpdateClusterDatastoreRequestDatastorePermissions struct {
 
 type _UpdateClusterDatastoreRequestDatastorePermissions UpdateClusterDatastoreRequestDatastorePermissions
 
-// NewUpdateClusterDatastoreRequestDatastorePermissions instantiates a new UpdateClusterDatastoreRequestDatastorePermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterDatastoreRequestDatastorePermissions() *UpdateClusterDatastoreRequestDatastorePermissions {
-	this := UpdateClusterDatastoreRequestDatastorePermissions{}
-	return &this
-}
-
 // NewUpdateClusterDatastoreRequestDatastorePermissionsWithDefaults instantiates a new UpdateClusterDatastoreRequestDatastorePermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateClusterDatastoreRequestDatastorePermissionsWithDefaults() *UpdateClusterDatastoreRequestDatastorePermissions {
 	this := UpdateClusterDatastoreRequestDatastorePermissions{}
 	return &this
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *UpdateClusterDatastoreRequestDatastorePermissions) GetResourcePermissions() UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterDatastoreRequestDatastorePermissions) GetResourcePermissionsOk() (*UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// SetResourcePermissions gets a reference to the given UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *UpdateClusterDatastoreRequestDatastorePermissions) SetResourcePermissions(v UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions) {
-	o.ResourcePermissions = &v
-}
-
-// GetResourcePool returns the ResourcePool field value if set, zero value otherwise.
-func (o *UpdateClusterDatastoreRequestDatastorePermissions) GetResourcePool() UpdateClusterDatastoreRequestDatastorePermissionsResourcePool {
-	if o == nil || IsNil(o.ResourcePool) {
-		var ret UpdateClusterDatastoreRequestDatastorePermissionsResourcePool
-		return ret
-	}
-	return *o.ResourcePool
-}
-
-// GetResourcePoolOk returns a tuple with the ResourcePool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterDatastoreRequestDatastorePermissions) GetResourcePoolOk() (*UpdateClusterDatastoreRequestDatastorePermissionsResourcePool, bool) {
-	if o == nil || IsNil(o.ResourcePool) {
-		return nil, false
-	}
-	return o.ResourcePool, true
-}
-
-// SetResourcePool gets a reference to the given UpdateClusterDatastoreRequestDatastorePermissionsResourcePool and assigns it to the ResourcePool field.
-func (o *UpdateClusterDatastoreRequestDatastorePermissions) SetResourcePool(v UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) {
-	o.ResourcePool = &v
-}
-
-// GetTenantPermissions returns the TenantPermissions field value if set, zero value otherwise.
-func (o *UpdateClusterDatastoreRequestDatastorePermissions) GetTenantPermissions() UpdateClusterDatastoreRequestDatastorePermissionsTenantPermissions {
-	if o == nil || IsNil(o.TenantPermissions) {
-		var ret UpdateClusterDatastoreRequestDatastorePermissionsTenantPermissions
-		return ret
-	}
-	return *o.TenantPermissions
-}
-
-// GetTenantPermissionsOk returns a tuple with the TenantPermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterDatastoreRequestDatastorePermissions) GetTenantPermissionsOk() (*UpdateClusterDatastoreRequestDatastorePermissionsTenantPermissions, bool) {
-	if o == nil || IsNil(o.TenantPermissions) {
-		return nil, false
-	}
-	return o.TenantPermissions, true
-}
-
-// SetTenantPermissions gets a reference to the given UpdateClusterDatastoreRequestDatastorePermissionsTenantPermissions and assigns it to the TenantPermissions field.
-func (o *UpdateClusterDatastoreRequestDatastorePermissions) SetTenantPermissions(v UpdateClusterDatastoreRequestDatastorePermissionsTenantPermissions) {
-	o.TenantPermissions = &v
 }
 
 func (o UpdateClusterDatastoreRequestDatastorePermissions) MarshalJSON() ([]byte, error) {

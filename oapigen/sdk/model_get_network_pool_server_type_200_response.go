@@ -26,44 +26,12 @@ type GetNetworkPoolServerType200Response struct {
 
 type _GetNetworkPoolServerType200Response GetNetworkPoolServerType200Response
 
-// NewGetNetworkPoolServerType200Response instantiates a new GetNetworkPoolServerType200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkPoolServerType200Response() *GetNetworkPoolServerType200Response {
-	this := GetNetworkPoolServerType200Response{}
-	return &this
-}
-
 // NewGetNetworkPoolServerType200ResponseWithDefaults instantiates a new GetNetworkPoolServerType200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkPoolServerType200ResponseWithDefaults() *GetNetworkPoolServerType200Response {
 	this := GetNetworkPoolServerType200Response{}
 	return &this
-}
-
-// GetNetworkPoolServerType returns the NetworkPoolServerType field value if set, zero value otherwise.
-func (o *GetNetworkPoolServerType200Response) GetNetworkPoolServerType() GetNetworkPoolServerType200ResponseNetworkPoolServerType {
-	if o == nil || IsNil(o.NetworkPoolServerType) {
-		var ret GetNetworkPoolServerType200ResponseNetworkPoolServerType
-		return ret
-	}
-	return *o.NetworkPoolServerType
-}
-
-// GetNetworkPoolServerTypeOk returns a tuple with the NetworkPoolServerType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkPoolServerType200Response) GetNetworkPoolServerTypeOk() (*GetNetworkPoolServerType200ResponseNetworkPoolServerType, bool) {
-	if o == nil || IsNil(o.NetworkPoolServerType) {
-		return nil, false
-	}
-	return o.NetworkPoolServerType, true
-}
-
-// SetNetworkPoolServerType gets a reference to the given GetNetworkPoolServerType200ResponseNetworkPoolServerType and assigns it to the NetworkPoolServerType field.
-func (o *GetNetworkPoolServerType200Response) SetNetworkPoolServerType(v GetNetworkPoolServerType200ResponseNetworkPoolServerType) {
-	o.NetworkPoolServerType = &v
 }
 
 func (o GetNetworkPoolServerType200Response) MarshalJSON() ([]byte, error) {

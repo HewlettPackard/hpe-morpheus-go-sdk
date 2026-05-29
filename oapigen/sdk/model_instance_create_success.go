@@ -26,46 +26,12 @@ type InstanceCreateSuccess struct {
 
 type _InstanceCreateSuccess InstanceCreateSuccess
 
-// NewInstanceCreateSuccess instantiates a new InstanceCreateSuccess object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceCreateSuccess(instance InstanceCreateSuccessInstance) *InstanceCreateSuccess {
-	this := InstanceCreateSuccess{}
-	this.Instance = instance
-	return &this
-}
-
 // NewInstanceCreateSuccessWithDefaults instantiates a new InstanceCreateSuccess object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceCreateSuccessWithDefaults() *InstanceCreateSuccess {
 	this := InstanceCreateSuccess{}
 	return &this
-}
-
-// GetInstance returns the Instance field value
-func (o *InstanceCreateSuccess) GetInstance() InstanceCreateSuccessInstance {
-	if o == nil {
-		var ret InstanceCreateSuccessInstance
-		return ret
-	}
-
-	return o.Instance
-}
-
-// GetInstanceOk returns a tuple with the Instance field value
-// and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccess) GetInstanceOk() (*InstanceCreateSuccessInstance, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Instance, true
-}
-
-// SetInstance sets field value
-func (o *InstanceCreateSuccess) SetInstance(v InstanceCreateSuccessInstance) {
-	o.Instance = v
 }
 
 func (o InstanceCreateSuccess) MarshalJSON() ([]byte, error) {

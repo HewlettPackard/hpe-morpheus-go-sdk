@@ -29,67 +29,12 @@ type ExecuteBackups200ResponseAllOfBackupInstance struct {
 
 type _ExecuteBackups200ResponseAllOfBackupInstance ExecuteBackups200ResponseAllOfBackupInstance
 
-// NewExecuteBackups200ResponseAllOfBackupInstance instantiates a new ExecuteBackups200ResponseAllOfBackupInstance object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewExecuteBackups200ResponseAllOfBackupInstance() *ExecuteBackups200ResponseAllOfBackupInstance {
-	this := ExecuteBackups200ResponseAllOfBackupInstance{}
-	return &this
-}
-
 // NewExecuteBackups200ResponseAllOfBackupInstanceWithDefaults instantiates a new ExecuteBackups200ResponseAllOfBackupInstance object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewExecuteBackups200ResponseAllOfBackupInstanceWithDefaults() *ExecuteBackups200ResponseAllOfBackupInstance {
 	this := ExecuteBackups200ResponseAllOfBackupInstance{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ExecuteBackups200ResponseAllOfBackupInstance) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteBackups200ResponseAllOfBackupInstance) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ExecuteBackups200ResponseAllOfBackupInstance) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ExecuteBackups200ResponseAllOfBackupInstance) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteBackups200ResponseAllOfBackupInstance) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ExecuteBackups200ResponseAllOfBackupInstance) SetName(v string) {
-	o.Name = &v
 }
 
 func (o ExecuteBackups200ResponseAllOfBackupInstance) MarshalJSON() ([]byte, error) {

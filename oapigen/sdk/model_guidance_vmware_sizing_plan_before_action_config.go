@@ -28,90 +28,12 @@ type GuidanceVmwareSizingPlanBeforeActionConfig struct {
 
 type _GuidanceVmwareSizingPlanBeforeActionConfig GuidanceVmwareSizingPlanBeforeActionConfig
 
-// NewGuidanceVmwareSizingPlanBeforeActionConfig instantiates a new GuidanceVmwareSizingPlanBeforeActionConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGuidanceVmwareSizingPlanBeforeActionConfig() *GuidanceVmwareSizingPlanBeforeActionConfig {
-	this := GuidanceVmwareSizingPlanBeforeActionConfig{}
-	return &this
-}
-
 // NewGuidanceVmwareSizingPlanBeforeActionConfigWithDefaults instantiates a new GuidanceVmwareSizingPlanBeforeActionConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGuidanceVmwareSizingPlanBeforeActionConfigWithDefaults() *GuidanceVmwareSizingPlanBeforeActionConfig {
 	this := GuidanceVmwareSizingPlanBeforeActionConfig{}
 	return &this
-}
-
-// GetStorageSizeType returns the StorageSizeType field value if set, zero value otherwise.
-func (o *GuidanceVmwareSizingPlanBeforeActionConfig) GetStorageSizeType() string {
-	if o == nil || IsNil(o.StorageSizeType) {
-		var ret string
-		return ret
-	}
-	return *o.StorageSizeType
-}
-
-// GetStorageSizeTypeOk returns a tuple with the StorageSizeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceVmwareSizingPlanBeforeActionConfig) GetStorageSizeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageSizeType) {
-		return nil, false
-	}
-	return o.StorageSizeType, true
-}
-
-// SetStorageSizeType gets a reference to the given string and assigns it to the StorageSizeType field.
-func (o *GuidanceVmwareSizingPlanBeforeActionConfig) SetStorageSizeType(v string) {
-	o.StorageSizeType = &v
-}
-
-// GetMemorySizeType returns the MemorySizeType field value if set, zero value otherwise.
-func (o *GuidanceVmwareSizingPlanBeforeActionConfig) GetMemorySizeType() string {
-	if o == nil || IsNil(o.MemorySizeType) {
-		var ret string
-		return ret
-	}
-	return *o.MemorySizeType
-}
-
-// GetMemorySizeTypeOk returns a tuple with the MemorySizeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceVmwareSizingPlanBeforeActionConfig) GetMemorySizeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.MemorySizeType) {
-		return nil, false
-	}
-	return o.MemorySizeType, true
-}
-
-// SetMemorySizeType gets a reference to the given string and assigns it to the MemorySizeType field.
-func (o *GuidanceVmwareSizingPlanBeforeActionConfig) SetMemorySizeType(v string) {
-	o.MemorySizeType = &v
-}
-
-// GetRanges returns the Ranges field value if set, zero value otherwise.
-func (o *GuidanceVmwareSizingPlanBeforeActionConfig) GetRanges() GuidanceVmwareSizingPlanBeforeActionConfigRanges {
-	if o == nil || IsNil(o.Ranges) {
-		var ret GuidanceVmwareSizingPlanBeforeActionConfigRanges
-		return ret
-	}
-	return *o.Ranges
-}
-
-// GetRangesOk returns a tuple with the Ranges field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceVmwareSizingPlanBeforeActionConfig) GetRangesOk() (*GuidanceVmwareSizingPlanBeforeActionConfigRanges, bool) {
-	if o == nil || IsNil(o.Ranges) {
-		return nil, false
-	}
-	return o.Ranges, true
-}
-
-// SetRanges gets a reference to the given GuidanceVmwareSizingPlanBeforeActionConfigRanges and assigns it to the Ranges field.
-func (o *GuidanceVmwareSizingPlanBeforeActionConfig) SetRanges(v GuidanceVmwareSizingPlanBeforeActionConfigRanges) {
-	o.Ranges = &v
 }
 
 func (o GuidanceVmwareSizingPlanBeforeActionConfig) MarshalJSON() ([]byte, error) {

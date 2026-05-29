@@ -26,44 +26,12 @@ type AddSecurityGroups200Response struct {
 
 type _AddSecurityGroups200Response AddSecurityGroups200Response
 
-// NewAddSecurityGroups200Response instantiates a new AddSecurityGroups200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddSecurityGroups200Response() *AddSecurityGroups200Response {
-	this := AddSecurityGroups200Response{}
-	return &this
-}
-
 // NewAddSecurityGroups200ResponseWithDefaults instantiates a new AddSecurityGroups200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddSecurityGroups200ResponseWithDefaults() *AddSecurityGroups200Response {
 	this := AddSecurityGroups200Response{}
 	return &this
-}
-
-// GetSecurityGroup returns the SecurityGroup field value if set, zero value otherwise.
-func (o *AddSecurityGroups200Response) GetSecurityGroup() AddSecurityGroups200ResponseSecurityGroup {
-	if o == nil || IsNil(o.SecurityGroup) {
-		var ret AddSecurityGroups200ResponseSecurityGroup
-		return ret
-	}
-	return *o.SecurityGroup
-}
-
-// GetSecurityGroupOk returns a tuple with the SecurityGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSecurityGroups200Response) GetSecurityGroupOk() (*AddSecurityGroups200ResponseSecurityGroup, bool) {
-	if o == nil || IsNil(o.SecurityGroup) {
-		return nil, false
-	}
-	return o.SecurityGroup, true
-}
-
-// SetSecurityGroup gets a reference to the given AddSecurityGroups200ResponseSecurityGroup and assigns it to the SecurityGroup field.
-func (o *AddSecurityGroups200Response) SetSecurityGroup(v AddSecurityGroups200ResponseSecurityGroup) {
-	o.SecurityGroup = &v
 }
 
 func (o AddSecurityGroups200Response) MarshalJSON() ([]byte, error) {

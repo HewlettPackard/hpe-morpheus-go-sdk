@@ -29,114 +29,12 @@ type ListInstances200ResponseAllOfInstancesInnerInstancePrice struct {
 
 type _ListInstances200ResponseAllOfInstancesInnerInstancePrice ListInstances200ResponseAllOfInstancesInnerInstancePrice
 
-// NewListInstances200ResponseAllOfInstancesInnerInstancePrice instantiates a new ListInstances200ResponseAllOfInstancesInnerInstancePrice object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListInstances200ResponseAllOfInstancesInnerInstancePrice() *ListInstances200ResponseAllOfInstancesInnerInstancePrice {
-	this := ListInstances200ResponseAllOfInstancesInnerInstancePrice{}
-	return &this
-}
-
 // NewListInstances200ResponseAllOfInstancesInnerInstancePriceWithDefaults instantiates a new ListInstances200ResponseAllOfInstancesInnerInstancePrice object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListInstances200ResponseAllOfInstancesInnerInstancePriceWithDefaults() *ListInstances200ResponseAllOfInstancesInnerInstancePrice {
 	this := ListInstances200ResponseAllOfInstancesInnerInstancePrice{}
 	return &this
-}
-
-// GetPrice returns the Price field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) GetPrice() float32 {
-	if o == nil || IsNil(o.Price) {
-		var ret float32
-		return ret
-	}
-	return *o.Price
-}
-
-// GetPriceOk returns a tuple with the Price field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) GetPriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.Price) {
-		return nil, false
-	}
-	return o.Price, true
-}
-
-// SetPrice gets a reference to the given float32 and assigns it to the Price field.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) SetPrice(v float32) {
-	o.Price = &v
-}
-
-// GetCost returns the Cost field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) GetCost() float32 {
-	if o == nil || IsNil(o.Cost) {
-		var ret float32
-		return ret
-	}
-	return *o.Cost
-}
-
-// GetCostOk returns a tuple with the Cost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) GetCostOk() (*float32, bool) {
-	if o == nil || IsNil(o.Cost) {
-		return nil, false
-	}
-	return o.Cost, true
-}
-
-// SetCost gets a reference to the given float32 and assigns it to the Cost field.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) SetCost(v float32) {
-	o.Cost = &v
-}
-
-// GetCurrency returns the Currency field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) GetCurrency() string {
-	if o == nil || IsNil(o.Currency.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Currency.Get()
-}
-
-// GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) GetCurrencyOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Currency.Get(), o.Currency.IsSet()
-}
-
-// SetCurrency gets a reference to the given NullableString and assigns it to the Currency field.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) SetCurrency(v string) {
-	o.Currency.Set(&v)
-}
-
-// GetUnit returns the Unit field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) GetUnit() string {
-	if o == nil || IsNil(o.Unit) {
-		var ret string
-		return ret
-	}
-	return *o.Unit
-}
-
-// GetUnitOk returns a tuple with the Unit field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) GetUnitOk() (*string, bool) {
-	if o == nil || IsNil(o.Unit) {
-		return nil, false
-	}
-	return o.Unit, true
-}
-
-// SetUnit gets a reference to the given string and assigns it to the Unit field.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) SetUnit(v string) {
-	o.Unit = &v
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerInstancePrice) MarshalJSON() ([]byte, error) {

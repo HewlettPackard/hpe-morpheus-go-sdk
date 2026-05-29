@@ -27,20 +27,6 @@ type UserSourceCreateUserSourceRoleMappings struct {
 	MapmapOfStringstring                                    *map[string]string
 }
 
-// []UserSourceCreateUserSourceRoleMappingsOneOfInnerAsUserSourceCreateUserSourceRoleMappings is a convenience function that returns []UserSourceCreateUserSourceRoleMappingsOneOfInner wrapped in UserSourceCreateUserSourceRoleMappings
-func ArrayOfUserSourceCreateUserSourceRoleMappingsOneOfInnerAsUserSourceCreateUserSourceRoleMappings(v *[]UserSourceCreateUserSourceRoleMappingsOneOfInner) UserSourceCreateUserSourceRoleMappings {
-	return UserSourceCreateUserSourceRoleMappings{
-		ArrayOfUserSourceCreateUserSourceRoleMappingsOneOfInner: v,
-	}
-}
-
-// map[string]stringAsUserSourceCreateUserSourceRoleMappings is a convenience function that returns map[string]string wrapped in UserSourceCreateUserSourceRoleMappings
-func MapmapOfStringstringAsUserSourceCreateUserSourceRoleMappings(v *map[string]string) UserSourceCreateUserSourceRoleMappings {
-	return UserSourceCreateUserSourceRoleMappings{
-		MapmapOfStringstring: v,
-	}
-}
-
 func (dst *UserSourceCreateUserSourceRoleMappings) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UserSourceCreateUserSourceRoleMappings{}

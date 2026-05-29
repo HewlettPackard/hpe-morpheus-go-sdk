@@ -27,67 +27,12 @@ type ListClusterDaemonsets200Response struct {
 
 type _ListClusterDaemonsets200Response ListClusterDaemonsets200Response
 
-// NewListClusterDaemonsets200Response instantiates a new ListClusterDaemonsets200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListClusterDaemonsets200Response() *ListClusterDaemonsets200Response {
-	this := ListClusterDaemonsets200Response{}
-	return &this
-}
-
 // NewListClusterDaemonsets200ResponseWithDefaults instantiates a new ListClusterDaemonsets200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListClusterDaemonsets200ResponseWithDefaults() *ListClusterDaemonsets200Response {
 	this := ListClusterDaemonsets200Response{}
 	return &this
-}
-
-// GetDaemonsets returns the Daemonsets field value if set, zero value otherwise.
-func (o *ListClusterDaemonsets200Response) GetDaemonsets() []ListClusterDaemonsets200ResponseAllOfDaemonsetsInner {
-	if o == nil || IsNil(o.Daemonsets) {
-		var ret []ListClusterDaemonsets200ResponseAllOfDaemonsetsInner
-		return ret
-	}
-	return o.Daemonsets
-}
-
-// GetDaemonsetsOk returns a tuple with the Daemonsets field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterDaemonsets200Response) GetDaemonsetsOk() ([]ListClusterDaemonsets200ResponseAllOfDaemonsetsInner, bool) {
-	if o == nil || IsNil(o.Daemonsets) {
-		return nil, false
-	}
-	return o.Daemonsets, true
-}
-
-// SetDaemonsets gets a reference to the given []ListClusterDaemonsets200ResponseAllOfDaemonsetsInner and assigns it to the Daemonsets field.
-func (o *ListClusterDaemonsets200Response) SetDaemonsets(v []ListClusterDaemonsets200ResponseAllOfDaemonsetsInner) {
-	o.Daemonsets = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListClusterDaemonsets200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterDaemonsets200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListClusterDaemonsets200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListClusterDaemonsets200Response) MarshalJSON() ([]byte, error) {

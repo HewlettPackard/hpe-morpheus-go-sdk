@@ -27,67 +27,12 @@ type GetGuidances200ResponseDiscoveryAnyOfSavings struct {
 
 type _GetGuidances200ResponseDiscoveryAnyOfSavings GetGuidances200ResponseDiscoveryAnyOfSavings
 
-// NewGetGuidances200ResponseDiscoveryAnyOfSavings instantiates a new GetGuidances200ResponseDiscoveryAnyOfSavings object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetGuidances200ResponseDiscoveryAnyOfSavings() *GetGuidances200ResponseDiscoveryAnyOfSavings {
-	this := GetGuidances200ResponseDiscoveryAnyOfSavings{}
-	return &this
-}
-
 // NewGetGuidances200ResponseDiscoveryAnyOfSavingsWithDefaults instantiates a new GetGuidances200ResponseDiscoveryAnyOfSavings object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetGuidances200ResponseDiscoveryAnyOfSavingsWithDefaults() *GetGuidances200ResponseDiscoveryAnyOfSavings {
 	this := GetGuidances200ResponseDiscoveryAnyOfSavings{}
 	return &this
-}
-
-// GetAmount returns the Amount field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOfSavings) GetAmount() float32 {
-	if o == nil || IsNil(o.Amount) {
-		var ret float32
-		return ret
-	}
-	return *o.Amount
-}
-
-// GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfSavings) GetAmountOk() (*float32, bool) {
-	if o == nil || IsNil(o.Amount) {
-		return nil, false
-	}
-	return o.Amount, true
-}
-
-// SetAmount gets a reference to the given float32 and assigns it to the Amount field.
-func (o *GetGuidances200ResponseDiscoveryAnyOfSavings) SetAmount(v float32) {
-	o.Amount = &v
-}
-
-// GetCurrency returns the Currency field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOfSavings) GetCurrency() string {
-	if o == nil || IsNil(o.Currency) {
-		var ret string
-		return ret
-	}
-	return *o.Currency
-}
-
-// GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfSavings) GetCurrencyOk() (*string, bool) {
-	if o == nil || IsNil(o.Currency) {
-		return nil, false
-	}
-	return o.Currency, true
-}
-
-// SetCurrency gets a reference to the given string and assigns it to the Currency field.
-func (o *GetGuidances200ResponseDiscoveryAnyOfSavings) SetCurrency(v string) {
-	o.Currency = &v
 }
 
 func (o GetGuidances200ResponseDiscoveryAnyOfSavings) MarshalJSON() ([]byte, error) {

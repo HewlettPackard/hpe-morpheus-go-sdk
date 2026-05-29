@@ -29,113 +29,12 @@ type GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsV
 
 type _GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue
 
-// NewGetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue instantiates a new GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue() *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue {
-	this := GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue{}
-	return &this
-}
-
 // NewGetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueWithDefaults instantiates a new GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueWithDefaults() *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue {
 	this := GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue{}
 	return &this
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDetailList returns the DetailList field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) GetDetailList() []GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueDetailListInner {
-	if o == nil || IsNil(o.DetailList) {
-		var ret []GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueDetailListInner
-		return ret
-	}
-	return o.DetailList
-}
-
-// GetDetailListOk returns a tuple with the DetailList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) GetDetailListOk() ([]GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueDetailListInner, bool) {
-	if o == nil || IsNil(o.DetailList) {
-		return nil, false
-	}
-	return o.DetailList, true
-}
-
-// SetDetailList gets a reference to the given []GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueDetailListInner and assigns it to the DetailList field.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) SetDetailList(v []GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueDetailListInner) {
-	o.DetailList = v
-}
-
-// GetSummary returns the Summary field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) GetSummary() GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary {
-	if o == nil || IsNil(o.Summary) {
-		var ret GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary
-		return ret
-	}
-	return *o.Summary
-}
-
-// GetSummaryOk returns a tuple with the Summary field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) GetSummaryOk() (*GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary, bool) {
-	if o == nil || IsNil(o.Summary) {
-		return nil, false
-	}
-	return o.Summary, true
-}
-
-// SetSummary gets a reference to the given GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary and assigns it to the Summary field.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) SetSummary(v GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary) {
-	o.Summary = &v
 }
 
 func (o GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) MarshalJSON() ([]byte, error) {

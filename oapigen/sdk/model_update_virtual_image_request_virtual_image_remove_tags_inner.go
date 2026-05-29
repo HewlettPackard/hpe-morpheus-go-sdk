@@ -27,69 +27,12 @@ type UpdateVirtualImageRequestVirtualImageRemoveTagsInner struct {
 
 type _UpdateVirtualImageRequestVirtualImageRemoveTagsInner UpdateVirtualImageRequestVirtualImageRemoveTagsInner
 
-// NewUpdateVirtualImageRequestVirtualImageRemoveTagsInner instantiates a new UpdateVirtualImageRequestVirtualImageRemoveTagsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateVirtualImageRequestVirtualImageRemoveTagsInner(name string) *UpdateVirtualImageRequestVirtualImageRemoveTagsInner {
-	this := UpdateVirtualImageRequestVirtualImageRemoveTagsInner{}
-	this.Name = name
-	return &this
-}
-
 // NewUpdateVirtualImageRequestVirtualImageRemoveTagsInnerWithDefaults instantiates a new UpdateVirtualImageRequestVirtualImageRemoveTagsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateVirtualImageRequestVirtualImageRemoveTagsInnerWithDefaults() *UpdateVirtualImageRequestVirtualImageRemoveTagsInner {
 	this := UpdateVirtualImageRequestVirtualImageRemoveTagsInner{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *UpdateVirtualImageRequestVirtualImageRemoveTagsInner) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *UpdateVirtualImageRequestVirtualImageRemoveTagsInner) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *UpdateVirtualImageRequestVirtualImageRemoveTagsInner) SetName(v string) {
-	o.Name = v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *UpdateVirtualImageRequestVirtualImageRemoveTagsInner) GetValue() string {
-	if o == nil || IsNil(o.Value) {
-		var ret string
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVirtualImageRequestVirtualImageRemoveTagsInner) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *UpdateVirtualImageRequestVirtualImageRemoveTagsInner) SetValue(v string) {
-	o.Value = &v
 }
 
 func (o UpdateVirtualImageRequestVirtualImageRemoveTagsInner) MarshalJSON() ([]byte, error) {

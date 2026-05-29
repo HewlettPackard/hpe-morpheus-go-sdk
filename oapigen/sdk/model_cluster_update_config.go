@@ -27,44 +27,12 @@ type ClusterUpdateConfig struct {
 
 type _ClusterUpdateConfig ClusterUpdateConfig
 
-// NewClusterUpdateConfig instantiates a new ClusterUpdateConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterUpdateConfig() *ClusterUpdateConfig {
-	this := ClusterUpdateConfig{}
-	return &this
-}
-
 // NewClusterUpdateConfigWithDefaults instantiates a new ClusterUpdateConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClusterUpdateConfigWithDefaults() *ClusterUpdateConfig {
 	this := ClusterUpdateConfig{}
 	return &this
-}
-
-// GetDynamicPlacementMode returns the DynamicPlacementMode field value if set, zero value otherwise.
-func (o *ClusterUpdateConfig) GetDynamicPlacementMode() string {
-	if o == nil || IsNil(o.DynamicPlacementMode) {
-		var ret string
-		return ret
-	}
-	return *o.DynamicPlacementMode
-}
-
-// GetDynamicPlacementModeOk returns a tuple with the DynamicPlacementMode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterUpdateConfig) GetDynamicPlacementModeOk() (*string, bool) {
-	if o == nil || IsNil(o.DynamicPlacementMode) {
-		return nil, false
-	}
-	return o.DynamicPlacementMode, true
-}
-
-// SetDynamicPlacementMode gets a reference to the given string and assigns it to the DynamicPlacementMode field.
-func (o *ClusterUpdateConfig) SetDynamicPlacementMode(v string) {
-	o.DynamicPlacementMode = &v
 }
 
 func (o ClusterUpdateConfig) MarshalJSON() ([]byte, error) {

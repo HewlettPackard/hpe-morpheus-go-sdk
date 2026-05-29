@@ -26,46 +26,12 @@ type AddUserGroupRequest struct {
 
 type _AddUserGroupRequest AddUserGroupRequest
 
-// NewAddUserGroupRequest instantiates a new AddUserGroupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddUserGroupRequest(userGroup AddUserGroupRequestUserGroup) *AddUserGroupRequest {
-	this := AddUserGroupRequest{}
-	this.UserGroup = userGroup
-	return &this
-}
-
 // NewAddUserGroupRequestWithDefaults instantiates a new AddUserGroupRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddUserGroupRequestWithDefaults() *AddUserGroupRequest {
 	this := AddUserGroupRequest{}
 	return &this
-}
-
-// GetUserGroup returns the UserGroup field value
-func (o *AddUserGroupRequest) GetUserGroup() AddUserGroupRequestUserGroup {
-	if o == nil {
-		var ret AddUserGroupRequestUserGroup
-		return ret
-	}
-
-	return o.UserGroup
-}
-
-// GetUserGroupOk returns a tuple with the UserGroup field value
-// and a boolean to check if the value has been set.
-func (o *AddUserGroupRequest) GetUserGroupOk() (*AddUserGroupRequestUserGroup, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.UserGroup, true
-}
-
-// SetUserGroup sets field value
-func (o *AddUserGroupRequest) SetUserGroup(v AddUserGroupRequestUserGroup) {
-	o.UserGroup = v
 }
 
 func (o AddUserGroupRequest) MarshalJSON() ([]byte, error) {

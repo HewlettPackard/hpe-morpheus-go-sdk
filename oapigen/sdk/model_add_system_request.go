@@ -26,44 +26,12 @@ type AddSystemRequest struct {
 
 type _AddSystemRequest AddSystemRequest
 
-// NewAddSystemRequest instantiates a new AddSystemRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddSystemRequest() *AddSystemRequest {
-	this := AddSystemRequest{}
-	return &this
-}
-
 // NewAddSystemRequestWithDefaults instantiates a new AddSystemRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddSystemRequestWithDefaults() *AddSystemRequest {
 	this := AddSystemRequest{}
 	return &this
-}
-
-// GetSystem returns the System field value if set, zero value otherwise.
-func (o *AddSystemRequest) GetSystem() AddSystemRequestSystem {
-	if o == nil || IsNil(o.System) {
-		var ret AddSystemRequestSystem
-		return ret
-	}
-	return *o.System
-}
-
-// GetSystemOk returns a tuple with the System field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSystemRequest) GetSystemOk() (*AddSystemRequestSystem, bool) {
-	if o == nil || IsNil(o.System) {
-		return nil, false
-	}
-	return o.System, true
-}
-
-// SetSystem gets a reference to the given AddSystemRequestSystem and assigns it to the System field.
-func (o *AddSystemRequest) SetSystem(v AddSystemRequestSystem) {
-	o.System = &v
 }
 
 func (o AddSystemRequest) MarshalJSON() ([]byte, error) {

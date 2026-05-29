@@ -28,90 +28,12 @@ type ListArchiveBuckets200Response struct {
 
 type _ListArchiveBuckets200Response ListArchiveBuckets200Response
 
-// NewListArchiveBuckets200Response instantiates a new ListArchiveBuckets200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListArchiveBuckets200Response() *ListArchiveBuckets200Response {
-	this := ListArchiveBuckets200Response{}
-	return &this
-}
-
 // NewListArchiveBuckets200ResponseWithDefaults instantiates a new ListArchiveBuckets200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListArchiveBuckets200ResponseWithDefaults() *ListArchiveBuckets200Response {
 	this := ListArchiveBuckets200Response{}
 	return &this
-}
-
-// GetArchiveBuckets returns the ArchiveBuckets field value if set, zero value otherwise.
-func (o *ListArchiveBuckets200Response) GetArchiveBuckets() []ListArchiveBuckets200ResponseAllOfArchiveBucketsInner {
-	if o == nil || IsNil(o.ArchiveBuckets) {
-		var ret []ListArchiveBuckets200ResponseAllOfArchiveBucketsInner
-		return ret
-	}
-	return o.ArchiveBuckets
-}
-
-// GetArchiveBucketsOk returns a tuple with the ArchiveBuckets field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListArchiveBuckets200Response) GetArchiveBucketsOk() ([]ListArchiveBuckets200ResponseAllOfArchiveBucketsInner, bool) {
-	if o == nil || IsNil(o.ArchiveBuckets) {
-		return nil, false
-	}
-	return o.ArchiveBuckets, true
-}
-
-// SetArchiveBuckets gets a reference to the given []ListArchiveBuckets200ResponseAllOfArchiveBucketsInner and assigns it to the ArchiveBuckets field.
-func (o *ListArchiveBuckets200Response) SetArchiveBuckets(v []ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) {
-	o.ArchiveBuckets = v
-}
-
-// GetArchiveBucketCount returns the ArchiveBucketCount field value if set, zero value otherwise.
-func (o *ListArchiveBuckets200Response) GetArchiveBucketCount() int64 {
-	if o == nil || IsNil(o.ArchiveBucketCount) {
-		var ret int64
-		return ret
-	}
-	return *o.ArchiveBucketCount
-}
-
-// GetArchiveBucketCountOk returns a tuple with the ArchiveBucketCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListArchiveBuckets200Response) GetArchiveBucketCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.ArchiveBucketCount) {
-		return nil, false
-	}
-	return o.ArchiveBucketCount, true
-}
-
-// SetArchiveBucketCount gets a reference to the given int64 and assigns it to the ArchiveBucketCount field.
-func (o *ListArchiveBuckets200Response) SetArchiveBucketCount(v int64) {
-	o.ArchiveBucketCount = &v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListArchiveBuckets200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListArchiveBuckets200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListArchiveBuckets200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListArchiveBuckets200Response) MarshalJSON() ([]byte, error) {

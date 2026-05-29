@@ -26,46 +26,12 @@ type IntegrationGitRepoConfig struct {
 
 type _IntegrationGitRepoConfig IntegrationGitRepoConfig
 
-// NewIntegrationGitRepoConfig instantiates a new IntegrationGitRepoConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIntegrationGitRepoConfig(integration IntegrationGitRepoConfigIntegration) *IntegrationGitRepoConfig {
-	this := IntegrationGitRepoConfig{}
-	this.Integration = integration
-	return &this
-}
-
 // NewIntegrationGitRepoConfigWithDefaults instantiates a new IntegrationGitRepoConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIntegrationGitRepoConfigWithDefaults() *IntegrationGitRepoConfig {
 	this := IntegrationGitRepoConfig{}
 	return &this
-}
-
-// GetIntegration returns the Integration field value
-func (o *IntegrationGitRepoConfig) GetIntegration() IntegrationGitRepoConfigIntegration {
-	if o == nil {
-		var ret IntegrationGitRepoConfigIntegration
-		return ret
-	}
-
-	return o.Integration
-}
-
-// GetIntegrationOk returns a tuple with the Integration field value
-// and a boolean to check if the value has been set.
-func (o *IntegrationGitRepoConfig) GetIntegrationOk() (*IntegrationGitRepoConfigIntegration, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Integration, true
-}
-
-// SetIntegration sets field value
-func (o *IntegrationGitRepoConfig) SetIntegration(v IntegrationGitRepoConfigIntegration) {
-	o.Integration = v
 }
 
 func (o IntegrationGitRepoConfig) MarshalJSON() ([]byte, error) {

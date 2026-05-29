@@ -27,67 +27,12 @@ type ListSecurityPackageTypes200Response struct {
 
 type _ListSecurityPackageTypes200Response ListSecurityPackageTypes200Response
 
-// NewListSecurityPackageTypes200Response instantiates a new ListSecurityPackageTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListSecurityPackageTypes200Response() *ListSecurityPackageTypes200Response {
-	this := ListSecurityPackageTypes200Response{}
-	return &this
-}
-
 // NewListSecurityPackageTypes200ResponseWithDefaults instantiates a new ListSecurityPackageTypes200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListSecurityPackageTypes200ResponseWithDefaults() *ListSecurityPackageTypes200Response {
 	this := ListSecurityPackageTypes200Response{}
 	return &this
-}
-
-// GetSecurityPackageTypes returns the SecurityPackageTypes field value if set, zero value otherwise.
-func (o *ListSecurityPackageTypes200Response) GetSecurityPackageTypes() []ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner {
-	if o == nil || IsNil(o.SecurityPackageTypes) {
-		var ret []ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner
-		return ret
-	}
-	return o.SecurityPackageTypes
-}
-
-// GetSecurityPackageTypesOk returns a tuple with the SecurityPackageTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListSecurityPackageTypes200Response) GetSecurityPackageTypesOk() ([]ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner, bool) {
-	if o == nil || IsNil(o.SecurityPackageTypes) {
-		return nil, false
-	}
-	return o.SecurityPackageTypes, true
-}
-
-// SetSecurityPackageTypes gets a reference to the given []ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner and assigns it to the SecurityPackageTypes field.
-func (o *ListSecurityPackageTypes200Response) SetSecurityPackageTypes(v []ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) {
-	o.SecurityPackageTypes = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListSecurityPackageTypes200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListSecurityPackageTypes200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListSecurityPackageTypes200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListSecurityPackageTypes200Response) MarshalJSON() ([]byte, error) {

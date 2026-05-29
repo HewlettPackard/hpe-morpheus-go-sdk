@@ -28,91 +28,12 @@ type AddIntegrations200ResponseAllOfIntegrationOneOf12Config struct {
 
 type _AddIntegrations200ResponseAllOfIntegrationOneOf12Config AddIntegrations200ResponseAllOfIntegrationOneOf12Config
 
-// NewAddIntegrations200ResponseAllOfIntegrationOneOf12Config instantiates a new AddIntegrations200ResponseAllOfIntegrationOneOf12Config object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIntegrations200ResponseAllOfIntegrationOneOf12Config() *AddIntegrations200ResponseAllOfIntegrationOneOf12Config {
-	this := AddIntegrations200ResponseAllOfIntegrationOneOf12Config{}
-	return &this
-}
-
 // NewAddIntegrations200ResponseAllOfIntegrationOneOf12ConfigWithDefaults instantiates a new AddIntegrations200ResponseAllOfIntegrationOneOf12Config object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddIntegrations200ResponseAllOfIntegrationOneOf12ConfigWithDefaults() *AddIntegrations200ResponseAllOfIntegrationOneOf12Config {
 	this := AddIntegrations200ResponseAllOfIntegrationOneOf12Config{}
 	return &this
-}
-
-// GetApprovalUser returns the ApprovalUser field value if set, zero value otherwise.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf12Config) GetApprovalUser() string {
-	if o == nil || IsNil(o.ApprovalUser) {
-		var ret string
-		return ret
-	}
-	return *o.ApprovalUser
-}
-
-// GetApprovalUserOk returns a tuple with the ApprovalUser field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf12Config) GetApprovalUserOk() (*string, bool) {
-	if o == nil || IsNil(o.ApprovalUser) {
-		return nil, false
-	}
-	return o.ApprovalUser, true
-}
-
-// SetApprovalUser gets a reference to the given string and assigns it to the ApprovalUser field.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf12Config) SetApprovalUser(v string) {
-	o.ApprovalUser = &v
-}
-
-// GetCompany returns the Company field value if set, zero value otherwise.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf12Config) GetCompany() string {
-	if o == nil || IsNil(o.Company) {
-		var ret string
-		return ret
-	}
-	return *o.Company
-}
-
-// GetCompanyOk returns a tuple with the Company field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf12Config) GetCompanyOk() (*string, bool) {
-	if o == nil || IsNil(o.Company) {
-		return nil, false
-	}
-	return o.Company, true
-}
-
-// SetCompany gets a reference to the given string and assigns it to the Company field.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf12Config) SetCompany(v string) {
-	o.Company = &v
-}
-
-// GetRemedyIgnoreSSLErrors returns the RemedyIgnoreSSLErrors field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf12Config) GetRemedyIgnoreSSLErrors() string {
-	if o == nil || IsNil(o.RemedyIgnoreSSLErrors.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.RemedyIgnoreSSLErrors.Get()
-}
-
-// GetRemedyIgnoreSSLErrorsOk returns a tuple with the RemedyIgnoreSSLErrors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf12Config) GetRemedyIgnoreSSLErrorsOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.RemedyIgnoreSSLErrors.Get(), o.RemedyIgnoreSSLErrors.IsSet()
-}
-
-// SetRemedyIgnoreSSLErrors gets a reference to the given NullableString and assigns it to the RemedyIgnoreSSLErrors field.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf12Config) SetRemedyIgnoreSSLErrors(v string) {
-	o.RemedyIgnoreSSLErrors.Set(&v)
 }
 
 func (o AddIntegrations200ResponseAllOfIntegrationOneOf12Config) MarshalJSON() ([]byte, error) {

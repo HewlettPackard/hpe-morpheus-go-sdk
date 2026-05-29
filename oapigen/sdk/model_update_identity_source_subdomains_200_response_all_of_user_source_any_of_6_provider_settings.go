@@ -28,90 +28,12 @@ type UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSetti
 
 type _UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings
 
-// NewUpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings instantiates a new UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings() *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings {
-	this := UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings{}
-	return &this
-}
-
 // NewUpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettingsWithDefaults instantiates a new UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettingsWithDefaults() *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings {
 	this := UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings{}
 	return &this
-}
-
-// GetEntityId returns the EntityId field value if set, zero value otherwise.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings) GetEntityId() string {
-	if o == nil || IsNil(o.EntityId) {
-		var ret string
-		return ret
-	}
-	return *o.EntityId
-}
-
-// GetEntityIdOk returns a tuple with the EntityId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings) GetEntityIdOk() (*string, bool) {
-	if o == nil || IsNil(o.EntityId) {
-		return nil, false
-	}
-	return o.EntityId, true
-}
-
-// SetEntityId gets a reference to the given string and assigns it to the EntityId field.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings) SetEntityId(v string) {
-	o.EntityId = &v
-}
-
-// GetAcsUrl returns the AcsUrl field value if set, zero value otherwise.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings) GetAcsUrl() string {
-	if o == nil || IsNil(o.AcsUrl) {
-		var ret string
-		return ret
-	}
-	return *o.AcsUrl
-}
-
-// GetAcsUrlOk returns a tuple with the AcsUrl field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings) GetAcsUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.AcsUrl) {
-		return nil, false
-	}
-	return o.AcsUrl, true
-}
-
-// SetAcsUrl gets a reference to the given string and assigns it to the AcsUrl field.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings) SetAcsUrl(v string) {
-	o.AcsUrl = &v
-}
-
-// GetSpMetadata returns the SpMetadata field value if set, zero value otherwise.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings) GetSpMetadata() string {
-	if o == nil || IsNil(o.SpMetadata) {
-		var ret string
-		return ret
-	}
-	return *o.SpMetadata
-}
-
-// GetSpMetadataOk returns a tuple with the SpMetadata field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings) GetSpMetadataOk() (*string, bool) {
-	if o == nil || IsNil(o.SpMetadata) {
-		return nil, false
-	}
-	return o.SpMetadata, true
-}
-
-// SetSpMetadata gets a reference to the given string and assigns it to the SpMetadata field.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings) SetSpMetadata(v string) {
-	o.SpMetadata = &v
 }
 
 func (o UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6ProviderSettings) MarshalJSON() ([]byte, error) {

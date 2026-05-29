@@ -26,44 +26,12 @@ type GetLoadBalancerPool200Response struct {
 
 type _GetLoadBalancerPool200Response GetLoadBalancerPool200Response
 
-// NewGetLoadBalancerPool200Response instantiates a new GetLoadBalancerPool200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetLoadBalancerPool200Response() *GetLoadBalancerPool200Response {
-	this := GetLoadBalancerPool200Response{}
-	return &this
-}
-
 // NewGetLoadBalancerPool200ResponseWithDefaults instantiates a new GetLoadBalancerPool200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetLoadBalancerPool200ResponseWithDefaults() *GetLoadBalancerPool200Response {
 	this := GetLoadBalancerPool200Response{}
 	return &this
-}
-
-// GetLoadBalancerPool returns the LoadBalancerPool field value if set, zero value otherwise.
-func (o *GetLoadBalancerPool200Response) GetLoadBalancerPool() GetLoadBalancerPool200ResponseLoadBalancerPool {
-	if o == nil || IsNil(o.LoadBalancerPool) {
-		var ret GetLoadBalancerPool200ResponseLoadBalancerPool
-		return ret
-	}
-	return *o.LoadBalancerPool
-}
-
-// GetLoadBalancerPoolOk returns a tuple with the LoadBalancerPool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLoadBalancerPool200Response) GetLoadBalancerPoolOk() (*GetLoadBalancerPool200ResponseLoadBalancerPool, bool) {
-	if o == nil || IsNil(o.LoadBalancerPool) {
-		return nil, false
-	}
-	return o.LoadBalancerPool, true
-}
-
-// SetLoadBalancerPool gets a reference to the given GetLoadBalancerPool200ResponseLoadBalancerPool and assigns it to the LoadBalancerPool field.
-func (o *GetLoadBalancerPool200Response) SetLoadBalancerPool(v GetLoadBalancerPool200ResponseLoadBalancerPool) {
-	o.LoadBalancerPool = &v
 }
 
 func (o GetLoadBalancerPool200Response) MarshalJSON() ([]byte, error) {

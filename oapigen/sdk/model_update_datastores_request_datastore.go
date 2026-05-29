@@ -33,17 +33,6 @@ type UpdateDatastoresRequestDatastore struct {
 
 type _UpdateDatastoresRequestDatastore UpdateDatastoresRequestDatastore
 
-// NewUpdateDatastoresRequestDatastore instantiates a new UpdateDatastoresRequestDatastore object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateDatastoresRequestDatastore() *UpdateDatastoresRequestDatastore {
-	this := UpdateDatastoresRequestDatastore{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 // NewUpdateDatastoresRequestDatastoreWithDefaults instantiates a new UpdateDatastoresRequestDatastore object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -52,121 +41,6 @@ func NewUpdateDatastoresRequestDatastoreWithDefaults() *UpdateDatastoresRequestD
 	var visibility string = "private"
 	this.Visibility = &visibility
 	return &this
-}
-
-// GetActive returns the Active field value if set, zero value otherwise.
-func (o *UpdateDatastoresRequestDatastore) GetActive() bool {
-	if o == nil || IsNil(o.Active) {
-		var ret bool
-		return ret
-	}
-	return *o.Active
-}
-
-// GetActiveOk returns a tuple with the Active field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDatastoresRequestDatastore) GetActiveOk() (*bool, bool) {
-	if o == nil || IsNil(o.Active) {
-		return nil, false
-	}
-	return o.Active, true
-}
-
-// SetActive gets a reference to the given bool and assigns it to the Active field.
-func (o *UpdateDatastoresRequestDatastore) SetActive(v bool) {
-	o.Active = &v
-}
-
-// GetHeartbeatTarget returns the HeartbeatTarget field value if set, zero value otherwise.
-func (o *UpdateDatastoresRequestDatastore) GetHeartbeatTarget() bool {
-	if o == nil || IsNil(o.HeartbeatTarget) {
-		var ret bool
-		return ret
-	}
-	return *o.HeartbeatTarget
-}
-
-// GetHeartbeatTargetOk returns a tuple with the HeartbeatTarget field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDatastoresRequestDatastore) GetHeartbeatTargetOk() (*bool, bool) {
-	if o == nil || IsNil(o.HeartbeatTarget) {
-		return nil, false
-	}
-	return o.HeartbeatTarget, true
-}
-
-// SetHeartbeatTarget gets a reference to the given bool and assigns it to the HeartbeatTarget field.
-func (o *UpdateDatastoresRequestDatastore) SetHeartbeatTarget(v bool) {
-	o.HeartbeatTarget = &v
-}
-
-// GetVisibility returns the Visibility field value if set, zero value otherwise.
-func (o *UpdateDatastoresRequestDatastore) GetVisibility() string {
-	if o == nil || IsNil(o.Visibility) {
-		var ret string
-		return ret
-	}
-	return *o.Visibility
-}
-
-// GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDatastoresRequestDatastore) GetVisibilityOk() (*string, bool) {
-	if o == nil || IsNil(o.Visibility) {
-		return nil, false
-	}
-	return o.Visibility, true
-}
-
-// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
-func (o *UpdateDatastoresRequestDatastore) SetVisibility(v string) {
-	o.Visibility = &v
-}
-
-// GetTenantPermissions returns the TenantPermissions field value if set, zero value otherwise.
-func (o *UpdateDatastoresRequestDatastore) GetTenantPermissions() UpdateDatastoresRequestDatastoreTenantPermissions {
-	if o == nil || IsNil(o.TenantPermissions) {
-		var ret UpdateDatastoresRequestDatastoreTenantPermissions
-		return ret
-	}
-	return *o.TenantPermissions
-}
-
-// GetTenantPermissionsOk returns a tuple with the TenantPermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDatastoresRequestDatastore) GetTenantPermissionsOk() (*UpdateDatastoresRequestDatastoreTenantPermissions, bool) {
-	if o == nil || IsNil(o.TenantPermissions) {
-		return nil, false
-	}
-	return o.TenantPermissions, true
-}
-
-// SetTenantPermissions gets a reference to the given UpdateDatastoresRequestDatastoreTenantPermissions and assigns it to the TenantPermissions field.
-func (o *UpdateDatastoresRequestDatastore) SetTenantPermissions(v UpdateDatastoresRequestDatastoreTenantPermissions) {
-	o.TenantPermissions = &v
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *UpdateDatastoresRequestDatastore) GetResourcePermissions() UpdateDatastoresRequestDatastoreResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret UpdateDatastoresRequestDatastoreResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDatastoresRequestDatastore) GetResourcePermissionsOk() (*UpdateDatastoresRequestDatastoreResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// SetResourcePermissions gets a reference to the given UpdateDatastoresRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *UpdateDatastoresRequestDatastore) SetResourcePermissions(v UpdateDatastoresRequestDatastoreResourcePermissions) {
-	o.ResourcePermissions = &v
 }
 
 func (o UpdateDatastoresRequestDatastore) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type RestartInstance200Response struct {
 
 type _RestartInstance200Response RestartInstance200Response
 
-// NewRestartInstance200Response instantiates a new RestartInstance200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRestartInstance200Response() *RestartInstance200Response {
-	this := RestartInstance200Response{}
-	return &this
-}
-
 // NewRestartInstance200ResponseWithDefaults instantiates a new RestartInstance200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRestartInstance200ResponseWithDefaults() *RestartInstance200Response {
 	this := RestartInstance200Response{}
 	return &this
-}
-
-// GetResults returns the Results field value if set, zero value otherwise.
-func (o *RestartInstance200Response) GetResults() map[string]interface{} {
-	if o == nil || IsNil(o.Results) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Results
-}
-
-// GetResultsOk returns a tuple with the Results field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RestartInstance200Response) GetResultsOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Results) {
-		return map[string]interface{}{}, false
-	}
-	return o.Results, true
-}
-
-// SetResults gets a reference to the given map[string]interface{} and assigns it to the Results field.
-func (o *RestartInstance200Response) SetResults(v map[string]interface{}) {
-	o.Results = v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *RestartInstance200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RestartInstance200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *RestartInstance200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o RestartInstance200Response) MarshalJSON() ([]byte, error) {

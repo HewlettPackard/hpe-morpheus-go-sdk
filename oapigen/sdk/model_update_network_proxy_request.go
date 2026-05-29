@@ -26,44 +26,12 @@ type UpdateNetworkProxyRequest struct {
 
 type _UpdateNetworkProxyRequest UpdateNetworkProxyRequest
 
-// NewUpdateNetworkProxyRequest instantiates a new UpdateNetworkProxyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkProxyRequest() *UpdateNetworkProxyRequest {
-	this := UpdateNetworkProxyRequest{}
-	return &this
-}
-
 // NewUpdateNetworkProxyRequestWithDefaults instantiates a new UpdateNetworkProxyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateNetworkProxyRequestWithDefaults() *UpdateNetworkProxyRequest {
 	this := UpdateNetworkProxyRequest{}
 	return &this
-}
-
-// GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise.
-func (o *UpdateNetworkProxyRequest) GetNetworkProxy() UpdateNetworkProxyRequestNetworkProxy {
-	if o == nil || IsNil(o.NetworkProxy) {
-		var ret UpdateNetworkProxyRequestNetworkProxy
-		return ret
-	}
-	return *o.NetworkProxy
-}
-
-// GetNetworkProxyOk returns a tuple with the NetworkProxy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkProxyRequest) GetNetworkProxyOk() (*UpdateNetworkProxyRequestNetworkProxy, bool) {
-	if o == nil || IsNil(o.NetworkProxy) {
-		return nil, false
-	}
-	return o.NetworkProxy, true
-}
-
-// SetNetworkProxy gets a reference to the given UpdateNetworkProxyRequestNetworkProxy and assigns it to the NetworkProxy field.
-func (o *UpdateNetworkProxyRequest) SetNetworkProxy(v UpdateNetworkProxyRequestNetworkProxy) {
-	o.NetworkProxy = &v
 }
 
 func (o UpdateNetworkProxyRequest) MarshalJSON() ([]byte, error) {

@@ -28,90 +28,12 @@ type ListPreseedScripts200Response struct {
 
 type _ListPreseedScripts200Response ListPreseedScripts200Response
 
-// NewListPreseedScripts200Response instantiates a new ListPreseedScripts200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListPreseedScripts200Response() *ListPreseedScripts200Response {
-	this := ListPreseedScripts200Response{}
-	return &this
-}
-
 // NewListPreseedScripts200ResponseWithDefaults instantiates a new ListPreseedScripts200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListPreseedScripts200ResponseWithDefaults() *ListPreseedScripts200Response {
 	this := ListPreseedScripts200Response{}
 	return &this
-}
-
-// GetPreseedScripts returns the PreseedScripts field value if set, zero value otherwise.
-func (o *ListPreseedScripts200Response) GetPreseedScripts() []ListPreseedScripts200ResponseAllOfPreseedScriptsInner {
-	if o == nil || IsNil(o.PreseedScripts) {
-		var ret []ListPreseedScripts200ResponseAllOfPreseedScriptsInner
-		return ret
-	}
-	return o.PreseedScripts
-}
-
-// GetPreseedScriptsOk returns a tuple with the PreseedScripts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPreseedScripts200Response) GetPreseedScriptsOk() ([]ListPreseedScripts200ResponseAllOfPreseedScriptsInner, bool) {
-	if o == nil || IsNil(o.PreseedScripts) {
-		return nil, false
-	}
-	return o.PreseedScripts, true
-}
-
-// SetPreseedScripts gets a reference to the given []ListPreseedScripts200ResponseAllOfPreseedScriptsInner and assigns it to the PreseedScripts field.
-func (o *ListPreseedScripts200Response) SetPreseedScripts(v []ListPreseedScripts200ResponseAllOfPreseedScriptsInner) {
-	o.PreseedScripts = v
-}
-
-// GetPreseedScriptCount returns the PreseedScriptCount field value if set, zero value otherwise.
-func (o *ListPreseedScripts200Response) GetPreseedScriptCount() int64 {
-	if o == nil || IsNil(o.PreseedScriptCount) {
-		var ret int64
-		return ret
-	}
-	return *o.PreseedScriptCount
-}
-
-// GetPreseedScriptCountOk returns a tuple with the PreseedScriptCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPreseedScripts200Response) GetPreseedScriptCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.PreseedScriptCount) {
-		return nil, false
-	}
-	return o.PreseedScriptCount, true
-}
-
-// SetPreseedScriptCount gets a reference to the given int64 and assigns it to the PreseedScriptCount field.
-func (o *ListPreseedScripts200Response) SetPreseedScriptCount(v int64) {
-	o.PreseedScriptCount = &v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListPreseedScripts200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPreseedScripts200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListPreseedScripts200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListPreseedScripts200Response) MarshalJSON() ([]byte, error) {

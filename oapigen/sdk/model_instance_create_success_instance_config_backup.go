@@ -29,113 +29,12 @@ type InstanceCreateSuccessInstanceConfigBackup struct {
 
 type _InstanceCreateSuccessInstanceConfigBackup InstanceCreateSuccessInstanceConfigBackup
 
-// NewInstanceCreateSuccessInstanceConfigBackup instantiates a new InstanceCreateSuccessInstanceConfigBackup object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceCreateSuccessInstanceConfigBackup() *InstanceCreateSuccessInstanceConfigBackup {
-	this := InstanceCreateSuccessInstanceConfigBackup{}
-	return &this
-}
-
 // NewInstanceCreateSuccessInstanceConfigBackupWithDefaults instantiates a new InstanceCreateSuccessInstanceConfigBackup object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceCreateSuccessInstanceConfigBackupWithDefaults() *InstanceCreateSuccessInstanceConfigBackup {
 	this := InstanceCreateSuccessInstanceConfigBackup{}
 	return &this
-}
-
-// GetCreateBackup returns the CreateBackup field value if set, zero value otherwise.
-func (o *InstanceCreateSuccessInstanceConfigBackup) GetCreateBackup() bool {
-	if o == nil || IsNil(o.CreateBackup) {
-		var ret bool
-		return ret
-	}
-	return *o.CreateBackup
-}
-
-// GetCreateBackupOk returns a tuple with the CreateBackup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccessInstanceConfigBackup) GetCreateBackupOk() (*bool, bool) {
-	if o == nil || IsNil(o.CreateBackup) {
-		return nil, false
-	}
-	return o.CreateBackup, true
-}
-
-// SetCreateBackup gets a reference to the given bool and assigns it to the CreateBackup field.
-func (o *InstanceCreateSuccessInstanceConfigBackup) SetCreateBackup(v bool) {
-	o.CreateBackup = &v
-}
-
-// GetJobAction returns the JobAction field value if set, zero value otherwise.
-func (o *InstanceCreateSuccessInstanceConfigBackup) GetJobAction() string {
-	if o == nil || IsNil(o.JobAction) {
-		var ret string
-		return ret
-	}
-	return *o.JobAction
-}
-
-// GetJobActionOk returns a tuple with the JobAction field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccessInstanceConfigBackup) GetJobActionOk() (*string, bool) {
-	if o == nil || IsNil(o.JobAction) {
-		return nil, false
-	}
-	return o.JobAction, true
-}
-
-// SetJobAction gets a reference to the given string and assigns it to the JobAction field.
-func (o *InstanceCreateSuccessInstanceConfigBackup) SetJobAction(v string) {
-	o.JobAction = &v
-}
-
-// GetJobRetentionCount returns the JobRetentionCount field value if set, zero value otherwise.
-func (o *InstanceCreateSuccessInstanceConfigBackup) GetJobRetentionCount() string {
-	if o == nil || IsNil(o.JobRetentionCount) {
-		var ret string
-		return ret
-	}
-	return *o.JobRetentionCount
-}
-
-// GetJobRetentionCountOk returns a tuple with the JobRetentionCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccessInstanceConfigBackup) GetJobRetentionCountOk() (*string, bool) {
-	if o == nil || IsNil(o.JobRetentionCount) {
-		return nil, false
-	}
-	return o.JobRetentionCount, true
-}
-
-// SetJobRetentionCount gets a reference to the given string and assigns it to the JobRetentionCount field.
-func (o *InstanceCreateSuccessInstanceConfigBackup) SetJobRetentionCount(v string) {
-	o.JobRetentionCount = &v
-}
-
-// GetProviderBackupType returns the ProviderBackupType field value if set, zero value otherwise.
-func (o *InstanceCreateSuccessInstanceConfigBackup) GetProviderBackupType() int64 {
-	if o == nil || IsNil(o.ProviderBackupType) {
-		var ret int64
-		return ret
-	}
-	return *o.ProviderBackupType
-}
-
-// GetProviderBackupTypeOk returns a tuple with the ProviderBackupType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccessInstanceConfigBackup) GetProviderBackupTypeOk() (*int64, bool) {
-	if o == nil || IsNil(o.ProviderBackupType) {
-		return nil, false
-	}
-	return o.ProviderBackupType, true
-}
-
-// SetProviderBackupType gets a reference to the given int64 and assigns it to the ProviderBackupType field.
-func (o *InstanceCreateSuccessInstanceConfigBackup) SetProviderBackupType(v int64) {
-	o.ProviderBackupType = &v
 }
 
 func (o InstanceCreateSuccessInstanceConfigBackup) MarshalJSON() ([]byte, error) {

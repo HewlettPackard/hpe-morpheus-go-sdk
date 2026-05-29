@@ -26,44 +26,12 @@ type ListHostDevices200Response struct {
 
 type _ListHostDevices200Response ListHostDevices200Response
 
-// NewListHostDevices200Response instantiates a new ListHostDevices200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListHostDevices200Response() *ListHostDevices200Response {
-	this := ListHostDevices200Response{}
-	return &this
-}
-
 // NewListHostDevices200ResponseWithDefaults instantiates a new ListHostDevices200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListHostDevices200ResponseWithDefaults() *ListHostDevices200Response {
 	this := ListHostDevices200Response{}
 	return &this
-}
-
-// GetDevices returns the Devices field value if set, zero value otherwise.
-func (o *ListHostDevices200Response) GetDevices() []ListHostDevices200ResponseDevicesInner {
-	if o == nil || IsNil(o.Devices) {
-		var ret []ListHostDevices200ResponseDevicesInner
-		return ret
-	}
-	return o.Devices
-}
-
-// GetDevicesOk returns a tuple with the Devices field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListHostDevices200Response) GetDevicesOk() ([]ListHostDevices200ResponseDevicesInner, bool) {
-	if o == nil || IsNil(o.Devices) {
-		return nil, false
-	}
-	return o.Devices, true
-}
-
-// SetDevices gets a reference to the given []ListHostDevices200ResponseDevicesInner and assigns it to the Devices field.
-func (o *ListHostDevices200Response) SetDevices(v []ListHostDevices200ResponseDevicesInner) {
-	o.Devices = v
 }
 
 func (o ListHostDevices200Response) MarshalJSON() ([]byte, error) {

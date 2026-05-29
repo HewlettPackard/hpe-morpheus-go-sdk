@@ -32,18 +32,6 @@ type AddClusterWorkerRequestServerNetworkInterfacesInner struct {
 
 type _AddClusterWorkerRequestServerNetworkInterfacesInner AddClusterWorkerRequestServerNetworkInterfacesInner
 
-// NewAddClusterWorkerRequestServerNetworkInterfacesInner instantiates a new AddClusterWorkerRequestServerNetworkInterfacesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterWorkerRequestServerNetworkInterfacesInner(network AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork) *AddClusterWorkerRequestServerNetworkInterfacesInner {
-	this := AddClusterWorkerRequestServerNetworkInterfacesInner{}
-	this.Network = network
-	var ipMode string = ""
-	this.IpMode = &ipMode
-	return &this
-}
-
 // NewAddClusterWorkerRequestServerNetworkInterfacesInnerWithDefaults instantiates a new AddClusterWorkerRequestServerNetworkInterfacesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -52,99 +40,6 @@ func NewAddClusterWorkerRequestServerNetworkInterfacesInnerWithDefaults() *AddCl
 	var ipMode string = ""
 	this.IpMode = &ipMode
 	return &this
-}
-
-// GetNetwork returns the Network field value
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) GetNetwork() AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork {
-	if o == nil {
-		var ret AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork
-		return ret
-	}
-
-	return o.Network
-}
-
-// GetNetworkOk returns a tuple with the Network field value
-// and a boolean to check if the value has been set.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) GetNetworkOk() (*AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Network, true
-}
-
-// SetNetwork sets field value
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) SetNetwork(v AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork) {
-	o.Network = v
-}
-
-// GetNetworkInterfaceTypeId returns the NetworkInterfaceTypeId field value if set, zero value otherwise.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) GetNetworkInterfaceTypeId() int64 {
-	if o == nil || IsNil(o.NetworkInterfaceTypeId) {
-		var ret int64
-		return ret
-	}
-	return *o.NetworkInterfaceTypeId
-}
-
-// GetNetworkInterfaceTypeIdOk returns a tuple with the NetworkInterfaceTypeId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) GetNetworkInterfaceTypeIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.NetworkInterfaceTypeId) {
-		return nil, false
-	}
-	return o.NetworkInterfaceTypeId, true
-}
-
-// SetNetworkInterfaceTypeId gets a reference to the given int64 and assigns it to the NetworkInterfaceTypeId field.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) SetNetworkInterfaceTypeId(v int64) {
-	o.NetworkInterfaceTypeId = &v
-}
-
-// GetIpAddress returns the IpAddress field value if set, zero value otherwise.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) GetIpAddress() string {
-	if o == nil || IsNil(o.IpAddress) {
-		var ret string
-		return ret
-	}
-	return *o.IpAddress
-}
-
-// GetIpAddressOk returns a tuple with the IpAddress field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) GetIpAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.IpAddress) {
-		return nil, false
-	}
-	return o.IpAddress, true
-}
-
-// SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) SetIpAddress(v string) {
-	o.IpAddress = &v
-}
-
-// GetIpMode returns the IpMode field value if set, zero value otherwise.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) GetIpMode() string {
-	if o == nil || IsNil(o.IpMode) {
-		var ret string
-		return ret
-	}
-	return *o.IpMode
-}
-
-// GetIpModeOk returns a tuple with the IpMode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) GetIpModeOk() (*string, bool) {
-	if o == nil || IsNil(o.IpMode) {
-		return nil, false
-	}
-	return o.IpMode, true
-}
-
-// SetIpMode gets a reference to the given string and assigns it to the IpMode field.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) SetIpMode(v string) {
-	o.IpMode = &v
 }
 
 func (o AddClusterWorkerRequestServerNetworkInterfacesInner) MarshalJSON() ([]byte, error) {

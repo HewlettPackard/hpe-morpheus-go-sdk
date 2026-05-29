@@ -28,90 +28,12 @@ type HealthRabbitQueuesInner struct {
 
 type _HealthRabbitQueuesInner HealthRabbitQueuesInner
 
-// NewHealthRabbitQueuesInner instantiates a new HealthRabbitQueuesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewHealthRabbitQueuesInner() *HealthRabbitQueuesInner {
-	this := HealthRabbitQueuesInner{}
-	return &this
-}
-
 // NewHealthRabbitQueuesInnerWithDefaults instantiates a new HealthRabbitQueuesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewHealthRabbitQueuesInnerWithDefaults() *HealthRabbitQueuesInner {
 	this := HealthRabbitQueuesInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *HealthRabbitQueuesInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HealthRabbitQueuesInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *HealthRabbitQueuesInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetCount returns the Count field value if set, zero value otherwise.
-func (o *HealthRabbitQueuesInner) GetCount() int64 {
-	if o == nil || IsNil(o.Count) {
-		var ret int64
-		return ret
-	}
-	return *o.Count
-}
-
-// GetCountOk returns a tuple with the Count field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HealthRabbitQueuesInner) GetCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.Count) {
-		return nil, false
-	}
-	return o.Count, true
-}
-
-// SetCount gets a reference to the given int64 and assigns it to the Count field.
-func (o *HealthRabbitQueuesInner) SetCount(v int64) {
-	o.Count = &v
-}
-
-// GetStatus returns the Status field value if set, zero value otherwise.
-func (o *HealthRabbitQueuesInner) GetStatus() string {
-	if o == nil || IsNil(o.Status) {
-		var ret string
-		return ret
-	}
-	return *o.Status
-}
-
-// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HealthRabbitQueuesInner) GetStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.Status) {
-		return nil, false
-	}
-	return o.Status, true
-}
-
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *HealthRabbitQueuesInner) SetStatus(v string) {
-	o.Status = &v
 }
 
 func (o HealthRabbitQueuesInner) MarshalJSON() ([]byte, error) {

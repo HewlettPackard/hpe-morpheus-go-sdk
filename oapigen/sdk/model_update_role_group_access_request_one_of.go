@@ -29,71 +29,12 @@ type UpdateRoleGroupAccessRequestOneOf struct {
 
 type _UpdateRoleGroupAccessRequestOneOf UpdateRoleGroupAccessRequestOneOf
 
-// NewUpdateRoleGroupAccessRequestOneOf instantiates a new UpdateRoleGroupAccessRequestOneOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateRoleGroupAccessRequestOneOf(groupId int32, access string) *UpdateRoleGroupAccessRequestOneOf {
-	this := UpdateRoleGroupAccessRequestOneOf{}
-	this.GroupId = groupId
-	this.Access = access
-	return &this
-}
-
 // NewUpdateRoleGroupAccessRequestOneOfWithDefaults instantiates a new UpdateRoleGroupAccessRequestOneOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateRoleGroupAccessRequestOneOfWithDefaults() *UpdateRoleGroupAccessRequestOneOf {
 	this := UpdateRoleGroupAccessRequestOneOf{}
 	return &this
-}
-
-// GetGroupId returns the GroupId field value
-func (o *UpdateRoleGroupAccessRequestOneOf) GetGroupId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.GroupId
-}
-
-// GetGroupIdOk returns a tuple with the GroupId field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleGroupAccessRequestOneOf) GetGroupIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.GroupId, true
-}
-
-// SetGroupId sets field value
-func (o *UpdateRoleGroupAccessRequestOneOf) SetGroupId(v int32) {
-	o.GroupId = v
-}
-
-// GetAccess returns the Access field value
-func (o *UpdateRoleGroupAccessRequestOneOf) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleGroupAccessRequestOneOf) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *UpdateRoleGroupAccessRequestOneOf) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o UpdateRoleGroupAccessRequestOneOf) MarshalJSON() ([]byte, error) {

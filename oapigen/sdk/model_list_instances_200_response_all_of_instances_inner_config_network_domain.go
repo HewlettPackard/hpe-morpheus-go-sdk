@@ -26,45 +26,12 @@ type ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain struct {
 
 type _ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain
 
-// NewListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain instantiates a new ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain() *ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain {
-	this := ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain{}
-	return &this
-}
-
 // NewListInstances200ResponseAllOfInstancesInnerConfigNetworkDomainWithDefaults instantiates a new ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListInstances200ResponseAllOfInstancesInnerConfigNetworkDomainWithDefaults() *ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain {
 	this := ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain) GetId() int64 {
-	if o == nil || IsNil(o.Id.Get()) {
-		var ret int64
-		return ret
-	}
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain) SetId(v int64) {
-	o.Id.Set(&v)
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain) MarshalJSON() ([]byte, error) {

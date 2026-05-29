@@ -29,113 +29,12 @@ type GetGuidances200ResponseDiscoveryAnyOf1Config struct {
 
 type _GetGuidances200ResponseDiscoveryAnyOf1Config GetGuidances200ResponseDiscoveryAnyOf1Config
 
-// NewGetGuidances200ResponseDiscoveryAnyOf1Config instantiates a new GetGuidances200ResponseDiscoveryAnyOf1Config object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetGuidances200ResponseDiscoveryAnyOf1Config() *GetGuidances200ResponseDiscoveryAnyOf1Config {
-	this := GetGuidances200ResponseDiscoveryAnyOf1Config{}
-	return &this
-}
-
 // NewGetGuidances200ResponseDiscoveryAnyOf1ConfigWithDefaults instantiates a new GetGuidances200ResponseDiscoveryAnyOf1Config object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetGuidances200ResponseDiscoveryAnyOf1ConfigWithDefaults() *GetGuidances200ResponseDiscoveryAnyOf1Config {
 	this := GetGuidances200ResponseDiscoveryAnyOf1Config{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetDetailList returns the DetailList field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) GetDetailList() []GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner {
-	if o == nil || IsNil(o.DetailList) {
-		var ret []GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner
-		return ret
-	}
-	return o.DetailList
-}
-
-// GetDetailListOk returns a tuple with the DetailList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) GetDetailListOk() ([]GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner, bool) {
-	if o == nil || IsNil(o.DetailList) {
-		return nil, false
-	}
-	return o.DetailList, true
-}
-
-// SetDetailList gets a reference to the given []GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner and assigns it to the DetailList field.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) SetDetailList(v []GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) {
-	o.DetailList = v
-}
-
-// GetServices returns the Services field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) GetServices() GetGuidances200ResponseDiscoveryAnyOf1ConfigServices {
-	if o == nil || IsNil(o.Services) {
-		var ret GetGuidances200ResponseDiscoveryAnyOf1ConfigServices
-		return ret
-	}
-	return *o.Services
-}
-
-// GetServicesOk returns a tuple with the Services field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) GetServicesOk() (*GetGuidances200ResponseDiscoveryAnyOf1ConfigServices, bool) {
-	if o == nil || IsNil(o.Services) {
-		return nil, false
-	}
-	return o.Services, true
-}
-
-// SetServices gets a reference to the given GetGuidances200ResponseDiscoveryAnyOf1ConfigServices and assigns it to the Services field.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) SetServices(v GetGuidances200ResponseDiscoveryAnyOf1ConfigServices) {
-	o.Services = &v
-}
-
-// GetSummary returns the Summary field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) GetSummary() GetGuidances200ResponseDiscoveryAnyOf1ConfigSummary {
-	if o == nil || IsNil(o.Summary) {
-		var ret GetGuidances200ResponseDiscoveryAnyOf1ConfigSummary
-		return ret
-	}
-	return *o.Summary
-}
-
-// GetSummaryOk returns a tuple with the Summary field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) GetSummaryOk() (*GetGuidances200ResponseDiscoveryAnyOf1ConfigSummary, bool) {
-	if o == nil || IsNil(o.Summary) {
-		return nil, false
-	}
-	return o.Summary, true
-}
-
-// SetSummary gets a reference to the given GetGuidances200ResponseDiscoveryAnyOf1ConfigSummary and assigns it to the Summary field.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) SetSummary(v GetGuidances200ResponseDiscoveryAnyOf1ConfigSummary) {
-	o.Summary = &v
 }
 
 func (o GetGuidances200ResponseDiscoveryAnyOf1Config) MarshalJSON() ([]byte, error) {

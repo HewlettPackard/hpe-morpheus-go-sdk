@@ -28,90 +28,12 @@ type AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4 struct {
 
 type _AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4 AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4
 
-// NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4 instantiates a new AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4() *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4 {
-	this := AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4{}
-	return &this
-}
-
 // NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4WithDefaults instantiates a new AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4WithDefaults() *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4 {
 	this := AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4{}
 	return &this
-}
-
-// GetServerNamingType returns the ServerNamingType field value if set, zero value otherwise.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4) GetServerNamingType() string {
-	if o == nil || IsNil(o.ServerNamingType) {
-		var ret string
-		return ret
-	}
-	return *o.ServerNamingType
-}
-
-// GetServerNamingTypeOk returns a tuple with the ServerNamingType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4) GetServerNamingTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ServerNamingType) {
-		return nil, false
-	}
-	return o.ServerNamingType, true
-}
-
-// SetServerNamingType gets a reference to the given string and assigns it to the ServerNamingType field.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4) SetServerNamingType(v string) {
-	o.ServerNamingType = &v
-}
-
-// GetServerNamingPattern returns the ServerNamingPattern field value if set, zero value otherwise.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4) GetServerNamingPattern() string {
-	if o == nil || IsNil(o.ServerNamingPattern) {
-		var ret string
-		return ret
-	}
-	return *o.ServerNamingPattern
-}
-
-// GetServerNamingPatternOk returns a tuple with the ServerNamingPattern field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4) GetServerNamingPatternOk() (*string, bool) {
-	if o == nil || IsNil(o.ServerNamingPattern) {
-		return nil, false
-	}
-	return o.ServerNamingPattern, true
-}
-
-// SetServerNamingPattern gets a reference to the given string and assigns it to the ServerNamingPattern field.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4) SetServerNamingPattern(v string) {
-	o.ServerNamingPattern = &v
-}
-
-// GetServerNamingConflict returns the ServerNamingConflict field value if set, zero value otherwise.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4) GetServerNamingConflict() bool {
-	if o == nil || IsNil(o.ServerNamingConflict) {
-		var ret bool
-		return ret
-	}
-	return *o.ServerNamingConflict
-}
-
-// GetServerNamingConflictOk returns a tuple with the ServerNamingConflict field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4) GetServerNamingConflictOk() (*bool, bool) {
-	if o == nil || IsNil(o.ServerNamingConflict) {
-		return nil, false
-	}
-	return o.ServerNamingConflict, true
-}
-
-// SetServerNamingConflict gets a reference to the given bool and assigns it to the ServerNamingConflict field.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4) SetServerNamingConflict(v bool) {
-	o.ServerNamingConflict = &v
 }
 
 func (o AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf4) MarshalJSON() ([]byte, error) {

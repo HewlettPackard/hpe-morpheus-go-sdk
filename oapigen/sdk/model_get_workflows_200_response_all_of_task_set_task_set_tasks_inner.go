@@ -29,113 +29,12 @@ type GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner struct {
 
 type _GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner
 
-// NewGetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner instantiates a new GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner() *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner {
-	this := GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner{}
-	return &this
-}
-
 // NewGetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerWithDefaults instantiates a new GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerWithDefaults() *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner {
 	this := GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetTaskPhase returns the TaskPhase field value if set, zero value otherwise.
-func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) GetTaskPhase() string {
-	if o == nil || IsNil(o.TaskPhase) {
-		var ret string
-		return ret
-	}
-	return *o.TaskPhase
-}
-
-// GetTaskPhaseOk returns a tuple with the TaskPhase field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) GetTaskPhaseOk() (*string, bool) {
-	if o == nil || IsNil(o.TaskPhase) {
-		return nil, false
-	}
-	return o.TaskPhase, true
-}
-
-// SetTaskPhase gets a reference to the given string and assigns it to the TaskPhase field.
-func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) SetTaskPhase(v string) {
-	o.TaskPhase = &v
-}
-
-// GetTaskOrder returns the TaskOrder field value if set, zero value otherwise.
-func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) GetTaskOrder() int64 {
-	if o == nil || IsNil(o.TaskOrder) {
-		var ret int64
-		return ret
-	}
-	return *o.TaskOrder
-}
-
-// GetTaskOrderOk returns a tuple with the TaskOrder field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) GetTaskOrderOk() (*int64, bool) {
-	if o == nil || IsNil(o.TaskOrder) {
-		return nil, false
-	}
-	return o.TaskOrder, true
-}
-
-// SetTaskOrder gets a reference to the given int64 and assigns it to the TaskOrder field.
-func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) SetTaskOrder(v int64) {
-	o.TaskOrder = &v
-}
-
-// GetTask returns the Task field value if set, zero value otherwise.
-func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) GetTask() GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask {
-	if o == nil || IsNil(o.Task) {
-		var ret GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask
-		return ret
-	}
-	return *o.Task
-}
-
-// GetTaskOk returns a tuple with the Task field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) GetTaskOk() (*GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask, bool) {
-	if o == nil || IsNil(o.Task) {
-		return nil, false
-	}
-	return o.Task, true
-}
-
-// SetTask gets a reference to the given GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask and assigns it to the Task field.
-func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) SetTask(v GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) {
-	o.Task = &v
 }
 
 func (o GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) MarshalJSON() ([]byte, error) {

@@ -28,90 +28,12 @@ type ClusterCreateServerConfigAnyOfOneOf2Controller struct {
 
 type _ClusterCreateServerConfigAnyOfOneOf2Controller ClusterCreateServerConfigAnyOfOneOf2Controller
 
-// NewClusterCreateServerConfigAnyOfOneOf2Controller instantiates a new ClusterCreateServerConfigAnyOfOneOf2Controller object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterCreateServerConfigAnyOfOneOf2Controller() *ClusterCreateServerConfigAnyOfOneOf2Controller {
-	this := ClusterCreateServerConfigAnyOfOneOf2Controller{}
-	return &this
-}
-
 // NewClusterCreateServerConfigAnyOfOneOf2ControllerWithDefaults instantiates a new ClusterCreateServerConfigAnyOfOneOf2Controller object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClusterCreateServerConfigAnyOfOneOf2ControllerWithDefaults() *ClusterCreateServerConfigAnyOfOneOf2Controller {
 	this := ClusterCreateServerConfigAnyOfOneOf2Controller{}
 	return &this
-}
-
-// GetRole returns the Role field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Controller) GetRole() ClusterCreateServerConfigAnyOfOneOf2ControllerRole {
-	if o == nil || IsNil(o.Role) {
-		var ret ClusterCreateServerConfigAnyOfOneOf2ControllerRole
-		return ret
-	}
-	return *o.Role
-}
-
-// GetRoleOk returns a tuple with the Role field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Controller) GetRoleOk() (*ClusterCreateServerConfigAnyOfOneOf2ControllerRole, bool) {
-	if o == nil || IsNil(o.Role) {
-		return nil, false
-	}
-	return o.Role, true
-}
-
-// SetRole gets a reference to the given ClusterCreateServerConfigAnyOfOneOf2ControllerRole and assigns it to the Role field.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Controller) SetRole(v ClusterCreateServerConfigAnyOfOneOf2ControllerRole) {
-	o.Role = &v
-}
-
-// GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Controller) GetNetwork() ClusterCreateServerConfigAnyOfOneOf2ControllerNetwork {
-	if o == nil || IsNil(o.Network) {
-		var ret ClusterCreateServerConfigAnyOfOneOf2ControllerNetwork
-		return ret
-	}
-	return *o.Network
-}
-
-// GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Controller) GetNetworkOk() (*ClusterCreateServerConfigAnyOfOneOf2ControllerNetwork, bool) {
-	if o == nil || IsNil(o.Network) {
-		return nil, false
-	}
-	return o.Network, true
-}
-
-// SetNetwork gets a reference to the given ClusterCreateServerConfigAnyOfOneOf2ControllerNetwork and assigns it to the Network field.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Controller) SetNetwork(v ClusterCreateServerConfigAnyOfOneOf2ControllerNetwork) {
-	o.Network = &v
-}
-
-// GetSecurityGroup returns the SecurityGroup field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Controller) GetSecurityGroup() ClusterCreateServerConfigAnyOfOneOf2ControllerSecurityGroup {
-	if o == nil || IsNil(o.SecurityGroup) {
-		var ret ClusterCreateServerConfigAnyOfOneOf2ControllerSecurityGroup
-		return ret
-	}
-	return *o.SecurityGroup
-}
-
-// GetSecurityGroupOk returns a tuple with the SecurityGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Controller) GetSecurityGroupOk() (*ClusterCreateServerConfigAnyOfOneOf2ControllerSecurityGroup, bool) {
-	if o == nil || IsNil(o.SecurityGroup) {
-		return nil, false
-	}
-	return o.SecurityGroup, true
-}
-
-// SetSecurityGroup gets a reference to the given ClusterCreateServerConfigAnyOfOneOf2ControllerSecurityGroup and assigns it to the SecurityGroup field.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Controller) SetSecurityGroup(v ClusterCreateServerConfigAnyOfOneOf2ControllerSecurityGroup) {
-	o.SecurityGroup = &v
 }
 
 func (o ClusterCreateServerConfigAnyOfOneOf2Controller) MarshalJSON() ([]byte, error) {

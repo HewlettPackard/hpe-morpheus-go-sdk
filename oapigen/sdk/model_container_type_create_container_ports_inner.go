@@ -28,94 +28,12 @@ type ContainerTypeCreateContainerPortsInner struct {
 
 type _ContainerTypeCreateContainerPortsInner ContainerTypeCreateContainerPortsInner
 
-// NewContainerTypeCreateContainerPortsInner instantiates a new ContainerTypeCreateContainerPortsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewContainerTypeCreateContainerPortsInner(name string, port int64) *ContainerTypeCreateContainerPortsInner {
-	this := ContainerTypeCreateContainerPortsInner{}
-	this.Name = name
-	this.Port = port
-	return &this
-}
-
 // NewContainerTypeCreateContainerPortsInnerWithDefaults instantiates a new ContainerTypeCreateContainerPortsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewContainerTypeCreateContainerPortsInnerWithDefaults() *ContainerTypeCreateContainerPortsInner {
 	this := ContainerTypeCreateContainerPortsInner{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *ContainerTypeCreateContainerPortsInner) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *ContainerTypeCreateContainerPortsInner) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *ContainerTypeCreateContainerPortsInner) SetName(v string) {
-	o.Name = v
-}
-
-// GetPort returns the Port field value
-func (o *ContainerTypeCreateContainerPortsInner) GetPort() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Port
-}
-
-// GetPortOk returns a tuple with the Port field value
-// and a boolean to check if the value has been set.
-func (o *ContainerTypeCreateContainerPortsInner) GetPortOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Port, true
-}
-
-// SetPort sets field value
-func (o *ContainerTypeCreateContainerPortsInner) SetPort(v int64) {
-	o.Port = v
-}
-
-// GetLoadBalanceProtocol returns the LoadBalanceProtocol field value if set, zero value otherwise.
-func (o *ContainerTypeCreateContainerPortsInner) GetLoadBalanceProtocol() string {
-	if o == nil || IsNil(o.LoadBalanceProtocol) {
-		var ret string
-		return ret
-	}
-	return *o.LoadBalanceProtocol
-}
-
-// GetLoadBalanceProtocolOk returns a tuple with the LoadBalanceProtocol field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ContainerTypeCreateContainerPortsInner) GetLoadBalanceProtocolOk() (*string, bool) {
-	if o == nil || IsNil(o.LoadBalanceProtocol) {
-		return nil, false
-	}
-	return o.LoadBalanceProtocol, true
-}
-
-// SetLoadBalanceProtocol gets a reference to the given string and assigns it to the LoadBalanceProtocol field.
-func (o *ContainerTypeCreateContainerPortsInner) SetLoadBalanceProtocol(v string) {
-	o.LoadBalanceProtocol = &v
 }
 
 func (o ContainerTypeCreateContainerPortsInner) MarshalJSON() ([]byte, error) {

@@ -29,114 +29,12 @@ type AddCatalogOrder200ResponseAllOfOrder struct {
 
 type _AddCatalogOrder200ResponseAllOfOrder AddCatalogOrder200ResponseAllOfOrder
 
-// NewAddCatalogOrder200ResponseAllOfOrder instantiates a new AddCatalogOrder200ResponseAllOfOrder object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCatalogOrder200ResponseAllOfOrder() *AddCatalogOrder200ResponseAllOfOrder {
-	this := AddCatalogOrder200ResponseAllOfOrder{}
-	return &this
-}
-
 // NewAddCatalogOrder200ResponseAllOfOrderWithDefaults instantiates a new AddCatalogOrder200ResponseAllOfOrder object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddCatalogOrder200ResponseAllOfOrderWithDefaults() *AddCatalogOrder200ResponseAllOfOrder {
 	this := AddCatalogOrder200ResponseAllOfOrder{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddCatalogOrder200ResponseAllOfOrder) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrder) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddCatalogOrder200ResponseAllOfOrder) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddCatalogOrder200ResponseAllOfOrder) GetName() string {
-	if o == nil || IsNil(o.Name.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Name.Get()
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddCatalogOrder200ResponseAllOfOrder) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Name.Get(), o.Name.IsSet()
-}
-
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
-func (o *AddCatalogOrder200ResponseAllOfOrder) SetName(v string) {
-	o.Name.Set(&v)
-}
-
-// GetItems returns the Items field value if set, zero value otherwise.
-func (o *AddCatalogOrder200ResponseAllOfOrder) GetItems() []AddCatalogOrder200ResponseAllOfOrderItemsInner {
-	if o == nil || IsNil(o.Items) {
-		var ret []AddCatalogOrder200ResponseAllOfOrderItemsInner
-		return ret
-	}
-	return o.Items
-}
-
-// GetItemsOk returns a tuple with the Items field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrder) GetItemsOk() ([]AddCatalogOrder200ResponseAllOfOrderItemsInner, bool) {
-	if o == nil || IsNil(o.Items) {
-		return nil, false
-	}
-	return o.Items, true
-}
-
-// SetItems gets a reference to the given []AddCatalogOrder200ResponseAllOfOrderItemsInner and assigns it to the Items field.
-func (o *AddCatalogOrder200ResponseAllOfOrder) SetItems(v []AddCatalogOrder200ResponseAllOfOrderItemsInner) {
-	o.Items = v
-}
-
-// GetStats returns the Stats field value if set, zero value otherwise.
-func (o *AddCatalogOrder200ResponseAllOfOrder) GetStats() AddCatalogOrder200ResponseAllOfOrderStats {
-	if o == nil || IsNil(o.Stats) {
-		var ret AddCatalogOrder200ResponseAllOfOrderStats
-		return ret
-	}
-	return *o.Stats
-}
-
-// GetStatsOk returns a tuple with the Stats field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrder) GetStatsOk() (*AddCatalogOrder200ResponseAllOfOrderStats, bool) {
-	if o == nil || IsNil(o.Stats) {
-		return nil, false
-	}
-	return o.Stats, true
-}
-
-// SetStats gets a reference to the given AddCatalogOrder200ResponseAllOfOrderStats and assigns it to the Stats field.
-func (o *AddCatalogOrder200ResponseAllOfOrder) SetStats(v AddCatalogOrder200ResponseAllOfOrderStats) {
-	o.Stats = &v
 }
 
 func (o AddCatalogOrder200ResponseAllOfOrder) MarshalJSON() ([]byte, error) {

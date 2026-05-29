@@ -27,67 +27,12 @@ type UpdateIntegrations200Response struct {
 
 type _UpdateIntegrations200Response UpdateIntegrations200Response
 
-// NewUpdateIntegrations200Response instantiates a new UpdateIntegrations200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIntegrations200Response() *UpdateIntegrations200Response {
-	this := UpdateIntegrations200Response{}
-	return &this
-}
-
 // NewUpdateIntegrations200ResponseWithDefaults instantiates a new UpdateIntegrations200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateIntegrations200ResponseWithDefaults() *UpdateIntegrations200Response {
 	this := UpdateIntegrations200Response{}
 	return &this
-}
-
-// GetIntegration returns the Integration field value if set, zero value otherwise.
-func (o *UpdateIntegrations200Response) GetIntegration() GetIntegrations200ResponseAllOfIntegration {
-	if o == nil || IsNil(o.Integration) {
-		var ret GetIntegrations200ResponseAllOfIntegration
-		return ret
-	}
-	return *o.Integration
-}
-
-// GetIntegrationOk returns a tuple with the Integration field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIntegrations200Response) GetIntegrationOk() (*GetIntegrations200ResponseAllOfIntegration, bool) {
-	if o == nil || IsNil(o.Integration) {
-		return nil, false
-	}
-	return o.Integration, true
-}
-
-// SetIntegration gets a reference to the given GetIntegrations200ResponseAllOfIntegration and assigns it to the Integration field.
-func (o *UpdateIntegrations200Response) SetIntegration(v GetIntegrations200ResponseAllOfIntegration) {
-	o.Integration = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateIntegrations200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIntegrations200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateIntegrations200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateIntegrations200Response) MarshalJSON() ([]byte, error) {

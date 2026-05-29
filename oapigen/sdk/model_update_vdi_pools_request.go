@@ -26,46 +26,12 @@ type UpdateVDIPoolsRequest struct {
 
 type _UpdateVDIPoolsRequest UpdateVDIPoolsRequest
 
-// NewUpdateVDIPoolsRequest instantiates a new UpdateVDIPoolsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateVDIPoolsRequest(vdiPool UpdateVDIPoolsRequestVdiPool) *UpdateVDIPoolsRequest {
-	this := UpdateVDIPoolsRequest{}
-	this.VdiPool = vdiPool
-	return &this
-}
-
 // NewUpdateVDIPoolsRequestWithDefaults instantiates a new UpdateVDIPoolsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateVDIPoolsRequestWithDefaults() *UpdateVDIPoolsRequest {
 	this := UpdateVDIPoolsRequest{}
 	return &this
-}
-
-// GetVdiPool returns the VdiPool field value
-func (o *UpdateVDIPoolsRequest) GetVdiPool() UpdateVDIPoolsRequestVdiPool {
-	if o == nil {
-		var ret UpdateVDIPoolsRequestVdiPool
-		return ret
-	}
-
-	return o.VdiPool
-}
-
-// GetVdiPoolOk returns a tuple with the VdiPool field value
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIPoolsRequest) GetVdiPoolOk() (*UpdateVDIPoolsRequestVdiPool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.VdiPool, true
-}
-
-// SetVdiPool sets field value
-func (o *UpdateVDIPoolsRequest) SetVdiPool(v UpdateVDIPoolsRequestVdiPool) {
-	o.VdiPool = v
 }
 
 func (o UpdateVDIPoolsRequest) MarshalJSON() ([]byte, error) {

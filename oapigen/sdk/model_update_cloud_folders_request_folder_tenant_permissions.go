@@ -31,90 +31,12 @@ type UpdateCloudFoldersRequestFolderTenantPermissions struct {
 
 type _UpdateCloudFoldersRequestFolderTenantPermissions UpdateCloudFoldersRequestFolderTenantPermissions
 
-// NewUpdateCloudFoldersRequestFolderTenantPermissions instantiates a new UpdateCloudFoldersRequestFolderTenantPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCloudFoldersRequestFolderTenantPermissions() *UpdateCloudFoldersRequestFolderTenantPermissions {
-	this := UpdateCloudFoldersRequestFolderTenantPermissions{}
-	return &this
-}
-
 // NewUpdateCloudFoldersRequestFolderTenantPermissionsWithDefaults instantiates a new UpdateCloudFoldersRequestFolderTenantPermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateCloudFoldersRequestFolderTenantPermissionsWithDefaults() *UpdateCloudFoldersRequestFolderTenantPermissions {
 	this := UpdateCloudFoldersRequestFolderTenantPermissions{}
 	return &this
-}
-
-// GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *UpdateCloudFoldersRequestFolderTenantPermissions) GetAccounts() []int64 {
-	if o == nil || IsNil(o.Accounts) {
-		var ret []int64
-		return ret
-	}
-	return o.Accounts
-}
-
-// GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudFoldersRequestFolderTenantPermissions) GetAccountsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.Accounts) {
-		return nil, false
-	}
-	return o.Accounts, true
-}
-
-// SetAccounts gets a reference to the given []int64 and assigns it to the Accounts field.
-func (o *UpdateCloudFoldersRequestFolderTenantPermissions) SetAccounts(v []int64) {
-	o.Accounts = v
-}
-
-// GetDefaultTarget returns the DefaultTarget field value if set, zero value otherwise.
-func (o *UpdateCloudFoldersRequestFolderTenantPermissions) GetDefaultTarget() []int64 {
-	if o == nil || IsNil(o.DefaultTarget) {
-		var ret []int64
-		return ret
-	}
-	return o.DefaultTarget
-}
-
-// GetDefaultTargetOk returns a tuple with the DefaultTarget field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudFoldersRequestFolderTenantPermissions) GetDefaultTargetOk() ([]int64, bool) {
-	if o == nil || IsNil(o.DefaultTarget) {
-		return nil, false
-	}
-	return o.DefaultTarget, true
-}
-
-// SetDefaultTarget gets a reference to the given []int64 and assigns it to the DefaultTarget field.
-func (o *UpdateCloudFoldersRequestFolderTenantPermissions) SetDefaultTarget(v []int64) {
-	o.DefaultTarget = v
-}
-
-// GetDefaultStore returns the DefaultStore field value if set, zero value otherwise.
-func (o *UpdateCloudFoldersRequestFolderTenantPermissions) GetDefaultStore() []int64 {
-	if o == nil || IsNil(o.DefaultStore) {
-		var ret []int64
-		return ret
-	}
-	return o.DefaultStore
-}
-
-// GetDefaultStoreOk returns a tuple with the DefaultStore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudFoldersRequestFolderTenantPermissions) GetDefaultStoreOk() ([]int64, bool) {
-	if o == nil || IsNil(o.DefaultStore) {
-		return nil, false
-	}
-	return o.DefaultStore, true
-}
-
-// SetDefaultStore gets a reference to the given []int64 and assigns it to the DefaultStore field.
-func (o *UpdateCloudFoldersRequestFolderTenantPermissions) SetDefaultStore(v []int64) {
-	o.DefaultStore = v
 }
 
 func (o UpdateCloudFoldersRequestFolderTenantPermissions) MarshalJSON() ([]byte, error) {

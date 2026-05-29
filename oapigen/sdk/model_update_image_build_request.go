@@ -26,44 +26,12 @@ type UpdateImageBuildRequest struct {
 
 type _UpdateImageBuildRequest UpdateImageBuildRequest
 
-// NewUpdateImageBuildRequest instantiates a new UpdateImageBuildRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateImageBuildRequest() *UpdateImageBuildRequest {
-	this := UpdateImageBuildRequest{}
-	return &this
-}
-
 // NewUpdateImageBuildRequestWithDefaults instantiates a new UpdateImageBuildRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateImageBuildRequestWithDefaults() *UpdateImageBuildRequest {
 	this := UpdateImageBuildRequest{}
 	return &this
-}
-
-// GetImageBuild returns the ImageBuild field value if set, zero value otherwise.
-func (o *UpdateImageBuildRequest) GetImageBuild() UpdateImageBuildRequestImageBuild {
-	if o == nil || IsNil(o.ImageBuild) {
-		var ret UpdateImageBuildRequestImageBuild
-		return ret
-	}
-	return *o.ImageBuild
-}
-
-// GetImageBuildOk returns a tuple with the ImageBuild field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateImageBuildRequest) GetImageBuildOk() (*UpdateImageBuildRequestImageBuild, bool) {
-	if o == nil || IsNil(o.ImageBuild) {
-		return nil, false
-	}
-	return o.ImageBuild, true
-}
-
-// SetImageBuild gets a reference to the given UpdateImageBuildRequestImageBuild and assigns it to the ImageBuild field.
-func (o *UpdateImageBuildRequest) SetImageBuild(v UpdateImageBuildRequestImageBuild) {
-	o.ImageBuild = &v
 }
 
 func (o UpdateImageBuildRequest) MarshalJSON() ([]byte, error) {

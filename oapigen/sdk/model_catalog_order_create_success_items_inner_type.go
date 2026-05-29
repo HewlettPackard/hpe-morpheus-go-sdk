@@ -28,90 +28,12 @@ type CatalogOrderCreateSuccessItemsInnerType struct {
 
 type _CatalogOrderCreateSuccessItemsInnerType CatalogOrderCreateSuccessItemsInnerType
 
-// NewCatalogOrderCreateSuccessItemsInnerType instantiates a new CatalogOrderCreateSuccessItemsInnerType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCatalogOrderCreateSuccessItemsInnerType() *CatalogOrderCreateSuccessItemsInnerType {
-	this := CatalogOrderCreateSuccessItemsInnerType{}
-	return &this
-}
-
 // NewCatalogOrderCreateSuccessItemsInnerTypeWithDefaults instantiates a new CatalogOrderCreateSuccessItemsInnerType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCatalogOrderCreateSuccessItemsInnerTypeWithDefaults() *CatalogOrderCreateSuccessItemsInnerType {
 	this := CatalogOrderCreateSuccessItemsInnerType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *CatalogOrderCreateSuccessItemsInnerType) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogOrderCreateSuccessItemsInnerType) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *CatalogOrderCreateSuccessItemsInnerType) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *CatalogOrderCreateSuccessItemsInnerType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogOrderCreateSuccessItemsInnerType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *CatalogOrderCreateSuccessItemsInnerType) SetName(v string) {
-	o.Name = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *CatalogOrderCreateSuccessItemsInnerType) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogOrderCreateSuccessItemsInnerType) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *CatalogOrderCreateSuccessItemsInnerType) SetType(v string) {
-	o.Type = &v
 }
 
 func (o CatalogOrderCreateSuccessItemsInnerType) MarshalJSON() ([]byte, error) {

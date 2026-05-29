@@ -26,44 +26,12 @@ type AddOptionTypeRequest struct {
 
 type _AddOptionTypeRequest AddOptionTypeRequest
 
-// NewAddOptionTypeRequest instantiates a new AddOptionTypeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddOptionTypeRequest() *AddOptionTypeRequest {
-	this := AddOptionTypeRequest{}
-	return &this
-}
-
 // NewAddOptionTypeRequestWithDefaults instantiates a new AddOptionTypeRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddOptionTypeRequestWithDefaults() *AddOptionTypeRequest {
 	this := AddOptionTypeRequest{}
 	return &this
-}
-
-// GetOptionType returns the OptionType field value if set, zero value otherwise.
-func (o *AddOptionTypeRequest) GetOptionType() AddOptionTypeRequestOptionType {
-	if o == nil || IsNil(o.OptionType) {
-		var ret AddOptionTypeRequestOptionType
-		return ret
-	}
-	return *o.OptionType
-}
-
-// GetOptionTypeOk returns a tuple with the OptionType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddOptionTypeRequest) GetOptionTypeOk() (*AddOptionTypeRequestOptionType, bool) {
-	if o == nil || IsNil(o.OptionType) {
-		return nil, false
-	}
-	return o.OptionType, true
-}
-
-// SetOptionType gets a reference to the given AddOptionTypeRequestOptionType and assigns it to the OptionType field.
-func (o *AddOptionTypeRequest) SetOptionType(v AddOptionTypeRequestOptionType) {
-	o.OptionType = &v
 }
 
 func (o AddOptionTypeRequest) MarshalJSON() ([]byte, error) {

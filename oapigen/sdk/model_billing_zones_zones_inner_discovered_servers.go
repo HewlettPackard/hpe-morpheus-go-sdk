@@ -29,113 +29,12 @@ type BillingZonesZonesInnerDiscoveredServers struct {
 
 type _BillingZonesZonesInnerDiscoveredServers BillingZonesZonesInnerDiscoveredServers
 
-// NewBillingZonesZonesInnerDiscoveredServers instantiates a new BillingZonesZonesInnerDiscoveredServers object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBillingZonesZonesInnerDiscoveredServers() *BillingZonesZonesInnerDiscoveredServers {
-	this := BillingZonesZonesInnerDiscoveredServers{}
-	return &this
-}
-
 // NewBillingZonesZonesInnerDiscoveredServersWithDefaults instantiates a new BillingZonesZonesInnerDiscoveredServers object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBillingZonesZonesInnerDiscoveredServersWithDefaults() *BillingZonesZonesInnerDiscoveredServers {
 	this := BillingZonesZonesInnerDiscoveredServers{}
 	return &this
-}
-
-// GetPrice returns the Price field value if set, zero value otherwise.
-func (o *BillingZonesZonesInnerDiscoveredServers) GetPrice() float32 {
-	if o == nil || IsNil(o.Price) {
-		var ret float32
-		return ret
-	}
-	return *o.Price
-}
-
-// GetPriceOk returns a tuple with the Price field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingZonesZonesInnerDiscoveredServers) GetPriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.Price) {
-		return nil, false
-	}
-	return o.Price, true
-}
-
-// SetPrice gets a reference to the given float32 and assigns it to the Price field.
-func (o *BillingZonesZonesInnerDiscoveredServers) SetPrice(v float32) {
-	o.Price = &v
-}
-
-// GetCost returns the Cost field value if set, zero value otherwise.
-func (o *BillingZonesZonesInnerDiscoveredServers) GetCost() float32 {
-	if o == nil || IsNil(o.Cost) {
-		var ret float32
-		return ret
-	}
-	return *o.Cost
-}
-
-// GetCostOk returns a tuple with the Cost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingZonesZonesInnerDiscoveredServers) GetCostOk() (*float32, bool) {
-	if o == nil || IsNil(o.Cost) {
-		return nil, false
-	}
-	return o.Cost, true
-}
-
-// SetCost gets a reference to the given float32 and assigns it to the Cost field.
-func (o *BillingZonesZonesInnerDiscoveredServers) SetCost(v float32) {
-	o.Cost = &v
-}
-
-// GetServers returns the Servers field value if set, zero value otherwise.
-func (o *BillingZonesZonesInnerDiscoveredServers) GetServers() []map[string]interface{} {
-	if o == nil || IsNil(o.Servers) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Servers
-}
-
-// GetServersOk returns a tuple with the Servers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingZonesZonesInnerDiscoveredServers) GetServersOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Servers) {
-		return nil, false
-	}
-	return o.Servers, true
-}
-
-// SetServers gets a reference to the given []map[string]interface{} and assigns it to the Servers field.
-func (o *BillingZonesZonesInnerDiscoveredServers) SetServers(v []map[string]interface{}) {
-	o.Servers = v
-}
-
-// GetCount returns the Count field value if set, zero value otherwise.
-func (o *BillingZonesZonesInnerDiscoveredServers) GetCount() int64 {
-	if o == nil || IsNil(o.Count) {
-		var ret int64
-		return ret
-	}
-	return *o.Count
-}
-
-// GetCountOk returns a tuple with the Count field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingZonesZonesInnerDiscoveredServers) GetCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.Count) {
-		return nil, false
-	}
-	return o.Count, true
-}
-
-// SetCount gets a reference to the given int64 and assigns it to the Count field.
-func (o *BillingZonesZonesInnerDiscoveredServers) SetCount(v int64) {
-	o.Count = &v
 }
 
 func (o BillingZonesZonesInnerDiscoveredServers) MarshalJSON() ([]byte, error) {

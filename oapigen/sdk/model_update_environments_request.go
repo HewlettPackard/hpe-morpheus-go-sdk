@@ -26,46 +26,12 @@ type UpdateEnvironmentsRequest struct {
 
 type _UpdateEnvironmentsRequest UpdateEnvironmentsRequest
 
-// NewUpdateEnvironmentsRequest instantiates a new UpdateEnvironmentsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateEnvironmentsRequest(environment UpdateEnvironmentsRequestEnvironment) *UpdateEnvironmentsRequest {
-	this := UpdateEnvironmentsRequest{}
-	this.Environment = environment
-	return &this
-}
-
 // NewUpdateEnvironmentsRequestWithDefaults instantiates a new UpdateEnvironmentsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateEnvironmentsRequestWithDefaults() *UpdateEnvironmentsRequest {
 	this := UpdateEnvironmentsRequest{}
 	return &this
-}
-
-// GetEnvironment returns the Environment field value
-func (o *UpdateEnvironmentsRequest) GetEnvironment() UpdateEnvironmentsRequestEnvironment {
-	if o == nil {
-		var ret UpdateEnvironmentsRequestEnvironment
-		return ret
-	}
-
-	return o.Environment
-}
-
-// GetEnvironmentOk returns a tuple with the Environment field value
-// and a boolean to check if the value has been set.
-func (o *UpdateEnvironmentsRequest) GetEnvironmentOk() (*UpdateEnvironmentsRequestEnvironment, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Environment, true
-}
-
-// SetEnvironment sets field value
-func (o *UpdateEnvironmentsRequest) SetEnvironment(v UpdateEnvironmentsRequestEnvironment) {
-	o.Environment = v
 }
 
 func (o UpdateEnvironmentsRequest) MarshalJSON() ([]byte, error) {

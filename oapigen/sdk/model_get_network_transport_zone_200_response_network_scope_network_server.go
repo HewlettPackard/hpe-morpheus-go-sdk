@@ -26,44 +26,12 @@ type GetNetworkTransportZone200ResponseNetworkScopeNetworkServer struct {
 
 type _GetNetworkTransportZone200ResponseNetworkScopeNetworkServer GetNetworkTransportZone200ResponseNetworkScopeNetworkServer
 
-// NewGetNetworkTransportZone200ResponseNetworkScopeNetworkServer instantiates a new GetNetworkTransportZone200ResponseNetworkScopeNetworkServer object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkTransportZone200ResponseNetworkScopeNetworkServer() *GetNetworkTransportZone200ResponseNetworkScopeNetworkServer {
-	this := GetNetworkTransportZone200ResponseNetworkScopeNetworkServer{}
-	return &this
-}
-
 // NewGetNetworkTransportZone200ResponseNetworkScopeNetworkServerWithDefaults instantiates a new GetNetworkTransportZone200ResponseNetworkScopeNetworkServer object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkTransportZone200ResponseNetworkScopeNetworkServerWithDefaults() *GetNetworkTransportZone200ResponseNetworkScopeNetworkServer {
 	this := GetNetworkTransportZone200ResponseNetworkScopeNetworkServer{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetNetworkTransportZone200ResponseNetworkScopeNetworkServer) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScopeNetworkServer) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetNetworkTransportZone200ResponseNetworkScopeNetworkServer) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o GetNetworkTransportZone200ResponseNetworkScopeNetworkServer) MarshalJSON() ([]byte, error) {

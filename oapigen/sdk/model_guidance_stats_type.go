@@ -29,113 +29,12 @@ type GuidanceStatsType struct {
 
 type _GuidanceStatsType GuidanceStatsType
 
-// NewGuidanceStatsType instantiates a new GuidanceStatsType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGuidanceStatsType() *GuidanceStatsType {
-	this := GuidanceStatsType{}
-	return &this
-}
-
 // NewGuidanceStatsTypeWithDefaults instantiates a new GuidanceStatsType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGuidanceStatsTypeWithDefaults() *GuidanceStatsType {
 	this := GuidanceStatsType{}
 	return &this
-}
-
-// GetSize returns the Size field value if set, zero value otherwise.
-func (o *GuidanceStatsType) GetSize() int64 {
-	if o == nil || IsNil(o.Size) {
-		var ret int64
-		return ret
-	}
-	return *o.Size
-}
-
-// GetSizeOk returns a tuple with the Size field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceStatsType) GetSizeOk() (*int64, bool) {
-	if o == nil || IsNil(o.Size) {
-		return nil, false
-	}
-	return o.Size, true
-}
-
-// SetSize gets a reference to the given int64 and assigns it to the Size field.
-func (o *GuidanceStatsType) SetSize(v int64) {
-	o.Size = &v
-}
-
-// GetShutdown returns the Shutdown field value if set, zero value otherwise.
-func (o *GuidanceStatsType) GetShutdown() int64 {
-	if o == nil || IsNil(o.Shutdown) {
-		var ret int64
-		return ret
-	}
-	return *o.Shutdown
-}
-
-// GetShutdownOk returns a tuple with the Shutdown field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceStatsType) GetShutdownOk() (*int64, bool) {
-	if o == nil || IsNil(o.Shutdown) {
-		return nil, false
-	}
-	return o.Shutdown, true
-}
-
-// SetShutdown gets a reference to the given int64 and assigns it to the Shutdown field.
-func (o *GuidanceStatsType) SetShutdown(v int64) {
-	o.Shutdown = &v
-}
-
-// GetMove returns the Move field value if set, zero value otherwise.
-func (o *GuidanceStatsType) GetMove() int64 {
-	if o == nil || IsNil(o.Move) {
-		var ret int64
-		return ret
-	}
-	return *o.Move
-}
-
-// GetMoveOk returns a tuple with the Move field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceStatsType) GetMoveOk() (*int64, bool) {
-	if o == nil || IsNil(o.Move) {
-		return nil, false
-	}
-	return o.Move, true
-}
-
-// SetMove gets a reference to the given int64 and assigns it to the Move field.
-func (o *GuidanceStatsType) SetMove(v int64) {
-	o.Move = &v
-}
-
-// GetSchedule returns the Schedule field value if set, zero value otherwise.
-func (o *GuidanceStatsType) GetSchedule() int64 {
-	if o == nil || IsNil(o.Schedule) {
-		var ret int64
-		return ret
-	}
-	return *o.Schedule
-}
-
-// GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceStatsType) GetScheduleOk() (*int64, bool) {
-	if o == nil || IsNil(o.Schedule) {
-		return nil, false
-	}
-	return o.Schedule, true
-}
-
-// SetSchedule gets a reference to the given int64 and assigns it to the Schedule field.
-func (o *GuidanceStatsType) SetSchedule(v int64) {
-	o.Schedule = &v
 }
 
 func (o GuidanceStatsType) MarshalJSON() ([]byte, error) {

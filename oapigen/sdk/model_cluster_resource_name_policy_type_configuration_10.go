@@ -28,92 +28,12 @@ type ClusterResourceNamePolicyTypeConfiguration10 struct {
 
 type _ClusterResourceNamePolicyTypeConfiguration10 ClusterResourceNamePolicyTypeConfiguration10
 
-// NewClusterResourceNamePolicyTypeConfiguration10 instantiates a new ClusterResourceNamePolicyTypeConfiguration10 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterResourceNamePolicyTypeConfiguration10(serverNamingType string) *ClusterResourceNamePolicyTypeConfiguration10 {
-	this := ClusterResourceNamePolicyTypeConfiguration10{}
-	this.ServerNamingType = serverNamingType
-	return &this
-}
-
 // NewClusterResourceNamePolicyTypeConfiguration10WithDefaults instantiates a new ClusterResourceNamePolicyTypeConfiguration10 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClusterResourceNamePolicyTypeConfiguration10WithDefaults() *ClusterResourceNamePolicyTypeConfiguration10 {
 	this := ClusterResourceNamePolicyTypeConfiguration10{}
 	return &this
-}
-
-// GetServerNamingType returns the ServerNamingType field value
-func (o *ClusterResourceNamePolicyTypeConfiguration10) GetServerNamingType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ServerNamingType
-}
-
-// GetServerNamingTypeOk returns a tuple with the ServerNamingType field value
-// and a boolean to check if the value has been set.
-func (o *ClusterResourceNamePolicyTypeConfiguration10) GetServerNamingTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ServerNamingType, true
-}
-
-// SetServerNamingType sets field value
-func (o *ClusterResourceNamePolicyTypeConfiguration10) SetServerNamingType(v string) {
-	o.ServerNamingType = v
-}
-
-// GetServerNamingPattern returns the ServerNamingPattern field value if set, zero value otherwise.
-func (o *ClusterResourceNamePolicyTypeConfiguration10) GetServerNamingPattern() string {
-	if o == nil || IsNil(o.ServerNamingPattern) {
-		var ret string
-		return ret
-	}
-	return *o.ServerNamingPattern
-}
-
-// GetServerNamingPatternOk returns a tuple with the ServerNamingPattern field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterResourceNamePolicyTypeConfiguration10) GetServerNamingPatternOk() (*string, bool) {
-	if o == nil || IsNil(o.ServerNamingPattern) {
-		return nil, false
-	}
-	return o.ServerNamingPattern, true
-}
-
-// SetServerNamingPattern gets a reference to the given string and assigns it to the ServerNamingPattern field.
-func (o *ClusterResourceNamePolicyTypeConfiguration10) SetServerNamingPattern(v string) {
-	o.ServerNamingPattern = &v
-}
-
-// GetServerNamingConflict returns the ServerNamingConflict field value if set, zero value otherwise.
-func (o *ClusterResourceNamePolicyTypeConfiguration10) GetServerNamingConflict() bool {
-	if o == nil || IsNil(o.ServerNamingConflict) {
-		var ret bool
-		return ret
-	}
-	return *o.ServerNamingConflict
-}
-
-// GetServerNamingConflictOk returns a tuple with the ServerNamingConflict field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterResourceNamePolicyTypeConfiguration10) GetServerNamingConflictOk() (*bool, bool) {
-	if o == nil || IsNil(o.ServerNamingConflict) {
-		return nil, false
-	}
-	return o.ServerNamingConflict, true
-}
-
-// SetServerNamingConflict gets a reference to the given bool and assigns it to the ServerNamingConflict field.
-func (o *ClusterResourceNamePolicyTypeConfiguration10) SetServerNamingConflict(v bool) {
-	o.ServerNamingConflict = &v
 }
 
 func (o ClusterResourceNamePolicyTypeConfiguration10) MarshalJSON() ([]byte, error) {

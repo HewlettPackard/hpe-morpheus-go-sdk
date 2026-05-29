@@ -31,93 +31,12 @@ type NetworkDhcpServerConfigNSX struct {
 
 type _NetworkDhcpServerConfigNSX NetworkDhcpServerConfigNSX
 
-// NewNetworkDhcpServerConfigNSX instantiates a new NetworkDhcpServerConfigNSX object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkDhcpServerConfigNSX() *NetworkDhcpServerConfigNSX {
-	this := NetworkDhcpServerConfigNSX{}
-	return &this
-}
-
 // NewNetworkDhcpServerConfigNSXWithDefaults instantiates a new NetworkDhcpServerConfigNSX object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkDhcpServerConfigNSXWithDefaults() *NetworkDhcpServerConfigNSX {
 	this := NetworkDhcpServerConfigNSX{}
 	return &this
-}
-
-// GetEdgeCluster returns the EdgeCluster field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NetworkDhcpServerConfigNSX) GetEdgeCluster() string {
-	if o == nil || IsNil(o.EdgeCluster.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.EdgeCluster.Get()
-}
-
-// GetEdgeClusterOk returns a tuple with the EdgeCluster field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NetworkDhcpServerConfigNSX) GetEdgeClusterOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.EdgeCluster.Get(), o.EdgeCluster.IsSet()
-}
-
-// SetEdgeCluster gets a reference to the given NullableString and assigns it to the EdgeCluster field.
-func (o *NetworkDhcpServerConfigNSX) SetEdgeCluster(v string) {
-	o.EdgeCluster.Set(&v)
-}
-
-// GetPreferredEdgeNode1 returns the PreferredEdgeNode1 field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NetworkDhcpServerConfigNSX) GetPreferredEdgeNode1() string {
-	if o == nil || IsNil(o.PreferredEdgeNode1.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.PreferredEdgeNode1.Get()
-}
-
-// GetPreferredEdgeNode1Ok returns a tuple with the PreferredEdgeNode1 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NetworkDhcpServerConfigNSX) GetPreferredEdgeNode1Ok() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.PreferredEdgeNode1.Get(), o.PreferredEdgeNode1.IsSet()
-}
-
-// SetPreferredEdgeNode1 gets a reference to the given NullableString and assigns it to the PreferredEdgeNode1 field.
-func (o *NetworkDhcpServerConfigNSX) SetPreferredEdgeNode1(v string) {
-	o.PreferredEdgeNode1.Set(&v)
-}
-
-// GetPreferredEdgeNode2 returns the PreferredEdgeNode2 field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NetworkDhcpServerConfigNSX) GetPreferredEdgeNode2() string {
-	if o == nil || IsNil(o.PreferredEdgeNode2.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.PreferredEdgeNode2.Get()
-}
-
-// GetPreferredEdgeNode2Ok returns a tuple with the PreferredEdgeNode2 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NetworkDhcpServerConfigNSX) GetPreferredEdgeNode2Ok() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.PreferredEdgeNode2.Get(), o.PreferredEdgeNode2.IsSet()
-}
-
-// SetPreferredEdgeNode2 gets a reference to the given NullableString and assigns it to the PreferredEdgeNode2 field.
-func (o *NetworkDhcpServerConfigNSX) SetPreferredEdgeNode2(v string) {
-	o.PreferredEdgeNode2.Set(&v)
 }
 
 func (o NetworkDhcpServerConfigNSX) MarshalJSON() ([]byte, error) {

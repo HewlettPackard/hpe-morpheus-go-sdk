@@ -28,90 +28,12 @@ type UpdateCredentials200ResponseAllOfCredentialType struct {
 
 type _UpdateCredentials200ResponseAllOfCredentialType UpdateCredentials200ResponseAllOfCredentialType
 
-// NewUpdateCredentials200ResponseAllOfCredentialType instantiates a new UpdateCredentials200ResponseAllOfCredentialType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCredentials200ResponseAllOfCredentialType() *UpdateCredentials200ResponseAllOfCredentialType {
-	this := UpdateCredentials200ResponseAllOfCredentialType{}
-	return &this
-}
-
 // NewUpdateCredentials200ResponseAllOfCredentialTypeWithDefaults instantiates a new UpdateCredentials200ResponseAllOfCredentialType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateCredentials200ResponseAllOfCredentialTypeWithDefaults() *UpdateCredentials200ResponseAllOfCredentialType {
 	this := UpdateCredentials200ResponseAllOfCredentialType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *UpdateCredentials200ResponseAllOfCredentialType) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCredentials200ResponseAllOfCredentialType) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *UpdateCredentials200ResponseAllOfCredentialType) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *UpdateCredentials200ResponseAllOfCredentialType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCredentials200ResponseAllOfCredentialType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *UpdateCredentials200ResponseAllOfCredentialType) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdateCredentials200ResponseAllOfCredentialType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCredentials200ResponseAllOfCredentialType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdateCredentials200ResponseAllOfCredentialType) SetName(v string) {
-	o.Name = &v
 }
 
 func (o UpdateCredentials200ResponseAllOfCredentialType) MarshalJSON() ([]byte, error) {

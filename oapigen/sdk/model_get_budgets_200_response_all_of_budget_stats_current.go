@@ -27,69 +27,12 @@ type GetBudgets200ResponseAllOfBudgetStatsCurrent struct {
 
 type _GetBudgets200ResponseAllOfBudgetStatsCurrent GetBudgets200ResponseAllOfBudgetStatsCurrent
 
-// NewGetBudgets200ResponseAllOfBudgetStatsCurrent instantiates a new GetBudgets200ResponseAllOfBudgetStatsCurrent object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetBudgets200ResponseAllOfBudgetStatsCurrent() *GetBudgets200ResponseAllOfBudgetStatsCurrent {
-	this := GetBudgets200ResponseAllOfBudgetStatsCurrent{}
-	return &this
-}
-
 // NewGetBudgets200ResponseAllOfBudgetStatsCurrentWithDefaults instantiates a new GetBudgets200ResponseAllOfBudgetStatsCurrent object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetBudgets200ResponseAllOfBudgetStatsCurrentWithDefaults() *GetBudgets200ResponseAllOfBudgetStatsCurrent {
 	this := GetBudgets200ResponseAllOfBudgetStatsCurrent{}
 	return &this
-}
-
-// GetEstimatedCost returns the EstimatedCost field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) GetEstimatedCost() string {
-	if o == nil || IsNil(o.EstimatedCost.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.EstimatedCost.Get()
-}
-
-// GetEstimatedCostOk returns a tuple with the EstimatedCost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) GetEstimatedCostOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.EstimatedCost.Get(), o.EstimatedCost.IsSet()
-}
-
-// SetEstimatedCost gets a reference to the given NullableString and assigns it to the EstimatedCost field.
-func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) SetEstimatedCost(v string) {
-	o.EstimatedCost.Set(&v)
-}
-
-// GetLastCost returns the LastCost field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) GetLastCost() string {
-	if o == nil || IsNil(o.LastCost.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.LastCost.Get()
-}
-
-// GetLastCostOk returns a tuple with the LastCost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) GetLastCostOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.LastCost.Get(), o.LastCost.IsSet()
-}
-
-// SetLastCost gets a reference to the given NullableString and assigns it to the LastCost field.
-func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) SetLastCost(v string) {
-	o.LastCost.Set(&v)
 }
 
 func (o GetBudgets200ResponseAllOfBudgetStatsCurrent) MarshalJSON() ([]byte, error) {

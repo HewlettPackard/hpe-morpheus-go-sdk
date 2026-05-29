@@ -27,67 +27,12 @@ type ListEmailTemplates200Response struct {
 
 type _ListEmailTemplates200Response ListEmailTemplates200Response
 
-// NewListEmailTemplates200Response instantiates a new ListEmailTemplates200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListEmailTemplates200Response() *ListEmailTemplates200Response {
-	this := ListEmailTemplates200Response{}
-	return &this
-}
-
 // NewListEmailTemplates200ResponseWithDefaults instantiates a new ListEmailTemplates200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListEmailTemplates200ResponseWithDefaults() *ListEmailTemplates200Response {
 	this := ListEmailTemplates200Response{}
 	return &this
-}
-
-// GetEmailTemplates returns the EmailTemplates field value if set, zero value otherwise.
-func (o *ListEmailTemplates200Response) GetEmailTemplates() []ListEmailTemplates200ResponseAllOfEmailTemplatesInner {
-	if o == nil || IsNil(o.EmailTemplates) {
-		var ret []ListEmailTemplates200ResponseAllOfEmailTemplatesInner
-		return ret
-	}
-	return o.EmailTemplates
-}
-
-// GetEmailTemplatesOk returns a tuple with the EmailTemplates field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListEmailTemplates200Response) GetEmailTemplatesOk() ([]ListEmailTemplates200ResponseAllOfEmailTemplatesInner, bool) {
-	if o == nil || IsNil(o.EmailTemplates) {
-		return nil, false
-	}
-	return o.EmailTemplates, true
-}
-
-// SetEmailTemplates gets a reference to the given []ListEmailTemplates200ResponseAllOfEmailTemplatesInner and assigns it to the EmailTemplates field.
-func (o *ListEmailTemplates200Response) SetEmailTemplates(v []ListEmailTemplates200ResponseAllOfEmailTemplatesInner) {
-	o.EmailTemplates = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListEmailTemplates200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListEmailTemplates200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListEmailTemplates200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListEmailTemplates200Response) MarshalJSON() ([]byte, error) {

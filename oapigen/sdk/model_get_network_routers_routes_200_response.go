@@ -26,44 +26,12 @@ type GetNetworkRoutersRoutes200Response struct {
 
 type _GetNetworkRoutersRoutes200Response GetNetworkRoutersRoutes200Response
 
-// NewGetNetworkRoutersRoutes200Response instantiates a new GetNetworkRoutersRoutes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkRoutersRoutes200Response() *GetNetworkRoutersRoutes200Response {
-	this := GetNetworkRoutersRoutes200Response{}
-	return &this
-}
-
 // NewGetNetworkRoutersRoutes200ResponseWithDefaults instantiates a new GetNetworkRoutersRoutes200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkRoutersRoutes200ResponseWithDefaults() *GetNetworkRoutersRoutes200Response {
 	this := GetNetworkRoutersRoutes200Response{}
 	return &this
-}
-
-// GetNetworkRoutes returns the NetworkRoutes field value if set, zero value otherwise.
-func (o *GetNetworkRoutersRoutes200Response) GetNetworkRoutes() []GetNetworkRoutersRoutes200ResponseNetworkRoutesInner {
-	if o == nil || IsNil(o.NetworkRoutes) {
-		var ret []GetNetworkRoutersRoutes200ResponseNetworkRoutesInner
-		return ret
-	}
-	return o.NetworkRoutes
-}
-
-// GetNetworkRoutesOk returns a tuple with the NetworkRoutes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkRoutersRoutes200Response) GetNetworkRoutesOk() ([]GetNetworkRoutersRoutes200ResponseNetworkRoutesInner, bool) {
-	if o == nil || IsNil(o.NetworkRoutes) {
-		return nil, false
-	}
-	return o.NetworkRoutes, true
-}
-
-// SetNetworkRoutes gets a reference to the given []GetNetworkRoutersRoutes200ResponseNetworkRoutesInner and assigns it to the NetworkRoutes field.
-func (o *GetNetworkRoutersRoutes200Response) SetNetworkRoutes(v []GetNetworkRoutersRoutes200ResponseNetworkRoutesInner) {
-	o.NetworkRoutes = v
 }
 
 func (o GetNetworkRoutersRoutes200Response) MarshalJSON() ([]byte, error) {

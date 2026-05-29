@@ -33,115 +33,12 @@ type AddContactsRequestContact struct {
 
 type _AddContactsRequestContact AddContactsRequestContact
 
-// NewAddContactsRequestContact instantiates a new AddContactsRequestContact object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddContactsRequestContact(name string) *AddContactsRequestContact {
-	this := AddContactsRequestContact{}
-	this.Name = name
-	return &this
-}
-
 // NewAddContactsRequestContactWithDefaults instantiates a new AddContactsRequestContact object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddContactsRequestContactWithDefaults() *AddContactsRequestContact {
 	this := AddContactsRequestContact{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *AddContactsRequestContact) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *AddContactsRequestContact) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *AddContactsRequestContact) SetName(v string) {
-	o.Name = v
-}
-
-// GetEmailAddress returns the EmailAddress field value if set, zero value otherwise.
-func (o *AddContactsRequestContact) GetEmailAddress() string {
-	if o == nil || IsNil(o.EmailAddress) {
-		var ret string
-		return ret
-	}
-	return *o.EmailAddress
-}
-
-// GetEmailAddressOk returns a tuple with the EmailAddress field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddContactsRequestContact) GetEmailAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.EmailAddress) {
-		return nil, false
-	}
-	return o.EmailAddress, true
-}
-
-// SetEmailAddress gets a reference to the given string and assigns it to the EmailAddress field.
-func (o *AddContactsRequestContact) SetEmailAddress(v string) {
-	o.EmailAddress = &v
-}
-
-// GetSmsAddress returns the SmsAddress field value if set, zero value otherwise.
-func (o *AddContactsRequestContact) GetSmsAddress() string {
-	if o == nil || IsNil(o.SmsAddress) {
-		var ret string
-		return ret
-	}
-	return *o.SmsAddress
-}
-
-// GetSmsAddressOk returns a tuple with the SmsAddress field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddContactsRequestContact) GetSmsAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.SmsAddress) {
-		return nil, false
-	}
-	return o.SmsAddress, true
-}
-
-// SetSmsAddress gets a reference to the given string and assigns it to the SmsAddress field.
-func (o *AddContactsRequestContact) SetSmsAddress(v string) {
-	o.SmsAddress = &v
-}
-
-// GetSlackHook returns the SlackHook field value if set, zero value otherwise.
-func (o *AddContactsRequestContact) GetSlackHook() string {
-	if o == nil || IsNil(o.SlackHook) {
-		var ret string
-		return ret
-	}
-	return *o.SlackHook
-}
-
-// GetSlackHookOk returns a tuple with the SlackHook field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddContactsRequestContact) GetSlackHookOk() (*string, bool) {
-	if o == nil || IsNil(o.SlackHook) {
-		return nil, false
-	}
-	return o.SlackHook, true
-}
-
-// SetSlackHook gets a reference to the given string and assigns it to the SlackHook field.
-func (o *AddContactsRequestContact) SetSlackHook(v string) {
-	o.SlackHook = &v
 }
 
 func (o AddContactsRequestContact) MarshalJSON() ([]byte, error) {

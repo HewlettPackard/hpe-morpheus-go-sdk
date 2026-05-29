@@ -27,67 +27,12 @@ type CancelSupportBundle200Response struct {
 
 type _CancelSupportBundle200Response CancelSupportBundle200Response
 
-// NewCancelSupportBundle200Response instantiates a new CancelSupportBundle200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCancelSupportBundle200Response() *CancelSupportBundle200Response {
-	this := CancelSupportBundle200Response{}
-	return &this
-}
-
 // NewCancelSupportBundle200ResponseWithDefaults instantiates a new CancelSupportBundle200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCancelSupportBundle200ResponseWithDefaults() *CancelSupportBundle200Response {
 	this := CancelSupportBundle200Response{}
 	return &this
-}
-
-// GetSupportBundle returns the SupportBundle field value if set, zero value otherwise.
-func (o *CancelSupportBundle200Response) GetSupportBundle() CancelSupportBundle200ResponseAllOfSupportBundle {
-	if o == nil || IsNil(o.SupportBundle) {
-		var ret CancelSupportBundle200ResponseAllOfSupportBundle
-		return ret
-	}
-	return *o.SupportBundle
-}
-
-// GetSupportBundleOk returns a tuple with the SupportBundle field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CancelSupportBundle200Response) GetSupportBundleOk() (*CancelSupportBundle200ResponseAllOfSupportBundle, bool) {
-	if o == nil || IsNil(o.SupportBundle) {
-		return nil, false
-	}
-	return o.SupportBundle, true
-}
-
-// SetSupportBundle gets a reference to the given CancelSupportBundle200ResponseAllOfSupportBundle and assigns it to the SupportBundle field.
-func (o *CancelSupportBundle200Response) SetSupportBundle(v CancelSupportBundle200ResponseAllOfSupportBundle) {
-	o.SupportBundle = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *CancelSupportBundle200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CancelSupportBundle200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *CancelSupportBundle200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o CancelSupportBundle200Response) MarshalJSON() ([]byte, error) {

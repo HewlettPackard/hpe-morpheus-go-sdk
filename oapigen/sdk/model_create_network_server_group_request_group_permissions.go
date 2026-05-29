@@ -28,90 +28,12 @@ type CreateNetworkServerGroupRequestGroupPermissions struct {
 
 type _CreateNetworkServerGroupRequestGroupPermissions CreateNetworkServerGroupRequestGroupPermissions
 
-// NewCreateNetworkServerGroupRequestGroupPermissions instantiates a new CreateNetworkServerGroupRequestGroupPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkServerGroupRequestGroupPermissions() *CreateNetworkServerGroupRequestGroupPermissions {
-	this := CreateNetworkServerGroupRequestGroupPermissions{}
-	return &this
-}
-
 // NewCreateNetworkServerGroupRequestGroupPermissionsWithDefaults instantiates a new CreateNetworkServerGroupRequestGroupPermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkServerGroupRequestGroupPermissionsWithDefaults() *CreateNetworkServerGroupRequestGroupPermissions {
 	this := CreateNetworkServerGroupRequestGroupPermissions{}
 	return &this
-}
-
-// GetResourcePool returns the ResourcePool field value if set, zero value otherwise.
-func (o *CreateNetworkServerGroupRequestGroupPermissions) GetResourcePool() CreateNetworkServerGroupRequestGroupPermissionsResourcePool {
-	if o == nil || IsNil(o.ResourcePool) {
-		var ret CreateNetworkServerGroupRequestGroupPermissionsResourcePool
-		return ret
-	}
-	return *o.ResourcePool
-}
-
-// GetResourcePoolOk returns a tuple with the ResourcePool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkServerGroupRequestGroupPermissions) GetResourcePoolOk() (*CreateNetworkServerGroupRequestGroupPermissionsResourcePool, bool) {
-	if o == nil || IsNil(o.ResourcePool) {
-		return nil, false
-	}
-	return o.ResourcePool, true
-}
-
-// SetResourcePool gets a reference to the given CreateNetworkServerGroupRequestGroupPermissionsResourcePool and assigns it to the ResourcePool field.
-func (o *CreateNetworkServerGroupRequestGroupPermissions) SetResourcePool(v CreateNetworkServerGroupRequestGroupPermissionsResourcePool) {
-	o.ResourcePool = &v
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *CreateNetworkServerGroupRequestGroupPermissions) GetResourcePermissions() CreateNetworkServerGroupRequestGroupPermissionsResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret CreateNetworkServerGroupRequestGroupPermissionsResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkServerGroupRequestGroupPermissions) GetResourcePermissionsOk() (*CreateNetworkServerGroupRequestGroupPermissionsResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// SetResourcePermissions gets a reference to the given CreateNetworkServerGroupRequestGroupPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *CreateNetworkServerGroupRequestGroupPermissions) SetResourcePermissions(v CreateNetworkServerGroupRequestGroupPermissionsResourcePermissions) {
-	o.ResourcePermissions = &v
-}
-
-// GetTenantPermissions returns the TenantPermissions field value if set, zero value otherwise.
-func (o *CreateNetworkServerGroupRequestGroupPermissions) GetTenantPermissions() CreateNetworkServerGroupRequestGroupPermissionsTenantPermissions {
-	if o == nil || IsNil(o.TenantPermissions) {
-		var ret CreateNetworkServerGroupRequestGroupPermissionsTenantPermissions
-		return ret
-	}
-	return *o.TenantPermissions
-}
-
-// GetTenantPermissionsOk returns a tuple with the TenantPermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkServerGroupRequestGroupPermissions) GetTenantPermissionsOk() (*CreateNetworkServerGroupRequestGroupPermissionsTenantPermissions, bool) {
-	if o == nil || IsNil(o.TenantPermissions) {
-		return nil, false
-	}
-	return o.TenantPermissions, true
-}
-
-// SetTenantPermissions gets a reference to the given CreateNetworkServerGroupRequestGroupPermissionsTenantPermissions and assigns it to the TenantPermissions field.
-func (o *CreateNetworkServerGroupRequestGroupPermissions) SetTenantPermissions(v CreateNetworkServerGroupRequestGroupPermissionsTenantPermissions) {
-	o.TenantPermissions = &v
 }
 
 func (o CreateNetworkServerGroupRequestGroupPermissions) MarshalJSON() ([]byte, error) {

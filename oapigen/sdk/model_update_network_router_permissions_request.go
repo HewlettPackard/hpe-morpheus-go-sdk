@@ -26,44 +26,12 @@ type UpdateNetworkRouterPermissionsRequest struct {
 
 type _UpdateNetworkRouterPermissionsRequest UpdateNetworkRouterPermissionsRequest
 
-// NewUpdateNetworkRouterPermissionsRequest instantiates a new UpdateNetworkRouterPermissionsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkRouterPermissionsRequest() *UpdateNetworkRouterPermissionsRequest {
-	this := UpdateNetworkRouterPermissionsRequest{}
-	return &this
-}
-
 // NewUpdateNetworkRouterPermissionsRequestWithDefaults instantiates a new UpdateNetworkRouterPermissionsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateNetworkRouterPermissionsRequestWithDefaults() *UpdateNetworkRouterPermissionsRequest {
 	this := UpdateNetworkRouterPermissionsRequest{}
 	return &this
-}
-
-// GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *UpdateNetworkRouterPermissionsRequest) GetPermissions() UpdateNetworkRouterPermissionsRequestPermissions {
-	if o == nil || IsNil(o.Permissions) {
-		var ret UpdateNetworkRouterPermissionsRequestPermissions
-		return ret
-	}
-	return *o.Permissions
-}
-
-// GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkRouterPermissionsRequest) GetPermissionsOk() (*UpdateNetworkRouterPermissionsRequestPermissions, bool) {
-	if o == nil || IsNil(o.Permissions) {
-		return nil, false
-	}
-	return o.Permissions, true
-}
-
-// SetPermissions gets a reference to the given UpdateNetworkRouterPermissionsRequestPermissions and assigns it to the Permissions field.
-func (o *UpdateNetworkRouterPermissionsRequest) SetPermissions(v UpdateNetworkRouterPermissionsRequestPermissions) {
-	o.Permissions = &v
 }
 
 func (o UpdateNetworkRouterPermissionsRequest) MarshalJSON() ([]byte, error) {

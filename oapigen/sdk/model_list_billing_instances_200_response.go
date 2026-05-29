@@ -27,67 +27,12 @@ type ListBillingInstances200Response struct {
 
 type _ListBillingInstances200Response ListBillingInstances200Response
 
-// NewListBillingInstances200Response instantiates a new ListBillingInstances200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListBillingInstances200Response() *ListBillingInstances200Response {
-	this := ListBillingInstances200Response{}
-	return &this
-}
-
 // NewListBillingInstances200ResponseWithDefaults instantiates a new ListBillingInstances200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListBillingInstances200ResponseWithDefaults() *ListBillingInstances200Response {
 	this := ListBillingInstances200Response{}
 	return &this
-}
-
-// GetBillingInfo returns the BillingInfo field value if set, zero value otherwise.
-func (o *ListBillingInstances200Response) GetBillingInfo() ListBillingInstances200ResponseAllOfBillingInfo {
-	if o == nil || IsNil(o.BillingInfo) {
-		var ret ListBillingInstances200ResponseAllOfBillingInfo
-		return ret
-	}
-	return *o.BillingInfo
-}
-
-// GetBillingInfoOk returns a tuple with the BillingInfo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBillingInstances200Response) GetBillingInfoOk() (*ListBillingInstances200ResponseAllOfBillingInfo, bool) {
-	if o == nil || IsNil(o.BillingInfo) {
-		return nil, false
-	}
-	return o.BillingInfo, true
-}
-
-// SetBillingInfo gets a reference to the given ListBillingInstances200ResponseAllOfBillingInfo and assigns it to the BillingInfo field.
-func (o *ListBillingInstances200Response) SetBillingInfo(v ListBillingInstances200ResponseAllOfBillingInfo) {
-	o.BillingInfo = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *ListBillingInstances200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBillingInstances200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *ListBillingInstances200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o ListBillingInstances200Response) MarshalJSON() ([]byte, error) {

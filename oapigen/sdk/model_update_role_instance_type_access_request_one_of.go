@@ -29,71 +29,12 @@ type UpdateRoleInstanceTypeAccessRequestOneOf struct {
 
 type _UpdateRoleInstanceTypeAccessRequestOneOf UpdateRoleInstanceTypeAccessRequestOneOf
 
-// NewUpdateRoleInstanceTypeAccessRequestOneOf instantiates a new UpdateRoleInstanceTypeAccessRequestOneOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateRoleInstanceTypeAccessRequestOneOf(instanceTypeId int32, access string) *UpdateRoleInstanceTypeAccessRequestOneOf {
-	this := UpdateRoleInstanceTypeAccessRequestOneOf{}
-	this.InstanceTypeId = instanceTypeId
-	this.Access = access
-	return &this
-}
-
 // NewUpdateRoleInstanceTypeAccessRequestOneOfWithDefaults instantiates a new UpdateRoleInstanceTypeAccessRequestOneOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateRoleInstanceTypeAccessRequestOneOfWithDefaults() *UpdateRoleInstanceTypeAccessRequestOneOf {
 	this := UpdateRoleInstanceTypeAccessRequestOneOf{}
 	return &this
-}
-
-// GetInstanceTypeId returns the InstanceTypeId field value
-func (o *UpdateRoleInstanceTypeAccessRequestOneOf) GetInstanceTypeId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.InstanceTypeId
-}
-
-// GetInstanceTypeIdOk returns a tuple with the InstanceTypeId field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleInstanceTypeAccessRequestOneOf) GetInstanceTypeIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.InstanceTypeId, true
-}
-
-// SetInstanceTypeId sets field value
-func (o *UpdateRoleInstanceTypeAccessRequestOneOf) SetInstanceTypeId(v int32) {
-	o.InstanceTypeId = v
-}
-
-// GetAccess returns the Access field value
-func (o *UpdateRoleInstanceTypeAccessRequestOneOf) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleInstanceTypeAccessRequestOneOf) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *UpdateRoleInstanceTypeAccessRequestOneOf) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o UpdateRoleInstanceTypeAccessRequestOneOf) MarshalJSON() ([]byte, error) {

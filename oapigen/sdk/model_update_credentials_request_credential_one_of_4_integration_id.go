@@ -27,20 +27,6 @@ type UpdateCredentialsRequestCredentialOneOf4IntegrationId struct {
 	String *string
 }
 
-// int64AsUpdateCredentialsRequestCredentialOneOf4IntegrationId is a convenience function that returns int64 wrapped in UpdateCredentialsRequestCredentialOneOf4IntegrationId
-func Int64AsUpdateCredentialsRequestCredentialOneOf4IntegrationId(v *int64) UpdateCredentialsRequestCredentialOneOf4IntegrationId {
-	return UpdateCredentialsRequestCredentialOneOf4IntegrationId{
-		Int64: v,
-	}
-}
-
-// stringAsUpdateCredentialsRequestCredentialOneOf4IntegrationId is a convenience function that returns string wrapped in UpdateCredentialsRequestCredentialOneOf4IntegrationId
-func StringAsUpdateCredentialsRequestCredentialOneOf4IntegrationId(v *string) UpdateCredentialsRequestCredentialOneOf4IntegrationId {
-	return UpdateCredentialsRequestCredentialOneOf4IntegrationId{
-		String: v,
-	}
-}
-
 func (dst *UpdateCredentialsRequestCredentialOneOf4IntegrationId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateCredentialsRequestCredentialOneOf4IntegrationId{}

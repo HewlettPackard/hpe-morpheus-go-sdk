@@ -26,46 +26,12 @@ type BackupTargetsPolicyTypeConfiguration7 struct {
 
 type _BackupTargetsPolicyTypeConfiguration7 BackupTargetsPolicyTypeConfiguration7
 
-// NewBackupTargetsPolicyTypeConfiguration7 instantiates a new BackupTargetsPolicyTypeConfiguration7 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBackupTargetsPolicyTypeConfiguration7(backupStorageIds []string) *BackupTargetsPolicyTypeConfiguration7 {
-	this := BackupTargetsPolicyTypeConfiguration7{}
-	this.BackupStorageIds = backupStorageIds
-	return &this
-}
-
 // NewBackupTargetsPolicyTypeConfiguration7WithDefaults instantiates a new BackupTargetsPolicyTypeConfiguration7 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBackupTargetsPolicyTypeConfiguration7WithDefaults() *BackupTargetsPolicyTypeConfiguration7 {
 	this := BackupTargetsPolicyTypeConfiguration7{}
 	return &this
-}
-
-// GetBackupStorageIds returns the BackupStorageIds field value
-func (o *BackupTargetsPolicyTypeConfiguration7) GetBackupStorageIds() []string {
-	if o == nil {
-		var ret []string
-		return ret
-	}
-
-	return o.BackupStorageIds
-}
-
-// GetBackupStorageIdsOk returns a tuple with the BackupStorageIds field value
-// and a boolean to check if the value has been set.
-func (o *BackupTargetsPolicyTypeConfiguration7) GetBackupStorageIdsOk() ([]string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.BackupStorageIds, true
-}
-
-// SetBackupStorageIds sets field value
-func (o *BackupTargetsPolicyTypeConfiguration7) SetBackupStorageIds(v []string) {
-	o.BackupStorageIds = v
 }
 
 func (o BackupTargetsPolicyTypeConfiguration7) MarshalJSON() ([]byte, error) {

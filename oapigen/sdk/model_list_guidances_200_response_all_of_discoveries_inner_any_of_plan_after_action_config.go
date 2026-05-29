@@ -28,90 +28,12 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig str
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig
 
-// NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig {
-	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig{}
-	return &this
-}
-
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfigWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfigWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig {
 	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig{}
 	return &this
-}
-
-// GetStorageSizeType returns the StorageSizeType field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) GetStorageSizeType() string {
-	if o == nil || IsNil(o.StorageSizeType) {
-		var ret string
-		return ret
-	}
-	return *o.StorageSizeType
-}
-
-// GetStorageSizeTypeOk returns a tuple with the StorageSizeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) GetStorageSizeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageSizeType) {
-		return nil, false
-	}
-	return o.StorageSizeType, true
-}
-
-// SetStorageSizeType gets a reference to the given string and assigns it to the StorageSizeType field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) SetStorageSizeType(v string) {
-	o.StorageSizeType = &v
-}
-
-// GetMemorySizeType returns the MemorySizeType field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) GetMemorySizeType() string {
-	if o == nil || IsNil(o.MemorySizeType) {
-		var ret string
-		return ret
-	}
-	return *o.MemorySizeType
-}
-
-// GetMemorySizeTypeOk returns a tuple with the MemorySizeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) GetMemorySizeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.MemorySizeType) {
-		return nil, false
-	}
-	return o.MemorySizeType, true
-}
-
-// SetMemorySizeType gets a reference to the given string and assigns it to the MemorySizeType field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) SetMemorySizeType(v string) {
-	o.MemorySizeType = &v
-}
-
-// GetRanges returns the Ranges field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) GetRanges() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfigRanges {
-	if o == nil || IsNil(o.Ranges) {
-		var ret ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfigRanges
-		return ret
-	}
-	return *o.Ranges
-}
-
-// GetRangesOk returns a tuple with the Ranges field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) GetRangesOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfigRanges, bool) {
-	if o == nil || IsNil(o.Ranges) {
-		return nil, false
-	}
-	return o.Ranges, true
-}
-
-// SetRanges gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfigRanges and assigns it to the Ranges field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) SetRanges(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfigRanges) {
-	o.Ranges = &v
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) MarshalJSON() ([]byte, error) {

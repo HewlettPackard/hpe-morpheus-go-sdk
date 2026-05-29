@@ -29,17 +29,6 @@ type CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission struct {
 
 type _CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission
 
-// NewCreateResourcePoolGroupRequestResourcePoolGroupResourcePermission instantiates a new CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateResourcePoolGroupRequestResourcePoolGroupResourcePermission() *CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission {
-	this := CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission{}
-	var all bool = true
-	this.All = &all
-	return &this
-}
-
 // NewCreateResourcePoolGroupRequestResourcePoolGroupResourcePermissionWithDefaults instantiates a new CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -48,52 +37,6 @@ func NewCreateResourcePoolGroupRequestResourcePoolGroupResourcePermissionWithDef
 	var all bool = true
 	this.All = &all
 	return &this
-}
-
-// GetAll returns the All field value if set, zero value otherwise.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission) GetAll() bool {
-	if o == nil || IsNil(o.All) {
-		var ret bool
-		return ret
-	}
-	return *o.All
-}
-
-// GetAllOk returns a tuple with the All field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission) GetAllOk() (*bool, bool) {
-	if o == nil || IsNil(o.All) {
-		return nil, false
-	}
-	return o.All, true
-}
-
-// SetAll gets a reference to the given bool and assigns it to the All field.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission) SetAll(v bool) {
-	o.All = &v
-}
-
-// GetSites returns the Sites field value if set, zero value otherwise.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission) GetSites() []CreateResourcePoolGroupRequestResourcePoolGroupResourcePermissionSitesInner {
-	if o == nil || IsNil(o.Sites) {
-		var ret []CreateResourcePoolGroupRequestResourcePoolGroupResourcePermissionSitesInner
-		return ret
-	}
-	return o.Sites
-}
-
-// GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission) GetSitesOk() ([]CreateResourcePoolGroupRequestResourcePoolGroupResourcePermissionSitesInner, bool) {
-	if o == nil || IsNil(o.Sites) {
-		return nil, false
-	}
-	return o.Sites, true
-}
-
-// SetSites gets a reference to the given []CreateResourcePoolGroupRequestResourcePoolGroupResourcePermissionSitesInner and assigns it to the Sites field.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission) SetSites(v []CreateResourcePoolGroupRequestResourcePoolGroupResourcePermissionSitesInner) {
-	o.Sites = v
 }
 
 func (o CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission) MarshalJSON() ([]byte, error) {

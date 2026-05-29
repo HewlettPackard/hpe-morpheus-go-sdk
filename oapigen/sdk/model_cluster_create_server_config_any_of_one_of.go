@@ -32,114 +32,12 @@ type ClusterCreateServerConfigAnyOfOneOf struct {
 
 type _ClusterCreateServerConfigAnyOfOneOf ClusterCreateServerConfigAnyOfOneOf
 
-// NewClusterCreateServerConfigAnyOfOneOf instantiates a new ClusterCreateServerConfigAnyOfOneOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterCreateServerConfigAnyOfOneOf() *ClusterCreateServerConfigAnyOfOneOf {
-	this := ClusterCreateServerConfigAnyOfOneOf{}
-	return &this
-}
-
 // NewClusterCreateServerConfigAnyOfOneOfWithDefaults instantiates a new ClusterCreateServerConfigAnyOfOneOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClusterCreateServerConfigAnyOfOneOfWithDefaults() *ClusterCreateServerConfigAnyOfOneOf {
 	this := ClusterCreateServerConfigAnyOfOneOf{}
 	return &this
-}
-
-// GetNodeCount returns the NodeCount field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf) GetNodeCount() int64 {
-	if o == nil || IsNil(o.NodeCount) {
-		var ret int64
-		return ret
-	}
-	return *o.NodeCount
-}
-
-// GetNodeCountOk returns a tuple with the NodeCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf) GetNodeCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.NodeCount) {
-		return nil, false
-	}
-	return o.NodeCount, true
-}
-
-// SetNodeCount gets a reference to the given int64 and assigns it to the NodeCount field.
-func (o *ClusterCreateServerConfigAnyOfOneOf) SetNodeCount(v int64) {
-	o.NodeCount = &v
-}
-
-// GetCreateUser returns the CreateUser field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf) GetCreateUser() bool {
-	if o == nil || IsNil(o.CreateUser) {
-		var ret bool
-		return ret
-	}
-	return *o.CreateUser
-}
-
-// GetCreateUserOk returns a tuple with the CreateUser field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf) GetCreateUserOk() (*bool, bool) {
-	if o == nil || IsNil(o.CreateUser) {
-		return nil, false
-	}
-	return o.CreateUser, true
-}
-
-// SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
-func (o *ClusterCreateServerConfigAnyOfOneOf) SetCreateUser(v bool) {
-	o.CreateUser = &v
-}
-
-// GetDefaultRepoAccount returns the DefaultRepoAccount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ClusterCreateServerConfigAnyOfOneOf) GetDefaultRepoAccount() int64 {
-	if o == nil || IsNil(o.DefaultRepoAccount.Get()) {
-		var ret int64
-		return ret
-	}
-	return *o.DefaultRepoAccount.Get()
-}
-
-// GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ClusterCreateServerConfigAnyOfOneOf) GetDefaultRepoAccountOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.DefaultRepoAccount.Get(), o.DefaultRepoAccount.IsSet()
-}
-
-// SetDefaultRepoAccount gets a reference to the given NullableInt64 and assigns it to the DefaultRepoAccount field.
-func (o *ClusterCreateServerConfigAnyOfOneOf) SetDefaultRepoAccount(v int64) {
-	o.DefaultRepoAccount.Set(&v)
-}
-
-// GetImageServer returns the ImageServer field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf) GetImageServer() string {
-	if o == nil || IsNil(o.ImageServer) {
-		var ret string
-		return ret
-	}
-	return *o.ImageServer
-}
-
-// GetImageServerOk returns a tuple with the ImageServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf) GetImageServerOk() (*string, bool) {
-	if o == nil || IsNil(o.ImageServer) {
-		return nil, false
-	}
-	return o.ImageServer, true
-}
-
-// SetImageServer gets a reference to the given string and assigns it to the ImageServer field.
-func (o *ClusterCreateServerConfigAnyOfOneOf) SetImageServer(v string) {
-	o.ImageServer = &v
 }
 
 func (o ClusterCreateServerConfigAnyOfOneOf) MarshalJSON() ([]byte, error) {

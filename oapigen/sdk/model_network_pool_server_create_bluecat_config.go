@@ -27,17 +27,6 @@ type NetworkPoolServerCreateBluecatConfig struct {
 
 type _NetworkPoolServerCreateBluecatConfig NetworkPoolServerCreateBluecatConfig
 
-// NewNetworkPoolServerCreateBluecatConfig instantiates a new NetworkPoolServerCreateBluecatConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkPoolServerCreateBluecatConfig() *NetworkPoolServerCreateBluecatConfig {
-	this := NetworkPoolServerCreateBluecatConfig{}
-	var inventoryExisting string = "off"
-	this.InventoryExisting = &inventoryExisting
-	return &this
-}
-
 // NewNetworkPoolServerCreateBluecatConfigWithDefaults instantiates a new NetworkPoolServerCreateBluecatConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -46,29 +35,6 @@ func NewNetworkPoolServerCreateBluecatConfigWithDefaults() *NetworkPoolServerCre
 	var inventoryExisting string = "off"
 	this.InventoryExisting = &inventoryExisting
 	return &this
-}
-
-// GetInventoryExisting returns the InventoryExisting field value if set, zero value otherwise.
-func (o *NetworkPoolServerCreateBluecatConfig) GetInventoryExisting() string {
-	if o == nil || IsNil(o.InventoryExisting) {
-		var ret string
-		return ret
-	}
-	return *o.InventoryExisting
-}
-
-// GetInventoryExistingOk returns a tuple with the InventoryExisting field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkPoolServerCreateBluecatConfig) GetInventoryExistingOk() (*string, bool) {
-	if o == nil || IsNil(o.InventoryExisting) {
-		return nil, false
-	}
-	return o.InventoryExisting, true
-}
-
-// SetInventoryExisting gets a reference to the given string and assigns it to the InventoryExisting field.
-func (o *NetworkPoolServerCreateBluecatConfig) SetInventoryExisting(v string) {
-	o.InventoryExisting = &v
 }
 
 func (o NetworkPoolServerCreateBluecatConfig) MarshalJSON() ([]byte, error) {

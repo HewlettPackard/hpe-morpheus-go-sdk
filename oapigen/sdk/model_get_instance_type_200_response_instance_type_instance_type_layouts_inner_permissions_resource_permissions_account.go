@@ -26,44 +26,12 @@ type GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsRe
 
 type _GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount
 
-// NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount instantiates a new GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount() *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount {
-	this := GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount{}
-	return &this
-}
-
 // NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccountWithDefaults instantiates a new GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccountWithDefaults() *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount {
 	this := GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type AddIntegrations200ResponseAllOfIntegrationOneOf2Config struct {
 
 type _AddIntegrations200ResponseAllOfIntegrationOneOf2Config AddIntegrations200ResponseAllOfIntegrationOneOf2Config
 
-// NewAddIntegrations200ResponseAllOfIntegrationOneOf2Config instantiates a new AddIntegrations200ResponseAllOfIntegrationOneOf2Config object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIntegrations200ResponseAllOfIntegrationOneOf2Config() *AddIntegrations200ResponseAllOfIntegrationOneOf2Config {
-	this := AddIntegrations200ResponseAllOfIntegrationOneOf2Config{}
-	return &this
-}
-
 // NewAddIntegrations200ResponseAllOfIntegrationOneOf2ConfigWithDefaults instantiates a new AddIntegrations200ResponseAllOfIntegrationOneOf2Config object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddIntegrations200ResponseAllOfIntegrationOneOf2ConfigWithDefaults() *AddIntegrations200ResponseAllOfIntegrationOneOf2Config {
 	this := AddIntegrations200ResponseAllOfIntegrationOneOf2Config{}
 	return &this
-}
-
-// GetZones returns the Zones field value if set, zero value otherwise.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf2Config) GetZones() []AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner {
-	if o == nil || IsNil(o.Zones) {
-		var ret []AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner
-		return ret
-	}
-	return o.Zones
-}
-
-// GetZonesOk returns a tuple with the Zones field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf2Config) GetZonesOk() ([]AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner, bool) {
-	if o == nil || IsNil(o.Zones) {
-		return nil, false
-	}
-	return o.Zones, true
-}
-
-// SetZones gets a reference to the given []AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner and assigns it to the Zones field.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf2Config) SetZones(v []AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner) {
-	o.Zones = v
 }
 
 func (o AddIntegrations200ResponseAllOfIntegrationOneOf2Config) MarshalJSON() ([]byte, error) {

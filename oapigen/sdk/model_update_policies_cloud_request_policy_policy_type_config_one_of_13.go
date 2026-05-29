@@ -26,44 +26,12 @@ type UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 struct {
 
 type _UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13
 
-// NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 instantiates a new UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13() *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 {
-	this := UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13{}
-	return &this
-}
-
 // NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13WithDefaults instantiates a new UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13WithDefaults() *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 {
 	this := UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13{}
 	return &this
-}
-
-// GetMaxHosts returns the MaxHosts field value if set, zero value otherwise.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13) GetMaxHosts() string {
-	if o == nil || IsNil(o.MaxHosts) {
-		var ret string
-		return ret
-	}
-	return *o.MaxHosts
-}
-
-// GetMaxHostsOk returns a tuple with the MaxHosts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13) GetMaxHostsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxHosts) {
-		return nil, false
-	}
-	return o.MaxHosts, true
-}
-
-// SetMaxHosts gets a reference to the given string and assigns it to the MaxHosts field.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13) SetMaxHosts(v string) {
-	o.MaxHosts = &v
 }
 
 func (o UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf13) MarshalJSON() ([]byte, error) {

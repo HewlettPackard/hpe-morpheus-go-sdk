@@ -27,45 +27,12 @@ type GenericInstanceConfiguration4 struct {
 
 type _GenericInstanceConfiguration4 GenericInstanceConfiguration4
 
-// NewGenericInstanceConfiguration4 instantiates a new GenericInstanceConfiguration4 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGenericInstanceConfiguration4() *GenericInstanceConfiguration4 {
-	this := GenericInstanceConfiguration4{}
-	return &this
-}
-
 // NewGenericInstanceConfiguration4WithDefaults instantiates a new GenericInstanceConfiguration4 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGenericInstanceConfiguration4WithDefaults() *GenericInstanceConfiguration4 {
 	this := GenericInstanceConfiguration4{}
 	return &this
-}
-
-// GetUserData returns the UserData field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GenericInstanceConfiguration4) GetUserData() string {
-	if o == nil || IsNil(o.UserData.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.UserData.Get()
-}
-
-// GetUserDataOk returns a tuple with the UserData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GenericInstanceConfiguration4) GetUserDataOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.UserData.Get(), o.UserData.IsSet()
-}
-
-// SetUserData gets a reference to the given NullableString and assigns it to the UserData field.
-func (o *GenericInstanceConfiguration4) SetUserData(v string) {
-	o.UserData.Set(&v)
 }
 
 func (o GenericInstanceConfiguration4) MarshalJSON() ([]byte, error) {

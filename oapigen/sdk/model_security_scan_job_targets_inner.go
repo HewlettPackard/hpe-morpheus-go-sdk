@@ -26,44 +26,12 @@ type SecurityScanJobTargetsInner struct {
 
 type _SecurityScanJobTargetsInner SecurityScanJobTargetsInner
 
-// NewSecurityScanJobTargetsInner instantiates a new SecurityScanJobTargetsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSecurityScanJobTargetsInner() *SecurityScanJobTargetsInner {
-	this := SecurityScanJobTargetsInner{}
-	return &this
-}
-
 // NewSecurityScanJobTargetsInnerWithDefaults instantiates a new SecurityScanJobTargetsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSecurityScanJobTargetsInnerWithDefaults() *SecurityScanJobTargetsInner {
 	this := SecurityScanJobTargetsInner{}
 	return &this
-}
-
-// GetRefId returns the RefId field value if set, zero value otherwise.
-func (o *SecurityScanJobTargetsInner) GetRefId() int64 {
-	if o == nil || IsNil(o.RefId) {
-		var ret int64
-		return ret
-	}
-	return *o.RefId
-}
-
-// GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SecurityScanJobTargetsInner) GetRefIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.RefId) {
-		return nil, false
-	}
-	return o.RefId, true
-}
-
-// SetRefId gets a reference to the given int64 and assigns it to the RefId field.
-func (o *SecurityScanJobTargetsInner) SetRefId(v int64) {
-	o.RefId = &v
 }
 
 func (o SecurityScanJobTargetsInner) MarshalJSON() ([]byte, error) {

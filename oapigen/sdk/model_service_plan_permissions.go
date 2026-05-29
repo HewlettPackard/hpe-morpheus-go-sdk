@@ -27,67 +27,12 @@ type ServicePlanPermissions struct {
 
 type _ServicePlanPermissions ServicePlanPermissions
 
-// NewServicePlanPermissions instantiates a new ServicePlanPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewServicePlanPermissions() *ServicePlanPermissions {
-	this := ServicePlanPermissions{}
-	return &this
-}
-
 // NewServicePlanPermissionsWithDefaults instantiates a new ServicePlanPermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewServicePlanPermissionsWithDefaults() *ServicePlanPermissions {
 	this := ServicePlanPermissions{}
 	return &this
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *ServicePlanPermissions) GetResourcePermissions() ServicePlanPermissionsResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret ServicePlanPermissionsResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServicePlanPermissions) GetResourcePermissionsOk() (*ServicePlanPermissionsResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// SetResourcePermissions gets a reference to the given ServicePlanPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *ServicePlanPermissions) SetResourcePermissions(v ServicePlanPermissionsResourcePermissions) {
-	o.ResourcePermissions = &v
-}
-
-// GetTenantPermissions returns the TenantPermissions field value if set, zero value otherwise.
-func (o *ServicePlanPermissions) GetTenantPermissions() ServicePlanPermissionsTenantPermissions {
-	if o == nil || IsNil(o.TenantPermissions) {
-		var ret ServicePlanPermissionsTenantPermissions
-		return ret
-	}
-	return *o.TenantPermissions
-}
-
-// GetTenantPermissionsOk returns a tuple with the TenantPermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServicePlanPermissions) GetTenantPermissionsOk() (*ServicePlanPermissionsTenantPermissions, bool) {
-	if o == nil || IsNil(o.TenantPermissions) {
-		return nil, false
-	}
-	return o.TenantPermissions, true
-}
-
-// SetTenantPermissions gets a reference to the given ServicePlanPermissionsTenantPermissions and assigns it to the TenantPermissions field.
-func (o *ServicePlanPermissions) SetTenantPermissions(v ServicePlanPermissionsTenantPermissions) {
-	o.TenantPermissions = &v
 }
 
 func (o ServicePlanPermissions) MarshalJSON() ([]byte, error) {

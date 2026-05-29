@@ -26,44 +26,12 @@ type PolicyCloudCreatePolicyTypeConfigOneOf6 struct {
 
 type _PolicyCloudCreatePolicyTypeConfigOneOf6 PolicyCloudCreatePolicyTypeConfigOneOf6
 
-// NewPolicyCloudCreatePolicyTypeConfigOneOf6 instantiates a new PolicyCloudCreatePolicyTypeConfigOneOf6 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPolicyCloudCreatePolicyTypeConfigOneOf6() *PolicyCloudCreatePolicyTypeConfigOneOf6 {
-	this := PolicyCloudCreatePolicyTypeConfigOneOf6{}
-	return &this
-}
-
 // NewPolicyCloudCreatePolicyTypeConfigOneOf6WithDefaults instantiates a new PolicyCloudCreatePolicyTypeConfigOneOf6 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPolicyCloudCreatePolicyTypeConfigOneOf6WithDefaults() *PolicyCloudCreatePolicyTypeConfigOneOf6 {
 	this := PolicyCloudCreatePolicyTypeConfigOneOf6{}
 	return &this
-}
-
-// GetRemovalAge returns the RemovalAge field value if set, zero value otherwise.
-func (o *PolicyCloudCreatePolicyTypeConfigOneOf6) GetRemovalAge() string {
-	if o == nil || IsNil(o.RemovalAge) {
-		var ret string
-		return ret
-	}
-	return *o.RemovalAge
-}
-
-// GetRemovalAgeOk returns a tuple with the RemovalAge field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyCloudCreatePolicyTypeConfigOneOf6) GetRemovalAgeOk() (*string, bool) {
-	if o == nil || IsNil(o.RemovalAge) {
-		return nil, false
-	}
-	return o.RemovalAge, true
-}
-
-// SetRemovalAge gets a reference to the given string and assigns it to the RemovalAge field.
-func (o *PolicyCloudCreatePolicyTypeConfigOneOf6) SetRemovalAge(v string) {
-	o.RemovalAge = &v
 }
 
 func (o PolicyCloudCreatePolicyTypeConfigOneOf6) MarshalJSON() ([]byte, error) {

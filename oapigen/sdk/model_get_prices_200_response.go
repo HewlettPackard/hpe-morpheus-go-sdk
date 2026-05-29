@@ -26,44 +26,12 @@ type GetPrices200Response struct {
 
 type _GetPrices200Response GetPrices200Response
 
-// NewGetPrices200Response instantiates a new GetPrices200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetPrices200Response() *GetPrices200Response {
-	this := GetPrices200Response{}
-	return &this
-}
-
 // NewGetPrices200ResponseWithDefaults instantiates a new GetPrices200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetPrices200ResponseWithDefaults() *GetPrices200Response {
 	this := GetPrices200Response{}
 	return &this
-}
-
-// GetPrice returns the Price field value if set, zero value otherwise.
-func (o *GetPrices200Response) GetPrice() GetPrices200ResponsePrice {
-	if o == nil || IsNil(o.Price) {
-		var ret GetPrices200ResponsePrice
-		return ret
-	}
-	return *o.Price
-}
-
-// GetPriceOk returns a tuple with the Price field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPrices200Response) GetPriceOk() (*GetPrices200ResponsePrice, bool) {
-	if o == nil || IsNil(o.Price) {
-		return nil, false
-	}
-	return o.Price, true
-}
-
-// SetPrice gets a reference to the given GetPrices200ResponsePrice and assigns it to the Price field.
-func (o *GetPrices200Response) SetPrice(v GetPrices200ResponsePrice) {
-	o.Price = &v
 }
 
 func (o GetPrices200Response) MarshalJSON() ([]byte, error) {

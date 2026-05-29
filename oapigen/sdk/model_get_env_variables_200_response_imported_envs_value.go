@@ -29,121 +29,12 @@ type GetEnvVariables200ResponseImportedEnvsValue struct {
 
 type _GetEnvVariables200ResponseImportedEnvsValue GetEnvVariables200ResponseImportedEnvsValue
 
-// NewGetEnvVariables200ResponseImportedEnvsValue instantiates a new GetEnvVariables200ResponseImportedEnvsValue object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetEnvVariables200ResponseImportedEnvsValue(export bool, masked bool, name string, value GetEnvVariables200ResponseImportedEnvsValueValue) *GetEnvVariables200ResponseImportedEnvsValue {
-	this := GetEnvVariables200ResponseImportedEnvsValue{}
-	this.Export = export
-	this.Masked = masked
-	this.Name = name
-	this.Value = value
-	return &this
-}
-
 // NewGetEnvVariables200ResponseImportedEnvsValueWithDefaults instantiates a new GetEnvVariables200ResponseImportedEnvsValue object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetEnvVariables200ResponseImportedEnvsValueWithDefaults() *GetEnvVariables200ResponseImportedEnvsValue {
 	this := GetEnvVariables200ResponseImportedEnvsValue{}
 	return &this
-}
-
-// GetExport returns the Export field value
-func (o *GetEnvVariables200ResponseImportedEnvsValue) GetExport() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.Export
-}
-
-// GetExportOk returns a tuple with the Export field value
-// and a boolean to check if the value has been set.
-func (o *GetEnvVariables200ResponseImportedEnvsValue) GetExportOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Export, true
-}
-
-// SetExport sets field value
-func (o *GetEnvVariables200ResponseImportedEnvsValue) SetExport(v bool) {
-	o.Export = v
-}
-
-// GetMasked returns the Masked field value
-func (o *GetEnvVariables200ResponseImportedEnvsValue) GetMasked() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.Masked
-}
-
-// GetMaskedOk returns a tuple with the Masked field value
-// and a boolean to check if the value has been set.
-func (o *GetEnvVariables200ResponseImportedEnvsValue) GetMaskedOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Masked, true
-}
-
-// SetMasked sets field value
-func (o *GetEnvVariables200ResponseImportedEnvsValue) SetMasked(v bool) {
-	o.Masked = v
-}
-
-// GetName returns the Name field value
-func (o *GetEnvVariables200ResponseImportedEnvsValue) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *GetEnvVariables200ResponseImportedEnvsValue) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *GetEnvVariables200ResponseImportedEnvsValue) SetName(v string) {
-	o.Name = v
-}
-
-// GetValue returns the Value field value
-func (o *GetEnvVariables200ResponseImportedEnvsValue) GetValue() GetEnvVariables200ResponseImportedEnvsValueValue {
-	if o == nil {
-		var ret GetEnvVariables200ResponseImportedEnvsValueValue
-		return ret
-	}
-
-	return o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value
-// and a boolean to check if the value has been set.
-func (o *GetEnvVariables200ResponseImportedEnvsValue) GetValueOk() (*GetEnvVariables200ResponseImportedEnvsValueValue, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Value, true
-}
-
-// SetValue sets field value
-func (o *GetEnvVariables200ResponseImportedEnvsValue) SetValue(v GetEnvVariables200ResponseImportedEnvsValueValue) {
-	o.Value = v
 }
 
 func (o GetEnvVariables200ResponseImportedEnvsValue) MarshalJSON() ([]byte, error) {

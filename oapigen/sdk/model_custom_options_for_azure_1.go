@@ -27,44 +27,12 @@ type CustomOptionsForAzure1 struct {
 
 type _CustomOptionsForAzure1 CustomOptionsForAzure1
 
-// NewCustomOptionsForAzure1 instantiates a new CustomOptionsForAzure1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCustomOptionsForAzure1() *CustomOptionsForAzure1 {
-	this := CustomOptionsForAzure1{}
-	return &this
-}
-
 // NewCustomOptionsForAzure1WithDefaults instantiates a new CustomOptionsForAzure1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCustomOptionsForAzure1WithDefaults() *CustomOptionsForAzure1 {
 	this := CustomOptionsForAzure1{}
 	return &this
-}
-
-// GetResourceGroup returns the ResourceGroup field value if set, zero value otherwise.
-func (o *CustomOptionsForAzure1) GetResourceGroup() string {
-	if o == nil || IsNil(o.ResourceGroup) {
-		var ret string
-		return ret
-	}
-	return *o.ResourceGroup
-}
-
-// GetResourceGroupOk returns a tuple with the ResourceGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CustomOptionsForAzure1) GetResourceGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceGroup) {
-		return nil, false
-	}
-	return o.ResourceGroup, true
-}
-
-// SetResourceGroup gets a reference to the given string and assigns it to the ResourceGroup field.
-func (o *CustomOptionsForAzure1) SetResourceGroup(v string) {
-	o.ResourceGroup = &v
 }
 
 func (o CustomOptionsForAzure1) MarshalJSON() ([]byte, error) {

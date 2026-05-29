@@ -28,96 +28,12 @@ type SpecTemplateCreateConfigCloudformation struct {
 
 type _SpecTemplateCreateConfigCloudformation SpecTemplateCreateConfigCloudformation
 
-// NewSpecTemplateCreateConfigCloudformation instantiates a new SpecTemplateCreateConfigCloudformation object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSpecTemplateCreateConfigCloudformation(iAM SpecTemplateCreateConfigCloudformationIAM, cAPABILITYNAMEDIAM SpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAM, cAPABILITYAUTOEXPAND SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND) *SpecTemplateCreateConfigCloudformation {
-	this := SpecTemplateCreateConfigCloudformation{}
-	this.IAM = iAM
-	this.CAPABILITY_NAMED_IAM = cAPABILITYNAMEDIAM
-	this.CAPABILITY_AUTO_EXPAND = cAPABILITYAUTOEXPAND
-	return &this
-}
-
 // NewSpecTemplateCreateConfigCloudformationWithDefaults instantiates a new SpecTemplateCreateConfigCloudformation object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSpecTemplateCreateConfigCloudformationWithDefaults() *SpecTemplateCreateConfigCloudformation {
 	this := SpecTemplateCreateConfigCloudformation{}
 	return &this
-}
-
-// GetIAM returns the IAM field value
-func (o *SpecTemplateCreateConfigCloudformation) GetIAM() SpecTemplateCreateConfigCloudformationIAM {
-	if o == nil {
-		var ret SpecTemplateCreateConfigCloudformationIAM
-		return ret
-	}
-
-	return o.IAM
-}
-
-// GetIAMOk returns a tuple with the IAM field value
-// and a boolean to check if the value has been set.
-func (o *SpecTemplateCreateConfigCloudformation) GetIAMOk() (*SpecTemplateCreateConfigCloudformationIAM, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.IAM, true
-}
-
-// SetIAM sets field value
-func (o *SpecTemplateCreateConfigCloudformation) SetIAM(v SpecTemplateCreateConfigCloudformationIAM) {
-	o.IAM = v
-}
-
-// GetCAPABILITY_NAMED_IAM returns the CAPABILITY_NAMED_IAM field value
-func (o *SpecTemplateCreateConfigCloudformation) GetCAPABILITY_NAMED_IAM() SpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAM {
-	if o == nil {
-		var ret SpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAM
-		return ret
-	}
-
-	return o.CAPABILITY_NAMED_IAM
-}
-
-// GetCAPABILITY_NAMED_IAMOk returns a tuple with the CAPABILITY_NAMED_IAM field value
-// and a boolean to check if the value has been set.
-func (o *SpecTemplateCreateConfigCloudformation) GetCAPABILITY_NAMED_IAMOk() (*SpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAM, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CAPABILITY_NAMED_IAM, true
-}
-
-// SetCAPABILITY_NAMED_IAM sets field value
-func (o *SpecTemplateCreateConfigCloudformation) SetCAPABILITY_NAMED_IAM(v SpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAM) {
-	o.CAPABILITY_NAMED_IAM = v
-}
-
-// GetCAPABILITY_AUTO_EXPAND returns the CAPABILITY_AUTO_EXPAND field value
-func (o *SpecTemplateCreateConfigCloudformation) GetCAPABILITY_AUTO_EXPAND() SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND {
-	if o == nil {
-		var ret SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND
-		return ret
-	}
-
-	return o.CAPABILITY_AUTO_EXPAND
-}
-
-// GetCAPABILITY_AUTO_EXPANDOk returns a tuple with the CAPABILITY_AUTO_EXPAND field value
-// and a boolean to check if the value has been set.
-func (o *SpecTemplateCreateConfigCloudformation) GetCAPABILITY_AUTO_EXPANDOk() (*SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CAPABILITY_AUTO_EXPAND, true
-}
-
-// SetCAPABILITY_AUTO_EXPAND sets field value
-func (o *SpecTemplateCreateConfigCloudformation) SetCAPABILITY_AUTO_EXPAND(v SpecTemplateCreateConfigCloudformationCAPABILITYAUTOEXPAND) {
-	o.CAPABILITY_AUTO_EXPAND = v
 }
 
 func (o SpecTemplateCreateConfigCloudformation) MarshalJSON() ([]byte, error) {

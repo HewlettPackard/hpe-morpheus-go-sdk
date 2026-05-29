@@ -26,44 +26,12 @@ type CatalogCartItemCreate struct {
 
 type _CatalogCartItemCreate CatalogCartItemCreate
 
-// NewCatalogCartItemCreate instantiates a new CatalogCartItemCreate object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCatalogCartItemCreate() *CatalogCartItemCreate {
-	this := CatalogCartItemCreate{}
-	return &this
-}
-
 // NewCatalogCartItemCreateWithDefaults instantiates a new CatalogCartItemCreate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCatalogCartItemCreateWithDefaults() *CatalogCartItemCreate {
 	this := CatalogCartItemCreate{}
 	return &this
-}
-
-// GetItem returns the Item field value if set, zero value otherwise.
-func (o *CatalogCartItemCreate) GetItem() CatalogCartItemCreateItem {
-	if o == nil || IsNil(o.Item) {
-		var ret CatalogCartItemCreateItem
-		return ret
-	}
-	return *o.Item
-}
-
-// GetItemOk returns a tuple with the Item field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogCartItemCreate) GetItemOk() (*CatalogCartItemCreateItem, bool) {
-	if o == nil || IsNil(o.Item) {
-		return nil, false
-	}
-	return o.Item, true
-}
-
-// SetItem gets a reference to the given CatalogCartItemCreateItem and assigns it to the Item field.
-func (o *CatalogCartItemCreate) SetItem(v CatalogCartItemCreateItem) {
-	o.Item = &v
 }
 
 func (o CatalogCartItemCreate) MarshalJSON() ([]byte, error) {

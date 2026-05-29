@@ -26,44 +26,12 @@ type AddCatalogOrderRequest struct {
 
 type _AddCatalogOrderRequest AddCatalogOrderRequest
 
-// NewAddCatalogOrderRequest instantiates a new AddCatalogOrderRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCatalogOrderRequest() *AddCatalogOrderRequest {
-	this := AddCatalogOrderRequest{}
-	return &this
-}
-
 // NewAddCatalogOrderRequestWithDefaults instantiates a new AddCatalogOrderRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddCatalogOrderRequestWithDefaults() *AddCatalogOrderRequest {
 	this := AddCatalogOrderRequest{}
 	return &this
-}
-
-// GetOrder returns the Order field value if set, zero value otherwise.
-func (o *AddCatalogOrderRequest) GetOrder() AddCatalogOrderRequestOrder {
-	if o == nil || IsNil(o.Order) {
-		var ret AddCatalogOrderRequestOrder
-		return ret
-	}
-	return *o.Order
-}
-
-// GetOrderOk returns a tuple with the Order field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCatalogOrderRequest) GetOrderOk() (*AddCatalogOrderRequestOrder, bool) {
-	if o == nil || IsNil(o.Order) {
-		return nil, false
-	}
-	return o.Order, true
-}
-
-// SetOrder gets a reference to the given AddCatalogOrderRequestOrder and assigns it to the Order field.
-func (o *AddCatalogOrderRequest) SetOrder(v AddCatalogOrderRequestOrder) {
-	o.Order = &v
 }
 
 func (o AddCatalogOrderRequest) MarshalJSON() ([]byte, error) {

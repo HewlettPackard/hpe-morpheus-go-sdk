@@ -26,44 +26,12 @@ type BackupTargetsPolicyTypeConfiguration1 struct {
 
 type _BackupTargetsPolicyTypeConfiguration1 BackupTargetsPolicyTypeConfiguration1
 
-// NewBackupTargetsPolicyTypeConfiguration1 instantiates a new BackupTargetsPolicyTypeConfiguration1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBackupTargetsPolicyTypeConfiguration1() *BackupTargetsPolicyTypeConfiguration1 {
-	this := BackupTargetsPolicyTypeConfiguration1{}
-	return &this
-}
-
 // NewBackupTargetsPolicyTypeConfiguration1WithDefaults instantiates a new BackupTargetsPolicyTypeConfiguration1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBackupTargetsPolicyTypeConfiguration1WithDefaults() *BackupTargetsPolicyTypeConfiguration1 {
 	this := BackupTargetsPolicyTypeConfiguration1{}
 	return &this
-}
-
-// GetBackupStorageIds returns the BackupStorageIds field value if set, zero value otherwise.
-func (o *BackupTargetsPolicyTypeConfiguration1) GetBackupStorageIds() []int64 {
-	if o == nil || IsNil(o.BackupStorageIds) {
-		var ret []int64
-		return ret
-	}
-	return o.BackupStorageIds
-}
-
-// GetBackupStorageIdsOk returns a tuple with the BackupStorageIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BackupTargetsPolicyTypeConfiguration1) GetBackupStorageIdsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.BackupStorageIds) {
-		return nil, false
-	}
-	return o.BackupStorageIds, true
-}
-
-// SetBackupStorageIds gets a reference to the given []int64 and assigns it to the BackupStorageIds field.
-func (o *BackupTargetsPolicyTypeConfiguration1) SetBackupStorageIds(v []int64) {
-	o.BackupStorageIds = v
 }
 
 func (o BackupTargetsPolicyTypeConfiguration1) MarshalJSON() ([]byte, error) {

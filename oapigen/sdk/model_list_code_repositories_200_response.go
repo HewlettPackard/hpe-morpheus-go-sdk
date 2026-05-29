@@ -27,67 +27,12 @@ type ListCodeRepositories200Response struct {
 
 type _ListCodeRepositories200Response ListCodeRepositories200Response
 
-// NewListCodeRepositories200Response instantiates a new ListCodeRepositories200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListCodeRepositories200Response() *ListCodeRepositories200Response {
-	this := ListCodeRepositories200Response{}
-	return &this
-}
-
 // NewListCodeRepositories200ResponseWithDefaults instantiates a new ListCodeRepositories200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListCodeRepositories200ResponseWithDefaults() *ListCodeRepositories200Response {
 	this := ListCodeRepositories200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *ListCodeRepositories200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCodeRepositories200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *ListCodeRepositories200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *ListCodeRepositories200Response) GetData() []ListCodeRepositories200ResponseAllOfDataInner {
-	if o == nil || IsNil(o.Data) {
-		var ret []ListCodeRepositories200ResponseAllOfDataInner
-		return ret
-	}
-	return o.Data
-}
-
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCodeRepositories200Response) GetDataOk() ([]ListCodeRepositories200ResponseAllOfDataInner, bool) {
-	if o == nil || IsNil(o.Data) {
-		return nil, false
-	}
-	return o.Data, true
-}
-
-// SetData gets a reference to the given []ListCodeRepositories200ResponseAllOfDataInner and assigns it to the Data field.
-func (o *ListCodeRepositories200Response) SetData(v []ListCodeRepositories200ResponseAllOfDataInner) {
-	o.Data = v
 }
 
 func (o ListCodeRepositories200Response) MarshalJSON() ([]byte, error) {

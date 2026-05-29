@@ -29,113 +29,12 @@ type BillingZonesZonesInnerInstances struct {
 
 type _BillingZonesZonesInnerInstances BillingZonesZonesInnerInstances
 
-// NewBillingZonesZonesInnerInstances instantiates a new BillingZonesZonesInnerInstances object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBillingZonesZonesInnerInstances() *BillingZonesZonesInnerInstances {
-	this := BillingZonesZonesInnerInstances{}
-	return &this
-}
-
 // NewBillingZonesZonesInnerInstancesWithDefaults instantiates a new BillingZonesZonesInnerInstances object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBillingZonesZonesInnerInstancesWithDefaults() *BillingZonesZonesInnerInstances {
 	this := BillingZonesZonesInnerInstances{}
 	return &this
-}
-
-// GetPrice returns the Price field value if set, zero value otherwise.
-func (o *BillingZonesZonesInnerInstances) GetPrice() float32 {
-	if o == nil || IsNil(o.Price) {
-		var ret float32
-		return ret
-	}
-	return *o.Price
-}
-
-// GetPriceOk returns a tuple with the Price field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingZonesZonesInnerInstances) GetPriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.Price) {
-		return nil, false
-	}
-	return o.Price, true
-}
-
-// SetPrice gets a reference to the given float32 and assigns it to the Price field.
-func (o *BillingZonesZonesInnerInstances) SetPrice(v float32) {
-	o.Price = &v
-}
-
-// GetCost returns the Cost field value if set, zero value otherwise.
-func (o *BillingZonesZonesInnerInstances) GetCost() float32 {
-	if o == nil || IsNil(o.Cost) {
-		var ret float32
-		return ret
-	}
-	return *o.Cost
-}
-
-// GetCostOk returns a tuple with the Cost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingZonesZonesInnerInstances) GetCostOk() (*float32, bool) {
-	if o == nil || IsNil(o.Cost) {
-		return nil, false
-	}
-	return o.Cost, true
-}
-
-// SetCost gets a reference to the given float32 and assigns it to the Cost field.
-func (o *BillingZonesZonesInnerInstances) SetCost(v float32) {
-	o.Cost = &v
-}
-
-// GetInstances returns the Instances field value if set, zero value otherwise.
-func (o *BillingZonesZonesInnerInstances) GetInstances() []map[string]interface{} {
-	if o == nil || IsNil(o.Instances) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Instances
-}
-
-// GetInstancesOk returns a tuple with the Instances field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingZonesZonesInnerInstances) GetInstancesOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Instances) {
-		return nil, false
-	}
-	return o.Instances, true
-}
-
-// SetInstances gets a reference to the given []map[string]interface{} and assigns it to the Instances field.
-func (o *BillingZonesZonesInnerInstances) SetInstances(v []map[string]interface{}) {
-	o.Instances = v
-}
-
-// GetCount returns the Count field value if set, zero value otherwise.
-func (o *BillingZonesZonesInnerInstances) GetCount() int64 {
-	if o == nil || IsNil(o.Count) {
-		var ret int64
-		return ret
-	}
-	return *o.Count
-}
-
-// GetCountOk returns a tuple with the Count field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingZonesZonesInnerInstances) GetCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.Count) {
-		return nil, false
-	}
-	return o.Count, true
-}
-
-// SetCount gets a reference to the given int64 and assigns it to the Count field.
-func (o *BillingZonesZonesInnerInstances) SetCount(v int64) {
-	o.Count = &v
 }
 
 func (o BillingZonesZonesInnerInstances) MarshalJSON() ([]byte, error) {

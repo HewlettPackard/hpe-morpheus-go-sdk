@@ -27,20 +27,6 @@ type ListOsTypes200ResponseAllOfOsTypesInnerOwner struct {
 	String                                            *string
 }
 
-// ListOsTypes200ResponseAllOfOsTypesInnerOwnerOneOfAsListOsTypes200ResponseAllOfOsTypesInnerOwner is a convenience function that returns ListOsTypes200ResponseAllOfOsTypesInnerOwnerOneOf wrapped in ListOsTypes200ResponseAllOfOsTypesInnerOwner
-func ListOsTypes200ResponseAllOfOsTypesInnerOwnerOneOfAsListOsTypes200ResponseAllOfOsTypesInnerOwner(v *ListOsTypes200ResponseAllOfOsTypesInnerOwnerOneOf) ListOsTypes200ResponseAllOfOsTypesInnerOwner {
-	return ListOsTypes200ResponseAllOfOsTypesInnerOwner{
-		ListOsTypes200ResponseAllOfOsTypesInnerOwnerOneOf: v,
-	}
-}
-
-// stringAsListOsTypes200ResponseAllOfOsTypesInnerOwner is a convenience function that returns string wrapped in ListOsTypes200ResponseAllOfOsTypesInnerOwner
-func StringAsListOsTypes200ResponseAllOfOsTypesInnerOwner(v *string) ListOsTypes200ResponseAllOfOsTypesInnerOwner {
-	return ListOsTypes200ResponseAllOfOsTypesInnerOwner{
-		String: v,
-	}
-}
-
 func (dst *ListOsTypes200ResponseAllOfOsTypesInnerOwner) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ListOsTypes200ResponseAllOfOsTypesInnerOwner{}

@@ -28,91 +28,12 @@ type GetInstanceThreshold200Response struct {
 
 type _GetInstanceThreshold200Response GetInstanceThreshold200Response
 
-// NewGetInstanceThreshold200Response instantiates a new GetInstanceThreshold200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceThreshold200Response() *GetInstanceThreshold200Response {
-	this := GetInstanceThreshold200Response{}
-	return &this
-}
-
 // NewGetInstanceThreshold200ResponseWithDefaults instantiates a new GetInstanceThreshold200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstanceThreshold200ResponseWithDefaults() *GetInstanceThreshold200Response {
 	this := GetInstanceThreshold200Response{}
 	return &this
-}
-
-// GetInstance returns the Instance field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetInstanceThreshold200Response) GetInstance() GetInstanceThreshold200ResponseInstance {
-	if o == nil || IsNil(o.Instance.Get()) {
-		var ret GetInstanceThreshold200ResponseInstance
-		return ret
-	}
-	return *o.Instance.Get()
-}
-
-// GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetInstanceThreshold200Response) GetInstanceOk() (*GetInstanceThreshold200ResponseInstance, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Instance.Get(), o.Instance.IsSet()
-}
-
-// SetInstance gets a reference to the given NullableGetInstanceThreshold200ResponseInstance and assigns it to the Instance field.
-func (o *GetInstanceThreshold200Response) SetInstance(v GetInstanceThreshold200ResponseInstance) {
-	o.Instance.Set(&v)
-}
-
-// GetInstanceThreshold returns the InstanceThreshold field value if set, zero value otherwise.
-func (o *GetInstanceThreshold200Response) GetInstanceThreshold() GetInstanceThreshold200ResponseInstanceThreshold {
-	if o == nil || IsNil(o.InstanceThreshold) {
-		var ret GetInstanceThreshold200ResponseInstanceThreshold
-		return ret
-	}
-	return *o.InstanceThreshold
-}
-
-// GetInstanceThresholdOk returns a tuple with the InstanceThreshold field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceThreshold200Response) GetInstanceThresholdOk() (*GetInstanceThreshold200ResponseInstanceThreshold, bool) {
-	if o == nil || IsNil(o.InstanceThreshold) {
-		return nil, false
-	}
-	return o.InstanceThreshold, true
-}
-
-// SetInstanceThreshold gets a reference to the given GetInstanceThreshold200ResponseInstanceThreshold and assigns it to the InstanceThreshold field.
-func (o *GetInstanceThreshold200Response) SetInstanceThreshold(v GetInstanceThreshold200ResponseInstanceThreshold) {
-	o.InstanceThreshold = &v
-}
-
-// GetInstanceSchedules returns the InstanceSchedules field value if set, zero value otherwise.
-func (o *GetInstanceThreshold200Response) GetInstanceSchedules() []GetInstanceThreshold200ResponseInstanceSchedulesInner {
-	if o == nil || IsNil(o.InstanceSchedules) {
-		var ret []GetInstanceThreshold200ResponseInstanceSchedulesInner
-		return ret
-	}
-	return o.InstanceSchedules
-}
-
-// GetInstanceSchedulesOk returns a tuple with the InstanceSchedules field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceThreshold200Response) GetInstanceSchedulesOk() ([]GetInstanceThreshold200ResponseInstanceSchedulesInner, bool) {
-	if o == nil || IsNil(o.InstanceSchedules) {
-		return nil, false
-	}
-	return o.InstanceSchedules, true
-}
-
-// SetInstanceSchedules gets a reference to the given []GetInstanceThreshold200ResponseInstanceSchedulesInner and assigns it to the InstanceSchedules field.
-func (o *GetInstanceThreshold200Response) SetInstanceSchedules(v []GetInstanceThreshold200ResponseInstanceSchedulesInner) {
-	o.InstanceSchedules = v
 }
 
 func (o GetInstanceThreshold200Response) MarshalJSON() ([]byte, error) {

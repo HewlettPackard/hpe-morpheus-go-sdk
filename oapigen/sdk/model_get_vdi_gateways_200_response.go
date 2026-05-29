@@ -26,44 +26,12 @@ type GetVDIGateways200Response struct {
 
 type _GetVDIGateways200Response GetVDIGateways200Response
 
-// NewGetVDIGateways200Response instantiates a new GetVDIGateways200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetVDIGateways200Response() *GetVDIGateways200Response {
-	this := GetVDIGateways200Response{}
-	return &this
-}
-
 // NewGetVDIGateways200ResponseWithDefaults instantiates a new GetVDIGateways200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetVDIGateways200ResponseWithDefaults() *GetVDIGateways200Response {
 	this := GetVDIGateways200Response{}
 	return &this
-}
-
-// GetVdiGateway returns the VdiGateway field value if set, zero value otherwise.
-func (o *GetVDIGateways200Response) GetVdiGateway() GetVDIGateways200ResponseVdiGateway {
-	if o == nil || IsNil(o.VdiGateway) {
-		var ret GetVDIGateways200ResponseVdiGateway
-		return ret
-	}
-	return *o.VdiGateway
-}
-
-// GetVdiGatewayOk returns a tuple with the VdiGateway field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetVDIGateways200Response) GetVdiGatewayOk() (*GetVDIGateways200ResponseVdiGateway, bool) {
-	if o == nil || IsNil(o.VdiGateway) {
-		return nil, false
-	}
-	return o.VdiGateway, true
-}
-
-// SetVdiGateway gets a reference to the given GetVDIGateways200ResponseVdiGateway and assigns it to the VdiGateway field.
-func (o *GetVDIGateways200Response) SetVdiGateway(v GetVDIGateways200ResponseVdiGateway) {
-	o.VdiGateway = &v
 }
 
 func (o GetVDIGateways200Response) MarshalJSON() ([]byte, error) {

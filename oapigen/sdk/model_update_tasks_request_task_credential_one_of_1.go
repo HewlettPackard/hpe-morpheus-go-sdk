@@ -26,44 +26,12 @@ type UpdateTasksRequestTaskCredentialOneOf1 struct {
 
 type _UpdateTasksRequestTaskCredentialOneOf1 UpdateTasksRequestTaskCredentialOneOf1
 
-// NewUpdateTasksRequestTaskCredentialOneOf1 instantiates a new UpdateTasksRequestTaskCredentialOneOf1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateTasksRequestTaskCredentialOneOf1() *UpdateTasksRequestTaskCredentialOneOf1 {
-	this := UpdateTasksRequestTaskCredentialOneOf1{}
-	return &this
-}
-
 // NewUpdateTasksRequestTaskCredentialOneOf1WithDefaults instantiates a new UpdateTasksRequestTaskCredentialOneOf1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateTasksRequestTaskCredentialOneOf1WithDefaults() *UpdateTasksRequestTaskCredentialOneOf1 {
 	this := UpdateTasksRequestTaskCredentialOneOf1{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *UpdateTasksRequestTaskCredentialOneOf1) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateTasksRequestTaskCredentialOneOf1) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *UpdateTasksRequestTaskCredentialOneOf1) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o UpdateTasksRequestTaskCredentialOneOf1) MarshalJSON() ([]byte, error) {

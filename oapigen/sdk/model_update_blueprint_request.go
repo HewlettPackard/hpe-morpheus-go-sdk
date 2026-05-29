@@ -31,48 +31,6 @@ type UpdateBlueprintRequest struct {
 	UpdateBlueprintRequestOneOf5 *UpdateBlueprintRequestOneOf5
 }
 
-// UpdateBlueprintRequestOneOfAsUpdateBlueprintRequest is a convenience function that returns UpdateBlueprintRequestOneOf wrapped in UpdateBlueprintRequest
-func UpdateBlueprintRequestOneOfAsUpdateBlueprintRequest(v *UpdateBlueprintRequestOneOf) UpdateBlueprintRequest {
-	return UpdateBlueprintRequest{
-		UpdateBlueprintRequestOneOf: v,
-	}
-}
-
-// UpdateBlueprintRequestOneOf1AsUpdateBlueprintRequest is a convenience function that returns UpdateBlueprintRequestOneOf1 wrapped in UpdateBlueprintRequest
-func UpdateBlueprintRequestOneOf1AsUpdateBlueprintRequest(v *UpdateBlueprintRequestOneOf1) UpdateBlueprintRequest {
-	return UpdateBlueprintRequest{
-		UpdateBlueprintRequestOneOf1: v,
-	}
-}
-
-// UpdateBlueprintRequestOneOf2AsUpdateBlueprintRequest is a convenience function that returns UpdateBlueprintRequestOneOf2 wrapped in UpdateBlueprintRequest
-func UpdateBlueprintRequestOneOf2AsUpdateBlueprintRequest(v *UpdateBlueprintRequestOneOf2) UpdateBlueprintRequest {
-	return UpdateBlueprintRequest{
-		UpdateBlueprintRequestOneOf2: v,
-	}
-}
-
-// UpdateBlueprintRequestOneOf3AsUpdateBlueprintRequest is a convenience function that returns UpdateBlueprintRequestOneOf3 wrapped in UpdateBlueprintRequest
-func UpdateBlueprintRequestOneOf3AsUpdateBlueprintRequest(v *UpdateBlueprintRequestOneOf3) UpdateBlueprintRequest {
-	return UpdateBlueprintRequest{
-		UpdateBlueprintRequestOneOf3: v,
-	}
-}
-
-// UpdateBlueprintRequestOneOf4AsUpdateBlueprintRequest is a convenience function that returns UpdateBlueprintRequestOneOf4 wrapped in UpdateBlueprintRequest
-func UpdateBlueprintRequestOneOf4AsUpdateBlueprintRequest(v *UpdateBlueprintRequestOneOf4) UpdateBlueprintRequest {
-	return UpdateBlueprintRequest{
-		UpdateBlueprintRequestOneOf4: v,
-	}
-}
-
-// UpdateBlueprintRequestOneOf5AsUpdateBlueprintRequest is a convenience function that returns UpdateBlueprintRequestOneOf5 wrapped in UpdateBlueprintRequest
-func UpdateBlueprintRequestOneOf5AsUpdateBlueprintRequest(v *UpdateBlueprintRequestOneOf5) UpdateBlueprintRequest {
-	return UpdateBlueprintRequest{
-		UpdateBlueprintRequestOneOf5: v,
-	}
-}
-
 func (dst *UpdateBlueprintRequest) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateBlueprintRequest{}

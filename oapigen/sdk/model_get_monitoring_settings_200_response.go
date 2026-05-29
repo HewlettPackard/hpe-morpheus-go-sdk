@@ -26,44 +26,12 @@ type GetMonitoringSettings200Response struct {
 
 type _GetMonitoringSettings200Response GetMonitoringSettings200Response
 
-// NewGetMonitoringSettings200Response instantiates a new GetMonitoringSettings200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetMonitoringSettings200Response() *GetMonitoringSettings200Response {
-	this := GetMonitoringSettings200Response{}
-	return &this
-}
-
 // NewGetMonitoringSettings200ResponseWithDefaults instantiates a new GetMonitoringSettings200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetMonitoringSettings200ResponseWithDefaults() *GetMonitoringSettings200Response {
 	this := GetMonitoringSettings200Response{}
 	return &this
-}
-
-// GetMonitoringSettings returns the MonitoringSettings field value if set, zero value otherwise.
-func (o *GetMonitoringSettings200Response) GetMonitoringSettings() GetMonitoringSettings200ResponseMonitoringSettings {
-	if o == nil || IsNil(o.MonitoringSettings) {
-		var ret GetMonitoringSettings200ResponseMonitoringSettings
-		return ret
-	}
-	return *o.MonitoringSettings
-}
-
-// GetMonitoringSettingsOk returns a tuple with the MonitoringSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetMonitoringSettings200Response) GetMonitoringSettingsOk() (*GetMonitoringSettings200ResponseMonitoringSettings, bool) {
-	if o == nil || IsNil(o.MonitoringSettings) {
-		return nil, false
-	}
-	return o.MonitoringSettings, true
-}
-
-// SetMonitoringSettings gets a reference to the given GetMonitoringSettings200ResponseMonitoringSettings and assigns it to the MonitoringSettings field.
-func (o *GetMonitoringSettings200Response) SetMonitoringSettings(v GetMonitoringSettings200ResponseMonitoringSettings) {
-	o.MonitoringSettings = &v
 }
 
 func (o GetMonitoringSettings200Response) MarshalJSON() ([]byte, error) {

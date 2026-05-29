@@ -27,67 +27,12 @@ type GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy struct {
 
 type _GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy
 
-// NewGetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy instantiates a new GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy() *GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy {
-	this := GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy{}
-	return &this
-}
-
 // NewGetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedByWithDefaults instantiates a new GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedByWithDefaults() *GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy {
 	this := GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy{}
 	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy) SetUsername(v string) {
-	o.Username = &v
-}
-
-// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
-func (o *GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy) GetDisplayName() string {
-	if o == nil || IsNil(o.DisplayName) {
-		var ret string
-		return ret
-	}
-	return *o.DisplayName
-}
-
-// GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy) GetDisplayNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DisplayName) {
-		return nil, false
-	}
-	return o.DisplayName, true
-}
-
-// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
-func (o *GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy) SetDisplayName(v string) {
-	o.DisplayName = &v
 }
 
 func (o GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy) MarshalJSON() ([]byte, error) {

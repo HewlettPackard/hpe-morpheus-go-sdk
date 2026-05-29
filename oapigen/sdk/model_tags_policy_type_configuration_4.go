@@ -29,113 +29,12 @@ type TagsPolicyTypeConfiguration4 struct {
 
 type _TagsPolicyTypeConfiguration4 TagsPolicyTypeConfiguration4
 
-// NewTagsPolicyTypeConfiguration4 instantiates a new TagsPolicyTypeConfiguration4 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTagsPolicyTypeConfiguration4() *TagsPolicyTypeConfiguration4 {
-	this := TagsPolicyTypeConfiguration4{}
-	return &this
-}
-
 // NewTagsPolicyTypeConfiguration4WithDefaults instantiates a new TagsPolicyTypeConfiguration4 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTagsPolicyTypeConfiguration4WithDefaults() *TagsPolicyTypeConfiguration4 {
 	this := TagsPolicyTypeConfiguration4{}
 	return &this
-}
-
-// GetStrict returns the Strict field value if set, zero value otherwise.
-func (o *TagsPolicyTypeConfiguration4) GetStrict() bool {
-	if o == nil || IsNil(o.Strict) {
-		var ret bool
-		return ret
-	}
-	return *o.Strict
-}
-
-// GetStrictOk returns a tuple with the Strict field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TagsPolicyTypeConfiguration4) GetStrictOk() (*bool, bool) {
-	if o == nil || IsNil(o.Strict) {
-		return nil, false
-	}
-	return o.Strict, true
-}
-
-// SetStrict gets a reference to the given bool and assigns it to the Strict field.
-func (o *TagsPolicyTypeConfiguration4) SetStrict(v bool) {
-	o.Strict = &v
-}
-
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *TagsPolicyTypeConfiguration4) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
-		return ret
-	}
-	return *o.Key
-}
-
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TagsPolicyTypeConfiguration4) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
-		return nil, false
-	}
-	return o.Key, true
-}
-
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *TagsPolicyTypeConfiguration4) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetValueListId returns the ValueListId field value if set, zero value otherwise.
-func (o *TagsPolicyTypeConfiguration4) GetValueListId() string {
-	if o == nil || IsNil(o.ValueListId) {
-		var ret string
-		return ret
-	}
-	return *o.ValueListId
-}
-
-// GetValueListIdOk returns a tuple with the ValueListId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TagsPolicyTypeConfiguration4) GetValueListIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ValueListId) {
-		return nil, false
-	}
-	return o.ValueListId, true
-}
-
-// SetValueListId gets a reference to the given string and assigns it to the ValueListId field.
-func (o *TagsPolicyTypeConfiguration4) SetValueListId(v string) {
-	o.ValueListId = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *TagsPolicyTypeConfiguration4) GetValue() string {
-	if o == nil || IsNil(o.Value) {
-		var ret string
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TagsPolicyTypeConfiguration4) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *TagsPolicyTypeConfiguration4) SetValue(v string) {
-	o.Value = &v
 }
 
 func (o TagsPolicyTypeConfiguration4) MarshalJSON() ([]byte, error) {

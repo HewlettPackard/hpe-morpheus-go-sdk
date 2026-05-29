@@ -27,67 +27,12 @@ type AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner struct {
 
 type _AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner
 
-// NewAddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner instantiates a new AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner() *AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner {
-	this := AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner{}
-	return &this
-}
-
 // NewAddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInnerWithDefaults instantiates a new AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInnerWithDefaults() *AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner {
 	this := AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner{}
 	return &this
-}
-
-// GetZoneName returns the ZoneName field value if set, zero value otherwise.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner) GetZoneName() string {
-	if o == nil || IsNil(o.ZoneName) {
-		var ret string
-		return ret
-	}
-	return *o.ZoneName
-}
-
-// GetZoneNameOk returns a tuple with the ZoneName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner) GetZoneNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ZoneName) {
-		return nil, false
-	}
-	return o.ZoneName, true
-}
-
-// SetZoneName gets a reference to the given string and assigns it to the ZoneName field.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner) SetZoneName(v string) {
-	o.ZoneName = &v
-}
-
-// GetReverseZone returns the ReverseZone field value if set, zero value otherwise.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner) GetReverseZone() string {
-	if o == nil || IsNil(o.ReverseZone) {
-		var ret string
-		return ret
-	}
-	return *o.ReverseZone
-}
-
-// GetReverseZoneOk returns a tuple with the ReverseZone field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner) GetReverseZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.ReverseZone) {
-		return nil, false
-	}
-	return o.ReverseZone, true
-}
-
-// SetReverseZone gets a reference to the given string and assigns it to the ReverseZone field.
-func (o *AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner) SetReverseZone(v string) {
-	o.ReverseZone = &v
 }
 
 func (o AddIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner) MarshalJSON() ([]byte, error) {

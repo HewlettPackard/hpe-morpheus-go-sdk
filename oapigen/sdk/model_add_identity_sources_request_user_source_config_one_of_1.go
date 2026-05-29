@@ -33,17 +33,6 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf1 struct {
 
 type _AddIdentitySourcesRequestUserSourceConfigOneOf1 AddIdentitySourcesRequestUserSourceConfigOneOf1
 
-// NewAddIdentitySourcesRequestUserSourceConfigOneOf1 instantiates a new AddIdentitySourcesRequestUserSourceConfigOneOf1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIdentitySourcesRequestUserSourceConfigOneOf1() *AddIdentitySourcesRequestUserSourceConfigOneOf1 {
-	this := AddIdentitySourcesRequestUserSourceConfigOneOf1{}
-	var organizationId bool = false
-	this.OrganizationId = &organizationId
-	return &this
-}
-
 // NewAddIdentitySourcesRequestUserSourceConfigOneOf1WithDefaults instantiates a new AddIdentitySourcesRequestUserSourceConfigOneOf1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -52,98 +41,6 @@ func NewAddIdentitySourcesRequestUserSourceConfigOneOf1WithDefaults() *AddIdenti
 	var organizationId bool = false
 	this.OrganizationId = &organizationId
 	return &this
-}
-
-// GetOrganizationId returns the OrganizationId field value if set, zero value otherwise.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf1) GetOrganizationId() bool {
-	if o == nil || IsNil(o.OrganizationId) {
-		var ret bool
-		return ret
-	}
-	return *o.OrganizationId
-}
-
-// GetOrganizationIdOk returns a tuple with the OrganizationId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf1) GetOrganizationIdOk() (*bool, bool) {
-	if o == nil || IsNil(o.OrganizationId) {
-		return nil, false
-	}
-	return o.OrganizationId, true
-}
-
-// SetOrganizationId gets a reference to the given bool and assigns it to the OrganizationId field.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf1) SetOrganizationId(v bool) {
-	o.OrganizationId = &v
-}
-
-// GetBindingUsername returns the BindingUsername field value if set, zero value otherwise.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf1) GetBindingUsername() string {
-	if o == nil || IsNil(o.BindingUsername) {
-		var ret string
-		return ret
-	}
-	return *o.BindingUsername
-}
-
-// GetBindingUsernameOk returns a tuple with the BindingUsername field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf1) GetBindingUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.BindingUsername) {
-		return nil, false
-	}
-	return o.BindingUsername, true
-}
-
-// SetBindingUsername gets a reference to the given string and assigns it to the BindingUsername field.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf1) SetBindingUsername(v string) {
-	o.BindingUsername = &v
-}
-
-// GetBindingPassword returns the BindingPassword field value if set, zero value otherwise.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf1) GetBindingPassword() string {
-	if o == nil || IsNil(o.BindingPassword) {
-		var ret string
-		return ret
-	}
-	return *o.BindingPassword
-}
-
-// GetBindingPasswordOk returns a tuple with the BindingPassword field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf1) GetBindingPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.BindingPassword) {
-		return nil, false
-	}
-	return o.BindingPassword, true
-}
-
-// SetBindingPassword gets a reference to the given string and assigns it to the BindingPassword field.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf1) SetBindingPassword(v string) {
-	o.BindingPassword = &v
-}
-
-// GetRequiredRole returns the RequiredRole field value if set, zero value otherwise.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf1) GetRequiredRole() string {
-	if o == nil || IsNil(o.RequiredRole) {
-		var ret string
-		return ret
-	}
-	return *o.RequiredRole
-}
-
-// GetRequiredRoleOk returns a tuple with the RequiredRole field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf1) GetRequiredRoleOk() (*string, bool) {
-	if o == nil || IsNil(o.RequiredRole) {
-		return nil, false
-	}
-	return o.RequiredRole, true
-}
-
-// SetRequiredRole gets a reference to the given string and assigns it to the RequiredRole field.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf1) SetRequiredRole(v string) {
-	o.RequiredRole = &v
 }
 
 func (o AddIdentitySourcesRequestUserSourceConfigOneOf1) MarshalJSON() ([]byte, error) {

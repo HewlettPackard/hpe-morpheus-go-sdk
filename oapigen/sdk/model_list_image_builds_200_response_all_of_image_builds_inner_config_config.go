@@ -28,90 +28,12 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig struct {
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig
 
-// NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig() *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig {
-	this := ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig{}
-	return &this
-}
-
 // NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfigWithDefaults instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfigWithDefaults() *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig {
 	this := ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig{}
 	return &this
-}
-
-// GetTemplate returns the Template field value if set, zero value otherwise.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) GetTemplate() int64 {
-	if o == nil || IsNil(o.Template) {
-		var ret int64
-		return ret
-	}
-	return *o.Template
-}
-
-// GetTemplateOk returns a tuple with the Template field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) GetTemplateOk() (*int64, bool) {
-	if o == nil || IsNil(o.Template) {
-		return nil, false
-	}
-	return o.Template, true
-}
-
-// SetTemplate gets a reference to the given int64 and assigns it to the Template field.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) SetTemplate(v int64) {
-	o.Template = &v
-}
-
-// GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) GetResourcePoolId() int64 {
-	if o == nil || IsNil(o.ResourcePoolId) {
-		var ret int64
-		return ret
-	}
-	return *o.ResourcePoolId
-}
-
-// GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) GetResourcePoolIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.ResourcePoolId) {
-		return nil, false
-	}
-	return o.ResourcePoolId, true
-}
-
-// SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) SetResourcePoolId(v int64) {
-	o.ResourcePoolId = &v
-}
-
-// GetExpose returns the Expose field value if set, zero value otherwise.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) GetExpose() int64 {
-	if o == nil || IsNil(o.Expose) {
-		var ret int64
-		return ret
-	}
-	return *o.Expose
-}
-
-// GetExposeOk returns a tuple with the Expose field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) GetExposeOk() (*int64, bool) {
-	if o == nil || IsNil(o.Expose) {
-		return nil, false
-	}
-	return o.Expose, true
-}
-
-// SetExpose gets a reference to the given int64 and assigns it to the Expose field.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) SetExpose(v int64) {
-	o.Expose = &v
 }
 
 func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) MarshalJSON() ([]byte, error) {

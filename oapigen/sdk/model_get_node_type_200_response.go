@@ -26,44 +26,12 @@ type GetNodeType200Response struct {
 
 type _GetNodeType200Response GetNodeType200Response
 
-// NewGetNodeType200Response instantiates a new GetNodeType200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNodeType200Response() *GetNodeType200Response {
-	this := GetNodeType200Response{}
-	return &this
-}
-
 // NewGetNodeType200ResponseWithDefaults instantiates a new GetNodeType200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNodeType200ResponseWithDefaults() *GetNodeType200Response {
 	this := GetNodeType200Response{}
 	return &this
-}
-
-// GetContainerType returns the ContainerType field value if set, zero value otherwise.
-func (o *GetNodeType200Response) GetContainerType() GetNodeType200ResponseContainerType {
-	if o == nil || IsNil(o.ContainerType) {
-		var ret GetNodeType200ResponseContainerType
-		return ret
-	}
-	return *o.ContainerType
-}
-
-// GetContainerTypeOk returns a tuple with the ContainerType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNodeType200Response) GetContainerTypeOk() (*GetNodeType200ResponseContainerType, bool) {
-	if o == nil || IsNil(o.ContainerType) {
-		return nil, false
-	}
-	return o.ContainerType, true
-}
-
-// SetContainerType gets a reference to the given GetNodeType200ResponseContainerType and assigns it to the ContainerType field.
-func (o *GetNodeType200Response) SetContainerType(v GetNodeType200ResponseContainerType) {
-	o.ContainerType = &v
 }
 
 func (o GetNodeType200Response) MarshalJSON() ([]byte, error) {

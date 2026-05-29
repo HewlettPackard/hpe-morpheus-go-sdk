@@ -26,44 +26,12 @@ type InstanceConfigReplicationGroup struct {
 
 type _InstanceConfigReplicationGroup InstanceConfigReplicationGroup
 
-// NewInstanceConfigReplicationGroup instantiates a new InstanceConfigReplicationGroup object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceConfigReplicationGroup() *InstanceConfigReplicationGroup {
-	this := InstanceConfigReplicationGroup{}
-	return &this
-}
-
 // NewInstanceConfigReplicationGroupWithDefaults instantiates a new InstanceConfigReplicationGroup object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceConfigReplicationGroupWithDefaults() *InstanceConfigReplicationGroup {
 	this := InstanceConfigReplicationGroup{}
 	return &this
-}
-
-// GetProviderMethod returns the ProviderMethod field value if set, zero value otherwise.
-func (o *InstanceConfigReplicationGroup) GetProviderMethod() string {
-	if o == nil || IsNil(o.ProviderMethod) {
-		var ret string
-		return ret
-	}
-	return *o.ProviderMethod
-}
-
-// GetProviderMethodOk returns a tuple with the ProviderMethod field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceConfigReplicationGroup) GetProviderMethodOk() (*string, bool) {
-	if o == nil || IsNil(o.ProviderMethod) {
-		return nil, false
-	}
-	return o.ProviderMethod, true
-}
-
-// SetProviderMethod gets a reference to the given string and assigns it to the ProviderMethod field.
-func (o *InstanceConfigReplicationGroup) SetProviderMethod(v string) {
-	o.ProviderMethod = &v
 }
 
 func (o InstanceConfigReplicationGroup) MarshalJSON() ([]byte, error) {

@@ -27,20 +27,6 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEna
 	String *string
 }
 
-// boolAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled is a convenience function that returns bool wrapped in AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled
-func BoolAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled(v *bool) AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled {
-	return AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled{
-		Bool: v,
-	}
-}
-
-// stringAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled is a convenience function that returns string wrapped in AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled
-func StringAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled(v *string) AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled {
-	return AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled{
-		String: v,
-	}
-}
-
 func (dst *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled{}

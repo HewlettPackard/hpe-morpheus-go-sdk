@@ -26,44 +26,12 @@ type CreateNetworkRouterRouteRequest struct {
 
 type _CreateNetworkRouterRouteRequest CreateNetworkRouterRouteRequest
 
-// NewCreateNetworkRouterRouteRequest instantiates a new CreateNetworkRouterRouteRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkRouterRouteRequest() *CreateNetworkRouterRouteRequest {
-	this := CreateNetworkRouterRouteRequest{}
-	return &this
-}
-
 // NewCreateNetworkRouterRouteRequestWithDefaults instantiates a new CreateNetworkRouterRouteRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkRouterRouteRequestWithDefaults() *CreateNetworkRouterRouteRequest {
 	this := CreateNetworkRouterRouteRequest{}
 	return &this
-}
-
-// GetNetworkRoute returns the NetworkRoute field value if set, zero value otherwise.
-func (o *CreateNetworkRouterRouteRequest) GetNetworkRoute() CreateNetworkRouterRouteRequestNetworkRoute {
-	if o == nil || IsNil(o.NetworkRoute) {
-		var ret CreateNetworkRouterRouteRequestNetworkRoute
-		return ret
-	}
-	return *o.NetworkRoute
-}
-
-// GetNetworkRouteOk returns a tuple with the NetworkRoute field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkRouterRouteRequest) GetNetworkRouteOk() (*CreateNetworkRouterRouteRequestNetworkRoute, bool) {
-	if o == nil || IsNil(o.NetworkRoute) {
-		return nil, false
-	}
-	return o.NetworkRoute, true
-}
-
-// SetNetworkRoute gets a reference to the given CreateNetworkRouterRouteRequestNetworkRoute and assigns it to the NetworkRoute field.
-func (o *CreateNetworkRouterRouteRequest) SetNetworkRoute(v CreateNetworkRouterRouteRequestNetworkRoute) {
-	o.NetworkRoute = &v
 }
 
 func (o CreateNetworkRouterRouteRequest) MarshalJSON() ([]byte, error) {

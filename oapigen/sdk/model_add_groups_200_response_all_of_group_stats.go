@@ -27,67 +27,12 @@ type AddGroups200ResponseAllOfGroupStats struct {
 
 type _AddGroups200ResponseAllOfGroupStats AddGroups200ResponseAllOfGroupStats
 
-// NewAddGroups200ResponseAllOfGroupStats instantiates a new AddGroups200ResponseAllOfGroupStats object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddGroups200ResponseAllOfGroupStats() *AddGroups200ResponseAllOfGroupStats {
-	this := AddGroups200ResponseAllOfGroupStats{}
-	return &this
-}
-
 // NewAddGroups200ResponseAllOfGroupStatsWithDefaults instantiates a new AddGroups200ResponseAllOfGroupStats object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddGroups200ResponseAllOfGroupStatsWithDefaults() *AddGroups200ResponseAllOfGroupStats {
 	this := AddGroups200ResponseAllOfGroupStats{}
 	return &this
-}
-
-// GetInstanceCounts returns the InstanceCounts field value if set, zero value otherwise.
-func (o *AddGroups200ResponseAllOfGroupStats) GetInstanceCounts() AddGroups200ResponseAllOfGroupStatsInstanceCounts {
-	if o == nil || IsNil(o.InstanceCounts) {
-		var ret AddGroups200ResponseAllOfGroupStatsInstanceCounts
-		return ret
-	}
-	return *o.InstanceCounts
-}
-
-// GetInstanceCountsOk returns a tuple with the InstanceCounts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddGroups200ResponseAllOfGroupStats) GetInstanceCountsOk() (*AddGroups200ResponseAllOfGroupStatsInstanceCounts, bool) {
-	if o == nil || IsNil(o.InstanceCounts) {
-		return nil, false
-	}
-	return o.InstanceCounts, true
-}
-
-// SetInstanceCounts gets a reference to the given AddGroups200ResponseAllOfGroupStatsInstanceCounts and assigns it to the InstanceCounts field.
-func (o *AddGroups200ResponseAllOfGroupStats) SetInstanceCounts(v AddGroups200ResponseAllOfGroupStatsInstanceCounts) {
-	o.InstanceCounts = &v
-}
-
-// GetServerCounts returns the ServerCounts field value if set, zero value otherwise.
-func (o *AddGroups200ResponseAllOfGroupStats) GetServerCounts() AddGroups200ResponseAllOfGroupStatsServerCounts {
-	if o == nil || IsNil(o.ServerCounts) {
-		var ret AddGroups200ResponseAllOfGroupStatsServerCounts
-		return ret
-	}
-	return *o.ServerCounts
-}
-
-// GetServerCountsOk returns a tuple with the ServerCounts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddGroups200ResponseAllOfGroupStats) GetServerCountsOk() (*AddGroups200ResponseAllOfGroupStatsServerCounts, bool) {
-	if o == nil || IsNil(o.ServerCounts) {
-		return nil, false
-	}
-	return o.ServerCounts, true
-}
-
-// SetServerCounts gets a reference to the given AddGroups200ResponseAllOfGroupStatsServerCounts and assigns it to the ServerCounts field.
-func (o *AddGroups200ResponseAllOfGroupStats) SetServerCounts(v AddGroups200ResponseAllOfGroupStatsServerCounts) {
-	o.ServerCounts = &v
 }
 
 func (o AddGroups200ResponseAllOfGroupStats) MarshalJSON() ([]byte, error) {

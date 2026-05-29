@@ -33,113 +33,12 @@ type AddStorageBucketsRequestStorageBucketConfigOneOf struct {
 
 type _AddStorageBucketsRequestStorageBucketConfigOneOf AddStorageBucketsRequestStorageBucketConfigOneOf
 
-// NewAddStorageBucketsRequestStorageBucketConfigOneOf instantiates a new AddStorageBucketsRequestStorageBucketConfigOneOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddStorageBucketsRequestStorageBucketConfigOneOf() *AddStorageBucketsRequestStorageBucketConfigOneOf {
-	this := AddStorageBucketsRequestStorageBucketConfigOneOf{}
-	return &this
-}
-
 // NewAddStorageBucketsRequestStorageBucketConfigOneOfWithDefaults instantiates a new AddStorageBucketsRequestStorageBucketConfigOneOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddStorageBucketsRequestStorageBucketConfigOneOfWithDefaults() *AddStorageBucketsRequestStorageBucketConfigOneOf {
 	this := AddStorageBucketsRequestStorageBucketConfigOneOf{}
 	return &this
-}
-
-// GetAccessKey returns the AccessKey field value if set, zero value otherwise.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) GetAccessKey() string {
-	if o == nil || IsNil(o.AccessKey) {
-		var ret string
-		return ret
-	}
-	return *o.AccessKey
-}
-
-// GetAccessKeyOk returns a tuple with the AccessKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) GetAccessKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.AccessKey) {
-		return nil, false
-	}
-	return o.AccessKey, true
-}
-
-// SetAccessKey gets a reference to the given string and assigns it to the AccessKey field.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) SetAccessKey(v string) {
-	o.AccessKey = &v
-}
-
-// GetSecretKey returns the SecretKey field value if set, zero value otherwise.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) GetSecretKey() string {
-	if o == nil || IsNil(o.SecretKey) {
-		var ret string
-		return ret
-	}
-	return *o.SecretKey
-}
-
-// GetSecretKeyOk returns a tuple with the SecretKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) GetSecretKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.SecretKey) {
-		return nil, false
-	}
-	return o.SecretKey, true
-}
-
-// SetSecretKey gets a reference to the given string and assigns it to the SecretKey field.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) SetSecretKey(v string) {
-	o.SecretKey = &v
-}
-
-// GetRegion returns the Region field value if set, zero value otherwise.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) GetRegion() string {
-	if o == nil || IsNil(o.Region) {
-		var ret string
-		return ret
-	}
-	return *o.Region
-}
-
-// GetRegionOk returns a tuple with the Region field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) GetRegionOk() (*string, bool) {
-	if o == nil || IsNil(o.Region) {
-		return nil, false
-	}
-	return o.Region, true
-}
-
-// SetRegion gets a reference to the given string and assigns it to the Region field.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) SetRegion(v string) {
-	o.Region = &v
-}
-
-// GetEndpoint returns the Endpoint field value if set, zero value otherwise.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) GetEndpoint() string {
-	if o == nil || IsNil(o.Endpoint) {
-		var ret string
-		return ret
-	}
-	return *o.Endpoint
-}
-
-// GetEndpointOk returns a tuple with the Endpoint field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) GetEndpointOk() (*string, bool) {
-	if o == nil || IsNil(o.Endpoint) {
-		return nil, false
-	}
-	return o.Endpoint, true
-}
-
-// SetEndpoint gets a reference to the given string and assigns it to the Endpoint field.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) SetEndpoint(v string) {
-	o.Endpoint = &v
 }
 
 func (o AddStorageBucketsRequestStorageBucketConfigOneOf) MarshalJSON() ([]byte, error) {

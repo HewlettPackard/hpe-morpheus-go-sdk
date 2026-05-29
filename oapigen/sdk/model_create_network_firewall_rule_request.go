@@ -26,44 +26,12 @@ type CreateNetworkFirewallRuleRequest struct {
 
 type _CreateNetworkFirewallRuleRequest CreateNetworkFirewallRuleRequest
 
-// NewCreateNetworkFirewallRuleRequest instantiates a new CreateNetworkFirewallRuleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkFirewallRuleRequest() *CreateNetworkFirewallRuleRequest {
-	this := CreateNetworkFirewallRuleRequest{}
-	return &this
-}
-
 // NewCreateNetworkFirewallRuleRequestWithDefaults instantiates a new CreateNetworkFirewallRuleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkFirewallRuleRequestWithDefaults() *CreateNetworkFirewallRuleRequest {
 	this := CreateNetworkFirewallRuleRequest{}
 	return &this
-}
-
-// GetRule returns the Rule field value if set, zero value otherwise.
-func (o *CreateNetworkFirewallRuleRequest) GetRule() CreateNetworkFirewallRuleRequestRule {
-	if o == nil || IsNil(o.Rule) {
-		var ret CreateNetworkFirewallRuleRequestRule
-		return ret
-	}
-	return *o.Rule
-}
-
-// GetRuleOk returns a tuple with the Rule field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkFirewallRuleRequest) GetRuleOk() (*CreateNetworkFirewallRuleRequestRule, bool) {
-	if o == nil || IsNil(o.Rule) {
-		return nil, false
-	}
-	return o.Rule, true
-}
-
-// SetRule gets a reference to the given CreateNetworkFirewallRuleRequestRule and assigns it to the Rule field.
-func (o *CreateNetworkFirewallRuleRequest) SetRule(v CreateNetworkFirewallRuleRequestRule) {
-	o.Rule = &v
 }
 
 func (o CreateNetworkFirewallRuleRequest) MarshalJSON() ([]byte, error) {

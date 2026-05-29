@@ -27,67 +27,12 @@ type GetVDIAllocations200ResponseVdiAllocationPool struct {
 
 type _GetVDIAllocations200ResponseVdiAllocationPool GetVDIAllocations200ResponseVdiAllocationPool
 
-// NewGetVDIAllocations200ResponseVdiAllocationPool instantiates a new GetVDIAllocations200ResponseVdiAllocationPool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetVDIAllocations200ResponseVdiAllocationPool() *GetVDIAllocations200ResponseVdiAllocationPool {
-	this := GetVDIAllocations200ResponseVdiAllocationPool{}
-	return &this
-}
-
 // NewGetVDIAllocations200ResponseVdiAllocationPoolWithDefaults instantiates a new GetVDIAllocations200ResponseVdiAllocationPool object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetVDIAllocations200ResponseVdiAllocationPoolWithDefaults() *GetVDIAllocations200ResponseVdiAllocationPool {
 	this := GetVDIAllocations200ResponseVdiAllocationPool{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetVDIAllocations200ResponseVdiAllocationPool) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetVDIAllocations200ResponseVdiAllocationPool) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetVDIAllocations200ResponseVdiAllocationPool) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetVDIAllocations200ResponseVdiAllocationPool) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetVDIAllocations200ResponseVdiAllocationPool) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetVDIAllocations200ResponseVdiAllocationPool) SetName(v string) {
-	o.Name = &v
 }
 
 func (o GetVDIAllocations200ResponseVdiAllocationPool) MarshalJSON() ([]byte, error) {

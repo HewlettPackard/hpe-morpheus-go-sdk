@@ -29,113 +29,12 @@ type ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers struct {
 
 type _ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers
 
-// NewListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers instantiates a new ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers() *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers {
-	this := ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers{}
-	return &this
-}
-
 // NewListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancersWithDefaults instantiates a new ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancersWithDefaults() *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers {
 	this := ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers{}
 	return &this
-}
-
-// GetPrice returns the Price field value if set, zero value otherwise.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers) GetPrice() float32 {
-	if o == nil || IsNil(o.Price) {
-		var ret float32
-		return ret
-	}
-	return *o.Price
-}
-
-// GetPriceOk returns a tuple with the Price field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers) GetPriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.Price) {
-		return nil, false
-	}
-	return o.Price, true
-}
-
-// SetPrice gets a reference to the given float32 and assigns it to the Price field.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers) SetPrice(v float32) {
-	o.Price = &v
-}
-
-// GetCost returns the Cost field value if set, zero value otherwise.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers) GetCost() float32 {
-	if o == nil || IsNil(o.Cost) {
-		var ret float32
-		return ret
-	}
-	return *o.Cost
-}
-
-// GetCostOk returns a tuple with the Cost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers) GetCostOk() (*float32, bool) {
-	if o == nil || IsNil(o.Cost) {
-		return nil, false
-	}
-	return o.Cost, true
-}
-
-// SetCost gets a reference to the given float32 and assigns it to the Cost field.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers) SetCost(v float32) {
-	o.Cost = &v
-}
-
-// GetLoadBalancers returns the LoadBalancers field value if set, zero value otherwise.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers) GetLoadBalancers() []map[string]interface{} {
-	if o == nil || IsNil(o.LoadBalancers) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.LoadBalancers
-}
-
-// GetLoadBalancersOk returns a tuple with the LoadBalancers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers) GetLoadBalancersOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.LoadBalancers) {
-		return nil, false
-	}
-	return o.LoadBalancers, true
-}
-
-// SetLoadBalancers gets a reference to the given []map[string]interface{} and assigns it to the LoadBalancers field.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers) SetLoadBalancers(v []map[string]interface{}) {
-	o.LoadBalancers = v
-}
-
-// GetCount returns the Count field value if set, zero value otherwise.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers) GetCount() int64 {
-	if o == nil || IsNil(o.Count) {
-		var ret int64
-		return ret
-	}
-	return *o.Count
-}
-
-// GetCountOk returns a tuple with the Count field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers) GetCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.Count) {
-		return nil, false
-	}
-	return o.Count, true
-}
-
-// SetCount gets a reference to the given int64 and assigns it to the Count field.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers) SetCount(v int64) {
-	o.Count = &v
 }
 
 func (o ListBillingZone200ResponseAllOfBillingInfoZonesInnerLoadBalancers) MarshalJSON() ([]byte, error) {

@@ -27,44 +27,12 @@ type CustomOptionsForOpenstackOpenTelekomHuawei struct {
 
 type _CustomOptionsForOpenstackOpenTelekomHuawei CustomOptionsForOpenstackOpenTelekomHuawei
 
-// NewCustomOptionsForOpenstackOpenTelekomHuawei instantiates a new CustomOptionsForOpenstackOpenTelekomHuawei object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCustomOptionsForOpenstackOpenTelekomHuawei() *CustomOptionsForOpenstackOpenTelekomHuawei {
-	this := CustomOptionsForOpenstackOpenTelekomHuawei{}
-	return &this
-}
-
 // NewCustomOptionsForOpenstackOpenTelekomHuaweiWithDefaults instantiates a new CustomOptionsForOpenstackOpenTelekomHuawei object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCustomOptionsForOpenstackOpenTelekomHuaweiWithDefaults() *CustomOptionsForOpenstackOpenTelekomHuawei {
 	this := CustomOptionsForOpenstackOpenTelekomHuawei{}
 	return &this
-}
-
-// GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
-func (o *CustomOptionsForOpenstackOpenTelekomHuawei) GetResourcePoolId() int64 {
-	if o == nil || IsNil(o.ResourcePoolId) {
-		var ret int64
-		return ret
-	}
-	return *o.ResourcePoolId
-}
-
-// GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CustomOptionsForOpenstackOpenTelekomHuawei) GetResourcePoolIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.ResourcePoolId) {
-		return nil, false
-	}
-	return o.ResourcePoolId, true
-}
-
-// SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
-func (o *CustomOptionsForOpenstackOpenTelekomHuawei) SetResourcePoolId(v int64) {
-	o.ResourcePoolId = &v
 }
 
 func (o CustomOptionsForOpenstackOpenTelekomHuawei) MarshalJSON() ([]byte, error) {

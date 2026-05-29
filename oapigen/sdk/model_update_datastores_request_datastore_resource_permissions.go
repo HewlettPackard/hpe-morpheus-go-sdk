@@ -33,19 +33,6 @@ type UpdateDatastoresRequestDatastoreResourcePermissions struct {
 
 type _UpdateDatastoresRequestDatastoreResourcePermissions UpdateDatastoresRequestDatastoreResourcePermissions
 
-// NewUpdateDatastoresRequestDatastoreResourcePermissions instantiates a new UpdateDatastoresRequestDatastoreResourcePermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateDatastoresRequestDatastoreResourcePermissions() *UpdateDatastoresRequestDatastoreResourcePermissions {
-	this := UpdateDatastoresRequestDatastoreResourcePermissions{}
-	var all bool = true
-	this.All = &all
-	var allPlans bool = true
-	this.AllPlans = &allPlans
-	return &this
-}
-
 // NewUpdateDatastoresRequestDatastoreResourcePermissionsWithDefaults instantiates a new UpdateDatastoresRequestDatastoreResourcePermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -56,98 +43,6 @@ func NewUpdateDatastoresRequestDatastoreResourcePermissionsWithDefaults() *Updat
 	var allPlans bool = true
 	this.AllPlans = &allPlans
 	return &this
-}
-
-// GetAll returns the All field value if set, zero value otherwise.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetAll() bool {
-	if o == nil || IsNil(o.All) {
-		var ret bool
-		return ret
-	}
-	return *o.All
-}
-
-// GetAllOk returns a tuple with the All field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetAllOk() (*bool, bool) {
-	if o == nil || IsNil(o.All) {
-		return nil, false
-	}
-	return o.All, true
-}
-
-// SetAll gets a reference to the given bool and assigns it to the All field.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetAll(v bool) {
-	o.All = &v
-}
-
-// GetSites returns the Sites field value if set, zero value otherwise.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetSites() []UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner {
-	if o == nil || IsNil(o.Sites) {
-		var ret []UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner
-		return ret
-	}
-	return o.Sites
-}
-
-// GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetSitesOk() ([]UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner, bool) {
-	if o == nil || IsNil(o.Sites) {
-		return nil, false
-	}
-	return o.Sites, true
-}
-
-// SetSites gets a reference to the given []UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner and assigns it to the Sites field.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetSites(v []UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner) {
-	o.Sites = v
-}
-
-// GetAllPlans returns the AllPlans field value if set, zero value otherwise.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetAllPlans() bool {
-	if o == nil || IsNil(o.AllPlans) {
-		var ret bool
-		return ret
-	}
-	return *o.AllPlans
-}
-
-// GetAllPlansOk returns a tuple with the AllPlans field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetAllPlansOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllPlans) {
-		return nil, false
-	}
-	return o.AllPlans, true
-}
-
-// SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetAllPlans(v bool) {
-	o.AllPlans = &v
-}
-
-// GetPlans returns the Plans field value if set, zero value otherwise.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetPlans() []UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner {
-	if o == nil || IsNil(o.Plans) {
-		var ret []UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner
-		return ret
-	}
-	return o.Plans
-}
-
-// GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetPlansOk() ([]UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner, bool) {
-	if o == nil || IsNil(o.Plans) {
-		return nil, false
-	}
-	return o.Plans, true
-}
-
-// SetPlans gets a reference to the given []UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner and assigns it to the Plans field.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetPlans(v []UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner) {
-	o.Plans = v
 }
 
 func (o UpdateDatastoresRequestDatastoreResourcePermissions) MarshalJSON() ([]byte, error) {

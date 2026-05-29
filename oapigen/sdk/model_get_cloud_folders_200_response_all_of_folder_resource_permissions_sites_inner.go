@@ -28,90 +28,12 @@ type GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner struct {
 
 type _GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner
 
-// NewGetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner instantiates a new GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner() *GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner {
-	this := GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner{}
-	return &this
-}
-
 // NewGetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInnerWithDefaults instantiates a new GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInnerWithDefaults() *GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner {
 	this := GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDefault returns the Default field value if set, zero value otherwise.
-func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner) GetDefault() bool {
-	if o == nil || IsNil(o.Default) {
-		var ret bool
-		return ret
-	}
-	return *o.Default
-}
-
-// GetDefaultOk returns a tuple with the Default field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner) GetDefaultOk() (*bool, bool) {
-	if o == nil || IsNil(o.Default) {
-		return nil, false
-	}
-	return o.Default, true
-}
-
-// SetDefault gets a reference to the given bool and assigns it to the Default field.
-func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner) SetDefault(v bool) {
-	o.Default = &v
 }
 
 func (o GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner) MarshalJSON() ([]byte, error) {

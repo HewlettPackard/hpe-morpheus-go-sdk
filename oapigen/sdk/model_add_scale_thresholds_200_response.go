@@ -27,67 +27,12 @@ type AddScaleThresholds200Response struct {
 
 type _AddScaleThresholds200Response AddScaleThresholds200Response
 
-// NewAddScaleThresholds200Response instantiates a new AddScaleThresholds200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddScaleThresholds200Response() *AddScaleThresholds200Response {
-	this := AddScaleThresholds200Response{}
-	return &this
-}
-
 // NewAddScaleThresholds200ResponseWithDefaults instantiates a new AddScaleThresholds200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddScaleThresholds200ResponseWithDefaults() *AddScaleThresholds200Response {
 	this := AddScaleThresholds200Response{}
 	return &this
-}
-
-// GetScaleThreshold returns the ScaleThreshold field value if set, zero value otherwise.
-func (o *AddScaleThresholds200Response) GetScaleThreshold() AddScaleThresholds200ResponseAllOfScaleThreshold {
-	if o == nil || IsNil(o.ScaleThreshold) {
-		var ret AddScaleThresholds200ResponseAllOfScaleThreshold
-		return ret
-	}
-	return *o.ScaleThreshold
-}
-
-// GetScaleThresholdOk returns a tuple with the ScaleThreshold field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddScaleThresholds200Response) GetScaleThresholdOk() (*AddScaleThresholds200ResponseAllOfScaleThreshold, bool) {
-	if o == nil || IsNil(o.ScaleThreshold) {
-		return nil, false
-	}
-	return o.ScaleThreshold, true
-}
-
-// SetScaleThreshold gets a reference to the given AddScaleThresholds200ResponseAllOfScaleThreshold and assigns it to the ScaleThreshold field.
-func (o *AddScaleThresholds200Response) SetScaleThreshold(v AddScaleThresholds200ResponseAllOfScaleThreshold) {
-	o.ScaleThreshold = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddScaleThresholds200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddScaleThresholds200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddScaleThresholds200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddScaleThresholds200Response) MarshalJSON() ([]byte, error) {

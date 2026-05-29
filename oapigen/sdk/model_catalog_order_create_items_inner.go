@@ -32,115 +32,12 @@ type CatalogOrderCreateItemsInner struct {
 
 type _CatalogOrderCreateItemsInner CatalogOrderCreateItemsInner
 
-// NewCatalogOrderCreateItemsInner instantiates a new CatalogOrderCreateItemsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCatalogOrderCreateItemsInner(config map[string]interface{}) *CatalogOrderCreateItemsInner {
-	this := CatalogOrderCreateItemsInner{}
-	this.Config = config
-	return &this
-}
-
 // NewCatalogOrderCreateItemsInnerWithDefaults instantiates a new CatalogOrderCreateItemsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCatalogOrderCreateItemsInnerWithDefaults() *CatalogOrderCreateItemsInner {
 	this := CatalogOrderCreateItemsInner{}
 	return &this
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *CatalogOrderCreateItemsInner) GetType() CatalogOrderCreateItemsInnerType {
-	if o == nil || IsNil(o.Type) {
-		var ret CatalogOrderCreateItemsInnerType
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogOrderCreateItemsInner) GetTypeOk() (*CatalogOrderCreateItemsInnerType, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given CatalogOrderCreateItemsInnerType and assigns it to the Type field.
-func (o *CatalogOrderCreateItemsInner) SetType(v CatalogOrderCreateItemsInnerType) {
-	o.Type = &v
-}
-
-// GetConfig returns the Config field value
-func (o *CatalogOrderCreateItemsInner) GetConfig() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
-		return ret
-	}
-
-	return o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value
-// and a boolean to check if the value has been set.
-func (o *CatalogOrderCreateItemsInner) GetConfigOk() (map[string]interface{}, bool) {
-	if o == nil {
-		return map[string]interface{}{}, false
-	}
-	return o.Config, true
-}
-
-// SetConfig sets field value
-func (o *CatalogOrderCreateItemsInner) SetConfig(v map[string]interface{}) {
-	o.Config = v
-}
-
-// GetContext returns the Context field value if set, zero value otherwise.
-func (o *CatalogOrderCreateItemsInner) GetContext() string {
-	if o == nil || IsNil(o.Context) {
-		var ret string
-		return ret
-	}
-	return *o.Context
-}
-
-// GetContextOk returns a tuple with the Context field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogOrderCreateItemsInner) GetContextOk() (*string, bool) {
-	if o == nil || IsNil(o.Context) {
-		return nil, false
-	}
-	return o.Context, true
-}
-
-// SetContext gets a reference to the given string and assigns it to the Context field.
-func (o *CatalogOrderCreateItemsInner) SetContext(v string) {
-	o.Context = &v
-}
-
-// GetTarget returns the Target field value if set, zero value otherwise.
-func (o *CatalogOrderCreateItemsInner) GetTarget() int64 {
-	if o == nil || IsNil(o.Target) {
-		var ret int64
-		return ret
-	}
-	return *o.Target
-}
-
-// GetTargetOk returns a tuple with the Target field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogOrderCreateItemsInner) GetTargetOk() (*int64, bool) {
-	if o == nil || IsNil(o.Target) {
-		return nil, false
-	}
-	return o.Target, true
-}
-
-// SetTarget gets a reference to the given int64 and assigns it to the Target field.
-func (o *CatalogOrderCreateItemsInner) SetTarget(v int64) {
-	o.Target = &v
 }
 
 func (o CatalogOrderCreateItemsInner) MarshalJSON() ([]byte, error) {

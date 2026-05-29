@@ -29,71 +29,12 @@ type UpdateRoleClusterTypeAccessRequestOneOf1 struct {
 
 type _UpdateRoleClusterTypeAccessRequestOneOf1 UpdateRoleClusterTypeAccessRequestOneOf1
 
-// NewUpdateRoleClusterTypeAccessRequestOneOf1 instantiates a new UpdateRoleClusterTypeAccessRequestOneOf1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateRoleClusterTypeAccessRequestOneOf1(allClusterTypes bool, access string) *UpdateRoleClusterTypeAccessRequestOneOf1 {
-	this := UpdateRoleClusterTypeAccessRequestOneOf1{}
-	this.AllClusterTypes = allClusterTypes
-	this.Access = access
-	return &this
-}
-
 // NewUpdateRoleClusterTypeAccessRequestOneOf1WithDefaults instantiates a new UpdateRoleClusterTypeAccessRequestOneOf1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateRoleClusterTypeAccessRequestOneOf1WithDefaults() *UpdateRoleClusterTypeAccessRequestOneOf1 {
 	this := UpdateRoleClusterTypeAccessRequestOneOf1{}
 	return &this
-}
-
-// GetAllClusterTypes returns the AllClusterTypes field value
-func (o *UpdateRoleClusterTypeAccessRequestOneOf1) GetAllClusterTypes() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AllClusterTypes
-}
-
-// GetAllClusterTypesOk returns a tuple with the AllClusterTypes field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleClusterTypeAccessRequestOneOf1) GetAllClusterTypesOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AllClusterTypes, true
-}
-
-// SetAllClusterTypes sets field value
-func (o *UpdateRoleClusterTypeAccessRequestOneOf1) SetAllClusterTypes(v bool) {
-	o.AllClusterTypes = v
-}
-
-// GetAccess returns the Access field value
-func (o *UpdateRoleClusterTypeAccessRequestOneOf1) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleClusterTypeAccessRequestOneOf1) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *UpdateRoleClusterTypeAccessRequestOneOf1) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o UpdateRoleClusterTypeAccessRequestOneOf1) MarshalJSON() ([]byte, error) {

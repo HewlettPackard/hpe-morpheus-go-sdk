@@ -27,67 +27,12 @@ type InstanceContainer4ContainerTypeSet struct {
 
 type _InstanceContainer4ContainerTypeSet InstanceContainer4ContainerTypeSet
 
-// NewInstanceContainer4ContainerTypeSet instantiates a new InstanceContainer4ContainerTypeSet object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceContainer4ContainerTypeSet() *InstanceContainer4ContainerTypeSet {
-	this := InstanceContainer4ContainerTypeSet{}
-	return &this
-}
-
 // NewInstanceContainer4ContainerTypeSetWithDefaults instantiates a new InstanceContainer4ContainerTypeSet object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceContainer4ContainerTypeSetWithDefaults() *InstanceContainer4ContainerTypeSet {
 	this := InstanceContainer4ContainerTypeSet{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *InstanceContainer4ContainerTypeSet) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceContainer4ContainerTypeSet) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *InstanceContainer4ContainerTypeSet) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *InstanceContainer4ContainerTypeSet) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceContainer4ContainerTypeSet) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *InstanceContainer4ContainerTypeSet) SetCode(v string) {
-	o.Code = &v
 }
 
 func (o InstanceContainer4ContainerTypeSet) MarshalJSON() ([]byte, error) {

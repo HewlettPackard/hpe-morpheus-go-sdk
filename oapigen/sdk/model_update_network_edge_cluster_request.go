@@ -26,44 +26,12 @@ type UpdateNetworkEdgeClusterRequest struct {
 
 type _UpdateNetworkEdgeClusterRequest UpdateNetworkEdgeClusterRequest
 
-// NewUpdateNetworkEdgeClusterRequest instantiates a new UpdateNetworkEdgeClusterRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkEdgeClusterRequest() *UpdateNetworkEdgeClusterRequest {
-	this := UpdateNetworkEdgeClusterRequest{}
-	return &this
-}
-
 // NewUpdateNetworkEdgeClusterRequestWithDefaults instantiates a new UpdateNetworkEdgeClusterRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateNetworkEdgeClusterRequestWithDefaults() *UpdateNetworkEdgeClusterRequest {
 	this := UpdateNetworkEdgeClusterRequest{}
 	return &this
-}
-
-// GetNetworkEdgeCluster returns the NetworkEdgeCluster field value if set, zero value otherwise.
-func (o *UpdateNetworkEdgeClusterRequest) GetNetworkEdgeCluster() map[string]interface{} {
-	if o == nil || IsNil(o.NetworkEdgeCluster) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.NetworkEdgeCluster
-}
-
-// GetNetworkEdgeClusterOk returns a tuple with the NetworkEdgeCluster field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkEdgeClusterRequest) GetNetworkEdgeClusterOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.NetworkEdgeCluster) {
-		return map[string]interface{}{}, false
-	}
-	return o.NetworkEdgeCluster, true
-}
-
-// SetNetworkEdgeCluster gets a reference to the given map[string]interface{} and assigns it to the NetworkEdgeCluster field.
-func (o *UpdateNetworkEdgeClusterRequest) SetNetworkEdgeCluster(v map[string]interface{}) {
-	o.NetworkEdgeCluster = v
 }
 
 func (o UpdateNetworkEdgeClusterRequest) MarshalJSON() ([]byte, error) {

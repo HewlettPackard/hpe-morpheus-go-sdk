@@ -27,67 +27,12 @@ type ListClusterIngresses200Response struct {
 
 type _ListClusterIngresses200Response ListClusterIngresses200Response
 
-// NewListClusterIngresses200Response instantiates a new ListClusterIngresses200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListClusterIngresses200Response() *ListClusterIngresses200Response {
-	this := ListClusterIngresses200Response{}
-	return &this
-}
-
 // NewListClusterIngresses200ResponseWithDefaults instantiates a new ListClusterIngresses200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListClusterIngresses200ResponseWithDefaults() *ListClusterIngresses200Response {
 	this := ListClusterIngresses200Response{}
 	return &this
-}
-
-// GetIngresses returns the Ingresses field value if set, zero value otherwise.
-func (o *ListClusterIngresses200Response) GetIngresses() []ListClusterIngresses200ResponseAllOfIngressesInner {
-	if o == nil || IsNil(o.Ingresses) {
-		var ret []ListClusterIngresses200ResponseAllOfIngressesInner
-		return ret
-	}
-	return o.Ingresses
-}
-
-// GetIngressesOk returns a tuple with the Ingresses field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterIngresses200Response) GetIngressesOk() ([]ListClusterIngresses200ResponseAllOfIngressesInner, bool) {
-	if o == nil || IsNil(o.Ingresses) {
-		return nil, false
-	}
-	return o.Ingresses, true
-}
-
-// SetIngresses gets a reference to the given []ListClusterIngresses200ResponseAllOfIngressesInner and assigns it to the Ingresses field.
-func (o *ListClusterIngresses200Response) SetIngresses(v []ListClusterIngresses200ResponseAllOfIngressesInner) {
-	o.Ingresses = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListClusterIngresses200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterIngresses200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListClusterIngresses200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListClusterIngresses200Response) MarshalJSON() ([]byte, error) {

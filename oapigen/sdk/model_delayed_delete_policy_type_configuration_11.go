@@ -26,46 +26,12 @@ type DelayedDeletePolicyTypeConfiguration11 struct {
 
 type _DelayedDeletePolicyTypeConfiguration11 DelayedDeletePolicyTypeConfiguration11
 
-// NewDelayedDeletePolicyTypeConfiguration11 instantiates a new DelayedDeletePolicyTypeConfiguration11 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewDelayedDeletePolicyTypeConfiguration11(removalAge string) *DelayedDeletePolicyTypeConfiguration11 {
-	this := DelayedDeletePolicyTypeConfiguration11{}
-	this.RemovalAge = removalAge
-	return &this
-}
-
 // NewDelayedDeletePolicyTypeConfiguration11WithDefaults instantiates a new DelayedDeletePolicyTypeConfiguration11 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewDelayedDeletePolicyTypeConfiguration11WithDefaults() *DelayedDeletePolicyTypeConfiguration11 {
 	this := DelayedDeletePolicyTypeConfiguration11{}
 	return &this
-}
-
-// GetRemovalAge returns the RemovalAge field value
-func (o *DelayedDeletePolicyTypeConfiguration11) GetRemovalAge() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.RemovalAge
-}
-
-// GetRemovalAgeOk returns a tuple with the RemovalAge field value
-// and a boolean to check if the value has been set.
-func (o *DelayedDeletePolicyTypeConfiguration11) GetRemovalAgeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.RemovalAge, true
-}
-
-// SetRemovalAge sets field value
-func (o *DelayedDeletePolicyTypeConfiguration11) SetRemovalAge(v string) {
-	o.RemovalAge = v
 }
 
 func (o DelayedDeletePolicyTypeConfiguration11) MarshalJSON() ([]byte, error) {

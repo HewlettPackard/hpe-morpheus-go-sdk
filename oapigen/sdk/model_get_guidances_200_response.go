@@ -26,44 +26,12 @@ type GetGuidances200Response struct {
 
 type _GetGuidances200Response GetGuidances200Response
 
-// NewGetGuidances200Response instantiates a new GetGuidances200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetGuidances200Response() *GetGuidances200Response {
-	this := GetGuidances200Response{}
-	return &this
-}
-
 // NewGetGuidances200ResponseWithDefaults instantiates a new GetGuidances200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetGuidances200ResponseWithDefaults() *GetGuidances200Response {
 	this := GetGuidances200Response{}
 	return &this
-}
-
-// GetDiscovery returns the Discovery field value if set, zero value otherwise.
-func (o *GetGuidances200Response) GetDiscovery() GetGuidances200ResponseDiscovery {
-	if o == nil || IsNil(o.Discovery) {
-		var ret GetGuidances200ResponseDiscovery
-		return ret
-	}
-	return *o.Discovery
-}
-
-// GetDiscoveryOk returns a tuple with the Discovery field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200Response) GetDiscoveryOk() (*GetGuidances200ResponseDiscovery, bool) {
-	if o == nil || IsNil(o.Discovery) {
-		return nil, false
-	}
-	return o.Discovery, true
-}
-
-// SetDiscovery gets a reference to the given GetGuidances200ResponseDiscovery and assigns it to the Discovery field.
-func (o *GetGuidances200Response) SetDiscovery(v GetGuidances200ResponseDiscovery) {
-	o.Discovery = &v
 }
 
 func (o GetGuidances200Response) MarshalJSON() ([]byte, error) {

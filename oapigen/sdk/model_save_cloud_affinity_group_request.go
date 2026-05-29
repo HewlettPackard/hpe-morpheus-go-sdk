@@ -26,44 +26,12 @@ type SaveCloudAffinityGroupRequest struct {
 
 type _SaveCloudAffinityGroupRequest SaveCloudAffinityGroupRequest
 
-// NewSaveCloudAffinityGroupRequest instantiates a new SaveCloudAffinityGroupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSaveCloudAffinityGroupRequest() *SaveCloudAffinityGroupRequest {
-	this := SaveCloudAffinityGroupRequest{}
-	return &this
-}
-
 // NewSaveCloudAffinityGroupRequestWithDefaults instantiates a new SaveCloudAffinityGroupRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSaveCloudAffinityGroupRequestWithDefaults() *SaveCloudAffinityGroupRequest {
 	this := SaveCloudAffinityGroupRequest{}
 	return &this
-}
-
-// GetAffinityGroup returns the AffinityGroup field value if set, zero value otherwise.
-func (o *SaveCloudAffinityGroupRequest) GetAffinityGroup() SaveCloudAffinityGroupRequestAffinityGroup {
-	if o == nil || IsNil(o.AffinityGroup) {
-		var ret SaveCloudAffinityGroupRequestAffinityGroup
-		return ret
-	}
-	return *o.AffinityGroup
-}
-
-// GetAffinityGroupOk returns a tuple with the AffinityGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveCloudAffinityGroupRequest) GetAffinityGroupOk() (*SaveCloudAffinityGroupRequestAffinityGroup, bool) {
-	if o == nil || IsNil(o.AffinityGroup) {
-		return nil, false
-	}
-	return o.AffinityGroup, true
-}
-
-// SetAffinityGroup gets a reference to the given SaveCloudAffinityGroupRequestAffinityGroup and assigns it to the AffinityGroup field.
-func (o *SaveCloudAffinityGroupRequest) SetAffinityGroup(v SaveCloudAffinityGroupRequestAffinityGroup) {
-	o.AffinityGroup = &v
 }
 
 func (o SaveCloudAffinityGroupRequest) MarshalJSON() ([]byte, error) {

@@ -27,68 +27,12 @@ type SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions st
 
 type _SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions
 
-// NewSaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions instantiates a new SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions() *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions {
-	this := SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions{}
-	return &this
-}
-
 // NewSaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissionsWithDefaults instantiates a new SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissionsWithDefaults() *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions {
 	this := SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions{}
 	return &this
-}
-
-// GetAll returns the All field value if set, zero value otherwise.
-func (o *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions) GetAll() bool {
-	if o == nil || IsNil(o.All) {
-		var ret bool
-		return ret
-	}
-	return *o.All
-}
-
-// GetAllOk returns a tuple with the All field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions) GetAllOk() (*bool, bool) {
-	if o == nil || IsNil(o.All) {
-		return nil, false
-	}
-	return o.All, true
-}
-
-// SetAll gets a reference to the given bool and assigns it to the All field.
-func (o *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions) SetAll(v bool) {
-	o.All = &v
-}
-
-// GetSites returns the Sites field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions) GetSites() []map[string]interface{} {
-	if o == nil {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Sites
-}
-
-// GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions) GetSitesOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Sites) {
-		return nil, false
-	}
-	return o.Sites, true
-}
-
-// SetSites gets a reference to the given []map[string]interface{} and assigns it to the Sites field.
-func (o *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions) SetSites(v []map[string]interface{}) {
-	o.Sites = v
 }
 
 func (o SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions) MarshalJSON() ([]byte, error) {

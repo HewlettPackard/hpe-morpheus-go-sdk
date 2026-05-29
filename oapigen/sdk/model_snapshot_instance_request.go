@@ -26,44 +26,12 @@ type SnapshotInstanceRequest struct {
 
 type _SnapshotInstanceRequest SnapshotInstanceRequest
 
-// NewSnapshotInstanceRequest instantiates a new SnapshotInstanceRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSnapshotInstanceRequest() *SnapshotInstanceRequest {
-	this := SnapshotInstanceRequest{}
-	return &this
-}
-
 // NewSnapshotInstanceRequestWithDefaults instantiates a new SnapshotInstanceRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSnapshotInstanceRequestWithDefaults() *SnapshotInstanceRequest {
 	this := SnapshotInstanceRequest{}
 	return &this
-}
-
-// GetSnapshot returns the Snapshot field value if set, zero value otherwise.
-func (o *SnapshotInstanceRequest) GetSnapshot() SnapshotInstanceRequestSnapshot {
-	if o == nil || IsNil(o.Snapshot) {
-		var ret SnapshotInstanceRequestSnapshot
-		return ret
-	}
-	return *o.Snapshot
-}
-
-// GetSnapshotOk returns a tuple with the Snapshot field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SnapshotInstanceRequest) GetSnapshotOk() (*SnapshotInstanceRequestSnapshot, bool) {
-	if o == nil || IsNil(o.Snapshot) {
-		return nil, false
-	}
-	return o.Snapshot, true
-}
-
-// SetSnapshot gets a reference to the given SnapshotInstanceRequestSnapshot and assigns it to the Snapshot field.
-func (o *SnapshotInstanceRequest) SetSnapshot(v SnapshotInstanceRequestSnapshot) {
-	o.Snapshot = &v
 }
 
 func (o SnapshotInstanceRequest) MarshalJSON() ([]byte, error) {

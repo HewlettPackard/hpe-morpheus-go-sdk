@@ -26,44 +26,12 @@ type GetIntegrationObjects200Response struct {
 
 type _GetIntegrationObjects200Response GetIntegrationObjects200Response
 
-// NewGetIntegrationObjects200Response instantiates a new GetIntegrationObjects200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetIntegrationObjects200Response() *GetIntegrationObjects200Response {
-	this := GetIntegrationObjects200Response{}
-	return &this
-}
-
 // NewGetIntegrationObjects200ResponseWithDefaults instantiates a new GetIntegrationObjects200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetIntegrationObjects200ResponseWithDefaults() *GetIntegrationObjects200Response {
 	this := GetIntegrationObjects200Response{}
 	return &this
-}
-
-// GetObject returns the Object field value if set, zero value otherwise.
-func (o *GetIntegrationObjects200Response) GetObject() GetIntegrationObjects200ResponseObject {
-	if o == nil || IsNil(o.Object) {
-		var ret GetIntegrationObjects200ResponseObject
-		return ret
-	}
-	return *o.Object
-}
-
-// GetObjectOk returns a tuple with the Object field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetIntegrationObjects200Response) GetObjectOk() (*GetIntegrationObjects200ResponseObject, bool) {
-	if o == nil || IsNil(o.Object) {
-		return nil, false
-	}
-	return o.Object, true
-}
-
-// SetObject gets a reference to the given GetIntegrationObjects200ResponseObject and assigns it to the Object field.
-func (o *GetIntegrationObjects200Response) SetObject(v GetIntegrationObjects200ResponseObject) {
-	o.Object = &v
 }
 
 func (o GetIntegrationObjects200Response) MarshalJSON() ([]byte, error) {

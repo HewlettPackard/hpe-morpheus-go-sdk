@@ -29,113 +29,12 @@ type UpdateNetworkGroupRequestNetworkGroup struct {
 
 type _UpdateNetworkGroupRequestNetworkGroup UpdateNetworkGroupRequestNetworkGroup
 
-// NewUpdateNetworkGroupRequestNetworkGroup instantiates a new UpdateNetworkGroupRequestNetworkGroup object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkGroupRequestNetworkGroup() *UpdateNetworkGroupRequestNetworkGroup {
-	this := UpdateNetworkGroupRequestNetworkGroup{}
-	return &this
-}
-
 // NewUpdateNetworkGroupRequestNetworkGroupWithDefaults instantiates a new UpdateNetworkGroupRequestNetworkGroup object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateNetworkGroupRequestNetworkGroupWithDefaults() *UpdateNetworkGroupRequestNetworkGroup {
 	this := UpdateNetworkGroupRequestNetworkGroup{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdateNetworkGroupRequestNetworkGroup) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkGroupRequestNetworkGroup) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdateNetworkGroupRequestNetworkGroup) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *UpdateNetworkGroupRequestNetworkGroup) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
-		var ret string
-		return ret
-	}
-	return *o.Description
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkGroupRequestNetworkGroup) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
-		return nil, false
-	}
-	return o.Description, true
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *UpdateNetworkGroupRequestNetworkGroup) SetDescription(v string) {
-	o.Description = &v
-}
-
-// GetNetworks returns the Networks field value if set, zero value otherwise.
-func (o *UpdateNetworkGroupRequestNetworkGroup) GetNetworks() []int64 {
-	if o == nil || IsNil(o.Networks) {
-		var ret []int64
-		return ret
-	}
-	return o.Networks
-}
-
-// GetNetworksOk returns a tuple with the Networks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkGroupRequestNetworkGroup) GetNetworksOk() ([]int64, bool) {
-	if o == nil || IsNil(o.Networks) {
-		return nil, false
-	}
-	return o.Networks, true
-}
-
-// SetNetworks gets a reference to the given []int64 and assigns it to the Networks field.
-func (o *UpdateNetworkGroupRequestNetworkGroup) SetNetworks(v []int64) {
-	o.Networks = v
-}
-
-// GetSubnets returns the Subnets field value if set, zero value otherwise.
-func (o *UpdateNetworkGroupRequestNetworkGroup) GetSubnets() []map[string]interface{} {
-	if o == nil || IsNil(o.Subnets) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Subnets
-}
-
-// GetSubnetsOk returns a tuple with the Subnets field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkGroupRequestNetworkGroup) GetSubnetsOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Subnets) {
-		return nil, false
-	}
-	return o.Subnets, true
-}
-
-// SetSubnets gets a reference to the given []map[string]interface{} and assigns it to the Subnets field.
-func (o *UpdateNetworkGroupRequestNetworkGroup) SetSubnets(v []map[string]interface{}) {
-	o.Subnets = v
 }
 
 func (o UpdateNetworkGroupRequestNetworkGroup) MarshalJSON() ([]byte, error) {

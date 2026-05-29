@@ -27,67 +27,12 @@ type AddSecurityGroupLocations200Response struct {
 
 type _AddSecurityGroupLocations200Response AddSecurityGroupLocations200Response
 
-// NewAddSecurityGroupLocations200Response instantiates a new AddSecurityGroupLocations200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddSecurityGroupLocations200Response() *AddSecurityGroupLocations200Response {
-	this := AddSecurityGroupLocations200Response{}
-	return &this
-}
-
 // NewAddSecurityGroupLocations200ResponseWithDefaults instantiates a new AddSecurityGroupLocations200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddSecurityGroupLocations200ResponseWithDefaults() *AddSecurityGroupLocations200Response {
 	this := AddSecurityGroupLocations200Response{}
 	return &this
-}
-
-// GetSecurityGroupLocation returns the SecurityGroupLocation field value if set, zero value otherwise.
-func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocation() AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation {
-	if o == nil || IsNil(o.SecurityGroupLocation) {
-		var ret AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation
-		return ret
-	}
-	return *o.SecurityGroupLocation
-}
-
-// GetSecurityGroupLocationOk returns a tuple with the SecurityGroupLocation field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocationOk() (*AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation, bool) {
-	if o == nil || IsNil(o.SecurityGroupLocation) {
-		return nil, false
-	}
-	return o.SecurityGroupLocation, true
-}
-
-// SetSecurityGroupLocation gets a reference to the given AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation and assigns it to the SecurityGroupLocation field.
-func (o *AddSecurityGroupLocations200Response) SetSecurityGroupLocation(v AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) {
-	o.SecurityGroupLocation = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddSecurityGroupLocations200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSecurityGroupLocations200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddSecurityGroupLocations200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddSecurityGroupLocations200Response) MarshalJSON() ([]byte, error) {

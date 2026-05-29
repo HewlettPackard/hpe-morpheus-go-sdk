@@ -27,44 +27,12 @@ type SecurityGroupLocationAwsCustomOptions struct {
 
 type _SecurityGroupLocationAwsCustomOptions SecurityGroupLocationAwsCustomOptions
 
-// NewSecurityGroupLocationAwsCustomOptions instantiates a new SecurityGroupLocationAwsCustomOptions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSecurityGroupLocationAwsCustomOptions() *SecurityGroupLocationAwsCustomOptions {
-	this := SecurityGroupLocationAwsCustomOptions{}
-	return &this
-}
-
 // NewSecurityGroupLocationAwsCustomOptionsWithDefaults instantiates a new SecurityGroupLocationAwsCustomOptions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSecurityGroupLocationAwsCustomOptionsWithDefaults() *SecurityGroupLocationAwsCustomOptions {
 	this := SecurityGroupLocationAwsCustomOptions{}
 	return &this
-}
-
-// GetVpc returns the Vpc field value if set, zero value otherwise.
-func (o *SecurityGroupLocationAwsCustomOptions) GetVpc() string {
-	if o == nil || IsNil(o.Vpc) {
-		var ret string
-		return ret
-	}
-	return *o.Vpc
-}
-
-// GetVpcOk returns a tuple with the Vpc field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SecurityGroupLocationAwsCustomOptions) GetVpcOk() (*string, bool) {
-	if o == nil || IsNil(o.Vpc) {
-		return nil, false
-	}
-	return o.Vpc, true
-}
-
-// SetVpc gets a reference to the given string and assigns it to the Vpc field.
-func (o *SecurityGroupLocationAwsCustomOptions) SetVpc(v string) {
-	o.Vpc = &v
 }
 
 func (o SecurityGroupLocationAwsCustomOptions) MarshalJSON() ([]byte, error) {

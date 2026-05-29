@@ -26,46 +26,12 @@ type UpdateBudgetsRequest struct {
 
 type _UpdateBudgetsRequest UpdateBudgetsRequest
 
-// NewUpdateBudgetsRequest instantiates a new UpdateBudgetsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateBudgetsRequest(budget UpdateBudgetsRequestBudget) *UpdateBudgetsRequest {
-	this := UpdateBudgetsRequest{}
-	this.Budget = budget
-	return &this
-}
-
 // NewUpdateBudgetsRequestWithDefaults instantiates a new UpdateBudgetsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateBudgetsRequestWithDefaults() *UpdateBudgetsRequest {
 	this := UpdateBudgetsRequest{}
 	return &this
-}
-
-// GetBudget returns the Budget field value
-func (o *UpdateBudgetsRequest) GetBudget() UpdateBudgetsRequestBudget {
-	if o == nil {
-		var ret UpdateBudgetsRequestBudget
-		return ret
-	}
-
-	return o.Budget
-}
-
-// GetBudgetOk returns a tuple with the Budget field value
-// and a boolean to check if the value has been set.
-func (o *UpdateBudgetsRequest) GetBudgetOk() (*UpdateBudgetsRequestBudget, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Budget, true
-}
-
-// SetBudget sets field value
-func (o *UpdateBudgetsRequest) SetBudget(v UpdateBudgetsRequestBudget) {
-	o.Budget = v
 }
 
 func (o UpdateBudgetsRequest) MarshalJSON() ([]byte, error) {

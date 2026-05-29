@@ -29,67 +29,12 @@ type UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole stru
 
 type _UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole
 
-// NewUpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole instantiates a new UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole() *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole {
-	this := UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole{}
-	return &this
-}
-
 // NewUpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRoleWithDefaults instantiates a new UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRoleWithDefaults() *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole {
 	this := UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetAuthority returns the Authority field value if set, zero value otherwise.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) GetAuthority() string {
-	if o == nil || IsNil(o.Authority) {
-		var ret string
-		return ret
-	}
-	return *o.Authority
-}
-
-// GetAuthorityOk returns a tuple with the Authority field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) GetAuthorityOk() (*string, bool) {
-	if o == nil || IsNil(o.Authority) {
-		return nil, false
-	}
-	return o.Authority, true
-}
-
-// SetAuthority gets a reference to the given string and assigns it to the Authority field.
-func (o *UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) SetAuthority(v string) {
-	o.Authority = &v
 }
 
 func (o UpdateIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) MarshalJSON() ([]byte, error) {

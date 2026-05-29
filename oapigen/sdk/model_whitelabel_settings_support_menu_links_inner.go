@@ -28,90 +28,12 @@ type WhitelabelSettingsSupportMenuLinksInner struct {
 
 type _WhitelabelSettingsSupportMenuLinksInner WhitelabelSettingsSupportMenuLinksInner
 
-// NewWhitelabelSettingsSupportMenuLinksInner instantiates a new WhitelabelSettingsSupportMenuLinksInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewWhitelabelSettingsSupportMenuLinksInner() *WhitelabelSettingsSupportMenuLinksInner {
-	this := WhitelabelSettingsSupportMenuLinksInner{}
-	return &this
-}
-
 // NewWhitelabelSettingsSupportMenuLinksInnerWithDefaults instantiates a new WhitelabelSettingsSupportMenuLinksInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewWhitelabelSettingsSupportMenuLinksInnerWithDefaults() *WhitelabelSettingsSupportMenuLinksInner {
 	this := WhitelabelSettingsSupportMenuLinksInner{}
 	return &this
-}
-
-// GetUrl returns the Url field value if set, zero value otherwise.
-func (o *WhitelabelSettingsSupportMenuLinksInner) GetUrl() string {
-	if o == nil || IsNil(o.Url) {
-		var ret string
-		return ret
-	}
-	return *o.Url
-}
-
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *WhitelabelSettingsSupportMenuLinksInner) GetUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.Url) {
-		return nil, false
-	}
-	return o.Url, true
-}
-
-// SetUrl gets a reference to the given string and assigns it to the Url field.
-func (o *WhitelabelSettingsSupportMenuLinksInner) SetUrl(v string) {
-	o.Url = &v
-}
-
-// GetLabel returns the Label field value if set, zero value otherwise.
-func (o *WhitelabelSettingsSupportMenuLinksInner) GetLabel() string {
-	if o == nil || IsNil(o.Label) {
-		var ret string
-		return ret
-	}
-	return *o.Label
-}
-
-// GetLabelOk returns a tuple with the Label field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *WhitelabelSettingsSupportMenuLinksInner) GetLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.Label) {
-		return nil, false
-	}
-	return o.Label, true
-}
-
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *WhitelabelSettingsSupportMenuLinksInner) SetLabel(v string) {
-	o.Label = &v
-}
-
-// GetLabelCode returns the LabelCode field value if set, zero value otherwise.
-func (o *WhitelabelSettingsSupportMenuLinksInner) GetLabelCode() string {
-	if o == nil || IsNil(o.LabelCode) {
-		var ret string
-		return ret
-	}
-	return *o.LabelCode
-}
-
-// GetLabelCodeOk returns a tuple with the LabelCode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *WhitelabelSettingsSupportMenuLinksInner) GetLabelCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.LabelCode) {
-		return nil, false
-	}
-	return o.LabelCode, true
-}
-
-// SetLabelCode gets a reference to the given string and assigns it to the LabelCode field.
-func (o *WhitelabelSettingsSupportMenuLinksInner) SetLabelCode(v string) {
-	o.LabelCode = &v
 }
 
 func (o WhitelabelSettingsSupportMenuLinksInner) MarshalJSON() ([]byte, error) {

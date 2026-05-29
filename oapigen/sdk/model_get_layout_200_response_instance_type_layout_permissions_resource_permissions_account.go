@@ -26,44 +26,12 @@ type GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount
 
 type _GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount
 
-// NewGetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount instantiates a new GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount() *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount {
-	this := GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount{}
-	return &this
-}
-
 // NewGetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccountWithDefaults instantiates a new GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccountWithDefaults() *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount {
 	this := GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount) MarshalJSON() ([]byte, error) {

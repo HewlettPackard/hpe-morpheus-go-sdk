@@ -29,18 +29,6 @@ type ExecuteExecutionRequestRequest struct {
 
 type _ExecuteExecutionRequestRequest ExecuteExecutionRequestRequest
 
-// NewExecuteExecutionRequestRequest instantiates a new ExecuteExecutionRequestRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewExecuteExecutionRequestRequest(script string) *ExecuteExecutionRequestRequest {
-	this := ExecuteExecutionRequestRequest{}
-	this.Script = script
-	var sendKeys bool = false
-	this.SendKeys = &sendKeys
-	return &this
-}
-
 // NewExecuteExecutionRequestRequestWithDefaults instantiates a new ExecuteExecutionRequestRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -49,53 +37,6 @@ func NewExecuteExecutionRequestRequestWithDefaults() *ExecuteExecutionRequestReq
 	var sendKeys bool = false
 	this.SendKeys = &sendKeys
 	return &this
-}
-
-// GetScript returns the Script field value
-func (o *ExecuteExecutionRequestRequest) GetScript() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Script
-}
-
-// GetScriptOk returns a tuple with the Script field value
-// and a boolean to check if the value has been set.
-func (o *ExecuteExecutionRequestRequest) GetScriptOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Script, true
-}
-
-// SetScript sets field value
-func (o *ExecuteExecutionRequestRequest) SetScript(v string) {
-	o.Script = v
-}
-
-// GetSendKeys returns the SendKeys field value if set, zero value otherwise.
-func (o *ExecuteExecutionRequestRequest) GetSendKeys() bool {
-	if o == nil || IsNil(o.SendKeys) {
-		var ret bool
-		return ret
-	}
-	return *o.SendKeys
-}
-
-// GetSendKeysOk returns a tuple with the SendKeys field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteExecutionRequestRequest) GetSendKeysOk() (*bool, bool) {
-	if o == nil || IsNil(o.SendKeys) {
-		return nil, false
-	}
-	return o.SendKeys, true
-}
-
-// SetSendKeys gets a reference to the given bool and assigns it to the SendKeys field.
-func (o *ExecuteExecutionRequestRequest) SetSendKeys(v bool) {
-	o.SendKeys = &v
 }
 
 func (o ExecuteExecutionRequestRequest) MarshalJSON() ([]byte, error) {

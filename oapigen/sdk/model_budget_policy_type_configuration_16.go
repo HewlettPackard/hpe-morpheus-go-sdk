@@ -28,90 +28,12 @@ type BudgetPolicyTypeConfiguration16 struct {
 
 type _BudgetPolicyTypeConfiguration16 BudgetPolicyTypeConfiguration16
 
-// NewBudgetPolicyTypeConfiguration16 instantiates a new BudgetPolicyTypeConfiguration16 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBudgetPolicyTypeConfiguration16() *BudgetPolicyTypeConfiguration16 {
-	this := BudgetPolicyTypeConfiguration16{}
-	return &this
-}
-
 // NewBudgetPolicyTypeConfiguration16WithDefaults instantiates a new BudgetPolicyTypeConfiguration16 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBudgetPolicyTypeConfiguration16WithDefaults() *BudgetPolicyTypeConfiguration16 {
 	this := BudgetPolicyTypeConfiguration16{}
 	return &this
-}
-
-// GetMaxPrice returns the MaxPrice field value if set, zero value otherwise.
-func (o *BudgetPolicyTypeConfiguration16) GetMaxPrice() float32 {
-	if o == nil || IsNil(o.MaxPrice) {
-		var ret float32
-		return ret
-	}
-	return *o.MaxPrice
-}
-
-// GetMaxPriceOk returns a tuple with the MaxPrice field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BudgetPolicyTypeConfiguration16) GetMaxPriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.MaxPrice) {
-		return nil, false
-	}
-	return o.MaxPrice, true
-}
-
-// SetMaxPrice gets a reference to the given float32 and assigns it to the MaxPrice field.
-func (o *BudgetPolicyTypeConfiguration16) SetMaxPrice(v float32) {
-	o.MaxPrice = &v
-}
-
-// GetMaxPriceCurrency returns the MaxPriceCurrency field value if set, zero value otherwise.
-func (o *BudgetPolicyTypeConfiguration16) GetMaxPriceCurrency() string {
-	if o == nil || IsNil(o.MaxPriceCurrency) {
-		var ret string
-		return ret
-	}
-	return *o.MaxPriceCurrency
-}
-
-// GetMaxPriceCurrencyOk returns a tuple with the MaxPriceCurrency field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BudgetPolicyTypeConfiguration16) GetMaxPriceCurrencyOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxPriceCurrency) {
-		return nil, false
-	}
-	return o.MaxPriceCurrency, true
-}
-
-// SetMaxPriceCurrency gets a reference to the given string and assigns it to the MaxPriceCurrency field.
-func (o *BudgetPolicyTypeConfiguration16) SetMaxPriceCurrency(v string) {
-	o.MaxPriceCurrency = &v
-}
-
-// GetMaxPriceUnit returns the MaxPriceUnit field value if set, zero value otherwise.
-func (o *BudgetPolicyTypeConfiguration16) GetMaxPriceUnit() string {
-	if o == nil || IsNil(o.MaxPriceUnit) {
-		var ret string
-		return ret
-	}
-	return *o.MaxPriceUnit
-}
-
-// GetMaxPriceUnitOk returns a tuple with the MaxPriceUnit field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BudgetPolicyTypeConfiguration16) GetMaxPriceUnitOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxPriceUnit) {
-		return nil, false
-	}
-	return o.MaxPriceUnit, true
-}
-
-// SetMaxPriceUnit gets a reference to the given string and assigns it to the MaxPriceUnit field.
-func (o *BudgetPolicyTypeConfiguration16) SetMaxPriceUnit(v string) {
-	o.MaxPriceUnit = &v
 }
 
 func (o BudgetPolicyTypeConfiguration16) MarshalJSON() ([]byte, error) {

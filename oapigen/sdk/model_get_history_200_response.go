@@ -26,44 +26,12 @@ type GetHistory200Response struct {
 
 type _GetHistory200Response GetHistory200Response
 
-// NewGetHistory200Response instantiates a new GetHistory200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetHistory200Response() *GetHistory200Response {
-	this := GetHistory200Response{}
-	return &this
-}
-
 // NewGetHistory200ResponseWithDefaults instantiates a new GetHistory200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetHistory200ResponseWithDefaults() *GetHistory200Response {
 	this := GetHistory200Response{}
 	return &this
-}
-
-// GetProcess returns the Process field value if set, zero value otherwise.
-func (o *GetHistory200Response) GetProcess() GetHistory200ResponseProcess {
-	if o == nil || IsNil(o.Process) {
-		var ret GetHistory200ResponseProcess
-		return ret
-	}
-	return *o.Process
-}
-
-// GetProcessOk returns a tuple with the Process field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetHistory200Response) GetProcessOk() (*GetHistory200ResponseProcess, bool) {
-	if o == nil || IsNil(o.Process) {
-		return nil, false
-	}
-	return o.Process, true
-}
-
-// SetProcess gets a reference to the given GetHistory200ResponseProcess and assigns it to the Process field.
-func (o *GetHistory200Response) SetProcess(v GetHistory200ResponseProcess) {
-	o.Process = &v
 }
 
 func (o GetHistory200Response) MarshalJSON() ([]byte, error) {

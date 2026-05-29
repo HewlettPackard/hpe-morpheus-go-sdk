@@ -26,44 +26,12 @@ type GetInstanceType200Response struct {
 
 type _GetInstanceType200Response GetInstanceType200Response
 
-// NewGetInstanceType200Response instantiates a new GetInstanceType200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceType200Response() *GetInstanceType200Response {
-	this := GetInstanceType200Response{}
-	return &this
-}
-
 // NewGetInstanceType200ResponseWithDefaults instantiates a new GetInstanceType200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstanceType200ResponseWithDefaults() *GetInstanceType200Response {
 	this := GetInstanceType200Response{}
 	return &this
-}
-
-// GetInstanceType returns the InstanceType field value if set, zero value otherwise.
-func (o *GetInstanceType200Response) GetInstanceType() GetInstanceType200ResponseInstanceType {
-	if o == nil || IsNil(o.InstanceType) {
-		var ret GetInstanceType200ResponseInstanceType
-		return ret
-	}
-	return *o.InstanceType
-}
-
-// GetInstanceTypeOk returns a tuple with the InstanceType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceType200Response) GetInstanceTypeOk() (*GetInstanceType200ResponseInstanceType, bool) {
-	if o == nil || IsNil(o.InstanceType) {
-		return nil, false
-	}
-	return o.InstanceType, true
-}
-
-// SetInstanceType gets a reference to the given GetInstanceType200ResponseInstanceType and assigns it to the InstanceType field.
-func (o *GetInstanceType200Response) SetInstanceType(v GetInstanceType200ResponseInstanceType) {
-	o.InstanceType = &v
 }
 
 func (o GetInstanceType200Response) MarshalJSON() ([]byte, error) {

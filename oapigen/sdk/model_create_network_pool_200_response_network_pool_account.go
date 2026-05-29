@@ -27,67 +27,12 @@ type CreateNetworkPool200ResponseNetworkPoolAccount struct {
 
 type _CreateNetworkPool200ResponseNetworkPoolAccount CreateNetworkPool200ResponseNetworkPoolAccount
 
-// NewCreateNetworkPool200ResponseNetworkPoolAccount instantiates a new CreateNetworkPool200ResponseNetworkPoolAccount object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkPool200ResponseNetworkPoolAccount() *CreateNetworkPool200ResponseNetworkPoolAccount {
-	this := CreateNetworkPool200ResponseNetworkPoolAccount{}
-	return &this
-}
-
 // NewCreateNetworkPool200ResponseNetworkPoolAccountWithDefaults instantiates a new CreateNetworkPool200ResponseNetworkPoolAccount object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkPool200ResponseNetworkPoolAccountWithDefaults() *CreateNetworkPool200ResponseNetworkPoolAccount {
 	this := CreateNetworkPool200ResponseNetworkPoolAccount{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *CreateNetworkPool200ResponseNetworkPoolAccount) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkPool200ResponseNetworkPoolAccount) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *CreateNetworkPool200ResponseNetworkPoolAccount) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *CreateNetworkPool200ResponseNetworkPoolAccount) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkPool200ResponseNetworkPoolAccount) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *CreateNetworkPool200ResponseNetworkPoolAccount) SetName(v string) {
-	o.Name = &v
 }
 
 func (o CreateNetworkPool200ResponseNetworkPoolAccount) MarshalJSON() ([]byte, error) {

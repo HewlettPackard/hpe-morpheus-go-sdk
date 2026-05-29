@@ -27,44 +27,12 @@ type HAProxyLoadBalancerConfigObject1Pool struct {
 
 type _HAProxyLoadBalancerConfigObject1Pool HAProxyLoadBalancerConfigObject1Pool
 
-// NewHAProxyLoadBalancerConfigObject1Pool instantiates a new HAProxyLoadBalancerConfigObject1Pool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewHAProxyLoadBalancerConfigObject1Pool() *HAProxyLoadBalancerConfigObject1Pool {
-	this := HAProxyLoadBalancerConfigObject1Pool{}
-	return &this
-}
-
 // NewHAProxyLoadBalancerConfigObject1PoolWithDefaults instantiates a new HAProxyLoadBalancerConfigObject1Pool object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewHAProxyLoadBalancerConfigObject1PoolWithDefaults() *HAProxyLoadBalancerConfigObject1Pool {
 	this := HAProxyLoadBalancerConfigObject1Pool{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *HAProxyLoadBalancerConfigObject1Pool) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HAProxyLoadBalancerConfigObject1Pool) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *HAProxyLoadBalancerConfigObject1Pool) SetId(v string) {
-	o.Id = &v
 }
 
 func (o HAProxyLoadBalancerConfigObject1Pool) MarshalJSON() ([]byte, error) {

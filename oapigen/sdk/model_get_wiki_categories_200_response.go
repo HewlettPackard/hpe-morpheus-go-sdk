@@ -26,44 +26,12 @@ type GetWikiCategories200Response struct {
 
 type _GetWikiCategories200Response GetWikiCategories200Response
 
-// NewGetWikiCategories200Response instantiates a new GetWikiCategories200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetWikiCategories200Response() *GetWikiCategories200Response {
-	this := GetWikiCategories200Response{}
-	return &this
-}
-
 // NewGetWikiCategories200ResponseWithDefaults instantiates a new GetWikiCategories200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetWikiCategories200ResponseWithDefaults() *GetWikiCategories200Response {
 	this := GetWikiCategories200Response{}
 	return &this
-}
-
-// GetCategories returns the Categories field value if set, zero value otherwise.
-func (o *GetWikiCategories200Response) GetCategories() []GetWikiCategories200ResponseCategoriesInner {
-	if o == nil || IsNil(o.Categories) {
-		var ret []GetWikiCategories200ResponseCategoriesInner
-		return ret
-	}
-	return o.Categories
-}
-
-// GetCategoriesOk returns a tuple with the Categories field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetWikiCategories200Response) GetCategoriesOk() ([]GetWikiCategories200ResponseCategoriesInner, bool) {
-	if o == nil || IsNil(o.Categories) {
-		return nil, false
-	}
-	return o.Categories, true
-}
-
-// SetCategories gets a reference to the given []GetWikiCategories200ResponseCategoriesInner and assigns it to the Categories field.
-func (o *GetWikiCategories200Response) SetCategories(v []GetWikiCategories200ResponseCategoriesInner) {
-	o.Categories = v
 }
 
 func (o GetWikiCategories200Response) MarshalJSON() ([]byte, error) {

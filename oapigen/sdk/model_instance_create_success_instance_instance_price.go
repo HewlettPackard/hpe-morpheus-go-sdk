@@ -29,113 +29,12 @@ type InstanceCreateSuccessInstanceInstancePrice struct {
 
 type _InstanceCreateSuccessInstanceInstancePrice InstanceCreateSuccessInstanceInstancePrice
 
-// NewInstanceCreateSuccessInstanceInstancePrice instantiates a new InstanceCreateSuccessInstanceInstancePrice object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceCreateSuccessInstanceInstancePrice() *InstanceCreateSuccessInstanceInstancePrice {
-	this := InstanceCreateSuccessInstanceInstancePrice{}
-	return &this
-}
-
 // NewInstanceCreateSuccessInstanceInstancePriceWithDefaults instantiates a new InstanceCreateSuccessInstanceInstancePrice object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceCreateSuccessInstanceInstancePriceWithDefaults() *InstanceCreateSuccessInstanceInstancePrice {
 	this := InstanceCreateSuccessInstanceInstancePrice{}
 	return &this
-}
-
-// GetPrice returns the Price field value if set, zero value otherwise.
-func (o *InstanceCreateSuccessInstanceInstancePrice) GetPrice() float32 {
-	if o == nil || IsNil(o.Price) {
-		var ret float32
-		return ret
-	}
-	return *o.Price
-}
-
-// GetPriceOk returns a tuple with the Price field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccessInstanceInstancePrice) GetPriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.Price) {
-		return nil, false
-	}
-	return o.Price, true
-}
-
-// SetPrice gets a reference to the given float32 and assigns it to the Price field.
-func (o *InstanceCreateSuccessInstanceInstancePrice) SetPrice(v float32) {
-	o.Price = &v
-}
-
-// GetCost returns the Cost field value if set, zero value otherwise.
-func (o *InstanceCreateSuccessInstanceInstancePrice) GetCost() float32 {
-	if o == nil || IsNil(o.Cost) {
-		var ret float32
-		return ret
-	}
-	return *o.Cost
-}
-
-// GetCostOk returns a tuple with the Cost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccessInstanceInstancePrice) GetCostOk() (*float32, bool) {
-	if o == nil || IsNil(o.Cost) {
-		return nil, false
-	}
-	return o.Cost, true
-}
-
-// SetCost gets a reference to the given float32 and assigns it to the Cost field.
-func (o *InstanceCreateSuccessInstanceInstancePrice) SetCost(v float32) {
-	o.Cost = &v
-}
-
-// GetCurrency returns the Currency field value if set, zero value otherwise.
-func (o *InstanceCreateSuccessInstanceInstancePrice) GetCurrency() string {
-	if o == nil || IsNil(o.Currency) {
-		var ret string
-		return ret
-	}
-	return *o.Currency
-}
-
-// GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccessInstanceInstancePrice) GetCurrencyOk() (*string, bool) {
-	if o == nil || IsNil(o.Currency) {
-		return nil, false
-	}
-	return o.Currency, true
-}
-
-// SetCurrency gets a reference to the given string and assigns it to the Currency field.
-func (o *InstanceCreateSuccessInstanceInstancePrice) SetCurrency(v string) {
-	o.Currency = &v
-}
-
-// GetUnit returns the Unit field value if set, zero value otherwise.
-func (o *InstanceCreateSuccessInstanceInstancePrice) GetUnit() string {
-	if o == nil || IsNil(o.Unit) {
-		var ret string
-		return ret
-	}
-	return *o.Unit
-}
-
-// GetUnitOk returns a tuple with the Unit field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccessInstanceInstancePrice) GetUnitOk() (*string, bool) {
-	if o == nil || IsNil(o.Unit) {
-		return nil, false
-	}
-	return o.Unit, true
-}
-
-// SetUnit gets a reference to the given string and assigns it to the Unit field.
-func (o *InstanceCreateSuccessInstanceInstancePrice) SetUnit(v string) {
-	o.Unit = &v
 }
 
 func (o InstanceCreateSuccessInstanceInstancePrice) MarshalJSON() ([]byte, error) {

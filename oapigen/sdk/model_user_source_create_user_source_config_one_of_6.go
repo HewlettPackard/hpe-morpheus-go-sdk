@@ -35,17 +35,6 @@ type UserSourceCreateUserSourceConfigOneOf6 struct {
 
 type _UserSourceCreateUserSourceConfigOneOf6 UserSourceCreateUserSourceConfigOneOf6
 
-// NewUserSourceCreateUserSourceConfigOneOf6 instantiates a new UserSourceCreateUserSourceConfigOneOf6 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserSourceCreateUserSourceConfigOneOf6() *UserSourceCreateUserSourceConfigOneOf6 {
-	this := UserSourceCreateUserSourceConfigOneOf6{}
-	var doNotIncludeSAMLRequest bool = false
-	this.DoNotIncludeSAMLRequest = &doNotIncludeSAMLRequest
-	return &this
-}
-
 // NewUserSourceCreateUserSourceConfigOneOf6WithDefaults instantiates a new UserSourceCreateUserSourceConfigOneOf6 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -54,121 +43,6 @@ func NewUserSourceCreateUserSourceConfigOneOf6WithDefaults() *UserSourceCreateUs
 	var doNotIncludeSAMLRequest bool = false
 	this.DoNotIncludeSAMLRequest = &doNotIncludeSAMLRequest
 	return &this
-}
-
-// GetLoginUrl returns the LoginUrl field value if set, zero value otherwise.
-func (o *UserSourceCreateUserSourceConfigOneOf6) GetLoginUrl() string {
-	if o == nil || IsNil(o.LoginUrl) {
-		var ret string
-		return ret
-	}
-	return *o.LoginUrl
-}
-
-// GetLoginUrlOk returns a tuple with the LoginUrl field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf6) GetLoginUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.LoginUrl) {
-		return nil, false
-	}
-	return o.LoginUrl, true
-}
-
-// SetLoginUrl gets a reference to the given string and assigns it to the LoginUrl field.
-func (o *UserSourceCreateUserSourceConfigOneOf6) SetLoginUrl(v string) {
-	o.LoginUrl = &v
-}
-
-// GetDoNotIncludeSAMLRequest returns the DoNotIncludeSAMLRequest field value if set, zero value otherwise.
-func (o *UserSourceCreateUserSourceConfigOneOf6) GetDoNotIncludeSAMLRequest() bool {
-	if o == nil || IsNil(o.DoNotIncludeSAMLRequest) {
-		var ret bool
-		return ret
-	}
-	return *o.DoNotIncludeSAMLRequest
-}
-
-// GetDoNotIncludeSAMLRequestOk returns a tuple with the DoNotIncludeSAMLRequest field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf6) GetDoNotIncludeSAMLRequestOk() (*bool, bool) {
-	if o == nil || IsNil(o.DoNotIncludeSAMLRequest) {
-		return nil, false
-	}
-	return o.DoNotIncludeSAMLRequest, true
-}
-
-// SetDoNotIncludeSAMLRequest gets a reference to the given bool and assigns it to the DoNotIncludeSAMLRequest field.
-func (o *UserSourceCreateUserSourceConfigOneOf6) SetDoNotIncludeSAMLRequest(v bool) {
-	o.DoNotIncludeSAMLRequest = &v
-}
-
-// GetLogout returns the Logout field value if set, zero value otherwise.
-func (o *UserSourceCreateUserSourceConfigOneOf6) GetLogout() string {
-	if o == nil || IsNil(o.Logout) {
-		var ret string
-		return ret
-	}
-	return *o.Logout
-}
-
-// GetLogoutOk returns a tuple with the Logout field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf6) GetLogoutOk() (*string, bool) {
-	if o == nil || IsNil(o.Logout) {
-		return nil, false
-	}
-	return o.Logout, true
-}
-
-// SetLogout gets a reference to the given string and assigns it to the Logout field.
-func (o *UserSourceCreateUserSourceConfigOneOf6) SetLogout(v string) {
-	o.Logout = &v
-}
-
-// GetEncryptionAlgo returns the EncryptionAlgo field value if set, zero value otherwise.
-func (o *UserSourceCreateUserSourceConfigOneOf6) GetEncryptionAlgo() string {
-	if o == nil || IsNil(o.EncryptionAlgo) {
-		var ret string
-		return ret
-	}
-	return *o.EncryptionAlgo
-}
-
-// GetEncryptionAlgoOk returns a tuple with the EncryptionAlgo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf6) GetEncryptionAlgoOk() (*string, bool) {
-	if o == nil || IsNil(o.EncryptionAlgo) {
-		return nil, false
-	}
-	return o.EncryptionAlgo, true
-}
-
-// SetEncryptionAlgo gets a reference to the given string and assigns it to the EncryptionAlgo field.
-func (o *UserSourceCreateUserSourceConfigOneOf6) SetEncryptionAlgo(v string) {
-	o.EncryptionAlgo = &v
-}
-
-// GetEncryptionKey returns the EncryptionKey field value if set, zero value otherwise.
-func (o *UserSourceCreateUserSourceConfigOneOf6) GetEncryptionKey() string {
-	if o == nil || IsNil(o.EncryptionKey) {
-		var ret string
-		return ret
-	}
-	return *o.EncryptionKey
-}
-
-// GetEncryptionKeyOk returns a tuple with the EncryptionKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf6) GetEncryptionKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.EncryptionKey) {
-		return nil, false
-	}
-	return o.EncryptionKey, true
-}
-
-// SetEncryptionKey gets a reference to the given string and assigns it to the EncryptionKey field.
-func (o *UserSourceCreateUserSourceConfigOneOf6) SetEncryptionKey(v string) {
-	o.EncryptionKey = &v
 }
 
 func (o UserSourceCreateUserSourceConfigOneOf6) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type UpdateInvoices200Response struct {
 
 type _UpdateInvoices200Response UpdateInvoices200Response
 
-// NewUpdateInvoices200Response instantiates a new UpdateInvoices200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateInvoices200Response() *UpdateInvoices200Response {
-	this := UpdateInvoices200Response{}
-	return &this
-}
-
 // NewUpdateInvoices200ResponseWithDefaults instantiates a new UpdateInvoices200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateInvoices200ResponseWithDefaults() *UpdateInvoices200Response {
 	this := UpdateInvoices200Response{}
 	return &this
-}
-
-// GetUser returns the User field value if set, zero value otherwise.
-func (o *UpdateInvoices200Response) GetUser() UpdateInvoices200ResponseAllOfUser {
-	if o == nil || IsNil(o.User) {
-		var ret UpdateInvoices200ResponseAllOfUser
-		return ret
-	}
-	return *o.User
-}
-
-// GetUserOk returns a tuple with the User field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateInvoices200Response) GetUserOk() (*UpdateInvoices200ResponseAllOfUser, bool) {
-	if o == nil || IsNil(o.User) {
-		return nil, false
-	}
-	return o.User, true
-}
-
-// SetUser gets a reference to the given UpdateInvoices200ResponseAllOfUser and assigns it to the User field.
-func (o *UpdateInvoices200Response) SetUser(v UpdateInvoices200ResponseAllOfUser) {
-	o.User = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateInvoices200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateInvoices200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateInvoices200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateInvoices200Response) MarshalJSON() ([]byte, error) {

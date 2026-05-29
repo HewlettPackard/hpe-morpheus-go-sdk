@@ -31,93 +31,12 @@ type AddInstanceRequestPortsInner struct {
 
 type _AddInstanceRequestPortsInner AddInstanceRequestPortsInner
 
-// NewAddInstanceRequestPortsInner instantiates a new AddInstanceRequestPortsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddInstanceRequestPortsInner(port int64) *AddInstanceRequestPortsInner {
-	this := AddInstanceRequestPortsInner{}
-	this.Port = port
-	return &this
-}
-
 // NewAddInstanceRequestPortsInnerWithDefaults instantiates a new AddInstanceRequestPortsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddInstanceRequestPortsInnerWithDefaults() *AddInstanceRequestPortsInner {
 	this := AddInstanceRequestPortsInner{}
 	return &this
-}
-
-// GetPort returns the Port field value
-func (o *AddInstanceRequestPortsInner) GetPort() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Port
-}
-
-// GetPortOk returns a tuple with the Port field value
-// and a boolean to check if the value has been set.
-func (o *AddInstanceRequestPortsInner) GetPortOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Port, true
-}
-
-// SetPort sets field value
-func (o *AddInstanceRequestPortsInner) SetPort(v int64) {
-	o.Port = v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddInstanceRequestPortsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstanceRequestPortsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddInstanceRequestPortsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetLb returns the Lb field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddInstanceRequestPortsInner) GetLb() string {
-	if o == nil || IsNil(o.Lb.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Lb.Get()
-}
-
-// GetLbOk returns a tuple with the Lb field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddInstanceRequestPortsInner) GetLbOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Lb.Get(), o.Lb.IsSet()
-}
-
-// SetLb gets a reference to the given NullableString and assigns it to the Lb field.
-func (o *AddInstanceRequestPortsInner) SetLb(v string) {
-	o.Lb.Set(&v)
 }
 
 func (o AddInstanceRequestPortsInner) MarshalJSON() ([]byte, error) {

@@ -27,20 +27,6 @@ type UpdateHostResize200ResponseAllOfServerConfigCreateUser struct {
 	String *string
 }
 
-// boolAsUpdateHostResize200ResponseAllOfServerConfigCreateUser is a convenience function that returns bool wrapped in UpdateHostResize200ResponseAllOfServerConfigCreateUser
-func BoolAsUpdateHostResize200ResponseAllOfServerConfigCreateUser(v *bool) UpdateHostResize200ResponseAllOfServerConfigCreateUser {
-	return UpdateHostResize200ResponseAllOfServerConfigCreateUser{
-		Bool: v,
-	}
-}
-
-// stringAsUpdateHostResize200ResponseAllOfServerConfigCreateUser is a convenience function that returns string wrapped in UpdateHostResize200ResponseAllOfServerConfigCreateUser
-func StringAsUpdateHostResize200ResponseAllOfServerConfigCreateUser(v *string) UpdateHostResize200ResponseAllOfServerConfigCreateUser {
-	return UpdateHostResize200ResponseAllOfServerConfigCreateUser{
-		String: v,
-	}
-}
-
 func (dst *UpdateHostResize200ResponseAllOfServerConfigCreateUser) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateHostResize200ResponseAllOfServerConfigCreateUser{}

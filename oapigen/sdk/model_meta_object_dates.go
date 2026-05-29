@@ -28,67 +28,12 @@ type MetaObjectDates struct {
 
 type _MetaObjectDates MetaObjectDates
 
-// NewMetaObjectDates instantiates a new MetaObjectDates object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMetaObjectDates() *MetaObjectDates {
-	this := MetaObjectDates{}
-	return &this
-}
-
 // NewMetaObjectDatesWithDefaults instantiates a new MetaObjectDates object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewMetaObjectDatesWithDefaults() *MetaObjectDates {
 	this := MetaObjectDates{}
 	return &this
-}
-
-// GetStartDate returns the StartDate field value if set, zero value otherwise.
-func (o *MetaObjectDates) GetStartDate() time.Time {
-	if o == nil || IsNil(o.StartDate) {
-		var ret time.Time
-		return ret
-	}
-	return *o.StartDate
-}
-
-// GetStartDateOk returns a tuple with the StartDate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MetaObjectDates) GetStartDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StartDate) {
-		return nil, false
-	}
-	return o.StartDate, true
-}
-
-// SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
-func (o *MetaObjectDates) SetStartDate(v time.Time) {
-	o.StartDate = &v
-}
-
-// GetEndDate returns the EndDate field value if set, zero value otherwise.
-func (o *MetaObjectDates) GetEndDate() time.Time {
-	if o == nil || IsNil(o.EndDate) {
-		var ret time.Time
-		return ret
-	}
-	return *o.EndDate
-}
-
-// GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MetaObjectDates) GetEndDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EndDate) {
-		return nil, false
-	}
-	return o.EndDate, true
-}
-
-// SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
-func (o *MetaObjectDates) SetEndDate(v time.Time) {
-	o.EndDate = &v
 }
 
 func (o MetaObjectDates) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type AddDeployments200Response struct {
 
 type _AddDeployments200Response AddDeployments200Response
 
-// NewAddDeployments200Response instantiates a new AddDeployments200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddDeployments200Response() *AddDeployments200Response {
-	this := AddDeployments200Response{}
-	return &this
-}
-
 // NewAddDeployments200ResponseWithDefaults instantiates a new AddDeployments200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddDeployments200ResponseWithDefaults() *AddDeployments200Response {
 	this := AddDeployments200Response{}
 	return &this
-}
-
-// GetDeployment returns the Deployment field value if set, zero value otherwise.
-func (o *AddDeployments200Response) GetDeployment() AddDeployments200ResponseAllOfDeployment {
-	if o == nil || IsNil(o.Deployment) {
-		var ret AddDeployments200ResponseAllOfDeployment
-		return ret
-	}
-	return *o.Deployment
-}
-
-// GetDeploymentOk returns a tuple with the Deployment field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddDeployments200Response) GetDeploymentOk() (*AddDeployments200ResponseAllOfDeployment, bool) {
-	if o == nil || IsNil(o.Deployment) {
-		return nil, false
-	}
-	return o.Deployment, true
-}
-
-// SetDeployment gets a reference to the given AddDeployments200ResponseAllOfDeployment and assigns it to the Deployment field.
-func (o *AddDeployments200Response) SetDeployment(v AddDeployments200ResponseAllOfDeployment) {
-	o.Deployment = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddDeployments200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddDeployments200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddDeployments200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddDeployments200Response) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type GetCloudResourcePools200Response struct {
 
 type _GetCloudResourcePools200Response GetCloudResourcePools200Response
 
-// NewGetCloudResourcePools200Response instantiates a new GetCloudResourcePools200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCloudResourcePools200Response() *GetCloudResourcePools200Response {
-	this := GetCloudResourcePools200Response{}
-	return &this
-}
-
 // NewGetCloudResourcePools200ResponseWithDefaults instantiates a new GetCloudResourcePools200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetCloudResourcePools200ResponseWithDefaults() *GetCloudResourcePools200Response {
 	this := GetCloudResourcePools200Response{}
 	return &this
-}
-
-// GetResourcePool returns the ResourcePool field value if set, zero value otherwise.
-func (o *GetCloudResourcePools200Response) GetResourcePool() GetCloudResourcePools200ResponseAllOfResourcePool {
-	if o == nil || IsNil(o.ResourcePool) {
-		var ret GetCloudResourcePools200ResponseAllOfResourcePool
-		return ret
-	}
-	return *o.ResourcePool
-}
-
-// GetResourcePoolOk returns a tuple with the ResourcePool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCloudResourcePools200Response) GetResourcePoolOk() (*GetCloudResourcePools200ResponseAllOfResourcePool, bool) {
-	if o == nil || IsNil(o.ResourcePool) {
-		return nil, false
-	}
-	return o.ResourcePool, true
-}
-
-// SetResourcePool gets a reference to the given GetCloudResourcePools200ResponseAllOfResourcePool and assigns it to the ResourcePool field.
-func (o *GetCloudResourcePools200Response) SetResourcePool(v GetCloudResourcePools200ResponseAllOfResourcePool) {
-	o.ResourcePool = &v
 }
 
 func (o GetCloudResourcePools200Response) MarshalJSON() ([]byte, error) {

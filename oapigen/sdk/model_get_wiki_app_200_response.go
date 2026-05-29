@@ -26,44 +26,12 @@ type GetWikiApp200Response struct {
 
 type _GetWikiApp200Response GetWikiApp200Response
 
-// NewGetWikiApp200Response instantiates a new GetWikiApp200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetWikiApp200Response() *GetWikiApp200Response {
-	this := GetWikiApp200Response{}
-	return &this
-}
-
 // NewGetWikiApp200ResponseWithDefaults instantiates a new GetWikiApp200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetWikiApp200ResponseWithDefaults() *GetWikiApp200Response {
 	this := GetWikiApp200Response{}
 	return &this
-}
-
-// GetPage returns the Page field value if set, zero value otherwise.
-func (o *GetWikiApp200Response) GetPage() GetWikiApp200ResponsePage {
-	if o == nil || IsNil(o.Page) {
-		var ret GetWikiApp200ResponsePage
-		return ret
-	}
-	return *o.Page
-}
-
-// GetPageOk returns a tuple with the Page field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetWikiApp200Response) GetPageOk() (*GetWikiApp200ResponsePage, bool) {
-	if o == nil || IsNil(o.Page) {
-		return nil, false
-	}
-	return o.Page, true
-}
-
-// SetPage gets a reference to the given GetWikiApp200ResponsePage and assigns it to the Page field.
-func (o *GetWikiApp200Response) SetPage(v GetWikiApp200ResponsePage) {
-	o.Page = &v
 }
 
 func (o GetWikiApp200Response) MarshalJSON() ([]byte, error) {

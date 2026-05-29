@@ -28,67 +28,12 @@ type InstanceBackups struct {
 
 type _InstanceBackups InstanceBackups
 
-// NewInstanceBackups instantiates a new InstanceBackups object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceBackups() *InstanceBackups {
-	this := InstanceBackups{}
-	return &this
-}
-
 // NewInstanceBackupsWithDefaults instantiates a new InstanceBackups object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceBackupsWithDefaults() *InstanceBackups {
 	this := InstanceBackups{}
 	return &this
-}
-
-// GetInstance returns the Instance field value if set, zero value otherwise.
-func (o *InstanceBackups) GetInstance() InstanceBackupsInstance {
-	if o == nil || IsNil(o.Instance) {
-		var ret InstanceBackupsInstance
-		return ret
-	}
-	return *o.Instance
-}
-
-// GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceBackups) GetInstanceOk() (*InstanceBackupsInstance, bool) {
-	if o == nil || IsNil(o.Instance) {
-		return nil, false
-	}
-	return o.Instance, true
-}
-
-// SetInstance gets a reference to the given InstanceBackupsInstance and assigns it to the Instance field.
-func (o *InstanceBackups) SetInstance(v InstanceBackupsInstance) {
-	o.Instance = &v
-}
-
-// GetBackups returns the Backups field value if set, zero value otherwise.
-func (o *InstanceBackups) GetBackups() []map[string]interface{} {
-	if o == nil || IsNil(o.Backups) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Backups
-}
-
-// GetBackupsOk returns a tuple with the Backups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceBackups) GetBackupsOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Backups) {
-		return nil, false
-	}
-	return o.Backups, true
-}
-
-// SetBackups gets a reference to the given []map[string]interface{} and assigns it to the Backups field.
-func (o *InstanceBackups) SetBackups(v []map[string]interface{}) {
-	o.Backups = v
 }
 
 func (o InstanceBackups) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSi
 
 type _GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner
 
-// NewGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner instantiates a new GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner() *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner {
-	this := GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner{}
-	return &this
-}
-
 // NewGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInnerWithDefaults instantiates a new GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInnerWithDefaults() *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner {
 	this := GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetDefault returns the Default field value if set, zero value otherwise.
-func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) GetDefault() bool {
-	if o == nil || IsNil(o.Default) {
-		var ret bool
-		return ret
-	}
-	return *o.Default
-}
-
-// GetDefaultOk returns a tuple with the Default field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) GetDefaultOk() (*bool, bool) {
-	if o == nil || IsNil(o.Default) {
-		return nil, false
-	}
-	return o.Default, true
-}
-
-// SetDefault gets a reference to the given bool and assigns it to the Default field.
-func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) SetDefault(v bool) {
-	o.Default = &v
 }
 
 func (o GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) MarshalJSON() ([]byte, error) {

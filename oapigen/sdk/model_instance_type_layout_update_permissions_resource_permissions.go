@@ -29,67 +29,12 @@ type InstanceTypeLayoutUpdatePermissionsResourcePermissions struct {
 
 type _InstanceTypeLayoutUpdatePermissionsResourcePermissions InstanceTypeLayoutUpdatePermissionsResourcePermissions
 
-// NewInstanceTypeLayoutUpdatePermissionsResourcePermissions instantiates a new InstanceTypeLayoutUpdatePermissionsResourcePermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceTypeLayoutUpdatePermissionsResourcePermissions() *InstanceTypeLayoutUpdatePermissionsResourcePermissions {
-	this := InstanceTypeLayoutUpdatePermissionsResourcePermissions{}
-	return &this
-}
-
 // NewInstanceTypeLayoutUpdatePermissionsResourcePermissionsWithDefaults instantiates a new InstanceTypeLayoutUpdatePermissionsResourcePermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceTypeLayoutUpdatePermissionsResourcePermissionsWithDefaults() *InstanceTypeLayoutUpdatePermissionsResourcePermissions {
 	this := InstanceTypeLayoutUpdatePermissionsResourcePermissions{}
 	return &this
-}
-
-// GetAll returns the All field value if set, zero value otherwise.
-func (o *InstanceTypeLayoutUpdatePermissionsResourcePermissions) GetAll() bool {
-	if o == nil || IsNil(o.All) {
-		var ret bool
-		return ret
-	}
-	return *o.All
-}
-
-// GetAllOk returns a tuple with the All field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceTypeLayoutUpdatePermissionsResourcePermissions) GetAllOk() (*bool, bool) {
-	if o == nil || IsNil(o.All) {
-		return nil, false
-	}
-	return o.All, true
-}
-
-// SetAll gets a reference to the given bool and assigns it to the All field.
-func (o *InstanceTypeLayoutUpdatePermissionsResourcePermissions) SetAll(v bool) {
-	o.All = &v
-}
-
-// GetSites returns the Sites field value if set, zero value otherwise.
-func (o *InstanceTypeLayoutUpdatePermissionsResourcePermissions) GetSites() []InstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInner {
-	if o == nil || IsNil(o.Sites) {
-		var ret []InstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInner
-		return ret
-	}
-	return o.Sites
-}
-
-// GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceTypeLayoutUpdatePermissionsResourcePermissions) GetSitesOk() ([]InstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInner, bool) {
-	if o == nil || IsNil(o.Sites) {
-		return nil, false
-	}
-	return o.Sites, true
-}
-
-// SetSites gets a reference to the given []InstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInner and assigns it to the Sites field.
-func (o *InstanceTypeLayoutUpdatePermissionsResourcePermissions) SetSites(v []InstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInner) {
-	o.Sites = v
 }
 
 func (o InstanceTypeLayoutUpdatePermissionsResourcePermissions) MarshalJSON() ([]byte, error) {

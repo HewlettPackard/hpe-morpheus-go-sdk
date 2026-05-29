@@ -28,90 +28,12 @@ type ExecuteWorkflows200Response struct {
 
 type _ExecuteWorkflows200Response ExecuteWorkflows200Response
 
-// NewExecuteWorkflows200Response instantiates a new ExecuteWorkflows200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewExecuteWorkflows200Response() *ExecuteWorkflows200Response {
-	this := ExecuteWorkflows200Response{}
-	return &this
-}
-
 // NewExecuteWorkflows200ResponseWithDefaults instantiates a new ExecuteWorkflows200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewExecuteWorkflows200ResponseWithDefaults() *ExecuteWorkflows200Response {
 	this := ExecuteWorkflows200Response{}
 	return &this
-}
-
-// GetJob returns the Job field value if set, zero value otherwise.
-func (o *ExecuteWorkflows200Response) GetJob() ExecuteWorkflows200ResponseAllOfJob {
-	if o == nil || IsNil(o.Job) {
-		var ret ExecuteWorkflows200ResponseAllOfJob
-		return ret
-	}
-	return *o.Job
-}
-
-// GetJobOk returns a tuple with the Job field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteWorkflows200Response) GetJobOk() (*ExecuteWorkflows200ResponseAllOfJob, bool) {
-	if o == nil || IsNil(o.Job) {
-		return nil, false
-	}
-	return o.Job, true
-}
-
-// SetJob gets a reference to the given ExecuteWorkflows200ResponseAllOfJob and assigns it to the Job field.
-func (o *ExecuteWorkflows200Response) SetJob(v ExecuteWorkflows200ResponseAllOfJob) {
-	o.Job = &v
-}
-
-// GetJobExecution returns the JobExecution field value if set, zero value otherwise.
-func (o *ExecuteWorkflows200Response) GetJobExecution() ExecuteWorkflows200ResponseAllOfJobExecution {
-	if o == nil || IsNil(o.JobExecution) {
-		var ret ExecuteWorkflows200ResponseAllOfJobExecution
-		return ret
-	}
-	return *o.JobExecution
-}
-
-// GetJobExecutionOk returns a tuple with the JobExecution field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteWorkflows200Response) GetJobExecutionOk() (*ExecuteWorkflows200ResponseAllOfJobExecution, bool) {
-	if o == nil || IsNil(o.JobExecution) {
-		return nil, false
-	}
-	return o.JobExecution, true
-}
-
-// SetJobExecution gets a reference to the given ExecuteWorkflows200ResponseAllOfJobExecution and assigns it to the JobExecution field.
-func (o *ExecuteWorkflows200Response) SetJobExecution(v ExecuteWorkflows200ResponseAllOfJobExecution) {
-	o.JobExecution = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *ExecuteWorkflows200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteWorkflows200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *ExecuteWorkflows200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o ExecuteWorkflows200Response) MarshalJSON() ([]byte, error) {

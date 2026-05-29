@@ -33,116 +33,12 @@ type AddBackupJobsRequestJob struct {
 
 type _AddBackupJobsRequestJob AddBackupJobsRequestJob
 
-// NewAddBackupJobsRequestJob instantiates a new AddBackupJobsRequestJob object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBackupJobsRequestJob(name string) *AddBackupJobsRequestJob {
-	this := AddBackupJobsRequestJob{}
-	this.Name = name
-	return &this
-}
-
 // NewAddBackupJobsRequestJobWithDefaults instantiates a new AddBackupJobsRequestJob object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddBackupJobsRequestJobWithDefaults() *AddBackupJobsRequestJob {
 	this := AddBackupJobsRequestJob{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *AddBackupJobsRequestJob) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *AddBackupJobsRequestJob) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *AddBackupJobsRequestJob) SetName(v string) {
-	o.Name = v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *AddBackupJobsRequestJob) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBackupJobsRequestJob) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *AddBackupJobsRequestJob) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetScheduleId returns the ScheduleId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddBackupJobsRequestJob) GetScheduleId() int64 {
-	if o == nil || IsNil(o.ScheduleId.Get()) {
-		var ret int64
-		return ret
-	}
-	return *o.ScheduleId.Get()
-}
-
-// GetScheduleIdOk returns a tuple with the ScheduleId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddBackupJobsRequestJob) GetScheduleIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ScheduleId.Get(), o.ScheduleId.IsSet()
-}
-
-// SetScheduleId gets a reference to the given NullableInt64 and assigns it to the ScheduleId field.
-func (o *AddBackupJobsRequestJob) SetScheduleId(v int64) {
-	o.ScheduleId.Set(&v)
-}
-
-// GetRetentionCount returns the RetentionCount field value if set, zero value otherwise.
-func (o *AddBackupJobsRequestJob) GetRetentionCount() int64 {
-	if o == nil || IsNil(o.RetentionCount) {
-		var ret int64
-		return ret
-	}
-	return *o.RetentionCount
-}
-
-// GetRetentionCountOk returns a tuple with the RetentionCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBackupJobsRequestJob) GetRetentionCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.RetentionCount) {
-		return nil, false
-	}
-	return o.RetentionCount, true
-}
-
-// SetRetentionCount gets a reference to the given int64 and assigns it to the RetentionCount field.
-func (o *AddBackupJobsRequestJob) SetRetentionCount(v int64) {
-	o.RetentionCount = &v
 }
 
 func (o AddBackupJobsRequestJob) MarshalJSON() ([]byte, error) {

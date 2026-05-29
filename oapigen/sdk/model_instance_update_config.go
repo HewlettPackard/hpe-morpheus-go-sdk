@@ -29,68 +29,12 @@ type InstanceUpdateConfig struct {
 
 type _InstanceUpdateConfig InstanceUpdateConfig
 
-// NewInstanceUpdateConfig instantiates a new InstanceUpdateConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceUpdateConfig() *InstanceUpdateConfig {
-	this := InstanceUpdateConfig{}
-	return &this
-}
-
 // NewInstanceUpdateConfigWithDefaults instantiates a new InstanceUpdateConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceUpdateConfigWithDefaults() *InstanceUpdateConfig {
 	this := InstanceUpdateConfig{}
 	return &this
-}
-
-// GetCustomOptions returns the CustomOptions field value if set, zero value otherwise.
-func (o *InstanceUpdateConfig) GetCustomOptions() map[string]interface{} {
-	if o == nil || IsNil(o.CustomOptions) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.CustomOptions
-}
-
-// GetCustomOptionsOk returns a tuple with the CustomOptions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceUpdateConfig) GetCustomOptionsOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.CustomOptions) {
-		return map[string]interface{}{}, false
-	}
-	return o.CustomOptions, true
-}
-
-// SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
-func (o *InstanceUpdateConfig) SetCustomOptions(v map[string]interface{}) {
-	o.CustomOptions = v
-}
-
-// GetUserData returns the UserData field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InstanceUpdateConfig) GetUserData() string {
-	if o == nil || IsNil(o.UserData.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.UserData.Get()
-}
-
-// GetUserDataOk returns a tuple with the UserData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InstanceUpdateConfig) GetUserDataOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.UserData.Get(), o.UserData.IsSet()
-}
-
-// SetUserData gets a reference to the given NullableString and assigns it to the UserData field.
-func (o *InstanceUpdateConfig) SetUserData(v string) {
-	o.UserData.Set(&v)
 }
 
 func (o InstanceUpdateConfig) MarshalJSON() ([]byte, error) {

@@ -31,90 +31,12 @@ type AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 struct {
 
 type _AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 AddCloudResourcePoolRequestResourcePoolConfigAnyOf1
 
-// NewAddCloudResourcePoolRequestResourcePoolConfigAnyOf1 instantiates a new AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCloudResourcePoolRequestResourcePoolConfigAnyOf1() *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 {
-	this := AddCloudResourcePoolRequestResourcePoolConfigAnyOf1{}
-	return &this
-}
-
 // NewAddCloudResourcePoolRequestResourcePoolConfigAnyOf1WithDefaults instantiates a new AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddCloudResourcePoolRequestResourcePoolConfigAnyOf1WithDefaults() *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 {
 	this := AddCloudResourcePoolRequestResourcePoolConfigAnyOf1{}
 	return &this
-}
-
-// GetManagers returns the Managers field value if set, zero value otherwise.
-func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) GetManagers() []string {
-	if o == nil || IsNil(o.Managers) {
-		var ret []string
-		return ret
-	}
-	return o.Managers
-}
-
-// GetManagersOk returns a tuple with the Managers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) GetManagersOk() ([]string, bool) {
-	if o == nil || IsNil(o.Managers) {
-		return nil, false
-	}
-	return o.Managers, true
-}
-
-// SetManagers gets a reference to the given []string and assigns it to the Managers field.
-func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) SetManagers(v []string) {
-	o.Managers = v
-}
-
-// GetDevelopers returns the Developers field value if set, zero value otherwise.
-func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) GetDevelopers() []string {
-	if o == nil || IsNil(o.Developers) {
-		var ret []string
-		return ret
-	}
-	return o.Developers
-}
-
-// GetDevelopersOk returns a tuple with the Developers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) GetDevelopersOk() ([]string, bool) {
-	if o == nil || IsNil(o.Developers) {
-		return nil, false
-	}
-	return o.Developers, true
-}
-
-// SetDevelopers gets a reference to the given []string and assigns it to the Developers field.
-func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) SetDevelopers(v []string) {
-	o.Developers = v
-}
-
-// GetAuditors returns the Auditors field value if set, zero value otherwise.
-func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) GetAuditors() []string {
-	if o == nil || IsNil(o.Auditors) {
-		var ret []string
-		return ret
-	}
-	return o.Auditors
-}
-
-// GetAuditorsOk returns a tuple with the Auditors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) GetAuditorsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Auditors) {
-		return nil, false
-	}
-	return o.Auditors, true
-}
-
-// SetAuditors gets a reference to the given []string and assigns it to the Auditors field.
-func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) SetAuditors(v []string) {
-	o.Auditors = v
 }
 
 func (o AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) MarshalJSON() ([]byte, error) {

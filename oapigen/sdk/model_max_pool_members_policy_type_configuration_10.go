@@ -26,46 +26,12 @@ type MaxPoolMembersPolicyTypeConfiguration10 struct {
 
 type _MaxPoolMembersPolicyTypeConfiguration10 MaxPoolMembersPolicyTypeConfiguration10
 
-// NewMaxPoolMembersPolicyTypeConfiguration10 instantiates a new MaxPoolMembersPolicyTypeConfiguration10 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMaxPoolMembersPolicyTypeConfiguration10(maxPoolMembers string) *MaxPoolMembersPolicyTypeConfiguration10 {
-	this := MaxPoolMembersPolicyTypeConfiguration10{}
-	this.MaxPoolMembers = maxPoolMembers
-	return &this
-}
-
 // NewMaxPoolMembersPolicyTypeConfiguration10WithDefaults instantiates a new MaxPoolMembersPolicyTypeConfiguration10 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewMaxPoolMembersPolicyTypeConfiguration10WithDefaults() *MaxPoolMembersPolicyTypeConfiguration10 {
 	this := MaxPoolMembersPolicyTypeConfiguration10{}
 	return &this
-}
-
-// GetMaxPoolMembers returns the MaxPoolMembers field value
-func (o *MaxPoolMembersPolicyTypeConfiguration10) GetMaxPoolMembers() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MaxPoolMembers
-}
-
-// GetMaxPoolMembersOk returns a tuple with the MaxPoolMembers field value
-// and a boolean to check if the value has been set.
-func (o *MaxPoolMembersPolicyTypeConfiguration10) GetMaxPoolMembersOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MaxPoolMembers, true
-}
-
-// SetMaxPoolMembers sets field value
-func (o *MaxPoolMembersPolicyTypeConfiguration10) SetMaxPoolMembers(v string) {
-	o.MaxPoolMembers = v
 }
 
 func (o MaxPoolMembersPolicyTypeConfiguration10) MarshalJSON() ([]byte, error) {

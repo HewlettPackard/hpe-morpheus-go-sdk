@@ -26,46 +26,12 @@ type WorkflowPolicyTypeConfiguration2 struct {
 
 type _WorkflowPolicyTypeConfiguration2 WorkflowPolicyTypeConfiguration2
 
-// NewWorkflowPolicyTypeConfiguration2 instantiates a new WorkflowPolicyTypeConfiguration2 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewWorkflowPolicyTypeConfiguration2(workflowId string) *WorkflowPolicyTypeConfiguration2 {
-	this := WorkflowPolicyTypeConfiguration2{}
-	this.WorkflowId = workflowId
-	return &this
-}
-
 // NewWorkflowPolicyTypeConfiguration2WithDefaults instantiates a new WorkflowPolicyTypeConfiguration2 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewWorkflowPolicyTypeConfiguration2WithDefaults() *WorkflowPolicyTypeConfiguration2 {
 	this := WorkflowPolicyTypeConfiguration2{}
 	return &this
-}
-
-// GetWorkflowId returns the WorkflowId field value
-func (o *WorkflowPolicyTypeConfiguration2) GetWorkflowId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.WorkflowId
-}
-
-// GetWorkflowIdOk returns a tuple with the WorkflowId field value
-// and a boolean to check if the value has been set.
-func (o *WorkflowPolicyTypeConfiguration2) GetWorkflowIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.WorkflowId, true
-}
-
-// SetWorkflowId sets field value
-func (o *WorkflowPolicyTypeConfiguration2) SetWorkflowId(v string) {
-	o.WorkflowId = v
 }
 
 func (o WorkflowPolicyTypeConfiguration2) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type PolicyGroupCreatePolicyTypeConfigOneOf19 struct {
 
 type _PolicyGroupCreatePolicyTypeConfigOneOf19 PolicyGroupCreatePolicyTypeConfigOneOf19
 
-// NewPolicyGroupCreatePolicyTypeConfigOneOf19 instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf19 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPolicyGroupCreatePolicyTypeConfigOneOf19() *PolicyGroupCreatePolicyTypeConfigOneOf19 {
-	this := PolicyGroupCreatePolicyTypeConfigOneOf19{}
-	return &this
-}
-
 // NewPolicyGroupCreatePolicyTypeConfigOneOf19WithDefaults instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf19 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPolicyGroupCreatePolicyTypeConfigOneOf19WithDefaults() *PolicyGroupCreatePolicyTypeConfigOneOf19 {
 	this := PolicyGroupCreatePolicyTypeConfigOneOf19{}
 	return &this
-}
-
-// GetMaxVirtualServers returns the MaxVirtualServers field value if set, zero value otherwise.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf19) GetMaxVirtualServers() string {
-	if o == nil || IsNil(o.MaxVirtualServers) {
-		var ret string
-		return ret
-	}
-	return *o.MaxVirtualServers
-}
-
-// GetMaxVirtualServersOk returns a tuple with the MaxVirtualServers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf19) GetMaxVirtualServersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxVirtualServers) {
-		return nil, false
-	}
-	return o.MaxVirtualServers, true
-}
-
-// SetMaxVirtualServers gets a reference to the given string and assigns it to the MaxVirtualServers field.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf19) SetMaxVirtualServers(v string) {
-	o.MaxVirtualServers = &v
 }
 
 func (o PolicyGroupCreatePolicyTypeConfigOneOf19) MarshalJSON() ([]byte, error) {

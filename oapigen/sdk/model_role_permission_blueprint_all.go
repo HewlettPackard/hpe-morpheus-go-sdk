@@ -29,71 +29,12 @@ type RolePermissionBlueprintAll struct {
 
 type _RolePermissionBlueprintAll RolePermissionBlueprintAll
 
-// NewRolePermissionBlueprintAll instantiates a new RolePermissionBlueprintAll object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRolePermissionBlueprintAll(allAppTemplates bool, access string) *RolePermissionBlueprintAll {
-	this := RolePermissionBlueprintAll{}
-	this.AllAppTemplates = allAppTemplates
-	this.Access = access
-	return &this
-}
-
 // NewRolePermissionBlueprintAllWithDefaults instantiates a new RolePermissionBlueprintAll object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRolePermissionBlueprintAllWithDefaults() *RolePermissionBlueprintAll {
 	this := RolePermissionBlueprintAll{}
 	return &this
-}
-
-// GetAllAppTemplates returns the AllAppTemplates field value
-func (o *RolePermissionBlueprintAll) GetAllAppTemplates() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AllAppTemplates
-}
-
-// GetAllAppTemplatesOk returns a tuple with the AllAppTemplates field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionBlueprintAll) GetAllAppTemplatesOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AllAppTemplates, true
-}
-
-// SetAllAppTemplates sets field value
-func (o *RolePermissionBlueprintAll) SetAllAppTemplates(v bool) {
-	o.AllAppTemplates = v
-}
-
-// GetAccess returns the Access field value
-func (o *RolePermissionBlueprintAll) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionBlueprintAll) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *RolePermissionBlueprintAll) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o RolePermissionBlueprintAll) MarshalJSON() ([]byte, error) {

@@ -27,20 +27,6 @@ type AddCypherKeyRequestTtl struct {
 	String *string
 }
 
-// int64AsAddCypherKeyRequestTtl is a convenience function that returns int64 wrapped in AddCypherKeyRequestTtl
-func Int64AsAddCypherKeyRequestTtl(v *int64) AddCypherKeyRequestTtl {
-	return AddCypherKeyRequestTtl{
-		Int64: v,
-	}
-}
-
-// stringAsAddCypherKeyRequestTtl is a convenience function that returns string wrapped in AddCypherKeyRequestTtl
-func StringAsAddCypherKeyRequestTtl(v *string) AddCypherKeyRequestTtl {
-	return AddCypherKeyRequestTtl{
-		String: v,
-	}
-}
-
 func (dst *AddCypherKeyRequestTtl) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddCypherKeyRequestTtl{}

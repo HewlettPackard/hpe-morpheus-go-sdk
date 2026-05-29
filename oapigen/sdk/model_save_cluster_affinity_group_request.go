@@ -26,44 +26,12 @@ type SaveClusterAffinityGroupRequest struct {
 
 type _SaveClusterAffinityGroupRequest SaveClusterAffinityGroupRequest
 
-// NewSaveClusterAffinityGroupRequest instantiates a new SaveClusterAffinityGroupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSaveClusterAffinityGroupRequest() *SaveClusterAffinityGroupRequest {
-	this := SaveClusterAffinityGroupRequest{}
-	return &this
-}
-
 // NewSaveClusterAffinityGroupRequestWithDefaults instantiates a new SaveClusterAffinityGroupRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSaveClusterAffinityGroupRequestWithDefaults() *SaveClusterAffinityGroupRequest {
 	this := SaveClusterAffinityGroupRequest{}
 	return &this
-}
-
-// GetAffinityGroup returns the AffinityGroup field value if set, zero value otherwise.
-func (o *SaveClusterAffinityGroupRequest) GetAffinityGroup() SaveClusterAffinityGroupRequestAffinityGroup {
-	if o == nil || IsNil(o.AffinityGroup) {
-		var ret SaveClusterAffinityGroupRequestAffinityGroup
-		return ret
-	}
-	return *o.AffinityGroup
-}
-
-// GetAffinityGroupOk returns a tuple with the AffinityGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveClusterAffinityGroupRequest) GetAffinityGroupOk() (*SaveClusterAffinityGroupRequestAffinityGroup, bool) {
-	if o == nil || IsNil(o.AffinityGroup) {
-		return nil, false
-	}
-	return o.AffinityGroup, true
-}
-
-// SetAffinityGroup gets a reference to the given SaveClusterAffinityGroupRequestAffinityGroup and assigns it to the AffinityGroup field.
-func (o *SaveClusterAffinityGroupRequest) SetAffinityGroup(v SaveClusterAffinityGroupRequestAffinityGroup) {
-	o.AffinityGroup = &v
 }
 
 func (o SaveClusterAffinityGroupRequest) MarshalJSON() ([]byte, error) {

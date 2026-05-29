@@ -27,20 +27,6 @@ type GetOsType200ResponseOsTypeOwner struct {
 	String                               *string
 }
 
-// GetOsType200ResponseOsTypeOwnerOneOfAsGetOsType200ResponseOsTypeOwner is a convenience function that returns GetOsType200ResponseOsTypeOwnerOneOf wrapped in GetOsType200ResponseOsTypeOwner
-func GetOsType200ResponseOsTypeOwnerOneOfAsGetOsType200ResponseOsTypeOwner(v *GetOsType200ResponseOsTypeOwnerOneOf) GetOsType200ResponseOsTypeOwner {
-	return GetOsType200ResponseOsTypeOwner{
-		GetOsType200ResponseOsTypeOwnerOneOf: v,
-	}
-}
-
-// stringAsGetOsType200ResponseOsTypeOwner is a convenience function that returns string wrapped in GetOsType200ResponseOsTypeOwner
-func StringAsGetOsType200ResponseOsTypeOwner(v *string) GetOsType200ResponseOsTypeOwner {
-	return GetOsType200ResponseOsTypeOwner{
-		String: v,
-	}
-}
-
 func (dst *GetOsType200ResponseOsTypeOwner) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &GetOsType200ResponseOsTypeOwner{}

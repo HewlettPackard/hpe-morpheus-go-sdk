@@ -26,44 +26,12 @@ type GetClusterNamespace200Response struct {
 
 type _GetClusterNamespace200Response GetClusterNamespace200Response
 
-// NewGetClusterNamespace200Response instantiates a new GetClusterNamespace200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetClusterNamespace200Response() *GetClusterNamespace200Response {
-	this := GetClusterNamespace200Response{}
-	return &this
-}
-
 // NewGetClusterNamespace200ResponseWithDefaults instantiates a new GetClusterNamespace200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetClusterNamespace200ResponseWithDefaults() *GetClusterNamespace200Response {
 	this := GetClusterNamespace200Response{}
 	return &this
-}
-
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *GetClusterNamespace200Response) GetNamespace() GetClusterNamespace200ResponseNamespace {
-	if o == nil || IsNil(o.Namespace) {
-		var ret GetClusterNamespace200ResponseNamespace
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClusterNamespace200Response) GetNamespaceOk() (*GetClusterNamespace200ResponseNamespace, bool) {
-	if o == nil || IsNil(o.Namespace) {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// SetNamespace gets a reference to the given GetClusterNamespace200ResponseNamespace and assigns it to the Namespace field.
-func (o *GetClusterNamespace200Response) SetNamespace(v GetClusterNamespace200ResponseNamespace) {
-	o.Namespace = &v
 }
 
 func (o GetClusterNamespace200Response) MarshalJSON() ([]byte, error) {

@@ -28,90 +28,12 @@ type UpdateWikiAppRequestPage struct {
 
 type _UpdateWikiAppRequestPage UpdateWikiAppRequestPage
 
-// NewUpdateWikiAppRequestPage instantiates a new UpdateWikiAppRequestPage object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateWikiAppRequestPage() *UpdateWikiAppRequestPage {
-	this := UpdateWikiAppRequestPage{}
-	return &this
-}
-
 // NewUpdateWikiAppRequestPageWithDefaults instantiates a new UpdateWikiAppRequestPage object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateWikiAppRequestPageWithDefaults() *UpdateWikiAppRequestPage {
 	this := UpdateWikiAppRequestPage{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdateWikiAppRequestPage) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateWikiAppRequestPage) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdateWikiAppRequestPage) SetName(v string) {
-	o.Name = &v
-}
-
-// GetCategory returns the Category field value if set, zero value otherwise.
-func (o *UpdateWikiAppRequestPage) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
-		var ret string
-		return ret
-	}
-	return *o.Category
-}
-
-// GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateWikiAppRequestPage) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
-		return nil, false
-	}
-	return o.Category, true
-}
-
-// SetCategory gets a reference to the given string and assigns it to the Category field.
-func (o *UpdateWikiAppRequestPage) SetCategory(v string) {
-	o.Category = &v
-}
-
-// GetContent returns the Content field value if set, zero value otherwise.
-func (o *UpdateWikiAppRequestPage) GetContent() string {
-	if o == nil || IsNil(o.Content) {
-		var ret string
-		return ret
-	}
-	return *o.Content
-}
-
-// GetContentOk returns a tuple with the Content field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateWikiAppRequestPage) GetContentOk() (*string, bool) {
-	if o == nil || IsNil(o.Content) {
-		return nil, false
-	}
-	return o.Content, true
-}
-
-// SetContent gets a reference to the given string and assigns it to the Content field.
-func (o *UpdateWikiAppRequestPage) SetContent(v string) {
-	o.Content = &v
 }
 
 func (o UpdateWikiAppRequestPage) MarshalJSON() ([]byte, error) {

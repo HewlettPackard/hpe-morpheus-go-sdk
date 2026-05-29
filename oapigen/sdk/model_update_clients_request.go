@@ -26,46 +26,12 @@ type UpdateClientsRequest struct {
 
 type _UpdateClientsRequest UpdateClientsRequest
 
-// NewUpdateClientsRequest instantiates a new UpdateClientsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClientsRequest(client UpdateClientsRequestClient) *UpdateClientsRequest {
-	this := UpdateClientsRequest{}
-	this.Client = client
-	return &this
-}
-
 // NewUpdateClientsRequestWithDefaults instantiates a new UpdateClientsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateClientsRequestWithDefaults() *UpdateClientsRequest {
 	this := UpdateClientsRequest{}
 	return &this
-}
-
-// GetClient returns the Client field value
-func (o *UpdateClientsRequest) GetClient() UpdateClientsRequestClient {
-	if o == nil {
-		var ret UpdateClientsRequestClient
-		return ret
-	}
-
-	return o.Client
-}
-
-// GetClientOk returns a tuple with the Client field value
-// and a boolean to check if the value has been set.
-func (o *UpdateClientsRequest) GetClientOk() (*UpdateClientsRequestClient, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Client, true
-}
-
-// SetClient sets field value
-func (o *UpdateClientsRequest) SetClient(v UpdateClientsRequestClient) {
-	o.Client = v
 }
 
 func (o UpdateClientsRequest) MarshalJSON() ([]byte, error) {

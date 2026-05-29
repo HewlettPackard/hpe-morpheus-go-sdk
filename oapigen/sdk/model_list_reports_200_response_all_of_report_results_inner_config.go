@@ -29,114 +29,12 @@ type ListReports200ResponseAllOfReportResultsInnerConfig struct {
 
 type _ListReports200ResponseAllOfReportResultsInnerConfig ListReports200ResponseAllOfReportResultsInnerConfig
 
-// NewListReports200ResponseAllOfReportResultsInnerConfig instantiates a new ListReports200ResponseAllOfReportResultsInnerConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListReports200ResponseAllOfReportResultsInnerConfig() *ListReports200ResponseAllOfReportResultsInnerConfig {
-	this := ListReports200ResponseAllOfReportResultsInnerConfig{}
-	return &this
-}
-
 // NewListReports200ResponseAllOfReportResultsInnerConfigWithDefaults instantiates a new ListReports200ResponseAllOfReportResultsInnerConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListReports200ResponseAllOfReportResultsInnerConfigWithDefaults() *ListReports200ResponseAllOfReportResultsInnerConfig {
 	this := ListReports200ResponseAllOfReportResultsInnerConfig{}
 	return &this
-}
-
-// GetReportType returns the ReportType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetReportType() string {
-	if o == nil || IsNil(o.ReportType.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.ReportType.Get()
-}
-
-// GetReportTypeOk returns a tuple with the ReportType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetReportTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ReportType.Get(), o.ReportType.IsSet()
-}
-
-// SetReportType gets a reference to the given NullableString and assigns it to the ReportType field.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) SetReportType(v string) {
-	o.ReportType.Set(&v)
-}
-
-// GetStartDate returns the StartDate field value if set, zero value otherwise.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetStartDate() string {
-	if o == nil || IsNil(o.StartDate) {
-		var ret string
-		return ret
-	}
-	return *o.StartDate
-}
-
-// GetStartDateOk returns a tuple with the StartDate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetStartDateOk() (*string, bool) {
-	if o == nil || IsNil(o.StartDate) {
-		return nil, false
-	}
-	return o.StartDate, true
-}
-
-// SetStartDate gets a reference to the given string and assigns it to the StartDate field.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) SetStartDate(v string) {
-	o.StartDate = &v
-}
-
-// GetEndDate returns the EndDate field value if set, zero value otherwise.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetEndDate() string {
-	if o == nil || IsNil(o.EndDate) {
-		var ret string
-		return ret
-	}
-	return *o.EndDate
-}
-
-// GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetEndDateOk() (*string, bool) {
-	if o == nil || IsNil(o.EndDate) {
-		return nil, false
-	}
-	return o.EndDate, true
-}
-
-// SetEndDate gets a reference to the given string and assigns it to the EndDate field.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) SetEndDate(v string) {
-	o.EndDate = &v
-}
-
-// GetCloudId returns the CloudId field value if set, zero value otherwise.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetCloudId() string {
-	if o == nil || IsNil(o.CloudId) {
-		var ret string
-		return ret
-	}
-	return *o.CloudId
-}
-
-// GetCloudIdOk returns a tuple with the CloudId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetCloudIdOk() (*string, bool) {
-	if o == nil || IsNil(o.CloudId) {
-		return nil, false
-	}
-	return o.CloudId, true
-}
-
-// SetCloudId gets a reference to the given string and assigns it to the CloudId field.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) SetCloudId(v string) {
-	o.CloudId = &v
 }
 
 func (o ListReports200ResponseAllOfReportResultsInnerConfig) MarshalJSON() ([]byte, error) {

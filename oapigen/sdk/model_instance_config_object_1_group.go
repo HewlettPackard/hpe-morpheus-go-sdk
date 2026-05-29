@@ -28,69 +28,12 @@ type InstanceConfigObject1Group struct {
 
 type _InstanceConfigObject1Group InstanceConfigObject1Group
 
-// NewInstanceConfigObject1Group instantiates a new InstanceConfigObject1Group object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceConfigObject1Group(id InstanceConfigObject1GroupId) *InstanceConfigObject1Group {
-	this := InstanceConfigObject1Group{}
-	this.Id = id
-	return &this
-}
-
 // NewInstanceConfigObject1GroupWithDefaults instantiates a new InstanceConfigObject1Group object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceConfigObject1GroupWithDefaults() *InstanceConfigObject1Group {
 	this := InstanceConfigObject1Group{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *InstanceConfigObject1Group) GetId() InstanceConfigObject1GroupId {
-	if o == nil {
-		var ret InstanceConfigObject1GroupId
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *InstanceConfigObject1Group) GetIdOk() (*InstanceConfigObject1GroupId, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *InstanceConfigObject1Group) SetId(v InstanceConfigObject1GroupId) {
-	o.Id = v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *InstanceConfigObject1Group) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceConfigObject1Group) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *InstanceConfigObject1Group) SetName(v string) {
-	o.Name = &v
 }
 
 func (o InstanceConfigObject1Group) MarshalJSON() ([]byte, error) {

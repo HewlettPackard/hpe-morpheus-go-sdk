@@ -27,67 +27,12 @@ type ListNetworks200ResponseAllOfNetworksInnerTenantsInner struct {
 
 type _ListNetworks200ResponseAllOfNetworksInnerTenantsInner ListNetworks200ResponseAllOfNetworksInnerTenantsInner
 
-// NewListNetworks200ResponseAllOfNetworksInnerTenantsInner instantiates a new ListNetworks200ResponseAllOfNetworksInnerTenantsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListNetworks200ResponseAllOfNetworksInnerTenantsInner() *ListNetworks200ResponseAllOfNetworksInnerTenantsInner {
-	this := ListNetworks200ResponseAllOfNetworksInnerTenantsInner{}
-	return &this
-}
-
 // NewListNetworks200ResponseAllOfNetworksInnerTenantsInnerWithDefaults instantiates a new ListNetworks200ResponseAllOfNetworksInnerTenantsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListNetworks200ResponseAllOfNetworksInnerTenantsInnerWithDefaults() *ListNetworks200ResponseAllOfNetworksInnerTenantsInner {
 	this := ListNetworks200ResponseAllOfNetworksInnerTenantsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListNetworks200ResponseAllOfNetworksInnerTenantsInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListNetworks200ResponseAllOfNetworksInnerTenantsInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListNetworks200ResponseAllOfNetworksInnerTenantsInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListNetworks200ResponseAllOfNetworksInnerTenantsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListNetworks200ResponseAllOfNetworksInnerTenantsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListNetworks200ResponseAllOfNetworksInnerTenantsInner) SetName(v string) {
-	o.Name = &v
 }
 
 func (o ListNetworks200ResponseAllOfNetworksInnerTenantsInner) MarshalJSON() ([]byte, error) {

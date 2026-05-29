@@ -26,44 +26,12 @@ type GetCatalogItemType200Response struct {
 
 type _GetCatalogItemType200Response GetCatalogItemType200Response
 
-// NewGetCatalogItemType200Response instantiates a new GetCatalogItemType200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCatalogItemType200Response() *GetCatalogItemType200Response {
-	this := GetCatalogItemType200Response{}
-	return &this
-}
-
 // NewGetCatalogItemType200ResponseWithDefaults instantiates a new GetCatalogItemType200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetCatalogItemType200ResponseWithDefaults() *GetCatalogItemType200Response {
 	this := GetCatalogItemType200Response{}
 	return &this
-}
-
-// GetCatalogItemType returns the CatalogItemType field value if set, zero value otherwise.
-func (o *GetCatalogItemType200Response) GetCatalogItemType() GetCatalogItemType200ResponseCatalogItemType {
-	if o == nil || IsNil(o.CatalogItemType) {
-		var ret GetCatalogItemType200ResponseCatalogItemType
-		return ret
-	}
-	return *o.CatalogItemType
-}
-
-// GetCatalogItemTypeOk returns a tuple with the CatalogItemType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCatalogItemType200Response) GetCatalogItemTypeOk() (*GetCatalogItemType200ResponseCatalogItemType, bool) {
-	if o == nil || IsNil(o.CatalogItemType) {
-		return nil, false
-	}
-	return o.CatalogItemType, true
-}
-
-// SetCatalogItemType gets a reference to the given GetCatalogItemType200ResponseCatalogItemType and assigns it to the CatalogItemType field.
-func (o *GetCatalogItemType200Response) SetCatalogItemType(v GetCatalogItemType200ResponseCatalogItemType) {
-	o.CatalogItemType = &v
 }
 
 func (o GetCatalogItemType200Response) MarshalJSON() ([]byte, error) {

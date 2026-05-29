@@ -26,44 +26,12 @@ type ApprovalItem struct {
 
 type _ApprovalItem ApprovalItem
 
-// NewApprovalItem instantiates a new ApprovalItem object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApprovalItem() *ApprovalItem {
-	this := ApprovalItem{}
-	return &this
-}
-
 // NewApprovalItemWithDefaults instantiates a new ApprovalItem object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApprovalItemWithDefaults() *ApprovalItem {
 	this := ApprovalItem{}
 	return &this
-}
-
-// GetApprovalItem returns the ApprovalItem field value if set, zero value otherwise.
-func (o *ApprovalItem) GetApprovalItem() ApprovalItemApprovalItem {
-	if o == nil || IsNil(o.ApprovalItem) {
-		var ret ApprovalItemApprovalItem
-		return ret
-	}
-	return *o.ApprovalItem
-}
-
-// GetApprovalItemOk returns a tuple with the ApprovalItem field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApprovalItem) GetApprovalItemOk() (*ApprovalItemApprovalItem, bool) {
-	if o == nil || IsNil(o.ApprovalItem) {
-		return nil, false
-	}
-	return o.ApprovalItem, true
-}
-
-// SetApprovalItem gets a reference to the given ApprovalItemApprovalItem and assigns it to the ApprovalItem field.
-func (o *ApprovalItem) SetApprovalItem(v ApprovalItemApprovalItem) {
-	o.ApprovalItem = &v
 }
 
 func (o ApprovalItem) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type ListIntegrations200ResponseAnyOf struct {
 
 type _ListIntegrations200ResponseAnyOf ListIntegrations200ResponseAnyOf
 
-// NewListIntegrations200ResponseAnyOf instantiates a new ListIntegrations200ResponseAnyOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListIntegrations200ResponseAnyOf() *ListIntegrations200ResponseAnyOf {
-	this := ListIntegrations200ResponseAnyOf{}
-	return &this
-}
-
 // NewListIntegrations200ResponseAnyOfWithDefaults instantiates a new ListIntegrations200ResponseAnyOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListIntegrations200ResponseAnyOfWithDefaults() *ListIntegrations200ResponseAnyOf {
 	this := ListIntegrations200ResponseAnyOf{}
 	return &this
-}
-
-// GetIntegrations returns the Integrations field value if set, zero value otherwise.
-func (o *ListIntegrations200ResponseAnyOf) GetIntegrations() []ListIntegrations200ResponseAnyOfIntegrationsInner {
-	if o == nil || IsNil(o.Integrations) {
-		var ret []ListIntegrations200ResponseAnyOfIntegrationsInner
-		return ret
-	}
-	return o.Integrations
-}
-
-// GetIntegrationsOk returns a tuple with the Integrations field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListIntegrations200ResponseAnyOf) GetIntegrationsOk() ([]ListIntegrations200ResponseAnyOfIntegrationsInner, bool) {
-	if o == nil || IsNil(o.Integrations) {
-		return nil, false
-	}
-	return o.Integrations, true
-}
-
-// SetIntegrations gets a reference to the given []ListIntegrations200ResponseAnyOfIntegrationsInner and assigns it to the Integrations field.
-func (o *ListIntegrations200ResponseAnyOf) SetIntegrations(v []ListIntegrations200ResponseAnyOfIntegrationsInner) {
-	o.Integrations = v
 }
 
 func (o ListIntegrations200ResponseAnyOf) MarshalJSON() ([]byte, error) {

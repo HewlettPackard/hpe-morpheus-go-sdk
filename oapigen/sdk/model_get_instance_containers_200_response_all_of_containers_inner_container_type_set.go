@@ -28,90 +28,12 @@ type GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet struct
 
 type _GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet
 
-// NewGetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet instantiates a new GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet() *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet {
-	this := GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet{}
-	return &this
-}
-
 // NewGetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSetWithDefaults instantiates a new GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSetWithDefaults() *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet {
 	this := GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) SetId(v int32) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetCategory returns the Category field value if set, zero value otherwise.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
-		var ret string
-		return ret
-	}
-	return *o.Category
-}
-
-// GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
-		return nil, false
-	}
-	return o.Category, true
-}
-
-// SetCategory gets a reference to the given string and assigns it to the Category field.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) SetCategory(v string) {
-	o.Category = &v
 }
 
 func (o GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) MarshalJSON() ([]byte, error) {

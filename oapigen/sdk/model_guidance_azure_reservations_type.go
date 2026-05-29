@@ -29,113 +29,12 @@ type GuidanceAzureReservationsType struct {
 
 type _GuidanceAzureReservationsType GuidanceAzureReservationsType
 
-// NewGuidanceAzureReservationsType instantiates a new GuidanceAzureReservationsType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGuidanceAzureReservationsType() *GuidanceAzureReservationsType {
-	this := GuidanceAzureReservationsType{}
-	return &this
-}
-
 // NewGuidanceAzureReservationsTypeWithDefaults instantiates a new GuidanceAzureReservationsType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGuidanceAzureReservationsTypeWithDefaults() *GuidanceAzureReservationsType {
 	this := GuidanceAzureReservationsType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GuidanceAzureReservationsType) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceAzureReservationsType) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GuidanceAzureReservationsType) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GuidanceAzureReservationsType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceAzureReservationsType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GuidanceAzureReservationsType) SetName(v string) {
-	o.Name = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *GuidanceAzureReservationsType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceAzureReservationsType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *GuidanceAzureReservationsType) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetTitle returns the Title field value if set, zero value otherwise.
-func (o *GuidanceAzureReservationsType) GetTitle() string {
-	if o == nil || IsNil(o.Title) {
-		var ret string
-		return ret
-	}
-	return *o.Title
-}
-
-// GetTitleOk returns a tuple with the Title field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceAzureReservationsType) GetTitleOk() (*string, bool) {
-	if o == nil || IsNil(o.Title) {
-		return nil, false
-	}
-	return o.Title, true
-}
-
-// SetTitle gets a reference to the given string and assigns it to the Title field.
-func (o *GuidanceAzureReservationsType) SetTitle(v string) {
-	o.Title = &v
 }
 
 func (o GuidanceAzureReservationsType) MarshalJSON() ([]byte, error) {

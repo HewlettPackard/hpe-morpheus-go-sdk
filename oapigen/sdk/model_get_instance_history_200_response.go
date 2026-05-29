@@ -27,67 +27,12 @@ type GetInstanceHistory200Response struct {
 
 type _GetInstanceHistory200Response GetInstanceHistory200Response
 
-// NewGetInstanceHistory200Response instantiates a new GetInstanceHistory200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceHistory200Response() *GetInstanceHistory200Response {
-	this := GetInstanceHistory200Response{}
-	return &this
-}
-
 // NewGetInstanceHistory200ResponseWithDefaults instantiates a new GetInstanceHistory200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstanceHistory200ResponseWithDefaults() *GetInstanceHistory200Response {
 	this := GetInstanceHistory200Response{}
 	return &this
-}
-
-// GetProcesses returns the Processes field value if set, zero value otherwise.
-func (o *GetInstanceHistory200Response) GetProcesses() []GetInstanceHistory200ResponseAllOfProcessesInner {
-	if o == nil || IsNil(o.Processes) {
-		var ret []GetInstanceHistory200ResponseAllOfProcessesInner
-		return ret
-	}
-	return o.Processes
-}
-
-// GetProcessesOk returns a tuple with the Processes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceHistory200Response) GetProcessesOk() ([]GetInstanceHistory200ResponseAllOfProcessesInner, bool) {
-	if o == nil || IsNil(o.Processes) {
-		return nil, false
-	}
-	return o.Processes, true
-}
-
-// SetProcesses gets a reference to the given []GetInstanceHistory200ResponseAllOfProcessesInner and assigns it to the Processes field.
-func (o *GetInstanceHistory200Response) SetProcesses(v []GetInstanceHistory200ResponseAllOfProcessesInner) {
-	o.Processes = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *GetInstanceHistory200Response) GetMeta() GetInstanceHistory200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret GetInstanceHistory200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceHistory200Response) GetMetaOk() (*GetInstanceHistory200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given GetInstanceHistory200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *GetInstanceHistory200Response) SetMeta(v GetInstanceHistory200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o GetInstanceHistory200Response) MarshalJSON() ([]byte, error) {

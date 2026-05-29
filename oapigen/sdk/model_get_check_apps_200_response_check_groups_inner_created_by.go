@@ -27,67 +27,12 @@ type GetCheckApps200ResponseCheckGroupsInnerCreatedBy struct {
 
 type _GetCheckApps200ResponseCheckGroupsInnerCreatedBy GetCheckApps200ResponseCheckGroupsInnerCreatedBy
 
-// NewGetCheckApps200ResponseCheckGroupsInnerCreatedBy instantiates a new GetCheckApps200ResponseCheckGroupsInnerCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCheckApps200ResponseCheckGroupsInnerCreatedBy() *GetCheckApps200ResponseCheckGroupsInnerCreatedBy {
-	this := GetCheckApps200ResponseCheckGroupsInnerCreatedBy{}
-	return &this
-}
-
 // NewGetCheckApps200ResponseCheckGroupsInnerCreatedByWithDefaults instantiates a new GetCheckApps200ResponseCheckGroupsInnerCreatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetCheckApps200ResponseCheckGroupsInnerCreatedByWithDefaults() *GetCheckApps200ResponseCheckGroupsInnerCreatedBy {
 	this := GetCheckApps200ResponseCheckGroupsInnerCreatedBy{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetCheckApps200ResponseCheckGroupsInnerCreatedBy) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCheckApps200ResponseCheckGroupsInnerCreatedBy) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetCheckApps200ResponseCheckGroupsInnerCreatedBy) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *GetCheckApps200ResponseCheckGroupsInnerCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCheckApps200ResponseCheckGroupsInnerCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *GetCheckApps200ResponseCheckGroupsInnerCreatedBy) SetUsername(v string) {
-	o.Username = &v
 }
 
 func (o GetCheckApps200ResponseCheckGroupsInnerCreatedBy) MarshalJSON() ([]byte, error) {

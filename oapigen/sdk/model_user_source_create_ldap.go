@@ -33,113 +33,12 @@ type UserSourceCreateLDAP struct {
 
 type _UserSourceCreateLDAP UserSourceCreateLDAP
 
-// NewUserSourceCreateLDAP instantiates a new UserSourceCreateLDAP object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserSourceCreateLDAP() *UserSourceCreateLDAP {
-	this := UserSourceCreateLDAP{}
-	return &this
-}
-
 // NewUserSourceCreateLDAPWithDefaults instantiates a new UserSourceCreateLDAP object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUserSourceCreateLDAPWithDefaults() *UserSourceCreateLDAP {
 	this := UserSourceCreateLDAP{}
 	return &this
-}
-
-// GetUrl returns the Url field value if set, zero value otherwise.
-func (o *UserSourceCreateLDAP) GetUrl() string {
-	if o == nil || IsNil(o.Url) {
-		var ret string
-		return ret
-	}
-	return *o.Url
-}
-
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateLDAP) GetUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.Url) {
-		return nil, false
-	}
-	return o.Url, true
-}
-
-// SetUrl gets a reference to the given string and assigns it to the Url field.
-func (o *UserSourceCreateLDAP) SetUrl(v string) {
-	o.Url = &v
-}
-
-// GetBindingUsername returns the BindingUsername field value if set, zero value otherwise.
-func (o *UserSourceCreateLDAP) GetBindingUsername() string {
-	if o == nil || IsNil(o.BindingUsername) {
-		var ret string
-		return ret
-	}
-	return *o.BindingUsername
-}
-
-// GetBindingUsernameOk returns a tuple with the BindingUsername field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateLDAP) GetBindingUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.BindingUsername) {
-		return nil, false
-	}
-	return o.BindingUsername, true
-}
-
-// SetBindingUsername gets a reference to the given string and assigns it to the BindingUsername field.
-func (o *UserSourceCreateLDAP) SetBindingUsername(v string) {
-	o.BindingUsername = &v
-}
-
-// GetBindingPassword returns the BindingPassword field value if set, zero value otherwise.
-func (o *UserSourceCreateLDAP) GetBindingPassword() string {
-	if o == nil || IsNil(o.BindingPassword) {
-		var ret string
-		return ret
-	}
-	return *o.BindingPassword
-}
-
-// GetBindingPasswordOk returns a tuple with the BindingPassword field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateLDAP) GetBindingPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.BindingPassword) {
-		return nil, false
-	}
-	return o.BindingPassword, true
-}
-
-// SetBindingPassword gets a reference to the given string and assigns it to the BindingPassword field.
-func (o *UserSourceCreateLDAP) SetBindingPassword(v string) {
-	o.BindingPassword = &v
-}
-
-// GetRequiredGroup returns the RequiredGroup field value if set, zero value otherwise.
-func (o *UserSourceCreateLDAP) GetRequiredGroup() string {
-	if o == nil || IsNil(o.RequiredGroup) {
-		var ret string
-		return ret
-	}
-	return *o.RequiredGroup
-}
-
-// GetRequiredGroupOk returns a tuple with the RequiredGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateLDAP) GetRequiredGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.RequiredGroup) {
-		return nil, false
-	}
-	return o.RequiredGroup, true
-}
-
-// SetRequiredGroup gets a reference to the given string and assigns it to the RequiredGroup field.
-func (o *UserSourceCreateLDAP) SetRequiredGroup(v string) {
-	o.RequiredGroup = &v
 }
 
 func (o UserSourceCreateLDAP) MarshalJSON() ([]byte, error) {

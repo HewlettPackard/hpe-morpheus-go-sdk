@@ -26,44 +26,12 @@ type GetInstanceSchedule200Response struct {
 
 type _GetInstanceSchedule200Response GetInstanceSchedule200Response
 
-// NewGetInstanceSchedule200Response instantiates a new GetInstanceSchedule200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceSchedule200Response() *GetInstanceSchedule200Response {
-	this := GetInstanceSchedule200Response{}
-	return &this
-}
-
 // NewGetInstanceSchedule200ResponseWithDefaults instantiates a new GetInstanceSchedule200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstanceSchedule200ResponseWithDefaults() *GetInstanceSchedule200Response {
 	this := GetInstanceSchedule200Response{}
 	return &this
-}
-
-// GetInstanceSchedule returns the InstanceSchedule field value if set, zero value otherwise.
-func (o *GetInstanceSchedule200Response) GetInstanceSchedule() GetInstanceSchedule200ResponseInstanceSchedule {
-	if o == nil || IsNil(o.InstanceSchedule) {
-		var ret GetInstanceSchedule200ResponseInstanceSchedule
-		return ret
-	}
-	return *o.InstanceSchedule
-}
-
-// GetInstanceScheduleOk returns a tuple with the InstanceSchedule field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceSchedule200Response) GetInstanceScheduleOk() (*GetInstanceSchedule200ResponseInstanceSchedule, bool) {
-	if o == nil || IsNil(o.InstanceSchedule) {
-		return nil, false
-	}
-	return o.InstanceSchedule, true
-}
-
-// SetInstanceSchedule gets a reference to the given GetInstanceSchedule200ResponseInstanceSchedule and assigns it to the InstanceSchedule field.
-func (o *GetInstanceSchedule200Response) SetInstanceSchedule(v GetInstanceSchedule200ResponseInstanceSchedule) {
-	o.InstanceSchedule = &v
 }
 
 func (o GetInstanceSchedule200Response) MarshalJSON() ([]byte, error) {

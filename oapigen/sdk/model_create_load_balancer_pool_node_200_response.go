@@ -28,91 +28,12 @@ type CreateLoadBalancerPoolNode200Response struct {
 
 type _CreateLoadBalancerPoolNode200Response CreateLoadBalancerPoolNode200Response
 
-// NewCreateLoadBalancerPoolNode200Response instantiates a new CreateLoadBalancerPoolNode200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateLoadBalancerPoolNode200Response() *CreateLoadBalancerPoolNode200Response {
-	this := CreateLoadBalancerPoolNode200Response{}
-	return &this
-}
-
 // NewCreateLoadBalancerPoolNode200ResponseWithDefaults instantiates a new CreateLoadBalancerPoolNode200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateLoadBalancerPoolNode200ResponseWithDefaults() *CreateLoadBalancerPoolNode200Response {
 	this := CreateLoadBalancerPoolNode200Response{}
 	return &this
-}
-
-// GetLoadBalancerNode returns the LoadBalancerNode field value if set, zero value otherwise.
-func (o *CreateLoadBalancerPoolNode200Response) GetLoadBalancerNode() CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode {
-	if o == nil || IsNil(o.LoadBalancerNode) {
-		var ret CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode
-		return ret
-	}
-	return *o.LoadBalancerNode
-}
-
-// GetLoadBalancerNodeOk returns a tuple with the LoadBalancerNode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerPoolNode200Response) GetLoadBalancerNodeOk() (*CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode, bool) {
-	if o == nil || IsNil(o.LoadBalancerNode) {
-		return nil, false
-	}
-	return o.LoadBalancerNode, true
-}
-
-// SetLoadBalancerNode gets a reference to the given CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode and assigns it to the LoadBalancerNode field.
-func (o *CreateLoadBalancerPoolNode200Response) SetLoadBalancerNode(v CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) {
-	o.LoadBalancerNode = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *CreateLoadBalancerPoolNode200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerPoolNode200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *CreateLoadBalancerPoolNode200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetMsg returns the Msg field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateLoadBalancerPoolNode200Response) GetMsg() string {
-	if o == nil || IsNil(o.Msg.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Msg.Get()
-}
-
-// GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateLoadBalancerPoolNode200Response) GetMsgOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Msg.Get(), o.Msg.IsSet()
-}
-
-// SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
-func (o *CreateLoadBalancerPoolNode200Response) SetMsg(v string) {
-	o.Msg.Set(&v)
 }
 
 func (o CreateLoadBalancerPoolNode200Response) MarshalJSON() ([]byte, error) {

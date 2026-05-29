@@ -27,67 +27,12 @@ type ListCloudAffinityGroups200Response struct {
 
 type _ListCloudAffinityGroups200Response ListCloudAffinityGroups200Response
 
-// NewListCloudAffinityGroups200Response instantiates a new ListCloudAffinityGroups200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListCloudAffinityGroups200Response() *ListCloudAffinityGroups200Response {
-	this := ListCloudAffinityGroups200Response{}
-	return &this
-}
-
 // NewListCloudAffinityGroups200ResponseWithDefaults instantiates a new ListCloudAffinityGroups200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListCloudAffinityGroups200ResponseWithDefaults() *ListCloudAffinityGroups200Response {
 	this := ListCloudAffinityGroups200Response{}
 	return &this
-}
-
-// GetAffinityGroups returns the AffinityGroups field value if set, zero value otherwise.
-func (o *ListCloudAffinityGroups200Response) GetAffinityGroups() []ListCloudAffinityGroups200ResponseAllOfAffinityGroupsInner {
-	if o == nil || IsNil(o.AffinityGroups) {
-		var ret []ListCloudAffinityGroups200ResponseAllOfAffinityGroupsInner
-		return ret
-	}
-	return o.AffinityGroups
-}
-
-// GetAffinityGroupsOk returns a tuple with the AffinityGroups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCloudAffinityGroups200Response) GetAffinityGroupsOk() ([]ListCloudAffinityGroups200ResponseAllOfAffinityGroupsInner, bool) {
-	if o == nil || IsNil(o.AffinityGroups) {
-		return nil, false
-	}
-	return o.AffinityGroups, true
-}
-
-// SetAffinityGroups gets a reference to the given []ListCloudAffinityGroups200ResponseAllOfAffinityGroupsInner and assigns it to the AffinityGroups field.
-func (o *ListCloudAffinityGroups200Response) SetAffinityGroups(v []ListCloudAffinityGroups200ResponseAllOfAffinityGroupsInner) {
-	o.AffinityGroups = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListCloudAffinityGroups200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCloudAffinityGroups200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListCloudAffinityGroups200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListCloudAffinityGroups200Response) MarshalJSON() ([]byte, error) {

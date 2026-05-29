@@ -29,67 +29,12 @@ type BootScriptsCreate struct {
 
 type _BootScriptsCreate BootScriptsCreate
 
-// NewBootScriptsCreate instantiates a new BootScriptsCreate object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBootScriptsCreate() *BootScriptsCreate {
-	this := BootScriptsCreate{}
-	return &this
-}
-
 // NewBootScriptsCreateWithDefaults instantiates a new BootScriptsCreate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBootScriptsCreateWithDefaults() *BootScriptsCreate {
 	this := BootScriptsCreate{}
 	return &this
-}
-
-// GetFileName returns the FileName field value if set, zero value otherwise.
-func (o *BootScriptsCreate) GetFileName() string {
-	if o == nil || IsNil(o.FileName) {
-		var ret string
-		return ret
-	}
-	return *o.FileName
-}
-
-// GetFileNameOk returns a tuple with the FileName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BootScriptsCreate) GetFileNameOk() (*string, bool) {
-	if o == nil || IsNil(o.FileName) {
-		return nil, false
-	}
-	return o.FileName, true
-}
-
-// SetFileName gets a reference to the given string and assigns it to the FileName field.
-func (o *BootScriptsCreate) SetFileName(v string) {
-	o.FileName = &v
-}
-
-// GetContent returns the Content field value if set, zero value otherwise.
-func (o *BootScriptsCreate) GetContent() string {
-	if o == nil || IsNil(o.Content) {
-		var ret string
-		return ret
-	}
-	return *o.Content
-}
-
-// GetContentOk returns a tuple with the Content field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BootScriptsCreate) GetContentOk() (*string, bool) {
-	if o == nil || IsNil(o.Content) {
-		return nil, false
-	}
-	return o.Content, true
-}
-
-// SetContent gets a reference to the given string and assigns it to the Content field.
-func (o *BootScriptsCreate) SetContent(v string) {
-	o.Content = &v
 }
 
 func (o BootScriptsCreate) MarshalJSON() ([]byte, error) {

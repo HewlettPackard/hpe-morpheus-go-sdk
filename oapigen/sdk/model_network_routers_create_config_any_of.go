@@ -27,20 +27,6 @@ type NetworkRoutersCreateConfigAnyOf struct {
 	NetworkRoutersCreateConfigAnyOfOneOf1 *NetworkRoutersCreateConfigAnyOfOneOf1
 }
 
-// NetworkRoutersCreateConfigAnyOfOneOfAsNetworkRoutersCreateConfigAnyOf is a convenience function that returns NetworkRoutersCreateConfigAnyOfOneOf wrapped in NetworkRoutersCreateConfigAnyOf
-func NetworkRoutersCreateConfigAnyOfOneOfAsNetworkRoutersCreateConfigAnyOf(v *NetworkRoutersCreateConfigAnyOfOneOf) NetworkRoutersCreateConfigAnyOf {
-	return NetworkRoutersCreateConfigAnyOf{
-		NetworkRoutersCreateConfigAnyOfOneOf: v,
-	}
-}
-
-// NetworkRoutersCreateConfigAnyOfOneOf1AsNetworkRoutersCreateConfigAnyOf is a convenience function that returns NetworkRoutersCreateConfigAnyOfOneOf1 wrapped in NetworkRoutersCreateConfigAnyOf
-func NetworkRoutersCreateConfigAnyOfOneOf1AsNetworkRoutersCreateConfigAnyOf(v *NetworkRoutersCreateConfigAnyOfOneOf1) NetworkRoutersCreateConfigAnyOf {
-	return NetworkRoutersCreateConfigAnyOf{
-		NetworkRoutersCreateConfigAnyOfOneOf1: v,
-	}
-}
-
 func (dst *NetworkRoutersCreateConfigAnyOf) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &NetworkRoutersCreateConfigAnyOf{}

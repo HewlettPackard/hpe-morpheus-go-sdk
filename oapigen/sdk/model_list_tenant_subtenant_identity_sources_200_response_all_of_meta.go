@@ -33,23 +33,6 @@ type ListTenantSubtenantIdentitySources200ResponseAllOfMeta struct {
 
 type _ListTenantSubtenantIdentitySources200ResponseAllOfMeta ListTenantSubtenantIdentitySources200ResponseAllOfMeta
 
-// NewListTenantSubtenantIdentitySources200ResponseAllOfMeta instantiates a new ListTenantSubtenantIdentitySources200ResponseAllOfMeta object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListTenantSubtenantIdentitySources200ResponseAllOfMeta() *ListTenantSubtenantIdentitySources200ResponseAllOfMeta {
-	this := ListTenantSubtenantIdentitySources200ResponseAllOfMeta{}
-	var offset int64 = 0
-	this.Offset = &offset
-	var max int64 = 25
-	this.Max = &max
-	var size int64 = 0
-	this.Size = &size
-	var total int64 = 0
-	this.Total = &total
-	return &this
-}
-
 // NewListTenantSubtenantIdentitySources200ResponseAllOfMetaWithDefaults instantiates a new ListTenantSubtenantIdentitySources200ResponseAllOfMeta object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -64,98 +47,6 @@ func NewListTenantSubtenantIdentitySources200ResponseAllOfMetaWithDefaults() *Li
 	var total int64 = 0
 	this.Total = &total
 	return &this
-}
-
-// GetOffset returns the Offset field value if set, zero value otherwise.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfMeta) GetOffset() int64 {
-	if o == nil || IsNil(o.Offset) {
-		var ret int64
-		return ret
-	}
-	return *o.Offset
-}
-
-// GetOffsetOk returns a tuple with the Offset field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfMeta) GetOffsetOk() (*int64, bool) {
-	if o == nil || IsNil(o.Offset) {
-		return nil, false
-	}
-	return o.Offset, true
-}
-
-// SetOffset gets a reference to the given int64 and assigns it to the Offset field.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfMeta) SetOffset(v int64) {
-	o.Offset = &v
-}
-
-// GetMax returns the Max field value if set, zero value otherwise.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfMeta) GetMax() int64 {
-	if o == nil || IsNil(o.Max) {
-		var ret int64
-		return ret
-	}
-	return *o.Max
-}
-
-// GetMaxOk returns a tuple with the Max field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfMeta) GetMaxOk() (*int64, bool) {
-	if o == nil || IsNil(o.Max) {
-		return nil, false
-	}
-	return o.Max, true
-}
-
-// SetMax gets a reference to the given int64 and assigns it to the Max field.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfMeta) SetMax(v int64) {
-	o.Max = &v
-}
-
-// GetSize returns the Size field value if set, zero value otherwise.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfMeta) GetSize() int64 {
-	if o == nil || IsNil(o.Size) {
-		var ret int64
-		return ret
-	}
-	return *o.Size
-}
-
-// GetSizeOk returns a tuple with the Size field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfMeta) GetSizeOk() (*int64, bool) {
-	if o == nil || IsNil(o.Size) {
-		return nil, false
-	}
-	return o.Size, true
-}
-
-// SetSize gets a reference to the given int64 and assigns it to the Size field.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfMeta) SetSize(v int64) {
-	o.Size = &v
-}
-
-// GetTotal returns the Total field value if set, zero value otherwise.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfMeta) GetTotal() int64 {
-	if o == nil || IsNil(o.Total) {
-		var ret int64
-		return ret
-	}
-	return *o.Total
-}
-
-// GetTotalOk returns a tuple with the Total field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfMeta) GetTotalOk() (*int64, bool) {
-	if o == nil || IsNil(o.Total) {
-		return nil, false
-	}
-	return o.Total, true
-}
-
-// SetTotal gets a reference to the given int64 and assigns it to the Total field.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfMeta) SetTotal(v int64) {
-	o.Total = &v
 }
 
 func (o ListTenantSubtenantIdentitySources200ResponseAllOfMeta) MarshalJSON() ([]byte, error) {

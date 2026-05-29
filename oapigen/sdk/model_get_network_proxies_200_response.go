@@ -28,91 +28,12 @@ type GetNetworkProxies200Response struct {
 
 type _GetNetworkProxies200Response GetNetworkProxies200Response
 
-// NewGetNetworkProxies200Response instantiates a new GetNetworkProxies200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkProxies200Response() *GetNetworkProxies200Response {
-	this := GetNetworkProxies200Response{}
-	return &this
-}
-
 // NewGetNetworkProxies200ResponseWithDefaults instantiates a new GetNetworkProxies200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkProxies200ResponseWithDefaults() *GetNetworkProxies200Response {
 	this := GetNetworkProxies200Response{}
 	return &this
-}
-
-// GetNetworkProxies returns the NetworkProxies field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetNetworkProxies200Response) GetNetworkProxies() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.NetworkProxies
-}
-
-// GetNetworkProxiesOk returns a tuple with the NetworkProxies field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetNetworkProxies200Response) GetNetworkProxiesOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.NetworkProxies) {
-		return nil, false
-	}
-	return &o.NetworkProxies, true
-}
-
-// SetNetworkProxies gets a reference to the given interface{} and assigns it to the NetworkProxies field.
-func (o *GetNetworkProxies200Response) SetNetworkProxies(v interface{}) {
-	o.NetworkProxies = v
-}
-
-// GetNetworkProxyCount returns the NetworkProxyCount field value if set, zero value otherwise.
-func (o *GetNetworkProxies200Response) GetNetworkProxyCount() int32 {
-	if o == nil || IsNil(o.NetworkProxyCount) {
-		var ret int32
-		return ret
-	}
-	return *o.NetworkProxyCount
-}
-
-// GetNetworkProxyCountOk returns a tuple with the NetworkProxyCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkProxies200Response) GetNetworkProxyCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.NetworkProxyCount) {
-		return nil, false
-	}
-	return o.NetworkProxyCount, true
-}
-
-// SetNetworkProxyCount gets a reference to the given int32 and assigns it to the NetworkProxyCount field.
-func (o *GetNetworkProxies200Response) SetNetworkProxyCount(v int32) {
-	o.NetworkProxyCount = &v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *GetNetworkProxies200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkProxies200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *GetNetworkProxies200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o GetNetworkProxies200Response) MarshalJSON() ([]byte, error) {

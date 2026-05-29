@@ -26,46 +26,12 @@ type UpdateCheckAppsRequest struct {
 
 type _UpdateCheckAppsRequest UpdateCheckAppsRequest
 
-// NewUpdateCheckAppsRequest instantiates a new UpdateCheckAppsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCheckAppsRequest(monitorApp UpdateCheckAppsRequestMonitorApp) *UpdateCheckAppsRequest {
-	this := UpdateCheckAppsRequest{}
-	this.MonitorApp = monitorApp
-	return &this
-}
-
 // NewUpdateCheckAppsRequestWithDefaults instantiates a new UpdateCheckAppsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateCheckAppsRequestWithDefaults() *UpdateCheckAppsRequest {
 	this := UpdateCheckAppsRequest{}
 	return &this
-}
-
-// GetMonitorApp returns the MonitorApp field value
-func (o *UpdateCheckAppsRequest) GetMonitorApp() UpdateCheckAppsRequestMonitorApp {
-	if o == nil {
-		var ret UpdateCheckAppsRequestMonitorApp
-		return ret
-	}
-
-	return o.MonitorApp
-}
-
-// GetMonitorAppOk returns a tuple with the MonitorApp field value
-// and a boolean to check if the value has been set.
-func (o *UpdateCheckAppsRequest) GetMonitorAppOk() (*UpdateCheckAppsRequestMonitorApp, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MonitorApp, true
-}
-
-// SetMonitorApp sets field value
-func (o *UpdateCheckAppsRequest) SetMonitorApp(v UpdateCheckAppsRequestMonitorApp) {
-	o.MonitorApp = v
 }
 
 func (o UpdateCheckAppsRequest) MarshalJSON() ([]byte, error) {

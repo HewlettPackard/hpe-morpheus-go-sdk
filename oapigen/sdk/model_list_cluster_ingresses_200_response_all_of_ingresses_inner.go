@@ -29,113 +29,12 @@ type ListClusterIngresses200ResponseAllOfIngressesInner struct {
 
 type _ListClusterIngresses200ResponseAllOfIngressesInner ListClusterIngresses200ResponseAllOfIngressesInner
 
-// NewListClusterIngresses200ResponseAllOfIngressesInner instantiates a new ListClusterIngresses200ResponseAllOfIngressesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListClusterIngresses200ResponseAllOfIngressesInner() *ListClusterIngresses200ResponseAllOfIngressesInner {
-	this := ListClusterIngresses200ResponseAllOfIngressesInner{}
-	return &this
-}
-
 // NewListClusterIngresses200ResponseAllOfIngressesInnerWithDefaults instantiates a new ListClusterIngresses200ResponseAllOfIngressesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListClusterIngresses200ResponseAllOfIngressesInnerWithDefaults() *ListClusterIngresses200ResponseAllOfIngressesInner {
 	this := ListClusterIngresses200ResponseAllOfIngressesInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetCategory returns the Category field value if set, zero value otherwise.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
-		var ret string
-		return ret
-	}
-	return *o.Category
-}
-
-// GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
-		return nil, false
-	}
-	return o.Category, true
-}
-
-// SetCategory gets a reference to the given string and assigns it to the Category field.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) SetCategory(v string) {
-	o.Category = &v
 }
 
 func (o ListClusterIngresses200ResponseAllOfIngressesInner) MarshalJSON() ([]byte, error) {

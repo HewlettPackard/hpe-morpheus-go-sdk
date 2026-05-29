@@ -27,44 +27,12 @@ type RequiredNetworkPolicyTypeConfiguration4 struct {
 
 type _RequiredNetworkPolicyTypeConfiguration4 RequiredNetworkPolicyTypeConfiguration4
 
-// NewRequiredNetworkPolicyTypeConfiguration4 instantiates a new RequiredNetworkPolicyTypeConfiguration4 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRequiredNetworkPolicyTypeConfiguration4() *RequiredNetworkPolicyTypeConfiguration4 {
-	this := RequiredNetworkPolicyTypeConfiguration4{}
-	return &this
-}
-
 // NewRequiredNetworkPolicyTypeConfiguration4WithDefaults instantiates a new RequiredNetworkPolicyTypeConfiguration4 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRequiredNetworkPolicyTypeConfiguration4WithDefaults() *RequiredNetworkPolicyTypeConfiguration4 {
 	this := RequiredNetworkPolicyTypeConfiguration4{}
 	return &this
-}
-
-// GetRequiredNetworks returns the RequiredNetworks field value if set, zero value otherwise.
-func (o *RequiredNetworkPolicyTypeConfiguration4) GetRequiredNetworks() []int64 {
-	if o == nil || IsNil(o.RequiredNetworks) {
-		var ret []int64
-		return ret
-	}
-	return o.RequiredNetworks
-}
-
-// GetRequiredNetworksOk returns a tuple with the RequiredNetworks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RequiredNetworkPolicyTypeConfiguration4) GetRequiredNetworksOk() ([]int64, bool) {
-	if o == nil || IsNil(o.RequiredNetworks) {
-		return nil, false
-	}
-	return o.RequiredNetworks, true
-}
-
-// SetRequiredNetworks gets a reference to the given []int64 and assigns it to the RequiredNetworks field.
-func (o *RequiredNetworkPolicyTypeConfiguration4) SetRequiredNetworks(v []int64) {
-	o.RequiredNetworks = v
 }
 
 func (o RequiredNetworkPolicyTypeConfiguration4) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type AddDeploymentsRequest struct {
 
 type _AddDeploymentsRequest AddDeploymentsRequest
 
-// NewAddDeploymentsRequest instantiates a new AddDeploymentsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddDeploymentsRequest() *AddDeploymentsRequest {
-	this := AddDeploymentsRequest{}
-	return &this
-}
-
 // NewAddDeploymentsRequestWithDefaults instantiates a new AddDeploymentsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddDeploymentsRequestWithDefaults() *AddDeploymentsRequest {
 	this := AddDeploymentsRequest{}
 	return &this
-}
-
-// GetDeployment returns the Deployment field value if set, zero value otherwise.
-func (o *AddDeploymentsRequest) GetDeployment() AddDeploymentsRequestDeployment {
-	if o == nil || IsNil(o.Deployment) {
-		var ret AddDeploymentsRequestDeployment
-		return ret
-	}
-	return *o.Deployment
-}
-
-// GetDeploymentOk returns a tuple with the Deployment field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddDeploymentsRequest) GetDeploymentOk() (*AddDeploymentsRequestDeployment, bool) {
-	if o == nil || IsNil(o.Deployment) {
-		return nil, false
-	}
-	return o.Deployment, true
-}
-
-// SetDeployment gets a reference to the given AddDeploymentsRequestDeployment and assigns it to the Deployment field.
-func (o *AddDeploymentsRequest) SetDeployment(v AddDeploymentsRequestDeployment) {
-	o.Deployment = &v
 }
 
 func (o AddDeploymentsRequest) MarshalJSON() ([]byte, error) {

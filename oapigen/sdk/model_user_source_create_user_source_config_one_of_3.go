@@ -31,90 +31,12 @@ type UserSourceCreateUserSourceConfigOneOf3 struct {
 
 type _UserSourceCreateUserSourceConfigOneOf3 UserSourceCreateUserSourceConfigOneOf3
 
-// NewUserSourceCreateUserSourceConfigOneOf3 instantiates a new UserSourceCreateUserSourceConfigOneOf3 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserSourceCreateUserSourceConfigOneOf3() *UserSourceCreateUserSourceConfigOneOf3 {
-	this := UserSourceCreateUserSourceConfigOneOf3{}
-	return &this
-}
-
 // NewUserSourceCreateUserSourceConfigOneOf3WithDefaults instantiates a new UserSourceCreateUserSourceConfigOneOf3 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUserSourceCreateUserSourceConfigOneOf3WithDefaults() *UserSourceCreateUserSourceConfigOneOf3 {
 	this := UserSourceCreateUserSourceConfigOneOf3{}
 	return &this
-}
-
-// GetUrl returns the Url field value if set, zero value otherwise.
-func (o *UserSourceCreateUserSourceConfigOneOf3) GetUrl() string {
-	if o == nil || IsNil(o.Url) {
-		var ret string
-		return ret
-	}
-	return *o.Url
-}
-
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf3) GetUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.Url) {
-		return nil, false
-	}
-	return o.Url, true
-}
-
-// SetUrl gets a reference to the given string and assigns it to the Url field.
-func (o *UserSourceCreateUserSourceConfigOneOf3) SetUrl(v string) {
-	o.Url = &v
-}
-
-// GetAdministratorAPIToken returns the AdministratorAPIToken field value if set, zero value otherwise.
-func (o *UserSourceCreateUserSourceConfigOneOf3) GetAdministratorAPIToken() string {
-	if o == nil || IsNil(o.AdministratorAPIToken) {
-		var ret string
-		return ret
-	}
-	return *o.AdministratorAPIToken
-}
-
-// GetAdministratorAPITokenOk returns a tuple with the AdministratorAPIToken field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf3) GetAdministratorAPITokenOk() (*string, bool) {
-	if o == nil || IsNil(o.AdministratorAPIToken) {
-		return nil, false
-	}
-	return o.AdministratorAPIToken, true
-}
-
-// SetAdministratorAPIToken gets a reference to the given string and assigns it to the AdministratorAPIToken field.
-func (o *UserSourceCreateUserSourceConfigOneOf3) SetAdministratorAPIToken(v string) {
-	o.AdministratorAPIToken = &v
-}
-
-// GetRequiredGroup returns the RequiredGroup field value if set, zero value otherwise.
-func (o *UserSourceCreateUserSourceConfigOneOf3) GetRequiredGroup() string {
-	if o == nil || IsNil(o.RequiredGroup) {
-		var ret string
-		return ret
-	}
-	return *o.RequiredGroup
-}
-
-// GetRequiredGroupOk returns a tuple with the RequiredGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf3) GetRequiredGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.RequiredGroup) {
-		return nil, false
-	}
-	return o.RequiredGroup, true
-}
-
-// SetRequiredGroup gets a reference to the given string and assigns it to the RequiredGroup field.
-func (o *UserSourceCreateUserSourceConfigOneOf3) SetRequiredGroup(v string) {
-	o.RequiredGroup = &v
 }
 
 func (o UserSourceCreateUserSourceConfigOneOf3) MarshalJSON() ([]byte, error) {

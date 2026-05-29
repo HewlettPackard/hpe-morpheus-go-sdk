@@ -29,113 +29,12 @@ type AddImageBuild200ResponseAllOfImageBuildConfigConfig struct {
 
 type _AddImageBuild200ResponseAllOfImageBuildConfigConfig AddImageBuild200ResponseAllOfImageBuildConfigConfig
 
-// NewAddImageBuild200ResponseAllOfImageBuildConfigConfig instantiates a new AddImageBuild200ResponseAllOfImageBuildConfigConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddImageBuild200ResponseAllOfImageBuildConfigConfig() *AddImageBuild200ResponseAllOfImageBuildConfigConfig {
-	this := AddImageBuild200ResponseAllOfImageBuildConfigConfig{}
-	return &this
-}
-
 // NewAddImageBuild200ResponseAllOfImageBuildConfigConfigWithDefaults instantiates a new AddImageBuild200ResponseAllOfImageBuildConfigConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddImageBuild200ResponseAllOfImageBuildConfigConfigWithDefaults() *AddImageBuild200ResponseAllOfImageBuildConfigConfig {
 	this := AddImageBuild200ResponseAllOfImageBuildConfigConfig{}
 	return &this
-}
-
-// GetTemplate returns the Template field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) GetTemplate() int64 {
-	if o == nil || IsNil(o.Template) {
-		var ret int64
-		return ret
-	}
-	return *o.Template
-}
-
-// GetTemplateOk returns a tuple with the Template field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) GetTemplateOk() (*int64, bool) {
-	if o == nil || IsNil(o.Template) {
-		return nil, false
-	}
-	return o.Template, true
-}
-
-// SetTemplate gets a reference to the given int64 and assigns it to the Template field.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) SetTemplate(v int64) {
-	o.Template = &v
-}
-
-// GetVmwareFolderId returns the VmwareFolderId field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) GetVmwareFolderId() string {
-	if o == nil || IsNil(o.VmwareFolderId) {
-		var ret string
-		return ret
-	}
-	return *o.VmwareFolderId
-}
-
-// GetVmwareFolderIdOk returns a tuple with the VmwareFolderId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) GetVmwareFolderIdOk() (*string, bool) {
-	if o == nil || IsNil(o.VmwareFolderId) {
-		return nil, false
-	}
-	return o.VmwareFolderId, true
-}
-
-// SetVmwareFolderId gets a reference to the given string and assigns it to the VmwareFolderId field.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) SetVmwareFolderId(v string) {
-	o.VmwareFolderId = &v
-}
-
-// GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) GetResourcePoolId() int64 {
-	if o == nil || IsNil(o.ResourcePoolId) {
-		var ret int64
-		return ret
-	}
-	return *o.ResourcePoolId
-}
-
-// GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) GetResourcePoolIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.ResourcePoolId) {
-		return nil, false
-	}
-	return o.ResourcePoolId, true
-}
-
-// SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) SetResourcePoolId(v int64) {
-	o.ResourcePoolId = &v
-}
-
-// GetNestedVirtualization returns the NestedVirtualization field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) GetNestedVirtualization() string {
-	if o == nil || IsNil(o.NestedVirtualization) {
-		var ret string
-		return ret
-	}
-	return *o.NestedVirtualization
-}
-
-// GetNestedVirtualizationOk returns a tuple with the NestedVirtualization field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) GetNestedVirtualizationOk() (*string, bool) {
-	if o == nil || IsNil(o.NestedVirtualization) {
-		return nil, false
-	}
-	return o.NestedVirtualization, true
-}
-
-// SetNestedVirtualization gets a reference to the given string and assigns it to the NestedVirtualization field.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) SetNestedVirtualization(v string) {
-	o.NestedVirtualization = &v
 }
 
 func (o AddImageBuild200ResponseAllOfImageBuildConfigConfig) MarshalJSON() ([]byte, error) {

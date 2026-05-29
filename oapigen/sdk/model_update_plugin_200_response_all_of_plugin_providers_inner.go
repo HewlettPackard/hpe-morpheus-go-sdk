@@ -27,67 +27,12 @@ type UpdatePlugin200ResponseAllOfPluginProvidersInner struct {
 
 type _UpdatePlugin200ResponseAllOfPluginProvidersInner UpdatePlugin200ResponseAllOfPluginProvidersInner
 
-// NewUpdatePlugin200ResponseAllOfPluginProvidersInner instantiates a new UpdatePlugin200ResponseAllOfPluginProvidersInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePlugin200ResponseAllOfPluginProvidersInner() *UpdatePlugin200ResponseAllOfPluginProvidersInner {
-	this := UpdatePlugin200ResponseAllOfPluginProvidersInner{}
-	return &this
-}
-
 // NewUpdatePlugin200ResponseAllOfPluginProvidersInnerWithDefaults instantiates a new UpdatePlugin200ResponseAllOfPluginProvidersInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdatePlugin200ResponseAllOfPluginProvidersInnerWithDefaults() *UpdatePlugin200ResponseAllOfPluginProvidersInner {
 	this := UpdatePlugin200ResponseAllOfPluginProvidersInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdatePlugin200ResponseAllOfPluginProvidersInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePlugin200ResponseAllOfPluginProvidersInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdatePlugin200ResponseAllOfPluginProvidersInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *UpdatePlugin200ResponseAllOfPluginProvidersInner) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePlugin200ResponseAllOfPluginProvidersInner) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *UpdatePlugin200ResponseAllOfPluginProvidersInner) SetType(v string) {
-	o.Type = &v
 }
 
 func (o UpdatePlugin200ResponseAllOfPluginProvidersInner) MarshalJSON() ([]byte, error) {

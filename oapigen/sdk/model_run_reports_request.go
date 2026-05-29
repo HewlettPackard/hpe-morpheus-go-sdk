@@ -26,46 +26,12 @@ type RunReportsRequest struct {
 
 type _RunReportsRequest RunReportsRequest
 
-// NewRunReportsRequest instantiates a new RunReportsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRunReportsRequest(report RunReportsRequestReport) *RunReportsRequest {
-	this := RunReportsRequest{}
-	this.Report = report
-	return &this
-}
-
 // NewRunReportsRequestWithDefaults instantiates a new RunReportsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRunReportsRequestWithDefaults() *RunReportsRequest {
 	this := RunReportsRequest{}
 	return &this
-}
-
-// GetReport returns the Report field value
-func (o *RunReportsRequest) GetReport() RunReportsRequestReport {
-	if o == nil {
-		var ret RunReportsRequestReport
-		return ret
-	}
-
-	return o.Report
-}
-
-// GetReportOk returns a tuple with the Report field value
-// and a boolean to check if the value has been set.
-func (o *RunReportsRequest) GetReportOk() (*RunReportsRequestReport, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Report, true
-}
-
-// SetReport sets field value
-func (o *RunReportsRequest) SetReport(v RunReportsRequestReport) {
-	o.Report = v
 }
 
 func (o RunReportsRequest) MarshalJSON() ([]byte, error) {

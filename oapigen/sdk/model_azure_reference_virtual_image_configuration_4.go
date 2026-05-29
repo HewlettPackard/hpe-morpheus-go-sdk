@@ -33,121 +33,12 @@ type AzureReferenceVirtualImageConfiguration4 struct {
 
 type _AzureReferenceVirtualImageConfiguration4 AzureReferenceVirtualImageConfiguration4
 
-// NewAzureReferenceVirtualImageConfiguration4 instantiates a new AzureReferenceVirtualImageConfiguration4 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAzureReferenceVirtualImageConfiguration4(publisher string, offer string, sku string, version string) *AzureReferenceVirtualImageConfiguration4 {
-	this := AzureReferenceVirtualImageConfiguration4{}
-	this.Publisher = publisher
-	this.Offer = offer
-	this.Sku = sku
-	this.Version = version
-	return &this
-}
-
 // NewAzureReferenceVirtualImageConfiguration4WithDefaults instantiates a new AzureReferenceVirtualImageConfiguration4 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAzureReferenceVirtualImageConfiguration4WithDefaults() *AzureReferenceVirtualImageConfiguration4 {
 	this := AzureReferenceVirtualImageConfiguration4{}
 	return &this
-}
-
-// GetPublisher returns the Publisher field value
-func (o *AzureReferenceVirtualImageConfiguration4) GetPublisher() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Publisher
-}
-
-// GetPublisherOk returns a tuple with the Publisher field value
-// and a boolean to check if the value has been set.
-func (o *AzureReferenceVirtualImageConfiguration4) GetPublisherOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Publisher, true
-}
-
-// SetPublisher sets field value
-func (o *AzureReferenceVirtualImageConfiguration4) SetPublisher(v string) {
-	o.Publisher = v
-}
-
-// GetOffer returns the Offer field value
-func (o *AzureReferenceVirtualImageConfiguration4) GetOffer() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Offer
-}
-
-// GetOfferOk returns a tuple with the Offer field value
-// and a boolean to check if the value has been set.
-func (o *AzureReferenceVirtualImageConfiguration4) GetOfferOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Offer, true
-}
-
-// SetOffer sets field value
-func (o *AzureReferenceVirtualImageConfiguration4) SetOffer(v string) {
-	o.Offer = v
-}
-
-// GetSku returns the Sku field value
-func (o *AzureReferenceVirtualImageConfiguration4) GetSku() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Sku
-}
-
-// GetSkuOk returns a tuple with the Sku field value
-// and a boolean to check if the value has been set.
-func (o *AzureReferenceVirtualImageConfiguration4) GetSkuOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Sku, true
-}
-
-// SetSku sets field value
-func (o *AzureReferenceVirtualImageConfiguration4) SetSku(v string) {
-	o.Sku = v
-}
-
-// GetVersion returns the Version field value
-func (o *AzureReferenceVirtualImageConfiguration4) GetVersion() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Version
-}
-
-// GetVersionOk returns a tuple with the Version field value
-// and a boolean to check if the value has been set.
-func (o *AzureReferenceVirtualImageConfiguration4) GetVersionOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Version, true
-}
-
-// SetVersion sets field value
-func (o *AzureReferenceVirtualImageConfiguration4) SetVersion(v string) {
-	o.Version = v
 }
 
 func (o AzureReferenceVirtualImageConfiguration4) MarshalJSON() ([]byte, error) {

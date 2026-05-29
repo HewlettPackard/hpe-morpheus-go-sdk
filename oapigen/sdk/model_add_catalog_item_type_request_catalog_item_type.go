@@ -28,27 +28,6 @@ type AddCatalogItemTypeRequestCatalogItemType struct {
 	WorkflowCatalogItemType  *WorkflowCatalogItemType
 }
 
-// BlueprintCatalogItemTypeAsAddCatalogItemTypeRequestCatalogItemType is a convenience function that returns BlueprintCatalogItemType wrapped in AddCatalogItemTypeRequestCatalogItemType
-func BlueprintCatalogItemTypeAsAddCatalogItemTypeRequestCatalogItemType(v *BlueprintCatalogItemType) AddCatalogItemTypeRequestCatalogItemType {
-	return AddCatalogItemTypeRequestCatalogItemType{
-		BlueprintCatalogItemType: v,
-	}
-}
-
-// InstanceCatalogItemTypeAsAddCatalogItemTypeRequestCatalogItemType is a convenience function that returns InstanceCatalogItemType wrapped in AddCatalogItemTypeRequestCatalogItemType
-func InstanceCatalogItemTypeAsAddCatalogItemTypeRequestCatalogItemType(v *InstanceCatalogItemType) AddCatalogItemTypeRequestCatalogItemType {
-	return AddCatalogItemTypeRequestCatalogItemType{
-		InstanceCatalogItemType: v,
-	}
-}
-
-// WorkflowCatalogItemTypeAsAddCatalogItemTypeRequestCatalogItemType is a convenience function that returns WorkflowCatalogItemType wrapped in AddCatalogItemTypeRequestCatalogItemType
-func WorkflowCatalogItemTypeAsAddCatalogItemTypeRequestCatalogItemType(v *WorkflowCatalogItemType) AddCatalogItemTypeRequestCatalogItemType {
-	return AddCatalogItemTypeRequestCatalogItemType{
-		WorkflowCatalogItemType: v,
-	}
-}
-
 func (dst *AddCatalogItemTypeRequestCatalogItemType) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddCatalogItemTypeRequestCatalogItemType{}

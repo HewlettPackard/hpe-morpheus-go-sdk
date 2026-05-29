@@ -26,46 +26,12 @@ type ExecuteBackupRestoreRequest struct {
 
 type _ExecuteBackupRestoreRequest ExecuteBackupRestoreRequest
 
-// NewExecuteBackupRestoreRequest instantiates a new ExecuteBackupRestoreRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewExecuteBackupRestoreRequest(restore ExecuteBackupRestoreRequestRestore) *ExecuteBackupRestoreRequest {
-	this := ExecuteBackupRestoreRequest{}
-	this.Restore = restore
-	return &this
-}
-
 // NewExecuteBackupRestoreRequestWithDefaults instantiates a new ExecuteBackupRestoreRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewExecuteBackupRestoreRequestWithDefaults() *ExecuteBackupRestoreRequest {
 	this := ExecuteBackupRestoreRequest{}
 	return &this
-}
-
-// GetRestore returns the Restore field value
-func (o *ExecuteBackupRestoreRequest) GetRestore() ExecuteBackupRestoreRequestRestore {
-	if o == nil {
-		var ret ExecuteBackupRestoreRequestRestore
-		return ret
-	}
-
-	return o.Restore
-}
-
-// GetRestoreOk returns a tuple with the Restore field value
-// and a boolean to check if the value has been set.
-func (o *ExecuteBackupRestoreRequest) GetRestoreOk() (*ExecuteBackupRestoreRequestRestore, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Restore, true
-}
-
-// SetRestore sets field value
-func (o *ExecuteBackupRestoreRequest) SetRestore(v ExecuteBackupRestoreRequestRestore) {
-	o.Restore = v
 }
 
 func (o ExecuteBackupRestoreRequest) MarshalJSON() ([]byte, error) {

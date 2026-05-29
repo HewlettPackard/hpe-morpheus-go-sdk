@@ -28,67 +28,12 @@ type GetInstanceStats200Response struct {
 
 type _GetInstanceStats200Response GetInstanceStats200Response
 
-// NewGetInstanceStats200Response instantiates a new GetInstanceStats200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceStats200Response() *GetInstanceStats200Response {
-	this := GetInstanceStats200Response{}
-	return &this
-}
-
 // NewGetInstanceStats200ResponseWithDefaults instantiates a new GetInstanceStats200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstanceStats200ResponseWithDefaults() *GetInstanceStats200Response {
 	this := GetInstanceStats200Response{}
 	return &this
-}
-
-// GetInstanceStats returns the InstanceStats field value if set, zero value otherwise.
-func (o *GetInstanceStats200Response) GetInstanceStats() GetInstanceStats200ResponseInstanceStats {
-	if o == nil || IsNil(o.InstanceStats) {
-		var ret GetInstanceStats200ResponseInstanceStats
-		return ret
-	}
-	return *o.InstanceStats
-}
-
-// GetInstanceStatsOk returns a tuple with the InstanceStats field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceStats200Response) GetInstanceStatsOk() (*GetInstanceStats200ResponseInstanceStats, bool) {
-	if o == nil || IsNil(o.InstanceStats) {
-		return nil, false
-	}
-	return o.InstanceStats, true
-}
-
-// SetInstanceStats gets a reference to the given GetInstanceStats200ResponseInstanceStats and assigns it to the InstanceStats field.
-func (o *GetInstanceStats200Response) SetInstanceStats(v GetInstanceStats200ResponseInstanceStats) {
-	o.InstanceStats = &v
-}
-
-// GetZoneIds returns the ZoneIds field value if set, zero value otherwise.
-func (o *GetInstanceStats200Response) GetZoneIds() []int64 {
-	if o == nil || IsNil(o.ZoneIds) {
-		var ret []int64
-		return ret
-	}
-	return o.ZoneIds
-}
-
-// GetZoneIdsOk returns a tuple with the ZoneIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceStats200Response) GetZoneIdsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.ZoneIds) {
-		return nil, false
-	}
-	return o.ZoneIds, true
-}
-
-// SetZoneIds gets a reference to the given []int64 and assigns it to the ZoneIds field.
-func (o *GetInstanceStats200Response) SetZoneIds(v []int64) {
-	o.ZoneIds = v
 }
 
 func (o GetInstanceStats200Response) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType struct {
 
 type _AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType
 
-// NewAddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType instantiates a new AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType() *AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType {
-	this := AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType{}
-	return &this
-}
-
 // NewAddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsTypeWithDefaults instantiates a new AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsTypeWithDefaults() *AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType {
 	this := AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType) SetId(v int32) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType) SetName(v string) {
-	o.Name = &v
 }
 
 func (o AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerOsType) MarshalJSON() ([]byte, error) {

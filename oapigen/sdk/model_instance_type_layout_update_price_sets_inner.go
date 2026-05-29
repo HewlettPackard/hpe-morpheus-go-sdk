@@ -27,46 +27,12 @@ type InstanceTypeLayoutUpdatePriceSetsInner struct {
 
 type _InstanceTypeLayoutUpdatePriceSetsInner InstanceTypeLayoutUpdatePriceSetsInner
 
-// NewInstanceTypeLayoutUpdatePriceSetsInner instantiates a new InstanceTypeLayoutUpdatePriceSetsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceTypeLayoutUpdatePriceSetsInner(id int64) *InstanceTypeLayoutUpdatePriceSetsInner {
-	this := InstanceTypeLayoutUpdatePriceSetsInner{}
-	this.Id = id
-	return &this
-}
-
 // NewInstanceTypeLayoutUpdatePriceSetsInnerWithDefaults instantiates a new InstanceTypeLayoutUpdatePriceSetsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceTypeLayoutUpdatePriceSetsInnerWithDefaults() *InstanceTypeLayoutUpdatePriceSetsInner {
 	this := InstanceTypeLayoutUpdatePriceSetsInner{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *InstanceTypeLayoutUpdatePriceSetsInner) GetId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *InstanceTypeLayoutUpdatePriceSetsInner) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *InstanceTypeLayoutUpdatePriceSetsInner) SetId(v int64) {
-	o.Id = v
 }
 
 func (o InstanceTypeLayoutUpdatePriceSetsInner) MarshalJSON() ([]byte, error) {

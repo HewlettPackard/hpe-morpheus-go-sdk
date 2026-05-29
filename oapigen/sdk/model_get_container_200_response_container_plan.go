@@ -28,90 +28,12 @@ type GetContainer200ResponseContainerPlan struct {
 
 type _GetContainer200ResponseContainerPlan GetContainer200ResponseContainerPlan
 
-// NewGetContainer200ResponseContainerPlan instantiates a new GetContainer200ResponseContainerPlan object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetContainer200ResponseContainerPlan() *GetContainer200ResponseContainerPlan {
-	this := GetContainer200ResponseContainerPlan{}
-	return &this
-}
-
 // NewGetContainer200ResponseContainerPlanWithDefaults instantiates a new GetContainer200ResponseContainerPlan object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetContainer200ResponseContainerPlanWithDefaults() *GetContainer200ResponseContainerPlan {
 	this := GetContainer200ResponseContainerPlan{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetContainer200ResponseContainerPlan) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetContainer200ResponseContainerPlan) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *GetContainer200ResponseContainerPlan) SetId(v int32) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *GetContainer200ResponseContainerPlan) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetContainer200ResponseContainerPlan) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *GetContainer200ResponseContainerPlan) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetContainer200ResponseContainerPlan) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetContainer200ResponseContainerPlan) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetContainer200ResponseContainerPlan) SetName(v string) {
-	o.Name = &v
 }
 
 func (o GetContainer200ResponseContainerPlan) MarshalJSON() ([]byte, error) {

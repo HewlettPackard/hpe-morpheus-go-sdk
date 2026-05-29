@@ -32,121 +32,12 @@ type CreateNetworksRequestNetworkConfigAnyOf1 struct {
 
 type _CreateNetworksRequestNetworkConfigAnyOf1 CreateNetworksRequestNetworkConfigAnyOf1
 
-// NewCreateNetworksRequestNetworkConfigAnyOf1 instantiates a new CreateNetworksRequestNetworkConfigAnyOf1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworksRequestNetworkConfigAnyOf1(availabilityZone string, cidr string, assignPublicIp bool, zonePool CreateNetworksRequestNetworkConfigAnyOf1ZonePool) *CreateNetworksRequestNetworkConfigAnyOf1 {
-	this := CreateNetworksRequestNetworkConfigAnyOf1{}
-	this.AvailabilityZone = availabilityZone
-	this.Cidr = cidr
-	this.AssignPublicIp = assignPublicIp
-	this.ZonePool = zonePool
-	return &this
-}
-
 // NewCreateNetworksRequestNetworkConfigAnyOf1WithDefaults instantiates a new CreateNetworksRequestNetworkConfigAnyOf1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworksRequestNetworkConfigAnyOf1WithDefaults() *CreateNetworksRequestNetworkConfigAnyOf1 {
 	this := CreateNetworksRequestNetworkConfigAnyOf1{}
 	return &this
-}
-
-// GetAvailabilityZone returns the AvailabilityZone field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf1) GetAvailabilityZone() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AvailabilityZone
-}
-
-// GetAvailabilityZoneOk returns a tuple with the AvailabilityZone field value
-// and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetworkConfigAnyOf1) GetAvailabilityZoneOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AvailabilityZone, true
-}
-
-// SetAvailabilityZone sets field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf1) SetAvailabilityZone(v string) {
-	o.AvailabilityZone = v
-}
-
-// GetCidr returns the Cidr field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf1) GetCidr() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Cidr
-}
-
-// GetCidrOk returns a tuple with the Cidr field value
-// and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetworkConfigAnyOf1) GetCidrOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Cidr, true
-}
-
-// SetCidr sets field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf1) SetCidr(v string) {
-	o.Cidr = v
-}
-
-// GetAssignPublicIp returns the AssignPublicIp field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf1) GetAssignPublicIp() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AssignPublicIp
-}
-
-// GetAssignPublicIpOk returns a tuple with the AssignPublicIp field value
-// and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetworkConfigAnyOf1) GetAssignPublicIpOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AssignPublicIp, true
-}
-
-// SetAssignPublicIp sets field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf1) SetAssignPublicIp(v bool) {
-	o.AssignPublicIp = v
-}
-
-// GetZonePool returns the ZonePool field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf1) GetZonePool() CreateNetworksRequestNetworkConfigAnyOf1ZonePool {
-	if o == nil {
-		var ret CreateNetworksRequestNetworkConfigAnyOf1ZonePool
-		return ret
-	}
-
-	return o.ZonePool
-}
-
-// GetZonePoolOk returns a tuple with the ZonePool field value
-// and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetworkConfigAnyOf1) GetZonePoolOk() (*CreateNetworksRequestNetworkConfigAnyOf1ZonePool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ZonePool, true
-}
-
-// SetZonePool sets field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf1) SetZonePool(v CreateNetworksRequestNetworkConfigAnyOf1ZonePool) {
-	o.ZonePool = v
 }
 
 func (o CreateNetworksRequestNetworkConfigAnyOf1) MarshalJSON() ([]byte, error) {

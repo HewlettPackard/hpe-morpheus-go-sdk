@@ -27,45 +27,12 @@ type UpdateHostRequestServerConfig struct {
 
 type _UpdateHostRequestServerConfig UpdateHostRequestServerConfig
 
-// NewUpdateHostRequestServerConfig instantiates a new UpdateHostRequestServerConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateHostRequestServerConfig() *UpdateHostRequestServerConfig {
-	this := UpdateHostRequestServerConfig{}
-	return &this
-}
-
 // NewUpdateHostRequestServerConfigWithDefaults instantiates a new UpdateHostRequestServerConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateHostRequestServerConfigWithDefaults() *UpdateHostRequestServerConfig {
 	this := UpdateHostRequestServerConfig{}
 	return &this
-}
-
-// GetUserData returns the UserData field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateHostRequestServerConfig) GetUserData() string {
-	if o == nil || IsNil(o.UserData.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.UserData.Get()
-}
-
-// GetUserDataOk returns a tuple with the UserData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateHostRequestServerConfig) GetUserDataOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.UserData.Get(), o.UserData.IsSet()
-}
-
-// SetUserData gets a reference to the given NullableString and assigns it to the UserData field.
-func (o *UpdateHostRequestServerConfig) SetUserData(v string) {
-	o.UserData.Set(&v)
 }
 
 func (o UpdateHostRequestServerConfig) MarshalJSON() ([]byte, error) {

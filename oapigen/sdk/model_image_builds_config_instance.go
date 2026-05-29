@@ -29,113 +29,12 @@ type ImageBuildsConfigInstance struct {
 
 type _ImageBuildsConfigInstance ImageBuildsConfigInstance
 
-// NewImageBuildsConfigInstance instantiates a new ImageBuildsConfigInstance object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewImageBuildsConfigInstance() *ImageBuildsConfigInstance {
-	this := ImageBuildsConfigInstance{}
-	return &this
-}
-
 // NewImageBuildsConfigInstanceWithDefaults instantiates a new ImageBuildsConfigInstance object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewImageBuildsConfigInstanceWithDefaults() *ImageBuildsConfigInstance {
 	this := ImageBuildsConfigInstance{}
 	return &this
-}
-
-// GetLayout returns the Layout field value if set, zero value otherwise.
-func (o *ImageBuildsConfigInstance) GetLayout() ImageBuildsConfigInstanceLayout {
-	if o == nil || IsNil(o.Layout) {
-		var ret ImageBuildsConfigInstanceLayout
-		return ret
-	}
-	return *o.Layout
-}
-
-// GetLayoutOk returns a tuple with the Layout field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ImageBuildsConfigInstance) GetLayoutOk() (*ImageBuildsConfigInstanceLayout, bool) {
-	if o == nil || IsNil(o.Layout) {
-		return nil, false
-	}
-	return o.Layout, true
-}
-
-// SetLayout gets a reference to the given ImageBuildsConfigInstanceLayout and assigns it to the Layout field.
-func (o *ImageBuildsConfigInstance) SetLayout(v ImageBuildsConfigInstanceLayout) {
-	o.Layout = &v
-}
-
-// GetSite returns the Site field value if set, zero value otherwise.
-func (o *ImageBuildsConfigInstance) GetSite() ImageBuildsConfigInstanceSite {
-	if o == nil || IsNil(o.Site) {
-		var ret ImageBuildsConfigInstanceSite
-		return ret
-	}
-	return *o.Site
-}
-
-// GetSiteOk returns a tuple with the Site field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ImageBuildsConfigInstance) GetSiteOk() (*ImageBuildsConfigInstanceSite, bool) {
-	if o == nil || IsNil(o.Site) {
-		return nil, false
-	}
-	return o.Site, true
-}
-
-// SetSite gets a reference to the given ImageBuildsConfigInstanceSite and assigns it to the Site field.
-func (o *ImageBuildsConfigInstance) SetSite(v ImageBuildsConfigInstanceSite) {
-	o.Site = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ImageBuildsConfigInstance) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ImageBuildsConfigInstance) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ImageBuildsConfigInstance) SetName(v string) {
-	o.Name = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *ImageBuildsConfigInstance) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ImageBuildsConfigInstance) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *ImageBuildsConfigInstance) SetType(v string) {
-	o.Type = &v
 }
 
 func (o ImageBuildsConfigInstance) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type GetNetworkRoutersFirewallRules200Response struct {
 
 type _GetNetworkRoutersFirewallRules200Response GetNetworkRoutersFirewallRules200Response
 
-// NewGetNetworkRoutersFirewallRules200Response instantiates a new GetNetworkRoutersFirewallRules200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkRoutersFirewallRules200Response() *GetNetworkRoutersFirewallRules200Response {
-	this := GetNetworkRoutersFirewallRules200Response{}
-	return &this
-}
-
 // NewGetNetworkRoutersFirewallRules200ResponseWithDefaults instantiates a new GetNetworkRoutersFirewallRules200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkRoutersFirewallRules200ResponseWithDefaults() *GetNetworkRoutersFirewallRules200Response {
 	this := GetNetworkRoutersFirewallRules200Response{}
 	return &this
-}
-
-// GetRules returns the Rules field value if set, zero value otherwise.
-func (o *GetNetworkRoutersFirewallRules200Response) GetRules() []GetNetworkRoutersFirewallRules200ResponseRulesInner {
-	if o == nil || IsNil(o.Rules) {
-		var ret []GetNetworkRoutersFirewallRules200ResponseRulesInner
-		return ret
-	}
-	return o.Rules
-}
-
-// GetRulesOk returns a tuple with the Rules field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkRoutersFirewallRules200Response) GetRulesOk() ([]GetNetworkRoutersFirewallRules200ResponseRulesInner, bool) {
-	if o == nil || IsNil(o.Rules) {
-		return nil, false
-	}
-	return o.Rules, true
-}
-
-// SetRules gets a reference to the given []GetNetworkRoutersFirewallRules200ResponseRulesInner and assigns it to the Rules field.
-func (o *GetNetworkRoutersFirewallRules200Response) SetRules(v []GetNetworkRoutersFirewallRules200ResponseRulesInner) {
-	o.Rules = v
 }
 
 func (o GetNetworkRoutersFirewallRules200Response) MarshalJSON() ([]byte, error) {

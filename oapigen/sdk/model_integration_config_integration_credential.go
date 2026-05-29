@@ -27,20 +27,6 @@ type IntegrationConfigIntegrationCredential struct {
 	IntegrationConfigIntegrationCredentialOneOf1 *IntegrationConfigIntegrationCredentialOneOf1
 }
 
-// IntegrationConfigIntegrationCredentialOneOfAsIntegrationConfigIntegrationCredential is a convenience function that returns IntegrationConfigIntegrationCredentialOneOf wrapped in IntegrationConfigIntegrationCredential
-func IntegrationConfigIntegrationCredentialOneOfAsIntegrationConfigIntegrationCredential(v *IntegrationConfigIntegrationCredentialOneOf) IntegrationConfigIntegrationCredential {
-	return IntegrationConfigIntegrationCredential{
-		IntegrationConfigIntegrationCredentialOneOf: v,
-	}
-}
-
-// IntegrationConfigIntegrationCredentialOneOf1AsIntegrationConfigIntegrationCredential is a convenience function that returns IntegrationConfigIntegrationCredentialOneOf1 wrapped in IntegrationConfigIntegrationCredential
-func IntegrationConfigIntegrationCredentialOneOf1AsIntegrationConfigIntegrationCredential(v *IntegrationConfigIntegrationCredentialOneOf1) IntegrationConfigIntegrationCredential {
-	return IntegrationConfigIntegrationCredential{
-		IntegrationConfigIntegrationCredentialOneOf1: v,
-	}
-}
-
 func (dst *IntegrationConfigIntegrationCredential) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &IntegrationConfigIntegrationCredential{}

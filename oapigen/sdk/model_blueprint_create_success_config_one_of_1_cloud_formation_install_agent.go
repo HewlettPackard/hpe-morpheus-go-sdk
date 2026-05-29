@@ -27,20 +27,6 @@ type BlueprintCreateSuccessConfigOneOf1CloudFormationInstallAgent struct {
 	String *string
 }
 
-// boolAsBlueprintCreateSuccessConfigOneOf1CloudFormationInstallAgent is a convenience function that returns bool wrapped in BlueprintCreateSuccessConfigOneOf1CloudFormationInstallAgent
-func BoolAsBlueprintCreateSuccessConfigOneOf1CloudFormationInstallAgent(v *bool) BlueprintCreateSuccessConfigOneOf1CloudFormationInstallAgent {
-	return BlueprintCreateSuccessConfigOneOf1CloudFormationInstallAgent{
-		Bool: v,
-	}
-}
-
-// stringAsBlueprintCreateSuccessConfigOneOf1CloudFormationInstallAgent is a convenience function that returns string wrapped in BlueprintCreateSuccessConfigOneOf1CloudFormationInstallAgent
-func StringAsBlueprintCreateSuccessConfigOneOf1CloudFormationInstallAgent(v *string) BlueprintCreateSuccessConfigOneOf1CloudFormationInstallAgent {
-	return BlueprintCreateSuccessConfigOneOf1CloudFormationInstallAgent{
-		String: v,
-	}
-}
-
 func (dst *BlueprintCreateSuccessConfigOneOf1CloudFormationInstallAgent) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &BlueprintCreateSuccessConfigOneOf1CloudFormationInstallAgent{}

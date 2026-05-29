@@ -26,44 +26,12 @@ type CreateNetworkProxy200Response struct {
 
 type _CreateNetworkProxy200Response CreateNetworkProxy200Response
 
-// NewCreateNetworkProxy200Response instantiates a new CreateNetworkProxy200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkProxy200Response() *CreateNetworkProxy200Response {
-	this := CreateNetworkProxy200Response{}
-	return &this
-}
-
 // NewCreateNetworkProxy200ResponseWithDefaults instantiates a new CreateNetworkProxy200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkProxy200ResponseWithDefaults() *CreateNetworkProxy200Response {
 	this := CreateNetworkProxy200Response{}
 	return &this
-}
-
-// GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise.
-func (o *CreateNetworkProxy200Response) GetNetworkProxy() CreateNetworkProxy200ResponseNetworkProxy {
-	if o == nil || IsNil(o.NetworkProxy) {
-		var ret CreateNetworkProxy200ResponseNetworkProxy
-		return ret
-	}
-	return *o.NetworkProxy
-}
-
-// GetNetworkProxyOk returns a tuple with the NetworkProxy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkProxy200Response) GetNetworkProxyOk() (*CreateNetworkProxy200ResponseNetworkProxy, bool) {
-	if o == nil || IsNil(o.NetworkProxy) {
-		return nil, false
-	}
-	return o.NetworkProxy, true
-}
-
-// SetNetworkProxy gets a reference to the given CreateNetworkProxy200ResponseNetworkProxy and assigns it to the NetworkProxy field.
-func (o *CreateNetworkProxy200Response) SetNetworkProxy(v CreateNetworkProxy200ResponseNetworkProxy) {
-	o.NetworkProxy = &v
 }
 
 func (o CreateNetworkProxy200Response) MarshalJSON() ([]byte, error) {

@@ -28,91 +28,12 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone struct {
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone
 
-// NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone {
-	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone{}
-	return &this
-}
-
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZoneWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZoneWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone {
 	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetName(v string) {
-	o.Name = &v
-}
-
-// GetZoneType returns the ZoneType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneType() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZoneZoneType {
-	if o == nil || IsNil(o.ZoneType.Get()) {
-		var ret ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZoneZoneType
-		return ret
-	}
-	return *o.ZoneType.Get()
-}
-
-// GetZoneTypeOk returns a tuple with the ZoneType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneTypeOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZoneZoneType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ZoneType.Get(), o.ZoneType.IsSet()
-}
-
-// SetZoneType gets a reference to the given NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZoneZoneType and assigns it to the ZoneType field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetZoneType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZoneZoneType) {
-	o.ZoneType.Set(&v)
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) MarshalJSON() ([]byte, error) {

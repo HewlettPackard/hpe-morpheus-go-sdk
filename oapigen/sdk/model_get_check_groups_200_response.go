@@ -27,67 +27,12 @@ type GetCheckGroups200Response struct {
 
 type _GetCheckGroups200Response GetCheckGroups200Response
 
-// NewGetCheckGroups200Response instantiates a new GetCheckGroups200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCheckGroups200Response() *GetCheckGroups200Response {
-	this := GetCheckGroups200Response{}
-	return &this
-}
-
 // NewGetCheckGroups200ResponseWithDefaults instantiates a new GetCheckGroups200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetCheckGroups200ResponseWithDefaults() *GetCheckGroups200Response {
 	this := GetCheckGroups200Response{}
 	return &this
-}
-
-// GetCheckGroup returns the CheckGroup field value if set, zero value otherwise.
-func (o *GetCheckGroups200Response) GetCheckGroup() GetCheckGroups200ResponseCheckGroup {
-	if o == nil || IsNil(o.CheckGroup) {
-		var ret GetCheckGroups200ResponseCheckGroup
-		return ret
-	}
-	return *o.CheckGroup
-}
-
-// GetCheckGroupOk returns a tuple with the CheckGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCheckGroups200Response) GetCheckGroupOk() (*GetCheckGroups200ResponseCheckGroup, bool) {
-	if o == nil || IsNil(o.CheckGroup) {
-		return nil, false
-	}
-	return o.CheckGroup, true
-}
-
-// SetCheckGroup gets a reference to the given GetCheckGroups200ResponseCheckGroup and assigns it to the CheckGroup field.
-func (o *GetCheckGroups200Response) SetCheckGroup(v GetCheckGroups200ResponseCheckGroup) {
-	o.CheckGroup = &v
-}
-
-// GetChecks returns the Checks field value if set, zero value otherwise.
-func (o *GetCheckGroups200Response) GetChecks() []GetCheckGroups200ResponseChecksInner {
-	if o == nil || IsNil(o.Checks) {
-		var ret []GetCheckGroups200ResponseChecksInner
-		return ret
-	}
-	return o.Checks
-}
-
-// GetChecksOk returns a tuple with the Checks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCheckGroups200Response) GetChecksOk() ([]GetCheckGroups200ResponseChecksInner, bool) {
-	if o == nil || IsNil(o.Checks) {
-		return nil, false
-	}
-	return o.Checks, true
-}
-
-// SetChecks gets a reference to the given []GetCheckGroups200ResponseChecksInner and assigns it to the Checks field.
-func (o *GetCheckGroups200Response) SetChecks(v []GetCheckGroups200ResponseChecksInner) {
-	o.Checks = v
 }
 
 func (o GetCheckGroups200Response) MarshalJSON() ([]byte, error) {

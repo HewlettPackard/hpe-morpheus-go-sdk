@@ -29,114 +29,12 @@ type ListCatalogCart200ResponseCart struct {
 
 type _ListCatalogCart200ResponseCart ListCatalogCart200ResponseCart
 
-// NewListCatalogCart200ResponseCart instantiates a new ListCatalogCart200ResponseCart object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListCatalogCart200ResponseCart() *ListCatalogCart200ResponseCart {
-	this := ListCatalogCart200ResponseCart{}
-	return &this
-}
-
 // NewListCatalogCart200ResponseCartWithDefaults instantiates a new ListCatalogCart200ResponseCart object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListCatalogCart200ResponseCartWithDefaults() *ListCatalogCart200ResponseCart {
 	this := ListCatalogCart200ResponseCart{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListCatalogCart200ResponseCart) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCatalogCart200ResponseCart) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListCatalogCart200ResponseCart) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListCatalogCart200ResponseCart) GetName() string {
-	if o == nil || IsNil(o.Name.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Name.Get()
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListCatalogCart200ResponseCart) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Name.Get(), o.Name.IsSet()
-}
-
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
-func (o *ListCatalogCart200ResponseCart) SetName(v string) {
-	o.Name.Set(&v)
-}
-
-// GetItems returns the Items field value if set, zero value otherwise.
-func (o *ListCatalogCart200ResponseCart) GetItems() []ListCatalogCart200ResponseCartItemsInner {
-	if o == nil || IsNil(o.Items) {
-		var ret []ListCatalogCart200ResponseCartItemsInner
-		return ret
-	}
-	return o.Items
-}
-
-// GetItemsOk returns a tuple with the Items field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCatalogCart200ResponseCart) GetItemsOk() ([]ListCatalogCart200ResponseCartItemsInner, bool) {
-	if o == nil || IsNil(o.Items) {
-		return nil, false
-	}
-	return o.Items, true
-}
-
-// SetItems gets a reference to the given []ListCatalogCart200ResponseCartItemsInner and assigns it to the Items field.
-func (o *ListCatalogCart200ResponseCart) SetItems(v []ListCatalogCart200ResponseCartItemsInner) {
-	o.Items = v
-}
-
-// GetStats returns the Stats field value if set, zero value otherwise.
-func (o *ListCatalogCart200ResponseCart) GetStats() ListCatalogCart200ResponseCartStats {
-	if o == nil || IsNil(o.Stats) {
-		var ret ListCatalogCart200ResponseCartStats
-		return ret
-	}
-	return *o.Stats
-}
-
-// GetStatsOk returns a tuple with the Stats field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCatalogCart200ResponseCart) GetStatsOk() (*ListCatalogCart200ResponseCartStats, bool) {
-	if o == nil || IsNil(o.Stats) {
-		return nil, false
-	}
-	return o.Stats, true
-}
-
-// SetStats gets a reference to the given ListCatalogCart200ResponseCartStats and assigns it to the Stats field.
-func (o *ListCatalogCart200ResponseCart) SetStats(v ListCatalogCart200ResponseCartStats) {
-	o.Stats = &v
 }
 
 func (o ListCatalogCart200ResponseCart) MarshalJSON() ([]byte, error) {

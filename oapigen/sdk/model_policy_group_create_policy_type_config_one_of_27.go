@@ -27,67 +27,12 @@ type PolicyGroupCreatePolicyTypeConfigOneOf27 struct {
 
 type _PolicyGroupCreatePolicyTypeConfigOneOf27 PolicyGroupCreatePolicyTypeConfigOneOf27
 
-// NewPolicyGroupCreatePolicyTypeConfigOneOf27 instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf27 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPolicyGroupCreatePolicyTypeConfigOneOf27() *PolicyGroupCreatePolicyTypeConfigOneOf27 {
-	this := PolicyGroupCreatePolicyTypeConfigOneOf27{}
-	return &this
-}
-
 // NewPolicyGroupCreatePolicyTypeConfigOneOf27WithDefaults instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf27 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPolicyGroupCreatePolicyTypeConfigOneOf27WithDefaults() *PolicyGroupCreatePolicyTypeConfigOneOf27 {
 	this := PolicyGroupCreatePolicyTypeConfigOneOf27{}
 	return &this
-}
-
-// GetStorageServerId returns the StorageServerId field value if set, zero value otherwise.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf27) GetStorageServerId() string {
-	if o == nil || IsNil(o.StorageServerId) {
-		var ret string
-		return ret
-	}
-	return *o.StorageServerId
-}
-
-// GetStorageServerIdOk returns a tuple with the StorageServerId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf27) GetStorageServerIdOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageServerId) {
-		return nil, false
-	}
-	return o.StorageServerId, true
-}
-
-// SetStorageServerId gets a reference to the given string and assigns it to the StorageServerId field.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf27) SetStorageServerId(v string) {
-	o.StorageServerId = &v
-}
-
-// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf27) GetMaxStorage() string {
-	if o == nil || IsNil(o.MaxStorage) {
-		var ret string
-		return ret
-	}
-	return *o.MaxStorage
-}
-
-// GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf27) GetMaxStorageOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxStorage) {
-		return nil, false
-	}
-	return o.MaxStorage, true
-}
-
-// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf27) SetMaxStorage(v string) {
-	o.MaxStorage = &v
 }
 
 func (o PolicyGroupCreatePolicyTypeConfigOneOf27) MarshalJSON() ([]byte, error) {

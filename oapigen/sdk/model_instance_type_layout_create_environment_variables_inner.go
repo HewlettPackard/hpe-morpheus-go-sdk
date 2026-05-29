@@ -33,20 +33,6 @@ type InstanceTypeLayoutCreateEnvironmentVariablesInner struct {
 
 type _InstanceTypeLayoutCreateEnvironmentVariablesInner InstanceTypeLayoutCreateEnvironmentVariablesInner
 
-// NewInstanceTypeLayoutCreateEnvironmentVariablesInner instantiates a new InstanceTypeLayoutCreateEnvironmentVariablesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceTypeLayoutCreateEnvironmentVariablesInner(name string) *InstanceTypeLayoutCreateEnvironmentVariablesInner {
-	this := InstanceTypeLayoutCreateEnvironmentVariablesInner{}
-	this.Name = name
-	var masked bool = false
-	this.Masked = &masked
-	var export bool = false
-	this.Export = &export
-	return &this
-}
-
 // NewInstanceTypeLayoutCreateEnvironmentVariablesInnerWithDefaults instantiates a new InstanceTypeLayoutCreateEnvironmentVariablesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -57,99 +43,6 @@ func NewInstanceTypeLayoutCreateEnvironmentVariablesInnerWithDefaults() *Instanc
 	var export bool = false
 	this.Export = &export
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *InstanceTypeLayoutCreateEnvironmentVariablesInner) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *InstanceTypeLayoutCreateEnvironmentVariablesInner) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *InstanceTypeLayoutCreateEnvironmentVariablesInner) SetName(v string) {
-	o.Name = v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *InstanceTypeLayoutCreateEnvironmentVariablesInner) GetValue() string {
-	if o == nil || IsNil(o.Value) {
-		var ret string
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceTypeLayoutCreateEnvironmentVariablesInner) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *InstanceTypeLayoutCreateEnvironmentVariablesInner) SetValue(v string) {
-	o.Value = &v
-}
-
-// GetMasked returns the Masked field value if set, zero value otherwise.
-func (o *InstanceTypeLayoutCreateEnvironmentVariablesInner) GetMasked() bool {
-	if o == nil || IsNil(o.Masked) {
-		var ret bool
-		return ret
-	}
-	return *o.Masked
-}
-
-// GetMaskedOk returns a tuple with the Masked field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceTypeLayoutCreateEnvironmentVariablesInner) GetMaskedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Masked) {
-		return nil, false
-	}
-	return o.Masked, true
-}
-
-// SetMasked gets a reference to the given bool and assigns it to the Masked field.
-func (o *InstanceTypeLayoutCreateEnvironmentVariablesInner) SetMasked(v bool) {
-	o.Masked = &v
-}
-
-// GetExport returns the Export field value if set, zero value otherwise.
-func (o *InstanceTypeLayoutCreateEnvironmentVariablesInner) GetExport() bool {
-	if o == nil || IsNil(o.Export) {
-		var ret bool
-		return ret
-	}
-	return *o.Export
-}
-
-// GetExportOk returns a tuple with the Export field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceTypeLayoutCreateEnvironmentVariablesInner) GetExportOk() (*bool, bool) {
-	if o == nil || IsNil(o.Export) {
-		return nil, false
-	}
-	return o.Export, true
-}
-
-// SetExport gets a reference to the given bool and assigns it to the Export field.
-func (o *InstanceTypeLayoutCreateEnvironmentVariablesInner) SetExport(v bool) {
-	o.Export = &v
 }
 
 func (o InstanceTypeLayoutCreateEnvironmentVariablesInner) MarshalJSON() ([]byte, error) {

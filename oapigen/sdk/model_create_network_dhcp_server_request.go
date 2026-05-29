@@ -26,44 +26,12 @@ type CreateNetworkDhcpServerRequest struct {
 
 type _CreateNetworkDhcpServerRequest CreateNetworkDhcpServerRequest
 
-// NewCreateNetworkDhcpServerRequest instantiates a new CreateNetworkDhcpServerRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkDhcpServerRequest() *CreateNetworkDhcpServerRequest {
-	this := CreateNetworkDhcpServerRequest{}
-	return &this
-}
-
 // NewCreateNetworkDhcpServerRequestWithDefaults instantiates a new CreateNetworkDhcpServerRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkDhcpServerRequestWithDefaults() *CreateNetworkDhcpServerRequest {
 	this := CreateNetworkDhcpServerRequest{}
 	return &this
-}
-
-// GetNetworkDhcpServer returns the NetworkDhcpServer field value if set, zero value otherwise.
-func (o *CreateNetworkDhcpServerRequest) GetNetworkDhcpServer() CreateNetworkDhcpServerRequestNetworkDhcpServer {
-	if o == nil || IsNil(o.NetworkDhcpServer) {
-		var ret CreateNetworkDhcpServerRequestNetworkDhcpServer
-		return ret
-	}
-	return *o.NetworkDhcpServer
-}
-
-// GetNetworkDhcpServerOk returns a tuple with the NetworkDhcpServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkDhcpServerRequest) GetNetworkDhcpServerOk() (*CreateNetworkDhcpServerRequestNetworkDhcpServer, bool) {
-	if o == nil || IsNil(o.NetworkDhcpServer) {
-		return nil, false
-	}
-	return o.NetworkDhcpServer, true
-}
-
-// SetNetworkDhcpServer gets a reference to the given CreateNetworkDhcpServerRequestNetworkDhcpServer and assigns it to the NetworkDhcpServer field.
-func (o *CreateNetworkDhcpServerRequest) SetNetworkDhcpServer(v CreateNetworkDhcpServerRequestNetworkDhcpServer) {
-	o.NetworkDhcpServer = &v
 }
 
 func (o CreateNetworkDhcpServerRequest) MarshalJSON() ([]byte, error) {

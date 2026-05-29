@@ -31,94 +31,12 @@ type AddIntegrationSnowObjectsRequestObject struct {
 
 type _AddIntegrationSnowObjectsRequestObject AddIntegrationSnowObjectsRequestObject
 
-// NewAddIntegrationSnowObjectsRequestObject instantiates a new AddIntegrationSnowObjectsRequestObject object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIntegrationSnowObjectsRequestObject(type_ string, catalogItemType int64) *AddIntegrationSnowObjectsRequestObject {
-	this := AddIntegrationSnowObjectsRequestObject{}
-	this.Type = type_
-	this.CatalogItemType = catalogItemType
-	return &this
-}
-
 // NewAddIntegrationSnowObjectsRequestObjectWithDefaults instantiates a new AddIntegrationSnowObjectsRequestObject object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddIntegrationSnowObjectsRequestObjectWithDefaults() *AddIntegrationSnowObjectsRequestObject {
 	this := AddIntegrationSnowObjectsRequestObject{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddIntegrationSnowObjectsRequestObject) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIntegrationSnowObjectsRequestObject) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddIntegrationSnowObjectsRequestObject) SetName(v string) {
-	o.Name = &v
-}
-
-// GetType returns the Type field value
-func (o *AddIntegrationSnowObjectsRequestObject) GetType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value
-// and a boolean to check if the value has been set.
-func (o *AddIntegrationSnowObjectsRequestObject) GetTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Type, true
-}
-
-// SetType sets field value
-func (o *AddIntegrationSnowObjectsRequestObject) SetType(v string) {
-	o.Type = v
-}
-
-// GetCatalogItemType returns the CatalogItemType field value
-func (o *AddIntegrationSnowObjectsRequestObject) GetCatalogItemType() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.CatalogItemType
-}
-
-// GetCatalogItemTypeOk returns a tuple with the CatalogItemType field value
-// and a boolean to check if the value has been set.
-func (o *AddIntegrationSnowObjectsRequestObject) GetCatalogItemTypeOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CatalogItemType, true
-}
-
-// SetCatalogItemType sets field value
-func (o *AddIntegrationSnowObjectsRequestObject) SetCatalogItemType(v int64) {
-	o.CatalogItemType = v
 }
 
 func (o AddIntegrationSnowObjectsRequestObject) MarshalJSON() ([]byte, error) {

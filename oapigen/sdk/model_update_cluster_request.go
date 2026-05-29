@@ -26,44 +26,12 @@ type UpdateClusterRequest struct {
 
 type _UpdateClusterRequest UpdateClusterRequest
 
-// NewUpdateClusterRequest instantiates a new UpdateClusterRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterRequest() *UpdateClusterRequest {
-	this := UpdateClusterRequest{}
-	return &this
-}
-
 // NewUpdateClusterRequestWithDefaults instantiates a new UpdateClusterRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateClusterRequestWithDefaults() *UpdateClusterRequest {
 	this := UpdateClusterRequest{}
 	return &this
-}
-
-// GetCluster returns the Cluster field value if set, zero value otherwise.
-func (o *UpdateClusterRequest) GetCluster() UpdateClusterRequestCluster {
-	if o == nil || IsNil(o.Cluster) {
-		var ret UpdateClusterRequestCluster
-		return ret
-	}
-	return *o.Cluster
-}
-
-// GetClusterOk returns a tuple with the Cluster field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterRequest) GetClusterOk() (*UpdateClusterRequestCluster, bool) {
-	if o == nil || IsNil(o.Cluster) {
-		return nil, false
-	}
-	return o.Cluster, true
-}
-
-// SetCluster gets a reference to the given UpdateClusterRequestCluster and assigns it to the Cluster field.
-func (o *UpdateClusterRequest) SetCluster(v UpdateClusterRequestCluster) {
-	o.Cluster = &v
 }
 
 func (o UpdateClusterRequest) MarshalJSON() ([]byte, error) {

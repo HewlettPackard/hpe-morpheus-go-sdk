@@ -26,44 +26,12 @@ type MaxLoadBalancerPoolsPolicyTypeConfiguration1 struct {
 
 type _MaxLoadBalancerPoolsPolicyTypeConfiguration1 MaxLoadBalancerPoolsPolicyTypeConfiguration1
 
-// NewMaxLoadBalancerPoolsPolicyTypeConfiguration1 instantiates a new MaxLoadBalancerPoolsPolicyTypeConfiguration1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMaxLoadBalancerPoolsPolicyTypeConfiguration1() *MaxLoadBalancerPoolsPolicyTypeConfiguration1 {
-	this := MaxLoadBalancerPoolsPolicyTypeConfiguration1{}
-	return &this
-}
-
 // NewMaxLoadBalancerPoolsPolicyTypeConfiguration1WithDefaults instantiates a new MaxLoadBalancerPoolsPolicyTypeConfiguration1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewMaxLoadBalancerPoolsPolicyTypeConfiguration1WithDefaults() *MaxLoadBalancerPoolsPolicyTypeConfiguration1 {
 	this := MaxLoadBalancerPoolsPolicyTypeConfiguration1{}
 	return &this
-}
-
-// GetMaxPools returns the MaxPools field value if set, zero value otherwise.
-func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration1) GetMaxPools() string {
-	if o == nil || IsNil(o.MaxPools) {
-		var ret string
-		return ret
-	}
-	return *o.MaxPools
-}
-
-// GetMaxPoolsOk returns a tuple with the MaxPools field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration1) GetMaxPoolsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxPools) {
-		return nil, false
-	}
-	return o.MaxPools, true
-}
-
-// SetMaxPools gets a reference to the given string and assigns it to the MaxPools field.
-func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration1) SetMaxPools(v string) {
-	o.MaxPools = &v
 }
 
 func (o MaxLoadBalancerPoolsPolicyTypeConfiguration1) MarshalJSON() ([]byte, error) {

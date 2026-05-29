@@ -27,67 +27,12 @@ type ListSubnetTypes200Response struct {
 
 type _ListSubnetTypes200Response ListSubnetTypes200Response
 
-// NewListSubnetTypes200Response instantiates a new ListSubnetTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListSubnetTypes200Response() *ListSubnetTypes200Response {
-	this := ListSubnetTypes200Response{}
-	return &this
-}
-
 // NewListSubnetTypes200ResponseWithDefaults instantiates a new ListSubnetTypes200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListSubnetTypes200ResponseWithDefaults() *ListSubnetTypes200Response {
 	this := ListSubnetTypes200Response{}
 	return &this
-}
-
-// GetSubnetTypes returns the SubnetTypes field value if set, zero value otherwise.
-func (o *ListSubnetTypes200Response) GetSubnetTypes() []ListSubnetTypes200ResponseAllOfSubnetTypesInner {
-	if o == nil || IsNil(o.SubnetTypes) {
-		var ret []ListSubnetTypes200ResponseAllOfSubnetTypesInner
-		return ret
-	}
-	return o.SubnetTypes
-}
-
-// GetSubnetTypesOk returns a tuple with the SubnetTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListSubnetTypes200Response) GetSubnetTypesOk() ([]ListSubnetTypes200ResponseAllOfSubnetTypesInner, bool) {
-	if o == nil || IsNil(o.SubnetTypes) {
-		return nil, false
-	}
-	return o.SubnetTypes, true
-}
-
-// SetSubnetTypes gets a reference to the given []ListSubnetTypes200ResponseAllOfSubnetTypesInner and assigns it to the SubnetTypes field.
-func (o *ListSubnetTypes200Response) SetSubnetTypes(v []ListSubnetTypes200ResponseAllOfSubnetTypesInner) {
-	o.SubnetTypes = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListSubnetTypes200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListSubnetTypes200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListSubnetTypes200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListSubnetTypes200Response) MarshalJSON() ([]byte, error) {

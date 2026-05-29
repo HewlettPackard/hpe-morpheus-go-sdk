@@ -28,90 +28,12 @@ type ExecuteTasks200Response struct {
 
 type _ExecuteTasks200Response ExecuteTasks200Response
 
-// NewExecuteTasks200Response instantiates a new ExecuteTasks200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewExecuteTasks200Response() *ExecuteTasks200Response {
-	this := ExecuteTasks200Response{}
-	return &this
-}
-
 // NewExecuteTasks200ResponseWithDefaults instantiates a new ExecuteTasks200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewExecuteTasks200ResponseWithDefaults() *ExecuteTasks200Response {
 	this := ExecuteTasks200Response{}
 	return &this
-}
-
-// GetJob returns the Job field value if set, zero value otherwise.
-func (o *ExecuteTasks200Response) GetJob() ExecuteTasks200ResponseAllOfJob {
-	if o == nil || IsNil(o.Job) {
-		var ret ExecuteTasks200ResponseAllOfJob
-		return ret
-	}
-	return *o.Job
-}
-
-// GetJobOk returns a tuple with the Job field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteTasks200Response) GetJobOk() (*ExecuteTasks200ResponseAllOfJob, bool) {
-	if o == nil || IsNil(o.Job) {
-		return nil, false
-	}
-	return o.Job, true
-}
-
-// SetJob gets a reference to the given ExecuteTasks200ResponseAllOfJob and assigns it to the Job field.
-func (o *ExecuteTasks200Response) SetJob(v ExecuteTasks200ResponseAllOfJob) {
-	o.Job = &v
-}
-
-// GetJobExecution returns the JobExecution field value if set, zero value otherwise.
-func (o *ExecuteTasks200Response) GetJobExecution() ExecuteTasks200ResponseAllOfJobExecution {
-	if o == nil || IsNil(o.JobExecution) {
-		var ret ExecuteTasks200ResponseAllOfJobExecution
-		return ret
-	}
-	return *o.JobExecution
-}
-
-// GetJobExecutionOk returns a tuple with the JobExecution field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteTasks200Response) GetJobExecutionOk() (*ExecuteTasks200ResponseAllOfJobExecution, bool) {
-	if o == nil || IsNil(o.JobExecution) {
-		return nil, false
-	}
-	return o.JobExecution, true
-}
-
-// SetJobExecution gets a reference to the given ExecuteTasks200ResponseAllOfJobExecution and assigns it to the JobExecution field.
-func (o *ExecuteTasks200Response) SetJobExecution(v ExecuteTasks200ResponseAllOfJobExecution) {
-	o.JobExecution = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *ExecuteTasks200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteTasks200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *ExecuteTasks200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o ExecuteTasks200Response) MarshalJSON() ([]byte, error) {

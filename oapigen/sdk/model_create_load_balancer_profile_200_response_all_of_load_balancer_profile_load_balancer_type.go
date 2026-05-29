@@ -28,90 +28,12 @@ type CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerTyp
 
 type _CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType
 
-// NewCreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType instantiates a new CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType() *CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType {
-	this := CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType{}
-	return &this
-}
-
 // NewCreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerTypeWithDefaults instantiates a new CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerTypeWithDefaults() *CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType {
 	this := CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType) SetName(v string) {
-	o.Name = &v
 }
 
 func (o CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerType) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool struct {
 
 type _SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool
 
-// NewSaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool instantiates a new SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool() *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool {
-	this := SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool{}
-	return &this
-}
-
 // NewSaveClusterAffinityGroup200ResponseAllOfAffinityGroupPoolWithDefaults instantiates a new SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSaveClusterAffinityGroup200ResponseAllOfAffinityGroupPoolWithDefaults() *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool {
 	this := SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool) MarshalJSON() ([]byte, error) {

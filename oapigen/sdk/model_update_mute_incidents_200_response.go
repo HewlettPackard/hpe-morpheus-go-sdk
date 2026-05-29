@@ -27,67 +27,12 @@ type UpdateMuteIncidents200Response struct {
 
 type _UpdateMuteIncidents200Response UpdateMuteIncidents200Response
 
-// NewUpdateMuteIncidents200Response instantiates a new UpdateMuteIncidents200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateMuteIncidents200Response() *UpdateMuteIncidents200Response {
-	this := UpdateMuteIncidents200Response{}
-	return &this
-}
-
 // NewUpdateMuteIncidents200ResponseWithDefaults instantiates a new UpdateMuteIncidents200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateMuteIncidents200ResponseWithDefaults() *UpdateMuteIncidents200Response {
 	this := UpdateMuteIncidents200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateMuteIncidents200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateMuteIncidents200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateMuteIncidents200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetMuted returns the Muted field value if set, zero value otherwise.
-func (o *UpdateMuteIncidents200Response) GetMuted() bool {
-	if o == nil || IsNil(o.Muted) {
-		var ret bool
-		return ret
-	}
-	return *o.Muted
-}
-
-// GetMutedOk returns a tuple with the Muted field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateMuteIncidents200Response) GetMutedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Muted) {
-		return nil, false
-	}
-	return o.Muted, true
-}
-
-// SetMuted gets a reference to the given bool and assigns it to the Muted field.
-func (o *UpdateMuteIncidents200Response) SetMuted(v bool) {
-	o.Muted = &v
 }
 
 func (o UpdateMuteIncidents200Response) MarshalJSON() ([]byte, error) {

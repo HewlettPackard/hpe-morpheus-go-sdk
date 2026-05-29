@@ -29,113 +29,12 @@ type UpdateServerNetworkInterface200ResponseAllOfOneOf struct {
 
 type _UpdateServerNetworkInterface200ResponseAllOfOneOf UpdateServerNetworkInterface200ResponseAllOfOneOf
 
-// NewUpdateServerNetworkInterface200ResponseAllOfOneOf instantiates a new UpdateServerNetworkInterface200ResponseAllOfOneOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateServerNetworkInterface200ResponseAllOfOneOf() *UpdateServerNetworkInterface200ResponseAllOfOneOf {
-	this := UpdateServerNetworkInterface200ResponseAllOfOneOf{}
-	return &this
-}
-
 // NewUpdateServerNetworkInterface200ResponseAllOfOneOfWithDefaults instantiates a new UpdateServerNetworkInterface200ResponseAllOfOneOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateServerNetworkInterface200ResponseAllOfOneOfWithDefaults() *UpdateServerNetworkInterface200ResponseAllOfOneOf {
 	this := UpdateServerNetworkInterface200ResponseAllOfOneOf{}
 	return &this
-}
-
-// GetNetworkInterface returns the NetworkInterface field value if set, zero value otherwise.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) GetNetworkInterface() UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterface {
-	if o == nil || IsNil(o.NetworkInterface) {
-		var ret UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterface
-		return ret
-	}
-	return *o.NetworkInterface
-}
-
-// GetNetworkInterfaceOk returns a tuple with the NetworkInterface field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) GetNetworkInterfaceOk() (*UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterface, bool) {
-	if o == nil || IsNil(o.NetworkInterface) {
-		return nil, false
-	}
-	return o.NetworkInterface, true
-}
-
-// SetNetworkInterface gets a reference to the given UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterface and assigns it to the NetworkInterface field.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) SetNetworkInterface(v UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterface) {
-	o.NetworkInterface = &v
-}
-
-// GetInterfaceType returns the InterfaceType field value if set, zero value otherwise.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) GetInterfaceType() string {
-	if o == nil || IsNil(o.InterfaceType) {
-		var ret string
-		return ret
-	}
-	return *o.InterfaceType
-}
-
-// GetInterfaceTypeOk returns a tuple with the InterfaceType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) GetInterfaceTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.InterfaceType) {
-		return nil, false
-	}
-	return o.InterfaceType, true
-}
-
-// SetInterfaceType gets a reference to the given string and assigns it to the InterfaceType field.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) SetInterfaceType(v string) {
-	o.InterfaceType = &v
-}
-
-// GetNetId returns the NetId field value if set, zero value otherwise.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) GetNetId() int64 {
-	if o == nil || IsNil(o.NetId) {
-		var ret int64
-		return ret
-	}
-	return *o.NetId
-}
-
-// GetNetIdOk returns a tuple with the NetId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) GetNetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.NetId) {
-		return nil, false
-	}
-	return o.NetId, true
-}
-
-// SetNetId gets a reference to the given int64 and assigns it to the NetId field.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) SetNetId(v int64) {
-	o.NetId = &v
-}
-
-// GetServer returns the Server field value if set, zero value otherwise.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) GetServer() UpdateServerNetworkInterface200ResponseAllOfOneOfServer {
-	if o == nil || IsNil(o.Server) {
-		var ret UpdateServerNetworkInterface200ResponseAllOfOneOfServer
-		return ret
-	}
-	return *o.Server
-}
-
-// GetServerOk returns a tuple with the Server field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) GetServerOk() (*UpdateServerNetworkInterface200ResponseAllOfOneOfServer, bool) {
-	if o == nil || IsNil(o.Server) {
-		return nil, false
-	}
-	return o.Server, true
-}
-
-// SetServer gets a reference to the given UpdateServerNetworkInterface200ResponseAllOfOneOfServer and assigns it to the Server field.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) SetServer(v UpdateServerNetworkInterface200ResponseAllOfOneOfServer) {
-	o.Server = &v
 }
 
 func (o UpdateServerNetworkInterface200ResponseAllOfOneOf) MarshalJSON() ([]byte, error) {

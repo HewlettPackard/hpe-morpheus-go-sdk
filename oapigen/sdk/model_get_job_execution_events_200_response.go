@@ -26,44 +26,12 @@ type GetJobExecutionEvents200Response struct {
 
 type _GetJobExecutionEvents200Response GetJobExecutionEvents200Response
 
-// NewGetJobExecutionEvents200Response instantiates a new GetJobExecutionEvents200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetJobExecutionEvents200Response() *GetJobExecutionEvents200Response {
-	this := GetJobExecutionEvents200Response{}
-	return &this
-}
-
 // NewGetJobExecutionEvents200ResponseWithDefaults instantiates a new GetJobExecutionEvents200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetJobExecutionEvents200ResponseWithDefaults() *GetJobExecutionEvents200Response {
 	this := GetJobExecutionEvents200Response{}
 	return &this
-}
-
-// GetProcessEvent returns the ProcessEvent field value if set, zero value otherwise.
-func (o *GetJobExecutionEvents200Response) GetProcessEvent() GetJobExecutionEvents200ResponseAllOfProcessEvent {
-	if o == nil || IsNil(o.ProcessEvent) {
-		var ret GetJobExecutionEvents200ResponseAllOfProcessEvent
-		return ret
-	}
-	return *o.ProcessEvent
-}
-
-// GetProcessEventOk returns a tuple with the ProcessEvent field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetJobExecutionEvents200Response) GetProcessEventOk() (*GetJobExecutionEvents200ResponseAllOfProcessEvent, bool) {
-	if o == nil || IsNil(o.ProcessEvent) {
-		return nil, false
-	}
-	return o.ProcessEvent, true
-}
-
-// SetProcessEvent gets a reference to the given GetJobExecutionEvents200ResponseAllOfProcessEvent and assigns it to the ProcessEvent field.
-func (o *GetJobExecutionEvents200Response) SetProcessEvent(v GetJobExecutionEvents200ResponseAllOfProcessEvent) {
-	o.ProcessEvent = &v
 }
 
 func (o GetJobExecutionEvents200Response) MarshalJSON() ([]byte, error) {

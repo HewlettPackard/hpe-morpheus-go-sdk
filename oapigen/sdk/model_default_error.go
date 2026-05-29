@@ -26,44 +26,12 @@ type DefaultError struct {
 
 type _DefaultError DefaultError
 
-// NewDefaultError instantiates a new DefaultError object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewDefaultError() *DefaultError {
-	this := DefaultError{}
-	return &this
-}
-
 // NewDefaultErrorWithDefaults instantiates a new DefaultError object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewDefaultErrorWithDefaults() *DefaultError {
 	this := DefaultError{}
 	return &this
-}
-
-// GetMsg returns the Msg field value if set, zero value otherwise.
-func (o *DefaultError) GetMsg() string {
-	if o == nil || IsNil(o.Msg) {
-		var ret string
-		return ret
-	}
-	return *o.Msg
-}
-
-// GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DefaultError) GetMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.Msg) {
-		return nil, false
-	}
-	return o.Msg, true
-}
-
-// SetMsg gets a reference to the given string and assigns it to the Msg field.
-func (o *DefaultError) SetMsg(v string) {
-	o.Msg = &v
 }
 
 func (o DefaultError) MarshalJSON() ([]byte, error) {

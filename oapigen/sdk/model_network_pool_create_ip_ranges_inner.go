@@ -31,90 +31,12 @@ type NetworkPoolCreateIpRangesInner struct {
 
 type _NetworkPoolCreateIpRangesInner NetworkPoolCreateIpRangesInner
 
-// NewNetworkPoolCreateIpRangesInner instantiates a new NetworkPoolCreateIpRangesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkPoolCreateIpRangesInner() *NetworkPoolCreateIpRangesInner {
-	this := NetworkPoolCreateIpRangesInner{}
-	return &this
-}
-
 // NewNetworkPoolCreateIpRangesInnerWithDefaults instantiates a new NetworkPoolCreateIpRangesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkPoolCreateIpRangesInnerWithDefaults() *NetworkPoolCreateIpRangesInner {
 	this := NetworkPoolCreateIpRangesInner{}
 	return &this
-}
-
-// GetStartAddress returns the StartAddress field value if set, zero value otherwise.
-func (o *NetworkPoolCreateIpRangesInner) GetStartAddress() string {
-	if o == nil || IsNil(o.StartAddress) {
-		var ret string
-		return ret
-	}
-	return *o.StartAddress
-}
-
-// GetStartAddressOk returns a tuple with the StartAddress field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkPoolCreateIpRangesInner) GetStartAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.StartAddress) {
-		return nil, false
-	}
-	return o.StartAddress, true
-}
-
-// SetStartAddress gets a reference to the given string and assigns it to the StartAddress field.
-func (o *NetworkPoolCreateIpRangesInner) SetStartAddress(v string) {
-	o.StartAddress = &v
-}
-
-// GetEndAddress returns the EndAddress field value if set, zero value otherwise.
-func (o *NetworkPoolCreateIpRangesInner) GetEndAddress() string {
-	if o == nil || IsNil(o.EndAddress) {
-		var ret string
-		return ret
-	}
-	return *o.EndAddress
-}
-
-// GetEndAddressOk returns a tuple with the EndAddress field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkPoolCreateIpRangesInner) GetEndAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.EndAddress) {
-		return nil, false
-	}
-	return o.EndAddress, true
-}
-
-// SetEndAddress gets a reference to the given string and assigns it to the EndAddress field.
-func (o *NetworkPoolCreateIpRangesInner) SetEndAddress(v string) {
-	o.EndAddress = &v
-}
-
-// GetCidrIPv6 returns the CidrIPv6 field value if set, zero value otherwise.
-func (o *NetworkPoolCreateIpRangesInner) GetCidrIPv6() string {
-	if o == nil || IsNil(o.CidrIPv6) {
-		var ret string
-		return ret
-	}
-	return *o.CidrIPv6
-}
-
-// GetCidrIPv6Ok returns a tuple with the CidrIPv6 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkPoolCreateIpRangesInner) GetCidrIPv6Ok() (*string, bool) {
-	if o == nil || IsNil(o.CidrIPv6) {
-		return nil, false
-	}
-	return o.CidrIPv6, true
-}
-
-// SetCidrIPv6 gets a reference to the given string and assigns it to the CidrIPv6 field.
-func (o *NetworkPoolCreateIpRangesInner) SetCidrIPv6(v string) {
-	o.CidrIPv6 = &v
 }
 
 func (o NetworkPoolCreateIpRangesInner) MarshalJSON() ([]byte, error) {

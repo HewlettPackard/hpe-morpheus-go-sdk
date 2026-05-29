@@ -28,90 +28,12 @@ type GetGuidances200ResponseDiscoveryAnyOfZone struct {
 
 type _GetGuidances200ResponseDiscoveryAnyOfZone GetGuidances200ResponseDiscoveryAnyOfZone
 
-// NewGetGuidances200ResponseDiscoveryAnyOfZone instantiates a new GetGuidances200ResponseDiscoveryAnyOfZone object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetGuidances200ResponseDiscoveryAnyOfZone() *GetGuidances200ResponseDiscoveryAnyOfZone {
-	this := GetGuidances200ResponseDiscoveryAnyOfZone{}
-	return &this
-}
-
 // NewGetGuidances200ResponseDiscoveryAnyOfZoneWithDefaults instantiates a new GetGuidances200ResponseDiscoveryAnyOfZone object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetGuidances200ResponseDiscoveryAnyOfZoneWithDefaults() *GetGuidances200ResponseDiscoveryAnyOfZone {
 	this := GetGuidances200ResponseDiscoveryAnyOfZone{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOfZone) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfZone) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetGuidances200ResponseDiscoveryAnyOfZone) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOfZone) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfZone) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetGuidances200ResponseDiscoveryAnyOfZone) SetName(v string) {
-	o.Name = &v
-}
-
-// GetZoneType returns the ZoneType field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOfZone) GetZoneType() GetGuidances200ResponseDiscoveryAnyOfZoneZoneType {
-	if o == nil || IsNil(o.ZoneType) {
-		var ret GetGuidances200ResponseDiscoveryAnyOfZoneZoneType
-		return ret
-	}
-	return *o.ZoneType
-}
-
-// GetZoneTypeOk returns a tuple with the ZoneType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfZone) GetZoneTypeOk() (*GetGuidances200ResponseDiscoveryAnyOfZoneZoneType, bool) {
-	if o == nil || IsNil(o.ZoneType) {
-		return nil, false
-	}
-	return o.ZoneType, true
-}
-
-// SetZoneType gets a reference to the given GetGuidances200ResponseDiscoveryAnyOfZoneZoneType and assigns it to the ZoneType field.
-func (o *GetGuidances200ResponseDiscoveryAnyOfZone) SetZoneType(v GetGuidances200ResponseDiscoveryAnyOfZoneZoneType) {
-	o.ZoneType = &v
 }
 
 func (o GetGuidances200ResponseDiscoveryAnyOfZone) MarshalJSON() ([]byte, error) {

@@ -26,46 +26,12 @@ type AddExecuteSchedulesRequest struct {
 
 type _AddExecuteSchedulesRequest AddExecuteSchedulesRequest
 
-// NewAddExecuteSchedulesRequest instantiates a new AddExecuteSchedulesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddExecuteSchedulesRequest(schedule AddExecuteSchedulesRequestSchedule) *AddExecuteSchedulesRequest {
-	this := AddExecuteSchedulesRequest{}
-	this.Schedule = schedule
-	return &this
-}
-
 // NewAddExecuteSchedulesRequestWithDefaults instantiates a new AddExecuteSchedulesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddExecuteSchedulesRequestWithDefaults() *AddExecuteSchedulesRequest {
 	this := AddExecuteSchedulesRequest{}
 	return &this
-}
-
-// GetSchedule returns the Schedule field value
-func (o *AddExecuteSchedulesRequest) GetSchedule() AddExecuteSchedulesRequestSchedule {
-	if o == nil {
-		var ret AddExecuteSchedulesRequestSchedule
-		return ret
-	}
-
-	return o.Schedule
-}
-
-// GetScheduleOk returns a tuple with the Schedule field value
-// and a boolean to check if the value has been set.
-func (o *AddExecuteSchedulesRequest) GetScheduleOk() (*AddExecuteSchedulesRequestSchedule, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Schedule, true
-}
-
-// SetSchedule sets field value
-func (o *AddExecuteSchedulesRequest) SetSchedule(v AddExecuteSchedulesRequestSchedule) {
-	o.Schedule = v
 }
 
 func (o AddExecuteSchedulesRequest) MarshalJSON() ([]byte, error) {

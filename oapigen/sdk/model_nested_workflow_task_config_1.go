@@ -29,69 +29,12 @@ type NestedWorkflowTaskConfig1 struct {
 
 type _NestedWorkflowTaskConfig1 NestedWorkflowTaskConfig1
 
-// NewNestedWorkflowTaskConfig1 instantiates a new NestedWorkflowTaskConfig1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNestedWorkflowTaskConfig1(operationalWorkflowId string) *NestedWorkflowTaskConfig1 {
-	this := NestedWorkflowTaskConfig1{}
-	this.OperationalWorkflowId = operationalWorkflowId
-	return &this
-}
-
 // NewNestedWorkflowTaskConfig1WithDefaults instantiates a new NestedWorkflowTaskConfig1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNestedWorkflowTaskConfig1WithDefaults() *NestedWorkflowTaskConfig1 {
 	this := NestedWorkflowTaskConfig1{}
 	return &this
-}
-
-// GetOperationalWorkflowId returns the OperationalWorkflowId field value
-func (o *NestedWorkflowTaskConfig1) GetOperationalWorkflowId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.OperationalWorkflowId
-}
-
-// GetOperationalWorkflowIdOk returns a tuple with the OperationalWorkflowId field value
-// and a boolean to check if the value has been set.
-func (o *NestedWorkflowTaskConfig1) GetOperationalWorkflowIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.OperationalWorkflowId, true
-}
-
-// SetOperationalWorkflowId sets field value
-func (o *NestedWorkflowTaskConfig1) SetOperationalWorkflowId(v string) {
-	o.OperationalWorkflowId = v
-}
-
-// GetOperationalWorkflowName returns the OperationalWorkflowName field value if set, zero value otherwise.
-func (o *NestedWorkflowTaskConfig1) GetOperationalWorkflowName() string {
-	if o == nil || IsNil(o.OperationalWorkflowName) {
-		var ret string
-		return ret
-	}
-	return *o.OperationalWorkflowName
-}
-
-// GetOperationalWorkflowNameOk returns a tuple with the OperationalWorkflowName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NestedWorkflowTaskConfig1) GetOperationalWorkflowNameOk() (*string, bool) {
-	if o == nil || IsNil(o.OperationalWorkflowName) {
-		return nil, false
-	}
-	return o.OperationalWorkflowName, true
-}
-
-// SetOperationalWorkflowName gets a reference to the given string and assigns it to the OperationalWorkflowName field.
-func (o *NestedWorkflowTaskConfig1) SetOperationalWorkflowName(v string) {
-	o.OperationalWorkflowName = &v
 }
 
 func (o NestedWorkflowTaskConfig1) MarshalJSON() ([]byte, error) {

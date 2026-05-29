@@ -26,44 +26,12 @@ type ClusterCreateServerConfigAnyOfOneOf3Worker struct {
 
 type _ClusterCreateServerConfigAnyOfOneOf3Worker ClusterCreateServerConfigAnyOfOneOf3Worker
 
-// NewClusterCreateServerConfigAnyOfOneOf3Worker instantiates a new ClusterCreateServerConfigAnyOfOneOf3Worker object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterCreateServerConfigAnyOfOneOf3Worker() *ClusterCreateServerConfigAnyOfOneOf3Worker {
-	this := ClusterCreateServerConfigAnyOfOneOf3Worker{}
-	return &this
-}
-
 // NewClusterCreateServerConfigAnyOfOneOf3WorkerWithDefaults instantiates a new ClusterCreateServerConfigAnyOfOneOf3Worker object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClusterCreateServerConfigAnyOfOneOf3WorkerWithDefaults() *ClusterCreateServerConfigAnyOfOneOf3Worker {
 	this := ClusterCreateServerConfigAnyOfOneOf3Worker{}
 	return &this
-}
-
-// GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf3Worker) GetPlan() ClusterCreateServerConfigAnyOfOneOf3WorkerPlan {
-	if o == nil || IsNil(o.Plan) {
-		var ret ClusterCreateServerConfigAnyOfOneOf3WorkerPlan
-		return ret
-	}
-	return *o.Plan
-}
-
-// GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf3Worker) GetPlanOk() (*ClusterCreateServerConfigAnyOfOneOf3WorkerPlan, bool) {
-	if o == nil || IsNil(o.Plan) {
-		return nil, false
-	}
-	return o.Plan, true
-}
-
-// SetPlan gets a reference to the given ClusterCreateServerConfigAnyOfOneOf3WorkerPlan and assigns it to the Plan field.
-func (o *ClusterCreateServerConfigAnyOfOneOf3Worker) SetPlan(v ClusterCreateServerConfigAnyOfOneOf3WorkerPlan) {
-	o.Plan = &v
 }
 
 func (o ClusterCreateServerConfigAnyOfOneOf3Worker) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 struct {
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2
 
-// NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 {
-	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2{}
-	return &this
-}
-
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2WithDefaults instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2WithDefaults() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 {
 	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2{}
 	return &this
-}
-
-// GetBackupStorageIds returns the BackupStorageIds field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2) GetBackupStorageIds() []int64 {
-	if o == nil || IsNil(o.BackupStorageIds) {
-		var ret []int64
-		return ret
-	}
-	return o.BackupStorageIds
-}
-
-// GetBackupStorageIdsOk returns a tuple with the BackupStorageIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2) GetBackupStorageIdsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.BackupStorageIds) {
-		return nil, false
-	}
-	return o.BackupStorageIds, true
-}
-
-// SetBackupStorageIds gets a reference to the given []int64 and assigns it to the BackupStorageIds field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2) SetBackupStorageIds(v []int64) {
-	o.BackupStorageIds = v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2) MarshalJSON() ([]byte, error) {

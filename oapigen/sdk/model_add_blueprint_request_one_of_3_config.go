@@ -27,44 +27,12 @@ type AddBlueprintRequestOneOf3Config struct {
 
 type _AddBlueprintRequestOneOf3Config AddBlueprintRequestOneOf3Config
 
-// NewAddBlueprintRequestOneOf3Config instantiates a new AddBlueprintRequestOneOf3Config object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBlueprintRequestOneOf3Config() *AddBlueprintRequestOneOf3Config {
-	this := AddBlueprintRequestOneOf3Config{}
-	return &this
-}
-
 // NewAddBlueprintRequestOneOf3ConfigWithDefaults instantiates a new AddBlueprintRequestOneOf3Config object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddBlueprintRequestOneOf3ConfigWithDefaults() *AddBlueprintRequestOneOf3Config {
 	this := AddBlueprintRequestOneOf3Config{}
 	return &this
-}
-
-// GetSpecs returns the Specs field value if set, zero value otherwise.
-func (o *AddBlueprintRequestOneOf3Config) GetSpecs() []AddBlueprintRequestOneOf3ConfigSpecsInner {
-	if o == nil || IsNil(o.Specs) {
-		var ret []AddBlueprintRequestOneOf3ConfigSpecsInner
-		return ret
-	}
-	return o.Specs
-}
-
-// GetSpecsOk returns a tuple with the Specs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBlueprintRequestOneOf3Config) GetSpecsOk() ([]AddBlueprintRequestOneOf3ConfigSpecsInner, bool) {
-	if o == nil || IsNil(o.Specs) {
-		return nil, false
-	}
-	return o.Specs, true
-}
-
-// SetSpecs gets a reference to the given []AddBlueprintRequestOneOf3ConfigSpecsInner and assigns it to the Specs field.
-func (o *AddBlueprintRequestOneOf3Config) SetSpecs(v []AddBlueprintRequestOneOf3ConfigSpecsInner) {
-	o.Specs = v
 }
 
 func (o AddBlueprintRequestOneOf3Config) MarshalJSON() ([]byte, error) {

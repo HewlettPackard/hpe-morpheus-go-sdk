@@ -27,67 +27,12 @@ type GetEmailTemplate200Response struct {
 
 type _GetEmailTemplate200Response GetEmailTemplate200Response
 
-// NewGetEmailTemplate200Response instantiates a new GetEmailTemplate200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetEmailTemplate200Response() *GetEmailTemplate200Response {
-	this := GetEmailTemplate200Response{}
-	return &this
-}
-
 // NewGetEmailTemplate200ResponseWithDefaults instantiates a new GetEmailTemplate200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetEmailTemplate200ResponseWithDefaults() *GetEmailTemplate200Response {
 	this := GetEmailTemplate200Response{}
 	return &this
-}
-
-// GetEmailTemplate returns the EmailTemplate field value if set, zero value otherwise.
-func (o *GetEmailTemplate200Response) GetEmailTemplate() AddEmailTemplate200ResponseEmailTemplate {
-	if o == nil || IsNil(o.EmailTemplate) {
-		var ret AddEmailTemplate200ResponseEmailTemplate
-		return ret
-	}
-	return *o.EmailTemplate
-}
-
-// GetEmailTemplateOk returns a tuple with the EmailTemplate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetEmailTemplate200Response) GetEmailTemplateOk() (*AddEmailTemplate200ResponseEmailTemplate, bool) {
-	if o == nil || IsNil(o.EmailTemplate) {
-		return nil, false
-	}
-	return o.EmailTemplate, true
-}
-
-// SetEmailTemplate gets a reference to the given AddEmailTemplate200ResponseEmailTemplate and assigns it to the EmailTemplate field.
-func (o *GetEmailTemplate200Response) SetEmailTemplate(v AddEmailTemplate200ResponseEmailTemplate) {
-	o.EmailTemplate = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *GetEmailTemplate200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetEmailTemplate200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *GetEmailTemplate200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o GetEmailTemplate200Response) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type GetContainerActions200ResponseActionsInner struct {
 
 type _GetContainerActions200ResponseActionsInner GetContainerActions200ResponseActionsInner
 
-// NewGetContainerActions200ResponseActionsInner instantiates a new GetContainerActions200ResponseActionsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetContainerActions200ResponseActionsInner() *GetContainerActions200ResponseActionsInner {
-	this := GetContainerActions200ResponseActionsInner{}
-	return &this
-}
-
 // NewGetContainerActions200ResponseActionsInnerWithDefaults instantiates a new GetContainerActions200ResponseActionsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetContainerActions200ResponseActionsInnerWithDefaults() *GetContainerActions200ResponseActionsInner {
 	this := GetContainerActions200ResponseActionsInner{}
 	return &this
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *GetContainerActions200ResponseActionsInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetContainerActions200ResponseActionsInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *GetContainerActions200ResponseActionsInner) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetContainerActions200ResponseActionsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetContainerActions200ResponseActionsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetContainerActions200ResponseActionsInner) SetName(v string) {
-	o.Name = &v
 }
 
 func (o GetContainerActions200ResponseActionsInner) MarshalJSON() ([]byte, error) {

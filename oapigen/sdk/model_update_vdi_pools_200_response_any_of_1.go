@@ -26,44 +26,12 @@ type UpdateVDIPools200ResponseAnyOf1 struct {
 
 type _UpdateVDIPools200ResponseAnyOf1 UpdateVDIPools200ResponseAnyOf1
 
-// NewUpdateVDIPools200ResponseAnyOf1 instantiates a new UpdateVDIPools200ResponseAnyOf1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateVDIPools200ResponseAnyOf1() *UpdateVDIPools200ResponseAnyOf1 {
-	this := UpdateVDIPools200ResponseAnyOf1{}
-	return &this
-}
-
 // NewUpdateVDIPools200ResponseAnyOf1WithDefaults instantiates a new UpdateVDIPools200ResponseAnyOf1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateVDIPools200ResponseAnyOf1WithDefaults() *UpdateVDIPools200ResponseAnyOf1 {
 	this := UpdateVDIPools200ResponseAnyOf1{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateVDIPools200ResponseAnyOf1) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIPools200ResponseAnyOf1) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateVDIPools200ResponseAnyOf1) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateVDIPools200ResponseAnyOf1) MarshalJSON() ([]byte, error) {

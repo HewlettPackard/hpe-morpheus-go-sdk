@@ -32,90 +32,12 @@ type ExecuteBackups200ResponseAllOfBackupLastResult struct {
 
 type _ExecuteBackups200ResponseAllOfBackupLastResult ExecuteBackups200ResponseAllOfBackupLastResult
 
-// NewExecuteBackups200ResponseAllOfBackupLastResult instantiates a new ExecuteBackups200ResponseAllOfBackupLastResult object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewExecuteBackups200ResponseAllOfBackupLastResult() *ExecuteBackups200ResponseAllOfBackupLastResult {
-	this := ExecuteBackups200ResponseAllOfBackupLastResult{}
-	return &this
-}
-
 // NewExecuteBackups200ResponseAllOfBackupLastResultWithDefaults instantiates a new ExecuteBackups200ResponseAllOfBackupLastResult object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewExecuteBackups200ResponseAllOfBackupLastResultWithDefaults() *ExecuteBackups200ResponseAllOfBackupLastResult {
 	this := ExecuteBackups200ResponseAllOfBackupLastResult{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ExecuteBackups200ResponseAllOfBackupLastResult) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteBackups200ResponseAllOfBackupLastResult) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ExecuteBackups200ResponseAllOfBackupLastResult) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ExecuteBackups200ResponseAllOfBackupLastResult) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteBackups200ResponseAllOfBackupLastResult) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ExecuteBackups200ResponseAllOfBackupLastResult) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDateCreated returns the DateCreated field value if set, zero value otherwise.
-func (o *ExecuteBackups200ResponseAllOfBackupLastResult) GetDateCreated() time.Time {
-	if o == nil || IsNil(o.DateCreated) {
-		var ret time.Time
-		return ret
-	}
-	return *o.DateCreated
-}
-
-// GetDateCreatedOk returns a tuple with the DateCreated field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteBackups200ResponseAllOfBackupLastResult) GetDateCreatedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.DateCreated) {
-		return nil, false
-	}
-	return o.DateCreated, true
-}
-
-// SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
-func (o *ExecuteBackups200ResponseAllOfBackupLastResult) SetDateCreated(v time.Time) {
-	o.DateCreated = &v
 }
 
 func (o ExecuteBackups200ResponseAllOfBackupLastResult) MarshalJSON() ([]byte, error) {

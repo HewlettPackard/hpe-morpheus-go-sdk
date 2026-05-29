@@ -28,27 +28,6 @@ type AddJobsRequestJob struct {
 	WorkflowJobPayload *WorkflowJobPayload
 }
 
-// SecurityScanJobAsAddJobsRequestJob is a convenience function that returns SecurityScanJob wrapped in AddJobsRequestJob
-func SecurityScanJobAsAddJobsRequestJob(v *SecurityScanJob) AddJobsRequestJob {
-	return AddJobsRequestJob{
-		SecurityScanJob: v,
-	}
-}
-
-// TaskJobPayloadAsAddJobsRequestJob is a convenience function that returns TaskJobPayload wrapped in AddJobsRequestJob
-func TaskJobPayloadAsAddJobsRequestJob(v *TaskJobPayload) AddJobsRequestJob {
-	return AddJobsRequestJob{
-		TaskJobPayload: v,
-	}
-}
-
-// WorkflowJobPayloadAsAddJobsRequestJob is a convenience function that returns WorkflowJobPayload wrapped in AddJobsRequestJob
-func WorkflowJobPayloadAsAddJobsRequestJob(v *WorkflowJobPayload) AddJobsRequestJob {
-	return AddJobsRequestJob{
-		WorkflowJobPayload: v,
-	}
-}
-
 func (dst *AddJobsRequestJob) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddJobsRequestJob{}

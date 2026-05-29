@@ -27,44 +27,12 @@ type GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor struct {
 
 type _GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor
 
-// NewGetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor instantiates a new GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor() *GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor {
-	this := GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor{}
-	return &this
-}
-
 // NewGetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitorWithDefaults instantiates a new GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitorWithDefaults() *GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor {
 	this := GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfigMonitor) MarshalJSON() ([]byte, error) {

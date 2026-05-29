@@ -28,67 +28,12 @@ type RunWorkflowInstance200Response struct {
 
 type _RunWorkflowInstance200Response RunWorkflowInstance200Response
 
-// NewRunWorkflowInstance200Response instantiates a new RunWorkflowInstance200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRunWorkflowInstance200Response() *RunWorkflowInstance200Response {
-	this := RunWorkflowInstance200Response{}
-	return &this
-}
-
 // NewRunWorkflowInstance200ResponseWithDefaults instantiates a new RunWorkflowInstance200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRunWorkflowInstance200ResponseWithDefaults() *RunWorkflowInstance200Response {
 	this := RunWorkflowInstance200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *RunWorkflowInstance200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RunWorkflowInstance200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *RunWorkflowInstance200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetProcessId returns the ProcessId field value if set, zero value otherwise.
-func (o *RunWorkflowInstance200Response) GetProcessId() int64 {
-	if o == nil || IsNil(o.ProcessId) {
-		var ret int64
-		return ret
-	}
-	return *o.ProcessId
-}
-
-// GetProcessIdOk returns a tuple with the ProcessId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RunWorkflowInstance200Response) GetProcessIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.ProcessId) {
-		return nil, false
-	}
-	return o.ProcessId, true
-}
-
-// SetProcessId gets a reference to the given int64 and assigns it to the ProcessId field.
-func (o *RunWorkflowInstance200Response) SetProcessId(v int64) {
-	o.ProcessId = &v
 }
 
 func (o RunWorkflowInstance200Response) MarshalJSON() ([]byte, error) {

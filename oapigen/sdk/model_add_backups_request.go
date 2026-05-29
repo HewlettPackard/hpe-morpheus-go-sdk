@@ -26,46 +26,12 @@ type AddBackupsRequest struct {
 
 type _AddBackupsRequest AddBackupsRequest
 
-// NewAddBackupsRequest instantiates a new AddBackupsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBackupsRequest(backup AddBackupsRequestBackup) *AddBackupsRequest {
-	this := AddBackupsRequest{}
-	this.Backup = backup
-	return &this
-}
-
 // NewAddBackupsRequestWithDefaults instantiates a new AddBackupsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddBackupsRequestWithDefaults() *AddBackupsRequest {
 	this := AddBackupsRequest{}
 	return &this
-}
-
-// GetBackup returns the Backup field value
-func (o *AddBackupsRequest) GetBackup() AddBackupsRequestBackup {
-	if o == nil {
-		var ret AddBackupsRequestBackup
-		return ret
-	}
-
-	return o.Backup
-}
-
-// GetBackupOk returns a tuple with the Backup field value
-// and a boolean to check if the value has been set.
-func (o *AddBackupsRequest) GetBackupOk() (*AddBackupsRequestBackup, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Backup, true
-}
-
-// SetBackup sets field value
-func (o *AddBackupsRequest) SetBackup(v AddBackupsRequestBackup) {
-	o.Backup = v
 }
 
 func (o AddBackupsRequest) MarshalJSON() ([]byte, error) {

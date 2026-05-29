@@ -28,90 +28,12 @@ type ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner str
 
 type _ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner
 
-// NewListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner instantiates a new ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner() *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner {
-	this := ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner{}
-	return &this
-}
-
 // NewListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInnerWithDefaults instantiates a new ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInnerWithDefaults() *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner {
 	this := ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) GetValue() string {
-	if o == nil || IsNil(o.Value) {
-		var ret string
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) SetValue(v string) {
-	o.Value = &v
-}
-
-// GetMasked returns the Masked field value if set, zero value otherwise.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) GetMasked() string {
-	if o == nil || IsNil(o.Masked) {
-		var ret string
-		return ret
-	}
-	return *o.Masked
-}
-
-// GetMaskedOk returns a tuple with the Masked field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) GetMaskedOk() (*string, bool) {
-	if o == nil || IsNil(o.Masked) {
-		return nil, false
-	}
-	return o.Masked, true
-}
-
-// SetMasked gets a reference to the given string and assigns it to the Masked field.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) SetMasked(v string) {
-	o.Masked = &v
 }
 
 func (o ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) MarshalJSON() ([]byte, error) {

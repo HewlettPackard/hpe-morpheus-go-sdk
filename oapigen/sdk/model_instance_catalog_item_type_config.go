@@ -27,20 +27,6 @@ type InstanceCatalogItemTypeConfig struct {
 	String               *string
 }
 
-// InstanceConfigObjectAsInstanceCatalogItemTypeConfig is a convenience function that returns InstanceConfigObject wrapped in InstanceCatalogItemTypeConfig
-func InstanceConfigObjectAsInstanceCatalogItemTypeConfig(v *InstanceConfigObject) InstanceCatalogItemTypeConfig {
-	return InstanceCatalogItemTypeConfig{
-		InstanceConfigObject: v,
-	}
-}
-
-// stringAsInstanceCatalogItemTypeConfig is a convenience function that returns string wrapped in InstanceCatalogItemTypeConfig
-func StringAsInstanceCatalogItemTypeConfig(v *string) InstanceCatalogItemTypeConfig {
-	return InstanceCatalogItemTypeConfig{
-		String: v,
-	}
-}
-
 func (dst *InstanceCatalogItemTypeConfig) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &InstanceCatalogItemTypeConfig{}

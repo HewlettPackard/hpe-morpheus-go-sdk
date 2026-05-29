@@ -27,67 +27,12 @@ type UpdateAlerts200Response struct {
 
 type _UpdateAlerts200Response UpdateAlerts200Response
 
-// NewUpdateAlerts200Response instantiates a new UpdateAlerts200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateAlerts200Response() *UpdateAlerts200Response {
-	this := UpdateAlerts200Response{}
-	return &this
-}
-
 // NewUpdateAlerts200ResponseWithDefaults instantiates a new UpdateAlerts200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateAlerts200ResponseWithDefaults() *UpdateAlerts200Response {
 	this := UpdateAlerts200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateAlerts200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateAlerts200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateAlerts200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetAlert returns the Alert field value if set, zero value otherwise.
-func (o *UpdateAlerts200Response) GetAlert() GetAlerts200ResponseAllOfAlert {
-	if o == nil || IsNil(o.Alert) {
-		var ret GetAlerts200ResponseAllOfAlert
-		return ret
-	}
-	return *o.Alert
-}
-
-// GetAlertOk returns a tuple with the Alert field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateAlerts200Response) GetAlertOk() (*GetAlerts200ResponseAllOfAlert, bool) {
-	if o == nil || IsNil(o.Alert) {
-		return nil, false
-	}
-	return o.Alert, true
-}
-
-// SetAlert gets a reference to the given GetAlerts200ResponseAllOfAlert and assigns it to the Alert field.
-func (o *UpdateAlerts200Response) SetAlert(v GetAlerts200ResponseAllOfAlert) {
-	o.Alert = &v
 }
 
 func (o UpdateAlerts200Response) MarshalJSON() ([]byte, error) {

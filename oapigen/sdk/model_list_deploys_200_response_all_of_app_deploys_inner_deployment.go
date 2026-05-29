@@ -28,90 +28,12 @@ type ListDeploys200ResponseAllOfAppDeploysInnerDeployment struct {
 
 type _ListDeploys200ResponseAllOfAppDeploysInnerDeployment ListDeploys200ResponseAllOfAppDeploysInnerDeployment
 
-// NewListDeploys200ResponseAllOfAppDeploysInnerDeployment instantiates a new ListDeploys200ResponseAllOfAppDeploysInnerDeployment object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListDeploys200ResponseAllOfAppDeploysInnerDeployment() *ListDeploys200ResponseAllOfAppDeploysInnerDeployment {
-	this := ListDeploys200ResponseAllOfAppDeploysInnerDeployment{}
-	return &this
-}
-
 // NewListDeploys200ResponseAllOfAppDeploysInnerDeploymentWithDefaults instantiates a new ListDeploys200ResponseAllOfAppDeploysInnerDeployment object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListDeploys200ResponseAllOfAppDeploysInnerDeploymentWithDefaults() *ListDeploys200ResponseAllOfAppDeploysInnerDeployment {
 	this := ListDeploys200ResponseAllOfAppDeploysInnerDeployment{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeployment) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeployment) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeployment) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeployment) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeployment) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeployment) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDeployType returns the DeployType field value if set, zero value otherwise.
-func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeployment) GetDeployType() string {
-	if o == nil || IsNil(o.DeployType) {
-		var ret string
-		return ret
-	}
-	return *o.DeployType
-}
-
-// GetDeployTypeOk returns a tuple with the DeployType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeployment) GetDeployTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.DeployType) {
-		return nil, false
-	}
-	return o.DeployType, true
-}
-
-// SetDeployType gets a reference to the given string and assigns it to the DeployType field.
-func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeployment) SetDeployType(v string) {
-	o.DeployType = &v
 }
 
 func (o ListDeploys200ResponseAllOfAppDeploysInnerDeployment) MarshalJSON() ([]byte, error) {

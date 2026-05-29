@@ -29,113 +29,12 @@ type ClustersServersInner struct {
 
 type _ClustersServersInner ClustersServersInner
 
-// NewClustersServersInner instantiates a new ClustersServersInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClustersServersInner() *ClustersServersInner {
-	this := ClustersServersInner{}
-	return &this
-}
-
 // NewClustersServersInnerWithDefaults instantiates a new ClustersServersInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClustersServersInnerWithDefaults() *ClustersServersInner {
 	this := ClustersServersInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ClustersServersInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClustersServersInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ClustersServersInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ClustersServersInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClustersServersInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ClustersServersInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetTypeSet returns the TypeSet field value if set, zero value otherwise.
-func (o *ClustersServersInner) GetTypeSet() ClustersServersInnerTypeSet {
-	if o == nil || IsNil(o.TypeSet) {
-		var ret ClustersServersInnerTypeSet
-		return ret
-	}
-	return *o.TypeSet
-}
-
-// GetTypeSetOk returns a tuple with the TypeSet field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClustersServersInner) GetTypeSetOk() (*ClustersServersInnerTypeSet, bool) {
-	if o == nil || IsNil(o.TypeSet) {
-		return nil, false
-	}
-	return o.TypeSet, true
-}
-
-// SetTypeSet gets a reference to the given ClustersServersInnerTypeSet and assigns it to the TypeSet field.
-func (o *ClustersServersInner) SetTypeSet(v ClustersServersInnerTypeSet) {
-	o.TypeSet = &v
-}
-
-// GetComputeServerType returns the ComputeServerType field value if set, zero value otherwise.
-func (o *ClustersServersInner) GetComputeServerType() ClustersServersInnerComputeServerType {
-	if o == nil || IsNil(o.ComputeServerType) {
-		var ret ClustersServersInnerComputeServerType
-		return ret
-	}
-	return *o.ComputeServerType
-}
-
-// GetComputeServerTypeOk returns a tuple with the ComputeServerType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClustersServersInner) GetComputeServerTypeOk() (*ClustersServersInnerComputeServerType, bool) {
-	if o == nil || IsNil(o.ComputeServerType) {
-		return nil, false
-	}
-	return o.ComputeServerType, true
-}
-
-// SetComputeServerType gets a reference to the given ClustersServersInnerComputeServerType and assigns it to the ComputeServerType field.
-func (o *ClustersServersInner) SetComputeServerType(v ClustersServersInnerComputeServerType) {
-	o.ComputeServerType = &v
 }
 
 func (o ClustersServersInner) MarshalJSON() ([]byte, error) {

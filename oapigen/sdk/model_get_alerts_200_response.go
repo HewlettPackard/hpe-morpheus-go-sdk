@@ -29,113 +29,12 @@ type GetAlerts200Response struct {
 
 type _GetAlerts200Response GetAlerts200Response
 
-// NewGetAlerts200Response instantiates a new GetAlerts200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetAlerts200Response() *GetAlerts200Response {
-	this := GetAlerts200Response{}
-	return &this
-}
-
 // NewGetAlerts200ResponseWithDefaults instantiates a new GetAlerts200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetAlerts200ResponseWithDefaults() *GetAlerts200Response {
 	this := GetAlerts200Response{}
 	return &this
-}
-
-// GetAlert returns the Alert field value if set, zero value otherwise.
-func (o *GetAlerts200Response) GetAlert() GetAlerts200ResponseAllOfAlert {
-	if o == nil || IsNil(o.Alert) {
-		var ret GetAlerts200ResponseAllOfAlert
-		return ret
-	}
-	return *o.Alert
-}
-
-// GetAlertOk returns a tuple with the Alert field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetAlerts200Response) GetAlertOk() (*GetAlerts200ResponseAllOfAlert, bool) {
-	if o == nil || IsNil(o.Alert) {
-		return nil, false
-	}
-	return o.Alert, true
-}
-
-// SetAlert gets a reference to the given GetAlerts200ResponseAllOfAlert and assigns it to the Alert field.
-func (o *GetAlerts200Response) SetAlert(v GetAlerts200ResponseAllOfAlert) {
-	o.Alert = &v
-}
-
-// GetChecks returns the Checks field value if set, zero value otherwise.
-func (o *GetAlerts200Response) GetChecks() []GetAlerts200ResponseAllOfChecksInner {
-	if o == nil || IsNil(o.Checks) {
-		var ret []GetAlerts200ResponseAllOfChecksInner
-		return ret
-	}
-	return o.Checks
-}
-
-// GetChecksOk returns a tuple with the Checks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetAlerts200Response) GetChecksOk() ([]GetAlerts200ResponseAllOfChecksInner, bool) {
-	if o == nil || IsNil(o.Checks) {
-		return nil, false
-	}
-	return o.Checks, true
-}
-
-// SetChecks gets a reference to the given []GetAlerts200ResponseAllOfChecksInner and assigns it to the Checks field.
-func (o *GetAlerts200Response) SetChecks(v []GetAlerts200ResponseAllOfChecksInner) {
-	o.Checks = v
-}
-
-// GetCheckGroups returns the CheckGroups field value if set, zero value otherwise.
-func (o *GetAlerts200Response) GetCheckGroups() []GetAlerts200ResponseAllOfCheckGroupsInner {
-	if o == nil || IsNil(o.CheckGroups) {
-		var ret []GetAlerts200ResponseAllOfCheckGroupsInner
-		return ret
-	}
-	return o.CheckGroups
-}
-
-// GetCheckGroupsOk returns a tuple with the CheckGroups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetAlerts200Response) GetCheckGroupsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInner, bool) {
-	if o == nil || IsNil(o.CheckGroups) {
-		return nil, false
-	}
-	return o.CheckGroups, true
-}
-
-// SetCheckGroups gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInner and assigns it to the CheckGroups field.
-func (o *GetAlerts200Response) SetCheckGroups(v []GetAlerts200ResponseAllOfCheckGroupsInner) {
-	o.CheckGroups = v
-}
-
-// GetApps returns the Apps field value if set, zero value otherwise.
-func (o *GetAlerts200Response) GetApps() []GetAlerts200ResponseAllOfAppsInner {
-	if o == nil || IsNil(o.Apps) {
-		var ret []GetAlerts200ResponseAllOfAppsInner
-		return ret
-	}
-	return o.Apps
-}
-
-// GetAppsOk returns a tuple with the Apps field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetAlerts200Response) GetAppsOk() ([]GetAlerts200ResponseAllOfAppsInner, bool) {
-	if o == nil || IsNil(o.Apps) {
-		return nil, false
-	}
-	return o.Apps, true
-}
-
-// SetApps gets a reference to the given []GetAlerts200ResponseAllOfAppsInner and assigns it to the Apps field.
-func (o *GetAlerts200Response) SetApps(v []GetAlerts200ResponseAllOfAppsInner) {
-	o.Apps = v
 }
 
 func (o GetAlerts200Response) MarshalJSON() ([]byte, error) {

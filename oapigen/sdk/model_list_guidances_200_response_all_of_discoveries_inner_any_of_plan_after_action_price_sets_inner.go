@@ -29,113 +29,12 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsI
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner
 
-// NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner {
-	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner{}
-	return &this
-}
-
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInnerWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInnerWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner {
 	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetPriceUnit returns the PriceUnit field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) GetPriceUnit() string {
-	if o == nil || IsNil(o.PriceUnit) {
-		var ret string
-		return ret
-	}
-	return *o.PriceUnit
-}
-
-// GetPriceUnitOk returns a tuple with the PriceUnit field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) GetPriceUnitOk() (*string, bool) {
-	if o == nil || IsNil(o.PriceUnit) {
-		return nil, false
-	}
-	return o.PriceUnit, true
-}
-
-// SetPriceUnit gets a reference to the given string and assigns it to the PriceUnit field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) SetPriceUnit(v string) {
-	o.PriceUnit = &v
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) MarshalJSON() ([]byte, error) {

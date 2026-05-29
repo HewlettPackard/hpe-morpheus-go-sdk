@@ -27,46 +27,12 @@ type ClusterLayoutUpdateProvisionType struct {
 
 type _ClusterLayoutUpdateProvisionType ClusterLayoutUpdateProvisionType
 
-// NewClusterLayoutUpdateProvisionType instantiates a new ClusterLayoutUpdateProvisionType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterLayoutUpdateProvisionType(id int64) *ClusterLayoutUpdateProvisionType {
-	this := ClusterLayoutUpdateProvisionType{}
-	this.Id = id
-	return &this
-}
-
 // NewClusterLayoutUpdateProvisionTypeWithDefaults instantiates a new ClusterLayoutUpdateProvisionType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClusterLayoutUpdateProvisionTypeWithDefaults() *ClusterLayoutUpdateProvisionType {
 	this := ClusterLayoutUpdateProvisionType{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ClusterLayoutUpdateProvisionType) GetId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ClusterLayoutUpdateProvisionType) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ClusterLayoutUpdateProvisionType) SetId(v int64) {
-	o.Id = v
 }
 
 func (o ClusterLayoutUpdateProvisionType) MarshalJSON() ([]byte, error) {

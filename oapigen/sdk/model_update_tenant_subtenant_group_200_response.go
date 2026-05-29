@@ -26,44 +26,12 @@ type UpdateTenantSubtenantGroup200Response struct {
 
 type _UpdateTenantSubtenantGroup200Response UpdateTenantSubtenantGroup200Response
 
-// NewUpdateTenantSubtenantGroup200Response instantiates a new UpdateTenantSubtenantGroup200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateTenantSubtenantGroup200Response() *UpdateTenantSubtenantGroup200Response {
-	this := UpdateTenantSubtenantGroup200Response{}
-	return &this
-}
-
 // NewUpdateTenantSubtenantGroup200ResponseWithDefaults instantiates a new UpdateTenantSubtenantGroup200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateTenantSubtenantGroup200ResponseWithDefaults() *UpdateTenantSubtenantGroup200Response {
 	this := UpdateTenantSubtenantGroup200Response{}
 	return &this
-}
-
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *UpdateTenantSubtenantGroup200Response) GetAccount() UpdateTenantSubtenantGroup200ResponseAccount {
-	if o == nil || IsNil(o.Account) {
-		var ret UpdateTenantSubtenantGroup200ResponseAccount
-		return ret
-	}
-	return *o.Account
-}
-
-// GetAccountOk returns a tuple with the Account field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateTenantSubtenantGroup200Response) GetAccountOk() (*UpdateTenantSubtenantGroup200ResponseAccount, bool) {
-	if o == nil || IsNil(o.Account) {
-		return nil, false
-	}
-	return o.Account, true
-}
-
-// SetAccount gets a reference to the given UpdateTenantSubtenantGroup200ResponseAccount and assigns it to the Account field.
-func (o *UpdateTenantSubtenantGroup200Response) SetAccount(v UpdateTenantSubtenantGroup200ResponseAccount) {
-	o.Account = &v
 }
 
 func (o UpdateTenantSubtenantGroup200Response) MarshalJSON() ([]byte, error) {

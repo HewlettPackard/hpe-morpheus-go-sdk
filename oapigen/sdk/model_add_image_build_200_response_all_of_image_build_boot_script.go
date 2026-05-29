@@ -27,67 +27,12 @@ type AddImageBuild200ResponseAllOfImageBuildBootScript struct {
 
 type _AddImageBuild200ResponseAllOfImageBuildBootScript AddImageBuild200ResponseAllOfImageBuildBootScript
 
-// NewAddImageBuild200ResponseAllOfImageBuildBootScript instantiates a new AddImageBuild200ResponseAllOfImageBuildBootScript object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddImageBuild200ResponseAllOfImageBuildBootScript() *AddImageBuild200ResponseAllOfImageBuildBootScript {
-	this := AddImageBuild200ResponseAllOfImageBuildBootScript{}
-	return &this
-}
-
 // NewAddImageBuild200ResponseAllOfImageBuildBootScriptWithDefaults instantiates a new AddImageBuild200ResponseAllOfImageBuildBootScript object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddImageBuild200ResponseAllOfImageBuildBootScriptWithDefaults() *AddImageBuild200ResponseAllOfImageBuildBootScript {
 	this := AddImageBuild200ResponseAllOfImageBuildBootScript{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildBootScript) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildBootScript) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddImageBuild200ResponseAllOfImageBuildBootScript) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetFileName returns the FileName field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildBootScript) GetFileName() string {
-	if o == nil || IsNil(o.FileName) {
-		var ret string
-		return ret
-	}
-	return *o.FileName
-}
-
-// GetFileNameOk returns a tuple with the FileName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildBootScript) GetFileNameOk() (*string, bool) {
-	if o == nil || IsNil(o.FileName) {
-		return nil, false
-	}
-	return o.FileName, true
-}
-
-// SetFileName gets a reference to the given string and assigns it to the FileName field.
-func (o *AddImageBuild200ResponseAllOfImageBuildBootScript) SetFileName(v string) {
-	o.FileName = &v
 }
 
 func (o AddImageBuild200ResponseAllOfImageBuildBootScript) MarshalJSON() ([]byte, error) {

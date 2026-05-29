@@ -29,121 +29,12 @@ type InstanceEnvsReadOnlyEnvsValue struct {
 
 type _InstanceEnvsReadOnlyEnvsValue InstanceEnvsReadOnlyEnvsValue
 
-// NewInstanceEnvsReadOnlyEnvsValue instantiates a new InstanceEnvsReadOnlyEnvsValue object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceEnvsReadOnlyEnvsValue(export bool, masked bool, name string, value InstanceEnvsReadOnlyEnvsValueValue) *InstanceEnvsReadOnlyEnvsValue {
-	this := InstanceEnvsReadOnlyEnvsValue{}
-	this.Export = export
-	this.Masked = masked
-	this.Name = name
-	this.Value = value
-	return &this
-}
-
 // NewInstanceEnvsReadOnlyEnvsValueWithDefaults instantiates a new InstanceEnvsReadOnlyEnvsValue object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceEnvsReadOnlyEnvsValueWithDefaults() *InstanceEnvsReadOnlyEnvsValue {
 	this := InstanceEnvsReadOnlyEnvsValue{}
 	return &this
-}
-
-// GetExport returns the Export field value
-func (o *InstanceEnvsReadOnlyEnvsValue) GetExport() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.Export
-}
-
-// GetExportOk returns a tuple with the Export field value
-// and a boolean to check if the value has been set.
-func (o *InstanceEnvsReadOnlyEnvsValue) GetExportOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Export, true
-}
-
-// SetExport sets field value
-func (o *InstanceEnvsReadOnlyEnvsValue) SetExport(v bool) {
-	o.Export = v
-}
-
-// GetMasked returns the Masked field value
-func (o *InstanceEnvsReadOnlyEnvsValue) GetMasked() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.Masked
-}
-
-// GetMaskedOk returns a tuple with the Masked field value
-// and a boolean to check if the value has been set.
-func (o *InstanceEnvsReadOnlyEnvsValue) GetMaskedOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Masked, true
-}
-
-// SetMasked sets field value
-func (o *InstanceEnvsReadOnlyEnvsValue) SetMasked(v bool) {
-	o.Masked = v
-}
-
-// GetName returns the Name field value
-func (o *InstanceEnvsReadOnlyEnvsValue) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *InstanceEnvsReadOnlyEnvsValue) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *InstanceEnvsReadOnlyEnvsValue) SetName(v string) {
-	o.Name = v
-}
-
-// GetValue returns the Value field value
-func (o *InstanceEnvsReadOnlyEnvsValue) GetValue() InstanceEnvsReadOnlyEnvsValueValue {
-	if o == nil {
-		var ret InstanceEnvsReadOnlyEnvsValueValue
-		return ret
-	}
-
-	return o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value
-// and a boolean to check if the value has been set.
-func (o *InstanceEnvsReadOnlyEnvsValue) GetValueOk() (*InstanceEnvsReadOnlyEnvsValueValue, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Value, true
-}
-
-// SetValue sets field value
-func (o *InstanceEnvsReadOnlyEnvsValue) SetValue(v InstanceEnvsReadOnlyEnvsValueValue) {
-	o.Value = v
 }
 
 func (o InstanceEnvsReadOnlyEnvsValue) MarshalJSON() ([]byte, error) {

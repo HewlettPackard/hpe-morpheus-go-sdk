@@ -28,90 +28,12 @@ type GetInvoices200ResponseAllOfInvoiceCloud struct {
 
 type _GetInvoices200ResponseAllOfInvoiceCloud GetInvoices200ResponseAllOfInvoiceCloud
 
-// NewGetInvoices200ResponseAllOfInvoiceCloud instantiates a new GetInvoices200ResponseAllOfInvoiceCloud object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInvoices200ResponseAllOfInvoiceCloud() *GetInvoices200ResponseAllOfInvoiceCloud {
-	this := GetInvoices200ResponseAllOfInvoiceCloud{}
-	return &this
-}
-
 // NewGetInvoices200ResponseAllOfInvoiceCloudWithDefaults instantiates a new GetInvoices200ResponseAllOfInvoiceCloud object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInvoices200ResponseAllOfInvoiceCloudWithDefaults() *GetInvoices200ResponseAllOfInvoiceCloud {
 	this := GetInvoices200ResponseAllOfInvoiceCloud{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetInvoices200ResponseAllOfInvoiceCloud) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInvoices200ResponseAllOfInvoiceCloud) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetInvoices200ResponseAllOfInvoiceCloud) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetInvoices200ResponseAllOfInvoiceCloud) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInvoices200ResponseAllOfInvoiceCloud) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetInvoices200ResponseAllOfInvoiceCloud) SetName(v string) {
-	o.Name = &v
-}
-
-// GetUuid returns the Uuid field value if set, zero value otherwise.
-func (o *GetInvoices200ResponseAllOfInvoiceCloud) GetUuid() string {
-	if o == nil || IsNil(o.Uuid) {
-		var ret string
-		return ret
-	}
-	return *o.Uuid
-}
-
-// GetUuidOk returns a tuple with the Uuid field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInvoices200ResponseAllOfInvoiceCloud) GetUuidOk() (*string, bool) {
-	if o == nil || IsNil(o.Uuid) {
-		return nil, false
-	}
-	return o.Uuid, true
-}
-
-// SetUuid gets a reference to the given string and assigns it to the Uuid field.
-func (o *GetInvoices200ResponseAllOfInvoiceCloud) SetUuid(v string) {
-	o.Uuid = &v
 }
 
 func (o GetInvoices200ResponseAllOfInvoiceCloud) MarshalJSON() ([]byte, error) {

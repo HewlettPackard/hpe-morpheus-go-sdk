@@ -26,46 +26,12 @@ type UpdateSecurityGroupRulesRequest struct {
 
 type _UpdateSecurityGroupRulesRequest UpdateSecurityGroupRulesRequest
 
-// NewUpdateSecurityGroupRulesRequest instantiates a new UpdateSecurityGroupRulesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateSecurityGroupRulesRequest(rule UpdateSecurityGroupRulesRequestRule) *UpdateSecurityGroupRulesRequest {
-	this := UpdateSecurityGroupRulesRequest{}
-	this.Rule = rule
-	return &this
-}
-
 // NewUpdateSecurityGroupRulesRequestWithDefaults instantiates a new UpdateSecurityGroupRulesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateSecurityGroupRulesRequestWithDefaults() *UpdateSecurityGroupRulesRequest {
 	this := UpdateSecurityGroupRulesRequest{}
 	return &this
-}
-
-// GetRule returns the Rule field value
-func (o *UpdateSecurityGroupRulesRequest) GetRule() UpdateSecurityGroupRulesRequestRule {
-	if o == nil {
-		var ret UpdateSecurityGroupRulesRequestRule
-		return ret
-	}
-
-	return o.Rule
-}
-
-// GetRuleOk returns a tuple with the Rule field value
-// and a boolean to check if the value has been set.
-func (o *UpdateSecurityGroupRulesRequest) GetRuleOk() (*UpdateSecurityGroupRulesRequestRule, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Rule, true
-}
-
-// SetRule sets field value
-func (o *UpdateSecurityGroupRulesRequest) SetRule(v UpdateSecurityGroupRulesRequestRule) {
-	o.Rule = v
 }
 
 func (o UpdateSecurityGroupRulesRequest) MarshalJSON() ([]byte, error) {

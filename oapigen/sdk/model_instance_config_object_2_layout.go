@@ -26,46 +26,12 @@ type InstanceConfigObject2Layout struct {
 
 type _InstanceConfigObject2Layout InstanceConfigObject2Layout
 
-// NewInstanceConfigObject2Layout instantiates a new InstanceConfigObject2Layout object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceConfigObject2Layout(id InstanceConfigObject2LayoutId) *InstanceConfigObject2Layout {
-	this := InstanceConfigObject2Layout{}
-	this.Id = id
-	return &this
-}
-
 // NewInstanceConfigObject2LayoutWithDefaults instantiates a new InstanceConfigObject2Layout object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceConfigObject2LayoutWithDefaults() *InstanceConfigObject2Layout {
 	this := InstanceConfigObject2Layout{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *InstanceConfigObject2Layout) GetId() InstanceConfigObject2LayoutId {
-	if o == nil {
-		var ret InstanceConfigObject2LayoutId
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *InstanceConfigObject2Layout) GetIdOk() (*InstanceConfigObject2LayoutId, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *InstanceConfigObject2Layout) SetId(v InstanceConfigObject2LayoutId) {
-	o.Id = v
 }
 
 func (o InstanceConfigObject2Layout) MarshalJSON() ([]byte, error) {

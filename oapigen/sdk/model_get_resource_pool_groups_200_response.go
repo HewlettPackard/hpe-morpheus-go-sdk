@@ -26,44 +26,12 @@ type GetResourcePoolGroups200Response struct {
 
 type _GetResourcePoolGroups200Response GetResourcePoolGroups200Response
 
-// NewGetResourcePoolGroups200Response instantiates a new GetResourcePoolGroups200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetResourcePoolGroups200Response() *GetResourcePoolGroups200Response {
-	this := GetResourcePoolGroups200Response{}
-	return &this
-}
-
 // NewGetResourcePoolGroups200ResponseWithDefaults instantiates a new GetResourcePoolGroups200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetResourcePoolGroups200ResponseWithDefaults() *GetResourcePoolGroups200Response {
 	this := GetResourcePoolGroups200Response{}
 	return &this
-}
-
-// GetResourcePoolGroups returns the ResourcePoolGroups field value if set, zero value otherwise.
-func (o *GetResourcePoolGroups200Response) GetResourcePoolGroups() []GetResourcePoolGroups200ResponseResourcePoolGroupsInner {
-	if o == nil || IsNil(o.ResourcePoolGroups) {
-		var ret []GetResourcePoolGroups200ResponseResourcePoolGroupsInner
-		return ret
-	}
-	return o.ResourcePoolGroups
-}
-
-// GetResourcePoolGroupsOk returns a tuple with the ResourcePoolGroups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetResourcePoolGroups200Response) GetResourcePoolGroupsOk() ([]GetResourcePoolGroups200ResponseResourcePoolGroupsInner, bool) {
-	if o == nil || IsNil(o.ResourcePoolGroups) {
-		return nil, false
-	}
-	return o.ResourcePoolGroups, true
-}
-
-// SetResourcePoolGroups gets a reference to the given []GetResourcePoolGroups200ResponseResourcePoolGroupsInner and assigns it to the ResourcePoolGroups field.
-func (o *GetResourcePoolGroups200Response) SetResourcePoolGroups(v []GetResourcePoolGroups200ResponseResourcePoolGroupsInner) {
-	o.ResourcePoolGroups = v
 }
 
 func (o GetResourcePoolGroups200Response) MarshalJSON() ([]byte, error) {

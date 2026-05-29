@@ -27,67 +27,12 @@ type ListReports200ResponseAllOfReportResultsInnerCreatedBy struct {
 
 type _ListReports200ResponseAllOfReportResultsInnerCreatedBy ListReports200ResponseAllOfReportResultsInnerCreatedBy
 
-// NewListReports200ResponseAllOfReportResultsInnerCreatedBy instantiates a new ListReports200ResponseAllOfReportResultsInnerCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListReports200ResponseAllOfReportResultsInnerCreatedBy() *ListReports200ResponseAllOfReportResultsInnerCreatedBy {
-	this := ListReports200ResponseAllOfReportResultsInnerCreatedBy{}
-	return &this
-}
-
 // NewListReports200ResponseAllOfReportResultsInnerCreatedByWithDefaults instantiates a new ListReports200ResponseAllOfReportResultsInnerCreatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListReports200ResponseAllOfReportResultsInnerCreatedByWithDefaults() *ListReports200ResponseAllOfReportResultsInnerCreatedBy {
 	this := ListReports200ResponseAllOfReportResultsInnerCreatedBy{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListReports200ResponseAllOfReportResultsInnerCreatedBy) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListReports200ResponseAllOfReportResultsInnerCreatedBy) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListReports200ResponseAllOfReportResultsInnerCreatedBy) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *ListReports200ResponseAllOfReportResultsInnerCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListReports200ResponseAllOfReportResultsInnerCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *ListReports200ResponseAllOfReportResultsInnerCreatedBy) SetUsername(v string) {
-	o.Username = &v
 }
 
 func (o ListReports200ResponseAllOfReportResultsInnerCreatedBy) MarshalJSON() ([]byte, error) {

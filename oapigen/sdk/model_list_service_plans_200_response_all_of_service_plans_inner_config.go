@@ -28,92 +28,12 @@ type ListServicePlans200ResponseAllOfServicePlansInnerConfig struct {
 
 type _ListServicePlans200ResponseAllOfServicePlansInnerConfig ListServicePlans200ResponseAllOfServicePlansInnerConfig
 
-// NewListServicePlans200ResponseAllOfServicePlansInnerConfig instantiates a new ListServicePlans200ResponseAllOfServicePlansInnerConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListServicePlans200ResponseAllOfServicePlansInnerConfig() *ListServicePlans200ResponseAllOfServicePlansInnerConfig {
-	this := ListServicePlans200ResponseAllOfServicePlansInnerConfig{}
-	return &this
-}
-
 // NewListServicePlans200ResponseAllOfServicePlansInnerConfigWithDefaults instantiates a new ListServicePlans200ResponseAllOfServicePlansInnerConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListServicePlans200ResponseAllOfServicePlansInnerConfigWithDefaults() *ListServicePlans200ResponseAllOfServicePlansInnerConfig {
 	this := ListServicePlans200ResponseAllOfServicePlansInnerConfig{}
 	return &this
-}
-
-// GetStorageSizeType returns the StorageSizeType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) GetStorageSizeType() string {
-	if o == nil || IsNil(o.StorageSizeType.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.StorageSizeType.Get()
-}
-
-// GetStorageSizeTypeOk returns a tuple with the StorageSizeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) GetStorageSizeTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.StorageSizeType.Get(), o.StorageSizeType.IsSet()
-}
-
-// SetStorageSizeType gets a reference to the given NullableString and assigns it to the StorageSizeType field.
-func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) SetStorageSizeType(v string) {
-	o.StorageSizeType.Set(&v)
-}
-
-// GetMemorySizeType returns the MemorySizeType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) GetMemorySizeType() string {
-	if o == nil || IsNil(o.MemorySizeType.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.MemorySizeType.Get()
-}
-
-// GetMemorySizeTypeOk returns a tuple with the MemorySizeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) GetMemorySizeTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.MemorySizeType.Get(), o.MemorySizeType.IsSet()
-}
-
-// SetMemorySizeType gets a reference to the given NullableString and assigns it to the MemorySizeType field.
-func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) SetMemorySizeType(v string) {
-	o.MemorySizeType.Set(&v)
-}
-
-// GetRanges returns the Ranges field value if set, zero value otherwise.
-func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) GetRanges() ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges {
-	if o == nil || IsNil(o.Ranges) {
-		var ret ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges
-		return ret
-	}
-	return *o.Ranges
-}
-
-// GetRangesOk returns a tuple with the Ranges field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) GetRangesOk() (*ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges, bool) {
-	if o == nil || IsNil(o.Ranges) {
-		return nil, false
-	}
-	return o.Ranges, true
-}
-
-// SetRanges gets a reference to the given ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges and assigns it to the Ranges field.
-func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) SetRanges(v ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) {
-	o.Ranges = &v
 }
 
 func (o ListServicePlans200ResponseAllOfServicePlansInnerConfig) MarshalJSON() ([]byte, error) {

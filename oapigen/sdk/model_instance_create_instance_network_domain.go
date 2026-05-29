@@ -27,46 +27,12 @@ type InstanceCreateInstanceNetworkDomain struct {
 
 type _InstanceCreateInstanceNetworkDomain InstanceCreateInstanceNetworkDomain
 
-// NewInstanceCreateInstanceNetworkDomain instantiates a new InstanceCreateInstanceNetworkDomain object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceCreateInstanceNetworkDomain(id int64) *InstanceCreateInstanceNetworkDomain {
-	this := InstanceCreateInstanceNetworkDomain{}
-	this.Id = id
-	return &this
-}
-
 // NewInstanceCreateInstanceNetworkDomainWithDefaults instantiates a new InstanceCreateInstanceNetworkDomain object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceCreateInstanceNetworkDomainWithDefaults() *InstanceCreateInstanceNetworkDomain {
 	this := InstanceCreateInstanceNetworkDomain{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *InstanceCreateInstanceNetworkDomain) GetId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *InstanceCreateInstanceNetworkDomain) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *InstanceCreateInstanceNetworkDomain) SetId(v int64) {
-	o.Id = v
 }
 
 func (o InstanceCreateInstanceNetworkDomain) MarshalJSON() ([]byte, error) {

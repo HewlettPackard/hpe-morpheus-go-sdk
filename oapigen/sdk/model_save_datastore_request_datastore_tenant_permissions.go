@@ -26,44 +26,12 @@ type SaveDatastoreRequestDatastoreTenantPermissions struct {
 
 type _SaveDatastoreRequestDatastoreTenantPermissions SaveDatastoreRequestDatastoreTenantPermissions
 
-// NewSaveDatastoreRequestDatastoreTenantPermissions instantiates a new SaveDatastoreRequestDatastoreTenantPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSaveDatastoreRequestDatastoreTenantPermissions() *SaveDatastoreRequestDatastoreTenantPermissions {
-	this := SaveDatastoreRequestDatastoreTenantPermissions{}
-	return &this
-}
-
 // NewSaveDatastoreRequestDatastoreTenantPermissionsWithDefaults instantiates a new SaveDatastoreRequestDatastoreTenantPermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSaveDatastoreRequestDatastoreTenantPermissionsWithDefaults() *SaveDatastoreRequestDatastoreTenantPermissions {
 	this := SaveDatastoreRequestDatastoreTenantPermissions{}
 	return &this
-}
-
-// GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *SaveDatastoreRequestDatastoreTenantPermissions) GetAccounts() []SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner {
-	if o == nil || IsNil(o.Accounts) {
-		var ret []SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner
-		return ret
-	}
-	return o.Accounts
-}
-
-// GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveDatastoreRequestDatastoreTenantPermissions) GetAccountsOk() ([]SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner, bool) {
-	if o == nil || IsNil(o.Accounts) {
-		return nil, false
-	}
-	return o.Accounts, true
-}
-
-// SetAccounts gets a reference to the given []SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner and assigns it to the Accounts field.
-func (o *SaveDatastoreRequestDatastoreTenantPermissions) SetAccounts(v []SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner) {
-	o.Accounts = v
 }
 
 func (o SaveDatastoreRequestDatastoreTenantPermissions) MarshalJSON() ([]byte, error) {

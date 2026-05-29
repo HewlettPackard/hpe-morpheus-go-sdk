@@ -27,67 +27,12 @@ type AddClusterWorker200Response struct {
 
 type _AddClusterWorker200Response AddClusterWorker200Response
 
-// NewAddClusterWorker200Response instantiates a new AddClusterWorker200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterWorker200Response() *AddClusterWorker200Response {
-	this := AddClusterWorker200Response{}
-	return &this
-}
-
 // NewAddClusterWorker200ResponseWithDefaults instantiates a new AddClusterWorker200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddClusterWorker200ResponseWithDefaults() *AddClusterWorker200Response {
 	this := AddClusterWorker200Response{}
 	return &this
-}
-
-// GetServers returns the Servers field value if set, zero value otherwise.
-func (o *AddClusterWorker200Response) GetServers() []map[string]interface{} {
-	if o == nil || IsNil(o.Servers) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Servers
-}
-
-// GetServersOk returns a tuple with the Servers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterWorker200Response) GetServersOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Servers) {
-		return nil, false
-	}
-	return o.Servers, true
-}
-
-// SetServers gets a reference to the given []map[string]interface{} and assigns it to the Servers field.
-func (o *AddClusterWorker200Response) SetServers(v []map[string]interface{}) {
-	o.Servers = v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddClusterWorker200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterWorker200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddClusterWorker200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddClusterWorker200Response) MarshalJSON() ([]byte, error) {

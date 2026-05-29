@@ -31,96 +31,12 @@ type CreateNetworksRequestNetworkConfigAnyOf struct {
 
 type _CreateNetworksRequestNetworkConfigAnyOf CreateNetworksRequestNetworkConfigAnyOf
 
-// NewCreateNetworksRequestNetworkConfigAnyOf instantiates a new CreateNetworksRequestNetworkConfigAnyOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworksRequestNetworkConfigAnyOf(resourceGroupId string, subnetName string, subnetCidr string) *CreateNetworksRequestNetworkConfigAnyOf {
-	this := CreateNetworksRequestNetworkConfigAnyOf{}
-	this.ResourceGroupId = resourceGroupId
-	this.SubnetName = subnetName
-	this.SubnetCidr = subnetCidr
-	return &this
-}
-
 // NewCreateNetworksRequestNetworkConfigAnyOfWithDefaults instantiates a new CreateNetworksRequestNetworkConfigAnyOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworksRequestNetworkConfigAnyOfWithDefaults() *CreateNetworksRequestNetworkConfigAnyOf {
 	this := CreateNetworksRequestNetworkConfigAnyOf{}
 	return &this
-}
-
-// GetResourceGroupId returns the ResourceGroupId field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf) GetResourceGroupId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ResourceGroupId
-}
-
-// GetResourceGroupIdOk returns a tuple with the ResourceGroupId field value
-// and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetworkConfigAnyOf) GetResourceGroupIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ResourceGroupId, true
-}
-
-// SetResourceGroupId sets field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf) SetResourceGroupId(v string) {
-	o.ResourceGroupId = v
-}
-
-// GetSubnetName returns the SubnetName field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf) GetSubnetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SubnetName
-}
-
-// GetSubnetNameOk returns a tuple with the SubnetName field value
-// and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetworkConfigAnyOf) GetSubnetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SubnetName, true
-}
-
-// SetSubnetName sets field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf) SetSubnetName(v string) {
-	o.SubnetName = v
-}
-
-// GetSubnetCidr returns the SubnetCidr field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf) GetSubnetCidr() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SubnetCidr
-}
-
-// GetSubnetCidrOk returns a tuple with the SubnetCidr field value
-// and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetworkConfigAnyOf) GetSubnetCidrOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SubnetCidr, true
-}
-
-// SetSubnetCidr sets field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf) SetSubnetCidr(v string) {
-	o.SubnetCidr = v
 }
 
 func (o CreateNetworksRequestNetworkConfigAnyOf) MarshalJSON() ([]byte, error) {

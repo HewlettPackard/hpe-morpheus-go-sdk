@@ -27,20 +27,6 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmCloudInitEnabled struct 
 	String *string
 }
 
-// boolAsAddBlueprint200ResponseAllOfBlueprintConfigOneOfArmCloudInitEnabled is a convenience function that returns bool wrapped in AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmCloudInitEnabled
-func BoolAsAddBlueprint200ResponseAllOfBlueprintConfigOneOfArmCloudInitEnabled(v *bool) AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmCloudInitEnabled {
-	return AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmCloudInitEnabled{
-		Bool: v,
-	}
-}
-
-// stringAsAddBlueprint200ResponseAllOfBlueprintConfigOneOfArmCloudInitEnabled is a convenience function that returns string wrapped in AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmCloudInitEnabled
-func StringAsAddBlueprint200ResponseAllOfBlueprintConfigOneOfArmCloudInitEnabled(v *string) AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmCloudInitEnabled {
-	return AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmCloudInitEnabled{
-		String: v,
-	}
-}
-
 func (dst *AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmCloudInitEnabled) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmCloudInitEnabled{}

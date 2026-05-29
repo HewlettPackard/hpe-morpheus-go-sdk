@@ -29,113 +29,12 @@ type Search200Response struct {
 
 type _Search200Response Search200Response
 
-// NewSearch200Response instantiates a new Search200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSearch200Response() *Search200Response {
-	this := Search200Response{}
-	return &this
-}
-
 // NewSearch200ResponseWithDefaults instantiates a new Search200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSearch200ResponseWithDefaults() *Search200Response {
 	this := Search200Response{}
 	return &this
-}
-
-// GetHits returns the Hits field value if set, zero value otherwise.
-func (o *Search200Response) GetHits() []Search200ResponseHitsInner {
-	if o == nil || IsNil(o.Hits) {
-		var ret []Search200ResponseHitsInner
-		return ret
-	}
-	return o.Hits
-}
-
-// GetHitsOk returns a tuple with the Hits field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Search200Response) GetHitsOk() ([]Search200ResponseHitsInner, bool) {
-	if o == nil || IsNil(o.Hits) {
-		return nil, false
-	}
-	return o.Hits, true
-}
-
-// SetHits gets a reference to the given []Search200ResponseHitsInner and assigns it to the Hits field.
-func (o *Search200Response) SetHits(v []Search200ResponseHitsInner) {
-	o.Hits = v
-}
-
-// GetQuery returns the Query field value if set, zero value otherwise.
-func (o *Search200Response) GetQuery() string {
-	if o == nil || IsNil(o.Query) {
-		var ret string
-		return ret
-	}
-	return *o.Query
-}
-
-// GetQueryOk returns a tuple with the Query field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Search200Response) GetQueryOk() (*string, bool) {
-	if o == nil || IsNil(o.Query) {
-		return nil, false
-	}
-	return o.Query, true
-}
-
-// SetQuery gets a reference to the given string and assigns it to the Query field.
-func (o *Search200Response) SetQuery(v string) {
-	o.Query = &v
-}
-
-// GetTook returns the Took field value if set, zero value otherwise.
-func (o *Search200Response) GetTook() int64 {
-	if o == nil || IsNil(o.Took) {
-		var ret int64
-		return ret
-	}
-	return *o.Took
-}
-
-// GetTookOk returns a tuple with the Took field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Search200Response) GetTookOk() (*int64, bool) {
-	if o == nil || IsNil(o.Took) {
-		return nil, false
-	}
-	return o.Took, true
-}
-
-// SetTook gets a reference to the given int64 and assigns it to the Took field.
-func (o *Search200Response) SetTook(v int64) {
-	o.Took = &v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *Search200Response) GetMeta() Search200ResponseMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret Search200ResponseMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Search200Response) GetMetaOk() (*Search200ResponseMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given Search200ResponseMeta and assigns it to the Meta field.
-func (o *Search200Response) SetMeta(v Search200ResponseMeta) {
-	o.Meta = &v
 }
 
 func (o Search200Response) MarshalJSON() ([]byte, error) {

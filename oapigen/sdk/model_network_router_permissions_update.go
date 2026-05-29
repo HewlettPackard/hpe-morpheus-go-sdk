@@ -28,67 +28,12 @@ type NetworkRouterPermissionsUpdate struct {
 
 type _NetworkRouterPermissionsUpdate NetworkRouterPermissionsUpdate
 
-// NewNetworkRouterPermissionsUpdate instantiates a new NetworkRouterPermissionsUpdate object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkRouterPermissionsUpdate() *NetworkRouterPermissionsUpdate {
-	this := NetworkRouterPermissionsUpdate{}
-	return &this
-}
-
 // NewNetworkRouterPermissionsUpdateWithDefaults instantiates a new NetworkRouterPermissionsUpdate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkRouterPermissionsUpdateWithDefaults() *NetworkRouterPermissionsUpdate {
 	this := NetworkRouterPermissionsUpdate{}
 	return &this
-}
-
-// GetVisibility returns the Visibility field value if set, zero value otherwise.
-func (o *NetworkRouterPermissionsUpdate) GetVisibility() string {
-	if o == nil || IsNil(o.Visibility) {
-		var ret string
-		return ret
-	}
-	return *o.Visibility
-}
-
-// GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkRouterPermissionsUpdate) GetVisibilityOk() (*string, bool) {
-	if o == nil || IsNil(o.Visibility) {
-		return nil, false
-	}
-	return o.Visibility, true
-}
-
-// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
-func (o *NetworkRouterPermissionsUpdate) SetVisibility(v string) {
-	o.Visibility = &v
-}
-
-// GetTenantPermissions returns the TenantPermissions field value if set, zero value otherwise.
-func (o *NetworkRouterPermissionsUpdate) GetTenantPermissions() NetworkRouterPermissionsUpdateTenantPermissions {
-	if o == nil || IsNil(o.TenantPermissions) {
-		var ret NetworkRouterPermissionsUpdateTenantPermissions
-		return ret
-	}
-	return *o.TenantPermissions
-}
-
-// GetTenantPermissionsOk returns a tuple with the TenantPermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkRouterPermissionsUpdate) GetTenantPermissionsOk() (*NetworkRouterPermissionsUpdateTenantPermissions, bool) {
-	if o == nil || IsNil(o.TenantPermissions) {
-		return nil, false
-	}
-	return o.TenantPermissions, true
-}
-
-// SetTenantPermissions gets a reference to the given NetworkRouterPermissionsUpdateTenantPermissions and assigns it to the TenantPermissions field.
-func (o *NetworkRouterPermissionsUpdate) SetTenantPermissions(v NetworkRouterPermissionsUpdateTenantPermissions) {
-	o.TenantPermissions = &v
 }
 
 func (o NetworkRouterPermissionsUpdate) MarshalJSON() ([]byte, error) {

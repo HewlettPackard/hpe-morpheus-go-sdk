@@ -26,44 +26,12 @@ type GetHostType200Response struct {
 
 type _GetHostType200Response GetHostType200Response
 
-// NewGetHostType200Response instantiates a new GetHostType200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetHostType200Response() *GetHostType200Response {
-	this := GetHostType200Response{}
-	return &this
-}
-
 // NewGetHostType200ResponseWithDefaults instantiates a new GetHostType200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetHostType200ResponseWithDefaults() *GetHostType200Response {
 	this := GetHostType200Response{}
 	return &this
-}
-
-// GetServerType returns the ServerType field value if set, zero value otherwise.
-func (o *GetHostType200Response) GetServerType() GetHostType200ResponseServerType {
-	if o == nil || IsNil(o.ServerType) {
-		var ret GetHostType200ResponseServerType
-		return ret
-	}
-	return *o.ServerType
-}
-
-// GetServerTypeOk returns a tuple with the ServerType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetHostType200Response) GetServerTypeOk() (*GetHostType200ResponseServerType, bool) {
-	if o == nil || IsNil(o.ServerType) {
-		return nil, false
-	}
-	return o.ServerType, true
-}
-
-// SetServerType gets a reference to the given GetHostType200ResponseServerType and assigns it to the ServerType field.
-func (o *GetHostType200Response) SetServerType(v GetHostType200ResponseServerType) {
-	o.ServerType = &v
 }
 
 func (o GetHostType200Response) MarshalJSON() ([]byte, error) {

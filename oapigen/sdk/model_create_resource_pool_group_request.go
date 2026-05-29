@@ -26,44 +26,12 @@ type CreateResourcePoolGroupRequest struct {
 
 type _CreateResourcePoolGroupRequest CreateResourcePoolGroupRequest
 
-// NewCreateResourcePoolGroupRequest instantiates a new CreateResourcePoolGroupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateResourcePoolGroupRequest() *CreateResourcePoolGroupRequest {
-	this := CreateResourcePoolGroupRequest{}
-	return &this
-}
-
 // NewCreateResourcePoolGroupRequestWithDefaults instantiates a new CreateResourcePoolGroupRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateResourcePoolGroupRequestWithDefaults() *CreateResourcePoolGroupRequest {
 	this := CreateResourcePoolGroupRequest{}
 	return &this
-}
-
-// GetResourcePoolGroup returns the ResourcePoolGroup field value if set, zero value otherwise.
-func (o *CreateResourcePoolGroupRequest) GetResourcePoolGroup() CreateResourcePoolGroupRequestResourcePoolGroup {
-	if o == nil || IsNil(o.ResourcePoolGroup) {
-		var ret CreateResourcePoolGroupRequestResourcePoolGroup
-		return ret
-	}
-	return *o.ResourcePoolGroup
-}
-
-// GetResourcePoolGroupOk returns a tuple with the ResourcePoolGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateResourcePoolGroupRequest) GetResourcePoolGroupOk() (*CreateResourcePoolGroupRequestResourcePoolGroup, bool) {
-	if o == nil || IsNil(o.ResourcePoolGroup) {
-		return nil, false
-	}
-	return o.ResourcePoolGroup, true
-}
-
-// SetResourcePoolGroup gets a reference to the given CreateResourcePoolGroupRequestResourcePoolGroup and assigns it to the ResourcePoolGroup field.
-func (o *CreateResourcePoolGroupRequest) SetResourcePoolGroup(v CreateResourcePoolGroupRequestResourcePoolGroup) {
-	o.ResourcePoolGroup = &v
 }
 
 func (o CreateResourcePoolGroupRequest) MarshalJSON() ([]byte, error) {

@@ -31,90 +31,12 @@ type AddStorageBucketsRequestStorageBucketConfigOneOf6 struct {
 
 type _AddStorageBucketsRequestStorageBucketConfigOneOf6 AddStorageBucketsRequestStorageBucketConfigOneOf6
 
-// NewAddStorageBucketsRequestStorageBucketConfigOneOf6 instantiates a new AddStorageBucketsRequestStorageBucketConfigOneOf6 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddStorageBucketsRequestStorageBucketConfigOneOf6() *AddStorageBucketsRequestStorageBucketConfigOneOf6 {
-	this := AddStorageBucketsRequestStorageBucketConfigOneOf6{}
-	return &this
-}
-
 // NewAddStorageBucketsRequestStorageBucketConfigOneOf6WithDefaults instantiates a new AddStorageBucketsRequestStorageBucketConfigOneOf6 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddStorageBucketsRequestStorageBucketConfigOneOf6WithDefaults() *AddStorageBucketsRequestStorageBucketConfigOneOf6 {
 	this := AddStorageBucketsRequestStorageBucketConfigOneOf6{}
 	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) SetUsername(v string) {
-	o.Username = &v
-}
-
-// GetApiKey returns the ApiKey field value if set, zero value otherwise.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) GetApiKey() string {
-	if o == nil || IsNil(o.ApiKey) {
-		var ret string
-		return ret
-	}
-	return *o.ApiKey
-}
-
-// GetApiKeyOk returns a tuple with the ApiKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) GetApiKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiKey) {
-		return nil, false
-	}
-	return o.ApiKey, true
-}
-
-// SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) SetApiKey(v string) {
-	o.ApiKey = &v
-}
-
-// GetRegion returns the Region field value if set, zero value otherwise.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) GetRegion() string {
-	if o == nil || IsNil(o.Region) {
-		var ret string
-		return ret
-	}
-	return *o.Region
-}
-
-// GetRegionOk returns a tuple with the Region field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) GetRegionOk() (*string, bool) {
-	if o == nil || IsNil(o.Region) {
-		return nil, false
-	}
-	return o.Region, true
-}
-
-// SetRegion gets a reference to the given string and assigns it to the Region field.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) SetRegion(v string) {
-	o.Region = &v
 }
 
 func (o AddStorageBucketsRequestStorageBucketConfigOneOf6) MarshalJSON() ([]byte, error) {

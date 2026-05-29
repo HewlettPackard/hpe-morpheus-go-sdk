@@ -26,44 +26,12 @@ type UpdateArchiveBucketRequest struct {
 
 type _UpdateArchiveBucketRequest UpdateArchiveBucketRequest
 
-// NewUpdateArchiveBucketRequest instantiates a new UpdateArchiveBucketRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateArchiveBucketRequest() *UpdateArchiveBucketRequest {
-	this := UpdateArchiveBucketRequest{}
-	return &this
-}
-
 // NewUpdateArchiveBucketRequestWithDefaults instantiates a new UpdateArchiveBucketRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateArchiveBucketRequestWithDefaults() *UpdateArchiveBucketRequest {
 	this := UpdateArchiveBucketRequest{}
 	return &this
-}
-
-// GetArchiveBucket returns the ArchiveBucket field value if set, zero value otherwise.
-func (o *UpdateArchiveBucketRequest) GetArchiveBucket() UpdateArchiveBucketRequestArchiveBucket {
-	if o == nil || IsNil(o.ArchiveBucket) {
-		var ret UpdateArchiveBucketRequestArchiveBucket
-		return ret
-	}
-	return *o.ArchiveBucket
-}
-
-// GetArchiveBucketOk returns a tuple with the ArchiveBucket field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateArchiveBucketRequest) GetArchiveBucketOk() (*UpdateArchiveBucketRequestArchiveBucket, bool) {
-	if o == nil || IsNil(o.ArchiveBucket) {
-		return nil, false
-	}
-	return o.ArchiveBucket, true
-}
-
-// SetArchiveBucket gets a reference to the given UpdateArchiveBucketRequestArchiveBucket and assigns it to the ArchiveBucket field.
-func (o *UpdateArchiveBucketRequest) SetArchiveBucket(v UpdateArchiveBucketRequestArchiveBucket) {
-	o.ArchiveBucket = &v
 }
 
 func (o UpdateArchiveBucketRequest) MarshalJSON() ([]byte, error) {

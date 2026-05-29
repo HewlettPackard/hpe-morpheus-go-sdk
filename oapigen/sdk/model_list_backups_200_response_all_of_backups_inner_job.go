@@ -29,67 +29,12 @@ type ListBackups200ResponseAllOfBackupsInnerJob struct {
 
 type _ListBackups200ResponseAllOfBackupsInnerJob ListBackups200ResponseAllOfBackupsInnerJob
 
-// NewListBackups200ResponseAllOfBackupsInnerJob instantiates a new ListBackups200ResponseAllOfBackupsInnerJob object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListBackups200ResponseAllOfBackupsInnerJob() *ListBackups200ResponseAllOfBackupsInnerJob {
-	this := ListBackups200ResponseAllOfBackupsInnerJob{}
-	return &this
-}
-
 // NewListBackups200ResponseAllOfBackupsInnerJobWithDefaults instantiates a new ListBackups200ResponseAllOfBackupsInnerJob object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListBackups200ResponseAllOfBackupsInnerJobWithDefaults() *ListBackups200ResponseAllOfBackupsInnerJob {
 	this := ListBackups200ResponseAllOfBackupsInnerJob{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListBackups200ResponseAllOfBackupsInnerJob) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerJob) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListBackups200ResponseAllOfBackupsInnerJob) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListBackups200ResponseAllOfBackupsInnerJob) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerJob) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListBackups200ResponseAllOfBackupsInnerJob) SetName(v string) {
-	o.Name = &v
 }
 
 func (o ListBackups200ResponseAllOfBackupsInnerJob) MarshalJSON() ([]byte, error) {

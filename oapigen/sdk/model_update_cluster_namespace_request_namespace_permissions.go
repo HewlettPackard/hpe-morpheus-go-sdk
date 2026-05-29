@@ -26,44 +26,12 @@ type UpdateClusterNamespaceRequestNamespacePermissions struct {
 
 type _UpdateClusterNamespaceRequestNamespacePermissions UpdateClusterNamespaceRequestNamespacePermissions
 
-// NewUpdateClusterNamespaceRequestNamespacePermissions instantiates a new UpdateClusterNamespaceRequestNamespacePermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterNamespaceRequestNamespacePermissions() *UpdateClusterNamespaceRequestNamespacePermissions {
-	this := UpdateClusterNamespaceRequestNamespacePermissions{}
-	return &this
-}
-
 // NewUpdateClusterNamespaceRequestNamespacePermissionsWithDefaults instantiates a new UpdateClusterNamespaceRequestNamespacePermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateClusterNamespaceRequestNamespacePermissionsWithDefaults() *UpdateClusterNamespaceRequestNamespacePermissions {
 	this := UpdateClusterNamespaceRequestNamespacePermissions{}
 	return &this
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *UpdateClusterNamespaceRequestNamespacePermissions) GetResourcePermissions() UpdateClusterNamespaceRequestNamespacePermissionsResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret UpdateClusterNamespaceRequestNamespacePermissionsResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterNamespaceRequestNamespacePermissions) GetResourcePermissionsOk() (*UpdateClusterNamespaceRequestNamespacePermissionsResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// SetResourcePermissions gets a reference to the given UpdateClusterNamespaceRequestNamespacePermissionsResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *UpdateClusterNamespaceRequestNamespacePermissions) SetResourcePermissions(v UpdateClusterNamespaceRequestNamespacePermissionsResourcePermissions) {
-	o.ResourcePermissions = &v
 }
 
 func (o UpdateClusterNamespaceRequestNamespacePermissions) MarshalJSON() ([]byte, error) {

@@ -28,90 +28,12 @@ type ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner struct {
 
 type _ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner
 
-// NewListUserGroups200ResponseAllOfUserGroupsInnerUsersInner instantiates a new ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListUserGroups200ResponseAllOfUserGroupsInnerUsersInner() *ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner {
-	this := ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner{}
-	return &this
-}
-
 // NewListUserGroups200ResponseAllOfUserGroupsInnerUsersInnerWithDefaults instantiates a new ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListUserGroups200ResponseAllOfUserGroupsInnerUsersInnerWithDefaults() *ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner {
 	this := ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner) SetUsername(v string) {
-	o.Username = &v
-}
-
-// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
-func (o *ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner) GetDisplayName() string {
-	if o == nil || IsNil(o.DisplayName) {
-		var ret string
-		return ret
-	}
-	return *o.DisplayName
-}
-
-// GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner) GetDisplayNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DisplayName) {
-		return nil, false
-	}
-	return o.DisplayName, true
-}
-
-// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
-func (o *ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner) SetDisplayName(v string) {
-	o.DisplayName = &v
 }
 
 func (o ListUserGroups200ResponseAllOfUserGroupsInnerUsersInner) MarshalJSON() ([]byte, error) {

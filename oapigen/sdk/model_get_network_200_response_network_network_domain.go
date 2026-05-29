@@ -27,44 +27,12 @@ type GetNetwork200ResponseNetworkNetworkDomain struct {
 
 type _GetNetwork200ResponseNetworkNetworkDomain GetNetwork200ResponseNetworkNetworkDomain
 
-// NewGetNetwork200ResponseNetworkNetworkDomain instantiates a new GetNetwork200ResponseNetworkNetworkDomain object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetwork200ResponseNetworkNetworkDomain() *GetNetwork200ResponseNetworkNetworkDomain {
-	this := GetNetwork200ResponseNetworkNetworkDomain{}
-	return &this
-}
-
 // NewGetNetwork200ResponseNetworkNetworkDomainWithDefaults instantiates a new GetNetwork200ResponseNetworkNetworkDomain object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetwork200ResponseNetworkNetworkDomainWithDefaults() *GetNetwork200ResponseNetworkNetworkDomain {
 	this := GetNetwork200ResponseNetworkNetworkDomain{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetNetwork200ResponseNetworkNetworkDomain) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetwork200ResponseNetworkNetworkDomain) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetNetwork200ResponseNetworkNetworkDomain) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o GetNetwork200ResponseNetworkNetworkDomain) MarshalJSON() ([]byte, error) {

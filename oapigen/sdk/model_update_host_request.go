@@ -26,44 +26,12 @@ type UpdateHostRequest struct {
 
 type _UpdateHostRequest UpdateHostRequest
 
-// NewUpdateHostRequest instantiates a new UpdateHostRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateHostRequest() *UpdateHostRequest {
-	this := UpdateHostRequest{}
-	return &this
-}
-
 // NewUpdateHostRequestWithDefaults instantiates a new UpdateHostRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateHostRequestWithDefaults() *UpdateHostRequest {
 	this := UpdateHostRequest{}
 	return &this
-}
-
-// GetServer returns the Server field value if set, zero value otherwise.
-func (o *UpdateHostRequest) GetServer() UpdateHostRequestServer {
-	if o == nil || IsNil(o.Server) {
-		var ret UpdateHostRequestServer
-		return ret
-	}
-	return *o.Server
-}
-
-// GetServerOk returns a tuple with the Server field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostRequest) GetServerOk() (*UpdateHostRequestServer, bool) {
-	if o == nil || IsNil(o.Server) {
-		return nil, false
-	}
-	return o.Server, true
-}
-
-// SetServer gets a reference to the given UpdateHostRequestServer and assigns it to the Server field.
-func (o *UpdateHostRequest) SetServer(v UpdateHostRequestServer) {
-	o.Server = &v
 }
 
 func (o UpdateHostRequest) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type SaveClusterDatastore200ResponseAllOfDatastoreStorageServer struct {
 
 type _SaveClusterDatastore200ResponseAllOfDatastoreStorageServer SaveClusterDatastore200ResponseAllOfDatastoreStorageServer
 
-// NewSaveClusterDatastore200ResponseAllOfDatastoreStorageServer instantiates a new SaveClusterDatastore200ResponseAllOfDatastoreStorageServer object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSaveClusterDatastore200ResponseAllOfDatastoreStorageServer() *SaveClusterDatastore200ResponseAllOfDatastoreStorageServer {
-	this := SaveClusterDatastore200ResponseAllOfDatastoreStorageServer{}
-	return &this
-}
-
 // NewSaveClusterDatastore200ResponseAllOfDatastoreStorageServerWithDefaults instantiates a new SaveClusterDatastore200ResponseAllOfDatastoreStorageServer object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSaveClusterDatastore200ResponseAllOfDatastoreStorageServerWithDefaults() *SaveClusterDatastore200ResponseAllOfDatastoreStorageServer {
 	this := SaveClusterDatastore200ResponseAllOfDatastoreStorageServer{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SaveClusterDatastore200ResponseAllOfDatastoreStorageServer) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveClusterDatastore200ResponseAllOfDatastoreStorageServer) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *SaveClusterDatastore200ResponseAllOfDatastoreStorageServer) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o SaveClusterDatastore200ResponseAllOfDatastoreStorageServer) MarshalJSON() ([]byte, error) {

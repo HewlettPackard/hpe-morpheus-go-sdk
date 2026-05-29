@@ -28,90 +28,12 @@ type GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig struct {
 
 type _GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig
 
-// NewGetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig instantiates a new GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig() *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig {
-	this := GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig{}
-	return &this
-}
-
 // NewGetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigWithDefaults instantiates a new GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigWithDefaults() *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig {
 	this := GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig{}
 	return &this
-}
-
-// GetStorageSizeType returns the StorageSizeType field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig) GetStorageSizeType() string {
-	if o == nil || IsNil(o.StorageSizeType) {
-		var ret string
-		return ret
-	}
-	return *o.StorageSizeType
-}
-
-// GetStorageSizeTypeOk returns a tuple with the StorageSizeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig) GetStorageSizeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageSizeType) {
-		return nil, false
-	}
-	return o.StorageSizeType, true
-}
-
-// SetStorageSizeType gets a reference to the given string and assigns it to the StorageSizeType field.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig) SetStorageSizeType(v string) {
-	o.StorageSizeType = &v
-}
-
-// GetMemorySizeType returns the MemorySizeType field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig) GetMemorySizeType() string {
-	if o == nil || IsNil(o.MemorySizeType) {
-		var ret string
-		return ret
-	}
-	return *o.MemorySizeType
-}
-
-// GetMemorySizeTypeOk returns a tuple with the MemorySizeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig) GetMemorySizeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.MemorySizeType) {
-		return nil, false
-	}
-	return o.MemorySizeType, true
-}
-
-// SetMemorySizeType gets a reference to the given string and assigns it to the MemorySizeType field.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig) SetMemorySizeType(v string) {
-	o.MemorySizeType = &v
-}
-
-// GetRanges returns the Ranges field value if set, zero value otherwise.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig) GetRanges() GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRanges {
-	if o == nil || IsNil(o.Ranges) {
-		var ret GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRanges
-		return ret
-	}
-	return *o.Ranges
-}
-
-// GetRangesOk returns a tuple with the Ranges field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig) GetRangesOk() (*GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRanges, bool) {
-	if o == nil || IsNil(o.Ranges) {
-		return nil, false
-	}
-	return o.Ranges, true
-}
-
-// SetRanges gets a reference to the given GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRanges and assigns it to the Ranges field.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig) SetRanges(v GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRanges) {
-	o.Ranges = &v
 }
 
 func (o GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfig) MarshalJSON() ([]byte, error) {

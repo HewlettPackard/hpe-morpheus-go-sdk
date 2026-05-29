@@ -26,44 +26,12 @@ type GetIdentitySources200Response struct {
 
 type _GetIdentitySources200Response GetIdentitySources200Response
 
-// NewGetIdentitySources200Response instantiates a new GetIdentitySources200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetIdentitySources200Response() *GetIdentitySources200Response {
-	this := GetIdentitySources200Response{}
-	return &this
-}
-
 // NewGetIdentitySources200ResponseWithDefaults instantiates a new GetIdentitySources200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetIdentitySources200ResponseWithDefaults() *GetIdentitySources200Response {
 	this := GetIdentitySources200Response{}
 	return &this
-}
-
-// GetUserSource returns the UserSource field value if set, zero value otherwise.
-func (o *GetIdentitySources200Response) GetUserSource() GetIdentitySources200ResponseUserSource {
-	if o == nil || IsNil(o.UserSource) {
-		var ret GetIdentitySources200ResponseUserSource
-		return ret
-	}
-	return *o.UserSource
-}
-
-// GetUserSourceOk returns a tuple with the UserSource field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetIdentitySources200Response) GetUserSourceOk() (*GetIdentitySources200ResponseUserSource, bool) {
-	if o == nil || IsNil(o.UserSource) {
-		return nil, false
-	}
-	return o.UserSource, true
-}
-
-// SetUserSource gets a reference to the given GetIdentitySources200ResponseUserSource and assigns it to the UserSource field.
-func (o *GetIdentitySources200Response) SetUserSource(v GetIdentitySources200ResponseUserSource) {
-	o.UserSource = &v
 }
 
 func (o GetIdentitySources200Response) MarshalJSON() ([]byte, error) {

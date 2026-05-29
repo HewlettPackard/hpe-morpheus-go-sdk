@@ -26,44 +26,12 @@ type GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions s
 
 type _GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions
 
-// NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions instantiates a new GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions() *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions {
-	this := GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions{}
-	return &this
-}
-
 // NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsWithDefaults instantiates a new GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsWithDefaults() *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions {
 	this := GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions{}
 	return &this
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions) GetResourcePermissions() GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions) GetResourcePermissionsOk() (*GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// SetResourcePermissions gets a reference to the given GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions) SetResourcePermissions(v GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) {
-	o.ResourcePermissions = &v
 }
 
 func (o GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions) MarshalJSON() ([]byte, error) {

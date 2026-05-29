@@ -33,21 +33,6 @@ type SnapshotInstanceRequestSnapshot struct {
 
 type _SnapshotInstanceRequestSnapshot SnapshotInstanceRequestSnapshot
 
-// NewSnapshotInstanceRequestSnapshot instantiates a new SnapshotInstanceRequestSnapshot object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSnapshotInstanceRequestSnapshot() *SnapshotInstanceRequestSnapshot {
-	this := SnapshotInstanceRequestSnapshot{}
-	var name string = "{serverName}.{timestamp}"
-	this.Name = &name
-	var memorySnapshot bool = false
-	this.MemorySnapshot = &memorySnapshot
-	var forExport bool = false
-	this.ForExport = &forExport
-	return &this
-}
-
 // NewSnapshotInstanceRequestSnapshotWithDefaults instantiates a new SnapshotInstanceRequestSnapshot object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -60,98 +45,6 @@ func NewSnapshotInstanceRequestSnapshotWithDefaults() *SnapshotInstanceRequestSn
 	var forExport bool = false
 	this.ForExport = &forExport
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *SnapshotInstanceRequestSnapshot) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SnapshotInstanceRequestSnapshot) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *SnapshotInstanceRequestSnapshot) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *SnapshotInstanceRequestSnapshot) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
-		var ret string
-		return ret
-	}
-	return *o.Description
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SnapshotInstanceRequestSnapshot) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
-		return nil, false
-	}
-	return o.Description, true
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *SnapshotInstanceRequestSnapshot) SetDescription(v string) {
-	o.Description = &v
-}
-
-// GetMemorySnapshot returns the MemorySnapshot field value if set, zero value otherwise.
-func (o *SnapshotInstanceRequestSnapshot) GetMemorySnapshot() bool {
-	if o == nil || IsNil(o.MemorySnapshot) {
-		var ret bool
-		return ret
-	}
-	return *o.MemorySnapshot
-}
-
-// GetMemorySnapshotOk returns a tuple with the MemorySnapshot field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SnapshotInstanceRequestSnapshot) GetMemorySnapshotOk() (*bool, bool) {
-	if o == nil || IsNil(o.MemorySnapshot) {
-		return nil, false
-	}
-	return o.MemorySnapshot, true
-}
-
-// SetMemorySnapshot gets a reference to the given bool and assigns it to the MemorySnapshot field.
-func (o *SnapshotInstanceRequestSnapshot) SetMemorySnapshot(v bool) {
-	o.MemorySnapshot = &v
-}
-
-// GetForExport returns the ForExport field value if set, zero value otherwise.
-func (o *SnapshotInstanceRequestSnapshot) GetForExport() bool {
-	if o == nil || IsNil(o.ForExport) {
-		var ret bool
-		return ret
-	}
-	return *o.ForExport
-}
-
-// GetForExportOk returns a tuple with the ForExport field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SnapshotInstanceRequestSnapshot) GetForExportOk() (*bool, bool) {
-	if o == nil || IsNil(o.ForExport) {
-		return nil, false
-	}
-	return o.ForExport, true
-}
-
-// SetForExport gets a reference to the given bool and assigns it to the ForExport field.
-func (o *SnapshotInstanceRequestSnapshot) SetForExport(v bool) {
-	o.ForExport = &v
 }
 
 func (o SnapshotInstanceRequestSnapshot) MarshalJSON() ([]byte, error) {

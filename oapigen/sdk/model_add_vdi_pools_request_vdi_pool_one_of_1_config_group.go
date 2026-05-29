@@ -27,20 +27,6 @@ type AddVDIPoolsRequestVdiPoolOneOf1ConfigGroup struct {
 	String *string
 }
 
-// int64AsAddVDIPoolsRequestVdiPoolOneOf1ConfigGroup is a convenience function that returns int64 wrapped in AddVDIPoolsRequestVdiPoolOneOf1ConfigGroup
-func Int64AsAddVDIPoolsRequestVdiPoolOneOf1ConfigGroup(v *int64) AddVDIPoolsRequestVdiPoolOneOf1ConfigGroup {
-	return AddVDIPoolsRequestVdiPoolOneOf1ConfigGroup{
-		Int64: v,
-	}
-}
-
-// stringAsAddVDIPoolsRequestVdiPoolOneOf1ConfigGroup is a convenience function that returns string wrapped in AddVDIPoolsRequestVdiPoolOneOf1ConfigGroup
-func StringAsAddVDIPoolsRequestVdiPoolOneOf1ConfigGroup(v *string) AddVDIPoolsRequestVdiPoolOneOf1ConfigGroup {
-	return AddVDIPoolsRequestVdiPoolOneOf1ConfigGroup{
-		String: v,
-	}
-}
-
 func (dst *AddVDIPoolsRequestVdiPoolOneOf1ConfigGroup) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddVDIPoolsRequestVdiPoolOneOf1ConfigGroup{}

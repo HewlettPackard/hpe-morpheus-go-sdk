@@ -26,44 +26,12 @@ type UpdateMonitoringSettingsRequest struct {
 
 type _UpdateMonitoringSettingsRequest UpdateMonitoringSettingsRequest
 
-// NewUpdateMonitoringSettingsRequest instantiates a new UpdateMonitoringSettingsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateMonitoringSettingsRequest() *UpdateMonitoringSettingsRequest {
-	this := UpdateMonitoringSettingsRequest{}
-	return &this
-}
-
 // NewUpdateMonitoringSettingsRequestWithDefaults instantiates a new UpdateMonitoringSettingsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateMonitoringSettingsRequestWithDefaults() *UpdateMonitoringSettingsRequest {
 	this := UpdateMonitoringSettingsRequest{}
 	return &this
-}
-
-// GetMonitoringSettings returns the MonitoringSettings field value if set, zero value otherwise.
-func (o *UpdateMonitoringSettingsRequest) GetMonitoringSettings() UpdateMonitoringSettingsRequestMonitoringSettings {
-	if o == nil || IsNil(o.MonitoringSettings) {
-		var ret UpdateMonitoringSettingsRequestMonitoringSettings
-		return ret
-	}
-	return *o.MonitoringSettings
-}
-
-// GetMonitoringSettingsOk returns a tuple with the MonitoringSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateMonitoringSettingsRequest) GetMonitoringSettingsOk() (*UpdateMonitoringSettingsRequestMonitoringSettings, bool) {
-	if o == nil || IsNil(o.MonitoringSettings) {
-		return nil, false
-	}
-	return o.MonitoringSettings, true
-}
-
-// SetMonitoringSettings gets a reference to the given UpdateMonitoringSettingsRequestMonitoringSettings and assigns it to the MonitoringSettings field.
-func (o *UpdateMonitoringSettingsRequest) SetMonitoringSettings(v UpdateMonitoringSettingsRequestMonitoringSettings) {
-	o.MonitoringSettings = &v
 }
 
 func (o UpdateMonitoringSettingsRequest) MarshalJSON() ([]byte, error) {

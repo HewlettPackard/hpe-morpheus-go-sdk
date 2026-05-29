@@ -27,67 +27,12 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config struct {
 
 type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config
 
-// NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config {
-	this := ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config{}
-	return &this
-}
-
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7ConfigWithDefaults instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7ConfigWithDefaults() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config {
 	this := ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config{}
 	return &this
-}
-
-// GetDefaultBranch returns the DefaultBranch field value if set, zero value otherwise.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config) GetDefaultBranch() string {
-	if o == nil || IsNil(o.DefaultBranch) {
-		var ret string
-		return ret
-	}
-	return *o.DefaultBranch
-}
-
-// GetDefaultBranchOk returns a tuple with the DefaultBranch field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config) GetDefaultBranchOk() (*string, bool) {
-	if o == nil || IsNil(o.DefaultBranch) {
-		return nil, false
-	}
-	return o.DefaultBranch, true
-}
-
-// SetDefaultBranch gets a reference to the given string and assigns it to the DefaultBranch field.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config) SetDefaultBranch(v string) {
-	o.DefaultBranch = &v
-}
-
-// GetCacheEnabled returns the CacheEnabled field value if set, zero value otherwise.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config) GetCacheEnabled() bool {
-	if o == nil || IsNil(o.CacheEnabled) {
-		var ret bool
-		return ret
-	}
-	return *o.CacheEnabled
-}
-
-// GetCacheEnabledOk returns a tuple with the CacheEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config) GetCacheEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.CacheEnabled) {
-		return nil, false
-	}
-	return o.CacheEnabled, true
-}
-
-// SetCacheEnabled gets a reference to the given bool and assigns it to the CacheEnabled field.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config) SetCacheEnabled(v bool) {
-	o.CacheEnabled = &v
 }
 
 func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config) MarshalJSON() ([]byte, error) {

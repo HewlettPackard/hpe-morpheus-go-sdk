@@ -26,44 +26,12 @@ type ListJobs200ResponseAllOfJobsInnerAnyOf1Task struct {
 
 type _ListJobs200ResponseAllOfJobsInnerAnyOf1Task ListJobs200ResponseAllOfJobsInnerAnyOf1Task
 
-// NewListJobs200ResponseAllOfJobsInnerAnyOf1Task instantiates a new ListJobs200ResponseAllOfJobsInnerAnyOf1Task object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListJobs200ResponseAllOfJobsInnerAnyOf1Task() *ListJobs200ResponseAllOfJobsInnerAnyOf1Task {
-	this := ListJobs200ResponseAllOfJobsInnerAnyOf1Task{}
-	return &this
-}
-
 // NewListJobs200ResponseAllOfJobsInnerAnyOf1TaskWithDefaults instantiates a new ListJobs200ResponseAllOfJobsInnerAnyOf1Task object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListJobs200ResponseAllOfJobsInnerAnyOf1TaskWithDefaults() *ListJobs200ResponseAllOfJobsInnerAnyOf1Task {
 	this := ListJobs200ResponseAllOfJobsInnerAnyOf1Task{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOf1Task) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOf1Task) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOf1Task) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o ListJobs200ResponseAllOfJobsInnerAnyOf1Task) MarshalJSON() ([]byte, error) {

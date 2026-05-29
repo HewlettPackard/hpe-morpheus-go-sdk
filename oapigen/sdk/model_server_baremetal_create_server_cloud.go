@@ -26,44 +26,12 @@ type ServerBaremetalCreateServerCloud struct {
 
 type _ServerBaremetalCreateServerCloud ServerBaremetalCreateServerCloud
 
-// NewServerBaremetalCreateServerCloud instantiates a new ServerBaremetalCreateServerCloud object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewServerBaremetalCreateServerCloud() *ServerBaremetalCreateServerCloud {
-	this := ServerBaremetalCreateServerCloud{}
-	return &this
-}
-
 // NewServerBaremetalCreateServerCloudWithDefaults instantiates a new ServerBaremetalCreateServerCloud object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewServerBaremetalCreateServerCloudWithDefaults() *ServerBaremetalCreateServerCloud {
 	this := ServerBaremetalCreateServerCloud{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ServerBaremetalCreateServerCloud) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServerBaremetalCreateServerCloud) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ServerBaremetalCreateServerCloud) SetId(v int32) {
-	o.Id = &v
 }
 
 func (o ServerBaremetalCreateServerCloud) MarshalJSON() ([]byte, error) {

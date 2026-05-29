@@ -30,92 +30,12 @@ type BlueprintKubernetesCreateKubernetes struct {
 
 type _BlueprintKubernetesCreateKubernetes BlueprintKubernetesCreateKubernetes
 
-// NewBlueprintKubernetesCreateKubernetes instantiates a new BlueprintKubernetesCreateKubernetes object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBlueprintKubernetesCreateKubernetes(configType string) *BlueprintKubernetesCreateKubernetes {
-	this := BlueprintKubernetesCreateKubernetes{}
-	this.ConfigType = configType
-	return &this
-}
-
 // NewBlueprintKubernetesCreateKubernetesWithDefaults instantiates a new BlueprintKubernetesCreateKubernetes object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBlueprintKubernetesCreateKubernetesWithDefaults() *BlueprintKubernetesCreateKubernetes {
 	this := BlueprintKubernetesCreateKubernetes{}
 	return &this
-}
-
-// GetConfigType returns the ConfigType field value
-func (o *BlueprintKubernetesCreateKubernetes) GetConfigType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ConfigType
-}
-
-// GetConfigTypeOk returns a tuple with the ConfigType field value
-// and a boolean to check if the value has been set.
-func (o *BlueprintKubernetesCreateKubernetes) GetConfigTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ConfigType, true
-}
-
-// SetConfigType sets field value
-func (o *BlueprintKubernetesCreateKubernetes) SetConfigType(v string) {
-	o.ConfigType = v
-}
-
-// GetYaml returns the Yaml field value if set, zero value otherwise.
-func (o *BlueprintKubernetesCreateKubernetes) GetYaml() string {
-	if o == nil || IsNil(o.Yaml) {
-		var ret string
-		return ret
-	}
-	return *o.Yaml
-}
-
-// GetYamlOk returns a tuple with the Yaml field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintKubernetesCreateKubernetes) GetYamlOk() (*string, bool) {
-	if o == nil || IsNil(o.Yaml) {
-		return nil, false
-	}
-	return o.Yaml, true
-}
-
-// SetYaml gets a reference to the given string and assigns it to the Yaml field.
-func (o *BlueprintKubernetesCreateKubernetes) SetYaml(v string) {
-	o.Yaml = &v
-}
-
-// GetGit returns the Git field value if set, zero value otherwise.
-func (o *BlueprintKubernetesCreateKubernetes) GetGit() BlueprintKubernetesCreateKubernetesGit {
-	if o == nil || IsNil(o.Git) {
-		var ret BlueprintKubernetesCreateKubernetesGit
-		return ret
-	}
-	return *o.Git
-}
-
-// GetGitOk returns a tuple with the Git field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintKubernetesCreateKubernetes) GetGitOk() (*BlueprintKubernetesCreateKubernetesGit, bool) {
-	if o == nil || IsNil(o.Git) {
-		return nil, false
-	}
-	return o.Git, true
-}
-
-// SetGit gets a reference to the given BlueprintKubernetesCreateKubernetesGit and assigns it to the Git field.
-func (o *BlueprintKubernetesCreateKubernetes) SetGit(v BlueprintKubernetesCreateKubernetesGit) {
-	o.Git = &v
 }
 
 func (o BlueprintKubernetesCreateKubernetes) MarshalJSON() ([]byte, error) {

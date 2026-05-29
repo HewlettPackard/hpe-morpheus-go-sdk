@@ -27,67 +27,12 @@ type ListProvisioningLicenses200Response struct {
 
 type _ListProvisioningLicenses200Response ListProvisioningLicenses200Response
 
-// NewListProvisioningLicenses200Response instantiates a new ListProvisioningLicenses200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListProvisioningLicenses200Response() *ListProvisioningLicenses200Response {
-	this := ListProvisioningLicenses200Response{}
-	return &this
-}
-
 // NewListProvisioningLicenses200ResponseWithDefaults instantiates a new ListProvisioningLicenses200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListProvisioningLicenses200ResponseWithDefaults() *ListProvisioningLicenses200Response {
 	this := ListProvisioningLicenses200Response{}
 	return &this
-}
-
-// GetLicenses returns the Licenses field value if set, zero value otherwise.
-func (o *ListProvisioningLicenses200Response) GetLicenses() []ListProvisioningLicenses200ResponseAllOfLicensesInner {
-	if o == nil || IsNil(o.Licenses) {
-		var ret []ListProvisioningLicenses200ResponseAllOfLicensesInner
-		return ret
-	}
-	return o.Licenses
-}
-
-// GetLicensesOk returns a tuple with the Licenses field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListProvisioningLicenses200Response) GetLicensesOk() ([]ListProvisioningLicenses200ResponseAllOfLicensesInner, bool) {
-	if o == nil || IsNil(o.Licenses) {
-		return nil, false
-	}
-	return o.Licenses, true
-}
-
-// SetLicenses gets a reference to the given []ListProvisioningLicenses200ResponseAllOfLicensesInner and assigns it to the Licenses field.
-func (o *ListProvisioningLicenses200Response) SetLicenses(v []ListProvisioningLicenses200ResponseAllOfLicensesInner) {
-	o.Licenses = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListProvisioningLicenses200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListProvisioningLicenses200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListProvisioningLicenses200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListProvisioningLicenses200Response) MarshalJSON() ([]byte, error) {

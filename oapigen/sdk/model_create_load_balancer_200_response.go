@@ -26,44 +26,12 @@ type CreateLoadBalancer200Response struct {
 
 type _CreateLoadBalancer200Response CreateLoadBalancer200Response
 
-// NewCreateLoadBalancer200Response instantiates a new CreateLoadBalancer200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateLoadBalancer200Response() *CreateLoadBalancer200Response {
-	this := CreateLoadBalancer200Response{}
-	return &this
-}
-
 // NewCreateLoadBalancer200ResponseWithDefaults instantiates a new CreateLoadBalancer200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateLoadBalancer200ResponseWithDefaults() *CreateLoadBalancer200Response {
 	this := CreateLoadBalancer200Response{}
 	return &this
-}
-
-// GetLoadBalancer returns the LoadBalancer field value if set, zero value otherwise.
-func (o *CreateLoadBalancer200Response) GetLoadBalancer() CreateLoadBalancer200ResponseLoadBalancer {
-	if o == nil || IsNil(o.LoadBalancer) {
-		var ret CreateLoadBalancer200ResponseLoadBalancer
-		return ret
-	}
-	return *o.LoadBalancer
-}
-
-// GetLoadBalancerOk returns a tuple with the LoadBalancer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancer200Response) GetLoadBalancerOk() (*CreateLoadBalancer200ResponseLoadBalancer, bool) {
-	if o == nil || IsNil(o.LoadBalancer) {
-		return nil, false
-	}
-	return o.LoadBalancer, true
-}
-
-// SetLoadBalancer gets a reference to the given CreateLoadBalancer200ResponseLoadBalancer and assigns it to the LoadBalancer field.
-func (o *CreateLoadBalancer200Response) SetLoadBalancer(v CreateLoadBalancer200ResponseLoadBalancer) {
-	o.LoadBalancer = &v
 }
 
 func (o CreateLoadBalancer200Response) MarshalJSON() ([]byte, error) {

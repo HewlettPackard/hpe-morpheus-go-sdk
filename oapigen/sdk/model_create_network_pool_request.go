@@ -26,44 +26,12 @@ type CreateNetworkPoolRequest struct {
 
 type _CreateNetworkPoolRequest CreateNetworkPoolRequest
 
-// NewCreateNetworkPoolRequest instantiates a new CreateNetworkPoolRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkPoolRequest() *CreateNetworkPoolRequest {
-	this := CreateNetworkPoolRequest{}
-	return &this
-}
-
 // NewCreateNetworkPoolRequestWithDefaults instantiates a new CreateNetworkPoolRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkPoolRequestWithDefaults() *CreateNetworkPoolRequest {
 	this := CreateNetworkPoolRequest{}
 	return &this
-}
-
-// GetNetworkPool returns the NetworkPool field value if set, zero value otherwise.
-func (o *CreateNetworkPoolRequest) GetNetworkPool() CreateNetworkPoolRequestNetworkPool {
-	if o == nil || IsNil(o.NetworkPool) {
-		var ret CreateNetworkPoolRequestNetworkPool
-		return ret
-	}
-	return *o.NetworkPool
-}
-
-// GetNetworkPoolOk returns a tuple with the NetworkPool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkPoolRequest) GetNetworkPoolOk() (*CreateNetworkPoolRequestNetworkPool, bool) {
-	if o == nil || IsNil(o.NetworkPool) {
-		return nil, false
-	}
-	return o.NetworkPool, true
-}
-
-// SetNetworkPool gets a reference to the given CreateNetworkPoolRequestNetworkPool and assigns it to the NetworkPool field.
-func (o *CreateNetworkPoolRequest) SetNetworkPool(v CreateNetworkPoolRequestNetworkPool) {
-	o.NetworkPool = &v
 }
 
 func (o CreateNetworkPoolRequest) MarshalJSON() ([]byte, error) {

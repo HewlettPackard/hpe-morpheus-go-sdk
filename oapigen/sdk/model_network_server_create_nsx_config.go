@@ -27,45 +27,12 @@ type NetworkServerCreateNSXConfig struct {
 
 type _NetworkServerCreateNSXConfig NetworkServerCreateNSXConfig
 
-// NewNetworkServerCreateNSXConfig instantiates a new NetworkServerCreateNSXConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkServerCreateNSXConfig() *NetworkServerCreateNSXConfig {
-	this := NetworkServerCreateNSXConfig{}
-	return &this
-}
-
 // NewNetworkServerCreateNSXConfigWithDefaults instantiates a new NetworkServerCreateNSXConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkServerCreateNSXConfigWithDefaults() *NetworkServerCreateNSXConfig {
 	this := NetworkServerCreateNSXConfig{}
 	return &this
-}
-
-// GetProject returns the Project field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NetworkServerCreateNSXConfig) GetProject() string {
-	if o == nil || IsNil(o.Project.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Project.Get()
-}
-
-// GetProjectOk returns a tuple with the Project field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NetworkServerCreateNSXConfig) GetProjectOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Project.Get(), o.Project.IsSet()
-}
-
-// SetProject gets a reference to the given NullableString and assigns it to the Project field.
-func (o *NetworkServerCreateNSXConfig) SetProject(v string) {
-	o.Project.Set(&v)
 }
 
 func (o NetworkServerCreateNSXConfig) MarshalJSON() ([]byte, error) {

@@ -27,44 +27,12 @@ type UpdateIntegrationsRequestOneOf6IntegrationConfig struct {
 
 type _UpdateIntegrationsRequestOneOf6IntegrationConfig UpdateIntegrationsRequestOneOf6IntegrationConfig
 
-// NewUpdateIntegrationsRequestOneOf6IntegrationConfig instantiates a new UpdateIntegrationsRequestOneOf6IntegrationConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIntegrationsRequestOneOf6IntegrationConfig() *UpdateIntegrationsRequestOneOf6IntegrationConfig {
-	this := UpdateIntegrationsRequestOneOf6IntegrationConfig{}
-	return &this
-}
-
 // NewUpdateIntegrationsRequestOneOf6IntegrationConfigWithDefaults instantiates a new UpdateIntegrationsRequestOneOf6IntegrationConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateIntegrationsRequestOneOf6IntegrationConfigWithDefaults() *UpdateIntegrationsRequestOneOf6IntegrationConfig {
 	this := UpdateIntegrationsRequestOneOf6IntegrationConfig{}
 	return &this
-}
-
-// GetCacheEnabled returns the CacheEnabled field value if set, zero value otherwise.
-func (o *UpdateIntegrationsRequestOneOf6IntegrationConfig) GetCacheEnabled() bool {
-	if o == nil || IsNil(o.CacheEnabled) {
-		var ret bool
-		return ret
-	}
-	return *o.CacheEnabled
-}
-
-// GetCacheEnabledOk returns a tuple with the CacheEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIntegrationsRequestOneOf6IntegrationConfig) GetCacheEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.CacheEnabled) {
-		return nil, false
-	}
-	return o.CacheEnabled, true
-}
-
-// SetCacheEnabled gets a reference to the given bool and assigns it to the CacheEnabled field.
-func (o *UpdateIntegrationsRequestOneOf6IntegrationConfig) SetCacheEnabled(v bool) {
-	o.CacheEnabled = &v
 }
 
 func (o UpdateIntegrationsRequestOneOf6IntegrationConfig) MarshalJSON() ([]byte, error) {

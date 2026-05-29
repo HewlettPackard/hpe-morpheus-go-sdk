@@ -26,44 +26,12 @@ type UpdateLoadBalancerPoolRequest struct {
 
 type _UpdateLoadBalancerPoolRequest UpdateLoadBalancerPoolRequest
 
-// NewUpdateLoadBalancerPoolRequest instantiates a new UpdateLoadBalancerPoolRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateLoadBalancerPoolRequest() *UpdateLoadBalancerPoolRequest {
-	this := UpdateLoadBalancerPoolRequest{}
-	return &this
-}
-
 // NewUpdateLoadBalancerPoolRequestWithDefaults instantiates a new UpdateLoadBalancerPoolRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateLoadBalancerPoolRequestWithDefaults() *UpdateLoadBalancerPoolRequest {
 	this := UpdateLoadBalancerPoolRequest{}
 	return &this
-}
-
-// GetLoadBalancerPool returns the LoadBalancerPool field value if set, zero value otherwise.
-func (o *UpdateLoadBalancerPoolRequest) GetLoadBalancerPool() UpdateLoadBalancerPoolRequestLoadBalancerPool {
-	if o == nil || IsNil(o.LoadBalancerPool) {
-		var ret UpdateLoadBalancerPoolRequestLoadBalancerPool
-		return ret
-	}
-	return *o.LoadBalancerPool
-}
-
-// GetLoadBalancerPoolOk returns a tuple with the LoadBalancerPool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateLoadBalancerPoolRequest) GetLoadBalancerPoolOk() (*UpdateLoadBalancerPoolRequestLoadBalancerPool, bool) {
-	if o == nil || IsNil(o.LoadBalancerPool) {
-		return nil, false
-	}
-	return o.LoadBalancerPool, true
-}
-
-// SetLoadBalancerPool gets a reference to the given UpdateLoadBalancerPoolRequestLoadBalancerPool and assigns it to the LoadBalancerPool field.
-func (o *UpdateLoadBalancerPoolRequest) SetLoadBalancerPool(v UpdateLoadBalancerPoolRequestLoadBalancerPool) {
-	o.LoadBalancerPool = &v
 }
 
 func (o UpdateLoadBalancerPoolRequest) MarshalJSON() ([]byte, error) {

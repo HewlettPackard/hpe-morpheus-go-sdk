@@ -27,67 +27,12 @@ type NetworkDhcpRelayCreate struct {
 
 type _NetworkDhcpRelayCreate NetworkDhcpRelayCreate
 
-// NewNetworkDhcpRelayCreate instantiates a new NetworkDhcpRelayCreate object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkDhcpRelayCreate() *NetworkDhcpRelayCreate {
-	this := NetworkDhcpRelayCreate{}
-	return &this
-}
-
 // NewNetworkDhcpRelayCreateWithDefaults instantiates a new NetworkDhcpRelayCreate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkDhcpRelayCreateWithDefaults() *NetworkDhcpRelayCreate {
 	this := NetworkDhcpRelayCreate{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *NetworkDhcpRelayCreate) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkDhcpRelayCreate) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *NetworkDhcpRelayCreate) SetName(v string) {
-	o.Name = &v
-}
-
-// GetServerIpAddresses returns the ServerIpAddresses field value if set, zero value otherwise.
-func (o *NetworkDhcpRelayCreate) GetServerIpAddresses() []string {
-	if o == nil || IsNil(o.ServerIpAddresses) {
-		var ret []string
-		return ret
-	}
-	return o.ServerIpAddresses
-}
-
-// GetServerIpAddressesOk returns a tuple with the ServerIpAddresses field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkDhcpRelayCreate) GetServerIpAddressesOk() ([]string, bool) {
-	if o == nil || IsNil(o.ServerIpAddresses) {
-		return nil, false
-	}
-	return o.ServerIpAddresses, true
-}
-
-// SetServerIpAddresses gets a reference to the given []string and assigns it to the ServerIpAddresses field.
-func (o *NetworkDhcpRelayCreate) SetServerIpAddresses(v []string) {
-	o.ServerIpAddresses = v
 }
 
 func (o NetworkDhcpRelayCreate) MarshalJSON() ([]byte, error) {

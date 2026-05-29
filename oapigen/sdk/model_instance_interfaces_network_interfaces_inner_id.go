@@ -27,20 +27,6 @@ type InstanceInterfacesNetworkInterfacesInnerId struct {
 	String *string
 }
 
-// int64AsInstanceInterfacesNetworkInterfacesInnerId is a convenience function that returns int64 wrapped in InstanceInterfacesNetworkInterfacesInnerId
-func Int64AsInstanceInterfacesNetworkInterfacesInnerId(v *int64) InstanceInterfacesNetworkInterfacesInnerId {
-	return InstanceInterfacesNetworkInterfacesInnerId{
-		Int64: v,
-	}
-}
-
-// stringAsInstanceInterfacesNetworkInterfacesInnerId is a convenience function that returns string wrapped in InstanceInterfacesNetworkInterfacesInnerId
-func StringAsInstanceInterfacesNetworkInterfacesInnerId(v *string) InstanceInterfacesNetworkInterfacesInnerId {
-	return InstanceInterfacesNetworkInterfacesInnerId{
-		String: v,
-	}
-}
-
 func (dst *InstanceInterfacesNetworkInterfacesInnerId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &InstanceInterfacesNetworkInterfacesInnerId{}

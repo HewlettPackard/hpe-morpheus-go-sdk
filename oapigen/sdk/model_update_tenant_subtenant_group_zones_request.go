@@ -26,46 +26,12 @@ type UpdateTenantSubtenantGroupZonesRequest struct {
 
 type _UpdateTenantSubtenantGroupZonesRequest UpdateTenantSubtenantGroupZonesRequest
 
-// NewUpdateTenantSubtenantGroupZonesRequest instantiates a new UpdateTenantSubtenantGroupZonesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateTenantSubtenantGroupZonesRequest(group UpdateTenantSubtenantGroupZonesRequestGroup) *UpdateTenantSubtenantGroupZonesRequest {
-	this := UpdateTenantSubtenantGroupZonesRequest{}
-	this.Group = group
-	return &this
-}
-
 // NewUpdateTenantSubtenantGroupZonesRequestWithDefaults instantiates a new UpdateTenantSubtenantGroupZonesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateTenantSubtenantGroupZonesRequestWithDefaults() *UpdateTenantSubtenantGroupZonesRequest {
 	this := UpdateTenantSubtenantGroupZonesRequest{}
 	return &this
-}
-
-// GetGroup returns the Group field value
-func (o *UpdateTenantSubtenantGroupZonesRequest) GetGroup() UpdateTenantSubtenantGroupZonesRequestGroup {
-	if o == nil {
-		var ret UpdateTenantSubtenantGroupZonesRequestGroup
-		return ret
-	}
-
-	return o.Group
-}
-
-// GetGroupOk returns a tuple with the Group field value
-// and a boolean to check if the value has been set.
-func (o *UpdateTenantSubtenantGroupZonesRequest) GetGroupOk() (*UpdateTenantSubtenantGroupZonesRequestGroup, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Group, true
-}
-
-// SetGroup sets field value
-func (o *UpdateTenantSubtenantGroupZonesRequest) SetGroup(v UpdateTenantSubtenantGroupZonesRequestGroup) {
-	o.Group = v
 }
 
 func (o UpdateTenantSubtenantGroupZonesRequest) MarshalJSON() ([]byte, error) {

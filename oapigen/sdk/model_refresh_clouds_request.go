@@ -31,90 +31,12 @@ type RefreshCloudsRequest struct {
 
 type _RefreshCloudsRequest RefreshCloudsRequest
 
-// NewRefreshCloudsRequest instantiates a new RefreshCloudsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRefreshCloudsRequest() *RefreshCloudsRequest {
-	this := RefreshCloudsRequest{}
-	return &this
-}
-
 // NewRefreshCloudsRequestWithDefaults instantiates a new RefreshCloudsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRefreshCloudsRequestWithDefaults() *RefreshCloudsRequest {
 	this := RefreshCloudsRequest{}
 	return &this
-}
-
-// GetMode returns the Mode field value if set, zero value otherwise.
-func (o *RefreshCloudsRequest) GetMode() string {
-	if o == nil || IsNil(o.Mode) {
-		var ret string
-		return ret
-	}
-	return *o.Mode
-}
-
-// GetModeOk returns a tuple with the Mode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RefreshCloudsRequest) GetModeOk() (*string, bool) {
-	if o == nil || IsNil(o.Mode) {
-		return nil, false
-	}
-	return o.Mode, true
-}
-
-// SetMode gets a reference to the given string and assigns it to the Mode field.
-func (o *RefreshCloudsRequest) SetMode(v string) {
-	o.Mode = &v
-}
-
-// GetRebuild returns the Rebuild field value if set, zero value otherwise.
-func (o *RefreshCloudsRequest) GetRebuild() string {
-	if o == nil || IsNil(o.Rebuild) {
-		var ret string
-		return ret
-	}
-	return *o.Rebuild
-}
-
-// GetRebuildOk returns a tuple with the Rebuild field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RefreshCloudsRequest) GetRebuildOk() (*string, bool) {
-	if o == nil || IsNil(o.Rebuild) {
-		return nil, false
-	}
-	return o.Rebuild, true
-}
-
-// SetRebuild gets a reference to the given string and assigns it to the Rebuild field.
-func (o *RefreshCloudsRequest) SetRebuild(v string) {
-	o.Rebuild = &v
-}
-
-// GetPeriod returns the Period field value if set, zero value otherwise.
-func (o *RefreshCloudsRequest) GetPeriod() string {
-	if o == nil || IsNil(o.Period) {
-		var ret string
-		return ret
-	}
-	return *o.Period
-}
-
-// GetPeriodOk returns a tuple with the Period field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RefreshCloudsRequest) GetPeriodOk() (*string, bool) {
-	if o == nil || IsNil(o.Period) {
-		return nil, false
-	}
-	return o.Period, true
-}
-
-// SetPeriod gets a reference to the given string and assigns it to the Period field.
-func (o *RefreshCloudsRequest) SetPeriod(v string) {
-	o.Period = &v
 }
 
 func (o RefreshCloudsRequest) MarshalJSON() ([]byte, error) {

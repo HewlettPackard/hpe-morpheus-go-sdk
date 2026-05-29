@@ -29,71 +29,12 @@ type RolePermissionCloudAll struct {
 
 type _RolePermissionCloudAll RolePermissionCloudAll
 
-// NewRolePermissionCloudAll instantiates a new RolePermissionCloudAll object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRolePermissionCloudAll(allClouds bool, access string) *RolePermissionCloudAll {
-	this := RolePermissionCloudAll{}
-	this.AllClouds = allClouds
-	this.Access = access
-	return &this
-}
-
 // NewRolePermissionCloudAllWithDefaults instantiates a new RolePermissionCloudAll object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRolePermissionCloudAllWithDefaults() *RolePermissionCloudAll {
 	this := RolePermissionCloudAll{}
 	return &this
-}
-
-// GetAllClouds returns the AllClouds field value
-func (o *RolePermissionCloudAll) GetAllClouds() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AllClouds
-}
-
-// GetAllCloudsOk returns a tuple with the AllClouds field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionCloudAll) GetAllCloudsOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AllClouds, true
-}
-
-// SetAllClouds sets field value
-func (o *RolePermissionCloudAll) SetAllClouds(v bool) {
-	o.AllClouds = v
-}
-
-// GetAccess returns the Access field value
-func (o *RolePermissionCloudAll) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionCloudAll) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *RolePermissionCloudAll) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o RolePermissionCloudAll) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type ListChecks200ResponseAllOfChecksInnerAccount struct {
 
 type _ListChecks200ResponseAllOfChecksInnerAccount ListChecks200ResponseAllOfChecksInnerAccount
 
-// NewListChecks200ResponseAllOfChecksInnerAccount instantiates a new ListChecks200ResponseAllOfChecksInnerAccount object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListChecks200ResponseAllOfChecksInnerAccount() *ListChecks200ResponseAllOfChecksInnerAccount {
-	this := ListChecks200ResponseAllOfChecksInnerAccount{}
-	return &this
-}
-
 // NewListChecks200ResponseAllOfChecksInnerAccountWithDefaults instantiates a new ListChecks200ResponseAllOfChecksInnerAccount object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListChecks200ResponseAllOfChecksInnerAccountWithDefaults() *ListChecks200ResponseAllOfChecksInnerAccount {
 	this := ListChecks200ResponseAllOfChecksInnerAccount{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListChecks200ResponseAllOfChecksInnerAccount) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListChecks200ResponseAllOfChecksInnerAccount) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListChecks200ResponseAllOfChecksInnerAccount) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o ListChecks200ResponseAllOfChecksInnerAccount) MarshalJSON() ([]byte, error) {

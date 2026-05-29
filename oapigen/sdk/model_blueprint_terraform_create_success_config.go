@@ -27,44 +27,12 @@ type BlueprintTerraformCreateSuccessConfig struct {
 
 type _BlueprintTerraformCreateSuccessConfig BlueprintTerraformCreateSuccessConfig
 
-// NewBlueprintTerraformCreateSuccessConfig instantiates a new BlueprintTerraformCreateSuccessConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBlueprintTerraformCreateSuccessConfig() *BlueprintTerraformCreateSuccessConfig {
-	this := BlueprintTerraformCreateSuccessConfig{}
-	return &this
-}
-
 // NewBlueprintTerraformCreateSuccessConfigWithDefaults instantiates a new BlueprintTerraformCreateSuccessConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBlueprintTerraformCreateSuccessConfigWithDefaults() *BlueprintTerraformCreateSuccessConfig {
 	this := BlueprintTerraformCreateSuccessConfig{}
 	return &this
-}
-
-// GetSpecs returns the Specs field value if set, zero value otherwise.
-func (o *BlueprintTerraformCreateSuccessConfig) GetSpecs() []BlueprintTerraformCreateSuccessConfigSpecsInner {
-	if o == nil || IsNil(o.Specs) {
-		var ret []BlueprintTerraformCreateSuccessConfigSpecsInner
-		return ret
-	}
-	return o.Specs
-}
-
-// GetSpecsOk returns a tuple with the Specs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintTerraformCreateSuccessConfig) GetSpecsOk() ([]BlueprintTerraformCreateSuccessConfigSpecsInner, bool) {
-	if o == nil || IsNil(o.Specs) {
-		return nil, false
-	}
-	return o.Specs, true
-}
-
-// SetSpecs gets a reference to the given []BlueprintTerraformCreateSuccessConfigSpecsInner and assigns it to the Specs field.
-func (o *BlueprintTerraformCreateSuccessConfig) SetSpecs(v []BlueprintTerraformCreateSuccessConfigSpecsInner) {
-	o.Specs = v
 }
 
 func (o BlueprintTerraformCreateSuccessConfig) MarshalJSON() ([]byte, error) {

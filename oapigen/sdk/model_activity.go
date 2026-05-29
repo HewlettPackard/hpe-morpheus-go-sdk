@@ -26,44 +26,12 @@ type Activity struct {
 
 type _Activity Activity
 
-// NewActivity instantiates a new Activity object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewActivity() *Activity {
-	this := Activity{}
-	return &this
-}
-
 // NewActivityWithDefaults instantiates a new Activity object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewActivityWithDefaults() *Activity {
 	this := Activity{}
 	return &this
-}
-
-// GetActivity returns the Activity field value if set, zero value otherwise.
-func (o *Activity) GetActivity() []ActivityActivityInner {
-	if o == nil || IsNil(o.Activity) {
-		var ret []ActivityActivityInner
-		return ret
-	}
-	return o.Activity
-}
-
-// GetActivityOk returns a tuple with the Activity field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Activity) GetActivityOk() ([]ActivityActivityInner, bool) {
-	if o == nil || IsNil(o.Activity) {
-		return nil, false
-	}
-	return o.Activity, true
-}
-
-// SetActivity gets a reference to the given []ActivityActivityInner and assigns it to the Activity field.
-func (o *Activity) SetActivity(v []ActivityActivityInner) {
-	o.Activity = v
 }
 
 func (o Activity) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type AddProvisioningLicense200Response struct {
 
 type _AddProvisioningLicense200Response AddProvisioningLicense200Response
 
-// NewAddProvisioningLicense200Response instantiates a new AddProvisioningLicense200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddProvisioningLicense200Response() *AddProvisioningLicense200Response {
-	this := AddProvisioningLicense200Response{}
-	return &this
-}
-
 // NewAddProvisioningLicense200ResponseWithDefaults instantiates a new AddProvisioningLicense200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddProvisioningLicense200ResponseWithDefaults() *AddProvisioningLicense200Response {
 	this := AddProvisioningLicense200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddProvisioningLicense200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddProvisioningLicense200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddProvisioningLicense200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetLicense returns the License field value if set, zero value otherwise.
-func (o *AddProvisioningLicense200Response) GetLicense() AddProvisioningLicense200ResponseAllOfLicense {
-	if o == nil || IsNil(o.License) {
-		var ret AddProvisioningLicense200ResponseAllOfLicense
-		return ret
-	}
-	return *o.License
-}
-
-// GetLicenseOk returns a tuple with the License field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddProvisioningLicense200Response) GetLicenseOk() (*AddProvisioningLicense200ResponseAllOfLicense, bool) {
-	if o == nil || IsNil(o.License) {
-		return nil, false
-	}
-	return o.License, true
-}
-
-// SetLicense gets a reference to the given AddProvisioningLicense200ResponseAllOfLicense and assigns it to the License field.
-func (o *AddProvisioningLicense200Response) SetLicense(v AddProvisioningLicense200ResponseAllOfLicense) {
-	o.License = &v
 }
 
 func (o AddProvisioningLicense200Response) MarshalJSON() ([]byte, error) {

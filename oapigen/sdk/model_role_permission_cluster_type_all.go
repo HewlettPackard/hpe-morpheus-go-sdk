@@ -29,71 +29,12 @@ type RolePermissionClusterTypeAll struct {
 
 type _RolePermissionClusterTypeAll RolePermissionClusterTypeAll
 
-// NewRolePermissionClusterTypeAll instantiates a new RolePermissionClusterTypeAll object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRolePermissionClusterTypeAll(allClusterTypes bool, access string) *RolePermissionClusterTypeAll {
-	this := RolePermissionClusterTypeAll{}
-	this.AllClusterTypes = allClusterTypes
-	this.Access = access
-	return &this
-}
-
 // NewRolePermissionClusterTypeAllWithDefaults instantiates a new RolePermissionClusterTypeAll object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRolePermissionClusterTypeAllWithDefaults() *RolePermissionClusterTypeAll {
 	this := RolePermissionClusterTypeAll{}
 	return &this
-}
-
-// GetAllClusterTypes returns the AllClusterTypes field value
-func (o *RolePermissionClusterTypeAll) GetAllClusterTypes() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AllClusterTypes
-}
-
-// GetAllClusterTypesOk returns a tuple with the AllClusterTypes field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionClusterTypeAll) GetAllClusterTypesOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AllClusterTypes, true
-}
-
-// SetAllClusterTypes sets field value
-func (o *RolePermissionClusterTypeAll) SetAllClusterTypes(v bool) {
-	o.AllClusterTypes = v
-}
-
-// GetAccess returns the Access field value
-func (o *RolePermissionClusterTypeAll) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionClusterTypeAll) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *RolePermissionClusterTypeAll) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o RolePermissionClusterTypeAll) MarshalJSON() ([]byte, error) {

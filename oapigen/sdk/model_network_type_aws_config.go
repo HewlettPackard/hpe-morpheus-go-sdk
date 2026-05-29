@@ -32,121 +32,12 @@ type NetworkTypeAwsConfig struct {
 
 type _NetworkTypeAwsConfig NetworkTypeAwsConfig
 
-// NewNetworkTypeAwsConfig instantiates a new NetworkTypeAwsConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkTypeAwsConfig(availabilityZone string, cidr string, assignPublicIp bool, zonePool NetworkTypeAwsConfigZonePool) *NetworkTypeAwsConfig {
-	this := NetworkTypeAwsConfig{}
-	this.AvailabilityZone = availabilityZone
-	this.Cidr = cidr
-	this.AssignPublicIp = assignPublicIp
-	this.ZonePool = zonePool
-	return &this
-}
-
 // NewNetworkTypeAwsConfigWithDefaults instantiates a new NetworkTypeAwsConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkTypeAwsConfigWithDefaults() *NetworkTypeAwsConfig {
 	this := NetworkTypeAwsConfig{}
 	return &this
-}
-
-// GetAvailabilityZone returns the AvailabilityZone field value
-func (o *NetworkTypeAwsConfig) GetAvailabilityZone() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AvailabilityZone
-}
-
-// GetAvailabilityZoneOk returns a tuple with the AvailabilityZone field value
-// and a boolean to check if the value has been set.
-func (o *NetworkTypeAwsConfig) GetAvailabilityZoneOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AvailabilityZone, true
-}
-
-// SetAvailabilityZone sets field value
-func (o *NetworkTypeAwsConfig) SetAvailabilityZone(v string) {
-	o.AvailabilityZone = v
-}
-
-// GetCidr returns the Cidr field value
-func (o *NetworkTypeAwsConfig) GetCidr() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Cidr
-}
-
-// GetCidrOk returns a tuple with the Cidr field value
-// and a boolean to check if the value has been set.
-func (o *NetworkTypeAwsConfig) GetCidrOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Cidr, true
-}
-
-// SetCidr sets field value
-func (o *NetworkTypeAwsConfig) SetCidr(v string) {
-	o.Cidr = v
-}
-
-// GetAssignPublicIp returns the AssignPublicIp field value
-func (o *NetworkTypeAwsConfig) GetAssignPublicIp() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AssignPublicIp
-}
-
-// GetAssignPublicIpOk returns a tuple with the AssignPublicIp field value
-// and a boolean to check if the value has been set.
-func (o *NetworkTypeAwsConfig) GetAssignPublicIpOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AssignPublicIp, true
-}
-
-// SetAssignPublicIp sets field value
-func (o *NetworkTypeAwsConfig) SetAssignPublicIp(v bool) {
-	o.AssignPublicIp = v
-}
-
-// GetZonePool returns the ZonePool field value
-func (o *NetworkTypeAwsConfig) GetZonePool() NetworkTypeAwsConfigZonePool {
-	if o == nil {
-		var ret NetworkTypeAwsConfigZonePool
-		return ret
-	}
-
-	return o.ZonePool
-}
-
-// GetZonePoolOk returns a tuple with the ZonePool field value
-// and a boolean to check if the value has been set.
-func (o *NetworkTypeAwsConfig) GetZonePoolOk() (*NetworkTypeAwsConfigZonePool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ZonePool, true
-}
-
-// SetZonePool sets field value
-func (o *NetworkTypeAwsConfig) SetZonePool(v NetworkTypeAwsConfigZonePool) {
-	o.ZonePool = v
 }
 
 func (o NetworkTypeAwsConfig) MarshalJSON() ([]byte, error) {

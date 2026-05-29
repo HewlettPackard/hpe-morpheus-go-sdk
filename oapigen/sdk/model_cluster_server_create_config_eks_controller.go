@@ -28,90 +28,12 @@ type ClusterServerCreateConfigEKSController struct {
 
 type _ClusterServerCreateConfigEKSController ClusterServerCreateConfigEKSController
 
-// NewClusterServerCreateConfigEKSController instantiates a new ClusterServerCreateConfigEKSController object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterServerCreateConfigEKSController() *ClusterServerCreateConfigEKSController {
-	this := ClusterServerCreateConfigEKSController{}
-	return &this
-}
-
 // NewClusterServerCreateConfigEKSControllerWithDefaults instantiates a new ClusterServerCreateConfigEKSController object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClusterServerCreateConfigEKSControllerWithDefaults() *ClusterServerCreateConfigEKSController {
 	this := ClusterServerCreateConfigEKSController{}
 	return &this
-}
-
-// GetRole returns the Role field value if set, zero value otherwise.
-func (o *ClusterServerCreateConfigEKSController) GetRole() ClusterServerCreateConfigEKSControllerRole {
-	if o == nil || IsNil(o.Role) {
-		var ret ClusterServerCreateConfigEKSControllerRole
-		return ret
-	}
-	return *o.Role
-}
-
-// GetRoleOk returns a tuple with the Role field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterServerCreateConfigEKSController) GetRoleOk() (*ClusterServerCreateConfigEKSControllerRole, bool) {
-	if o == nil || IsNil(o.Role) {
-		return nil, false
-	}
-	return o.Role, true
-}
-
-// SetRole gets a reference to the given ClusterServerCreateConfigEKSControllerRole and assigns it to the Role field.
-func (o *ClusterServerCreateConfigEKSController) SetRole(v ClusterServerCreateConfigEKSControllerRole) {
-	o.Role = &v
-}
-
-// GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *ClusterServerCreateConfigEKSController) GetNetwork() ClusterServerCreateConfigEKSControllerNetwork {
-	if o == nil || IsNil(o.Network) {
-		var ret ClusterServerCreateConfigEKSControllerNetwork
-		return ret
-	}
-	return *o.Network
-}
-
-// GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterServerCreateConfigEKSController) GetNetworkOk() (*ClusterServerCreateConfigEKSControllerNetwork, bool) {
-	if o == nil || IsNil(o.Network) {
-		return nil, false
-	}
-	return o.Network, true
-}
-
-// SetNetwork gets a reference to the given ClusterServerCreateConfigEKSControllerNetwork and assigns it to the Network field.
-func (o *ClusterServerCreateConfigEKSController) SetNetwork(v ClusterServerCreateConfigEKSControllerNetwork) {
-	o.Network = &v
-}
-
-// GetSecurityGroup returns the SecurityGroup field value if set, zero value otherwise.
-func (o *ClusterServerCreateConfigEKSController) GetSecurityGroup() ClusterServerCreateConfigEKSControllerSecurityGroup {
-	if o == nil || IsNil(o.SecurityGroup) {
-		var ret ClusterServerCreateConfigEKSControllerSecurityGroup
-		return ret
-	}
-	return *o.SecurityGroup
-}
-
-// GetSecurityGroupOk returns a tuple with the SecurityGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterServerCreateConfigEKSController) GetSecurityGroupOk() (*ClusterServerCreateConfigEKSControllerSecurityGroup, bool) {
-	if o == nil || IsNil(o.SecurityGroup) {
-		return nil, false
-	}
-	return o.SecurityGroup, true
-}
-
-// SetSecurityGroup gets a reference to the given ClusterServerCreateConfigEKSControllerSecurityGroup and assigns it to the SecurityGroup field.
-func (o *ClusterServerCreateConfigEKSController) SetSecurityGroup(v ClusterServerCreateConfigEKSControllerSecurityGroup) {
-	o.SecurityGroup = &v
 }
 
 func (o ClusterServerCreateConfigEKSController) MarshalJSON() ([]byte, error) {

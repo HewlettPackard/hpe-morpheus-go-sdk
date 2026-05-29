@@ -29,71 +29,12 @@ type RolePermissionDefaultVDIPool struct {
 
 type _RolePermissionDefaultVDIPool RolePermissionDefaultVDIPool
 
-// NewRolePermissionDefaultVDIPool instantiates a new RolePermissionDefaultVDIPool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRolePermissionDefaultVDIPool(permissionCode string, access string) *RolePermissionDefaultVDIPool {
-	this := RolePermissionDefaultVDIPool{}
-	this.PermissionCode = permissionCode
-	this.Access = access
-	return &this
-}
-
 // NewRolePermissionDefaultVDIPoolWithDefaults instantiates a new RolePermissionDefaultVDIPool object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRolePermissionDefaultVDIPoolWithDefaults() *RolePermissionDefaultVDIPool {
 	this := RolePermissionDefaultVDIPool{}
 	return &this
-}
-
-// GetPermissionCode returns the PermissionCode field value
-func (o *RolePermissionDefaultVDIPool) GetPermissionCode() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PermissionCode
-}
-
-// GetPermissionCodeOk returns a tuple with the PermissionCode field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionDefaultVDIPool) GetPermissionCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PermissionCode, true
-}
-
-// SetPermissionCode sets field value
-func (o *RolePermissionDefaultVDIPool) SetPermissionCode(v string) {
-	o.PermissionCode = v
-}
-
-// GetAccess returns the Access field value
-func (o *RolePermissionDefaultVDIPool) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionDefaultVDIPool) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *RolePermissionDefaultVDIPool) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o RolePermissionDefaultVDIPool) MarshalJSON() ([]byte, error) {

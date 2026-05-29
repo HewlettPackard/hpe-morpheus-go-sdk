@@ -27,67 +27,12 @@ type GetCatalogType200Response struct {
 
 type _GetCatalogType200Response GetCatalogType200Response
 
-// NewGetCatalogType200Response instantiates a new GetCatalogType200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCatalogType200Response() *GetCatalogType200Response {
-	this := GetCatalogType200Response{}
-	return &this
-}
-
 // NewGetCatalogType200ResponseWithDefaults instantiates a new GetCatalogType200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetCatalogType200ResponseWithDefaults() *GetCatalogType200Response {
 	this := GetCatalogType200Response{}
 	return &this
-}
-
-// GetCatalogItemTypes returns the CatalogItemTypes field value if set, zero value otherwise.
-func (o *GetCatalogType200Response) GetCatalogItemTypes() []GetCatalogType200ResponseAllOfCatalogItemTypesInner {
-	if o == nil || IsNil(o.CatalogItemTypes) {
-		var ret []GetCatalogType200ResponseAllOfCatalogItemTypesInner
-		return ret
-	}
-	return o.CatalogItemTypes
-}
-
-// GetCatalogItemTypesOk returns a tuple with the CatalogItemTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCatalogType200Response) GetCatalogItemTypesOk() ([]GetCatalogType200ResponseAllOfCatalogItemTypesInner, bool) {
-	if o == nil || IsNil(o.CatalogItemTypes) {
-		return nil, false
-	}
-	return o.CatalogItemTypes, true
-}
-
-// SetCatalogItemTypes gets a reference to the given []GetCatalogType200ResponseAllOfCatalogItemTypesInner and assigns it to the CatalogItemTypes field.
-func (o *GetCatalogType200Response) SetCatalogItemTypes(v []GetCatalogType200ResponseAllOfCatalogItemTypesInner) {
-	o.CatalogItemTypes = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *GetCatalogType200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCatalogType200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *GetCatalogType200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o GetCatalogType200Response) MarshalJSON() ([]byte, error) {

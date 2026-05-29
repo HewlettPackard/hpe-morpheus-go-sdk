@@ -26,44 +26,12 @@ type GetNetworkGroup200Response struct {
 
 type _GetNetworkGroup200Response GetNetworkGroup200Response
 
-// NewGetNetworkGroup200Response instantiates a new GetNetworkGroup200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkGroup200Response() *GetNetworkGroup200Response {
-	this := GetNetworkGroup200Response{}
-	return &this
-}
-
 // NewGetNetworkGroup200ResponseWithDefaults instantiates a new GetNetworkGroup200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkGroup200ResponseWithDefaults() *GetNetworkGroup200Response {
 	this := GetNetworkGroup200Response{}
 	return &this
-}
-
-// GetNetworkGroup returns the NetworkGroup field value if set, zero value otherwise.
-func (o *GetNetworkGroup200Response) GetNetworkGroup() GetNetworkGroup200ResponseNetworkGroup {
-	if o == nil || IsNil(o.NetworkGroup) {
-		var ret GetNetworkGroup200ResponseNetworkGroup
-		return ret
-	}
-	return *o.NetworkGroup
-}
-
-// GetNetworkGroupOk returns a tuple with the NetworkGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkGroup200Response) GetNetworkGroupOk() (*GetNetworkGroup200ResponseNetworkGroup, bool) {
-	if o == nil || IsNil(o.NetworkGroup) {
-		return nil, false
-	}
-	return o.NetworkGroup, true
-}
-
-// SetNetworkGroup gets a reference to the given GetNetworkGroup200ResponseNetworkGroup and assigns it to the NetworkGroup field.
-func (o *GetNetworkGroup200Response) SetNetworkGroup(v GetNetworkGroup200ResponseNetworkGroup) {
-	o.NetworkGroup = &v
 }
 
 func (o GetNetworkGroup200Response) MarshalJSON() ([]byte, error) {

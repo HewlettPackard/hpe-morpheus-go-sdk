@@ -27,44 +27,12 @@ type InstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool struct {
 
 type _InstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool InstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool
 
-// NewInstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool instantiates a new InstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool() *InstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool {
-	this := InstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool{}
-	return &this
-}
-
 // NewInstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPoolWithDefaults instantiates a new InstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPoolWithDefaults() *InstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool {
 	this := InstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *InstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *InstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o InstancesNetworkInterfaces7NetworkInterfacesInnerNetworkPool) MarshalJSON() ([]byte, error) {

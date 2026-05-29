@@ -26,44 +26,12 @@ type GetOptionListItems200Response struct {
 
 type _GetOptionListItems200Response GetOptionListItems200Response
 
-// NewGetOptionListItems200Response instantiates a new GetOptionListItems200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetOptionListItems200Response() *GetOptionListItems200Response {
-	this := GetOptionListItems200Response{}
-	return &this
-}
-
 // NewGetOptionListItems200ResponseWithDefaults instantiates a new GetOptionListItems200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetOptionListItems200ResponseWithDefaults() *GetOptionListItems200Response {
 	this := GetOptionListItems200Response{}
 	return &this
-}
-
-// GetListItems returns the ListItems field value if set, zero value otherwise.
-func (o *GetOptionListItems200Response) GetListItems() []GetOptionListItems200ResponseListItemsInner {
-	if o == nil || IsNil(o.ListItems) {
-		var ret []GetOptionListItems200ResponseListItemsInner
-		return ret
-	}
-	return o.ListItems
-}
-
-// GetListItemsOk returns a tuple with the ListItems field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetOptionListItems200Response) GetListItemsOk() ([]GetOptionListItems200ResponseListItemsInner, bool) {
-	if o == nil || IsNil(o.ListItems) {
-		return nil, false
-	}
-	return o.ListItems, true
-}
-
-// SetListItems gets a reference to the given []GetOptionListItems200ResponseListItemsInner and assigns it to the ListItems field.
-func (o *GetOptionListItems200Response) SetListItems(v []GetOptionListItems200ResponseListItemsInner) {
-	o.ListItems = v
 }
 
 func (o GetOptionListItems200Response) MarshalJSON() ([]byte, error) {

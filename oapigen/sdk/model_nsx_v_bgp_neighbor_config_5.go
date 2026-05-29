@@ -29,67 +29,12 @@ type NSXVBGPNeighborConfig5 struct {
 
 type _NSXVBGPNeighborConfig5 NSXVBGPNeighborConfig5
 
-// NewNSXVBGPNeighborConfig5 instantiates a new NSXVBGPNeighborConfig5 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNSXVBGPNeighborConfig5() *NSXVBGPNeighborConfig5 {
-	this := NSXVBGPNeighborConfig5{}
-	return &this
-}
-
 // NewNSXVBGPNeighborConfig5WithDefaults instantiates a new NSXVBGPNeighborConfig5 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNSXVBGPNeighborConfig5WithDefaults() *NSXVBGPNeighborConfig5 {
 	this := NSXVBGPNeighborConfig5{}
 	return &this
-}
-
-// GetRouterId returns the RouterId field value if set, zero value otherwise.
-func (o *NSXVBGPNeighborConfig5) GetRouterId() string {
-	if o == nil || IsNil(o.RouterId) {
-		var ret string
-		return ret
-	}
-	return *o.RouterId
-}
-
-// GetRouterIdOk returns a tuple with the RouterId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NSXVBGPNeighborConfig5) GetRouterIdOk() (*string, bool) {
-	if o == nil || IsNil(o.RouterId) {
-		return nil, false
-	}
-	return o.RouterId, true
-}
-
-// SetRouterId gets a reference to the given string and assigns it to the RouterId field.
-func (o *NSXVBGPNeighborConfig5) SetRouterId(v string) {
-	o.RouterId = &v
-}
-
-// GetInterface returns the Interface field value if set, zero value otherwise.
-func (o *NSXVBGPNeighborConfig5) GetInterface() string {
-	if o == nil || IsNil(o.Interface) {
-		var ret string
-		return ret
-	}
-	return *o.Interface
-}
-
-// GetInterfaceOk returns a tuple with the Interface field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NSXVBGPNeighborConfig5) GetInterfaceOk() (*string, bool) {
-	if o == nil || IsNil(o.Interface) {
-		return nil, false
-	}
-	return o.Interface, true
-}
-
-// SetInterface gets a reference to the given string and assigns it to the Interface field.
-func (o *NSXVBGPNeighborConfig5) SetInterface(v string) {
-	o.Interface = &v
 }
 
 func (o NSXVBGPNeighborConfig5) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type UpdateUserSettingsAccessToken200Response struct {
 
 type _UpdateUserSettingsAccessToken200Response UpdateUserSettingsAccessToken200Response
 
-// NewUpdateUserSettingsAccessToken200Response instantiates a new UpdateUserSettingsAccessToken200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateUserSettingsAccessToken200Response() *UpdateUserSettingsAccessToken200Response {
-	this := UpdateUserSettingsAccessToken200Response{}
-	return &this
-}
-
 // NewUpdateUserSettingsAccessToken200ResponseWithDefaults instantiates a new UpdateUserSettingsAccessToken200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateUserSettingsAccessToken200ResponseWithDefaults() *UpdateUserSettingsAccessToken200Response {
 	this := UpdateUserSettingsAccessToken200Response{}
 	return &this
-}
-
-// GetToken returns the Token field value if set, zero value otherwise.
-func (o *UpdateUserSettingsAccessToken200Response) GetToken() string {
-	if o == nil || IsNil(o.Token) {
-		var ret string
-		return ret
-	}
-	return *o.Token
-}
-
-// GetTokenOk returns a tuple with the Token field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateUserSettingsAccessToken200Response) GetTokenOk() (*string, bool) {
-	if o == nil || IsNil(o.Token) {
-		return nil, false
-	}
-	return o.Token, true
-}
-
-// SetToken gets a reference to the given string and assigns it to the Token field.
-func (o *UpdateUserSettingsAccessToken200Response) SetToken(v string) {
-	o.Token = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateUserSettingsAccessToken200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateUserSettingsAccessToken200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateUserSettingsAccessToken200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateUserSettingsAccessToken200Response) MarshalJSON() ([]byte, error) {

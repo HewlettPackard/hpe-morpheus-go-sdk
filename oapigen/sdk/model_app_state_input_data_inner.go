@@ -28,90 +28,12 @@ type AppStateInputDataInner struct {
 
 type _AppStateInputDataInner AppStateInputDataInner
 
-// NewAppStateInputDataInner instantiates a new AppStateInputDataInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAppStateInputDataInner() *AppStateInputDataInner {
-	this := AppStateInputDataInner{}
-	return &this
-}
-
 // NewAppStateInputDataInnerWithDefaults instantiates a new AppStateInputDataInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAppStateInputDataInnerWithDefaults() *AppStateInputDataInner {
 	this := AppStateInputDataInner{}
 	return &this
-}
-
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *AppStateInputDataInner) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
-		return ret
-	}
-	return *o.Key
-}
-
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppStateInputDataInner) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
-		return nil, false
-	}
-	return o.Key, true
-}
-
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *AppStateInputDataInner) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AppStateInputDataInner) GetName() AppStateInputDataInnerName {
-	if o == nil || IsNil(o.Name) {
-		var ret AppStateInputDataInnerName
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppStateInputDataInner) GetNameOk() (*AppStateInputDataInnerName, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given AppStateInputDataInnerName and assigns it to the Name field.
-func (o *AppStateInputDataInner) SetName(v AppStateInputDataInnerName) {
-	o.Name = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *AppStateInputDataInner) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppStateInputDataInner) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *AppStateInputDataInner) SetType(v string) {
-	o.Type = &v
 }
 
 func (o AppStateInputDataInner) MarshalJSON() ([]byte, error) {

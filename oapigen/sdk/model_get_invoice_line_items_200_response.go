@@ -27,67 +27,12 @@ type GetInvoiceLineItems200Response struct {
 
 type _GetInvoiceLineItems200Response GetInvoiceLineItems200Response
 
-// NewGetInvoiceLineItems200Response instantiates a new GetInvoiceLineItems200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInvoiceLineItems200Response() *GetInvoiceLineItems200Response {
-	this := GetInvoiceLineItems200Response{}
-	return &this
-}
-
 // NewGetInvoiceLineItems200ResponseWithDefaults instantiates a new GetInvoiceLineItems200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInvoiceLineItems200ResponseWithDefaults() *GetInvoiceLineItems200Response {
 	this := GetInvoiceLineItems200Response{}
 	return &this
-}
-
-// GetLineItem returns the LineItem field value if set, zero value otherwise.
-func (o *GetInvoiceLineItems200Response) GetLineItem() GetInvoiceLineItems200ResponseAllOfLineItem {
-	if o == nil || IsNil(o.LineItem) {
-		var ret GetInvoiceLineItems200ResponseAllOfLineItem
-		return ret
-	}
-	return *o.LineItem
-}
-
-// GetLineItemOk returns a tuple with the LineItem field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInvoiceLineItems200Response) GetLineItemOk() (*GetInvoiceLineItems200ResponseAllOfLineItem, bool) {
-	if o == nil || IsNil(o.LineItem) {
-		return nil, false
-	}
-	return o.LineItem, true
-}
-
-// SetLineItem gets a reference to the given GetInvoiceLineItems200ResponseAllOfLineItem and assigns it to the LineItem field.
-func (o *GetInvoiceLineItems200Response) SetLineItem(v GetInvoiceLineItems200ResponseAllOfLineItem) {
-	o.LineItem = &v
-}
-
-// GetMasterAccount returns the MasterAccount field value if set, zero value otherwise.
-func (o *GetInvoiceLineItems200Response) GetMasterAccount() bool {
-	if o == nil || IsNil(o.MasterAccount) {
-		var ret bool
-		return ret
-	}
-	return *o.MasterAccount
-}
-
-// GetMasterAccountOk returns a tuple with the MasterAccount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInvoiceLineItems200Response) GetMasterAccountOk() (*bool, bool) {
-	if o == nil || IsNil(o.MasterAccount) {
-		return nil, false
-	}
-	return o.MasterAccount, true
-}
-
-// SetMasterAccount gets a reference to the given bool and assigns it to the MasterAccount field.
-func (o *GetInvoiceLineItems200Response) SetMasterAccount(v bool) {
-	o.MasterAccount = &v
 }
 
 func (o GetInvoiceLineItems200Response) MarshalJSON() ([]byte, error) {

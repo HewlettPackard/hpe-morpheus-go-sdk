@@ -29,71 +29,12 @@ type DefaultCatalogItemTypePermission struct {
 
 type _DefaultCatalogItemTypePermission DefaultCatalogItemTypePermission
 
-// NewDefaultCatalogItemTypePermission instantiates a new DefaultCatalogItemTypePermission object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewDefaultCatalogItemTypePermission(permissionCode string, access string) *DefaultCatalogItemTypePermission {
-	this := DefaultCatalogItemTypePermission{}
-	this.PermissionCode = permissionCode
-	this.Access = access
-	return &this
-}
-
 // NewDefaultCatalogItemTypePermissionWithDefaults instantiates a new DefaultCatalogItemTypePermission object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewDefaultCatalogItemTypePermissionWithDefaults() *DefaultCatalogItemTypePermission {
 	this := DefaultCatalogItemTypePermission{}
 	return &this
-}
-
-// GetPermissionCode returns the PermissionCode field value
-func (o *DefaultCatalogItemTypePermission) GetPermissionCode() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PermissionCode
-}
-
-// GetPermissionCodeOk returns a tuple with the PermissionCode field value
-// and a boolean to check if the value has been set.
-func (o *DefaultCatalogItemTypePermission) GetPermissionCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PermissionCode, true
-}
-
-// SetPermissionCode sets field value
-func (o *DefaultCatalogItemTypePermission) SetPermissionCode(v string) {
-	o.PermissionCode = v
-}
-
-// GetAccess returns the Access field value
-func (o *DefaultCatalogItemTypePermission) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *DefaultCatalogItemTypePermission) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *DefaultCatalogItemTypePermission) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o DefaultCatalogItemTypePermission) MarshalJSON() ([]byte, error) {

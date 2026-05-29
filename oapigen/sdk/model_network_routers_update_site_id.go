@@ -27,20 +27,6 @@ type NetworkRoutersUpdateSiteId struct {
 	String *string
 }
 
-// int64AsNetworkRoutersUpdateSiteId is a convenience function that returns int64 wrapped in NetworkRoutersUpdateSiteId
-func Int64AsNetworkRoutersUpdateSiteId(v *int64) NetworkRoutersUpdateSiteId {
-	return NetworkRoutersUpdateSiteId{
-		Int64: v,
-	}
-}
-
-// stringAsNetworkRoutersUpdateSiteId is a convenience function that returns string wrapped in NetworkRoutersUpdateSiteId
-func StringAsNetworkRoutersUpdateSiteId(v *string) NetworkRoutersUpdateSiteId {
-	return NetworkRoutersUpdateSiteId{
-		String: v,
-	}
-}
-
 func (dst *NetworkRoutersUpdateSiteId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &NetworkRoutersUpdateSiteId{}

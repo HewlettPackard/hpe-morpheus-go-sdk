@@ -26,46 +26,12 @@ type MaxSnapshotsPolicyTypeConfiguration14 struct {
 
 type _MaxSnapshotsPolicyTypeConfiguration14 MaxSnapshotsPolicyTypeConfiguration14
 
-// NewMaxSnapshotsPolicyTypeConfiguration14 instantiates a new MaxSnapshotsPolicyTypeConfiguration14 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMaxSnapshotsPolicyTypeConfiguration14(maxSnapshots string) *MaxSnapshotsPolicyTypeConfiguration14 {
-	this := MaxSnapshotsPolicyTypeConfiguration14{}
-	this.MaxSnapshots = maxSnapshots
-	return &this
-}
-
 // NewMaxSnapshotsPolicyTypeConfiguration14WithDefaults instantiates a new MaxSnapshotsPolicyTypeConfiguration14 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewMaxSnapshotsPolicyTypeConfiguration14WithDefaults() *MaxSnapshotsPolicyTypeConfiguration14 {
 	this := MaxSnapshotsPolicyTypeConfiguration14{}
 	return &this
-}
-
-// GetMaxSnapshots returns the MaxSnapshots field value
-func (o *MaxSnapshotsPolicyTypeConfiguration14) GetMaxSnapshots() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MaxSnapshots
-}
-
-// GetMaxSnapshotsOk returns a tuple with the MaxSnapshots field value
-// and a boolean to check if the value has been set.
-func (o *MaxSnapshotsPolicyTypeConfiguration14) GetMaxSnapshotsOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MaxSnapshots, true
-}
-
-// SetMaxSnapshots sets field value
-func (o *MaxSnapshotsPolicyTypeConfiguration14) SetMaxSnapshots(v string) {
-	o.MaxSnapshots = v
 }
 
 func (o MaxSnapshotsPolicyTypeConfiguration14) MarshalJSON() ([]byte, error) {

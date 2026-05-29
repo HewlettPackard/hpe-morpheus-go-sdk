@@ -26,44 +26,12 @@ type BackupTargetsPolicyTypeConfiguration15 struct {
 
 type _BackupTargetsPolicyTypeConfiguration15 BackupTargetsPolicyTypeConfiguration15
 
-// NewBackupTargetsPolicyTypeConfiguration15 instantiates a new BackupTargetsPolicyTypeConfiguration15 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBackupTargetsPolicyTypeConfiguration15() *BackupTargetsPolicyTypeConfiguration15 {
-	this := BackupTargetsPolicyTypeConfiguration15{}
-	return &this
-}
-
 // NewBackupTargetsPolicyTypeConfiguration15WithDefaults instantiates a new BackupTargetsPolicyTypeConfiguration15 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBackupTargetsPolicyTypeConfiguration15WithDefaults() *BackupTargetsPolicyTypeConfiguration15 {
 	this := BackupTargetsPolicyTypeConfiguration15{}
 	return &this
-}
-
-// GetBackupStorageIds returns the BackupStorageIds field value if set, zero value otherwise.
-func (o *BackupTargetsPolicyTypeConfiguration15) GetBackupStorageIds() []int64 {
-	if o == nil || IsNil(o.BackupStorageIds) {
-		var ret []int64
-		return ret
-	}
-	return o.BackupStorageIds
-}
-
-// GetBackupStorageIdsOk returns a tuple with the BackupStorageIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BackupTargetsPolicyTypeConfiguration15) GetBackupStorageIdsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.BackupStorageIds) {
-		return nil, false
-	}
-	return o.BackupStorageIds, true
-}
-
-// SetBackupStorageIds gets a reference to the given []int64 and assigns it to the BackupStorageIds field.
-func (o *BackupTargetsPolicyTypeConfiguration15) SetBackupStorageIds(v []int64) {
-	o.BackupStorageIds = v
 }
 
 func (o BackupTargetsPolicyTypeConfiguration15) MarshalJSON() ([]byte, error) {

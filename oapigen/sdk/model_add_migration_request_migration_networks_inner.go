@@ -27,67 +27,12 @@ type AddMigrationRequestMigrationNetworksInner struct {
 
 type _AddMigrationRequestMigrationNetworksInner AddMigrationRequestMigrationNetworksInner
 
-// NewAddMigrationRequestMigrationNetworksInner instantiates a new AddMigrationRequestMigrationNetworksInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddMigrationRequestMigrationNetworksInner() *AddMigrationRequestMigrationNetworksInner {
-	this := AddMigrationRequestMigrationNetworksInner{}
-	return &this
-}
-
 // NewAddMigrationRequestMigrationNetworksInnerWithDefaults instantiates a new AddMigrationRequestMigrationNetworksInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddMigrationRequestMigrationNetworksInnerWithDefaults() *AddMigrationRequestMigrationNetworksInner {
 	this := AddMigrationRequestMigrationNetworksInner{}
 	return &this
-}
-
-// GetSourceNetwork returns the SourceNetwork field value if set, zero value otherwise.
-func (o *AddMigrationRequestMigrationNetworksInner) GetSourceNetwork() AddMigrationRequestMigrationNetworksInnerSourceNetwork {
-	if o == nil || IsNil(o.SourceNetwork) {
-		var ret AddMigrationRequestMigrationNetworksInnerSourceNetwork
-		return ret
-	}
-	return *o.SourceNetwork
-}
-
-// GetSourceNetworkOk returns a tuple with the SourceNetwork field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddMigrationRequestMigrationNetworksInner) GetSourceNetworkOk() (*AddMigrationRequestMigrationNetworksInnerSourceNetwork, bool) {
-	if o == nil || IsNil(o.SourceNetwork) {
-		return nil, false
-	}
-	return o.SourceNetwork, true
-}
-
-// SetSourceNetwork gets a reference to the given AddMigrationRequestMigrationNetworksInnerSourceNetwork and assigns it to the SourceNetwork field.
-func (o *AddMigrationRequestMigrationNetworksInner) SetSourceNetwork(v AddMigrationRequestMigrationNetworksInnerSourceNetwork) {
-	o.SourceNetwork = &v
-}
-
-// GetDestinationNetwork returns the DestinationNetwork field value if set, zero value otherwise.
-func (o *AddMigrationRequestMigrationNetworksInner) GetDestinationNetwork() AddMigrationRequestMigrationNetworksInnerDestinationNetwork {
-	if o == nil || IsNil(o.DestinationNetwork) {
-		var ret AddMigrationRequestMigrationNetworksInnerDestinationNetwork
-		return ret
-	}
-	return *o.DestinationNetwork
-}
-
-// GetDestinationNetworkOk returns a tuple with the DestinationNetwork field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddMigrationRequestMigrationNetworksInner) GetDestinationNetworkOk() (*AddMigrationRequestMigrationNetworksInnerDestinationNetwork, bool) {
-	if o == nil || IsNil(o.DestinationNetwork) {
-		return nil, false
-	}
-	return o.DestinationNetwork, true
-}
-
-// SetDestinationNetwork gets a reference to the given AddMigrationRequestMigrationNetworksInnerDestinationNetwork and assigns it to the DestinationNetwork field.
-func (o *AddMigrationRequestMigrationNetworksInner) SetDestinationNetwork(v AddMigrationRequestMigrationNetworksInnerDestinationNetwork) {
-	o.DestinationNetwork = &v
 }
 
 func (o AddMigrationRequestMigrationNetworksInner) MarshalJSON() ([]byte, error) {

@@ -28,90 +28,12 @@ type AddBaremetalHost200ResponseServerControllersInnerType struct {
 
 type _AddBaremetalHost200ResponseServerControllersInnerType AddBaremetalHost200ResponseServerControllersInnerType
 
-// NewAddBaremetalHost200ResponseServerControllersInnerType instantiates a new AddBaremetalHost200ResponseServerControllersInnerType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBaremetalHost200ResponseServerControllersInnerType() *AddBaremetalHost200ResponseServerControllersInnerType {
-	this := AddBaremetalHost200ResponseServerControllersInnerType{}
-	return &this
-}
-
 // NewAddBaremetalHost200ResponseServerControllersInnerTypeWithDefaults instantiates a new AddBaremetalHost200ResponseServerControllersInnerType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddBaremetalHost200ResponseServerControllersInnerTypeWithDefaults() *AddBaremetalHost200ResponseServerControllersInnerType {
 	this := AddBaremetalHost200ResponseServerControllersInnerType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddBaremetalHost200ResponseServerControllersInnerType) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBaremetalHost200ResponseServerControllersInnerType) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddBaremetalHost200ResponseServerControllersInnerType) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *AddBaremetalHost200ResponseServerControllersInnerType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBaremetalHost200ResponseServerControllersInnerType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *AddBaremetalHost200ResponseServerControllersInnerType) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddBaremetalHost200ResponseServerControllersInnerType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBaremetalHost200ResponseServerControllersInnerType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddBaremetalHost200ResponseServerControllersInnerType) SetName(v string) {
-	o.Name = &v
 }
 
 func (o AddBaremetalHost200ResponseServerControllersInnerType) MarshalJSON() ([]byte, error) {

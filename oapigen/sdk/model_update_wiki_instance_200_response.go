@@ -27,67 +27,12 @@ type UpdateWikiInstance200Response struct {
 
 type _UpdateWikiInstance200Response UpdateWikiInstance200Response
 
-// NewUpdateWikiInstance200Response instantiates a new UpdateWikiInstance200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateWikiInstance200Response() *UpdateWikiInstance200Response {
-	this := UpdateWikiInstance200Response{}
-	return &this
-}
-
 // NewUpdateWikiInstance200ResponseWithDefaults instantiates a new UpdateWikiInstance200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateWikiInstance200ResponseWithDefaults() *UpdateWikiInstance200Response {
 	this := UpdateWikiInstance200Response{}
 	return &this
-}
-
-// GetPage returns the Page field value if set, zero value otherwise.
-func (o *UpdateWikiInstance200Response) GetPage() UpdateWikiCluster200ResponseAllOfPage {
-	if o == nil || IsNil(o.Page) {
-		var ret UpdateWikiCluster200ResponseAllOfPage
-		return ret
-	}
-	return *o.Page
-}
-
-// GetPageOk returns a tuple with the Page field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateWikiInstance200Response) GetPageOk() (*UpdateWikiCluster200ResponseAllOfPage, bool) {
-	if o == nil || IsNil(o.Page) {
-		return nil, false
-	}
-	return o.Page, true
-}
-
-// SetPage gets a reference to the given UpdateWikiCluster200ResponseAllOfPage and assigns it to the Page field.
-func (o *UpdateWikiInstance200Response) SetPage(v UpdateWikiCluster200ResponseAllOfPage) {
-	o.Page = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateWikiInstance200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateWikiInstance200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateWikiInstance200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateWikiInstance200Response) MarshalJSON() ([]byte, error) {

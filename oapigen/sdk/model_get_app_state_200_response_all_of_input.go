@@ -28,90 +28,12 @@ type GetAppState200ResponseAllOfInput struct {
 
 type _GetAppState200ResponseAllOfInput GetAppState200ResponseAllOfInput
 
-// NewGetAppState200ResponseAllOfInput instantiates a new GetAppState200ResponseAllOfInput object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetAppState200ResponseAllOfInput() *GetAppState200ResponseAllOfInput {
-	this := GetAppState200ResponseAllOfInput{}
-	return &this
-}
-
 // NewGetAppState200ResponseAllOfInputWithDefaults instantiates a new GetAppState200ResponseAllOfInput object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetAppState200ResponseAllOfInputWithDefaults() *GetAppState200ResponseAllOfInput {
 	this := GetAppState200ResponseAllOfInput{}
 	return &this
-}
-
-// GetVariables returns the Variables field value if set, zero value otherwise.
-func (o *GetAppState200ResponseAllOfInput) GetVariables() []GetAppState200ResponseAllOfInputVariablesInner {
-	if o == nil || IsNil(o.Variables) {
-		var ret []GetAppState200ResponseAllOfInputVariablesInner
-		return ret
-	}
-	return o.Variables
-}
-
-// GetVariablesOk returns a tuple with the Variables field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetAppState200ResponseAllOfInput) GetVariablesOk() ([]GetAppState200ResponseAllOfInputVariablesInner, bool) {
-	if o == nil || IsNil(o.Variables) {
-		return nil, false
-	}
-	return o.Variables, true
-}
-
-// SetVariables gets a reference to the given []GetAppState200ResponseAllOfInputVariablesInner and assigns it to the Variables field.
-func (o *GetAppState200ResponseAllOfInput) SetVariables(v []GetAppState200ResponseAllOfInputVariablesInner) {
-	o.Variables = v
-}
-
-// GetProviders returns the Providers field value if set, zero value otherwise.
-func (o *GetAppState200ResponseAllOfInput) GetProviders() []GetAppState200ResponseAllOfInputProvidersInner {
-	if o == nil || IsNil(o.Providers) {
-		var ret []GetAppState200ResponseAllOfInputProvidersInner
-		return ret
-	}
-	return o.Providers
-}
-
-// GetProvidersOk returns a tuple with the Providers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetAppState200ResponseAllOfInput) GetProvidersOk() ([]GetAppState200ResponseAllOfInputProvidersInner, bool) {
-	if o == nil || IsNil(o.Providers) {
-		return nil, false
-	}
-	return o.Providers, true
-}
-
-// SetProviders gets a reference to the given []GetAppState200ResponseAllOfInputProvidersInner and assigns it to the Providers field.
-func (o *GetAppState200ResponseAllOfInput) SetProviders(v []GetAppState200ResponseAllOfInputProvidersInner) {
-	o.Providers = v
-}
-
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *GetAppState200ResponseAllOfInput) GetData() []GetAppState200ResponseAllOfInputDataInner {
-	if o == nil || IsNil(o.Data) {
-		var ret []GetAppState200ResponseAllOfInputDataInner
-		return ret
-	}
-	return o.Data
-}
-
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetAppState200ResponseAllOfInput) GetDataOk() ([]GetAppState200ResponseAllOfInputDataInner, bool) {
-	if o == nil || IsNil(o.Data) {
-		return nil, false
-	}
-	return o.Data, true
-}
-
-// SetData gets a reference to the given []GetAppState200ResponseAllOfInputDataInner and assigns it to the Data field.
-func (o *GetAppState200ResponseAllOfInput) SetData(v []GetAppState200ResponseAllOfInputDataInner) {
-	o.Data = v
 }
 
 func (o GetAppState200ResponseAllOfInput) MarshalJSON() ([]byte, error) {

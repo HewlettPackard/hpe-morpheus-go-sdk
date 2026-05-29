@@ -26,46 +26,12 @@ type AddChecksRequest struct {
 
 type _AddChecksRequest AddChecksRequest
 
-// NewAddChecksRequest instantiates a new AddChecksRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddChecksRequest(check AddChecksRequestCheck) *AddChecksRequest {
-	this := AddChecksRequest{}
-	this.Check = check
-	return &this
-}
-
 // NewAddChecksRequestWithDefaults instantiates a new AddChecksRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddChecksRequestWithDefaults() *AddChecksRequest {
 	this := AddChecksRequest{}
 	return &this
-}
-
-// GetCheck returns the Check field value
-func (o *AddChecksRequest) GetCheck() AddChecksRequestCheck {
-	if o == nil {
-		var ret AddChecksRequestCheck
-		return ret
-	}
-
-	return o.Check
-}
-
-// GetCheckOk returns a tuple with the Check field value
-// and a boolean to check if the value has been set.
-func (o *AddChecksRequest) GetCheckOk() (*AddChecksRequestCheck, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Check, true
-}
-
-// SetCheck sets field value
-func (o *AddChecksRequest) SetCheck(v AddChecksRequestCheck) {
-	o.Check = v
 }
 
 func (o AddChecksRequest) MarshalJSON() ([]byte, error) {

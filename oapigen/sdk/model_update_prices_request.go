@@ -26,46 +26,12 @@ type UpdatePricesRequest struct {
 
 type _UpdatePricesRequest UpdatePricesRequest
 
-// NewUpdatePricesRequest instantiates a new UpdatePricesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePricesRequest(price UpdatePricesRequestPrice) *UpdatePricesRequest {
-	this := UpdatePricesRequest{}
-	this.Price = price
-	return &this
-}
-
 // NewUpdatePricesRequestWithDefaults instantiates a new UpdatePricesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdatePricesRequestWithDefaults() *UpdatePricesRequest {
 	this := UpdatePricesRequest{}
 	return &this
-}
-
-// GetPrice returns the Price field value
-func (o *UpdatePricesRequest) GetPrice() UpdatePricesRequestPrice {
-	if o == nil {
-		var ret UpdatePricesRequestPrice
-		return ret
-	}
-
-	return o.Price
-}
-
-// GetPriceOk returns a tuple with the Price field value
-// and a boolean to check if the value has been set.
-func (o *UpdatePricesRequest) GetPriceOk() (*UpdatePricesRequestPrice, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Price, true
-}
-
-// SetPrice sets field value
-func (o *UpdatePricesRequest) SetPrice(v UpdatePricesRequestPrice) {
-	o.Price = v
 }
 
 func (o UpdatePricesRequest) MarshalJSON() ([]byte, error) {

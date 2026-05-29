@@ -27,67 +27,12 @@ type GetImageBuild200ResponseImageBuildConfigInstanceLayout struct {
 
 type _GetImageBuild200ResponseImageBuildConfigInstanceLayout GetImageBuild200ResponseImageBuildConfigInstanceLayout
 
-// NewGetImageBuild200ResponseImageBuildConfigInstanceLayout instantiates a new GetImageBuild200ResponseImageBuildConfigInstanceLayout object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetImageBuild200ResponseImageBuildConfigInstanceLayout() *GetImageBuild200ResponseImageBuildConfigInstanceLayout {
-	this := GetImageBuild200ResponseImageBuildConfigInstanceLayout{}
-	return &this
-}
-
 // NewGetImageBuild200ResponseImageBuildConfigInstanceLayoutWithDefaults instantiates a new GetImageBuild200ResponseImageBuildConfigInstanceLayout object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetImageBuild200ResponseImageBuildConfigInstanceLayoutWithDefaults() *GetImageBuild200ResponseImageBuildConfigInstanceLayout {
 	this := GetImageBuild200ResponseImageBuildConfigInstanceLayout{}
 	return &this
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *GetImageBuild200ResponseImageBuildConfigInstanceLayout) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetImageBuild200ResponseImageBuildConfigInstanceLayout) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *GetImageBuild200ResponseImageBuildConfigInstanceLayout) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetImageBuild200ResponseImageBuildConfigInstanceLayout) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetImageBuild200ResponseImageBuildConfigInstanceLayout) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetImageBuild200ResponseImageBuildConfigInstanceLayout) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o GetImageBuild200ResponseImageBuildConfigInstanceLayout) MarshalJSON() ([]byte, error) {

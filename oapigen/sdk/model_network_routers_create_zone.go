@@ -27,46 +27,12 @@ type NetworkRoutersCreateZone struct {
 
 type _NetworkRoutersCreateZone NetworkRoutersCreateZone
 
-// NewNetworkRoutersCreateZone instantiates a new NetworkRoutersCreateZone object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkRoutersCreateZone(id int64) *NetworkRoutersCreateZone {
-	this := NetworkRoutersCreateZone{}
-	this.Id = id
-	return &this
-}
-
 // NewNetworkRoutersCreateZoneWithDefaults instantiates a new NetworkRoutersCreateZone object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkRoutersCreateZoneWithDefaults() *NetworkRoutersCreateZone {
 	this := NetworkRoutersCreateZone{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *NetworkRoutersCreateZone) GetId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *NetworkRoutersCreateZone) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *NetworkRoutersCreateZone) SetId(v int64) {
-	o.Id = v
 }
 
 func (o NetworkRoutersCreateZone) MarshalJSON() ([]byte, error) {

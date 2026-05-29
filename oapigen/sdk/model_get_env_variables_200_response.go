@@ -28,91 +28,12 @@ type GetEnvVariables200Response struct {
 
 type _GetEnvVariables200Response GetEnvVariables200Response
 
-// NewGetEnvVariables200Response instantiates a new GetEnvVariables200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetEnvVariables200Response() *GetEnvVariables200Response {
-	this := GetEnvVariables200Response{}
-	return &this
-}
-
 // NewGetEnvVariables200ResponseWithDefaults instantiates a new GetEnvVariables200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetEnvVariables200ResponseWithDefaults() *GetEnvVariables200Response {
 	this := GetEnvVariables200Response{}
 	return &this
-}
-
-// GetEnvs returns the Envs field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetEnvVariables200Response) GetEnvs() []GetEnvVariables200ResponseEnvsInner {
-	if o == nil {
-		var ret []GetEnvVariables200ResponseEnvsInner
-		return ret
-	}
-	return o.Envs
-}
-
-// GetEnvsOk returns a tuple with the Envs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetEnvVariables200Response) GetEnvsOk() ([]GetEnvVariables200ResponseEnvsInner, bool) {
-	if o == nil || IsNil(o.Envs) {
-		return nil, false
-	}
-	return o.Envs, true
-}
-
-// SetEnvs gets a reference to the given []GetEnvVariables200ResponseEnvsInner and assigns it to the Envs field.
-func (o *GetEnvVariables200Response) SetEnvs(v []GetEnvVariables200ResponseEnvsInner) {
-	o.Envs = v
-}
-
-// GetReadOnlyEnvs returns the ReadOnlyEnvs field value if set, zero value otherwise.
-func (o *GetEnvVariables200Response) GetReadOnlyEnvs() map[string]GetEnvVariables200ResponseReadOnlyEnvsValue {
-	if o == nil || IsNil(o.ReadOnlyEnvs) {
-		var ret map[string]GetEnvVariables200ResponseReadOnlyEnvsValue
-		return ret
-	}
-	return *o.ReadOnlyEnvs
-}
-
-// GetReadOnlyEnvsOk returns a tuple with the ReadOnlyEnvs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetEnvVariables200Response) GetReadOnlyEnvsOk() (*map[string]GetEnvVariables200ResponseReadOnlyEnvsValue, bool) {
-	if o == nil || IsNil(o.ReadOnlyEnvs) {
-		return nil, false
-	}
-	return o.ReadOnlyEnvs, true
-}
-
-// SetReadOnlyEnvs gets a reference to the given map[string]GetEnvVariables200ResponseReadOnlyEnvsValue and assigns it to the ReadOnlyEnvs field.
-func (o *GetEnvVariables200Response) SetReadOnlyEnvs(v map[string]GetEnvVariables200ResponseReadOnlyEnvsValue) {
-	o.ReadOnlyEnvs = &v
-}
-
-// GetImportedEnvs returns the ImportedEnvs field value if set, zero value otherwise.
-func (o *GetEnvVariables200Response) GetImportedEnvs() map[string]GetEnvVariables200ResponseImportedEnvsValue {
-	if o == nil || IsNil(o.ImportedEnvs) {
-		var ret map[string]GetEnvVariables200ResponseImportedEnvsValue
-		return ret
-	}
-	return *o.ImportedEnvs
-}
-
-// GetImportedEnvsOk returns a tuple with the ImportedEnvs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetEnvVariables200Response) GetImportedEnvsOk() (*map[string]GetEnvVariables200ResponseImportedEnvsValue, bool) {
-	if o == nil || IsNil(o.ImportedEnvs) {
-		return nil, false
-	}
-	return o.ImportedEnvs, true
-}
-
-// SetImportedEnvs gets a reference to the given map[string]GetEnvVariables200ResponseImportedEnvsValue and assigns it to the ImportedEnvs field.
-func (o *GetEnvVariables200Response) SetImportedEnvs(v map[string]GetEnvVariables200ResponseImportedEnvsValue) {
-	o.ImportedEnvs = &v
 }
 
 func (o GetEnvVariables200Response) MarshalJSON() ([]byte, error) {

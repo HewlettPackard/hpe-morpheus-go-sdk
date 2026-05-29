@@ -26,44 +26,12 @@ type AppPrepareApply struct {
 
 type _AppPrepareApply AppPrepareApply
 
-// NewAppPrepareApply instantiates a new AppPrepareApply object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAppPrepareApply() *AppPrepareApply {
-	this := AppPrepareApply{}
-	return &this
-}
-
 // NewAppPrepareApplyWithDefaults instantiates a new AppPrepareApply object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAppPrepareApplyWithDefaults() *AppPrepareApply {
 	this := AppPrepareApply{}
 	return &this
-}
-
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *AppPrepareApply) GetData() AppPrepareApplyData {
-	if o == nil || IsNil(o.Data) {
-		var ret AppPrepareApplyData
-		return ret
-	}
-	return *o.Data
-}
-
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppPrepareApply) GetDataOk() (*AppPrepareApplyData, bool) {
-	if o == nil || IsNil(o.Data) {
-		return nil, false
-	}
-	return o.Data, true
-}
-
-// SetData gets a reference to the given AppPrepareApplyData and assigns it to the Data field.
-func (o *AppPrepareApply) SetData(v AppPrepareApplyData) {
-	o.Data = &v
 }
 
 func (o AppPrepareApply) MarshalJSON() ([]byte, error) {

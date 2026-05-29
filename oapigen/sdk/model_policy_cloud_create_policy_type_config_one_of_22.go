@@ -26,44 +26,12 @@ type PolicyCloudCreatePolicyTypeConfigOneOf22 struct {
 
 type _PolicyCloudCreatePolicyTypeConfigOneOf22 PolicyCloudCreatePolicyTypeConfigOneOf22
 
-// NewPolicyCloudCreatePolicyTypeConfigOneOf22 instantiates a new PolicyCloudCreatePolicyTypeConfigOneOf22 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPolicyCloudCreatePolicyTypeConfigOneOf22() *PolicyCloudCreatePolicyTypeConfigOneOf22 {
-	this := PolicyCloudCreatePolicyTypeConfigOneOf22{}
-	return &this
-}
-
 // NewPolicyCloudCreatePolicyTypeConfigOneOf22WithDefaults instantiates a new PolicyCloudCreatePolicyTypeConfigOneOf22 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPolicyCloudCreatePolicyTypeConfigOneOf22WithDefaults() *PolicyCloudCreatePolicyTypeConfigOneOf22 {
 	this := PolicyCloudCreatePolicyTypeConfigOneOf22{}
 	return &this
-}
-
-// GetMaxNetworks returns the MaxNetworks field value if set, zero value otherwise.
-func (o *PolicyCloudCreatePolicyTypeConfigOneOf22) GetMaxNetworks() string {
-	if o == nil || IsNil(o.MaxNetworks) {
-		var ret string
-		return ret
-	}
-	return *o.MaxNetworks
-}
-
-// GetMaxNetworksOk returns a tuple with the MaxNetworks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyCloudCreatePolicyTypeConfigOneOf22) GetMaxNetworksOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxNetworks) {
-		return nil, false
-	}
-	return o.MaxNetworks, true
-}
-
-// SetMaxNetworks gets a reference to the given string and assigns it to the MaxNetworks field.
-func (o *PolicyCloudCreatePolicyTypeConfigOneOf22) SetMaxNetworks(v string) {
-	o.MaxNetworks = &v
 }
 
 func (o PolicyCloudCreatePolicyTypeConfigOneOf22) MarshalJSON() ([]byte, error) {

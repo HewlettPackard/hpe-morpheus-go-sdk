@@ -28,90 +28,12 @@ type ListInvoices200Response struct {
 
 type _ListInvoices200Response ListInvoices200Response
 
-// NewListInvoices200Response instantiates a new ListInvoices200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListInvoices200Response() *ListInvoices200Response {
-	this := ListInvoices200Response{}
-	return &this
-}
-
 // NewListInvoices200ResponseWithDefaults instantiates a new ListInvoices200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListInvoices200ResponseWithDefaults() *ListInvoices200Response {
 	this := ListInvoices200Response{}
 	return &this
-}
-
-// GetInvoices returns the Invoices field value if set, zero value otherwise.
-func (o *ListInvoices200Response) GetInvoices() []ListInvoices200ResponseAllOfInvoicesInner {
-	if o == nil || IsNil(o.Invoices) {
-		var ret []ListInvoices200ResponseAllOfInvoicesInner
-		return ret
-	}
-	return o.Invoices
-}
-
-// GetInvoicesOk returns a tuple with the Invoices field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListInvoices200Response) GetInvoicesOk() ([]ListInvoices200ResponseAllOfInvoicesInner, bool) {
-	if o == nil || IsNil(o.Invoices) {
-		return nil, false
-	}
-	return o.Invoices, true
-}
-
-// SetInvoices gets a reference to the given []ListInvoices200ResponseAllOfInvoicesInner and assigns it to the Invoices field.
-func (o *ListInvoices200Response) SetInvoices(v []ListInvoices200ResponseAllOfInvoicesInner) {
-	o.Invoices = v
-}
-
-// GetMasterAccount returns the MasterAccount field value if set, zero value otherwise.
-func (o *ListInvoices200Response) GetMasterAccount() bool {
-	if o == nil || IsNil(o.MasterAccount) {
-		var ret bool
-		return ret
-	}
-	return *o.MasterAccount
-}
-
-// GetMasterAccountOk returns a tuple with the MasterAccount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListInvoices200Response) GetMasterAccountOk() (*bool, bool) {
-	if o == nil || IsNil(o.MasterAccount) {
-		return nil, false
-	}
-	return o.MasterAccount, true
-}
-
-// SetMasterAccount gets a reference to the given bool and assigns it to the MasterAccount field.
-func (o *ListInvoices200Response) SetMasterAccount(v bool) {
-	o.MasterAccount = &v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListInvoices200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListInvoices200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListInvoices200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListInvoices200Response) MarshalJSON() ([]byte, error) {

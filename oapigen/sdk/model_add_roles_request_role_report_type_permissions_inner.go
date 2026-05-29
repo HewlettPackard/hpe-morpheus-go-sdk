@@ -29,71 +29,12 @@ type AddRolesRequestRoleReportTypePermissionsInner struct {
 
 type _AddRolesRequestRoleReportTypePermissionsInner AddRolesRequestRoleReportTypePermissionsInner
 
-// NewAddRolesRequestRoleReportTypePermissionsInner instantiates a new AddRolesRequestRoleReportTypePermissionsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddRolesRequestRoleReportTypePermissionsInner(code string, access string) *AddRolesRequestRoleReportTypePermissionsInner {
-	this := AddRolesRequestRoleReportTypePermissionsInner{}
-	this.Code = code
-	this.Access = access
-	return &this
-}
-
 // NewAddRolesRequestRoleReportTypePermissionsInnerWithDefaults instantiates a new AddRolesRequestRoleReportTypePermissionsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddRolesRequestRoleReportTypePermissionsInnerWithDefaults() *AddRolesRequestRoleReportTypePermissionsInner {
 	this := AddRolesRequestRoleReportTypePermissionsInner{}
 	return &this
-}
-
-// GetCode returns the Code field value
-func (o *AddRolesRequestRoleReportTypePermissionsInner) GetCode() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value
-// and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleReportTypePermissionsInner) GetCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Code, true
-}
-
-// SetCode sets field value
-func (o *AddRolesRequestRoleReportTypePermissionsInner) SetCode(v string) {
-	o.Code = v
-}
-
-// GetAccess returns the Access field value
-func (o *AddRolesRequestRoleReportTypePermissionsInner) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleReportTypePermissionsInner) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *AddRolesRequestRoleReportTypePermissionsInner) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o AddRolesRequestRoleReportTypePermissionsInner) MarshalJSON() ([]byte, error) {

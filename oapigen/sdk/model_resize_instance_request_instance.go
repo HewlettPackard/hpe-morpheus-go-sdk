@@ -28,67 +28,12 @@ type ResizeInstanceRequestInstance struct {
 
 type _ResizeInstanceRequestInstance ResizeInstanceRequestInstance
 
-// NewResizeInstanceRequestInstance instantiates a new ResizeInstanceRequestInstance object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewResizeInstanceRequestInstance() *ResizeInstanceRequestInstance {
-	this := ResizeInstanceRequestInstance{}
-	return &this
-}
-
 // NewResizeInstanceRequestInstanceWithDefaults instantiates a new ResizeInstanceRequestInstance object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewResizeInstanceRequestInstanceWithDefaults() *ResizeInstanceRequestInstance {
 	this := ResizeInstanceRequestInstance{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ResizeInstanceRequestInstance) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequestInstance) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ResizeInstanceRequestInstance) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *ResizeInstanceRequestInstance) GetPlan() ResizeInstanceRequestInstancePlan {
-	if o == nil || IsNil(o.Plan) {
-		var ret ResizeInstanceRequestInstancePlan
-		return ret
-	}
-	return *o.Plan
-}
-
-// GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequestInstance) GetPlanOk() (*ResizeInstanceRequestInstancePlan, bool) {
-	if o == nil || IsNil(o.Plan) {
-		return nil, false
-	}
-	return o.Plan, true
-}
-
-// SetPlan gets a reference to the given ResizeInstanceRequestInstancePlan and assigns it to the Plan field.
-func (o *ResizeInstanceRequestInstance) SetPlan(v ResizeInstanceRequestInstancePlan) {
-	o.Plan = &v
 }
 
 func (o ResizeInstanceRequestInstance) MarshalJSON() ([]byte, error) {

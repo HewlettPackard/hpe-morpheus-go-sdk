@@ -29,71 +29,12 @@ type RolePermissionReportTypeAll struct {
 
 type _RolePermissionReportTypeAll RolePermissionReportTypeAll
 
-// NewRolePermissionReportTypeAll instantiates a new RolePermissionReportTypeAll object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRolePermissionReportTypeAll(allReportTypes bool, access string) *RolePermissionReportTypeAll {
-	this := RolePermissionReportTypeAll{}
-	this.AllReportTypes = allReportTypes
-	this.Access = access
-	return &this
-}
-
 // NewRolePermissionReportTypeAllWithDefaults instantiates a new RolePermissionReportTypeAll object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRolePermissionReportTypeAllWithDefaults() *RolePermissionReportTypeAll {
 	this := RolePermissionReportTypeAll{}
 	return &this
-}
-
-// GetAllReportTypes returns the AllReportTypes field value
-func (o *RolePermissionReportTypeAll) GetAllReportTypes() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AllReportTypes
-}
-
-// GetAllReportTypesOk returns a tuple with the AllReportTypes field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionReportTypeAll) GetAllReportTypesOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AllReportTypes, true
-}
-
-// SetAllReportTypes sets field value
-func (o *RolePermissionReportTypeAll) SetAllReportTypes(v bool) {
-	o.AllReportTypes = v
-}
-
-// GetAccess returns the Access field value
-func (o *RolePermissionReportTypeAll) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionReportTypeAll) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *RolePermissionReportTypeAll) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o RolePermissionReportTypeAll) MarshalJSON() ([]byte, error) {

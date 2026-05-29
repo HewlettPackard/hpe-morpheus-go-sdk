@@ -27,67 +27,12 @@ type UpdateExecuteSchedules200Response struct {
 
 type _UpdateExecuteSchedules200Response UpdateExecuteSchedules200Response
 
-// NewUpdateExecuteSchedules200Response instantiates a new UpdateExecuteSchedules200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateExecuteSchedules200Response() *UpdateExecuteSchedules200Response {
-	this := UpdateExecuteSchedules200Response{}
-	return &this
-}
-
 // NewUpdateExecuteSchedules200ResponseWithDefaults instantiates a new UpdateExecuteSchedules200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateExecuteSchedules200ResponseWithDefaults() *UpdateExecuteSchedules200Response {
 	this := UpdateExecuteSchedules200Response{}
 	return &this
-}
-
-// GetSchedule returns the Schedule field value if set, zero value otherwise.
-func (o *UpdateExecuteSchedules200Response) GetSchedule() UpdateExecuteSchedules200ResponseAllOfSchedule {
-	if o == nil || IsNil(o.Schedule) {
-		var ret UpdateExecuteSchedules200ResponseAllOfSchedule
-		return ret
-	}
-	return *o.Schedule
-}
-
-// GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateExecuteSchedules200Response) GetScheduleOk() (*UpdateExecuteSchedules200ResponseAllOfSchedule, bool) {
-	if o == nil || IsNil(o.Schedule) {
-		return nil, false
-	}
-	return o.Schedule, true
-}
-
-// SetSchedule gets a reference to the given UpdateExecuteSchedules200ResponseAllOfSchedule and assigns it to the Schedule field.
-func (o *UpdateExecuteSchedules200Response) SetSchedule(v UpdateExecuteSchedules200ResponseAllOfSchedule) {
-	o.Schedule = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateExecuteSchedules200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateExecuteSchedules200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateExecuteSchedules200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateExecuteSchedules200Response) MarshalJSON() ([]byte, error) {

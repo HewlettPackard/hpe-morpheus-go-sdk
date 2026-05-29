@@ -27,67 +27,12 @@ type GetChecks200ResponseCheckCreatedBy struct {
 
 type _GetChecks200ResponseCheckCreatedBy GetChecks200ResponseCheckCreatedBy
 
-// NewGetChecks200ResponseCheckCreatedBy instantiates a new GetChecks200ResponseCheckCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetChecks200ResponseCheckCreatedBy() *GetChecks200ResponseCheckCreatedBy {
-	this := GetChecks200ResponseCheckCreatedBy{}
-	return &this
-}
-
 // NewGetChecks200ResponseCheckCreatedByWithDefaults instantiates a new GetChecks200ResponseCheckCreatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetChecks200ResponseCheckCreatedByWithDefaults() *GetChecks200ResponseCheckCreatedBy {
 	this := GetChecks200ResponseCheckCreatedBy{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetChecks200ResponseCheckCreatedBy) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetChecks200ResponseCheckCreatedBy) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetChecks200ResponseCheckCreatedBy) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *GetChecks200ResponseCheckCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetChecks200ResponseCheckCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *GetChecks200ResponseCheckCreatedBy) SetUsername(v string) {
-	o.Username = &v
 }
 
 func (o GetChecks200ResponseCheckCreatedBy) MarshalJSON() ([]byte, error) {

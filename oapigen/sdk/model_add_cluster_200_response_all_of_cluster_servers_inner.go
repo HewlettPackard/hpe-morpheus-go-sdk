@@ -29,113 +29,12 @@ type AddCluster200ResponseAllOfClusterServersInner struct {
 
 type _AddCluster200ResponseAllOfClusterServersInner AddCluster200ResponseAllOfClusterServersInner
 
-// NewAddCluster200ResponseAllOfClusterServersInner instantiates a new AddCluster200ResponseAllOfClusterServersInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCluster200ResponseAllOfClusterServersInner() *AddCluster200ResponseAllOfClusterServersInner {
-	this := AddCluster200ResponseAllOfClusterServersInner{}
-	return &this
-}
-
 // NewAddCluster200ResponseAllOfClusterServersInnerWithDefaults instantiates a new AddCluster200ResponseAllOfClusterServersInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddCluster200ResponseAllOfClusterServersInnerWithDefaults() *AddCluster200ResponseAllOfClusterServersInner {
 	this := AddCluster200ResponseAllOfClusterServersInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddCluster200ResponseAllOfClusterServersInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCluster200ResponseAllOfClusterServersInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddCluster200ResponseAllOfClusterServersInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddCluster200ResponseAllOfClusterServersInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCluster200ResponseAllOfClusterServersInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddCluster200ResponseAllOfClusterServersInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetTypeSet returns the TypeSet field value if set, zero value otherwise.
-func (o *AddCluster200ResponseAllOfClusterServersInner) GetTypeSet() AddCluster200ResponseAllOfClusterServersInnerTypeSet {
-	if o == nil || IsNil(o.TypeSet) {
-		var ret AddCluster200ResponseAllOfClusterServersInnerTypeSet
-		return ret
-	}
-	return *o.TypeSet
-}
-
-// GetTypeSetOk returns a tuple with the TypeSet field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCluster200ResponseAllOfClusterServersInner) GetTypeSetOk() (*AddCluster200ResponseAllOfClusterServersInnerTypeSet, bool) {
-	if o == nil || IsNil(o.TypeSet) {
-		return nil, false
-	}
-	return o.TypeSet, true
-}
-
-// SetTypeSet gets a reference to the given AddCluster200ResponseAllOfClusterServersInnerTypeSet and assigns it to the TypeSet field.
-func (o *AddCluster200ResponseAllOfClusterServersInner) SetTypeSet(v AddCluster200ResponseAllOfClusterServersInnerTypeSet) {
-	o.TypeSet = &v
-}
-
-// GetComputeServerType returns the ComputeServerType field value if set, zero value otherwise.
-func (o *AddCluster200ResponseAllOfClusterServersInner) GetComputeServerType() AddCluster200ResponseAllOfClusterServersInnerComputeServerType {
-	if o == nil || IsNil(o.ComputeServerType) {
-		var ret AddCluster200ResponseAllOfClusterServersInnerComputeServerType
-		return ret
-	}
-	return *o.ComputeServerType
-}
-
-// GetComputeServerTypeOk returns a tuple with the ComputeServerType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCluster200ResponseAllOfClusterServersInner) GetComputeServerTypeOk() (*AddCluster200ResponseAllOfClusterServersInnerComputeServerType, bool) {
-	if o == nil || IsNil(o.ComputeServerType) {
-		return nil, false
-	}
-	return o.ComputeServerType, true
-}
-
-// SetComputeServerType gets a reference to the given AddCluster200ResponseAllOfClusterServersInnerComputeServerType and assigns it to the ComputeServerType field.
-func (o *AddCluster200ResponseAllOfClusterServersInner) SetComputeServerType(v AddCluster200ResponseAllOfClusterServersInnerComputeServerType) {
-	o.ComputeServerType = &v
 }
 
 func (o AddCluster200ResponseAllOfClusterServersInner) MarshalJSON() ([]byte, error) {

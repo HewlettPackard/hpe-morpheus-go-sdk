@@ -26,44 +26,12 @@ type UpdateNetworkRouterNatRequest struct {
 
 type _UpdateNetworkRouterNatRequest UpdateNetworkRouterNatRequest
 
-// NewUpdateNetworkRouterNatRequest instantiates a new UpdateNetworkRouterNatRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkRouterNatRequest() *UpdateNetworkRouterNatRequest {
-	this := UpdateNetworkRouterNatRequest{}
-	return &this
-}
-
 // NewUpdateNetworkRouterNatRequestWithDefaults instantiates a new UpdateNetworkRouterNatRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateNetworkRouterNatRequestWithDefaults() *UpdateNetworkRouterNatRequest {
 	this := UpdateNetworkRouterNatRequest{}
 	return &this
-}
-
-// GetNetworkRouterNAT returns the NetworkRouterNAT field value if set, zero value otherwise.
-func (o *UpdateNetworkRouterNatRequest) GetNetworkRouterNAT() UpdateNetworkRouterNatRequestNetworkRouterNAT {
-	if o == nil || IsNil(o.NetworkRouterNAT) {
-		var ret UpdateNetworkRouterNatRequestNetworkRouterNAT
-		return ret
-	}
-	return *o.NetworkRouterNAT
-}
-
-// GetNetworkRouterNATOk returns a tuple with the NetworkRouterNAT field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkRouterNatRequest) GetNetworkRouterNATOk() (*UpdateNetworkRouterNatRequestNetworkRouterNAT, bool) {
-	if o == nil || IsNil(o.NetworkRouterNAT) {
-		return nil, false
-	}
-	return o.NetworkRouterNAT, true
-}
-
-// SetNetworkRouterNAT gets a reference to the given UpdateNetworkRouterNatRequestNetworkRouterNAT and assigns it to the NetworkRouterNAT field.
-func (o *UpdateNetworkRouterNatRequest) SetNetworkRouterNAT(v UpdateNetworkRouterNatRequestNetworkRouterNAT) {
-	o.NetworkRouterNAT = &v
 }
 
 func (o UpdateNetworkRouterNatRequest) MarshalJSON() ([]byte, error) {

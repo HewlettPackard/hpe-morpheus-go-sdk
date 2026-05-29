@@ -29,113 +29,12 @@ type ListCypherKeys200Response struct {
 
 type _ListCypherKeys200Response ListCypherKeys200Response
 
-// NewListCypherKeys200Response instantiates a new ListCypherKeys200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListCypherKeys200Response() *ListCypherKeys200Response {
-	this := ListCypherKeys200Response{}
-	return &this
-}
-
 // NewListCypherKeys200ResponseWithDefaults instantiates a new ListCypherKeys200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListCypherKeys200ResponseWithDefaults() *ListCypherKeys200Response {
 	this := ListCypherKeys200Response{}
 	return &this
-}
-
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *ListCypherKeys200Response) GetData() ListCypherKeys200ResponseAllOfData {
-	if o == nil || IsNil(o.Data) {
-		var ret ListCypherKeys200ResponseAllOfData
-		return ret
-	}
-	return *o.Data
-}
-
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCypherKeys200Response) GetDataOk() (*ListCypherKeys200ResponseAllOfData, bool) {
-	if o == nil || IsNil(o.Data) {
-		return nil, false
-	}
-	return o.Data, true
-}
-
-// SetData gets a reference to the given ListCypherKeys200ResponseAllOfData and assigns it to the Data field.
-func (o *ListCypherKeys200Response) SetData(v ListCypherKeys200ResponseAllOfData) {
-	o.Data = &v
-}
-
-// GetCyphers returns the Cyphers field value if set, zero value otherwise.
-func (o *ListCypherKeys200Response) GetCyphers() []ListCypherKeys200ResponseAllOfCyphersInner {
-	if o == nil || IsNil(o.Cyphers) {
-		var ret []ListCypherKeys200ResponseAllOfCyphersInner
-		return ret
-	}
-	return o.Cyphers
-}
-
-// GetCyphersOk returns a tuple with the Cyphers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCypherKeys200Response) GetCyphersOk() ([]ListCypherKeys200ResponseAllOfCyphersInner, bool) {
-	if o == nil || IsNil(o.Cyphers) {
-		return nil, false
-	}
-	return o.Cyphers, true
-}
-
-// SetCyphers gets a reference to the given []ListCypherKeys200ResponseAllOfCyphersInner and assigns it to the Cyphers field.
-func (o *ListCypherKeys200Response) SetCyphers(v []ListCypherKeys200ResponseAllOfCyphersInner) {
-	o.Cyphers = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListCypherKeys200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCypherKeys200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListCypherKeys200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *ListCypherKeys200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCypherKeys200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *ListCypherKeys200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o ListCypherKeys200Response) MarshalJSON() ([]byte, error) {

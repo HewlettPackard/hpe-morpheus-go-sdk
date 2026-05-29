@@ -26,44 +26,12 @@ type InstanceTypeLayoutUpdatePermissions struct {
 
 type _InstanceTypeLayoutUpdatePermissions InstanceTypeLayoutUpdatePermissions
 
-// NewInstanceTypeLayoutUpdatePermissions instantiates a new InstanceTypeLayoutUpdatePermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceTypeLayoutUpdatePermissions() *InstanceTypeLayoutUpdatePermissions {
-	this := InstanceTypeLayoutUpdatePermissions{}
-	return &this
-}
-
 // NewInstanceTypeLayoutUpdatePermissionsWithDefaults instantiates a new InstanceTypeLayoutUpdatePermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceTypeLayoutUpdatePermissionsWithDefaults() *InstanceTypeLayoutUpdatePermissions {
 	this := InstanceTypeLayoutUpdatePermissions{}
 	return &this
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *InstanceTypeLayoutUpdatePermissions) GetResourcePermissions() InstanceTypeLayoutUpdatePermissionsResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret InstanceTypeLayoutUpdatePermissionsResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceTypeLayoutUpdatePermissions) GetResourcePermissionsOk() (*InstanceTypeLayoutUpdatePermissionsResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// SetResourcePermissions gets a reference to the given InstanceTypeLayoutUpdatePermissionsResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *InstanceTypeLayoutUpdatePermissions) SetResourcePermissions(v InstanceTypeLayoutUpdatePermissionsResourcePermissions) {
-	o.ResourcePermissions = &v
 }
 
 func (o InstanceTypeLayoutUpdatePermissions) MarshalJSON() ([]byte, error) {

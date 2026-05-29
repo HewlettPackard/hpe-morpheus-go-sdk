@@ -26,44 +26,12 @@ type InstanceTypeInstanceTypeLayoutsInnerPermissions struct {
 
 type _InstanceTypeInstanceTypeLayoutsInnerPermissions InstanceTypeInstanceTypeLayoutsInnerPermissions
 
-// NewInstanceTypeInstanceTypeLayoutsInnerPermissions instantiates a new InstanceTypeInstanceTypeLayoutsInnerPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceTypeInstanceTypeLayoutsInnerPermissions() *InstanceTypeInstanceTypeLayoutsInnerPermissions {
-	this := InstanceTypeInstanceTypeLayoutsInnerPermissions{}
-	return &this
-}
-
 // NewInstanceTypeInstanceTypeLayoutsInnerPermissionsWithDefaults instantiates a new InstanceTypeInstanceTypeLayoutsInnerPermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceTypeInstanceTypeLayoutsInnerPermissionsWithDefaults() *InstanceTypeInstanceTypeLayoutsInnerPermissions {
 	this := InstanceTypeInstanceTypeLayoutsInnerPermissions{}
 	return &this
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *InstanceTypeInstanceTypeLayoutsInnerPermissions) GetResourcePermissions() InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerPermissions) GetResourcePermissionsOk() (*InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// SetResourcePermissions gets a reference to the given InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *InstanceTypeInstanceTypeLayoutsInnerPermissions) SetResourcePermissions(v InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) {
-	o.ResourcePermissions = &v
 }
 
 func (o InstanceTypeInstanceTypeLayoutsInnerPermissions) MarshalJSON() ([]byte, error) {

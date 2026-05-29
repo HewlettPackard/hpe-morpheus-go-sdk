@@ -32,113 +32,12 @@ type UpdateNetworkPoolRequestNetworkPool struct {
 
 type _UpdateNetworkPoolRequestNetworkPool UpdateNetworkPoolRequestNetworkPool
 
-// NewUpdateNetworkPoolRequestNetworkPool instantiates a new UpdateNetworkPoolRequestNetworkPool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkPoolRequestNetworkPool() *UpdateNetworkPoolRequestNetworkPool {
-	this := UpdateNetworkPoolRequestNetworkPool{}
-	return &this
-}
-
 // NewUpdateNetworkPoolRequestNetworkPoolWithDefaults instantiates a new UpdateNetworkPoolRequestNetworkPool object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateNetworkPoolRequestNetworkPoolWithDefaults() *UpdateNetworkPoolRequestNetworkPool {
 	this := UpdateNetworkPoolRequestNetworkPool{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdateNetworkPoolRequestNetworkPool) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkPoolRequestNetworkPool) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdateNetworkPoolRequestNetworkPool) SetName(v string) {
-	o.Name = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *UpdateNetworkPoolRequestNetworkPool) GetType() UpdateNetworkPoolRequestNetworkPoolType {
-	if o == nil || IsNil(o.Type) {
-		var ret UpdateNetworkPoolRequestNetworkPoolType
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkPoolRequestNetworkPool) GetTypeOk() (*UpdateNetworkPoolRequestNetworkPoolType, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given UpdateNetworkPoolRequestNetworkPoolType and assigns it to the Type field.
-func (o *UpdateNetworkPoolRequestNetworkPool) SetType(v UpdateNetworkPoolRequestNetworkPoolType) {
-	o.Type = &v
-}
-
-// GetIpRanges returns the IpRanges field value if set, zero value otherwise.
-func (o *UpdateNetworkPoolRequestNetworkPool) GetIpRanges() []UpdateNetworkPoolRequestNetworkPoolIpRangesInner {
-	if o == nil || IsNil(o.IpRanges) {
-		var ret []UpdateNetworkPoolRequestNetworkPoolIpRangesInner
-		return ret
-	}
-	return o.IpRanges
-}
-
-// GetIpRangesOk returns a tuple with the IpRanges field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkPoolRequestNetworkPool) GetIpRangesOk() ([]UpdateNetworkPoolRequestNetworkPoolIpRangesInner, bool) {
-	if o == nil || IsNil(o.IpRanges) {
-		return nil, false
-	}
-	return o.IpRanges, true
-}
-
-// SetIpRanges gets a reference to the given []UpdateNetworkPoolRequestNetworkPoolIpRangesInner and assigns it to the IpRanges field.
-func (o *UpdateNetworkPoolRequestNetworkPool) SetIpRanges(v []UpdateNetworkPoolRequestNetworkPoolIpRangesInner) {
-	o.IpRanges = v
-}
-
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *UpdateNetworkPoolRequestNetworkPool) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkPoolRequestNetworkPool) GetConfigOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
-	}
-	return o.Config, true
-}
-
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *UpdateNetworkPoolRequestNetworkPool) SetConfig(v map[string]interface{}) {
-	o.Config = v
 }
 
 func (o UpdateNetworkPoolRequestNetworkPool) MarshalJSON() ([]byte, error) {

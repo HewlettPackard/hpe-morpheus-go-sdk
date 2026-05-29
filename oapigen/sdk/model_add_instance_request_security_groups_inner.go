@@ -26,44 +26,12 @@ type AddInstanceRequestSecurityGroupsInner struct {
 
 type _AddInstanceRequestSecurityGroupsInner AddInstanceRequestSecurityGroupsInner
 
-// NewAddInstanceRequestSecurityGroupsInner instantiates a new AddInstanceRequestSecurityGroupsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddInstanceRequestSecurityGroupsInner() *AddInstanceRequestSecurityGroupsInner {
-	this := AddInstanceRequestSecurityGroupsInner{}
-	return &this
-}
-
 // NewAddInstanceRequestSecurityGroupsInnerWithDefaults instantiates a new AddInstanceRequestSecurityGroupsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddInstanceRequestSecurityGroupsInnerWithDefaults() *AddInstanceRequestSecurityGroupsInner {
 	this := AddInstanceRequestSecurityGroupsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddInstanceRequestSecurityGroupsInner) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstanceRequestSecurityGroupsInner) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *AddInstanceRequestSecurityGroupsInner) SetId(v string) {
-	o.Id = &v
 }
 
 func (o AddInstanceRequestSecurityGroupsInner) MarshalJSON() ([]byte, error) {

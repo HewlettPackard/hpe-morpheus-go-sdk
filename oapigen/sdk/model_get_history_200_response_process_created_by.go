@@ -27,67 +27,12 @@ type GetHistory200ResponseProcessCreatedBy struct {
 
 type _GetHistory200ResponseProcessCreatedBy GetHistory200ResponseProcessCreatedBy
 
-// NewGetHistory200ResponseProcessCreatedBy instantiates a new GetHistory200ResponseProcessCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetHistory200ResponseProcessCreatedBy() *GetHistory200ResponseProcessCreatedBy {
-	this := GetHistory200ResponseProcessCreatedBy{}
-	return &this
-}
-
 // NewGetHistory200ResponseProcessCreatedByWithDefaults instantiates a new GetHistory200ResponseProcessCreatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetHistory200ResponseProcessCreatedByWithDefaults() *GetHistory200ResponseProcessCreatedBy {
 	this := GetHistory200ResponseProcessCreatedBy{}
 	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *GetHistory200ResponseProcessCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetHistory200ResponseProcessCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *GetHistory200ResponseProcessCreatedBy) SetUsername(v string) {
-	o.Username = &v
-}
-
-// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
-func (o *GetHistory200ResponseProcessCreatedBy) GetDisplayName() string {
-	if o == nil || IsNil(o.DisplayName) {
-		var ret string
-		return ret
-	}
-	return *o.DisplayName
-}
-
-// GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetHistory200ResponseProcessCreatedBy) GetDisplayNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DisplayName) {
-		return nil, false
-	}
-	return o.DisplayName, true
-}
-
-// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
-func (o *GetHistory200ResponseProcessCreatedBy) SetDisplayName(v string) {
-	o.DisplayName = &v
 }
 
 func (o GetHistory200ResponseProcessCreatedBy) MarshalJSON() ([]byte, error) {

@@ -33,113 +33,12 @@ type AddClusterNamespaceRequestNamespaceResourcePermissions struct {
 
 type _AddClusterNamespaceRequestNamespaceResourcePermissions AddClusterNamespaceRequestNamespaceResourcePermissions
 
-// NewAddClusterNamespaceRequestNamespaceResourcePermissions instantiates a new AddClusterNamespaceRequestNamespaceResourcePermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterNamespaceRequestNamespaceResourcePermissions() *AddClusterNamespaceRequestNamespaceResourcePermissions {
-	this := AddClusterNamespaceRequestNamespaceResourcePermissions{}
-	return &this
-}
-
 // NewAddClusterNamespaceRequestNamespaceResourcePermissionsWithDefaults instantiates a new AddClusterNamespaceRequestNamespaceResourcePermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddClusterNamespaceRequestNamespaceResourcePermissionsWithDefaults() *AddClusterNamespaceRequestNamespaceResourcePermissions {
 	this := AddClusterNamespaceRequestNamespaceResourcePermissions{}
 	return &this
-}
-
-// GetAll returns the All field value if set, zero value otherwise.
-func (o *AddClusterNamespaceRequestNamespaceResourcePermissions) GetAll() bool {
-	if o == nil || IsNil(o.All) {
-		var ret bool
-		return ret
-	}
-	return *o.All
-}
-
-// GetAllOk returns a tuple with the All field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterNamespaceRequestNamespaceResourcePermissions) GetAllOk() (*bool, bool) {
-	if o == nil || IsNil(o.All) {
-		return nil, false
-	}
-	return o.All, true
-}
-
-// SetAll gets a reference to the given bool and assigns it to the All field.
-func (o *AddClusterNamespaceRequestNamespaceResourcePermissions) SetAll(v bool) {
-	o.All = &v
-}
-
-// GetSites returns the Sites field value if set, zero value otherwise.
-func (o *AddClusterNamespaceRequestNamespaceResourcePermissions) GetSites() []AddClusterNamespaceRequestNamespaceResourcePermissionsSitesInner {
-	if o == nil || IsNil(o.Sites) {
-		var ret []AddClusterNamespaceRequestNamespaceResourcePermissionsSitesInner
-		return ret
-	}
-	return o.Sites
-}
-
-// GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterNamespaceRequestNamespaceResourcePermissions) GetSitesOk() ([]AddClusterNamespaceRequestNamespaceResourcePermissionsSitesInner, bool) {
-	if o == nil || IsNil(o.Sites) {
-		return nil, false
-	}
-	return o.Sites, true
-}
-
-// SetSites gets a reference to the given []AddClusterNamespaceRequestNamespaceResourcePermissionsSitesInner and assigns it to the Sites field.
-func (o *AddClusterNamespaceRequestNamespaceResourcePermissions) SetSites(v []AddClusterNamespaceRequestNamespaceResourcePermissionsSitesInner) {
-	o.Sites = v
-}
-
-// GetAllPlans returns the AllPlans field value if set, zero value otherwise.
-func (o *AddClusterNamespaceRequestNamespaceResourcePermissions) GetAllPlans() bool {
-	if o == nil || IsNil(o.AllPlans) {
-		var ret bool
-		return ret
-	}
-	return *o.AllPlans
-}
-
-// GetAllPlansOk returns a tuple with the AllPlans field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterNamespaceRequestNamespaceResourcePermissions) GetAllPlansOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllPlans) {
-		return nil, false
-	}
-	return o.AllPlans, true
-}
-
-// SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
-func (o *AddClusterNamespaceRequestNamespaceResourcePermissions) SetAllPlans(v bool) {
-	o.AllPlans = &v
-}
-
-// GetPlans returns the Plans field value if set, zero value otherwise.
-func (o *AddClusterNamespaceRequestNamespaceResourcePermissions) GetPlans() []AddClusterNamespaceRequestNamespaceResourcePermissionsPlansInner {
-	if o == nil || IsNil(o.Plans) {
-		var ret []AddClusterNamespaceRequestNamespaceResourcePermissionsPlansInner
-		return ret
-	}
-	return o.Plans
-}
-
-// GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterNamespaceRequestNamespaceResourcePermissions) GetPlansOk() ([]AddClusterNamespaceRequestNamespaceResourcePermissionsPlansInner, bool) {
-	if o == nil || IsNil(o.Plans) {
-		return nil, false
-	}
-	return o.Plans, true
-}
-
-// SetPlans gets a reference to the given []AddClusterNamespaceRequestNamespaceResourcePermissionsPlansInner and assigns it to the Plans field.
-func (o *AddClusterNamespaceRequestNamespaceResourcePermissions) SetPlans(v []AddClusterNamespaceRequestNamespaceResourcePermissionsPlansInner) {
-	o.Plans = v
 }
 
 func (o AddClusterNamespaceRequestNamespaceResourcePermissions) MarshalJSON() ([]byte, error) {

@@ -27,46 +27,12 @@ type UpdateIdentitySourceSubdomainsRequest struct {
 
 type _UpdateIdentitySourceSubdomainsRequest UpdateIdentitySourceSubdomainsRequest
 
-// NewUpdateIdentitySourceSubdomainsRequest instantiates a new UpdateIdentitySourceSubdomainsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIdentitySourceSubdomainsRequest(subdomain string) *UpdateIdentitySourceSubdomainsRequest {
-	this := UpdateIdentitySourceSubdomainsRequest{}
-	this.Subdomain = subdomain
-	return &this
-}
-
 // NewUpdateIdentitySourceSubdomainsRequestWithDefaults instantiates a new UpdateIdentitySourceSubdomainsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateIdentitySourceSubdomainsRequestWithDefaults() *UpdateIdentitySourceSubdomainsRequest {
 	this := UpdateIdentitySourceSubdomainsRequest{}
 	return &this
-}
-
-// GetSubdomain returns the Subdomain field value
-func (o *UpdateIdentitySourceSubdomainsRequest) GetSubdomain() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Subdomain
-}
-
-// GetSubdomainOk returns a tuple with the Subdomain field value
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourceSubdomainsRequest) GetSubdomainOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Subdomain, true
-}
-
-// SetSubdomain sets field value
-func (o *UpdateIdentitySourceSubdomainsRequest) SetSubdomain(v string) {
-	o.Subdomain = v
 }
 
 func (o UpdateIdentitySourceSubdomainsRequest) MarshalJSON() ([]byte, error) {

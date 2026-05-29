@@ -28,90 +28,12 @@ type GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType struct {
 
 type _GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType
 
-// NewGetNetworkServer200ResponseNetworkServerIntegrationIntegrationType instantiates a new GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkServer200ResponseNetworkServerIntegrationIntegrationType() *GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType {
-	this := GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType{}
-	return &this
-}
-
 // NewGetNetworkServer200ResponseNetworkServerIntegrationIntegrationTypeWithDefaults instantiates a new GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkServer200ResponseNetworkServerIntegrationIntegrationTypeWithDefaults() *GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType {
 	this := GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType) SetName(v string) {
-	o.Name = &v
 }
 
 func (o GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType) MarshalJSON() ([]byte, error) {

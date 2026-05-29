@@ -29,71 +29,12 @@ type RolePermissionPersona struct {
 
 type _RolePermissionPersona RolePermissionPersona
 
-// NewRolePermissionPersona instantiates a new RolePermissionPersona object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRolePermissionPersona(personaCode string, access string) *RolePermissionPersona {
-	this := RolePermissionPersona{}
-	this.PersonaCode = personaCode
-	this.Access = access
-	return &this
-}
-
 // NewRolePermissionPersonaWithDefaults instantiates a new RolePermissionPersona object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRolePermissionPersonaWithDefaults() *RolePermissionPersona {
 	this := RolePermissionPersona{}
 	return &this
-}
-
-// GetPersonaCode returns the PersonaCode field value
-func (o *RolePermissionPersona) GetPersonaCode() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PersonaCode
-}
-
-// GetPersonaCodeOk returns a tuple with the PersonaCode field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionPersona) GetPersonaCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PersonaCode, true
-}
-
-// SetPersonaCode sets field value
-func (o *RolePermissionPersona) SetPersonaCode(v string) {
-	o.PersonaCode = v
-}
-
-// GetAccess returns the Access field value
-func (o *RolePermissionPersona) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionPersona) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *RolePermissionPersona) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o RolePermissionPersona) MarshalJSON() ([]byte, error) {

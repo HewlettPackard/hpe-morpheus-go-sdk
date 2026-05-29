@@ -27,67 +27,12 @@ type ListInstanceTypesProvisioning200Response struct {
 
 type _ListInstanceTypesProvisioning200Response ListInstanceTypesProvisioning200Response
 
-// NewListInstanceTypesProvisioning200Response instantiates a new ListInstanceTypesProvisioning200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListInstanceTypesProvisioning200Response() *ListInstanceTypesProvisioning200Response {
-	this := ListInstanceTypesProvisioning200Response{}
-	return &this
-}
-
 // NewListInstanceTypesProvisioning200ResponseWithDefaults instantiates a new ListInstanceTypesProvisioning200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListInstanceTypesProvisioning200ResponseWithDefaults() *ListInstanceTypesProvisioning200Response {
 	this := ListInstanceTypesProvisioning200Response{}
 	return &this
-}
-
-// GetInstanceTypes returns the InstanceTypes field value if set, zero value otherwise.
-func (o *ListInstanceTypesProvisioning200Response) GetInstanceTypes() []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner {
-	if o == nil || IsNil(o.InstanceTypes) {
-		var ret []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner
-		return ret
-	}
-	return o.InstanceTypes
-}
-
-// GetInstanceTypesOk returns a tuple with the InstanceTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListInstanceTypesProvisioning200Response) GetInstanceTypesOk() ([]ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner, bool) {
-	if o == nil || IsNil(o.InstanceTypes) {
-		return nil, false
-	}
-	return o.InstanceTypes, true
-}
-
-// SetInstanceTypes gets a reference to the given []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner and assigns it to the InstanceTypes field.
-func (o *ListInstanceTypesProvisioning200Response) SetInstanceTypes(v []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) {
-	o.InstanceTypes = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListInstanceTypesProvisioning200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListInstanceTypesProvisioning200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListInstanceTypesProvisioning200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListInstanceTypesProvisioning200Response) MarshalJSON() ([]byte, error) {

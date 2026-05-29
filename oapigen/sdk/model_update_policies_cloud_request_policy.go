@@ -30,90 +30,12 @@ type UpdatePoliciesCloudRequestPolicy struct {
 
 type _UpdatePoliciesCloudRequestPolicy UpdatePoliciesCloudRequestPolicy
 
-// NewUpdatePoliciesCloudRequestPolicy instantiates a new UpdatePoliciesCloudRequestPolicy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePoliciesCloudRequestPolicy() *UpdatePoliciesCloudRequestPolicy {
-	this := UpdatePoliciesCloudRequestPolicy{}
-	return &this
-}
-
 // NewUpdatePoliciesCloudRequestPolicyWithDefaults instantiates a new UpdatePoliciesCloudRequestPolicy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdatePoliciesCloudRequestPolicyWithDefaults() *UpdatePoliciesCloudRequestPolicy {
 	this := UpdatePoliciesCloudRequestPolicy{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdatePoliciesCloudRequestPolicy) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesCloudRequestPolicy) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdatePoliciesCloudRequestPolicy) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *UpdatePoliciesCloudRequestPolicy) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
-		var ret string
-		return ret
-	}
-	return *o.Description
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesCloudRequestPolicy) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
-		return nil, false
-	}
-	return o.Description, true
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *UpdatePoliciesCloudRequestPolicy) SetDescription(v string) {
-	o.Description = &v
-}
-
-// GetPolicyType returns the PolicyType field value if set, zero value otherwise.
-func (o *UpdatePoliciesCloudRequestPolicy) GetPolicyType() UpdatePoliciesCloudRequestPolicyPolicyType {
-	if o == nil || IsNil(o.PolicyType) {
-		var ret UpdatePoliciesCloudRequestPolicyPolicyType
-		return ret
-	}
-	return *o.PolicyType
-}
-
-// GetPolicyTypeOk returns a tuple with the PolicyType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesCloudRequestPolicy) GetPolicyTypeOk() (*UpdatePoliciesCloudRequestPolicyPolicyType, bool) {
-	if o == nil || IsNil(o.PolicyType) {
-		return nil, false
-	}
-	return o.PolicyType, true
-}
-
-// SetPolicyType gets a reference to the given UpdatePoliciesCloudRequestPolicyPolicyType and assigns it to the PolicyType field.
-func (o *UpdatePoliciesCloudRequestPolicy) SetPolicyType(v UpdatePoliciesCloudRequestPolicyPolicyType) {
-	o.PolicyType = &v
 }
 
 func (o UpdatePoliciesCloudRequestPolicy) MarshalJSON() ([]byte, error) {

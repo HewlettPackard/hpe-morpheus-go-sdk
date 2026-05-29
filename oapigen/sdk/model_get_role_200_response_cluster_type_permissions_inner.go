@@ -29,113 +29,12 @@ type GetRole200ResponseClusterTypePermissionsInner struct {
 
 type _GetRole200ResponseClusterTypePermissionsInner GetRole200ResponseClusterTypePermissionsInner
 
-// NewGetRole200ResponseClusterTypePermissionsInner instantiates a new GetRole200ResponseClusterTypePermissionsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetRole200ResponseClusterTypePermissionsInner() *GetRole200ResponseClusterTypePermissionsInner {
-	this := GetRole200ResponseClusterTypePermissionsInner{}
-	return &this
-}
-
 // NewGetRole200ResponseClusterTypePermissionsInnerWithDefaults instantiates a new GetRole200ResponseClusterTypePermissionsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetRole200ResponseClusterTypePermissionsInnerWithDefaults() *GetRole200ResponseClusterTypePermissionsInner {
 	this := GetRole200ResponseClusterTypePermissionsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetRole200ResponseClusterTypePermissionsInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetRole200ResponseClusterTypePermissionsInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetRole200ResponseClusterTypePermissionsInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *GetRole200ResponseClusterTypePermissionsInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetRole200ResponseClusterTypePermissionsInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *GetRole200ResponseClusterTypePermissionsInner) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetRole200ResponseClusterTypePermissionsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetRole200ResponseClusterTypePermissionsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetRole200ResponseClusterTypePermissionsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetAccess returns the Access field value if set, zero value otherwise.
-func (o *GetRole200ResponseClusterTypePermissionsInner) GetAccess() string {
-	if o == nil || IsNil(o.Access) {
-		var ret string
-		return ret
-	}
-	return *o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetRole200ResponseClusterTypePermissionsInner) GetAccessOk() (*string, bool) {
-	if o == nil || IsNil(o.Access) {
-		return nil, false
-	}
-	return o.Access, true
-}
-
-// SetAccess gets a reference to the given string and assigns it to the Access field.
-func (o *GetRole200ResponseClusterTypePermissionsInner) SetAccess(v string) {
-	o.Access = &v
 }
 
 func (o GetRole200ResponseClusterTypePermissionsInner) MarshalJSON() ([]byte, error) {

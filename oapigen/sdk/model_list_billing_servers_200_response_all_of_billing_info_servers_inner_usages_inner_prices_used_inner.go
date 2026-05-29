@@ -29,113 +29,12 @@ type ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesU
 
 type _ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner
 
-// NewListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner instantiates a new ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner() *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner {
-	this := ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner{}
-	return &this
-}
-
 // NewListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInnerWithDefaults instantiates a new ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInnerWithDefaults() *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner {
 	this := ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner{}
 	return &this
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) SetType(v string) {
-	o.Type = &v
-}
-
-// GetPricePerUnit returns the PricePerUnit field value if set, zero value otherwise.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) GetPricePerUnit() float32 {
-	if o == nil || IsNil(o.PricePerUnit) {
-		var ret float32
-		return ret
-	}
-	return *o.PricePerUnit
-}
-
-// GetPricePerUnitOk returns a tuple with the PricePerUnit field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) GetPricePerUnitOk() (*float32, bool) {
-	if o == nil || IsNil(o.PricePerUnit) {
-		return nil, false
-	}
-	return o.PricePerUnit, true
-}
-
-// SetPricePerUnit gets a reference to the given float32 and assigns it to the PricePerUnit field.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) SetPricePerUnit(v float32) {
-	o.PricePerUnit = &v
-}
-
-// GetCostPerUnit returns the CostPerUnit field value if set, zero value otherwise.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) GetCostPerUnit() float32 {
-	if o == nil || IsNil(o.CostPerUnit) {
-		var ret float32
-		return ret
-	}
-	return *o.CostPerUnit
-}
-
-// GetCostPerUnitOk returns a tuple with the CostPerUnit field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) GetCostPerUnitOk() (*float32, bool) {
-	if o == nil || IsNil(o.CostPerUnit) {
-		return nil, false
-	}
-	return o.CostPerUnit, true
-}
-
-// SetCostPerUnit gets a reference to the given float32 and assigns it to the CostPerUnit field.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) SetCostPerUnit(v float32) {
-	o.CostPerUnit = &v
-}
-
-// GetQuantity returns the Quantity field value if set, zero value otherwise.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) GetQuantity() float32 {
-	if o == nil || IsNil(o.Quantity) {
-		var ret float32
-		return ret
-	}
-	return *o.Quantity
-}
-
-// GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) GetQuantityOk() (*float32, bool) {
-	if o == nil || IsNil(o.Quantity) {
-		return nil, false
-	}
-	return o.Quantity, true
-}
-
-// SetQuantity gets a reference to the given float32 and assigns it to the Quantity field.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) SetQuantity(v float32) {
-	o.Quantity = &v
 }
 
 func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) MarshalJSON() ([]byte, error) {

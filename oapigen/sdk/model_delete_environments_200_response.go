@@ -27,68 +27,12 @@ type DeleteEnvironments200Response struct {
 
 type _DeleteEnvironments200Response DeleteEnvironments200Response
 
-// NewDeleteEnvironments200Response instantiates a new DeleteEnvironments200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewDeleteEnvironments200Response() *DeleteEnvironments200Response {
-	this := DeleteEnvironments200Response{}
-	return &this
-}
-
 // NewDeleteEnvironments200ResponseWithDefaults instantiates a new DeleteEnvironments200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewDeleteEnvironments200ResponseWithDefaults() *DeleteEnvironments200Response {
 	this := DeleteEnvironments200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *DeleteEnvironments200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeleteEnvironments200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *DeleteEnvironments200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetErrors returns the Errors field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DeleteEnvironments200Response) GetErrors() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Errors
-}
-
-// GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DeleteEnvironments200Response) GetErrorsOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Errors) {
-		return map[string]interface{}{}, false
-	}
-	return o.Errors, true
-}
-
-// SetErrors gets a reference to the given map[string]interface{} and assigns it to the Errors field.
-func (o *DeleteEnvironments200Response) SetErrors(v map[string]interface{}) {
-	o.Errors = v
 }
 
 func (o DeleteEnvironments200Response) MarshalJSON() ([]byte, error) {

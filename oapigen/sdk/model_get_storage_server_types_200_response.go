@@ -26,44 +26,12 @@ type GetStorageServerTypes200Response struct {
 
 type _GetStorageServerTypes200Response GetStorageServerTypes200Response
 
-// NewGetStorageServerTypes200Response instantiates a new GetStorageServerTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetStorageServerTypes200Response() *GetStorageServerTypes200Response {
-	this := GetStorageServerTypes200Response{}
-	return &this
-}
-
 // NewGetStorageServerTypes200ResponseWithDefaults instantiates a new GetStorageServerTypes200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetStorageServerTypes200ResponseWithDefaults() *GetStorageServerTypes200Response {
 	this := GetStorageServerTypes200Response{}
 	return &this
-}
-
-// GetStorageServerType returns the StorageServerType field value if set, zero value otherwise.
-func (o *GetStorageServerTypes200Response) GetStorageServerType() GetStorageServerTypes200ResponseStorageServerType {
-	if o == nil || IsNil(o.StorageServerType) {
-		var ret GetStorageServerTypes200ResponseStorageServerType
-		return ret
-	}
-	return *o.StorageServerType
-}
-
-// GetStorageServerTypeOk returns a tuple with the StorageServerType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetStorageServerTypes200Response) GetStorageServerTypeOk() (*GetStorageServerTypes200ResponseStorageServerType, bool) {
-	if o == nil || IsNil(o.StorageServerType) {
-		return nil, false
-	}
-	return o.StorageServerType, true
-}
-
-// SetStorageServerType gets a reference to the given GetStorageServerTypes200ResponseStorageServerType and assigns it to the StorageServerType field.
-func (o *GetStorageServerTypes200Response) SetStorageServerType(v GetStorageServerTypes200ResponseStorageServerType) {
-	o.StorageServerType = &v
 }
 
 func (o GetStorageServerTypes200Response) MarshalJSON() ([]byte, error) {

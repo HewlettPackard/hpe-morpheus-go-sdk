@@ -29,18 +29,6 @@ type TestLicenseRequest struct {
 
 type _TestLicenseRequest TestLicenseRequest
 
-// NewTestLicenseRequest instantiates a new TestLicenseRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTestLicenseRequest(license string) *TestLicenseRequest {
-	this := TestLicenseRequest{}
-	this.License = license
-	var installAction string = "replace"
-	this.InstallAction = &installAction
-	return &this
-}
-
 // NewTestLicenseRequestWithDefaults instantiates a new TestLicenseRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -49,53 +37,6 @@ func NewTestLicenseRequestWithDefaults() *TestLicenseRequest {
 	var installAction string = "replace"
 	this.InstallAction = &installAction
 	return &this
-}
-
-// GetLicense returns the License field value
-func (o *TestLicenseRequest) GetLicense() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.License
-}
-
-// GetLicenseOk returns a tuple with the License field value
-// and a boolean to check if the value has been set.
-func (o *TestLicenseRequest) GetLicenseOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.License, true
-}
-
-// SetLicense sets field value
-func (o *TestLicenseRequest) SetLicense(v string) {
-	o.License = v
-}
-
-// GetInstallAction returns the InstallAction field value if set, zero value otherwise.
-func (o *TestLicenseRequest) GetInstallAction() string {
-	if o == nil || IsNil(o.InstallAction) {
-		var ret string
-		return ret
-	}
-	return *o.InstallAction
-}
-
-// GetInstallActionOk returns a tuple with the InstallAction field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TestLicenseRequest) GetInstallActionOk() (*string, bool) {
-	if o == nil || IsNil(o.InstallAction) {
-		return nil, false
-	}
-	return o.InstallAction, true
-}
-
-// SetInstallAction gets a reference to the given string and assigns it to the InstallAction field.
-func (o *TestLicenseRequest) SetInstallAction(v string) {
-	o.InstallAction = &v
 }
 
 func (o TestLicenseRequest) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type ListCatalogCart200Response struct {
 
 type _ListCatalogCart200Response ListCatalogCart200Response
 
-// NewListCatalogCart200Response instantiates a new ListCatalogCart200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListCatalogCart200Response() *ListCatalogCart200Response {
-	this := ListCatalogCart200Response{}
-	return &this
-}
-
 // NewListCatalogCart200ResponseWithDefaults instantiates a new ListCatalogCart200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListCatalogCart200ResponseWithDefaults() *ListCatalogCart200Response {
 	this := ListCatalogCart200Response{}
 	return &this
-}
-
-// GetCart returns the Cart field value if set, zero value otherwise.
-func (o *ListCatalogCart200Response) GetCart() ListCatalogCart200ResponseCart {
-	if o == nil || IsNil(o.Cart) {
-		var ret ListCatalogCart200ResponseCart
-		return ret
-	}
-	return *o.Cart
-}
-
-// GetCartOk returns a tuple with the Cart field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCatalogCart200Response) GetCartOk() (*ListCatalogCart200ResponseCart, bool) {
-	if o == nil || IsNil(o.Cart) {
-		return nil, false
-	}
-	return o.Cart, true
-}
-
-// SetCart gets a reference to the given ListCatalogCart200ResponseCart and assigns it to the Cart field.
-func (o *ListCatalogCart200Response) SetCart(v ListCatalogCart200ResponseCart) {
-	o.Cart = &v
 }
 
 func (o ListCatalogCart200Response) MarshalJSON() ([]byte, error) {

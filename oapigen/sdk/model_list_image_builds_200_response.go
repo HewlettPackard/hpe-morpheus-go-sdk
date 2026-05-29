@@ -28,90 +28,12 @@ type ListImageBuilds200Response struct {
 
 type _ListImageBuilds200Response ListImageBuilds200Response
 
-// NewListImageBuilds200Response instantiates a new ListImageBuilds200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListImageBuilds200Response() *ListImageBuilds200Response {
-	this := ListImageBuilds200Response{}
-	return &this
-}
-
 // NewListImageBuilds200ResponseWithDefaults instantiates a new ListImageBuilds200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListImageBuilds200ResponseWithDefaults() *ListImageBuilds200Response {
 	this := ListImageBuilds200Response{}
 	return &this
-}
-
-// GetImageBuilds returns the ImageBuilds field value if set, zero value otherwise.
-func (o *ListImageBuilds200Response) GetImageBuilds() []ListImageBuilds200ResponseAllOfImageBuildsInner {
-	if o == nil || IsNil(o.ImageBuilds) {
-		var ret []ListImageBuilds200ResponseAllOfImageBuildsInner
-		return ret
-	}
-	return o.ImageBuilds
-}
-
-// GetImageBuildsOk returns a tuple with the ImageBuilds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListImageBuilds200Response) GetImageBuildsOk() ([]ListImageBuilds200ResponseAllOfImageBuildsInner, bool) {
-	if o == nil || IsNil(o.ImageBuilds) {
-		return nil, false
-	}
-	return o.ImageBuilds, true
-}
-
-// SetImageBuilds gets a reference to the given []ListImageBuilds200ResponseAllOfImageBuildsInner and assigns it to the ImageBuilds field.
-func (o *ListImageBuilds200Response) SetImageBuilds(v []ListImageBuilds200ResponseAllOfImageBuildsInner) {
-	o.ImageBuilds = v
-}
-
-// GetImageBuildCount returns the ImageBuildCount field value if set, zero value otherwise.
-func (o *ListImageBuilds200Response) GetImageBuildCount() int64 {
-	if o == nil || IsNil(o.ImageBuildCount) {
-		var ret int64
-		return ret
-	}
-	return *o.ImageBuildCount
-}
-
-// GetImageBuildCountOk returns a tuple with the ImageBuildCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListImageBuilds200Response) GetImageBuildCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.ImageBuildCount) {
-		return nil, false
-	}
-	return o.ImageBuildCount, true
-}
-
-// SetImageBuildCount gets a reference to the given int64 and assigns it to the ImageBuildCount field.
-func (o *ListImageBuilds200Response) SetImageBuildCount(v int64) {
-	o.ImageBuildCount = &v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListImageBuilds200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListImageBuilds200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListImageBuilds200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListImageBuilds200Response) MarshalJSON() ([]byte, error) {

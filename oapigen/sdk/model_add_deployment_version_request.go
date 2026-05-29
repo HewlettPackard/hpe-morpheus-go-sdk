@@ -26,44 +26,12 @@ type AddDeploymentVersionRequest struct {
 
 type _AddDeploymentVersionRequest AddDeploymentVersionRequest
 
-// NewAddDeploymentVersionRequest instantiates a new AddDeploymentVersionRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddDeploymentVersionRequest() *AddDeploymentVersionRequest {
-	this := AddDeploymentVersionRequest{}
-	return &this
-}
-
 // NewAddDeploymentVersionRequestWithDefaults instantiates a new AddDeploymentVersionRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddDeploymentVersionRequestWithDefaults() *AddDeploymentVersionRequest {
 	this := AddDeploymentVersionRequest{}
 	return &this
-}
-
-// GetVersion returns the Version field value if set, zero value otherwise.
-func (o *AddDeploymentVersionRequest) GetVersion() AddDeploymentVersionRequestVersion {
-	if o == nil || IsNil(o.Version) {
-		var ret AddDeploymentVersionRequestVersion
-		return ret
-	}
-	return *o.Version
-}
-
-// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddDeploymentVersionRequest) GetVersionOk() (*AddDeploymentVersionRequestVersion, bool) {
-	if o == nil || IsNil(o.Version) {
-		return nil, false
-	}
-	return o.Version, true
-}
-
-// SetVersion gets a reference to the given AddDeploymentVersionRequestVersion and assigns it to the Version field.
-func (o *AddDeploymentVersionRequest) SetVersion(v AddDeploymentVersionRequestVersion) {
-	o.Version = &v
 }
 
 func (o AddDeploymentVersionRequest) MarshalJSON() ([]byte, error) {

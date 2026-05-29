@@ -29,114 +29,12 @@ type UpdateNetwork200Response struct {
 
 type _UpdateNetwork200Response UpdateNetwork200Response
 
-// NewUpdateNetwork200Response instantiates a new UpdateNetwork200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetwork200Response() *UpdateNetwork200Response {
-	this := UpdateNetwork200Response{}
-	return &this
-}
-
 // NewUpdateNetwork200ResponseWithDefaults instantiates a new UpdateNetwork200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateNetwork200ResponseWithDefaults() *UpdateNetwork200Response {
 	this := UpdateNetwork200Response{}
 	return &this
-}
-
-// GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *UpdateNetwork200Response) GetNetwork() UpdateNetwork200ResponseAllOfNetwork {
-	if o == nil || IsNil(o.Network) {
-		var ret UpdateNetwork200ResponseAllOfNetwork
-		return ret
-	}
-	return *o.Network
-}
-
-// GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetwork200Response) GetNetworkOk() (*UpdateNetwork200ResponseAllOfNetwork, bool) {
-	if o == nil || IsNil(o.Network) {
-		return nil, false
-	}
-	return o.Network, true
-}
-
-// SetNetwork gets a reference to the given UpdateNetwork200ResponseAllOfNetwork and assigns it to the Network field.
-func (o *UpdateNetwork200Response) SetNetwork(v UpdateNetwork200ResponseAllOfNetwork) {
-	o.Network = &v
-}
-
-// GetErrors returns the Errors field value if set, zero value otherwise.
-func (o *UpdateNetwork200Response) GetErrors() map[string]interface{} {
-	if o == nil || IsNil(o.Errors) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Errors
-}
-
-// GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetwork200Response) GetErrorsOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Errors) {
-		return map[string]interface{}{}, false
-	}
-	return o.Errors, true
-}
-
-// SetErrors gets a reference to the given map[string]interface{} and assigns it to the Errors field.
-func (o *UpdateNetwork200Response) SetErrors(v map[string]interface{}) {
-	o.Errors = v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateNetwork200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetwork200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateNetwork200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetMsg returns the Msg field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateNetwork200Response) GetMsg() string {
-	if o == nil || IsNil(o.Msg.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Msg.Get()
-}
-
-// GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateNetwork200Response) GetMsgOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Msg.Get(), o.Msg.IsSet()
-}
-
-// SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
-func (o *UpdateNetwork200Response) SetMsg(v string) {
-	o.Msg.Set(&v)
 }
 
 func (o UpdateNetwork200Response) MarshalJSON() ([]byte, error) {

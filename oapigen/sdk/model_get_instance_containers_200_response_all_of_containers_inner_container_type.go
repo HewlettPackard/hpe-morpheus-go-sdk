@@ -29,113 +29,12 @@ type GetInstanceContainers200ResponseAllOfContainersInnerContainerType struct {
 
 type _GetInstanceContainers200ResponseAllOfContainersInnerContainerType GetInstanceContainers200ResponseAllOfContainersInnerContainerType
 
-// NewGetInstanceContainers200ResponseAllOfContainersInnerContainerType instantiates a new GetInstanceContainers200ResponseAllOfContainersInnerContainerType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceContainers200ResponseAllOfContainersInnerContainerType() *GetInstanceContainers200ResponseAllOfContainersInnerContainerType {
-	this := GetInstanceContainers200ResponseAllOfContainersInnerContainerType{}
-	return &this
-}
-
 // NewGetInstanceContainers200ResponseAllOfContainersInnerContainerTypeWithDefaults instantiates a new GetInstanceContainers200ResponseAllOfContainersInnerContainerType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstanceContainers200ResponseAllOfContainersInnerContainerTypeWithDefaults() *GetInstanceContainers200ResponseAllOfContainersInnerContainerType {
 	this := GetInstanceContainers200ResponseAllOfContainersInnerContainerType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerType) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerType) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerType) SetId(v int32) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerType) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetCategory returns the Category field value if set, zero value otherwise.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerType) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
-		var ret string
-		return ret
-	}
-	return *o.Category
-}
-
-// GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerType) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
-		return nil, false
-	}
-	return o.Category, true
-}
-
-// SetCategory gets a reference to the given string and assigns it to the Category field.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerType) SetCategory(v string) {
-	o.Category = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerType) SetName(v string) {
-	o.Name = &v
 }
 
 func (o GetInstanceContainers200ResponseAllOfContainersInnerContainerType) MarshalJSON() ([]byte, error) {

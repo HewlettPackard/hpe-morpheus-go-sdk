@@ -33,19 +33,6 @@ type TokenAuthorizationCodeRequest struct {
 
 type _TokenAuthorizationCodeRequest TokenAuthorizationCodeRequest
 
-// NewTokenAuthorizationCodeRequest instantiates a new TokenAuthorizationCodeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTokenAuthorizationCodeRequest(clientId string, clientSecret string, grantType string, authorizationCode string) *TokenAuthorizationCodeRequest {
-	this := TokenAuthorizationCodeRequest{}
-	this.ClientId = clientId
-	this.ClientSecret = clientSecret
-	this.GrantType = grantType
-	this.AuthorizationCode = authorizationCode
-	return &this
-}
-
 // NewTokenAuthorizationCodeRequestWithDefaults instantiates a new TokenAuthorizationCodeRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -54,102 +41,6 @@ func NewTokenAuthorizationCodeRequestWithDefaults() *TokenAuthorizationCodeReque
 	var grantType string = "authorization_code"
 	this.GrantType = grantType
 	return &this
-}
-
-// GetClientId returns the ClientId field value
-func (o *TokenAuthorizationCodeRequest) GetClientId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ClientId
-}
-
-// GetClientIdOk returns a tuple with the ClientId field value
-// and a boolean to check if the value has been set.
-func (o *TokenAuthorizationCodeRequest) GetClientIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ClientId, true
-}
-
-// SetClientId sets field value
-func (o *TokenAuthorizationCodeRequest) SetClientId(v string) {
-	o.ClientId = v
-}
-
-// GetClientSecret returns the ClientSecret field value
-func (o *TokenAuthorizationCodeRequest) GetClientSecret() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ClientSecret
-}
-
-// GetClientSecretOk returns a tuple with the ClientSecret field value
-// and a boolean to check if the value has been set.
-func (o *TokenAuthorizationCodeRequest) GetClientSecretOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ClientSecret, true
-}
-
-// SetClientSecret sets field value
-func (o *TokenAuthorizationCodeRequest) SetClientSecret(v string) {
-	o.ClientSecret = v
-}
-
-// GetGrantType returns the GrantType field value
-func (o *TokenAuthorizationCodeRequest) GetGrantType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.GrantType
-}
-
-// GetGrantTypeOk returns a tuple with the GrantType field value
-// and a boolean to check if the value has been set.
-func (o *TokenAuthorizationCodeRequest) GetGrantTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.GrantType, true
-}
-
-// SetGrantType sets field value
-func (o *TokenAuthorizationCodeRequest) SetGrantType(v string) {
-	o.GrantType = v
-}
-
-// GetAuthorizationCode returns the AuthorizationCode field value
-func (o *TokenAuthorizationCodeRequest) GetAuthorizationCode() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AuthorizationCode
-}
-
-// GetAuthorizationCodeOk returns a tuple with the AuthorizationCode field value
-// and a boolean to check if the value has been set.
-func (o *TokenAuthorizationCodeRequest) GetAuthorizationCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AuthorizationCode, true
-}
-
-// SetAuthorizationCode sets field value
-func (o *TokenAuthorizationCodeRequest) SetAuthorizationCode(v string) {
-	o.AuthorizationCode = v
 }
 
 func (o TokenAuthorizationCodeRequest) MarshalJSON() ([]byte, error) {

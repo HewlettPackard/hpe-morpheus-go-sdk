@@ -26,44 +26,12 @@ type GetHostSnpshots200Response struct {
 
 type _GetHostSnpshots200Response GetHostSnpshots200Response
 
-// NewGetHostSnpshots200Response instantiates a new GetHostSnpshots200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetHostSnpshots200Response() *GetHostSnpshots200Response {
-	this := GetHostSnpshots200Response{}
-	return &this
-}
-
 // NewGetHostSnpshots200ResponseWithDefaults instantiates a new GetHostSnpshots200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetHostSnpshots200ResponseWithDefaults() *GetHostSnpshots200Response {
 	this := GetHostSnpshots200Response{}
 	return &this
-}
-
-// GetSnapshots returns the Snapshots field value if set, zero value otherwise.
-func (o *GetHostSnpshots200Response) GetSnapshots() []GetHostSnpshots200ResponseSnapshotsInner {
-	if o == nil || IsNil(o.Snapshots) {
-		var ret []GetHostSnpshots200ResponseSnapshotsInner
-		return ret
-	}
-	return o.Snapshots
-}
-
-// GetSnapshotsOk returns a tuple with the Snapshots field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetHostSnpshots200Response) GetSnapshotsOk() ([]GetHostSnpshots200ResponseSnapshotsInner, bool) {
-	if o == nil || IsNil(o.Snapshots) {
-		return nil, false
-	}
-	return o.Snapshots, true
-}
-
-// SetSnapshots gets a reference to the given []GetHostSnpshots200ResponseSnapshotsInner and assigns it to the Snapshots field.
-func (o *GetHostSnpshots200Response) SetSnapshots(v []GetHostSnpshots200ResponseSnapshotsInner) {
-	o.Snapshots = v
 }
 
 func (o GetHostSnpshots200Response) MarshalJSON() ([]byte, error) {

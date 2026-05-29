@@ -29,71 +29,12 @@ type RolePermissionFeature struct {
 
 type _RolePermissionFeature RolePermissionFeature
 
-// NewRolePermissionFeature instantiates a new RolePermissionFeature object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRolePermissionFeature(permissionCode string, access string) *RolePermissionFeature {
-	this := RolePermissionFeature{}
-	this.PermissionCode = permissionCode
-	this.Access = access
-	return &this
-}
-
 // NewRolePermissionFeatureWithDefaults instantiates a new RolePermissionFeature object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRolePermissionFeatureWithDefaults() *RolePermissionFeature {
 	this := RolePermissionFeature{}
 	return &this
-}
-
-// GetPermissionCode returns the PermissionCode field value
-func (o *RolePermissionFeature) GetPermissionCode() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PermissionCode
-}
-
-// GetPermissionCodeOk returns a tuple with the PermissionCode field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionFeature) GetPermissionCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PermissionCode, true
-}
-
-// SetPermissionCode sets field value
-func (o *RolePermissionFeature) SetPermissionCode(v string) {
-	o.PermissionCode = v
-}
-
-// GetAccess returns the Access field value
-func (o *RolePermissionFeature) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionFeature) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *RolePermissionFeature) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o RolePermissionFeature) MarshalJSON() ([]byte, error) {

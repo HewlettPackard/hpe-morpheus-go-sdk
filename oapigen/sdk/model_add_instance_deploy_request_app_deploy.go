@@ -35,17 +35,6 @@ type AddInstanceDeployRequestAppDeploy struct {
 
 type _AddInstanceDeployRequestAppDeploy AddInstanceDeployRequestAppDeploy
 
-// NewAddInstanceDeployRequestAppDeploy instantiates a new AddInstanceDeployRequestAppDeploy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddInstanceDeployRequestAppDeploy() *AddInstanceDeployRequestAppDeploy {
-	this := AddInstanceDeployRequestAppDeploy{}
-	var stageOnly bool = false
-	this.StageOnly = &stageOnly
-	return &this
-}
-
 // NewAddInstanceDeployRequestAppDeployWithDefaults instantiates a new AddInstanceDeployRequestAppDeploy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -54,121 +43,6 @@ func NewAddInstanceDeployRequestAppDeployWithDefaults() *AddInstanceDeployReques
 	var stageOnly bool = false
 	this.StageOnly = &stageOnly
 	return &this
-}
-
-// GetDeploymentId returns the DeploymentId field value if set, zero value otherwise.
-func (o *AddInstanceDeployRequestAppDeploy) GetDeploymentId() int64 {
-	if o == nil || IsNil(o.DeploymentId) {
-		var ret int64
-		return ret
-	}
-	return *o.DeploymentId
-}
-
-// GetDeploymentIdOk returns a tuple with the DeploymentId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstanceDeployRequestAppDeploy) GetDeploymentIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.DeploymentId) {
-		return nil, false
-	}
-	return o.DeploymentId, true
-}
-
-// SetDeploymentId gets a reference to the given int64 and assigns it to the DeploymentId field.
-func (o *AddInstanceDeployRequestAppDeploy) SetDeploymentId(v int64) {
-	o.DeploymentId = &v
-}
-
-// GetVersion returns the Version field value if set, zero value otherwise.
-func (o *AddInstanceDeployRequestAppDeploy) GetVersion() string {
-	if o == nil || IsNil(o.Version) {
-		var ret string
-		return ret
-	}
-	return *o.Version
-}
-
-// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstanceDeployRequestAppDeploy) GetVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.Version) {
-		return nil, false
-	}
-	return o.Version, true
-}
-
-// SetVersion gets a reference to the given string and assigns it to the Version field.
-func (o *AddInstanceDeployRequestAppDeploy) SetVersion(v string) {
-	o.Version = &v
-}
-
-// GetVersionId returns the VersionId field value if set, zero value otherwise.
-func (o *AddInstanceDeployRequestAppDeploy) GetVersionId() int64 {
-	if o == nil || IsNil(o.VersionId) {
-		var ret int64
-		return ret
-	}
-	return *o.VersionId
-}
-
-// GetVersionIdOk returns a tuple with the VersionId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstanceDeployRequestAppDeploy) GetVersionIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.VersionId) {
-		return nil, false
-	}
-	return o.VersionId, true
-}
-
-// SetVersionId gets a reference to the given int64 and assigns it to the VersionId field.
-func (o *AddInstanceDeployRequestAppDeploy) SetVersionId(v int64) {
-	o.VersionId = &v
-}
-
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *AddInstanceDeployRequestAppDeploy) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstanceDeployRequestAppDeploy) GetConfigOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
-	}
-	return o.Config, true
-}
-
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *AddInstanceDeployRequestAppDeploy) SetConfig(v map[string]interface{}) {
-	o.Config = v
-}
-
-// GetStageOnly returns the StageOnly field value if set, zero value otherwise.
-func (o *AddInstanceDeployRequestAppDeploy) GetStageOnly() bool {
-	if o == nil || IsNil(o.StageOnly) {
-		var ret bool
-		return ret
-	}
-	return *o.StageOnly
-}
-
-// GetStageOnlyOk returns a tuple with the StageOnly field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstanceDeployRequestAppDeploy) GetStageOnlyOk() (*bool, bool) {
-	if o == nil || IsNil(o.StageOnly) {
-		return nil, false
-	}
-	return o.StageOnly, true
-}
-
-// SetStageOnly gets a reference to the given bool and assigns it to the StageOnly field.
-func (o *AddInstanceDeployRequestAppDeploy) SetStageOnly(v bool) {
-	o.StageOnly = &v
 }
 
 func (o AddInstanceDeployRequestAppDeploy) MarshalJSON() ([]byte, error) {

@@ -29,114 +29,12 @@ type CatalogOrderCreateSuccess struct {
 
 type _CatalogOrderCreateSuccess CatalogOrderCreateSuccess
 
-// NewCatalogOrderCreateSuccess instantiates a new CatalogOrderCreateSuccess object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCatalogOrderCreateSuccess() *CatalogOrderCreateSuccess {
-	this := CatalogOrderCreateSuccess{}
-	return &this
-}
-
 // NewCatalogOrderCreateSuccessWithDefaults instantiates a new CatalogOrderCreateSuccess object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCatalogOrderCreateSuccessWithDefaults() *CatalogOrderCreateSuccess {
 	this := CatalogOrderCreateSuccess{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *CatalogOrderCreateSuccess) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogOrderCreateSuccess) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *CatalogOrderCreateSuccess) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CatalogOrderCreateSuccess) GetName() string {
-	if o == nil || IsNil(o.Name.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Name.Get()
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CatalogOrderCreateSuccess) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Name.Get(), o.Name.IsSet()
-}
-
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
-func (o *CatalogOrderCreateSuccess) SetName(v string) {
-	o.Name.Set(&v)
-}
-
-// GetItems returns the Items field value if set, zero value otherwise.
-func (o *CatalogOrderCreateSuccess) GetItems() []CatalogOrderCreateSuccessItemsInner {
-	if o == nil || IsNil(o.Items) {
-		var ret []CatalogOrderCreateSuccessItemsInner
-		return ret
-	}
-	return o.Items
-}
-
-// GetItemsOk returns a tuple with the Items field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogOrderCreateSuccess) GetItemsOk() ([]CatalogOrderCreateSuccessItemsInner, bool) {
-	if o == nil || IsNil(o.Items) {
-		return nil, false
-	}
-	return o.Items, true
-}
-
-// SetItems gets a reference to the given []CatalogOrderCreateSuccessItemsInner and assigns it to the Items field.
-func (o *CatalogOrderCreateSuccess) SetItems(v []CatalogOrderCreateSuccessItemsInner) {
-	o.Items = v
-}
-
-// GetStats returns the Stats field value if set, zero value otherwise.
-func (o *CatalogOrderCreateSuccess) GetStats() CatalogOrderCreateSuccessStats {
-	if o == nil || IsNil(o.Stats) {
-		var ret CatalogOrderCreateSuccessStats
-		return ret
-	}
-	return *o.Stats
-}
-
-// GetStatsOk returns a tuple with the Stats field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogOrderCreateSuccess) GetStatsOk() (*CatalogOrderCreateSuccessStats, bool) {
-	if o == nil || IsNil(o.Stats) {
-		return nil, false
-	}
-	return o.Stats, true
-}
-
-// SetStats gets a reference to the given CatalogOrderCreateSuccessStats and assigns it to the Stats field.
-func (o *CatalogOrderCreateSuccess) SetStats(v CatalogOrderCreateSuccessStats) {
-	o.Stats = &v
 }
 
 func (o CatalogOrderCreateSuccess) MarshalJSON() ([]byte, error) {

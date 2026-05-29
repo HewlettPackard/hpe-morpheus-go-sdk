@@ -28,69 +28,12 @@ type InstancesNetworkInterfaces3Network struct {
 
 type _InstancesNetworkInterfaces3Network InstancesNetworkInterfaces3Network
 
-// NewInstancesNetworkInterfaces3Network instantiates a new InstancesNetworkInterfaces3Network object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstancesNetworkInterfaces3Network(id string) *InstancesNetworkInterfaces3Network {
-	this := InstancesNetworkInterfaces3Network{}
-	this.Id = id
-	return &this
-}
-
 // NewInstancesNetworkInterfaces3NetworkWithDefaults instantiates a new InstancesNetworkInterfaces3Network object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstancesNetworkInterfaces3NetworkWithDefaults() *InstancesNetworkInterfaces3Network {
 	this := InstancesNetworkInterfaces3Network{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *InstancesNetworkInterfaces3Network) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *InstancesNetworkInterfaces3Network) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *InstancesNetworkInterfaces3Network) SetId(v string) {
-	o.Id = v
-}
-
-// GetPool returns the Pool field value if set, zero value otherwise.
-func (o *InstancesNetworkInterfaces3Network) GetPool() InstancesNetworkInterfaces3NetworkPool {
-	if o == nil || IsNil(o.Pool) {
-		var ret InstancesNetworkInterfaces3NetworkPool
-		return ret
-	}
-	return *o.Pool
-}
-
-// GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstancesNetworkInterfaces3Network) GetPoolOk() (*InstancesNetworkInterfaces3NetworkPool, bool) {
-	if o == nil || IsNil(o.Pool) {
-		return nil, false
-	}
-	return o.Pool, true
-}
-
-// SetPool gets a reference to the given InstancesNetworkInterfaces3NetworkPool and assigns it to the Pool field.
-func (o *InstancesNetworkInterfaces3Network) SetPool(v InstancesNetworkInterfaces3NetworkPool) {
-	o.Pool = &v
 }
 
 func (o InstancesNetworkInterfaces3Network) MarshalJSON() ([]byte, error) {

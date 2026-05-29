@@ -27,67 +27,12 @@ type UpdateEnvironments200Response struct {
 
 type _UpdateEnvironments200Response UpdateEnvironments200Response
 
-// NewUpdateEnvironments200Response instantiates a new UpdateEnvironments200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateEnvironments200Response() *UpdateEnvironments200Response {
-	this := UpdateEnvironments200Response{}
-	return &this
-}
-
 // NewUpdateEnvironments200ResponseWithDefaults instantiates a new UpdateEnvironments200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateEnvironments200ResponseWithDefaults() *UpdateEnvironments200Response {
 	this := UpdateEnvironments200Response{}
 	return &this
-}
-
-// GetEnvironment returns the Environment field value if set, zero value otherwise.
-func (o *UpdateEnvironments200Response) GetEnvironment() UpdateEnvironments200ResponseAllOfEnvironment {
-	if o == nil || IsNil(o.Environment) {
-		var ret UpdateEnvironments200ResponseAllOfEnvironment
-		return ret
-	}
-	return *o.Environment
-}
-
-// GetEnvironmentOk returns a tuple with the Environment field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateEnvironments200Response) GetEnvironmentOk() (*UpdateEnvironments200ResponseAllOfEnvironment, bool) {
-	if o == nil || IsNil(o.Environment) {
-		return nil, false
-	}
-	return o.Environment, true
-}
-
-// SetEnvironment gets a reference to the given UpdateEnvironments200ResponseAllOfEnvironment and assigns it to the Environment field.
-func (o *UpdateEnvironments200Response) SetEnvironment(v UpdateEnvironments200ResponseAllOfEnvironment) {
-	o.Environment = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateEnvironments200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateEnvironments200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateEnvironments200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateEnvironments200Response) MarshalJSON() ([]byte, error) {

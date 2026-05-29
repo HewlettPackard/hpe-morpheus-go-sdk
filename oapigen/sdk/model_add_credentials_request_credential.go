@@ -34,69 +34,6 @@ type AddCredentialsRequestCredential struct {
 	AddCredentialsRequestCredentialOneOf8 *AddCredentialsRequestCredentialOneOf8
 }
 
-// AddCredentialsRequestCredentialOneOfAsAddCredentialsRequestCredential is a convenience function that returns AddCredentialsRequestCredentialOneOf wrapped in AddCredentialsRequestCredential
-func AddCredentialsRequestCredentialOneOfAsAddCredentialsRequestCredential(v *AddCredentialsRequestCredentialOneOf) AddCredentialsRequestCredential {
-	return AddCredentialsRequestCredential{
-		AddCredentialsRequestCredentialOneOf: v,
-	}
-}
-
-// AddCredentialsRequestCredentialOneOf1AsAddCredentialsRequestCredential is a convenience function that returns AddCredentialsRequestCredentialOneOf1 wrapped in AddCredentialsRequestCredential
-func AddCredentialsRequestCredentialOneOf1AsAddCredentialsRequestCredential(v *AddCredentialsRequestCredentialOneOf1) AddCredentialsRequestCredential {
-	return AddCredentialsRequestCredential{
-		AddCredentialsRequestCredentialOneOf1: v,
-	}
-}
-
-// AddCredentialsRequestCredentialOneOf2AsAddCredentialsRequestCredential is a convenience function that returns AddCredentialsRequestCredentialOneOf2 wrapped in AddCredentialsRequestCredential
-func AddCredentialsRequestCredentialOneOf2AsAddCredentialsRequestCredential(v *AddCredentialsRequestCredentialOneOf2) AddCredentialsRequestCredential {
-	return AddCredentialsRequestCredential{
-		AddCredentialsRequestCredentialOneOf2: v,
-	}
-}
-
-// AddCredentialsRequestCredentialOneOf3AsAddCredentialsRequestCredential is a convenience function that returns AddCredentialsRequestCredentialOneOf3 wrapped in AddCredentialsRequestCredential
-func AddCredentialsRequestCredentialOneOf3AsAddCredentialsRequestCredential(v *AddCredentialsRequestCredentialOneOf3) AddCredentialsRequestCredential {
-	return AddCredentialsRequestCredential{
-		AddCredentialsRequestCredentialOneOf3: v,
-	}
-}
-
-// AddCredentialsRequestCredentialOneOf4AsAddCredentialsRequestCredential is a convenience function that returns AddCredentialsRequestCredentialOneOf4 wrapped in AddCredentialsRequestCredential
-func AddCredentialsRequestCredentialOneOf4AsAddCredentialsRequestCredential(v *AddCredentialsRequestCredentialOneOf4) AddCredentialsRequestCredential {
-	return AddCredentialsRequestCredential{
-		AddCredentialsRequestCredentialOneOf4: v,
-	}
-}
-
-// AddCredentialsRequestCredentialOneOf5AsAddCredentialsRequestCredential is a convenience function that returns AddCredentialsRequestCredentialOneOf5 wrapped in AddCredentialsRequestCredential
-func AddCredentialsRequestCredentialOneOf5AsAddCredentialsRequestCredential(v *AddCredentialsRequestCredentialOneOf5) AddCredentialsRequestCredential {
-	return AddCredentialsRequestCredential{
-		AddCredentialsRequestCredentialOneOf5: v,
-	}
-}
-
-// AddCredentialsRequestCredentialOneOf6AsAddCredentialsRequestCredential is a convenience function that returns AddCredentialsRequestCredentialOneOf6 wrapped in AddCredentialsRequestCredential
-func AddCredentialsRequestCredentialOneOf6AsAddCredentialsRequestCredential(v *AddCredentialsRequestCredentialOneOf6) AddCredentialsRequestCredential {
-	return AddCredentialsRequestCredential{
-		AddCredentialsRequestCredentialOneOf6: v,
-	}
-}
-
-// AddCredentialsRequestCredentialOneOf7AsAddCredentialsRequestCredential is a convenience function that returns AddCredentialsRequestCredentialOneOf7 wrapped in AddCredentialsRequestCredential
-func AddCredentialsRequestCredentialOneOf7AsAddCredentialsRequestCredential(v *AddCredentialsRequestCredentialOneOf7) AddCredentialsRequestCredential {
-	return AddCredentialsRequestCredential{
-		AddCredentialsRequestCredentialOneOf7: v,
-	}
-}
-
-// AddCredentialsRequestCredentialOneOf8AsAddCredentialsRequestCredential is a convenience function that returns AddCredentialsRequestCredentialOneOf8 wrapped in AddCredentialsRequestCredential
-func AddCredentialsRequestCredentialOneOf8AsAddCredentialsRequestCredential(v *AddCredentialsRequestCredentialOneOf8) AddCredentialsRequestCredential {
-	return AddCredentialsRequestCredential{
-		AddCredentialsRequestCredentialOneOf8: v,
-	}
-}
-
 func (dst *AddCredentialsRequestCredential) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddCredentialsRequestCredential{}

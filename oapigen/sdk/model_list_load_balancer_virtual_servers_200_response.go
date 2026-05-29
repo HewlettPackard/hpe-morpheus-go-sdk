@@ -27,67 +27,12 @@ type ListLoadBalancerVirtualServers200Response struct {
 
 type _ListLoadBalancerVirtualServers200Response ListLoadBalancerVirtualServers200Response
 
-// NewListLoadBalancerVirtualServers200Response instantiates a new ListLoadBalancerVirtualServers200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListLoadBalancerVirtualServers200Response() *ListLoadBalancerVirtualServers200Response {
-	this := ListLoadBalancerVirtualServers200Response{}
-	return &this
-}
-
 // NewListLoadBalancerVirtualServers200ResponseWithDefaults instantiates a new ListLoadBalancerVirtualServers200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListLoadBalancerVirtualServers200ResponseWithDefaults() *ListLoadBalancerVirtualServers200Response {
 	this := ListLoadBalancerVirtualServers200Response{}
 	return &this
-}
-
-// GetLoadBalancerInstances returns the LoadBalancerInstances field value if set, zero value otherwise.
-func (o *ListLoadBalancerVirtualServers200Response) GetLoadBalancerInstances() []ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner {
-	if o == nil || IsNil(o.LoadBalancerInstances) {
-		var ret []ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner
-		return ret
-	}
-	return o.LoadBalancerInstances
-}
-
-// GetLoadBalancerInstancesOk returns a tuple with the LoadBalancerInstances field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListLoadBalancerVirtualServers200Response) GetLoadBalancerInstancesOk() ([]ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner, bool) {
-	if o == nil || IsNil(o.LoadBalancerInstances) {
-		return nil, false
-	}
-	return o.LoadBalancerInstances, true
-}
-
-// SetLoadBalancerInstances gets a reference to the given []ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner and assigns it to the LoadBalancerInstances field.
-func (o *ListLoadBalancerVirtualServers200Response) SetLoadBalancerInstances(v []ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) {
-	o.LoadBalancerInstances = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListLoadBalancerVirtualServers200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListLoadBalancerVirtualServers200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListLoadBalancerVirtualServers200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListLoadBalancerVirtualServers200Response) MarshalJSON() ([]byte, error) {

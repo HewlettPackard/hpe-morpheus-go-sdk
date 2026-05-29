@@ -26,44 +26,12 @@ type AddClusterWorkerRequest struct {
 
 type _AddClusterWorkerRequest AddClusterWorkerRequest
 
-// NewAddClusterWorkerRequest instantiates a new AddClusterWorkerRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterWorkerRequest() *AddClusterWorkerRequest {
-	this := AddClusterWorkerRequest{}
-	return &this
-}
-
 // NewAddClusterWorkerRequestWithDefaults instantiates a new AddClusterWorkerRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddClusterWorkerRequestWithDefaults() *AddClusterWorkerRequest {
 	this := AddClusterWorkerRequest{}
 	return &this
-}
-
-// GetServer returns the Server field value if set, zero value otherwise.
-func (o *AddClusterWorkerRequest) GetServer() AddClusterWorkerRequestServer {
-	if o == nil || IsNil(o.Server) {
-		var ret AddClusterWorkerRequestServer
-		return ret
-	}
-	return *o.Server
-}
-
-// GetServerOk returns a tuple with the Server field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterWorkerRequest) GetServerOk() (*AddClusterWorkerRequestServer, bool) {
-	if o == nil || IsNil(o.Server) {
-		return nil, false
-	}
-	return o.Server, true
-}
-
-// SetServer gets a reference to the given AddClusterWorkerRequestServer and assigns it to the Server field.
-func (o *AddClusterWorkerRequest) SetServer(v AddClusterWorkerRequestServer) {
-	o.Server = &v
 }
 
 func (o AddClusterWorkerRequest) MarshalJSON() ([]byte, error) {

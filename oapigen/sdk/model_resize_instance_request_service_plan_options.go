@@ -31,90 +31,12 @@ type ResizeInstanceRequestServicePlanOptions struct {
 
 type _ResizeInstanceRequestServicePlanOptions ResizeInstanceRequestServicePlanOptions
 
-// NewResizeInstanceRequestServicePlanOptions instantiates a new ResizeInstanceRequestServicePlanOptions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewResizeInstanceRequestServicePlanOptions() *ResizeInstanceRequestServicePlanOptions {
-	this := ResizeInstanceRequestServicePlanOptions{}
-	return &this
-}
-
 // NewResizeInstanceRequestServicePlanOptionsWithDefaults instantiates a new ResizeInstanceRequestServicePlanOptions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewResizeInstanceRequestServicePlanOptionsWithDefaults() *ResizeInstanceRequestServicePlanOptions {
 	this := ResizeInstanceRequestServicePlanOptions{}
 	return &this
-}
-
-// GetMaxCores returns the MaxCores field value if set, zero value otherwise.
-func (o *ResizeInstanceRequestServicePlanOptions) GetMaxCores() int64 {
-	if o == nil || IsNil(o.MaxCores) {
-		var ret int64
-		return ret
-	}
-	return *o.MaxCores
-}
-
-// GetMaxCoresOk returns a tuple with the MaxCores field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequestServicePlanOptions) GetMaxCoresOk() (*int64, bool) {
-	if o == nil || IsNil(o.MaxCores) {
-		return nil, false
-	}
-	return o.MaxCores, true
-}
-
-// SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
-func (o *ResizeInstanceRequestServicePlanOptions) SetMaxCores(v int64) {
-	o.MaxCores = &v
-}
-
-// GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise.
-func (o *ResizeInstanceRequestServicePlanOptions) GetCoresPerSocket() int64 {
-	if o == nil || IsNil(o.CoresPerSocket) {
-		var ret int64
-		return ret
-	}
-	return *o.CoresPerSocket
-}
-
-// GetCoresPerSocketOk returns a tuple with the CoresPerSocket field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequestServicePlanOptions) GetCoresPerSocketOk() (*int64, bool) {
-	if o == nil || IsNil(o.CoresPerSocket) {
-		return nil, false
-	}
-	return o.CoresPerSocket, true
-}
-
-// SetCoresPerSocket gets a reference to the given int64 and assigns it to the CoresPerSocket field.
-func (o *ResizeInstanceRequestServicePlanOptions) SetCoresPerSocket(v int64) {
-	o.CoresPerSocket = &v
-}
-
-// GetMaxMemory returns the MaxMemory field value if set, zero value otherwise.
-func (o *ResizeInstanceRequestServicePlanOptions) GetMaxMemory() int64 {
-	if o == nil || IsNil(o.MaxMemory) {
-		var ret int64
-		return ret
-	}
-	return *o.MaxMemory
-}
-
-// GetMaxMemoryOk returns a tuple with the MaxMemory field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequestServicePlanOptions) GetMaxMemoryOk() (*int64, bool) {
-	if o == nil || IsNil(o.MaxMemory) {
-		return nil, false
-	}
-	return o.MaxMemory, true
-}
-
-// SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
-func (o *ResizeInstanceRequestServicePlanOptions) SetMaxMemory(v int64) {
-	o.MaxMemory = &v
 }
 
 func (o ResizeInstanceRequestServicePlanOptions) MarshalJSON() ([]byte, error) {

@@ -32,55 +32,6 @@ type UpdateIntegrationsRequest struct {
 	UpdateIntegrationsRequestOneOf6 *UpdateIntegrationsRequestOneOf6
 }
 
-// UpdateIntegrationsRequestOneOfAsUpdateIntegrationsRequest is a convenience function that returns UpdateIntegrationsRequestOneOf wrapped in UpdateIntegrationsRequest
-func UpdateIntegrationsRequestOneOfAsUpdateIntegrationsRequest(v *UpdateIntegrationsRequestOneOf) UpdateIntegrationsRequest {
-	return UpdateIntegrationsRequest{
-		UpdateIntegrationsRequestOneOf: v,
-	}
-}
-
-// UpdateIntegrationsRequestOneOf1AsUpdateIntegrationsRequest is a convenience function that returns UpdateIntegrationsRequestOneOf1 wrapped in UpdateIntegrationsRequest
-func UpdateIntegrationsRequestOneOf1AsUpdateIntegrationsRequest(v *UpdateIntegrationsRequestOneOf1) UpdateIntegrationsRequest {
-	return UpdateIntegrationsRequest{
-		UpdateIntegrationsRequestOneOf1: v,
-	}
-}
-
-// UpdateIntegrationsRequestOneOf2AsUpdateIntegrationsRequest is a convenience function that returns UpdateIntegrationsRequestOneOf2 wrapped in UpdateIntegrationsRequest
-func UpdateIntegrationsRequestOneOf2AsUpdateIntegrationsRequest(v *UpdateIntegrationsRequestOneOf2) UpdateIntegrationsRequest {
-	return UpdateIntegrationsRequest{
-		UpdateIntegrationsRequestOneOf2: v,
-	}
-}
-
-// UpdateIntegrationsRequestOneOf3AsUpdateIntegrationsRequest is a convenience function that returns UpdateIntegrationsRequestOneOf3 wrapped in UpdateIntegrationsRequest
-func UpdateIntegrationsRequestOneOf3AsUpdateIntegrationsRequest(v *UpdateIntegrationsRequestOneOf3) UpdateIntegrationsRequest {
-	return UpdateIntegrationsRequest{
-		UpdateIntegrationsRequestOneOf3: v,
-	}
-}
-
-// UpdateIntegrationsRequestOneOf4AsUpdateIntegrationsRequest is a convenience function that returns UpdateIntegrationsRequestOneOf4 wrapped in UpdateIntegrationsRequest
-func UpdateIntegrationsRequestOneOf4AsUpdateIntegrationsRequest(v *UpdateIntegrationsRequestOneOf4) UpdateIntegrationsRequest {
-	return UpdateIntegrationsRequest{
-		UpdateIntegrationsRequestOneOf4: v,
-	}
-}
-
-// UpdateIntegrationsRequestOneOf5AsUpdateIntegrationsRequest is a convenience function that returns UpdateIntegrationsRequestOneOf5 wrapped in UpdateIntegrationsRequest
-func UpdateIntegrationsRequestOneOf5AsUpdateIntegrationsRequest(v *UpdateIntegrationsRequestOneOf5) UpdateIntegrationsRequest {
-	return UpdateIntegrationsRequest{
-		UpdateIntegrationsRequestOneOf5: v,
-	}
-}
-
-// UpdateIntegrationsRequestOneOf6AsUpdateIntegrationsRequest is a convenience function that returns UpdateIntegrationsRequestOneOf6 wrapped in UpdateIntegrationsRequest
-func UpdateIntegrationsRequestOneOf6AsUpdateIntegrationsRequest(v *UpdateIntegrationsRequestOneOf6) UpdateIntegrationsRequest {
-	return UpdateIntegrationsRequest{
-		UpdateIntegrationsRequestOneOf6: v,
-	}
-}
-
 func (dst *UpdateIntegrationsRequest) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateIntegrationsRequest{}

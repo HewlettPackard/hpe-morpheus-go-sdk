@@ -26,44 +26,12 @@ type GetClusterContainer200Response struct {
 
 type _GetClusterContainer200Response GetClusterContainer200Response
 
-// NewGetClusterContainer200Response instantiates a new GetClusterContainer200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetClusterContainer200Response() *GetClusterContainer200Response {
-	this := GetClusterContainer200Response{}
-	return &this
-}
-
 // NewGetClusterContainer200ResponseWithDefaults instantiates a new GetClusterContainer200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetClusterContainer200ResponseWithDefaults() *GetClusterContainer200Response {
 	this := GetClusterContainer200Response{}
 	return &this
-}
-
-// GetResource returns the Resource field value if set, zero value otherwise.
-func (o *GetClusterContainer200Response) GetResource() GetClusterContainer200ResponseResource {
-	if o == nil || IsNil(o.Resource) {
-		var ret GetClusterContainer200ResponseResource
-		return ret
-	}
-	return *o.Resource
-}
-
-// GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClusterContainer200Response) GetResourceOk() (*GetClusterContainer200ResponseResource, bool) {
-	if o == nil || IsNil(o.Resource) {
-		return nil, false
-	}
-	return o.Resource, true
-}
-
-// SetResource gets a reference to the given GetClusterContainer200ResponseResource and assigns it to the Resource field.
-func (o *GetClusterContainer200Response) SetResource(v GetClusterContainer200ResponseResource) {
-	o.Resource = &v
 }
 
 func (o GetClusterContainer200Response) MarshalJSON() ([]byte, error) {

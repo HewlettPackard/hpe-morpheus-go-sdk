@@ -27,67 +27,12 @@ type UpdateJobs200Response struct {
 
 type _UpdateJobs200Response UpdateJobs200Response
 
-// NewUpdateJobs200Response instantiates a new UpdateJobs200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateJobs200Response() *UpdateJobs200Response {
-	this := UpdateJobs200Response{}
-	return &this
-}
-
 // NewUpdateJobs200ResponseWithDefaults instantiates a new UpdateJobs200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateJobs200ResponseWithDefaults() *UpdateJobs200Response {
 	this := UpdateJobs200Response{}
 	return &this
-}
-
-// GetJob returns the Job field value if set, zero value otherwise.
-func (o *UpdateJobs200Response) GetJob() UpdateJobs200ResponseAllOfJob {
-	if o == nil || IsNil(o.Job) {
-		var ret UpdateJobs200ResponseAllOfJob
-		return ret
-	}
-	return *o.Job
-}
-
-// GetJobOk returns a tuple with the Job field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateJobs200Response) GetJobOk() (*UpdateJobs200ResponseAllOfJob, bool) {
-	if o == nil || IsNil(o.Job) {
-		return nil, false
-	}
-	return o.Job, true
-}
-
-// SetJob gets a reference to the given UpdateJobs200ResponseAllOfJob and assigns it to the Job field.
-func (o *UpdateJobs200Response) SetJob(v UpdateJobs200ResponseAllOfJob) {
-	o.Job = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateJobs200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateJobs200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateJobs200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateJobs200Response) MarshalJSON() ([]byte, error) {

@@ -30,90 +30,12 @@ type UpdateHostInstallAgentRequestServer struct {
 
 type _UpdateHostInstallAgentRequestServer UpdateHostInstallAgentRequestServer
 
-// NewUpdateHostInstallAgentRequestServer instantiates a new UpdateHostInstallAgentRequestServer object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateHostInstallAgentRequestServer() *UpdateHostInstallAgentRequestServer {
-	this := UpdateHostInstallAgentRequestServer{}
-	return &this
-}
-
 // NewUpdateHostInstallAgentRequestServerWithDefaults instantiates a new UpdateHostInstallAgentRequestServer object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateHostInstallAgentRequestServerWithDefaults() *UpdateHostInstallAgentRequestServer {
 	this := UpdateHostInstallAgentRequestServer{}
 	return &this
-}
-
-// GetSshUsername returns the SshUsername field value if set, zero value otherwise.
-func (o *UpdateHostInstallAgentRequestServer) GetSshUsername() string {
-	if o == nil || IsNil(o.SshUsername) {
-		var ret string
-		return ret
-	}
-	return *o.SshUsername
-}
-
-// GetSshUsernameOk returns a tuple with the SshUsername field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostInstallAgentRequestServer) GetSshUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.SshUsername) {
-		return nil, false
-	}
-	return o.SshUsername, true
-}
-
-// SetSshUsername gets a reference to the given string and assigns it to the SshUsername field.
-func (o *UpdateHostInstallAgentRequestServer) SetSshUsername(v string) {
-	o.SshUsername = &v
-}
-
-// GetSshPassword returns the SshPassword field value if set, zero value otherwise.
-func (o *UpdateHostInstallAgentRequestServer) GetSshPassword() string {
-	if o == nil || IsNil(o.SshPassword) {
-		var ret string
-		return ret
-	}
-	return *o.SshPassword
-}
-
-// GetSshPasswordOk returns a tuple with the SshPassword field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostInstallAgentRequestServer) GetSshPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.SshPassword) {
-		return nil, false
-	}
-	return o.SshPassword, true
-}
-
-// SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
-func (o *UpdateHostInstallAgentRequestServer) SetSshPassword(v string) {
-	o.SshPassword = &v
-}
-
-// GetServerOs returns the ServerOs field value if set, zero value otherwise.
-func (o *UpdateHostInstallAgentRequestServer) GetServerOs() UpdateHostInstallAgentRequestServerServerOs {
-	if o == nil || IsNil(o.ServerOs) {
-		var ret UpdateHostInstallAgentRequestServerServerOs
-		return ret
-	}
-	return *o.ServerOs
-}
-
-// GetServerOsOk returns a tuple with the ServerOs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostInstallAgentRequestServer) GetServerOsOk() (*UpdateHostInstallAgentRequestServerServerOs, bool) {
-	if o == nil || IsNil(o.ServerOs) {
-		return nil, false
-	}
-	return o.ServerOs, true
-}
-
-// SetServerOs gets a reference to the given UpdateHostInstallAgentRequestServerServerOs and assigns it to the ServerOs field.
-func (o *UpdateHostInstallAgentRequestServer) SetServerOs(v UpdateHostInstallAgentRequestServerServerOs) {
-	o.ServerOs = &v
 }
 
 func (o UpdateHostInstallAgentRequestServer) MarshalJSON() ([]byte, error) {

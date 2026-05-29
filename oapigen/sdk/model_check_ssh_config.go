@@ -35,17 +35,6 @@ type CheckSshConfig struct {
 
 type _CheckSshConfig CheckSshConfig
 
-// NewCheckSshConfig instantiates a new CheckSshConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCheckSshConfig() *CheckSshConfig {
-	this := CheckSshConfig{}
-	var tunnelOn string = "off"
-	this.TunnelOn = &tunnelOn
-	return &this
-}
-
 // NewCheckSshConfigWithDefaults instantiates a new CheckSshConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -54,121 +43,6 @@ func NewCheckSshConfigWithDefaults() *CheckSshConfig {
 	var tunnelOn string = "off"
 	this.TunnelOn = &tunnelOn
 	return &this
-}
-
-// GetTunnelOn returns the TunnelOn field value if set, zero value otherwise.
-func (o *CheckSshConfig) GetTunnelOn() string {
-	if o == nil || IsNil(o.TunnelOn) {
-		var ret string
-		return ret
-	}
-	return *o.TunnelOn
-}
-
-// GetTunnelOnOk returns a tuple with the TunnelOn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckSshConfig) GetTunnelOnOk() (*string, bool) {
-	if o == nil || IsNil(o.TunnelOn) {
-		return nil, false
-	}
-	return o.TunnelOn, true
-}
-
-// SetTunnelOn gets a reference to the given string and assigns it to the TunnelOn field.
-func (o *CheckSshConfig) SetTunnelOn(v string) {
-	o.TunnelOn = &v
-}
-
-// GetSshHost returns the SshHost field value if set, zero value otherwise.
-func (o *CheckSshConfig) GetSshHost() string {
-	if o == nil || IsNil(o.SshHost) {
-		var ret string
-		return ret
-	}
-	return *o.SshHost
-}
-
-// GetSshHostOk returns a tuple with the SshHost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckSshConfig) GetSshHostOk() (*string, bool) {
-	if o == nil || IsNil(o.SshHost) {
-		return nil, false
-	}
-	return o.SshHost, true
-}
-
-// SetSshHost gets a reference to the given string and assigns it to the SshHost field.
-func (o *CheckSshConfig) SetSshHost(v string) {
-	o.SshHost = &v
-}
-
-// GetSshPort returns the SshPort field value if set, zero value otherwise.
-func (o *CheckSshConfig) GetSshPort() int64 {
-	if o == nil || IsNil(o.SshPort) {
-		var ret int64
-		return ret
-	}
-	return *o.SshPort
-}
-
-// GetSshPortOk returns a tuple with the SshPort field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckSshConfig) GetSshPortOk() (*int64, bool) {
-	if o == nil || IsNil(o.SshPort) {
-		return nil, false
-	}
-	return o.SshPort, true
-}
-
-// SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
-func (o *CheckSshConfig) SetSshPort(v int64) {
-	o.SshPort = &v
-}
-
-// GetSshUser returns the SshUser field value if set, zero value otherwise.
-func (o *CheckSshConfig) GetSshUser() string {
-	if o == nil || IsNil(o.SshUser) {
-		var ret string
-		return ret
-	}
-	return *o.SshUser
-}
-
-// GetSshUserOk returns a tuple with the SshUser field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckSshConfig) GetSshUserOk() (*string, bool) {
-	if o == nil || IsNil(o.SshUser) {
-		return nil, false
-	}
-	return o.SshUser, true
-}
-
-// SetSshUser gets a reference to the given string and assigns it to the SshUser field.
-func (o *CheckSshConfig) SetSshUser(v string) {
-	o.SshUser = &v
-}
-
-// GetSshPassword returns the SshPassword field value if set, zero value otherwise.
-func (o *CheckSshConfig) GetSshPassword() string {
-	if o == nil || IsNil(o.SshPassword) {
-		var ret string
-		return ret
-	}
-	return *o.SshPassword
-}
-
-// GetSshPasswordOk returns a tuple with the SshPassword field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckSshConfig) GetSshPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.SshPassword) {
-		return nil, false
-	}
-	return o.SshPassword, true
-}
-
-// SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
-func (o *CheckSshConfig) SetSshPassword(v string) {
-	o.SshPassword = &v
 }
 
 func (o CheckSshConfig) MarshalJSON() ([]byte, error) {

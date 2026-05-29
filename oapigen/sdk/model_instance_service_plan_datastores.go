@@ -27,67 +27,12 @@ type InstanceServicePlanDatastores struct {
 
 type _InstanceServicePlanDatastores InstanceServicePlanDatastores
 
-// NewInstanceServicePlanDatastores instantiates a new InstanceServicePlanDatastores object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceServicePlanDatastores() *InstanceServicePlanDatastores {
-	this := InstanceServicePlanDatastores{}
-	return &this
-}
-
 // NewInstanceServicePlanDatastoresWithDefaults instantiates a new InstanceServicePlanDatastores object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceServicePlanDatastoresWithDefaults() *InstanceServicePlanDatastores {
 	this := InstanceServicePlanDatastores{}
 	return &this
-}
-
-// GetCluster returns the Cluster field value if set, zero value otherwise.
-func (o *InstanceServicePlanDatastores) GetCluster() []InstanceServicePlanDatastoresClusterInner {
-	if o == nil || IsNil(o.Cluster) {
-		var ret []InstanceServicePlanDatastoresClusterInner
-		return ret
-	}
-	return o.Cluster
-}
-
-// GetClusterOk returns a tuple with the Cluster field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceServicePlanDatastores) GetClusterOk() ([]InstanceServicePlanDatastoresClusterInner, bool) {
-	if o == nil || IsNil(o.Cluster) {
-		return nil, false
-	}
-	return o.Cluster, true
-}
-
-// SetCluster gets a reference to the given []InstanceServicePlanDatastoresClusterInner and assigns it to the Cluster field.
-func (o *InstanceServicePlanDatastores) SetCluster(v []InstanceServicePlanDatastoresClusterInner) {
-	o.Cluster = v
-}
-
-// GetStore returns the Store field value if set, zero value otherwise.
-func (o *InstanceServicePlanDatastores) GetStore() []InstanceServicePlanDatastoresStoreInner {
-	if o == nil || IsNil(o.Store) {
-		var ret []InstanceServicePlanDatastoresStoreInner
-		return ret
-	}
-	return o.Store
-}
-
-// GetStoreOk returns a tuple with the Store field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceServicePlanDatastores) GetStoreOk() ([]InstanceServicePlanDatastoresStoreInner, bool) {
-	if o == nil || IsNil(o.Store) {
-		return nil, false
-	}
-	return o.Store, true
-}
-
-// SetStore gets a reference to the given []InstanceServicePlanDatastoresStoreInner and assigns it to the Store field.
-func (o *InstanceServicePlanDatastores) SetStore(v []InstanceServicePlanDatastoresStoreInner) {
-	o.Store = v
 }
 
 func (o InstanceServicePlanDatastores) MarshalJSON() ([]byte, error) {

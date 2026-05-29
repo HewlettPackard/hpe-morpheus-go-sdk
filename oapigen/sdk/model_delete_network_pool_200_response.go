@@ -26,44 +26,12 @@ type DeleteNetworkPool200Response struct {
 
 type _DeleteNetworkPool200Response DeleteNetworkPool200Response
 
-// NewDeleteNetworkPool200Response instantiates a new DeleteNetworkPool200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewDeleteNetworkPool200Response() *DeleteNetworkPool200Response {
-	this := DeleteNetworkPool200Response{}
-	return &this
-}
-
 // NewDeleteNetworkPool200ResponseWithDefaults instantiates a new DeleteNetworkPool200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewDeleteNetworkPool200ResponseWithDefaults() *DeleteNetworkPool200Response {
 	this := DeleteNetworkPool200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *DeleteNetworkPool200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeleteNetworkPool200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *DeleteNetworkPool200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o DeleteNetworkPool200Response) MarshalJSON() ([]byte, error) {

@@ -28,17 +28,6 @@ type GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf struct {
 
 type _GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf
 
-// NewGetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf instantiates a new GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf(cidrBlock string, tenancy string) *GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf {
-	this := GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf{}
-	this.CidrBlock = cidrBlock
-	this.Tenancy = tenancy
-	return &this
-}
-
 // NewGetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOfWithDefaults instantiates a new GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -47,54 +36,6 @@ func NewGetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOfWithDefaults
 	var tenancy string = "default"
 	this.Tenancy = tenancy
 	return &this
-}
-
-// GetCidrBlock returns the CidrBlock field value
-func (o *GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf) GetCidrBlock() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CidrBlock
-}
-
-// GetCidrBlockOk returns a tuple with the CidrBlock field value
-// and a boolean to check if the value has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf) GetCidrBlockOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CidrBlock, true
-}
-
-// SetCidrBlock sets field value
-func (o *GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf) SetCidrBlock(v string) {
-	o.CidrBlock = v
-}
-
-// GetTenancy returns the Tenancy field value
-func (o *GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf) GetTenancy() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Tenancy
-}
-
-// GetTenancyOk returns a tuple with the Tenancy field value
-// and a boolean to check if the value has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf) GetTenancyOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Tenancy, true
-}
-
-// SetTenancy sets field value
-func (o *GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf) SetTenancy(v string) {
-	o.Tenancy = v
 }
 
 func (o GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf) MarshalJSON() ([]byte, error) {

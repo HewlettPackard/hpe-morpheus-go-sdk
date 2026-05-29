@@ -29,113 +29,12 @@ type GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer struct {
 
 type _GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer
 
-// NewGetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer instantiates a new GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer() *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer {
-	this := GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer{}
-	return &this
-}
-
 // NewGetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancerWithDefaults instantiates a new GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancerWithDefaults() *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer {
 	this := GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer) GetType() GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancerType {
-	if o == nil || IsNil(o.Type) {
-		var ret GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancerType
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer) GetTypeOk() (*GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancerType, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancerType and assigns it to the Type field.
-func (o *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer) SetType(v GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancerType) {
-	o.Type = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer) SetName(v string) {
-	o.Name = &v
-}
-
-// GetIp returns the Ip field value if set, zero value otherwise.
-func (o *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer) GetIp() string {
-	if o == nil || IsNil(o.Ip) {
-		var ret string
-		return ret
-	}
-	return *o.Ip
-}
-
-// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer) GetIpOk() (*string, bool) {
-	if o == nil || IsNil(o.Ip) {
-		return nil, false
-	}
-	return o.Ip, true
-}
-
-// SetIp gets a reference to the given string and assigns it to the Ip field.
-func (o *GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer) SetIp(v string) {
-	o.Ip = &v
 }
 
 func (o GetLoadBalancerProfile200ResponseLoadBalancerProfileLoadBalancer) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer struct {
 
 type _GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer
 
-// NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer instantiates a new GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer() *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer {
-	this := GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer{}
-	return &this
-}
-
 // NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServerWithDefaults instantiates a new GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServerWithDefaults() *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer {
 	this := GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer) SetId(v int32) {
-	o.Id = &v
 }
 
 func (o GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer) MarshalJSON() ([]byte, error) {

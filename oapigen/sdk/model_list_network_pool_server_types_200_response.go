@@ -27,67 +27,12 @@ type ListNetworkPoolServerTypes200Response struct {
 
 type _ListNetworkPoolServerTypes200Response ListNetworkPoolServerTypes200Response
 
-// NewListNetworkPoolServerTypes200Response instantiates a new ListNetworkPoolServerTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListNetworkPoolServerTypes200Response() *ListNetworkPoolServerTypes200Response {
-	this := ListNetworkPoolServerTypes200Response{}
-	return &this
-}
-
 // NewListNetworkPoolServerTypes200ResponseWithDefaults instantiates a new ListNetworkPoolServerTypes200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListNetworkPoolServerTypes200ResponseWithDefaults() *ListNetworkPoolServerTypes200Response {
 	this := ListNetworkPoolServerTypes200Response{}
 	return &this
-}
-
-// GetNetworkPoolServerTypes returns the NetworkPoolServerTypes field value if set, zero value otherwise.
-func (o *ListNetworkPoolServerTypes200Response) GetNetworkPoolServerTypes() []ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner {
-	if o == nil || IsNil(o.NetworkPoolServerTypes) {
-		var ret []ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner
-		return ret
-	}
-	return o.NetworkPoolServerTypes
-}
-
-// GetNetworkPoolServerTypesOk returns a tuple with the NetworkPoolServerTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListNetworkPoolServerTypes200Response) GetNetworkPoolServerTypesOk() ([]ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner, bool) {
-	if o == nil || IsNil(o.NetworkPoolServerTypes) {
-		return nil, false
-	}
-	return o.NetworkPoolServerTypes, true
-}
-
-// SetNetworkPoolServerTypes gets a reference to the given []ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner and assigns it to the NetworkPoolServerTypes field.
-func (o *ListNetworkPoolServerTypes200Response) SetNetworkPoolServerTypes(v []ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) {
-	o.NetworkPoolServerTypes = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListNetworkPoolServerTypes200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListNetworkPoolServerTypes200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListNetworkPoolServerTypes200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListNetworkPoolServerTypes200Response) MarshalJSON() ([]byte, error) {

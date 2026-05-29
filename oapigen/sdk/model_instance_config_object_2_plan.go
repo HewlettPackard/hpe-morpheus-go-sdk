@@ -26,46 +26,12 @@ type InstanceConfigObject2Plan struct {
 
 type _InstanceConfigObject2Plan InstanceConfigObject2Plan
 
-// NewInstanceConfigObject2Plan instantiates a new InstanceConfigObject2Plan object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceConfigObject2Plan(id InstanceConfigObject2PlanId) *InstanceConfigObject2Plan {
-	this := InstanceConfigObject2Plan{}
-	this.Id = id
-	return &this
-}
-
 // NewInstanceConfigObject2PlanWithDefaults instantiates a new InstanceConfigObject2Plan object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceConfigObject2PlanWithDefaults() *InstanceConfigObject2Plan {
 	this := InstanceConfigObject2Plan{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *InstanceConfigObject2Plan) GetId() InstanceConfigObject2PlanId {
-	if o == nil {
-		var ret InstanceConfigObject2PlanId
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *InstanceConfigObject2Plan) GetIdOk() (*InstanceConfigObject2PlanId, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *InstanceConfigObject2Plan) SetId(v InstanceConfigObject2PlanId) {
-	o.Id = v
 }
 
 func (o InstanceConfigObject2Plan) MarshalJSON() ([]byte, error) {

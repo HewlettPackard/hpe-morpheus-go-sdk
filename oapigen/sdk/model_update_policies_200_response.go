@@ -27,67 +27,12 @@ type UpdatePolicies200Response struct {
 
 type _UpdatePolicies200Response UpdatePolicies200Response
 
-// NewUpdatePolicies200Response instantiates a new UpdatePolicies200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePolicies200Response() *UpdatePolicies200Response {
-	this := UpdatePolicies200Response{}
-	return &this
-}
-
 // NewUpdatePolicies200ResponseWithDefaults instantiates a new UpdatePolicies200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdatePolicies200ResponseWithDefaults() *UpdatePolicies200Response {
 	this := UpdatePolicies200Response{}
 	return &this
-}
-
-// GetPolicy returns the Policy field value if set, zero value otherwise.
-func (o *UpdatePolicies200Response) GetPolicy() UpdatePolicies200ResponseAllOfPolicy {
-	if o == nil || IsNil(o.Policy) {
-		var ret UpdatePolicies200ResponseAllOfPolicy
-		return ret
-	}
-	return *o.Policy
-}
-
-// GetPolicyOk returns a tuple with the Policy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePolicies200Response) GetPolicyOk() (*UpdatePolicies200ResponseAllOfPolicy, bool) {
-	if o == nil || IsNil(o.Policy) {
-		return nil, false
-	}
-	return o.Policy, true
-}
-
-// SetPolicy gets a reference to the given UpdatePolicies200ResponseAllOfPolicy and assigns it to the Policy field.
-func (o *UpdatePolicies200Response) SetPolicy(v UpdatePolicies200ResponseAllOfPolicy) {
-	o.Policy = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdatePolicies200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePolicies200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdatePolicies200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdatePolicies200Response) MarshalJSON() ([]byte, error) {

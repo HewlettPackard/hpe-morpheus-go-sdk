@@ -26,44 +26,12 @@ type ListOptionLists200ResponseAllOfOptionTypesInnerCredential struct {
 
 type _ListOptionLists200ResponseAllOfOptionTypesInnerCredential ListOptionLists200ResponseAllOfOptionTypesInnerCredential
 
-// NewListOptionLists200ResponseAllOfOptionTypesInnerCredential instantiates a new ListOptionLists200ResponseAllOfOptionTypesInnerCredential object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListOptionLists200ResponseAllOfOptionTypesInnerCredential() *ListOptionLists200ResponseAllOfOptionTypesInnerCredential {
-	this := ListOptionLists200ResponseAllOfOptionTypesInnerCredential{}
-	return &this
-}
-
 // NewListOptionLists200ResponseAllOfOptionTypesInnerCredentialWithDefaults instantiates a new ListOptionLists200ResponseAllOfOptionTypesInnerCredential object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListOptionLists200ResponseAllOfOptionTypesInnerCredentialWithDefaults() *ListOptionLists200ResponseAllOfOptionTypesInnerCredential {
 	this := ListOptionLists200ResponseAllOfOptionTypesInnerCredential{}
 	return &this
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerCredential) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerCredential) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInnerCredential) SetType(v string) {
-	o.Type = &v
 }
 
 func (o ListOptionLists200ResponseAllOfOptionTypesInnerCredential) MarshalJSON() ([]byte, error) {

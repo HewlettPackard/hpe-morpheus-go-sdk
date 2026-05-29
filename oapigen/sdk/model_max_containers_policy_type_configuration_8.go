@@ -26,46 +26,12 @@ type MaxContainersPolicyTypeConfiguration8 struct {
 
 type _MaxContainersPolicyTypeConfiguration8 MaxContainersPolicyTypeConfiguration8
 
-// NewMaxContainersPolicyTypeConfiguration8 instantiates a new MaxContainersPolicyTypeConfiguration8 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMaxContainersPolicyTypeConfiguration8(maxContainers string) *MaxContainersPolicyTypeConfiguration8 {
-	this := MaxContainersPolicyTypeConfiguration8{}
-	this.MaxContainers = maxContainers
-	return &this
-}
-
 // NewMaxContainersPolicyTypeConfiguration8WithDefaults instantiates a new MaxContainersPolicyTypeConfiguration8 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewMaxContainersPolicyTypeConfiguration8WithDefaults() *MaxContainersPolicyTypeConfiguration8 {
 	this := MaxContainersPolicyTypeConfiguration8{}
 	return &this
-}
-
-// GetMaxContainers returns the MaxContainers field value
-func (o *MaxContainersPolicyTypeConfiguration8) GetMaxContainers() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MaxContainers
-}
-
-// GetMaxContainersOk returns a tuple with the MaxContainers field value
-// and a boolean to check if the value has been set.
-func (o *MaxContainersPolicyTypeConfiguration8) GetMaxContainersOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MaxContainers, true
-}
-
-// SetMaxContainers sets field value
-func (o *MaxContainersPolicyTypeConfiguration8) SetMaxContainers(v string) {
-	o.MaxContainers = v
 }
 
 func (o MaxContainersPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {

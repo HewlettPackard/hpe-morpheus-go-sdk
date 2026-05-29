@@ -26,44 +26,12 @@ type AddClusterRequestClusterServerServerType struct {
 
 type _AddClusterRequestClusterServerServerType AddClusterRequestClusterServerServerType
 
-// NewAddClusterRequestClusterServerServerType instantiates a new AddClusterRequestClusterServerServerType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterRequestClusterServerServerType() *AddClusterRequestClusterServerServerType {
-	this := AddClusterRequestClusterServerServerType{}
-	return &this
-}
-
 // NewAddClusterRequestClusterServerServerTypeWithDefaults instantiates a new AddClusterRequestClusterServerServerType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddClusterRequestClusterServerServerTypeWithDefaults() *AddClusterRequestClusterServerServerType {
 	this := AddClusterRequestClusterServerServerType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerServerType) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerServerType) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *AddClusterRequestClusterServerServerType) SetId(v int32) {
-	o.Id = &v
 }
 
 func (o AddClusterRequestClusterServerServerType) MarshalJSON() ([]byte, error) {

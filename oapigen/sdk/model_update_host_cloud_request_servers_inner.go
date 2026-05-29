@@ -27,67 +27,12 @@ type UpdateHostCloudRequestServersInner struct {
 
 type _UpdateHostCloudRequestServersInner UpdateHostCloudRequestServersInner
 
-// NewUpdateHostCloudRequestServersInner instantiates a new UpdateHostCloudRequestServersInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateHostCloudRequestServersInner() *UpdateHostCloudRequestServersInner {
-	this := UpdateHostCloudRequestServersInner{}
-	return &this
-}
-
 // NewUpdateHostCloudRequestServersInnerWithDefaults instantiates a new UpdateHostCloudRequestServersInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateHostCloudRequestServersInnerWithDefaults() *UpdateHostCloudRequestServersInner {
 	this := UpdateHostCloudRequestServersInner{}
 	return &this
-}
-
-// GetSource returns the Source field value if set, zero value otherwise.
-func (o *UpdateHostCloudRequestServersInner) GetSource() int64 {
-	if o == nil || IsNil(o.Source) {
-		var ret int64
-		return ret
-	}
-	return *o.Source
-}
-
-// GetSourceOk returns a tuple with the Source field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostCloudRequestServersInner) GetSourceOk() (*int64, bool) {
-	if o == nil || IsNil(o.Source) {
-		return nil, false
-	}
-	return o.Source, true
-}
-
-// SetSource gets a reference to the given int64 and assigns it to the Source field.
-func (o *UpdateHostCloudRequestServersInner) SetSource(v int64) {
-	o.Source = &v
-}
-
-// GetTarget returns the Target field value if set, zero value otherwise.
-func (o *UpdateHostCloudRequestServersInner) GetTarget() int64 {
-	if o == nil || IsNil(o.Target) {
-		var ret int64
-		return ret
-	}
-	return *o.Target
-}
-
-// GetTargetOk returns a tuple with the Target field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostCloudRequestServersInner) GetTargetOk() (*int64, bool) {
-	if o == nil || IsNil(o.Target) {
-		return nil, false
-	}
-	return o.Target, true
-}
-
-// SetTarget gets a reference to the given int64 and assigns it to the Target field.
-func (o *UpdateHostCloudRequestServersInner) SetTarget(v int64) {
-	o.Target = &v
 }
 
 func (o UpdateHostCloudRequestServersInner) MarshalJSON() ([]byte, error) {

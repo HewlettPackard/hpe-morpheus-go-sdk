@@ -27,67 +27,12 @@ type ListNodeTypes200ResponseAllOfContainerTypesInnerAccount struct {
 
 type _ListNodeTypes200ResponseAllOfContainerTypesInnerAccount ListNodeTypes200ResponseAllOfContainerTypesInnerAccount
 
-// NewListNodeTypes200ResponseAllOfContainerTypesInnerAccount instantiates a new ListNodeTypes200ResponseAllOfContainerTypesInnerAccount object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListNodeTypes200ResponseAllOfContainerTypesInnerAccount() *ListNodeTypes200ResponseAllOfContainerTypesInnerAccount {
-	this := ListNodeTypes200ResponseAllOfContainerTypesInnerAccount{}
-	return &this
-}
-
 // NewListNodeTypes200ResponseAllOfContainerTypesInnerAccountWithDefaults instantiates a new ListNodeTypes200ResponseAllOfContainerTypesInnerAccount object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListNodeTypes200ResponseAllOfContainerTypesInnerAccountWithDefaults() *ListNodeTypes200ResponseAllOfContainerTypesInnerAccount {
 	this := ListNodeTypes200ResponseAllOfContainerTypesInnerAccount{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerAccount) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerAccount) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerAccount) SetId(v int32) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerAccount) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerAccount) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerAccount) SetName(v string) {
-	o.Name = &v
 }
 
 func (o ListNodeTypes200ResponseAllOfContainerTypesInnerAccount) MarshalJSON() ([]byte, error) {

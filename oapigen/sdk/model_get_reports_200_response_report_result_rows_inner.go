@@ -29,114 +29,12 @@ type GetReports200ResponseReportResultRowsInner struct {
 
 type _GetReports200ResponseReportResultRowsInner GetReports200ResponseReportResultRowsInner
 
-// NewGetReports200ResponseReportResultRowsInner instantiates a new GetReports200ResponseReportResultRowsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetReports200ResponseReportResultRowsInner() *GetReports200ResponseReportResultRowsInner {
-	this := GetReports200ResponseReportResultRowsInner{}
-	return &this
-}
-
 // NewGetReports200ResponseReportResultRowsInnerWithDefaults instantiates a new GetReports200ResponseReportResultRowsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetReports200ResponseReportResultRowsInnerWithDefaults() *GetReports200ResponseReportResultRowsInner {
 	this := GetReports200ResponseReportResultRowsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetReports200ResponseReportResultRowsInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetReports200ResponseReportResultRowsInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetReports200ResponseReportResultRowsInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetSection returns the Section field value if set, zero value otherwise.
-func (o *GetReports200ResponseReportResultRowsInner) GetSection() string {
-	if o == nil || IsNil(o.Section) {
-		var ret string
-		return ret
-	}
-	return *o.Section
-}
-
-// GetSectionOk returns a tuple with the Section field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetReports200ResponseReportResultRowsInner) GetSectionOk() (*string, bool) {
-	if o == nil || IsNil(o.Section) {
-		return nil, false
-	}
-	return o.Section, true
-}
-
-// SetSection gets a reference to the given string and assigns it to the Section field.
-func (o *GetReports200ResponseReportResultRowsInner) SetSection(v string) {
-	o.Section = &v
-}
-
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *GetReports200ResponseReportResultRowsInner) GetData() string {
-	if o == nil || IsNil(o.Data) {
-		var ret string
-		return ret
-	}
-	return *o.Data
-}
-
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetReports200ResponseReportResultRowsInner) GetDataOk() (*string, bool) {
-	if o == nil || IsNil(o.Data) {
-		return nil, false
-	}
-	return o.Data, true
-}
-
-// SetData gets a reference to the given string and assigns it to the Data field.
-func (o *GetReports200ResponseReportResultRowsInner) SetData(v string) {
-	o.Data = &v
-}
-
-// GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetReports200ResponseReportResultRowsInner) GetDisplayOrder() string {
-	if o == nil || IsNil(o.DisplayOrder.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.DisplayOrder.Get()
-}
-
-// GetDisplayOrderOk returns a tuple with the DisplayOrder field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetReports200ResponseReportResultRowsInner) GetDisplayOrderOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.DisplayOrder.Get(), o.DisplayOrder.IsSet()
-}
-
-// SetDisplayOrder gets a reference to the given NullableString and assigns it to the DisplayOrder field.
-func (o *GetReports200ResponseReportResultRowsInner) SetDisplayOrder(v string) {
-	o.DisplayOrder.Set(&v)
 }
 
 func (o GetReports200ResponseReportResultRowsInner) MarshalJSON() ([]byte, error) {

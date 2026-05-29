@@ -27,67 +27,12 @@ type ListDeploymentFiles200Response struct {
 
 type _ListDeploymentFiles200Response ListDeploymentFiles200Response
 
-// NewListDeploymentFiles200Response instantiates a new ListDeploymentFiles200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListDeploymentFiles200Response() *ListDeploymentFiles200Response {
-	this := ListDeploymentFiles200Response{}
-	return &this
-}
-
 // NewListDeploymentFiles200ResponseWithDefaults instantiates a new ListDeploymentFiles200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListDeploymentFiles200ResponseWithDefaults() *ListDeploymentFiles200Response {
 	this := ListDeploymentFiles200Response{}
 	return &this
-}
-
-// GetVersions returns the Versions field value if set, zero value otherwise.
-func (o *ListDeploymentFiles200Response) GetVersions() []ListDeploymentFiles200ResponseAllOfVersionsInner {
-	if o == nil || IsNil(o.Versions) {
-		var ret []ListDeploymentFiles200ResponseAllOfVersionsInner
-		return ret
-	}
-	return o.Versions
-}
-
-// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListDeploymentFiles200Response) GetVersionsOk() ([]ListDeploymentFiles200ResponseAllOfVersionsInner, bool) {
-	if o == nil || IsNil(o.Versions) {
-		return nil, false
-	}
-	return o.Versions, true
-}
-
-// SetVersions gets a reference to the given []ListDeploymentFiles200ResponseAllOfVersionsInner and assigns it to the Versions field.
-func (o *ListDeploymentFiles200Response) SetVersions(v []ListDeploymentFiles200ResponseAllOfVersionsInner) {
-	o.Versions = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListDeploymentFiles200Response) GetMeta() ListDeploymentFiles200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListDeploymentFiles200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListDeploymentFiles200Response) GetMetaOk() (*ListDeploymentFiles200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListDeploymentFiles200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListDeploymentFiles200Response) SetMeta(v ListDeploymentFiles200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListDeploymentFiles200Response) MarshalJSON() ([]byte, error) {

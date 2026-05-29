@@ -26,44 +26,12 @@ type GetNetworkDhcpRelay200Response struct {
 
 type _GetNetworkDhcpRelay200Response GetNetworkDhcpRelay200Response
 
-// NewGetNetworkDhcpRelay200Response instantiates a new GetNetworkDhcpRelay200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkDhcpRelay200Response() *GetNetworkDhcpRelay200Response {
-	this := GetNetworkDhcpRelay200Response{}
-	return &this
-}
-
 // NewGetNetworkDhcpRelay200ResponseWithDefaults instantiates a new GetNetworkDhcpRelay200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkDhcpRelay200ResponseWithDefaults() *GetNetworkDhcpRelay200Response {
 	this := GetNetworkDhcpRelay200Response{}
 	return &this
-}
-
-// GetNetworkDhcpRelay returns the NetworkDhcpRelay field value if set, zero value otherwise.
-func (o *GetNetworkDhcpRelay200Response) GetNetworkDhcpRelay() GetNetworkDhcpRelay200ResponseNetworkDhcpRelay {
-	if o == nil || IsNil(o.NetworkDhcpRelay) {
-		var ret GetNetworkDhcpRelay200ResponseNetworkDhcpRelay
-		return ret
-	}
-	return *o.NetworkDhcpRelay
-}
-
-// GetNetworkDhcpRelayOk returns a tuple with the NetworkDhcpRelay field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpRelay200Response) GetNetworkDhcpRelayOk() (*GetNetworkDhcpRelay200ResponseNetworkDhcpRelay, bool) {
-	if o == nil || IsNil(o.NetworkDhcpRelay) {
-		return nil, false
-	}
-	return o.NetworkDhcpRelay, true
-}
-
-// SetNetworkDhcpRelay gets a reference to the given GetNetworkDhcpRelay200ResponseNetworkDhcpRelay and assigns it to the NetworkDhcpRelay field.
-func (o *GetNetworkDhcpRelay200Response) SetNetworkDhcpRelay(v GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) {
-	o.NetworkDhcpRelay = &v
 }
 
 func (o GetNetworkDhcpRelay200Response) MarshalJSON() ([]byte, error) {

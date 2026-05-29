@@ -28,91 +28,12 @@ type RefreshLoadBalancer200Response struct {
 
 type _RefreshLoadBalancer200Response RefreshLoadBalancer200Response
 
-// NewRefreshLoadBalancer200Response instantiates a new RefreshLoadBalancer200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRefreshLoadBalancer200Response() *RefreshLoadBalancer200Response {
-	this := RefreshLoadBalancer200Response{}
-	return &this
-}
-
 // NewRefreshLoadBalancer200ResponseWithDefaults instantiates a new RefreshLoadBalancer200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRefreshLoadBalancer200ResponseWithDefaults() *RefreshLoadBalancer200Response {
 	this := RefreshLoadBalancer200Response{}
 	return &this
-}
-
-// GetLoadBalancer returns the LoadBalancer field value if set, zero value otherwise.
-func (o *RefreshLoadBalancer200Response) GetLoadBalancer() GetLoadBalancer200ResponseLoadBalancer {
-	if o == nil || IsNil(o.LoadBalancer) {
-		var ret GetLoadBalancer200ResponseLoadBalancer
-		return ret
-	}
-	return *o.LoadBalancer
-}
-
-// GetLoadBalancerOk returns a tuple with the LoadBalancer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RefreshLoadBalancer200Response) GetLoadBalancerOk() (*GetLoadBalancer200ResponseLoadBalancer, bool) {
-	if o == nil || IsNil(o.LoadBalancer) {
-		return nil, false
-	}
-	return o.LoadBalancer, true
-}
-
-// SetLoadBalancer gets a reference to the given GetLoadBalancer200ResponseLoadBalancer and assigns it to the LoadBalancer field.
-func (o *RefreshLoadBalancer200Response) SetLoadBalancer(v GetLoadBalancer200ResponseLoadBalancer) {
-	o.LoadBalancer = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *RefreshLoadBalancer200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RefreshLoadBalancer200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *RefreshLoadBalancer200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetMsg returns the Msg field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RefreshLoadBalancer200Response) GetMsg() string {
-	if o == nil || IsNil(o.Msg.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Msg.Get()
-}
-
-// GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RefreshLoadBalancer200Response) GetMsgOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Msg.Get(), o.Msg.IsSet()
-}
-
-// SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
-func (o *RefreshLoadBalancer200Response) SetMsg(v string) {
-	o.Msg.Set(&v)
 }
 
 func (o RefreshLoadBalancer200Response) MarshalJSON() ([]byte, error) {

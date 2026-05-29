@@ -26,44 +26,12 @@ type UpdateSecurityGroups200Response struct {
 
 type _UpdateSecurityGroups200Response UpdateSecurityGroups200Response
 
-// NewUpdateSecurityGroups200Response instantiates a new UpdateSecurityGroups200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateSecurityGroups200Response() *UpdateSecurityGroups200Response {
-	this := UpdateSecurityGroups200Response{}
-	return &this
-}
-
 // NewUpdateSecurityGroups200ResponseWithDefaults instantiates a new UpdateSecurityGroups200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateSecurityGroups200ResponseWithDefaults() *UpdateSecurityGroups200Response {
 	this := UpdateSecurityGroups200Response{}
 	return &this
-}
-
-// GetSecurityGroup returns the SecurityGroup field value if set, zero value otherwise.
-func (o *UpdateSecurityGroups200Response) GetSecurityGroup() UpdateSecurityGroups200ResponseSecurityGroup {
-	if o == nil || IsNil(o.SecurityGroup) {
-		var ret UpdateSecurityGroups200ResponseSecurityGroup
-		return ret
-	}
-	return *o.SecurityGroup
-}
-
-// GetSecurityGroupOk returns a tuple with the SecurityGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateSecurityGroups200Response) GetSecurityGroupOk() (*UpdateSecurityGroups200ResponseSecurityGroup, bool) {
-	if o == nil || IsNil(o.SecurityGroup) {
-		return nil, false
-	}
-	return o.SecurityGroup, true
-}
-
-// SetSecurityGroup gets a reference to the given UpdateSecurityGroups200ResponseSecurityGroup and assigns it to the SecurityGroup field.
-func (o *UpdateSecurityGroups200Response) SetSecurityGroup(v UpdateSecurityGroups200ResponseSecurityGroup) {
-	o.SecurityGroup = &v
 }
 
 func (o UpdateSecurityGroups200Response) MarshalJSON() ([]byte, error) {

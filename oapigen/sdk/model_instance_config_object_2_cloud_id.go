@@ -27,20 +27,6 @@ type InstanceConfigObject2CloudId struct {
 	String *string
 }
 
-// int64AsInstanceConfigObject2CloudId is a convenience function that returns int64 wrapped in InstanceConfigObject2CloudId
-func Int64AsInstanceConfigObject2CloudId(v *int64) InstanceConfigObject2CloudId {
-	return InstanceConfigObject2CloudId{
-		Int64: v,
-	}
-}
-
-// stringAsInstanceConfigObject2CloudId is a convenience function that returns string wrapped in InstanceConfigObject2CloudId
-func StringAsInstanceConfigObject2CloudId(v *string) InstanceConfigObject2CloudId {
-	return InstanceConfigObject2CloudId{
-		String: v,
-	}
-}
-
 func (dst *InstanceConfigObject2CloudId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &InstanceConfigObject2CloudId{}

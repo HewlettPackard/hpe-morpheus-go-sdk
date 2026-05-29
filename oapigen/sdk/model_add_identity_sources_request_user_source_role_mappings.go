@@ -27,20 +27,6 @@ type AddIdentitySourcesRequestUserSourceRoleMappings struct {
 	MapmapOfStringstring                                             *map[string]string
 }
 
-// []AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerAsAddIdentitySourcesRequestUserSourceRoleMappings is a convenience function that returns []AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner wrapped in AddIdentitySourcesRequestUserSourceRoleMappings
-func ArrayOfAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerAsAddIdentitySourcesRequestUserSourceRoleMappings(v *[]AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) AddIdentitySourcesRequestUserSourceRoleMappings {
-	return AddIdentitySourcesRequestUserSourceRoleMappings{
-		ArrayOfAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner: v,
-	}
-}
-
-// map[string]stringAsAddIdentitySourcesRequestUserSourceRoleMappings is a convenience function that returns map[string]string wrapped in AddIdentitySourcesRequestUserSourceRoleMappings
-func MapmapOfStringstringAsAddIdentitySourcesRequestUserSourceRoleMappings(v *map[string]string) AddIdentitySourcesRequestUserSourceRoleMappings {
-	return AddIdentitySourcesRequestUserSourceRoleMappings{
-		MapmapOfStringstring: v,
-	}
-}
-
 func (dst *AddIdentitySourcesRequestUserSourceRoleMappings) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddIdentitySourcesRequestUserSourceRoleMappings{}

@@ -27,67 +27,12 @@ type ListPolicyTypes200Response struct {
 
 type _ListPolicyTypes200Response ListPolicyTypes200Response
 
-// NewListPolicyTypes200Response instantiates a new ListPolicyTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListPolicyTypes200Response() *ListPolicyTypes200Response {
-	this := ListPolicyTypes200Response{}
-	return &this
-}
-
 // NewListPolicyTypes200ResponseWithDefaults instantiates a new ListPolicyTypes200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListPolicyTypes200ResponseWithDefaults() *ListPolicyTypes200Response {
 	this := ListPolicyTypes200Response{}
 	return &this
-}
-
-// GetPolicyTypes returns the PolicyTypes field value if set, zero value otherwise.
-func (o *ListPolicyTypes200Response) GetPolicyTypes() []ListPolicyTypes200ResponseAllOfPolicyTypesInner {
-	if o == nil || IsNil(o.PolicyTypes) {
-		var ret []ListPolicyTypes200ResponseAllOfPolicyTypesInner
-		return ret
-	}
-	return o.PolicyTypes
-}
-
-// GetPolicyTypesOk returns a tuple with the PolicyTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPolicyTypes200Response) GetPolicyTypesOk() ([]ListPolicyTypes200ResponseAllOfPolicyTypesInner, bool) {
-	if o == nil || IsNil(o.PolicyTypes) {
-		return nil, false
-	}
-	return o.PolicyTypes, true
-}
-
-// SetPolicyTypes gets a reference to the given []ListPolicyTypes200ResponseAllOfPolicyTypesInner and assigns it to the PolicyTypes field.
-func (o *ListPolicyTypes200Response) SetPolicyTypes(v []ListPolicyTypes200ResponseAllOfPolicyTypesInner) {
-	o.PolicyTypes = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListPolicyTypes200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPolicyTypes200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListPolicyTypes200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListPolicyTypes200Response) MarshalJSON() ([]byte, error) {

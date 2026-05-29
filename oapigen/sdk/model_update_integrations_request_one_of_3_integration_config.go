@@ -27,44 +27,12 @@ type UpdateIntegrationsRequestOneOf3IntegrationConfig struct {
 
 type _UpdateIntegrationsRequestOneOf3IntegrationConfig UpdateIntegrationsRequestOneOf3IntegrationConfig
 
-// NewUpdateIntegrationsRequestOneOf3IntegrationConfig instantiates a new UpdateIntegrationsRequestOneOf3IntegrationConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIntegrationsRequestOneOf3IntegrationConfig() *UpdateIntegrationsRequestOneOf3IntegrationConfig {
-	this := UpdateIntegrationsRequestOneOf3IntegrationConfig{}
-	return &this
-}
-
 // NewUpdateIntegrationsRequestOneOf3IntegrationConfigWithDefaults instantiates a new UpdateIntegrationsRequestOneOf3IntegrationConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateIntegrationsRequestOneOf3IntegrationConfigWithDefaults() *UpdateIntegrationsRequestOneOf3IntegrationConfig {
 	this := UpdateIntegrationsRequestOneOf3IntegrationConfig{}
 	return &this
-}
-
-// GetSaltApplyOnMinion returns the SaltApplyOnMinion field value if set, zero value otherwise.
-func (o *UpdateIntegrationsRequestOneOf3IntegrationConfig) GetSaltApplyOnMinion() bool {
-	if o == nil || IsNil(o.SaltApplyOnMinion) {
-		var ret bool
-		return ret
-	}
-	return *o.SaltApplyOnMinion
-}
-
-// GetSaltApplyOnMinionOk returns a tuple with the SaltApplyOnMinion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIntegrationsRequestOneOf3IntegrationConfig) GetSaltApplyOnMinionOk() (*bool, bool) {
-	if o == nil || IsNil(o.SaltApplyOnMinion) {
-		return nil, false
-	}
-	return o.SaltApplyOnMinion, true
-}
-
-// SetSaltApplyOnMinion gets a reference to the given bool and assigns it to the SaltApplyOnMinion field.
-func (o *UpdateIntegrationsRequestOneOf3IntegrationConfig) SetSaltApplyOnMinion(v bool) {
-	o.SaltApplyOnMinion = &v
 }
 
 func (o UpdateIntegrationsRequestOneOf3IntegrationConfig) MarshalJSON() ([]byte, error) {

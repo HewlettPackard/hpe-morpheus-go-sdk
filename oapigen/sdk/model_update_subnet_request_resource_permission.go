@@ -31,113 +31,12 @@ type UpdateSubnetRequestResourcePermission struct {
 
 type _UpdateSubnetRequestResourcePermission UpdateSubnetRequestResourcePermission
 
-// NewUpdateSubnetRequestResourcePermission instantiates a new UpdateSubnetRequestResourcePermission object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateSubnetRequestResourcePermission() *UpdateSubnetRequestResourcePermission {
-	this := UpdateSubnetRequestResourcePermission{}
-	return &this
-}
-
 // NewUpdateSubnetRequestResourcePermissionWithDefaults instantiates a new UpdateSubnetRequestResourcePermission object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateSubnetRequestResourcePermissionWithDefaults() *UpdateSubnetRequestResourcePermission {
 	this := UpdateSubnetRequestResourcePermission{}
 	return &this
-}
-
-// GetAll returns the All field value if set, zero value otherwise.
-func (o *UpdateSubnetRequestResourcePermission) GetAll() bool {
-	if o == nil || IsNil(o.All) {
-		var ret bool
-		return ret
-	}
-	return *o.All
-}
-
-// GetAllOk returns a tuple with the All field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateSubnetRequestResourcePermission) GetAllOk() (*bool, bool) {
-	if o == nil || IsNil(o.All) {
-		return nil, false
-	}
-	return o.All, true
-}
-
-// SetAll gets a reference to the given bool and assigns it to the All field.
-func (o *UpdateSubnetRequestResourcePermission) SetAll(v bool) {
-	o.All = &v
-}
-
-// GetSites returns the Sites field value if set, zero value otherwise.
-func (o *UpdateSubnetRequestResourcePermission) GetSites() []UpdateSubnetRequestResourcePermissionSitesInner {
-	if o == nil || IsNil(o.Sites) {
-		var ret []UpdateSubnetRequestResourcePermissionSitesInner
-		return ret
-	}
-	return o.Sites
-}
-
-// GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateSubnetRequestResourcePermission) GetSitesOk() ([]UpdateSubnetRequestResourcePermissionSitesInner, bool) {
-	if o == nil || IsNil(o.Sites) {
-		return nil, false
-	}
-	return o.Sites, true
-}
-
-// SetSites gets a reference to the given []UpdateSubnetRequestResourcePermissionSitesInner and assigns it to the Sites field.
-func (o *UpdateSubnetRequestResourcePermission) SetSites(v []UpdateSubnetRequestResourcePermissionSitesInner) {
-	o.Sites = v
-}
-
-// GetAllPlans returns the AllPlans field value if set, zero value otherwise.
-func (o *UpdateSubnetRequestResourcePermission) GetAllPlans() bool {
-	if o == nil || IsNil(o.AllPlans) {
-		var ret bool
-		return ret
-	}
-	return *o.AllPlans
-}
-
-// GetAllPlansOk returns a tuple with the AllPlans field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateSubnetRequestResourcePermission) GetAllPlansOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllPlans) {
-		return nil, false
-	}
-	return o.AllPlans, true
-}
-
-// SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
-func (o *UpdateSubnetRequestResourcePermission) SetAllPlans(v bool) {
-	o.AllPlans = &v
-}
-
-// GetPlans returns the Plans field value if set, zero value otherwise.
-func (o *UpdateSubnetRequestResourcePermission) GetPlans() []map[string]interface{} {
-	if o == nil || IsNil(o.Plans) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Plans
-}
-
-// GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateSubnetRequestResourcePermission) GetPlansOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Plans) {
-		return nil, false
-	}
-	return o.Plans, true
-}
-
-// SetPlans gets a reference to the given []map[string]interface{} and assigns it to the Plans field.
-func (o *UpdateSubnetRequestResourcePermission) SetPlans(v []map[string]interface{}) {
-	o.Plans = v
 }
 
 func (o UpdateSubnetRequestResourcePermission) MarshalJSON() ([]byte, error) {

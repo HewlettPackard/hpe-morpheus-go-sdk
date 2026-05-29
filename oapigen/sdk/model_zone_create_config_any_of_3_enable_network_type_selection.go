@@ -26,13 +26,6 @@ type ZoneCreateConfigAnyOf3EnableNetworkTypeSelection struct {
 	String *string
 }
 
-// stringAsZoneCreateConfigAnyOf3EnableNetworkTypeSelection is a convenience function that returns string wrapped in ZoneCreateConfigAnyOf3EnableNetworkTypeSelection
-func StringAsZoneCreateConfigAnyOf3EnableNetworkTypeSelection(v *string) ZoneCreateConfigAnyOf3EnableNetworkTypeSelection {
-	return ZoneCreateConfigAnyOf3EnableNetworkTypeSelection{
-		String: v,
-	}
-}
-
 func (dst *ZoneCreateConfigAnyOf3EnableNetworkTypeSelection) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ZoneCreateConfigAnyOf3EnableNetworkTypeSelection{}

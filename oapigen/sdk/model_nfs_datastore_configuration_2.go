@@ -31,94 +31,12 @@ type NFSDatastoreConfiguration2 struct {
 
 type _NFSDatastoreConfiguration2 NFSDatastoreConfiguration2
 
-// NewNFSDatastoreConfiguration2 instantiates a new NFSDatastoreConfiguration2 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNFSDatastoreConfiguration2(sourceHostname string, sourceDirPath string) *NFSDatastoreConfiguration2 {
-	this := NFSDatastoreConfiguration2{}
-	this.SourceHostname = sourceHostname
-	this.SourceDirPath = sourceDirPath
-	return &this
-}
-
 // NewNFSDatastoreConfiguration2WithDefaults instantiates a new NFSDatastoreConfiguration2 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNFSDatastoreConfiguration2WithDefaults() *NFSDatastoreConfiguration2 {
 	this := NFSDatastoreConfiguration2{}
 	return &this
-}
-
-// GetSourceHostname returns the SourceHostname field value
-func (o *NFSDatastoreConfiguration2) GetSourceHostname() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SourceHostname
-}
-
-// GetSourceHostnameOk returns a tuple with the SourceHostname field value
-// and a boolean to check if the value has been set.
-func (o *NFSDatastoreConfiguration2) GetSourceHostnameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SourceHostname, true
-}
-
-// SetSourceHostname sets field value
-func (o *NFSDatastoreConfiguration2) SetSourceHostname(v string) {
-	o.SourceHostname = v
-}
-
-// GetSourceDirPath returns the SourceDirPath field value
-func (o *NFSDatastoreConfiguration2) GetSourceDirPath() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SourceDirPath
-}
-
-// GetSourceDirPathOk returns a tuple with the SourceDirPath field value
-// and a boolean to check if the value has been set.
-func (o *NFSDatastoreConfiguration2) GetSourceDirPathOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SourceDirPath, true
-}
-
-// SetSourceDirPath sets field value
-func (o *NFSDatastoreConfiguration2) SetSourceDirPath(v string) {
-	o.SourceDirPath = v
-}
-
-// GetSourceVersion returns the SourceVersion field value if set, zero value otherwise.
-func (o *NFSDatastoreConfiguration2) GetSourceVersion() string {
-	if o == nil || IsNil(o.SourceVersion) {
-		var ret string
-		return ret
-	}
-	return *o.SourceVersion
-}
-
-// GetSourceVersionOk returns a tuple with the SourceVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NFSDatastoreConfiguration2) GetSourceVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceVersion) {
-		return nil, false
-	}
-	return o.SourceVersion, true
-}
-
-// SetSourceVersion gets a reference to the given string and assigns it to the SourceVersion field.
-func (o *NFSDatastoreConfiguration2) SetSourceVersion(v string) {
-	o.SourceVersion = &v
 }
 
 func (o NFSDatastoreConfiguration2) MarshalJSON() ([]byte, error) {

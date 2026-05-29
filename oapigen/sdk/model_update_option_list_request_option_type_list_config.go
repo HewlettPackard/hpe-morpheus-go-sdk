@@ -26,44 +26,12 @@ type UpdateOptionListRequestOptionTypeListConfig struct {
 
 type _UpdateOptionListRequestOptionTypeListConfig UpdateOptionListRequestOptionTypeListConfig
 
-// NewUpdateOptionListRequestOptionTypeListConfig instantiates a new UpdateOptionListRequestOptionTypeListConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateOptionListRequestOptionTypeListConfig() *UpdateOptionListRequestOptionTypeListConfig {
-	this := UpdateOptionListRequestOptionTypeListConfig{}
-	return &this
-}
-
 // NewUpdateOptionListRequestOptionTypeListConfigWithDefaults instantiates a new UpdateOptionListRequestOptionTypeListConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateOptionListRequestOptionTypeListConfigWithDefaults() *UpdateOptionListRequestOptionTypeListConfig {
 	this := UpdateOptionListRequestOptionTypeListConfig{}
 	return &this
-}
-
-// GetSourceHeaders returns the SourceHeaders field value if set, zero value otherwise.
-func (o *UpdateOptionListRequestOptionTypeListConfig) GetSourceHeaders() []UpdateOptionListRequestOptionTypeListConfigSourceHeadersInner {
-	if o == nil || IsNil(o.SourceHeaders) {
-		var ret []UpdateOptionListRequestOptionTypeListConfigSourceHeadersInner
-		return ret
-	}
-	return o.SourceHeaders
-}
-
-// GetSourceHeadersOk returns a tuple with the SourceHeaders field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateOptionListRequestOptionTypeListConfig) GetSourceHeadersOk() ([]UpdateOptionListRequestOptionTypeListConfigSourceHeadersInner, bool) {
-	if o == nil || IsNil(o.SourceHeaders) {
-		return nil, false
-	}
-	return o.SourceHeaders, true
-}
-
-// SetSourceHeaders gets a reference to the given []UpdateOptionListRequestOptionTypeListConfigSourceHeadersInner and assigns it to the SourceHeaders field.
-func (o *UpdateOptionListRequestOptionTypeListConfig) SetSourceHeaders(v []UpdateOptionListRequestOptionTypeListConfigSourceHeadersInner) {
-	o.SourceHeaders = v
 }
 
 func (o UpdateOptionListRequestOptionTypeListConfig) MarshalJSON() ([]byte, error) {

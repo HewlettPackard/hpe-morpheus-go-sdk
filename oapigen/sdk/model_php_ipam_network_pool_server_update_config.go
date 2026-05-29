@@ -29,17 +29,6 @@ type PhpIPAMNetworkPoolServerUpdateConfig struct {
 
 type _PhpIPAMNetworkPoolServerUpdateConfig PhpIPAMNetworkPoolServerUpdateConfig
 
-// NewPhpIPAMNetworkPoolServerUpdateConfig instantiates a new PhpIPAMNetworkPoolServerUpdateConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPhpIPAMNetworkPoolServerUpdateConfig() *PhpIPAMNetworkPoolServerUpdateConfig {
-	this := PhpIPAMNetworkPoolServerUpdateConfig{}
-	var inventoryExisting string = "off"
-	this.InventoryExisting = &inventoryExisting
-	return &this
-}
-
 // NewPhpIPAMNetworkPoolServerUpdateConfigWithDefaults instantiates a new PhpIPAMNetworkPoolServerUpdateConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -48,52 +37,6 @@ func NewPhpIPAMNetworkPoolServerUpdateConfigWithDefaults() *PhpIPAMNetworkPoolSe
 	var inventoryExisting string = "off"
 	this.InventoryExisting = &inventoryExisting
 	return &this
-}
-
-// GetAppId returns the AppId field value if set, zero value otherwise.
-func (o *PhpIPAMNetworkPoolServerUpdateConfig) GetAppId() string {
-	if o == nil || IsNil(o.AppId) {
-		var ret string
-		return ret
-	}
-	return *o.AppId
-}
-
-// GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PhpIPAMNetworkPoolServerUpdateConfig) GetAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppId) {
-		return nil, false
-	}
-	return o.AppId, true
-}
-
-// SetAppId gets a reference to the given string and assigns it to the AppId field.
-func (o *PhpIPAMNetworkPoolServerUpdateConfig) SetAppId(v string) {
-	o.AppId = &v
-}
-
-// GetInventoryExisting returns the InventoryExisting field value if set, zero value otherwise.
-func (o *PhpIPAMNetworkPoolServerUpdateConfig) GetInventoryExisting() string {
-	if o == nil || IsNil(o.InventoryExisting) {
-		var ret string
-		return ret
-	}
-	return *o.InventoryExisting
-}
-
-// GetInventoryExistingOk returns a tuple with the InventoryExisting field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PhpIPAMNetworkPoolServerUpdateConfig) GetInventoryExistingOk() (*string, bool) {
-	if o == nil || IsNil(o.InventoryExisting) {
-		return nil, false
-	}
-	return o.InventoryExisting, true
-}
-
-// SetInventoryExisting gets a reference to the given string and assigns it to the InventoryExisting field.
-func (o *PhpIPAMNetworkPoolServerUpdateConfig) SetInventoryExisting(v string) {
-	o.InventoryExisting = &v
 }
 
 func (o PhpIPAMNetworkPoolServerUpdateConfig) MarshalJSON() ([]byte, error) {

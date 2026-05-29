@@ -26,44 +26,12 @@ type UpdateClusterPackageRequest struct {
 
 type _UpdateClusterPackageRequest UpdateClusterPackageRequest
 
-// NewUpdateClusterPackageRequest instantiates a new UpdateClusterPackageRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterPackageRequest() *UpdateClusterPackageRequest {
-	this := UpdateClusterPackageRequest{}
-	return &this
-}
-
 // NewUpdateClusterPackageRequestWithDefaults instantiates a new UpdateClusterPackageRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateClusterPackageRequestWithDefaults() *UpdateClusterPackageRequest {
 	this := UpdateClusterPackageRequest{}
 	return &this
-}
-
-// GetClusterPackage returns the ClusterPackage field value if set, zero value otherwise.
-func (o *UpdateClusterPackageRequest) GetClusterPackage() UpdateClusterPackageRequestClusterPackage {
-	if o == nil || IsNil(o.ClusterPackage) {
-		var ret UpdateClusterPackageRequestClusterPackage
-		return ret
-	}
-	return *o.ClusterPackage
-}
-
-// GetClusterPackageOk returns a tuple with the ClusterPackage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterPackageRequest) GetClusterPackageOk() (*UpdateClusterPackageRequestClusterPackage, bool) {
-	if o == nil || IsNil(o.ClusterPackage) {
-		return nil, false
-	}
-	return o.ClusterPackage, true
-}
-
-// SetClusterPackage gets a reference to the given UpdateClusterPackageRequestClusterPackage and assigns it to the ClusterPackage field.
-func (o *UpdateClusterPackageRequest) SetClusterPackage(v UpdateClusterPackageRequestClusterPackage) {
-	o.ClusterPackage = &v
 }
 
 func (o UpdateClusterPackageRequest) MarshalJSON() ([]byte, error) {

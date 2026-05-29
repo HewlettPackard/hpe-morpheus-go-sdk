@@ -27,67 +27,12 @@ type UpdateHostAssignTenant200Response struct {
 
 type _UpdateHostAssignTenant200Response UpdateHostAssignTenant200Response
 
-// NewUpdateHostAssignTenant200Response instantiates a new UpdateHostAssignTenant200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateHostAssignTenant200Response() *UpdateHostAssignTenant200Response {
-	this := UpdateHostAssignTenant200Response{}
-	return &this
-}
-
 // NewUpdateHostAssignTenant200ResponseWithDefaults instantiates a new UpdateHostAssignTenant200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateHostAssignTenant200ResponseWithDefaults() *UpdateHostAssignTenant200Response {
 	this := UpdateHostAssignTenant200Response{}
 	return &this
-}
-
-// GetServer returns the Server field value if set, zero value otherwise.
-func (o *UpdateHostAssignTenant200Response) GetServer() UpdateHostAssignTenant200ResponseAllOfServer {
-	if o == nil || IsNil(o.Server) {
-		var ret UpdateHostAssignTenant200ResponseAllOfServer
-		return ret
-	}
-	return *o.Server
-}
-
-// GetServerOk returns a tuple with the Server field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostAssignTenant200Response) GetServerOk() (*UpdateHostAssignTenant200ResponseAllOfServer, bool) {
-	if o == nil || IsNil(o.Server) {
-		return nil, false
-	}
-	return o.Server, true
-}
-
-// SetServer gets a reference to the given UpdateHostAssignTenant200ResponseAllOfServer and assigns it to the Server field.
-func (o *UpdateHostAssignTenant200Response) SetServer(v UpdateHostAssignTenant200ResponseAllOfServer) {
-	o.Server = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateHostAssignTenant200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostAssignTenant200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateHostAssignTenant200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateHostAssignTenant200Response) MarshalJSON() ([]byte, error) {

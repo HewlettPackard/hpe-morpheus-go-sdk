@@ -26,13 +26,6 @@ type UpdateVDIAppsRequestVdiApp struct {
 	UpdateVDIAppsRequestVdiAppOneOf *UpdateVDIAppsRequestVdiAppOneOf
 }
 
-// UpdateVDIAppsRequestVdiAppOneOfAsUpdateVDIAppsRequestVdiApp is a convenience function that returns UpdateVDIAppsRequestVdiAppOneOf wrapped in UpdateVDIAppsRequestVdiApp
-func UpdateVDIAppsRequestVdiAppOneOfAsUpdateVDIAppsRequestVdiApp(v *UpdateVDIAppsRequestVdiAppOneOf) UpdateVDIAppsRequestVdiApp {
-	return UpdateVDIAppsRequestVdiApp{
-		UpdateVDIAppsRequestVdiAppOneOf: v,
-	}
-}
-
 func (dst *UpdateVDIAppsRequestVdiApp) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateVDIAppsRequestVdiApp{}

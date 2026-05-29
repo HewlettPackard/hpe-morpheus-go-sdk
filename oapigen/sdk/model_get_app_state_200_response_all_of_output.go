@@ -26,44 +26,12 @@ type GetAppState200ResponseAllOfOutput struct {
 
 type _GetAppState200ResponseAllOfOutput GetAppState200ResponseAllOfOutput
 
-// NewGetAppState200ResponseAllOfOutput instantiates a new GetAppState200ResponseAllOfOutput object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetAppState200ResponseAllOfOutput() *GetAppState200ResponseAllOfOutput {
-	this := GetAppState200ResponseAllOfOutput{}
-	return &this
-}
-
 // NewGetAppState200ResponseAllOfOutputWithDefaults instantiates a new GetAppState200ResponseAllOfOutput object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetAppState200ResponseAllOfOutputWithDefaults() *GetAppState200ResponseAllOfOutput {
 	this := GetAppState200ResponseAllOfOutput{}
 	return &this
-}
-
-// GetOutputs returns the Outputs field value if set, zero value otherwise.
-func (o *GetAppState200ResponseAllOfOutput) GetOutputs() []map[string]interface{} {
-	if o == nil || IsNil(o.Outputs) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Outputs
-}
-
-// GetOutputsOk returns a tuple with the Outputs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetAppState200ResponseAllOfOutput) GetOutputsOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Outputs) {
-		return nil, false
-	}
-	return o.Outputs, true
-}
-
-// SetOutputs gets a reference to the given []map[string]interface{} and assigns it to the Outputs field.
-func (o *GetAppState200ResponseAllOfOutput) SetOutputs(v []map[string]interface{}) {
-	o.Outputs = v
 }
 
 func (o GetAppState200ResponseAllOfOutput) MarshalJSON() ([]byte, error) {

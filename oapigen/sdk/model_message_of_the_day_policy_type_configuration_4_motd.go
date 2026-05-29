@@ -29,114 +29,12 @@ type MessageOfTheDayPolicyTypeConfiguration4Motd struct {
 
 type _MessageOfTheDayPolicyTypeConfiguration4Motd MessageOfTheDayPolicyTypeConfiguration4Motd
 
-// NewMessageOfTheDayPolicyTypeConfiguration4Motd instantiates a new MessageOfTheDayPolicyTypeConfiguration4Motd object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMessageOfTheDayPolicyTypeConfiguration4Motd() *MessageOfTheDayPolicyTypeConfiguration4Motd {
-	this := MessageOfTheDayPolicyTypeConfiguration4Motd{}
-	return &this
-}
-
 // NewMessageOfTheDayPolicyTypeConfiguration4MotdWithDefaults instantiates a new MessageOfTheDayPolicyTypeConfiguration4Motd object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewMessageOfTheDayPolicyTypeConfiguration4MotdWithDefaults() *MessageOfTheDayPolicyTypeConfiguration4Motd {
 	this := MessageOfTheDayPolicyTypeConfiguration4Motd{}
 	return &this
-}
-
-// GetTitle returns the Title field value if set, zero value otherwise.
-func (o *MessageOfTheDayPolicyTypeConfiguration4Motd) GetTitle() string {
-	if o == nil || IsNil(o.Title) {
-		var ret string
-		return ret
-	}
-	return *o.Title
-}
-
-// GetTitleOk returns a tuple with the Title field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MessageOfTheDayPolicyTypeConfiguration4Motd) GetTitleOk() (*string, bool) {
-	if o == nil || IsNil(o.Title) {
-		return nil, false
-	}
-	return o.Title, true
-}
-
-// SetTitle gets a reference to the given string and assigns it to the Title field.
-func (o *MessageOfTheDayPolicyTypeConfiguration4Motd) SetTitle(v string) {
-	o.Title = &v
-}
-
-// GetMessage returns the Message field value if set, zero value otherwise.
-func (o *MessageOfTheDayPolicyTypeConfiguration4Motd) GetMessage() string {
-	if o == nil || IsNil(o.Message) {
-		var ret string
-		return ret
-	}
-	return *o.Message
-}
-
-// GetMessageOk returns a tuple with the Message field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MessageOfTheDayPolicyTypeConfiguration4Motd) GetMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.Message) {
-		return nil, false
-	}
-	return o.Message, true
-}
-
-// SetMessage gets a reference to the given string and assigns it to the Message field.
-func (o *MessageOfTheDayPolicyTypeConfiguration4Motd) SetMessage(v string) {
-	o.Message = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *MessageOfTheDayPolicyTypeConfiguration4Motd) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MessageOfTheDayPolicyTypeConfiguration4Motd) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *MessageOfTheDayPolicyTypeConfiguration4Motd) SetType(v string) {
-	o.Type = &v
-}
-
-// GetFullPage returns the FullPage field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MessageOfTheDayPolicyTypeConfiguration4Motd) GetFullPage() bool {
-	if o == nil || IsNil(o.FullPage.Get()) {
-		var ret bool
-		return ret
-	}
-	return *o.FullPage.Get()
-}
-
-// GetFullPageOk returns a tuple with the FullPage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MessageOfTheDayPolicyTypeConfiguration4Motd) GetFullPageOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.FullPage.Get(), o.FullPage.IsSet()
-}
-
-// SetFullPage gets a reference to the given NullableBool and assigns it to the FullPage field.
-func (o *MessageOfTheDayPolicyTypeConfiguration4Motd) SetFullPage(v bool) {
-	o.FullPage.Set(&v)
 }
 
 func (o MessageOfTheDayPolicyTypeConfiguration4Motd) MarshalJSON() ([]byte, error) {

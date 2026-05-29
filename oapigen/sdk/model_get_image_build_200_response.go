@@ -27,67 +27,12 @@ type GetImageBuild200Response struct {
 
 type _GetImageBuild200Response GetImageBuild200Response
 
-// NewGetImageBuild200Response instantiates a new GetImageBuild200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetImageBuild200Response() *GetImageBuild200Response {
-	this := GetImageBuild200Response{}
-	return &this
-}
-
 // NewGetImageBuild200ResponseWithDefaults instantiates a new GetImageBuild200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetImageBuild200ResponseWithDefaults() *GetImageBuild200Response {
 	this := GetImageBuild200Response{}
 	return &this
-}
-
-// GetImageBuild returns the ImageBuild field value if set, zero value otherwise.
-func (o *GetImageBuild200Response) GetImageBuild() GetImageBuild200ResponseImageBuild {
-	if o == nil || IsNil(o.ImageBuild) {
-		var ret GetImageBuild200ResponseImageBuild
-		return ret
-	}
-	return *o.ImageBuild
-}
-
-// GetImageBuildOk returns a tuple with the ImageBuild field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetImageBuild200Response) GetImageBuildOk() (*GetImageBuild200ResponseImageBuild, bool) {
-	if o == nil || IsNil(o.ImageBuild) {
-		return nil, false
-	}
-	return o.ImageBuild, true
-}
-
-// SetImageBuild gets a reference to the given GetImageBuild200ResponseImageBuild and assigns it to the ImageBuild field.
-func (o *GetImageBuild200Response) SetImageBuild(v GetImageBuild200ResponseImageBuild) {
-	o.ImageBuild = &v
-}
-
-// GetImageBuildExecutions returns the ImageBuildExecutions field value if set, zero value otherwise.
-func (o *GetImageBuild200Response) GetImageBuildExecutions() []GetImageBuild200ResponseImageBuildExecutionsInner {
-	if o == nil || IsNil(o.ImageBuildExecutions) {
-		var ret []GetImageBuild200ResponseImageBuildExecutionsInner
-		return ret
-	}
-	return o.ImageBuildExecutions
-}
-
-// GetImageBuildExecutionsOk returns a tuple with the ImageBuildExecutions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetImageBuild200Response) GetImageBuildExecutionsOk() ([]GetImageBuild200ResponseImageBuildExecutionsInner, bool) {
-	if o == nil || IsNil(o.ImageBuildExecutions) {
-		return nil, false
-	}
-	return o.ImageBuildExecutions, true
-}
-
-// SetImageBuildExecutions gets a reference to the given []GetImageBuild200ResponseImageBuildExecutionsInner and assigns it to the ImageBuildExecutions field.
-func (o *GetImageBuild200Response) SetImageBuildExecutions(v []GetImageBuild200ResponseImageBuildExecutionsInner) {
-	o.ImageBuildExecutions = v
 }
 
 func (o GetImageBuild200Response) MarshalJSON() ([]byte, error) {

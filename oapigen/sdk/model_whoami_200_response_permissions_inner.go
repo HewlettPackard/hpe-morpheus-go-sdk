@@ -28,90 +28,12 @@ type Whoami200ResponsePermissionsInner struct {
 
 type _Whoami200ResponsePermissionsInner Whoami200ResponsePermissionsInner
 
-// NewWhoami200ResponsePermissionsInner instantiates a new Whoami200ResponsePermissionsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewWhoami200ResponsePermissionsInner() *Whoami200ResponsePermissionsInner {
-	this := Whoami200ResponsePermissionsInner{}
-	return &this
-}
-
 // NewWhoami200ResponsePermissionsInnerWithDefaults instantiates a new Whoami200ResponsePermissionsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewWhoami200ResponsePermissionsInnerWithDefaults() *Whoami200ResponsePermissionsInner {
 	this := Whoami200ResponsePermissionsInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *Whoami200ResponsePermissionsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Whoami200ResponsePermissionsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *Whoami200ResponsePermissionsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *Whoami200ResponsePermissionsInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Whoami200ResponsePermissionsInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *Whoami200ResponsePermissionsInner) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetAccess returns the Access field value if set, zero value otherwise.
-func (o *Whoami200ResponsePermissionsInner) GetAccess() string {
-	if o == nil || IsNil(o.Access) {
-		var ret string
-		return ret
-	}
-	return *o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Whoami200ResponsePermissionsInner) GetAccessOk() (*string, bool) {
-	if o == nil || IsNil(o.Access) {
-		return nil, false
-	}
-	return o.Access, true
-}
-
-// SetAccess gets a reference to the given string and assigns it to the Access field.
-func (o *Whoami200ResponsePermissionsInner) SetAccess(v string) {
-	o.Access = &v
 }
 
 func (o Whoami200ResponsePermissionsInner) MarshalJSON() ([]byte, error) {

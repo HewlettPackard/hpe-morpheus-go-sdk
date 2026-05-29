@@ -27,67 +27,12 @@ type GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild 
 
 type _GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild
 
-// NewGetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild instantiates a new GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild() *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild {
-	this := GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild{}
-	return &this
-}
-
 // NewGetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuildWithDefaults instantiates a new GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuildWithDefaults() *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild {
 	this := GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild) SetName(v string) {
-	o.Name = &v
 }
 
 func (o GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerImageBuild) MarshalJSON() ([]byte, error) {

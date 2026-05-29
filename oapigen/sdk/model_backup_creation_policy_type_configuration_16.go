@@ -27,67 +27,12 @@ type BackupCreationPolicyTypeConfiguration16 struct {
 
 type _BackupCreationPolicyTypeConfiguration16 BackupCreationPolicyTypeConfiguration16
 
-// NewBackupCreationPolicyTypeConfiguration16 instantiates a new BackupCreationPolicyTypeConfiguration16 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBackupCreationPolicyTypeConfiguration16() *BackupCreationPolicyTypeConfiguration16 {
-	this := BackupCreationPolicyTypeConfiguration16{}
-	return &this
-}
-
 // NewBackupCreationPolicyTypeConfiguration16WithDefaults instantiates a new BackupCreationPolicyTypeConfiguration16 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBackupCreationPolicyTypeConfiguration16WithDefaults() *BackupCreationPolicyTypeConfiguration16 {
 	this := BackupCreationPolicyTypeConfiguration16{}
 	return &this
-}
-
-// GetCreateBackupType returns the CreateBackupType field value if set, zero value otherwise.
-func (o *BackupCreationPolicyTypeConfiguration16) GetCreateBackupType() string {
-	if o == nil || IsNil(o.CreateBackupType) {
-		var ret string
-		return ret
-	}
-	return *o.CreateBackupType
-}
-
-// GetCreateBackupTypeOk returns a tuple with the CreateBackupType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BackupCreationPolicyTypeConfiguration16) GetCreateBackupTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.CreateBackupType) {
-		return nil, false
-	}
-	return o.CreateBackupType, true
-}
-
-// SetCreateBackupType gets a reference to the given string and assigns it to the CreateBackupType field.
-func (o *BackupCreationPolicyTypeConfiguration16) SetCreateBackupType(v string) {
-	o.CreateBackupType = &v
-}
-
-// GetCreateBackup returns the CreateBackup field value if set, zero value otherwise.
-func (o *BackupCreationPolicyTypeConfiguration16) GetCreateBackup() bool {
-	if o == nil || IsNil(o.CreateBackup) {
-		var ret bool
-		return ret
-	}
-	return *o.CreateBackup
-}
-
-// GetCreateBackupOk returns a tuple with the CreateBackup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BackupCreationPolicyTypeConfiguration16) GetCreateBackupOk() (*bool, bool) {
-	if o == nil || IsNil(o.CreateBackup) {
-		return nil, false
-	}
-	return o.CreateBackup, true
-}
-
-// SetCreateBackup gets a reference to the given bool and assigns it to the CreateBackup field.
-func (o *BackupCreationPolicyTypeConfiguration16) SetCreateBackup(v bool) {
-	o.CreateBackup = &v
 }
 
 func (o BackupCreationPolicyTypeConfiguration16) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type AddCertificateRequest struct {
 
 type _AddCertificateRequest AddCertificateRequest
 
-// NewAddCertificateRequest instantiates a new AddCertificateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCertificateRequest() *AddCertificateRequest {
-	this := AddCertificateRequest{}
-	return &this
-}
-
 // NewAddCertificateRequestWithDefaults instantiates a new AddCertificateRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddCertificateRequestWithDefaults() *AddCertificateRequest {
 	this := AddCertificateRequest{}
 	return &this
-}
-
-// GetCertificate returns the Certificate field value if set, zero value otherwise.
-func (o *AddCertificateRequest) GetCertificate() AddCertificateRequestCertificate {
-	if o == nil || IsNil(o.Certificate) {
-		var ret AddCertificateRequestCertificate
-		return ret
-	}
-	return *o.Certificate
-}
-
-// GetCertificateOk returns a tuple with the Certificate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCertificateRequest) GetCertificateOk() (*AddCertificateRequestCertificate, bool) {
-	if o == nil || IsNil(o.Certificate) {
-		return nil, false
-	}
-	return o.Certificate, true
-}
-
-// SetCertificate gets a reference to the given AddCertificateRequestCertificate and assigns it to the Certificate field.
-func (o *AddCertificateRequest) SetCertificate(v AddCertificateRequestCertificate) {
-	o.Certificate = &v
 }
 
 func (o AddCertificateRequest) MarshalJSON() ([]byte, error) {

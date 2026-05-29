@@ -28,18 +28,6 @@ type UpdateClusterLayoutRequestLayoutWorkersInner struct {
 
 type _UpdateClusterLayoutRequestLayoutWorkersInner UpdateClusterLayoutRequestLayoutWorkersInner
 
-// NewUpdateClusterLayoutRequestLayoutWorkersInner instantiates a new UpdateClusterLayoutRequestLayoutWorkersInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterLayoutRequestLayoutWorkersInner(containerType UpdateClusterLayoutRequestLayoutWorkersInnerContainerType) *UpdateClusterLayoutRequestLayoutWorkersInner {
-	this := UpdateClusterLayoutRequestLayoutWorkersInner{}
-	var nodeCount int64 = 1
-	this.NodeCount = &nodeCount
-	this.ContainerType = containerType
-	return &this
-}
-
 // NewUpdateClusterLayoutRequestLayoutWorkersInnerWithDefaults instantiates a new UpdateClusterLayoutRequestLayoutWorkersInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -48,53 +36,6 @@ func NewUpdateClusterLayoutRequestLayoutWorkersInnerWithDefaults() *UpdateCluste
 	var nodeCount int64 = 1
 	this.NodeCount = &nodeCount
 	return &this
-}
-
-// GetNodeCount returns the NodeCount field value if set, zero value otherwise.
-func (o *UpdateClusterLayoutRequestLayoutWorkersInner) GetNodeCount() int64 {
-	if o == nil || IsNil(o.NodeCount) {
-		var ret int64
-		return ret
-	}
-	return *o.NodeCount
-}
-
-// GetNodeCountOk returns a tuple with the NodeCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterLayoutRequestLayoutWorkersInner) GetNodeCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.NodeCount) {
-		return nil, false
-	}
-	return o.NodeCount, true
-}
-
-// SetNodeCount gets a reference to the given int64 and assigns it to the NodeCount field.
-func (o *UpdateClusterLayoutRequestLayoutWorkersInner) SetNodeCount(v int64) {
-	o.NodeCount = &v
-}
-
-// GetContainerType returns the ContainerType field value
-func (o *UpdateClusterLayoutRequestLayoutWorkersInner) GetContainerType() UpdateClusterLayoutRequestLayoutWorkersInnerContainerType {
-	if o == nil {
-		var ret UpdateClusterLayoutRequestLayoutWorkersInnerContainerType
-		return ret
-	}
-
-	return o.ContainerType
-}
-
-// GetContainerTypeOk returns a tuple with the ContainerType field value
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterLayoutRequestLayoutWorkersInner) GetContainerTypeOk() (*UpdateClusterLayoutRequestLayoutWorkersInnerContainerType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ContainerType, true
-}
-
-// SetContainerType sets field value
-func (o *UpdateClusterLayoutRequestLayoutWorkersInner) SetContainerType(v UpdateClusterLayoutRequestLayoutWorkersInnerContainerType) {
-	o.ContainerType = v
 }
 
 func (o UpdateClusterLayoutRequestLayoutWorkersInner) MarshalJSON() ([]byte, error) {

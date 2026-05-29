@@ -31,17 +31,6 @@ type UpdateCloudDatastoresRequestDatastore struct {
 
 type _UpdateCloudDatastoresRequestDatastore UpdateCloudDatastoresRequestDatastore
 
-// NewUpdateCloudDatastoresRequestDatastore instantiates a new UpdateCloudDatastoresRequestDatastore object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCloudDatastoresRequestDatastore() *UpdateCloudDatastoresRequestDatastore {
-	this := UpdateCloudDatastoresRequestDatastore{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 // NewUpdateCloudDatastoresRequestDatastoreWithDefaults instantiates a new UpdateCloudDatastoresRequestDatastore object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -50,98 +39,6 @@ func NewUpdateCloudDatastoresRequestDatastoreWithDefaults() *UpdateCloudDatastor
 	var visibility string = "private"
 	this.Visibility = &visibility
 	return &this
-}
-
-// GetActive returns the Active field value if set, zero value otherwise.
-func (o *UpdateCloudDatastoresRequestDatastore) GetActive() bool {
-	if o == nil || IsNil(o.Active) {
-		var ret bool
-		return ret
-	}
-	return *o.Active
-}
-
-// GetActiveOk returns a tuple with the Active field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudDatastoresRequestDatastore) GetActiveOk() (*bool, bool) {
-	if o == nil || IsNil(o.Active) {
-		return nil, false
-	}
-	return o.Active, true
-}
-
-// SetActive gets a reference to the given bool and assigns it to the Active field.
-func (o *UpdateCloudDatastoresRequestDatastore) SetActive(v bool) {
-	o.Active = &v
-}
-
-// GetVisibility returns the Visibility field value if set, zero value otherwise.
-func (o *UpdateCloudDatastoresRequestDatastore) GetVisibility() string {
-	if o == nil || IsNil(o.Visibility) {
-		var ret string
-		return ret
-	}
-	return *o.Visibility
-}
-
-// GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudDatastoresRequestDatastore) GetVisibilityOk() (*string, bool) {
-	if o == nil || IsNil(o.Visibility) {
-		return nil, false
-	}
-	return o.Visibility, true
-}
-
-// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
-func (o *UpdateCloudDatastoresRequestDatastore) SetVisibility(v string) {
-	o.Visibility = &v
-}
-
-// GetTenantPermissions returns the TenantPermissions field value if set, zero value otherwise.
-func (o *UpdateCloudDatastoresRequestDatastore) GetTenantPermissions() UpdateCloudDatastoresRequestDatastoreTenantPermissions {
-	if o == nil || IsNil(o.TenantPermissions) {
-		var ret UpdateCloudDatastoresRequestDatastoreTenantPermissions
-		return ret
-	}
-	return *o.TenantPermissions
-}
-
-// GetTenantPermissionsOk returns a tuple with the TenantPermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudDatastoresRequestDatastore) GetTenantPermissionsOk() (*UpdateCloudDatastoresRequestDatastoreTenantPermissions, bool) {
-	if o == nil || IsNil(o.TenantPermissions) {
-		return nil, false
-	}
-	return o.TenantPermissions, true
-}
-
-// SetTenantPermissions gets a reference to the given UpdateCloudDatastoresRequestDatastoreTenantPermissions and assigns it to the TenantPermissions field.
-func (o *UpdateCloudDatastoresRequestDatastore) SetTenantPermissions(v UpdateCloudDatastoresRequestDatastoreTenantPermissions) {
-	o.TenantPermissions = &v
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *UpdateCloudDatastoresRequestDatastore) GetResourcePermissions() UpdateCloudDatastoresRequestDatastoreResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret UpdateCloudDatastoresRequestDatastoreResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudDatastoresRequestDatastore) GetResourcePermissionsOk() (*UpdateCloudDatastoresRequestDatastoreResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// SetResourcePermissions gets a reference to the given UpdateCloudDatastoresRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *UpdateCloudDatastoresRequestDatastore) SetResourcePermissions(v UpdateCloudDatastoresRequestDatastoreResourcePermissions) {
-	o.ResourcePermissions = &v
 }
 
 func (o UpdateCloudDatastoresRequestDatastore) MarshalJSON() ([]byte, error) {

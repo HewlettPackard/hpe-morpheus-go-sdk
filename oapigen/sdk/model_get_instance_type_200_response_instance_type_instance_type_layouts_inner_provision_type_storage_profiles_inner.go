@@ -29,113 +29,12 @@ type GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionType
 
 type _GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner
 
-// NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner instantiates a new GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner() *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner {
-	this := GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner{}
-	return &this
-}
-
 // NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInnerWithDefaults instantiates a new GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInnerWithDefaults() *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner {
 	this := GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) GetDisplayOrder() int64 {
-	if o == nil || IsNil(o.DisplayOrder) {
-		var ret int64
-		return ret
-	}
-	return *o.DisplayOrder
-}
-
-// GetDisplayOrderOk returns a tuple with the DisplayOrder field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) GetDisplayOrderOk() (*int64, bool) {
-	if o == nil || IsNil(o.DisplayOrder) {
-		return nil, false
-	}
-	return o.DisplayOrder, true
-}
-
-// SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) SetDisplayOrder(v int64) {
-	o.DisplayOrder = &v
-}
-
-// GetIsDefault returns the IsDefault field value if set, zero value otherwise.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) GetIsDefault() bool {
-	if o == nil || IsNil(o.IsDefault) {
-		var ret bool
-		return ret
-	}
-	return *o.IsDefault
-}
-
-// GetIsDefaultOk returns a tuple with the IsDefault field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) GetIsDefaultOk() (*bool, bool) {
-	if o == nil || IsNil(o.IsDefault) {
-		return nil, false
-	}
-	return o.IsDefault, true
-}
-
-// SetIsDefault gets a reference to the given bool and assigns it to the IsDefault field.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) SetIsDefault(v bool) {
-	o.IsDefault = &v
 }
 
 func (o GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) MarshalJSON() ([]byte, error) {

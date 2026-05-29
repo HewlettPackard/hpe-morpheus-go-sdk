@@ -27,67 +27,12 @@ type ListUsages200Response struct {
 
 type _ListUsages200Response ListUsages200Response
 
-// NewListUsages200Response instantiates a new ListUsages200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListUsages200Response() *ListUsages200Response {
-	this := ListUsages200Response{}
-	return &this
-}
-
 // NewListUsages200ResponseWithDefaults instantiates a new ListUsages200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListUsages200ResponseWithDefaults() *ListUsages200Response {
 	this := ListUsages200Response{}
 	return &this
-}
-
-// GetActivity returns the Activity field value if set, zero value otherwise.
-func (o *ListUsages200Response) GetActivity() []ListUsages200ResponseActivityInner {
-	if o == nil || IsNil(o.Activity) {
-		var ret []ListUsages200ResponseActivityInner
-		return ret
-	}
-	return o.Activity
-}
-
-// GetActivityOk returns a tuple with the Activity field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListUsages200Response) GetActivityOk() ([]ListUsages200ResponseActivityInner, bool) {
-	if o == nil || IsNil(o.Activity) {
-		return nil, false
-	}
-	return o.Activity, true
-}
-
-// SetActivity gets a reference to the given []ListUsages200ResponseActivityInner and assigns it to the Activity field.
-func (o *ListUsages200Response) SetActivity(v []ListUsages200ResponseActivityInner) {
-	o.Activity = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListUsages200Response) GetMeta() ListUsages200ResponseMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListUsages200ResponseMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListUsages200Response) GetMetaOk() (*ListUsages200ResponseMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListUsages200ResponseMeta and assigns it to the Meta field.
-func (o *ListUsages200Response) SetMeta(v ListUsages200ResponseMeta) {
-	o.Meta = &v
 }
 
 func (o ListUsages200Response) MarshalJSON() ([]byte, error) {

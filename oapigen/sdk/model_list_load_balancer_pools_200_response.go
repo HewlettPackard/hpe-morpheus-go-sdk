@@ -27,67 +27,12 @@ type ListLoadBalancerPools200Response struct {
 
 type _ListLoadBalancerPools200Response ListLoadBalancerPools200Response
 
-// NewListLoadBalancerPools200Response instantiates a new ListLoadBalancerPools200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListLoadBalancerPools200Response() *ListLoadBalancerPools200Response {
-	this := ListLoadBalancerPools200Response{}
-	return &this
-}
-
 // NewListLoadBalancerPools200ResponseWithDefaults instantiates a new ListLoadBalancerPools200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListLoadBalancerPools200ResponseWithDefaults() *ListLoadBalancerPools200Response {
 	this := ListLoadBalancerPools200Response{}
 	return &this
-}
-
-// GetLoadBalancerPools returns the LoadBalancerPools field value if set, zero value otherwise.
-func (o *ListLoadBalancerPools200Response) GetLoadBalancerPools() []ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner {
-	if o == nil || IsNil(o.LoadBalancerPools) {
-		var ret []ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner
-		return ret
-	}
-	return o.LoadBalancerPools
-}
-
-// GetLoadBalancerPoolsOk returns a tuple with the LoadBalancerPools field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListLoadBalancerPools200Response) GetLoadBalancerPoolsOk() ([]ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner, bool) {
-	if o == nil || IsNil(o.LoadBalancerPools) {
-		return nil, false
-	}
-	return o.LoadBalancerPools, true
-}
-
-// SetLoadBalancerPools gets a reference to the given []ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner and assigns it to the LoadBalancerPools field.
-func (o *ListLoadBalancerPools200Response) SetLoadBalancerPools(v []ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) {
-	o.LoadBalancerPools = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListLoadBalancerPools200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListLoadBalancerPools200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListLoadBalancerPools200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListLoadBalancerPools200Response) MarshalJSON() ([]byte, error) {

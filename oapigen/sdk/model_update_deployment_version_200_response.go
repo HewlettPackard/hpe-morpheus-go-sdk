@@ -27,67 +27,12 @@ type UpdateDeploymentVersion200Response struct {
 
 type _UpdateDeploymentVersion200Response UpdateDeploymentVersion200Response
 
-// NewUpdateDeploymentVersion200Response instantiates a new UpdateDeploymentVersion200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateDeploymentVersion200Response() *UpdateDeploymentVersion200Response {
-	this := UpdateDeploymentVersion200Response{}
-	return &this
-}
-
 // NewUpdateDeploymentVersion200ResponseWithDefaults instantiates a new UpdateDeploymentVersion200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateDeploymentVersion200ResponseWithDefaults() *UpdateDeploymentVersion200Response {
 	this := UpdateDeploymentVersion200Response{}
 	return &this
-}
-
-// GetVersion returns the Version field value if set, zero value otherwise.
-func (o *UpdateDeploymentVersion200Response) GetVersion() UpdateDeploymentVersion200ResponseAllOfVersion {
-	if o == nil || IsNil(o.Version) {
-		var ret UpdateDeploymentVersion200ResponseAllOfVersion
-		return ret
-	}
-	return *o.Version
-}
-
-// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDeploymentVersion200Response) GetVersionOk() (*UpdateDeploymentVersion200ResponseAllOfVersion, bool) {
-	if o == nil || IsNil(o.Version) {
-		return nil, false
-	}
-	return o.Version, true
-}
-
-// SetVersion gets a reference to the given UpdateDeploymentVersion200ResponseAllOfVersion and assigns it to the Version field.
-func (o *UpdateDeploymentVersion200Response) SetVersion(v UpdateDeploymentVersion200ResponseAllOfVersion) {
-	o.Version = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateDeploymentVersion200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDeploymentVersion200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateDeploymentVersion200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateDeploymentVersion200Response) MarshalJSON() ([]byte, error) {

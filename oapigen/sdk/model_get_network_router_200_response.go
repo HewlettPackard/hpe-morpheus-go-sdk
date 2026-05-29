@@ -26,44 +26,12 @@ type GetNetworkRouter200Response struct {
 
 type _GetNetworkRouter200Response GetNetworkRouter200Response
 
-// NewGetNetworkRouter200Response instantiates a new GetNetworkRouter200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkRouter200Response() *GetNetworkRouter200Response {
-	this := GetNetworkRouter200Response{}
-	return &this
-}
-
 // NewGetNetworkRouter200ResponseWithDefaults instantiates a new GetNetworkRouter200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkRouter200ResponseWithDefaults() *GetNetworkRouter200Response {
 	this := GetNetworkRouter200Response{}
 	return &this
-}
-
-// GetNetworkRouter returns the NetworkRouter field value if set, zero value otherwise.
-func (o *GetNetworkRouter200Response) GetNetworkRouter() GetNetworkRouter200ResponseNetworkRouter {
-	if o == nil || IsNil(o.NetworkRouter) {
-		var ret GetNetworkRouter200ResponseNetworkRouter
-		return ret
-	}
-	return *o.NetworkRouter
-}
-
-// GetNetworkRouterOk returns a tuple with the NetworkRouter field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkRouter200Response) GetNetworkRouterOk() (*GetNetworkRouter200ResponseNetworkRouter, bool) {
-	if o == nil || IsNil(o.NetworkRouter) {
-		return nil, false
-	}
-	return o.NetworkRouter, true
-}
-
-// SetNetworkRouter gets a reference to the given GetNetworkRouter200ResponseNetworkRouter and assigns it to the NetworkRouter field.
-func (o *GetNetworkRouter200Response) SetNetworkRouter(v GetNetworkRouter200ResponseNetworkRouter) {
-	o.NetworkRouter = &v
 }
 
 func (o GetNetworkRouter200Response) MarshalJSON() ([]byte, error) {

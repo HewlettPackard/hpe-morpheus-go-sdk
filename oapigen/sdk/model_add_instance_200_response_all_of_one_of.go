@@ -26,46 +26,12 @@ type AddInstance200ResponseAllOfOneOf struct {
 
 type _AddInstance200ResponseAllOfOneOf AddInstance200ResponseAllOfOneOf
 
-// NewAddInstance200ResponseAllOfOneOf instantiates a new AddInstance200ResponseAllOfOneOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddInstance200ResponseAllOfOneOf(instance AddInstance200ResponseAllOfOneOfInstance) *AddInstance200ResponseAllOfOneOf {
-	this := AddInstance200ResponseAllOfOneOf{}
-	this.Instance = instance
-	return &this
-}
-
 // NewAddInstance200ResponseAllOfOneOfWithDefaults instantiates a new AddInstance200ResponseAllOfOneOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddInstance200ResponseAllOfOneOfWithDefaults() *AddInstance200ResponseAllOfOneOf {
 	this := AddInstance200ResponseAllOfOneOf{}
 	return &this
-}
-
-// GetInstance returns the Instance field value
-func (o *AddInstance200ResponseAllOfOneOf) GetInstance() AddInstance200ResponseAllOfOneOfInstance {
-	if o == nil {
-		var ret AddInstance200ResponseAllOfOneOfInstance
-		return ret
-	}
-
-	return o.Instance
-}
-
-// GetInstanceOk returns a tuple with the Instance field value
-// and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOf) GetInstanceOk() (*AddInstance200ResponseAllOfOneOfInstance, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Instance, true
-}
-
-// SetInstance sets field value
-func (o *AddInstance200ResponseAllOfOneOf) SetInstance(v AddInstance200ResponseAllOfOneOfInstance) {
-	o.Instance = v
 }
 
 func (o AddInstance200ResponseAllOfOneOf) MarshalJSON() ([]byte, error) {

@@ -27,17 +27,6 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15 struct {
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15
 
-// NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15 {
-	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15{}
-	var excludeContainers string = "off"
-	this.ExcludeContainers = &excludeContainers
-	return &this
-}
-
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15WithDefaults instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -46,52 +35,6 @@ func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15WithDefaults() *AddP
 	var excludeContainers string = "off"
 	this.ExcludeContainers = &excludeContainers
 	return &this
-}
-
-// GetMaxMemory returns the MaxMemory field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15) GetMaxMemory() string {
-	if o == nil || IsNil(o.MaxMemory) {
-		var ret string
-		return ret
-	}
-	return *o.MaxMemory
-}
-
-// GetMaxMemoryOk returns a tuple with the MaxMemory field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15) GetMaxMemoryOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxMemory) {
-		return nil, false
-	}
-	return o.MaxMemory, true
-}
-
-// SetMaxMemory gets a reference to the given string and assigns it to the MaxMemory field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15) SetMaxMemory(v string) {
-	o.MaxMemory = &v
-}
-
-// GetExcludeContainers returns the ExcludeContainers field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15) GetExcludeContainers() string {
-	if o == nil || IsNil(o.ExcludeContainers) {
-		var ret string
-		return ret
-	}
-	return *o.ExcludeContainers
-}
-
-// GetExcludeContainersOk returns a tuple with the ExcludeContainers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15) GetExcludeContainersOk() (*string, bool) {
-	if o == nil || IsNil(o.ExcludeContainers) {
-		return nil, false
-	}
-	return o.ExcludeContainers, true
-}
-
-// SetExcludeContainers gets a reference to the given string and assigns it to the ExcludeContainers field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15) SetExcludeContainers(v string) {
-	o.ExcludeContainers = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf15) MarshalJSON() ([]byte, error) {

@@ -28,90 +28,12 @@ type ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner struct {
 
 type _ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner
 
-// NewListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner instantiates a new ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner() *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner {
-	this := ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner{}
-	return &this
-}
-
 // NewListHealth200ResponseAllOfHealthDatabaseSlowQueriesInnerWithDefaults instantiates a new ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListHealth200ResponseAllOfHealthDatabaseSlowQueriesInnerWithDefaults() *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner {
 	this := ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner{}
 	return &this
-}
-
-// GetCount returns the Count field value if set, zero value otherwise.
-func (o *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) GetCount() int64 {
-	if o == nil || IsNil(o.Count) {
-		var ret int64
-		return ret
-	}
-	return *o.Count
-}
-
-// GetCountOk returns a tuple with the Count field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) GetCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.Count) {
-		return nil, false
-	}
-	return o.Count, true
-}
-
-// SetCount gets a reference to the given int64 and assigns it to the Count field.
-func (o *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) SetCount(v int64) {
-	o.Count = &v
-}
-
-// GetTime returns the Time field value if set, zero value otherwise.
-func (o *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) GetTime() int64 {
-	if o == nil || IsNil(o.Time) {
-		var ret int64
-		return ret
-	}
-	return *o.Time
-}
-
-// GetTimeOk returns a tuple with the Time field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) GetTimeOk() (*int64, bool) {
-	if o == nil || IsNil(o.Time) {
-		return nil, false
-	}
-	return o.Time, true
-}
-
-// SetTime gets a reference to the given int64 and assigns it to the Time field.
-func (o *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) SetTime(v int64) {
-	o.Time = &v
-}
-
-// GetQuery returns the Query field value if set, zero value otherwise.
-func (o *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) GetQuery() string {
-	if o == nil || IsNil(o.Query) {
-		var ret string
-		return ret
-	}
-	return *o.Query
-}
-
-// GetQueryOk returns a tuple with the Query field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) GetQueryOk() (*string, bool) {
-	if o == nil || IsNil(o.Query) {
-		return nil, false
-	}
-	return o.Query, true
-}
-
-// SetQuery gets a reference to the given string and assigns it to the Query field.
-func (o *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) SetQuery(v string) {
-	o.Query = &v
 }
 
 func (o ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) MarshalJSON() ([]byte, error) {

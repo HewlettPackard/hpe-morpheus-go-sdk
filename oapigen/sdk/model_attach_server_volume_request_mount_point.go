@@ -28,71 +28,12 @@ type AttachServerVolumeRequestMountPoint struct {
 
 type _AttachServerVolumeRequestMountPoint AttachServerVolumeRequestMountPoint
 
-// NewAttachServerVolumeRequestMountPoint instantiates a new AttachServerVolumeRequestMountPoint object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAttachServerVolumeRequestMountPoint(controller AttachServerVolumeRequestMountPointController, unitNumber string) *AttachServerVolumeRequestMountPoint {
-	this := AttachServerVolumeRequestMountPoint{}
-	this.Controller = controller
-	this.UnitNumber = unitNumber
-	return &this
-}
-
 // NewAttachServerVolumeRequestMountPointWithDefaults instantiates a new AttachServerVolumeRequestMountPoint object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAttachServerVolumeRequestMountPointWithDefaults() *AttachServerVolumeRequestMountPoint {
 	this := AttachServerVolumeRequestMountPoint{}
 	return &this
-}
-
-// GetController returns the Controller field value
-func (o *AttachServerVolumeRequestMountPoint) GetController() AttachServerVolumeRequestMountPointController {
-	if o == nil {
-		var ret AttachServerVolumeRequestMountPointController
-		return ret
-	}
-
-	return o.Controller
-}
-
-// GetControllerOk returns a tuple with the Controller field value
-// and a boolean to check if the value has been set.
-func (o *AttachServerVolumeRequestMountPoint) GetControllerOk() (*AttachServerVolumeRequestMountPointController, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Controller, true
-}
-
-// SetController sets field value
-func (o *AttachServerVolumeRequestMountPoint) SetController(v AttachServerVolumeRequestMountPointController) {
-	o.Controller = v
-}
-
-// GetUnitNumber returns the UnitNumber field value
-func (o *AttachServerVolumeRequestMountPoint) GetUnitNumber() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.UnitNumber
-}
-
-// GetUnitNumberOk returns a tuple with the UnitNumber field value
-// and a boolean to check if the value has been set.
-func (o *AttachServerVolumeRequestMountPoint) GetUnitNumberOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.UnitNumber, true
-}
-
-// SetUnitNumber sets field value
-func (o *AttachServerVolumeRequestMountPoint) SetUnitNumber(v string) {
-	o.UnitNumber = v
 }
 
 func (o AttachServerVolumeRequestMountPoint) MarshalJSON() ([]byte, error) {

@@ -28,68 +28,12 @@ type SetInstanceSecurityGroups200Response struct {
 
 type _SetInstanceSecurityGroups200Response SetInstanceSecurityGroups200Response
 
-// NewSetInstanceSecurityGroups200Response instantiates a new SetInstanceSecurityGroups200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSetInstanceSecurityGroups200Response() *SetInstanceSecurityGroups200Response {
-	this := SetInstanceSecurityGroups200Response{}
-	return &this
-}
-
 // NewSetInstanceSecurityGroups200ResponseWithDefaults instantiates a new SetInstanceSecurityGroups200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSetInstanceSecurityGroups200ResponseWithDefaults() *SetInstanceSecurityGroups200Response {
 	this := SetInstanceSecurityGroups200Response{}
 	return &this
-}
-
-// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SetInstanceSecurityGroups200Response) GetSecurityGroups() []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner {
-	if o == nil {
-		var ret []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner
-		return ret
-	}
-	return o.SecurityGroups
-}
-
-// GetSecurityGroupsOk returns a tuple with the SecurityGroups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SetInstanceSecurityGroups200Response) GetSecurityGroupsOk() ([]SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner, bool) {
-	if o == nil || IsNil(o.SecurityGroups) {
-		return nil, false
-	}
-	return o.SecurityGroups, true
-}
-
-// SetSecurityGroups gets a reference to the given []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner and assigns it to the SecurityGroups field.
-func (o *SetInstanceSecurityGroups200Response) SetSecurityGroups(v []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner) {
-	o.SecurityGroups = v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *SetInstanceSecurityGroups200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SetInstanceSecurityGroups200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *SetInstanceSecurityGroups200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o SetInstanceSecurityGroups200Response) MarshalJSON() ([]byte, error) {

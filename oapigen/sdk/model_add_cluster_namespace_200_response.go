@@ -27,67 +27,12 @@ type AddClusterNamespace200Response struct {
 
 type _AddClusterNamespace200Response AddClusterNamespace200Response
 
-// NewAddClusterNamespace200Response instantiates a new AddClusterNamespace200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterNamespace200Response() *AddClusterNamespace200Response {
-	this := AddClusterNamespace200Response{}
-	return &this
-}
-
 // NewAddClusterNamespace200ResponseWithDefaults instantiates a new AddClusterNamespace200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddClusterNamespace200ResponseWithDefaults() *AddClusterNamespace200Response {
 	this := AddClusterNamespace200Response{}
 	return &this
-}
-
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *AddClusterNamespace200Response) GetNamespace() AddClusterNamespace200ResponseAllOfNamespace {
-	if o == nil || IsNil(o.Namespace) {
-		var ret AddClusterNamespace200ResponseAllOfNamespace
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterNamespace200Response) GetNamespaceOk() (*AddClusterNamespace200ResponseAllOfNamespace, bool) {
-	if o == nil || IsNil(o.Namespace) {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// SetNamespace gets a reference to the given AddClusterNamespace200ResponseAllOfNamespace and assigns it to the Namespace field.
-func (o *AddClusterNamespace200Response) SetNamespace(v AddClusterNamespace200ResponseAllOfNamespace) {
-	o.Namespace = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddClusterNamespace200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterNamespace200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddClusterNamespace200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddClusterNamespace200Response) MarshalJSON() ([]byte, error) {

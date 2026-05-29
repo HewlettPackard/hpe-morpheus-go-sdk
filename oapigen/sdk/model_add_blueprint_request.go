@@ -31,48 +31,6 @@ type AddBlueprintRequest struct {
 	AddBlueprintRequestOneOf5 *AddBlueprintRequestOneOf5
 }
 
-// AddBlueprintRequestOneOfAsAddBlueprintRequest is a convenience function that returns AddBlueprintRequestOneOf wrapped in AddBlueprintRequest
-func AddBlueprintRequestOneOfAsAddBlueprintRequest(v *AddBlueprintRequestOneOf) AddBlueprintRequest {
-	return AddBlueprintRequest{
-		AddBlueprintRequestOneOf: v,
-	}
-}
-
-// AddBlueprintRequestOneOf1AsAddBlueprintRequest is a convenience function that returns AddBlueprintRequestOneOf1 wrapped in AddBlueprintRequest
-func AddBlueprintRequestOneOf1AsAddBlueprintRequest(v *AddBlueprintRequestOneOf1) AddBlueprintRequest {
-	return AddBlueprintRequest{
-		AddBlueprintRequestOneOf1: v,
-	}
-}
-
-// AddBlueprintRequestOneOf2AsAddBlueprintRequest is a convenience function that returns AddBlueprintRequestOneOf2 wrapped in AddBlueprintRequest
-func AddBlueprintRequestOneOf2AsAddBlueprintRequest(v *AddBlueprintRequestOneOf2) AddBlueprintRequest {
-	return AddBlueprintRequest{
-		AddBlueprintRequestOneOf2: v,
-	}
-}
-
-// AddBlueprintRequestOneOf3AsAddBlueprintRequest is a convenience function that returns AddBlueprintRequestOneOf3 wrapped in AddBlueprintRequest
-func AddBlueprintRequestOneOf3AsAddBlueprintRequest(v *AddBlueprintRequestOneOf3) AddBlueprintRequest {
-	return AddBlueprintRequest{
-		AddBlueprintRequestOneOf3: v,
-	}
-}
-
-// AddBlueprintRequestOneOf4AsAddBlueprintRequest is a convenience function that returns AddBlueprintRequestOneOf4 wrapped in AddBlueprintRequest
-func AddBlueprintRequestOneOf4AsAddBlueprintRequest(v *AddBlueprintRequestOneOf4) AddBlueprintRequest {
-	return AddBlueprintRequest{
-		AddBlueprintRequestOneOf4: v,
-	}
-}
-
-// AddBlueprintRequestOneOf5AsAddBlueprintRequest is a convenience function that returns AddBlueprintRequestOneOf5 wrapped in AddBlueprintRequest
-func AddBlueprintRequestOneOf5AsAddBlueprintRequest(v *AddBlueprintRequestOneOf5) AddBlueprintRequest {
-	return AddBlueprintRequest{
-		AddBlueprintRequestOneOf5: v,
-	}
-}
-
 func (dst *AddBlueprintRequest) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddBlueprintRequest{}

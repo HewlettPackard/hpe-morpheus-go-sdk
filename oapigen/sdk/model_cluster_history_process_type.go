@@ -27,67 +27,12 @@ type ClusterHistoryProcessType struct {
 
 type _ClusterHistoryProcessType ClusterHistoryProcessType
 
-// NewClusterHistoryProcessType instantiates a new ClusterHistoryProcessType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterHistoryProcessType() *ClusterHistoryProcessType {
-	this := ClusterHistoryProcessType{}
-	return &this
-}
-
 // NewClusterHistoryProcessTypeWithDefaults instantiates a new ClusterHistoryProcessType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewClusterHistoryProcessTypeWithDefaults() *ClusterHistoryProcessType {
 	this := ClusterHistoryProcessType{}
 	return &this
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *ClusterHistoryProcessType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterHistoryProcessType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *ClusterHistoryProcessType) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ClusterHistoryProcessType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterHistoryProcessType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ClusterHistoryProcessType) SetName(v string) {
-	o.Name = &v
 }
 
 func (o ClusterHistoryProcessType) MarshalJSON() ([]byte, error) {

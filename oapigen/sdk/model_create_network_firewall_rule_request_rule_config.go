@@ -27,67 +27,12 @@ type CreateNetworkFirewallRuleRequestRuleConfig struct {
 
 type _CreateNetworkFirewallRuleRequestRuleConfig CreateNetworkFirewallRuleRequestRuleConfig
 
-// NewCreateNetworkFirewallRuleRequestRuleConfig instantiates a new CreateNetworkFirewallRuleRequestRuleConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkFirewallRuleRequestRuleConfig() *CreateNetworkFirewallRuleRequestRuleConfig {
-	this := CreateNetworkFirewallRuleRequestRuleConfig{}
-	return &this
-}
-
 // NewCreateNetworkFirewallRuleRequestRuleConfigWithDefaults instantiates a new CreateNetworkFirewallRuleRequestRuleConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateNetworkFirewallRuleRequestRuleConfigWithDefaults() *CreateNetworkFirewallRuleRequestRuleConfig {
 	this := CreateNetworkFirewallRuleRequestRuleConfig{}
 	return &this
-}
-
-// GetApplication returns the Application field value if set, zero value otherwise.
-func (o *CreateNetworkFirewallRuleRequestRuleConfig) GetApplication() []string {
-	if o == nil || IsNil(o.Application) {
-		var ret []string
-		return ret
-	}
-	return o.Application
-}
-
-// GetApplicationOk returns a tuple with the Application field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkFirewallRuleRequestRuleConfig) GetApplicationOk() ([]string, bool) {
-	if o == nil || IsNil(o.Application) {
-		return nil, false
-	}
-	return o.Application, true
-}
-
-// SetApplication gets a reference to the given []string and assigns it to the Application field.
-func (o *CreateNetworkFirewallRuleRequestRuleConfig) SetApplication(v []string) {
-	o.Application = v
-}
-
-// GetProfile returns the Profile field value if set, zero value otherwise.
-func (o *CreateNetworkFirewallRuleRequestRuleConfig) GetProfile() []string {
-	if o == nil || IsNil(o.Profile) {
-		var ret []string
-		return ret
-	}
-	return o.Profile
-}
-
-// GetProfileOk returns a tuple with the Profile field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkFirewallRuleRequestRuleConfig) GetProfileOk() ([]string, bool) {
-	if o == nil || IsNil(o.Profile) {
-		return nil, false
-	}
-	return o.Profile, true
-}
-
-// SetProfile gets a reference to the given []string and assigns it to the Profile field.
-func (o *CreateNetworkFirewallRuleRequestRuleConfig) SetProfile(v []string) {
-	o.Profile = v
 }
 
 func (o CreateNetworkFirewallRuleRequestRuleConfig) MarshalJSON() ([]byte, error) {

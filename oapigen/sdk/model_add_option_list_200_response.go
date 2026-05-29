@@ -26,44 +26,12 @@ type AddOptionList200Response struct {
 
 type _AddOptionList200Response AddOptionList200Response
 
-// NewAddOptionList200Response instantiates a new AddOptionList200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddOptionList200Response() *AddOptionList200Response {
-	this := AddOptionList200Response{}
-	return &this
-}
-
 // NewAddOptionList200ResponseWithDefaults instantiates a new AddOptionList200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddOptionList200ResponseWithDefaults() *AddOptionList200Response {
 	this := AddOptionList200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddOptionList200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddOptionList200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddOptionList200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddOptionList200Response) MarshalJSON() ([]byte, error) {

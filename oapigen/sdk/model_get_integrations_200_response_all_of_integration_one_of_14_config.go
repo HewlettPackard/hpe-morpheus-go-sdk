@@ -26,44 +26,12 @@ type GetIntegrations200ResponseAllOfIntegrationOneOf14Config struct {
 
 type _GetIntegrations200ResponseAllOfIntegrationOneOf14Config GetIntegrations200ResponseAllOfIntegrationOneOf14Config
 
-// NewGetIntegrations200ResponseAllOfIntegrationOneOf14Config instantiates a new GetIntegrations200ResponseAllOfIntegrationOneOf14Config object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetIntegrations200ResponseAllOfIntegrationOneOf14Config() *GetIntegrations200ResponseAllOfIntegrationOneOf14Config {
-	this := GetIntegrations200ResponseAllOfIntegrationOneOf14Config{}
-	return &this
-}
-
 // NewGetIntegrations200ResponseAllOfIntegrationOneOf14ConfigWithDefaults instantiates a new GetIntegrations200ResponseAllOfIntegrationOneOf14Config object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetIntegrations200ResponseAllOfIntegrationOneOf14ConfigWithDefaults() *GetIntegrations200ResponseAllOfIntegrationOneOf14Config {
 	this := GetIntegrations200ResponseAllOfIntegrationOneOf14Config{}
 	return &this
-}
-
-// GetSaltApplyOnMinion returns the SaltApplyOnMinion field value if set, zero value otherwise.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf14Config) GetSaltApplyOnMinion() bool {
-	if o == nil || IsNil(o.SaltApplyOnMinion) {
-		var ret bool
-		return ret
-	}
-	return *o.SaltApplyOnMinion
-}
-
-// GetSaltApplyOnMinionOk returns a tuple with the SaltApplyOnMinion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf14Config) GetSaltApplyOnMinionOk() (*bool, bool) {
-	if o == nil || IsNil(o.SaltApplyOnMinion) {
-		return nil, false
-	}
-	return o.SaltApplyOnMinion, true
-}
-
-// SetSaltApplyOnMinion gets a reference to the given bool and assigns it to the SaltApplyOnMinion field.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf14Config) SetSaltApplyOnMinion(v bool) {
-	o.SaltApplyOnMinion = &v
 }
 
 func (o GetIntegrations200ResponseAllOfIntegrationOneOf14Config) MarshalJSON() ([]byte, error) {

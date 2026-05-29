@@ -29,113 +29,12 @@ type AddUserTenant200ResponseAllOfUserAccessFeaturesInner struct {
 
 type _AddUserTenant200ResponseAllOfUserAccessFeaturesInner AddUserTenant200ResponseAllOfUserAccessFeaturesInner
 
-// NewAddUserTenant200ResponseAllOfUserAccessFeaturesInner instantiates a new AddUserTenant200ResponseAllOfUserAccessFeaturesInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddUserTenant200ResponseAllOfUserAccessFeaturesInner() *AddUserTenant200ResponseAllOfUserAccessFeaturesInner {
-	this := AddUserTenant200ResponseAllOfUserAccessFeaturesInner{}
-	return &this
-}
-
 // NewAddUserTenant200ResponseAllOfUserAccessFeaturesInnerWithDefaults instantiates a new AddUserTenant200ResponseAllOfUserAccessFeaturesInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddUserTenant200ResponseAllOfUserAccessFeaturesInnerWithDefaults() *AddUserTenant200ResponseAllOfUserAccessFeaturesInner {
 	this := AddUserTenant200ResponseAllOfUserAccessFeaturesInner{}
 	return &this
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccessFeaturesInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccessFeaturesInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *AddUserTenant200ResponseAllOfUserAccessFeaturesInner) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccessFeaturesInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccessFeaturesInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddUserTenant200ResponseAllOfUserAccessFeaturesInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetAccess returns the Access field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccessFeaturesInner) GetAccess() string {
-	if o == nil || IsNil(o.Access) {
-		var ret string
-		return ret
-	}
-	return *o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccessFeaturesInner) GetAccessOk() (*string, bool) {
-	if o == nil || IsNil(o.Access) {
-		return nil, false
-	}
-	return o.Access, true
-}
-
-// SetAccess gets a reference to the given string and assigns it to the Access field.
-func (o *AddUserTenant200ResponseAllOfUserAccessFeaturesInner) SetAccess(v string) {
-	o.Access = &v
-}
-
-// GetSubCategory returns the SubCategory field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccessFeaturesInner) GetSubCategory() string {
-	if o == nil || IsNil(o.SubCategory) {
-		var ret string
-		return ret
-	}
-	return *o.SubCategory
-}
-
-// GetSubCategoryOk returns a tuple with the SubCategory field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccessFeaturesInner) GetSubCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.SubCategory) {
-		return nil, false
-	}
-	return o.SubCategory, true
-}
-
-// SetSubCategory gets a reference to the given string and assigns it to the SubCategory field.
-func (o *AddUserTenant200ResponseAllOfUserAccessFeaturesInner) SetSubCategory(v string) {
-	o.SubCategory = &v
 }
 
 func (o AddUserTenant200ResponseAllOfUserAccessFeaturesInner) MarshalJSON() ([]byte, error) {

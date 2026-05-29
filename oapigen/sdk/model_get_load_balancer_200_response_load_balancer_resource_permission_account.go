@@ -26,44 +26,12 @@ type GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount struct {
 
 type _GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount
 
-// NewGetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount instantiates a new GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount() *GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount {
-	this := GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount{}
-	return &this
-}
-
 // NewGetLoadBalancer200ResponseLoadBalancerResourcePermissionAccountWithDefaults instantiates a new GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetLoadBalancer200ResponseLoadBalancerResourcePermissionAccountWithDefaults() *GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount {
 	this := GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount) MarshalJSON() ([]byte, error) {

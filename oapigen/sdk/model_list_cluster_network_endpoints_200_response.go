@@ -27,67 +27,12 @@ type ListClusterNetworkEndpoints200Response struct {
 
 type _ListClusterNetworkEndpoints200Response ListClusterNetworkEndpoints200Response
 
-// NewListClusterNetworkEndpoints200Response instantiates a new ListClusterNetworkEndpoints200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListClusterNetworkEndpoints200Response() *ListClusterNetworkEndpoints200Response {
-	this := ListClusterNetworkEndpoints200Response{}
-	return &this
-}
-
 // NewListClusterNetworkEndpoints200ResponseWithDefaults instantiates a new ListClusterNetworkEndpoints200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListClusterNetworkEndpoints200ResponseWithDefaults() *ListClusterNetworkEndpoints200Response {
 	this := ListClusterNetworkEndpoints200Response{}
 	return &this
-}
-
-// GetEndpoints returns the Endpoints field value if set, zero value otherwise.
-func (o *ListClusterNetworkEndpoints200Response) GetEndpoints() []ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner {
-	if o == nil || IsNil(o.Endpoints) {
-		var ret []ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner
-		return ret
-	}
-	return o.Endpoints
-}
-
-// GetEndpointsOk returns a tuple with the Endpoints field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterNetworkEndpoints200Response) GetEndpointsOk() ([]ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner, bool) {
-	if o == nil || IsNil(o.Endpoints) {
-		return nil, false
-	}
-	return o.Endpoints, true
-}
-
-// SetEndpoints gets a reference to the given []ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner and assigns it to the Endpoints field.
-func (o *ListClusterNetworkEndpoints200Response) SetEndpoints(v []ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) {
-	o.Endpoints = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListClusterNetworkEndpoints200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterNetworkEndpoints200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListClusterNetworkEndpoints200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListClusterNetworkEndpoints200Response) MarshalJSON() ([]byte, error) {

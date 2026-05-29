@@ -26,46 +26,12 @@ type UpdateIdentitySourcesRequest struct {
 
 type _UpdateIdentitySourcesRequest UpdateIdentitySourcesRequest
 
-// NewUpdateIdentitySourcesRequest instantiates a new UpdateIdentitySourcesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIdentitySourcesRequest(userSource UpdateIdentitySourcesRequestUserSource) *UpdateIdentitySourcesRequest {
-	this := UpdateIdentitySourcesRequest{}
-	this.UserSource = userSource
-	return &this
-}
-
 // NewUpdateIdentitySourcesRequestWithDefaults instantiates a new UpdateIdentitySourcesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateIdentitySourcesRequestWithDefaults() *UpdateIdentitySourcesRequest {
 	this := UpdateIdentitySourcesRequest{}
 	return &this
-}
-
-// GetUserSource returns the UserSource field value
-func (o *UpdateIdentitySourcesRequest) GetUserSource() UpdateIdentitySourcesRequestUserSource {
-	if o == nil {
-		var ret UpdateIdentitySourcesRequestUserSource
-		return ret
-	}
-
-	return o.UserSource
-}
-
-// GetUserSourceOk returns a tuple with the UserSource field value
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourcesRequest) GetUserSourceOk() (*UpdateIdentitySourcesRequestUserSource, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.UserSource, true
-}
-
-// SetUserSource sets field value
-func (o *UpdateIdentitySourcesRequest) SetUserSource(v UpdateIdentitySourcesRequestUserSource) {
-	o.UserSource = v
 }
 
 func (o UpdateIdentitySourcesRequest) MarshalJSON() ([]byte, error) {

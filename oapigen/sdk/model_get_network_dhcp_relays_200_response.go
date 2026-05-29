@@ -27,68 +27,12 @@ type GetNetworkDhcpRelays200Response struct {
 
 type _GetNetworkDhcpRelays200Response GetNetworkDhcpRelays200Response
 
-// NewGetNetworkDhcpRelays200Response instantiates a new GetNetworkDhcpRelays200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkDhcpRelays200Response() *GetNetworkDhcpRelays200Response {
-	this := GetNetworkDhcpRelays200Response{}
-	return &this
-}
-
 // NewGetNetworkDhcpRelays200ResponseWithDefaults instantiates a new GetNetworkDhcpRelays200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkDhcpRelays200ResponseWithDefaults() *GetNetworkDhcpRelays200Response {
 	this := GetNetworkDhcpRelays200Response{}
 	return &this
-}
-
-// GetNetworkDhcpRelays returns the NetworkDhcpRelays field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetNetworkDhcpRelays200Response) GetNetworkDhcpRelays() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.NetworkDhcpRelays
-}
-
-// GetNetworkDhcpRelaysOk returns a tuple with the NetworkDhcpRelays field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetNetworkDhcpRelays200Response) GetNetworkDhcpRelaysOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.NetworkDhcpRelays) {
-		return nil, false
-	}
-	return &o.NetworkDhcpRelays, true
-}
-
-// SetNetworkDhcpRelays gets a reference to the given interface{} and assigns it to the NetworkDhcpRelays field.
-func (o *GetNetworkDhcpRelays200Response) SetNetworkDhcpRelays(v interface{}) {
-	o.NetworkDhcpRelays = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *GetNetworkDhcpRelays200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpRelays200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *GetNetworkDhcpRelays200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o GetNetworkDhcpRelays200Response) MarshalJSON() ([]byte, error) {

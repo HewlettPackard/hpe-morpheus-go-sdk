@@ -26,46 +26,12 @@ type AddPowerScheduleInstancesRequest struct {
 
 type _AddPowerScheduleInstancesRequest AddPowerScheduleInstancesRequest
 
-// NewAddPowerScheduleInstancesRequest instantiates a new AddPowerScheduleInstancesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPowerScheduleInstancesRequest(instances []int64) *AddPowerScheduleInstancesRequest {
-	this := AddPowerScheduleInstancesRequest{}
-	this.Instances = instances
-	return &this
-}
-
 // NewAddPowerScheduleInstancesRequestWithDefaults instantiates a new AddPowerScheduleInstancesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddPowerScheduleInstancesRequestWithDefaults() *AddPowerScheduleInstancesRequest {
 	this := AddPowerScheduleInstancesRequest{}
 	return &this
-}
-
-// GetInstances returns the Instances field value
-func (o *AddPowerScheduleInstancesRequest) GetInstances() []int64 {
-	if o == nil {
-		var ret []int64
-		return ret
-	}
-
-	return o.Instances
-}
-
-// GetInstancesOk returns a tuple with the Instances field value
-// and a boolean to check if the value has been set.
-func (o *AddPowerScheduleInstancesRequest) GetInstancesOk() ([]int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Instances, true
-}
-
-// SetInstances sets field value
-func (o *AddPowerScheduleInstancesRequest) SetInstances(v []int64) {
-	o.Instances = v
 }
 
 func (o AddPowerScheduleInstancesRequest) MarshalJSON() ([]byte, error) {

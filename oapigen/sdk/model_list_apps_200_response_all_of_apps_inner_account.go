@@ -27,67 +27,12 @@ type ListApps200ResponseAllOfAppsInnerAccount struct {
 
 type _ListApps200ResponseAllOfAppsInnerAccount ListApps200ResponseAllOfAppsInnerAccount
 
-// NewListApps200ResponseAllOfAppsInnerAccount instantiates a new ListApps200ResponseAllOfAppsInnerAccount object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListApps200ResponseAllOfAppsInnerAccount() *ListApps200ResponseAllOfAppsInnerAccount {
-	this := ListApps200ResponseAllOfAppsInnerAccount{}
-	return &this
-}
-
 // NewListApps200ResponseAllOfAppsInnerAccountWithDefaults instantiates a new ListApps200ResponseAllOfAppsInnerAccount object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListApps200ResponseAllOfAppsInnerAccountWithDefaults() *ListApps200ResponseAllOfAppsInnerAccount {
 	this := ListApps200ResponseAllOfAppsInnerAccount{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListApps200ResponseAllOfAppsInnerAccount) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListApps200ResponseAllOfAppsInnerAccount) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListApps200ResponseAllOfAppsInnerAccount) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListApps200ResponseAllOfAppsInnerAccount) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListApps200ResponseAllOfAppsInnerAccount) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListApps200ResponseAllOfAppsInnerAccount) SetName(v string) {
-	o.Name = &v
 }
 
 func (o ListApps200ResponseAllOfAppsInnerAccount) MarshalJSON() ([]byte, error) {

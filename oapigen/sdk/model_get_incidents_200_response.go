@@ -26,44 +26,12 @@ type GetIncidents200Response struct {
 
 type _GetIncidents200Response GetIncidents200Response
 
-// NewGetIncidents200Response instantiates a new GetIncidents200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetIncidents200Response() *GetIncidents200Response {
-	this := GetIncidents200Response{}
-	return &this
-}
-
 // NewGetIncidents200ResponseWithDefaults instantiates a new GetIncidents200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetIncidents200ResponseWithDefaults() *GetIncidents200Response {
 	this := GetIncidents200Response{}
 	return &this
-}
-
-// GetIncident returns the Incident field value if set, zero value otherwise.
-func (o *GetIncidents200Response) GetIncident() GetIncidents200ResponseIncident {
-	if o == nil || IsNil(o.Incident) {
-		var ret GetIncidents200ResponseIncident
-		return ret
-	}
-	return *o.Incident
-}
-
-// GetIncidentOk returns a tuple with the Incident field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetIncidents200Response) GetIncidentOk() (*GetIncidents200ResponseIncident, bool) {
-	if o == nil || IsNil(o.Incident) {
-		return nil, false
-	}
-	return o.Incident, true
-}
-
-// SetIncident gets a reference to the given GetIncidents200ResponseIncident and assigns it to the Incident field.
-func (o *GetIncidents200Response) SetIncident(v GetIncidents200ResponseIncident) {
-	o.Incident = &v
 }
 
 func (o GetIncidents200Response) MarshalJSON() ([]byte, error) {

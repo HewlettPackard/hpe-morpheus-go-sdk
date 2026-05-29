@@ -33,113 +33,12 @@ type CreateLoadBalancerProfileRequestLoadBalancerProfile struct {
 
 type _CreateLoadBalancerProfileRequestLoadBalancerProfile CreateLoadBalancerProfileRequestLoadBalancerProfile
 
-// NewCreateLoadBalancerProfileRequestLoadBalancerProfile instantiates a new CreateLoadBalancerProfileRequestLoadBalancerProfile object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateLoadBalancerProfileRequestLoadBalancerProfile() *CreateLoadBalancerProfileRequestLoadBalancerProfile {
-	this := CreateLoadBalancerProfileRequestLoadBalancerProfile{}
-	return &this
-}
-
 // NewCreateLoadBalancerProfileRequestLoadBalancerProfileWithDefaults instantiates a new CreateLoadBalancerProfileRequestLoadBalancerProfile object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateLoadBalancerProfileRequestLoadBalancerProfileWithDefaults() *CreateLoadBalancerProfileRequestLoadBalancerProfile {
 	this := CreateLoadBalancerProfileRequestLoadBalancerProfile{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
-		var ret string
-		return ret
-	}
-	return *o.Description
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
-		return nil, false
-	}
-	return o.Description, true
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) SetDescription(v string) {
-	o.Description = &v
-}
-
-// GetServiceType returns the ServiceType field value if set, zero value otherwise.
-func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) GetServiceType() string {
-	if o == nil || IsNil(o.ServiceType) {
-		var ret string
-		return ret
-	}
-	return *o.ServiceType
-}
-
-// GetServiceTypeOk returns a tuple with the ServiceType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) GetServiceTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceType) {
-		return nil, false
-	}
-	return o.ServiceType, true
-}
-
-// SetServiceType gets a reference to the given string and assigns it to the ServiceType field.
-func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) SetServiceType(v string) {
-	o.ServiceType = &v
-}
-
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) GetConfigOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
-	}
-	return o.Config, true
-}
-
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) SetConfig(v map[string]interface{}) {
-	o.Config = v
 }
 
 func (o CreateLoadBalancerProfileRequestLoadBalancerProfile) MarshalJSON() ([]byte, error) {

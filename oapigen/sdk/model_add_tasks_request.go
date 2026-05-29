@@ -26,46 +26,12 @@ type AddTasksRequest struct {
 
 type _AddTasksRequest AddTasksRequest
 
-// NewAddTasksRequest instantiates a new AddTasksRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddTasksRequest(task AddTasksRequestTask) *AddTasksRequest {
-	this := AddTasksRequest{}
-	this.Task = task
-	return &this
-}
-
 // NewAddTasksRequestWithDefaults instantiates a new AddTasksRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddTasksRequestWithDefaults() *AddTasksRequest {
 	this := AddTasksRequest{}
 	return &this
-}
-
-// GetTask returns the Task field value
-func (o *AddTasksRequest) GetTask() AddTasksRequestTask {
-	if o == nil {
-		var ret AddTasksRequestTask
-		return ret
-	}
-
-	return o.Task
-}
-
-// GetTaskOk returns a tuple with the Task field value
-// and a boolean to check if the value has been set.
-func (o *AddTasksRequest) GetTaskOk() (*AddTasksRequestTask, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Task, true
-}
-
-// SetTask sets field value
-func (o *AddTasksRequest) SetTask(v AddTasksRequestTask) {
-	o.Task = v
 }
 
 func (o AddTasksRequest) MarshalJSON() ([]byte, error) {

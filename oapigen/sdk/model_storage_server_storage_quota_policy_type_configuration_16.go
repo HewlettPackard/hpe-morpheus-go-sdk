@@ -27,67 +27,12 @@ type StorageServerStorageQuotaPolicyTypeConfiguration16 struct {
 
 type _StorageServerStorageQuotaPolicyTypeConfiguration16 StorageServerStorageQuotaPolicyTypeConfiguration16
 
-// NewStorageServerStorageQuotaPolicyTypeConfiguration16 instantiates a new StorageServerStorageQuotaPolicyTypeConfiguration16 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewStorageServerStorageQuotaPolicyTypeConfiguration16() *StorageServerStorageQuotaPolicyTypeConfiguration16 {
-	this := StorageServerStorageQuotaPolicyTypeConfiguration16{}
-	return &this
-}
-
 // NewStorageServerStorageQuotaPolicyTypeConfiguration16WithDefaults instantiates a new StorageServerStorageQuotaPolicyTypeConfiguration16 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewStorageServerStorageQuotaPolicyTypeConfiguration16WithDefaults() *StorageServerStorageQuotaPolicyTypeConfiguration16 {
 	this := StorageServerStorageQuotaPolicyTypeConfiguration16{}
 	return &this
-}
-
-// GetStorageServerId returns the StorageServerId field value if set, zero value otherwise.
-func (o *StorageServerStorageQuotaPolicyTypeConfiguration16) GetStorageServerId() string {
-	if o == nil || IsNil(o.StorageServerId) {
-		var ret string
-		return ret
-	}
-	return *o.StorageServerId
-}
-
-// GetStorageServerIdOk returns a tuple with the StorageServerId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *StorageServerStorageQuotaPolicyTypeConfiguration16) GetStorageServerIdOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageServerId) {
-		return nil, false
-	}
-	return o.StorageServerId, true
-}
-
-// SetStorageServerId gets a reference to the given string and assigns it to the StorageServerId field.
-func (o *StorageServerStorageQuotaPolicyTypeConfiguration16) SetStorageServerId(v string) {
-	o.StorageServerId = &v
-}
-
-// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
-func (o *StorageServerStorageQuotaPolicyTypeConfiguration16) GetMaxStorage() string {
-	if o == nil || IsNil(o.MaxStorage) {
-		var ret string
-		return ret
-	}
-	return *o.MaxStorage
-}
-
-// GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *StorageServerStorageQuotaPolicyTypeConfiguration16) GetMaxStorageOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxStorage) {
-		return nil, false
-	}
-	return o.MaxStorage, true
-}
-
-// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
-func (o *StorageServerStorageQuotaPolicyTypeConfiguration16) SetMaxStorage(v string) {
-	o.MaxStorage = &v
 }
 
 func (o StorageServerStorageQuotaPolicyTypeConfiguration16) MarshalJSON() ([]byte, error) {

@@ -31,18 +31,6 @@ type AcknowledgeHealthAlarmsRequestAlarm struct {
 
 type _AcknowledgeHealthAlarmsRequestAlarm AcknowledgeHealthAlarmsRequestAlarm
 
-// NewAcknowledgeHealthAlarmsRequestAlarm instantiates a new AcknowledgeHealthAlarmsRequestAlarm object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAcknowledgeHealthAlarmsRequestAlarm(acknowledged bool) *AcknowledgeHealthAlarmsRequestAlarm {
-	this := AcknowledgeHealthAlarmsRequestAlarm{}
-	this.Acknowledged = acknowledged
-	var all bool = false
-	this.All = &all
-	return &this
-}
-
 // NewAcknowledgeHealthAlarmsRequestAlarmWithDefaults instantiates a new AcknowledgeHealthAlarmsRequestAlarm object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -51,76 +39,6 @@ func NewAcknowledgeHealthAlarmsRequestAlarmWithDefaults() *AcknowledgeHealthAlar
 	var all bool = false
 	this.All = &all
 	return &this
-}
-
-// GetAcknowledged returns the Acknowledged field value
-func (o *AcknowledgeHealthAlarmsRequestAlarm) GetAcknowledged() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.Acknowledged
-}
-
-// GetAcknowledgedOk returns a tuple with the Acknowledged field value
-// and a boolean to check if the value has been set.
-func (o *AcknowledgeHealthAlarmsRequestAlarm) GetAcknowledgedOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Acknowledged, true
-}
-
-// SetAcknowledged sets field value
-func (o *AcknowledgeHealthAlarmsRequestAlarm) SetAcknowledged(v bool) {
-	o.Acknowledged = v
-}
-
-// GetIds returns the Ids field value if set, zero value otherwise.
-func (o *AcknowledgeHealthAlarmsRequestAlarm) GetIds() []int64 {
-	if o == nil || IsNil(o.Ids) {
-		var ret []int64
-		return ret
-	}
-	return o.Ids
-}
-
-// GetIdsOk returns a tuple with the Ids field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AcknowledgeHealthAlarmsRequestAlarm) GetIdsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.Ids) {
-		return nil, false
-	}
-	return o.Ids, true
-}
-
-// SetIds gets a reference to the given []int64 and assigns it to the Ids field.
-func (o *AcknowledgeHealthAlarmsRequestAlarm) SetIds(v []int64) {
-	o.Ids = v
-}
-
-// GetAll returns the All field value if set, zero value otherwise.
-func (o *AcknowledgeHealthAlarmsRequestAlarm) GetAll() bool {
-	if o == nil || IsNil(o.All) {
-		var ret bool
-		return ret
-	}
-	return *o.All
-}
-
-// GetAllOk returns a tuple with the All field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AcknowledgeHealthAlarmsRequestAlarm) GetAllOk() (*bool, bool) {
-	if o == nil || IsNil(o.All) {
-		return nil, false
-	}
-	return o.All, true
-}
-
-// SetAll gets a reference to the given bool and assigns it to the All field.
-func (o *AcknowledgeHealthAlarmsRequestAlarm) SetAll(v bool) {
-	o.All = &v
 }
 
 func (o AcknowledgeHealthAlarmsRequestAlarm) MarshalJSON() ([]byte, error) {

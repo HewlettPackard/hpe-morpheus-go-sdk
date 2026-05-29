@@ -27,67 +27,12 @@ type UpdateSecurityPackages200Response struct {
 
 type _UpdateSecurityPackages200Response UpdateSecurityPackages200Response
 
-// NewUpdateSecurityPackages200Response instantiates a new UpdateSecurityPackages200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateSecurityPackages200Response() *UpdateSecurityPackages200Response {
-	this := UpdateSecurityPackages200Response{}
-	return &this
-}
-
 // NewUpdateSecurityPackages200ResponseWithDefaults instantiates a new UpdateSecurityPackages200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateSecurityPackages200ResponseWithDefaults() *UpdateSecurityPackages200Response {
 	this := UpdateSecurityPackages200Response{}
 	return &this
-}
-
-// GetSecurityPackage returns the SecurityPackage field value if set, zero value otherwise.
-func (o *UpdateSecurityPackages200Response) GetSecurityPackage() UpdateSecurityPackages200ResponseAllOfSecurityPackage {
-	if o == nil || IsNil(o.SecurityPackage) {
-		var ret UpdateSecurityPackages200ResponseAllOfSecurityPackage
-		return ret
-	}
-	return *o.SecurityPackage
-}
-
-// GetSecurityPackageOk returns a tuple with the SecurityPackage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateSecurityPackages200Response) GetSecurityPackageOk() (*UpdateSecurityPackages200ResponseAllOfSecurityPackage, bool) {
-	if o == nil || IsNil(o.SecurityPackage) {
-		return nil, false
-	}
-	return o.SecurityPackage, true
-}
-
-// SetSecurityPackage gets a reference to the given UpdateSecurityPackages200ResponseAllOfSecurityPackage and assigns it to the SecurityPackage field.
-func (o *UpdateSecurityPackages200Response) SetSecurityPackage(v UpdateSecurityPackages200ResponseAllOfSecurityPackage) {
-	o.SecurityPackage = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateSecurityPackages200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateSecurityPackages200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateSecurityPackages200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o UpdateSecurityPackages200Response) MarshalJSON() ([]byte, error) {

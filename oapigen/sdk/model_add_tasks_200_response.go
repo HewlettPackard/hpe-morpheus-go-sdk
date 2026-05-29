@@ -27,67 +27,12 @@ type AddTasks200Response struct {
 
 type _AddTasks200Response AddTasks200Response
 
-// NewAddTasks200Response instantiates a new AddTasks200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddTasks200Response() *AddTasks200Response {
-	this := AddTasks200Response{}
-	return &this
-}
-
 // NewAddTasks200ResponseWithDefaults instantiates a new AddTasks200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddTasks200ResponseWithDefaults() *AddTasks200Response {
 	this := AddTasks200Response{}
 	return &this
-}
-
-// GetTask returns the Task field value if set, zero value otherwise.
-func (o *AddTasks200Response) GetTask() AddTasks200ResponseAllOfTask {
-	if o == nil || IsNil(o.Task) {
-		var ret AddTasks200ResponseAllOfTask
-		return ret
-	}
-	return *o.Task
-}
-
-// GetTaskOk returns a tuple with the Task field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddTasks200Response) GetTaskOk() (*AddTasks200ResponseAllOfTask, bool) {
-	if o == nil || IsNil(o.Task) {
-		return nil, false
-	}
-	return o.Task, true
-}
-
-// SetTask gets a reference to the given AddTasks200ResponseAllOfTask and assigns it to the Task field.
-func (o *AddTasks200Response) SetTask(v AddTasks200ResponseAllOfTask) {
-	o.Task = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddTasks200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddTasks200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddTasks200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddTasks200Response) MarshalJSON() ([]byte, error) {

@@ -29,67 +29,12 @@ type UpdateIntegrationsRequestOneOf5IntegrationConfig struct {
 
 type _UpdateIntegrationsRequestOneOf5IntegrationConfig UpdateIntegrationsRequestOneOf5IntegrationConfig
 
-// NewUpdateIntegrationsRequestOneOf5IntegrationConfig instantiates a new UpdateIntegrationsRequestOneOf5IntegrationConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIntegrationsRequestOneOf5IntegrationConfig() *UpdateIntegrationsRequestOneOf5IntegrationConfig {
-	this := UpdateIntegrationsRequestOneOf5IntegrationConfig{}
-	return &this
-}
-
 // NewUpdateIntegrationsRequestOneOf5IntegrationConfigWithDefaults instantiates a new UpdateIntegrationsRequestOneOf5IntegrationConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateIntegrationsRequestOneOf5IntegrationConfigWithDefaults() *UpdateIntegrationsRequestOneOf5IntegrationConfig {
 	this := UpdateIntegrationsRequestOneOf5IntegrationConfig{}
 	return &this
-}
-
-// GetDefaultBranch returns the DefaultBranch field value if set, zero value otherwise.
-func (o *UpdateIntegrationsRequestOneOf5IntegrationConfig) GetDefaultBranch() string {
-	if o == nil || IsNil(o.DefaultBranch) {
-		var ret string
-		return ret
-	}
-	return *o.DefaultBranch
-}
-
-// GetDefaultBranchOk returns a tuple with the DefaultBranch field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIntegrationsRequestOneOf5IntegrationConfig) GetDefaultBranchOk() (*string, bool) {
-	if o == nil || IsNil(o.DefaultBranch) {
-		return nil, false
-	}
-	return o.DefaultBranch, true
-}
-
-// SetDefaultBranch gets a reference to the given string and assigns it to the DefaultBranch field.
-func (o *UpdateIntegrationsRequestOneOf5IntegrationConfig) SetDefaultBranch(v string) {
-	o.DefaultBranch = &v
-}
-
-// GetCacheEnabled returns the CacheEnabled field value if set, zero value otherwise.
-func (o *UpdateIntegrationsRequestOneOf5IntegrationConfig) GetCacheEnabled() bool {
-	if o == nil || IsNil(o.CacheEnabled) {
-		var ret bool
-		return ret
-	}
-	return *o.CacheEnabled
-}
-
-// GetCacheEnabledOk returns a tuple with the CacheEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIntegrationsRequestOneOf5IntegrationConfig) GetCacheEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.CacheEnabled) {
-		return nil, false
-	}
-	return o.CacheEnabled, true
-}
-
-// SetCacheEnabled gets a reference to the given bool and assigns it to the CacheEnabled field.
-func (o *UpdateIntegrationsRequestOneOf5IntegrationConfig) SetCacheEnabled(v bool) {
-	o.CacheEnabled = &v
 }
 
 func (o UpdateIntegrationsRequestOneOf5IntegrationConfig) MarshalJSON() ([]byte, error) {

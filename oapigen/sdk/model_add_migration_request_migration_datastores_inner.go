@@ -27,67 +27,12 @@ type AddMigrationRequestMigrationDatastoresInner struct {
 
 type _AddMigrationRequestMigrationDatastoresInner AddMigrationRequestMigrationDatastoresInner
 
-// NewAddMigrationRequestMigrationDatastoresInner instantiates a new AddMigrationRequestMigrationDatastoresInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddMigrationRequestMigrationDatastoresInner() *AddMigrationRequestMigrationDatastoresInner {
-	this := AddMigrationRequestMigrationDatastoresInner{}
-	return &this
-}
-
 // NewAddMigrationRequestMigrationDatastoresInnerWithDefaults instantiates a new AddMigrationRequestMigrationDatastoresInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddMigrationRequestMigrationDatastoresInnerWithDefaults() *AddMigrationRequestMigrationDatastoresInner {
 	this := AddMigrationRequestMigrationDatastoresInner{}
 	return &this
-}
-
-// GetSourceDatastore returns the SourceDatastore field value if set, zero value otherwise.
-func (o *AddMigrationRequestMigrationDatastoresInner) GetSourceDatastore() AddMigrationRequestMigrationDatastoresInnerSourceDatastore {
-	if o == nil || IsNil(o.SourceDatastore) {
-		var ret AddMigrationRequestMigrationDatastoresInnerSourceDatastore
-		return ret
-	}
-	return *o.SourceDatastore
-}
-
-// GetSourceDatastoreOk returns a tuple with the SourceDatastore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddMigrationRequestMigrationDatastoresInner) GetSourceDatastoreOk() (*AddMigrationRequestMigrationDatastoresInnerSourceDatastore, bool) {
-	if o == nil || IsNil(o.SourceDatastore) {
-		return nil, false
-	}
-	return o.SourceDatastore, true
-}
-
-// SetSourceDatastore gets a reference to the given AddMigrationRequestMigrationDatastoresInnerSourceDatastore and assigns it to the SourceDatastore field.
-func (o *AddMigrationRequestMigrationDatastoresInner) SetSourceDatastore(v AddMigrationRequestMigrationDatastoresInnerSourceDatastore) {
-	o.SourceDatastore = &v
-}
-
-// GetDestinationDatastore returns the DestinationDatastore field value if set, zero value otherwise.
-func (o *AddMigrationRequestMigrationDatastoresInner) GetDestinationDatastore() AddMigrationRequestMigrationDatastoresInnerDestinationDatastore {
-	if o == nil || IsNil(o.DestinationDatastore) {
-		var ret AddMigrationRequestMigrationDatastoresInnerDestinationDatastore
-		return ret
-	}
-	return *o.DestinationDatastore
-}
-
-// GetDestinationDatastoreOk returns a tuple with the DestinationDatastore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddMigrationRequestMigrationDatastoresInner) GetDestinationDatastoreOk() (*AddMigrationRequestMigrationDatastoresInnerDestinationDatastore, bool) {
-	if o == nil || IsNil(o.DestinationDatastore) {
-		return nil, false
-	}
-	return o.DestinationDatastore, true
-}
-
-// SetDestinationDatastore gets a reference to the given AddMigrationRequestMigrationDatastoresInnerDestinationDatastore and assigns it to the DestinationDatastore field.
-func (o *AddMigrationRequestMigrationDatastoresInner) SetDestinationDatastore(v AddMigrationRequestMigrationDatastoresInnerDestinationDatastore) {
-	o.DestinationDatastore = &v
 }
 
 func (o AddMigrationRequestMigrationDatastoresInner) MarshalJSON() ([]byte, error) {

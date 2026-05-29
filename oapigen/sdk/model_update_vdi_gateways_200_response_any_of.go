@@ -26,44 +26,12 @@ type UpdateVDIGateways200ResponseAnyOf struct {
 
 type _UpdateVDIGateways200ResponseAnyOf UpdateVDIGateways200ResponseAnyOf
 
-// NewUpdateVDIGateways200ResponseAnyOf instantiates a new UpdateVDIGateways200ResponseAnyOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateVDIGateways200ResponseAnyOf() *UpdateVDIGateways200ResponseAnyOf {
-	this := UpdateVDIGateways200ResponseAnyOf{}
-	return &this
-}
-
 // NewUpdateVDIGateways200ResponseAnyOfWithDefaults instantiates a new UpdateVDIGateways200ResponseAnyOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateVDIGateways200ResponseAnyOfWithDefaults() *UpdateVDIGateways200ResponseAnyOf {
 	this := UpdateVDIGateways200ResponseAnyOf{}
 	return &this
-}
-
-// GetVdiGateway returns the VdiGateway field value if set, zero value otherwise.
-func (o *UpdateVDIGateways200ResponseAnyOf) GetVdiGateway() UpdateVDIGateways200ResponseAnyOfVdiGateway {
-	if o == nil || IsNil(o.VdiGateway) {
-		var ret UpdateVDIGateways200ResponseAnyOfVdiGateway
-		return ret
-	}
-	return *o.VdiGateway
-}
-
-// GetVdiGatewayOk returns a tuple with the VdiGateway field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIGateways200ResponseAnyOf) GetVdiGatewayOk() (*UpdateVDIGateways200ResponseAnyOfVdiGateway, bool) {
-	if o == nil || IsNil(o.VdiGateway) {
-		return nil, false
-	}
-	return o.VdiGateway, true
-}
-
-// SetVdiGateway gets a reference to the given UpdateVDIGateways200ResponseAnyOfVdiGateway and assigns it to the VdiGateway field.
-func (o *UpdateVDIGateways200ResponseAnyOf) SetVdiGateway(v UpdateVDIGateways200ResponseAnyOfVdiGateway) {
-	o.VdiGateway = &v
 }
 
 func (o UpdateVDIGateways200ResponseAnyOf) MarshalJSON() ([]byte, error) {

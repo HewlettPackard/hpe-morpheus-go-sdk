@@ -27,68 +27,12 @@ type RefreshNetworkServer200Response struct {
 
 type _RefreshNetworkServer200Response RefreshNetworkServer200Response
 
-// NewRefreshNetworkServer200Response instantiates a new RefreshNetworkServer200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRefreshNetworkServer200Response() *RefreshNetworkServer200Response {
-	this := RefreshNetworkServer200Response{}
-	return &this
-}
-
 // NewRefreshNetworkServer200ResponseWithDefaults instantiates a new RefreshNetworkServer200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRefreshNetworkServer200ResponseWithDefaults() *RefreshNetworkServer200Response {
 	this := RefreshNetworkServer200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *RefreshNetworkServer200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RefreshNetworkServer200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *RefreshNetworkServer200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RefreshNetworkServer200Response) GetId() int64 {
-	if o == nil || IsNil(o.Id.Get()) {
-		var ret int64
-		return ret
-	}
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RefreshNetworkServer200Response) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
-func (o *RefreshNetworkServer200Response) SetId(v int64) {
-	o.Id.Set(&v)
 }
 
 func (o RefreshNetworkServer200Response) MarshalJSON() ([]byte, error) {

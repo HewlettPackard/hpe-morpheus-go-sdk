@@ -27,67 +27,12 @@ type ListScaleThresholds200Response struct {
 
 type _ListScaleThresholds200Response ListScaleThresholds200Response
 
-// NewListScaleThresholds200Response instantiates a new ListScaleThresholds200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListScaleThresholds200Response() *ListScaleThresholds200Response {
-	this := ListScaleThresholds200Response{}
-	return &this
-}
-
 // NewListScaleThresholds200ResponseWithDefaults instantiates a new ListScaleThresholds200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListScaleThresholds200ResponseWithDefaults() *ListScaleThresholds200Response {
 	this := ListScaleThresholds200Response{}
 	return &this
-}
-
-// GetScaleThresholds returns the ScaleThresholds field value if set, zero value otherwise.
-func (o *ListScaleThresholds200Response) GetScaleThresholds() []ListScaleThresholds200ResponseAllOfScaleThresholdsInner {
-	if o == nil || IsNil(o.ScaleThresholds) {
-		var ret []ListScaleThresholds200ResponseAllOfScaleThresholdsInner
-		return ret
-	}
-	return o.ScaleThresholds
-}
-
-// GetScaleThresholdsOk returns a tuple with the ScaleThresholds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListScaleThresholds200Response) GetScaleThresholdsOk() ([]ListScaleThresholds200ResponseAllOfScaleThresholdsInner, bool) {
-	if o == nil || IsNil(o.ScaleThresholds) {
-		return nil, false
-	}
-	return o.ScaleThresholds, true
-}
-
-// SetScaleThresholds gets a reference to the given []ListScaleThresholds200ResponseAllOfScaleThresholdsInner and assigns it to the ScaleThresholds field.
-func (o *ListScaleThresholds200Response) SetScaleThresholds(v []ListScaleThresholds200ResponseAllOfScaleThresholdsInner) {
-	o.ScaleThresholds = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListScaleThresholds200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListScaleThresholds200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListScaleThresholds200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListScaleThresholds200Response) MarshalJSON() ([]byte, error) {

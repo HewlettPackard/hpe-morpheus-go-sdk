@@ -28,90 +28,12 @@ type GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile struct 
 
 type _GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile
 
-// NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile instantiates a new GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile() *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile {
-	this := GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile{}
-	return &this
-}
-
 // NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFileWithDefaults instantiates a new GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFileWithDefaults() *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile {
 	this := GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) SetName(v string) {
-	o.Name = &v
-}
-
-// GetFilePath returns the FilePath field value if set, zero value otherwise.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) GetFilePath() string {
-	if o == nil || IsNil(o.FilePath) {
-		var ret string
-		return ret
-	}
-	return *o.FilePath
-}
-
-// GetFilePathOk returns a tuple with the FilePath field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) GetFilePathOk() (*string, bool) {
-	if o == nil || IsNil(o.FilePath) {
-		return nil, false
-	}
-	return o.FilePath, true
-}
-
-// SetFilePath gets a reference to the given string and assigns it to the FilePath field.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) SetFilePath(v string) {
-	o.FilePath = &v
 }
 
 func (o GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) MarshalJSON() ([]byte, error) {

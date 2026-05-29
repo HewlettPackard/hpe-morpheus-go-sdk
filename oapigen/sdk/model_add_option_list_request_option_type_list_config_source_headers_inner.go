@@ -31,18 +31,6 @@ type AddOptionListRequestOptionTypeListConfigSourceHeadersInner struct {
 
 type _AddOptionListRequestOptionTypeListConfigSourceHeadersInner AddOptionListRequestOptionTypeListConfigSourceHeadersInner
 
-// NewAddOptionListRequestOptionTypeListConfigSourceHeadersInner instantiates a new AddOptionListRequestOptionTypeListConfigSourceHeadersInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddOptionListRequestOptionTypeListConfigSourceHeadersInner(name string) *AddOptionListRequestOptionTypeListConfigSourceHeadersInner {
-	this := AddOptionListRequestOptionTypeListConfigSourceHeadersInner{}
-	this.Name = name
-	var masked bool = false
-	this.Masked = &masked
-	return &this
-}
-
 // NewAddOptionListRequestOptionTypeListConfigSourceHeadersInnerWithDefaults instantiates a new AddOptionListRequestOptionTypeListConfigSourceHeadersInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -51,76 +39,6 @@ func NewAddOptionListRequestOptionTypeListConfigSourceHeadersInnerWithDefaults()
 	var masked bool = false
 	this.Masked = &masked
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) SetName(v string) {
-	o.Name = v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) GetValue() string {
-	if o == nil || IsNil(o.Value) {
-		var ret string
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) SetValue(v string) {
-	o.Value = &v
-}
-
-// GetMasked returns the Masked field value if set, zero value otherwise.
-func (o *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) GetMasked() bool {
-	if o == nil || IsNil(o.Masked) {
-		var ret bool
-		return ret
-	}
-	return *o.Masked
-}
-
-// GetMaskedOk returns a tuple with the Masked field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) GetMaskedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Masked) {
-		return nil, false
-	}
-	return o.Masked, true
-}
-
-// SetMasked gets a reference to the given bool and assigns it to the Masked field.
-func (o *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) SetMasked(v bool) {
-	o.Masked = &v
 }
 
 func (o AddOptionListRequestOptionTypeListConfigSourceHeadersInner) MarshalJSON() ([]byte, error) {

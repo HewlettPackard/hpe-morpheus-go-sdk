@@ -30,113 +30,12 @@ type UpdateClientsRequestClient struct {
 
 type _UpdateClientsRequestClient UpdateClientsRequestClient
 
-// NewUpdateClientsRequestClient instantiates a new UpdateClientsRequestClient object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClientsRequestClient() *UpdateClientsRequestClient {
-	this := UpdateClientsRequestClient{}
-	return &this
-}
-
 // NewUpdateClientsRequestClientWithDefaults instantiates a new UpdateClientsRequestClient object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateClientsRequestClientWithDefaults() *UpdateClientsRequestClient {
 	this := UpdateClientsRequestClient{}
 	return &this
-}
-
-// GetClientId returns the ClientId field value if set, zero value otherwise.
-func (o *UpdateClientsRequestClient) GetClientId() string {
-	if o == nil || IsNil(o.ClientId) {
-		var ret string
-		return ret
-	}
-	return *o.ClientId
-}
-
-// GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClientsRequestClient) GetClientIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ClientId) {
-		return nil, false
-	}
-	return o.ClientId, true
-}
-
-// SetClientId gets a reference to the given string and assigns it to the ClientId field.
-func (o *UpdateClientsRequestClient) SetClientId(v string) {
-	o.ClientId = &v
-}
-
-// GetAccessTokenValiditySeconds returns the AccessTokenValiditySeconds field value if set, zero value otherwise.
-func (o *UpdateClientsRequestClient) GetAccessTokenValiditySeconds() int64 {
-	if o == nil || IsNil(o.AccessTokenValiditySeconds) {
-		var ret int64
-		return ret
-	}
-	return *o.AccessTokenValiditySeconds
-}
-
-// GetAccessTokenValiditySecondsOk returns a tuple with the AccessTokenValiditySeconds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClientsRequestClient) GetAccessTokenValiditySecondsOk() (*int64, bool) {
-	if o == nil || IsNil(o.AccessTokenValiditySeconds) {
-		return nil, false
-	}
-	return o.AccessTokenValiditySeconds, true
-}
-
-// SetAccessTokenValiditySeconds gets a reference to the given int64 and assigns it to the AccessTokenValiditySeconds field.
-func (o *UpdateClientsRequestClient) SetAccessTokenValiditySeconds(v int64) {
-	o.AccessTokenValiditySeconds = &v
-}
-
-// GetRefreshTokenValiditySeconds returns the RefreshTokenValiditySeconds field value if set, zero value otherwise.
-func (o *UpdateClientsRequestClient) GetRefreshTokenValiditySeconds() int64 {
-	if o == nil || IsNil(o.RefreshTokenValiditySeconds) {
-		var ret int64
-		return ret
-	}
-	return *o.RefreshTokenValiditySeconds
-}
-
-// GetRefreshTokenValiditySecondsOk returns a tuple with the RefreshTokenValiditySeconds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClientsRequestClient) GetRefreshTokenValiditySecondsOk() (*int64, bool) {
-	if o == nil || IsNil(o.RefreshTokenValiditySeconds) {
-		return nil, false
-	}
-	return o.RefreshTokenValiditySeconds, true
-}
-
-// SetRefreshTokenValiditySeconds gets a reference to the given int64 and assigns it to the RefreshTokenValiditySeconds field.
-func (o *UpdateClientsRequestClient) SetRefreshTokenValiditySeconds(v int64) {
-	o.RefreshTokenValiditySeconds = &v
-}
-
-// GetRedirectUris returns the RedirectUris field value if set, zero value otherwise.
-func (o *UpdateClientsRequestClient) GetRedirectUris() []string {
-	if o == nil || IsNil(o.RedirectUris) {
-		var ret []string
-		return ret
-	}
-	return o.RedirectUris
-}
-
-// GetRedirectUrisOk returns a tuple with the RedirectUris field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClientsRequestClient) GetRedirectUrisOk() ([]string, bool) {
-	if o == nil || IsNil(o.RedirectUris) {
-		return nil, false
-	}
-	return o.RedirectUris, true
-}
-
-// SetRedirectUris gets a reference to the given []string and assigns it to the RedirectUris field.
-func (o *UpdateClientsRequestClient) SetRedirectUris(v []string) {
-	o.RedirectUris = v
 }
 
 func (o UpdateClientsRequestClient) MarshalJSON() ([]byte, error) {

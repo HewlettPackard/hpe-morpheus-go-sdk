@@ -26,44 +26,12 @@ type InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume struct {
 
 type _InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume
 
-// NewInstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume instantiates a new InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume() *InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume {
-	this := InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume{}
-	return &this
-}
-
 // NewInstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolumeWithDefaults instantiates a new InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolumeWithDefaults() *InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume {
 	this := InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume) SetId(v int32) {
-	o.Id = &v
 }
 
 func (o InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume) MarshalJSON() ([]byte, error) {

@@ -33,119 +33,12 @@ type AddOsTypeImageRequestOsTypeImage struct {
 
 type _AddOsTypeImageRequestOsTypeImage AddOsTypeImageRequestOsTypeImage
 
-// NewAddOsTypeImageRequestOsTypeImage instantiates a new AddOsTypeImageRequestOsTypeImage object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddOsTypeImageRequestOsTypeImage(osType int64, virtualImage int64) *AddOsTypeImageRequestOsTypeImage {
-	this := AddOsTypeImageRequestOsTypeImage{}
-	this.OsType = osType
-	this.VirtualImage = virtualImage
-	return &this
-}
-
 // NewAddOsTypeImageRequestOsTypeImageWithDefaults instantiates a new AddOsTypeImageRequestOsTypeImage object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddOsTypeImageRequestOsTypeImageWithDefaults() *AddOsTypeImageRequestOsTypeImage {
 	this := AddOsTypeImageRequestOsTypeImage{}
 	return &this
-}
-
-// GetOsType returns the OsType field value
-func (o *AddOsTypeImageRequestOsTypeImage) GetOsType() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.OsType
-}
-
-// GetOsTypeOk returns a tuple with the OsType field value
-// and a boolean to check if the value has been set.
-func (o *AddOsTypeImageRequestOsTypeImage) GetOsTypeOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.OsType, true
-}
-
-// SetOsType sets field value
-func (o *AddOsTypeImageRequestOsTypeImage) SetOsType(v int64) {
-	o.OsType = v
-}
-
-// GetVirtualImage returns the VirtualImage field value
-func (o *AddOsTypeImageRequestOsTypeImage) GetVirtualImage() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.VirtualImage
-}
-
-// GetVirtualImageOk returns a tuple with the VirtualImage field value
-// and a boolean to check if the value has been set.
-func (o *AddOsTypeImageRequestOsTypeImage) GetVirtualImageOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.VirtualImage, true
-}
-
-// SetVirtualImage sets field value
-func (o *AddOsTypeImageRequestOsTypeImage) SetVirtualImage(v int64) {
-	o.VirtualImage = v
-}
-
-// GetProvisionType returns the ProvisionType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddOsTypeImageRequestOsTypeImage) GetProvisionType() int64 {
-	if o == nil || IsNil(o.ProvisionType.Get()) {
-		var ret int64
-		return ret
-	}
-	return *o.ProvisionType.Get()
-}
-
-// GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddOsTypeImageRequestOsTypeImage) GetProvisionTypeOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ProvisionType.Get(), o.ProvisionType.IsSet()
-}
-
-// SetProvisionType gets a reference to the given NullableInt64 and assigns it to the ProvisionType field.
-func (o *AddOsTypeImageRequestOsTypeImage) SetProvisionType(v int64) {
-	o.ProvisionType.Set(&v)
-}
-
-// GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddOsTypeImageRequestOsTypeImage) GetZone() int64 {
-	if o == nil || IsNil(o.Zone.Get()) {
-		var ret int64
-		return ret
-	}
-	return *o.Zone.Get()
-}
-
-// GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddOsTypeImageRequestOsTypeImage) GetZoneOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Zone.Get(), o.Zone.IsSet()
-}
-
-// SetZone gets a reference to the given NullableInt64 and assigns it to the Zone field.
-func (o *AddOsTypeImageRequestOsTypeImage) SetZone(v int64) {
-	o.Zone.Set(&v)
 }
 
 func (o AddOsTypeImageRequestOsTypeImage) MarshalJSON() ([]byte, error) {

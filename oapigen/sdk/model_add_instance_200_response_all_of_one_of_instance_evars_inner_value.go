@@ -27,20 +27,6 @@ type AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue struct {
 	String  *string
 }
 
-// float32AsAddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue is a convenience function that returns float32 wrapped in AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue
-func Float32AsAddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue(v *float32) AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue {
-	return AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue{
-		Float32: v,
-	}
-}
-
-// stringAsAddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue is a convenience function that returns string wrapped in AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue
-func StringAsAddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue(v *string) AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue {
-	return AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue{
-		String: v,
-	}
-}
-
 func (dst *AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue{}

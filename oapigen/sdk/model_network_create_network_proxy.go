@@ -27,44 +27,12 @@ type NetworkCreateNetworkProxy struct {
 
 type _NetworkCreateNetworkProxy NetworkCreateNetworkProxy
 
-// NewNetworkCreateNetworkProxy instantiates a new NetworkCreateNetworkProxy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkCreateNetworkProxy() *NetworkCreateNetworkProxy {
-	this := NetworkCreateNetworkProxy{}
-	return &this
-}
-
 // NewNetworkCreateNetworkProxyWithDefaults instantiates a new NetworkCreateNetworkProxy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNetworkCreateNetworkProxyWithDefaults() *NetworkCreateNetworkProxy {
 	this := NetworkCreateNetworkProxy{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *NetworkCreateNetworkProxy) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkCreateNetworkProxy) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *NetworkCreateNetworkProxy) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o NetworkCreateNetworkProxy) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type AddCatalogCart200Response struct {
 
 type _AddCatalogCart200Response AddCatalogCart200Response
 
-// NewAddCatalogCart200Response instantiates a new AddCatalogCart200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCatalogCart200Response() *AddCatalogCart200Response {
-	this := AddCatalogCart200Response{}
-	return &this
-}
-
 // NewAddCatalogCart200ResponseWithDefaults instantiates a new AddCatalogCart200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddCatalogCart200ResponseWithDefaults() *AddCatalogCart200Response {
 	this := AddCatalogCart200Response{}
 	return &this
-}
-
-// GetMsg returns the Msg field value if set, zero value otherwise.
-func (o *AddCatalogCart200Response) GetMsg() string {
-	if o == nil || IsNil(o.Msg) {
-		var ret string
-		return ret
-	}
-	return *o.Msg
-}
-
-// GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCatalogCart200Response) GetMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.Msg) {
-		return nil, false
-	}
-	return o.Msg, true
-}
-
-// SetMsg gets a reference to the given string and assigns it to the Msg field.
-func (o *AddCatalogCart200Response) SetMsg(v string) {
-	o.Msg = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddCatalogCart200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCatalogCart200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddCatalogCart200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddCatalogCart200Response) MarshalJSON() ([]byte, error) {

@@ -27,44 +27,12 @@ type SetInstanceSecurityGroupsRequest struct {
 
 type _SetInstanceSecurityGroupsRequest SetInstanceSecurityGroupsRequest
 
-// NewSetInstanceSecurityGroupsRequest instantiates a new SetInstanceSecurityGroupsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSetInstanceSecurityGroupsRequest() *SetInstanceSecurityGroupsRequest {
-	this := SetInstanceSecurityGroupsRequest{}
-	return &this
-}
-
 // NewSetInstanceSecurityGroupsRequestWithDefaults instantiates a new SetInstanceSecurityGroupsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSetInstanceSecurityGroupsRequestWithDefaults() *SetInstanceSecurityGroupsRequest {
 	this := SetInstanceSecurityGroupsRequest{}
 	return &this
-}
-
-// GetSecurityGroupIds returns the SecurityGroupIds field value if set, zero value otherwise.
-func (o *SetInstanceSecurityGroupsRequest) GetSecurityGroupIds() []int64 {
-	if o == nil || IsNil(o.SecurityGroupIds) {
-		var ret []int64
-		return ret
-	}
-	return o.SecurityGroupIds
-}
-
-// GetSecurityGroupIdsOk returns a tuple with the SecurityGroupIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SetInstanceSecurityGroupsRequest) GetSecurityGroupIdsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.SecurityGroupIds) {
-		return nil, false
-	}
-	return o.SecurityGroupIds, true
-}
-
-// SetSecurityGroupIds gets a reference to the given []int64 and assigns it to the SecurityGroupIds field.
-func (o *SetInstanceSecurityGroupsRequest) SetSecurityGroupIds(v []int64) {
-	o.SecurityGroupIds = v
 }
 
 func (o SetInstanceSecurityGroupsRequest) MarshalJSON() ([]byte, error) {

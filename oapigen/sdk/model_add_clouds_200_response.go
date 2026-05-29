@@ -27,67 +27,12 @@ type AddClouds200Response struct {
 
 type _AddClouds200Response AddClouds200Response
 
-// NewAddClouds200Response instantiates a new AddClouds200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClouds200Response() *AddClouds200Response {
-	this := AddClouds200Response{}
-	return &this
-}
-
 // NewAddClouds200ResponseWithDefaults instantiates a new AddClouds200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddClouds200ResponseWithDefaults() *AddClouds200Response {
 	this := AddClouds200Response{}
 	return &this
-}
-
-// GetZone returns the Zone field value if set, zero value otherwise.
-func (o *AddClouds200Response) GetZone() AddClouds200ResponseAllOfZone {
-	if o == nil || IsNil(o.Zone) {
-		var ret AddClouds200ResponseAllOfZone
-		return ret
-	}
-	return *o.Zone
-}
-
-// GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClouds200Response) GetZoneOk() (*AddClouds200ResponseAllOfZone, bool) {
-	if o == nil || IsNil(o.Zone) {
-		return nil, false
-	}
-	return o.Zone, true
-}
-
-// SetZone gets a reference to the given AddClouds200ResponseAllOfZone and assigns it to the Zone field.
-func (o *AddClouds200Response) SetZone(v AddClouds200ResponseAllOfZone) {
-	o.Zone = &v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddClouds200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClouds200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddClouds200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o AddClouds200Response) MarshalJSON() ([]byte, error) {

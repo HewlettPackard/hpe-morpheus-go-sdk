@@ -29,67 +29,12 @@ type LoadBalancerUpdateResourcePermission struct {
 
 type _LoadBalancerUpdateResourcePermission LoadBalancerUpdateResourcePermission
 
-// NewLoadBalancerUpdateResourcePermission instantiates a new LoadBalancerUpdateResourcePermission object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewLoadBalancerUpdateResourcePermission() *LoadBalancerUpdateResourcePermission {
-	this := LoadBalancerUpdateResourcePermission{}
-	return &this
-}
-
 // NewLoadBalancerUpdateResourcePermissionWithDefaults instantiates a new LoadBalancerUpdateResourcePermission object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewLoadBalancerUpdateResourcePermissionWithDefaults() *LoadBalancerUpdateResourcePermission {
 	this := LoadBalancerUpdateResourcePermission{}
 	return &this
-}
-
-// GetAll returns the All field value if set, zero value otherwise.
-func (o *LoadBalancerUpdateResourcePermission) GetAll() bool {
-	if o == nil || IsNil(o.All) {
-		var ret bool
-		return ret
-	}
-	return *o.All
-}
-
-// GetAllOk returns a tuple with the All field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoadBalancerUpdateResourcePermission) GetAllOk() (*bool, bool) {
-	if o == nil || IsNil(o.All) {
-		return nil, false
-	}
-	return o.All, true
-}
-
-// SetAll gets a reference to the given bool and assigns it to the All field.
-func (o *LoadBalancerUpdateResourcePermission) SetAll(v bool) {
-	o.All = &v
-}
-
-// GetSites returns the Sites field value if set, zero value otherwise.
-func (o *LoadBalancerUpdateResourcePermission) GetSites() []int64 {
-	if o == nil || IsNil(o.Sites) {
-		var ret []int64
-		return ret
-	}
-	return o.Sites
-}
-
-// GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoadBalancerUpdateResourcePermission) GetSitesOk() ([]int64, bool) {
-	if o == nil || IsNil(o.Sites) {
-		return nil, false
-	}
-	return o.Sites, true
-}
-
-// SetSites gets a reference to the given []int64 and assigns it to the Sites field.
-func (o *LoadBalancerUpdateResourcePermission) SetSites(v []int64) {
-	o.Sites = v
 }
 
 func (o LoadBalancerUpdateResourcePermission) MarshalJSON() ([]byte, error) {

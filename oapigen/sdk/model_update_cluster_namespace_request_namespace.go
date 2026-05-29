@@ -32,17 +32,6 @@ type UpdateClusterNamespaceRequestNamespace struct {
 
 type _UpdateClusterNamespaceRequestNamespace UpdateClusterNamespaceRequestNamespace
 
-// NewUpdateClusterNamespaceRequestNamespace instantiates a new UpdateClusterNamespaceRequestNamespace object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterNamespaceRequestNamespace() *UpdateClusterNamespaceRequestNamespace {
-	this := UpdateClusterNamespaceRequestNamespace{}
-	var active bool = false
-	this.Active = &active
-	return &this
-}
-
 // NewUpdateClusterNamespaceRequestNamespaceWithDefaults instantiates a new UpdateClusterNamespaceRequestNamespace object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -51,98 +40,6 @@ func NewUpdateClusterNamespaceRequestNamespaceWithDefaults() *UpdateClusterNames
 	var active bool = false
 	this.Active = &active
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdateClusterNamespaceRequestNamespace) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterNamespaceRequestNamespace) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdateClusterNamespaceRequestNamespace) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *UpdateClusterNamespaceRequestNamespace) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
-		var ret string
-		return ret
-	}
-	return *o.Description
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterNamespaceRequestNamespace) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
-		return nil, false
-	}
-	return o.Description, true
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *UpdateClusterNamespaceRequestNamespace) SetDescription(v string) {
-	o.Description = &v
-}
-
-// GetActive returns the Active field value if set, zero value otherwise.
-func (o *UpdateClusterNamespaceRequestNamespace) GetActive() bool {
-	if o == nil || IsNil(o.Active) {
-		var ret bool
-		return ret
-	}
-	return *o.Active
-}
-
-// GetActiveOk returns a tuple with the Active field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterNamespaceRequestNamespace) GetActiveOk() (*bool, bool) {
-	if o == nil || IsNil(o.Active) {
-		return nil, false
-	}
-	return o.Active, true
-}
-
-// SetActive gets a reference to the given bool and assigns it to the Active field.
-func (o *UpdateClusterNamespaceRequestNamespace) SetActive(v bool) {
-	o.Active = &v
-}
-
-// GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *UpdateClusterNamespaceRequestNamespace) GetPermissions() UpdateClusterNamespaceRequestNamespacePermissions {
-	if o == nil || IsNil(o.Permissions) {
-		var ret UpdateClusterNamespaceRequestNamespacePermissions
-		return ret
-	}
-	return *o.Permissions
-}
-
-// GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterNamespaceRequestNamespace) GetPermissionsOk() (*UpdateClusterNamespaceRequestNamespacePermissions, bool) {
-	if o == nil || IsNil(o.Permissions) {
-		return nil, false
-	}
-	return o.Permissions, true
-}
-
-// SetPermissions gets a reference to the given UpdateClusterNamespaceRequestNamespacePermissions and assigns it to the Permissions field.
-func (o *UpdateClusterNamespaceRequestNamespace) SetPermissions(v UpdateClusterNamespaceRequestNamespacePermissions) {
-	o.Permissions = &v
 }
 
 func (o UpdateClusterNamespaceRequestNamespace) MarshalJSON() ([]byte, error) {

@@ -27,67 +27,12 @@ type GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplications
 
 type _GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner
 
-// NewGetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner instantiates a new GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner() *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner {
-	this := GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner{}
-	return &this
-}
-
 // NewGetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInnerWithDefaults instantiates a new GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInnerWithDefaults() *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner {
 	this := GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner) SetName(v string) {
-	o.Name = &v
 }
 
 func (o GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner) MarshalJSON() ([]byte, error) {

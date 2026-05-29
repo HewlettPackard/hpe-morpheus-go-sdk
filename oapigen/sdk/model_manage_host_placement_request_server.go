@@ -28,67 +28,12 @@ type ManageHostPlacementRequestServer struct {
 
 type _ManageHostPlacementRequestServer ManageHostPlacementRequestServer
 
-// NewManageHostPlacementRequestServer instantiates a new ManageHostPlacementRequestServer object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewManageHostPlacementRequestServer() *ManageHostPlacementRequestServer {
-	this := ManageHostPlacementRequestServer{}
-	return &this
-}
-
 // NewManageHostPlacementRequestServerWithDefaults instantiates a new ManageHostPlacementRequestServer object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewManageHostPlacementRequestServerWithDefaults() *ManageHostPlacementRequestServer {
 	this := ManageHostPlacementRequestServer{}
 	return &this
-}
-
-// GetPlacementStrategy returns the PlacementStrategy field value if set, zero value otherwise.
-func (o *ManageHostPlacementRequestServer) GetPlacementStrategy() string {
-	if o == nil || IsNil(o.PlacementStrategy) {
-		var ret string
-		return ret
-	}
-	return *o.PlacementStrategy
-}
-
-// GetPlacementStrategyOk returns a tuple with the PlacementStrategy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ManageHostPlacementRequestServer) GetPlacementStrategyOk() (*string, bool) {
-	if o == nil || IsNil(o.PlacementStrategy) {
-		return nil, false
-	}
-	return o.PlacementStrategy, true
-}
-
-// SetPlacementStrategy gets a reference to the given string and assigns it to the PlacementStrategy field.
-func (o *ManageHostPlacementRequestServer) SetPlacementStrategy(v string) {
-	o.PlacementStrategy = &v
-}
-
-// GetPreferredParentServer returns the PreferredParentServer field value if set, zero value otherwise.
-func (o *ManageHostPlacementRequestServer) GetPreferredParentServer() ManageHostPlacementRequestServerPreferredParentServer {
-	if o == nil || IsNil(o.PreferredParentServer) {
-		var ret ManageHostPlacementRequestServerPreferredParentServer
-		return ret
-	}
-	return *o.PreferredParentServer
-}
-
-// GetPreferredParentServerOk returns a tuple with the PreferredParentServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ManageHostPlacementRequestServer) GetPreferredParentServerOk() (*ManageHostPlacementRequestServerPreferredParentServer, bool) {
-	if o == nil || IsNil(o.PreferredParentServer) {
-		return nil, false
-	}
-	return o.PreferredParentServer, true
-}
-
-// SetPreferredParentServer gets a reference to the given ManageHostPlacementRequestServerPreferredParentServer and assigns it to the PreferredParentServer field.
-func (o *ManageHostPlacementRequestServer) SetPreferredParentServer(v ManageHostPlacementRequestServerPreferredParentServer) {
-	o.PreferredParentServer = &v
 }
 
 func (o ManageHostPlacementRequestServer) MarshalJSON() ([]byte, error) {

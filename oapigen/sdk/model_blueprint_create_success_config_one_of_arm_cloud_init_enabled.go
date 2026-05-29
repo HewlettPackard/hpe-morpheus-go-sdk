@@ -27,20 +27,6 @@ type BlueprintCreateSuccessConfigOneOfArmCloudInitEnabled struct {
 	String *string
 }
 
-// boolAsBlueprintCreateSuccessConfigOneOfArmCloudInitEnabled is a convenience function that returns bool wrapped in BlueprintCreateSuccessConfigOneOfArmCloudInitEnabled
-func BoolAsBlueprintCreateSuccessConfigOneOfArmCloudInitEnabled(v *bool) BlueprintCreateSuccessConfigOneOfArmCloudInitEnabled {
-	return BlueprintCreateSuccessConfigOneOfArmCloudInitEnabled{
-		Bool: v,
-	}
-}
-
-// stringAsBlueprintCreateSuccessConfigOneOfArmCloudInitEnabled is a convenience function that returns string wrapped in BlueprintCreateSuccessConfigOneOfArmCloudInitEnabled
-func StringAsBlueprintCreateSuccessConfigOneOfArmCloudInitEnabled(v *string) BlueprintCreateSuccessConfigOneOfArmCloudInitEnabled {
-	return BlueprintCreateSuccessConfigOneOfArmCloudInitEnabled{
-		String: v,
-	}
-}
-
 func (dst *BlueprintCreateSuccessConfigOneOfArmCloudInitEnabled) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &BlueprintCreateSuccessConfigOneOfArmCloudInitEnabled{}

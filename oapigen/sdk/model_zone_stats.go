@@ -26,44 +26,12 @@ type ZoneStats struct {
 
 type _ZoneStats ZoneStats
 
-// NewZoneStats instantiates a new ZoneStats object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewZoneStats() *ZoneStats {
-	this := ZoneStats{}
-	return &this
-}
-
 // NewZoneStatsWithDefaults instantiates a new ZoneStats object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewZoneStatsWithDefaults() *ZoneStats {
 	this := ZoneStats{}
 	return &this
-}
-
-// GetServerCounts returns the ServerCounts field value if set, zero value otherwise.
-func (o *ZoneStats) GetServerCounts() AddClouds200ResponseAllOfZoneStatsServerCounts {
-	if o == nil || IsNil(o.ServerCounts) {
-		var ret AddClouds200ResponseAllOfZoneStatsServerCounts
-		return ret
-	}
-	return *o.ServerCounts
-}
-
-// GetServerCountsOk returns a tuple with the ServerCounts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ZoneStats) GetServerCountsOk() (*AddClouds200ResponseAllOfZoneStatsServerCounts, bool) {
-	if o == nil || IsNil(o.ServerCounts) {
-		return nil, false
-	}
-	return o.ServerCounts, true
-}
-
-// SetServerCounts gets a reference to the given AddClouds200ResponseAllOfZoneStatsServerCounts and assigns it to the ServerCounts field.
-func (o *ZoneStats) SetServerCounts(v AddClouds200ResponseAllOfZoneStatsServerCounts) {
-	o.ServerCounts = &v
 }
 
 func (o ZoneStats) MarshalJSON() ([]byte, error) {

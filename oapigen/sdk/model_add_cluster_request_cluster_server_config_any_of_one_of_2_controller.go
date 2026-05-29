@@ -28,90 +28,12 @@ type AddClusterRequestClusterServerConfigAnyOfOneOf2Controller struct {
 
 type _AddClusterRequestClusterServerConfigAnyOfOneOf2Controller AddClusterRequestClusterServerConfigAnyOfOneOf2Controller
 
-// NewAddClusterRequestClusterServerConfigAnyOfOneOf2Controller instantiates a new AddClusterRequestClusterServerConfigAnyOfOneOf2Controller object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterRequestClusterServerConfigAnyOfOneOf2Controller() *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller {
-	this := AddClusterRequestClusterServerConfigAnyOfOneOf2Controller{}
-	return &this
-}
-
 // NewAddClusterRequestClusterServerConfigAnyOfOneOf2ControllerWithDefaults instantiates a new AddClusterRequestClusterServerConfigAnyOfOneOf2Controller object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddClusterRequestClusterServerConfigAnyOfOneOf2ControllerWithDefaults() *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller {
 	this := AddClusterRequestClusterServerConfigAnyOfOneOf2Controller{}
 	return &this
-}
-
-// GetRole returns the Role field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) GetRole() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole {
-	if o == nil || IsNil(o.Role) {
-		var ret AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole
-		return ret
-	}
-	return *o.Role
-}
-
-// GetRoleOk returns a tuple with the Role field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) GetRoleOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole, bool) {
-	if o == nil || IsNil(o.Role) {
-		return nil, false
-	}
-	return o.Role, true
-}
-
-// SetRole gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole and assigns it to the Role field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) SetRole(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole) {
-	o.Role = &v
-}
-
-// GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) GetNetwork() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork {
-	if o == nil || IsNil(o.Network) {
-		var ret AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork
-		return ret
-	}
-	return *o.Network
-}
-
-// GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) GetNetworkOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork, bool) {
-	if o == nil || IsNil(o.Network) {
-		return nil, false
-	}
-	return o.Network, true
-}
-
-// SetNetwork gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork and assigns it to the Network field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) SetNetwork(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork) {
-	o.Network = &v
-}
-
-// GetSecurityGroup returns the SecurityGroup field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) GetSecurityGroup() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerSecurityGroup {
-	if o == nil || IsNil(o.SecurityGroup) {
-		var ret AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerSecurityGroup
-		return ret
-	}
-	return *o.SecurityGroup
-}
-
-// GetSecurityGroupOk returns a tuple with the SecurityGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) GetSecurityGroupOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerSecurityGroup, bool) {
-	if o == nil || IsNil(o.SecurityGroup) {
-		return nil, false
-	}
-	return o.SecurityGroup, true
-}
-
-// SetSecurityGroup gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerSecurityGroup and assigns it to the SecurityGroup field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) SetSecurityGroup(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerSecurityGroup) {
-	o.SecurityGroup = &v
 }
 
 func (o AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) MarshalJSON() ([]byte, error) {

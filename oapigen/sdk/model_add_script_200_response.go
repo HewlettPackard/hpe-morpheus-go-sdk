@@ -27,67 +27,12 @@ type AddScript200Response struct {
 
 type _AddScript200Response AddScript200Response
 
-// NewAddScript200Response instantiates a new AddScript200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddScript200Response() *AddScript200Response {
-	this := AddScript200Response{}
-	return &this
-}
-
 // NewAddScript200ResponseWithDefaults instantiates a new AddScript200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddScript200ResponseWithDefaults() *AddScript200Response {
 	this := AddScript200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddScript200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddScript200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddScript200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetContainerScript returns the ContainerScript field value if set, zero value otherwise.
-func (o *AddScript200Response) GetContainerScript() AddScript200ResponseContainerScript {
-	if o == nil || IsNil(o.ContainerScript) {
-		var ret AddScript200ResponseContainerScript
-		return ret
-	}
-	return *o.ContainerScript
-}
-
-// GetContainerScriptOk returns a tuple with the ContainerScript field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddScript200Response) GetContainerScriptOk() (*AddScript200ResponseContainerScript, bool) {
-	if o == nil || IsNil(o.ContainerScript) {
-		return nil, false
-	}
-	return o.ContainerScript, true
-}
-
-// SetContainerScript gets a reference to the given AddScript200ResponseContainerScript and assigns it to the ContainerScript field.
-func (o *AddScript200Response) SetContainerScript(v AddScript200ResponseContainerScript) {
-	o.ContainerScript = &v
 }
 
 func (o AddScript200Response) MarshalJSON() ([]byte, error) {

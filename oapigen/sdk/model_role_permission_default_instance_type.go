@@ -29,71 +29,12 @@ type RolePermissionDefaultInstanceType struct {
 
 type _RolePermissionDefaultInstanceType RolePermissionDefaultInstanceType
 
-// NewRolePermissionDefaultInstanceType instantiates a new RolePermissionDefaultInstanceType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRolePermissionDefaultInstanceType(permissionCode string, access string) *RolePermissionDefaultInstanceType {
-	this := RolePermissionDefaultInstanceType{}
-	this.PermissionCode = permissionCode
-	this.Access = access
-	return &this
-}
-
 // NewRolePermissionDefaultInstanceTypeWithDefaults instantiates a new RolePermissionDefaultInstanceType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRolePermissionDefaultInstanceTypeWithDefaults() *RolePermissionDefaultInstanceType {
 	this := RolePermissionDefaultInstanceType{}
 	return &this
-}
-
-// GetPermissionCode returns the PermissionCode field value
-func (o *RolePermissionDefaultInstanceType) GetPermissionCode() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PermissionCode
-}
-
-// GetPermissionCodeOk returns a tuple with the PermissionCode field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionDefaultInstanceType) GetPermissionCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PermissionCode, true
-}
-
-// SetPermissionCode sets field value
-func (o *RolePermissionDefaultInstanceType) SetPermissionCode(v string) {
-	o.PermissionCode = v
-}
-
-// GetAccess returns the Access field value
-func (o *RolePermissionDefaultInstanceType) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *RolePermissionDefaultInstanceType) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *RolePermissionDefaultInstanceType) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o RolePermissionDefaultInstanceType) MarshalJSON() ([]byte, error) {

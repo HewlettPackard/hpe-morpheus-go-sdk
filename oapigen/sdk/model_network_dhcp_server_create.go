@@ -32,19 +32,6 @@ type NetworkDhcpServerCreate struct {
 
 type _NetworkDhcpServerCreate NetworkDhcpServerCreate
 
-// NewNetworkDhcpServerCreate instantiates a new NetworkDhcpServerCreate object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkDhcpServerCreate(serverIpAddress string, leaseTime int64, name string, config NetworkDhcpServerCreateConfig) *NetworkDhcpServerCreate {
-	this := NetworkDhcpServerCreate{}
-	this.ServerIpAddress = serverIpAddress
-	this.LeaseTime = leaseTime
-	this.Name = name
-	this.Config = config
-	return &this
-}
-
 // NewNetworkDhcpServerCreateWithDefaults instantiates a new NetworkDhcpServerCreate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -53,102 +40,6 @@ func NewNetworkDhcpServerCreateWithDefaults() *NetworkDhcpServerCreate {
 	var leaseTime int64 = 86400
 	this.LeaseTime = leaseTime
 	return &this
-}
-
-// GetServerIpAddress returns the ServerIpAddress field value
-func (o *NetworkDhcpServerCreate) GetServerIpAddress() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ServerIpAddress
-}
-
-// GetServerIpAddressOk returns a tuple with the ServerIpAddress field value
-// and a boolean to check if the value has been set.
-func (o *NetworkDhcpServerCreate) GetServerIpAddressOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ServerIpAddress, true
-}
-
-// SetServerIpAddress sets field value
-func (o *NetworkDhcpServerCreate) SetServerIpAddress(v string) {
-	o.ServerIpAddress = v
-}
-
-// GetLeaseTime returns the LeaseTime field value
-func (o *NetworkDhcpServerCreate) GetLeaseTime() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.LeaseTime
-}
-
-// GetLeaseTimeOk returns a tuple with the LeaseTime field value
-// and a boolean to check if the value has been set.
-func (o *NetworkDhcpServerCreate) GetLeaseTimeOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.LeaseTime, true
-}
-
-// SetLeaseTime sets field value
-func (o *NetworkDhcpServerCreate) SetLeaseTime(v int64) {
-	o.LeaseTime = v
-}
-
-// GetName returns the Name field value
-func (o *NetworkDhcpServerCreate) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *NetworkDhcpServerCreate) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *NetworkDhcpServerCreate) SetName(v string) {
-	o.Name = v
-}
-
-// GetConfig returns the Config field value
-func (o *NetworkDhcpServerCreate) GetConfig() NetworkDhcpServerCreateConfig {
-	if o == nil {
-		var ret NetworkDhcpServerCreateConfig
-		return ret
-	}
-
-	return o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value
-// and a boolean to check if the value has been set.
-func (o *NetworkDhcpServerCreate) GetConfigOk() (*NetworkDhcpServerCreateConfig, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Config, true
-}
-
-// SetConfig sets field value
-func (o *NetworkDhcpServerCreate) SetConfig(v NetworkDhcpServerCreateConfig) {
-	o.Config = v
 }
 
 func (o NetworkDhcpServerCreate) MarshalJSON() ([]byte, error) {

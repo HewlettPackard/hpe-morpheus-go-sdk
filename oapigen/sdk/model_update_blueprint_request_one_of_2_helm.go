@@ -28,69 +28,12 @@ type UpdateBlueprintRequestOneOf2Helm struct {
 
 type _UpdateBlueprintRequestOneOf2Helm UpdateBlueprintRequestOneOf2Helm
 
-// NewUpdateBlueprintRequestOneOf2Helm instantiates a new UpdateBlueprintRequestOneOf2Helm object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateBlueprintRequestOneOf2Helm(configType string) *UpdateBlueprintRequestOneOf2Helm {
-	this := UpdateBlueprintRequestOneOf2Helm{}
-	this.ConfigType = configType
-	return &this
-}
-
 // NewUpdateBlueprintRequestOneOf2HelmWithDefaults instantiates a new UpdateBlueprintRequestOneOf2Helm object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateBlueprintRequestOneOf2HelmWithDefaults() *UpdateBlueprintRequestOneOf2Helm {
 	this := UpdateBlueprintRequestOneOf2Helm{}
 	return &this
-}
-
-// GetConfigType returns the ConfigType field value
-func (o *UpdateBlueprintRequestOneOf2Helm) GetConfigType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ConfigType
-}
-
-// GetConfigTypeOk returns a tuple with the ConfigType field value
-// and a boolean to check if the value has been set.
-func (o *UpdateBlueprintRequestOneOf2Helm) GetConfigTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ConfigType, true
-}
-
-// SetConfigType sets field value
-func (o *UpdateBlueprintRequestOneOf2Helm) SetConfigType(v string) {
-	o.ConfigType = v
-}
-
-// GetGit returns the Git field value if set, zero value otherwise.
-func (o *UpdateBlueprintRequestOneOf2Helm) GetGit() UpdateBlueprintRequestOneOf2HelmGit {
-	if o == nil || IsNil(o.Git) {
-		var ret UpdateBlueprintRequestOneOf2HelmGit
-		return ret
-	}
-	return *o.Git
-}
-
-// GetGitOk returns a tuple with the Git field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateBlueprintRequestOneOf2Helm) GetGitOk() (*UpdateBlueprintRequestOneOf2HelmGit, bool) {
-	if o == nil || IsNil(o.Git) {
-		return nil, false
-	}
-	return o.Git, true
-}
-
-// SetGit gets a reference to the given UpdateBlueprintRequestOneOf2HelmGit and assigns it to the Git field.
-func (o *UpdateBlueprintRequestOneOf2Helm) SetGit(v UpdateBlueprintRequestOneOf2HelmGit) {
-	o.Git = &v
 }
 
 func (o UpdateBlueprintRequestOneOf2Helm) MarshalJSON() ([]byte, error) {

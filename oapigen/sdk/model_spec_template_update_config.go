@@ -26,44 +26,12 @@ type SpecTemplateUpdateConfig struct {
 
 type _SpecTemplateUpdateConfig SpecTemplateUpdateConfig
 
-// NewSpecTemplateUpdateConfig instantiates a new SpecTemplateUpdateConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSpecTemplateUpdateConfig() *SpecTemplateUpdateConfig {
-	this := SpecTemplateUpdateConfig{}
-	return &this
-}
-
 // NewSpecTemplateUpdateConfigWithDefaults instantiates a new SpecTemplateUpdateConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSpecTemplateUpdateConfigWithDefaults() *SpecTemplateUpdateConfig {
 	this := SpecTemplateUpdateConfig{}
 	return &this
-}
-
-// GetCloudformation returns the Cloudformation field value if set, zero value otherwise.
-func (o *SpecTemplateUpdateConfig) GetCloudformation() SpecTemplateUpdateConfigCloudformation {
-	if o == nil || IsNil(o.Cloudformation) {
-		var ret SpecTemplateUpdateConfigCloudformation
-		return ret
-	}
-	return *o.Cloudformation
-}
-
-// GetCloudformationOk returns a tuple with the Cloudformation field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SpecTemplateUpdateConfig) GetCloudformationOk() (*SpecTemplateUpdateConfigCloudformation, bool) {
-	if o == nil || IsNil(o.Cloudformation) {
-		return nil, false
-	}
-	return o.Cloudformation, true
-}
-
-// SetCloudformation gets a reference to the given SpecTemplateUpdateConfigCloudformation and assigns it to the Cloudformation field.
-func (o *SpecTemplateUpdateConfig) SetCloudformation(v SpecTemplateUpdateConfigCloudformation) {
-	o.Cloudformation = &v
 }
 
 func (o SpecTemplateUpdateConfig) MarshalJSON() ([]byte, error) {

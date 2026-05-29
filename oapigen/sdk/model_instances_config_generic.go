@@ -27,45 +27,12 @@ type InstancesConfigGeneric struct {
 
 type _InstancesConfigGeneric InstancesConfigGeneric
 
-// NewInstancesConfigGeneric instantiates a new InstancesConfigGeneric object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstancesConfigGeneric() *InstancesConfigGeneric {
-	this := InstancesConfigGeneric{}
-	return &this
-}
-
 // NewInstancesConfigGenericWithDefaults instantiates a new InstancesConfigGeneric object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewInstancesConfigGenericWithDefaults() *InstancesConfigGeneric {
 	this := InstancesConfigGeneric{}
 	return &this
-}
-
-// GetUserData returns the UserData field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InstancesConfigGeneric) GetUserData() string {
-	if o == nil || IsNil(o.UserData.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.UserData.Get()
-}
-
-// GetUserDataOk returns a tuple with the UserData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InstancesConfigGeneric) GetUserDataOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.UserData.Get(), o.UserData.IsSet()
-}
-
-// SetUserData gets a reference to the given NullableString and assigns it to the UserData field.
-func (o *InstancesConfigGeneric) SetUserData(v string) {
-	o.UserData.Set(&v)
 }
 
 func (o InstancesConfigGeneric) MarshalJSON() ([]byte, error) {

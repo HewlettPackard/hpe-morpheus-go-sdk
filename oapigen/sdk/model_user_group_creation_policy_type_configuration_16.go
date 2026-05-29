@@ -26,44 +26,12 @@ type UserGroupCreationPolicyTypeConfiguration16 struct {
 
 type _UserGroupCreationPolicyTypeConfiguration16 UserGroupCreationPolicyTypeConfiguration16
 
-// NewUserGroupCreationPolicyTypeConfiguration16 instantiates a new UserGroupCreationPolicyTypeConfiguration16 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserGroupCreationPolicyTypeConfiguration16() *UserGroupCreationPolicyTypeConfiguration16 {
-	this := UserGroupCreationPolicyTypeConfiguration16{}
-	return &this
-}
-
 // NewUserGroupCreationPolicyTypeConfiguration16WithDefaults instantiates a new UserGroupCreationPolicyTypeConfiguration16 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUserGroupCreationPolicyTypeConfiguration16WithDefaults() *UserGroupCreationPolicyTypeConfiguration16 {
 	this := UserGroupCreationPolicyTypeConfiguration16{}
 	return &this
-}
-
-// GetUserGroup returns the UserGroup field value if set, zero value otherwise.
-func (o *UserGroupCreationPolicyTypeConfiguration16) GetUserGroup() string {
-	if o == nil || IsNil(o.UserGroup) {
-		var ret string
-		return ret
-	}
-	return *o.UserGroup
-}
-
-// GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserGroupCreationPolicyTypeConfiguration16) GetUserGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.UserGroup) {
-		return nil, false
-	}
-	return o.UserGroup, true
-}
-
-// SetUserGroup gets a reference to the given string and assigns it to the UserGroup field.
-func (o *UserGroupCreationPolicyTypeConfiguration16) SetUserGroup(v string) {
-	o.UserGroup = &v
 }
 
 func (o UserGroupCreationPolicyTypeConfiguration16) MarshalJSON() ([]byte, error) {

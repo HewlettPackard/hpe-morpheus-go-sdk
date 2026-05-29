@@ -29,71 +29,12 @@ type UpdateRoleRequestRoleReportTypePermissionsInner struct {
 
 type _UpdateRoleRequestRoleReportTypePermissionsInner UpdateRoleRequestRoleReportTypePermissionsInner
 
-// NewUpdateRoleRequestRoleReportTypePermissionsInner instantiates a new UpdateRoleRequestRoleReportTypePermissionsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateRoleRequestRoleReportTypePermissionsInner(code string, access string) *UpdateRoleRequestRoleReportTypePermissionsInner {
-	this := UpdateRoleRequestRoleReportTypePermissionsInner{}
-	this.Code = code
-	this.Access = access
-	return &this
-}
-
 // NewUpdateRoleRequestRoleReportTypePermissionsInnerWithDefaults instantiates a new UpdateRoleRequestRoleReportTypePermissionsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateRoleRequestRoleReportTypePermissionsInnerWithDefaults() *UpdateRoleRequestRoleReportTypePermissionsInner {
 	this := UpdateRoleRequestRoleReportTypePermissionsInner{}
 	return &this
-}
-
-// GetCode returns the Code field value
-func (o *UpdateRoleRequestRoleReportTypePermissionsInner) GetCode() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRoleReportTypePermissionsInner) GetCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Code, true
-}
-
-// SetCode sets field value
-func (o *UpdateRoleRequestRoleReportTypePermissionsInner) SetCode(v string) {
-	o.Code = v
-}
-
-// GetAccess returns the Access field value
-func (o *UpdateRoleRequestRoleReportTypePermissionsInner) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRoleReportTypePermissionsInner) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *UpdateRoleRequestRoleReportTypePermissionsInner) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o UpdateRoleRequestRoleReportTypePermissionsInner) MarshalJSON() ([]byte, error) {

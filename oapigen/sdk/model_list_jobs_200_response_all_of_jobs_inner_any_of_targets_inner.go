@@ -29,113 +29,12 @@ type ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner struct {
 
 type _ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner
 
-// NewListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner instantiates a new ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner() *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner {
-	this := ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner{}
-	return &this
-}
-
 // NewListJobs200ResponseAllOfJobsInnerAnyOfTargetsInnerWithDefaults instantiates a new ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListJobs200ResponseAllOfJobsInnerAnyOfTargetsInnerWithDefaults() *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner {
 	this := ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) SetName(v string) {
-	o.Name = &v
-}
-
-// GetTargetType returns the TargetType field value if set, zero value otherwise.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) GetTargetType() string {
-	if o == nil || IsNil(o.TargetType) {
-		var ret string
-		return ret
-	}
-	return *o.TargetType
-}
-
-// GetTargetTypeOk returns a tuple with the TargetType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) GetTargetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetType) {
-		return nil, false
-	}
-	return o.TargetType, true
-}
-
-// SetTargetType gets a reference to the given string and assigns it to the TargetType field.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) SetTargetType(v string) {
-	o.TargetType = &v
-}
-
-// GetRefId returns the RefId field value if set, zero value otherwise.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) GetRefId() int64 {
-	if o == nil || IsNil(o.RefId) {
-		var ret int64
-		return ret
-	}
-	return *o.RefId
-}
-
-// GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) GetRefIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.RefId) {
-		return nil, false
-	}
-	return o.RefId, true
-}
-
-// SetRefId gets a reference to the given int64 and assigns it to the RefId field.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) SetRefId(v int64) {
-	o.RefId = &v
 }
 
 func (o ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) MarshalJSON() ([]byte, error) {

@@ -29,69 +29,12 @@ type AddTokenRequestToken struct {
 
 type _AddTokenRequestToken AddTokenRequestToken
 
-// NewAddTokenRequestToken instantiates a new AddTokenRequestToken object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddTokenRequestToken(clientId string) *AddTokenRequestToken {
-	this := AddTokenRequestToken{}
-	this.ClientId = clientId
-	return &this
-}
-
 // NewAddTokenRequestTokenWithDefaults instantiates a new AddTokenRequestToken object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddTokenRequestTokenWithDefaults() *AddTokenRequestToken {
 	this := AddTokenRequestToken{}
 	return &this
-}
-
-// GetClientId returns the ClientId field value
-func (o *AddTokenRequestToken) GetClientId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ClientId
-}
-
-// GetClientIdOk returns a tuple with the ClientId field value
-// and a boolean to check if the value has been set.
-func (o *AddTokenRequestToken) GetClientIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ClientId, true
-}
-
-// SetClientId sets field value
-func (o *AddTokenRequestToken) SetClientId(v string) {
-	o.ClientId = v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AddTokenRequestToken) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddTokenRequestToken) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddTokenRequestToken) SetName(v string) {
-	o.Name = &v
 }
 
 func (o AddTokenRequestToken) MarshalJSON() ([]byte, error) {

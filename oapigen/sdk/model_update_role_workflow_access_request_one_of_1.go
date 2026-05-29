@@ -29,71 +29,12 @@ type UpdateRoleWorkflowAccessRequestOneOf1 struct {
 
 type _UpdateRoleWorkflowAccessRequestOneOf1 UpdateRoleWorkflowAccessRequestOneOf1
 
-// NewUpdateRoleWorkflowAccessRequestOneOf1 instantiates a new UpdateRoleWorkflowAccessRequestOneOf1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateRoleWorkflowAccessRequestOneOf1(allTaskSets bool, access string) *UpdateRoleWorkflowAccessRequestOneOf1 {
-	this := UpdateRoleWorkflowAccessRequestOneOf1{}
-	this.AllTaskSets = allTaskSets
-	this.Access = access
-	return &this
-}
-
 // NewUpdateRoleWorkflowAccessRequestOneOf1WithDefaults instantiates a new UpdateRoleWorkflowAccessRequestOneOf1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateRoleWorkflowAccessRequestOneOf1WithDefaults() *UpdateRoleWorkflowAccessRequestOneOf1 {
 	this := UpdateRoleWorkflowAccessRequestOneOf1{}
 	return &this
-}
-
-// GetAllTaskSets returns the AllTaskSets field value
-func (o *UpdateRoleWorkflowAccessRequestOneOf1) GetAllTaskSets() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AllTaskSets
-}
-
-// GetAllTaskSetsOk returns a tuple with the AllTaskSets field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleWorkflowAccessRequestOneOf1) GetAllTaskSetsOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AllTaskSets, true
-}
-
-// SetAllTaskSets sets field value
-func (o *UpdateRoleWorkflowAccessRequestOneOf1) SetAllTaskSets(v bool) {
-	o.AllTaskSets = v
-}
-
-// GetAccess returns the Access field value
-func (o *UpdateRoleWorkflowAccessRequestOneOf1) GetAccess() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value
-// and a boolean to check if the value has been set.
-func (o *UpdateRoleWorkflowAccessRequestOneOf1) GetAccessOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Access, true
-}
-
-// SetAccess sets field value
-func (o *UpdateRoleWorkflowAccessRequestOneOf1) SetAccess(v string) {
-	o.Access = v
 }
 
 func (o UpdateRoleWorkflowAccessRequestOneOf1) MarshalJSON() ([]byte, error) {

@@ -29,90 +29,12 @@ type License struct {
 
 type _License License
 
-// NewLicense instantiates a new License object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewLicense() *License {
-	this := License{}
-	return &this
-}
-
 // NewLicenseWithDefaults instantiates a new License object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewLicenseWithDefaults() *License {
 	this := License{}
 	return &this
-}
-
-// GetLicense returns the License field value if set, zero value otherwise.
-func (o *License) GetLicense() InstallLicense200ResponseLicense {
-	if o == nil || IsNil(o.License) {
-		var ret InstallLicense200ResponseLicense
-		return ret
-	}
-	return *o.License
-}
-
-// GetLicenseOk returns a tuple with the License field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *License) GetLicenseOk() (*InstallLicense200ResponseLicense, bool) {
-	if o == nil || IsNil(o.License) {
-		return nil, false
-	}
-	return o.License, true
-}
-
-// SetLicense gets a reference to the given InstallLicense200ResponseLicense and assigns it to the License field.
-func (o *License) SetLicense(v InstallLicense200ResponseLicense) {
-	o.License = &v
-}
-
-// GetInstalledLicenses returns the InstalledLicenses field value if set, zero value otherwise.
-func (o *License) GetInstalledLicenses() []InstallLicense200ResponseInstalledLicensesInner {
-	if o == nil || IsNil(o.InstalledLicenses) {
-		var ret []InstallLicense200ResponseInstalledLicensesInner
-		return ret
-	}
-	return o.InstalledLicenses
-}
-
-// GetInstalledLicensesOk returns a tuple with the InstalledLicenses field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *License) GetInstalledLicensesOk() ([]InstallLicense200ResponseInstalledLicensesInner, bool) {
-	if o == nil || IsNil(o.InstalledLicenses) {
-		return nil, false
-	}
-	return o.InstalledLicenses, true
-}
-
-// SetInstalledLicenses gets a reference to the given []InstallLicense200ResponseInstalledLicensesInner and assigns it to the InstalledLicenses field.
-func (o *License) SetInstalledLicenses(v []InstallLicense200ResponseInstalledLicensesInner) {
-	o.InstalledLicenses = v
-}
-
-// GetCurrentUsage returns the CurrentUsage field value if set, zero value otherwise.
-func (o *License) GetCurrentUsage() InstallLicense200ResponseCurrentUsage {
-	if o == nil || IsNil(o.CurrentUsage) {
-		var ret InstallLicense200ResponseCurrentUsage
-		return ret
-	}
-	return *o.CurrentUsage
-}
-
-// GetCurrentUsageOk returns a tuple with the CurrentUsage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *License) GetCurrentUsageOk() (*InstallLicense200ResponseCurrentUsage, bool) {
-	if o == nil || IsNil(o.CurrentUsage) {
-		return nil, false
-	}
-	return o.CurrentUsage, true
-}
-
-// SetCurrentUsage gets a reference to the given InstallLicense200ResponseCurrentUsage and assigns it to the CurrentUsage field.
-func (o *License) SetCurrentUsage(v InstallLicense200ResponseCurrentUsage) {
-	o.CurrentUsage = &v
 }
 
 func (o License) MarshalJSON() ([]byte, error) {

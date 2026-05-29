@@ -27,17 +27,6 @@ type PolicyGroupCreatePolicyTypeConfigOneOf18 struct {
 
 type _PolicyGroupCreatePolicyTypeConfigOneOf18 PolicyGroupCreatePolicyTypeConfigOneOf18
 
-// NewPolicyGroupCreatePolicyTypeConfigOneOf18 instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf18 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPolicyGroupCreatePolicyTypeConfigOneOf18() *PolicyGroupCreatePolicyTypeConfigOneOf18 {
-	this := PolicyGroupCreatePolicyTypeConfigOneOf18{}
-	var excludeContainers string = "off"
-	this.ExcludeContainers = &excludeContainers
-	return &this
-}
-
 // NewPolicyGroupCreatePolicyTypeConfigOneOf18WithDefaults instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf18 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -46,52 +35,6 @@ func NewPolicyGroupCreatePolicyTypeConfigOneOf18WithDefaults() *PolicyGroupCreat
 	var excludeContainers string = "off"
 	this.ExcludeContainers = &excludeContainers
 	return &this
-}
-
-// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf18) GetMaxStorage() string {
-	if o == nil || IsNil(o.MaxStorage) {
-		var ret string
-		return ret
-	}
-	return *o.MaxStorage
-}
-
-// GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf18) GetMaxStorageOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxStorage) {
-		return nil, false
-	}
-	return o.MaxStorage, true
-}
-
-// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf18) SetMaxStorage(v string) {
-	o.MaxStorage = &v
-}
-
-// GetExcludeContainers returns the ExcludeContainers field value if set, zero value otherwise.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf18) GetExcludeContainers() string {
-	if o == nil || IsNil(o.ExcludeContainers) {
-		var ret string
-		return ret
-	}
-	return *o.ExcludeContainers
-}
-
-// GetExcludeContainersOk returns a tuple with the ExcludeContainers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf18) GetExcludeContainersOk() (*string, bool) {
-	if o == nil || IsNil(o.ExcludeContainers) {
-		return nil, false
-	}
-	return o.ExcludeContainers, true
-}
-
-// SetExcludeContainers gets a reference to the given string and assigns it to the ExcludeContainers field.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf18) SetExcludeContainers(v string) {
-	o.ExcludeContainers = &v
 }
 
 func (o PolicyGroupCreatePolicyTypeConfigOneOf18) MarshalJSON() ([]byte, error) {

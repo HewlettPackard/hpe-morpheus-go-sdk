@@ -27,17 +27,6 @@ type Global struct {
 
 type _Global Global
 
-// NewGlobal instantiates a new Global object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGlobal() *Global {
-	this := Global{}
-	var global bool = false
-	this.Global = &global
-	return &this
-}
-
 // NewGlobalWithDefaults instantiates a new Global object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -46,29 +35,6 @@ func NewGlobalWithDefaults() *Global {
 	var global bool = false
 	this.Global = &global
 	return &this
-}
-
-// GetGlobal returns the Global field value if set, zero value otherwise.
-func (o *Global) GetGlobal() bool {
-	if o == nil || IsNil(o.Global) {
-		var ret bool
-		return ret
-	}
-	return *o.Global
-}
-
-// GetGlobalOk returns a tuple with the Global field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Global) GetGlobalOk() (*bool, bool) {
-	if o == nil || IsNil(o.Global) {
-		return nil, false
-	}
-	return o.Global, true
-}
-
-// SetGlobal gets a reference to the given bool and assigns it to the Global field.
-func (o *Global) SetGlobal(v bool) {
-	o.Global = &v
 }
 
 func (o Global) MarshalJSON() ([]byte, error) {

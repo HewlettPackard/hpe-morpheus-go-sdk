@@ -26,44 +26,12 @@ type CreateLoadBalancerProfileRequest struct {
 
 type _CreateLoadBalancerProfileRequest CreateLoadBalancerProfileRequest
 
-// NewCreateLoadBalancerProfileRequest instantiates a new CreateLoadBalancerProfileRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateLoadBalancerProfileRequest() *CreateLoadBalancerProfileRequest {
-	this := CreateLoadBalancerProfileRequest{}
-	return &this
-}
-
 // NewCreateLoadBalancerProfileRequestWithDefaults instantiates a new CreateLoadBalancerProfileRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCreateLoadBalancerProfileRequestWithDefaults() *CreateLoadBalancerProfileRequest {
 	this := CreateLoadBalancerProfileRequest{}
 	return &this
-}
-
-// GetLoadBalancerProfile returns the LoadBalancerProfile field value if set, zero value otherwise.
-func (o *CreateLoadBalancerProfileRequest) GetLoadBalancerProfile() CreateLoadBalancerProfileRequestLoadBalancerProfile {
-	if o == nil || IsNil(o.LoadBalancerProfile) {
-		var ret CreateLoadBalancerProfileRequestLoadBalancerProfile
-		return ret
-	}
-	return *o.LoadBalancerProfile
-}
-
-// GetLoadBalancerProfileOk returns a tuple with the LoadBalancerProfile field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerProfileRequest) GetLoadBalancerProfileOk() (*CreateLoadBalancerProfileRequestLoadBalancerProfile, bool) {
-	if o == nil || IsNil(o.LoadBalancerProfile) {
-		return nil, false
-	}
-	return o.LoadBalancerProfile, true
-}
-
-// SetLoadBalancerProfile gets a reference to the given CreateLoadBalancerProfileRequestLoadBalancerProfile and assigns it to the LoadBalancerProfile field.
-func (o *CreateLoadBalancerProfileRequest) SetLoadBalancerProfile(v CreateLoadBalancerProfileRequestLoadBalancerProfile) {
-	o.LoadBalancerProfile = &v
 }
 
 func (o CreateLoadBalancerProfileRequest) MarshalJSON() ([]byte, error) {

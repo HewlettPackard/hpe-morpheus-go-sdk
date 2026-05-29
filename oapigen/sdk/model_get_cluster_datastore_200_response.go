@@ -26,44 +26,12 @@ type GetClusterDatastore200Response struct {
 
 type _GetClusterDatastore200Response GetClusterDatastore200Response
 
-// NewGetClusterDatastore200Response instantiates a new GetClusterDatastore200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetClusterDatastore200Response() *GetClusterDatastore200Response {
-	this := GetClusterDatastore200Response{}
-	return &this
-}
-
 // NewGetClusterDatastore200ResponseWithDefaults instantiates a new GetClusterDatastore200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetClusterDatastore200ResponseWithDefaults() *GetClusterDatastore200Response {
 	this := GetClusterDatastore200Response{}
 	return &this
-}
-
-// GetDatastore returns the Datastore field value if set, zero value otherwise.
-func (o *GetClusterDatastore200Response) GetDatastore() GetClusterDatastore200ResponseDatastore {
-	if o == nil || IsNil(o.Datastore) {
-		var ret GetClusterDatastore200ResponseDatastore
-		return ret
-	}
-	return *o.Datastore
-}
-
-// GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClusterDatastore200Response) GetDatastoreOk() (*GetClusterDatastore200ResponseDatastore, bool) {
-	if o == nil || IsNil(o.Datastore) {
-		return nil, false
-	}
-	return o.Datastore, true
-}
-
-// SetDatastore gets a reference to the given GetClusterDatastore200ResponseDatastore and assigns it to the Datastore field.
-func (o *GetClusterDatastore200Response) SetDatastore(v GetClusterDatastore200ResponseDatastore) {
-	o.Datastore = &v
 }
 
 func (o GetClusterDatastore200Response) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type RemoveTenantSubtenantGroup200Response struct {
 
 type _RemoveTenantSubtenantGroup200Response RemoveTenantSubtenantGroup200Response
 
-// NewRemoveTenantSubtenantGroup200Response instantiates a new RemoveTenantSubtenantGroup200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRemoveTenantSubtenantGroup200Response() *RemoveTenantSubtenantGroup200Response {
-	this := RemoveTenantSubtenantGroup200Response{}
-	return &this
-}
-
 // NewRemoveTenantSubtenantGroup200ResponseWithDefaults instantiates a new RemoveTenantSubtenantGroup200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRemoveTenantSubtenantGroup200ResponseWithDefaults() *RemoveTenantSubtenantGroup200Response {
 	this := RemoveTenantSubtenantGroup200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *RemoveTenantSubtenantGroup200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RemoveTenantSubtenantGroup200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *RemoveTenantSubtenantGroup200Response) SetSuccess(v bool) {
-	o.Success = &v
 }
 
 func (o RemoveTenantSubtenantGroup200Response) MarshalJSON() ([]byte, error) {

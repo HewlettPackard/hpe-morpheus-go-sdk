@@ -33,113 +33,12 @@ type BlueprintMorpheusCreateSuccessConfig struct {
 
 type _BlueprintMorpheusCreateSuccessConfig BlueprintMorpheusCreateSuccessConfig
 
-// NewBlueprintMorpheusCreateSuccessConfig instantiates a new BlueprintMorpheusCreateSuccessConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBlueprintMorpheusCreateSuccessConfig() *BlueprintMorpheusCreateSuccessConfig {
-	this := BlueprintMorpheusCreateSuccessConfig{}
-	return &this
-}
-
 // NewBlueprintMorpheusCreateSuccessConfigWithDefaults instantiates a new BlueprintMorpheusCreateSuccessConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBlueprintMorpheusCreateSuccessConfigWithDefaults() *BlueprintMorpheusCreateSuccessConfig {
 	this := BlueprintMorpheusCreateSuccessConfig{}
 	return &this
-}
-
-// GetImage returns the Image field value if set, zero value otherwise.
-func (o *BlueprintMorpheusCreateSuccessConfig) GetImage() string {
-	if o == nil || IsNil(o.Image) {
-		var ret string
-		return ret
-	}
-	return *o.Image
-}
-
-// GetImageOk returns a tuple with the Image field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintMorpheusCreateSuccessConfig) GetImageOk() (*string, bool) {
-	if o == nil || IsNil(o.Image) {
-		return nil, false
-	}
-	return o.Image, true
-}
-
-// SetImage gets a reference to the given string and assigns it to the Image field.
-func (o *BlueprintMorpheusCreateSuccessConfig) SetImage(v string) {
-	o.Image = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *BlueprintMorpheusCreateSuccessConfig) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintMorpheusCreateSuccessConfig) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *BlueprintMorpheusCreateSuccessConfig) SetName(v string) {
-	o.Name = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *BlueprintMorpheusCreateSuccessConfig) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintMorpheusCreateSuccessConfig) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *BlueprintMorpheusCreateSuccessConfig) SetType(v string) {
-	o.Type = &v
-}
-
-// GetTiers returns the Tiers field value if set, zero value otherwise.
-func (o *BlueprintMorpheusCreateSuccessConfig) GetTiers() map[string]interface{} {
-	if o == nil || IsNil(o.Tiers) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Tiers
-}
-
-// GetTiersOk returns a tuple with the Tiers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintMorpheusCreateSuccessConfig) GetTiersOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Tiers) {
-		return map[string]interface{}{}, false
-	}
-	return o.Tiers, true
-}
-
-// SetTiers gets a reference to the given map[string]interface{} and assigns it to the Tiers field.
-func (o *BlueprintMorpheusCreateSuccessConfig) SetTiers(v map[string]interface{}) {
-	o.Tiers = v
 }
 
 func (o BlueprintMorpheusCreateSuccessConfig) MarshalJSON() ([]byte, error) {

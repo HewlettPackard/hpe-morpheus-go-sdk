@@ -29,113 +29,12 @@ type GuidanceStatsSeverity struct {
 
 type _GuidanceStatsSeverity GuidanceStatsSeverity
 
-// NewGuidanceStatsSeverity instantiates a new GuidanceStatsSeverity object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGuidanceStatsSeverity() *GuidanceStatsSeverity {
-	this := GuidanceStatsSeverity{}
-	return &this
-}
-
 // NewGuidanceStatsSeverityWithDefaults instantiates a new GuidanceStatsSeverity object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGuidanceStatsSeverityWithDefaults() *GuidanceStatsSeverity {
 	this := GuidanceStatsSeverity{}
 	return &this
-}
-
-// GetLow returns the Low field value if set, zero value otherwise.
-func (o *GuidanceStatsSeverity) GetLow() int64 {
-	if o == nil || IsNil(o.Low) {
-		var ret int64
-		return ret
-	}
-	return *o.Low
-}
-
-// GetLowOk returns a tuple with the Low field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceStatsSeverity) GetLowOk() (*int64, bool) {
-	if o == nil || IsNil(o.Low) {
-		return nil, false
-	}
-	return o.Low, true
-}
-
-// SetLow gets a reference to the given int64 and assigns it to the Low field.
-func (o *GuidanceStatsSeverity) SetLow(v int64) {
-	o.Low = &v
-}
-
-// GetInfo returns the Info field value if set, zero value otherwise.
-func (o *GuidanceStatsSeverity) GetInfo() int64 {
-	if o == nil || IsNil(o.Info) {
-		var ret int64
-		return ret
-	}
-	return *o.Info
-}
-
-// GetInfoOk returns a tuple with the Info field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceStatsSeverity) GetInfoOk() (*int64, bool) {
-	if o == nil || IsNil(o.Info) {
-		return nil, false
-	}
-	return o.Info, true
-}
-
-// SetInfo gets a reference to the given int64 and assigns it to the Info field.
-func (o *GuidanceStatsSeverity) SetInfo(v int64) {
-	o.Info = &v
-}
-
-// GetWarning returns the Warning field value if set, zero value otherwise.
-func (o *GuidanceStatsSeverity) GetWarning() int64 {
-	if o == nil || IsNil(o.Warning) {
-		var ret int64
-		return ret
-	}
-	return *o.Warning
-}
-
-// GetWarningOk returns a tuple with the Warning field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceStatsSeverity) GetWarningOk() (*int64, bool) {
-	if o == nil || IsNil(o.Warning) {
-		return nil, false
-	}
-	return o.Warning, true
-}
-
-// SetWarning gets a reference to the given int64 and assigns it to the Warning field.
-func (o *GuidanceStatsSeverity) SetWarning(v int64) {
-	o.Warning = &v
-}
-
-// GetCritical returns the Critical field value if set, zero value otherwise.
-func (o *GuidanceStatsSeverity) GetCritical() int64 {
-	if o == nil || IsNil(o.Critical) {
-		var ret int64
-		return ret
-	}
-	return *o.Critical
-}
-
-// GetCriticalOk returns a tuple with the Critical field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceStatsSeverity) GetCriticalOk() (*int64, bool) {
-	if o == nil || IsNil(o.Critical) {
-		return nil, false
-	}
-	return o.Critical, true
-}
-
-// SetCritical gets a reference to the given int64 and assigns it to the Critical field.
-func (o *GuidanceStatsSeverity) SetCritical(v int64) {
-	o.Critical = &v
 }
 
 func (o GuidanceStatsSeverity) MarshalJSON() ([]byte, error) {

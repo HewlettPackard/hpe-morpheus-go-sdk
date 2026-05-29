@@ -34,16 +34,6 @@ type AddSpecTemplateRequestSpecTemplateFile struct {
 
 type _AddSpecTemplateRequestSpecTemplateFile AddSpecTemplateRequestSpecTemplateFile
 
-// NewAddSpecTemplateRequestSpecTemplateFile instantiates a new AddSpecTemplateRequestSpecTemplateFile object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddSpecTemplateRequestSpecTemplateFile(sourceType string) *AddSpecTemplateRequestSpecTemplateFile {
-	this := AddSpecTemplateRequestSpecTemplateFile{}
-	this.SourceType = sourceType
-	return &this
-}
-
 // NewAddSpecTemplateRequestSpecTemplateFileWithDefaults instantiates a new AddSpecTemplateRequestSpecTemplateFile object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -52,122 +42,6 @@ func NewAddSpecTemplateRequestSpecTemplateFileWithDefaults() *AddSpecTemplateReq
 	var sourceType string = "local"
 	this.SourceType = sourceType
 	return &this
-}
-
-// GetSourceType returns the SourceType field value
-func (o *AddSpecTemplateRequestSpecTemplateFile) GetSourceType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SourceType
-}
-
-// GetSourceTypeOk returns a tuple with the SourceType field value
-// and a boolean to check if the value has been set.
-func (o *AddSpecTemplateRequestSpecTemplateFile) GetSourceTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SourceType, true
-}
-
-// SetSourceType sets field value
-func (o *AddSpecTemplateRequestSpecTemplateFile) SetSourceType(v string) {
-	o.SourceType = v
-}
-
-// GetContent returns the Content field value if set, zero value otherwise.
-func (o *AddSpecTemplateRequestSpecTemplateFile) GetContent() string {
-	if o == nil || IsNil(o.Content) {
-		var ret string
-		return ret
-	}
-	return *o.Content
-}
-
-// GetContentOk returns a tuple with the Content field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSpecTemplateRequestSpecTemplateFile) GetContentOk() (*string, bool) {
-	if o == nil || IsNil(o.Content) {
-		return nil, false
-	}
-	return o.Content, true
-}
-
-// SetContent gets a reference to the given string and assigns it to the Content field.
-func (o *AddSpecTemplateRequestSpecTemplateFile) SetContent(v string) {
-	o.Content = &v
-}
-
-// GetContentPath returns the ContentPath field value if set, zero value otherwise.
-func (o *AddSpecTemplateRequestSpecTemplateFile) GetContentPath() string {
-	if o == nil || IsNil(o.ContentPath) {
-		var ret string
-		return ret
-	}
-	return *o.ContentPath
-}
-
-// GetContentPathOk returns a tuple with the ContentPath field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSpecTemplateRequestSpecTemplateFile) GetContentPathOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentPath) {
-		return nil, false
-	}
-	return o.ContentPath, true
-}
-
-// SetContentPath gets a reference to the given string and assigns it to the ContentPath field.
-func (o *AddSpecTemplateRequestSpecTemplateFile) SetContentPath(v string) {
-	o.ContentPath = &v
-}
-
-// GetContentRef returns the ContentRef field value if set, zero value otherwise.
-func (o *AddSpecTemplateRequestSpecTemplateFile) GetContentRef() string {
-	if o == nil || IsNil(o.ContentRef) {
-		var ret string
-		return ret
-	}
-	return *o.ContentRef
-}
-
-// GetContentRefOk returns a tuple with the ContentRef field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSpecTemplateRequestSpecTemplateFile) GetContentRefOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentRef) {
-		return nil, false
-	}
-	return o.ContentRef, true
-}
-
-// SetContentRef gets a reference to the given string and assigns it to the ContentRef field.
-func (o *AddSpecTemplateRequestSpecTemplateFile) SetContentRef(v string) {
-	o.ContentRef = &v
-}
-
-// GetRepository returns the Repository field value if set, zero value otherwise.
-func (o *AddSpecTemplateRequestSpecTemplateFile) GetRepository() AddSpecTemplateRequestSpecTemplateFileRepository {
-	if o == nil || IsNil(o.Repository) {
-		var ret AddSpecTemplateRequestSpecTemplateFileRepository
-		return ret
-	}
-	return *o.Repository
-}
-
-// GetRepositoryOk returns a tuple with the Repository field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSpecTemplateRequestSpecTemplateFile) GetRepositoryOk() (*AddSpecTemplateRequestSpecTemplateFileRepository, bool) {
-	if o == nil || IsNil(o.Repository) {
-		return nil, false
-	}
-	return o.Repository, true
-}
-
-// SetRepository gets a reference to the given AddSpecTemplateRequestSpecTemplateFileRepository and assigns it to the Repository field.
-func (o *AddSpecTemplateRequestSpecTemplateFile) SetRepository(v AddSpecTemplateRequestSpecTemplateFileRepository) {
-	o.Repository = &v
 }
 
 func (o AddSpecTemplateRequestSpecTemplateFile) MarshalJSON() ([]byte, error) {

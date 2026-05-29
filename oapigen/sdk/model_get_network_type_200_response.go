@@ -26,44 +26,12 @@ type GetNetworkType200Response struct {
 
 type _GetNetworkType200Response GetNetworkType200Response
 
-// NewGetNetworkType200Response instantiates a new GetNetworkType200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkType200Response() *GetNetworkType200Response {
-	this := GetNetworkType200Response{}
-	return &this
-}
-
 // NewGetNetworkType200ResponseWithDefaults instantiates a new GetNetworkType200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkType200ResponseWithDefaults() *GetNetworkType200Response {
 	this := GetNetworkType200Response{}
 	return &this
-}
-
-// GetNetworkType returns the NetworkType field value if set, zero value otherwise.
-func (o *GetNetworkType200Response) GetNetworkType() GetNetworkType200ResponseNetworkType {
-	if o == nil || IsNil(o.NetworkType) {
-		var ret GetNetworkType200ResponseNetworkType
-		return ret
-	}
-	return *o.NetworkType
-}
-
-// GetNetworkTypeOk returns a tuple with the NetworkType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkType200Response) GetNetworkTypeOk() (*GetNetworkType200ResponseNetworkType, bool) {
-	if o == nil || IsNil(o.NetworkType) {
-		return nil, false
-	}
-	return o.NetworkType, true
-}
-
-// SetNetworkType gets a reference to the given GetNetworkType200ResponseNetworkType and assigns it to the NetworkType field.
-func (o *GetNetworkType200Response) SetNetworkType(v GetNetworkType200ResponseNetworkType) {
-	o.NetworkType = &v
 }
 
 func (o GetNetworkType200Response) MarshalJSON() ([]byte, error) {

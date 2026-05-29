@@ -26,44 +26,12 @@ type GetInstanceTypeProvisioning200Response struct {
 
 type _GetInstanceTypeProvisioning200Response GetInstanceTypeProvisioning200Response
 
-// NewGetInstanceTypeProvisioning200Response instantiates a new GetInstanceTypeProvisioning200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceTypeProvisioning200Response() *GetInstanceTypeProvisioning200Response {
-	this := GetInstanceTypeProvisioning200Response{}
-	return &this
-}
-
 // NewGetInstanceTypeProvisioning200ResponseWithDefaults instantiates a new GetInstanceTypeProvisioning200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstanceTypeProvisioning200ResponseWithDefaults() *GetInstanceTypeProvisioning200Response {
 	this := GetInstanceTypeProvisioning200Response{}
 	return &this
-}
-
-// GetInstanceType returns the InstanceType field value if set, zero value otherwise.
-func (o *GetInstanceTypeProvisioning200Response) GetInstanceType() GetInstanceTypeProvisioning200ResponseAllOfInstanceType {
-	if o == nil || IsNil(o.InstanceType) {
-		var ret GetInstanceTypeProvisioning200ResponseAllOfInstanceType
-		return ret
-	}
-	return *o.InstanceType
-}
-
-// GetInstanceTypeOk returns a tuple with the InstanceType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceTypeProvisioning200Response) GetInstanceTypeOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceType, bool) {
-	if o == nil || IsNil(o.InstanceType) {
-		return nil, false
-	}
-	return o.InstanceType, true
-}
-
-// SetInstanceType gets a reference to the given GetInstanceTypeProvisioning200ResponseAllOfInstanceType and assigns it to the InstanceType field.
-func (o *GetInstanceTypeProvisioning200Response) SetInstanceType(v GetInstanceTypeProvisioning200ResponseAllOfInstanceType) {
-	o.InstanceType = &v
 }
 
 func (o GetInstanceTypeProvisioning200Response) MarshalJSON() ([]byte, error) {

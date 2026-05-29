@@ -29,17 +29,6 @@ type NetworkPoolServerCreateInfobloxConfig struct {
 
 type _NetworkPoolServerCreateInfobloxConfig NetworkPoolServerCreateInfobloxConfig
 
-// NewNetworkPoolServerCreateInfobloxConfig instantiates a new NetworkPoolServerCreateInfobloxConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkPoolServerCreateInfobloxConfig() *NetworkPoolServerCreateInfobloxConfig {
-	this := NetworkPoolServerCreateInfobloxConfig{}
-	var inventoryExisting string = "off"
-	this.InventoryExisting = &inventoryExisting
-	return &this
-}
-
 // NewNetworkPoolServerCreateInfobloxConfigWithDefaults instantiates a new NetworkPoolServerCreateInfobloxConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -48,53 +37,6 @@ func NewNetworkPoolServerCreateInfobloxConfigWithDefaults() *NetworkPoolServerCr
 	var inventoryExisting string = "off"
 	this.InventoryExisting = &inventoryExisting
 	return &this
-}
-
-// GetInventoryExisting returns the InventoryExisting field value if set, zero value otherwise.
-func (o *NetworkPoolServerCreateInfobloxConfig) GetInventoryExisting() string {
-	if o == nil || IsNil(o.InventoryExisting) {
-		var ret string
-		return ret
-	}
-	return *o.InventoryExisting
-}
-
-// GetInventoryExistingOk returns a tuple with the InventoryExisting field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkPoolServerCreateInfobloxConfig) GetInventoryExistingOk() (*string, bool) {
-	if o == nil || IsNil(o.InventoryExisting) {
-		return nil, false
-	}
-	return o.InventoryExisting, true
-}
-
-// SetInventoryExisting gets a reference to the given string and assigns it to the InventoryExisting field.
-func (o *NetworkPoolServerCreateInfobloxConfig) SetInventoryExisting(v string) {
-	o.InventoryExisting = &v
-}
-
-// GetExtraAttributes returns the ExtraAttributes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NetworkPoolServerCreateInfobloxConfig) GetExtraAttributes() string {
-	if o == nil || IsNil(o.ExtraAttributes.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.ExtraAttributes.Get()
-}
-
-// GetExtraAttributesOk returns a tuple with the ExtraAttributes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NetworkPoolServerCreateInfobloxConfig) GetExtraAttributesOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ExtraAttributes.Get(), o.ExtraAttributes.IsSet()
-}
-
-// SetExtraAttributes gets a reference to the given NullableString and assigns it to the ExtraAttributes field.
-func (o *NetworkPoolServerCreateInfobloxConfig) SetExtraAttributes(v string) {
-	o.ExtraAttributes.Set(&v)
 }
 
 func (o NetworkPoolServerCreateInfobloxConfig) MarshalJSON() ([]byte, error) {

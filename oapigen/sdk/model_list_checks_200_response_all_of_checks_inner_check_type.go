@@ -29,113 +29,12 @@ type ListChecks200ResponseAllOfChecksInnerCheckType struct {
 
 type _ListChecks200ResponseAllOfChecksInnerCheckType ListChecks200ResponseAllOfChecksInnerCheckType
 
-// NewListChecks200ResponseAllOfChecksInnerCheckType instantiates a new ListChecks200ResponseAllOfChecksInnerCheckType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListChecks200ResponseAllOfChecksInnerCheckType() *ListChecks200ResponseAllOfChecksInnerCheckType {
-	this := ListChecks200ResponseAllOfChecksInnerCheckType{}
-	return &this
-}
-
 // NewListChecks200ResponseAllOfChecksInnerCheckTypeWithDefaults instantiates a new ListChecks200ResponseAllOfChecksInnerCheckType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListChecks200ResponseAllOfChecksInnerCheckTypeWithDefaults() *ListChecks200ResponseAllOfChecksInnerCheckType {
 	this := ListChecks200ResponseAllOfChecksInnerCheckType{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListChecks200ResponseAllOfChecksInnerCheckType) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListChecks200ResponseAllOfChecksInnerCheckType) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListChecks200ResponseAllOfChecksInnerCheckType) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *ListChecks200ResponseAllOfChecksInnerCheckType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListChecks200ResponseAllOfChecksInnerCheckType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *ListChecks200ResponseAllOfChecksInnerCheckType) SetCode(v string) {
-	o.Code = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ListChecks200ResponseAllOfChecksInnerCheckType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListChecks200ResponseAllOfChecksInnerCheckType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ListChecks200ResponseAllOfChecksInnerCheckType) SetName(v string) {
-	o.Name = &v
-}
-
-// GetMetricName returns the MetricName field value if set, zero value otherwise.
-func (o *ListChecks200ResponseAllOfChecksInnerCheckType) GetMetricName() string {
-	if o == nil || IsNil(o.MetricName) {
-		var ret string
-		return ret
-	}
-	return *o.MetricName
-}
-
-// GetMetricNameOk returns a tuple with the MetricName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListChecks200ResponseAllOfChecksInnerCheckType) GetMetricNameOk() (*string, bool) {
-	if o == nil || IsNil(o.MetricName) {
-		return nil, false
-	}
-	return o.MetricName, true
-}
-
-// SetMetricName gets a reference to the given string and assigns it to the MetricName field.
-func (o *ListChecks200ResponseAllOfChecksInnerCheckType) SetMetricName(v string) {
-	o.MetricName = &v
 }
 
 func (o ListChecks200ResponseAllOfChecksInnerCheckType) MarshalJSON() ([]byte, error) {

@@ -26,44 +26,12 @@ type GetNetworkRouterRoute200Response struct {
 
 type _GetNetworkRouterRoute200Response GetNetworkRouterRoute200Response
 
-// NewGetNetworkRouterRoute200Response instantiates a new GetNetworkRouterRoute200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkRouterRoute200Response() *GetNetworkRouterRoute200Response {
-	this := GetNetworkRouterRoute200Response{}
-	return &this
-}
-
 // NewGetNetworkRouterRoute200ResponseWithDefaults instantiates a new GetNetworkRouterRoute200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetNetworkRouterRoute200ResponseWithDefaults() *GetNetworkRouterRoute200Response {
 	this := GetNetworkRouterRoute200Response{}
 	return &this
-}
-
-// GetNetworkRoute returns the NetworkRoute field value if set, zero value otherwise.
-func (o *GetNetworkRouterRoute200Response) GetNetworkRoute() GetNetworkRouterRoute200ResponseNetworkRoute {
-	if o == nil || IsNil(o.NetworkRoute) {
-		var ret GetNetworkRouterRoute200ResponseNetworkRoute
-		return ret
-	}
-	return *o.NetworkRoute
-}
-
-// GetNetworkRouteOk returns a tuple with the NetworkRoute field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkRouterRoute200Response) GetNetworkRouteOk() (*GetNetworkRouterRoute200ResponseNetworkRoute, bool) {
-	if o == nil || IsNil(o.NetworkRoute) {
-		return nil, false
-	}
-	return o.NetworkRoute, true
-}
-
-// SetNetworkRoute gets a reference to the given GetNetworkRouterRoute200ResponseNetworkRoute and assigns it to the NetworkRoute field.
-func (o *GetNetworkRouterRoute200Response) SetNetworkRoute(v GetNetworkRouterRoute200ResponseNetworkRoute) {
-	o.NetworkRoute = &v
 }
 
 func (o GetNetworkRouterRoute200Response) MarshalJSON() ([]byte, error) {

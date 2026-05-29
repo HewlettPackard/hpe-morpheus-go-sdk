@@ -26,44 +26,12 @@ type ListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount struct {
 
 type _ListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount ListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount
 
-// NewListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount instantiates a new ListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount() *ListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount {
-	this := ListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount{}
-	return &this
-}
-
 // NewListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccountWithDefaults instantiates a new ListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccountWithDefaults() *ListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount {
 	this := ListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o ListIncidents200ResponseAllOfIncidentsInnerChecksInnerAccount) MarshalJSON() ([]byte, error) {

@@ -29,67 +29,12 @@ type AddStorageBucketsRequestStorageBucketConfigOneOf4 struct {
 
 type _AddStorageBucketsRequestStorageBucketConfigOneOf4 AddStorageBucketsRequestStorageBucketConfigOneOf4
 
-// NewAddStorageBucketsRequestStorageBucketConfigOneOf4 instantiates a new AddStorageBucketsRequestStorageBucketConfigOneOf4 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddStorageBucketsRequestStorageBucketConfigOneOf4() *AddStorageBucketsRequestStorageBucketConfigOneOf4 {
-	this := AddStorageBucketsRequestStorageBucketConfigOneOf4{}
-	return &this
-}
-
 // NewAddStorageBucketsRequestStorageBucketConfigOneOf4WithDefaults instantiates a new AddStorageBucketsRequestStorageBucketConfigOneOf4 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddStorageBucketsRequestStorageBucketConfigOneOf4WithDefaults() *AddStorageBucketsRequestStorageBucketConfigOneOf4 {
 	this := AddStorageBucketsRequestStorageBucketConfigOneOf4{}
 	return &this
-}
-
-// GetHost returns the Host field value if set, zero value otherwise.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) GetHost() string {
-	if o == nil || IsNil(o.Host) {
-		var ret string
-		return ret
-	}
-	return *o.Host
-}
-
-// GetHostOk returns a tuple with the Host field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) GetHostOk() (*string, bool) {
-	if o == nil || IsNil(o.Host) {
-		return nil, false
-	}
-	return o.Host, true
-}
-
-// SetHost gets a reference to the given string and assigns it to the Host field.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) SetHost(v string) {
-	o.Host = &v
-}
-
-// GetExportFolder returns the ExportFolder field value if set, zero value otherwise.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) GetExportFolder() string {
-	if o == nil || IsNil(o.ExportFolder) {
-		var ret string
-		return ret
-	}
-	return *o.ExportFolder
-}
-
-// GetExportFolderOk returns a tuple with the ExportFolder field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) GetExportFolderOk() (*string, bool) {
-	if o == nil || IsNil(o.ExportFolder) {
-		return nil, false
-	}
-	return o.ExportFolder, true
-}
-
-// SetExportFolder gets a reference to the given string and assigns it to the ExportFolder field.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) SetExportFolder(v string) {
-	o.ExportFolder = &v
 }
 
 func (o AddStorageBucketsRequestStorageBucketConfigOneOf4) MarshalJSON() ([]byte, error) {

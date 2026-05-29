@@ -27,67 +27,12 @@ type ListOptionNetworkOptions200Response struct {
 
 type _ListOptionNetworkOptions200Response ListOptionNetworkOptions200Response
 
-// NewListOptionNetworkOptions200Response instantiates a new ListOptionNetworkOptions200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListOptionNetworkOptions200Response() *ListOptionNetworkOptions200Response {
-	this := ListOptionNetworkOptions200Response{}
-	return &this
-}
-
 // NewListOptionNetworkOptions200ResponseWithDefaults instantiates a new ListOptionNetworkOptions200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListOptionNetworkOptions200ResponseWithDefaults() *ListOptionNetworkOptions200Response {
 	this := ListOptionNetworkOptions200Response{}
 	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *ListOptionNetworkOptions200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionNetworkOptions200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *ListOptionNetworkOptions200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *ListOptionNetworkOptions200Response) GetData() ZoneNetworkOptionsResponse {
-	if o == nil || IsNil(o.Data) {
-		var ret ZoneNetworkOptionsResponse
-		return ret
-	}
-	return *o.Data
-}
-
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionNetworkOptions200Response) GetDataOk() (*ZoneNetworkOptionsResponse, bool) {
-	if o == nil || IsNil(o.Data) {
-		return nil, false
-	}
-	return o.Data, true
-}
-
-// SetData gets a reference to the given ZoneNetworkOptionsResponse and assigns it to the Data field.
-func (o *ListOptionNetworkOptions200Response) SetData(v ZoneNetworkOptionsResponse) {
-	o.Data = &v
 }
 
 func (o ListOptionNetworkOptions200Response) MarshalJSON() ([]byte, error) {

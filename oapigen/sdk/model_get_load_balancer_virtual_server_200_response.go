@@ -26,44 +26,12 @@ type GetLoadBalancerVirtualServer200Response struct {
 
 type _GetLoadBalancerVirtualServer200Response GetLoadBalancerVirtualServer200Response
 
-// NewGetLoadBalancerVirtualServer200Response instantiates a new GetLoadBalancerVirtualServer200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetLoadBalancerVirtualServer200Response() *GetLoadBalancerVirtualServer200Response {
-	this := GetLoadBalancerVirtualServer200Response{}
-	return &this
-}
-
 // NewGetLoadBalancerVirtualServer200ResponseWithDefaults instantiates a new GetLoadBalancerVirtualServer200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetLoadBalancerVirtualServer200ResponseWithDefaults() *GetLoadBalancerVirtualServer200Response {
 	this := GetLoadBalancerVirtualServer200Response{}
 	return &this
-}
-
-// GetLoadBalancerInstance returns the LoadBalancerInstance field value if set, zero value otherwise.
-func (o *GetLoadBalancerVirtualServer200Response) GetLoadBalancerInstance() GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance {
-	if o == nil || IsNil(o.LoadBalancerInstance) {
-		var ret GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance
-		return ret
-	}
-	return *o.LoadBalancerInstance
-}
-
-// GetLoadBalancerInstanceOk returns a tuple with the LoadBalancerInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLoadBalancerVirtualServer200Response) GetLoadBalancerInstanceOk() (*GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance, bool) {
-	if o == nil || IsNil(o.LoadBalancerInstance) {
-		return nil, false
-	}
-	return o.LoadBalancerInstance, true
-}
-
-// SetLoadBalancerInstance gets a reference to the given GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance and assigns it to the LoadBalancerInstance field.
-func (o *GetLoadBalancerVirtualServer200Response) SetLoadBalancerInstance(v GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance) {
-	o.LoadBalancerInstance = &v
 }
 
 func (o GetLoadBalancerVirtualServer200Response) MarshalJSON() ([]byte, error) {

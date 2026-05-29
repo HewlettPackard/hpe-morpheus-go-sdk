@@ -29,113 +29,12 @@ type UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf struct {
 
 type _UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf
 
-// NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf instantiates a new UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf() *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf {
-	this := UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf{}
-	return &this
-}
-
 // NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOfWithDefaults instantiates a new UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOfWithDefaults() *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf {
 	this := UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf{}
 	return &this
-}
-
-// GetAccountIntegrationId returns the AccountIntegrationId field value if set, zero value otherwise.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf) GetAccountIntegrationId() string {
-	if o == nil || IsNil(o.AccountIntegrationId) {
-		var ret string
-		return ret
-	}
-	return *o.AccountIntegrationId
-}
-
-// GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf) GetAccountIntegrationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AccountIntegrationId) {
-		return nil, false
-	}
-	return o.AccountIntegrationId, true
-}
-
-// SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf) SetAccountIntegrationId(v string) {
-	o.AccountIntegrationId = &v
-}
-
-// GetWorkflowId returns the WorkflowId field value if set, zero value otherwise.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf) GetWorkflowId() string {
-	if o == nil || IsNil(o.WorkflowId) {
-		var ret string
-		return ret
-	}
-	return *o.WorkflowId
-}
-
-// GetWorkflowIdOk returns a tuple with the WorkflowId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf) GetWorkflowIdOk() (*string, bool) {
-	if o == nil || IsNil(o.WorkflowId) {
-		return nil, false
-	}
-	return o.WorkflowId, true
-}
-
-// SetWorkflowId gets a reference to the given string and assigns it to the WorkflowId field.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf) SetWorkflowId(v string) {
-	o.WorkflowId = &v
-}
-
-// GetFlowId returns the FlowId field value if set, zero value otherwise.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf) GetFlowId() string {
-	if o == nil || IsNil(o.FlowId) {
-		var ret string
-		return ret
-	}
-	return *o.FlowId
-}
-
-// GetFlowIdOk returns a tuple with the FlowId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf) GetFlowIdOk() (*string, bool) {
-	if o == nil || IsNil(o.FlowId) {
-		return nil, false
-	}
-	return o.FlowId, true
-}
-
-// SetFlowId gets a reference to the given string and assigns it to the FlowId field.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf) SetFlowId(v string) {
-	o.FlowId = &v
-}
-
-// GetWorkflowType returns the WorkflowType field value if set, zero value otherwise.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf) GetWorkflowType() string {
-	if o == nil || IsNil(o.WorkflowType) {
-		var ret string
-		return ret
-	}
-	return *o.WorkflowType
-}
-
-// GetWorkflowTypeOk returns a tuple with the WorkflowType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf) GetWorkflowTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.WorkflowType) {
-		return nil, false
-	}
-	return o.WorkflowType, true
-}
-
-// SetWorkflowType gets a reference to the given string and assigns it to the WorkflowType field.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf) SetWorkflowType(v string) {
-	o.WorkflowType = &v
 }
 
 func (o UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf) MarshalJSON() ([]byte, error) {

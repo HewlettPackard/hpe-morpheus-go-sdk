@@ -27,67 +27,12 @@ type GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy struct {
 
 type _GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy
 
-// NewGetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy instantiates a new GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy() *GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy {
-	this := GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy{}
-	return &this
-}
-
 // NewGetInstanceHistory200ResponseAllOfProcessesInnerUpdatedByWithDefaults instantiates a new GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetInstanceHistory200ResponseAllOfProcessesInnerUpdatedByWithDefaults() *GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy {
 	this := GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy{}
 	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy) SetUsername(v string) {
-	o.Username = &v
-}
-
-// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
-func (o *GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy) GetDisplayName() string {
-	if o == nil || IsNil(o.DisplayName) {
-		var ret string
-		return ret
-	}
-	return *o.DisplayName
-}
-
-// GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy) GetDisplayNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DisplayName) {
-		return nil, false
-	}
-	return o.DisplayName, true
-}
-
-// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
-func (o *GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy) SetDisplayName(v string) {
-	o.DisplayName = &v
 }
 
 func (o GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy) MarshalJSON() ([]byte, error) {

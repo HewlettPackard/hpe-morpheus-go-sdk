@@ -26,46 +26,12 @@ type IntegrationDockerRepoConfig struct {
 
 type _IntegrationDockerRepoConfig IntegrationDockerRepoConfig
 
-// NewIntegrationDockerRepoConfig instantiates a new IntegrationDockerRepoConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIntegrationDockerRepoConfig(integration IntegrationDockerRepoConfigIntegration) *IntegrationDockerRepoConfig {
-	this := IntegrationDockerRepoConfig{}
-	this.Integration = integration
-	return &this
-}
-
 // NewIntegrationDockerRepoConfigWithDefaults instantiates a new IntegrationDockerRepoConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIntegrationDockerRepoConfigWithDefaults() *IntegrationDockerRepoConfig {
 	this := IntegrationDockerRepoConfig{}
 	return &this
-}
-
-// GetIntegration returns the Integration field value
-func (o *IntegrationDockerRepoConfig) GetIntegration() IntegrationDockerRepoConfigIntegration {
-	if o == nil {
-		var ret IntegrationDockerRepoConfigIntegration
-		return ret
-	}
-
-	return o.Integration
-}
-
-// GetIntegrationOk returns a tuple with the Integration field value
-// and a boolean to check if the value has been set.
-func (o *IntegrationDockerRepoConfig) GetIntegrationOk() (*IntegrationDockerRepoConfigIntegration, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Integration, true
-}
-
-// SetIntegration sets field value
-func (o *IntegrationDockerRepoConfig) SetIntegration(v IntegrationDockerRepoConfigIntegration) {
-	o.Integration = v
 }
 
 func (o IntegrationDockerRepoConfig) MarshalJSON() ([]byte, error) {

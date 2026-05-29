@@ -26,44 +26,12 @@ type MaxHostsPolicyTypeConfiguration16 struct {
 
 type _MaxHostsPolicyTypeConfiguration16 MaxHostsPolicyTypeConfiguration16
 
-// NewMaxHostsPolicyTypeConfiguration16 instantiates a new MaxHostsPolicyTypeConfiguration16 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMaxHostsPolicyTypeConfiguration16() *MaxHostsPolicyTypeConfiguration16 {
-	this := MaxHostsPolicyTypeConfiguration16{}
-	return &this
-}
-
 // NewMaxHostsPolicyTypeConfiguration16WithDefaults instantiates a new MaxHostsPolicyTypeConfiguration16 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewMaxHostsPolicyTypeConfiguration16WithDefaults() *MaxHostsPolicyTypeConfiguration16 {
 	this := MaxHostsPolicyTypeConfiguration16{}
 	return &this
-}
-
-// GetMaxHosts returns the MaxHosts field value if set, zero value otherwise.
-func (o *MaxHostsPolicyTypeConfiguration16) GetMaxHosts() string {
-	if o == nil || IsNil(o.MaxHosts) {
-		var ret string
-		return ret
-	}
-	return *o.MaxHosts
-}
-
-// GetMaxHostsOk returns a tuple with the MaxHosts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MaxHostsPolicyTypeConfiguration16) GetMaxHostsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxHosts) {
-		return nil, false
-	}
-	return o.MaxHosts, true
-}
-
-// SetMaxHosts gets a reference to the given string and assigns it to the MaxHosts field.
-func (o *MaxHostsPolicyTypeConfiguration16) SetMaxHosts(v string) {
-	o.MaxHosts = &v
 }
 
 func (o MaxHostsPolicyTypeConfiguration16) MarshalJSON() ([]byte, error) {

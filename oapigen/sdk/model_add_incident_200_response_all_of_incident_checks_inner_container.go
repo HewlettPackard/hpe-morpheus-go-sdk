@@ -26,44 +26,12 @@ type AddIncident200ResponseAllOfIncidentChecksInnerContainer struct {
 
 type _AddIncident200ResponseAllOfIncidentChecksInnerContainer AddIncident200ResponseAllOfIncidentChecksInnerContainer
 
-// NewAddIncident200ResponseAllOfIncidentChecksInnerContainer instantiates a new AddIncident200ResponseAllOfIncidentChecksInnerContainer object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIncident200ResponseAllOfIncidentChecksInnerContainer() *AddIncident200ResponseAllOfIncidentChecksInnerContainer {
-	this := AddIncident200ResponseAllOfIncidentChecksInnerContainer{}
-	return &this
-}
-
 // NewAddIncident200ResponseAllOfIncidentChecksInnerContainerWithDefaults instantiates a new AddIncident200ResponseAllOfIncidentChecksInnerContainer object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAddIncident200ResponseAllOfIncidentChecksInnerContainerWithDefaults() *AddIncident200ResponseAllOfIncidentChecksInnerContainer {
 	this := AddIncident200ResponseAllOfIncidentChecksInnerContainer{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddIncident200ResponseAllOfIncidentChecksInnerContainer) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInnerContainer) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddIncident200ResponseAllOfIncidentChecksInnerContainer) SetId(v int64) {
-	o.Id = &v
 }
 
 func (o AddIncident200ResponseAllOfIncidentChecksInnerContainer) MarshalJSON() ([]byte, error) {

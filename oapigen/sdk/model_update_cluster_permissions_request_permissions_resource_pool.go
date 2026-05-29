@@ -27,44 +27,12 @@ type UpdateClusterPermissionsRequestPermissionsResourcePool struct {
 
 type _UpdateClusterPermissionsRequestPermissionsResourcePool UpdateClusterPermissionsRequestPermissionsResourcePool
 
-// NewUpdateClusterPermissionsRequestPermissionsResourcePool instantiates a new UpdateClusterPermissionsRequestPermissionsResourcePool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterPermissionsRequestPermissionsResourcePool() *UpdateClusterPermissionsRequestPermissionsResourcePool {
-	this := UpdateClusterPermissionsRequestPermissionsResourcePool{}
-	return &this
-}
-
 // NewUpdateClusterPermissionsRequestPermissionsResourcePoolWithDefaults instantiates a new UpdateClusterPermissionsRequestPermissionsResourcePool object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateClusterPermissionsRequestPermissionsResourcePoolWithDefaults() *UpdateClusterPermissionsRequestPermissionsResourcePool {
 	this := UpdateClusterPermissionsRequestPermissionsResourcePool{}
 	return &this
-}
-
-// GetVisibility returns the Visibility field value if set, zero value otherwise.
-func (o *UpdateClusterPermissionsRequestPermissionsResourcePool) GetVisibility() string {
-	if o == nil || IsNil(o.Visibility) {
-		var ret string
-		return ret
-	}
-	return *o.Visibility
-}
-
-// GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterPermissionsRequestPermissionsResourcePool) GetVisibilityOk() (*string, bool) {
-	if o == nil || IsNil(o.Visibility) {
-		return nil, false
-	}
-	return o.Visibility, true
-}
-
-// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
-func (o *UpdateClusterPermissionsRequestPermissionsResourcePool) SetVisibility(v string) {
-	o.Visibility = &v
 }
 
 func (o UpdateClusterPermissionsRequestPermissionsResourcePool) MarshalJSON() ([]byte, error) {

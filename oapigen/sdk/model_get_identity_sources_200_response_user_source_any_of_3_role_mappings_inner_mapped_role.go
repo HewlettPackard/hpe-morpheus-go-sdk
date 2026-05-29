@@ -28,90 +28,12 @@ type GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole st
 
 type _GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole
 
-// NewGetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole instantiates a new GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole() *GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole {
-	this := GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole{}
-	return &this
-}
-
 // NewGetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRoleWithDefaults instantiates a new GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRoleWithDefaults() *GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole {
 	this := GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole) SetName(v string) {
-	o.Name = &v
-}
-
-// GetAuthority returns the Authority field value if set, zero value otherwise.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole) GetAuthority() string {
-	if o == nil || IsNil(o.Authority) {
-		var ret string
-		return ret
-	}
-	return *o.Authority
-}
-
-// GetAuthorityOk returns a tuple with the Authority field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole) GetAuthorityOk() (*string, bool) {
-	if o == nil || IsNil(o.Authority) {
-		return nil, false
-	}
-	return o.Authority, true
-}
-
-// SetAuthority gets a reference to the given string and assigns it to the Authority field.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole) SetAuthority(v string) {
-	o.Authority = &v
 }
 
 func (o GetIdentitySources200ResponseUserSourceAnyOf3RoleMappingsInnerMappedRole) MarshalJSON() ([]byte, error) {

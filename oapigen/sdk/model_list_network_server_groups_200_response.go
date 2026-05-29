@@ -27,67 +27,12 @@ type ListNetworkServerGroups200Response struct {
 
 type _ListNetworkServerGroups200Response ListNetworkServerGroups200Response
 
-// NewListNetworkServerGroups200Response instantiates a new ListNetworkServerGroups200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListNetworkServerGroups200Response() *ListNetworkServerGroups200Response {
-	this := ListNetworkServerGroups200Response{}
-	return &this
-}
-
 // NewListNetworkServerGroups200ResponseWithDefaults instantiates a new ListNetworkServerGroups200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListNetworkServerGroups200ResponseWithDefaults() *ListNetworkServerGroups200Response {
 	this := ListNetworkServerGroups200Response{}
 	return &this
-}
-
-// GetGroups returns the Groups field value if set, zero value otherwise.
-func (o *ListNetworkServerGroups200Response) GetGroups() []ListNetworkServerGroups200ResponseAllOfGroupsInner {
-	if o == nil || IsNil(o.Groups) {
-		var ret []ListNetworkServerGroups200ResponseAllOfGroupsInner
-		return ret
-	}
-	return o.Groups
-}
-
-// GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListNetworkServerGroups200Response) GetGroupsOk() ([]ListNetworkServerGroups200ResponseAllOfGroupsInner, bool) {
-	if o == nil || IsNil(o.Groups) {
-		return nil, false
-	}
-	return o.Groups, true
-}
-
-// SetGroups gets a reference to the given []ListNetworkServerGroups200ResponseAllOfGroupsInner and assigns it to the Groups field.
-func (o *ListNetworkServerGroups200Response) SetGroups(v []ListNetworkServerGroups200ResponseAllOfGroupsInner) {
-	o.Groups = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListNetworkServerGroups200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret ListApprovals200ResponseAllOfMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListNetworkServerGroups200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListNetworkServerGroups200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
-	o.Meta = &v
 }
 
 func (o ListNetworkServerGroups200Response) MarshalJSON() ([]byte, error) {

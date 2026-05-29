@@ -27,20 +27,6 @@ type AddClusterRequestClusterType struct {
 	String                            *string
 }
 
-// AddClusterRequestClusterTypeOneOfAsAddClusterRequestClusterType is a convenience function that returns AddClusterRequestClusterTypeOneOf wrapped in AddClusterRequestClusterType
-func AddClusterRequestClusterTypeOneOfAsAddClusterRequestClusterType(v *AddClusterRequestClusterTypeOneOf) AddClusterRequestClusterType {
-	return AddClusterRequestClusterType{
-		AddClusterRequestClusterTypeOneOf: v,
-	}
-}
-
-// stringAsAddClusterRequestClusterType is a convenience function that returns string wrapped in AddClusterRequestClusterType
-func StringAsAddClusterRequestClusterType(v *string) AddClusterRequestClusterType {
-	return AddClusterRequestClusterType{
-		String: v,
-	}
-}
-
 func (dst *AddClusterRequestClusterType) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddClusterRequestClusterType{}

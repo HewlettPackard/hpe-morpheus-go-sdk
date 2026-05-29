@@ -26,44 +26,12 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices struct {
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices
 
-// NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices {
-	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices{}
-	return &this
-}
-
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices {
 	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices{}
 	return &this
-}
-
-// GetAzureVms returns the AzureVms field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices) GetAzureVms() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms {
-	if o == nil || IsNil(o.AzureVms) {
-		var ret ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms
-		return ret
-	}
-	return *o.AzureVms
-}
-
-// GetAzureVmsOk returns a tuple with the AzureVms field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices) GetAzureVmsOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms, bool) {
-	if o == nil || IsNil(o.AzureVms) {
-		return nil, false
-	}
-	return o.AzureVms, true
-}
-
-// SetAzureVms gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms and assigns it to the AzureVms field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices) SetAzureVms(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms) {
-	o.AzureVms = &v
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices) MarshalJSON() ([]byte, error) {
