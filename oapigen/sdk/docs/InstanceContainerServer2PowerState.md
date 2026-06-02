@@ -5,16 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
-## Methods
+## Usage
 
-### NewInstanceContainerServer2PowerState
+Instantiate with a Go composite literal:
 
-`func NewInstanceContainerServer2PowerState() *InstanceContainerServer2PowerState`
-
-NewInstanceContainerServer2PowerState instantiates a new InstanceContainerServer2PowerState object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+```go
+obj := &InstanceContainerServer2PowerState{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

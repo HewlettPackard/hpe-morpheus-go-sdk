@@ -5,16 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
-## Methods
+## Usage
 
-### NewMaxMemoryPolicyTypeConfiguration1MaxMemory
+Instantiate with a Go composite literal:
 
-`func NewMaxMemoryPolicyTypeConfiguration1MaxMemory() *MaxMemoryPolicyTypeConfiguration1MaxMemory`
-
-NewMaxMemoryPolicyTypeConfiguration1MaxMemory instantiates a new MaxMemoryPolicyTypeConfiguration1MaxMemory object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+```go
+obj := &MaxMemoryPolicyTypeConfiguration1MaxMemory{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

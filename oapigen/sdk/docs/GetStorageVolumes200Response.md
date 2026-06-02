@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **StorageVolume** | Pointer to [**GetStorageVolumes200ResponseStorageVolume**](GetStorageVolumes200ResponseStorageVolume.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetStorageVolumes200Response
+Instantiate with a Go composite literal:
 
-`func NewGetStorageVolumes200Response() *GetStorageVolumes200Response`
-
-NewGetStorageVolumes200Response instantiates a new GetStorageVolumes200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetStorageVolume
-
-`func (o *GetStorageVolumes200Response) GetStorageVolume() GetStorageVolumes200ResponseStorageVolume`
-
-GetStorageVolume returns the StorageVolume field if non-nil, zero value otherwise.
-
-### GetStorageVolumeOk
-
-`func (o *GetStorageVolumes200Response) GetStorageVolumeOk() (*GetStorageVolumes200ResponseStorageVolume, bool)`
-
-GetStorageVolumeOk returns a tuple with the StorageVolume field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStorageVolume
-
-`func (o *GetStorageVolumes200Response) SetStorageVolume(v GetStorageVolumes200ResponseStorageVolume)`
-
-SetStorageVolume sets StorageVolume field to given value.
-
-### HasStorageVolume
-
-`func (o *GetStorageVolumes200Response) HasStorageVolume() bool`
-
-HasStorageVolume returns a boolean if a field has been set.
+```go
+obj := &GetStorageVolumes200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

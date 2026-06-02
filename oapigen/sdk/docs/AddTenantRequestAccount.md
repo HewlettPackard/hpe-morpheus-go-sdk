@@ -11,182 +11,30 @@ Name | Type | Description | Notes
 **Subdomain** | Pointer to **NullableString** | The subdomain. This will be part of the login URL and username for sub tenant users. | [optional] 
 **Currency** | Pointer to **string** | Currency Code (ISO 4217) | [optional] [default to "USD"]
 
-## Methods
-
-### NewAddTenantRequestAccount
-
-`func NewAddTenantRequestAccount(name string, ) *AddTenantRequestAccount`
-
-NewAddTenantRequestAccount instantiates a new AddTenantRequestAccount object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetName
-
-`func (o *AddTenantRequestAccount) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *AddTenantRequestAccount) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *AddTenantRequestAccount) SetName(v string)`
-
-SetName sets Name field to given value.
-
-
-### GetDescription
-
-`func (o *AddTenantRequestAccount) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *AddTenantRequestAccount) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *AddTenantRequestAccount) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *AddTenantRequestAccount) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### SetDescriptionNil
-
-`func (o *AddTenantRequestAccount) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *AddTenantRequestAccount) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetParentAccount
-
-`func (o *AddTenantRequestAccount) GetParentAccount() AddTenantRequestAccountParentAccount`
-
-GetParentAccount returns the ParentAccount field if non-nil, zero value otherwise.
-
-### GetParentAccountOk
-
-`func (o *AddTenantRequestAccount) GetParentAccountOk() (*AddTenantRequestAccountParentAccount, bool)`
-
-GetParentAccountOk returns a tuple with the ParentAccount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParentAccount
-
-`func (o *AddTenantRequestAccount) SetParentAccount(v AddTenantRequestAccountParentAccount)`
-
-SetParentAccount sets ParentAccount field to given value.
-
-### HasParentAccount
-
-`func (o *AddTenantRequestAccount) HasParentAccount() bool`
-
-HasParentAccount returns a boolean if a field has been set.
-
-### GetRole
-
-`func (o *AddTenantRequestAccount) GetRole() AddTenantRequestAccountRole`
-
-GetRole returns the Role field if non-nil, zero value otherwise.
-
-### GetRoleOk
-
-`func (o *AddTenantRequestAccount) GetRoleOk() (*AddTenantRequestAccountRole, bool)`
-
-GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRole
-
-`func (o *AddTenantRequestAccount) SetRole(v AddTenantRequestAccountRole)`
-
-SetRole sets Role field to given value.
-
-### HasRole
-
-`func (o *AddTenantRequestAccount) HasRole() bool`
-
-HasRole returns a boolean if a field has been set.
-
-### GetSubdomain
-
-`func (o *AddTenantRequestAccount) GetSubdomain() string`
-
-GetSubdomain returns the Subdomain field if non-nil, zero value otherwise.
-
-### GetSubdomainOk
-
-`func (o *AddTenantRequestAccount) GetSubdomainOk() (*string, bool)`
-
-GetSubdomainOk returns a tuple with the Subdomain field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubdomain
-
-`func (o *AddTenantRequestAccount) SetSubdomain(v string)`
-
-SetSubdomain sets Subdomain field to given value.
-
-### HasSubdomain
-
-`func (o *AddTenantRequestAccount) HasSubdomain() bool`
-
-HasSubdomain returns a boolean if a field has been set.
-
-### SetSubdomainNil
-
-`func (o *AddTenantRequestAccount) SetSubdomainNil(b bool)`
-
- SetSubdomainNil sets the value for Subdomain to be an explicit nil
-
-### UnsetSubdomain
-`func (o *AddTenantRequestAccount) UnsetSubdomain()`
-
-UnsetSubdomain ensures that no value is present for Subdomain, not even an explicit nil
-### GetCurrency
-
-`func (o *AddTenantRequestAccount) GetCurrency() string`
-
-GetCurrency returns the Currency field if non-nil, zero value otherwise.
-
-### GetCurrencyOk
-
-`func (o *AddTenantRequestAccount) GetCurrencyOk() (*string, bool)`
-
-GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCurrency
-
-`func (o *AddTenantRequestAccount) SetCurrency(v string)`
-
-SetCurrency sets Currency field to given value.
-
-### HasCurrency
-
-`func (o *AddTenantRequestAccount) HasCurrency() bool`
-
-HasCurrency returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &AddTenantRequestAccount{
+    // Set fields directly
+}
+```
+
+### Description (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Description.IsSet()` — check if set
+- `obj.Description.Get()` — get the inner value (returns pointer)
+- `obj.Description.Set(&val)` — set the value
+- `obj.Description.Unset()` — clear the value
+### Subdomain (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Subdomain.IsSet()` — check if set
+- `obj.Subdomain.Get()` — get the inner value (returns pointer)
+- `obj.Subdomain.Set(&val)` — set the value
+- `obj.Subdomain.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

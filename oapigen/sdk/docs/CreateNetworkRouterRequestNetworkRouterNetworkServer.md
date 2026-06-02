@@ -6,36 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int64** | Network Server ID | 
 
-## Methods
+## Usage
 
-### NewCreateNetworkRouterRequestNetworkRouterNetworkServer
+Instantiate with a Go composite literal:
 
-`func NewCreateNetworkRouterRequestNetworkRouterNetworkServer(id int64, ) *CreateNetworkRouterRequestNetworkRouterNetworkServer`
-
-NewCreateNetworkRouterRequestNetworkRouterNetworkServer instantiates a new CreateNetworkRouterRequestNetworkRouterNetworkServer object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *CreateNetworkRouterRequestNetworkRouterNetworkServer) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *CreateNetworkRouterRequestNetworkRouterNetworkServer) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *CreateNetworkRouterRequestNetworkRouterNetworkServer) SetId(v int64)`
-
-SetId sets Id field to given value.
-
+```go
+obj := &CreateNetworkRouterRequestNetworkRouterNetworkServer{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

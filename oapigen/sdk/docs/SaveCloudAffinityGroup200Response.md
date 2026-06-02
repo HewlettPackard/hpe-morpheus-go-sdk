@@ -7,66 +7,15 @@ Name | Type | Description | Notes
 **AffinityGroup** | Pointer to [**SaveCloudAffinityGroup200ResponseAllOfAffinityGroup**](SaveCloudAffinityGroup200ResponseAllOfAffinityGroup.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewSaveCloudAffinityGroup200Response
+Instantiate with a Go composite literal:
 
-`func NewSaveCloudAffinityGroup200Response() *SaveCloudAffinityGroup200Response`
-
-NewSaveCloudAffinityGroup200Response instantiates a new SaveCloudAffinityGroup200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetAffinityGroup
-
-`func (o *SaveCloudAffinityGroup200Response) GetAffinityGroup() SaveCloudAffinityGroup200ResponseAllOfAffinityGroup`
-
-GetAffinityGroup returns the AffinityGroup field if non-nil, zero value otherwise.
-
-### GetAffinityGroupOk
-
-`func (o *SaveCloudAffinityGroup200Response) GetAffinityGroupOk() (*SaveCloudAffinityGroup200ResponseAllOfAffinityGroup, bool)`
-
-GetAffinityGroupOk returns a tuple with the AffinityGroup field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAffinityGroup
-
-`func (o *SaveCloudAffinityGroup200Response) SetAffinityGroup(v SaveCloudAffinityGroup200ResponseAllOfAffinityGroup)`
-
-SetAffinityGroup sets AffinityGroup field to given value.
-
-### HasAffinityGroup
-
-`func (o *SaveCloudAffinityGroup200Response) HasAffinityGroup() bool`
-
-HasAffinityGroup returns a boolean if a field has been set.
-
-### GetSuccess
-
-`func (o *SaveCloudAffinityGroup200Response) GetSuccess() bool`
-
-GetSuccess returns the Success field if non-nil, zero value otherwise.
-
-### GetSuccessOk
-
-`func (o *SaveCloudAffinityGroup200Response) GetSuccessOk() (*bool, bool)`
-
-GetSuccessOk returns a tuple with the Success field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSuccess
-
-`func (o *SaveCloudAffinityGroup200Response) SetSuccess(v bool)`
-
-SetSuccess sets Success field to given value.
-
-### HasSuccess
-
-`func (o *SaveCloudAffinityGroup200Response) HasSuccess() bool`
-
-HasSuccess returns a boolean if a field has been set.
+```go
+obj := &SaveCloudAffinityGroup200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

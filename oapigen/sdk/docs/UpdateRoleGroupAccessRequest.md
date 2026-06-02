@@ -8,76 +8,15 @@ Name | Type | Description | Notes
 **Access** | **string** | The new access level. | 
 **AllGroups** | **bool** | Apply to all groups (site) | 
 
-## Methods
+## Usage
 
-### NewUpdateRoleGroupAccessRequest
+Instantiate with a Go composite literal:
 
-`func NewUpdateRoleGroupAccessRequest(groupId int32, access string, allGroups bool, ) *UpdateRoleGroupAccessRequest`
-
-NewUpdateRoleGroupAccessRequest instantiates a new UpdateRoleGroupAccessRequest object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetGroupId
-
-`func (o *UpdateRoleGroupAccessRequest) GetGroupId() int32`
-
-GetGroupId returns the GroupId field if non-nil, zero value otherwise.
-
-### GetGroupIdOk
-
-`func (o *UpdateRoleGroupAccessRequest) GetGroupIdOk() (*int32, bool)`
-
-GetGroupIdOk returns a tuple with the GroupId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGroupId
-
-`func (o *UpdateRoleGroupAccessRequest) SetGroupId(v int32)`
-
-SetGroupId sets GroupId field to given value.
-
-
-### GetAccess
-
-`func (o *UpdateRoleGroupAccessRequest) GetAccess() string`
-
-GetAccess returns the Access field if non-nil, zero value otherwise.
-
-### GetAccessOk
-
-`func (o *UpdateRoleGroupAccessRequest) GetAccessOk() (*string, bool)`
-
-GetAccessOk returns a tuple with the Access field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccess
-
-`func (o *UpdateRoleGroupAccessRequest) SetAccess(v string)`
-
-SetAccess sets Access field to given value.
-
-
-### GetAllGroups
-
-`func (o *UpdateRoleGroupAccessRequest) GetAllGroups() bool`
-
-GetAllGroups returns the AllGroups field if non-nil, zero value otherwise.
-
-### GetAllGroupsOk
-
-`func (o *UpdateRoleGroupAccessRequest) GetAllGroupsOk() (*bool, bool)`
-
-GetAllGroupsOk returns a tuple with the AllGroups field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllGroups
-
-`func (o *UpdateRoleGroupAccessRequest) SetAllGroups(v bool)`
-
-SetAllGroups sets AllGroups field to given value.
-
+```go
+obj := &UpdateRoleGroupAccessRequest{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

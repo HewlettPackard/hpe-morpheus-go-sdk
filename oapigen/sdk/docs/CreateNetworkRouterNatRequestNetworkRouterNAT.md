@@ -6,47 +6,23 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **interface{}** |  | 
 
-## Methods
+## Usage
 
-### NewCreateNetworkRouterNatRequestNetworkRouterNAT
+Instantiate with a Go composite literal:
 
-`func NewCreateNetworkRouterNatRequestNetworkRouterNAT(name interface{}, ) *CreateNetworkRouterNatRequestNetworkRouterNAT`
+```go
+obj := &CreateNetworkRouterNatRequestNetworkRouterNAT{
+    // Set fields directly
+}
+```
 
-NewCreateNetworkRouterNatRequestNetworkRouterNAT instantiates a new CreateNetworkRouterNatRequestNetworkRouterNAT object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### Name (Nullable)
 
-### GetName
-
-`func (o *CreateNetworkRouterNatRequestNetworkRouterNAT) GetName() interface{}`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *CreateNetworkRouterNatRequestNetworkRouterNAT) GetNameOk() (*interface{}, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *CreateNetworkRouterNatRequestNetworkRouterNAT) SetName(v interface{})`
-
-SetName sets Name field to given value.
-
-
-### SetNameNil
-
-`func (o *CreateNetworkRouterNatRequestNetworkRouterNAT) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *CreateNetworkRouterNatRequestNetworkRouterNAT) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
+Use the Nullable wrapper methods:
+- `obj.Name.IsSet()` — check if set
+- `obj.Name.Get()` — get the inner value (returns pointer)
+- `obj.Name.Set(&val)` — set the value
+- `obj.Name.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

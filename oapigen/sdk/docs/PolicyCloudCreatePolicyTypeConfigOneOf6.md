@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RemovalAge** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewPolicyCloudCreatePolicyTypeConfigOneOf6
+Instantiate with a Go composite literal:
 
-`func NewPolicyCloudCreatePolicyTypeConfigOneOf6() *PolicyCloudCreatePolicyTypeConfigOneOf6`
-
-NewPolicyCloudCreatePolicyTypeConfigOneOf6 instantiates a new PolicyCloudCreatePolicyTypeConfigOneOf6 object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetRemovalAge
-
-`func (o *PolicyCloudCreatePolicyTypeConfigOneOf6) GetRemovalAge() string`
-
-GetRemovalAge returns the RemovalAge field if non-nil, zero value otherwise.
-
-### GetRemovalAgeOk
-
-`func (o *PolicyCloudCreatePolicyTypeConfigOneOf6) GetRemovalAgeOk() (*string, bool)`
-
-GetRemovalAgeOk returns a tuple with the RemovalAge field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRemovalAge
-
-`func (o *PolicyCloudCreatePolicyTypeConfigOneOf6) SetRemovalAge(v string)`
-
-SetRemovalAge sets RemovalAge field to given value.
-
-### HasRemovalAge
-
-`func (o *PolicyCloudCreatePolicyTypeConfigOneOf6) HasRemovalAge() bool`
-
-HasRemovalAge returns a boolean if a field has been set.
+```go
+obj := &PolicyCloudCreatePolicyTypeConfigOneOf6{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Page** | Pointer to [**GetWikiApp200ResponsePage**](GetWikiApp200ResponsePage.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetWikiApp200Response
+Instantiate with a Go composite literal:
 
-`func NewGetWikiApp200Response() *GetWikiApp200Response`
-
-NewGetWikiApp200Response instantiates a new GetWikiApp200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetPage
-
-`func (o *GetWikiApp200Response) GetPage() GetWikiApp200ResponsePage`
-
-GetPage returns the Page field if non-nil, zero value otherwise.
-
-### GetPageOk
-
-`func (o *GetWikiApp200Response) GetPageOk() (*GetWikiApp200ResponsePage, bool)`
-
-GetPageOk returns a tuple with the Page field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPage
-
-`func (o *GetWikiApp200Response) SetPage(v GetWikiApp200ResponsePage)`
-
-SetPage sets Page field to given value.
-
-### HasPage
-
-`func (o *GetWikiApp200Response) HasPage() bool`
-
-HasPage returns a boolean if a field has been set.
+```go
+obj := &GetWikiApp200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

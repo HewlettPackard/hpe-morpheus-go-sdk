@@ -9,116 +9,15 @@ Name | Type | Description | Notes
 **Code** | Pointer to **string** | Unique code identifier for the layout. | [optional] 
 **ComponentTypes** | Pointer to [**[]ListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInner**](ListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInner.md) | The component type definitions associated with this layout. | [optional] 
 
-## Methods
+## Usage
 
-### NewListSystemTypeLayouts200ResponseSystemTypeLayoutsInner
+Instantiate with a Go composite literal:
 
-`func NewListSystemTypeLayouts200ResponseSystemTypeLayoutsInner() *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner`
-
-NewListSystemTypeLayouts200ResponseSystemTypeLayoutsInner instantiates a new ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetCode
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) GetCode() string`
-
-GetCode returns the Code field if non-nil, zero value otherwise.
-
-### GetCodeOk
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) GetCodeOk() (*string, bool)`
-
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCode
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) SetCode(v string)`
-
-SetCode sets Code field to given value.
-
-### HasCode
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) HasCode() bool`
-
-HasCode returns a boolean if a field has been set.
-
-### GetComponentTypes
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) GetComponentTypes() []ListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInner`
-
-GetComponentTypes returns the ComponentTypes field if non-nil, zero value otherwise.
-
-### GetComponentTypesOk
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) GetComponentTypesOk() (*[]ListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInner, bool)`
-
-GetComponentTypesOk returns a tuple with the ComponentTypes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetComponentTypes
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) SetComponentTypes(v []ListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInner)`
-
-SetComponentTypes sets ComponentTypes field to given value.
-
-### HasComponentTypes
-
-`func (o *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) HasComponentTypes() bool`
-
-HasComponentTypes returns a boolean if a field has been set.
+```go
+obj := &ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

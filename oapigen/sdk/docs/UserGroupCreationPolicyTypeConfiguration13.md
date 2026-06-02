@@ -6,36 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **UserGroup** | **string** |  | 
 
-## Methods
+## Usage
 
-### NewUserGroupCreationPolicyTypeConfiguration13
+Instantiate with a Go composite literal:
 
-`func NewUserGroupCreationPolicyTypeConfiguration13(userGroup string, ) *UserGroupCreationPolicyTypeConfiguration13`
-
-NewUserGroupCreationPolicyTypeConfiguration13 instantiates a new UserGroupCreationPolicyTypeConfiguration13 object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetUserGroup
-
-`func (o *UserGroupCreationPolicyTypeConfiguration13) GetUserGroup() string`
-
-GetUserGroup returns the UserGroup field if non-nil, zero value otherwise.
-
-### GetUserGroupOk
-
-`func (o *UserGroupCreationPolicyTypeConfiguration13) GetUserGroupOk() (*string, bool)`
-
-GetUserGroupOk returns a tuple with the UserGroup field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserGroup
-
-`func (o *UserGroupCreationPolicyTypeConfiguration13) SetUserGroup(v string)`
-
-SetUserGroup sets UserGroup field to given value.
-
+```go
+obj := &UserGroupCreationPolicyTypeConfiguration13{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

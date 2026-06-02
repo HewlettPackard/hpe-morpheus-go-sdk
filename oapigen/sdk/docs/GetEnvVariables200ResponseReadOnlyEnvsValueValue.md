@@ -5,16 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
-## Methods
+## Usage
 
-### NewGetEnvVariables200ResponseReadOnlyEnvsValueValue
+Instantiate with a Go composite literal:
 
-`func NewGetEnvVariables200ResponseReadOnlyEnvsValueValue() *GetEnvVariables200ResponseReadOnlyEnvsValueValue`
-
-NewGetEnvVariables200ResponseReadOnlyEnvsValueValue instantiates a new GetEnvVariables200ResponseReadOnlyEnvsValueValue object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+```go
+obj := &GetEnvVariables200ResponseReadOnlyEnvsValueValue{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

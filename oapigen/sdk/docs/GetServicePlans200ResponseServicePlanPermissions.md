@@ -7,66 +7,15 @@ Name | Type | Description | Notes
 **ResourcePermissions** | Pointer to [**GetServicePlans200ResponseServicePlanPermissionsResourcePermissions**](GetServicePlans200ResponseServicePlanPermissionsResourcePermissions.md) |  | [optional] 
 **TenantPermissions** | Pointer to [**GetServicePlans200ResponseServicePlanPermissionsTenantPermissions**](GetServicePlans200ResponseServicePlanPermissionsTenantPermissions.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetServicePlans200ResponseServicePlanPermissions
+Instantiate with a Go composite literal:
 
-`func NewGetServicePlans200ResponseServicePlanPermissions() *GetServicePlans200ResponseServicePlanPermissions`
-
-NewGetServicePlans200ResponseServicePlanPermissions instantiates a new GetServicePlans200ResponseServicePlanPermissions object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetResourcePermissions
-
-`func (o *GetServicePlans200ResponseServicePlanPermissions) GetResourcePermissions() GetServicePlans200ResponseServicePlanPermissionsResourcePermissions`
-
-GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
-
-### GetResourcePermissionsOk
-
-`func (o *GetServicePlans200ResponseServicePlanPermissions) GetResourcePermissionsOk() (*GetServicePlans200ResponseServicePlanPermissionsResourcePermissions, bool)`
-
-GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourcePermissions
-
-`func (o *GetServicePlans200ResponseServicePlanPermissions) SetResourcePermissions(v GetServicePlans200ResponseServicePlanPermissionsResourcePermissions)`
-
-SetResourcePermissions sets ResourcePermissions field to given value.
-
-### HasResourcePermissions
-
-`func (o *GetServicePlans200ResponseServicePlanPermissions) HasResourcePermissions() bool`
-
-HasResourcePermissions returns a boolean if a field has been set.
-
-### GetTenantPermissions
-
-`func (o *GetServicePlans200ResponseServicePlanPermissions) GetTenantPermissions() GetServicePlans200ResponseServicePlanPermissionsTenantPermissions`
-
-GetTenantPermissions returns the TenantPermissions field if non-nil, zero value otherwise.
-
-### GetTenantPermissionsOk
-
-`func (o *GetServicePlans200ResponseServicePlanPermissions) GetTenantPermissionsOk() (*GetServicePlans200ResponseServicePlanPermissionsTenantPermissions, bool)`
-
-GetTenantPermissionsOk returns a tuple with the TenantPermissions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTenantPermissions
-
-`func (o *GetServicePlans200ResponseServicePlanPermissions) SetTenantPermissions(v GetServicePlans200ResponseServicePlanPermissionsTenantPermissions)`
-
-SetTenantPermissions sets TenantPermissions field to given value.
-
-### HasTenantPermissions
-
-`func (o *GetServicePlans200ResponseServicePlanPermissions) HasTenantPermissions() bool`
-
-HasTenantPermissions returns a boolean if a field has been set.
+```go
+obj := &GetServicePlans200ResponseServicePlanPermissions{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

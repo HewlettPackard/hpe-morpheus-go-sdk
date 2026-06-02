@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CatalogItemType** | Pointer to [**GetCatalogItemType200ResponseCatalogItemType**](GetCatalogItemType200ResponseCatalogItemType.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetCatalogItemType200Response
+Instantiate with a Go composite literal:
 
-`func NewGetCatalogItemType200Response() *GetCatalogItemType200Response`
-
-NewGetCatalogItemType200Response instantiates a new GetCatalogItemType200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetCatalogItemType
-
-`func (o *GetCatalogItemType200Response) GetCatalogItemType() GetCatalogItemType200ResponseCatalogItemType`
-
-GetCatalogItemType returns the CatalogItemType field if non-nil, zero value otherwise.
-
-### GetCatalogItemTypeOk
-
-`func (o *GetCatalogItemType200Response) GetCatalogItemTypeOk() (*GetCatalogItemType200ResponseCatalogItemType, bool)`
-
-GetCatalogItemTypeOk returns a tuple with the CatalogItemType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCatalogItemType
-
-`func (o *GetCatalogItemType200Response) SetCatalogItemType(v GetCatalogItemType200ResponseCatalogItemType)`
-
-SetCatalogItemType sets CatalogItemType field to given value.
-
-### HasCatalogItemType
-
-`func (o *GetCatalogItemType200Response) HasCatalogItemType() bool`
-
-HasCatalogItemType returns a boolean if a field has been set.
+```go
+obj := &GetCatalogItemType200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -7,56 +7,15 @@ Name | Type | Description | Notes
 **Code** | **string** | &#x60;code&#x60; of the feature permission | 
 **Access** | **string** | The new access level. | 
 
-## Methods
+## Usage
 
-### NewUpdateRoleRequestRoleFeaturePermissionsInner
+Instantiate with a Go composite literal:
 
-`func NewUpdateRoleRequestRoleFeaturePermissionsInner(code string, access string, ) *UpdateRoleRequestRoleFeaturePermissionsInner`
-
-NewUpdateRoleRequestRoleFeaturePermissionsInner instantiates a new UpdateRoleRequestRoleFeaturePermissionsInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetCode
-
-`func (o *UpdateRoleRequestRoleFeaturePermissionsInner) GetCode() string`
-
-GetCode returns the Code field if non-nil, zero value otherwise.
-
-### GetCodeOk
-
-`func (o *UpdateRoleRequestRoleFeaturePermissionsInner) GetCodeOk() (*string, bool)`
-
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCode
-
-`func (o *UpdateRoleRequestRoleFeaturePermissionsInner) SetCode(v string)`
-
-SetCode sets Code field to given value.
-
-
-### GetAccess
-
-`func (o *UpdateRoleRequestRoleFeaturePermissionsInner) GetAccess() string`
-
-GetAccess returns the Access field if non-nil, zero value otherwise.
-
-### GetAccessOk
-
-`func (o *UpdateRoleRequestRoleFeaturePermissionsInner) GetAccessOk() (*string, bool)`
-
-GetAccessOk returns a tuple with the Access field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccess
-
-`func (o *UpdateRoleRequestRoleFeaturePermissionsInner) SetAccess(v string)`
-
-SetAccess sets Access field to given value.
-
+```go
+obj := &UpdateRoleRequestRoleFeaturePermissionsInner{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

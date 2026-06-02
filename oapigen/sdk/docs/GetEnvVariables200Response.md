@@ -8,102 +8,23 @@ Name | Type | Description | Notes
 **ReadOnlyEnvs** | Pointer to [**map[string]GetEnvVariables200ResponseReadOnlyEnvsValue**](GetEnvVariables200ResponseReadOnlyEnvsValue.md) |  | [optional] 
 **ImportedEnvs** | Pointer to [**map[string]GetEnvVariables200ResponseImportedEnvsValue**](GetEnvVariables200ResponseImportedEnvsValue.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetEnvVariables200Response
+Instantiate with a Go composite literal:
 
-`func NewGetEnvVariables200Response() *GetEnvVariables200Response`
+```go
+obj := &GetEnvVariables200Response{
+    // Set fields directly
+}
+```
 
-NewGetEnvVariables200Response instantiates a new GetEnvVariables200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### Envs (Nullable)
 
-### GetEnvs
-
-`func (o *GetEnvVariables200Response) GetEnvs() []GetEnvVariables200ResponseEnvsInner`
-
-GetEnvs returns the Envs field if non-nil, zero value otherwise.
-
-### GetEnvsOk
-
-`func (o *GetEnvVariables200Response) GetEnvsOk() (*[]GetEnvVariables200ResponseEnvsInner, bool)`
-
-GetEnvsOk returns a tuple with the Envs field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnvs
-
-`func (o *GetEnvVariables200Response) SetEnvs(v []GetEnvVariables200ResponseEnvsInner)`
-
-SetEnvs sets Envs field to given value.
-
-### HasEnvs
-
-`func (o *GetEnvVariables200Response) HasEnvs() bool`
-
-HasEnvs returns a boolean if a field has been set.
-
-### SetEnvsNil
-
-`func (o *GetEnvVariables200Response) SetEnvsNil(b bool)`
-
- SetEnvsNil sets the value for Envs to be an explicit nil
-
-### UnsetEnvs
-`func (o *GetEnvVariables200Response) UnsetEnvs()`
-
-UnsetEnvs ensures that no value is present for Envs, not even an explicit nil
-### GetReadOnlyEnvs
-
-`func (o *GetEnvVariables200Response) GetReadOnlyEnvs() map[string]GetEnvVariables200ResponseReadOnlyEnvsValue`
-
-GetReadOnlyEnvs returns the ReadOnlyEnvs field if non-nil, zero value otherwise.
-
-### GetReadOnlyEnvsOk
-
-`func (o *GetEnvVariables200Response) GetReadOnlyEnvsOk() (*map[string]GetEnvVariables200ResponseReadOnlyEnvsValue, bool)`
-
-GetReadOnlyEnvsOk returns a tuple with the ReadOnlyEnvs field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReadOnlyEnvs
-
-`func (o *GetEnvVariables200Response) SetReadOnlyEnvs(v map[string]GetEnvVariables200ResponseReadOnlyEnvsValue)`
-
-SetReadOnlyEnvs sets ReadOnlyEnvs field to given value.
-
-### HasReadOnlyEnvs
-
-`func (o *GetEnvVariables200Response) HasReadOnlyEnvs() bool`
-
-HasReadOnlyEnvs returns a boolean if a field has been set.
-
-### GetImportedEnvs
-
-`func (o *GetEnvVariables200Response) GetImportedEnvs() map[string]GetEnvVariables200ResponseImportedEnvsValue`
-
-GetImportedEnvs returns the ImportedEnvs field if non-nil, zero value otherwise.
-
-### GetImportedEnvsOk
-
-`func (o *GetEnvVariables200Response) GetImportedEnvsOk() (*map[string]GetEnvVariables200ResponseImportedEnvsValue, bool)`
-
-GetImportedEnvsOk returns a tuple with the ImportedEnvs field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImportedEnvs
-
-`func (o *GetEnvVariables200Response) SetImportedEnvs(v map[string]GetEnvVariables200ResponseImportedEnvsValue)`
-
-SetImportedEnvs sets ImportedEnvs field to given value.
-
-### HasImportedEnvs
-
-`func (o *GetEnvVariables200Response) HasImportedEnvs() bool`
-
-HasImportedEnvs returns a boolean if a field has been set.
-
+Use the Nullable wrapper methods:
+- `obj.Envs.IsSet()` — check if set
+- `obj.Envs.Get()` — get the inner value (returns pointer)
+- `obj.Envs.Set(&val)` — set the value
+- `obj.Envs.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

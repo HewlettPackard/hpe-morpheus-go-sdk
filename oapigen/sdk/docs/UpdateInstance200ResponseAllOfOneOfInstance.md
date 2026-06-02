@@ -10,116 +10,15 @@ Name | Type | Description | Notes
 **Layout** | [**UpdateInstance200ResponseAllOfOneOfInstanceLayout**](UpdateInstance200ResponseAllOfOneOfInstanceLayout.md) |  | 
 **Plan** | [**UpdateInstance200ResponseAllOfOneOfInstancePlan**](UpdateInstance200ResponseAllOfOneOfInstancePlan.md) |  | 
 
-## Methods
+## Usage
 
-### NewUpdateInstance200ResponseAllOfOneOfInstance
+Instantiate with a Go composite literal:
 
-`func NewUpdateInstance200ResponseAllOfOneOfInstance(name string, site UpdateInstance200ResponseAllOfOneOfInstanceSite, instanceType UpdateInstance200ResponseAllOfOneOfInstanceInstanceType, layout UpdateInstance200ResponseAllOfOneOfInstanceLayout, plan UpdateInstance200ResponseAllOfOneOfInstancePlan, ) *UpdateInstance200ResponseAllOfOneOfInstance`
-
-NewUpdateInstance200ResponseAllOfOneOfInstance instantiates a new UpdateInstance200ResponseAllOfOneOfInstance object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetName
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetName(v string)`
-
-SetName sets Name field to given value.
-
-
-### GetSite
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetSite() UpdateInstance200ResponseAllOfOneOfInstanceSite`
-
-GetSite returns the Site field if non-nil, zero value otherwise.
-
-### GetSiteOk
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetSiteOk() (*UpdateInstance200ResponseAllOfOneOfInstanceSite, bool)`
-
-GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSite
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetSite(v UpdateInstance200ResponseAllOfOneOfInstanceSite)`
-
-SetSite sets Site field to given value.
-
-
-### GetInstanceType
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetInstanceType() UpdateInstance200ResponseAllOfOneOfInstanceInstanceType`
-
-GetInstanceType returns the InstanceType field if non-nil, zero value otherwise.
-
-### GetInstanceTypeOk
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetInstanceTypeOk() (*UpdateInstance200ResponseAllOfOneOfInstanceInstanceType, bool)`
-
-GetInstanceTypeOk returns a tuple with the InstanceType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInstanceType
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetInstanceType(v UpdateInstance200ResponseAllOfOneOfInstanceInstanceType)`
-
-SetInstanceType sets InstanceType field to given value.
-
-
-### GetLayout
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetLayout() UpdateInstance200ResponseAllOfOneOfInstanceLayout`
-
-GetLayout returns the Layout field if non-nil, zero value otherwise.
-
-### GetLayoutOk
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetLayoutOk() (*UpdateInstance200ResponseAllOfOneOfInstanceLayout, bool)`
-
-GetLayoutOk returns a tuple with the Layout field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLayout
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetLayout(v UpdateInstance200ResponseAllOfOneOfInstanceLayout)`
-
-SetLayout sets Layout field to given value.
-
-
-### GetPlan
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetPlan() UpdateInstance200ResponseAllOfOneOfInstancePlan`
-
-GetPlan returns the Plan field if non-nil, zero value otherwise.
-
-### GetPlanOk
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetPlanOk() (*UpdateInstance200ResponseAllOfOneOfInstancePlan, bool)`
-
-GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPlan
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetPlan(v UpdateInstance200ResponseAllOfOneOfInstancePlan)`
-
-SetPlan sets Plan field to given value.
-
+```go
+obj := &UpdateInstance200ResponseAllOfOneOfInstance{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Folder** | Pointer to [**GetCloudFolders200ResponseAllOfFolder**](GetCloudFolders200ResponseAllOfFolder.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetCloudFolders200Response
+Instantiate with a Go composite literal:
 
-`func NewGetCloudFolders200Response() *GetCloudFolders200Response`
-
-NewGetCloudFolders200Response instantiates a new GetCloudFolders200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetFolder
-
-`func (o *GetCloudFolders200Response) GetFolder() GetCloudFolders200ResponseAllOfFolder`
-
-GetFolder returns the Folder field if non-nil, zero value otherwise.
-
-### GetFolderOk
-
-`func (o *GetCloudFolders200Response) GetFolderOk() (*GetCloudFolders200ResponseAllOfFolder, bool)`
-
-GetFolderOk returns a tuple with the Folder field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFolder
-
-`func (o *GetCloudFolders200Response) SetFolder(v GetCloudFolders200ResponseAllOfFolder)`
-
-SetFolder sets Folder field to given value.
-
-### HasFolder
-
-`func (o *GetCloudFolders200Response) HasFolder() bool`
-
-HasFolder returns a boolean if a field has been set.
+```go
+obj := &GetCloudFolders200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

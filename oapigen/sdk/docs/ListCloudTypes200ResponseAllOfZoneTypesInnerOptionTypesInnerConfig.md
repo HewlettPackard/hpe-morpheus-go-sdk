@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CredentialTypes** | Pointer to **[]string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig
+Instantiate with a Go composite literal:
 
-`func NewListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig() *ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig`
-
-NewListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig instantiates a new ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetCredentialTypes
-
-`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) GetCredentialTypes() []string`
-
-GetCredentialTypes returns the CredentialTypes field if non-nil, zero value otherwise.
-
-### GetCredentialTypesOk
-
-`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) GetCredentialTypesOk() (*[]string, bool)`
-
-GetCredentialTypesOk returns a tuple with the CredentialTypes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredentialTypes
-
-`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) SetCredentialTypes(v []string)`
-
-SetCredentialTypes sets CredentialTypes field to given value.
-
-### HasCredentialTypes
-
-`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) HasCredentialTypes() bool`
-
-HasCredentialTypes returns a boolean if a field has been set.
+```go
+obj := &ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -6,36 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int64** | The id for the memory and storage option pre-configured within Morpheus. | 
 
-## Methods
+## Usage
 
-### NewUpdateInstance200ResponseAllOfOneOfInstancePlan
+Instantiate with a Go composite literal:
 
-`func NewUpdateInstance200ResponseAllOfOneOfInstancePlan(id int64, ) *UpdateInstance200ResponseAllOfOneOfInstancePlan`
-
-NewUpdateInstance200ResponseAllOfOneOfInstancePlan instantiates a new UpdateInstance200ResponseAllOfOneOfInstancePlan object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstancePlan) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstancePlan) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *UpdateInstance200ResponseAllOfOneOfInstancePlan) SetId(v int64)`
-
-SetId sets Id field to given value.
-
+```go
+obj := &UpdateInstance200ResponseAllOfOneOfInstancePlan{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

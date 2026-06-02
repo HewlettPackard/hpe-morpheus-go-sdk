@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Plan** | Pointer to [**AddClusterRequestClusterServerConfigAnyOfOneOf3WorkerPlan**](AddClusterRequestClusterServerConfigAnyOfOneOf3WorkerPlan.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewAddClusterRequestClusterServerConfigAnyOfOneOf3Worker
+Instantiate with a Go composite literal:
 
-`func NewAddClusterRequestClusterServerConfigAnyOfOneOf3Worker() *AddClusterRequestClusterServerConfigAnyOfOneOf3Worker`
-
-NewAddClusterRequestClusterServerConfigAnyOfOneOf3Worker instantiates a new AddClusterRequestClusterServerConfigAnyOfOneOf3Worker object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetPlan
-
-`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3Worker) GetPlan() AddClusterRequestClusterServerConfigAnyOfOneOf3WorkerPlan`
-
-GetPlan returns the Plan field if non-nil, zero value otherwise.
-
-### GetPlanOk
-
-`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3Worker) GetPlanOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf3WorkerPlan, bool)`
-
-GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPlan
-
-`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3Worker) SetPlan(v AddClusterRequestClusterServerConfigAnyOfOneOf3WorkerPlan)`
-
-SetPlan sets Plan field to given value.
-
-### HasPlan
-
-`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3Worker) HasPlan() bool`
-
-HasPlan returns a boolean if a field has been set.
+```go
+obj := &AddClusterRequestClusterServerConfigAnyOfOneOf3Worker{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

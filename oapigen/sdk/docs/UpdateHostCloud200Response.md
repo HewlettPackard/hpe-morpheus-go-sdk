@@ -11,207 +11,44 @@ Name | Type | Description | Notes
 **InProgress** | Pointer to **bool** |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
-## Methods
-
-### NewUpdateHostCloud200Response
-
-`func NewUpdateHostCloud200Response() *UpdateHostCloud200Response`
-
-NewUpdateHostCloud200Response instantiates a new UpdateHostCloud200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetMsg
-
-`func (o *UpdateHostCloud200Response) GetMsg() string`
-
-GetMsg returns the Msg field if non-nil, zero value otherwise.
-
-### GetMsgOk
-
-`func (o *UpdateHostCloud200Response) GetMsgOk() (*string, bool)`
-
-GetMsgOk returns a tuple with the Msg field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMsg
-
-`func (o *UpdateHostCloud200Response) SetMsg(v string)`
-
-SetMsg sets Msg field to given value.
-
-### HasMsg
-
-`func (o *UpdateHostCloud200Response) HasMsg() bool`
-
-HasMsg returns a boolean if a field has been set.
-
-### SetMsgNil
-
-`func (o *UpdateHostCloud200Response) SetMsgNil(b bool)`
-
- SetMsgNil sets the value for Msg to be an explicit nil
-
-### UnsetMsg
-`func (o *UpdateHostCloud200Response) UnsetMsg()`
-
-UnsetMsg ensures that no value is present for Msg, not even an explicit nil
-### GetErrors
-
-`func (o *UpdateHostCloud200Response) GetErrors() string`
-
-GetErrors returns the Errors field if non-nil, zero value otherwise.
-
-### GetErrorsOk
-
-`func (o *UpdateHostCloud200Response) GetErrorsOk() (*string, bool)`
-
-GetErrorsOk returns a tuple with the Errors field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetErrors
-
-`func (o *UpdateHostCloud200Response) SetErrors(v string)`
-
-SetErrors sets Errors field to given value.
-
-### HasErrors
-
-`func (o *UpdateHostCloud200Response) HasErrors() bool`
-
-HasErrors returns a boolean if a field has been set.
-
-### SetErrorsNil
-
-`func (o *UpdateHostCloud200Response) SetErrorsNil(b bool)`
-
- SetErrorsNil sets the value for Errors to be an explicit nil
-
-### UnsetErrors
-`func (o *UpdateHostCloud200Response) UnsetErrors()`
-
-UnsetErrors ensures that no value is present for Errors, not even an explicit nil
-### GetErrorCode
-
-`func (o *UpdateHostCloud200Response) GetErrorCode() string`
-
-GetErrorCode returns the ErrorCode field if non-nil, zero value otherwise.
-
-### GetErrorCodeOk
-
-`func (o *UpdateHostCloud200Response) GetErrorCodeOk() (*string, bool)`
-
-GetErrorCodeOk returns a tuple with the ErrorCode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetErrorCode
-
-`func (o *UpdateHostCloud200Response) SetErrorCode(v string)`
-
-SetErrorCode sets ErrorCode field to given value.
-
-### HasErrorCode
-
-`func (o *UpdateHostCloud200Response) HasErrorCode() bool`
-
-HasErrorCode returns a boolean if a field has been set.
-
-### SetErrorCodeNil
-
-`func (o *UpdateHostCloud200Response) SetErrorCodeNil(b bool)`
-
- SetErrorCodeNil sets the value for ErrorCode to be an explicit nil
-
-### UnsetErrorCode
-`func (o *UpdateHostCloud200Response) UnsetErrorCode()`
-
-UnsetErrorCode ensures that no value is present for ErrorCode, not even an explicit nil
-### GetData
-
-`func (o *UpdateHostCloud200Response) GetData() string`
-
-GetData returns the Data field if non-nil, zero value otherwise.
-
-### GetDataOk
-
-`func (o *UpdateHostCloud200Response) GetDataOk() (*string, bool)`
-
-GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetData
-
-`func (o *UpdateHostCloud200Response) SetData(v string)`
-
-SetData sets Data field to given value.
-
-### HasData
-
-`func (o *UpdateHostCloud200Response) HasData() bool`
-
-HasData returns a boolean if a field has been set.
-
-### SetDataNil
-
-`func (o *UpdateHostCloud200Response) SetDataNil(b bool)`
-
- SetDataNil sets the value for Data to be an explicit nil
-
-### UnsetData
-`func (o *UpdateHostCloud200Response) UnsetData()`
-
-UnsetData ensures that no value is present for Data, not even an explicit nil
-### GetInProgress
-
-`func (o *UpdateHostCloud200Response) GetInProgress() bool`
-
-GetInProgress returns the InProgress field if non-nil, zero value otherwise.
-
-### GetInProgressOk
-
-`func (o *UpdateHostCloud200Response) GetInProgressOk() (*bool, bool)`
-
-GetInProgressOk returns a tuple with the InProgress field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInProgress
-
-`func (o *UpdateHostCloud200Response) SetInProgress(v bool)`
-
-SetInProgress sets InProgress field to given value.
-
-### HasInProgress
-
-`func (o *UpdateHostCloud200Response) HasInProgress() bool`
-
-HasInProgress returns a boolean if a field has been set.
-
-### GetSuccess
-
-`func (o *UpdateHostCloud200Response) GetSuccess() bool`
-
-GetSuccess returns the Success field if non-nil, zero value otherwise.
-
-### GetSuccessOk
-
-`func (o *UpdateHostCloud200Response) GetSuccessOk() (*bool, bool)`
-
-GetSuccessOk returns a tuple with the Success field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSuccess
-
-`func (o *UpdateHostCloud200Response) SetSuccess(v bool)`
-
-SetSuccess sets Success field to given value.
-
-### HasSuccess
-
-`func (o *UpdateHostCloud200Response) HasSuccess() bool`
-
-HasSuccess returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &UpdateHostCloud200Response{
+    // Set fields directly
+}
+```
+
+### Msg (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Msg.IsSet()` — check if set
+- `obj.Msg.Get()` — get the inner value (returns pointer)
+- `obj.Msg.Set(&val)` — set the value
+- `obj.Msg.Unset()` — clear the value
+### Errors (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Errors.IsSet()` — check if set
+- `obj.Errors.Get()` — get the inner value (returns pointer)
+- `obj.Errors.Set(&val)` — set the value
+- `obj.Errors.Unset()` — clear the value
+### ErrorCode (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ErrorCode.IsSet()` — check if set
+- `obj.ErrorCode.Get()` — get the inner value (returns pointer)
+- `obj.ErrorCode.Set(&val)` — set the value
+- `obj.ErrorCode.Unset()` — clear the value
+### Data (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Data.IsSet()` — check if set
+- `obj.Data.Get()` — get the inner value (returns pointer)
+- `obj.Data.Set(&val)` — set the value
+- `obj.Data.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

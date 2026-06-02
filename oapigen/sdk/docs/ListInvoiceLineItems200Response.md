@@ -8,91 +8,15 @@ Name | Type | Description | Notes
 **MasterAccount** | Pointer to **bool** |  | [optional] 
 **Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListInvoiceLineItems200Response
+Instantiate with a Go composite literal:
 
-`func NewListInvoiceLineItems200Response() *ListInvoiceLineItems200Response`
-
-NewListInvoiceLineItems200Response instantiates a new ListInvoiceLineItems200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetLineItems
-
-`func (o *ListInvoiceLineItems200Response) GetLineItems() []ListInvoiceLineItems200ResponseAllOfLineItemsInner`
-
-GetLineItems returns the LineItems field if non-nil, zero value otherwise.
-
-### GetLineItemsOk
-
-`func (o *ListInvoiceLineItems200Response) GetLineItemsOk() (*[]ListInvoiceLineItems200ResponseAllOfLineItemsInner, bool)`
-
-GetLineItemsOk returns a tuple with the LineItems field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLineItems
-
-`func (o *ListInvoiceLineItems200Response) SetLineItems(v []ListInvoiceLineItems200ResponseAllOfLineItemsInner)`
-
-SetLineItems sets LineItems field to given value.
-
-### HasLineItems
-
-`func (o *ListInvoiceLineItems200Response) HasLineItems() bool`
-
-HasLineItems returns a boolean if a field has been set.
-
-### GetMasterAccount
-
-`func (o *ListInvoiceLineItems200Response) GetMasterAccount() bool`
-
-GetMasterAccount returns the MasterAccount field if non-nil, zero value otherwise.
-
-### GetMasterAccountOk
-
-`func (o *ListInvoiceLineItems200Response) GetMasterAccountOk() (*bool, bool)`
-
-GetMasterAccountOk returns a tuple with the MasterAccount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMasterAccount
-
-`func (o *ListInvoiceLineItems200Response) SetMasterAccount(v bool)`
-
-SetMasterAccount sets MasterAccount field to given value.
-
-### HasMasterAccount
-
-`func (o *ListInvoiceLineItems200Response) HasMasterAccount() bool`
-
-HasMasterAccount returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *ListInvoiceLineItems200Response) GetMeta() ListApprovals200ResponseAllOfMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *ListInvoiceLineItems200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *ListInvoiceLineItems200Response) SetMeta(v ListApprovals200ResponseAllOfMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *ListInvoiceLineItems200Response) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
+```go
+obj := &ListInvoiceLineItems200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

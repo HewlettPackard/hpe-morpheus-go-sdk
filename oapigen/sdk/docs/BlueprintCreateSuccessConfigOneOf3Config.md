@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Specs** | Pointer to [**[]BlueprintCreateSuccessConfigOneOf3ConfigSpecsInner**](BlueprintCreateSuccessConfigOneOf3ConfigSpecsInner.md) | Array of Kubernetes specs in Morpheus | [optional] 
 
-## Methods
+## Usage
 
-### NewBlueprintCreateSuccessConfigOneOf3Config
+Instantiate with a Go composite literal:
 
-`func NewBlueprintCreateSuccessConfigOneOf3Config() *BlueprintCreateSuccessConfigOneOf3Config`
-
-NewBlueprintCreateSuccessConfigOneOf3Config instantiates a new BlueprintCreateSuccessConfigOneOf3Config object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetSpecs
-
-`func (o *BlueprintCreateSuccessConfigOneOf3Config) GetSpecs() []BlueprintCreateSuccessConfigOneOf3ConfigSpecsInner`
-
-GetSpecs returns the Specs field if non-nil, zero value otherwise.
-
-### GetSpecsOk
-
-`func (o *BlueprintCreateSuccessConfigOneOf3Config) GetSpecsOk() (*[]BlueprintCreateSuccessConfigOneOf3ConfigSpecsInner, bool)`
-
-GetSpecsOk returns a tuple with the Specs field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSpecs
-
-`func (o *BlueprintCreateSuccessConfigOneOf3Config) SetSpecs(v []BlueprintCreateSuccessConfigOneOf3ConfigSpecsInner)`
-
-SetSpecs sets Specs field to given value.
-
-### HasSpecs
-
-`func (o *BlueprintCreateSuccessConfigOneOf3Config) HasSpecs() bool`
-
-HasSpecs returns a boolean if a field has been set.
+```go
+obj := &BlueprintCreateSuccessConfigOneOf3Config{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

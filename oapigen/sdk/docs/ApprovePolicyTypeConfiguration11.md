@@ -9,111 +9,15 @@ Name | Type | Description | Notes
 **FlowId** | Pointer to **string** |  | [optional] 
 **WorkflowType** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewApprovePolicyTypeConfiguration11
+Instantiate with a Go composite literal:
 
-`func NewApprovePolicyTypeConfiguration11(accountIntegrationId string, ) *ApprovePolicyTypeConfiguration11`
-
-NewApprovePolicyTypeConfiguration11 instantiates a new ApprovePolicyTypeConfiguration11 object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetAccountIntegrationId
-
-`func (o *ApprovePolicyTypeConfiguration11) GetAccountIntegrationId() string`
-
-GetAccountIntegrationId returns the AccountIntegrationId field if non-nil, zero value otherwise.
-
-### GetAccountIntegrationIdOk
-
-`func (o *ApprovePolicyTypeConfiguration11) GetAccountIntegrationIdOk() (*string, bool)`
-
-GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccountIntegrationId
-
-`func (o *ApprovePolicyTypeConfiguration11) SetAccountIntegrationId(v string)`
-
-SetAccountIntegrationId sets AccountIntegrationId field to given value.
-
-
-### GetWorkflowId
-
-`func (o *ApprovePolicyTypeConfiguration11) GetWorkflowId() string`
-
-GetWorkflowId returns the WorkflowId field if non-nil, zero value otherwise.
-
-### GetWorkflowIdOk
-
-`func (o *ApprovePolicyTypeConfiguration11) GetWorkflowIdOk() (*string, bool)`
-
-GetWorkflowIdOk returns a tuple with the WorkflowId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWorkflowId
-
-`func (o *ApprovePolicyTypeConfiguration11) SetWorkflowId(v string)`
-
-SetWorkflowId sets WorkflowId field to given value.
-
-### HasWorkflowId
-
-`func (o *ApprovePolicyTypeConfiguration11) HasWorkflowId() bool`
-
-HasWorkflowId returns a boolean if a field has been set.
-
-### GetFlowId
-
-`func (o *ApprovePolicyTypeConfiguration11) GetFlowId() string`
-
-GetFlowId returns the FlowId field if non-nil, zero value otherwise.
-
-### GetFlowIdOk
-
-`func (o *ApprovePolicyTypeConfiguration11) GetFlowIdOk() (*string, bool)`
-
-GetFlowIdOk returns a tuple with the FlowId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFlowId
-
-`func (o *ApprovePolicyTypeConfiguration11) SetFlowId(v string)`
-
-SetFlowId sets FlowId field to given value.
-
-### HasFlowId
-
-`func (o *ApprovePolicyTypeConfiguration11) HasFlowId() bool`
-
-HasFlowId returns a boolean if a field has been set.
-
-### GetWorkflowType
-
-`func (o *ApprovePolicyTypeConfiguration11) GetWorkflowType() string`
-
-GetWorkflowType returns the WorkflowType field if non-nil, zero value otherwise.
-
-### GetWorkflowTypeOk
-
-`func (o *ApprovePolicyTypeConfiguration11) GetWorkflowTypeOk() (*string, bool)`
-
-GetWorkflowTypeOk returns a tuple with the WorkflowType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWorkflowType
-
-`func (o *ApprovePolicyTypeConfiguration11) SetWorkflowType(v string)`
-
-SetWorkflowType sets WorkflowType field to given value.
-
-### HasWorkflowType
-
-`func (o *ApprovePolicyTypeConfiguration11) HasWorkflowType() bool`
-
-HasWorkflowType returns a boolean if a field has been set.
+```go
+obj := &ApprovePolicyTypeConfiguration11{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

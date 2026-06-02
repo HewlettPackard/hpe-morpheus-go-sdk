@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Restore** | Pointer to [**GetBackupRestores200ResponseRestore**](GetBackupRestores200ResponseRestore.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetBackupRestores200Response
+Instantiate with a Go composite literal:
 
-`func NewGetBackupRestores200Response() *GetBackupRestores200Response`
-
-NewGetBackupRestores200Response instantiates a new GetBackupRestores200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetRestore
-
-`func (o *GetBackupRestores200Response) GetRestore() GetBackupRestores200ResponseRestore`
-
-GetRestore returns the Restore field if non-nil, zero value otherwise.
-
-### GetRestoreOk
-
-`func (o *GetBackupRestores200Response) GetRestoreOk() (*GetBackupRestores200ResponseRestore, bool)`
-
-GetRestoreOk returns a tuple with the Restore field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRestore
-
-`func (o *GetBackupRestores200Response) SetRestore(v GetBackupRestores200ResponseRestore)`
-
-SetRestore sets Restore field to given value.
-
-### HasRestore
-
-`func (o *GetBackupRestores200Response) HasRestore() bool`
-
-HasRestore returns a boolean if a field has been set.
+```go
+obj := &GetBackupRestores200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

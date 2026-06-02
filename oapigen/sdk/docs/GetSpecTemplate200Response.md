@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SpecTemplate** | Pointer to [**GetSpecTemplate200ResponseSpecTemplate**](GetSpecTemplate200ResponseSpecTemplate.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetSpecTemplate200Response
+Instantiate with a Go composite literal:
 
-`func NewGetSpecTemplate200Response() *GetSpecTemplate200Response`
-
-NewGetSpecTemplate200Response instantiates a new GetSpecTemplate200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetSpecTemplate
-
-`func (o *GetSpecTemplate200Response) GetSpecTemplate() GetSpecTemplate200ResponseSpecTemplate`
-
-GetSpecTemplate returns the SpecTemplate field if non-nil, zero value otherwise.
-
-### GetSpecTemplateOk
-
-`func (o *GetSpecTemplate200Response) GetSpecTemplateOk() (*GetSpecTemplate200ResponseSpecTemplate, bool)`
-
-GetSpecTemplateOk returns a tuple with the SpecTemplate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSpecTemplate
-
-`func (o *GetSpecTemplate200Response) SetSpecTemplate(v GetSpecTemplate200ResponseSpecTemplate)`
-
-SetSpecTemplate sets SpecTemplate field to given value.
-
-### HasSpecTemplate
-
-`func (o *GetSpecTemplate200Response) HasSpecTemplate() bool`
-
-HasSpecTemplate returns a boolean if a field has been set.
+```go
+obj := &GetSpecTemplate200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

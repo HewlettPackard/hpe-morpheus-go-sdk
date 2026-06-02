@@ -8,91 +8,15 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewAddVdiAllocation200ResponseAllOfDesktopAllocationInstance
+Instantiate with a Go composite literal:
 
-`func NewAddVdiAllocation200ResponseAllOfDesktopAllocationInstance() *AddVdiAllocation200ResponseAllOfDesktopAllocationInstance`
-
-NewAddVdiAllocation200ResponseAllOfDesktopAllocationInstance instantiates a new AddVdiAllocation200ResponseAllOfDesktopAllocationInstance object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationInstance) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationInstance) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationInstance) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationInstance) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationInstance) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationInstance) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationInstance) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationInstance) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetStatus
-
-`func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationInstance) GetStatus() string`
-
-GetStatus returns the Status field if non-nil, zero value otherwise.
-
-### GetStatusOk
-
-`func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationInstance) GetStatusOk() (*string, bool)`
-
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatus
-
-`func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationInstance) SetStatus(v string)`
-
-SetStatus sets Status field to given value.
-
-### HasStatus
-
-`func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationInstance) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
+```go
+obj := &AddVdiAllocation200ResponseAllOfDesktopAllocationInstance{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

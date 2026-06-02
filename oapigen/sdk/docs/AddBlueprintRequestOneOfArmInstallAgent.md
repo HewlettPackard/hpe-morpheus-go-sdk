@@ -5,16 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
-## Methods
+## Usage
 
-### NewAddBlueprintRequestOneOfArmInstallAgent
+Instantiate with a Go composite literal:
 
-`func NewAddBlueprintRequestOneOfArmInstallAgent() *AddBlueprintRequestOneOfArmInstallAgent`
-
-NewAddBlueprintRequestOneOfArmInstallAgent instantiates a new AddBlueprintRequestOneOfArmInstallAgent object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+```go
+obj := &AddBlueprintRequestOneOfArmInstallAgent{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

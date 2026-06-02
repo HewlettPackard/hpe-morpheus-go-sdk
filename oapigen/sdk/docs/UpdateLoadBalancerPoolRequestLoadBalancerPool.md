@@ -10,141 +10,15 @@ Name | Type | Description | Notes
 **MinActive** | Pointer to **int64** | Min Active Members | [optional] 
 **Config** | Pointer to **map[string]interface{}** | Configuration object with parameters that vary by type. | [optional] 
 
-## Methods
+## Usage
 
-### NewUpdateLoadBalancerPoolRequestLoadBalancerPool
+Instantiate with a Go composite literal:
 
-`func NewUpdateLoadBalancerPoolRequestLoadBalancerPool() *UpdateLoadBalancerPoolRequestLoadBalancerPool`
-
-NewUpdateLoadBalancerPoolRequestLoadBalancerPool instantiates a new UpdateLoadBalancerPoolRequestLoadBalancerPool object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetName
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### GetVipBalance
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetVipBalance() string`
-
-GetVipBalance returns the VipBalance field if non-nil, zero value otherwise.
-
-### GetVipBalanceOk
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetVipBalanceOk() (*string, bool)`
-
-GetVipBalanceOk returns a tuple with the VipBalance field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipBalance
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) SetVipBalance(v string)`
-
-SetVipBalance sets VipBalance field to given value.
-
-### HasVipBalance
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) HasVipBalance() bool`
-
-HasVipBalance returns a boolean if a field has been set.
-
-### GetMinActive
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetMinActive() int64`
-
-GetMinActive returns the MinActive field if non-nil, zero value otherwise.
-
-### GetMinActiveOk
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetMinActiveOk() (*int64, bool)`
-
-GetMinActiveOk returns a tuple with the MinActive field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMinActive
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) SetMinActive(v int64)`
-
-SetMinActive sets MinActive field to given value.
-
-### HasMinActive
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) HasMinActive() bool`
-
-HasMinActive returns a boolean if a field has been set.
-
-### GetConfig
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetConfig() map[string]interface{}`
-
-GetConfig returns the Config field if non-nil, zero value otherwise.
-
-### GetConfigOk
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetConfigOk() (*map[string]interface{}, bool)`
-
-GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfig
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) SetConfig(v map[string]interface{})`
-
-SetConfig sets Config field to given value.
-
-### HasConfig
-
-`func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) HasConfig() bool`
-
-HasConfig returns a boolean if a field has been set.
+```go
+obj := &UpdateLoadBalancerPoolRequestLoadBalancerPool{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

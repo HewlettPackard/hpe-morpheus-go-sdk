@@ -7,66 +7,15 @@ Name | Type | Description | Notes
 **InstanceCounts** | Pointer to [**ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts**](ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts.md) |  | [optional] 
 **ServerCounts** | Pointer to [**ListGroups200ResponseAllOfGroupsInnerStatsServerCounts**](ListGroups200ResponseAllOfGroupsInnerStatsServerCounts.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListGroups200ResponseAllOfGroupsInnerStats
+Instantiate with a Go composite literal:
 
-`func NewListGroups200ResponseAllOfGroupsInnerStats() *ListGroups200ResponseAllOfGroupsInnerStats`
-
-NewListGroups200ResponseAllOfGroupsInnerStats instantiates a new ListGroups200ResponseAllOfGroupsInnerStats object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetInstanceCounts
-
-`func (o *ListGroups200ResponseAllOfGroupsInnerStats) GetInstanceCounts() ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts`
-
-GetInstanceCounts returns the InstanceCounts field if non-nil, zero value otherwise.
-
-### GetInstanceCountsOk
-
-`func (o *ListGroups200ResponseAllOfGroupsInnerStats) GetInstanceCountsOk() (*ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts, bool)`
-
-GetInstanceCountsOk returns a tuple with the InstanceCounts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInstanceCounts
-
-`func (o *ListGroups200ResponseAllOfGroupsInnerStats) SetInstanceCounts(v ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts)`
-
-SetInstanceCounts sets InstanceCounts field to given value.
-
-### HasInstanceCounts
-
-`func (o *ListGroups200ResponseAllOfGroupsInnerStats) HasInstanceCounts() bool`
-
-HasInstanceCounts returns a boolean if a field has been set.
-
-### GetServerCounts
-
-`func (o *ListGroups200ResponseAllOfGroupsInnerStats) GetServerCounts() ListGroups200ResponseAllOfGroupsInnerStatsServerCounts`
-
-GetServerCounts returns the ServerCounts field if non-nil, zero value otherwise.
-
-### GetServerCountsOk
-
-`func (o *ListGroups200ResponseAllOfGroupsInnerStats) GetServerCountsOk() (*ListGroups200ResponseAllOfGroupsInnerStatsServerCounts, bool)`
-
-GetServerCountsOk returns a tuple with the ServerCounts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerCounts
-
-`func (o *ListGroups200ResponseAllOfGroupsInnerStats) SetServerCounts(v ListGroups200ResponseAllOfGroupsInnerStatsServerCounts)`
-
-SetServerCounts sets ServerCounts field to given value.
-
-### HasServerCounts
-
-`func (o *ListGroups200ResponseAllOfGroupsInnerStats) HasServerCounts() bool`
-
-HasServerCounts returns a boolean if a field has been set.
+```go
+obj := &ListGroups200ResponseAllOfGroupsInnerStats{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

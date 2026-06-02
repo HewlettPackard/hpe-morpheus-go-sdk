@@ -19,477 +19,93 @@ Name | Type | Description | Notes
 **ReplicationMode** | Pointer to **NullableString** |  | [optional] 
 **SecurityServer** | Pointer to **NullableString** |  | [optional] 
 
-## Methods
-
-### NewAddClouds200ResponseAllOfZoneConfigAnyOf
-
-`func NewAddClouds200ResponseAllOfZoneConfigAnyOf() *AddClouds200ResponseAllOfZoneConfigAnyOf`
-
-NewAddClouds200ResponseAllOfZoneConfigAnyOf instantiates a new AddClouds200ResponseAllOfZoneConfigAnyOf object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetApplianceUrl
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetApplianceUrl() string`
-
-GetApplianceUrl returns the ApplianceUrl field if non-nil, zero value otherwise.
-
-### GetApplianceUrlOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetApplianceUrlOk() (*string, bool)`
-
-GetApplianceUrlOk returns a tuple with the ApplianceUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApplianceUrl
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetApplianceUrl(v string)`
-
-SetApplianceUrl sets ApplianceUrl field to given value.
-
-### HasApplianceUrl
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasApplianceUrl() bool`
-
-HasApplianceUrl returns a boolean if a field has been set.
-
-### SetApplianceUrlNil
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetApplianceUrlNil(b bool)`
-
- SetApplianceUrlNil sets the value for ApplianceUrl to be an explicit nil
-
-### UnsetApplianceUrl
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetApplianceUrl()`
-
-UnsetApplianceUrl ensures that no value is present for ApplianceUrl, not even an explicit nil
-### GetDatacenterName
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetDatacenterName() string`
-
-GetDatacenterName returns the DatacenterName field if non-nil, zero value otherwise.
-
-### GetDatacenterNameOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetDatacenterNameOk() (*string, bool)`
-
-GetDatacenterNameOk returns a tuple with the DatacenterName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDatacenterName
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetDatacenterName(v string)`
-
-SetDatacenterName sets DatacenterName field to given value.
-
-### HasDatacenterName
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasDatacenterName() bool`
-
-HasDatacenterName returns a boolean if a field has been set.
-
-### SetDatacenterNameNil
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetDatacenterNameNil(b bool)`
-
- SetDatacenterNameNil sets the value for DatacenterName to be an explicit nil
-
-### UnsetDatacenterName
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetDatacenterName()`
-
-UnsetDatacenterName ensures that no value is present for DatacenterName, not even an explicit nil
-### GetExternalId
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetExternalId() string`
-
-GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
-
-### GetExternalIdOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetExternalIdOk() (*string, bool)`
-
-GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExternalId
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetExternalId(v string)`
-
-SetExternalId sets ExternalId field to given value.
-
-### HasExternalId
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasExternalId() bool`
-
-HasExternalId returns a boolean if a field has been set.
-
-### SetExternalIdNil
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetExternalIdNil(b bool)`
-
- SetExternalIdNil sets the value for ExternalId to be an explicit nil
-
-### UnsetExternalId
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetExternalId()`
-
-UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-### GetInventoryLevel
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetInventoryLevel() string`
-
-GetInventoryLevel returns the InventoryLevel field if non-nil, zero value otherwise.
-
-### GetInventoryLevelOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetInventoryLevelOk() (*string, bool)`
-
-GetInventoryLevelOk returns a tuple with the InventoryLevel field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInventoryLevel
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetInventoryLevel(v string)`
-
-SetInventoryLevel sets InventoryLevel field to given value.
-
-### HasInventoryLevel
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasInventoryLevel() bool`
-
-HasInventoryLevel returns a boolean if a field has been set.
-
-### SetInventoryLevelNil
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetInventoryLevelNil(b bool)`
-
- SetInventoryLevelNil sets the value for InventoryLevel to be an explicit nil
-
-### UnsetInventoryLevel
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetInventoryLevel()`
-
-UnsetInventoryLevel ensures that no value is present for InventoryLevel, not even an explicit nil
-### GetConsoleKeymap
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetConsoleKeymap() string`
-
-GetConsoleKeymap returns the ConsoleKeymap field if non-nil, zero value otherwise.
-
-### GetConsoleKeymapOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetConsoleKeymapOk() (*string, bool)`
-
-GetConsoleKeymapOk returns a tuple with the ConsoleKeymap field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConsoleKeymap
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetConsoleKeymap(v string)`
-
-SetConsoleKeymap sets ConsoleKeymap field to given value.
-
-### HasConsoleKeymap
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasConsoleKeymap() bool`
-
-HasConsoleKeymap returns a boolean if a field has been set.
-
-### SetConsoleKeymapNil
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetConsoleKeymapNil(b bool)`
-
- SetConsoleKeymapNil sets the value for ConsoleKeymap to be an explicit nil
-
-### UnsetConsoleKeymap
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetConsoleKeymap()`
-
-UnsetConsoleKeymap ensures that no value is present for ConsoleKeymap, not even an explicit nil
-### GetBackupMode
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetBackupMode() string`
-
-GetBackupMode returns the BackupMode field if non-nil, zero value otherwise.
-
-### GetBackupModeOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetBackupModeOk() (*string, bool)`
-
-GetBackupModeOk returns a tuple with the BackupMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBackupMode
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetBackupMode(v string)`
-
-SetBackupMode sets BackupMode field to given value.
-
-### HasBackupMode
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasBackupMode() bool`
-
-HasBackupMode returns a boolean if a field has been set.
-
-### SetBackupModeNil
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetBackupModeNil(b bool)`
-
- SetBackupModeNil sets the value for BackupMode to be an explicit nil
-
-### UnsetBackupMode
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetBackupMode()`
-
-UnsetBackupMode ensures that no value is present for BackupMode, not even an explicit nil
-### GetCertificateProvider
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetCertificateProvider() string`
-
-GetCertificateProvider returns the CertificateProvider field if non-nil, zero value otherwise.
-
-### GetCertificateProviderOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetCertificateProviderOk() (*string, bool)`
-
-GetCertificateProviderOk returns a tuple with the CertificateProvider field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCertificateProvider
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetCertificateProvider(v string)`
-
-SetCertificateProvider sets CertificateProvider field to given value.
-
-### HasCertificateProvider
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasCertificateProvider() bool`
-
-HasCertificateProvider returns a boolean if a field has been set.
-
-### SetCertificateProviderNil
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetCertificateProviderNil(b bool)`
-
- SetCertificateProviderNil sets the value for CertificateProvider to be an explicit nil
-
-### UnsetCertificateProvider
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetCertificateProvider()`
-
-UnsetCertificateProvider ensures that no value is present for CertificateProvider, not even an explicit nil
-### GetConfigCmdbDiscovery
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetConfigCmdbDiscovery() bool`
-
-GetConfigCmdbDiscovery returns the ConfigCmdbDiscovery field if non-nil, zero value otherwise.
-
-### GetConfigCmdbDiscoveryOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetConfigCmdbDiscoveryOk() (*bool, bool)`
-
-GetConfigCmdbDiscoveryOk returns a tuple with the ConfigCmdbDiscovery field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfigCmdbDiscovery
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetConfigCmdbDiscovery(v bool)`
-
-SetConfigCmdbDiscovery sets ConfigCmdbDiscovery field to given value.
-
-### HasConfigCmdbDiscovery
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasConfigCmdbDiscovery() bool`
-
-HasConfigCmdbDiscovery returns a boolean if a field has been set.
-
-### GetEnableNetworkTypeSelection
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetEnableNetworkTypeSelection() string`
-
-GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field if non-nil, zero value otherwise.
-
-### GetEnableNetworkTypeSelectionOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetEnableNetworkTypeSelectionOk() (*string, bool)`
-
-GetEnableNetworkTypeSelectionOk returns a tuple with the EnableNetworkTypeSelection field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnableNetworkTypeSelection
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetEnableNetworkTypeSelection(v string)`
-
-SetEnableNetworkTypeSelection sets EnableNetworkTypeSelection field to given value.
-
-### HasEnableNetworkTypeSelection
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasEnableNetworkTypeSelection() bool`
-
-HasEnableNetworkTypeSelection returns a boolean if a field has been set.
-
-### SetEnableNetworkTypeSelectionNil
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetEnableNetworkTypeSelectionNil(b bool)`
-
- SetEnableNetworkTypeSelectionNil sets the value for EnableNetworkTypeSelection to be an explicit nil
-
-### UnsetEnableNetworkTypeSelection
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetEnableNetworkTypeSelection()`
-
-UnsetEnableNetworkTypeSelection ensures that no value is present for EnableNetworkTypeSelection, not even an explicit nil
-### GetKubeUrl
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetKubeUrl() string`
-
-GetKubeUrl returns the KubeUrl field if non-nil, zero value otherwise.
-
-### GetKubeUrlOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetKubeUrlOk() (*string, bool)`
-
-GetKubeUrlOk returns a tuple with the KubeUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKubeUrl
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetKubeUrl(v string)`
-
-SetKubeUrl sets KubeUrl field to given value.
-
-### HasKubeUrl
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasKubeUrl() bool`
-
-HasKubeUrl returns a boolean if a field has been set.
-
-### SetKubeUrlNil
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetKubeUrlNil(b bool)`
-
- SetKubeUrlNil sets the value for KubeUrl to be an explicit nil
-
-### UnsetKubeUrl
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetKubeUrl()`
-
-UnsetKubeUrl ensures that no value is present for KubeUrl, not even an explicit nil
-### GetNetworkServer
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetNetworkServer() AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer`
-
-GetNetworkServer returns the NetworkServer field if non-nil, zero value otherwise.
-
-### GetNetworkServerOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetNetworkServerOk() (*AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer, bool)`
-
-GetNetworkServerOk returns a tuple with the NetworkServer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkServer
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetNetworkServer(v AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer)`
-
-SetNetworkServer sets NetworkServer field to given value.
-
-### HasNetworkServer
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasNetworkServer() bool`
-
-HasNetworkServer returns a boolean if a field has been set.
-
-### GetNetworkServerId
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetNetworkServerId() string`
-
-GetNetworkServerId returns the NetworkServerId field if non-nil, zero value otherwise.
-
-### GetNetworkServerIdOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetNetworkServerIdOk() (*string, bool)`
-
-GetNetworkServerIdOk returns a tuple with the NetworkServerId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkServerId
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetNetworkServerId(v string)`
-
-SetNetworkServerId sets NetworkServerId field to given value.
-
-### HasNetworkServerId
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasNetworkServerId() bool`
-
-HasNetworkServerId returns a boolean if a field has been set.
-
-### GetReplicationMode
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetReplicationMode() string`
-
-GetReplicationMode returns the ReplicationMode field if non-nil, zero value otherwise.
-
-### GetReplicationModeOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetReplicationModeOk() (*string, bool)`
-
-GetReplicationModeOk returns a tuple with the ReplicationMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReplicationMode
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetReplicationMode(v string)`
-
-SetReplicationMode sets ReplicationMode field to given value.
-
-### HasReplicationMode
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasReplicationMode() bool`
-
-HasReplicationMode returns a boolean if a field has been set.
-
-### SetReplicationModeNil
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetReplicationModeNil(b bool)`
-
- SetReplicationModeNil sets the value for ReplicationMode to be an explicit nil
-
-### UnsetReplicationMode
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetReplicationMode()`
-
-UnsetReplicationMode ensures that no value is present for ReplicationMode, not even an explicit nil
-### GetSecurityServer
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetSecurityServer() string`
-
-GetSecurityServer returns the SecurityServer field if non-nil, zero value otherwise.
-
-### GetSecurityServerOk
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetSecurityServerOk() (*string, bool)`
-
-GetSecurityServerOk returns a tuple with the SecurityServer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSecurityServer
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetSecurityServer(v string)`
-
-SetSecurityServer sets SecurityServer field to given value.
-
-### HasSecurityServer
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) HasSecurityServer() bool`
-
-HasSecurityServer returns a boolean if a field has been set.
-
-### SetSecurityServerNil
-
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetSecurityServerNil(b bool)`
-
- SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
-
-### UnsetSecurityServer
-`func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetSecurityServer()`
-
-UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &AddClouds200ResponseAllOfZoneConfigAnyOf{
+    // Set fields directly
+}
+```
+
+### ApplianceUrl (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ApplianceUrl.IsSet()` — check if set
+- `obj.ApplianceUrl.Get()` — get the inner value (returns pointer)
+- `obj.ApplianceUrl.Set(&val)` — set the value
+- `obj.ApplianceUrl.Unset()` — clear the value
+### DatacenterName (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.DatacenterName.IsSet()` — check if set
+- `obj.DatacenterName.Get()` — get the inner value (returns pointer)
+- `obj.DatacenterName.Set(&val)` — set the value
+- `obj.DatacenterName.Unset()` — clear the value
+### ExternalId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ExternalId.IsSet()` — check if set
+- `obj.ExternalId.Get()` — get the inner value (returns pointer)
+- `obj.ExternalId.Set(&val)` — set the value
+- `obj.ExternalId.Unset()` — clear the value
+### InventoryLevel (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.InventoryLevel.IsSet()` — check if set
+- `obj.InventoryLevel.Get()` — get the inner value (returns pointer)
+- `obj.InventoryLevel.Set(&val)` — set the value
+- `obj.InventoryLevel.Unset()` — clear the value
+### ConsoleKeymap (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ConsoleKeymap.IsSet()` — check if set
+- `obj.ConsoleKeymap.Get()` — get the inner value (returns pointer)
+- `obj.ConsoleKeymap.Set(&val)` — set the value
+- `obj.ConsoleKeymap.Unset()` — clear the value
+### BackupMode (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.BackupMode.IsSet()` — check if set
+- `obj.BackupMode.Get()` — get the inner value (returns pointer)
+- `obj.BackupMode.Set(&val)` — set the value
+- `obj.BackupMode.Unset()` — clear the value
+### CertificateProvider (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.CertificateProvider.IsSet()` — check if set
+- `obj.CertificateProvider.Get()` — get the inner value (returns pointer)
+- `obj.CertificateProvider.Set(&val)` — set the value
+- `obj.CertificateProvider.Unset()` — clear the value
+### EnableNetworkTypeSelection (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.EnableNetworkTypeSelection.IsSet()` — check if set
+- `obj.EnableNetworkTypeSelection.Get()` — get the inner value (returns pointer)
+- `obj.EnableNetworkTypeSelection.Set(&val)` — set the value
+- `obj.EnableNetworkTypeSelection.Unset()` — clear the value
+### KubeUrl (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.KubeUrl.IsSet()` — check if set
+- `obj.KubeUrl.Get()` — get the inner value (returns pointer)
+- `obj.KubeUrl.Set(&val)` — set the value
+- `obj.KubeUrl.Unset()` — clear the value
+### ReplicationMode (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ReplicationMode.IsSet()` — check if set
+- `obj.ReplicationMode.Get()` — get the inner value (returns pointer)
+- `obj.ReplicationMode.Set(&val)` — set the value
+- `obj.ReplicationMode.Unset()` — clear the value
+### SecurityServer (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SecurityServer.IsSet()` — check if set
+- `obj.SecurityServer.Get()` — get the inner value (returns pointer)
+- `obj.SecurityServer.Set(&val)` — set the value
+- `obj.SecurityServer.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

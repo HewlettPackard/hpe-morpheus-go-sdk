@@ -6,36 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Group** | [**UpdateGroupsRequestGroup**](UpdateGroupsRequestGroup.md) |  | 
 
-## Methods
+## Usage
 
-### NewUpdateGroupsRequest
+Instantiate with a Go composite literal:
 
-`func NewUpdateGroupsRequest(group UpdateGroupsRequestGroup, ) *UpdateGroupsRequest`
-
-NewUpdateGroupsRequest instantiates a new UpdateGroupsRequest object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetGroup
-
-`func (o *UpdateGroupsRequest) GetGroup() UpdateGroupsRequestGroup`
-
-GetGroup returns the Group field if non-nil, zero value otherwise.
-
-### GetGroupOk
-
-`func (o *UpdateGroupsRequest) GetGroupOk() (*UpdateGroupsRequestGroup, bool)`
-
-GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGroup
-
-`func (o *UpdateGroupsRequest) SetGroup(v UpdateGroupsRequestGroup)`
-
-SetGroup sets Group field to given value.
-
+```go
+obj := &UpdateGroupsRequest{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewTaskResponseCredential
+Instantiate with a Go composite literal:
 
-`func NewTaskResponseCredential() *TaskResponseCredential`
-
-NewTaskResponseCredential instantiates a new TaskResponseCredential object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetType
-
-`func (o *TaskResponseCredential) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *TaskResponseCredential) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *TaskResponseCredential) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *TaskResponseCredential) HasType() bool`
-
-HasType returns a boolean if a field has been set.
+```go
+obj := &TaskResponseCredential{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **NetworkPoolIp** | Pointer to [**CreateNetworkPoolIpRequestNetworkPoolIp**](CreateNetworkPoolIpRequestNetworkPoolIp.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewCreateNetworkPoolIpRequest
+Instantiate with a Go composite literal:
 
-`func NewCreateNetworkPoolIpRequest() *CreateNetworkPoolIpRequest`
-
-NewCreateNetworkPoolIpRequest instantiates a new CreateNetworkPoolIpRequest object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetNetworkPoolIp
-
-`func (o *CreateNetworkPoolIpRequest) GetNetworkPoolIp() CreateNetworkPoolIpRequestNetworkPoolIp`
-
-GetNetworkPoolIp returns the NetworkPoolIp field if non-nil, zero value otherwise.
-
-### GetNetworkPoolIpOk
-
-`func (o *CreateNetworkPoolIpRequest) GetNetworkPoolIpOk() (*CreateNetworkPoolIpRequestNetworkPoolIp, bool)`
-
-GetNetworkPoolIpOk returns a tuple with the NetworkPoolIp field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkPoolIp
-
-`func (o *CreateNetworkPoolIpRequest) SetNetworkPoolIp(v CreateNetworkPoolIpRequestNetworkPoolIp)`
-
-SetNetworkPoolIp sets NetworkPoolIp field to given value.
-
-### HasNetworkPoolIp
-
-`func (o *CreateNetworkPoolIpRequest) HasNetworkPoolIp() bool`
-
-HasNetworkPoolIp returns a boolean if a field has been set.
+```go
+obj := &CreateNetworkPoolIpRequest{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

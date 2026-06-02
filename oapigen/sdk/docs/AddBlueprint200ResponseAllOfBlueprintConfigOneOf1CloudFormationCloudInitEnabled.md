@@ -5,16 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
-## Methods
+## Usage
 
-### NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled
+Instantiate with a Go composite literal:
 
-`func NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled`
-
-NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+```go
+obj := &AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -7,77 +7,23 @@ Name | Type | Description | Notes
 **Success** | Pointer to **bool** |  | [optional] 
 **Errors** | Pointer to **map[string]interface{}** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewSuccessError
+Instantiate with a Go composite literal:
 
-`func NewSuccessError() *SuccessError`
+```go
+obj := &SuccessError{
+    // Set fields directly
+}
+```
 
-NewSuccessError instantiates a new SuccessError object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### Errors (Nullable)
 
-### GetSuccess
-
-`func (o *SuccessError) GetSuccess() bool`
-
-GetSuccess returns the Success field if non-nil, zero value otherwise.
-
-### GetSuccessOk
-
-`func (o *SuccessError) GetSuccessOk() (*bool, bool)`
-
-GetSuccessOk returns a tuple with the Success field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSuccess
-
-`func (o *SuccessError) SetSuccess(v bool)`
-
-SetSuccess sets Success field to given value.
-
-### HasSuccess
-
-`func (o *SuccessError) HasSuccess() bool`
-
-HasSuccess returns a boolean if a field has been set.
-
-### GetErrors
-
-`func (o *SuccessError) GetErrors() map[string]interface{}`
-
-GetErrors returns the Errors field if non-nil, zero value otherwise.
-
-### GetErrorsOk
-
-`func (o *SuccessError) GetErrorsOk() (*map[string]interface{}, bool)`
-
-GetErrorsOk returns a tuple with the Errors field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetErrors
-
-`func (o *SuccessError) SetErrors(v map[string]interface{})`
-
-SetErrors sets Errors field to given value.
-
-### HasErrors
-
-`func (o *SuccessError) HasErrors() bool`
-
-HasErrors returns a boolean if a field has been set.
-
-### SetErrorsNil
-
-`func (o *SuccessError) SetErrorsNil(b bool)`
-
- SetErrorsNil sets the value for Errors to be an explicit nil
-
-### UnsetErrors
-`func (o *SuccessError) UnsetErrors()`
-
-UnsetErrors ensures that no value is present for Errors, not even an explicit nil
+Use the Nullable wrapper methods:
+- `obj.Errors.IsSet()` — check if set
+- `obj.Errors.Get()` — get the inner value (returns pointer)
+- `obj.Errors.Set(&val)` — set the value
+- `obj.Errors.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

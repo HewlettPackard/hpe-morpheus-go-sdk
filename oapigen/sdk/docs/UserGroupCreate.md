@@ -10,162 +10,30 @@ Name | Type | Description | Notes
 **ServerGroup** | Pointer to **NullableString** |  | [optional] 
 **Users** | Pointer to **[]int64** | A list of IDs of users that are in the user group | [optional] 
 
-## Methods
-
-### NewUserGroupCreate
-
-`func NewUserGroupCreate() *UserGroupCreate`
-
-NewUserGroupCreate instantiates a new UserGroupCreate object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetName
-
-`func (o *UserGroupCreate) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *UserGroupCreate) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *UserGroupCreate) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *UserGroupCreate) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *UserGroupCreate) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *UserGroupCreate) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *UserGroupCreate) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *UserGroupCreate) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### SetDescriptionNil
-
-`func (o *UserGroupCreate) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *UserGroupCreate) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetSudoUser
-
-`func (o *UserGroupCreate) GetSudoUser() bool`
-
-GetSudoUser returns the SudoUser field if non-nil, zero value otherwise.
-
-### GetSudoUserOk
-
-`func (o *UserGroupCreate) GetSudoUserOk() (*bool, bool)`
-
-GetSudoUserOk returns a tuple with the SudoUser field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSudoUser
-
-`func (o *UserGroupCreate) SetSudoUser(v bool)`
-
-SetSudoUser sets SudoUser field to given value.
-
-### HasSudoUser
-
-`func (o *UserGroupCreate) HasSudoUser() bool`
-
-HasSudoUser returns a boolean if a field has been set.
-
-### GetServerGroup
-
-`func (o *UserGroupCreate) GetServerGroup() string`
-
-GetServerGroup returns the ServerGroup field if non-nil, zero value otherwise.
-
-### GetServerGroupOk
-
-`func (o *UserGroupCreate) GetServerGroupOk() (*string, bool)`
-
-GetServerGroupOk returns a tuple with the ServerGroup field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerGroup
-
-`func (o *UserGroupCreate) SetServerGroup(v string)`
-
-SetServerGroup sets ServerGroup field to given value.
-
-### HasServerGroup
-
-`func (o *UserGroupCreate) HasServerGroup() bool`
-
-HasServerGroup returns a boolean if a field has been set.
-
-### SetServerGroupNil
-
-`func (o *UserGroupCreate) SetServerGroupNil(b bool)`
-
- SetServerGroupNil sets the value for ServerGroup to be an explicit nil
-
-### UnsetServerGroup
-`func (o *UserGroupCreate) UnsetServerGroup()`
-
-UnsetServerGroup ensures that no value is present for ServerGroup, not even an explicit nil
-### GetUsers
-
-`func (o *UserGroupCreate) GetUsers() []int64`
-
-GetUsers returns the Users field if non-nil, zero value otherwise.
-
-### GetUsersOk
-
-`func (o *UserGroupCreate) GetUsersOk() (*[]int64, bool)`
-
-GetUsersOk returns a tuple with the Users field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsers
-
-`func (o *UserGroupCreate) SetUsers(v []int64)`
-
-SetUsers sets Users field to given value.
-
-### HasUsers
-
-`func (o *UserGroupCreate) HasUsers() bool`
-
-HasUsers returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &UserGroupCreate{
+    // Set fields directly
+}
+```
+
+### Description (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Description.IsSet()` — check if set
+- `obj.Description.Get()` — get the inner value (returns pointer)
+- `obj.Description.Set(&val)` — set the value
+- `obj.Description.Unset()` — clear the value
+### ServerGroup (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServerGroup.IsSet()` — check if set
+- `obj.ServerGroup.Get()` — get the inner value (returns pointer)
+- `obj.ServerGroup.Set(&val)` — set the value
+- `obj.ServerGroup.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

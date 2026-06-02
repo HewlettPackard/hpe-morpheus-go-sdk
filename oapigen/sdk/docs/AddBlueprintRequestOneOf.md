@@ -10,137 +10,23 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **Arm** | [**AddBlueprintRequestOneOfArm**](AddBlueprintRequestOneOfArm.md) |  | 
 
-## Methods
+## Usage
 
-### NewAddBlueprintRequestOneOf
+Instantiate with a Go composite literal:
 
-`func NewAddBlueprintRequestOneOf(name string, type_ string, arm AddBlueprintRequestOneOfArm, ) *AddBlueprintRequestOneOf`
+```go
+obj := &AddBlueprintRequestOneOf{
+    // Set fields directly
+}
+```
 
-NewAddBlueprintRequestOneOf instantiates a new AddBlueprintRequestOneOf object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### Labels (Nullable)
 
-### GetName
-
-`func (o *AddBlueprintRequestOneOf) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *AddBlueprintRequestOneOf) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *AddBlueprintRequestOneOf) SetName(v string)`
-
-SetName sets Name field to given value.
-
-
-### GetImage
-
-`func (o *AddBlueprintRequestOneOf) GetImage() string`
-
-GetImage returns the Image field if non-nil, zero value otherwise.
-
-### GetImageOk
-
-`func (o *AddBlueprintRequestOneOf) GetImageOk() (*string, bool)`
-
-GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImage
-
-`func (o *AddBlueprintRequestOneOf) SetImage(v string)`
-
-SetImage sets Image field to given value.
-
-### HasImage
-
-`func (o *AddBlueprintRequestOneOf) HasImage() bool`
-
-HasImage returns a boolean if a field has been set.
-
-### GetType
-
-`func (o *AddBlueprintRequestOneOf) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *AddBlueprintRequestOneOf) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *AddBlueprintRequestOneOf) SetType(v string)`
-
-SetType sets Type field to given value.
-
-
-### GetLabels
-
-`func (o *AddBlueprintRequestOneOf) GetLabels() []string`
-
-GetLabels returns the Labels field if non-nil, zero value otherwise.
-
-### GetLabelsOk
-
-`func (o *AddBlueprintRequestOneOf) GetLabelsOk() (*[]string, bool)`
-
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLabels
-
-`func (o *AddBlueprintRequestOneOf) SetLabels(v []string)`
-
-SetLabels sets Labels field to given value.
-
-### HasLabels
-
-`func (o *AddBlueprintRequestOneOf) HasLabels() bool`
-
-HasLabels returns a boolean if a field has been set.
-
-### SetLabelsNil
-
-`func (o *AddBlueprintRequestOneOf) SetLabelsNil(b bool)`
-
- SetLabelsNil sets the value for Labels to be an explicit nil
-
-### UnsetLabels
-`func (o *AddBlueprintRequestOneOf) UnsetLabels()`
-
-UnsetLabels ensures that no value is present for Labels, not even an explicit nil
-### GetArm
-
-`func (o *AddBlueprintRequestOneOf) GetArm() AddBlueprintRequestOneOfArm`
-
-GetArm returns the Arm field if non-nil, zero value otherwise.
-
-### GetArmOk
-
-`func (o *AddBlueprintRequestOneOf) GetArmOk() (*AddBlueprintRequestOneOfArm, bool)`
-
-GetArmOk returns a tuple with the Arm field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetArm
-
-`func (o *AddBlueprintRequestOneOf) SetArm(v AddBlueprintRequestOneOfArm)`
-
-SetArm sets Arm field to given value.
-
-
+Use the Nullable wrapper methods:
+- `obj.Labels.IsSet()` — check if set
+- `obj.Labels.Get()` — get the inner value (returns pointer)
+- `obj.Labels.Set(&val)` — set the value
+- `obj.Labels.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

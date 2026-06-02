@@ -16,327 +16,51 @@ Name | Type | Description | Notes
 **Config** | Pointer to [**BluecatNetworkPoolServerConfig**](BluecatNetworkPoolServerConfig.md) |  | [optional] 
 **Credential** | Pointer to [**BluecatNetworkPoolServerCredential**](BluecatNetworkPoolServerCredential.md) |  | [optional] 
 
-## Methods
-
-### NewBluecatNetworkPoolServer
-
-`func NewBluecatNetworkPoolServer(type_ string, name string, serviceUrl NullableString, ) *BluecatNetworkPoolServer`
-
-NewBluecatNetworkPoolServer instantiates a new BluecatNetworkPoolServer object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetType
-
-`func (o *BluecatNetworkPoolServer) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *BluecatNetworkPoolServer) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *BluecatNetworkPoolServer) SetType(v string)`
-
-SetType sets Type field to given value.
-
-
-### GetName
-
-`func (o *BluecatNetworkPoolServer) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *BluecatNetworkPoolServer) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *BluecatNetworkPoolServer) SetName(v string)`
-
-SetName sets Name field to given value.
-
-
-### GetEnabled
-
-`func (o *BluecatNetworkPoolServer) GetEnabled() bool`
-
-GetEnabled returns the Enabled field if non-nil, zero value otherwise.
-
-### GetEnabledOk
-
-`func (o *BluecatNetworkPoolServer) GetEnabledOk() (*bool, bool)`
-
-GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnabled
-
-`func (o *BluecatNetworkPoolServer) SetEnabled(v bool)`
-
-SetEnabled sets Enabled field to given value.
-
-### HasEnabled
-
-`func (o *BluecatNetworkPoolServer) HasEnabled() bool`
-
-HasEnabled returns a boolean if a field has been set.
-
-### GetServiceUrl
-
-`func (o *BluecatNetworkPoolServer) GetServiceUrl() string`
-
-GetServiceUrl returns the ServiceUrl field if non-nil, zero value otherwise.
-
-### GetServiceUrlOk
-
-`func (o *BluecatNetworkPoolServer) GetServiceUrlOk() (*string, bool)`
-
-GetServiceUrlOk returns a tuple with the ServiceUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceUrl
-
-`func (o *BluecatNetworkPoolServer) SetServiceUrl(v string)`
-
-SetServiceUrl sets ServiceUrl field to given value.
-
-
-### SetServiceUrlNil
-
-`func (o *BluecatNetworkPoolServer) SetServiceUrlNil(b bool)`
-
- SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
-
-### UnsetServiceUrl
-`func (o *BluecatNetworkPoolServer) UnsetServiceUrl()`
-
-UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
-### GetServiceUsername
-
-`func (o *BluecatNetworkPoolServer) GetServiceUsername() string`
-
-GetServiceUsername returns the ServiceUsername field if non-nil, zero value otherwise.
-
-### GetServiceUsernameOk
-
-`func (o *BluecatNetworkPoolServer) GetServiceUsernameOk() (*string, bool)`
-
-GetServiceUsernameOk returns a tuple with the ServiceUsername field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceUsername
-
-`func (o *BluecatNetworkPoolServer) SetServiceUsername(v string)`
-
-SetServiceUsername sets ServiceUsername field to given value.
-
-### HasServiceUsername
-
-`func (o *BluecatNetworkPoolServer) HasServiceUsername() bool`
-
-HasServiceUsername returns a boolean if a field has been set.
-
-### SetServiceUsernameNil
-
-`func (o *BluecatNetworkPoolServer) SetServiceUsernameNil(b bool)`
-
- SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
-
-### UnsetServiceUsername
-`func (o *BluecatNetworkPoolServer) UnsetServiceUsername()`
-
-UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
-### GetServicePassword
-
-`func (o *BluecatNetworkPoolServer) GetServicePassword() string`
-
-GetServicePassword returns the ServicePassword field if non-nil, zero value otherwise.
-
-### GetServicePasswordOk
-
-`func (o *BluecatNetworkPoolServer) GetServicePasswordOk() (*string, bool)`
-
-GetServicePasswordOk returns a tuple with the ServicePassword field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServicePassword
-
-`func (o *BluecatNetworkPoolServer) SetServicePassword(v string)`
-
-SetServicePassword sets ServicePassword field to given value.
-
-### HasServicePassword
-
-`func (o *BluecatNetworkPoolServer) HasServicePassword() bool`
-
-HasServicePassword returns a boolean if a field has been set.
-
-### SetServicePasswordNil
-
-`func (o *BluecatNetworkPoolServer) SetServicePasswordNil(b bool)`
-
- SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
-
-### UnsetServicePassword
-`func (o *BluecatNetworkPoolServer) UnsetServicePassword()`
-
-UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
-### GetServiceThrottleRate
-
-`func (o *BluecatNetworkPoolServer) GetServiceThrottleRate() int64`
-
-GetServiceThrottleRate returns the ServiceThrottleRate field if non-nil, zero value otherwise.
-
-### GetServiceThrottleRateOk
-
-`func (o *BluecatNetworkPoolServer) GetServiceThrottleRateOk() (*int64, bool)`
-
-GetServiceThrottleRateOk returns a tuple with the ServiceThrottleRate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceThrottleRate
-
-`func (o *BluecatNetworkPoolServer) SetServiceThrottleRate(v int64)`
-
-SetServiceThrottleRate sets ServiceThrottleRate field to given value.
-
-### HasServiceThrottleRate
-
-`func (o *BluecatNetworkPoolServer) HasServiceThrottleRate() bool`
-
-HasServiceThrottleRate returns a boolean if a field has been set.
-
-### SetServiceThrottleRateNil
-
-`func (o *BluecatNetworkPoolServer) SetServiceThrottleRateNil(b bool)`
-
- SetServiceThrottleRateNil sets the value for ServiceThrottleRate to be an explicit nil
-
-### UnsetServiceThrottleRate
-`func (o *BluecatNetworkPoolServer) UnsetServiceThrottleRate()`
-
-UnsetServiceThrottleRate ensures that no value is present for ServiceThrottleRate, not even an explicit nil
-### GetIgnoreSsl
-
-`func (o *BluecatNetworkPoolServer) GetIgnoreSsl() bool`
-
-GetIgnoreSsl returns the IgnoreSsl field if non-nil, zero value otherwise.
-
-### GetIgnoreSslOk
-
-`func (o *BluecatNetworkPoolServer) GetIgnoreSslOk() (*bool, bool)`
-
-GetIgnoreSslOk returns a tuple with the IgnoreSsl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIgnoreSsl
-
-`func (o *BluecatNetworkPoolServer) SetIgnoreSsl(v bool)`
-
-SetIgnoreSsl sets IgnoreSsl field to given value.
-
-### HasIgnoreSsl
-
-`func (o *BluecatNetworkPoolServer) HasIgnoreSsl() bool`
-
-HasIgnoreSsl returns a boolean if a field has been set.
-
-### GetNetworkFilter
-
-`func (o *BluecatNetworkPoolServer) GetNetworkFilter() string`
-
-GetNetworkFilter returns the NetworkFilter field if non-nil, zero value otherwise.
-
-### GetNetworkFilterOk
-
-`func (o *BluecatNetworkPoolServer) GetNetworkFilterOk() (*string, bool)`
-
-GetNetworkFilterOk returns a tuple with the NetworkFilter field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkFilter
-
-`func (o *BluecatNetworkPoolServer) SetNetworkFilter(v string)`
-
-SetNetworkFilter sets NetworkFilter field to given value.
-
-### HasNetworkFilter
-
-`func (o *BluecatNetworkPoolServer) HasNetworkFilter() bool`
-
-HasNetworkFilter returns a boolean if a field has been set.
-
-### SetNetworkFilterNil
-
-`func (o *BluecatNetworkPoolServer) SetNetworkFilterNil(b bool)`
-
- SetNetworkFilterNil sets the value for NetworkFilter to be an explicit nil
-
-### UnsetNetworkFilter
-`func (o *BluecatNetworkPoolServer) UnsetNetworkFilter()`
-
-UnsetNetworkFilter ensures that no value is present for NetworkFilter, not even an explicit nil
-### GetConfig
-
-`func (o *BluecatNetworkPoolServer) GetConfig() BluecatNetworkPoolServerConfig`
-
-GetConfig returns the Config field if non-nil, zero value otherwise.
-
-### GetConfigOk
-
-`func (o *BluecatNetworkPoolServer) GetConfigOk() (*BluecatNetworkPoolServerConfig, bool)`
-
-GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfig
-
-`func (o *BluecatNetworkPoolServer) SetConfig(v BluecatNetworkPoolServerConfig)`
-
-SetConfig sets Config field to given value.
-
-### HasConfig
-
-`func (o *BluecatNetworkPoolServer) HasConfig() bool`
-
-HasConfig returns a boolean if a field has been set.
-
-### GetCredential
-
-`func (o *BluecatNetworkPoolServer) GetCredential() BluecatNetworkPoolServerCredential`
-
-GetCredential returns the Credential field if non-nil, zero value otherwise.
-
-### GetCredentialOk
-
-`func (o *BluecatNetworkPoolServer) GetCredentialOk() (*BluecatNetworkPoolServerCredential, bool)`
-
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredential
-
-`func (o *BluecatNetworkPoolServer) SetCredential(v BluecatNetworkPoolServerCredential)`
-
-SetCredential sets Credential field to given value.
-
-### HasCredential
-
-`func (o *BluecatNetworkPoolServer) HasCredential() bool`
-
-HasCredential returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &BluecatNetworkPoolServer{
+    // Set fields directly
+}
+```
+
+### ServiceUrl (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceUrl.IsSet()` — check if set
+- `obj.ServiceUrl.Get()` — get the inner value (returns pointer)
+- `obj.ServiceUrl.Set(&val)` — set the value
+- `obj.ServiceUrl.Unset()` — clear the value
+### ServiceUsername (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceUsername.IsSet()` — check if set
+- `obj.ServiceUsername.Get()` — get the inner value (returns pointer)
+- `obj.ServiceUsername.Set(&val)` — set the value
+- `obj.ServiceUsername.Unset()` — clear the value
+### ServicePassword (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServicePassword.IsSet()` — check if set
+- `obj.ServicePassword.Get()` — get the inner value (returns pointer)
+- `obj.ServicePassword.Set(&val)` — set the value
+- `obj.ServicePassword.Unset()` — clear the value
+### ServiceThrottleRate (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceThrottleRate.IsSet()` — check if set
+- `obj.ServiceThrottleRate.Get()` — get the inner value (returns pointer)
+- `obj.ServiceThrottleRate.Set(&val)` — set the value
+- `obj.ServiceThrottleRate.Unset()` — clear the value
+### NetworkFilter (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.NetworkFilter.IsSet()` — check if set
+- `obj.NetworkFilter.Get()` — get the inner value (returns pointer)
+- `obj.NetworkFilter.Set(&val)` — set the value
+- `obj.NetworkFilter.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

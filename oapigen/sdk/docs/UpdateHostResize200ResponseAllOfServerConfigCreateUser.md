@@ -5,16 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
-## Methods
+## Usage
 
-### NewUpdateHostResize200ResponseAllOfServerConfigCreateUser
+Instantiate with a Go composite literal:
 
-`func NewUpdateHostResize200ResponseAllOfServerConfigCreateUser() *UpdateHostResize200ResponseAllOfServerConfigCreateUser`
-
-NewUpdateHostResize200ResponseAllOfServerConfigCreateUser instantiates a new UpdateHostResize200ResponseAllOfServerConfigCreateUser object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+```go
+obj := &UpdateHostResize200ResponseAllOfServerConfigCreateUser{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -21,477 +21,58 @@ Name | Type | Description | Notes
 **ContainerTemplates** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **EnvironmentVariables** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
-## Methods
-
-### NewAddNodeType200ResponseAllOfContainerType
-
-`func NewAddNodeType200ResponseAllOfContainerType() *AddNodeType200ResponseAllOfContainerType`
-
-NewAddNodeType200ResponseAllOfContainerType instantiates a new AddNodeType200ResponseAllOfContainerType object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetId() int32`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetIdOk() (*int32, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetId(v int32)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetAccount
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetAccount() AddNodeType200ResponseAllOfContainerTypeAccount`
-
-GetAccount returns the Account field if non-nil, zero value otherwise.
-
-### GetAccountOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetAccountOk() (*AddNodeType200ResponseAllOfContainerTypeAccount, bool)`
-
-GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccount
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetAccount(v AddNodeType200ResponseAllOfContainerTypeAccount)`
-
-SetAccount sets Account field to given value.
-
-### HasAccount
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasAccount() bool`
-
-HasAccount returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetLabels
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetLabels() []string`
-
-GetLabels returns the Labels field if non-nil, zero value otherwise.
-
-### GetLabelsOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetLabelsOk() (*[]string, bool)`
-
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLabels
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetLabels(v []string)`
-
-SetLabels sets Labels field to given value.
-
-### HasLabels
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasLabels() bool`
-
-HasLabels returns a boolean if a field has been set.
-
-### GetShortName
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetShortName() string`
-
-GetShortName returns the ShortName field if non-nil, zero value otherwise.
-
-### GetShortNameOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetShortNameOk() (*string, bool)`
-
-GetShortNameOk returns a tuple with the ShortName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetShortName
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetShortName(v string)`
-
-SetShortName sets ShortName field to given value.
-
-### HasShortName
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasShortName() bool`
-
-HasShortName returns a boolean if a field has been set.
-
-### GetCode
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetCode() string`
-
-GetCode returns the Code field if non-nil, zero value otherwise.
-
-### GetCodeOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetCodeOk() (*string, bool)`
-
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCode
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetCode(v string)`
-
-SetCode sets Code field to given value.
-
-### HasCode
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasCode() bool`
-
-HasCode returns a boolean if a field has been set.
-
-### GetContainerVersion
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetContainerVersion() string`
-
-GetContainerVersion returns the ContainerVersion field if non-nil, zero value otherwise.
-
-### GetContainerVersionOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetContainerVersionOk() (*string, bool)`
-
-GetContainerVersionOk returns a tuple with the ContainerVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContainerVersion
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetContainerVersion(v string)`
-
-SetContainerVersion sets ContainerVersion field to given value.
-
-### HasContainerVersion
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasContainerVersion() bool`
-
-HasContainerVersion returns a boolean if a field has been set.
-
-### GetProvisionType
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetProvisionType() AddNodeType200ResponseAllOfContainerTypeProvisionType`
-
-GetProvisionType returns the ProvisionType field if non-nil, zero value otherwise.
-
-### GetProvisionTypeOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetProvisionTypeOk() (*AddNodeType200ResponseAllOfContainerTypeProvisionType, bool)`
-
-GetProvisionTypeOk returns a tuple with the ProvisionType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProvisionType
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetProvisionType(v AddNodeType200ResponseAllOfContainerTypeProvisionType)`
-
-SetProvisionType sets ProvisionType field to given value.
-
-### HasProvisionType
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasProvisionType() bool`
-
-HasProvisionType returns a boolean if a field has been set.
-
-### GetVirtualImage
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetVirtualImage() AddNodeType200ResponseAllOfContainerTypeVirtualImage`
-
-GetVirtualImage returns the VirtualImage field if non-nil, zero value otherwise.
-
-### GetVirtualImageOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetVirtualImageOk() (*AddNodeType200ResponseAllOfContainerTypeVirtualImage, bool)`
-
-GetVirtualImageOk returns a tuple with the VirtualImage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVirtualImage
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetVirtualImage(v AddNodeType200ResponseAllOfContainerTypeVirtualImage)`
-
-SetVirtualImage sets VirtualImage field to given value.
-
-### HasVirtualImage
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasVirtualImage() bool`
-
-HasVirtualImage returns a boolean if a field has been set.
-
-### GetOsType
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetOsType() AddNodeType200ResponseAllOfContainerTypeOsType`
-
-GetOsType returns the OsType field if non-nil, zero value otherwise.
-
-### GetOsTypeOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetOsTypeOk() (*AddNodeType200ResponseAllOfContainerTypeOsType, bool)`
-
-GetOsTypeOk returns a tuple with the OsType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOsType
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetOsType(v AddNodeType200ResponseAllOfContainerTypeOsType)`
-
-SetOsType sets OsType field to given value.
-
-### HasOsType
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasOsType() bool`
-
-HasOsType returns a boolean if a field has been set.
-
-### GetCategory
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetCategory() string`
-
-GetCategory returns the Category field if non-nil, zero value otherwise.
-
-### GetCategoryOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetCategoryOk() (*string, bool)`
-
-GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCategory
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetCategory(v string)`
-
-SetCategory sets Category field to given value.
-
-### HasCategory
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasCategory() bool`
-
-HasCategory returns a boolean if a field has been set.
-
-### SetCategoryNil
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetCategoryNil(b bool)`
-
- SetCategoryNil sets the value for Category to be an explicit nil
-
-### UnsetCategory
-`func (o *AddNodeType200ResponseAllOfContainerType) UnsetCategory()`
-
-UnsetCategory ensures that no value is present for Category, not even an explicit nil
-### GetConfig
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetConfig() map[string]interface{}`
-
-GetConfig returns the Config field if non-nil, zero value otherwise.
-
-### GetConfigOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetConfigOk() (*map[string]interface{}, bool)`
-
-GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfig
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetConfig(v map[string]interface{})`
-
-SetConfig sets Config field to given value.
-
-### HasConfig
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasConfig() bool`
-
-HasConfig returns a boolean if a field has been set.
-
-### SetConfigNil
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetConfigNil(b bool)`
-
- SetConfigNil sets the value for Config to be an explicit nil
-
-### UnsetConfig
-`func (o *AddNodeType200ResponseAllOfContainerType) UnsetConfig()`
-
-UnsetConfig ensures that no value is present for Config, not even an explicit nil
-### GetContainerPorts
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetContainerPorts() []AddNodeType200ResponseAllOfContainerTypeContainerPortsInner`
-
-GetContainerPorts returns the ContainerPorts field if non-nil, zero value otherwise.
-
-### GetContainerPortsOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetContainerPortsOk() (*[]AddNodeType200ResponseAllOfContainerTypeContainerPortsInner, bool)`
-
-GetContainerPortsOk returns a tuple with the ContainerPorts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContainerPorts
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetContainerPorts(v []AddNodeType200ResponseAllOfContainerTypeContainerPortsInner)`
-
-SetContainerPorts sets ContainerPorts field to given value.
-
-### HasContainerPorts
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasContainerPorts() bool`
-
-HasContainerPorts returns a boolean if a field has been set.
-
-### SetContainerPortsNil
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetContainerPortsNil(b bool)`
-
- SetContainerPortsNil sets the value for ContainerPorts to be an explicit nil
-
-### UnsetContainerPorts
-`func (o *AddNodeType200ResponseAllOfContainerType) UnsetContainerPorts()`
-
-UnsetContainerPorts ensures that no value is present for ContainerPorts, not even an explicit nil
-### GetContainerScripts
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetContainerScripts() []map[string]interface{}`
-
-GetContainerScripts returns the ContainerScripts field if non-nil, zero value otherwise.
-
-### GetContainerScriptsOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetContainerScriptsOk() (*[]map[string]interface{}, bool)`
-
-GetContainerScriptsOk returns a tuple with the ContainerScripts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContainerScripts
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetContainerScripts(v []map[string]interface{})`
-
-SetContainerScripts sets ContainerScripts field to given value.
-
-### HasContainerScripts
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasContainerScripts() bool`
-
-HasContainerScripts returns a boolean if a field has been set.
-
-### SetContainerScriptsNil
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetContainerScriptsNil(b bool)`
-
- SetContainerScriptsNil sets the value for ContainerScripts to be an explicit nil
-
-### UnsetContainerScripts
-`func (o *AddNodeType200ResponseAllOfContainerType) UnsetContainerScripts()`
-
-UnsetContainerScripts ensures that no value is present for ContainerScripts, not even an explicit nil
-### GetContainerTemplates
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetContainerTemplates() []map[string]interface{}`
-
-GetContainerTemplates returns the ContainerTemplates field if non-nil, zero value otherwise.
-
-### GetContainerTemplatesOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetContainerTemplatesOk() (*[]map[string]interface{}, bool)`
-
-GetContainerTemplatesOk returns a tuple with the ContainerTemplates field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContainerTemplates
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetContainerTemplates(v []map[string]interface{})`
-
-SetContainerTemplates sets ContainerTemplates field to given value.
-
-### HasContainerTemplates
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasContainerTemplates() bool`
-
-HasContainerTemplates returns a boolean if a field has been set.
-
-### SetContainerTemplatesNil
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetContainerTemplatesNil(b bool)`
-
- SetContainerTemplatesNil sets the value for ContainerTemplates to be an explicit nil
-
-### UnsetContainerTemplates
-`func (o *AddNodeType200ResponseAllOfContainerType) UnsetContainerTemplates()`
-
-UnsetContainerTemplates ensures that no value is present for ContainerTemplates, not even an explicit nil
-### GetEnvironmentVariables
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetEnvironmentVariables() []map[string]interface{}`
-
-GetEnvironmentVariables returns the EnvironmentVariables field if non-nil, zero value otherwise.
-
-### GetEnvironmentVariablesOk
-
-`func (o *AddNodeType200ResponseAllOfContainerType) GetEnvironmentVariablesOk() (*[]map[string]interface{}, bool)`
-
-GetEnvironmentVariablesOk returns a tuple with the EnvironmentVariables field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnvironmentVariables
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetEnvironmentVariables(v []map[string]interface{})`
-
-SetEnvironmentVariables sets EnvironmentVariables field to given value.
-
-### HasEnvironmentVariables
-
-`func (o *AddNodeType200ResponseAllOfContainerType) HasEnvironmentVariables() bool`
-
-HasEnvironmentVariables returns a boolean if a field has been set.
-
-### SetEnvironmentVariablesNil
-
-`func (o *AddNodeType200ResponseAllOfContainerType) SetEnvironmentVariablesNil(b bool)`
-
- SetEnvironmentVariablesNil sets the value for EnvironmentVariables to be an explicit nil
-
-### UnsetEnvironmentVariables
-`func (o *AddNodeType200ResponseAllOfContainerType) UnsetEnvironmentVariables()`
-
-UnsetEnvironmentVariables ensures that no value is present for EnvironmentVariables, not even an explicit nil
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &AddNodeType200ResponseAllOfContainerType{
+    // Set fields directly
+}
+```
+
+### Category (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Category.IsSet()` — check if set
+- `obj.Category.Get()` — get the inner value (returns pointer)
+- `obj.Category.Set(&val)` — set the value
+- `obj.Category.Unset()` — clear the value
+### Config (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Config.IsSet()` — check if set
+- `obj.Config.Get()` — get the inner value (returns pointer)
+- `obj.Config.Set(&val)` — set the value
+- `obj.Config.Unset()` — clear the value
+### ContainerPorts (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ContainerPorts.IsSet()` — check if set
+- `obj.ContainerPorts.Get()` — get the inner value (returns pointer)
+- `obj.ContainerPorts.Set(&val)` — set the value
+- `obj.ContainerPorts.Unset()` — clear the value
+### ContainerScripts (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ContainerScripts.IsSet()` — check if set
+- `obj.ContainerScripts.Get()` — get the inner value (returns pointer)
+- `obj.ContainerScripts.Set(&val)` — set the value
+- `obj.ContainerScripts.Unset()` — clear the value
+### ContainerTemplates (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ContainerTemplates.IsSet()` — check if set
+- `obj.ContainerTemplates.Get()` — get the inner value (returns pointer)
+- `obj.ContainerTemplates.Set(&val)` — set the value
+- `obj.ContainerTemplates.Unset()` — clear the value
+### EnvironmentVariables (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.EnvironmentVariables.IsSet()` — check if set
+- `obj.EnvironmentVariables.Get()` — get the inner value (returns pointer)
+- `obj.EnvironmentVariables.Set(&val)` — set the value
+- `obj.EnvironmentVariables.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

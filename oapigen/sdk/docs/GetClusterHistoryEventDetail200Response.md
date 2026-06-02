@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ProcessEvent** | Pointer to [**GetClusterHistoryEventDetail200ResponseProcessEvent**](GetClusterHistoryEventDetail200ResponseProcessEvent.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetClusterHistoryEventDetail200Response
+Instantiate with a Go composite literal:
 
-`func NewGetClusterHistoryEventDetail200Response() *GetClusterHistoryEventDetail200Response`
-
-NewGetClusterHistoryEventDetail200Response instantiates a new GetClusterHistoryEventDetail200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetProcessEvent
-
-`func (o *GetClusterHistoryEventDetail200Response) GetProcessEvent() GetClusterHistoryEventDetail200ResponseProcessEvent`
-
-GetProcessEvent returns the ProcessEvent field if non-nil, zero value otherwise.
-
-### GetProcessEventOk
-
-`func (o *GetClusterHistoryEventDetail200Response) GetProcessEventOk() (*GetClusterHistoryEventDetail200ResponseProcessEvent, bool)`
-
-GetProcessEventOk returns a tuple with the ProcessEvent field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProcessEvent
-
-`func (o *GetClusterHistoryEventDetail200Response) SetProcessEvent(v GetClusterHistoryEventDetail200ResponseProcessEvent)`
-
-SetProcessEvent sets ProcessEvent field to given value.
-
-### HasProcessEvent
-
-`func (o *GetClusterHistoryEventDetail200Response) HasProcessEvent() bool`
-
-HasProcessEvent returns a boolean if a field has been set.
+```go
+obj := &GetClusterHistoryEventDetail200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -11,197 +11,37 @@ Name | Type | Description | Notes
 **Repository** | Pointer to **NullableString** |  | [optional] 
 **Content** | Pointer to **string** |  | [optional] 
 
-## Methods
-
-### NewListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile
-
-`func NewListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile() *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile`
-
-NewListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile instantiates a new ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetSourceType
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetSourceType() string`
-
-GetSourceType returns the SourceType field if non-nil, zero value otherwise.
-
-### GetSourceTypeOk
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetSourceTypeOk() (*string, bool)`
-
-GetSourceTypeOk returns a tuple with the SourceType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSourceType
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetSourceType(v string)`
-
-SetSourceType sets SourceType field to given value.
-
-### HasSourceType
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) HasSourceType() bool`
-
-HasSourceType returns a boolean if a field has been set.
-
-### GetContentRef
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetContentRef() string`
-
-GetContentRef returns the ContentRef field if non-nil, zero value otherwise.
-
-### GetContentRefOk
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetContentRefOk() (*string, bool)`
-
-GetContentRefOk returns a tuple with the ContentRef field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContentRef
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetContentRef(v string)`
-
-SetContentRef sets ContentRef field to given value.
-
-### HasContentRef
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) HasContentRef() bool`
-
-HasContentRef returns a boolean if a field has been set.
-
-### SetContentRefNil
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetContentRefNil(b bool)`
-
- SetContentRefNil sets the value for ContentRef to be an explicit nil
-
-### UnsetContentRef
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) UnsetContentRef()`
-
-UnsetContentRef ensures that no value is present for ContentRef, not even an explicit nil
-### GetContentPath
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetContentPath() string`
-
-GetContentPath returns the ContentPath field if non-nil, zero value otherwise.
-
-### GetContentPathOk
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetContentPathOk() (*string, bool)`
-
-GetContentPathOk returns a tuple with the ContentPath field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContentPath
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetContentPath(v string)`
-
-SetContentPath sets ContentPath field to given value.
-
-### HasContentPath
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) HasContentPath() bool`
-
-HasContentPath returns a boolean if a field has been set.
-
-### SetContentPathNil
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetContentPathNil(b bool)`
-
- SetContentPathNil sets the value for ContentPath to be an explicit nil
-
-### UnsetContentPath
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) UnsetContentPath()`
-
-UnsetContentPath ensures that no value is present for ContentPath, not even an explicit nil
-### GetRepository
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetRepository() string`
-
-GetRepository returns the Repository field if non-nil, zero value otherwise.
-
-### GetRepositoryOk
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetRepositoryOk() (*string, bool)`
-
-GetRepositoryOk returns a tuple with the Repository field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRepository
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetRepository(v string)`
-
-SetRepository sets Repository field to given value.
-
-### HasRepository
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) HasRepository() bool`
-
-HasRepository returns a boolean if a field has been set.
-
-### SetRepositoryNil
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetRepositoryNil(b bool)`
-
- SetRepositoryNil sets the value for Repository to be an explicit nil
-
-### UnsetRepository
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) UnsetRepository()`
-
-UnsetRepository ensures that no value is present for Repository, not even an explicit nil
-### GetContent
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetContent() string`
-
-GetContent returns the Content field if non-nil, zero value otherwise.
-
-### GetContentOk
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetContentOk() (*string, bool)`
-
-GetContentOk returns a tuple with the Content field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContent
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetContent(v string)`
-
-SetContent sets Content field to given value.
-
-### HasContent
-
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) HasContent() bool`
-
-HasContent returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile{
+    // Set fields directly
+}
+```
+
+### ContentRef (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ContentRef.IsSet()` — check if set
+- `obj.ContentRef.Get()` — get the inner value (returns pointer)
+- `obj.ContentRef.Set(&val)` — set the value
+- `obj.ContentRef.Unset()` — clear the value
+### ContentPath (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ContentPath.IsSet()` — check if set
+- `obj.ContentPath.Get()` — get the inner value (returns pointer)
+- `obj.ContentPath.Set(&val)` — set the value
+- `obj.ContentPath.Unset()` — clear the value
+### Repository (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Repository.IsSet()` — check if set
+- `obj.Repository.Get()` — get the inner value (returns pointer)
+- `obj.Repository.Set(&val)` — set the value
+- `obj.Repository.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

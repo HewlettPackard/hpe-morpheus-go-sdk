@@ -11,177 +11,23 @@ Name | Type | Description | Notes
 **Content** | Pointer to **string** |  | [optional] 
 **CreatedBy** | Pointer to [**AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy**](AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy.md) |  | [optional] 
 
-## Methods
-
-### NewPreseedScript
-
-`func NewPreseedScript() *PreseedScript`
-
-NewPreseedScript instantiates a new PreseedScript object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *PreseedScript) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *PreseedScript) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *PreseedScript) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *PreseedScript) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetAccount
-
-`func (o *PreseedScript) GetAccount() AddPreseedScript200ResponseAllOfPreseedScriptAccount`
-
-GetAccount returns the Account field if non-nil, zero value otherwise.
-
-### GetAccountOk
-
-`func (o *PreseedScript) GetAccountOk() (*AddPreseedScript200ResponseAllOfPreseedScriptAccount, bool)`
-
-GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccount
-
-`func (o *PreseedScript) SetAccount(v AddPreseedScript200ResponseAllOfPreseedScriptAccount)`
-
-SetAccount sets Account field to given value.
-
-### HasAccount
-
-`func (o *PreseedScript) HasAccount() bool`
-
-HasAccount returns a boolean if a field has been set.
-
-### GetFileName
-
-`func (o *PreseedScript) GetFileName() string`
-
-GetFileName returns the FileName field if non-nil, zero value otherwise.
-
-### GetFileNameOk
-
-`func (o *PreseedScript) GetFileNameOk() (*string, bool)`
-
-GetFileNameOk returns a tuple with the FileName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFileName
-
-`func (o *PreseedScript) SetFileName(v string)`
-
-SetFileName sets FileName field to given value.
-
-### HasFileName
-
-`func (o *PreseedScript) HasFileName() bool`
-
-HasFileName returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *PreseedScript) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *PreseedScript) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *PreseedScript) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *PreseedScript) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### SetDescriptionNil
-
-`func (o *PreseedScript) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *PreseedScript) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetContent
-
-`func (o *PreseedScript) GetContent() string`
-
-GetContent returns the Content field if non-nil, zero value otherwise.
-
-### GetContentOk
-
-`func (o *PreseedScript) GetContentOk() (*string, bool)`
-
-GetContentOk returns a tuple with the Content field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContent
-
-`func (o *PreseedScript) SetContent(v string)`
-
-SetContent sets Content field to given value.
-
-### HasContent
-
-`func (o *PreseedScript) HasContent() bool`
-
-HasContent returns a boolean if a field has been set.
-
-### GetCreatedBy
-
-`func (o *PreseedScript) GetCreatedBy() AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy`
-
-GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
-
-### GetCreatedByOk
-
-`func (o *PreseedScript) GetCreatedByOk() (*AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy, bool)`
-
-GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedBy
-
-`func (o *PreseedScript) SetCreatedBy(v AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy)`
-
-SetCreatedBy sets CreatedBy field to given value.
-
-### HasCreatedBy
-
-`func (o *PreseedScript) HasCreatedBy() bool`
-
-HasCreatedBy returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &PreseedScript{
+    // Set fields directly
+}
+```
+
+### Description (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Description.IsSet()` — check if set
+- `obj.Description.Get()` — get the inner value (returns pointer)
+- `obj.Description.Set(&val)` — set the value
+- `obj.Description.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

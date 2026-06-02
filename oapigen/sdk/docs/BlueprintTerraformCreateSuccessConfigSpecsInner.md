@@ -8,91 +8,15 @@ Name | Type | Description | Notes
 **Value** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewBlueprintTerraformCreateSuccessConfigSpecsInner
+Instantiate with a Go composite literal:
 
-`func NewBlueprintTerraformCreateSuccessConfigSpecsInner() *BlueprintTerraformCreateSuccessConfigSpecsInner`
-
-NewBlueprintTerraformCreateSuccessConfigSpecsInner instantiates a new BlueprintTerraformCreateSuccessConfigSpecsInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *BlueprintTerraformCreateSuccessConfigSpecsInner) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *BlueprintTerraformCreateSuccessConfigSpecsInner) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *BlueprintTerraformCreateSuccessConfigSpecsInner) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *BlueprintTerraformCreateSuccessConfigSpecsInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetValue
-
-`func (o *BlueprintTerraformCreateSuccessConfigSpecsInner) GetValue() int64`
-
-GetValue returns the Value field if non-nil, zero value otherwise.
-
-### GetValueOk
-
-`func (o *BlueprintTerraformCreateSuccessConfigSpecsInner) GetValueOk() (*int64, bool)`
-
-GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValue
-
-`func (o *BlueprintTerraformCreateSuccessConfigSpecsInner) SetValue(v int64)`
-
-SetValue sets Value field to given value.
-
-### HasValue
-
-`func (o *BlueprintTerraformCreateSuccessConfigSpecsInner) HasValue() bool`
-
-HasValue returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *BlueprintTerraformCreateSuccessConfigSpecsInner) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *BlueprintTerraformCreateSuccessConfigSpecsInner) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *BlueprintTerraformCreateSuccessConfigSpecsInner) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *BlueprintTerraformCreateSuccessConfigSpecsInner) HasName() bool`
-
-HasName returns a boolean if a field has been set.
+```go
+obj := &BlueprintTerraformCreateSuccessConfigSpecsInner{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

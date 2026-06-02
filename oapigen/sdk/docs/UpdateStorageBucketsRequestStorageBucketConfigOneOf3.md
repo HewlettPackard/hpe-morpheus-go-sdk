@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BasePath** | Pointer to **string** | Storage Path | [optional] 
 
-## Methods
+## Usage
 
-### NewUpdateStorageBucketsRequestStorageBucketConfigOneOf3
+Instantiate with a Go composite literal:
 
-`func NewUpdateStorageBucketsRequestStorageBucketConfigOneOf3() *UpdateStorageBucketsRequestStorageBucketConfigOneOf3`
-
-NewUpdateStorageBucketsRequestStorageBucketConfigOneOf3 instantiates a new UpdateStorageBucketsRequestStorageBucketConfigOneOf3 object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetBasePath
-
-`func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf3) GetBasePath() string`
-
-GetBasePath returns the BasePath field if non-nil, zero value otherwise.
-
-### GetBasePathOk
-
-`func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf3) GetBasePathOk() (*string, bool)`
-
-GetBasePathOk returns a tuple with the BasePath field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBasePath
-
-`func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf3) SetBasePath(v string)`
-
-SetBasePath sets BasePath field to given value.
-
-### HasBasePath
-
-`func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf3) HasBasePath() bool`
-
-HasBasePath returns a boolean if a field has been set.
+```go
+obj := &UpdateStorageBucketsRequestStorageBucketConfigOneOf3{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

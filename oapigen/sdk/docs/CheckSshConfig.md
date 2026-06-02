@@ -10,141 +10,15 @@ Name | Type | Description | Notes
 **SshUser** | Pointer to **string** | SSH user on the proxy host to login as | [optional] 
 **SshPassword** | Pointer to **string** | Password for user, if not using key based authentication | [optional] 
 
-## Methods
+## Usage
 
-### NewCheckSshConfig
+Instantiate with a Go composite literal:
 
-`func NewCheckSshConfig() *CheckSshConfig`
-
-NewCheckSshConfig instantiates a new CheckSshConfig object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetTunnelOn
-
-`func (o *CheckSshConfig) GetTunnelOn() string`
-
-GetTunnelOn returns the TunnelOn field if non-nil, zero value otherwise.
-
-### GetTunnelOnOk
-
-`func (o *CheckSshConfig) GetTunnelOnOk() (*string, bool)`
-
-GetTunnelOnOk returns a tuple with the TunnelOn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTunnelOn
-
-`func (o *CheckSshConfig) SetTunnelOn(v string)`
-
-SetTunnelOn sets TunnelOn field to given value.
-
-### HasTunnelOn
-
-`func (o *CheckSshConfig) HasTunnelOn() bool`
-
-HasTunnelOn returns a boolean if a field has been set.
-
-### GetSshHost
-
-`func (o *CheckSshConfig) GetSshHost() string`
-
-GetSshHost returns the SshHost field if non-nil, zero value otherwise.
-
-### GetSshHostOk
-
-`func (o *CheckSshConfig) GetSshHostOk() (*string, bool)`
-
-GetSshHostOk returns a tuple with the SshHost field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSshHost
-
-`func (o *CheckSshConfig) SetSshHost(v string)`
-
-SetSshHost sets SshHost field to given value.
-
-### HasSshHost
-
-`func (o *CheckSshConfig) HasSshHost() bool`
-
-HasSshHost returns a boolean if a field has been set.
-
-### GetSshPort
-
-`func (o *CheckSshConfig) GetSshPort() int64`
-
-GetSshPort returns the SshPort field if non-nil, zero value otherwise.
-
-### GetSshPortOk
-
-`func (o *CheckSshConfig) GetSshPortOk() (*int64, bool)`
-
-GetSshPortOk returns a tuple with the SshPort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSshPort
-
-`func (o *CheckSshConfig) SetSshPort(v int64)`
-
-SetSshPort sets SshPort field to given value.
-
-### HasSshPort
-
-`func (o *CheckSshConfig) HasSshPort() bool`
-
-HasSshPort returns a boolean if a field has been set.
-
-### GetSshUser
-
-`func (o *CheckSshConfig) GetSshUser() string`
-
-GetSshUser returns the SshUser field if non-nil, zero value otherwise.
-
-### GetSshUserOk
-
-`func (o *CheckSshConfig) GetSshUserOk() (*string, bool)`
-
-GetSshUserOk returns a tuple with the SshUser field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSshUser
-
-`func (o *CheckSshConfig) SetSshUser(v string)`
-
-SetSshUser sets SshUser field to given value.
-
-### HasSshUser
-
-`func (o *CheckSshConfig) HasSshUser() bool`
-
-HasSshUser returns a boolean if a field has been set.
-
-### GetSshPassword
-
-`func (o *CheckSshConfig) GetSshPassword() string`
-
-GetSshPassword returns the SshPassword field if non-nil, zero value otherwise.
-
-### GetSshPasswordOk
-
-`func (o *CheckSshConfig) GetSshPasswordOk() (*string, bool)`
-
-GetSshPasswordOk returns a tuple with the SshPassword field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSshPassword
-
-`func (o *CheckSshConfig) SetSshPassword(v string)`
-
-SetSshPassword sets SshPassword field to given value.
-
-### HasSshPassword
-
-`func (o *CheckSshConfig) HasSshPassword() bool`
-
-HasSshPassword returns a boolean if a field has been set.
+```go
+obj := &CheckSshConfig{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

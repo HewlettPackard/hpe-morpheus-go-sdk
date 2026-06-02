@@ -7,66 +7,15 @@ Name | Type | Description | Notes
 **Desktops** | Pointer to [**[]ListVdi200ResponseAllOfDesktopsInner**](ListVdi200ResponseAllOfDesktopsInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListVdi200Response
+Instantiate with a Go composite literal:
 
-`func NewListVdi200Response() *ListVdi200Response`
-
-NewListVdi200Response instantiates a new ListVdi200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetDesktops
-
-`func (o *ListVdi200Response) GetDesktops() []ListVdi200ResponseAllOfDesktopsInner`
-
-GetDesktops returns the Desktops field if non-nil, zero value otherwise.
-
-### GetDesktopsOk
-
-`func (o *ListVdi200Response) GetDesktopsOk() (*[]ListVdi200ResponseAllOfDesktopsInner, bool)`
-
-GetDesktopsOk returns a tuple with the Desktops field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDesktops
-
-`func (o *ListVdi200Response) SetDesktops(v []ListVdi200ResponseAllOfDesktopsInner)`
-
-SetDesktops sets Desktops field to given value.
-
-### HasDesktops
-
-`func (o *ListVdi200Response) HasDesktops() bool`
-
-HasDesktops returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *ListVdi200Response) GetMeta() ListApprovals200ResponseAllOfMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *ListVdi200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *ListVdi200Response) SetMeta(v ListApprovals200ResponseAllOfMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *ListVdi200Response) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
+```go
+obj := &ListVdi200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

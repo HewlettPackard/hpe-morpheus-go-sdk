@@ -7,66 +7,15 @@ Name | Type | Description | Notes
 **SecurityPackage** | Pointer to [**AddSecurityPackages200ResponseAllOfSecurityPackage**](AddSecurityPackages200ResponseAllOfSecurityPackage.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewAddSecurityPackages200Response
+Instantiate with a Go composite literal:
 
-`func NewAddSecurityPackages200Response() *AddSecurityPackages200Response`
-
-NewAddSecurityPackages200Response instantiates a new AddSecurityPackages200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetSecurityPackage
-
-`func (o *AddSecurityPackages200Response) GetSecurityPackage() AddSecurityPackages200ResponseAllOfSecurityPackage`
-
-GetSecurityPackage returns the SecurityPackage field if non-nil, zero value otherwise.
-
-### GetSecurityPackageOk
-
-`func (o *AddSecurityPackages200Response) GetSecurityPackageOk() (*AddSecurityPackages200ResponseAllOfSecurityPackage, bool)`
-
-GetSecurityPackageOk returns a tuple with the SecurityPackage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSecurityPackage
-
-`func (o *AddSecurityPackages200Response) SetSecurityPackage(v AddSecurityPackages200ResponseAllOfSecurityPackage)`
-
-SetSecurityPackage sets SecurityPackage field to given value.
-
-### HasSecurityPackage
-
-`func (o *AddSecurityPackages200Response) HasSecurityPackage() bool`
-
-HasSecurityPackage returns a boolean if a field has been set.
-
-### GetSuccess
-
-`func (o *AddSecurityPackages200Response) GetSuccess() bool`
-
-GetSuccess returns the Success field if non-nil, zero value otherwise.
-
-### GetSuccessOk
-
-`func (o *AddSecurityPackages200Response) GetSuccessOk() (*bool, bool)`
-
-GetSuccessOk returns a tuple with the Success field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSuccess
-
-`func (o *AddSecurityPackages200Response) SetSuccess(v bool)`
-
-SetSuccess sets Success field to given value.
-
-### HasSuccess
-
-`func (o *AddSecurityPackages200Response) HasSuccess() bool`
-
-HasSuccess returns a boolean if a field has been set.
+```go
+obj := &AddSecurityPackages200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

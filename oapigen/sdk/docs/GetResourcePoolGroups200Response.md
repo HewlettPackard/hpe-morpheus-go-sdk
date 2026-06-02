@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ResourcePoolGroups** | Pointer to [**[]GetResourcePoolGroups200ResponseResourcePoolGroupsInner**](GetResourcePoolGroups200ResponseResourcePoolGroupsInner.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetResourcePoolGroups200Response
+Instantiate with a Go composite literal:
 
-`func NewGetResourcePoolGroups200Response() *GetResourcePoolGroups200Response`
-
-NewGetResourcePoolGroups200Response instantiates a new GetResourcePoolGroups200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetResourcePoolGroups
-
-`func (o *GetResourcePoolGroups200Response) GetResourcePoolGroups() []GetResourcePoolGroups200ResponseResourcePoolGroupsInner`
-
-GetResourcePoolGroups returns the ResourcePoolGroups field if non-nil, zero value otherwise.
-
-### GetResourcePoolGroupsOk
-
-`func (o *GetResourcePoolGroups200Response) GetResourcePoolGroupsOk() (*[]GetResourcePoolGroups200ResponseResourcePoolGroupsInner, bool)`
-
-GetResourcePoolGroupsOk returns a tuple with the ResourcePoolGroups field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourcePoolGroups
-
-`func (o *GetResourcePoolGroups200Response) SetResourcePoolGroups(v []GetResourcePoolGroups200ResponseResourcePoolGroupsInner)`
-
-SetResourcePoolGroups sets ResourcePoolGroups field to given value.
-
-### HasResourcePoolGroups
-
-`func (o *GetResourcePoolGroups200Response) HasResourcePoolGroups() bool`
-
-HasResourcePoolGroups returns a boolean if a field has been set.
+```go
+obj := &GetResourcePoolGroups200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

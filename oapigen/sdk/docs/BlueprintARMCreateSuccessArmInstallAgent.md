@@ -5,16 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
-## Methods
+## Usage
 
-### NewBlueprintARMCreateSuccessArmInstallAgent
+Instantiate with a Go composite literal:
 
-`func NewBlueprintARMCreateSuccessArmInstallAgent() *BlueprintARMCreateSuccessArmInstallAgent`
-
-NewBlueprintARMCreateSuccessArmInstallAgent instantiates a new BlueprintARMCreateSuccessArmInstallAgent object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+```go
+obj := &BlueprintARMCreateSuccessArmInstallAgent{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

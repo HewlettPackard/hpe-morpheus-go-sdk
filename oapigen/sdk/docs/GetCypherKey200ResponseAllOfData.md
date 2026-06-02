@@ -5,16 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
-## Methods
+## Usage
 
-### NewGetCypherKey200ResponseAllOfData
+Instantiate with a Go composite literal:
 
-`func NewGetCypherKey200ResponseAllOfData() *GetCypherKey200ResponseAllOfData`
-
-NewGetCypherKey200ResponseAllOfData instantiates a new GetCypherKey200ResponseAllOfData object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+```go
+obj := &GetCypherKey200ResponseAllOfData{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

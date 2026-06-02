@@ -5,16 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
-## Methods
+## Usage
 
-### NewNetworkRouterBgpNeighborUpdateBfdEnabled
+Instantiate with a Go composite literal:
 
-`func NewNetworkRouterBgpNeighborUpdateBfdEnabled() *NetworkRouterBgpNeighborUpdateBfdEnabled`
-
-NewNetworkRouterBgpNeighborUpdateBfdEnabled instantiates a new NetworkRouterBgpNeighborUpdateBfdEnabled object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+```go
+obj := &NetworkRouterBgpNeighborUpdateBfdEnabled{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

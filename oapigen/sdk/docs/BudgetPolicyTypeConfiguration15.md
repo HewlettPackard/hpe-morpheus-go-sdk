@@ -8,91 +8,15 @@ Name | Type | Description | Notes
 **MaxPriceCurrency** | Pointer to **string** |  | [optional] 
 **MaxPriceUnit** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewBudgetPolicyTypeConfiguration15
+Instantiate with a Go composite literal:
 
-`func NewBudgetPolicyTypeConfiguration15() *BudgetPolicyTypeConfiguration15`
-
-NewBudgetPolicyTypeConfiguration15 instantiates a new BudgetPolicyTypeConfiguration15 object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetMaxPrice
-
-`func (o *BudgetPolicyTypeConfiguration15) GetMaxPrice() float32`
-
-GetMaxPrice returns the MaxPrice field if non-nil, zero value otherwise.
-
-### GetMaxPriceOk
-
-`func (o *BudgetPolicyTypeConfiguration15) GetMaxPriceOk() (*float32, bool)`
-
-GetMaxPriceOk returns a tuple with the MaxPrice field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxPrice
-
-`func (o *BudgetPolicyTypeConfiguration15) SetMaxPrice(v float32)`
-
-SetMaxPrice sets MaxPrice field to given value.
-
-### HasMaxPrice
-
-`func (o *BudgetPolicyTypeConfiguration15) HasMaxPrice() bool`
-
-HasMaxPrice returns a boolean if a field has been set.
-
-### GetMaxPriceCurrency
-
-`func (o *BudgetPolicyTypeConfiguration15) GetMaxPriceCurrency() string`
-
-GetMaxPriceCurrency returns the MaxPriceCurrency field if non-nil, zero value otherwise.
-
-### GetMaxPriceCurrencyOk
-
-`func (o *BudgetPolicyTypeConfiguration15) GetMaxPriceCurrencyOk() (*string, bool)`
-
-GetMaxPriceCurrencyOk returns a tuple with the MaxPriceCurrency field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxPriceCurrency
-
-`func (o *BudgetPolicyTypeConfiguration15) SetMaxPriceCurrency(v string)`
-
-SetMaxPriceCurrency sets MaxPriceCurrency field to given value.
-
-### HasMaxPriceCurrency
-
-`func (o *BudgetPolicyTypeConfiguration15) HasMaxPriceCurrency() bool`
-
-HasMaxPriceCurrency returns a boolean if a field has been set.
-
-### GetMaxPriceUnit
-
-`func (o *BudgetPolicyTypeConfiguration15) GetMaxPriceUnit() string`
-
-GetMaxPriceUnit returns the MaxPriceUnit field if non-nil, zero value otherwise.
-
-### GetMaxPriceUnitOk
-
-`func (o *BudgetPolicyTypeConfiguration15) GetMaxPriceUnitOk() (*string, bool)`
-
-GetMaxPriceUnitOk returns a tuple with the MaxPriceUnit field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxPriceUnit
-
-`func (o *BudgetPolicyTypeConfiguration15) SetMaxPriceUnit(v string)`
-
-SetMaxPriceUnit sets MaxPriceUnit field to given value.
-
-### HasMaxPriceUnit
-
-`func (o *BudgetPolicyTypeConfiguration15) HasMaxPriceUnit() bool`
-
-HasMaxPriceUnit returns a boolean if a field has been set.
+```go
+obj := &BudgetPolicyTypeConfiguration15{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

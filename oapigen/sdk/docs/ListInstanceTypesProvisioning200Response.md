@@ -7,66 +7,15 @@ Name | Type | Description | Notes
 **InstanceTypes** | Pointer to [**[]ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner**](ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListInstanceTypesProvisioning200Response
+Instantiate with a Go composite literal:
 
-`func NewListInstanceTypesProvisioning200Response() *ListInstanceTypesProvisioning200Response`
-
-NewListInstanceTypesProvisioning200Response instantiates a new ListInstanceTypesProvisioning200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetInstanceTypes
-
-`func (o *ListInstanceTypesProvisioning200Response) GetInstanceTypes() []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner`
-
-GetInstanceTypes returns the InstanceTypes field if non-nil, zero value otherwise.
-
-### GetInstanceTypesOk
-
-`func (o *ListInstanceTypesProvisioning200Response) GetInstanceTypesOk() (*[]ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner, bool)`
-
-GetInstanceTypesOk returns a tuple with the InstanceTypes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInstanceTypes
-
-`func (o *ListInstanceTypesProvisioning200Response) SetInstanceTypes(v []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner)`
-
-SetInstanceTypes sets InstanceTypes field to given value.
-
-### HasInstanceTypes
-
-`func (o *ListInstanceTypesProvisioning200Response) HasInstanceTypes() bool`
-
-HasInstanceTypes returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *ListInstanceTypesProvisioning200Response) GetMeta() ListApprovals200ResponseAllOfMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *ListInstanceTypesProvisioning200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *ListInstanceTypesProvisioning200Response) SetMeta(v ListApprovals200ResponseAllOfMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *ListInstanceTypesProvisioning200Response) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
+```go
+obj := &ListInstanceTypesProvisioning200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

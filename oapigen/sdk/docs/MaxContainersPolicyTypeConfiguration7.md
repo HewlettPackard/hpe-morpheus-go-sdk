@@ -6,36 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MaxContainers** | **string** |  | 
 
-## Methods
+## Usage
 
-### NewMaxContainersPolicyTypeConfiguration7
+Instantiate with a Go composite literal:
 
-`func NewMaxContainersPolicyTypeConfiguration7(maxContainers string, ) *MaxContainersPolicyTypeConfiguration7`
-
-NewMaxContainersPolicyTypeConfiguration7 instantiates a new MaxContainersPolicyTypeConfiguration7 object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetMaxContainers
-
-`func (o *MaxContainersPolicyTypeConfiguration7) GetMaxContainers() string`
-
-GetMaxContainers returns the MaxContainers field if non-nil, zero value otherwise.
-
-### GetMaxContainersOk
-
-`func (o *MaxContainersPolicyTypeConfiguration7) GetMaxContainersOk() (*string, bool)`
-
-GetMaxContainersOk returns a tuple with the MaxContainers field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxContainers
-
-`func (o *MaxContainersPolicyTypeConfiguration7) SetMaxContainers(v string)`
-
-SetMaxContainers sets MaxContainers field to given value.
-
+```go
+obj := &MaxContainersPolicyTypeConfiguration7{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,16 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
-## Methods
+## Usage
 
-### NewListJobs200ResponseAllOfJobsInnerAnyOf2ScheduleMode
+Instantiate with a Go composite literal:
 
-`func NewListJobs200ResponseAllOfJobsInnerAnyOf2ScheduleMode() *ListJobs200ResponseAllOfJobsInnerAnyOf2ScheduleMode`
-
-NewListJobs200ResponseAllOfJobsInnerAnyOf2ScheduleMode instantiates a new ListJobs200ResponseAllOfJobsInnerAnyOf2ScheduleMode object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+```go
+obj := &ListJobs200ResponseAllOfJobsInnerAnyOf2ScheduleMode{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

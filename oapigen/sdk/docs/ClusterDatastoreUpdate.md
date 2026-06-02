@@ -10,141 +10,15 @@ Name | Type | Description | Notes
 **HeartbeatTarget** | Pointer to **bool** | Heartbeat Target | [optional] 
 **SupportsVmSecureMetadata** | Pointer to **bool** | When &#x60;true&#x60;, designates this datastore to hold NVRAM and swtpm state for TPM/SecureBoot VMs in the cluster, enabling live migration and HA failover. Only one datastore per cluster scope may be designated at a time; setting this to &#x60;true&#x60; automatically clears the flag on any previously designated datastore. Only applicable to GFS2 and NFS datastore types.  | [optional] 
 
-## Methods
+## Usage
 
-### NewClusterDatastoreUpdate
+Instantiate with a Go composite literal:
 
-`func NewClusterDatastoreUpdate() *ClusterDatastoreUpdate`
-
-NewClusterDatastoreUpdate instantiates a new ClusterDatastoreUpdate object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetActive
-
-`func (o *ClusterDatastoreUpdate) GetActive() bool`
-
-GetActive returns the Active field if non-nil, zero value otherwise.
-
-### GetActiveOk
-
-`func (o *ClusterDatastoreUpdate) GetActiveOk() (*bool, bool)`
-
-GetActiveOk returns a tuple with the Active field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActive
-
-`func (o *ClusterDatastoreUpdate) SetActive(v bool)`
-
-SetActive sets Active field to given value.
-
-### HasActive
-
-`func (o *ClusterDatastoreUpdate) HasActive() bool`
-
-HasActive returns a boolean if a field has been set.
-
-### GetPermissions
-
-`func (o *ClusterDatastoreUpdate) GetPermissions() ClusterDatastoreUpdatePermissions`
-
-GetPermissions returns the Permissions field if non-nil, zero value otherwise.
-
-### GetPermissionsOk
-
-`func (o *ClusterDatastoreUpdate) GetPermissionsOk() (*ClusterDatastoreUpdatePermissions, bool)`
-
-GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPermissions
-
-`func (o *ClusterDatastoreUpdate) SetPermissions(v ClusterDatastoreUpdatePermissions)`
-
-SetPermissions sets Permissions field to given value.
-
-### HasPermissions
-
-`func (o *ClusterDatastoreUpdate) HasPermissions() bool`
-
-HasPermissions returns a boolean if a field has been set.
-
-### GetVisibility
-
-`func (o *ClusterDatastoreUpdate) GetVisibility() string`
-
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
-
-### GetVisibilityOk
-
-`func (o *ClusterDatastoreUpdate) GetVisibilityOk() (*string, bool)`
-
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVisibility
-
-`func (o *ClusterDatastoreUpdate) SetVisibility(v string)`
-
-SetVisibility sets Visibility field to given value.
-
-### HasVisibility
-
-`func (o *ClusterDatastoreUpdate) HasVisibility() bool`
-
-HasVisibility returns a boolean if a field has been set.
-
-### GetHeartbeatTarget
-
-`func (o *ClusterDatastoreUpdate) GetHeartbeatTarget() bool`
-
-GetHeartbeatTarget returns the HeartbeatTarget field if non-nil, zero value otherwise.
-
-### GetHeartbeatTargetOk
-
-`func (o *ClusterDatastoreUpdate) GetHeartbeatTargetOk() (*bool, bool)`
-
-GetHeartbeatTargetOk returns a tuple with the HeartbeatTarget field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHeartbeatTarget
-
-`func (o *ClusterDatastoreUpdate) SetHeartbeatTarget(v bool)`
-
-SetHeartbeatTarget sets HeartbeatTarget field to given value.
-
-### HasHeartbeatTarget
-
-`func (o *ClusterDatastoreUpdate) HasHeartbeatTarget() bool`
-
-HasHeartbeatTarget returns a boolean if a field has been set.
-
-### GetSupportsVmSecureMetadata
-
-`func (o *ClusterDatastoreUpdate) GetSupportsVmSecureMetadata() bool`
-
-GetSupportsVmSecureMetadata returns the SupportsVmSecureMetadata field if non-nil, zero value otherwise.
-
-### GetSupportsVmSecureMetadataOk
-
-`func (o *ClusterDatastoreUpdate) GetSupportsVmSecureMetadataOk() (*bool, bool)`
-
-GetSupportsVmSecureMetadataOk returns a tuple with the SupportsVmSecureMetadata field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSupportsVmSecureMetadata
-
-`func (o *ClusterDatastoreUpdate) SetSupportsVmSecureMetadata(v bool)`
-
-SetSupportsVmSecureMetadata sets SupportsVmSecureMetadata field to given value.
-
-### HasSupportsVmSecureMetadata
-
-`func (o *ClusterDatastoreUpdate) HasSupportsVmSecureMetadata() bool`
-
-HasSupportsVmSecureMetadata returns a boolean if a field has been set.
+```go
+obj := &ClusterDatastoreUpdate{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Environment** | Pointer to [**GetEnvironments200ResponseEnvironment**](GetEnvironments200ResponseEnvironment.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetEnvironments200Response
+Instantiate with a Go composite literal:
 
-`func NewGetEnvironments200Response() *GetEnvironments200Response`
-
-NewGetEnvironments200Response instantiates a new GetEnvironments200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetEnvironment
-
-`func (o *GetEnvironments200Response) GetEnvironment() GetEnvironments200ResponseEnvironment`
-
-GetEnvironment returns the Environment field if non-nil, zero value otherwise.
-
-### GetEnvironmentOk
-
-`func (o *GetEnvironments200Response) GetEnvironmentOk() (*GetEnvironments200ResponseEnvironment, bool)`
-
-GetEnvironmentOk returns a tuple with the Environment field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnvironment
-
-`func (o *GetEnvironments200Response) SetEnvironment(v GetEnvironments200ResponseEnvironment)`
-
-SetEnvironment sets Environment field to given value.
-
-### HasEnvironment
-
-`func (o *GetEnvironments200Response) HasEnvironment() bool`
-
-HasEnvironment returns a boolean if a field has been set.
+```go
+obj := &GetEnvironments200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

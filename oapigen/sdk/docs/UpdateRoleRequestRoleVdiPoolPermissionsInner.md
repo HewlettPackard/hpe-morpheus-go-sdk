@@ -7,56 +7,15 @@ Name | Type | Description | Notes
 **Id** | **int64** | &#x60;id&#x60; of the VDI pool | 
 **Access** | **string** | The new access level. | 
 
-## Methods
+## Usage
 
-### NewUpdateRoleRequestRoleVdiPoolPermissionsInner
+Instantiate with a Go composite literal:
 
-`func NewUpdateRoleRequestRoleVdiPoolPermissionsInner(id int64, access string, ) *UpdateRoleRequestRoleVdiPoolPermissionsInner`
-
-NewUpdateRoleRequestRoleVdiPoolPermissionsInner instantiates a new UpdateRoleRequestRoleVdiPoolPermissionsInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *UpdateRoleRequestRoleVdiPoolPermissionsInner) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *UpdateRoleRequestRoleVdiPoolPermissionsInner) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *UpdateRoleRequestRoleVdiPoolPermissionsInner) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-
-### GetAccess
-
-`func (o *UpdateRoleRequestRoleVdiPoolPermissionsInner) GetAccess() string`
-
-GetAccess returns the Access field if non-nil, zero value otherwise.
-
-### GetAccessOk
-
-`func (o *UpdateRoleRequestRoleVdiPoolPermissionsInner) GetAccessOk() (*string, bool)`
-
-GetAccessOk returns a tuple with the Access field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccess
-
-`func (o *UpdateRoleRequestRoleVdiPoolPermissionsInner) SetAccess(v string)`
-
-SetAccess sets Access field to given value.
-
+```go
+obj := &UpdateRoleRequestRoleVdiPoolPermissionsInner{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

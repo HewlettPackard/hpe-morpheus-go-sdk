@@ -7,66 +7,15 @@ Name | Type | Description | Notes
 **Clients** | Pointer to [**[]ListClients200ResponseAllOfClientsInner**](ListClients200ResponseAllOfClientsInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListClients200Response
+Instantiate with a Go composite literal:
 
-`func NewListClients200Response() *ListClients200Response`
-
-NewListClients200Response instantiates a new ListClients200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetClients
-
-`func (o *ListClients200Response) GetClients() []ListClients200ResponseAllOfClientsInner`
-
-GetClients returns the Clients field if non-nil, zero value otherwise.
-
-### GetClientsOk
-
-`func (o *ListClients200Response) GetClientsOk() (*[]ListClients200ResponseAllOfClientsInner, bool)`
-
-GetClientsOk returns a tuple with the Clients field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClients
-
-`func (o *ListClients200Response) SetClients(v []ListClients200ResponseAllOfClientsInner)`
-
-SetClients sets Clients field to given value.
-
-### HasClients
-
-`func (o *ListClients200Response) HasClients() bool`
-
-HasClients returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *ListClients200Response) GetMeta() ListApprovals200ResponseAllOfMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *ListClients200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *ListClients200Response) SetMeta(v ListApprovals200ResponseAllOfMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *ListClients200Response) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
+```go
+obj := &ListClients200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

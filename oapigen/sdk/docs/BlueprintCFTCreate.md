@@ -9,112 +9,23 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **CloudFormation** | [**BlueprintCFTCreateCloudFormation**](BlueprintCFTCreateCloudFormation.md) |  | 
 
-## Methods
+## Usage
 
-### NewBlueprintCFTCreate
+Instantiate with a Go composite literal:
 
-`func NewBlueprintCFTCreate(name string, type_ string, cloudFormation BlueprintCFTCreateCloudFormation, ) *BlueprintCFTCreate`
+```go
+obj := &BlueprintCFTCreate{
+    // Set fields directly
+}
+```
 
-NewBlueprintCFTCreate instantiates a new BlueprintCFTCreate object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### Labels (Nullable)
 
-### GetName
-
-`func (o *BlueprintCFTCreate) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *BlueprintCFTCreate) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *BlueprintCFTCreate) SetName(v string)`
-
-SetName sets Name field to given value.
-
-
-### GetType
-
-`func (o *BlueprintCFTCreate) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *BlueprintCFTCreate) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *BlueprintCFTCreate) SetType(v string)`
-
-SetType sets Type field to given value.
-
-
-### GetLabels
-
-`func (o *BlueprintCFTCreate) GetLabels() []string`
-
-GetLabels returns the Labels field if non-nil, zero value otherwise.
-
-### GetLabelsOk
-
-`func (o *BlueprintCFTCreate) GetLabelsOk() (*[]string, bool)`
-
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLabels
-
-`func (o *BlueprintCFTCreate) SetLabels(v []string)`
-
-SetLabels sets Labels field to given value.
-
-### HasLabels
-
-`func (o *BlueprintCFTCreate) HasLabels() bool`
-
-HasLabels returns a boolean if a field has been set.
-
-### SetLabelsNil
-
-`func (o *BlueprintCFTCreate) SetLabelsNil(b bool)`
-
- SetLabelsNil sets the value for Labels to be an explicit nil
-
-### UnsetLabels
-`func (o *BlueprintCFTCreate) UnsetLabels()`
-
-UnsetLabels ensures that no value is present for Labels, not even an explicit nil
-### GetCloudFormation
-
-`func (o *BlueprintCFTCreate) GetCloudFormation() BlueprintCFTCreateCloudFormation`
-
-GetCloudFormation returns the CloudFormation field if non-nil, zero value otherwise.
-
-### GetCloudFormationOk
-
-`func (o *BlueprintCFTCreate) GetCloudFormationOk() (*BlueprintCFTCreateCloudFormation, bool)`
-
-GetCloudFormationOk returns a tuple with the CloudFormation field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCloudFormation
-
-`func (o *BlueprintCFTCreate) SetCloudFormation(v BlueprintCFTCreateCloudFormation)`
-
-SetCloudFormation sets CloudFormation field to given value.
-
-
+Use the Nullable wrapper methods:
+- `obj.Labels.IsSet()` — check if set
+- `obj.Labels.Get()` — get the inner value (returns pointer)
+- `obj.Labels.Set(&val)` — set the value
+- `obj.Labels.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **UserSource** | Pointer to [**GetIdentitySources200ResponseUserSource**](GetIdentitySources200ResponseUserSource.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetIdentitySources200Response
+Instantiate with a Go composite literal:
 
-`func NewGetIdentitySources200Response() *GetIdentitySources200Response`
-
-NewGetIdentitySources200Response instantiates a new GetIdentitySources200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetUserSource
-
-`func (o *GetIdentitySources200Response) GetUserSource() GetIdentitySources200ResponseUserSource`
-
-GetUserSource returns the UserSource field if non-nil, zero value otherwise.
-
-### GetUserSourceOk
-
-`func (o *GetIdentitySources200Response) GetUserSourceOk() (*GetIdentitySources200ResponseUserSource, bool)`
-
-GetUserSourceOk returns a tuple with the UserSource field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserSource
-
-`func (o *GetIdentitySources200Response) SetUserSource(v GetIdentitySources200ResponseUserSource)`
-
-SetUserSource sets UserSource field to given value.
-
-### HasUserSource
-
-`func (o *GetIdentitySources200Response) HasUserSource() bool`
-
-HasUserSource returns a boolean if a field has been set.
+```go
+obj := &GetIdentitySources200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

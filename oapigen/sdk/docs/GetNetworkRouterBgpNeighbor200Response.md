@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **NetworkRouterBgpNeighbor** | Pointer to [**GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor**](GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetNetworkRouterBgpNeighbor200Response
+Instantiate with a Go composite literal:
 
-`func NewGetNetworkRouterBgpNeighbor200Response() *GetNetworkRouterBgpNeighbor200Response`
-
-NewGetNetworkRouterBgpNeighbor200Response instantiates a new GetNetworkRouterBgpNeighbor200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetNetworkRouterBgpNeighbor
-
-`func (o *GetNetworkRouterBgpNeighbor200Response) GetNetworkRouterBgpNeighbor() GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor`
-
-GetNetworkRouterBgpNeighbor returns the NetworkRouterBgpNeighbor field if non-nil, zero value otherwise.
-
-### GetNetworkRouterBgpNeighborOk
-
-`func (o *GetNetworkRouterBgpNeighbor200Response) GetNetworkRouterBgpNeighborOk() (*GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor, bool)`
-
-GetNetworkRouterBgpNeighborOk returns a tuple with the NetworkRouterBgpNeighbor field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkRouterBgpNeighbor
-
-`func (o *GetNetworkRouterBgpNeighbor200Response) SetNetworkRouterBgpNeighbor(v GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor)`
-
-SetNetworkRouterBgpNeighbor sets NetworkRouterBgpNeighbor field to given value.
-
-### HasNetworkRouterBgpNeighbor
-
-`func (o *GetNetworkRouterBgpNeighbor200Response) HasNetworkRouterBgpNeighbor() bool`
-
-HasNetworkRouterBgpNeighbor returns a boolean if a field has been set.
+```go
+obj := &GetNetworkRouterBgpNeighbor200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

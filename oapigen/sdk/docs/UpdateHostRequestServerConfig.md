@@ -6,52 +6,23 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **UserData** | Pointer to **NullableString** | User Data. Allows for override of cloud-init based user-data yaml or custom scripts | [optional] 
 
-## Methods
+## Usage
 
-### NewUpdateHostRequestServerConfig
+Instantiate with a Go composite literal:
 
-`func NewUpdateHostRequestServerConfig() *UpdateHostRequestServerConfig`
+```go
+obj := &UpdateHostRequestServerConfig{
+    // Set fields directly
+}
+```
 
-NewUpdateHostRequestServerConfig instantiates a new UpdateHostRequestServerConfig object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### UserData (Nullable)
 
-### GetUserData
-
-`func (o *UpdateHostRequestServerConfig) GetUserData() string`
-
-GetUserData returns the UserData field if non-nil, zero value otherwise.
-
-### GetUserDataOk
-
-`func (o *UpdateHostRequestServerConfig) GetUserDataOk() (*string, bool)`
-
-GetUserDataOk returns a tuple with the UserData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserData
-
-`func (o *UpdateHostRequestServerConfig) SetUserData(v string)`
-
-SetUserData sets UserData field to given value.
-
-### HasUserData
-
-`func (o *UpdateHostRequestServerConfig) HasUserData() bool`
-
-HasUserData returns a boolean if a field has been set.
-
-### SetUserDataNil
-
-`func (o *UpdateHostRequestServerConfig) SetUserDataNil(b bool)`
-
- SetUserDataNil sets the value for UserData to be an explicit nil
-
-### UnsetUserData
-`func (o *UpdateHostRequestServerConfig) UnsetUserData()`
-
-UnsetUserData ensures that no value is present for UserData, not even an explicit nil
+Use the Nullable wrapper methods:
+- `obj.UserData.IsSet()` — check if set
+- `obj.UserData.Get()` — get the inner value (returns pointer)
+- `obj.UserData.Set(&val)` — set the value
+- `obj.UserData.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

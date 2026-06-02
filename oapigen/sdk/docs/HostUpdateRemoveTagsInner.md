@@ -7,77 +7,23 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **NullableString** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewHostUpdateRemoveTagsInner
+Instantiate with a Go composite literal:
 
-`func NewHostUpdateRemoveTagsInner() *HostUpdateRemoveTagsInner`
+```go
+obj := &HostUpdateRemoveTagsInner{
+    // Set fields directly
+}
+```
 
-NewHostUpdateRemoveTagsInner instantiates a new HostUpdateRemoveTagsInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### Value (Nullable)
 
-### GetName
-
-`func (o *HostUpdateRemoveTagsInner) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *HostUpdateRemoveTagsInner) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *HostUpdateRemoveTagsInner) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *HostUpdateRemoveTagsInner) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetValue
-
-`func (o *HostUpdateRemoveTagsInner) GetValue() string`
-
-GetValue returns the Value field if non-nil, zero value otherwise.
-
-### GetValueOk
-
-`func (o *HostUpdateRemoveTagsInner) GetValueOk() (*string, bool)`
-
-GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValue
-
-`func (o *HostUpdateRemoveTagsInner) SetValue(v string)`
-
-SetValue sets Value field to given value.
-
-### HasValue
-
-`func (o *HostUpdateRemoveTagsInner) HasValue() bool`
-
-HasValue returns a boolean if a field has been set.
-
-### SetValueNil
-
-`func (o *HostUpdateRemoveTagsInner) SetValueNil(b bool)`
-
- SetValueNil sets the value for Value to be an explicit nil
-
-### UnsetValue
-`func (o *HostUpdateRemoveTagsInner) UnsetValue()`
-
-UnsetValue ensures that no value is present for Value, not even an explicit nil
+Use the Nullable wrapper methods:
+- `obj.Value.IsSet()` — check if set
+- `obj.Value.Get()` — get the inner value (returns pointer)
+- `obj.Value.Set(&val)` — set the value
+- `obj.Value.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

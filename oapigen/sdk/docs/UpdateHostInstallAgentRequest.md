@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Server** | Pointer to [**UpdateHostInstallAgentRequestServer**](UpdateHostInstallAgentRequestServer.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewUpdateHostInstallAgentRequest
+Instantiate with a Go composite literal:
 
-`func NewUpdateHostInstallAgentRequest() *UpdateHostInstallAgentRequest`
-
-NewUpdateHostInstallAgentRequest instantiates a new UpdateHostInstallAgentRequest object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetServer
-
-`func (o *UpdateHostInstallAgentRequest) GetServer() UpdateHostInstallAgentRequestServer`
-
-GetServer returns the Server field if non-nil, zero value otherwise.
-
-### GetServerOk
-
-`func (o *UpdateHostInstallAgentRequest) GetServerOk() (*UpdateHostInstallAgentRequestServer, bool)`
-
-GetServerOk returns a tuple with the Server field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServer
-
-`func (o *UpdateHostInstallAgentRequest) SetServer(v UpdateHostInstallAgentRequestServer)`
-
-SetServer sets Server field to given value.
-
-### HasServer
-
-`func (o *UpdateHostInstallAgentRequest) HasServer() bool`
-
-HasServer returns a boolean if a field has been set.
+```go
+obj := &UpdateHostInstallAgentRequest{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

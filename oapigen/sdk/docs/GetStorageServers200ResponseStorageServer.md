@@ -49,1377 +49,198 @@ Name | Type | Description | Notes
 **Owner** | Pointer to [**GetStorageServers200ResponseStorageServerOwner**](GetStorageServers200ResponseStorageServerOwner.md) |  | [optional] 
 **Credential** | Pointer to [**GetStorageServers200ResponseStorageServerCredential**](GetStorageServers200ResponseStorageServerCredential.md) |  | [optional] 
 
-## Methods
-
-### NewGetStorageServers200ResponseStorageServer
-
-`func NewGetStorageServers200ResponseStorageServer() *GetStorageServers200ResponseStorageServer`
-
-NewGetStorageServers200ResponseStorageServer instantiates a new GetStorageServers200ResponseStorageServer object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *GetStorageServers200ResponseStorageServer) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GetStorageServers200ResponseStorageServer) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GetStorageServers200ResponseStorageServer) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *GetStorageServers200ResponseStorageServer) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *GetStorageServers200ResponseStorageServer) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *GetStorageServers200ResponseStorageServer) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetType
-
-`func (o *GetStorageServers200ResponseStorageServer) GetType() GetStorageServers200ResponseStorageServerType`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetTypeOk() (*GetStorageServers200ResponseStorageServerType, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *GetStorageServers200ResponseStorageServer) SetType(v GetStorageServers200ResponseStorageServerType)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *GetStorageServers200ResponseStorageServer) HasType() bool`
-
-HasType returns a boolean if a field has been set.
-
-### GetChassis
-
-`func (o *GetStorageServers200ResponseStorageServer) GetChassis() GetStorageServers200ResponseStorageServerChassis`
-
-GetChassis returns the Chassis field if non-nil, zero value otherwise.
-
-### GetChassisOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetChassisOk() (*GetStorageServers200ResponseStorageServerChassis, bool)`
-
-GetChassisOk returns a tuple with the Chassis field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetChassis
-
-`func (o *GetStorageServers200ResponseStorageServer) SetChassis(v GetStorageServers200ResponseStorageServerChassis)`
-
-SetChassis sets Chassis field to given value.
-
-### HasChassis
-
-`func (o *GetStorageServers200ResponseStorageServer) HasChassis() bool`
-
-HasChassis returns a boolean if a field has been set.
-
-### GetVisibility
-
-`func (o *GetStorageServers200ResponseStorageServer) GetVisibility() string`
-
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
-
-### GetVisibilityOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetVisibilityOk() (*string, bool)`
-
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVisibility
-
-`func (o *GetStorageServers200ResponseStorageServer) SetVisibility(v string)`
-
-SetVisibility sets Visibility field to given value.
-
-### HasVisibility
-
-`func (o *GetStorageServers200ResponseStorageServer) HasVisibility() bool`
-
-HasVisibility returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *GetStorageServers200ResponseStorageServer) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *GetStorageServers200ResponseStorageServer) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *GetStorageServers200ResponseStorageServer) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### SetDescriptionNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *GetStorageServers200ResponseStorageServer) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetInternalId
-
-`func (o *GetStorageServers200ResponseStorageServer) GetInternalId() string`
-
-GetInternalId returns the InternalId field if non-nil, zero value otherwise.
-
-### GetInternalIdOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetInternalIdOk() (*string, bool)`
-
-GetInternalIdOk returns a tuple with the InternalId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInternalId
-
-`func (o *GetStorageServers200ResponseStorageServer) SetInternalId(v string)`
-
-SetInternalId sets InternalId field to given value.
-
-### HasInternalId
-
-`func (o *GetStorageServers200ResponseStorageServer) HasInternalId() bool`
-
-HasInternalId returns a boolean if a field has been set.
-
-### SetInternalIdNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetInternalIdNil(b bool)`
-
- SetInternalIdNil sets the value for InternalId to be an explicit nil
-
-### UnsetInternalId
-`func (o *GetStorageServers200ResponseStorageServer) UnsetInternalId()`
-
-UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-### GetExternalId
-
-`func (o *GetStorageServers200ResponseStorageServer) GetExternalId() string`
-
-GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
-
-### GetExternalIdOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetExternalIdOk() (*string, bool)`
-
-GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExternalId
-
-`func (o *GetStorageServers200ResponseStorageServer) SetExternalId(v string)`
-
-SetExternalId sets ExternalId field to given value.
-
-### HasExternalId
-
-`func (o *GetStorageServers200ResponseStorageServer) HasExternalId() bool`
-
-HasExternalId returns a boolean if a field has been set.
-
-### SetExternalIdNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetExternalIdNil(b bool)`
-
- SetExternalIdNil sets the value for ExternalId to be an explicit nil
-
-### UnsetExternalId
-`func (o *GetStorageServers200ResponseStorageServer) UnsetExternalId()`
-
-UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-### GetServiceUrl
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServiceUrl() string`
-
-GetServiceUrl returns the ServiceUrl field if non-nil, zero value otherwise.
-
-### GetServiceUrlOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServiceUrlOk() (*string, bool)`
-
-GetServiceUrlOk returns a tuple with the ServiceUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceUrl
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServiceUrl(v string)`
-
-SetServiceUrl sets ServiceUrl field to given value.
-
-### HasServiceUrl
-
-`func (o *GetStorageServers200ResponseStorageServer) HasServiceUrl() bool`
-
-HasServiceUrl returns a boolean if a field has been set.
-
-### SetServiceUrlNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServiceUrlNil(b bool)`
-
- SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
-
-### UnsetServiceUrl
-`func (o *GetStorageServers200ResponseStorageServer) UnsetServiceUrl()`
-
-UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
-### GetServiceHost
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServiceHost() string`
-
-GetServiceHost returns the ServiceHost field if non-nil, zero value otherwise.
-
-### GetServiceHostOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServiceHostOk() (*string, bool)`
-
-GetServiceHostOk returns a tuple with the ServiceHost field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceHost
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServiceHost(v string)`
-
-SetServiceHost sets ServiceHost field to given value.
-
-### HasServiceHost
-
-`func (o *GetStorageServers200ResponseStorageServer) HasServiceHost() bool`
-
-HasServiceHost returns a boolean if a field has been set.
-
-### SetServiceHostNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServiceHostNil(b bool)`
-
- SetServiceHostNil sets the value for ServiceHost to be an explicit nil
-
-### UnsetServiceHost
-`func (o *GetStorageServers200ResponseStorageServer) UnsetServiceHost()`
-
-UnsetServiceHost ensures that no value is present for ServiceHost, not even an explicit nil
-### GetServicePath
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServicePath() string`
-
-GetServicePath returns the ServicePath field if non-nil, zero value otherwise.
-
-### GetServicePathOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServicePathOk() (*string, bool)`
-
-GetServicePathOk returns a tuple with the ServicePath field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServicePath
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServicePath(v string)`
-
-SetServicePath sets ServicePath field to given value.
-
-### HasServicePath
-
-`func (o *GetStorageServers200ResponseStorageServer) HasServicePath() bool`
-
-HasServicePath returns a boolean if a field has been set.
-
-### SetServicePathNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServicePathNil(b bool)`
-
- SetServicePathNil sets the value for ServicePath to be an explicit nil
-
-### UnsetServicePath
-`func (o *GetStorageServers200ResponseStorageServer) UnsetServicePath()`
-
-UnsetServicePath ensures that no value is present for ServicePath, not even an explicit nil
-### GetServiceToken
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServiceToken() string`
-
-GetServiceToken returns the ServiceToken field if non-nil, zero value otherwise.
-
-### GetServiceTokenOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServiceTokenOk() (*string, bool)`
-
-GetServiceTokenOk returns a tuple with the ServiceToken field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceToken
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServiceToken(v string)`
-
-SetServiceToken sets ServiceToken field to given value.
-
-### HasServiceToken
-
-`func (o *GetStorageServers200ResponseStorageServer) HasServiceToken() bool`
-
-HasServiceToken returns a boolean if a field has been set.
-
-### SetServiceTokenNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServiceTokenNil(b bool)`
-
- SetServiceTokenNil sets the value for ServiceToken to be an explicit nil
-
-### UnsetServiceToken
-`func (o *GetStorageServers200ResponseStorageServer) UnsetServiceToken()`
-
-UnsetServiceToken ensures that no value is present for ServiceToken, not even an explicit nil
-### GetServiceTokenHash
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServiceTokenHash() string`
-
-GetServiceTokenHash returns the ServiceTokenHash field if non-nil, zero value otherwise.
-
-### GetServiceTokenHashOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServiceTokenHashOk() (*string, bool)`
-
-GetServiceTokenHashOk returns a tuple with the ServiceTokenHash field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceTokenHash
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServiceTokenHash(v string)`
-
-SetServiceTokenHash sets ServiceTokenHash field to given value.
-
-### HasServiceTokenHash
-
-`func (o *GetStorageServers200ResponseStorageServer) HasServiceTokenHash() bool`
-
-HasServiceTokenHash returns a boolean if a field has been set.
-
-### SetServiceTokenHashNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServiceTokenHashNil(b bool)`
-
- SetServiceTokenHashNil sets the value for ServiceTokenHash to be an explicit nil
-
-### UnsetServiceTokenHash
-`func (o *GetStorageServers200ResponseStorageServer) UnsetServiceTokenHash()`
-
-UnsetServiceTokenHash ensures that no value is present for ServiceTokenHash, not even an explicit nil
-### GetServiceVersion
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServiceVersion() string`
-
-GetServiceVersion returns the ServiceVersion field if non-nil, zero value otherwise.
-
-### GetServiceVersionOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServiceVersionOk() (*string, bool)`
-
-GetServiceVersionOk returns a tuple with the ServiceVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceVersion
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServiceVersion(v string)`
-
-SetServiceVersion sets ServiceVersion field to given value.
-
-### HasServiceVersion
-
-`func (o *GetStorageServers200ResponseStorageServer) HasServiceVersion() bool`
-
-HasServiceVersion returns a boolean if a field has been set.
-
-### SetServiceVersionNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServiceVersionNil(b bool)`
-
- SetServiceVersionNil sets the value for ServiceVersion to be an explicit nil
-
-### UnsetServiceVersion
-`func (o *GetStorageServers200ResponseStorageServer) UnsetServiceVersion()`
-
-UnsetServiceVersion ensures that no value is present for ServiceVersion, not even an explicit nil
-### GetServiceUsername
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServiceUsername() string`
-
-GetServiceUsername returns the ServiceUsername field if non-nil, zero value otherwise.
-
-### GetServiceUsernameOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServiceUsernameOk() (*string, bool)`
-
-GetServiceUsernameOk returns a tuple with the ServiceUsername field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceUsername
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServiceUsername(v string)`
-
-SetServiceUsername sets ServiceUsername field to given value.
-
-### HasServiceUsername
-
-`func (o *GetStorageServers200ResponseStorageServer) HasServiceUsername() bool`
-
-HasServiceUsername returns a boolean if a field has been set.
-
-### SetServiceUsernameNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServiceUsernameNil(b bool)`
-
- SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
-
-### UnsetServiceUsername
-`func (o *GetStorageServers200ResponseStorageServer) UnsetServiceUsername()`
-
-UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
-### GetServicePassword
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServicePassword() string`
-
-GetServicePassword returns the ServicePassword field if non-nil, zero value otherwise.
-
-### GetServicePasswordOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServicePasswordOk() (*string, bool)`
-
-GetServicePasswordOk returns a tuple with the ServicePassword field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServicePassword
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServicePassword(v string)`
-
-SetServicePassword sets ServicePassword field to given value.
-
-### HasServicePassword
-
-`func (o *GetStorageServers200ResponseStorageServer) HasServicePassword() bool`
-
-HasServicePassword returns a boolean if a field has been set.
-
-### SetServicePasswordNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServicePasswordNil(b bool)`
-
- SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
-
-### UnsetServicePassword
-`func (o *GetStorageServers200ResponseStorageServer) UnsetServicePassword()`
-
-UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
-### GetServicePasswordHash
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServicePasswordHash() string`
-
-GetServicePasswordHash returns the ServicePasswordHash field if non-nil, zero value otherwise.
-
-### GetServicePasswordHashOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServicePasswordHashOk() (*string, bool)`
-
-GetServicePasswordHashOk returns a tuple with the ServicePasswordHash field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServicePasswordHash
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServicePasswordHash(v string)`
-
-SetServicePasswordHash sets ServicePasswordHash field to given value.
-
-### HasServicePasswordHash
-
-`func (o *GetStorageServers200ResponseStorageServer) HasServicePasswordHash() bool`
-
-HasServicePasswordHash returns a boolean if a field has been set.
-
-### SetServicePasswordHashNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServicePasswordHashNil(b bool)`
-
- SetServicePasswordHashNil sets the value for ServicePasswordHash to be an explicit nil
-
-### UnsetServicePasswordHash
-`func (o *GetStorageServers200ResponseStorageServer) UnsetServicePasswordHash()`
-
-UnsetServicePasswordHash ensures that no value is present for ServicePasswordHash, not even an explicit nil
-### GetInternalIp
-
-`func (o *GetStorageServers200ResponseStorageServer) GetInternalIp() string`
-
-GetInternalIp returns the InternalIp field if non-nil, zero value otherwise.
-
-### GetInternalIpOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetInternalIpOk() (*string, bool)`
-
-GetInternalIpOk returns a tuple with the InternalIp field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInternalIp
-
-`func (o *GetStorageServers200ResponseStorageServer) SetInternalIp(v string)`
-
-SetInternalIp sets InternalIp field to given value.
-
-### HasInternalIp
-
-`func (o *GetStorageServers200ResponseStorageServer) HasInternalIp() bool`
-
-HasInternalIp returns a boolean if a field has been set.
-
-### SetInternalIpNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetInternalIpNil(b bool)`
-
- SetInternalIpNil sets the value for InternalIp to be an explicit nil
-
-### UnsetInternalIp
-`func (o *GetStorageServers200ResponseStorageServer) UnsetInternalIp()`
-
-UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
-### GetExternalIp
-
-`func (o *GetStorageServers200ResponseStorageServer) GetExternalIp() string`
-
-GetExternalIp returns the ExternalIp field if non-nil, zero value otherwise.
-
-### GetExternalIpOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetExternalIpOk() (*string, bool)`
-
-GetExternalIpOk returns a tuple with the ExternalIp field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExternalIp
-
-`func (o *GetStorageServers200ResponseStorageServer) SetExternalIp(v string)`
-
-SetExternalIp sets ExternalIp field to given value.
-
-### HasExternalIp
-
-`func (o *GetStorageServers200ResponseStorageServer) HasExternalIp() bool`
-
-HasExternalIp returns a boolean if a field has been set.
-
-### SetExternalIpNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetExternalIpNil(b bool)`
-
- SetExternalIpNil sets the value for ExternalIp to be an explicit nil
-
-### UnsetExternalIp
-`func (o *GetStorageServers200ResponseStorageServer) UnsetExternalIp()`
-
-UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
-### GetApiPort
-
-`func (o *GetStorageServers200ResponseStorageServer) GetApiPort() int32`
-
-GetApiPort returns the ApiPort field if non-nil, zero value otherwise.
-
-### GetApiPortOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetApiPortOk() (*int32, bool)`
-
-GetApiPortOk returns a tuple with the ApiPort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApiPort
-
-`func (o *GetStorageServers200ResponseStorageServer) SetApiPort(v int32)`
-
-SetApiPort sets ApiPort field to given value.
-
-### HasApiPort
-
-`func (o *GetStorageServers200ResponseStorageServer) HasApiPort() bool`
-
-HasApiPort returns a boolean if a field has been set.
-
-### SetApiPortNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetApiPortNil(b bool)`
-
- SetApiPortNil sets the value for ApiPort to be an explicit nil
-
-### UnsetApiPort
-`func (o *GetStorageServers200ResponseStorageServer) UnsetApiPort()`
-
-UnsetApiPort ensures that no value is present for ApiPort, not even an explicit nil
-### GetAdminPort
-
-`func (o *GetStorageServers200ResponseStorageServer) GetAdminPort() int32`
-
-GetAdminPort returns the AdminPort field if non-nil, zero value otherwise.
-
-### GetAdminPortOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetAdminPortOk() (*int32, bool)`
-
-GetAdminPortOk returns a tuple with the AdminPort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAdminPort
-
-`func (o *GetStorageServers200ResponseStorageServer) SetAdminPort(v int32)`
-
-SetAdminPort sets AdminPort field to given value.
-
-### HasAdminPort
-
-`func (o *GetStorageServers200ResponseStorageServer) HasAdminPort() bool`
-
-HasAdminPort returns a boolean if a field has been set.
-
-### SetAdminPortNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetAdminPortNil(b bool)`
-
- SetAdminPortNil sets the value for AdminPort to be an explicit nil
-
-### UnsetAdminPort
-`func (o *GetStorageServers200ResponseStorageServer) UnsetAdminPort()`
-
-UnsetAdminPort ensures that no value is present for AdminPort, not even an explicit nil
-### GetConfig
-
-`func (o *GetStorageServers200ResponseStorageServer) GetConfig() map[string]interface{}`
-
-GetConfig returns the Config field if non-nil, zero value otherwise.
-
-### GetConfigOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetConfigOk() (*map[string]interface{}, bool)`
-
-GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfig
-
-`func (o *GetStorageServers200ResponseStorageServer) SetConfig(v map[string]interface{})`
-
-SetConfig sets Config field to given value.
-
-### HasConfig
-
-`func (o *GetStorageServers200ResponseStorageServer) HasConfig() bool`
-
-HasConfig returns a boolean if a field has been set.
-
-### GetRefType
-
-`func (o *GetStorageServers200ResponseStorageServer) GetRefType() string`
-
-GetRefType returns the RefType field if non-nil, zero value otherwise.
-
-### GetRefTypeOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetRefTypeOk() (*string, bool)`
-
-GetRefTypeOk returns a tuple with the RefType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRefType
-
-`func (o *GetStorageServers200ResponseStorageServer) SetRefType(v string)`
-
-SetRefType sets RefType field to given value.
-
-### HasRefType
-
-`func (o *GetStorageServers200ResponseStorageServer) HasRefType() bool`
-
-HasRefType returns a boolean if a field has been set.
-
-### GetRefId
-
-`func (o *GetStorageServers200ResponseStorageServer) GetRefId() int64`
-
-GetRefId returns the RefId field if non-nil, zero value otherwise.
-
-### GetRefIdOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetRefIdOk() (*int64, bool)`
-
-GetRefIdOk returns a tuple with the RefId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRefId
-
-`func (o *GetStorageServers200ResponseStorageServer) SetRefId(v int64)`
-
-SetRefId sets RefId field to given value.
-
-### HasRefId
-
-`func (o *GetStorageServers200ResponseStorageServer) HasRefId() bool`
-
-HasRefId returns a boolean if a field has been set.
-
-### GetCategory
-
-`func (o *GetStorageServers200ResponseStorageServer) GetCategory() string`
-
-GetCategory returns the Category field if non-nil, zero value otherwise.
-
-### GetCategoryOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetCategoryOk() (*string, bool)`
-
-GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCategory
-
-`func (o *GetStorageServers200ResponseStorageServer) SetCategory(v string)`
-
-SetCategory sets Category field to given value.
-
-### HasCategory
-
-`func (o *GetStorageServers200ResponseStorageServer) HasCategory() bool`
-
-HasCategory returns a boolean if a field has been set.
-
-### SetCategoryNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetCategoryNil(b bool)`
-
- SetCategoryNil sets the value for Category to be an explicit nil
-
-### UnsetCategory
-`func (o *GetStorageServers200ResponseStorageServer) UnsetCategory()`
-
-UnsetCategory ensures that no value is present for Category, not even an explicit nil
-### GetServerVendor
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServerVendor() string`
-
-GetServerVendor returns the ServerVendor field if non-nil, zero value otherwise.
-
-### GetServerVendorOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServerVendorOk() (*string, bool)`
-
-GetServerVendorOk returns a tuple with the ServerVendor field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerVendor
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServerVendor(v string)`
-
-SetServerVendor sets ServerVendor field to given value.
-
-### HasServerVendor
-
-`func (o *GetStorageServers200ResponseStorageServer) HasServerVendor() bool`
-
-HasServerVendor returns a boolean if a field has been set.
-
-### SetServerVendorNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServerVendorNil(b bool)`
-
- SetServerVendorNil sets the value for ServerVendor to be an explicit nil
-
-### UnsetServerVendor
-`func (o *GetStorageServers200ResponseStorageServer) UnsetServerVendor()`
-
-UnsetServerVendor ensures that no value is present for ServerVendor, not even an explicit nil
-### GetServerModel
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServerModel() string`
-
-GetServerModel returns the ServerModel field if non-nil, zero value otherwise.
-
-### GetServerModelOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetServerModelOk() (*string, bool)`
-
-GetServerModelOk returns a tuple with the ServerModel field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerModel
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServerModel(v string)`
-
-SetServerModel sets ServerModel field to given value.
-
-### HasServerModel
-
-`func (o *GetStorageServers200ResponseStorageServer) HasServerModel() bool`
-
-HasServerModel returns a boolean if a field has been set.
-
-### SetServerModelNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetServerModelNil(b bool)`
-
- SetServerModelNil sets the value for ServerModel to be an explicit nil
-
-### UnsetServerModel
-`func (o *GetStorageServers200ResponseStorageServer) UnsetServerModel()`
-
-UnsetServerModel ensures that no value is present for ServerModel, not even an explicit nil
-### GetSerialNumber
-
-`func (o *GetStorageServers200ResponseStorageServer) GetSerialNumber() string`
-
-GetSerialNumber returns the SerialNumber field if non-nil, zero value otherwise.
-
-### GetSerialNumberOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetSerialNumberOk() (*string, bool)`
-
-GetSerialNumberOk returns a tuple with the SerialNumber field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSerialNumber
-
-`func (o *GetStorageServers200ResponseStorageServer) SetSerialNumber(v string)`
-
-SetSerialNumber sets SerialNumber field to given value.
-
-### HasSerialNumber
-
-`func (o *GetStorageServers200ResponseStorageServer) HasSerialNumber() bool`
-
-HasSerialNumber returns a boolean if a field has been set.
-
-### SetSerialNumberNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetSerialNumberNil(b bool)`
-
- SetSerialNumberNil sets the value for SerialNumber to be an explicit nil
-
-### UnsetSerialNumber
-`func (o *GetStorageServers200ResponseStorageServer) UnsetSerialNumber()`
-
-UnsetSerialNumber ensures that no value is present for SerialNumber, not even an explicit nil
-### GetStatus
-
-`func (o *GetStorageServers200ResponseStorageServer) GetStatus() string`
-
-GetStatus returns the Status field if non-nil, zero value otherwise.
-
-### GetStatusOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetStatusOk() (*string, bool)`
-
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatus
-
-`func (o *GetStorageServers200ResponseStorageServer) SetStatus(v string)`
-
-SetStatus sets Status field to given value.
-
-### HasStatus
-
-`func (o *GetStorageServers200ResponseStorageServer) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
-
-### SetStatusNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetStatusNil(b bool)`
-
- SetStatusNil sets the value for Status to be an explicit nil
-
-### UnsetStatus
-`func (o *GetStorageServers200ResponseStorageServer) UnsetStatus()`
-
-UnsetStatus ensures that no value is present for Status, not even an explicit nil
-### GetStatusMessage
-
-`func (o *GetStorageServers200ResponseStorageServer) GetStatusMessage() string`
-
-GetStatusMessage returns the StatusMessage field if non-nil, zero value otherwise.
-
-### GetStatusMessageOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetStatusMessageOk() (*string, bool)`
-
-GetStatusMessageOk returns a tuple with the StatusMessage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatusMessage
-
-`func (o *GetStorageServers200ResponseStorageServer) SetStatusMessage(v string)`
-
-SetStatusMessage sets StatusMessage field to given value.
-
-### HasStatusMessage
-
-`func (o *GetStorageServers200ResponseStorageServer) HasStatusMessage() bool`
-
-HasStatusMessage returns a boolean if a field has been set.
-
-### SetStatusMessageNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetStatusMessageNil(b bool)`
-
- SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-
-### UnsetStatusMessage
-`func (o *GetStorageServers200ResponseStorageServer) UnsetStatusMessage()`
-
-UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-### GetStatusDate
-
-`func (o *GetStorageServers200ResponseStorageServer) GetStatusDate() time.Time`
-
-GetStatusDate returns the StatusDate field if non-nil, zero value otherwise.
-
-### GetStatusDateOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetStatusDateOk() (*time.Time, bool)`
-
-GetStatusDateOk returns a tuple with the StatusDate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatusDate
-
-`func (o *GetStorageServers200ResponseStorageServer) SetStatusDate(v time.Time)`
-
-SetStatusDate sets StatusDate field to given value.
-
-### HasStatusDate
-
-`func (o *GetStorageServers200ResponseStorageServer) HasStatusDate() bool`
-
-HasStatusDate returns a boolean if a field has been set.
-
-### GetErrorMessage
-
-`func (o *GetStorageServers200ResponseStorageServer) GetErrorMessage() string`
-
-GetErrorMessage returns the ErrorMessage field if non-nil, zero value otherwise.
-
-### GetErrorMessageOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetErrorMessageOk() (*string, bool)`
-
-GetErrorMessageOk returns a tuple with the ErrorMessage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetErrorMessage
-
-`func (o *GetStorageServers200ResponseStorageServer) SetErrorMessage(v string)`
-
-SetErrorMessage sets ErrorMessage field to given value.
-
-### HasErrorMessage
-
-`func (o *GetStorageServers200ResponseStorageServer) HasErrorMessage() bool`
-
-HasErrorMessage returns a boolean if a field has been set.
-
-### SetErrorMessageNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetErrorMessageNil(b bool)`
-
- SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
-
-### UnsetErrorMessage
-`func (o *GetStorageServers200ResponseStorageServer) UnsetErrorMessage()`
-
-UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
-### GetMaxStorage
-
-`func (o *GetStorageServers200ResponseStorageServer) GetMaxStorage() int64`
-
-GetMaxStorage returns the MaxStorage field if non-nil, zero value otherwise.
-
-### GetMaxStorageOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetMaxStorageOk() (*int64, bool)`
-
-GetMaxStorageOk returns a tuple with the MaxStorage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxStorage
-
-`func (o *GetStorageServers200ResponseStorageServer) SetMaxStorage(v int64)`
-
-SetMaxStorage sets MaxStorage field to given value.
-
-### HasMaxStorage
-
-`func (o *GetStorageServers200ResponseStorageServer) HasMaxStorage() bool`
-
-HasMaxStorage returns a boolean if a field has been set.
-
-### SetMaxStorageNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetMaxStorageNil(b bool)`
-
- SetMaxStorageNil sets the value for MaxStorage to be an explicit nil
-
-### UnsetMaxStorage
-`func (o *GetStorageServers200ResponseStorageServer) UnsetMaxStorage()`
-
-UnsetMaxStorage ensures that no value is present for MaxStorage, not even an explicit nil
-### GetUsedStorage
-
-`func (o *GetStorageServers200ResponseStorageServer) GetUsedStorage() int64`
-
-GetUsedStorage returns the UsedStorage field if non-nil, zero value otherwise.
-
-### GetUsedStorageOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetUsedStorageOk() (*int64, bool)`
-
-GetUsedStorageOk returns a tuple with the UsedStorage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsedStorage
-
-`func (o *GetStorageServers200ResponseStorageServer) SetUsedStorage(v int64)`
-
-SetUsedStorage sets UsedStorage field to given value.
-
-### HasUsedStorage
-
-`func (o *GetStorageServers200ResponseStorageServer) HasUsedStorage() bool`
-
-HasUsedStorage returns a boolean if a field has been set.
-
-### SetUsedStorageNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetUsedStorageNil(b bool)`
-
- SetUsedStorageNil sets the value for UsedStorage to be an explicit nil
-
-### UnsetUsedStorage
-`func (o *GetStorageServers200ResponseStorageServer) UnsetUsedStorage()`
-
-UnsetUsedStorage ensures that no value is present for UsedStorage, not even an explicit nil
-### GetDiskCount
-
-`func (o *GetStorageServers200ResponseStorageServer) GetDiskCount() int32`
-
-GetDiskCount returns the DiskCount field if non-nil, zero value otherwise.
-
-### GetDiskCountOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetDiskCountOk() (*int32, bool)`
-
-GetDiskCountOk returns a tuple with the DiskCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDiskCount
-
-`func (o *GetStorageServers200ResponseStorageServer) SetDiskCount(v int32)`
-
-SetDiskCount sets DiskCount field to given value.
-
-### HasDiskCount
-
-`func (o *GetStorageServers200ResponseStorageServer) HasDiskCount() bool`
-
-HasDiskCount returns a boolean if a field has been set.
-
-### SetDiskCountNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetDiskCountNil(b bool)`
-
- SetDiskCountNil sets the value for DiskCount to be an explicit nil
-
-### UnsetDiskCount
-`func (o *GetStorageServers200ResponseStorageServer) UnsetDiskCount()`
-
-UnsetDiskCount ensures that no value is present for DiskCount, not even an explicit nil
-### GetDateCreated
-
-`func (o *GetStorageServers200ResponseStorageServer) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *GetStorageServers200ResponseStorageServer) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *GetStorageServers200ResponseStorageServer) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *GetStorageServers200ResponseStorageServer) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *GetStorageServers200ResponseStorageServer) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *GetStorageServers200ResponseStorageServer) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
-### GetEnabled
-
-`func (o *GetStorageServers200ResponseStorageServer) GetEnabled() bool`
-
-GetEnabled returns the Enabled field if non-nil, zero value otherwise.
-
-### GetEnabledOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetEnabledOk() (*bool, bool)`
-
-GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnabled
-
-`func (o *GetStorageServers200ResponseStorageServer) SetEnabled(v bool)`
-
-SetEnabled sets Enabled field to given value.
-
-### HasEnabled
-
-`func (o *GetStorageServers200ResponseStorageServer) HasEnabled() bool`
-
-HasEnabled returns a boolean if a field has been set.
-
-### GetGroups
-
-`func (o *GetStorageServers200ResponseStorageServer) GetGroups() []GetStorageServers200ResponseStorageServerGroupsInner`
-
-GetGroups returns the Groups field if non-nil, zero value otherwise.
-
-### GetGroupsOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetGroupsOk() (*[]GetStorageServers200ResponseStorageServerGroupsInner, bool)`
-
-GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGroups
-
-`func (o *GetStorageServers200ResponseStorageServer) SetGroups(v []GetStorageServers200ResponseStorageServerGroupsInner)`
-
-SetGroups sets Groups field to given value.
-
-### HasGroups
-
-`func (o *GetStorageServers200ResponseStorageServer) HasGroups() bool`
-
-HasGroups returns a boolean if a field has been set.
-
-### GetHostGroups
-
-`func (o *GetStorageServers200ResponseStorageServer) GetHostGroups() []GetStorageServers200ResponseStorageServerHostGroupsInner`
-
-GetHostGroups returns the HostGroups field if non-nil, zero value otherwise.
-
-### GetHostGroupsOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetHostGroupsOk() (*[]GetStorageServers200ResponseStorageServerHostGroupsInner, bool)`
-
-GetHostGroupsOk returns a tuple with the HostGroups field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHostGroups
-
-`func (o *GetStorageServers200ResponseStorageServer) SetHostGroups(v []GetStorageServers200ResponseStorageServerHostGroupsInner)`
-
-SetHostGroups sets HostGroups field to given value.
-
-### HasHostGroups
-
-`func (o *GetStorageServers200ResponseStorageServer) HasHostGroups() bool`
-
-HasHostGroups returns a boolean if a field has been set.
-
-### GetHosts
-
-`func (o *GetStorageServers200ResponseStorageServer) GetHosts() []GetStorageServers200ResponseStorageServerHostsInner`
-
-GetHosts returns the Hosts field if non-nil, zero value otherwise.
-
-### GetHostsOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetHostsOk() (*[]GetStorageServers200ResponseStorageServerHostsInner, bool)`
-
-GetHostsOk returns a tuple with the Hosts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHosts
-
-`func (o *GetStorageServers200ResponseStorageServer) SetHosts(v []GetStorageServers200ResponseStorageServerHostsInner)`
-
-SetHosts sets Hosts field to given value.
-
-### HasHosts
-
-`func (o *GetStorageServers200ResponseStorageServer) HasHosts() bool`
-
-HasHosts returns a boolean if a field has been set.
-
-### GetTenants
-
-`func (o *GetStorageServers200ResponseStorageServer) GetTenants() []GetStorageServers200ResponseStorageServerTenantsInner`
-
-GetTenants returns the Tenants field if non-nil, zero value otherwise.
-
-### GetTenantsOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetTenantsOk() (*[]GetStorageServers200ResponseStorageServerTenantsInner, bool)`
-
-GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTenants
-
-`func (o *GetStorageServers200ResponseStorageServer) SetTenants(v []GetStorageServers200ResponseStorageServerTenantsInner)`
-
-SetTenants sets Tenants field to given value.
-
-### HasTenants
-
-`func (o *GetStorageServers200ResponseStorageServer) HasTenants() bool`
-
-HasTenants returns a boolean if a field has been set.
-
-### GetOwner
-
-`func (o *GetStorageServers200ResponseStorageServer) GetOwner() GetStorageServers200ResponseStorageServerOwner`
-
-GetOwner returns the Owner field if non-nil, zero value otherwise.
-
-### GetOwnerOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetOwnerOk() (*GetStorageServers200ResponseStorageServerOwner, bool)`
-
-GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOwner
-
-`func (o *GetStorageServers200ResponseStorageServer) SetOwner(v GetStorageServers200ResponseStorageServerOwner)`
-
-SetOwner sets Owner field to given value.
-
-### HasOwner
-
-`func (o *GetStorageServers200ResponseStorageServer) HasOwner() bool`
-
-HasOwner returns a boolean if a field has been set.
-
-### GetCredential
-
-`func (o *GetStorageServers200ResponseStorageServer) GetCredential() GetStorageServers200ResponseStorageServerCredential`
-
-GetCredential returns the Credential field if non-nil, zero value otherwise.
-
-### GetCredentialOk
-
-`func (o *GetStorageServers200ResponseStorageServer) GetCredentialOk() (*GetStorageServers200ResponseStorageServerCredential, bool)`
-
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredential
-
-`func (o *GetStorageServers200ResponseStorageServer) SetCredential(v GetStorageServers200ResponseStorageServerCredential)`
-
-SetCredential sets Credential field to given value.
-
-### HasCredential
-
-`func (o *GetStorageServers200ResponseStorageServer) HasCredential() bool`
-
-HasCredential returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &GetStorageServers200ResponseStorageServer{
+    // Set fields directly
+}
+```
+
+### Description (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Description.IsSet()` — check if set
+- `obj.Description.Get()` — get the inner value (returns pointer)
+- `obj.Description.Set(&val)` — set the value
+- `obj.Description.Unset()` — clear the value
+### InternalId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.InternalId.IsSet()` — check if set
+- `obj.InternalId.Get()` — get the inner value (returns pointer)
+- `obj.InternalId.Set(&val)` — set the value
+- `obj.InternalId.Unset()` — clear the value
+### ExternalId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ExternalId.IsSet()` — check if set
+- `obj.ExternalId.Get()` — get the inner value (returns pointer)
+- `obj.ExternalId.Set(&val)` — set the value
+- `obj.ExternalId.Unset()` — clear the value
+### ServiceUrl (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceUrl.IsSet()` — check if set
+- `obj.ServiceUrl.Get()` — get the inner value (returns pointer)
+- `obj.ServiceUrl.Set(&val)` — set the value
+- `obj.ServiceUrl.Unset()` — clear the value
+### ServiceHost (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceHost.IsSet()` — check if set
+- `obj.ServiceHost.Get()` — get the inner value (returns pointer)
+- `obj.ServiceHost.Set(&val)` — set the value
+- `obj.ServiceHost.Unset()` — clear the value
+### ServicePath (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServicePath.IsSet()` — check if set
+- `obj.ServicePath.Get()` — get the inner value (returns pointer)
+- `obj.ServicePath.Set(&val)` — set the value
+- `obj.ServicePath.Unset()` — clear the value
+### ServiceToken (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceToken.IsSet()` — check if set
+- `obj.ServiceToken.Get()` — get the inner value (returns pointer)
+- `obj.ServiceToken.Set(&val)` — set the value
+- `obj.ServiceToken.Unset()` — clear the value
+### ServiceTokenHash (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceTokenHash.IsSet()` — check if set
+- `obj.ServiceTokenHash.Get()` — get the inner value (returns pointer)
+- `obj.ServiceTokenHash.Set(&val)` — set the value
+- `obj.ServiceTokenHash.Unset()` — clear the value
+### ServiceVersion (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceVersion.IsSet()` — check if set
+- `obj.ServiceVersion.Get()` — get the inner value (returns pointer)
+- `obj.ServiceVersion.Set(&val)` — set the value
+- `obj.ServiceVersion.Unset()` — clear the value
+### ServiceUsername (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceUsername.IsSet()` — check if set
+- `obj.ServiceUsername.Get()` — get the inner value (returns pointer)
+- `obj.ServiceUsername.Set(&val)` — set the value
+- `obj.ServiceUsername.Unset()` — clear the value
+### ServicePassword (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServicePassword.IsSet()` — check if set
+- `obj.ServicePassword.Get()` — get the inner value (returns pointer)
+- `obj.ServicePassword.Set(&val)` — set the value
+- `obj.ServicePassword.Unset()` — clear the value
+### ServicePasswordHash (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServicePasswordHash.IsSet()` — check if set
+- `obj.ServicePasswordHash.Get()` — get the inner value (returns pointer)
+- `obj.ServicePasswordHash.Set(&val)` — set the value
+- `obj.ServicePasswordHash.Unset()` — clear the value
+### InternalIp (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.InternalIp.IsSet()` — check if set
+- `obj.InternalIp.Get()` — get the inner value (returns pointer)
+- `obj.InternalIp.Set(&val)` — set the value
+- `obj.InternalIp.Unset()` — clear the value
+### ExternalIp (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ExternalIp.IsSet()` — check if set
+- `obj.ExternalIp.Get()` — get the inner value (returns pointer)
+- `obj.ExternalIp.Set(&val)` — set the value
+- `obj.ExternalIp.Unset()` — clear the value
+### ApiPort (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ApiPort.IsSet()` — check if set
+- `obj.ApiPort.Get()` — get the inner value (returns pointer)
+- `obj.ApiPort.Set(&val)` — set the value
+- `obj.ApiPort.Unset()` — clear the value
+### AdminPort (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.AdminPort.IsSet()` — check if set
+- `obj.AdminPort.Get()` — get the inner value (returns pointer)
+- `obj.AdminPort.Set(&val)` — set the value
+- `obj.AdminPort.Unset()` — clear the value
+### Category (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Category.IsSet()` — check if set
+- `obj.Category.Get()` — get the inner value (returns pointer)
+- `obj.Category.Set(&val)` — set the value
+- `obj.Category.Unset()` — clear the value
+### ServerVendor (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServerVendor.IsSet()` — check if set
+- `obj.ServerVendor.Get()` — get the inner value (returns pointer)
+- `obj.ServerVendor.Set(&val)` — set the value
+- `obj.ServerVendor.Unset()` — clear the value
+### ServerModel (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServerModel.IsSet()` — check if set
+- `obj.ServerModel.Get()` — get the inner value (returns pointer)
+- `obj.ServerModel.Set(&val)` — set the value
+- `obj.ServerModel.Unset()` — clear the value
+### SerialNumber (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SerialNumber.IsSet()` — check if set
+- `obj.SerialNumber.Get()` — get the inner value (returns pointer)
+- `obj.SerialNumber.Set(&val)` — set the value
+- `obj.SerialNumber.Unset()` — clear the value
+### Status (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Status.IsSet()` — check if set
+- `obj.Status.Get()` — get the inner value (returns pointer)
+- `obj.Status.Set(&val)` — set the value
+- `obj.Status.Unset()` — clear the value
+### StatusMessage (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.StatusMessage.IsSet()` — check if set
+- `obj.StatusMessage.Get()` — get the inner value (returns pointer)
+- `obj.StatusMessage.Set(&val)` — set the value
+- `obj.StatusMessage.Unset()` — clear the value
+### ErrorMessage (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ErrorMessage.IsSet()` — check if set
+- `obj.ErrorMessage.Get()` — get the inner value (returns pointer)
+- `obj.ErrorMessage.Set(&val)` — set the value
+- `obj.ErrorMessage.Unset()` — clear the value
+### MaxStorage (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.MaxStorage.IsSet()` — check if set
+- `obj.MaxStorage.Get()` — get the inner value (returns pointer)
+- `obj.MaxStorage.Set(&val)` — set the value
+- `obj.MaxStorage.Unset()` — clear the value
+### UsedStorage (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.UsedStorage.IsSet()` — check if set
+- `obj.UsedStorage.Get()` — get the inner value (returns pointer)
+- `obj.UsedStorage.Set(&val)` — set the value
+- `obj.UsedStorage.Unset()` — clear the value
+### DiskCount (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.DiskCount.IsSet()` — check if set
+- `obj.DiskCount.Get()` — get the inner value (returns pointer)
+- `obj.DiskCount.Set(&val)` — set the value
+- `obj.DiskCount.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

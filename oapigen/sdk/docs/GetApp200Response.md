@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **App** | Pointer to [**GetApp200ResponseApp**](GetApp200ResponseApp.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetApp200Response
+Instantiate with a Go composite literal:
 
-`func NewGetApp200Response() *GetApp200Response`
-
-NewGetApp200Response instantiates a new GetApp200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetApp
-
-`func (o *GetApp200Response) GetApp() GetApp200ResponseApp`
-
-GetApp returns the App field if non-nil, zero value otherwise.
-
-### GetAppOk
-
-`func (o *GetApp200Response) GetAppOk() (*GetApp200ResponseApp, bool)`
-
-GetAppOk returns a tuple with the App field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApp
-
-`func (o *GetApp200Response) SetApp(v GetApp200ResponseApp)`
-
-SetApp sets App field to given value.
-
-### HasApp
-
-`func (o *GetApp200Response) HasApp() bool`
-
-HasApp returns a boolean if a field has been set.
+```go
+obj := &GetApp200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

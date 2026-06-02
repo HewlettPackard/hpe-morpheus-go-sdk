@@ -7,66 +7,15 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Username** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListClusterJobs200ResponseAllOfJobsInnerCreatedBy
+Instantiate with a Go composite literal:
 
-`func NewListClusterJobs200ResponseAllOfJobsInnerCreatedBy() *ListClusterJobs200ResponseAllOfJobsInnerCreatedBy`
-
-NewListClusterJobs200ResponseAllOfJobsInnerCreatedBy instantiates a new ListClusterJobs200ResponseAllOfJobsInnerCreatedBy object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *ListClusterJobs200ResponseAllOfJobsInnerCreatedBy) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ListClusterJobs200ResponseAllOfJobsInnerCreatedBy) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ListClusterJobs200ResponseAllOfJobsInnerCreatedBy) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *ListClusterJobs200ResponseAllOfJobsInnerCreatedBy) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetUsername
-
-`func (o *ListClusterJobs200ResponseAllOfJobsInnerCreatedBy) GetUsername() string`
-
-GetUsername returns the Username field if non-nil, zero value otherwise.
-
-### GetUsernameOk
-
-`func (o *ListClusterJobs200ResponseAllOfJobsInnerCreatedBy) GetUsernameOk() (*string, bool)`
-
-GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsername
-
-`func (o *ListClusterJobs200ResponseAllOfJobsInnerCreatedBy) SetUsername(v string)`
-
-SetUsername sets Username field to given value.
-
-### HasUsername
-
-`func (o *ListClusterJobs200ResponseAllOfJobsInnerCreatedBy) HasUsername() bool`
-
-HasUsername returns a boolean if a field has been set.
+```go
+obj := &ListClusterJobs200ResponseAllOfJobsInnerCreatedBy{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

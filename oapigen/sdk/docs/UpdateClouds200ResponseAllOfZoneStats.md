@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ServerCounts** | Pointer to [**AddClouds200ResponseAllOfZoneStatsServerCounts**](AddClouds200ResponseAllOfZoneStatsServerCounts.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewUpdateClouds200ResponseAllOfZoneStats
+Instantiate with a Go composite literal:
 
-`func NewUpdateClouds200ResponseAllOfZoneStats() *UpdateClouds200ResponseAllOfZoneStats`
-
-NewUpdateClouds200ResponseAllOfZoneStats instantiates a new UpdateClouds200ResponseAllOfZoneStats object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetServerCounts
-
-`func (o *UpdateClouds200ResponseAllOfZoneStats) GetServerCounts() AddClouds200ResponseAllOfZoneStatsServerCounts`
-
-GetServerCounts returns the ServerCounts field if non-nil, zero value otherwise.
-
-### GetServerCountsOk
-
-`func (o *UpdateClouds200ResponseAllOfZoneStats) GetServerCountsOk() (*AddClouds200ResponseAllOfZoneStatsServerCounts, bool)`
-
-GetServerCountsOk returns a tuple with the ServerCounts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerCounts
-
-`func (o *UpdateClouds200ResponseAllOfZoneStats) SetServerCounts(v AddClouds200ResponseAllOfZoneStatsServerCounts)`
-
-SetServerCounts sets ServerCounts field to given value.
-
-### HasServerCounts
-
-`func (o *UpdateClouds200ResponseAllOfZoneStats) HasServerCounts() bool`
-
-HasServerCounts returns a boolean if a field has been set.
+```go
+obj := &UpdateClouds200ResponseAllOfZoneStats{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

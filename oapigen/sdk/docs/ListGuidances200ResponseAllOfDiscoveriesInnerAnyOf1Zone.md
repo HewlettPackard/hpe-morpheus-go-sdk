@@ -8,91 +8,15 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **ZoneType** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ZoneZoneType**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ZoneZoneType.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone
+Instantiate with a Go composite literal:
 
-`func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone`
-
-NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetZoneType
-
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) GetZoneType() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ZoneZoneType`
-
-GetZoneType returns the ZoneType field if non-nil, zero value otherwise.
-
-### GetZoneTypeOk
-
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) GetZoneTypeOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ZoneZoneType, bool)`
-
-GetZoneTypeOk returns a tuple with the ZoneType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetZoneType
-
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) SetZoneType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ZoneZoneType)`
-
-SetZoneType sets ZoneType field to given value.
-
-### HasZoneType
-
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) HasZoneType() bool`
-
-HasZoneType returns a boolean if a field has been set.
+```go
+obj := &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -7,66 +7,15 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewAddVDIPools200ResponseAnyOfVdiPoolConfigGroup
+Instantiate with a Go composite literal:
 
-`func NewAddVDIPools200ResponseAnyOfVdiPoolConfigGroup() *AddVDIPools200ResponseAnyOfVdiPoolConfigGroup`
-
-NewAddVDIPools200ResponseAnyOfVdiPoolConfigGroup instantiates a new AddVDIPools200ResponseAnyOfVdiPoolConfigGroup object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigGroup) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigGroup) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigGroup) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigGroup) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigGroup) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigGroup) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigGroup) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigGroup) HasName() bool`
-
-HasName returns a boolean if a field has been set.
+```go
+obj := &AddVDIPools200ResponseAnyOfVdiPoolConfigGroup{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

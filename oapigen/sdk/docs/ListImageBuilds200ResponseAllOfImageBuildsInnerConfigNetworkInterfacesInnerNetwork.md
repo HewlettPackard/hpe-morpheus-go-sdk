@@ -9,127 +9,23 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **HasPool** | Pointer to **bool** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork
+Instantiate with a Go composite literal:
 
-`func NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork() *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork`
+```go
+obj := &ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork{
+    // Set fields directly
+}
+```
 
-NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### Pool (Nullable)
 
-### GetIdName
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetIdName() string`
-
-GetIdName returns the IdName field if non-nil, zero value otherwise.
-
-### GetIdNameOk
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetIdNameOk() (*string, bool)`
-
-GetIdNameOk returns a tuple with the IdName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIdName
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) SetIdName(v string)`
-
-SetIdName sets IdName field to given value.
-
-### HasIdName
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) HasIdName() bool`
-
-HasIdName returns a boolean if a field has been set.
-
-### GetPool
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetPool() ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetworkPool`
-
-GetPool returns the Pool field if non-nil, zero value otherwise.
-
-### GetPoolOk
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetPoolOk() (*ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetworkPool, bool)`
-
-GetPoolOk returns a tuple with the Pool field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPool
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) SetPool(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetworkPool)`
-
-SetPool sets Pool field to given value.
-
-### HasPool
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) HasPool() bool`
-
-HasPool returns a boolean if a field has been set.
-
-### SetPoolNil
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) SetPoolNil(b bool)`
-
- SetPoolNil sets the value for Pool to be an explicit nil
-
-### UnsetPool
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) UnsetPool()`
-
-UnsetPool ensures that no value is present for Pool, not even an explicit nil
-### GetId
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetHasPool
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetHasPool() bool`
-
-GetHasPool returns the HasPool field if non-nil, zero value otherwise.
-
-### GetHasPoolOk
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetHasPoolOk() (*bool, bool)`
-
-GetHasPoolOk returns a tuple with the HasPool field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasPool
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) SetHasPool(v bool)`
-
-SetHasPool sets HasPool field to given value.
-
-### HasHasPool
-
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) HasHasPool() bool`
-
-HasHasPool returns a boolean if a field has been set.
-
+Use the Nullable wrapper methods:
+- `obj.Pool.IsSet()` — check if set
+- `obj.Pool.Get()` — get the inner value (returns pointer)
+- `obj.Pool.Set(&val)` — set the value
+- `obj.Pool.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

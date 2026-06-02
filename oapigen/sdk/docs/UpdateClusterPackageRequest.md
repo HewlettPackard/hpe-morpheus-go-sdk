@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClusterPackage** | Pointer to [**UpdateClusterPackageRequestClusterPackage**](UpdateClusterPackageRequestClusterPackage.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewUpdateClusterPackageRequest
+Instantiate with a Go composite literal:
 
-`func NewUpdateClusterPackageRequest() *UpdateClusterPackageRequest`
-
-NewUpdateClusterPackageRequest instantiates a new UpdateClusterPackageRequest object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetClusterPackage
-
-`func (o *UpdateClusterPackageRequest) GetClusterPackage() UpdateClusterPackageRequestClusterPackage`
-
-GetClusterPackage returns the ClusterPackage field if non-nil, zero value otherwise.
-
-### GetClusterPackageOk
-
-`func (o *UpdateClusterPackageRequest) GetClusterPackageOk() (*UpdateClusterPackageRequestClusterPackage, bool)`
-
-GetClusterPackageOk returns a tuple with the ClusterPackage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClusterPackage
-
-`func (o *UpdateClusterPackageRequest) SetClusterPackage(v UpdateClusterPackageRequestClusterPackage)`
-
-SetClusterPackage sets ClusterPackage field to given value.
-
-### HasClusterPackage
-
-`func (o *UpdateClusterPackageRequest) HasClusterPackage() bool`
-
-HasClusterPackage returns a boolean if a field has been set.
+```go
+obj := &UpdateClusterPackageRequest{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

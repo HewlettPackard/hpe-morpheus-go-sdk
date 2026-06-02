@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Group** | Pointer to [**GetTenantSubtenantGroup200ResponseGroup**](GetTenantSubtenantGroup200ResponseGroup.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetTenantSubtenantGroup200Response
+Instantiate with a Go composite literal:
 
-`func NewGetTenantSubtenantGroup200Response() *GetTenantSubtenantGroup200Response`
-
-NewGetTenantSubtenantGroup200Response instantiates a new GetTenantSubtenantGroup200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetGroup
-
-`func (o *GetTenantSubtenantGroup200Response) GetGroup() GetTenantSubtenantGroup200ResponseGroup`
-
-GetGroup returns the Group field if non-nil, zero value otherwise.
-
-### GetGroupOk
-
-`func (o *GetTenantSubtenantGroup200Response) GetGroupOk() (*GetTenantSubtenantGroup200ResponseGroup, bool)`
-
-GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGroup
-
-`func (o *GetTenantSubtenantGroup200Response) SetGroup(v GetTenantSubtenantGroup200ResponseGroup)`
-
-SetGroup sets Group field to given value.
-
-### HasGroup
-
-`func (o *GetTenantSubtenantGroup200Response) HasGroup() bool`
-
-HasGroup returns a boolean if a field has been set.
+```go
+obj := &GetTenantSubtenantGroup200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

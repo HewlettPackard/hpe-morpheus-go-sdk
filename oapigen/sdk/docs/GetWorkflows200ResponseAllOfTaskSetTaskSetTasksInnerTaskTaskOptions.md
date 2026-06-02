@@ -14,332 +14,79 @@ Name | Type | Description | Notes
 **PasswordHash** | Pointer to **NullableString** |  | [optional] 
 **ShellSudo** | Pointer to **NullableString** |  | [optional] 
 
-## Methods
-
-### NewGetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions
-
-`func NewGetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions() *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions`
-
-NewGetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions instantiates a new GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetLocalScriptGitRef
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetLocalScriptGitRef() string`
-
-GetLocalScriptGitRef returns the LocalScriptGitRef field if non-nil, zero value otherwise.
-
-### GetLocalScriptGitRefOk
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetLocalScriptGitRefOk() (*string, bool)`
-
-GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLocalScriptGitRef
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetLocalScriptGitRef(v string)`
-
-SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
-
-### HasLocalScriptGitRef
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) HasLocalScriptGitRef() bool`
-
-HasLocalScriptGitRef returns a boolean if a field has been set.
-
-### SetLocalScriptGitRefNil
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetLocalScriptGitRefNil(b bool)`
-
- SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
-
-### UnsetLocalScriptGitRef
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetLocalScriptGitRef()`
-
-UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
-### GetUsername
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetUsername() string`
-
-GetUsername returns the Username field if non-nil, zero value otherwise.
-
-### GetUsernameOk
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetUsernameOk() (*string, bool)`
-
-GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsername
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetUsername(v string)`
-
-SetUsername sets Username field to given value.
-
-### HasUsername
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) HasUsername() bool`
-
-HasUsername returns a boolean if a field has been set.
-
-### SetUsernameNil
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetUsernameNil(b bool)`
-
- SetUsernameNil sets the value for Username to be an explicit nil
-
-### UnsetUsername
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetUsername()`
-
-UnsetUsername ensures that no value is present for Username, not even an explicit nil
-### GetLocalScriptGitId
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetLocalScriptGitId() string`
-
-GetLocalScriptGitId returns the LocalScriptGitId field if non-nil, zero value otherwise.
-
-### GetLocalScriptGitIdOk
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetLocalScriptGitIdOk() (*string, bool)`
-
-GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLocalScriptGitId
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetLocalScriptGitId(v string)`
-
-SetLocalScriptGitId sets LocalScriptGitId field to given value.
-
-### HasLocalScriptGitId
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) HasLocalScriptGitId() bool`
-
-HasLocalScriptGitId returns a boolean if a field has been set.
-
-### SetLocalScriptGitIdNil
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetLocalScriptGitIdNil(b bool)`
-
- SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
-
-### UnsetLocalScriptGitId
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetLocalScriptGitId()`
-
-UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
-### GetHost
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetHost() string`
-
-GetHost returns the Host field if non-nil, zero value otherwise.
-
-### GetHostOk
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetHostOk() (*string, bool)`
-
-GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHost
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetHost(v string)`
-
-SetHost sets Host field to given value.
-
-### HasHost
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) HasHost() bool`
-
-HasHost returns a boolean if a field has been set.
-
-### SetHostNil
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetHostNil(b bool)`
-
- SetHostNil sets the value for Host to be an explicit nil
-
-### UnsetHost
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetHost()`
-
-UnsetHost ensures that no value is present for Host, not even an explicit nil
-### GetSshKey
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetSshKey() string`
-
-GetSshKey returns the SshKey field if non-nil, zero value otherwise.
-
-### GetSshKeyOk
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetSshKeyOk() (*string, bool)`
-
-GetSshKeyOk returns a tuple with the SshKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSshKey
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetSshKey(v string)`
-
-SetSshKey sets SshKey field to given value.
-
-### HasSshKey
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) HasSshKey() bool`
-
-HasSshKey returns a boolean if a field has been set.
-
-### SetSshKeyNil
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetSshKeyNil(b bool)`
-
- SetSshKeyNil sets the value for SshKey to be an explicit nil
-
-### UnsetSshKey
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetSshKey()`
-
-UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
-### GetPort
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetPort() string`
-
-GetPort returns the Port field if non-nil, zero value otherwise.
-
-### GetPortOk
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetPortOk() (*string, bool)`
-
-GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPort
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetPort(v string)`
-
-SetPort sets Port field to given value.
-
-### HasPort
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) HasPort() bool`
-
-HasPort returns a boolean if a field has been set.
-
-### SetPortNil
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetPortNil(b bool)`
-
- SetPortNil sets the value for Port to be an explicit nil
-
-### UnsetPort
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetPort()`
-
-UnsetPort ensures that no value is present for Port, not even an explicit nil
-### GetPassword
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetPassword() string`
-
-GetPassword returns the Password field if non-nil, zero value otherwise.
-
-### GetPasswordOk
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetPasswordOk() (*string, bool)`
-
-GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPassword
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetPassword(v string)`
-
-SetPassword sets Password field to given value.
-
-### HasPassword
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) HasPassword() bool`
-
-HasPassword returns a boolean if a field has been set.
-
-### SetPasswordNil
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetPasswordNil(b bool)`
-
- SetPasswordNil sets the value for Password to be an explicit nil
-
-### UnsetPassword
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetPassword()`
-
-UnsetPassword ensures that no value is present for Password, not even an explicit nil
-### GetPasswordHash
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetPasswordHash() string`
-
-GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
-
-### GetPasswordHashOk
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetPasswordHashOk() (*string, bool)`
-
-GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPasswordHash
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetPasswordHash(v string)`
-
-SetPasswordHash sets PasswordHash field to given value.
-
-### HasPasswordHash
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) HasPasswordHash() bool`
-
-HasPasswordHash returns a boolean if a field has been set.
-
-### SetPasswordHashNil
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetPasswordHashNil(b bool)`
-
- SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
-
-### UnsetPasswordHash
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetPasswordHash()`
-
-UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
-### GetShellSudo
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetShellSudo() string`
-
-GetShellSudo returns the ShellSudo field if non-nil, zero value otherwise.
-
-### GetShellSudoOk
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetShellSudoOk() (*string, bool)`
-
-GetShellSudoOk returns a tuple with the ShellSudo field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetShellSudo
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetShellSudo(v string)`
-
-SetShellSudo sets ShellSudo field to given value.
-
-### HasShellSudo
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) HasShellSudo() bool`
-
-HasShellSudo returns a boolean if a field has been set.
-
-### SetShellSudoNil
-
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetShellSudoNil(b bool)`
-
- SetShellSudoNil sets the value for ShellSudo to be an explicit nil
-
-### UnsetShellSudo
-`func (o *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetShellSudo()`
-
-UnsetShellSudo ensures that no value is present for ShellSudo, not even an explicit nil
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions{
+    // Set fields directly
+}
+```
+
+### LocalScriptGitRef (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.LocalScriptGitRef.IsSet()` — check if set
+- `obj.LocalScriptGitRef.Get()` — get the inner value (returns pointer)
+- `obj.LocalScriptGitRef.Set(&val)` — set the value
+- `obj.LocalScriptGitRef.Unset()` — clear the value
+### Username (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Username.IsSet()` — check if set
+- `obj.Username.Get()` — get the inner value (returns pointer)
+- `obj.Username.Set(&val)` — set the value
+- `obj.Username.Unset()` — clear the value
+### LocalScriptGitId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.LocalScriptGitId.IsSet()` — check if set
+- `obj.LocalScriptGitId.Get()` — get the inner value (returns pointer)
+- `obj.LocalScriptGitId.Set(&val)` — set the value
+- `obj.LocalScriptGitId.Unset()` — clear the value
+### Host (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Host.IsSet()` — check if set
+- `obj.Host.Get()` — get the inner value (returns pointer)
+- `obj.Host.Set(&val)` — set the value
+- `obj.Host.Unset()` — clear the value
+### SshKey (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SshKey.IsSet()` — check if set
+- `obj.SshKey.Get()` — get the inner value (returns pointer)
+- `obj.SshKey.Set(&val)` — set the value
+- `obj.SshKey.Unset()` — clear the value
+### Port (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Port.IsSet()` — check if set
+- `obj.Port.Get()` — get the inner value (returns pointer)
+- `obj.Port.Set(&val)` — set the value
+- `obj.Port.Unset()` — clear the value
+### Password (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Password.IsSet()` — check if set
+- `obj.Password.Get()` — get the inner value (returns pointer)
+- `obj.Password.Set(&val)` — set the value
+- `obj.Password.Unset()` — clear the value
+### PasswordHash (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.PasswordHash.IsSet()` — check if set
+- `obj.PasswordHash.Get()` — get the inner value (returns pointer)
+- `obj.PasswordHash.Set(&val)` — set the value
+- `obj.PasswordHash.Unset()` — clear the value
+### ShellSudo (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ShellSudo.IsSet()` — check if set
+- `obj.ShellSudo.Get()` — get the inner value (returns pointer)
+- `obj.ShellSudo.Set(&val)` — set the value
+- `obj.ShellSudo.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

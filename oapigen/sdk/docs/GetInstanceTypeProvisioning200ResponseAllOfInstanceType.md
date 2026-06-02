@@ -34,872 +34,107 @@ Name | Type | Description | Notes
 **ImagePath** | Pointer to **NullableString** | Logo image URL | [optional] 
 **DarkImagePath** | Pointer to **NullableString** | Dark logo image URL | [optional] 
 
-## Methods
-
-### NewGetInstanceTypeProvisioning200ResponseAllOfInstanceType
-
-`func NewGetInstanceTypeProvisioning200ResponseAllOfInstanceType() *GetInstanceTypeProvisioning200ResponseAllOfInstanceType`
-
-NewGetInstanceTypeProvisioning200ResponseAllOfInstanceType instantiates a new GetInstanceTypeProvisioning200ResponseAllOfInstanceType object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetAccount
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetAccount() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount`
-
-GetAccount returns the Account field if non-nil, zero value otherwise.
-
-### GetAccountOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetAccountOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount, bool)`
-
-GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccount
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetAccount(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount)`
-
-SetAccount sets Account field to given value.
-
-### HasAccount
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasAccount() bool`
-
-HasAccount returns a boolean if a field has been set.
-
-### SetAccountNil
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetAccountNil(b bool)`
-
- SetAccountNil sets the value for Account to be an explicit nil
-
-### UnsetAccount
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetAccount()`
-
-UnsetAccount ensures that no value is present for Account, not even an explicit nil
-### GetName
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetLabels
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetLabels() []string`
-
-GetLabels returns the Labels field if non-nil, zero value otherwise.
-
-### GetLabelsOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetLabelsOk() (*[]string, bool)`
-
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLabels
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetLabels(v []string)`
-
-SetLabels sets Labels field to given value.
-
-### HasLabels
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasLabels() bool`
-
-HasLabels returns a boolean if a field has been set.
-
-### SetLabelsNil
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetLabelsNil(b bool)`
-
- SetLabelsNil sets the value for Labels to be an explicit nil
-
-### UnsetLabels
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetLabels()`
-
-UnsetLabels ensures that no value is present for Labels, not even an explicit nil
-### GetCode
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetCode() string`
-
-GetCode returns the Code field if non-nil, zero value otherwise.
-
-### GetCodeOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetCodeOk() (*string, bool)`
-
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCode
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetCode(v string)`
-
-SetCode sets Code field to given value.
-
-### HasCode
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasCode() bool`
-
-HasCode returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### SetDescriptionNil
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetProvisionTypeCode
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetProvisionTypeCode() string`
-
-GetProvisionTypeCode returns the ProvisionTypeCode field if non-nil, zero value otherwise.
-
-### GetProvisionTypeCodeOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetProvisionTypeCodeOk() (*string, bool)`
-
-GetProvisionTypeCodeOk returns a tuple with the ProvisionTypeCode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProvisionTypeCode
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetProvisionTypeCode(v string)`
-
-SetProvisionTypeCode sets ProvisionTypeCode field to given value.
-
-### HasProvisionTypeCode
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasProvisionTypeCode() bool`
-
-HasProvisionTypeCode returns a boolean if a field has been set.
-
-### SetProvisionTypeCodeNil
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetProvisionTypeCodeNil(b bool)`
-
- SetProvisionTypeCodeNil sets the value for ProvisionTypeCode to be an explicit nil
-
-### UnsetProvisionTypeCode
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetProvisionTypeCode()`
-
-UnsetProvisionTypeCode ensures that no value is present for ProvisionTypeCode, not even an explicit nil
-### GetCategory
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetCategory() string`
-
-GetCategory returns the Category field if non-nil, zero value otherwise.
-
-### GetCategoryOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetCategoryOk() (*string, bool)`
-
-GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCategory
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetCategory(v string)`
-
-SetCategory sets Category field to given value.
-
-### HasCategory
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasCategory() bool`
-
-HasCategory returns a boolean if a field has been set.
-
-### GetActive
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetActive() bool`
-
-GetActive returns the Active field if non-nil, zero value otherwise.
-
-### GetActiveOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetActiveOk() (*bool, bool)`
-
-GetActiveOk returns a tuple with the Active field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActive
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetActive(v bool)`
-
-SetActive sets Active field to given value.
-
-### HasActive
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasActive() bool`
-
-HasActive returns a boolean if a field has been set.
-
-### GetHasProvisioningStep
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetHasProvisioningStep() bool`
-
-GetHasProvisioningStep returns the HasProvisioningStep field if non-nil, zero value otherwise.
-
-### GetHasProvisioningStepOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetHasProvisioningStepOk() (*bool, bool)`
-
-GetHasProvisioningStepOk returns a tuple with the HasProvisioningStep field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasProvisioningStep
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetHasProvisioningStep(v bool)`
-
-SetHasProvisioningStep sets HasProvisioningStep field to given value.
-
-### HasHasProvisioningStep
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasHasProvisioningStep() bool`
-
-HasHasProvisioningStep returns a boolean if a field has been set.
-
-### GetHasDeployment
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetHasDeployment() bool`
-
-GetHasDeployment returns the HasDeployment field if non-nil, zero value otherwise.
-
-### GetHasDeploymentOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetHasDeploymentOk() (*bool, bool)`
-
-GetHasDeploymentOk returns a tuple with the HasDeployment field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasDeployment
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetHasDeployment(v bool)`
-
-SetHasDeployment sets HasDeployment field to given value.
-
-### HasHasDeployment
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasHasDeployment() bool`
-
-HasHasDeployment returns a boolean if a field has been set.
-
-### GetHasConfig
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetHasConfig() bool`
-
-GetHasConfig returns the HasConfig field if non-nil, zero value otherwise.
-
-### GetHasConfigOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetHasConfigOk() (*bool, bool)`
-
-GetHasConfigOk returns a tuple with the HasConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasConfig
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetHasConfig(v bool)`
-
-SetHasConfig sets HasConfig field to given value.
-
-### HasHasConfig
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasHasConfig() bool`
-
-HasHasConfig returns a boolean if a field has been set.
-
-### GetHasSettings
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetHasSettings() bool`
-
-GetHasSettings returns the HasSettings field if non-nil, zero value otherwise.
-
-### GetHasSettingsOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetHasSettingsOk() (*bool, bool)`
-
-GetHasSettingsOk returns a tuple with the HasSettings field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasSettings
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetHasSettings(v bool)`
-
-SetHasSettings sets HasSettings field to given value.
-
-### HasHasSettings
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasHasSettings() bool`
-
-HasHasSettings returns a boolean if a field has been set.
-
-### GetHasAutoScale
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetHasAutoScale() bool`
-
-GetHasAutoScale returns the HasAutoScale field if non-nil, zero value otherwise.
-
-### GetHasAutoScaleOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetHasAutoScaleOk() (*bool, bool)`
-
-GetHasAutoScaleOk returns a tuple with the HasAutoScale field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasAutoScale
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetHasAutoScale(v bool)`
-
-SetHasAutoScale sets HasAutoScale field to given value.
-
-### HasHasAutoScale
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasHasAutoScale() bool`
-
-HasHasAutoScale returns a boolean if a field has been set.
-
-### GetProxyType
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetProxyType() string`
-
-GetProxyType returns the ProxyType field if non-nil, zero value otherwise.
-
-### GetProxyTypeOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetProxyTypeOk() (*string, bool)`
-
-GetProxyTypeOk returns a tuple with the ProxyType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProxyType
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetProxyType(v string)`
-
-SetProxyType sets ProxyType field to given value.
-
-### HasProxyType
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasProxyType() bool`
-
-HasProxyType returns a boolean if a field has been set.
-
-### SetProxyTypeNil
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetProxyTypeNil(b bool)`
-
- SetProxyTypeNil sets the value for ProxyType to be an explicit nil
-
-### UnsetProxyType
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetProxyType()`
-
-UnsetProxyType ensures that no value is present for ProxyType, not even an explicit nil
-### GetProxyPort
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetProxyPort() string`
-
-GetProxyPort returns the ProxyPort field if non-nil, zero value otherwise.
-
-### GetProxyPortOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetProxyPortOk() (*string, bool)`
-
-GetProxyPortOk returns a tuple with the ProxyPort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProxyPort
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetProxyPort(v string)`
-
-SetProxyPort sets ProxyPort field to given value.
-
-### HasProxyPort
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasProxyPort() bool`
-
-HasProxyPort returns a boolean if a field has been set.
-
-### SetProxyPortNil
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetProxyPortNil(b bool)`
-
- SetProxyPortNil sets the value for ProxyPort to be an explicit nil
-
-### UnsetProxyPort
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetProxyPort()`
-
-UnsetProxyPort ensures that no value is present for ProxyPort, not even an explicit nil
-### GetProxyProtocol
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetProxyProtocol() string`
-
-GetProxyProtocol returns the ProxyProtocol field if non-nil, zero value otherwise.
-
-### GetProxyProtocolOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetProxyProtocolOk() (*string, bool)`
-
-GetProxyProtocolOk returns a tuple with the ProxyProtocol field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProxyProtocol
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetProxyProtocol(v string)`
-
-SetProxyProtocol sets ProxyProtocol field to given value.
-
-### HasProxyProtocol
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasProxyProtocol() bool`
-
-HasProxyProtocol returns a boolean if a field has been set.
-
-### SetProxyProtocolNil
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetProxyProtocolNil(b bool)`
-
- SetProxyProtocolNil sets the value for ProxyProtocol to be an explicit nil
-
-### UnsetProxyProtocol
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetProxyProtocol()`
-
-UnsetProxyProtocol ensures that no value is present for ProxyProtocol, not even an explicit nil
-### GetEnvironmentPrefix
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetEnvironmentPrefix() string`
-
-GetEnvironmentPrefix returns the EnvironmentPrefix field if non-nil, zero value otherwise.
-
-### GetEnvironmentPrefixOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetEnvironmentPrefixOk() (*string, bool)`
-
-GetEnvironmentPrefixOk returns a tuple with the EnvironmentPrefix field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnvironmentPrefix
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetEnvironmentPrefix(v string)`
-
-SetEnvironmentPrefix sets EnvironmentPrefix field to given value.
-
-### HasEnvironmentPrefix
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasEnvironmentPrefix() bool`
-
-HasEnvironmentPrefix returns a boolean if a field has been set.
-
-### GetBackupType
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetBackupType() string`
-
-GetBackupType returns the BackupType field if non-nil, zero value otherwise.
-
-### GetBackupTypeOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetBackupTypeOk() (*string, bool)`
-
-GetBackupTypeOk returns a tuple with the BackupType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBackupType
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetBackupType(v string)`
-
-SetBackupType sets BackupType field to given value.
-
-### HasBackupType
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasBackupType() bool`
-
-HasBackupType returns a boolean if a field has been set.
-
-### SetBackupTypeNil
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetBackupTypeNil(b bool)`
-
- SetBackupTypeNil sets the value for BackupType to be an explicit nil
-
-### UnsetBackupType
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetBackupType()`
-
-UnsetBackupType ensures that no value is present for BackupType, not even an explicit nil
-### GetConfig
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetConfig() map[string]interface{}`
-
-GetConfig returns the Config field if non-nil, zero value otherwise.
-
-### GetConfigOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetConfigOk() (*map[string]interface{}, bool)`
-
-GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfig
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetConfig(v map[string]interface{})`
-
-SetConfig sets Config field to given value.
-
-### HasConfig
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasConfig() bool`
-
-HasConfig returns a boolean if a field has been set.
-
-### SetConfigNil
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetConfigNil(b bool)`
-
- SetConfigNil sets the value for Config to be an explicit nil
-
-### UnsetConfig
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetConfig()`
-
-UnsetConfig ensures that no value is present for Config, not even an explicit nil
-### GetVisibility
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetVisibility() string`
-
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
-
-### GetVisibilityOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetVisibilityOk() (*string, bool)`
-
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVisibility
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetVisibility(v string)`
-
-SetVisibility sets Visibility field to given value.
-
-### HasVisibility
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasVisibility() bool`
-
-HasVisibility returns a boolean if a field has been set.
-
-### GetFeatured
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetFeatured() bool`
-
-GetFeatured returns the Featured field if non-nil, zero value otherwise.
-
-### GetFeaturedOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetFeaturedOk() (*bool, bool)`
-
-GetFeaturedOk returns a tuple with the Featured field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFeatured
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetFeatured(v bool)`
-
-SetFeatured sets Featured field to given value.
-
-### HasFeatured
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasFeatured() bool`
-
-HasFeatured returns a boolean if a field has been set.
-
-### GetVersions
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetVersions() []string`
-
-GetVersions returns the Versions field if non-nil, zero value otherwise.
-
-### GetVersionsOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetVersionsOk() (*[]string, bool)`
-
-GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVersions
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetVersions(v []string)`
-
-SetVersions sets Versions field to given value.
-
-### HasVersions
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasVersions() bool`
-
-HasVersions returns a boolean if a field has been set.
-
-### GetInstanceTypeLayouts
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetInstanceTypeLayouts() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner`
-
-GetInstanceTypeLayouts returns the InstanceTypeLayouts field if non-nil, zero value otherwise.
-
-### GetInstanceTypeLayoutsOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetInstanceTypeLayoutsOk() (*[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner, bool)`
-
-GetInstanceTypeLayoutsOk returns a tuple with the InstanceTypeLayouts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInstanceTypeLayouts
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetInstanceTypeLayouts(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner)`
-
-SetInstanceTypeLayouts sets InstanceTypeLayouts field to given value.
-
-### HasInstanceTypeLayouts
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasInstanceTypeLayouts() bool`
-
-HasInstanceTypeLayouts returns a boolean if a field has been set.
-
-### GetOptionTypes
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetOptionTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner`
-
-GetOptionTypes returns the OptionTypes field if non-nil, zero value otherwise.
-
-### GetOptionTypesOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetOptionTypesOk() (*[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner, bool)`
-
-GetOptionTypesOk returns a tuple with the OptionTypes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOptionTypes
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetOptionTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner)`
-
-SetOptionTypes sets OptionTypes field to given value.
-
-### HasOptionTypes
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasOptionTypes() bool`
-
-HasOptionTypes returns a boolean if a field has been set.
-
-### GetEnvironmentVariables
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetEnvironmentVariables() []map[string]interface{}`
-
-GetEnvironmentVariables returns the EnvironmentVariables field if non-nil, zero value otherwise.
-
-### GetEnvironmentVariablesOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetEnvironmentVariablesOk() (*[]map[string]interface{}, bool)`
-
-GetEnvironmentVariablesOk returns a tuple with the EnvironmentVariables field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnvironmentVariables
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetEnvironmentVariables(v []map[string]interface{})`
-
-SetEnvironmentVariables sets EnvironmentVariables field to given value.
-
-### HasEnvironmentVariables
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasEnvironmentVariables() bool`
-
-HasEnvironmentVariables returns a boolean if a field has been set.
-
-### SetEnvironmentVariablesNil
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetEnvironmentVariablesNil(b bool)`
-
- SetEnvironmentVariablesNil sets the value for EnvironmentVariables to be an explicit nil
-
-### UnsetEnvironmentVariables
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetEnvironmentVariables()`
-
-UnsetEnvironmentVariables ensures that no value is present for EnvironmentVariables, not even an explicit nil
-### GetPriceSets
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetPriceSets() []map[string]interface{}`
-
-GetPriceSets returns the PriceSets field if non-nil, zero value otherwise.
-
-### GetPriceSetsOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetPriceSetsOk() (*[]map[string]interface{}, bool)`
-
-GetPriceSetsOk returns a tuple with the PriceSets field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPriceSets
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetPriceSets(v []map[string]interface{})`
-
-SetPriceSets sets PriceSets field to given value.
-
-### HasPriceSets
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasPriceSets() bool`
-
-HasPriceSets returns a boolean if a field has been set.
-
-### SetPriceSetsNil
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetPriceSetsNil(b bool)`
-
- SetPriceSetsNil sets the value for PriceSets to be an explicit nil
-
-### UnsetPriceSets
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetPriceSets()`
-
-UnsetPriceSets ensures that no value is present for PriceSets, not even an explicit nil
-### GetImagePath
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetImagePath() string`
-
-GetImagePath returns the ImagePath field if non-nil, zero value otherwise.
-
-### GetImagePathOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetImagePathOk() (*string, bool)`
-
-GetImagePathOk returns a tuple with the ImagePath field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImagePath
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetImagePath(v string)`
-
-SetImagePath sets ImagePath field to given value.
-
-### HasImagePath
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasImagePath() bool`
-
-HasImagePath returns a boolean if a field has been set.
-
-### SetImagePathNil
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetImagePathNil(b bool)`
-
- SetImagePathNil sets the value for ImagePath to be an explicit nil
-
-### UnsetImagePath
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetImagePath()`
-
-UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
-### GetDarkImagePath
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetDarkImagePath() string`
-
-GetDarkImagePath returns the DarkImagePath field if non-nil, zero value otherwise.
-
-### GetDarkImagePathOk
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetDarkImagePathOk() (*string, bool)`
-
-GetDarkImagePathOk returns a tuple with the DarkImagePath field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDarkImagePath
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetDarkImagePath(v string)`
-
-SetDarkImagePath sets DarkImagePath field to given value.
-
-### HasDarkImagePath
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) HasDarkImagePath() bool`
-
-HasDarkImagePath returns a boolean if a field has been set.
-
-### SetDarkImagePathNil
-
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetDarkImagePathNil(b bool)`
-
- SetDarkImagePathNil sets the value for DarkImagePath to be an explicit nil
-
-### UnsetDarkImagePath
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetDarkImagePath()`
-
-UnsetDarkImagePath ensures that no value is present for DarkImagePath, not even an explicit nil
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &GetInstanceTypeProvisioning200ResponseAllOfInstanceType{
+    // Set fields directly
+}
+```
+
+### Account (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Account.IsSet()` — check if set
+- `obj.Account.Get()` — get the inner value (returns pointer)
+- `obj.Account.Set(&val)` — set the value
+- `obj.Account.Unset()` — clear the value
+### Labels (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Labels.IsSet()` — check if set
+- `obj.Labels.Get()` — get the inner value (returns pointer)
+- `obj.Labels.Set(&val)` — set the value
+- `obj.Labels.Unset()` — clear the value
+### Description (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Description.IsSet()` — check if set
+- `obj.Description.Get()` — get the inner value (returns pointer)
+- `obj.Description.Set(&val)` — set the value
+- `obj.Description.Unset()` — clear the value
+### ProvisionTypeCode (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ProvisionTypeCode.IsSet()` — check if set
+- `obj.ProvisionTypeCode.Get()` — get the inner value (returns pointer)
+- `obj.ProvisionTypeCode.Set(&val)` — set the value
+- `obj.ProvisionTypeCode.Unset()` — clear the value
+### ProxyType (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ProxyType.IsSet()` — check if set
+- `obj.ProxyType.Get()` — get the inner value (returns pointer)
+- `obj.ProxyType.Set(&val)` — set the value
+- `obj.ProxyType.Unset()` — clear the value
+### ProxyPort (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ProxyPort.IsSet()` — check if set
+- `obj.ProxyPort.Get()` — get the inner value (returns pointer)
+- `obj.ProxyPort.Set(&val)` — set the value
+- `obj.ProxyPort.Unset()` — clear the value
+### ProxyProtocol (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ProxyProtocol.IsSet()` — check if set
+- `obj.ProxyProtocol.Get()` — get the inner value (returns pointer)
+- `obj.ProxyProtocol.Set(&val)` — set the value
+- `obj.ProxyProtocol.Unset()` — clear the value
+### BackupType (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.BackupType.IsSet()` — check if set
+- `obj.BackupType.Get()` — get the inner value (returns pointer)
+- `obj.BackupType.Set(&val)` — set the value
+- `obj.BackupType.Unset()` — clear the value
+### Config (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Config.IsSet()` — check if set
+- `obj.Config.Get()` — get the inner value (returns pointer)
+- `obj.Config.Set(&val)` — set the value
+- `obj.Config.Unset()` — clear the value
+### EnvironmentVariables (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.EnvironmentVariables.IsSet()` — check if set
+- `obj.EnvironmentVariables.Get()` — get the inner value (returns pointer)
+- `obj.EnvironmentVariables.Set(&val)` — set the value
+- `obj.EnvironmentVariables.Unset()` — clear the value
+### PriceSets (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.PriceSets.IsSet()` — check if set
+- `obj.PriceSets.Get()` — get the inner value (returns pointer)
+- `obj.PriceSets.Set(&val)` — set the value
+- `obj.PriceSets.Unset()` — clear the value
+### ImagePath (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ImagePath.IsSet()` — check if set
+- `obj.ImagePath.Get()` — get the inner value (returns pointer)
+- `obj.ImagePath.Set(&val)` — set the value
+- `obj.ImagePath.Unset()` — clear the value
+### DarkImagePath (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.DarkImagePath.IsSet()` — check if set
+- `obj.DarkImagePath.Get()` — get the inner value (returns pointer)
+- `obj.DarkImagePath.Set(&val)` — set the value
+- `obj.DarkImagePath.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

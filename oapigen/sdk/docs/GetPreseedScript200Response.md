@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PreseedScript** | Pointer to [**GetPreseedScript200ResponsePreseedScript**](GetPreseedScript200ResponsePreseedScript.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetPreseedScript200Response
+Instantiate with a Go composite literal:
 
-`func NewGetPreseedScript200Response() *GetPreseedScript200Response`
-
-NewGetPreseedScript200Response instantiates a new GetPreseedScript200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetPreseedScript
-
-`func (o *GetPreseedScript200Response) GetPreseedScript() GetPreseedScript200ResponsePreseedScript`
-
-GetPreseedScript returns the PreseedScript field if non-nil, zero value otherwise.
-
-### GetPreseedScriptOk
-
-`func (o *GetPreseedScript200Response) GetPreseedScriptOk() (*GetPreseedScript200ResponsePreseedScript, bool)`
-
-GetPreseedScriptOk returns a tuple with the PreseedScript field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPreseedScript
-
-`func (o *GetPreseedScript200Response) SetPreseedScript(v GetPreseedScript200ResponsePreseedScript)`
-
-SetPreseedScript sets PreseedScript field to given value.
-
-### HasPreseedScript
-
-`func (o *GetPreseedScript200Response) HasPreseedScript() bool`
-
-HasPreseedScript returns a boolean if a field has been set.
+```go
+obj := &GetPreseedScript200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

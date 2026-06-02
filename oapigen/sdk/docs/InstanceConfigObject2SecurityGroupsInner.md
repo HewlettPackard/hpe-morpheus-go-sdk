@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | Security Group ID | [optional] 
 
-## Methods
+## Usage
 
-### NewInstanceConfigObject2SecurityGroupsInner
+Instantiate with a Go composite literal:
 
-`func NewInstanceConfigObject2SecurityGroupsInner() *InstanceConfigObject2SecurityGroupsInner`
-
-NewInstanceConfigObject2SecurityGroupsInner instantiates a new InstanceConfigObject2SecurityGroupsInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetId
-
-`func (o *InstanceConfigObject2SecurityGroupsInner) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *InstanceConfigObject2SecurityGroupsInner) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *InstanceConfigObject2SecurityGroupsInner) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *InstanceConfigObject2SecurityGroupsInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
+```go
+obj := &InstanceConfigObject2SecurityGroupsInner{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InstanceSchedules** | Pointer to [**[]GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner**](GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetInstanceSchedules200Response
+Instantiate with a Go composite literal:
 
-`func NewGetInstanceSchedules200Response() *GetInstanceSchedules200Response`
-
-NewGetInstanceSchedules200Response instantiates a new GetInstanceSchedules200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetInstanceSchedules
-
-`func (o *GetInstanceSchedules200Response) GetInstanceSchedules() []GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner`
-
-GetInstanceSchedules returns the InstanceSchedules field if non-nil, zero value otherwise.
-
-### GetInstanceSchedulesOk
-
-`func (o *GetInstanceSchedules200Response) GetInstanceSchedulesOk() (*[]GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner, bool)`
-
-GetInstanceSchedulesOk returns a tuple with the InstanceSchedules field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInstanceSchedules
-
-`func (o *GetInstanceSchedules200Response) SetInstanceSchedules(v []GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner)`
-
-SetInstanceSchedules sets InstanceSchedules field to given value.
-
-### HasInstanceSchedules
-
-`func (o *GetInstanceSchedules200Response) HasInstanceSchedules() bool`
-
-HasInstanceSchedules returns a boolean if a field has been set.
+```go
+obj := &GetInstanceSchedules200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

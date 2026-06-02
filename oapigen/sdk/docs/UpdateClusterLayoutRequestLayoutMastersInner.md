@@ -7,61 +7,15 @@ Name | Type | Description | Notes
 **NodeCount** | Pointer to **int64** | Number of nodes | [optional] [default to 1]
 **ContainerType** | [**UpdateClusterLayoutRequestLayoutMastersInnerContainerType**](UpdateClusterLayoutRequestLayoutMastersInnerContainerType.md) |  | 
 
-## Methods
+## Usage
 
-### NewUpdateClusterLayoutRequestLayoutMastersInner
+Instantiate with a Go composite literal:
 
-`func NewUpdateClusterLayoutRequestLayoutMastersInner(containerType UpdateClusterLayoutRequestLayoutMastersInnerContainerType, ) *UpdateClusterLayoutRequestLayoutMastersInner`
-
-NewUpdateClusterLayoutRequestLayoutMastersInner instantiates a new UpdateClusterLayoutRequestLayoutMastersInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetNodeCount
-
-`func (o *UpdateClusterLayoutRequestLayoutMastersInner) GetNodeCount() int64`
-
-GetNodeCount returns the NodeCount field if non-nil, zero value otherwise.
-
-### GetNodeCountOk
-
-`func (o *UpdateClusterLayoutRequestLayoutMastersInner) GetNodeCountOk() (*int64, bool)`
-
-GetNodeCountOk returns a tuple with the NodeCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNodeCount
-
-`func (o *UpdateClusterLayoutRequestLayoutMastersInner) SetNodeCount(v int64)`
-
-SetNodeCount sets NodeCount field to given value.
-
-### HasNodeCount
-
-`func (o *UpdateClusterLayoutRequestLayoutMastersInner) HasNodeCount() bool`
-
-HasNodeCount returns a boolean if a field has been set.
-
-### GetContainerType
-
-`func (o *UpdateClusterLayoutRequestLayoutMastersInner) GetContainerType() UpdateClusterLayoutRequestLayoutMastersInnerContainerType`
-
-GetContainerType returns the ContainerType field if non-nil, zero value otherwise.
-
-### GetContainerTypeOk
-
-`func (o *UpdateClusterLayoutRequestLayoutMastersInner) GetContainerTypeOk() (*UpdateClusterLayoutRequestLayoutMastersInnerContainerType, bool)`
-
-GetContainerTypeOk returns a tuple with the ContainerType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContainerType
-
-`func (o *UpdateClusterLayoutRequestLayoutMastersInner) SetContainerType(v UpdateClusterLayoutRequestLayoutMastersInnerContainerType)`
-
-SetContainerType sets ContainerType field to given value.
-
+```go
+obj := &UpdateClusterLayoutRequestLayoutMastersInner{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

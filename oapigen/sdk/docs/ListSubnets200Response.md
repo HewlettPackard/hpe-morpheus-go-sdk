@@ -7,66 +7,15 @@ Name | Type | Description | Notes
 **Subnets** | Pointer to [**[]ListSubnets200ResponseAllOfSubnetsInner**](ListSubnets200ResponseAllOfSubnetsInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListSubnets200ResponseAllOfMeta**](ListSubnets200ResponseAllOfMeta.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListSubnets200Response
+Instantiate with a Go composite literal:
 
-`func NewListSubnets200Response() *ListSubnets200Response`
-
-NewListSubnets200Response instantiates a new ListSubnets200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetSubnets
-
-`func (o *ListSubnets200Response) GetSubnets() []ListSubnets200ResponseAllOfSubnetsInner`
-
-GetSubnets returns the Subnets field if non-nil, zero value otherwise.
-
-### GetSubnetsOk
-
-`func (o *ListSubnets200Response) GetSubnetsOk() (*[]ListSubnets200ResponseAllOfSubnetsInner, bool)`
-
-GetSubnetsOk returns a tuple with the Subnets field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubnets
-
-`func (o *ListSubnets200Response) SetSubnets(v []ListSubnets200ResponseAllOfSubnetsInner)`
-
-SetSubnets sets Subnets field to given value.
-
-### HasSubnets
-
-`func (o *ListSubnets200Response) HasSubnets() bool`
-
-HasSubnets returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *ListSubnets200Response) GetMeta() ListSubnets200ResponseAllOfMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *ListSubnets200Response) GetMetaOk() (*ListSubnets200ResponseAllOfMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *ListSubnets200Response) SetMeta(v ListSubnets200ResponseAllOfMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *ListSubnets200Response) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
+```go
+obj := &ListSubnets200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

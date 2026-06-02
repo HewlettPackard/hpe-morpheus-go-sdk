@@ -7,66 +7,15 @@ Name | Type | Description | Notes
 **Success** | Pointer to **bool** |  | [optional] 
 **Server** | Pointer to [**AddBaremetalHost200ResponseServer**](AddBaremetalHost200ResponseServer.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewAddBaremetalHost200Response
+Instantiate with a Go composite literal:
 
-`func NewAddBaremetalHost200Response() *AddBaremetalHost200Response`
-
-NewAddBaremetalHost200Response instantiates a new AddBaremetalHost200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetSuccess
-
-`func (o *AddBaremetalHost200Response) GetSuccess() bool`
-
-GetSuccess returns the Success field if non-nil, zero value otherwise.
-
-### GetSuccessOk
-
-`func (o *AddBaremetalHost200Response) GetSuccessOk() (*bool, bool)`
-
-GetSuccessOk returns a tuple with the Success field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSuccess
-
-`func (o *AddBaremetalHost200Response) SetSuccess(v bool)`
-
-SetSuccess sets Success field to given value.
-
-### HasSuccess
-
-`func (o *AddBaremetalHost200Response) HasSuccess() bool`
-
-HasSuccess returns a boolean if a field has been set.
-
-### GetServer
-
-`func (o *AddBaremetalHost200Response) GetServer() AddBaremetalHost200ResponseServer`
-
-GetServer returns the Server field if non-nil, zero value otherwise.
-
-### GetServerOk
-
-`func (o *AddBaremetalHost200Response) GetServerOk() (*AddBaremetalHost200ResponseServer, bool)`
-
-GetServerOk returns a tuple with the Server field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServer
-
-`func (o *AddBaremetalHost200Response) SetServer(v AddBaremetalHost200ResponseServer)`
-
-SetServer sets Server field to given value.
-
-### HasServer
-
-`func (o *AddBaremetalHost200Response) HasServer() bool`
-
-HasServer returns a boolean if a field has been set.
+```go
+obj := &AddBaremetalHost200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

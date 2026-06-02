@@ -7,77 +7,23 @@ Name | Type | Description | Notes
 **NetworkPoolIps** | Pointer to **interface{}** |  | [optional] 
 **Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetNetworkPoolIps200Response
+Instantiate with a Go composite literal:
 
-`func NewGetNetworkPoolIps200Response() *GetNetworkPoolIps200Response`
+```go
+obj := &GetNetworkPoolIps200Response{
+    // Set fields directly
+}
+```
 
-NewGetNetworkPoolIps200Response instantiates a new GetNetworkPoolIps200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### NetworkPoolIps (Nullable)
 
-### GetNetworkPoolIps
-
-`func (o *GetNetworkPoolIps200Response) GetNetworkPoolIps() interface{}`
-
-GetNetworkPoolIps returns the NetworkPoolIps field if non-nil, zero value otherwise.
-
-### GetNetworkPoolIpsOk
-
-`func (o *GetNetworkPoolIps200Response) GetNetworkPoolIpsOk() (*interface{}, bool)`
-
-GetNetworkPoolIpsOk returns a tuple with the NetworkPoolIps field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkPoolIps
-
-`func (o *GetNetworkPoolIps200Response) SetNetworkPoolIps(v interface{})`
-
-SetNetworkPoolIps sets NetworkPoolIps field to given value.
-
-### HasNetworkPoolIps
-
-`func (o *GetNetworkPoolIps200Response) HasNetworkPoolIps() bool`
-
-HasNetworkPoolIps returns a boolean if a field has been set.
-
-### SetNetworkPoolIpsNil
-
-`func (o *GetNetworkPoolIps200Response) SetNetworkPoolIpsNil(b bool)`
-
- SetNetworkPoolIpsNil sets the value for NetworkPoolIps to be an explicit nil
-
-### UnsetNetworkPoolIps
-`func (o *GetNetworkPoolIps200Response) UnsetNetworkPoolIps()`
-
-UnsetNetworkPoolIps ensures that no value is present for NetworkPoolIps, not even an explicit nil
-### GetMeta
-
-`func (o *GetNetworkPoolIps200Response) GetMeta() ListApprovals200ResponseAllOfMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *GetNetworkPoolIps200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *GetNetworkPoolIps200Response) SetMeta(v ListApprovals200ResponseAllOfMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *GetNetworkPoolIps200Response) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
+Use the Nullable wrapper methods:
+- `obj.NetworkPoolIps.IsSet()` — check if set
+- `obj.NetworkPoolIps.Get()` — get the inner value (returns pointer)
+- `obj.NetworkPoolIps.Set(&val)` — set the value
+- `obj.NetworkPoolIps.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

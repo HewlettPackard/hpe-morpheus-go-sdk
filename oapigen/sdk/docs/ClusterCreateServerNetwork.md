@@ -6,36 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The primary management interface name to establish a management bridge (i.e. eth0,ens192,bond0,etc) | 
 
-## Methods
+## Usage
 
-### NewClusterCreateServerNetwork
+Instantiate with a Go composite literal:
 
-`func NewClusterCreateServerNetwork(name string, ) *ClusterCreateServerNetwork`
-
-NewClusterCreateServerNetwork instantiates a new ClusterCreateServerNetwork object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetName
-
-`func (o *ClusterCreateServerNetwork) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *ClusterCreateServerNetwork) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *ClusterCreateServerNetwork) SetName(v string)`
-
-SetName sets Name field to given value.
-
+```go
+obj := &ClusterCreateServerNetwork{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

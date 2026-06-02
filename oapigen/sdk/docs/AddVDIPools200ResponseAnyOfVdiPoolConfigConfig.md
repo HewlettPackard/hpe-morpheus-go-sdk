@@ -14,272 +14,37 @@ Name | Type | Description | Notes
 **ResourcePoolId** | Pointer to **int64** |  | [optional] 
 **PoolProviderType** | Pointer to **NullableString** |  | [optional] 
 
-## Methods
-
-### NewAddVDIPools200ResponseAnyOfVdiPoolConfigConfig
-
-`func NewAddVDIPools200ResponseAnyOfVdiPoolConfigConfig() *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig`
-
-NewAddVDIPools200ResponseAnyOfVdiPoolConfigConfig instantiates a new AddVDIPools200ResponseAnyOfVdiPoolConfigConfig object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetCreateUser
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetCreateUser() bool`
-
-GetCreateUser returns the CreateUser field if non-nil, zero value otherwise.
-
-### GetCreateUserOk
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetCreateUserOk() (*bool, bool)`
-
-GetCreateUserOk returns a tuple with the CreateUser field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreateUser
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) SetCreateUser(v bool)`
-
-SetCreateUser sets CreateUser field to given value.
-
-### HasCreateUser
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) HasCreateUser() bool`
-
-HasCreateUser returns a boolean if a field has been set.
-
-### GetIsEC2
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetIsEC2() bool`
-
-GetIsEC2 returns the IsEC2 field if non-nil, zero value otherwise.
-
-### GetIsEC2Ok
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetIsEC2Ok() (*bool, bool)`
-
-GetIsEC2Ok returns a tuple with the IsEC2 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsEC2
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) SetIsEC2(v bool)`
-
-SetIsEC2 sets IsEC2 field to given value.
-
-### HasIsEC2
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) HasIsEC2() bool`
-
-HasIsEC2 returns a boolean if a field has been set.
-
-### GetIsVpcSelectable
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetIsVpcSelectable() bool`
-
-GetIsVpcSelectable returns the IsVpcSelectable field if non-nil, zero value otherwise.
-
-### GetIsVpcSelectableOk
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetIsVpcSelectableOk() (*bool, bool)`
-
-GetIsVpcSelectableOk returns a tuple with the IsVpcSelectable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsVpcSelectable
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) SetIsVpcSelectable(v bool)`
-
-SetIsVpcSelectable sets IsVpcSelectable field to given value.
-
-### HasIsVpcSelectable
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) HasIsVpcSelectable() bool`
-
-HasIsVpcSelectable returns a boolean if a field has been set.
-
-### GetNoAgent
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetNoAgent() bool`
-
-GetNoAgent returns the NoAgent field if non-nil, zero value otherwise.
-
-### GetNoAgentOk
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetNoAgentOk() (*bool, bool)`
-
-GetNoAgentOk returns a tuple with the NoAgent field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNoAgent
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) SetNoAgent(v bool)`
-
-SetNoAgent sets NoAgent field to given value.
-
-### HasNoAgent
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) HasNoAgent() bool`
-
-HasNoAgent returns a boolean if a field has been set.
-
-### GetSmbiosAssetTag
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetSmbiosAssetTag() string`
-
-GetSmbiosAssetTag returns the SmbiosAssetTag field if non-nil, zero value otherwise.
-
-### GetSmbiosAssetTagOk
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetSmbiosAssetTagOk() (*string, bool)`
-
-GetSmbiosAssetTagOk returns a tuple with the SmbiosAssetTag field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSmbiosAssetTag
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) SetSmbiosAssetTag(v string)`
-
-SetSmbiosAssetTag sets SmbiosAssetTag field to given value.
-
-### HasSmbiosAssetTag
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) HasSmbiosAssetTag() bool`
-
-HasSmbiosAssetTag returns a boolean if a field has been set.
-
-### SetSmbiosAssetTagNil
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) SetSmbiosAssetTagNil(b bool)`
-
- SetSmbiosAssetTagNil sets the value for SmbiosAssetTag to be an explicit nil
-
-### UnsetSmbiosAssetTag
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) UnsetSmbiosAssetTag()`
-
-UnsetSmbiosAssetTag ensures that no value is present for SmbiosAssetTag, not even an explicit nil
-### GetNestedVirtualization
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetNestedVirtualization() string`
-
-GetNestedVirtualization returns the NestedVirtualization field if non-nil, zero value otherwise.
-
-### GetNestedVirtualizationOk
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetNestedVirtualizationOk() (*string, bool)`
-
-GetNestedVirtualizationOk returns a tuple with the NestedVirtualization field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNestedVirtualization
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) SetNestedVirtualization(v string)`
-
-SetNestedVirtualization sets NestedVirtualization field to given value.
-
-### HasNestedVirtualization
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) HasNestedVirtualization() bool`
-
-HasNestedVirtualization returns a boolean if a field has been set.
-
-### SetNestedVirtualizationNil
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) SetNestedVirtualizationNil(b bool)`
-
- SetNestedVirtualizationNil sets the value for NestedVirtualization to be an explicit nil
-
-### UnsetNestedVirtualization
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) UnsetNestedVirtualization()`
-
-UnsetNestedVirtualization ensures that no value is present for NestedVirtualization, not even an explicit nil
-### GetVmwareFolderId
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetVmwareFolderId() string`
-
-GetVmwareFolderId returns the VmwareFolderId field if non-nil, zero value otherwise.
-
-### GetVmwareFolderIdOk
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetVmwareFolderIdOk() (*string, bool)`
-
-GetVmwareFolderIdOk returns a tuple with the VmwareFolderId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVmwareFolderId
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) SetVmwareFolderId(v string)`
-
-SetVmwareFolderId sets VmwareFolderId field to given value.
-
-### HasVmwareFolderId
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) HasVmwareFolderId() bool`
-
-HasVmwareFolderId returns a boolean if a field has been set.
-
-### GetResourcePoolId
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetResourcePoolId() int64`
-
-GetResourcePoolId returns the ResourcePoolId field if non-nil, zero value otherwise.
-
-### GetResourcePoolIdOk
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetResourcePoolIdOk() (*int64, bool)`
-
-GetResourcePoolIdOk returns a tuple with the ResourcePoolId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourcePoolId
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) SetResourcePoolId(v int64)`
-
-SetResourcePoolId sets ResourcePoolId field to given value.
-
-### HasResourcePoolId
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) HasResourcePoolId() bool`
-
-HasResourcePoolId returns a boolean if a field has been set.
-
-### GetPoolProviderType
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetPoolProviderType() string`
-
-GetPoolProviderType returns the PoolProviderType field if non-nil, zero value otherwise.
-
-### GetPoolProviderTypeOk
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) GetPoolProviderTypeOk() (*string, bool)`
-
-GetPoolProviderTypeOk returns a tuple with the PoolProviderType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPoolProviderType
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) SetPoolProviderType(v string)`
-
-SetPoolProviderType sets PoolProviderType field to given value.
-
-### HasPoolProviderType
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) HasPoolProviderType() bool`
-
-HasPoolProviderType returns a boolean if a field has been set.
-
-### SetPoolProviderTypeNil
-
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) SetPoolProviderTypeNil(b bool)`
-
- SetPoolProviderTypeNil sets the value for PoolProviderType to be an explicit nil
-
-### UnsetPoolProviderType
-`func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigConfig) UnsetPoolProviderType()`
-
-UnsetPoolProviderType ensures that no value is present for PoolProviderType, not even an explicit nil
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &AddVDIPools200ResponseAnyOfVdiPoolConfigConfig{
+    // Set fields directly
+}
+```
+
+### SmbiosAssetTag (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SmbiosAssetTag.IsSet()` — check if set
+- `obj.SmbiosAssetTag.Get()` — get the inner value (returns pointer)
+- `obj.SmbiosAssetTag.Set(&val)` — set the value
+- `obj.SmbiosAssetTag.Unset()` — clear the value
+### NestedVirtualization (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.NestedVirtualization.IsSet()` — check if set
+- `obj.NestedVirtualization.Get()` — get the inner value (returns pointer)
+- `obj.NestedVirtualization.Set(&val)` — set the value
+- `obj.NestedVirtualization.Unset()` — clear the value
+### PoolProviderType (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.PoolProviderType.IsSet()` — check if set
+- `obj.PoolProviderType.Get()` — get the inner value (returns pointer)
+- `obj.PoolProviderType.Set(&val)` — set the value
+- `obj.PoolProviderType.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,66 +7,15 @@ Name | Type | Description | Notes
 **SecurityScans** | Pointer to [**[]ListSecurityScans200ResponseAllOfSecurityScansInner**](ListSecurityScans200ResponseAllOfSecurityScansInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListSecurityScans200Response
+Instantiate with a Go composite literal:
 
-`func NewListSecurityScans200Response() *ListSecurityScans200Response`
-
-NewListSecurityScans200Response instantiates a new ListSecurityScans200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetSecurityScans
-
-`func (o *ListSecurityScans200Response) GetSecurityScans() []ListSecurityScans200ResponseAllOfSecurityScansInner`
-
-GetSecurityScans returns the SecurityScans field if non-nil, zero value otherwise.
-
-### GetSecurityScansOk
-
-`func (o *ListSecurityScans200Response) GetSecurityScansOk() (*[]ListSecurityScans200ResponseAllOfSecurityScansInner, bool)`
-
-GetSecurityScansOk returns a tuple with the SecurityScans field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSecurityScans
-
-`func (o *ListSecurityScans200Response) SetSecurityScans(v []ListSecurityScans200ResponseAllOfSecurityScansInner)`
-
-SetSecurityScans sets SecurityScans field to given value.
-
-### HasSecurityScans
-
-`func (o *ListSecurityScans200Response) HasSecurityScans() bool`
-
-HasSecurityScans returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *ListSecurityScans200Response) GetMeta() ListApprovals200ResponseAllOfMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *ListSecurityScans200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *ListSecurityScans200Response) SetMeta(v ListApprovals200ResponseAllOfMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *ListSecurityScans200Response) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
+```go
+obj := &ListSecurityScans200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

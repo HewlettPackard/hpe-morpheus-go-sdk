@@ -6,41 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **WhitelabelSettings** | Pointer to [**ListWhitelabelSettings200ResponseWhitelabelSettings**](ListWhitelabelSettings200ResponseWhitelabelSettings.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListWhitelabelSettings200Response
+Instantiate with a Go composite literal:
 
-`func NewListWhitelabelSettings200Response() *ListWhitelabelSettings200Response`
-
-NewListWhitelabelSettings200Response instantiates a new ListWhitelabelSettings200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### GetWhitelabelSettings
-
-`func (o *ListWhitelabelSettings200Response) GetWhitelabelSettings() ListWhitelabelSettings200ResponseWhitelabelSettings`
-
-GetWhitelabelSettings returns the WhitelabelSettings field if non-nil, zero value otherwise.
-
-### GetWhitelabelSettingsOk
-
-`func (o *ListWhitelabelSettings200Response) GetWhitelabelSettingsOk() (*ListWhitelabelSettings200ResponseWhitelabelSettings, bool)`
-
-GetWhitelabelSettingsOk returns a tuple with the WhitelabelSettings field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWhitelabelSettings
-
-`func (o *ListWhitelabelSettings200Response) SetWhitelabelSettings(v ListWhitelabelSettings200ResponseWhitelabelSettings)`
-
-SetWhitelabelSettings sets WhitelabelSettings field to given value.
-
-### HasWhitelabelSettings
-
-`func (o *ListWhitelabelSettings200Response) HasWhitelabelSettings() bool`
-
-HasWhitelabelSettings returns a boolean if a field has been set.
+```go
+obj := &ListWhitelabelSettings200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
