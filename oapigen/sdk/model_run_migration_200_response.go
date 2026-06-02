@@ -26,14 +26,6 @@ type RunMigration200Response struct {
 
 type _RunMigration200Response RunMigration200Response
 
-// NewRunMigration200ResponseWithDefaults instantiates a new RunMigration200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRunMigration200ResponseWithDefaults() *RunMigration200Response {
-	this := RunMigration200Response{}
-	return &this
-}
-
 func (o RunMigration200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

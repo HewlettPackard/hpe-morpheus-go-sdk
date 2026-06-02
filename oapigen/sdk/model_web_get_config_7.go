@@ -39,16 +39,6 @@ type WebGetConfig7 struct {
 
 type _WebGetConfig7 WebGetConfig7
 
-// NewWebGetConfig7WithDefaults instantiates a new WebGetConfig7 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWebGetConfig7WithDefaults() *WebGetConfig7 {
-	this := WebGetConfig7{}
-	var ignoreSSL bool = false
-	this.IgnoreSSL = &ignoreSSL
-	return &this
-}
-
 func (o WebGetConfig7) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

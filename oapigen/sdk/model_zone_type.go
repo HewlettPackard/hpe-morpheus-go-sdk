@@ -59,14 +59,6 @@ type ZoneType struct {
 
 type _ZoneType ZoneType
 
-// NewZoneTypeWithDefaults instantiates a new ZoneType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneTypeWithDefaults() *ZoneType {
-	this := ZoneType{}
-	return &this
-}
-
 func (o ZoneType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

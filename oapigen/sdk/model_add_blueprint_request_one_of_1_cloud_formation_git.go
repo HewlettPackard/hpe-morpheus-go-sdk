@@ -33,14 +33,6 @@ type AddBlueprintRequestOneOf1CloudFormationGit struct {
 
 type _AddBlueprintRequestOneOf1CloudFormationGit AddBlueprintRequestOneOf1CloudFormationGit
 
-// NewAddBlueprintRequestOneOf1CloudFormationGitWithDefaults instantiates a new AddBlueprintRequestOneOf1CloudFormationGit object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBlueprintRequestOneOf1CloudFormationGitWithDefaults() *AddBlueprintRequestOneOf1CloudFormationGit {
-	this := AddBlueprintRequestOneOf1CloudFormationGit{}
-	return &this
-}
-
 func (o AddBlueprintRequestOneOf1CloudFormationGit) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

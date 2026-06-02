@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetCluster200ResponseClusterPermissionsWithDefaults
-
-`func NewGetCluster200ResponseClusterPermissionsWithDefaults() *GetCluster200ResponseClusterPermissions`
-
-NewGetCluster200ResponseClusterPermissionsWithDefaults instantiates a new GetCluster200ResponseClusterPermissions object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetResourcePool
 
 `func (o *GetCluster200ResponseClusterPermissions) GetResourcePool() GetCluster200ResponseClusterPermissionsResourcePool`

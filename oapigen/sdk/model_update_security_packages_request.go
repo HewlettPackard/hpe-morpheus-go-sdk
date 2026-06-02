@@ -26,14 +26,6 @@ type UpdateSecurityPackagesRequest struct {
 
 type _UpdateSecurityPackagesRequest UpdateSecurityPackagesRequest
 
-// NewUpdateSecurityPackagesRequestWithDefaults instantiates a new UpdateSecurityPackagesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateSecurityPackagesRequestWithDefaults() *UpdateSecurityPackagesRequest {
-	this := UpdateSecurityPackagesRequest{}
-	return &this
-}
-
 func (o UpdateSecurityPackagesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

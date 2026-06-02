@@ -27,14 +27,6 @@ type SaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions stru
 
 type _SaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions SaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions
 
-// NewSaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissionsWithDefaults instantiates a new SaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissionsWithDefaults() *SaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions {
-	this := SaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions{}
-	return &this
-}
-
 func (o SaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

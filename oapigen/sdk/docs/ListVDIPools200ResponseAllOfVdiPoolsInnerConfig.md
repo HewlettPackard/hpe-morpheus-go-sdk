@@ -40,14 +40,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigWithDefaults
-
-`func NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigWithDefaults() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig`
-
-NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigWithDefaults instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetGroup
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetGroup() ListVDIPools200ResponseAllOfVdiPoolsInnerConfigGroup`

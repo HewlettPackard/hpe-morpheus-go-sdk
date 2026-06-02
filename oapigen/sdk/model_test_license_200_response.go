@@ -29,14 +29,6 @@ type TestLicense200Response struct {
 
 type _TestLicense200Response TestLicense200Response
 
-// NewTestLicense200ResponseWithDefaults instantiates a new TestLicense200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTestLicense200ResponseWithDefaults() *TestLicense200Response {
-	this := TestLicense200Response{}
-	return &this
-}
-
 func (o TestLicense200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

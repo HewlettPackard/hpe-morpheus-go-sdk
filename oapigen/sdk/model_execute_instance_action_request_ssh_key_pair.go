@@ -27,14 +27,6 @@ type ExecuteInstanceActionRequestSshKeyPair struct {
 
 type _ExecuteInstanceActionRequestSshKeyPair ExecuteInstanceActionRequestSshKeyPair
 
-// NewExecuteInstanceActionRequestSshKeyPairWithDefaults instantiates a new ExecuteInstanceActionRequestSshKeyPair object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewExecuteInstanceActionRequestSshKeyPairWithDefaults() *ExecuteInstanceActionRequestSshKeyPair {
-	this := ExecuteInstanceActionRequestSshKeyPair{}
-	return &this
-}
-
 func (o ExecuteInstanceActionRequestSshKeyPair) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

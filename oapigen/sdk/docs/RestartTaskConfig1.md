@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRestartTaskConfig1WithDefaults
-
-`func NewRestartTaskConfig1WithDefaults() *RestartTaskConfig1`
-
-NewRestartTaskConfig1WithDefaults instantiates a new RestartTaskConfig1 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPassword
 
 `func (o *RestartTaskConfig1) GetPassword() string`

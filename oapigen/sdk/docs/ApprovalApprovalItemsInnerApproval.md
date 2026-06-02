@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewApprovalApprovalItemsInnerApprovalWithDefaults
-
-`func NewApprovalApprovalItemsInnerApprovalWithDefaults() *ApprovalApprovalItemsInnerApproval`
-
-NewApprovalApprovalItemsInnerApprovalWithDefaults instantiates a new ApprovalApprovalItemsInnerApproval object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ApprovalApprovalItemsInnerApproval) GetId() int64`

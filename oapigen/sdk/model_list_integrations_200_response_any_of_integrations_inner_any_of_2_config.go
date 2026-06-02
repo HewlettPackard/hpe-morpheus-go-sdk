@@ -26,14 +26,6 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config struct {
 
 type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config
 
-// NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigWithDefaults instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigWithDefaults() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config {
-	this := ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config{}
-	return &this
-}
-
 func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

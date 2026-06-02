@@ -27,14 +27,6 @@ type UpdateSecurityGroupRulesRequestRuleDestinationGroup struct {
 
 type _UpdateSecurityGroupRulesRequestRuleDestinationGroup UpdateSecurityGroupRulesRequestRuleDestinationGroup
 
-// NewUpdateSecurityGroupRulesRequestRuleDestinationGroupWithDefaults instantiates a new UpdateSecurityGroupRulesRequestRuleDestinationGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateSecurityGroupRulesRequestRuleDestinationGroupWithDefaults() *UpdateSecurityGroupRulesRequestRuleDestinationGroup {
-	this := UpdateSecurityGroupRulesRequestRuleDestinationGroup{}
-	return &this
-}
-
 func (o UpdateSecurityGroupRulesRequestRuleDestinationGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

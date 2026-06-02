@@ -27,14 +27,6 @@ type ListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionList
 
 type _ListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionList ListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionList
 
-// NewListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionListWithDefaults instantiates a new ListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionListWithDefaults() *ListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionList {
-	this := ListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionList{}
-	return &this
-}
-
 func (o ListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

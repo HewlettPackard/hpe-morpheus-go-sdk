@@ -27,14 +27,6 @@ type SaveCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner struct {
 
 type _SaveCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner SaveCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner
 
-// NewSaveCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInnerWithDefaults instantiates a new SaveCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInnerWithDefaults() *SaveCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner {
-	this := SaveCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner{}
-	return &this
-}
-
 func (o SaveCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

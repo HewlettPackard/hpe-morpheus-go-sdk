@@ -29,16 +29,6 @@ type UpdateResourcePoolGroupRequestResourcePoolGroupResourcePermission struct {
 
 type _UpdateResourcePoolGroupRequestResourcePoolGroupResourcePermission UpdateResourcePoolGroupRequestResourcePoolGroupResourcePermission
 
-// NewUpdateResourcePoolGroupRequestResourcePoolGroupResourcePermissionWithDefaults instantiates a new UpdateResourcePoolGroupRequestResourcePoolGroupResourcePermission object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateResourcePoolGroupRequestResourcePoolGroupResourcePermissionWithDefaults() *UpdateResourcePoolGroupRequestResourcePoolGroupResourcePermission {
-	this := UpdateResourcePoolGroupRequestResourcePoolGroupResourcePermission{}
-	var all bool = true
-	this.All = &all
-	return &this
-}
-
 func (o UpdateResourcePoolGroupRequestResourcePoolGroupResourcePermission) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

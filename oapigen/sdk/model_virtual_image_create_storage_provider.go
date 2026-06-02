@@ -26,14 +26,6 @@ type VirtualImageCreateStorageProvider struct {
 
 type _VirtualImageCreateStorageProvider VirtualImageCreateStorageProvider
 
-// NewVirtualImageCreateStorageProviderWithDefaults instantiates a new VirtualImageCreateStorageProvider object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewVirtualImageCreateStorageProviderWithDefaults() *VirtualImageCreateStorageProvider {
-	this := VirtualImageCreateStorageProvider{}
-	return &this
-}
-
 func (o VirtualImageCreateStorageProvider) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -34,14 +34,6 @@ type ElasticSearchConfig3 struct {
 
 type _ElasticSearchConfig3 ElasticSearchConfig3
 
-// NewElasticSearchConfig3WithDefaults instantiates a new ElasticSearchConfig3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewElasticSearchConfig3WithDefaults() *ElasticSearchConfig3 {
-	this := ElasticSearchConfig3{}
-	return &this
-}
-
 func (o ElasticSearchConfig3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

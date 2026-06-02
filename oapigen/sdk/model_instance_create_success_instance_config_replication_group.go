@@ -26,14 +26,6 @@ type InstanceCreateSuccessInstanceConfigReplicationGroup struct {
 
 type _InstanceCreateSuccessInstanceConfigReplicationGroup InstanceCreateSuccessInstanceConfigReplicationGroup
 
-// NewInstanceCreateSuccessInstanceConfigReplicationGroupWithDefaults instantiates a new InstanceCreateSuccessInstanceConfigReplicationGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceCreateSuccessInstanceConfigReplicationGroupWithDefaults() *InstanceCreateSuccessInstanceConfigReplicationGroup {
-	this := InstanceCreateSuccessInstanceConfigReplicationGroup{}
-	return &this
-}
-
 func (o InstanceCreateSuccessInstanceConfigReplicationGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

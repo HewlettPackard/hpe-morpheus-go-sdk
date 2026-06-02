@@ -32,14 +32,6 @@ type ListChecks200ResponseAllOfChecksInnerConfigAnyOf struct {
 
 type _ListChecks200ResponseAllOfChecksInnerConfigAnyOf ListChecks200ResponseAllOfChecksInnerConfigAnyOf
 
-// NewListChecks200ResponseAllOfChecksInnerConfigAnyOfWithDefaults instantiates a new ListChecks200ResponseAllOfChecksInnerConfigAnyOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListChecks200ResponseAllOfChecksInnerConfigAnyOfWithDefaults() *ListChecks200ResponseAllOfChecksInnerConfigAnyOf {
-	this := ListChecks200ResponseAllOfChecksInnerConfigAnyOf{}
-	return &this
-}
-
 func (o ListChecks200ResponseAllOfChecksInnerConfigAnyOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

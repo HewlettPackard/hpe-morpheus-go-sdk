@@ -27,14 +27,6 @@ type InstanceServicePlanAutoOptionsInner struct {
 
 type _InstanceServicePlanAutoOptionsInner InstanceServicePlanAutoOptionsInner
 
-// NewInstanceServicePlanAutoOptionsInnerWithDefaults instantiates a new InstanceServicePlanAutoOptionsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceServicePlanAutoOptionsInnerWithDefaults() *InstanceServicePlanAutoOptionsInner {
-	this := InstanceServicePlanAutoOptionsInner{}
-	return &this
-}
-
 func (o InstanceServicePlanAutoOptionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

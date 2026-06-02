@@ -32,14 +32,6 @@ type ClusterServerCreateConfigAKS struct {
 
 type _ClusterServerCreateConfigAKS ClusterServerCreateConfigAKS
 
-// NewClusterServerCreateConfigAKSWithDefaults instantiates a new ClusterServerCreateConfigAKS object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterServerCreateConfigAKSWithDefaults() *ClusterServerCreateConfigAKS {
-	this := ClusterServerCreateConfigAKS{}
-	return &this
-}
-
 func (o ClusterServerCreateConfigAKS) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

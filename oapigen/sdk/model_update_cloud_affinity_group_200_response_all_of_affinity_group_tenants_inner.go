@@ -27,14 +27,6 @@ type UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner struct {
 
 type _UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner
 
-// NewUpdateCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInnerWithDefaults instantiates a new UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInnerWithDefaults() *UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner {
-	this := UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner{}
-	return &this
-}
-
 func (o UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

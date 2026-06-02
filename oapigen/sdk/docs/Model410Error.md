@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewModel410ErrorWithDefaults
-
-`func NewModel410ErrorWithDefaults() *Model410Error`
-
-NewModel410ErrorWithDefaults instantiates a new Model410Error object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMsg
 
 `func (o *Model410Error) GetMsg() string`

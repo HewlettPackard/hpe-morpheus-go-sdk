@@ -48,14 +48,6 @@ type AppCreateResponse struct {
 
 type _AppCreateResponse AppCreateResponse
 
-// NewAppCreateResponseWithDefaults instantiates a new AppCreateResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppCreateResponseWithDefaults() *AppCreateResponse {
-	this := AppCreateResponse{}
-	return &this
-}
-
 func (o AppCreateResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

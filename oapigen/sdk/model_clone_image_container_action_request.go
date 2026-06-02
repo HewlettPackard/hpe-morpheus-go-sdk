@@ -29,16 +29,6 @@ type CloneImageContainerActionRequest struct {
 
 type _CloneImageContainerActionRequest CloneImageContainerActionRequest
 
-// NewCloneImageContainerActionRequestWithDefaults instantiates a new CloneImageContainerActionRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCloneImageContainerActionRequestWithDefaults() *CloneImageContainerActionRequest {
-	this := CloneImageContainerActionRequest{}
-	var templateName string = "{server.name}-{timestamp}"
-	this.TemplateName = &templateName
-	return &this
-}
-
 func (o CloneImageContainerActionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type ImportContainerActionRequest struct {
 
 type _ImportContainerActionRequest ImportContainerActionRequest
 
-// NewImportContainerActionRequestWithDefaults instantiates a new ImportContainerActionRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewImportContainerActionRequestWithDefaults() *ImportContainerActionRequest {
-	this := ImportContainerActionRequest{}
-	return &this
-}
-
 func (o ImportContainerActionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type AddServicePlansRequest struct {
 
 type _AddServicePlansRequest AddServicePlansRequest
 
-// NewAddServicePlansRequestWithDefaults instantiates a new AddServicePlansRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddServicePlansRequestWithDefaults() *AddServicePlansRequest {
-	this := AddServicePlansRequest{}
-	return &this
-}
-
 func (o AddServicePlansRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

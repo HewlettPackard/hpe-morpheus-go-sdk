@@ -27,14 +27,6 @@ type NSXNetworkServerCredential struct {
 
 type _NSXNetworkServerCredential NSXNetworkServerCredential
 
-// NewNSXNetworkServerCredentialWithDefaults instantiates a new NSXNetworkServerCredential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNSXNetworkServerCredentialWithDefaults() *NSXNetworkServerCredential {
-	this := NSXNetworkServerCredential{}
-	return &this
-}
-
 func (o NSXNetworkServerCredential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

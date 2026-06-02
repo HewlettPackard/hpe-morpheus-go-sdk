@@ -27,14 +27,6 @@ type UpdateIncidentsReopen200Response struct {
 
 type _UpdateIncidentsReopen200Response UpdateIncidentsReopen200Response
 
-// NewUpdateIncidentsReopen200ResponseWithDefaults instantiates a new UpdateIncidentsReopen200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIncidentsReopen200ResponseWithDefaults() *UpdateIncidentsReopen200Response {
-	this := UpdateIncidentsReopen200Response{}
-	return &this
-}
-
 func (o UpdateIncidentsReopen200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

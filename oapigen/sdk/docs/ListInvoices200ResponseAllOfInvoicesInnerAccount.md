@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListInvoices200ResponseAllOfInvoicesInnerAccountWithDefaults
-
-`func NewListInvoices200ResponseAllOfInvoicesInnerAccountWithDefaults() *ListInvoices200ResponseAllOfInvoicesInnerAccount`
-
-NewListInvoices200ResponseAllOfInvoicesInnerAccountWithDefaults instantiates a new ListInvoices200ResponseAllOfInvoicesInnerAccount object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListInvoices200ResponseAllOfInvoicesInnerAccount) GetId() int64`

@@ -27,14 +27,6 @@ type AppPrepareApplyDataGroup struct {
 
 type _AppPrepareApplyDataGroup AppPrepareApplyDataGroup
 
-// NewAppPrepareApplyDataGroupWithDefaults instantiates a new AppPrepareApplyDataGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppPrepareApplyDataGroupWithDefaults() *AppPrepareApplyDataGroup {
-	this := AppPrepareApplyDataGroup{}
-	return &this
-}
-
 func (o AppPrepareApplyDataGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

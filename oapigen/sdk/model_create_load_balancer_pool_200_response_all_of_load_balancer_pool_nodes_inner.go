@@ -27,14 +27,6 @@ type CreateLoadBalancerPool200ResponseAllOfLoadBalancerPoolNodesInner struct {
 
 type _CreateLoadBalancerPool200ResponseAllOfLoadBalancerPoolNodesInner CreateLoadBalancerPool200ResponseAllOfLoadBalancerPoolNodesInner
 
-// NewCreateLoadBalancerPool200ResponseAllOfLoadBalancerPoolNodesInnerWithDefaults instantiates a new CreateLoadBalancerPool200ResponseAllOfLoadBalancerPoolNodesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateLoadBalancerPool200ResponseAllOfLoadBalancerPoolNodesInnerWithDefaults() *CreateLoadBalancerPool200ResponseAllOfLoadBalancerPoolNodesInner {
-	this := CreateLoadBalancerPool200ResponseAllOfLoadBalancerPoolNodesInner{}
-	return &this
-}
-
 func (o CreateLoadBalancerPool200ResponseAllOfLoadBalancerPoolNodesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

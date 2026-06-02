@@ -27,16 +27,6 @@ type MaxCoresPolicyTypeConfiguration13 struct {
 
 type _MaxCoresPolicyTypeConfiguration13 MaxCoresPolicyTypeConfiguration13
 
-// NewMaxCoresPolicyTypeConfiguration13WithDefaults instantiates a new MaxCoresPolicyTypeConfiguration13 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxCoresPolicyTypeConfiguration13WithDefaults() *MaxCoresPolicyTypeConfiguration13 {
-	this := MaxCoresPolicyTypeConfiguration13{}
-	var excludeContainers string = "off"
-	this.ExcludeContainers = &excludeContainers
-	return &this
-}
-
 func (o MaxCoresPolicyTypeConfiguration13) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

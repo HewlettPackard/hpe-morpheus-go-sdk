@@ -28,14 +28,6 @@ type GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfig struct {
 
 type _GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfig GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfig
 
-// NewGetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigWithDefaults instantiates a new GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigWithDefaults() *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfig {
-	this := GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfig{}
-	return &this
-}
-
 func (o GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

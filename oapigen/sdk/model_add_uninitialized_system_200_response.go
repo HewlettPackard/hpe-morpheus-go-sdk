@@ -28,14 +28,6 @@ type AddUninitializedSystem200Response struct {
 
 type _AddUninitializedSystem200Response AddUninitializedSystem200Response
 
-// NewAddUninitializedSystem200ResponseWithDefaults instantiates a new AddUninitializedSystem200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddUninitializedSystem200ResponseWithDefaults() *AddUninitializedSystem200Response {
-	this := AddUninitializedSystem200Response{}
-	return &this
-}
-
 func (o AddUninitializedSystem200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

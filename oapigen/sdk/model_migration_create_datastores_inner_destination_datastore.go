@@ -27,14 +27,6 @@ type MigrationCreateDatastoresInnerDestinationDatastore struct {
 
 type _MigrationCreateDatastoresInnerDestinationDatastore MigrationCreateDatastoresInnerDestinationDatastore
 
-// NewMigrationCreateDatastoresInnerDestinationDatastoreWithDefaults instantiates a new MigrationCreateDatastoresInnerDestinationDatastore object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMigrationCreateDatastoresInnerDestinationDatastoreWithDefaults() *MigrationCreateDatastoresInnerDestinationDatastore {
-	this := MigrationCreateDatastoresInnerDestinationDatastore{}
-	return &this
-}
-
 func (o MigrationCreateDatastoresInnerDestinationDatastore) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

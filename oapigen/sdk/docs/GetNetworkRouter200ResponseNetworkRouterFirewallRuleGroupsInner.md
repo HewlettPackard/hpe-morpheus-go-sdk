@@ -27,14 +27,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerWithDefaults
-
-`func NewGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerWithDefaults() *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner`
-
-NewGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerWithDefaults instantiates a new GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) GetId() int64`

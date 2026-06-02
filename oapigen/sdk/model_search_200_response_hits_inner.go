@@ -35,14 +35,6 @@ type Search200ResponseHitsInner struct {
 
 type _Search200ResponseHitsInner Search200ResponseHitsInner
 
-// NewSearch200ResponseHitsInnerWithDefaults instantiates a new Search200ResponseHitsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSearch200ResponseHitsInnerWithDefaults() *Search200ResponseHitsInner {
-	this := Search200ResponseHitsInner{}
-	return &this
-}
-
 func (o Search200ResponseHitsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

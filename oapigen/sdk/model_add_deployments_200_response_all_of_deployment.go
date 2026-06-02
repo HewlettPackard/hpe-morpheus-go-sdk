@@ -34,14 +34,6 @@ type AddDeployments200ResponseAllOfDeployment struct {
 
 type _AddDeployments200ResponseAllOfDeployment AddDeployments200ResponseAllOfDeployment
 
-// NewAddDeployments200ResponseAllOfDeploymentWithDefaults instantiates a new AddDeployments200ResponseAllOfDeployment object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddDeployments200ResponseAllOfDeploymentWithDefaults() *AddDeployments200ResponseAllOfDeployment {
-	this := AddDeployments200ResponseAllOfDeployment{}
-	return &this
-}
-
 func (o AddDeployments200ResponseAllOfDeployment) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

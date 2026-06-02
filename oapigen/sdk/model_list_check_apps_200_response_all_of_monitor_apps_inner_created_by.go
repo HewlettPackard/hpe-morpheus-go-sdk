@@ -27,14 +27,6 @@ type ListCheckApps200ResponseAllOfMonitorAppsInnerCreatedBy struct {
 
 type _ListCheckApps200ResponseAllOfMonitorAppsInnerCreatedBy ListCheckApps200ResponseAllOfMonitorAppsInnerCreatedBy
 
-// NewListCheckApps200ResponseAllOfMonitorAppsInnerCreatedByWithDefaults instantiates a new ListCheckApps200ResponseAllOfMonitorAppsInnerCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCheckApps200ResponseAllOfMonitorAppsInnerCreatedByWithDefaults() *ListCheckApps200ResponseAllOfMonitorAppsInnerCreatedBy {
-	this := ListCheckApps200ResponseAllOfMonitorAppsInnerCreatedBy{}
-	return &this
-}
-
 func (o ListCheckApps200ResponseAllOfMonitorAppsInnerCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

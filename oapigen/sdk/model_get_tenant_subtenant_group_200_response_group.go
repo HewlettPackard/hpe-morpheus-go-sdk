@@ -38,14 +38,6 @@ type GetTenantSubtenantGroup200ResponseGroup struct {
 
 type _GetTenantSubtenantGroup200ResponseGroup GetTenantSubtenantGroup200ResponseGroup
 
-// NewGetTenantSubtenantGroup200ResponseGroupWithDefaults instantiates a new GetTenantSubtenantGroup200ResponseGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetTenantSubtenantGroup200ResponseGroupWithDefaults() *GetTenantSubtenantGroup200ResponseGroup {
-	this := GetTenantSubtenantGroup200ResponseGroup{}
-	return &this
-}
-
 func (o GetTenantSubtenantGroup200ResponseGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

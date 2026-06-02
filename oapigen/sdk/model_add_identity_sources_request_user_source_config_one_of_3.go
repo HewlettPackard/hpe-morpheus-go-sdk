@@ -31,14 +31,6 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf3 struct {
 
 type _AddIdentitySourcesRequestUserSourceConfigOneOf3 AddIdentitySourcesRequestUserSourceConfigOneOf3
 
-// NewAddIdentitySourcesRequestUserSourceConfigOneOf3WithDefaults instantiates a new AddIdentitySourcesRequestUserSourceConfigOneOf3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIdentitySourcesRequestUserSourceConfigOneOf3WithDefaults() *AddIdentitySourcesRequestUserSourceConfigOneOf3 {
-	this := AddIdentitySourcesRequestUserSourceConfigOneOf3{}
-	return &this
-}
-
 func (o AddIdentitySourcesRequestUserSourceConfigOneOf3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

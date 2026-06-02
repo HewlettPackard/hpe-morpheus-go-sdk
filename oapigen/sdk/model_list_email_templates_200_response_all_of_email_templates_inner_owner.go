@@ -27,14 +27,6 @@ type ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner struct {
 
 type _ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner
 
-// NewListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwnerWithDefaults instantiates a new ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwnerWithDefaults() *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner {
-	this := ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner{}
-	return &this
-}
-
 func (o ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

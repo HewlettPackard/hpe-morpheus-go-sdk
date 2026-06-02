@@ -27,16 +27,6 @@ type NetworkPoolServerCreateSolarWindsConfig struct {
 
 type _NetworkPoolServerCreateSolarWindsConfig NetworkPoolServerCreateSolarWindsConfig
 
-// NewNetworkPoolServerCreateSolarWindsConfigWithDefaults instantiates a new NetworkPoolServerCreateSolarWindsConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkPoolServerCreateSolarWindsConfigWithDefaults() *NetworkPoolServerCreateSolarWindsConfig {
-	this := NetworkPoolServerCreateSolarWindsConfig{}
-	var inventoryExisting string = "off"
-	this.InventoryExisting = &inventoryExisting
-	return &this
-}
-
 func (o NetworkPoolServerCreateSolarWindsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

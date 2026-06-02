@@ -39,14 +39,6 @@ type IntegrationChef struct {
 
 type _IntegrationChef IntegrationChef
 
-// NewIntegrationChefWithDefaults instantiates a new IntegrationChef object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationChefWithDefaults() *IntegrationChef {
-	this := IntegrationChef{}
-	return &this
-}
-
 func (o IntegrationChef) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

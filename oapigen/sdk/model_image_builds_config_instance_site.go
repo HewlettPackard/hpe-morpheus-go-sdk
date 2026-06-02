@@ -26,14 +26,6 @@ type ImageBuildsConfigInstanceSite struct {
 
 type _ImageBuildsConfigInstanceSite ImageBuildsConfigInstanceSite
 
-// NewImageBuildsConfigInstanceSiteWithDefaults instantiates a new ImageBuildsConfigInstanceSite object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewImageBuildsConfigInstanceSiteWithDefaults() *ImageBuildsConfigInstanceSite {
-	this := ImageBuildsConfigInstanceSite{}
-	return &this
-}
-
 func (o ImageBuildsConfigInstanceSite) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

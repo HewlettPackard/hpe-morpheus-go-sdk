@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetStateInstance200ResponseAllOfInstanceWithDefaults
-
-`func NewGetStateInstance200ResponseAllOfInstanceWithDefaults() *GetStateInstance200ResponseAllOfInstance`
-
-NewGetStateInstance200ResponseAllOfInstanceWithDefaults instantiates a new GetStateInstance200ResponseAllOfInstance object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetWorkloads
 
 `func (o *GetStateInstance200ResponseAllOfInstance) GetWorkloads() []map[string]interface{}`

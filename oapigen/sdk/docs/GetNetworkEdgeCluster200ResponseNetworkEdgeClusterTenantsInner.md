@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInnerWithDefaults
-
-`func NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInnerWithDefaults() *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner`
-
-NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInnerWithDefaults instantiates a new GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner) GetId() int32`

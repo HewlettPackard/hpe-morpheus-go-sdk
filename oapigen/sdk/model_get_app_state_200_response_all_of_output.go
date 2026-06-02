@@ -26,14 +26,6 @@ type GetAppState200ResponseAllOfOutput struct {
 
 type _GetAppState200ResponseAllOfOutput GetAppState200ResponseAllOfOutput
 
-// NewGetAppState200ResponseAllOfOutputWithDefaults instantiates a new GetAppState200ResponseAllOfOutput object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetAppState200ResponseAllOfOutputWithDefaults() *GetAppState200ResponseAllOfOutput {
-	this := GetAppState200ResponseAllOfOutput{}
-	return &this
-}
-
 func (o GetAppState200ResponseAllOfOutput) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

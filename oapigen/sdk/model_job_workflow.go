@@ -48,14 +48,6 @@ type JobWorkflow struct {
 
 type _JobWorkflow JobWorkflow
 
-// NewJobWorkflowWithDefaults instantiates a new JobWorkflow object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewJobWorkflowWithDefaults() *JobWorkflow {
-	this := JobWorkflow{}
-	return &this
-}
-
 func (o JobWorkflow) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

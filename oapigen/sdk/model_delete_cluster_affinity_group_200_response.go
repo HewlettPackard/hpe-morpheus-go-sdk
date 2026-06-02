@@ -26,14 +26,6 @@ type DeleteClusterAffinityGroup200Response struct {
 
 type _DeleteClusterAffinityGroup200Response DeleteClusterAffinityGroup200Response
 
-// NewDeleteClusterAffinityGroup200ResponseWithDefaults instantiates a new DeleteClusterAffinityGroup200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteClusterAffinityGroup200ResponseWithDefaults() *DeleteClusterAffinityGroup200Response {
-	this := DeleteClusterAffinityGroup200Response{}
-	return &this
-}
-
 func (o DeleteClusterAffinityGroup200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

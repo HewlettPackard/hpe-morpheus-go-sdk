@@ -27,14 +27,6 @@ type GetGroups200ResponseGroupZonesInner struct {
 
 type _GetGroups200ResponseGroupZonesInner GetGroups200ResponseGroupZonesInner
 
-// NewGetGroups200ResponseGroupZonesInnerWithDefaults instantiates a new GetGroups200ResponseGroupZonesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetGroups200ResponseGroupZonesInnerWithDefaults() *GetGroups200ResponseGroupZonesInner {
-	this := GetGroups200ResponseGroupZonesInner{}
-	return &this
-}
-
 func (o GetGroups200ResponseGroupZonesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

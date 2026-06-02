@@ -27,14 +27,6 @@ type UpdateChecks200ResponseAllOfCheckCreatedBy struct {
 
 type _UpdateChecks200ResponseAllOfCheckCreatedBy UpdateChecks200ResponseAllOfCheckCreatedBy
 
-// NewUpdateChecks200ResponseAllOfCheckCreatedByWithDefaults instantiates a new UpdateChecks200ResponseAllOfCheckCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateChecks200ResponseAllOfCheckCreatedByWithDefaults() *UpdateChecks200ResponseAllOfCheckCreatedBy {
-	this := UpdateChecks200ResponseAllOfCheckCreatedBy{}
-	return &this
-}
-
 func (o UpdateChecks200ResponseAllOfCheckCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

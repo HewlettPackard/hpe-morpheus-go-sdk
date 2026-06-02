@@ -46,14 +46,6 @@ type UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf7 struct {
 
 type _UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf7 UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf7
 
-// NewUpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf7WithDefaults instantiates a new UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf7 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf7WithDefaults() *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf7 {
-	this := UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf7{}
-	return &this
-}
-
 func (o UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf7) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

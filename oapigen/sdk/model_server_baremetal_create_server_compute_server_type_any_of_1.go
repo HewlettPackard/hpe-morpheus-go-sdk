@@ -27,14 +27,6 @@ type ServerBaremetalCreateServerComputeServerTypeAnyOf1 struct {
 
 type _ServerBaremetalCreateServerComputeServerTypeAnyOf1 ServerBaremetalCreateServerComputeServerTypeAnyOf1
 
-// NewServerBaremetalCreateServerComputeServerTypeAnyOf1WithDefaults instantiates a new ServerBaremetalCreateServerComputeServerTypeAnyOf1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewServerBaremetalCreateServerComputeServerTypeAnyOf1WithDefaults() *ServerBaremetalCreateServerComputeServerTypeAnyOf1 {
-	this := ServerBaremetalCreateServerComputeServerTypeAnyOf1{}
-	return &this
-}
-
 func (o ServerBaremetalCreateServerComputeServerTypeAnyOf1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

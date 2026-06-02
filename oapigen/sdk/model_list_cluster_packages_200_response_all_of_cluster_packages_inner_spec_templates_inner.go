@@ -28,14 +28,6 @@ type ListClusterPackages200ResponseAllOfClusterPackagesInnerSpecTemplatesInner s
 
 type _ListClusterPackages200ResponseAllOfClusterPackagesInnerSpecTemplatesInner ListClusterPackages200ResponseAllOfClusterPackagesInnerSpecTemplatesInner
 
-// NewListClusterPackages200ResponseAllOfClusterPackagesInnerSpecTemplatesInnerWithDefaults instantiates a new ListClusterPackages200ResponseAllOfClusterPackagesInnerSpecTemplatesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterPackages200ResponseAllOfClusterPackagesInnerSpecTemplatesInnerWithDefaults() *ListClusterPackages200ResponseAllOfClusterPackagesInnerSpecTemplatesInner {
-	this := ListClusterPackages200ResponseAllOfClusterPackagesInnerSpecTemplatesInner{}
-	return &this
-}
-
 func (o ListClusterPackages200ResponseAllOfClusterPackagesInnerSpecTemplatesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNetworkFirewallRules200ResponseWithDefaults
-
-`func NewGetNetworkFirewallRules200ResponseWithDefaults() *GetNetworkFirewallRules200Response`
-
-NewGetNetworkFirewallRules200ResponseWithDefaults instantiates a new GetNetworkFirewallRules200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetRules
 
 `func (o *GetNetworkFirewallRules200Response) GetRules() []GetNetworkFirewallRules200ResponseAllOfRulesInner`

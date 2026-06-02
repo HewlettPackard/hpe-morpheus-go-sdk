@@ -29,16 +29,6 @@ type RolePermissionDefaultGroup struct {
 
 type _RolePermissionDefaultGroup RolePermissionDefaultGroup
 
-// NewRolePermissionDefaultGroupWithDefaults instantiates a new RolePermissionDefaultGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRolePermissionDefaultGroupWithDefaults() *RolePermissionDefaultGroup {
-	this := RolePermissionDefaultGroup{}
-	var permissionCode string = "ComputeSite"
-	this.PermissionCode = permissionCode
-	return &this
-}
-
 func (o RolePermissionDefaultGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

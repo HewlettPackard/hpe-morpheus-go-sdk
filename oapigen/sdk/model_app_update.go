@@ -35,14 +35,6 @@ type AppUpdate struct {
 
 type _AppUpdate AppUpdate
 
-// NewAppUpdateWithDefaults instantiates a new AppUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppUpdateWithDefaults() *AppUpdate {
-	this := AppUpdate{}
-	return &this
-}
-
 func (o AppUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

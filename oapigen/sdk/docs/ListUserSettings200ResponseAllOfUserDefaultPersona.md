@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListUserSettings200ResponseAllOfUserDefaultPersonaWithDefaults
-
-`func NewListUserSettings200ResponseAllOfUserDefaultPersonaWithDefaults() *ListUserSettings200ResponseAllOfUserDefaultPersona`
-
-NewListUserSettings200ResponseAllOfUserDefaultPersonaWithDefaults instantiates a new ListUserSettings200ResponseAllOfUserDefaultPersona object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListUserSettings200ResponseAllOfUserDefaultPersona) GetId() int64`

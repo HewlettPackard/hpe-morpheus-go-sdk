@@ -28,14 +28,6 @@ type ListIntegrationObjects200ResponseObjectsInnerLayoutProvisionType struct {
 
 type _ListIntegrationObjects200ResponseObjectsInnerLayoutProvisionType ListIntegrationObjects200ResponseObjectsInnerLayoutProvisionType
 
-// NewListIntegrationObjects200ResponseObjectsInnerLayoutProvisionTypeWithDefaults instantiates a new ListIntegrationObjects200ResponseObjectsInnerLayoutProvisionType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListIntegrationObjects200ResponseObjectsInnerLayoutProvisionTypeWithDefaults() *ListIntegrationObjects200ResponseObjectsInnerLayoutProvisionType {
-	this := ListIntegrationObjects200ResponseObjectsInnerLayoutProvisionType{}
-	return &this
-}
-
 func (o ListIntegrationObjects200ResponseObjectsInnerLayoutProvisionType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

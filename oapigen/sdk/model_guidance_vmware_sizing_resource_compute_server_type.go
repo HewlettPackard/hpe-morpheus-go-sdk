@@ -30,14 +30,6 @@ type GuidanceVmwareSizingResourceComputeServerType struct {
 
 type _GuidanceVmwareSizingResourceComputeServerType GuidanceVmwareSizingResourceComputeServerType
 
-// NewGuidanceVmwareSizingResourceComputeServerTypeWithDefaults instantiates a new GuidanceVmwareSizingResourceComputeServerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGuidanceVmwareSizingResourceComputeServerTypeWithDefaults() *GuidanceVmwareSizingResourceComputeServerType {
-	this := GuidanceVmwareSizingResourceComputeServerType{}
-	return &this
-}
-
 func (o GuidanceVmwareSizingResourceComputeServerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

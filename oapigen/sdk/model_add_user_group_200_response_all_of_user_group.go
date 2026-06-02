@@ -37,14 +37,6 @@ type AddUserGroup200ResponseAllOfUserGroup struct {
 
 type _AddUserGroup200ResponseAllOfUserGroup AddUserGroup200ResponseAllOfUserGroup
 
-// NewAddUserGroup200ResponseAllOfUserGroupWithDefaults instantiates a new AddUserGroup200ResponseAllOfUserGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddUserGroup200ResponseAllOfUserGroupWithDefaults() *AddUserGroup200ResponseAllOfUserGroup {
-	this := AddUserGroup200ResponseAllOfUserGroup{}
-	return &this
-}
-
 func (o AddUserGroup200ResponseAllOfUserGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

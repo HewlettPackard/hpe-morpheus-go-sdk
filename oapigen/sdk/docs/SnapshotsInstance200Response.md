@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSnapshotsInstance200ResponseWithDefaults
-
-`func NewSnapshotsInstance200ResponseWithDefaults() *SnapshotsInstance200Response`
-
-NewSnapshotsInstance200ResponseWithDefaults instantiates a new SnapshotsInstance200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSnapshots
 
 `func (o *SnapshotsInstance200Response) GetSnapshots() []SnapshotsInstance200ResponseSnapshotsInner`

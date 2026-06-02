@@ -27,14 +27,6 @@ type ListNetworks200ResponseAllOfNetworksInnerResourcePermission struct {
 
 type _ListNetworks200ResponseAllOfNetworksInnerResourcePermission ListNetworks200ResponseAllOfNetworksInnerResourcePermission
 
-// NewListNetworks200ResponseAllOfNetworksInnerResourcePermissionWithDefaults instantiates a new ListNetworks200ResponseAllOfNetworksInnerResourcePermission object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListNetworks200ResponseAllOfNetworksInnerResourcePermissionWithDefaults() *ListNetworks200ResponseAllOfNetworksInnerResourcePermission {
-	this := ListNetworks200ResponseAllOfNetworksInnerResourcePermission{}
-	return &this
-}
-
 func (o ListNetworks200ResponseAllOfNetworksInnerResourcePermission) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

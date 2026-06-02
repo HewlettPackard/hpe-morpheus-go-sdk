@@ -26,14 +26,6 @@ type CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount struct {
 
 type _CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount
 
-// NewCreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccountWithDefaults instantiates a new CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccountWithDefaults() *CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount {
-	this := CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount{}
-	return &this
-}
-
 func (o CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

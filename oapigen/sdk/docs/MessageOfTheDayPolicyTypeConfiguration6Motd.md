@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewMessageOfTheDayPolicyTypeConfiguration6MotdWithDefaults
-
-`func NewMessageOfTheDayPolicyTypeConfiguration6MotdWithDefaults() *MessageOfTheDayPolicyTypeConfiguration6Motd`
-
-NewMessageOfTheDayPolicyTypeConfiguration6MotdWithDefaults instantiates a new MessageOfTheDayPolicyTypeConfiguration6Motd object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetTitle
 
 `func (o *MessageOfTheDayPolicyTypeConfiguration6Motd) GetTitle() string`

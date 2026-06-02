@@ -44,14 +44,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetLoadBalancerPoolNode200ResponseLoadBalancerNodeWithDefaults
-
-`func NewGetLoadBalancerPoolNode200ResponseLoadBalancerNodeWithDefaults() *GetLoadBalancerPoolNode200ResponseLoadBalancerNode`
-
-NewGetLoadBalancerPoolNode200ResponseLoadBalancerNodeWithDefaults instantiates a new GetLoadBalancerPoolNode200ResponseLoadBalancerNode object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetLoadBalancerPoolNode200ResponseLoadBalancerNode) GetId() int64`

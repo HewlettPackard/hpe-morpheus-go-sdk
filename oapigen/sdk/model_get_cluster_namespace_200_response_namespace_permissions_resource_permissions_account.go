@@ -26,14 +26,6 @@ type GetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsAccoun
 
 type _GetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsAccount GetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsAccount
 
-// NewGetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsAccountWithDefaults instantiates a new GetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsAccountWithDefaults() *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsAccount {
-	this := GetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsAccount{}
-	return &this
-}
-
 func (o GetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

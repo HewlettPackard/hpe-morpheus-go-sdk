@@ -36,22 +36,6 @@ type UsagesMeta struct {
 
 type _UsagesMeta UsagesMeta
 
-// NewUsagesMetaWithDefaults instantiates a new UsagesMeta object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUsagesMetaWithDefaults() *UsagesMeta {
-	this := UsagesMeta{}
-	var offset int64 = 0
-	this.Offset = &offset
-	var max int64 = 25
-	this.Max = &max
-	var size int64 = 0
-	this.Size = &size
-	var total int64 = 0
-	this.Total = &total
-	return &this
-}
-
 func (o UsagesMeta) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

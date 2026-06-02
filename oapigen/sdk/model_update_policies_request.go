@@ -26,14 +26,6 @@ type UpdatePoliciesRequest struct {
 
 type _UpdatePoliciesRequest UpdatePoliciesRequest
 
-// NewUpdatePoliciesRequestWithDefaults instantiates a new UpdatePoliciesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePoliciesRequestWithDefaults() *UpdatePoliciesRequest {
-	this := UpdatePoliciesRequest{}
-	return &this
-}
-
 func (o UpdatePoliciesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

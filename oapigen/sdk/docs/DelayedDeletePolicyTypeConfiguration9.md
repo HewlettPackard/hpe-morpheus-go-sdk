@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewDelayedDeletePolicyTypeConfiguration9WithDefaults
-
-`func NewDelayedDeletePolicyTypeConfiguration9WithDefaults() *DelayedDeletePolicyTypeConfiguration9`
-
-NewDelayedDeletePolicyTypeConfiguration9WithDefaults instantiates a new DelayedDeletePolicyTypeConfiguration9 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetRemovalAge
 
 `func (o *DelayedDeletePolicyTypeConfiguration9) GetRemovalAge() string`

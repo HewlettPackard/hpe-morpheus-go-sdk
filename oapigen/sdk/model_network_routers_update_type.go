@@ -27,14 +27,6 @@ type NetworkRoutersUpdateType struct {
 
 type _NetworkRoutersUpdateType NetworkRoutersUpdateType
 
-// NewNetworkRoutersUpdateTypeWithDefaults instantiates a new NetworkRoutersUpdateType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkRoutersUpdateTypeWithDefaults() *NetworkRoutersUpdateType {
-	this := NetworkRoutersUpdateType{}
-	return &this
-}
-
 func (o NetworkRoutersUpdateType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

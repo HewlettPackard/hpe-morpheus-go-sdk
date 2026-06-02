@@ -28,14 +28,6 @@ type SystemComponentsInnerType struct {
 
 type _SystemComponentsInnerType SystemComponentsInnerType
 
-// NewSystemComponentsInnerTypeWithDefaults instantiates a new SystemComponentsInnerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSystemComponentsInnerTypeWithDefaults() *SystemComponentsInnerType {
-	this := SystemComponentsInnerType{}
-	return &this
-}
-
 func (o SystemComponentsInnerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

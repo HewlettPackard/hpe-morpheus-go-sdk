@@ -27,14 +27,6 @@ type InstanceOwner struct {
 
 type _InstanceOwner InstanceOwner
 
-// NewInstanceOwnerWithDefaults instantiates a new InstanceOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceOwnerWithDefaults() *InstanceOwner {
-	this := InstanceOwner{}
-	return &this
-}
-
 func (o InstanceOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

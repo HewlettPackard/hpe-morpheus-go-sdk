@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewNetworkCreateConfigAnyOf2WithDefaults
-
-`func NewNetworkCreateConfigAnyOf2WithDefaults() *NetworkCreateConfigAnyOf2`
-
-NewNetworkCreateConfigAnyOf2WithDefaults instantiates a new NetworkCreateConfigAnyOf2 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMtu
 
 `func (o *NetworkCreateConfigAnyOf2) GetMtu() string`

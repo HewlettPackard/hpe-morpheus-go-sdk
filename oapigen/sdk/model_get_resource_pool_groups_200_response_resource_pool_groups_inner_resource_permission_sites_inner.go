@@ -27,14 +27,6 @@ type GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSi
 
 type _GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner
 
-// NewGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInnerWithDefaults instantiates a new GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInnerWithDefaults() *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner {
-	this := GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner{}
-	return &this
-}
-
 func (o GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

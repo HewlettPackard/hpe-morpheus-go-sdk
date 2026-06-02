@@ -42,14 +42,6 @@ type IntegrationCypher struct {
 
 type _IntegrationCypher IntegrationCypher
 
-// NewIntegrationCypherWithDefaults instantiates a new IntegrationCypher object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationCypherWithDefaults() *IntegrationCypher {
-	this := IntegrationCypher{}
-	return &this
-}
-
 func (o IntegrationCypher) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

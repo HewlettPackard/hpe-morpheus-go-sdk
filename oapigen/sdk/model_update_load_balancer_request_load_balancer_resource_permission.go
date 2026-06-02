@@ -29,14 +29,6 @@ type UpdateLoadBalancerRequestLoadBalancerResourcePermission struct {
 
 type _UpdateLoadBalancerRequestLoadBalancerResourcePermission UpdateLoadBalancerRequestLoadBalancerResourcePermission
 
-// NewUpdateLoadBalancerRequestLoadBalancerResourcePermissionWithDefaults instantiates a new UpdateLoadBalancerRequestLoadBalancerResourcePermission object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateLoadBalancerRequestLoadBalancerResourcePermissionWithDefaults() *UpdateLoadBalancerRequestLoadBalancerResourcePermission {
-	this := UpdateLoadBalancerRequestLoadBalancerResourcePermission{}
-	return &this
-}
-
 func (o UpdateLoadBalancerRequestLoadBalancerResourcePermission) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

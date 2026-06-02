@@ -26,14 +26,6 @@ type UpdateHostManagedRequestServerConfigCustomOptions struct {
 
 type _UpdateHostManagedRequestServerConfigCustomOptions UpdateHostManagedRequestServerConfigCustomOptions
 
-// NewUpdateHostManagedRequestServerConfigCustomOptionsWithDefaults instantiates a new UpdateHostManagedRequestServerConfigCustomOptions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateHostManagedRequestServerConfigCustomOptionsWithDefaults() *UpdateHostManagedRequestServerConfigCustomOptions {
-	this := UpdateHostManagedRequestServerConfigCustomOptions{}
-	return &this
-}
-
 func (o UpdateHostManagedRequestServerConfigCustomOptions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

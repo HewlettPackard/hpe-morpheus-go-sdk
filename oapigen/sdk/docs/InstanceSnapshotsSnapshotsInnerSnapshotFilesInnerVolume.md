@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolumeWithDefaults
-
-`func NewInstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolumeWithDefaults() *InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume`
-
-NewInstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolumeWithDefaults instantiates a new InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume) GetId() int32`

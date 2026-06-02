@@ -26,14 +26,6 @@ type UpdateDatastores200ResponseDatastoreAllOfZonePool struct {
 
 type _UpdateDatastores200ResponseDatastoreAllOfZonePool UpdateDatastores200ResponseDatastoreAllOfZonePool
 
-// NewUpdateDatastores200ResponseDatastoreAllOfZonePoolWithDefaults instantiates a new UpdateDatastores200ResponseDatastoreAllOfZonePool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateDatastores200ResponseDatastoreAllOfZonePoolWithDefaults() *UpdateDatastores200ResponseDatastoreAllOfZonePool {
-	this := UpdateDatastores200ResponseDatastoreAllOfZonePool{}
-	return &this
-}
-
 func (o UpdateDatastores200ResponseDatastoreAllOfZonePool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

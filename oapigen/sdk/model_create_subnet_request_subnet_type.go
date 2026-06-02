@@ -27,14 +27,6 @@ type CreateSubnetRequestSubnetType struct {
 
 type _CreateSubnetRequestSubnetType CreateSubnetRequestSubnetType
 
-// NewCreateSubnetRequestSubnetTypeWithDefaults instantiates a new CreateSubnetRequestSubnetType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateSubnetRequestSubnetTypeWithDefaults() *CreateSubnetRequestSubnetType {
-	this := CreateSubnetRequestSubnetType{}
-	return &this
-}
-
 func (o CreateSubnetRequestSubnetType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

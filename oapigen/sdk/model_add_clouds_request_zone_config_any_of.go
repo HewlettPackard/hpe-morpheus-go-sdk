@@ -99,18 +99,6 @@ type AddCloudsRequestZoneConfigAnyOf struct {
 
 type _AddCloudsRequestZoneConfigAnyOf AddCloudsRequestZoneConfigAnyOf
 
-// NewAddCloudsRequestZoneConfigAnyOfWithDefaults instantiates a new AddCloudsRequestZoneConfigAnyOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCloudsRequestZoneConfigAnyOfWithDefaults() *AddCloudsRequestZoneConfigAnyOf {
-	this := AddCloudsRequestZoneConfigAnyOf{}
-	var useHostCredentials string = "on"
-	this.UseHostCredentials = &useHostCredentials
-	var ebsEncryption string = "on"
-	this.EbsEncryption = &ebsEncryption
-	return &this
-}
-
 func (o AddCloudsRequestZoneConfigAnyOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

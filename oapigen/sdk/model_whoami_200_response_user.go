@@ -53,14 +53,6 @@ type Whoami200ResponseUser struct {
 
 type _Whoami200ResponseUser Whoami200ResponseUser
 
-// NewWhoami200ResponseUserWithDefaults instantiates a new Whoami200ResponseUser object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWhoami200ResponseUserWithDefaults() *Whoami200ResponseUser {
-	this := Whoami200ResponseUser{}
-	return &this
-}
-
 func (o Whoami200ResponseUser) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

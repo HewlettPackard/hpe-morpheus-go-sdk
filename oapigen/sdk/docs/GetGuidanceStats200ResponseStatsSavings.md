@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetGuidanceStats200ResponseStatsSavingsWithDefaults
-
-`func NewGetGuidanceStats200ResponseStatsSavingsWithDefaults() *GetGuidanceStats200ResponseStatsSavings`
-
-NewGetGuidanceStats200ResponseStatsSavingsWithDefaults instantiates a new GetGuidanceStats200ResponseStatsSavings object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAmount
 
 `func (o *GetGuidanceStats200ResponseStatsSavings) GetAmount() float32`

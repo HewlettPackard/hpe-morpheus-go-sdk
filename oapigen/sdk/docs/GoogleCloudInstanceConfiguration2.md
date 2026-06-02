@@ -22,14 +22,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGoogleCloudInstanceConfiguration2WithDefaults
-
-`func NewGoogleCloudInstanceConfiguration2WithDefaults() *GoogleCloudInstanceConfiguration2`
-
-NewGoogleCloudInstanceConfiguration2WithDefaults instantiates a new GoogleCloudInstanceConfiguration2 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetNoAgent
 
 `func (o *GoogleCloudInstanceConfiguration2) GetNoAgent() bool`

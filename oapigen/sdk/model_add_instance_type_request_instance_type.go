@@ -53,16 +53,6 @@ type AddInstanceTypeRequestInstanceType struct {
 
 type _AddInstanceTypeRequestInstanceType AddInstanceTypeRequestInstanceType
 
-// NewAddInstanceTypeRequestInstanceTypeWithDefaults instantiates a new AddInstanceTypeRequestInstanceType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstanceTypeRequestInstanceTypeWithDefaults() *AddInstanceTypeRequestInstanceType {
-	this := AddInstanceTypeRequestInstanceType{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o AddInstanceTypeRequestInstanceType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

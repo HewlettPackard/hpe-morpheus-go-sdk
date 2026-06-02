@@ -34,14 +34,6 @@ type AddGroupsRequestGroup struct {
 
 type _AddGroupsRequestGroup AddGroupsRequestGroup
 
-// NewAddGroupsRequestGroupWithDefaults instantiates a new AddGroupsRequestGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddGroupsRequestGroupWithDefaults() *AddGroupsRequestGroup {
-	this := AddGroupsRequestGroup{}
-	return &this
-}
-
 func (o AddGroupsRequestGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

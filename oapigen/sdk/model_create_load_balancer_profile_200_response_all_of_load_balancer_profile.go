@@ -52,14 +52,6 @@ type CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile struct {
 
 type _CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile
 
-// NewCreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileWithDefaults instantiates a new CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileWithDefaults() *CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile {
-	this := CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile{}
-	return &this
-}
-
 func (o CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -34,14 +34,6 @@ type ListVDIApps200ResponseAllOfVdiAppsInner struct {
 
 type _ListVDIApps200ResponseAllOfVdiAppsInner ListVDIApps200ResponseAllOfVdiAppsInner
 
-// NewListVDIApps200ResponseAllOfVdiAppsInnerWithDefaults instantiates a new ListVDIApps200ResponseAllOfVdiAppsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListVDIApps200ResponseAllOfVdiAppsInnerWithDefaults() *ListVDIApps200ResponseAllOfVdiAppsInner {
-	this := ListVDIApps200ResponseAllOfVdiAppsInner{}
-	return &this
-}
-
 func (o ListVDIApps200ResponseAllOfVdiAppsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

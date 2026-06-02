@@ -26,14 +26,6 @@ type AddLogSettingsSyslogRules200Response struct {
 
 type _AddLogSettingsSyslogRules200Response AddLogSettingsSyslogRules200Response
 
-// NewAddLogSettingsSyslogRules200ResponseWithDefaults instantiates a new AddLogSettingsSyslogRules200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLogSettingsSyslogRules200ResponseWithDefaults() *AddLogSettingsSyslogRules200Response {
-	this := AddLogSettingsSyslogRules200Response{}
-	return &this
-}
-
 func (o AddLogSettingsSyslogRules200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

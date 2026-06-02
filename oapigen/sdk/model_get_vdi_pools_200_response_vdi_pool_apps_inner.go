@@ -27,14 +27,6 @@ type GetVDIPools200ResponseVdiPoolAppsInner struct {
 
 type _GetVDIPools200ResponseVdiPoolAppsInner GetVDIPools200ResponseVdiPoolAppsInner
 
-// NewGetVDIPools200ResponseVdiPoolAppsInnerWithDefaults instantiates a new GetVDIPools200ResponseVdiPoolAppsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetVDIPools200ResponseVdiPoolAppsInnerWithDefaults() *GetVDIPools200ResponseVdiPoolAppsInner {
-	this := GetVDIPools200ResponseVdiPoolAppsInner{}
-	return &this
-}
-
 func (o GetVDIPools200ResponseVdiPoolAppsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

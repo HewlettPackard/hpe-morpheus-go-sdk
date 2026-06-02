@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetStorageServerTypes200ResponseWithDefaults
-
-`func NewGetStorageServerTypes200ResponseWithDefaults() *GetStorageServerTypes200Response`
-
-NewGetStorageServerTypes200ResponseWithDefaults instantiates a new GetStorageServerTypes200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetStorageServerType
 
 `func (o *GetStorageServerTypes200Response) GetStorageServerType() GetStorageServerTypes200ResponseStorageServerType`

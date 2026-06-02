@@ -34,14 +34,6 @@ type UpdateVDIPools200ResponseAnyOfVdiPoolConfigConfig struct {
 
 type _UpdateVDIPools200ResponseAnyOfVdiPoolConfigConfig UpdateVDIPools200ResponseAnyOfVdiPoolConfigConfig
 
-// NewUpdateVDIPools200ResponseAnyOfVdiPoolConfigConfigWithDefaults instantiates a new UpdateVDIPools200ResponseAnyOfVdiPoolConfigConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateVDIPools200ResponseAnyOfVdiPoolConfigConfigWithDefaults() *UpdateVDIPools200ResponseAnyOfVdiPoolConfigConfig {
-	this := UpdateVDIPools200ResponseAnyOfVdiPoolConfigConfig{}
-	return &this
-}
-
 func (o UpdateVDIPools200ResponseAnyOfVdiPoolConfigConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

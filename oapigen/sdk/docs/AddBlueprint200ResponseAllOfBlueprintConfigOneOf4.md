@@ -23,14 +23,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf4WithDefaults
-
-`func NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf4WithDefaults() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4`
-
-NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf4WithDefaults instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf4 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetName
 
 `func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4) GetName() string`

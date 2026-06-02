@@ -29,14 +29,6 @@ type InstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner struc
 
 type _InstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner InstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner
 
-// NewInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInnerWithDefaults instantiates a new InstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInnerWithDefaults() *InstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner {
-	this := InstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner{}
-	return &this
-}
-
 func (o InstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

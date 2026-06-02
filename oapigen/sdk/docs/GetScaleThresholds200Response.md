@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetScaleThresholds200ResponseWithDefaults
-
-`func NewGetScaleThresholds200ResponseWithDefaults() *GetScaleThresholds200Response`
-
-NewGetScaleThresholds200ResponseWithDefaults instantiates a new GetScaleThresholds200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetScaleThreshold
 
 `func (o *GetScaleThresholds200Response) GetScaleThreshold() GetScaleThresholds200ResponseAllOfScaleThreshold`

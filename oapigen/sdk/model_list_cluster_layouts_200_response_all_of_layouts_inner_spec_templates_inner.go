@@ -42,14 +42,6 @@ type ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner struct {
 
 type _ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner
 
-// NewListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerWithDefaults instantiates a new ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerWithDefaults() *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner {
-	this := ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner{}
-	return &this
-}
-
 func (o ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

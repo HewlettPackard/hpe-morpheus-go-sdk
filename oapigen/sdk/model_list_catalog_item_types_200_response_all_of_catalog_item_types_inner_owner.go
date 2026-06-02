@@ -27,14 +27,6 @@ type ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner struct {
 
 type _ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner
 
-// NewListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwnerWithDefaults instantiates a new ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwnerWithDefaults() *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner {
-	this := ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner{}
-	return &this
-}
-
 func (o ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

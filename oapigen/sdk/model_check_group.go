@@ -53,14 +53,6 @@ type CheckGroup struct {
 
 type _CheckGroup CheckGroup
 
-// NewCheckGroupWithDefaults instantiates a new CheckGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCheckGroupWithDefaults() *CheckGroup {
-	this := CheckGroup{}
-	return &this
-}
-
 func (o CheckGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

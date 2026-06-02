@@ -39,18 +39,6 @@ type CreateNetworkRouterRouteRequestNetworkRoute struct {
 
 type _CreateNetworkRouterRouteRequestNetworkRoute CreateNetworkRouterRouteRequestNetworkRoute
 
-// NewCreateNetworkRouterRouteRequestNetworkRouteWithDefaults instantiates a new CreateNetworkRouterRouteRequestNetworkRoute object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkRouterRouteRequestNetworkRouteWithDefaults() *CreateNetworkRouterRouteRequestNetworkRoute {
-	this := CreateNetworkRouterRouteRequestNetworkRoute{}
-	var enabled bool = false
-	this.Enabled = &enabled
-	var defaultRoute bool = false
-	this.DefaultRoute = &defaultRoute
-	return &this
-}
-
 func (o CreateNetworkRouterRouteRequestNetworkRoute) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

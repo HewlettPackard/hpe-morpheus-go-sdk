@@ -26,14 +26,6 @@ type UpdateLogSettingsRequest struct {
 
 type _UpdateLogSettingsRequest UpdateLogSettingsRequest
 
-// NewUpdateLogSettingsRequestWithDefaults instantiates a new UpdateLogSettingsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateLogSettingsRequestWithDefaults() *UpdateLogSettingsRequest {
-	this := UpdateLogSettingsRequest{}
-	return &this
-}
-
 func (o UpdateLogSettingsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

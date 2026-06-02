@@ -27,14 +27,6 @@ type GetCatalogItemType200ResponseCatalogItemTypeWorkflow struct {
 
 type _GetCatalogItemType200ResponseCatalogItemTypeWorkflow GetCatalogItemType200ResponseCatalogItemTypeWorkflow
 
-// NewGetCatalogItemType200ResponseCatalogItemTypeWorkflowWithDefaults instantiates a new GetCatalogItemType200ResponseCatalogItemTypeWorkflow object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCatalogItemType200ResponseCatalogItemTypeWorkflowWithDefaults() *GetCatalogItemType200ResponseCatalogItemTypeWorkflow {
-	this := GetCatalogItemType200ResponseCatalogItemTypeWorkflow{}
-	return &this
-}
-
 func (o GetCatalogItemType200ResponseCatalogItemTypeWorkflow) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

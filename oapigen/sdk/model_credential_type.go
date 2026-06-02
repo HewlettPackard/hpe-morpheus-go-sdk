@@ -28,14 +28,6 @@ type CredentialType struct {
 
 type _CredentialType CredentialType
 
-// NewCredentialTypeWithDefaults instantiates a new CredentialType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCredentialTypeWithDefaults() *CredentialType {
-	this := CredentialType{}
-	return &this
-}
-
 func (o CredentialType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

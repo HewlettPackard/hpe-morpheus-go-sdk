@@ -26,14 +26,6 @@ type UpdateCredentialsRequestCredentialOneOfIntegration struct {
 
 type _UpdateCredentialsRequestCredentialOneOfIntegration UpdateCredentialsRequestCredentialOneOfIntegration
 
-// NewUpdateCredentialsRequestCredentialOneOfIntegrationWithDefaults instantiates a new UpdateCredentialsRequestCredentialOneOfIntegration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCredentialsRequestCredentialOneOfIntegrationWithDefaults() *UpdateCredentialsRequestCredentialOneOfIntegration {
-	this := UpdateCredentialsRequestCredentialOneOfIntegration{}
-	return &this
-}
-
 func (o UpdateCredentialsRequestCredentialOneOfIntegration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

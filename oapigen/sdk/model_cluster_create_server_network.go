@@ -27,14 +27,6 @@ type ClusterCreateServerNetwork struct {
 
 type _ClusterCreateServerNetwork ClusterCreateServerNetwork
 
-// NewClusterCreateServerNetworkWithDefaults instantiates a new ClusterCreateServerNetwork object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterCreateServerNetworkWithDefaults() *ClusterCreateServerNetwork {
-	this := ClusterCreateServerNetwork{}
-	return &this
-}
-
 func (o ClusterCreateServerNetwork) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewContainersAttachFloatingIp200ResponseWithDefaults
-
-`func NewContainersAttachFloatingIp200ResponseWithDefaults() *ContainersAttachFloatingIp200Response`
-
-NewContainersAttachFloatingIp200ResponseWithDefaults instantiates a new ContainersAttachFloatingIp200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *ContainersAttachFloatingIp200Response) GetSuccess() bool`

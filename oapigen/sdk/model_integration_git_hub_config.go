@@ -26,14 +26,6 @@ type IntegrationGitHubConfig struct {
 
 type _IntegrationGitHubConfig IntegrationGitHubConfig
 
-// NewIntegrationGitHubConfigWithDefaults instantiates a new IntegrationGitHubConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationGitHubConfigWithDefaults() *IntegrationGitHubConfig {
-	this := IntegrationGitHubConfig{}
-	return &this
-}
-
 func (o IntegrationGitHubConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -35,14 +35,6 @@ type LibraryTemplateTaskConfig6 struct {
 
 type _LibraryTemplateTaskConfig6 LibraryTemplateTaskConfig6
 
-// NewLibraryTemplateTaskConfig6WithDefaults instantiates a new LibraryTemplateTaskConfig6 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLibraryTemplateTaskConfig6WithDefaults() *LibraryTemplateTaskConfig6 {
-	this := LibraryTemplateTaskConfig6{}
-	return &this
-}
-
 func (o LibraryTemplateTaskConfig6) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

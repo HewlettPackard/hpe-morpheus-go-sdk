@@ -38,22 +38,6 @@ type PushCheck1 struct {
 
 type _PushCheck1 PushCheck1
 
-// NewPushCheck1WithDefaults instantiates a new PushCheck1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPushCheck1WithDefaults() *PushCheck1 {
-	this := PushCheck1{}
-	var checkInterval int32 = 300000
-	this.CheckInterval = &checkInterval
-	var inUptime bool = true
-	this.InUptime = &inUptime
-	var active bool = true
-	this.Active = &active
-	var severity string = "critical"
-	this.Severity = &severity
-	return &this
-}
-
 func (o PushCheck1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

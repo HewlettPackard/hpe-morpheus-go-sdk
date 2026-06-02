@@ -32,14 +32,6 @@ type CatalogOrderCreateItemsInner struct {
 
 type _CatalogOrderCreateItemsInner CatalogOrderCreateItemsInner
 
-// NewCatalogOrderCreateItemsInnerWithDefaults instantiates a new CatalogOrderCreateItemsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCatalogOrderCreateItemsInnerWithDefaults() *CatalogOrderCreateItemsInner {
-	this := CatalogOrderCreateItemsInner{}
-	return &this
-}
-
 func (o CatalogOrderCreateItemsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

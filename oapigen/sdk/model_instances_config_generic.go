@@ -27,14 +27,6 @@ type InstancesConfigGeneric struct {
 
 type _InstancesConfigGeneric InstancesConfigGeneric
 
-// NewInstancesConfigGenericWithDefaults instantiates a new InstancesConfigGeneric object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstancesConfigGenericWithDefaults() *InstancesConfigGeneric {
-	this := InstancesConfigGeneric{}
-	return &this
-}
-
 func (o InstancesConfigGeneric) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

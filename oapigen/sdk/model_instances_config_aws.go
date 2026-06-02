@@ -43,20 +43,6 @@ type InstancesConfigAWS struct {
 
 type _InstancesConfigAWS InstancesConfigAWS
 
-// NewInstancesConfigAWSWithDefaults instantiates a new InstancesConfigAWS object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstancesConfigAWSWithDefaults() *InstancesConfigAWS {
-	this := InstancesConfigAWS{}
-	var noAgent bool = false
-	this.NoAgent = *NewNullableBool(&noAgent)
-	var createUser bool = false
-	this.CreateUser = *NewNullableBool(&createUser)
-	var isEC2 string = "false"
-	this.IsEC2 = &isEC2
-	return &this
-}
-
 func (o InstancesConfigAWS) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

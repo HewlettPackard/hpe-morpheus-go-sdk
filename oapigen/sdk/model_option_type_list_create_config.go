@@ -26,14 +26,6 @@ type OptionTypeListCreateConfig struct {
 
 type _OptionTypeListCreateConfig OptionTypeListCreateConfig
 
-// NewOptionTypeListCreateConfigWithDefaults instantiates a new OptionTypeListCreateConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOptionTypeListCreateConfigWithDefaults() *OptionTypeListCreateConfig {
-	this := OptionTypeListCreateConfig{}
-	return &this
-}
-
 func (o OptionTypeListCreateConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

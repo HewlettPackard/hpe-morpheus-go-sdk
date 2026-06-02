@@ -34,14 +34,6 @@ type BlueprintCreateSuccessConfigOneOf5Terraform struct {
 
 type _BlueprintCreateSuccessConfigOneOf5Terraform BlueprintCreateSuccessConfigOneOf5Terraform
 
-// NewBlueprintCreateSuccessConfigOneOf5TerraformWithDefaults instantiates a new BlueprintCreateSuccessConfigOneOf5Terraform object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintCreateSuccessConfigOneOf5TerraformWithDefaults() *BlueprintCreateSuccessConfigOneOf5Terraform {
-	this := BlueprintCreateSuccessConfigOneOf5Terraform{}
-	return &this
-}
-
 func (o BlueprintCreateSuccessConfigOneOf5Terraform) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

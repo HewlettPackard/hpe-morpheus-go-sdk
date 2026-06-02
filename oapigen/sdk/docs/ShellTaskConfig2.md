@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewShellTaskConfig2WithDefaults
-
-`func NewShellTaskConfig2WithDefaults() *ShellTaskConfig2`
-
-NewShellTaskConfig2WithDefaults instantiates a new ShellTaskConfig2 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetLocalScriptGitRef
 
 `func (o *ShellTaskConfig2) GetLocalScriptGitRef() string`

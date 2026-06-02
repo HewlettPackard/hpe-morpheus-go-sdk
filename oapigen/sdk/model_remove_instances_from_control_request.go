@@ -27,14 +27,6 @@ type RemoveInstancesFromControlRequest struct {
 
 type _RemoveInstancesFromControlRequest RemoveInstancesFromControlRequest
 
-// NewRemoveInstancesFromControlRequestWithDefaults instantiates a new RemoveInstancesFromControlRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRemoveInstancesFromControlRequestWithDefaults() *RemoveInstancesFromControlRequest {
-	this := RemoveInstancesFromControlRequest{}
-	return &this
-}
-
 func (o RemoveInstancesFromControlRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

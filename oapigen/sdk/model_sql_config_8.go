@@ -47,14 +47,6 @@ type SQLConfig8 struct {
 
 type _SQLConfig8 SQLConfig8
 
-// NewSQLConfig8WithDefaults instantiates a new SQLConfig8 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSQLConfig8WithDefaults() *SQLConfig8 {
-	this := SQLConfig8{}
-	return &this
-}
-
 func (o SQLConfig8) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

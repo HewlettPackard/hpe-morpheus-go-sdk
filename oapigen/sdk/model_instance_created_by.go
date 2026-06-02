@@ -27,14 +27,6 @@ type InstanceCreatedBy struct {
 
 type _InstanceCreatedBy InstanceCreatedBy
 
-// NewInstanceCreatedByWithDefaults instantiates a new InstanceCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceCreatedByWithDefaults() *InstanceCreatedBy {
-	this := InstanceCreatedBy{}
-	return &this
-}
-
 func (o InstanceCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

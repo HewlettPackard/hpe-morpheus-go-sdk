@@ -35,18 +35,6 @@ type AddEnvironmentsRequestEnvironment struct {
 
 type _AddEnvironmentsRequestEnvironment AddEnvironmentsRequestEnvironment
 
-// NewAddEnvironmentsRequestEnvironmentWithDefaults instantiates a new AddEnvironmentsRequestEnvironment object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddEnvironmentsRequestEnvironmentWithDefaults() *AddEnvironmentsRequestEnvironment {
-	this := AddEnvironmentsRequestEnvironment{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	var sortOrder int64 = 0
-	this.SortOrder = &sortOrder
-	return &this
-}
-
 func (o AddEnvironmentsRequestEnvironment) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

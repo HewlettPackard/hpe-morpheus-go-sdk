@@ -29,14 +29,6 @@ type ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner struc
 
 type _ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner
 
-// NewListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInnerWithDefaults instantiates a new ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInnerWithDefaults() *ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner {
-	this := ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner{}
-	return &this
-}
-
 func (o ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

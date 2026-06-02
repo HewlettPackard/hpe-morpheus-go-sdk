@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddPoliciesRequestWithDefaults
-
-`func NewAddPoliciesRequestWithDefaults() *AddPoliciesRequest`
-
-NewAddPoliciesRequestWithDefaults instantiates a new AddPoliciesRequest object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPolicy
 
 `func (o *AddPoliciesRequest) GetPolicy() AddPoliciesRequestPolicy`

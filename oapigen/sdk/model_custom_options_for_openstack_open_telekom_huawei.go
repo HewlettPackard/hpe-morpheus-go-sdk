@@ -27,14 +27,6 @@ type CustomOptionsForOpenstackOpenTelekomHuawei struct {
 
 type _CustomOptionsForOpenstackOpenTelekomHuawei CustomOptionsForOpenstackOpenTelekomHuawei
 
-// NewCustomOptionsForOpenstackOpenTelekomHuaweiWithDefaults instantiates a new CustomOptionsForOpenstackOpenTelekomHuawei object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCustomOptionsForOpenstackOpenTelekomHuaweiWithDefaults() *CustomOptionsForOpenstackOpenTelekomHuawei {
-	this := CustomOptionsForOpenstackOpenTelekomHuawei{}
-	return &this
-}
-
 func (o CustomOptionsForOpenstackOpenTelekomHuawei) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

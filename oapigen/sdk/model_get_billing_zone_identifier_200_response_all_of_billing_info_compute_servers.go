@@ -29,14 +29,6 @@ type GetBillingZoneIdentifier200ResponseAllOfBillingInfoComputeServers struct {
 
 type _GetBillingZoneIdentifier200ResponseAllOfBillingInfoComputeServers GetBillingZoneIdentifier200ResponseAllOfBillingInfoComputeServers
 
-// NewGetBillingZoneIdentifier200ResponseAllOfBillingInfoComputeServersWithDefaults instantiates a new GetBillingZoneIdentifier200ResponseAllOfBillingInfoComputeServers object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetBillingZoneIdentifier200ResponseAllOfBillingInfoComputeServersWithDefaults() *GetBillingZoneIdentifier200ResponseAllOfBillingInfoComputeServers {
-	this := GetBillingZoneIdentifier200ResponseAllOfBillingInfoComputeServers{}
-	return &this
-}
-
 func (o GetBillingZoneIdentifier200ResponseAllOfBillingInfoComputeServers) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

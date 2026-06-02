@@ -53,18 +53,6 @@ type CatalogItemTypeBlueprintCreate struct {
 
 type _CatalogItemTypeBlueprintCreate CatalogItemTypeBlueprintCreate
 
-// NewCatalogItemTypeBlueprintCreateWithDefaults instantiates a new CatalogItemTypeBlueprintCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCatalogItemTypeBlueprintCreateWithDefaults() *CatalogItemTypeBlueprintCreate {
-	this := CatalogItemTypeBlueprintCreate{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	var formType string = "optionTypes"
-	this.FormType = &formType
-	return &this
-}
-
 func (o CatalogItemTypeBlueprintCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

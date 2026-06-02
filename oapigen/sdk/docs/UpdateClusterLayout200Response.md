@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateClusterLayout200ResponseWithDefaults
-
-`func NewUpdateClusterLayout200ResponseWithDefaults() *UpdateClusterLayout200Response`
-
-NewUpdateClusterLayout200ResponseWithDefaults instantiates a new UpdateClusterLayout200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *UpdateClusterLayout200Response) GetSuccess() bool`

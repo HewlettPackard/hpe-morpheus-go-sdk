@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetSupportBundle200ResponseWithDefaults
-
-`func NewGetSupportBundle200ResponseWithDefaults() *GetSupportBundle200Response`
-
-NewGetSupportBundle200ResponseWithDefaults instantiates a new GetSupportBundle200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSupportBundle
 
 `func (o *GetSupportBundle200Response) GetSupportBundle() GetSupportBundle200ResponseSupportBundle`

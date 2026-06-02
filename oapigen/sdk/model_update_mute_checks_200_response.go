@@ -27,14 +27,6 @@ type UpdateMuteChecks200Response struct {
 
 type _UpdateMuteChecks200Response UpdateMuteChecks200Response
 
-// NewUpdateMuteChecks200ResponseWithDefaults instantiates a new UpdateMuteChecks200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateMuteChecks200ResponseWithDefaults() *UpdateMuteChecks200Response {
-	this := UpdateMuteChecks200Response{}
-	return &this
-}
-
 func (o UpdateMuteChecks200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

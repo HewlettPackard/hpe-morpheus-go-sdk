@@ -27,14 +27,6 @@ type AddInstanceRequestInstancePlan struct {
 
 type _AddInstanceRequestInstancePlan AddInstanceRequestInstancePlan
 
-// NewAddInstanceRequestInstancePlanWithDefaults instantiates a new AddInstanceRequestInstancePlan object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstanceRequestInstancePlanWithDefaults() *AddInstanceRequestInstancePlan {
-	this := AddInstanceRequestInstancePlan{}
-	return &this
-}
-
 func (o AddInstanceRequestInstancePlan) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

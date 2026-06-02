@@ -29,14 +29,6 @@ type ExecuteBackups200ResponseAllOfBackupStorageProvider struct {
 
 type _ExecuteBackups200ResponseAllOfBackupStorageProvider ExecuteBackups200ResponseAllOfBackupStorageProvider
 
-// NewExecuteBackups200ResponseAllOfBackupStorageProviderWithDefaults instantiates a new ExecuteBackups200ResponseAllOfBackupStorageProvider object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewExecuteBackups200ResponseAllOfBackupStorageProviderWithDefaults() *ExecuteBackups200ResponseAllOfBackupStorageProvider {
-	this := ExecuteBackups200ResponseAllOfBackupStorageProvider{}
-	return &this
-}
-
 func (o ExecuteBackups200ResponseAllOfBackupStorageProvider) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

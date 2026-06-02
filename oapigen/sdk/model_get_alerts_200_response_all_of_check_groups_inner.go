@@ -53,14 +53,6 @@ type GetAlerts200ResponseAllOfCheckGroupsInner struct {
 
 type _GetAlerts200ResponseAllOfCheckGroupsInner GetAlerts200ResponseAllOfCheckGroupsInner
 
-// NewGetAlerts200ResponseAllOfCheckGroupsInnerWithDefaults instantiates a new GetAlerts200ResponseAllOfCheckGroupsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetAlerts200ResponseAllOfCheckGroupsInnerWithDefaults() *GetAlerts200ResponseAllOfCheckGroupsInner {
-	this := GetAlerts200ResponseAllOfCheckGroupsInner{}
-	return &this
-}
-
 func (o GetAlerts200ResponseAllOfCheckGroupsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -28,14 +28,6 @@ type Whoami200ResponsePermissionsInner struct {
 
 type _Whoami200ResponsePermissionsInner Whoami200ResponsePermissionsInner
 
-// NewWhoami200ResponsePermissionsInnerWithDefaults instantiates a new Whoami200ResponsePermissionsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWhoami200ResponsePermissionsInnerWithDefaults() *Whoami200ResponsePermissionsInner {
-	this := Whoami200ResponsePermissionsInner{}
-	return &this
-}
-
 func (o Whoami200ResponsePermissionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

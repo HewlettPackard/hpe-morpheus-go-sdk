@@ -27,14 +27,6 @@ type AnsibleTowerJobTemplateOptions struct {
 
 type _AnsibleTowerJobTemplateOptions AnsibleTowerJobTemplateOptions
 
-// NewAnsibleTowerJobTemplateOptionsWithDefaults instantiates a new AnsibleTowerJobTemplateOptions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAnsibleTowerJobTemplateOptionsWithDefaults() *AnsibleTowerJobTemplateOptions {
-	this := AnsibleTowerJobTemplateOptions{}
-	return &this
-}
-
 func (o AnsibleTowerJobTemplateOptions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

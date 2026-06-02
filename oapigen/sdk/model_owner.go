@@ -27,14 +27,6 @@ type Owner struct {
 
 type _Owner Owner
 
-// NewOwnerWithDefaults instantiates a new Owner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOwnerWithDefaults() *Owner {
-	this := Owner{}
-	return &this
-}
-
 func (o Owner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type InstanceTypeInstanceTypeLayoutsInnerPermissions struct {
 
 type _InstanceTypeInstanceTypeLayoutsInnerPermissions InstanceTypeInstanceTypeLayoutsInnerPermissions
 
-// NewInstanceTypeInstanceTypeLayoutsInnerPermissionsWithDefaults instantiates a new InstanceTypeInstanceTypeLayoutsInnerPermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceTypeInstanceTypeLayoutsInnerPermissionsWithDefaults() *InstanceTypeInstanceTypeLayoutsInnerPermissions {
-	this := InstanceTypeInstanceTypeLayoutsInnerPermissions{}
-	return &this
-}
-
 func (o InstanceTypeInstanceTypeLayoutsInnerPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

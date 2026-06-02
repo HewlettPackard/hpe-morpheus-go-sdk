@@ -45,14 +45,6 @@ type Issue struct {
 
 type _Issue Issue
 
-// NewIssueWithDefaults instantiates a new Issue object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIssueWithDefaults() *Issue {
-	this := Issue{}
-	return &this
-}
-
 func (o Issue) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

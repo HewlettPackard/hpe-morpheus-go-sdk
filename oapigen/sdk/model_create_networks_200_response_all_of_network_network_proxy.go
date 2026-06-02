@@ -27,14 +27,6 @@ type CreateNetworks200ResponseAllOfNetworkNetworkProxy struct {
 
 type _CreateNetworks200ResponseAllOfNetworkNetworkProxy CreateNetworks200ResponseAllOfNetworkNetworkProxy
 
-// NewCreateNetworks200ResponseAllOfNetworkNetworkProxyWithDefaults instantiates a new CreateNetworks200ResponseAllOfNetworkNetworkProxy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworks200ResponseAllOfNetworkNetworkProxyWithDefaults() *CreateNetworks200ResponseAllOfNetworkNetworkProxy {
-	this := CreateNetworks200ResponseAllOfNetworkNetworkProxy{}
-	return &this
-}
-
 func (o CreateNetworks200ResponseAllOfNetworkNetworkProxy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

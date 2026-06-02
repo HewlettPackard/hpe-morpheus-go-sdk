@@ -29,14 +29,6 @@ type StorageProfile struct {
 
 type _StorageProfile StorageProfile
 
-// NewStorageProfileWithDefaults instantiates a new StorageProfile object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewStorageProfileWithDefaults() *StorageProfile {
-	this := StorageProfile{}
-	return &this
-}
-
 func (o StorageProfile) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

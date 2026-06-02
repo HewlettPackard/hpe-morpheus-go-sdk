@@ -31,14 +31,6 @@ type AddClusterWorkerRequestServerServicePlanOptions struct {
 
 type _AddClusterWorkerRequestServerServicePlanOptions AddClusterWorkerRequestServerServicePlanOptions
 
-// NewAddClusterWorkerRequestServerServicePlanOptionsWithDefaults instantiates a new AddClusterWorkerRequestServerServicePlanOptions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterWorkerRequestServerServicePlanOptionsWithDefaults() *AddClusterWorkerRequestServerServicePlanOptions {
-	this := AddClusterWorkerRequestServerServicePlanOptions{}
-	return &this
-}
-
 func (o AddClusterWorkerRequestServerServicePlanOptions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

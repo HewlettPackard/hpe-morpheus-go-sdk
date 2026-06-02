@@ -28,14 +28,6 @@ type RunWorkflowInstance200Response struct {
 
 type _RunWorkflowInstance200Response RunWorkflowInstance200Response
 
-// NewRunWorkflowInstance200ResponseWithDefaults instantiates a new RunWorkflowInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRunWorkflowInstance200ResponseWithDefaults() *RunWorkflowInstance200Response {
-	this := RunWorkflowInstance200Response{}
-	return &this
-}
-
 func (o RunWorkflowInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

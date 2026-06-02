@@ -28,14 +28,6 @@ type InstanceResizeInstance struct {
 
 type _InstanceResizeInstance InstanceResizeInstance
 
-// NewInstanceResizeInstanceWithDefaults instantiates a new InstanceResizeInstance object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceResizeInstanceWithDefaults() *InstanceResizeInstance {
-	this := InstanceResizeInstance{}
-	return &this
-}
-
 func (o InstanceResizeInstance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

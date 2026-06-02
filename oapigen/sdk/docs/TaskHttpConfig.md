@@ -32,14 +32,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTaskHttpConfigWithDefaults
-
-`func NewTaskHttpConfigWithDefaults() *TaskHttpConfig`
-
-NewTaskHttpConfigWithDefaults instantiates a new TaskHttpConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetWebPassword
 
 `func (o *TaskHttpConfig) GetWebPassword() string`

@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSuspendInstance200ResponseWithDefaults
-
-`func NewSuspendInstance200ResponseWithDefaults() *SuspendInstance200Response`
-
-NewSuspendInstance200ResponseWithDefaults instantiates a new SuspendInstance200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *SuspendInstance200Response) GetSuccess() bool`

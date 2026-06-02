@@ -26,14 +26,6 @@ type GetGuidanceStats200Response struct {
 
 type _GetGuidanceStats200Response GetGuidanceStats200Response
 
-// NewGetGuidanceStats200ResponseWithDefaults instantiates a new GetGuidanceStats200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetGuidanceStats200ResponseWithDefaults() *GetGuidanceStats200Response {
-	this := GetGuidanceStats200Response{}
-	return &this
-}
-
 func (o GetGuidanceStats200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

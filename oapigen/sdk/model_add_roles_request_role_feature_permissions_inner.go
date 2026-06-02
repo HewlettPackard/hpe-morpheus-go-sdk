@@ -29,14 +29,6 @@ type AddRolesRequestRoleFeaturePermissionsInner struct {
 
 type _AddRolesRequestRoleFeaturePermissionsInner AddRolesRequestRoleFeaturePermissionsInner
 
-// NewAddRolesRequestRoleFeaturePermissionsInnerWithDefaults instantiates a new AddRolesRequestRoleFeaturePermissionsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddRolesRequestRoleFeaturePermissionsInnerWithDefaults() *AddRolesRequestRoleFeaturePermissionsInner {
-	this := AddRolesRequestRoleFeaturePermissionsInner{}
-	return &this
-}
-
 func (o AddRolesRequestRoleFeaturePermissionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

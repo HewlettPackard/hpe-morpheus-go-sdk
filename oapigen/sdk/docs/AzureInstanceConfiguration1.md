@@ -27,14 +27,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAzureInstanceConfiguration1WithDefaults
-
-`func NewAzureInstanceConfiguration1WithDefaults() *AzureInstanceConfiguration1`
-
-NewAzureInstanceConfiguration1WithDefaults instantiates a new AzureInstanceConfiguration1 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetResourcePoolId
 
 `func (o *AzureInstanceConfiguration1) GetResourcePoolId() string`

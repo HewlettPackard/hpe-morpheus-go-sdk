@@ -35,18 +35,6 @@ type AddArchiveBucketRequestArchiveBucket struct {
 
 type _AddArchiveBucketRequestArchiveBucket AddArchiveBucketRequestArchiveBucket
 
-// NewAddArchiveBucketRequestArchiveBucketWithDefaults instantiates a new AddArchiveBucketRequestArchiveBucket object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddArchiveBucketRequestArchiveBucketWithDefaults() *AddArchiveBucketRequestArchiveBucket {
-	this := AddArchiveBucketRequestArchiveBucket{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	var isPublic bool = false
-	this.IsPublic = &isPublic
-	return &this
-}
-
 func (o AddArchiveBucketRequestArchiveBucket) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

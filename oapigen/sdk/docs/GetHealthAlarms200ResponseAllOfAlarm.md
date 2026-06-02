@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetHealthAlarms200ResponseAllOfAlarmWithDefaults
-
-`func NewGetHealthAlarms200ResponseAllOfAlarmWithDefaults() *GetHealthAlarms200ResponseAllOfAlarm`
-
-NewGetHealthAlarms200ResponseAllOfAlarmWithDefaults instantiates a new GetHealthAlarms200ResponseAllOfAlarm object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetHealthAlarms200ResponseAllOfAlarm) GetId() int64`

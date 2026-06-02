@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRequiredNetworkPolicyTypeConfiguration13WithDefaults
-
-`func NewRequiredNetworkPolicyTypeConfiguration13WithDefaults() *RequiredNetworkPolicyTypeConfiguration13`
-
-NewRequiredNetworkPolicyTypeConfiguration13WithDefaults instantiates a new RequiredNetworkPolicyTypeConfiguration13 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetRequiredNetworks
 
 `func (o *RequiredNetworkPolicyTypeConfiguration13) GetRequiredNetworks() []int64`

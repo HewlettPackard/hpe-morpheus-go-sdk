@@ -34,14 +34,6 @@ type OptionTypeFieldGroup struct {
 
 type _OptionTypeFieldGroup OptionTypeFieldGroup
 
-// NewOptionTypeFieldGroupWithDefaults instantiates a new OptionTypeFieldGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOptionTypeFieldGroupWithDefaults() *OptionTypeFieldGroup {
-	this := OptionTypeFieldGroup{}
-	return &this
-}
-
 func (o OptionTypeFieldGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

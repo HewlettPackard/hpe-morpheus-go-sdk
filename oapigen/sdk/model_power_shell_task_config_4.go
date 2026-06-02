@@ -33,14 +33,6 @@ type PowerShellTaskConfig4 struct {
 
 type _PowerShellTaskConfig4 PowerShellTaskConfig4
 
-// NewPowerShellTaskConfig4WithDefaults instantiates a new PowerShellTaskConfig4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPowerShellTaskConfig4WithDefaults() *PowerShellTaskConfig4 {
-	this := PowerShellTaskConfig4{}
-	return &this
-}
-
 func (o PowerShellTaskConfig4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

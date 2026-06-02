@@ -47,14 +47,6 @@ type SQLConfig5 struct {
 
 type _SQLConfig5 SQLConfig5
 
-// NewSQLConfig5WithDefaults instantiates a new SQLConfig5 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSQLConfig5WithDefaults() *SQLConfig5 {
-	this := SQLConfig5{}
-	return &this
-}
-
 func (o SQLConfig5) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

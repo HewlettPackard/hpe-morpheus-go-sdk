@@ -26,14 +26,6 @@ type BackupTargetsPolicyTypeConfiguration4 struct {
 
 type _BackupTargetsPolicyTypeConfiguration4 BackupTargetsPolicyTypeConfiguration4
 
-// NewBackupTargetsPolicyTypeConfiguration4WithDefaults instantiates a new BackupTargetsPolicyTypeConfiguration4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBackupTargetsPolicyTypeConfiguration4WithDefaults() *BackupTargetsPolicyTypeConfiguration4 {
-	this := BackupTargetsPolicyTypeConfiguration4{}
-	return &this
-}
-
 func (o BackupTargetsPolicyTypeConfiguration4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

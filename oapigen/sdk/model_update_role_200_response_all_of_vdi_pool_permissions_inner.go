@@ -28,14 +28,6 @@ type UpdateRole200ResponseAllOfVdiPoolPermissionsInner struct {
 
 type _UpdateRole200ResponseAllOfVdiPoolPermissionsInner UpdateRole200ResponseAllOfVdiPoolPermissionsInner
 
-// NewUpdateRole200ResponseAllOfVdiPoolPermissionsInnerWithDefaults instantiates a new UpdateRole200ResponseAllOfVdiPoolPermissionsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateRole200ResponseAllOfVdiPoolPermissionsInnerWithDefaults() *UpdateRole200ResponseAllOfVdiPoolPermissionsInner {
-	this := UpdateRole200ResponseAllOfVdiPoolPermissionsInner{}
-	return &this
-}
-
 func (o UpdateRole200ResponseAllOfVdiPoolPermissionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

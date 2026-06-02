@@ -26,14 +26,6 @@ type Model404Error struct {
 
 type _Model404Error Model404Error
 
-// NewModel404ErrorWithDefaults instantiates a new Model404Error object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewModel404ErrorWithDefaults() *Model404Error {
-	this := Model404Error{}
-	return &this
-}
-
 func (o Model404Error) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

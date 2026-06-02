@@ -27,14 +27,6 @@ type InstanceUpdate struct {
 
 type _InstanceUpdate InstanceUpdate
 
-// NewInstanceUpdateWithDefaults instantiates a new InstanceUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceUpdateWithDefaults() *InstanceUpdate {
-	this := InstanceUpdate{}
-	return &this
-}
-
 func (o InstanceUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

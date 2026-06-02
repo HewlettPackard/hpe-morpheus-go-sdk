@@ -27,14 +27,6 @@ type GetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy struct 
 
 type _GetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy GetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy
 
-// NewGetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedByWithDefaults instantiates a new GetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedByWithDefaults() *GetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy {
-	this := GetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy{}
-	return &this
-}
-
 func (o GetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

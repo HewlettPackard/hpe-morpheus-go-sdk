@@ -26,14 +26,6 @@ type DeletePowerScheduleServersRequest struct {
 
 type _DeletePowerScheduleServersRequest DeletePowerScheduleServersRequest
 
-// NewDeletePowerScheduleServersRequestWithDefaults instantiates a new DeletePowerScheduleServersRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeletePowerScheduleServersRequestWithDefaults() *DeletePowerScheduleServersRequest {
-	this := DeletePowerScheduleServersRequest{}
-	return &this
-}
-
 func (o DeletePowerScheduleServersRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

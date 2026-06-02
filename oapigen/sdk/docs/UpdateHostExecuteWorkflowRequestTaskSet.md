@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateHostExecuteWorkflowRequestTaskSetWithDefaults
-
-`func NewUpdateHostExecuteWorkflowRequestTaskSetWithDefaults() *UpdateHostExecuteWorkflowRequestTaskSet`
-
-NewUpdateHostExecuteWorkflowRequestTaskSetWithDefaults instantiates a new UpdateHostExecuteWorkflowRequestTaskSet object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetCustomOptions
 
 `func (o *UpdateHostExecuteWorkflowRequestTaskSet) GetCustomOptions() map[string]interface{}`

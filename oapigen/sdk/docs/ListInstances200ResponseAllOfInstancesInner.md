@@ -98,14 +98,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListInstances200ResponseAllOfInstancesInnerWithDefaults
-
-`func NewListInstances200ResponseAllOfInstancesInnerWithDefaults() *ListInstances200ResponseAllOfInstancesInner`
-
-NewListInstances200ResponseAllOfInstancesInnerWithDefaults instantiates a new ListInstances200ResponseAllOfInstancesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListInstances200ResponseAllOfInstancesInner) GetId() int64`

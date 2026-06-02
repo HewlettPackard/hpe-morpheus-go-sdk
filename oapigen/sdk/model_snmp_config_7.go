@@ -49,14 +49,6 @@ type SNMPConfig7 struct {
 
 type _SNMPConfig7 SNMPConfig7
 
-// NewSNMPConfig7WithDefaults instantiates a new SNMPConfig7 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSNMPConfig7WithDefaults() *SNMPConfig7 {
-	this := SNMPConfig7{}
-	return &this
-}
-
 func (o SNMPConfig7) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

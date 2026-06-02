@@ -26,14 +26,6 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer struct {
 
 type _ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer
 
-// NewListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServerWithDefaults instantiates a new ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServerWithDefaults() *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer {
-	this := ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer{}
-	return &this
-}
-
 func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

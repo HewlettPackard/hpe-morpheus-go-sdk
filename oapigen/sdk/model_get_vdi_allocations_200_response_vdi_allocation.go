@@ -37,14 +37,6 @@ type GetVDIAllocations200ResponseVdiAllocation struct {
 
 type _GetVDIAllocations200ResponseVdiAllocation GetVDIAllocations200ResponseVdiAllocation
 
-// NewGetVDIAllocations200ResponseVdiAllocationWithDefaults instantiates a new GetVDIAllocations200ResponseVdiAllocation object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetVDIAllocations200ResponseVdiAllocationWithDefaults() *GetVDIAllocations200ResponseVdiAllocation {
-	this := GetVDIAllocations200ResponseVdiAllocation{}
-	return &this
-}
-
 func (o GetVDIAllocations200ResponseVdiAllocation) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

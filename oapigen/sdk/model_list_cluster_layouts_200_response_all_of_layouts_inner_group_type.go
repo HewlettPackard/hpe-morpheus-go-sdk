@@ -28,14 +28,6 @@ type ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType struct {
 
 type _ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType
 
-// NewListClusterLayouts200ResponseAllOfLayoutsInnerGroupTypeWithDefaults instantiates a new ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterLayouts200ResponseAllOfLayoutsInnerGroupTypeWithDefaults() *ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType {
-	this := ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType{}
-	return &this
-}
-
 func (o ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

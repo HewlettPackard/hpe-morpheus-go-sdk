@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddTasks200ResponseAllOfTaskCredentialWithDefaults
-
-`func NewAddTasks200ResponseAllOfTaskCredentialWithDefaults() *AddTasks200ResponseAllOfTaskCredential`
-
-NewAddTasks200ResponseAllOfTaskCredentialWithDefaults instantiates a new AddTasks200ResponseAllOfTaskCredential object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetType
 
 `func (o *AddTasks200ResponseAllOfTaskCredential) GetType() string`

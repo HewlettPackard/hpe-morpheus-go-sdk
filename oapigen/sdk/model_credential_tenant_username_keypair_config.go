@@ -39,16 +39,6 @@ type CredentialTenantUsernameKeypairConfig struct {
 
 type _CredentialTenantUsernameKeypairConfig CredentialTenantUsernameKeypairConfig
 
-// NewCredentialTenantUsernameKeypairConfigWithDefaults instantiates a new CredentialTenantUsernameKeypairConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCredentialTenantUsernameKeypairConfigWithDefaults() *CredentialTenantUsernameKeypairConfig {
-	this := CredentialTenantUsernameKeypairConfig{}
-	var enabled bool = true
-	this.Enabled = &enabled
-	return &this
-}
-
 func (o CredentialTenantUsernameKeypairConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

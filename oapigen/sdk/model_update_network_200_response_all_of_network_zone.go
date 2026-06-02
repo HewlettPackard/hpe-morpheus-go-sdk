@@ -29,14 +29,6 @@ type UpdateNetwork200ResponseAllOfNetworkZone struct {
 
 type _UpdateNetwork200ResponseAllOfNetworkZone UpdateNetwork200ResponseAllOfNetworkZone
 
-// NewUpdateNetwork200ResponseAllOfNetworkZoneWithDefaults instantiates a new UpdateNetwork200ResponseAllOfNetworkZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetwork200ResponseAllOfNetworkZoneWithDefaults() *UpdateNetwork200ResponseAllOfNetworkZone {
-	this := UpdateNetwork200ResponseAllOfNetworkZone{}
-	return &this
-}
-
 func (o UpdateNetwork200ResponseAllOfNetworkZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type SNMPCheck1AllOfCheckType struct {
 
 type _SNMPCheck1AllOfCheckType SNMPCheck1AllOfCheckType
 
-// NewSNMPCheck1AllOfCheckTypeWithDefaults instantiates a new SNMPCheck1AllOfCheckType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSNMPCheck1AllOfCheckTypeWithDefaults() *SNMPCheck1AllOfCheckType {
-	this := SNMPCheck1AllOfCheckType{}
-	return &this
-}
-
 func (o SNMPCheck1AllOfCheckType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

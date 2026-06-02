@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddBlueprintRequestOneOf2HelmGitWithDefaults
-
-`func NewAddBlueprintRequestOneOf2HelmGitWithDefaults() *AddBlueprintRequestOneOf2HelmGit`
-
-NewAddBlueprintRequestOneOf2HelmGitWithDefaults instantiates a new AddBlueprintRequestOneOf2HelmGit object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetRepoId
 
 `func (o *AddBlueprintRequestOneOf2HelmGit) GetRepoId() int64`

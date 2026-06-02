@@ -27,14 +27,6 @@ type RequiredNetworkPolicyTypeConfiguration16 struct {
 
 type _RequiredNetworkPolicyTypeConfiguration16 RequiredNetworkPolicyTypeConfiguration16
 
-// NewRequiredNetworkPolicyTypeConfiguration16WithDefaults instantiates a new RequiredNetworkPolicyTypeConfiguration16 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRequiredNetworkPolicyTypeConfiguration16WithDefaults() *RequiredNetworkPolicyTypeConfiguration16 {
-	this := RequiredNetworkPolicyTypeConfiguration16{}
-	return &this
-}
-
 func (o RequiredNetworkPolicyTypeConfiguration16) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

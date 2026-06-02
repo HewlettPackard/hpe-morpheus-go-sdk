@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetIntegrations200ResponseAllOfIntegrationOneOf14ConfigWithDefaults
-
-`func NewGetIntegrations200ResponseAllOfIntegrationOneOf14ConfigWithDefaults() *GetIntegrations200ResponseAllOfIntegrationOneOf14Config`
-
-NewGetIntegrations200ResponseAllOfIntegrationOneOf14ConfigWithDefaults instantiates a new GetIntegrations200ResponseAllOfIntegrationOneOf14Config object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSaltApplyOnMinion
 
 `func (o *GetIntegrations200ResponseAllOfIntegrationOneOf14Config) GetSaltApplyOnMinion() bool`

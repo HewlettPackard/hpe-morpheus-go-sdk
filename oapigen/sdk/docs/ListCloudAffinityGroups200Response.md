@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListCloudAffinityGroups200ResponseWithDefaults
-
-`func NewListCloudAffinityGroups200ResponseWithDefaults() *ListCloudAffinityGroups200Response`
-
-NewListCloudAffinityGroups200ResponseWithDefaults instantiates a new ListCloudAffinityGroups200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAffinityGroups
 
 `func (o *ListCloudAffinityGroups200Response) GetAffinityGroups() []ListCloudAffinityGroups200ResponseAllOfAffinityGroupsInner`

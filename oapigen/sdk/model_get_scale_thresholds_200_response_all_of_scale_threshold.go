@@ -45,14 +45,6 @@ type GetScaleThresholds200ResponseAllOfScaleThreshold struct {
 
 type _GetScaleThresholds200ResponseAllOfScaleThreshold GetScaleThresholds200ResponseAllOfScaleThreshold
 
-// NewGetScaleThresholds200ResponseAllOfScaleThresholdWithDefaults instantiates a new GetScaleThresholds200ResponseAllOfScaleThreshold object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetScaleThresholds200ResponseAllOfScaleThresholdWithDefaults() *GetScaleThresholds200ResponseAllOfScaleThreshold {
-	this := GetScaleThresholds200ResponseAllOfScaleThreshold{}
-	return &this
-}
-
 func (o GetScaleThresholds200ResponseAllOfScaleThreshold) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

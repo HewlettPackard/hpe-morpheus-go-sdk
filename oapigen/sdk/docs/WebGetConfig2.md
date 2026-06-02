@@ -23,14 +23,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewWebGetConfig2WithDefaults
-
-`func NewWebGetConfig2WithDefaults() *WebGetConfig2`
-
-NewWebGetConfig2WithDefaults instantiates a new WebGetConfig2 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetWebMethod
 
 `func (o *WebGetConfig2) GetWebMethod() string`

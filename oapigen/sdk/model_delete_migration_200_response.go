@@ -26,14 +26,6 @@ type DeleteMigration200Response struct {
 
 type _DeleteMigration200Response DeleteMigration200Response
 
-// NewDeleteMigration200ResponseWithDefaults instantiates a new DeleteMigration200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteMigration200ResponseWithDefaults() *DeleteMigration200Response {
-	this := DeleteMigration200Response{}
-	return &this
-}
-
 func (o DeleteMigration200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

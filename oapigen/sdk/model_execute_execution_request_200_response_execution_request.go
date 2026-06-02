@@ -43,14 +43,6 @@ type ExecuteExecutionRequest200ResponseExecutionRequest struct {
 
 type _ExecuteExecutionRequest200ResponseExecutionRequest ExecuteExecutionRequest200ResponseExecutionRequest
 
-// NewExecuteExecutionRequest200ResponseExecutionRequestWithDefaults instantiates a new ExecuteExecutionRequest200ResponseExecutionRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewExecuteExecutionRequest200ResponseExecutionRequestWithDefaults() *ExecuteExecutionRequest200ResponseExecutionRequest {
-	this := ExecuteExecutionRequest200ResponseExecutionRequest{}
-	return &this
-}
-
 func (o ExecuteExecutionRequest200ResponseExecutionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

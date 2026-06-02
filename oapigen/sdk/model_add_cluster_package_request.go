@@ -26,14 +26,6 @@ type AddClusterPackageRequest struct {
 
 type _AddClusterPackageRequest AddClusterPackageRequest
 
-// NewAddClusterPackageRequestWithDefaults instantiates a new AddClusterPackageRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterPackageRequestWithDefaults() *AddClusterPackageRequest {
-	this := AddClusterPackageRequest{}
-	return &this
-}
-
 func (o AddClusterPackageRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

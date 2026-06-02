@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddArchiveFile200ResponseWithDefaults
-
-`func NewAddArchiveFile200ResponseWithDefaults() *AddArchiveFile200Response`
-
-NewAddArchiveFile200ResponseWithDefaults instantiates a new AddArchiveFile200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetArchiveFile
 
 `func (o *AddArchiveFile200Response) GetArchiveFile() AddArchiveFile200ResponseAllOfArchiveFile`

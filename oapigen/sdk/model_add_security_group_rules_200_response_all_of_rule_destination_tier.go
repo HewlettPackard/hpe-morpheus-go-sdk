@@ -27,14 +27,6 @@ type AddSecurityGroupRules200ResponseAllOfRuleDestinationTier struct {
 
 type _AddSecurityGroupRules200ResponseAllOfRuleDestinationTier AddSecurityGroupRules200ResponseAllOfRuleDestinationTier
 
-// NewAddSecurityGroupRules200ResponseAllOfRuleDestinationTierWithDefaults instantiates a new AddSecurityGroupRules200ResponseAllOfRuleDestinationTier object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddSecurityGroupRules200ResponseAllOfRuleDestinationTierWithDefaults() *AddSecurityGroupRules200ResponseAllOfRuleDestinationTier {
-	this := AddSecurityGroupRules200ResponseAllOfRuleDestinationTier{}
-	return &this
-}
-
 func (o AddSecurityGroupRules200ResponseAllOfRuleDestinationTier) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

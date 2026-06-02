@@ -29,14 +29,6 @@ type ListClusterIngresses200ResponseAllOfIngressesInner struct {
 
 type _ListClusterIngresses200ResponseAllOfIngressesInner ListClusterIngresses200ResponseAllOfIngressesInner
 
-// NewListClusterIngresses200ResponseAllOfIngressesInnerWithDefaults instantiates a new ListClusterIngresses200ResponseAllOfIngressesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterIngresses200ResponseAllOfIngressesInnerWithDefaults() *ListClusterIngresses200ResponseAllOfIngressesInner {
-	this := ListClusterIngresses200ResponseAllOfIngressesInner{}
-	return &this
-}
-
 func (o ListClusterIngresses200ResponseAllOfIngressesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

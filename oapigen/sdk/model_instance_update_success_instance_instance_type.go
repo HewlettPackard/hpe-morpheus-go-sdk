@@ -27,14 +27,6 @@ type InstanceUpdateSuccessInstanceInstanceType struct {
 
 type _InstanceUpdateSuccessInstanceInstanceType InstanceUpdateSuccessInstanceInstanceType
 
-// NewInstanceUpdateSuccessInstanceInstanceTypeWithDefaults instantiates a new InstanceUpdateSuccessInstanceInstanceType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceUpdateSuccessInstanceInstanceTypeWithDefaults() *InstanceUpdateSuccessInstanceInstanceType {
-	this := InstanceUpdateSuccessInstanceInstanceType{}
-	return &this
-}
-
 func (o InstanceUpdateSuccessInstanceInstanceType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type GetUser200ResponseUserAccount struct {
 
 type _GetUser200ResponseUserAccount GetUser200ResponseUserAccount
 
-// NewGetUser200ResponseUserAccountWithDefaults instantiates a new GetUser200ResponseUserAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetUser200ResponseUserAccountWithDefaults() *GetUser200ResponseUserAccount {
-	this := GetUser200ResponseUserAccount{}
-	return &this
-}
-
 func (o GetUser200ResponseUserAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

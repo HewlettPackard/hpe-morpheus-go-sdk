@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddCypherKey200ResponseAllOfCypherWithDefaults
-
-`func NewAddCypherKey200ResponseAllOfCypherWithDefaults() *AddCypherKey200ResponseAllOfCypher`
-
-NewAddCypherKey200ResponseAllOfCypherWithDefaults instantiates a new AddCypherKey200ResponseAllOfCypher object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddCypherKey200ResponseAllOfCypher) GetId() int32`

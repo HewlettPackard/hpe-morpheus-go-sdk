@@ -58,14 +58,6 @@ type ListHistory200ResponseAllOfProcessesInner struct {
 
 type _ListHistory200ResponseAllOfProcessesInner ListHistory200ResponseAllOfProcessesInner
 
-// NewListHistory200ResponseAllOfProcessesInnerWithDefaults instantiates a new ListHistory200ResponseAllOfProcessesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListHistory200ResponseAllOfProcessesInnerWithDefaults() *ListHistory200ResponseAllOfProcessesInner {
-	this := ListHistory200ResponseAllOfProcessesInner{}
-	return &this
-}
-
 func (o ListHistory200ResponseAllOfProcessesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type FileShareStorageQuotaPolicyTypeConfiguration struct {
 
 type _FileShareStorageQuotaPolicyTypeConfiguration FileShareStorageQuotaPolicyTypeConfiguration
 
-// NewFileShareStorageQuotaPolicyTypeConfigurationWithDefaults instantiates a new FileShareStorageQuotaPolicyTypeConfiguration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewFileShareStorageQuotaPolicyTypeConfigurationWithDefaults() *FileShareStorageQuotaPolicyTypeConfiguration {
-	this := FileShareStorageQuotaPolicyTypeConfiguration{}
-	return &this
-}
-
 func (o FileShareStorageQuotaPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

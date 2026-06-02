@@ -27,14 +27,6 @@ type OptionTypeListCreateCredential struct {
 
 type _OptionTypeListCreateCredential OptionTypeListCreateCredential
 
-// NewOptionTypeListCreateCredentialWithDefaults instantiates a new OptionTypeListCreateCredential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOptionTypeListCreateCredentialWithDefaults() *OptionTypeListCreateCredential {
-	this := OptionTypeListCreateCredential{}
-	return &this
-}
-
 func (o OptionTypeListCreateCredential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

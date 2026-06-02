@@ -26,14 +26,6 @@ type UpdateMigrationRequest struct {
 
 type _UpdateMigrationRequest UpdateMigrationRequest
 
-// NewUpdateMigrationRequestWithDefaults instantiates a new UpdateMigrationRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateMigrationRequestWithDefaults() *UpdateMigrationRequest {
-	this := UpdateMigrationRequest{}
-	return &this
-}
-
 func (o UpdateMigrationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

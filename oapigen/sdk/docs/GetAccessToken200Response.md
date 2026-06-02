@@ -22,14 +22,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetAccessToken200ResponseWithDefaults
-
-`func NewGetAccessToken200ResponseWithDefaults() *GetAccessToken200Response`
-
-NewGetAccessToken200ResponseWithDefaults instantiates a new GetAccessToken200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAccessToken
 
 `func (o *GetAccessToken200Response) GetAccessToken() string`

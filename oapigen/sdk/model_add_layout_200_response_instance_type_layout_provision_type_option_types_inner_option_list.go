@@ -27,14 +27,6 @@ type AddLayout200ResponseInstanceTypeLayoutProvisionTypeOptionTypesInnerOptionLi
 
 type _AddLayout200ResponseInstanceTypeLayoutProvisionTypeOptionTypesInnerOptionList AddLayout200ResponseInstanceTypeLayoutProvisionTypeOptionTypesInnerOptionList
 
-// NewAddLayout200ResponseInstanceTypeLayoutProvisionTypeOptionTypesInnerOptionListWithDefaults instantiates a new AddLayout200ResponseInstanceTypeLayoutProvisionTypeOptionTypesInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLayout200ResponseInstanceTypeLayoutProvisionTypeOptionTypesInnerOptionListWithDefaults() *AddLayout200ResponseInstanceTypeLayoutProvisionTypeOptionTypesInnerOptionList {
-	this := AddLayout200ResponseInstanceTypeLayoutProvisionTypeOptionTypesInnerOptionList{}
-	return &this
-}
-
 func (o AddLayout200ResponseInstanceTypeLayoutProvisionTypeOptionTypesInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

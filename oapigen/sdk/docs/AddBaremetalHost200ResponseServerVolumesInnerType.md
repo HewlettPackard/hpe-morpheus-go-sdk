@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddBaremetalHost200ResponseServerVolumesInnerTypeWithDefaults
-
-`func NewAddBaremetalHost200ResponseServerVolumesInnerTypeWithDefaults() *AddBaremetalHost200ResponseServerVolumesInnerType`
-
-NewAddBaremetalHost200ResponseServerVolumesInnerTypeWithDefaults instantiates a new AddBaremetalHost200ResponseServerVolumesInnerType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddBaremetalHost200ResponseServerVolumesInnerType) GetId() int64`

@@ -21,14 +21,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddIntegrationsRequestOneOf2IntegrationConfigWithDefaults
-
-`func NewAddIntegrationsRequestOneOf2IntegrationConfigWithDefaults() *AddIntegrationsRequestOneOf2IntegrationConfig`
-
-NewAddIntegrationsRequestOneOf2IntegrationConfigWithDefaults instantiates a new AddIntegrationsRequestOneOf2IntegrationConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetServiceNowCustomCmdbMapping
 
 `func (o *AddIntegrationsRequestOneOf2IntegrationConfig) GetServiceNowCustomCmdbMapping() []map[string]interface{}`

@@ -26,14 +26,6 @@ type DeleteOptionList200Response struct {
 
 type _DeleteOptionList200Response DeleteOptionList200Response
 
-// NewDeleteOptionList200ResponseWithDefaults instantiates a new DeleteOptionList200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteOptionList200ResponseWithDefaults() *DeleteOptionList200Response {
-	this := DeleteOptionList200Response{}
-	return &this
-}
-
 func (o DeleteOptionList200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

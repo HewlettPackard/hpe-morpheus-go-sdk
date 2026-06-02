@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetAppState200ResponseAllOfInputDataInnerWithDefaults
-
-`func NewGetAppState200ResponseAllOfInputDataInnerWithDefaults() *GetAppState200ResponseAllOfInputDataInner`
-
-NewGetAppState200ResponseAllOfInputDataInnerWithDefaults instantiates a new GetAppState200ResponseAllOfInputDataInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetKey
 
 `func (o *GetAppState200ResponseAllOfInputDataInner) GetKey() string`

@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddStorageServers200ResponseAllOfStorageServerHostsInnerWithDefaults
-
-`func NewAddStorageServers200ResponseAllOfStorageServerHostsInnerWithDefaults() *AddStorageServers200ResponseAllOfStorageServerHostsInner`
-
-NewAddStorageServers200ResponseAllOfStorageServerHostsInnerWithDefaults instantiates a new AddStorageServers200ResponseAllOfStorageServerHostsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddStorageServers200ResponseAllOfStorageServerHostsInner) GetId() int64`

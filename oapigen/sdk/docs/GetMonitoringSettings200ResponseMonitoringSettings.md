@@ -21,14 +21,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetMonitoringSettings200ResponseMonitoringSettingsWithDefaults
-
-`func NewGetMonitoringSettings200ResponseMonitoringSettingsWithDefaults() *GetMonitoringSettings200ResponseMonitoringSettings`
-
-NewGetMonitoringSettings200ResponseMonitoringSettingsWithDefaults instantiates a new GetMonitoringSettings200ResponseMonitoringSettings object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAutoManageChecks
 
 `func (o *GetMonitoringSettings200ResponseMonitoringSettings) GetAutoManageChecks() bool`

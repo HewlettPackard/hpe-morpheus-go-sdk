@@ -35,14 +35,6 @@ type AddUninitializedSystemRequestSystemComponentsInner struct {
 
 type _AddUninitializedSystemRequestSystemComponentsInner AddUninitializedSystemRequestSystemComponentsInner
 
-// NewAddUninitializedSystemRequestSystemComponentsInnerWithDefaults instantiates a new AddUninitializedSystemRequestSystemComponentsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddUninitializedSystemRequestSystemComponentsInnerWithDefaults() *AddUninitializedSystemRequestSystemComponentsInner {
-	this := AddUninitializedSystemRequestSystemComponentsInner{}
-	return &this
-}
-
 func (o AddUninitializedSystemRequestSystemComponentsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

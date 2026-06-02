@@ -26,14 +26,6 @@ type UpdateApprovalsItem200Response struct {
 
 type _UpdateApprovalsItem200Response UpdateApprovalsItem200Response
 
-// NewUpdateApprovalsItem200ResponseWithDefaults instantiates a new UpdateApprovalsItem200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateApprovalsItem200ResponseWithDefaults() *UpdateApprovalsItem200Response {
-	this := UpdateApprovalsItem200Response{}
-	return &this
-}
-
 func (o UpdateApprovalsItem200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -30,14 +30,6 @@ type GetDatastores200ResponseAllOfDatastoreDatastoreType struct {
 
 type _GetDatastores200ResponseAllOfDatastoreDatastoreType GetDatastores200ResponseAllOfDatastoreDatastoreType
 
-// NewGetDatastores200ResponseAllOfDatastoreDatastoreTypeWithDefaults instantiates a new GetDatastores200ResponseAllOfDatastoreDatastoreType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetDatastores200ResponseAllOfDatastoreDatastoreTypeWithDefaults() *GetDatastores200ResponseAllOfDatastoreDatastoreType {
-	this := GetDatastores200ResponseAllOfDatastoreDatastoreType{}
-	return &this
-}
-
 func (o GetDatastores200ResponseAllOfDatastoreDatastoreType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

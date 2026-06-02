@@ -33,14 +33,6 @@ type UpdateBlueprintRequestOneOfArmGit struct {
 
 type _UpdateBlueprintRequestOneOfArmGit UpdateBlueprintRequestOneOfArmGit
 
-// NewUpdateBlueprintRequestOneOfArmGitWithDefaults instantiates a new UpdateBlueprintRequestOneOfArmGit object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBlueprintRequestOneOfArmGitWithDefaults() *UpdateBlueprintRequestOneOfArmGit {
-	this := UpdateBlueprintRequestOneOfArmGit{}
-	return &this
-}
-
 func (o UpdateBlueprintRequestOneOfArmGit) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

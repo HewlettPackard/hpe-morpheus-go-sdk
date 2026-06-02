@@ -27,14 +27,6 @@ type GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerType
 
 type _GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage
 
-// NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImageWithDefaults instantiates a new GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImageWithDefaults() *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage {
-	this := GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage{}
-	return &this
-}
-
 func (o GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

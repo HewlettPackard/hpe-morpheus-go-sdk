@@ -48,14 +48,6 @@ type GetNetworkRoutersNats200ResponseNetworkRouterNATsInner struct {
 
 type _GetNetworkRoutersNats200ResponseNetworkRouterNATsInner GetNetworkRoutersNats200ResponseNetworkRouterNATsInner
 
-// NewGetNetworkRoutersNats200ResponseNetworkRouterNATsInnerWithDefaults instantiates a new GetNetworkRoutersNats200ResponseNetworkRouterNATsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkRoutersNats200ResponseNetworkRouterNATsInnerWithDefaults() *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner {
-	this := GetNetworkRoutersNats200ResponseNetworkRouterNATsInner{}
-	return &this
-}
-
 func (o GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

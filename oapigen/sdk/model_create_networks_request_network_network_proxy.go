@@ -27,14 +27,6 @@ type CreateNetworksRequestNetworkNetworkProxy struct {
 
 type _CreateNetworksRequestNetworkNetworkProxy CreateNetworksRequestNetworkNetworkProxy
 
-// NewCreateNetworksRequestNetworkNetworkProxyWithDefaults instantiates a new CreateNetworksRequestNetworkNetworkProxy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworksRequestNetworkNetworkProxyWithDefaults() *CreateNetworksRequestNetworkNetworkProxy {
-	this := CreateNetworksRequestNetworkNetworkProxy{}
-	return &this
-}
-
 func (o CreateNetworksRequestNetworkNetworkProxy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

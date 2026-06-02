@@ -27,14 +27,6 @@ type ClusterCreateTypeOneOf struct {
 
 type _ClusterCreateTypeOneOf ClusterCreateTypeOneOf
 
-// NewClusterCreateTypeOneOfWithDefaults instantiates a new ClusterCreateTypeOneOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterCreateTypeOneOfWithDefaults() *ClusterCreateTypeOneOf {
-	this := ClusterCreateTypeOneOf{}
-	return &this
-}
-
 func (o ClusterCreateTypeOneOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

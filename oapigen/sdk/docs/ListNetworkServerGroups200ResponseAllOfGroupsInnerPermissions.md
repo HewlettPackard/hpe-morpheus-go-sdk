@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsWithDefaults
-
-`func NewListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsWithDefaults() *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions`
-
-NewListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsWithDefaults instantiates a new ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetResourcePool
 
 `func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) GetResourcePool() ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePool`

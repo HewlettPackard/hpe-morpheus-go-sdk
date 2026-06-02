@@ -31,14 +31,6 @@ type ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInne
 
 type _ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore
 
-// NewListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastoreWithDefaults instantiates a new ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastoreWithDefaults() *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore {
-	this := ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore{}
-	return &this
-}
-
 func (o ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

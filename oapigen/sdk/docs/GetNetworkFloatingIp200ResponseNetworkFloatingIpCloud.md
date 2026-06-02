@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNetworkFloatingIp200ResponseNetworkFloatingIpCloudWithDefaults
-
-`func NewGetNetworkFloatingIp200ResponseNetworkFloatingIpCloudWithDefaults() *GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud`
-
-NewGetNetworkFloatingIp200ResponseNetworkFloatingIpCloudWithDefaults instantiates a new GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud) GetId() int64`

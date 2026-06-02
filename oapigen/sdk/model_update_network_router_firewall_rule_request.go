@@ -26,14 +26,6 @@ type UpdateNetworkRouterFirewallRuleRequest struct {
 
 type _UpdateNetworkRouterFirewallRuleRequest UpdateNetworkRouterFirewallRuleRequest
 
-// NewUpdateNetworkRouterFirewallRuleRequestWithDefaults instantiates a new UpdateNetworkRouterFirewallRuleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkRouterFirewallRuleRequestWithDefaults() *UpdateNetworkRouterFirewallRuleRequest {
-	this := UpdateNetworkRouterFirewallRuleRequest{}
-	return &this
-}
-
 func (o UpdateNetworkRouterFirewallRuleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

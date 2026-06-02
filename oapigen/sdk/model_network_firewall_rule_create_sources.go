@@ -26,14 +26,6 @@ type NetworkFirewallRuleCreateSources struct {
 
 type _NetworkFirewallRuleCreateSources NetworkFirewallRuleCreateSources
 
-// NewNetworkFirewallRuleCreateSourcesWithDefaults instantiates a new NetworkFirewallRuleCreateSources object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkFirewallRuleCreateSourcesWithDefaults() *NetworkFirewallRuleCreateSources {
-	this := NetworkFirewallRuleCreateSources{}
-	return &this
-}
-
 func (o NetworkFirewallRuleCreateSources) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

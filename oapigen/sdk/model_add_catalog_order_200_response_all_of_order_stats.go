@@ -28,14 +28,6 @@ type AddCatalogOrder200ResponseAllOfOrderStats struct {
 
 type _AddCatalogOrder200ResponseAllOfOrderStats AddCatalogOrder200ResponseAllOfOrderStats
 
-// NewAddCatalogOrder200ResponseAllOfOrderStatsWithDefaults instantiates a new AddCatalogOrder200ResponseAllOfOrderStats object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCatalogOrder200ResponseAllOfOrderStatsWithDefaults() *AddCatalogOrder200ResponseAllOfOrderStats {
-	this := AddCatalogOrder200ResponseAllOfOrderStats{}
-	return &this
-}
-
 func (o AddCatalogOrder200ResponseAllOfOrderStats) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -43,14 +43,6 @@ type SnapshotsInstance200ResponseSnapshotsInner struct {
 
 type _SnapshotsInstance200ResponseSnapshotsInner SnapshotsInstance200ResponseSnapshotsInner
 
-// NewSnapshotsInstance200ResponseSnapshotsInnerWithDefaults instantiates a new SnapshotsInstance200ResponseSnapshotsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSnapshotsInstance200ResponseSnapshotsInnerWithDefaults() *SnapshotsInstance200ResponseSnapshotsInner {
-	this := SnapshotsInstance200ResponseSnapshotsInner{}
-	return &this
-}
-
 func (o SnapshotsInstance200ResponseSnapshotsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

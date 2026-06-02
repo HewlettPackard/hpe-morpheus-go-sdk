@@ -33,14 +33,6 @@ type ClusterWorkerStats struct {
 
 type _ClusterWorkerStats ClusterWorkerStats
 
-// NewClusterWorkerStatsWithDefaults instantiates a new ClusterWorkerStats object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterWorkerStatsWithDefaults() *ClusterWorkerStats {
-	this := ClusterWorkerStats{}
-	return &this
-}
-
 func (o ClusterWorkerStats) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

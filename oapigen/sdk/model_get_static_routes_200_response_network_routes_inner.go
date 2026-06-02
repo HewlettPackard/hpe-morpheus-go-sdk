@@ -43,14 +43,6 @@ type GetStaticRoutes200ResponseNetworkRoutesInner struct {
 
 type _GetStaticRoutes200ResponseNetworkRoutesInner GetStaticRoutes200ResponseNetworkRoutesInner
 
-// NewGetStaticRoutes200ResponseNetworkRoutesInnerWithDefaults instantiates a new GetStaticRoutes200ResponseNetworkRoutesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetStaticRoutes200ResponseNetworkRoutesInnerWithDefaults() *GetStaticRoutes200ResponseNetworkRoutesInner {
-	this := GetStaticRoutes200ResponseNetworkRoutesInner{}
-	return &this
-}
-
 func (o GetStaticRoutes200ResponseNetworkRoutesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSetApplianceSettingsMaintenanceMode200ResponseWithDefaults
-
-`func NewSetApplianceSettingsMaintenanceMode200ResponseWithDefaults() *SetApplianceSettingsMaintenanceMode200Response`
-
-NewSetApplianceSettingsMaintenanceMode200ResponseWithDefaults instantiates a new SetApplianceSettingsMaintenanceMode200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *SetApplianceSettingsMaintenanceMode200Response) GetSuccess() bool`

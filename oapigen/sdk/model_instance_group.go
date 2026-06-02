@@ -27,14 +27,6 @@ type InstanceGroup struct {
 
 type _InstanceGroup InstanceGroup
 
-// NewInstanceGroupWithDefaults instantiates a new InstanceGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceGroupWithDefaults() *InstanceGroup {
-	this := InstanceGroup{}
-	return &this
-}
-
 func (o InstanceGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -50,16 +50,6 @@ type UpdateImageBuildRequestImageBuild struct {
 
 type _UpdateImageBuildRequestImageBuild UpdateImageBuildRequestImageBuild
 
-// NewUpdateImageBuildRequestImageBuildWithDefaults instantiates a new UpdateImageBuildRequestImageBuild object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateImageBuildRequestImageBuildWithDefaults() *UpdateImageBuildRequestImageBuild {
-	this := UpdateImageBuildRequestImageBuild{}
-	var keepResults int64 = 0
-	this.KeepResults = &keepResults
-	return &this
-}
-
 func (o UpdateImageBuildRequestImageBuild) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

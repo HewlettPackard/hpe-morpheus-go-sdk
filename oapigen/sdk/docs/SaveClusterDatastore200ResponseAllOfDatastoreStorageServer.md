@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSaveClusterDatastore200ResponseAllOfDatastoreStorageServerWithDefaults
-
-`func NewSaveClusterDatastore200ResponseAllOfDatastoreStorageServerWithDefaults() *SaveClusterDatastore200ResponseAllOfDatastoreStorageServer`
-
-NewSaveClusterDatastore200ResponseAllOfDatastoreStorageServerWithDefaults instantiates a new SaveClusterDatastore200ResponseAllOfDatastoreStorageServer object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *SaveClusterDatastore200ResponseAllOfDatastoreStorageServer) GetId() int64`

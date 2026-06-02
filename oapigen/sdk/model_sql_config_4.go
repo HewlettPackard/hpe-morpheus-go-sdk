@@ -47,14 +47,6 @@ type SQLConfig4 struct {
 
 type _SQLConfig4 SQLConfig4
 
-// NewSQLConfig4WithDefaults instantiates a new SQLConfig4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSQLConfig4WithDefaults() *SQLConfig4 {
-	this := SQLConfig4{}
-	return &this
-}
-
 func (o SQLConfig4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

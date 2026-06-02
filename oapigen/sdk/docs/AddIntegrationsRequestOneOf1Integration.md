@@ -26,14 +26,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddIntegrationsRequestOneOf1IntegrationWithDefaults
-
-`func NewAddIntegrationsRequestOneOf1IntegrationWithDefaults() *AddIntegrationsRequestOneOf1Integration`
-
-NewAddIntegrationsRequestOneOf1IntegrationWithDefaults instantiates a new AddIntegrationsRequestOneOf1Integration object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetName
 
 `func (o *AddIntegrationsRequestOneOf1Integration) GetName() string`

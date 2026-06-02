@@ -36,14 +36,6 @@ type UpdateBlueprint200ResponseBlueprint struct {
 
 type _UpdateBlueprint200ResponseBlueprint UpdateBlueprint200ResponseBlueprint
 
-// NewUpdateBlueprint200ResponseBlueprintWithDefaults instantiates a new UpdateBlueprint200ResponseBlueprint object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBlueprint200ResponseBlueprintWithDefaults() *UpdateBlueprint200ResponseBlueprint {
-	this := UpdateBlueprint200ResponseBlueprint{}
-	return &this
-}
-
 func (o UpdateBlueprint200ResponseBlueprint) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

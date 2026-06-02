@@ -40,16 +40,6 @@ type ClusterAffinityGroupCreate struct {
 
 type _ClusterAffinityGroupCreate ClusterAffinityGroupCreate
 
-// NewClusterAffinityGroupCreateWithDefaults instantiates a new ClusterAffinityGroupCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterAffinityGroupCreateWithDefaults() *ClusterAffinityGroupCreate {
-	this := ClusterAffinityGroupCreate{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o ClusterAffinityGroupCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

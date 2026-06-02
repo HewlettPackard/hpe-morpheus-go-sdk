@@ -36,14 +36,6 @@ type UserPermissions struct {
 
 type _UserPermissions UserPermissions
 
-// NewUserPermissionsWithDefaults instantiates a new UserPermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserPermissionsWithDefaults() *UserPermissions {
-	this := UserPermissions{}
-	return &this
-}
-
 func (o UserPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

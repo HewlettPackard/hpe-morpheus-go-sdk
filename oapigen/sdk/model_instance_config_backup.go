@@ -29,14 +29,6 @@ type InstanceConfigBackup struct {
 
 type _InstanceConfigBackup InstanceConfigBackup
 
-// NewInstanceConfigBackupWithDefaults instantiates a new InstanceConfigBackup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigBackupWithDefaults() *InstanceConfigBackup {
-	this := InstanceConfigBackup{}
-	return &this
-}
-
 func (o InstanceConfigBackup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

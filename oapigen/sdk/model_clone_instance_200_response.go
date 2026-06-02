@@ -26,14 +26,6 @@ type CloneInstance200Response struct {
 
 type _CloneInstance200Response CloneInstance200Response
 
-// NewCloneInstance200ResponseWithDefaults instantiates a new CloneInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCloneInstance200ResponseWithDefaults() *CloneInstance200Response {
-	this := CloneInstance200Response{}
-	return &this
-}
-
 func (o CloneInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

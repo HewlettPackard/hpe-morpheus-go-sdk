@@ -26,14 +26,6 @@ type ClusterServerCreateConfigEKSWorkerRole struct {
 
 type _ClusterServerCreateConfigEKSWorkerRole ClusterServerCreateConfigEKSWorkerRole
 
-// NewClusterServerCreateConfigEKSWorkerRoleWithDefaults instantiates a new ClusterServerCreateConfigEKSWorkerRole object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterServerCreateConfigEKSWorkerRoleWithDefaults() *ClusterServerCreateConfigEKSWorkerRole {
-	this := ClusterServerCreateConfigEKSWorkerRole{}
-	return &this
-}
-
 func (o ClusterServerCreateConfigEKSWorkerRole) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

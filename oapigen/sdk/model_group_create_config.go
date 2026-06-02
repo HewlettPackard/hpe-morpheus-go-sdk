@@ -37,14 +37,6 @@ type GroupCreateConfig struct {
 
 type _GroupCreateConfig GroupCreateConfig
 
-// NewGroupCreateConfigWithDefaults instantiates a new GroupCreateConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGroupCreateConfigWithDefaults() *GroupCreateConfig {
-	this := GroupCreateConfig{}
-	return &this
-}
-
 func (o GroupCreateConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

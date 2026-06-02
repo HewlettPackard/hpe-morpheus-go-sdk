@@ -26,14 +26,6 @@ type RouterQuotaPolicyTypeConfiguration8 struct {
 
 type _RouterQuotaPolicyTypeConfiguration8 RouterQuotaPolicyTypeConfiguration8
 
-// NewRouterQuotaPolicyTypeConfiguration8WithDefaults instantiates a new RouterQuotaPolicyTypeConfiguration8 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRouterQuotaPolicyTypeConfiguration8WithDefaults() *RouterQuotaPolicyTypeConfiguration8 {
-	this := RouterQuotaPolicyTypeConfiguration8{}
-	return &this
-}
-
 func (o RouterQuotaPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

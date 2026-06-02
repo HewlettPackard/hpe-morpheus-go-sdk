@@ -56,14 +56,6 @@ type AddNodeTypeRequestContainerType struct {
 
 type _AddNodeTypeRequestContainerType AddNodeTypeRequestContainerType
 
-// NewAddNodeTypeRequestContainerTypeWithDefaults instantiates a new AddNodeTypeRequestContainerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddNodeTypeRequestContainerTypeWithDefaults() *AddNodeTypeRequestContainerType {
-	this := AddNodeTypeRequestContainerType{}
-	return &this
-}
-
 func (o AddNodeTypeRequestContainerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -37,14 +37,6 @@ type AccessToken struct {
 
 type _AccessToken AccessToken
 
-// NewAccessTokenWithDefaults instantiates a new AccessToken object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAccessTokenWithDefaults() *AccessToken {
-	this := AccessToken{}
-	return &this
-}
-
 func (o AccessToken) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

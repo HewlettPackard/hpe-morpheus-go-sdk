@@ -21,14 +21,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetArchiveBucket200ResponseWithDefaults
-
-`func NewGetArchiveBucket200ResponseWithDefaults() *GetArchiveBucket200Response`
-
-NewGetArchiveBucket200ResponseWithDefaults instantiates a new GetArchiveBucket200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetArchiveBucket
 
 `func (o *GetArchiveBucket200Response) GetArchiveBucket() GetArchiveBucket200ResponseArchiveBucket`

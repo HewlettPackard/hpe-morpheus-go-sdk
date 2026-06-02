@@ -28,14 +28,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListHealthLogs200ResponseAllOfLogsInnerWithDefaults
-
-`func NewListHealthLogs200ResponseAllOfLogsInnerWithDefaults() *ListHealthLogs200ResponseAllOfLogsInner`
-
-NewListHealthLogs200ResponseAllOfLogsInnerWithDefaults instantiates a new ListHealthLogs200ResponseAllOfLogsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetTypeCode
 
 `func (o *ListHealthLogs200ResponseAllOfLogsInner) GetTypeCode() string`

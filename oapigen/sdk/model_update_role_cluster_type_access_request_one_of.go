@@ -29,14 +29,6 @@ type UpdateRoleClusterTypeAccessRequestOneOf struct {
 
 type _UpdateRoleClusterTypeAccessRequestOneOf UpdateRoleClusterTypeAccessRequestOneOf
 
-// NewUpdateRoleClusterTypeAccessRequestOneOfWithDefaults instantiates a new UpdateRoleClusterTypeAccessRequestOneOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateRoleClusterTypeAccessRequestOneOfWithDefaults() *UpdateRoleClusterTypeAccessRequestOneOf {
-	this := UpdateRoleClusterTypeAccessRequestOneOf{}
-	return &this
-}
-
 func (o UpdateRoleClusterTypeAccessRequestOneOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

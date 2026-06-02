@@ -34,16 +34,6 @@ type UpdateSpecTemplateRequestSpecTemplateFile struct {
 
 type _UpdateSpecTemplateRequestSpecTemplateFile UpdateSpecTemplateRequestSpecTemplateFile
 
-// NewUpdateSpecTemplateRequestSpecTemplateFileWithDefaults instantiates a new UpdateSpecTemplateRequestSpecTemplateFile object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateSpecTemplateRequestSpecTemplateFileWithDefaults() *UpdateSpecTemplateRequestSpecTemplateFile {
-	this := UpdateSpecTemplateRequestSpecTemplateFile{}
-	var sourceType string = "local"
-	this.SourceType = &sourceType
-	return &this
-}
-
 func (o UpdateSpecTemplateRequestSpecTemplateFile) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

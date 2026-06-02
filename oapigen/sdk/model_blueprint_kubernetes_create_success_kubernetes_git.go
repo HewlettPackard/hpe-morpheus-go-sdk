@@ -33,14 +33,6 @@ type BlueprintKubernetesCreateSuccessKubernetesGit struct {
 
 type _BlueprintKubernetesCreateSuccessKubernetesGit BlueprintKubernetesCreateSuccessKubernetesGit
 
-// NewBlueprintKubernetesCreateSuccessKubernetesGitWithDefaults instantiates a new BlueprintKubernetesCreateSuccessKubernetesGit object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintKubernetesCreateSuccessKubernetesGitWithDefaults() *BlueprintKubernetesCreateSuccessKubernetesGit {
-	this := BlueprintKubernetesCreateSuccessKubernetesGit{}
-	return &this
-}
-
 func (o BlueprintKubernetesCreateSuccessKubernetesGit) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

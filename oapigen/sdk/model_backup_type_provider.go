@@ -44,14 +44,6 @@ type BackupTypeProvider struct {
 
 type _BackupTypeProvider BackupTypeProvider
 
-// NewBackupTypeProviderWithDefaults instantiates a new BackupTypeProvider object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBackupTypeProviderWithDefaults() *BackupTypeProvider {
-	this := BackupTypeProvider{}
-	return &this
-}
-
 func (o BackupTypeProvider) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

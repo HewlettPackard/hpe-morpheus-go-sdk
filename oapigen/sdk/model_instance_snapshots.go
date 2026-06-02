@@ -27,14 +27,6 @@ type InstanceSnapshots struct {
 
 type _InstanceSnapshots InstanceSnapshots
 
-// NewInstanceSnapshotsWithDefaults instantiates a new InstanceSnapshots object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceSnapshotsWithDefaults() *InstanceSnapshots {
-	this := InstanceSnapshots{}
-	return &this
-}
-
 func (o InstanceSnapshots) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

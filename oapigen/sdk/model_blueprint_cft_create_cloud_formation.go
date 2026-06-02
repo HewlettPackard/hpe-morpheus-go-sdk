@@ -42,24 +42,6 @@ type BlueprintCFTCreateCloudFormation struct {
 
 type _BlueprintCFTCreateCloudFormation BlueprintCFTCreateCloudFormation
 
-// NewBlueprintCFTCreateCloudFormationWithDefaults instantiates a new BlueprintCFTCreateCloudFormation object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintCFTCreateCloudFormationWithDefaults() *BlueprintCFTCreateCloudFormation {
-	this := BlueprintCFTCreateCloudFormation{}
-	var iAM bool = false
-	this.IAM = &iAM
-	var cAPABILITYNAMEDIAM bool = false
-	this.CAPABILITY_NAMED_IAM = &cAPABILITYNAMEDIAM
-	var cAPABILITYAUTOEXPAND bool = false
-	this.CAPABILITY_AUTO_EXPAND = &cAPABILITYAUTOEXPAND
-	var installAgent bool = false
-	this.InstallAgent = &installAgent
-	var cloudInitEnabled bool = false
-	this.CloudInitEnabled = &cloudInitEnabled
-	return &this
-}
-
 func (o BlueprintCFTCreateCloudFormation) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

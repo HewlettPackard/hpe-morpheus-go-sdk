@@ -29,14 +29,6 @@ type UpdateInstanceNetworkInterface200ResponseAllOfOneOf struct {
 
 type _UpdateInstanceNetworkInterface200ResponseAllOfOneOf UpdateInstanceNetworkInterface200ResponseAllOfOneOf
 
-// NewUpdateInstanceNetworkInterface200ResponseAllOfOneOfWithDefaults instantiates a new UpdateInstanceNetworkInterface200ResponseAllOfOneOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstanceNetworkInterface200ResponseAllOfOneOfWithDefaults() *UpdateInstanceNetworkInterface200ResponseAllOfOneOf {
-	this := UpdateInstanceNetworkInterface200ResponseAllOfOneOf{}
-	return &this
-}
-
 func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

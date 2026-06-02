@@ -59,16 +59,6 @@ type SNMPCheckAllOfConfig struct {
 
 type _SNMPCheckAllOfConfig SNMPCheckAllOfConfig
 
-// NewSNMPCheckAllOfConfigWithDefaults instantiates a new SNMPCheckAllOfConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSNMPCheckAllOfConfigWithDefaults() *SNMPCheckAllOfConfig {
-	this := SNMPCheckAllOfConfig{}
-	var tunnelOn string = "off"
-	this.TunnelOn = &tunnelOn
-	return &this
-}
-
 func (o SNMPCheckAllOfConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

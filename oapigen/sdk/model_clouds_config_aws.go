@@ -56,14 +56,6 @@ type CloudsConfigAWS struct {
 
 type _CloudsConfigAWS CloudsConfigAWS
 
-// NewCloudsConfigAWSWithDefaults instantiates a new CloudsConfigAWS object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCloudsConfigAWSWithDefaults() *CloudsConfigAWS {
-	this := CloudsConfigAWS{}
-	return &this
-}
-
 func (o CloudsConfigAWS) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

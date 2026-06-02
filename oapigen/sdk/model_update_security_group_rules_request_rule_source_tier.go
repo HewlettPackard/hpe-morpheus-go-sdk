@@ -27,14 +27,6 @@ type UpdateSecurityGroupRulesRequestRuleSourceTier struct {
 
 type _UpdateSecurityGroupRulesRequestRuleSourceTier UpdateSecurityGroupRulesRequestRuleSourceTier
 
-// NewUpdateSecurityGroupRulesRequestRuleSourceTierWithDefaults instantiates a new UpdateSecurityGroupRulesRequestRuleSourceTier object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateSecurityGroupRulesRequestRuleSourceTierWithDefaults() *UpdateSecurityGroupRulesRequestRuleSourceTier {
-	this := UpdateSecurityGroupRulesRequestRuleSourceTier{}
-	return &this
-}
-
 func (o UpdateSecurityGroupRulesRequestRuleSourceTier) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

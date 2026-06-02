@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewDeleteLoadBalancerPoolNode200ResponseWithDefaults
-
-`func NewDeleteLoadBalancerPoolNode200ResponseWithDefaults() *DeleteLoadBalancerPoolNode200Response`
-
-NewDeleteLoadBalancerPoolNode200ResponseWithDefaults instantiates a new DeleteLoadBalancerPoolNode200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *DeleteLoadBalancerPoolNode200Response) GetSuccess() bool`

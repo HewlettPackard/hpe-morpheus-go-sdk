@@ -27,14 +27,6 @@ type GetNetworkProxy200ResponseNetworkProxyAccount struct {
 
 type _GetNetworkProxy200ResponseNetworkProxyAccount GetNetworkProxy200ResponseNetworkProxyAccount
 
-// NewGetNetworkProxy200ResponseNetworkProxyAccountWithDefaults instantiates a new GetNetworkProxy200ResponseNetworkProxyAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkProxy200ResponseNetworkProxyAccountWithDefaults() *GetNetworkProxy200ResponseNetworkProxyAccount {
-	this := GetNetworkProxy200ResponseNetworkProxyAccount{}
-	return &this
-}
-
 func (o GetNetworkProxy200ResponseNetworkProxyAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

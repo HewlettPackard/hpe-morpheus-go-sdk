@@ -27,14 +27,6 @@ type UpdateHostResize200ResponseAllOfServerInterfacesInnerNetworkDomain struct {
 
 type _UpdateHostResize200ResponseAllOfServerInterfacesInnerNetworkDomain UpdateHostResize200ResponseAllOfServerInterfacesInnerNetworkDomain
 
-// NewUpdateHostResize200ResponseAllOfServerInterfacesInnerNetworkDomainWithDefaults instantiates a new UpdateHostResize200ResponseAllOfServerInterfacesInnerNetworkDomain object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateHostResize200ResponseAllOfServerInterfacesInnerNetworkDomainWithDefaults() *UpdateHostResize200ResponseAllOfServerInterfacesInnerNetworkDomain {
-	this := UpdateHostResize200ResponseAllOfServerInterfacesInnerNetworkDomain{}
-	return &this
-}
-
 func (o UpdateHostResize200ResponseAllOfServerInterfacesInnerNetworkDomain) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

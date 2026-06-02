@@ -26,14 +26,6 @@ type AddPowerSchedulesRequest struct {
 
 type _AddPowerSchedulesRequest AddPowerSchedulesRequest
 
-// NewAddPowerSchedulesRequestWithDefaults instantiates a new AddPowerSchedulesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPowerSchedulesRequestWithDefaults() *AddPowerSchedulesRequest {
-	this := AddPowerSchedulesRequest{}
-	return &this
-}
-
 func (o AddPowerSchedulesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

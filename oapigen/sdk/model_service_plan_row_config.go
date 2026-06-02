@@ -28,14 +28,6 @@ type ServicePlanRowConfig struct {
 
 type _ServicePlanRowConfig ServicePlanRowConfig
 
-// NewServicePlanRowConfigWithDefaults instantiates a new ServicePlanRowConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewServicePlanRowConfigWithDefaults() *ServicePlanRowConfig {
-	this := ServicePlanRowConfig{}
-	return &this
-}
-
 func (o ServicePlanRowConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

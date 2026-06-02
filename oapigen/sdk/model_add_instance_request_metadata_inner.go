@@ -27,14 +27,6 @@ type AddInstanceRequestMetadataInner struct {
 
 type _AddInstanceRequestMetadataInner AddInstanceRequestMetadataInner
 
-// NewAddInstanceRequestMetadataInnerWithDefaults instantiates a new AddInstanceRequestMetadataInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstanceRequestMetadataInnerWithDefaults() *AddInstanceRequestMetadataInner {
-	this := AddInstanceRequestMetadataInner{}
-	return &this
-}
-
 func (o AddInstanceRequestMetadataInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

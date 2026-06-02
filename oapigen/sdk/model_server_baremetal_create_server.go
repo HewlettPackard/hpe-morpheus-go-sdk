@@ -33,14 +33,6 @@ type ServerBaremetalCreateServer struct {
 
 type _ServerBaremetalCreateServer ServerBaremetalCreateServer
 
-// NewServerBaremetalCreateServerWithDefaults instantiates a new ServerBaremetalCreateServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewServerBaremetalCreateServerWithDefaults() *ServerBaremetalCreateServer {
-	this := ServerBaremetalCreateServer{}
-	return &this
-}
-
 func (o ServerBaremetalCreateServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type UpdateStorageServersRequestStorageServerTenantsInner struct {
 
 type _UpdateStorageServersRequestStorageServerTenantsInner UpdateStorageServersRequestStorageServerTenantsInner
 
-// NewUpdateStorageServersRequestStorageServerTenantsInnerWithDefaults instantiates a new UpdateStorageServersRequestStorageServerTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateStorageServersRequestStorageServerTenantsInnerWithDefaults() *UpdateStorageServersRequestStorageServerTenantsInner {
-	this := UpdateStorageServersRequestStorageServerTenantsInner{}
-	return &this
-}
-
 func (o UpdateStorageServersRequestStorageServerTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

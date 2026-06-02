@@ -25,14 +25,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptionsWithDefaults
-
-`func NewAddWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptionsWithDefaults() *AddWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions`
-
-NewAddWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptionsWithDefaults instantiates a new AddWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetLocalScriptGitRef
 
 `func (o *AddWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) GetLocalScriptGitRef() string`

@@ -27,14 +27,6 @@ type ClusterContainersServer struct {
 
 type _ClusterContainersServer ClusterContainersServer
 
-// NewClusterContainersServerWithDefaults instantiates a new ClusterContainersServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterContainersServerWithDefaults() *ClusterContainersServer {
-	this := ClusterContainersServer{}
-	return &this
-}
-
 func (o ClusterContainersServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

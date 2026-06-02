@@ -33,14 +33,6 @@ type ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerApplica
 
 type _ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerApplicablePricesInner ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerApplicablePricesInner
 
-// NewListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerApplicablePricesInnerWithDefaults instantiates a new ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerApplicablePricesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerApplicablePricesInnerWithDefaults() *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerApplicablePricesInner {
-	this := ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerApplicablePricesInner{}
-	return &this
-}
-
 func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerApplicablePricesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

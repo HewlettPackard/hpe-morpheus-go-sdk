@@ -26,14 +26,6 @@ type ImageBuildCreateZone struct {
 
 type _ImageBuildCreateZone ImageBuildCreateZone
 
-// NewImageBuildCreateZoneWithDefaults instantiates a new ImageBuildCreateZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewImageBuildCreateZoneWithDefaults() *ImageBuildCreateZone {
-	this := ImageBuildCreateZone{}
-	return &this
-}
-
 func (o ImageBuildCreateZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

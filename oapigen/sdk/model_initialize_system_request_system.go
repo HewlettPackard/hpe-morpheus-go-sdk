@@ -38,14 +38,6 @@ type InitializeSystemRequestSystem struct {
 
 type _InitializeSystemRequestSystem InitializeSystemRequestSystem
 
-// NewInitializeSystemRequestSystemWithDefaults instantiates a new InitializeSystemRequestSystem object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInitializeSystemRequestSystemWithDefaults() *InitializeSystemRequestSystem {
-	this := InitializeSystemRequestSystem{}
-	return &this
-}
-
 func (o InitializeSystemRequestSystem) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

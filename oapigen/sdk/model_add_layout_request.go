@@ -26,14 +26,6 @@ type AddLayoutRequest struct {
 
 type _AddLayoutRequest AddLayoutRequest
 
-// NewAddLayoutRequestWithDefaults instantiates a new AddLayoutRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLayoutRequestWithDefaults() *AddLayoutRequest {
-	this := AddLayoutRequest{}
-	return &this
-}
-
 func (o AddLayoutRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

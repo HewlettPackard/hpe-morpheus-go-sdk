@@ -29,14 +29,6 @@ type HealthElasticMaster struct {
 
 type _HealthElasticMaster HealthElasticMaster
 
-// NewHealthElasticMasterWithDefaults instantiates a new HealthElasticMaster object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewHealthElasticMasterWithDefaults() *HealthElasticMaster {
-	this := HealthElasticMaster{}
-	return &this
-}
-
 func (o HealthElasticMaster) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

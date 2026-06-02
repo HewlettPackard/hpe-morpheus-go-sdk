@@ -26,14 +26,6 @@ type GetLoadBalancerVirtualServer200Response struct {
 
 type _GetLoadBalancerVirtualServer200Response GetLoadBalancerVirtualServer200Response
 
-// NewGetLoadBalancerVirtualServer200ResponseWithDefaults instantiates a new GetLoadBalancerVirtualServer200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetLoadBalancerVirtualServer200ResponseWithDefaults() *GetLoadBalancerVirtualServer200Response {
-	this := GetLoadBalancerVirtualServer200Response{}
-	return &this
-}
-
 func (o GetLoadBalancerVirtualServer200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

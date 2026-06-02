@@ -29,14 +29,6 @@ type AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner str
 
 type _AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner
 
-// NewAddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInnerWithDefaults instantiates a new AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInnerWithDefaults() *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner {
-	this := AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner{}
-	return &this
-}
-
 func (o AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

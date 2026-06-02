@@ -26,14 +26,6 @@ type NetworkQuotaPolicyTypeConfiguration3 struct {
 
 type _NetworkQuotaPolicyTypeConfiguration3 NetworkQuotaPolicyTypeConfiguration3
 
-// NewNetworkQuotaPolicyTypeConfiguration3WithDefaults instantiates a new NetworkQuotaPolicyTypeConfiguration3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkQuotaPolicyTypeConfiguration3WithDefaults() *NetworkQuotaPolicyTypeConfiguration3 {
-	this := NetworkQuotaPolicyTypeConfiguration3{}
-	return &this
-}
-
 func (o NetworkQuotaPolicyTypeConfiguration3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

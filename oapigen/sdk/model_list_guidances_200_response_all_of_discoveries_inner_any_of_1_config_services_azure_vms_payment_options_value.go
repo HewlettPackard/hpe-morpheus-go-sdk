@@ -28,14 +28,6 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPa
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue
 
-// NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue {
-	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue{}
-	return &this
-}
-
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

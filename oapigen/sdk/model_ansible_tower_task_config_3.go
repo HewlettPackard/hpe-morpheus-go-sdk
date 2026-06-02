@@ -36,14 +36,6 @@ type AnsibleTowerTaskConfig3 struct {
 
 type _AnsibleTowerTaskConfig3 AnsibleTowerTaskConfig3
 
-// NewAnsibleTowerTaskConfig3WithDefaults instantiates a new AnsibleTowerTaskConfig3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAnsibleTowerTaskConfig3WithDefaults() *AnsibleTowerTaskConfig3 {
-	this := AnsibleTowerTaskConfig3{}
-	return &this
-}
-
 func (o AnsibleTowerTaskConfig3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

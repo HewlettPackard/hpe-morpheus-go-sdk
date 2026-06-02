@@ -27,14 +27,6 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultImageBuild struct 
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultImageBuild ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultImageBuild
 
-// NewListImageBuilds200ResponseAllOfImageBuildsInnerLastResultImageBuildWithDefaults instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultImageBuild object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListImageBuilds200ResponseAllOfImageBuildsInnerLastResultImageBuildWithDefaults() *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultImageBuild {
-	this := ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultImageBuild{}
-	return &this
-}
-
 func (o ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultImageBuild) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

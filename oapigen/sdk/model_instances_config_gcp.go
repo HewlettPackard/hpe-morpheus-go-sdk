@@ -37,16 +37,6 @@ type InstancesConfigGCP struct {
 
 type _InstancesConfigGCP InstancesConfigGCP
 
-// NewInstancesConfigGCPWithDefaults instantiates a new InstancesConfigGCP object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstancesConfigGCPWithDefaults() *InstancesConfigGCP {
-	this := InstancesConfigGCP{}
-	var noAgent bool = false
-	this.NoAgent = *NewNullableBool(&noAgent)
-	return &this
-}
-
 func (o InstancesConfigGCP) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

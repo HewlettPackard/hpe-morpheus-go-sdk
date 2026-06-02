@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInstanceConfigObject2SecurityGroupsInnerWithDefaults
-
-`func NewInstanceConfigObject2SecurityGroupsInnerWithDefaults() *InstanceConfigObject2SecurityGroupsInner`
-
-NewInstanceConfigObject2SecurityGroupsInnerWithDefaults instantiates a new InstanceConfigObject2SecurityGroupsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *InstanceConfigObject2SecurityGroupsInner) GetId() string`

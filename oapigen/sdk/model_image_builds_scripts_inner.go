@@ -29,14 +29,6 @@ type ImageBuildsScriptsInner struct {
 
 type _ImageBuildsScriptsInner ImageBuildsScriptsInner
 
-// NewImageBuildsScriptsInnerWithDefaults instantiates a new ImageBuildsScriptsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewImageBuildsScriptsInnerWithDefaults() *ImageBuildsScriptsInner {
-	this := ImageBuildsScriptsInner{}
-	return &this
-}
-
 func (o ImageBuildsScriptsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

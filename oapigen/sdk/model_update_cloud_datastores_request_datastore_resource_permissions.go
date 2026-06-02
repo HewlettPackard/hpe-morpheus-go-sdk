@@ -33,18 +33,6 @@ type UpdateCloudDatastoresRequestDatastoreResourcePermissions struct {
 
 type _UpdateCloudDatastoresRequestDatastoreResourcePermissions UpdateCloudDatastoresRequestDatastoreResourcePermissions
 
-// NewUpdateCloudDatastoresRequestDatastoreResourcePermissionsWithDefaults instantiates a new UpdateCloudDatastoresRequestDatastoreResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCloudDatastoresRequestDatastoreResourcePermissionsWithDefaults() *UpdateCloudDatastoresRequestDatastoreResourcePermissions {
-	this := UpdateCloudDatastoresRequestDatastoreResourcePermissions{}
-	var all bool = true
-	this.All = &all
-	var allPlans bool = true
-	this.AllPlans = &allPlans
-	return &this
-}
-
 func (o UpdateCloudDatastoresRequestDatastoreResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -29,14 +29,6 @@ type UpdateRolePersonaAccessRequestOneOf struct {
 
 type _UpdateRolePersonaAccessRequestOneOf UpdateRolePersonaAccessRequestOneOf
 
-// NewUpdateRolePersonaAccessRequestOneOfWithDefaults instantiates a new UpdateRolePersonaAccessRequestOneOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateRolePersonaAccessRequestOneOfWithDefaults() *UpdateRolePersonaAccessRequestOneOf {
-	this := UpdateRolePersonaAccessRequestOneOf{}
-	return &this
-}
-
 func (o UpdateRolePersonaAccessRequestOneOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

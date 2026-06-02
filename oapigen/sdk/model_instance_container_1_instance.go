@@ -27,14 +27,6 @@ type InstanceContainer1Instance struct {
 
 type _InstanceContainer1Instance InstanceContainer1Instance
 
-// NewInstanceContainer1InstanceWithDefaults instantiates a new InstanceContainer1Instance object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainer1InstanceWithDefaults() *InstanceContainer1Instance {
-	this := InstanceContainer1Instance{}
-	return &this
-}
-
 func (o InstanceContainer1Instance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

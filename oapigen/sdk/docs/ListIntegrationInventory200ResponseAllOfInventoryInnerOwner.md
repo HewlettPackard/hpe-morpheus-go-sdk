@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListIntegrationInventory200ResponseAllOfInventoryInnerOwnerWithDefaults
-
-`func NewListIntegrationInventory200ResponseAllOfInventoryInnerOwnerWithDefaults() *ListIntegrationInventory200ResponseAllOfInventoryInnerOwner`
-
-NewListIntegrationInventory200ResponseAllOfInventoryInnerOwnerWithDefaults instantiates a new ListIntegrationInventory200ResponseAllOfInventoryInnerOwner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListIntegrationInventory200ResponseAllOfInventoryInnerOwner) GetId() int64`

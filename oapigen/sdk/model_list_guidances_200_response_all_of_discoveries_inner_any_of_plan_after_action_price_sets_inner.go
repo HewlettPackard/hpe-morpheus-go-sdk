@@ -29,14 +29,6 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsI
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner
 
-// NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInnerWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInnerWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner {
-	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner{}
-	return &this
-}
-
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

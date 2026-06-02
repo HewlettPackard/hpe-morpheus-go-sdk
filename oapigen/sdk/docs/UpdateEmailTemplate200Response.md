@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateEmailTemplate200ResponseWithDefaults
-
-`func NewUpdateEmailTemplate200ResponseWithDefaults() *UpdateEmailTemplate200Response`
-
-NewUpdateEmailTemplate200ResponseWithDefaults instantiates a new UpdateEmailTemplate200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetEmailTemplate
 
 `func (o *UpdateEmailTemplate200Response) GetEmailTemplate() AddEmailTemplate200ResponseEmailTemplate`

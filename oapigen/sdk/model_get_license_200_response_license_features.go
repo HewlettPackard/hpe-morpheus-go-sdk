@@ -77,14 +77,6 @@ type GetLicense200ResponseLicenseFeatures struct {
 
 type _GetLicense200ResponseLicenseFeatures GetLicense200ResponseLicenseFeatures
 
-// NewGetLicense200ResponseLicenseFeaturesWithDefaults instantiates a new GetLicense200ResponseLicenseFeatures object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetLicense200ResponseLicenseFeaturesWithDefaults() *GetLicense200ResponseLicenseFeatures {
-	this := GetLicense200ResponseLicenseFeatures{}
-	return &this
-}
-
 func (o GetLicense200ResponseLicenseFeatures) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

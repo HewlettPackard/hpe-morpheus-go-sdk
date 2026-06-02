@@ -37,14 +37,6 @@ type ListNetworkServerGroups200ResponseAllOfGroupsInner struct {
 
 type _ListNetworkServerGroups200ResponseAllOfGroupsInner ListNetworkServerGroups200ResponseAllOfGroupsInner
 
-// NewListNetworkServerGroups200ResponseAllOfGroupsInnerWithDefaults instantiates a new ListNetworkServerGroups200ResponseAllOfGroupsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListNetworkServerGroups200ResponseAllOfGroupsInnerWithDefaults() *ListNetworkServerGroups200ResponseAllOfGroupsInner {
-	this := ListNetworkServerGroups200ResponseAllOfGroupsInner{}
-	return &this
-}
-
 func (o ListNetworkServerGroups200ResponseAllOfGroupsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

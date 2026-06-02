@@ -26,14 +26,6 @@ type SetInstanceTypeFeatured200Response struct {
 
 type _SetInstanceTypeFeatured200Response SetInstanceTypeFeatured200Response
 
-// NewSetInstanceTypeFeatured200ResponseWithDefaults instantiates a new SetInstanceTypeFeatured200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSetInstanceTypeFeatured200ResponseWithDefaults() *SetInstanceTypeFeatured200Response {
-	this := SetInstanceTypeFeatured200Response{}
-	return &this
-}
-
 func (o SetInstanceTypeFeatured200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

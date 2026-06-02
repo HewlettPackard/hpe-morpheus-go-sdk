@@ -29,14 +29,6 @@ type UpdatePluginRequestPlugin struct {
 
 type _UpdatePluginRequestPlugin UpdatePluginRequestPlugin
 
-// NewUpdatePluginRequestPluginWithDefaults instantiates a new UpdatePluginRequestPlugin object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePluginRequestPluginWithDefaults() *UpdatePluginRequestPlugin {
-	this := UpdatePluginRequestPlugin{}
-	return &this
-}
-
 func (o UpdatePluginRequestPlugin) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

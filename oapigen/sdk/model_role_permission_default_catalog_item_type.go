@@ -29,14 +29,6 @@ type RolePermissionDefaultCatalogItemType struct {
 
 type _RolePermissionDefaultCatalogItemType RolePermissionDefaultCatalogItemType
 
-// NewRolePermissionDefaultCatalogItemTypeWithDefaults instantiates a new RolePermissionDefaultCatalogItemType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRolePermissionDefaultCatalogItemTypeWithDefaults() *RolePermissionDefaultCatalogItemType {
-	this := RolePermissionDefaultCatalogItemType{}
-	return &this
-}
-
 func (o RolePermissionDefaultCatalogItemType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -45,14 +45,6 @@ type ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Con
 
 type _ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config
 
-// NewListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6ConfigWithDefaults instantiates a new ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6ConfigWithDefaults() *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config {
-	this := ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config{}
-	return &this
-}
-
 func (o ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

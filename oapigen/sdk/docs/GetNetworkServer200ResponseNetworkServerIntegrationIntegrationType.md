@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNetworkServer200ResponseNetworkServerIntegrationIntegrationTypeWithDefaults
-
-`func NewGetNetworkServer200ResponseNetworkServerIntegrationIntegrationTypeWithDefaults() *GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType`
-
-NewGetNetworkServer200ResponseNetworkServerIntegrationIntegrationTypeWithDefaults instantiates a new GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType) GetId() int64`

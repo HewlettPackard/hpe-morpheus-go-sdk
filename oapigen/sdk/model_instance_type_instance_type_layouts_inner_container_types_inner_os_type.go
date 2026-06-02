@@ -27,14 +27,6 @@ type InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerOsType struct {
 
 type _InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerOsType InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerOsType
 
-// NewInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerOsTypeWithDefaults instantiates a new InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerOsType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerOsTypeWithDefaults() *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerOsType {
-	this := InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerOsType{}
-	return &this
-}
-
 func (o InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerOsType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

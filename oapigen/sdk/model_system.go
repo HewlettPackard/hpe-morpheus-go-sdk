@@ -49,14 +49,6 @@ type System struct {
 
 type _System System
 
-// NewSystemWithDefaults instantiates a new System object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSystemWithDefaults() *System {
-	this := System{}
-	return &this
-}
-
 func (o System) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

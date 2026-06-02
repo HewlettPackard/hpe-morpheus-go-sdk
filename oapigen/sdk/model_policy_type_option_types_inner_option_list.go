@@ -27,14 +27,6 @@ type PolicyTypeOptionTypesInnerOptionList struct {
 
 type _PolicyTypeOptionTypesInnerOptionList PolicyTypeOptionTypesInnerOptionList
 
-// NewPolicyTypeOptionTypesInnerOptionListWithDefaults instantiates a new PolicyTypeOptionTypesInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPolicyTypeOptionTypesInnerOptionListWithDefaults() *PolicyTypeOptionTypesInnerOptionList {
-	this := PolicyTypeOptionTypesInnerOptionList{}
-	return &this
-}
-
 func (o PolicyTypeOptionTypesInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

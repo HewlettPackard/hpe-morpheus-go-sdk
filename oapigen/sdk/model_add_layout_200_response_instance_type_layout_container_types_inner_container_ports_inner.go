@@ -28,14 +28,6 @@ type AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerContainerPortsInne
 
 type _AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerContainerPortsInner AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerContainerPortsInner
 
-// NewAddLayout200ResponseInstanceTypeLayoutContainerTypesInnerContainerPortsInnerWithDefaults instantiates a new AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerContainerPortsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLayout200ResponseInstanceTypeLayoutContainerTypesInnerContainerPortsInnerWithDefaults() *AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerContainerPortsInner {
-	this := AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerContainerPortsInner{}
-	return &this
-}
-
 func (o AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerContainerPortsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

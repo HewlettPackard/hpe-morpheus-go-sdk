@@ -27,14 +27,6 @@ type InstanceCreateSuccessInstanceConfigLayout struct {
 
 type _InstanceCreateSuccessInstanceConfigLayout InstanceCreateSuccessInstanceConfigLayout
 
-// NewInstanceCreateSuccessInstanceConfigLayoutWithDefaults instantiates a new InstanceCreateSuccessInstanceConfigLayout object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceCreateSuccessInstanceConfigLayoutWithDefaults() *InstanceCreateSuccessInstanceConfigLayout {
-	this := InstanceCreateSuccessInstanceConfigLayout{}
-	return &this
-}
-
 func (o InstanceCreateSuccessInstanceConfigLayout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

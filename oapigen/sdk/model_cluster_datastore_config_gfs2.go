@@ -29,14 +29,6 @@ type ClusterDatastoreConfigGFS2 struct {
 
 type _ClusterDatastoreConfigGFS2 ClusterDatastoreConfigGFS2
 
-// NewClusterDatastoreConfigGFS2WithDefaults instantiates a new ClusterDatastoreConfigGFS2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterDatastoreConfigGFS2WithDefaults() *ClusterDatastoreConfigGFS2 {
-	this := ClusterDatastoreConfigGFS2{}
-	return &this
-}
-
 func (o ClusterDatastoreConfigGFS2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type AddProvisioningLicenseRequest struct {
 
 type _AddProvisioningLicenseRequest AddProvisioningLicenseRequest
 
-// NewAddProvisioningLicenseRequestWithDefaults instantiates a new AddProvisioningLicenseRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddProvisioningLicenseRequestWithDefaults() *AddProvisioningLicenseRequest {
-	this := AddProvisioningLicenseRequest{}
-	return &this
-}
-
 func (o AddProvisioningLicenseRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

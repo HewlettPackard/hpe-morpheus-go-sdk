@@ -28,14 +28,6 @@ type SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsPlansInner st
 
 type _SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsPlansInner SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsPlansInner
 
-// NewSaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsPlansInnerWithDefaults instantiates a new SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsPlansInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsPlansInnerWithDefaults() *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsPlansInner {
-	this := SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsPlansInner{}
-	return &this
-}
-
 func (o SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsPlansInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

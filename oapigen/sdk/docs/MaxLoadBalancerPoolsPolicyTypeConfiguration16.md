@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewMaxLoadBalancerPoolsPolicyTypeConfiguration16WithDefaults
-
-`func NewMaxLoadBalancerPoolsPolicyTypeConfiguration16WithDefaults() *MaxLoadBalancerPoolsPolicyTypeConfiguration16`
-
-NewMaxLoadBalancerPoolsPolicyTypeConfiguration16WithDefaults instantiates a new MaxLoadBalancerPoolsPolicyTypeConfiguration16 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMaxPools
 
 `func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration16) GetMaxPools() string`

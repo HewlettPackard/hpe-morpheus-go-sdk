@@ -37,14 +37,6 @@ type GetDeploymentVersion200ResponseVersion struct {
 
 type _GetDeploymentVersion200ResponseVersion GetDeploymentVersion200ResponseVersion
 
-// NewGetDeploymentVersion200ResponseVersionWithDefaults instantiates a new GetDeploymentVersion200ResponseVersion object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetDeploymentVersion200ResponseVersionWithDefaults() *GetDeploymentVersion200ResponseVersion {
-	this := GetDeploymentVersion200ResponseVersion{}
-	return &this
-}
-
 func (o GetDeploymentVersion200ResponseVersion) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

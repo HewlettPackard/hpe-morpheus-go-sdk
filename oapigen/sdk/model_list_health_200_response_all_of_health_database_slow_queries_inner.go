@@ -28,14 +28,6 @@ type ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner struct {
 
 type _ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner
 
-// NewListHealth200ResponseAllOfHealthDatabaseSlowQueriesInnerWithDefaults instantiates a new ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListHealth200ResponseAllOfHealthDatabaseSlowQueriesInnerWithDefaults() *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner {
-	this := ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner{}
-	return &this
-}
-
 func (o ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

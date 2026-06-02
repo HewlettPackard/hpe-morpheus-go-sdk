@@ -39,14 +39,6 @@ type ProvisioningSettings struct {
 
 type _ProvisioningSettings ProvisioningSettings
 
-// NewProvisioningSettingsWithDefaults instantiates a new ProvisioningSettings object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewProvisioningSettingsWithDefaults() *ProvisioningSettings {
-	this := ProvisioningSettings{}
-	return &this
-}
-
 func (o ProvisioningSettings) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

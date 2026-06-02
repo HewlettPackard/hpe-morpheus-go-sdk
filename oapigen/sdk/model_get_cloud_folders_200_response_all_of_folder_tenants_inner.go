@@ -29,14 +29,6 @@ type GetCloudFolders200ResponseAllOfFolderTenantsInner struct {
 
 type _GetCloudFolders200ResponseAllOfFolderTenantsInner GetCloudFolders200ResponseAllOfFolderTenantsInner
 
-// NewGetCloudFolders200ResponseAllOfFolderTenantsInnerWithDefaults instantiates a new GetCloudFolders200ResponseAllOfFolderTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCloudFolders200ResponseAllOfFolderTenantsInnerWithDefaults() *GetCloudFolders200ResponseAllOfFolderTenantsInner {
-	this := GetCloudFolders200ResponseAllOfFolderTenantsInner{}
-	return &this
-}
-
 func (o GetCloudFolders200ResponseAllOfFolderTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

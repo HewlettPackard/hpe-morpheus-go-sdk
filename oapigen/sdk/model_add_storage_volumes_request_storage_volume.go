@@ -33,14 +33,6 @@ type AddStorageVolumesRequestStorageVolume struct {
 
 type _AddStorageVolumesRequestStorageVolume AddStorageVolumesRequestStorageVolume
 
-// NewAddStorageVolumesRequestStorageVolumeWithDefaults instantiates a new AddStorageVolumesRequestStorageVolume object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddStorageVolumesRequestStorageVolumeWithDefaults() *AddStorageVolumesRequestStorageVolume {
-	this := AddStorageVolumesRequestStorageVolume{}
-	return &this
-}
-
 func (o AddStorageVolumesRequestStorageVolume) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

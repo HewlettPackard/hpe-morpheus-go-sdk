@@ -34,14 +34,6 @@ type GetBudgets200ResponseAllOfBudgetStatsIntervalsInner struct {
 
 type _GetBudgets200ResponseAllOfBudgetStatsIntervalsInner GetBudgets200ResponseAllOfBudgetStatsIntervalsInner
 
-// NewGetBudgets200ResponseAllOfBudgetStatsIntervalsInnerWithDefaults instantiates a new GetBudgets200ResponseAllOfBudgetStatsIntervalsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetBudgets200ResponseAllOfBudgetStatsIntervalsInnerWithDefaults() *GetBudgets200ResponseAllOfBudgetStatsIntervalsInner {
-	this := GetBudgets200ResponseAllOfBudgetStatsIntervalsInner{}
-	return &this
-}
-
 func (o GetBudgets200ResponseAllOfBudgetStatsIntervalsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

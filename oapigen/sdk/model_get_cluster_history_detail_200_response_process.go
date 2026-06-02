@@ -56,14 +56,6 @@ type GetClusterHistoryDetail200ResponseProcess struct {
 
 type _GetClusterHistoryDetail200ResponseProcess GetClusterHistoryDetail200ResponseProcess
 
-// NewGetClusterHistoryDetail200ResponseProcessWithDefaults instantiates a new GetClusterHistoryDetail200ResponseProcess object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterHistoryDetail200ResponseProcessWithDefaults() *GetClusterHistoryDetail200ResponseProcess {
-	this := GetClusterHistoryDetail200ResponseProcess{}
-	return &this
-}
-
 func (o GetClusterHistoryDetail200ResponseProcess) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

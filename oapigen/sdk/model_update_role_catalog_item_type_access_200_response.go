@@ -27,14 +27,6 @@ type UpdateRoleCatalogItemTypeAccess200Response struct {
 
 type _UpdateRoleCatalogItemTypeAccess200Response UpdateRoleCatalogItemTypeAccess200Response
 
-// NewUpdateRoleCatalogItemTypeAccess200ResponseWithDefaults instantiates a new UpdateRoleCatalogItemTypeAccess200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateRoleCatalogItemTypeAccess200ResponseWithDefaults() *UpdateRoleCatalogItemTypeAccess200Response {
-	this := UpdateRoleCatalogItemTypeAccess200Response{}
-	return &this
-}
-
 func (o UpdateRoleCatalogItemTypeAccess200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

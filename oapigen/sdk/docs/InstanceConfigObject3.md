@@ -37,14 +37,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInstanceConfigObject3WithDefaults
-
-`func NewInstanceConfigObject3WithDefaults() *InstanceConfigObject3`
-
-NewInstanceConfigObject3WithDefaults instantiates a new InstanceConfigObject3 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetGroup
 
 `func (o *InstanceConfigObject3) GetGroup() InstanceConfigObject1Group`

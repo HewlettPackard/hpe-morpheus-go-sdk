@@ -27,14 +27,6 @@ type CreateSubnet200ResponseSubnetNetworkProxy struct {
 
 type _CreateSubnet200ResponseSubnetNetworkProxy CreateSubnet200ResponseSubnetNetworkProxy
 
-// NewCreateSubnet200ResponseSubnetNetworkProxyWithDefaults instantiates a new CreateSubnet200ResponseSubnetNetworkProxy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateSubnet200ResponseSubnetNetworkProxyWithDefaults() *CreateSubnet200ResponseSubnetNetworkProxy {
-	this := CreateSubnet200ResponseSubnetNetworkProxy{}
-	return &this
-}
-
 func (o CreateSubnet200ResponseSubnetNetworkProxy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

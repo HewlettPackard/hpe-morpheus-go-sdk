@@ -26,14 +26,6 @@ type UpdateNetworkDhcpRelayRequest struct {
 
 type _UpdateNetworkDhcpRelayRequest UpdateNetworkDhcpRelayRequest
 
-// NewUpdateNetworkDhcpRelayRequestWithDefaults instantiates a new UpdateNetworkDhcpRelayRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkDhcpRelayRequestWithDefaults() *UpdateNetworkDhcpRelayRequest {
-	this := UpdateNetworkDhcpRelayRequest{}
-	return &this
-}
-
 func (o UpdateNetworkDhcpRelayRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -58,14 +58,6 @@ type UpdateBudgets200ResponseAllOfBudget struct {
 
 type _UpdateBudgets200ResponseAllOfBudget UpdateBudgets200ResponseAllOfBudget
 
-// NewUpdateBudgets200ResponseAllOfBudgetWithDefaults instantiates a new UpdateBudgets200ResponseAllOfBudget object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBudgets200ResponseAllOfBudgetWithDefaults() *UpdateBudgets200ResponseAllOfBudget {
-	this := UpdateBudgets200ResponseAllOfBudget{}
-	return &this
-}
-
 func (o UpdateBudgets200ResponseAllOfBudget) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

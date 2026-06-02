@@ -26,14 +26,6 @@ type AddClusterLayoutsRequestLayoutMastersInnerContainerType struct {
 
 type _AddClusterLayoutsRequestLayoutMastersInnerContainerType AddClusterLayoutsRequestLayoutMastersInnerContainerType
 
-// NewAddClusterLayoutsRequestLayoutMastersInnerContainerTypeWithDefaults instantiates a new AddClusterLayoutsRequestLayoutMastersInnerContainerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterLayoutsRequestLayoutMastersInnerContainerTypeWithDefaults() *AddClusterLayoutsRequestLayoutMastersInnerContainerType {
-	this := AddClusterLayoutsRequestLayoutMastersInnerContainerType{}
-	return &this
-}
-
 func (o AddClusterLayoutsRequestLayoutMastersInnerContainerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

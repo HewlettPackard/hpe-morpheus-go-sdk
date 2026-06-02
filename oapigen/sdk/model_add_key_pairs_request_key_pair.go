@@ -29,14 +29,6 @@ type AddKeyPairsRequestKeyPair struct {
 
 type _AddKeyPairsRequestKeyPair AddKeyPairsRequestKeyPair
 
-// NewAddKeyPairsRequestKeyPairWithDefaults instantiates a new AddKeyPairsRequestKeyPair object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddKeyPairsRequestKeyPairWithDefaults() *AddKeyPairsRequestKeyPair {
-	this := AddKeyPairsRequestKeyPair{}
-	return &this
-}
-
 func (o AddKeyPairsRequestKeyPair) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

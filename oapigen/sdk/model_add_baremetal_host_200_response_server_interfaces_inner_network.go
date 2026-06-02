@@ -27,14 +27,6 @@ type AddBaremetalHost200ResponseServerInterfacesInnerNetwork struct {
 
 type _AddBaremetalHost200ResponseServerInterfacesInnerNetwork AddBaremetalHost200ResponseServerInterfacesInnerNetwork
 
-// NewAddBaremetalHost200ResponseServerInterfacesInnerNetworkWithDefaults instantiates a new AddBaremetalHost200ResponseServerInterfacesInnerNetwork object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBaremetalHost200ResponseServerInterfacesInnerNetworkWithDefaults() *AddBaremetalHost200ResponseServerInterfacesInnerNetwork {
-	this := AddBaremetalHost200ResponseServerInterfacesInnerNetwork{}
-	return &this
-}
-
 func (o AddBaremetalHost200ResponseServerInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

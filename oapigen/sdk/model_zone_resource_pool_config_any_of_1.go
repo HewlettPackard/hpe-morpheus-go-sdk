@@ -29,14 +29,6 @@ type ZoneResourcePoolConfigAnyOf1 struct {
 
 type _ZoneResourcePoolConfigAnyOf1 ZoneResourcePoolConfigAnyOf1
 
-// NewZoneResourcePoolConfigAnyOf1WithDefaults instantiates a new ZoneResourcePoolConfigAnyOf1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneResourcePoolConfigAnyOf1WithDefaults() *ZoneResourcePoolConfigAnyOf1 {
-	this := ZoneResourcePoolConfigAnyOf1{}
-	return &this
-}
-
 func (o ZoneResourcePoolConfigAnyOf1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

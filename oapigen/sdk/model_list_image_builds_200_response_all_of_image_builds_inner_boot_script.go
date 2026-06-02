@@ -27,14 +27,6 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript struct {
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript
 
-// NewListImageBuilds200ResponseAllOfImageBuildsInnerBootScriptWithDefaults instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListImageBuilds200ResponseAllOfImageBuildsInnerBootScriptWithDefaults() *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript {
-	this := ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript{}
-	return &this
-}
-
 func (o ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -39,14 +39,6 @@ type JobExecution struct {
 
 type _JobExecution JobExecution
 
-// NewJobExecutionWithDefaults instantiates a new JobExecution object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewJobExecutionWithDefaults() *JobExecution {
-	this := JobExecution{}
-	return &this
-}
-
 func (o JobExecution) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type ClustersCreatedBy struct {
 
 type _ClustersCreatedBy ClustersCreatedBy
 
-// NewClustersCreatedByWithDefaults instantiates a new ClustersCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClustersCreatedByWithDefaults() *ClustersCreatedBy {
-	this := ClustersCreatedBy{}
-	return &this
-}
-
 func (o ClustersCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -28,14 +28,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddArchiveFile200ResponseAllOfArchiveFileWithDefaults
-
-`func NewAddArchiveFile200ResponseAllOfArchiveFileWithDefaults() *AddArchiveFile200ResponseAllOfArchiveFile`
-
-NewAddArchiveFile200ResponseAllOfArchiveFileWithDefaults instantiates a new AddArchiveFile200ResponseAllOfArchiveFile object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddArchiveFile200ResponseAllOfArchiveFile) GetId() int64`

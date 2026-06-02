@@ -39,14 +39,6 @@ type ImageBuildExecution struct {
 
 type _ImageBuildExecution ImageBuildExecution
 
-// NewImageBuildExecutionWithDefaults instantiates a new ImageBuildExecution object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewImageBuildExecutionWithDefaults() *ImageBuildExecution {
-	this := ImageBuildExecution{}
-	return &this
-}
-
 func (o ImageBuildExecution) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

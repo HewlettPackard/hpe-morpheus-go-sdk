@@ -26,14 +26,6 @@ type MaxVMsPolicyTypeConfiguration14 struct {
 
 type _MaxVMsPolicyTypeConfiguration14 MaxVMsPolicyTypeConfiguration14
 
-// NewMaxVMsPolicyTypeConfiguration14WithDefaults instantiates a new MaxVMsPolicyTypeConfiguration14 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxVMsPolicyTypeConfiguration14WithDefaults() *MaxVMsPolicyTypeConfiguration14 {
-	this := MaxVMsPolicyTypeConfiguration14{}
-	return &this
-}
-
 func (o MaxVMsPolicyTypeConfiguration14) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

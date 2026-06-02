@@ -33,22 +33,6 @@ type ListSubnets200ResponseAllOfMeta struct {
 
 type _ListSubnets200ResponseAllOfMeta ListSubnets200ResponseAllOfMeta
 
-// NewListSubnets200ResponseAllOfMetaWithDefaults instantiates a new ListSubnets200ResponseAllOfMeta object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListSubnets200ResponseAllOfMetaWithDefaults() *ListSubnets200ResponseAllOfMeta {
-	this := ListSubnets200ResponseAllOfMeta{}
-	var offset int64 = 0
-	this.Offset = &offset
-	var max int64 = 25
-	this.Max = &max
-	var size int64 = 0
-	this.Size = &size
-	var total int64 = 0
-	this.Total = &total
-	return &this
-}
-
 func (o ListSubnets200ResponseAllOfMeta) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

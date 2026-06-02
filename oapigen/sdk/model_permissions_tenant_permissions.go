@@ -27,14 +27,6 @@ type PermissionsTenantPermissions struct {
 
 type _PermissionsTenantPermissions PermissionsTenantPermissions
 
-// NewPermissionsTenantPermissionsWithDefaults instantiates a new PermissionsTenantPermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPermissionsTenantPermissionsWithDefaults() *PermissionsTenantPermissions {
-	this := PermissionsTenantPermissions{}
-	return &this
-}
-
 func (o PermissionsTenantPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

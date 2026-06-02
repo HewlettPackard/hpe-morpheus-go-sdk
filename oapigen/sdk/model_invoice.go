@@ -125,14 +125,6 @@ type Invoice struct {
 
 type _Invoice Invoice
 
-// NewInvoiceWithDefaults instantiates a new Invoice object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInvoiceWithDefaults() *Invoice {
-	this := Invoice{}
-	return &this
-}
-
 func (o Invoice) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

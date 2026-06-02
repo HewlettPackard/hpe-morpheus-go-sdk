@@ -28,14 +28,6 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInnerT
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInnerType ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInnerType
 
-// NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInnerTypeWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInnerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInnerTypeWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInnerType {
-	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInnerType{}
-	return &this
-}
-
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInnerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner struct {
 
 type _UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner
 
-// NewUpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInnerWithDefaults instantiates a new UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInnerWithDefaults() *UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner {
-	this := UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner{}
-	return &this
-}
-
 func (o UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

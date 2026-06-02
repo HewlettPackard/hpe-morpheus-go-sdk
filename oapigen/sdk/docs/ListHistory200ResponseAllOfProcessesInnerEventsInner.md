@@ -47,14 +47,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListHistory200ResponseAllOfProcessesInnerEventsInnerWithDefaults
-
-`func NewListHistory200ResponseAllOfProcessesInnerEventsInnerWithDefaults() *ListHistory200ResponseAllOfProcessesInnerEventsInner`
-
-NewListHistory200ResponseAllOfProcessesInnerEventsInnerWithDefaults instantiates a new ListHistory200ResponseAllOfProcessesInnerEventsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetId() int64`

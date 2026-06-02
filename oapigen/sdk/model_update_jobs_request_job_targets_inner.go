@@ -26,14 +26,6 @@ type UpdateJobsRequestJobTargetsInner struct {
 
 type _UpdateJobsRequestJobTargetsInner UpdateJobsRequestJobTargetsInner
 
-// NewUpdateJobsRequestJobTargetsInnerWithDefaults instantiates a new UpdateJobsRequestJobTargetsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateJobsRequestJobTargetsInnerWithDefaults() *UpdateJobsRequestJobTargetsInner {
-	this := UpdateJobsRequestJobTargetsInner{}
-	return &this
-}
-
 func (o UpdateJobsRequestJobTargetsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

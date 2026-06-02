@@ -92,14 +92,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdatePoliciesCloud200ResponseAllOfPolicyConfigWithDefaults
-
-`func NewUpdatePoliciesCloud200ResponseAllOfPolicyConfigWithDefaults() *UpdatePoliciesCloud200ResponseAllOfPolicyConfig`
-
-NewUpdatePoliciesCloud200ResponseAllOfPolicyConfigWithDefaults instantiates a new UpdatePoliciesCloud200ResponseAllOfPolicyConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAccountIntegrationId
 
 `func (o *UpdatePoliciesCloud200ResponseAllOfPolicyConfig) GetAccountIntegrationId() string`

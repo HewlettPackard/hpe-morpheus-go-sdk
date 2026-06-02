@@ -28,14 +28,6 @@ type InstancesNetworkInterfaces2Network struct {
 
 type _InstancesNetworkInterfaces2Network InstancesNetworkInterfaces2Network
 
-// NewInstancesNetworkInterfaces2NetworkWithDefaults instantiates a new InstancesNetworkInterfaces2Network object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstancesNetworkInterfaces2NetworkWithDefaults() *InstancesNetworkInterfaces2Network {
-	this := InstancesNetworkInterfaces2Network{}
-	return &this
-}
-
 func (o InstancesNetworkInterfaces2Network) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type NetworkRouterBgpNeighborConfigNsxtCreate struct {
 
 type _NetworkRouterBgpNeighborConfigNsxtCreate NetworkRouterBgpNeighborConfigNsxtCreate
 
-// NewNetworkRouterBgpNeighborConfigNsxtCreateWithDefaults instantiates a new NetworkRouterBgpNeighborConfigNsxtCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkRouterBgpNeighborConfigNsxtCreateWithDefaults() *NetworkRouterBgpNeighborConfigNsxtCreate {
-	this := NetworkRouterBgpNeighborConfigNsxtCreate{}
-	return &this
-}
-
 func (o NetworkRouterBgpNeighborConfigNsxtCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

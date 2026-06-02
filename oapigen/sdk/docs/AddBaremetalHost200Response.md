@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddBaremetalHost200ResponseWithDefaults
-
-`func NewAddBaremetalHost200ResponseWithDefaults() *AddBaremetalHost200Response`
-
-NewAddBaremetalHost200ResponseWithDefaults instantiates a new AddBaremetalHost200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *AddBaremetalHost200Response) GetSuccess() bool`

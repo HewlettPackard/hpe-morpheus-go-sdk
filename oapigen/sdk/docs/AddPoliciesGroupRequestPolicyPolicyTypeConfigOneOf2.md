@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2WithDefaults
-
-`func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2WithDefaults() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2`
-
-NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2WithDefaults instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetBackupStorageIds
 
 `func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2) GetBackupStorageIds() []int64`

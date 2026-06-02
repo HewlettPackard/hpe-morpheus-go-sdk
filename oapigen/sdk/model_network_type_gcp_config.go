@@ -29,18 +29,6 @@ type NetworkTypeGcpConfig struct {
 
 type _NetworkTypeGcpConfig NetworkTypeGcpConfig
 
-// NewNetworkTypeGcpConfigWithDefaults instantiates a new NetworkTypeGcpConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkTypeGcpConfigWithDefaults() *NetworkTypeGcpConfig {
-	this := NetworkTypeGcpConfig{}
-	var mtu string = "1460"
-	this.Mtu = mtu
-	var autoCreate bool = true
-	this.AutoCreate = autoCreate
-	return &this
-}
-
 func (o NetworkTypeGcpConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

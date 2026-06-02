@@ -45,18 +45,6 @@ type NetworkServerCreateNSX struct {
 
 type _NetworkServerCreateNSX NetworkServerCreateNSX
 
-// NewNetworkServerCreateNSXWithDefaults instantiates a new NetworkServerCreateNSX object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkServerCreateNSXWithDefaults() *NetworkServerCreateNSX {
-	this := NetworkServerCreateNSX{}
-	var enabled bool = true
-	this.Enabled = &enabled
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o NetworkServerCreateNSX) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListCertificates200ResponseCertificatesInnerTypeWithDefaults
-
-`func NewListCertificates200ResponseCertificatesInnerTypeWithDefaults() *ListCertificates200ResponseCertificatesInnerType`
-
-NewListCertificates200ResponseCertificatesInnerTypeWithDefaults instantiates a new ListCertificates200ResponseCertificatesInnerType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListCertificates200ResponseCertificatesInnerType) GetId() int64`

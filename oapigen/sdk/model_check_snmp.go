@@ -38,22 +38,6 @@ type CheckSNMP struct {
 
 type _CheckSNMP CheckSNMP
 
-// NewCheckSNMPWithDefaults instantiates a new CheckSNMP object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCheckSNMPWithDefaults() *CheckSNMP {
-	this := CheckSNMP{}
-	var checkInterval int32 = 300000
-	this.CheckInterval = &checkInterval
-	var inUptime bool = true
-	this.InUptime = &inUptime
-	var active bool = true
-	this.Active = &active
-	var severity string = "critical"
-	this.Severity = &severity
-	return &this
-}
-
 func (o CheckSNMP) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

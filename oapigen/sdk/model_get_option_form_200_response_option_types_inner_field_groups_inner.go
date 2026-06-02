@@ -34,14 +34,6 @@ type GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner struct {
 
 type _GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner
 
-// NewGetOptionForm200ResponseOptionTypesInnerFieldGroupsInnerWithDefaults instantiates a new GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetOptionForm200ResponseOptionTypesInnerFieldGroupsInnerWithDefaults() *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner {
-	this := GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner{}
-	return &this
-}
-
 func (o GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateHostUpgradeAgent202ResponseWithDefaults
-
-`func NewUpdateHostUpgradeAgent202ResponseWithDefaults() *UpdateHostUpgradeAgent202Response`
-
-NewUpdateHostUpgradeAgent202ResponseWithDefaults instantiates a new UpdateHostUpgradeAgent202Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *UpdateHostUpgradeAgent202Response) GetSuccess() bool`

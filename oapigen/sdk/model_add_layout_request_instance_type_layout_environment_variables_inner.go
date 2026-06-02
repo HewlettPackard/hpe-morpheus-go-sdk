@@ -33,18 +33,6 @@ type AddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner struct {
 
 type _AddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner AddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner
 
-// NewAddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInnerWithDefaults instantiates a new AddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInnerWithDefaults() *AddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner {
-	this := AddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner{}
-	var masked bool = false
-	this.Masked = &masked
-	var export bool = false
-	this.Export = &export
-	return &this
-}
-
 func (o AddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

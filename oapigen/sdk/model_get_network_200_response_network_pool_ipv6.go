@@ -31,14 +31,6 @@ type GetNetwork200ResponseNetworkPoolIPv6 struct {
 
 type _GetNetwork200ResponseNetworkPoolIPv6 GetNetwork200ResponseNetworkPoolIPv6
 
-// NewGetNetwork200ResponseNetworkPoolIPv6WithDefaults instantiates a new GetNetwork200ResponseNetworkPoolIPv6 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetwork200ResponseNetworkPoolIPv6WithDefaults() *GetNetwork200ResponseNetworkPoolIPv6 {
-	this := GetNetwork200ResponseNetworkPoolIPv6{}
-	return &this
-}
-
 func (o GetNetwork200ResponseNetworkPoolIPv6) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

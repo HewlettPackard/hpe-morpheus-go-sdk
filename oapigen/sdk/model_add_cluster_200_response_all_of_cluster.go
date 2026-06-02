@@ -96,16 +96,6 @@ type AddCluster200ResponseAllOfCluster struct {
 
 type _AddCluster200ResponseAllOfCluster AddCluster200ResponseAllOfCluster
 
-// NewAddCluster200ResponseAllOfClusterWithDefaults instantiates a new AddCluster200ResponseAllOfCluster object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCluster200ResponseAllOfClusterWithDefaults() *AddCluster200ResponseAllOfCluster {
-	this := AddCluster200ResponseAllOfCluster{}
-	var autoRecoverPowerState bool = false
-	this.AutoRecoverPowerState = &autoRecoverPowerState
-	return &this
-}
-
 func (o AddCluster200ResponseAllOfCluster) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

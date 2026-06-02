@@ -29,16 +29,6 @@ type GetresourcePoolGroup200ResponseResourcePoolGroupResourcePermission struct {
 
 type _GetresourcePoolGroup200ResponseResourcePoolGroupResourcePermission GetresourcePoolGroup200ResponseResourcePoolGroupResourcePermission
 
-// NewGetresourcePoolGroup200ResponseResourcePoolGroupResourcePermissionWithDefaults instantiates a new GetresourcePoolGroup200ResponseResourcePoolGroupResourcePermission object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetresourcePoolGroup200ResponseResourcePoolGroupResourcePermissionWithDefaults() *GetresourcePoolGroup200ResponseResourcePoolGroupResourcePermission {
-	this := GetresourcePoolGroup200ResponseResourcePoolGroupResourcePermission{}
-	var all bool = true
-	this.All = &all
-	return &this
-}
-
 func (o GetresourcePoolGroup200ResponseResourcePoolGroupResourcePermission) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

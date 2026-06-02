@@ -42,14 +42,6 @@ type Tenant struct {
 
 type _Tenant Tenant
 
-// NewTenantWithDefaults instantiates a new Tenant object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTenantWithDefaults() *Tenant {
-	this := Tenant{}
-	return &this
-}
-
 func (o Tenant) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

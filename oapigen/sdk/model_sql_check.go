@@ -39,22 +39,6 @@ type SqlCheck struct {
 
 type _SqlCheck SqlCheck
 
-// NewSqlCheckWithDefaults instantiates a new SqlCheck object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSqlCheckWithDefaults() *SqlCheck {
-	this := SqlCheck{}
-	var checkInterval int32 = 300000
-	this.CheckInterval = &checkInterval
-	var inUptime bool = true
-	this.InUptime = &inUptime
-	var active bool = true
-	this.Active = &active
-	var severity string = "critical"
-	this.Severity = &severity
-	return &this
-}
-
 func (o SqlCheck) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

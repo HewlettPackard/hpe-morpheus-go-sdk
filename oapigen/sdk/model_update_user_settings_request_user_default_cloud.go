@@ -27,14 +27,6 @@ type UpdateUserSettingsRequestUserDefaultCloud struct {
 
 type _UpdateUserSettingsRequestUserDefaultCloud UpdateUserSettingsRequestUserDefaultCloud
 
-// NewUpdateUserSettingsRequestUserDefaultCloudWithDefaults instantiates a new UpdateUserSettingsRequestUserDefaultCloud object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateUserSettingsRequestUserDefaultCloudWithDefaults() *UpdateUserSettingsRequestUserDefaultCloud {
-	this := UpdateUserSettingsRequestUserDefaultCloud{}
-	return &this
-}
-
 func (o UpdateUserSettingsRequestUserDefaultCloud) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

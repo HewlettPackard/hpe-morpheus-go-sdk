@@ -28,14 +28,6 @@ type ClusterJobsType struct {
 
 type _ClusterJobsType ClusterJobsType
 
-// NewClusterJobsTypeWithDefaults instantiates a new ClusterJobsType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterJobsTypeWithDefaults() *ClusterJobsType {
-	this := ClusterJobsType{}
-	return &this
-}
-
 func (o ClusterJobsType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

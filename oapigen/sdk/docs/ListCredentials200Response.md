@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListCredentials200ResponseWithDefaults
-
-`func NewListCredentials200ResponseWithDefaults() *ListCredentials200Response`
-
-NewListCredentials200ResponseWithDefaults instantiates a new ListCredentials200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetCredentials
 
 `func (o *ListCredentials200Response) GetCredentials() []ListCredentials200ResponseAllOfCredentialsInner`

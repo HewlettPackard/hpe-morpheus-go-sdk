@@ -26,14 +26,6 @@ type GetPlugin200Response struct {
 
 type _GetPlugin200Response GetPlugin200Response
 
-// NewGetPlugin200ResponseWithDefaults instantiates a new GetPlugin200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetPlugin200ResponseWithDefaults() *GetPlugin200Response {
-	this := GetPlugin200Response{}
-	return &this
-}
-
 func (o GetPlugin200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

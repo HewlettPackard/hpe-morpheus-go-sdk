@@ -26,14 +26,6 @@ type DelayedDeletePolicyTypeConfiguration7 struct {
 
 type _DelayedDeletePolicyTypeConfiguration7 DelayedDeletePolicyTypeConfiguration7
 
-// NewDelayedDeletePolicyTypeConfiguration7WithDefaults instantiates a new DelayedDeletePolicyTypeConfiguration7 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDelayedDeletePolicyTypeConfiguration7WithDefaults() *DelayedDeletePolicyTypeConfiguration7 {
-	this := DelayedDeletePolicyTypeConfiguration7{}
-	return &this
-}
-
 func (o DelayedDeletePolicyTypeConfiguration7) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

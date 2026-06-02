@@ -48,14 +48,6 @@ type ServerType struct {
 
 type _ServerType ServerType
 
-// NewServerTypeWithDefaults instantiates a new ServerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewServerTypeWithDefaults() *ServerType {
-	this := ServerType{}
-	return &this
-}
-
 func (o ServerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

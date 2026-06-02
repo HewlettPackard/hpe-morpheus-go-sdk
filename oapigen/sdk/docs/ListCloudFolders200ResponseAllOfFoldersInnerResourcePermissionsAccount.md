@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccountWithDefaults
-
-`func NewListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccountWithDefaults() *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount`
-
-NewListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccountWithDefaults instantiates a new ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount) GetId() int64`

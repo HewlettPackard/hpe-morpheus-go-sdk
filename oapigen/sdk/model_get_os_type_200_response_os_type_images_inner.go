@@ -32,14 +32,6 @@ type GetOsType200ResponseOsTypeImagesInner struct {
 
 type _GetOsType200ResponseOsTypeImagesInner GetOsType200ResponseOsTypeImagesInner
 
-// NewGetOsType200ResponseOsTypeImagesInnerWithDefaults instantiates a new GetOsType200ResponseOsTypeImagesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetOsType200ResponseOsTypeImagesInnerWithDefaults() *GetOsType200ResponseOsTypeImagesInner {
-	this := GetOsType200ResponseOsTypeImagesInner{}
-	return &this
-}
-
 func (o GetOsType200ResponseOsTypeImagesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

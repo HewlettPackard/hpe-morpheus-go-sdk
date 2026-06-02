@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGroovyTaskConfig6WithDefaults
-
-`func NewGroovyTaskConfig6WithDefaults() *GroovyTaskConfig6`
-
-NewGroovyTaskConfig6WithDefaults instantiates a new GroovyTaskConfig6 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetLocalScriptGitRef
 
 `func (o *GroovyTaskConfig6) GetLocalScriptGitRef() string`

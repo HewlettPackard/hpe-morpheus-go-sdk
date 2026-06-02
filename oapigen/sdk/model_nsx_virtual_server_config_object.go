@@ -37,14 +37,6 @@ type NSXVirtualServerConfigObject struct {
 
 type _NSXVirtualServerConfigObject NSXVirtualServerConfigObject
 
-// NewNSXVirtualServerConfigObjectWithDefaults instantiates a new NSXVirtualServerConfigObject object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNSXVirtualServerConfigObjectWithDefaults() *NSXVirtualServerConfigObject {
-	this := NSXVirtualServerConfigObject{}
-	return &this
-}
-
 func (o NSXVirtualServerConfigObject) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -28,14 +28,6 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstanceLayout struct 
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstanceLayout ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstanceLayout
 
-// NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstanceLayoutWithDefaults instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstanceLayout object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstanceLayoutWithDefaults() *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstanceLayout {
-	this := ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstanceLayout{}
-	return &this
-}
-
 func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstanceLayout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

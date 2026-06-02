@@ -26,14 +26,6 @@ type RevertSnapshotInstance200Response struct {
 
 type _RevertSnapshotInstance200Response RevertSnapshotInstance200Response
 
-// NewRevertSnapshotInstance200ResponseWithDefaults instantiates a new RevertSnapshotInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRevertSnapshotInstance200ResponseWithDefaults() *RevertSnapshotInstance200Response {
-	this := RevertSnapshotInstance200Response{}
-	return &this
-}
-
 func (o RevertSnapshotInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

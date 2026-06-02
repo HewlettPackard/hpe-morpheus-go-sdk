@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListClusters200ResponseAllOfClustersInnerSiteWithDefaults
-
-`func NewListClusters200ResponseAllOfClustersInnerSiteWithDefaults() *ListClusters200ResponseAllOfClustersInnerSite`
-
-NewListClusters200ResponseAllOfClustersInnerSiteWithDefaults instantiates a new ListClusters200ResponseAllOfClustersInnerSite object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListClusters200ResponseAllOfClustersInnerSite) GetId() int64`

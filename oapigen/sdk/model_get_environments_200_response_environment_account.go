@@ -27,14 +27,6 @@ type GetEnvironments200ResponseEnvironmentAccount struct {
 
 type _GetEnvironments200ResponseEnvironmentAccount GetEnvironments200ResponseEnvironmentAccount
 
-// NewGetEnvironments200ResponseEnvironmentAccountWithDefaults instantiates a new GetEnvironments200ResponseEnvironmentAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetEnvironments200ResponseEnvironmentAccountWithDefaults() *GetEnvironments200ResponseEnvironmentAccount {
-	this := GetEnvironments200ResponseEnvironmentAccount{}
-	return &this
-}
-
 func (o GetEnvironments200ResponseEnvironmentAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

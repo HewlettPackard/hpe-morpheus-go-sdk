@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBalancerWithDefaults
-
-`func NewListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBalancerWithDefaults() *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBalancer`
-
-NewListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBalancerWithDefaults instantiates a new ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBalancer object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBalancer) GetId() int64`

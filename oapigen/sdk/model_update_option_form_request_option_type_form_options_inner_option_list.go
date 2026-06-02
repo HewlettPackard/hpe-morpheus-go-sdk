@@ -27,14 +27,6 @@ type UpdateOptionFormRequestOptionTypeFormOptionsInnerOptionList struct {
 
 type _UpdateOptionFormRequestOptionTypeFormOptionsInnerOptionList UpdateOptionFormRequestOptionTypeFormOptionsInnerOptionList
 
-// NewUpdateOptionFormRequestOptionTypeFormOptionsInnerOptionListWithDefaults instantiates a new UpdateOptionFormRequestOptionTypeFormOptionsInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateOptionFormRequestOptionTypeFormOptionsInnerOptionListWithDefaults() *UpdateOptionFormRequestOptionTypeFormOptionsInnerOptionList {
-	this := UpdateOptionFormRequestOptionTypeFormOptionsInnerOptionList{}
-	return &this
-}
-
 func (o UpdateOptionFormRequestOptionTypeFormOptionsInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

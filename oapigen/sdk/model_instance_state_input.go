@@ -28,14 +28,6 @@ type InstanceStateInput struct {
 
 type _InstanceStateInput InstanceStateInput
 
-// NewInstanceStateInputWithDefaults instantiates a new InstanceStateInput object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceStateInputWithDefaults() *InstanceStateInput {
-	this := InstanceStateInput{}
-	return &this
-}
-
 func (o InstanceStateInput) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

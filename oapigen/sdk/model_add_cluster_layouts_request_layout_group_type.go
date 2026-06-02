@@ -27,14 +27,6 @@ type AddClusterLayoutsRequestLayoutGroupType struct {
 
 type _AddClusterLayoutsRequestLayoutGroupType AddClusterLayoutsRequestLayoutGroupType
 
-// NewAddClusterLayoutsRequestLayoutGroupTypeWithDefaults instantiates a new AddClusterLayoutsRequestLayoutGroupType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterLayoutsRequestLayoutGroupTypeWithDefaults() *AddClusterLayoutsRequestLayoutGroupType {
-	this := AddClusterLayoutsRequestLayoutGroupType{}
-	return &this
-}
-
 func (o AddClusterLayoutsRequestLayoutGroupType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

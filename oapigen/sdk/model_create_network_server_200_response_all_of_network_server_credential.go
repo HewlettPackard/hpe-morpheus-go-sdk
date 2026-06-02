@@ -29,14 +29,6 @@ type CreateNetworkServer200ResponseAllOfNetworkServerCredential struct {
 
 type _CreateNetworkServer200ResponseAllOfNetworkServerCredential CreateNetworkServer200ResponseAllOfNetworkServerCredential
 
-// NewCreateNetworkServer200ResponseAllOfNetworkServerCredentialWithDefaults instantiates a new CreateNetworkServer200ResponseAllOfNetworkServerCredential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkServer200ResponseAllOfNetworkServerCredentialWithDefaults() *CreateNetworkServer200ResponseAllOfNetworkServerCredential {
-	this := CreateNetworkServer200ResponseAllOfNetworkServerCredential{}
-	return &this
-}
-
 func (o CreateNetworkServer200ResponseAllOfNetworkServerCredential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

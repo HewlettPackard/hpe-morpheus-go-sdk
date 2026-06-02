@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetIntegrations200ResponseAllOfIntegrationOneOf2ConfigWithDefaults
-
-`func NewGetIntegrations200ResponseAllOfIntegrationOneOf2ConfigWithDefaults() *GetIntegrations200ResponseAllOfIntegrationOneOf2Config`
-
-NewGetIntegrations200ResponseAllOfIntegrationOneOf2ConfigWithDefaults instantiates a new GetIntegrations200ResponseAllOfIntegrationOneOf2Config object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetZones
 
 `func (o *GetIntegrations200ResponseAllOfIntegrationOneOf2Config) GetZones() []GetIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner`

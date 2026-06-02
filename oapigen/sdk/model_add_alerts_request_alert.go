@@ -43,26 +43,6 @@ type AddAlertsRequestAlert struct {
 
 type _AddAlertsRequestAlert AddAlertsRequestAlert
 
-// NewAddAlertsRequestAlertWithDefaults instantiates a new AddAlertsRequestAlert object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddAlertsRequestAlertWithDefaults() *AddAlertsRequestAlert {
-	this := AddAlertsRequestAlert{}
-	var minDuration int32 = 0
-	this.MinDuration = &minDuration
-	var minSeverity string = "critical"
-	this.MinSeverity = &minSeverity
-	var active bool = true
-	this.Active = &active
-	var allChecks bool = false
-	this.AllChecks = &allChecks
-	var allGroups bool = false
-	this.AllGroups = &allGroups
-	var allApps bool = false
-	this.AllApps = &allApps
-	return &this
-}
-
 func (o AddAlertsRequestAlert) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

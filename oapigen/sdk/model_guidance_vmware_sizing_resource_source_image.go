@@ -28,14 +28,6 @@ type GuidanceVmwareSizingResourceSourceImage struct {
 
 type _GuidanceVmwareSizingResourceSourceImage GuidanceVmwareSizingResourceSourceImage
 
-// NewGuidanceVmwareSizingResourceSourceImageWithDefaults instantiates a new GuidanceVmwareSizingResourceSourceImage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGuidanceVmwareSizingResourceSourceImageWithDefaults() *GuidanceVmwareSizingResourceSourceImage {
-	this := GuidanceVmwareSizingResourceSourceImage{}
-	return &this
-}
-
 func (o GuidanceVmwareSizingResourceSourceImage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

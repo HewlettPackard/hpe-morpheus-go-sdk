@@ -26,14 +26,6 @@ type GetNetworkGroup200Response struct {
 
 type _GetNetworkGroup200Response GetNetworkGroup200Response
 
-// NewGetNetworkGroup200ResponseWithDefaults instantiates a new GetNetworkGroup200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkGroup200ResponseWithDefaults() *GetNetworkGroup200Response {
-	this := GetNetworkGroup200Response{}
-	return &this
-}
-
 func (o GetNetworkGroup200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetClusterHistory200ResponseAllOfProcessesInnerProcessTypeWithDefaults
-
-`func NewGetClusterHistory200ResponseAllOfProcessesInnerProcessTypeWithDefaults() *GetClusterHistory200ResponseAllOfProcessesInnerProcessType`
-
-NewGetClusterHistory200ResponseAllOfProcessesInnerProcessTypeWithDefaults instantiates a new GetClusterHistory200ResponseAllOfProcessesInnerProcessType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetCode
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerProcessType) GetCode() string`

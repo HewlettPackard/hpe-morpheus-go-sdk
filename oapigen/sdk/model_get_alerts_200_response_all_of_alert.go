@@ -40,14 +40,6 @@ type GetAlerts200ResponseAllOfAlert struct {
 
 type _GetAlerts200ResponseAllOfAlert GetAlerts200ResponseAllOfAlert
 
-// NewGetAlerts200ResponseAllOfAlertWithDefaults instantiates a new GetAlerts200ResponseAllOfAlert object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetAlerts200ResponseAllOfAlertWithDefaults() *GetAlerts200ResponseAllOfAlert {
-	this := GetAlerts200ResponseAllOfAlert{}
-	return &this
-}
-
 func (o GetAlerts200ResponseAllOfAlert) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

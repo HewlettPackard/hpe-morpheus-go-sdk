@@ -27,16 +27,6 @@ type ZoneCreateCredential struct {
 
 type _ZoneCreateCredential ZoneCreateCredential
 
-// NewZoneCreateCredentialWithDefaults instantiates a new ZoneCreateCredential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneCreateCredentialWithDefaults() *ZoneCreateCredential {
-	this := ZoneCreateCredential{}
-	var type_ string = "local"
-	this.Type = &type_
-	return &this
-}
-
 func (o ZoneCreateCredential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

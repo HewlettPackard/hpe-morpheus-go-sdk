@@ -29,16 +29,6 @@ type InstallLicenseRequest struct {
 
 type _InstallLicenseRequest InstallLicenseRequest
 
-// NewInstallLicenseRequestWithDefaults instantiates a new InstallLicenseRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstallLicenseRequestWithDefaults() *InstallLicenseRequest {
-	this := InstallLicenseRequest{}
-	var installAction string = "replace"
-	this.InstallAction = &installAction
-	return &this
-}
-
 func (o InstallLicenseRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

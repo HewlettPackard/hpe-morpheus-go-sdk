@@ -27,14 +27,6 @@ type UsersAvailableRolesRolesInnerOwner struct {
 
 type _UsersAvailableRolesRolesInnerOwner UsersAvailableRolesRolesInnerOwner
 
-// NewUsersAvailableRolesRolesInnerOwnerWithDefaults instantiates a new UsersAvailableRolesRolesInnerOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUsersAvailableRolesRolesInnerOwnerWithDefaults() *UsersAvailableRolesRolesInnerOwner {
-	this := UsersAvailableRolesRolesInnerOwner{}
-	return &this
-}
-
 func (o UsersAvailableRolesRolesInnerOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

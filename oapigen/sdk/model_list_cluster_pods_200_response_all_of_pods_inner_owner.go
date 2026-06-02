@@ -26,14 +26,6 @@ type ListClusterPods200ResponseAllOfPodsInnerOwner struct {
 
 type _ListClusterPods200ResponseAllOfPodsInnerOwner ListClusterPods200ResponseAllOfPodsInnerOwner
 
-// NewListClusterPods200ResponseAllOfPodsInnerOwnerWithDefaults instantiates a new ListClusterPods200ResponseAllOfPodsInnerOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterPods200ResponseAllOfPodsInnerOwnerWithDefaults() *ListClusterPods200ResponseAllOfPodsInnerOwner {
-	this := ListClusterPods200ResponseAllOfPodsInnerOwner{}
-	return &this
-}
-
 func (o ListClusterPods200ResponseAllOfPodsInnerOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

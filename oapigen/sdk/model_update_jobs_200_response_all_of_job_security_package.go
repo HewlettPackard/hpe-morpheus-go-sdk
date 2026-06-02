@@ -27,14 +27,6 @@ type UpdateJobs200ResponseAllOfJobSecurityPackage struct {
 
 type _UpdateJobs200ResponseAllOfJobSecurityPackage UpdateJobs200ResponseAllOfJobSecurityPackage
 
-// NewUpdateJobs200ResponseAllOfJobSecurityPackageWithDefaults instantiates a new UpdateJobs200ResponseAllOfJobSecurityPackage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateJobs200ResponseAllOfJobSecurityPackageWithDefaults() *UpdateJobs200ResponseAllOfJobSecurityPackage {
-	this := UpdateJobs200ResponseAllOfJobSecurityPackage{}
-	return &this
-}
-
 func (o UpdateJobs200ResponseAllOfJobSecurityPackage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

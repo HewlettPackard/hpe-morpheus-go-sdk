@@ -27,14 +27,6 @@ type ValidateSystem200Response struct {
 
 type _ValidateSystem200Response ValidateSystem200Response
 
-// NewValidateSystem200ResponseWithDefaults instantiates a new ValidateSystem200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewValidateSystem200ResponseWithDefaults() *ValidateSystem200Response {
-	this := ValidateSystem200Response{}
-	return &this
-}
-
 func (o ValidateSystem200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

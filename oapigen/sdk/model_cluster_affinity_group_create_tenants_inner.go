@@ -26,14 +26,6 @@ type ClusterAffinityGroupCreateTenantsInner struct {
 
 type _ClusterAffinityGroupCreateTenantsInner ClusterAffinityGroupCreateTenantsInner
 
-// NewClusterAffinityGroupCreateTenantsInnerWithDefaults instantiates a new ClusterAffinityGroupCreateTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterAffinityGroupCreateTenantsInnerWithDefaults() *ClusterAffinityGroupCreateTenantsInner {
-	this := ClusterAffinityGroupCreateTenantsInner{}
-	return &this
-}
-
 func (o ClusterAffinityGroupCreateTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

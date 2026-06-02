@@ -42,14 +42,6 @@ type ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner struct {
 
 type _ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner
 
-// NewListHealth200ResponseAllOfHealthThreadsBusyThreadsInnerWithDefaults instantiates a new ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListHealth200ResponseAllOfHealthThreadsBusyThreadsInnerWithDefaults() *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner {
-	this := ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner{}
-	return &this
-}
-
 func (o ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

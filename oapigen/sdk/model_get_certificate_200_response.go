@@ -26,14 +26,6 @@ type GetCertificate200Response struct {
 
 type _GetCertificate200Response GetCertificate200Response
 
-// NewGetCertificate200ResponseWithDefaults instantiates a new GetCertificate200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCertificate200ResponseWithDefaults() *GetCertificate200Response {
-	this := GetCertificate200Response{}
-	return &this
-}
-
 func (o GetCertificate200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

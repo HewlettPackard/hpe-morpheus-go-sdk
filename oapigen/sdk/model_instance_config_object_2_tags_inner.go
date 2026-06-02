@@ -27,14 +27,6 @@ type InstanceConfigObject2TagsInner struct {
 
 type _InstanceConfigObject2TagsInner InstanceConfigObject2TagsInner
 
-// NewInstanceConfigObject2TagsInnerWithDefaults instantiates a new InstanceConfigObject2TagsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigObject2TagsInnerWithDefaults() *InstanceConfigObject2TagsInner {
-	this := InstanceConfigObject2TagsInner{}
-	return &this
-}
-
 func (o InstanceConfigObject2TagsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

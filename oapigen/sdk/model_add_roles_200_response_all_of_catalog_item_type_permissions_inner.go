@@ -28,14 +28,6 @@ type AddRoles200ResponseAllOfCatalogItemTypePermissionsInner struct {
 
 type _AddRoles200ResponseAllOfCatalogItemTypePermissionsInner AddRoles200ResponseAllOfCatalogItemTypePermissionsInner
 
-// NewAddRoles200ResponseAllOfCatalogItemTypePermissionsInnerWithDefaults instantiates a new AddRoles200ResponseAllOfCatalogItemTypePermissionsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddRoles200ResponseAllOfCatalogItemTypePermissionsInnerWithDefaults() *AddRoles200ResponseAllOfCatalogItemTypePermissionsInner {
-	this := AddRoles200ResponseAllOfCatalogItemTypePermissionsInner{}
-	return &this
-}
-
 func (o AddRoles200ResponseAllOfCatalogItemTypePermissionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

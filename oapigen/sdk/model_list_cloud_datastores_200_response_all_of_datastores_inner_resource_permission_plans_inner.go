@@ -28,14 +28,6 @@ type ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansIn
 
 type _ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner
 
-// NewListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInnerWithDefaults instantiates a new ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInnerWithDefaults() *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner {
-	this := ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner{}
-	return &this
-}
-
 func (o ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

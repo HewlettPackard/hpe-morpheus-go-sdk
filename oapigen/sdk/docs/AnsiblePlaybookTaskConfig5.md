@@ -30,14 +30,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAnsiblePlaybookTaskConfig5WithDefaults
-
-`func NewAnsiblePlaybookTaskConfig5WithDefaults() *AnsiblePlaybookTaskConfig5`
-
-NewAnsiblePlaybookTaskConfig5WithDefaults instantiates a new AnsiblePlaybookTaskConfig5 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAnsibleOptions
 
 `func (o *AnsiblePlaybookTaskConfig5) GetAnsibleOptions() string`

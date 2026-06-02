@@ -26,14 +26,6 @@ type AddScript200ResponseContainerScript struct {
 
 type _AddScript200ResponseContainerScript AddScript200ResponseContainerScript
 
-// NewAddScript200ResponseContainerScriptWithDefaults instantiates a new AddScript200ResponseContainerScript object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddScript200ResponseContainerScriptWithDefaults() *AddScript200ResponseContainerScript {
-	this := AddScript200ResponseContainerScript{}
-	return &this
-}
-
 func (o AddScript200ResponseContainerScript) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

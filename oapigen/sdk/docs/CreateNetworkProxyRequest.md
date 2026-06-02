@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCreateNetworkProxyRequestWithDefaults
-
-`func NewCreateNetworkProxyRequestWithDefaults() *CreateNetworkProxyRequest`
-
-NewCreateNetworkProxyRequestWithDefaults instantiates a new CreateNetworkProxyRequest object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetNetworkProxy
 
 `func (o *CreateNetworkProxyRequest) GetNetworkProxy() CreateNetworkProxyRequestNetworkProxy`

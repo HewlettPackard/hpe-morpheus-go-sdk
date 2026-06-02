@@ -38,14 +38,6 @@ type TenantGroup struct {
 
 type _TenantGroup TenantGroup
 
-// NewTenantGroupWithDefaults instantiates a new TenantGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTenantGroupWithDefaults() *TenantGroup {
-	this := TenantGroup{}
-	return &this
-}
-
 func (o TenantGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

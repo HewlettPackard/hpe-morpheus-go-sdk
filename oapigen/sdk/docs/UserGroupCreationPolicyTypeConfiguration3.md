@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUserGroupCreationPolicyTypeConfiguration3WithDefaults
-
-`func NewUserGroupCreationPolicyTypeConfiguration3WithDefaults() *UserGroupCreationPolicyTypeConfiguration3`
-
-NewUserGroupCreationPolicyTypeConfiguration3WithDefaults instantiates a new UserGroupCreationPolicyTypeConfiguration3 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetUserGroup
 
 `func (o *UserGroupCreationPolicyTypeConfiguration3) GetUserGroup() string`

@@ -65,14 +65,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListTasks200ResponseAllOfTasksInnerWithDefaults
-
-`func NewListTasks200ResponseAllOfTasksInnerWithDefaults() *ListTasks200ResponseAllOfTasksInner`
-
-NewListTasks200ResponseAllOfTasksInnerWithDefaults instantiates a new ListTasks200ResponseAllOfTasksInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAnsibleOptions
 
 `func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleOptions() string`

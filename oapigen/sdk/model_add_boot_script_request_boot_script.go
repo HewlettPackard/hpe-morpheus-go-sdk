@@ -29,14 +29,6 @@ type AddBootScriptRequestBootScript struct {
 
 type _AddBootScriptRequestBootScript AddBootScriptRequestBootScript
 
-// NewAddBootScriptRequestBootScriptWithDefaults instantiates a new AddBootScriptRequestBootScript object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBootScriptRequestBootScriptWithDefaults() *AddBootScriptRequestBootScript {
-	this := AddBootScriptRequestBootScript{}
-	return &this
-}
-
 func (o AddBootScriptRequestBootScript) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

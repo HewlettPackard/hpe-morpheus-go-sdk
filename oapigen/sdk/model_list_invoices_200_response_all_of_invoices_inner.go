@@ -125,14 +125,6 @@ type ListInvoices200ResponseAllOfInvoicesInner struct {
 
 type _ListInvoices200ResponseAllOfInvoicesInner ListInvoices200ResponseAllOfInvoicesInner
 
-// NewListInvoices200ResponseAllOfInvoicesInnerWithDefaults instantiates a new ListInvoices200ResponseAllOfInvoicesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListInvoices200ResponseAllOfInvoicesInnerWithDefaults() *ListInvoices200ResponseAllOfInvoicesInner {
-	this := ListInvoices200ResponseAllOfInvoicesInner{}
-	return &this
-}
-
 func (o ListInvoices200ResponseAllOfInvoicesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

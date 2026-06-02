@@ -27,14 +27,6 @@ type GetInstance200ResponseInstanceConfigLayout struct {
 
 type _GetInstance200ResponseInstanceConfigLayout GetInstance200ResponseInstanceConfigLayout
 
-// NewGetInstance200ResponseInstanceConfigLayoutWithDefaults instantiates a new GetInstance200ResponseInstanceConfigLayout object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstance200ResponseInstanceConfigLayoutWithDefaults() *GetInstance200ResponseInstanceConfigLayout {
-	this := GetInstance200ResponseInstanceConfigLayout{}
-	return &this
-}
-
 func (o GetInstance200ResponseInstanceConfigLayout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

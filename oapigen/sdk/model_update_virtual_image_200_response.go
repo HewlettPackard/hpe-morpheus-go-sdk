@@ -27,14 +27,6 @@ type UpdateVirtualImage200Response struct {
 
 type _UpdateVirtualImage200Response UpdateVirtualImage200Response
 
-// NewUpdateVirtualImage200ResponseWithDefaults instantiates a new UpdateVirtualImage200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateVirtualImage200ResponseWithDefaults() *UpdateVirtualImage200Response {
-	this := UpdateVirtualImage200Response{}
-	return &this
-}
-
 func (o UpdateVirtualImage200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

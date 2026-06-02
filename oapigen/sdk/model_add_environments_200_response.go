@@ -27,14 +27,6 @@ type AddEnvironments200Response struct {
 
 type _AddEnvironments200Response AddEnvironments200Response
 
-// NewAddEnvironments200ResponseWithDefaults instantiates a new AddEnvironments200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddEnvironments200ResponseWithDefaults() *AddEnvironments200Response {
-	this := AddEnvironments200Response{}
-	return &this
-}
-
 func (o AddEnvironments200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

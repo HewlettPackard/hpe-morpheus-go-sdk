@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdatePlugin200ResponseAllOfPluginOptionTypesInnerOptionListWithDefaults
-
-`func NewUpdatePlugin200ResponseAllOfPluginOptionTypesInnerOptionListWithDefaults() *UpdatePlugin200ResponseAllOfPluginOptionTypesInnerOptionList`
-
-NewUpdatePlugin200ResponseAllOfPluginOptionTypesInnerOptionListWithDefaults instantiates a new UpdatePlugin200ResponseAllOfPluginOptionTypesInnerOptionList object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdatePlugin200ResponseAllOfPluginOptionTypesInnerOptionList) GetId() int64`

@@ -49,14 +49,6 @@ type Role struct {
 
 type _Role Role
 
-// NewRoleWithDefaults instantiates a new Role object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRoleWithDefaults() *Role {
-	this := Role{}
-	return &this
-}
-
 func (o Role) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

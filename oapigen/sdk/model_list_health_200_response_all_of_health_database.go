@@ -39,14 +39,6 @@ type ListHealth200ResponseAllOfHealthDatabase struct {
 
 type _ListHealth200ResponseAllOfHealthDatabase ListHealth200ResponseAllOfHealthDatabase
 
-// NewListHealth200ResponseAllOfHealthDatabaseWithDefaults instantiates a new ListHealth200ResponseAllOfHealthDatabase object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListHealth200ResponseAllOfHealthDatabaseWithDefaults() *ListHealth200ResponseAllOfHealthDatabase {
-	this := ListHealth200ResponseAllOfHealthDatabase{}
-	return &this
-}
-
 func (o ListHealth200ResponseAllOfHealthDatabase) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

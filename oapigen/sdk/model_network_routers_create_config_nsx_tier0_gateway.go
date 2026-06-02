@@ -53,14 +53,6 @@ type NetworkRoutersCreateConfigNSXTier0Gateway struct {
 
 type _NetworkRoutersCreateConfigNSXTier0Gateway NetworkRoutersCreateConfigNSXTier0Gateway
 
-// NewNetworkRoutersCreateConfigNSXTier0GatewayWithDefaults instantiates a new NetworkRoutersCreateConfigNSXTier0Gateway object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkRoutersCreateConfigNSXTier0GatewayWithDefaults() *NetworkRoutersCreateConfigNSXTier0Gateway {
-	this := NetworkRoutersCreateConfigNSXTier0Gateway{}
-	return &this
-}
-
 func (o NetworkRoutersCreateConfigNSXTier0Gateway) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

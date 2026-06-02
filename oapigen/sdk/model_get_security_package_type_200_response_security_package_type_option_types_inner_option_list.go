@@ -27,14 +27,6 @@ type GetSecurityPackageType200ResponseSecurityPackageTypeOptionTypesInnerOptionL
 
 type _GetSecurityPackageType200ResponseSecurityPackageTypeOptionTypesInnerOptionList GetSecurityPackageType200ResponseSecurityPackageTypeOptionTypesInnerOptionList
 
-// NewGetSecurityPackageType200ResponseSecurityPackageTypeOptionTypesInnerOptionListWithDefaults instantiates a new GetSecurityPackageType200ResponseSecurityPackageTypeOptionTypesInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSecurityPackageType200ResponseSecurityPackageTypeOptionTypesInnerOptionListWithDefaults() *GetSecurityPackageType200ResponseSecurityPackageTypeOptionTypesInnerOptionList {
-	this := GetSecurityPackageType200ResponseSecurityPackageTypeOptionTypesInnerOptionList{}
-	return &this
-}
-
 func (o GetSecurityPackageType200ResponseSecurityPackageTypeOptionTypesInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

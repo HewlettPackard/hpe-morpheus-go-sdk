@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddClient200ResponseAllOfClientWithDefaults
-
-`func NewAddClient200ResponseAllOfClientWithDefaults() *AddClient200ResponseAllOfClient`
-
-NewAddClient200ResponseAllOfClientWithDefaults instantiates a new AddClient200ResponseAllOfClient object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddClient200ResponseAllOfClient) GetId() int64`

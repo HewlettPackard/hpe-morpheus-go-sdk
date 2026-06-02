@@ -46,14 +46,6 @@ type LoadBalancerInstanceUpdate struct {
 
 type _LoadBalancerInstanceUpdate LoadBalancerInstanceUpdate
 
-// NewLoadBalancerInstanceUpdateWithDefaults instantiates a new LoadBalancerInstanceUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLoadBalancerInstanceUpdateWithDefaults() *LoadBalancerInstanceUpdate {
-	this := LoadBalancerInstanceUpdate{}
-	return &this
-}
-
 func (o LoadBalancerInstanceUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

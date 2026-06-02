@@ -26,14 +26,6 @@ type UpdateIntegrationInventoryRequestInventoryTenantsInner struct {
 
 type _UpdateIntegrationInventoryRequestInventoryTenantsInner UpdateIntegrationInventoryRequestInventoryTenantsInner
 
-// NewUpdateIntegrationInventoryRequestInventoryTenantsInnerWithDefaults instantiates a new UpdateIntegrationInventoryRequestInventoryTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIntegrationInventoryRequestInventoryTenantsInnerWithDefaults() *UpdateIntegrationInventoryRequestInventoryTenantsInner {
-	this := UpdateIntegrationInventoryRequestInventoryTenantsInner{}
-	return &this
-}
-
 func (o UpdateIntegrationInventoryRequestInventoryTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

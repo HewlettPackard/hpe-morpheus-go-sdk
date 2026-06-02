@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf6WithDefaults
-
-`func NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf6WithDefaults() *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf6`
-
-NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf6WithDefaults instantiates a new UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf6 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetRemovalAge
 
 `func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf6) GetRemovalAge() string`

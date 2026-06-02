@@ -29,14 +29,6 @@ type GetRole200ResponseReportTypePermissionsInner struct {
 
 type _GetRole200ResponseReportTypePermissionsInner GetRole200ResponseReportTypePermissionsInner
 
-// NewGetRole200ResponseReportTypePermissionsInnerWithDefaults instantiates a new GetRole200ResponseReportTypePermissionsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetRole200ResponseReportTypePermissionsInnerWithDefaults() *GetRole200ResponseReportTypePermissionsInner {
-	this := GetRole200ResponseReportTypePermissionsInner{}
-	return &this
-}
-
 func (o GetRole200ResponseReportTypePermissionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

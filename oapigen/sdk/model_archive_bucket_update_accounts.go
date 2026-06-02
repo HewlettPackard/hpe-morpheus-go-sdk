@@ -26,14 +26,6 @@ type ArchiveBucketUpdateAccounts struct {
 
 type _ArchiveBucketUpdateAccounts ArchiveBucketUpdateAccounts
 
-// NewArchiveBucketUpdateAccountsWithDefaults instantiates a new ArchiveBucketUpdateAccounts object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewArchiveBucketUpdateAccountsWithDefaults() *ArchiveBucketUpdateAccounts {
-	this := ArchiveBucketUpdateAccounts{}
-	return &this
-}
-
 func (o ArchiveBucketUpdateAccounts) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

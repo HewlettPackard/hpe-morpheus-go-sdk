@@ -31,14 +31,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddClusterLayoutsRequestLayoutWithDefaults
-
-`func NewAddClusterLayoutsRequestLayoutWithDefaults() *AddClusterLayoutsRequestLayout`
-
-NewAddClusterLayoutsRequestLayoutWithDefaults instantiates a new AddClusterLayoutsRequestLayout object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetName
 
 `func (o *AddClusterLayoutsRequestLayout) GetName() string`

@@ -28,14 +28,6 @@ type UpdateInstanceThreshold200Response struct {
 
 type _UpdateInstanceThreshold200Response UpdateInstanceThreshold200Response
 
-// NewUpdateInstanceThreshold200ResponseWithDefaults instantiates a new UpdateInstanceThreshold200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstanceThreshold200ResponseWithDefaults() *UpdateInstanceThreshold200Response {
-	this := UpdateInstanceThreshold200Response{}
-	return &this
-}
-
 func (o UpdateInstanceThreshold200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

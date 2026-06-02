@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetJobExecutionEvents200ResponseAllOfProcessEventCreatedByWithDefaults
-
-`func NewGetJobExecutionEvents200ResponseAllOfProcessEventCreatedByWithDefaults() *GetJobExecutionEvents200ResponseAllOfProcessEventCreatedBy`
-
-NewGetJobExecutionEvents200ResponseAllOfProcessEventCreatedByWithDefaults instantiates a new GetJobExecutionEvents200ResponseAllOfProcessEventCreatedBy object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetUsername
 
 `func (o *GetJobExecutionEvents200ResponseAllOfProcessEventCreatedBy) GetUsername() string`

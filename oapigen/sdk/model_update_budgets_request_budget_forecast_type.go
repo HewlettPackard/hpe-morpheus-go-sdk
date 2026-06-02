@@ -27,14 +27,6 @@ type UpdateBudgetsRequestBudgetForecastType struct {
 
 type _UpdateBudgetsRequestBudgetForecastType UpdateBudgetsRequestBudgetForecastType
 
-// NewUpdateBudgetsRequestBudgetForecastTypeWithDefaults instantiates a new UpdateBudgetsRequestBudgetForecastType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBudgetsRequestBudgetForecastTypeWithDefaults() *UpdateBudgetsRequestBudgetForecastType {
-	this := UpdateBudgetsRequestBudgetForecastType{}
-	return &this
-}
-
 func (o UpdateBudgetsRequestBudgetForecastType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

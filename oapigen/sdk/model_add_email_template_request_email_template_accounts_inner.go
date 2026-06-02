@@ -27,14 +27,6 @@ type AddEmailTemplateRequestEmailTemplateAccountsInner struct {
 
 type _AddEmailTemplateRequestEmailTemplateAccountsInner AddEmailTemplateRequestEmailTemplateAccountsInner
 
-// NewAddEmailTemplateRequestEmailTemplateAccountsInnerWithDefaults instantiates a new AddEmailTemplateRequestEmailTemplateAccountsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddEmailTemplateRequestEmailTemplateAccountsInnerWithDefaults() *AddEmailTemplateRequestEmailTemplateAccountsInner {
-	this := AddEmailTemplateRequestEmailTemplateAccountsInner{}
-	return &this
-}
-
 func (o AddEmailTemplateRequestEmailTemplateAccountsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

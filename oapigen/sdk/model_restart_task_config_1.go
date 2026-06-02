@@ -33,14 +33,6 @@ type RestartTaskConfig1 struct {
 
 type _RestartTaskConfig1 RestartTaskConfig1
 
-// NewRestartTaskConfig1WithDefaults instantiates a new RestartTaskConfig1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRestartTaskConfig1WithDefaults() *RestartTaskConfig1 {
-	this := RestartTaskConfig1{}
-	return &this
-}
-
 func (o RestartTaskConfig1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

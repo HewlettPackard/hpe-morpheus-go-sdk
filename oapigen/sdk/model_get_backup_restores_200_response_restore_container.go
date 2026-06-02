@@ -29,14 +29,6 @@ type GetBackupRestores200ResponseRestoreContainer struct {
 
 type _GetBackupRestores200ResponseRestoreContainer GetBackupRestores200ResponseRestoreContainer
 
-// NewGetBackupRestores200ResponseRestoreContainerWithDefaults instantiates a new GetBackupRestores200ResponseRestoreContainer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetBackupRestores200ResponseRestoreContainerWithDefaults() *GetBackupRestores200ResponseRestoreContainer {
-	this := GetBackupRestores200ResponseRestoreContainer{}
-	return &this
-}
-
 func (o GetBackupRestores200ResponseRestoreContainer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

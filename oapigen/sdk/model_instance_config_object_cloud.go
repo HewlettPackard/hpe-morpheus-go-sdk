@@ -28,14 +28,6 @@ type InstanceConfigObjectCloud struct {
 
 type _InstanceConfigObjectCloud InstanceConfigObjectCloud
 
-// NewInstanceConfigObjectCloudWithDefaults instantiates a new InstanceConfigObjectCloud object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigObjectCloudWithDefaults() *InstanceConfigObjectCloud {
-	this := InstanceConfigObjectCloud{}
-	return &this
-}
-
 func (o InstanceConfigObjectCloud) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

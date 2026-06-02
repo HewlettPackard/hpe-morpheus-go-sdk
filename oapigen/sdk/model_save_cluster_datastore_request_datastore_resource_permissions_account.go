@@ -26,14 +26,6 @@ type SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount struct {
 
 type _SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount
 
-// NewSaveClusterDatastoreRequestDatastoreResourcePermissionsAccountWithDefaults instantiates a new SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveClusterDatastoreRequestDatastoreResourcePermissionsAccountWithDefaults() *SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount {
-	this := SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount{}
-	return &this
-}
-
 func (o SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

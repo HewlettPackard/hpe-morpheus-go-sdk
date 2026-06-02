@@ -27,14 +27,6 @@ type ClustersType struct {
 
 type _ClustersType ClustersType
 
-// NewClustersTypeWithDefaults instantiates a new ClustersType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClustersTypeWithDefaults() *ClustersType {
-	this := ClustersType{}
-	return &this
-}
-
 func (o ClustersType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

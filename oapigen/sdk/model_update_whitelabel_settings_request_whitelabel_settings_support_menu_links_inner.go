@@ -28,14 +28,6 @@ type UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner stru
 
 type _UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner
 
-// NewUpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInnerWithDefaults instantiates a new UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInnerWithDefaults() *UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner {
-	this := UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner{}
-	return &this
-}
-
 func (o UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

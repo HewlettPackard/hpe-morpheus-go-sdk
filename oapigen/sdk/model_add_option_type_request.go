@@ -26,14 +26,6 @@ type AddOptionTypeRequest struct {
 
 type _AddOptionTypeRequest AddOptionTypeRequest
 
-// NewAddOptionTypeRequestWithDefaults instantiates a new AddOptionTypeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddOptionTypeRequestWithDefaults() *AddOptionTypeRequest {
-	this := AddOptionTypeRequest{}
-	return &this
-}
-
 func (o AddOptionTypeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

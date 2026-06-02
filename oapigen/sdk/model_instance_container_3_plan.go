@@ -28,14 +28,6 @@ type InstanceContainer3Plan struct {
 
 type _InstanceContainer3Plan InstanceContainer3Plan
 
-// NewInstanceContainer3PlanWithDefaults instantiates a new InstanceContainer3Plan object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainer3PlanWithDefaults() *InstanceContainer3Plan {
-	this := InstanceContainer3Plan{}
-	return &this
-}
-
 func (o InstanceContainer3Plan) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

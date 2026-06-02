@@ -31,14 +31,6 @@ type GetPreseedScript200ResponsePreseedScript struct {
 
 type _GetPreseedScript200ResponsePreseedScript GetPreseedScript200ResponsePreseedScript
 
-// NewGetPreseedScript200ResponsePreseedScriptWithDefaults instantiates a new GetPreseedScript200ResponsePreseedScript object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetPreseedScript200ResponsePreseedScriptWithDefaults() *GetPreseedScript200ResponsePreseedScript {
-	this := GetPreseedScript200ResponsePreseedScript{}
-	return &this
-}
-
 func (o GetPreseedScript200ResponsePreseedScript) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

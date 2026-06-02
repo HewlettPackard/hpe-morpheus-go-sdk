@@ -28,14 +28,6 @@ type AddUser200ResponseAllOfUserAccessAppTemplatesInner struct {
 
 type _AddUser200ResponseAllOfUserAccessAppTemplatesInner AddUser200ResponseAllOfUserAccessAppTemplatesInner
 
-// NewAddUser200ResponseAllOfUserAccessAppTemplatesInnerWithDefaults instantiates a new AddUser200ResponseAllOfUserAccessAppTemplatesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddUser200ResponseAllOfUserAccessAppTemplatesInnerWithDefaults() *AddUser200ResponseAllOfUserAccessAppTemplatesInner {
-	this := AddUser200ResponseAllOfUserAccessAppTemplatesInner{}
-	return &this
-}
-
 func (o AddUser200ResponseAllOfUserAccessAppTemplatesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

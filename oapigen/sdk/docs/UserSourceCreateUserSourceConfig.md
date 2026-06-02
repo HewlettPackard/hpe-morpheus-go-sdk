@@ -48,14 +48,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUserSourceCreateUserSourceConfigWithDefaults
-
-`func NewUserSourceCreateUserSourceConfigWithDefaults() *UserSourceCreateUserSourceConfig`
-
-NewUserSourceCreateUserSourceConfigWithDefaults instantiates a new UserSourceCreateUserSourceConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetUrl
 
 `func (o *UserSourceCreateUserSourceConfig) GetUrl() string`

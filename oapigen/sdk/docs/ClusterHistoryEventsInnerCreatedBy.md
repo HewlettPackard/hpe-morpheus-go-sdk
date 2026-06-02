@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewClusterHistoryEventsInnerCreatedByWithDefaults
-
-`func NewClusterHistoryEventsInnerCreatedByWithDefaults() *ClusterHistoryEventsInnerCreatedBy`
-
-NewClusterHistoryEventsInnerCreatedByWithDefaults instantiates a new ClusterHistoryEventsInnerCreatedBy object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetUsername
 
 `func (o *ClusterHistoryEventsInnerCreatedBy) GetUsername() string`

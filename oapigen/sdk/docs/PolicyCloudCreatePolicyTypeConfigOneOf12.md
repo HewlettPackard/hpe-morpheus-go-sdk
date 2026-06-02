@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPolicyCloudCreatePolicyTypeConfigOneOf12WithDefaults
-
-`func NewPolicyCloudCreatePolicyTypeConfigOneOf12WithDefaults() *PolicyCloudCreatePolicyTypeConfigOneOf12`
-
-NewPolicyCloudCreatePolicyTypeConfigOneOf12WithDefaults instantiates a new PolicyCloudCreatePolicyTypeConfigOneOf12 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMaxCores
 
 `func (o *PolicyCloudCreatePolicyTypeConfigOneOf12) GetMaxCores() string`

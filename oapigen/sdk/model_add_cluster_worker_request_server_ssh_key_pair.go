@@ -27,14 +27,6 @@ type AddClusterWorkerRequestServerSshKeyPair struct {
 
 type _AddClusterWorkerRequestServerSshKeyPair AddClusterWorkerRequestServerSshKeyPair
 
-// NewAddClusterWorkerRequestServerSshKeyPairWithDefaults instantiates a new AddClusterWorkerRequestServerSshKeyPair object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterWorkerRequestServerSshKeyPairWithDefaults() *AddClusterWorkerRequestServerSshKeyPair {
-	this := AddClusterWorkerRequestServerSshKeyPair{}
-	return &this
-}
-
 func (o AddClusterWorkerRequestServerSshKeyPair) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

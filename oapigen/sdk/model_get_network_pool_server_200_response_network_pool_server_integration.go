@@ -27,14 +27,6 @@ type GetNetworkPoolServer200ResponseNetworkPoolServerIntegration struct {
 
 type _GetNetworkPoolServer200ResponseNetworkPoolServerIntegration GetNetworkPoolServer200ResponseNetworkPoolServerIntegration
 
-// NewGetNetworkPoolServer200ResponseNetworkPoolServerIntegrationWithDefaults instantiates a new GetNetworkPoolServer200ResponseNetworkPoolServerIntegration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkPoolServer200ResponseNetworkPoolServerIntegrationWithDefaults() *GetNetworkPoolServer200ResponseNetworkPoolServerIntegration {
-	this := GetNetworkPoolServer200ResponseNetworkPoolServerIntegration{}
-	return &this
-}
-
 func (o GetNetworkPoolServer200ResponseNetworkPoolServerIntegration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

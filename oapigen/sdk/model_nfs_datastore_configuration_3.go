@@ -31,14 +31,6 @@ type NFSDatastoreConfiguration3 struct {
 
 type _NFSDatastoreConfiguration3 NFSDatastoreConfiguration3
 
-// NewNFSDatastoreConfiguration3WithDefaults instantiates a new NFSDatastoreConfiguration3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNFSDatastoreConfiguration3WithDefaults() *NFSDatastoreConfiguration3 {
-	this := NFSDatastoreConfiguration3{}
-	return &this
-}
-
 func (o NFSDatastoreConfiguration3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

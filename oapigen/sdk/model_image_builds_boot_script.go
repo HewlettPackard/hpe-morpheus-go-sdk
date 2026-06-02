@@ -27,14 +27,6 @@ type ImageBuildsBootScript struct {
 
 type _ImageBuildsBootScript ImageBuildsBootScript
 
-// NewImageBuildsBootScriptWithDefaults instantiates a new ImageBuildsBootScript object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewImageBuildsBootScriptWithDefaults() *ImageBuildsBootScript {
-	this := ImageBuildsBootScript{}
-	return &this
-}
-
 func (o ImageBuildsBootScript) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

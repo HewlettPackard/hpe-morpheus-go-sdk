@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateNetwork200ResponseAllOfNetworkPoolWithDefaults
-
-`func NewUpdateNetwork200ResponseAllOfNetworkPoolWithDefaults() *UpdateNetwork200ResponseAllOfNetworkPool`
-
-NewUpdateNetwork200ResponseAllOfNetworkPoolWithDefaults instantiates a new UpdateNetwork200ResponseAllOfNetworkPool object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateNetwork200ResponseAllOfNetworkPool) GetId() int64`

@@ -27,14 +27,6 @@ type VirtualImageUpdateTagsInner struct {
 
 type _VirtualImageUpdateTagsInner VirtualImageUpdateTagsInner
 
-// NewVirtualImageUpdateTagsInnerWithDefaults instantiates a new VirtualImageUpdateTagsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewVirtualImageUpdateTagsInnerWithDefaults() *VirtualImageUpdateTagsInner {
-	this := VirtualImageUpdateTagsInner{}
-	return &this
-}
-
 func (o VirtualImageUpdateTagsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

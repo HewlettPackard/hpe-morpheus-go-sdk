@@ -29,14 +29,6 @@ type UpdateBackupJobs200ResponseAllOfJobAccount struct {
 
 type _UpdateBackupJobs200ResponseAllOfJobAccount UpdateBackupJobs200ResponseAllOfJobAccount
 
-// NewUpdateBackupJobs200ResponseAllOfJobAccountWithDefaults instantiates a new UpdateBackupJobs200ResponseAllOfJobAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBackupJobs200ResponseAllOfJobAccountWithDefaults() *UpdateBackupJobs200ResponseAllOfJobAccount {
-	this := UpdateBackupJobs200ResponseAllOfJobAccount{}
-	return &this
-}
-
 func (o UpdateBackupJobs200ResponseAllOfJobAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

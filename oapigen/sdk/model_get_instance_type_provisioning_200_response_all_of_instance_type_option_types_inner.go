@@ -66,14 +66,6 @@ type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner str
 
 type _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner
 
-// NewGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInnerWithDefaults instantiates a new GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInnerWithDefaults() *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner {
-	this := GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner{}
-	return &this
-}
-
 func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -22,14 +22,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetSpecTemplate200ResponseSpecTemplateFileWithDefaults
-
-`func NewGetSpecTemplate200ResponseSpecTemplateFileWithDefaults() *GetSpecTemplate200ResponseSpecTemplateFile`
-
-NewGetSpecTemplate200ResponseSpecTemplateFileWithDefaults instantiates a new GetSpecTemplate200ResponseSpecTemplateFile object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetSpecTemplate200ResponseSpecTemplateFile) GetId() int64`

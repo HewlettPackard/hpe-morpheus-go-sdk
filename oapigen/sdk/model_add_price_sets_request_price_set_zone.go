@@ -27,14 +27,6 @@ type AddPriceSetsRequestPriceSetZone struct {
 
 type _AddPriceSetsRequestPriceSetZone AddPriceSetsRequestPriceSetZone
 
-// NewAddPriceSetsRequestPriceSetZoneWithDefaults instantiates a new AddPriceSetsRequestPriceSetZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPriceSetsRequestPriceSetZoneWithDefaults() *AddPriceSetsRequestPriceSetZone {
-	this := AddPriceSetsRequestPriceSetZone{}
-	return &this
-}
-
 func (o AddPriceSetsRequestPriceSetZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

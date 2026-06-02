@@ -27,14 +27,6 @@ type ImageBuildsLastResultImageBuild struct {
 
 type _ImageBuildsLastResultImageBuild ImageBuildsLastResultImageBuild
 
-// NewImageBuildsLastResultImageBuildWithDefaults instantiates a new ImageBuildsLastResultImageBuild object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewImageBuildsLastResultImageBuildWithDefaults() *ImageBuildsLastResultImageBuild {
-	this := ImageBuildsLastResultImageBuild{}
-	return &this
-}
-
 func (o ImageBuildsLastResultImageBuild) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

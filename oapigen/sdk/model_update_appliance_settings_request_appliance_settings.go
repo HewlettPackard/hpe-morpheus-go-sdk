@@ -135,14 +135,6 @@ type UpdateApplianceSettingsRequestApplianceSettings struct {
 
 type _UpdateApplianceSettingsRequestApplianceSettings UpdateApplianceSettingsRequestApplianceSettings
 
-// NewUpdateApplianceSettingsRequestApplianceSettingsWithDefaults instantiates a new UpdateApplianceSettingsRequestApplianceSettings object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateApplianceSettingsRequestApplianceSettingsWithDefaults() *UpdateApplianceSettingsRequestApplianceSettings {
-	this := UpdateApplianceSettingsRequestApplianceSettings{}
-	return &this
-}
-
 func (o UpdateApplianceSettingsRequestApplianceSettings) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

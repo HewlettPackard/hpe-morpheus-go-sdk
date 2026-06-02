@@ -26,14 +26,6 @@ type NetworkFirewallRuleUpdateScopes struct {
 
 type _NetworkFirewallRuleUpdateScopes NetworkFirewallRuleUpdateScopes
 
-// NewNetworkFirewallRuleUpdateScopesWithDefaults instantiates a new NetworkFirewallRuleUpdateScopes object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkFirewallRuleUpdateScopesWithDefaults() *NetworkFirewallRuleUpdateScopes {
-	this := NetworkFirewallRuleUpdateScopes{}
-	return &this
-}
-
 func (o NetworkFirewallRuleUpdateScopes) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

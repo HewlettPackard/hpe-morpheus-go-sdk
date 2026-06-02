@@ -29,14 +29,6 @@ type License struct {
 
 type _License License
 
-// NewLicenseWithDefaults instantiates a new License object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLicenseWithDefaults() *License {
-	this := License{}
-	return &this
-}
-
 func (o License) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

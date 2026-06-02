@@ -63,14 +63,6 @@ type GetCheckApps200ResponseChecksInner struct {
 
 type _GetCheckApps200ResponseChecksInner GetCheckApps200ResponseChecksInner
 
-// NewGetCheckApps200ResponseChecksInnerWithDefaults instantiates a new GetCheckApps200ResponseChecksInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCheckApps200ResponseChecksInnerWithDefaults() *GetCheckApps200ResponseChecksInner {
-	this := GetCheckApps200ResponseChecksInner{}
-	return &this
-}
-
 func (o GetCheckApps200ResponseChecksInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

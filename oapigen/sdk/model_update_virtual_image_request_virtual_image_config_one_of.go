@@ -33,14 +33,6 @@ type UpdateVirtualImageRequestVirtualImageConfigOneOf struct {
 
 type _UpdateVirtualImageRequestVirtualImageConfigOneOf UpdateVirtualImageRequestVirtualImageConfigOneOf
 
-// NewUpdateVirtualImageRequestVirtualImageConfigOneOfWithDefaults instantiates a new UpdateVirtualImageRequestVirtualImageConfigOneOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateVirtualImageRequestVirtualImageConfigOneOfWithDefaults() *UpdateVirtualImageRequestVirtualImageConfigOneOf {
-	this := UpdateVirtualImageRequestVirtualImageConfigOneOf{}
-	return &this
-}
-
 func (o UpdateVirtualImageRequestVirtualImageConfigOneOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

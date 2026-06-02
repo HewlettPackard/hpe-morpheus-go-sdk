@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewVMWareInstanceConfiguration1WithDefaults
-
-`func NewVMWareInstanceConfiguration1WithDefaults() *VMWareInstanceConfiguration1`
-
-NewVMWareInstanceConfiguration1WithDefaults instantiates a new VMWareInstanceConfiguration1 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetNoAgent
 
 `func (o *VMWareInstanceConfiguration1) GetNoAgent() bool`

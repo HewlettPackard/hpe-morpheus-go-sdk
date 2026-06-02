@@ -32,16 +32,6 @@ type ClusterCreateServerNetworkInterfacesInner struct {
 
 type _ClusterCreateServerNetworkInterfacesInner ClusterCreateServerNetworkInterfacesInner
 
-// NewClusterCreateServerNetworkInterfacesInnerWithDefaults instantiates a new ClusterCreateServerNetworkInterfacesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterCreateServerNetworkInterfacesInnerWithDefaults() *ClusterCreateServerNetworkInterfacesInner {
-	this := ClusterCreateServerNetworkInterfacesInner{}
-	var ipMode string = ""
-	this.IpMode = &ipMode
-	return &this
-}
-
 func (o ClusterCreateServerNetworkInterfacesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

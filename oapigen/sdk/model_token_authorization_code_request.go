@@ -33,16 +33,6 @@ type TokenAuthorizationCodeRequest struct {
 
 type _TokenAuthorizationCodeRequest TokenAuthorizationCodeRequest
 
-// NewTokenAuthorizationCodeRequestWithDefaults instantiates a new TokenAuthorizationCodeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTokenAuthorizationCodeRequestWithDefaults() *TokenAuthorizationCodeRequest {
-	this := TokenAuthorizationCodeRequest{}
-	var grantType string = "authorization_code"
-	this.GrantType = grantType
-	return &this
-}
-
 func (o TokenAuthorizationCodeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

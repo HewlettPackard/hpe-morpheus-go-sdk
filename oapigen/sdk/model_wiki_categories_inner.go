@@ -27,14 +27,6 @@ type WikiCategoriesInner struct {
 
 type _WikiCategoriesInner WikiCategoriesInner
 
-// NewWikiCategoriesInnerWithDefaults instantiates a new WikiCategoriesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWikiCategoriesInnerWithDefaults() *WikiCategoriesInner {
-	this := WikiCategoriesInner{}
-	return &this
-}
-
 func (o WikiCategoriesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

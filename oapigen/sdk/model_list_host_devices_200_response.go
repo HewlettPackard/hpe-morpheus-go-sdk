@@ -26,14 +26,6 @@ type ListHostDevices200Response struct {
 
 type _ListHostDevices200Response ListHostDevices200Response
 
-// NewListHostDevices200ResponseWithDefaults instantiates a new ListHostDevices200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListHostDevices200ResponseWithDefaults() *ListHostDevices200Response {
-	this := ListHostDevices200Response{}
-	return &this
-}
-
 func (o ListHostDevices200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

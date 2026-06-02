@@ -39,14 +39,6 @@ type CloudsConfigHVM struct {
 
 type _CloudsConfigHVM CloudsConfigHVM
 
-// NewCloudsConfigHVMWithDefaults instantiates a new CloudsConfigHVM object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCloudsConfigHVMWithDefaults() *CloudsConfigHVM {
-	this := CloudsConfigHVM{}
-	return &this
-}
-
 func (o CloudsConfigHVM) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

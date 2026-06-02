@@ -28,14 +28,6 @@ type ProvisioningSettingsDefaultTemplateType struct {
 
 type _ProvisioningSettingsDefaultTemplateType ProvisioningSettingsDefaultTemplateType
 
-// NewProvisioningSettingsDefaultTemplateTypeWithDefaults instantiates a new ProvisioningSettingsDefaultTemplateType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewProvisioningSettingsDefaultTemplateTypeWithDefaults() *ProvisioningSettingsDefaultTemplateType {
-	this := ProvisioningSettingsDefaultTemplateType{}
-	return &this
-}
-
 func (o ProvisioningSettingsDefaultTemplateType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

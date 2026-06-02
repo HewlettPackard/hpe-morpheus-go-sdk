@@ -34,14 +34,6 @@ type UpdateBlueprintRequestOneOf struct {
 
 type _UpdateBlueprintRequestOneOf UpdateBlueprintRequestOneOf
 
-// NewUpdateBlueprintRequestOneOfWithDefaults instantiates a new UpdateBlueprintRequestOneOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBlueprintRequestOneOfWithDefaults() *UpdateBlueprintRequestOneOf {
-	this := UpdateBlueprintRequestOneOf{}
-	return &this
-}
-
 func (o UpdateBlueprintRequestOneOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

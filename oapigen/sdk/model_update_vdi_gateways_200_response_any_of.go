@@ -26,14 +26,6 @@ type UpdateVDIGateways200ResponseAnyOf struct {
 
 type _UpdateVDIGateways200ResponseAnyOf UpdateVDIGateways200ResponseAnyOf
 
-// NewUpdateVDIGateways200ResponseAnyOfWithDefaults instantiates a new UpdateVDIGateways200ResponseAnyOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateVDIGateways200ResponseAnyOfWithDefaults() *UpdateVDIGateways200ResponseAnyOf {
-	this := UpdateVDIGateways200ResponseAnyOf{}
-	return &this
-}
-
 func (o UpdateVDIGateways200ResponseAnyOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type DeleteResourcePoolGroup200Response struct {
 
 type _DeleteResourcePoolGroup200Response DeleteResourcePoolGroup200Response
 
-// NewDeleteResourcePoolGroup200ResponseWithDefaults instantiates a new DeleteResourcePoolGroup200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteResourcePoolGroup200ResponseWithDefaults() *DeleteResourcePoolGroup200Response {
-	this := DeleteResourcePoolGroup200Response{}
-	return &this
-}
-
 func (o DeleteResourcePoolGroup200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

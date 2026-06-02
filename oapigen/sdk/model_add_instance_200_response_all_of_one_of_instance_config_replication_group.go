@@ -26,14 +26,6 @@ type AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup struct {
 
 type _AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup
 
-// NewAddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroupWithDefaults instantiates a new AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroupWithDefaults() *AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup {
-	this := AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup{}
-	return &this
-}
-
 func (o AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

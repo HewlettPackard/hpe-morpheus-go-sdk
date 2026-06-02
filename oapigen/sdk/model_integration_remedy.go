@@ -43,14 +43,6 @@ type IntegrationRemedy struct {
 
 type _IntegrationRemedy IntegrationRemedy
 
-// NewIntegrationRemedyWithDefaults instantiates a new IntegrationRemedy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationRemedyWithDefaults() *IntegrationRemedy {
-	this := IntegrationRemedy{}
-	return &this
-}
-
 func (o IntegrationRemedy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

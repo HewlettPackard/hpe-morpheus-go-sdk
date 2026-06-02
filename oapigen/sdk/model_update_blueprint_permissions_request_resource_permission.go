@@ -31,14 +31,6 @@ type UpdateBlueprintPermissionsRequestResourcePermission struct {
 
 type _UpdateBlueprintPermissionsRequestResourcePermission UpdateBlueprintPermissionsRequestResourcePermission
 
-// NewUpdateBlueprintPermissionsRequestResourcePermissionWithDefaults instantiates a new UpdateBlueprintPermissionsRequestResourcePermission object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBlueprintPermissionsRequestResourcePermissionWithDefaults() *UpdateBlueprintPermissionsRequestResourcePermission {
-	this := UpdateBlueprintPermissionsRequestResourcePermission{}
-	return &this
-}
-
 func (o UpdateBlueprintPermissionsRequestResourcePermission) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

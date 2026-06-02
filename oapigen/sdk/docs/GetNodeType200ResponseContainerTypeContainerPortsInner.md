@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNodeType200ResponseContainerTypeContainerPortsInnerWithDefaults
-
-`func NewGetNodeType200ResponseContainerTypeContainerPortsInnerWithDefaults() *GetNodeType200ResponseContainerTypeContainerPortsInner`
-
-NewGetNodeType200ResponseContainerTypeContainerPortsInnerWithDefaults instantiates a new GetNodeType200ResponseContainerTypeContainerPortsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetName
 
 `func (o *GetNodeType200ResponseContainerTypeContainerPortsInner) GetName() string`

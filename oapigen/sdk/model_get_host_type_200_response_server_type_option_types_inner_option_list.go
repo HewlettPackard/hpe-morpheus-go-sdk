@@ -27,14 +27,6 @@ type GetHostType200ResponseServerTypeOptionTypesInnerOptionList struct {
 
 type _GetHostType200ResponseServerTypeOptionTypesInnerOptionList GetHostType200ResponseServerTypeOptionTypesInnerOptionList
 
-// NewGetHostType200ResponseServerTypeOptionTypesInnerOptionListWithDefaults instantiates a new GetHostType200ResponseServerTypeOptionTypesInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetHostType200ResponseServerTypeOptionTypesInnerOptionListWithDefaults() *GetHostType200ResponseServerTypeOptionTypesInnerOptionList {
-	this := GetHostType200ResponseServerTypeOptionTypesInnerOptionList{}
-	return &this
-}
-
 func (o GetHostType200ResponseServerTypeOptionTypesInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

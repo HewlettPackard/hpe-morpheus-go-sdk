@@ -26,14 +26,6 @@ type UpdateWikiAppRequest struct {
 
 type _UpdateWikiAppRequest UpdateWikiAppRequest
 
-// NewUpdateWikiAppRequestWithDefaults instantiates a new UpdateWikiAppRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateWikiAppRequestWithDefaults() *UpdateWikiAppRequest {
-	this := UpdateWikiAppRequest{}
-	return &this
-}
-
 func (o UpdateWikiAppRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

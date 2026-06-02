@@ -34,14 +34,6 @@ type VRealizeOrchestratorTaskConfig4 struct {
 
 type _VRealizeOrchestratorTaskConfig4 VRealizeOrchestratorTaskConfig4
 
-// NewVRealizeOrchestratorTaskConfig4WithDefaults instantiates a new VRealizeOrchestratorTaskConfig4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewVRealizeOrchestratorTaskConfig4WithDefaults() *VRealizeOrchestratorTaskConfig4 {
-	this := VRealizeOrchestratorTaskConfig4{}
-	return &this
-}
-
 func (o VRealizeOrchestratorTaskConfig4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

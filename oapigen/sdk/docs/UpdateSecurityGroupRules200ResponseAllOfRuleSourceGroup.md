@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateSecurityGroupRules200ResponseAllOfRuleSourceGroupWithDefaults
-
-`func NewUpdateSecurityGroupRules200ResponseAllOfRuleSourceGroupWithDefaults() *UpdateSecurityGroupRules200ResponseAllOfRuleSourceGroup`
-
-NewUpdateSecurityGroupRules200ResponseAllOfRuleSourceGroupWithDefaults instantiates a new UpdateSecurityGroupRules200ResponseAllOfRuleSourceGroup object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateSecurityGroupRules200ResponseAllOfRuleSourceGroup) GetId() int64`

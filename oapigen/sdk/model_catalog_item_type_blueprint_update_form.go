@@ -27,14 +27,6 @@ type CatalogItemTypeBlueprintUpdateForm struct {
 
 type _CatalogItemTypeBlueprintUpdateForm CatalogItemTypeBlueprintUpdateForm
 
-// NewCatalogItemTypeBlueprintUpdateFormWithDefaults instantiates a new CatalogItemTypeBlueprintUpdateForm object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCatalogItemTypeBlueprintUpdateFormWithDefaults() *CatalogItemTypeBlueprintUpdateForm {
-	this := CatalogItemTypeBlueprintUpdateForm{}
-	return &this
-}
-
 func (o CatalogItemTypeBlueprintUpdateForm) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

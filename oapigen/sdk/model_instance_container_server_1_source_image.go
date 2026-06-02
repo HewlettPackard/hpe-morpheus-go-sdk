@@ -28,14 +28,6 @@ type InstanceContainerServer1SourceImage struct {
 
 type _InstanceContainerServer1SourceImage InstanceContainerServer1SourceImage
 
-// NewInstanceContainerServer1SourceImageWithDefaults instantiates a new InstanceContainerServer1SourceImage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainerServer1SourceImageWithDefaults() *InstanceContainerServer1SourceImage {
-	this := InstanceContainerServer1SourceImage{}
-	return &this
-}
-
 func (o InstanceContainerServer1SourceImage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

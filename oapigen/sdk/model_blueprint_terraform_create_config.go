@@ -27,14 +27,6 @@ type BlueprintTerraformCreateConfig struct {
 
 type _BlueprintTerraformCreateConfig BlueprintTerraformCreateConfig
 
-// NewBlueprintTerraformCreateConfigWithDefaults instantiates a new BlueprintTerraformCreateConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintTerraformCreateConfigWithDefaults() *BlueprintTerraformCreateConfig {
-	this := BlueprintTerraformCreateConfig{}
-	return &this
-}
-
 func (o BlueprintTerraformCreateConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

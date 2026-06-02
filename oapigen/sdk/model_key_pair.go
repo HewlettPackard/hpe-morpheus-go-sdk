@@ -37,14 +37,6 @@ type KeyPair struct {
 
 type _KeyPair KeyPair
 
-// NewKeyPairWithDefaults instantiates a new KeyPair object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKeyPairWithDefaults() *KeyPair {
-	this := KeyPair{}
-	return &this
-}
-
 func (o KeyPair) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

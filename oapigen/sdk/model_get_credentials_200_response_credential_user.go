@@ -28,14 +28,6 @@ type GetCredentials200ResponseCredentialUser struct {
 
 type _GetCredentials200ResponseCredentialUser GetCredentials200ResponseCredentialUser
 
-// NewGetCredentials200ResponseCredentialUserWithDefaults instantiates a new GetCredentials200ResponseCredentialUser object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCredentials200ResponseCredentialUserWithDefaults() *GetCredentials200ResponseCredentialUser {
-	this := GetCredentials200ResponseCredentialUser{}
-	return &this
-}
-
 func (o GetCredentials200ResponseCredentialUser) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

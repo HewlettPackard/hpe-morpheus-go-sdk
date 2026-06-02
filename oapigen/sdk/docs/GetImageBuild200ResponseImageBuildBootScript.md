@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetImageBuild200ResponseImageBuildBootScriptWithDefaults
-
-`func NewGetImageBuild200ResponseImageBuildBootScriptWithDefaults() *GetImageBuild200ResponseImageBuildBootScript`
-
-NewGetImageBuild200ResponseImageBuildBootScriptWithDefaults instantiates a new GetImageBuild200ResponseImageBuildBootScript object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetImageBuild200ResponseImageBuildBootScript) GetId() int64`

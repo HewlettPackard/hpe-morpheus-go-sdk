@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNodeType200ResponseContainerTypeOsTypeWithDefaults
-
-`func NewGetNodeType200ResponseContainerTypeOsTypeWithDefaults() *GetNodeType200ResponseContainerTypeOsType`
-
-NewGetNodeType200ResponseContainerTypeOsTypeWithDefaults instantiates a new GetNodeType200ResponseContainerTypeOsType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetNodeType200ResponseContainerTypeOsType) GetId() int32`

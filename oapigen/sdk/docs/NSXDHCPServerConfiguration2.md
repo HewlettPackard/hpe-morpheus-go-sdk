@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewNSXDHCPServerConfiguration2WithDefaults
-
-`func NewNSXDHCPServerConfiguration2WithDefaults() *NSXDHCPServerConfiguration2`
-
-NewNSXDHCPServerConfiguration2WithDefaults instantiates a new NSXDHCPServerConfiguration2 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetEdgeCluster
 
 `func (o *NSXDHCPServerConfiguration2) GetEdgeCluster() string`

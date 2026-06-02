@@ -41,14 +41,6 @@ type GetSupportBundle200ResponseSupportBundle struct {
 
 type _GetSupportBundle200ResponseSupportBundle GetSupportBundle200ResponseSupportBundle
 
-// NewGetSupportBundle200ResponseSupportBundleWithDefaults instantiates a new GetSupportBundle200ResponseSupportBundle object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSupportBundle200ResponseSupportBundleWithDefaults() *GetSupportBundle200ResponseSupportBundle {
-	this := GetSupportBundle200ResponseSupportBundle{}
-	return &this
-}
-
 func (o GetSupportBundle200ResponseSupportBundle) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

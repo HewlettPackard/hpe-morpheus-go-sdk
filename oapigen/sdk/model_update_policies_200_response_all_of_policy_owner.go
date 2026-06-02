@@ -27,14 +27,6 @@ type UpdatePolicies200ResponseAllOfPolicyOwner struct {
 
 type _UpdatePolicies200ResponseAllOfPolicyOwner UpdatePolicies200ResponseAllOfPolicyOwner
 
-// NewUpdatePolicies200ResponseAllOfPolicyOwnerWithDefaults instantiates a new UpdatePolicies200ResponseAllOfPolicyOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePolicies200ResponseAllOfPolicyOwnerWithDefaults() *UpdatePolicies200ResponseAllOfPolicyOwner {
-	this := UpdatePolicies200ResponseAllOfPolicyOwner{}
-	return &this
-}
-
 func (o UpdatePolicies200ResponseAllOfPolicyOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

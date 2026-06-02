@@ -31,14 +31,6 @@ type GetIntegrationObjects200ResponseObject struct {
 
 type _GetIntegrationObjects200ResponseObject GetIntegrationObjects200ResponseObject
 
-// NewGetIntegrationObjects200ResponseObjectWithDefaults instantiates a new GetIntegrationObjects200ResponseObject object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetIntegrationObjects200ResponseObjectWithDefaults() *GetIntegrationObjects200ResponseObject {
-	this := GetIntegrationObjects200ResponseObject{}
-	return &this
-}
-
 func (o GetIntegrationObjects200ResponseObject) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

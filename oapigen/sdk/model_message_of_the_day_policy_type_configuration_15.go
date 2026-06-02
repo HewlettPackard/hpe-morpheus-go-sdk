@@ -31,14 +31,6 @@ type MessageOfTheDayPolicyTypeConfiguration15 struct {
 
 type _MessageOfTheDayPolicyTypeConfiguration15 MessageOfTheDayPolicyTypeConfiguration15
 
-// NewMessageOfTheDayPolicyTypeConfiguration15WithDefaults instantiates a new MessageOfTheDayPolicyTypeConfiguration15 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMessageOfTheDayPolicyTypeConfiguration15WithDefaults() *MessageOfTheDayPolicyTypeConfiguration15 {
-	this := MessageOfTheDayPolicyTypeConfiguration15{}
-	return &this
-}
-
 func (o MessageOfTheDayPolicyTypeConfiguration15) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

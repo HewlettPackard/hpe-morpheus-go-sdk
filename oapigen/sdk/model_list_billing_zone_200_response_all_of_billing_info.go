@@ -31,14 +31,6 @@ type ListBillingZone200ResponseAllOfBillingInfo struct {
 
 type _ListBillingZone200ResponseAllOfBillingInfo ListBillingZone200ResponseAllOfBillingInfo
 
-// NewListBillingZone200ResponseAllOfBillingInfoWithDefaults instantiates a new ListBillingZone200ResponseAllOfBillingInfo object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListBillingZone200ResponseAllOfBillingInfoWithDefaults() *ListBillingZone200ResponseAllOfBillingInfo {
-	this := ListBillingZone200ResponseAllOfBillingInfo{}
-	return &this
-}
-
 func (o ListBillingZone200ResponseAllOfBillingInfo) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

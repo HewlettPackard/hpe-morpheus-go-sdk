@@ -27,14 +27,6 @@ type GetVirtualImage200ResponseVirtualImageAccountsInner struct {
 
 type _GetVirtualImage200ResponseVirtualImageAccountsInner GetVirtualImage200ResponseVirtualImageAccountsInner
 
-// NewGetVirtualImage200ResponseVirtualImageAccountsInnerWithDefaults instantiates a new GetVirtualImage200ResponseVirtualImageAccountsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetVirtualImage200ResponseVirtualImageAccountsInnerWithDefaults() *GetVirtualImage200ResponseVirtualImageAccountsInner {
-	this := GetVirtualImage200ResponseVirtualImageAccountsInner{}
-	return &this
-}
-
 func (o GetVirtualImage200ResponseVirtualImageAccountsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

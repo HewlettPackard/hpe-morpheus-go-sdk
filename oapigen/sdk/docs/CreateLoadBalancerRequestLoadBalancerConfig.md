@@ -22,14 +22,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCreateLoadBalancerRequestLoadBalancerConfigWithDefaults
-
-`func NewCreateLoadBalancerRequestLoadBalancerConfigWithDefaults() *CreateLoadBalancerRequestLoadBalancerConfig`
-
-NewCreateLoadBalancerRequestLoadBalancerConfigWithDefaults instantiates a new CreateLoadBalancerRequestLoadBalancerConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPlan
 
 `func (o *CreateLoadBalancerRequestLoadBalancerConfig) GetPlan() HAProxyLoadBalancerConfigObjectPlan`

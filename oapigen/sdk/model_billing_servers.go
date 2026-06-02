@@ -31,14 +31,6 @@ type BillingServers struct {
 
 type _BillingServers BillingServers
 
-// NewBillingServersWithDefaults instantiates a new BillingServers object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBillingServersWithDefaults() *BillingServers {
-	this := BillingServers{}
-	return &this
-}
-
 func (o BillingServers) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

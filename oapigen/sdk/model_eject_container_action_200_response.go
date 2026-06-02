@@ -27,14 +27,6 @@ type EjectContainerAction200Response struct {
 
 type _EjectContainerAction200Response EjectContainerAction200Response
 
-// NewEjectContainerAction200ResponseWithDefaults instantiates a new EjectContainerAction200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewEjectContainerAction200ResponseWithDefaults() *EjectContainerAction200Response {
-	this := EjectContainerAction200Response{}
-	return &this
-}
-
 func (o EjectContainerAction200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

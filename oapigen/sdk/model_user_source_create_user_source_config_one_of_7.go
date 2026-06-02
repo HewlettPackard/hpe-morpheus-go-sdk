@@ -33,14 +33,6 @@ type UserSourceCreateUserSourceConfigOneOf7 struct {
 
 type _UserSourceCreateUserSourceConfigOneOf7 UserSourceCreateUserSourceConfigOneOf7
 
-// NewUserSourceCreateUserSourceConfigOneOf7WithDefaults instantiates a new UserSourceCreateUserSourceConfigOneOf7 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserSourceCreateUserSourceConfigOneOf7WithDefaults() *UserSourceCreateUserSourceConfigOneOf7 {
-	this := UserSourceCreateUserSourceConfigOneOf7{}
-	return &this
-}
-
 func (o UserSourceCreateUserSourceConfigOneOf7) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

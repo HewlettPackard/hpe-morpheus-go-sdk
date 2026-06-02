@@ -26,14 +26,6 @@ type UpdateImageBuildRequestImageBuildPreseedScript struct {
 
 type _UpdateImageBuildRequestImageBuildPreseedScript UpdateImageBuildRequestImageBuildPreseedScript
 
-// NewUpdateImageBuildRequestImageBuildPreseedScriptWithDefaults instantiates a new UpdateImageBuildRequestImageBuildPreseedScript object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateImageBuildRequestImageBuildPreseedScriptWithDefaults() *UpdateImageBuildRequestImageBuildPreseedScript {
-	this := UpdateImageBuildRequestImageBuildPreseedScript{}
-	return &this
-}
-
 func (o UpdateImageBuildRequestImageBuildPreseedScript) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

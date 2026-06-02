@@ -27,14 +27,6 @@ type BackupCreationPolicyTypeConfiguration10 struct {
 
 type _BackupCreationPolicyTypeConfiguration10 BackupCreationPolicyTypeConfiguration10
 
-// NewBackupCreationPolicyTypeConfiguration10WithDefaults instantiates a new BackupCreationPolicyTypeConfiguration10 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBackupCreationPolicyTypeConfiguration10WithDefaults() *BackupCreationPolicyTypeConfiguration10 {
-	this := BackupCreationPolicyTypeConfiguration10{}
-	return &this
-}
-
 func (o BackupCreationPolicyTypeConfiguration10) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

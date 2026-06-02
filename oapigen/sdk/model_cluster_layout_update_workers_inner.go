@@ -28,16 +28,6 @@ type ClusterLayoutUpdateWorkersInner struct {
 
 type _ClusterLayoutUpdateWorkersInner ClusterLayoutUpdateWorkersInner
 
-// NewClusterLayoutUpdateWorkersInnerWithDefaults instantiates a new ClusterLayoutUpdateWorkersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterLayoutUpdateWorkersInnerWithDefaults() *ClusterLayoutUpdateWorkersInner {
-	this := ClusterLayoutUpdateWorkersInner{}
-	var nodeCount int64 = 1
-	this.NodeCount = &nodeCount
-	return &this
-}
-
 func (o ClusterLayoutUpdateWorkersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

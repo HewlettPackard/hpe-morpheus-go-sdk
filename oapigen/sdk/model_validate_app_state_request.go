@@ -27,14 +27,6 @@ type ValidateAppStateRequest struct {
 
 type _ValidateAppStateRequest ValidateAppStateRequest
 
-// NewValidateAppStateRequestWithDefaults instantiates a new ValidateAppStateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewValidateAppStateRequestWithDefaults() *ValidateAppStateRequest {
-	this := ValidateAppStateRequest{}
-	return &this
-}
-
 func (o ValidateAppStateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

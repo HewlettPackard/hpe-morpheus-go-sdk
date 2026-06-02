@@ -26,14 +26,6 @@ type AddImageBuildRequest struct {
 
 type _AddImageBuildRequest AddImageBuildRequest
 
-// NewAddImageBuildRequestWithDefaults instantiates a new AddImageBuildRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddImageBuildRequestWithDefaults() *AddImageBuildRequest {
-	this := AddImageBuildRequest{}
-	return &this
-}
-
 func (o AddImageBuildRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

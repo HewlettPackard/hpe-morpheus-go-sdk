@@ -59,24 +59,6 @@ type UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf struct {
 
 type _UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf
 
-// NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOfWithDefaults instantiates a new UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOfWithDefaults() *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf {
-	this := UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	var enabled bool = true
-	this.Enabled = &enabled
-	var featured bool = false
-	this.Featured = &featured
-	var allowQuantity bool = false
-	this.AllowQuantity = &allowQuantity
-	var formType string = "optionTypes"
-	this.FormType = &formType
-	return &this
-}
-
 func (o UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

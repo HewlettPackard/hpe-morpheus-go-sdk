@@ -35,14 +35,6 @@ type ConditionalWorkflowTaskConfig4 struct {
 
 type _ConditionalWorkflowTaskConfig4 ConditionalWorkflowTaskConfig4
 
-// NewConditionalWorkflowTaskConfig4WithDefaults instantiates a new ConditionalWorkflowTaskConfig4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewConditionalWorkflowTaskConfig4WithDefaults() *ConditionalWorkflowTaskConfig4 {
-	this := ConditionalWorkflowTaskConfig4{}
-	return &this
-}
-
 func (o ConditionalWorkflowTaskConfig4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

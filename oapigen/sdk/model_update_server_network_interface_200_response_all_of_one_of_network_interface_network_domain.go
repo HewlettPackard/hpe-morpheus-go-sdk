@@ -27,14 +27,6 @@ type UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterfaceNetworkDom
 
 type _UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterfaceNetworkDomain UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterfaceNetworkDomain
 
-// NewUpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterfaceNetworkDomainWithDefaults instantiates a new UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterfaceNetworkDomain object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterfaceNetworkDomainWithDefaults() *UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterfaceNetworkDomain {
-	this := UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterfaceNetworkDomain{}
-	return &this
-}
-
 func (o UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterfaceNetworkDomain) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

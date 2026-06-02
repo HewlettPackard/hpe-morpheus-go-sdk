@@ -31,14 +31,6 @@ type ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig struct {
 
 type _ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig
 
-// NewListStorageBuckets200ResponseAllOfStorageBucketsInnerConfigWithDefaults instantiates a new ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListStorageBuckets200ResponseAllOfStorageBucketsInnerConfigWithDefaults() *ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig {
-	this := ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig{}
-	return &this
-}
-
 func (o ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

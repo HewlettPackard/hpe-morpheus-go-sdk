@@ -27,14 +27,6 @@ type UpdateInvoices200Response struct {
 
 type _UpdateInvoices200Response UpdateInvoices200Response
 
-// NewUpdateInvoices200ResponseWithDefaults instantiates a new UpdateInvoices200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInvoices200ResponseWithDefaults() *UpdateInvoices200Response {
-	this := UpdateInvoices200Response{}
-	return &this
-}
-
 func (o UpdateInvoices200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListProvisioningSettings200ResponseWithDefaults
-
-`func NewListProvisioningSettings200ResponseWithDefaults() *ListProvisioningSettings200Response`
-
-NewListProvisioningSettings200ResponseWithDefaults instantiates a new ListProvisioningSettings200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetProvisioningSettings
 
 `func (o *ListProvisioningSettings200Response) GetProvisioningSettings() ListProvisioningSettings200ResponseProvisioningSettings`

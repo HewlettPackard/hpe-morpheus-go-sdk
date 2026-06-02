@@ -64,14 +64,6 @@ type CloudsConfigVMware struct {
 
 type _CloudsConfigVMware CloudsConfigVMware
 
-// NewCloudsConfigVMwareWithDefaults instantiates a new CloudsConfigVMware object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCloudsConfigVMwareWithDefaults() *CloudsConfigVMware {
-	this := CloudsConfigVMware{}
-	return &this
-}
-
 func (o CloudsConfigVMware) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

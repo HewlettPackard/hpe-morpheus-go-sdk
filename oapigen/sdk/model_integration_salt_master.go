@@ -49,14 +49,6 @@ type IntegrationSaltMaster struct {
 
 type _IntegrationSaltMaster IntegrationSaltMaster
 
-// NewIntegrationSaltMasterWithDefaults instantiates a new IntegrationSaltMaster object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationSaltMasterWithDefaults() *IntegrationSaltMaster {
-	this := IntegrationSaltMaster{}
-	return &this
-}
-
 func (o IntegrationSaltMaster) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

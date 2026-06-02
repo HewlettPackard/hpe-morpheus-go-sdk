@@ -27,14 +27,6 @@ type GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerAccount struct {
 
 type _GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerAccount GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerAccount
 
-// NewGetLayout200ResponseInstanceTypeLayoutContainerTypesInnerAccountWithDefaults instantiates a new GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetLayout200ResponseInstanceTypeLayoutContainerTypesInnerAccountWithDefaults() *GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerAccount {
-	this := GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerAccount{}
-	return &this
-}
-
 func (o GetLayout200ResponseInstanceTypeLayoutContainerTypesInnerAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

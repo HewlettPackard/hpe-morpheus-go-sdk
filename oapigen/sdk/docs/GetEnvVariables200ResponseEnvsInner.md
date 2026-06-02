@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetEnvVariables200ResponseEnvsInnerWithDefaults
-
-`func NewGetEnvVariables200ResponseEnvsInnerWithDefaults() *GetEnvVariables200ResponseEnvsInner`
-
-NewGetEnvVariables200ResponseEnvsInnerWithDefaults instantiates a new GetEnvVariables200ResponseEnvsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetExport
 
 `func (o *GetEnvVariables200ResponseEnvsInner) GetExport() bool`

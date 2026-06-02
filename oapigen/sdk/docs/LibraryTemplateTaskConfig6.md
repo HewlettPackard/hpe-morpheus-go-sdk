@@ -26,14 +26,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewLibraryTemplateTaskConfig6WithDefaults
-
-`func NewLibraryTemplateTaskConfig6WithDefaults() *LibraryTemplateTaskConfig6`
-
-NewLibraryTemplateTaskConfig6WithDefaults instantiates a new LibraryTemplateTaskConfig6 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetUsername
 
 `func (o *LibraryTemplateTaskConfig6) GetUsername() string`

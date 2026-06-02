@@ -38,14 +38,6 @@ type SocketConfig struct {
 
 type _SocketConfig SocketConfig
 
-// NewSocketConfigWithDefaults instantiates a new SocketConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSocketConfigWithDefaults() *SocketConfig {
-	this := SocketConfig{}
-	return &this
-}
-
 func (o SocketConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

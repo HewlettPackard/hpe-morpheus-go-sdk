@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListBootScripts200ResponseWithDefaults
-
-`func NewListBootScripts200ResponseWithDefaults() *ListBootScripts200Response`
-
-NewListBootScripts200ResponseWithDefaults instantiates a new ListBootScripts200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetBootScripts
 
 `func (o *ListBootScripts200Response) GetBootScripts() []ListBootScripts200ResponseAllOfBootScriptsInner`

@@ -27,14 +27,6 @@ type AddIntegrationSnowObjects200Response struct {
 
 type _AddIntegrationSnowObjects200Response AddIntegrationSnowObjects200Response
 
-// NewAddIntegrationSnowObjects200ResponseWithDefaults instantiates a new AddIntegrationSnowObjects200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIntegrationSnowObjects200ResponseWithDefaults() *AddIntegrationSnowObjects200Response {
-	this := AddIntegrationSnowObjects200Response{}
-	return &this
-}
-
 func (o AddIntegrationSnowObjects200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

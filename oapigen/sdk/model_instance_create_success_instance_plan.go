@@ -28,14 +28,6 @@ type InstanceCreateSuccessInstancePlan struct {
 
 type _InstanceCreateSuccessInstancePlan InstanceCreateSuccessInstancePlan
 
-// NewInstanceCreateSuccessInstancePlanWithDefaults instantiates a new InstanceCreateSuccessInstancePlan object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceCreateSuccessInstancePlanWithDefaults() *InstanceCreateSuccessInstancePlan {
-	this := InstanceCreateSuccessInstancePlan{}
-	return &this
-}
-
 func (o InstanceCreateSuccessInstancePlan) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

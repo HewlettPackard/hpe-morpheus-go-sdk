@@ -29,14 +29,6 @@ type AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole struct 
 
 type _AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole
 
-// NewAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRoleWithDefaults instantiates a new AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRoleWithDefaults() *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole {
-	this := AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole{}
-	return &this
-}
-
 func (o AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

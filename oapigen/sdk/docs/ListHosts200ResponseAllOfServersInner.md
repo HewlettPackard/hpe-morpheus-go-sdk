@@ -96,14 +96,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListHosts200ResponseAllOfServersInnerWithDefaults
-
-`func NewListHosts200ResponseAllOfServersInnerWithDefaults() *ListHosts200ResponseAllOfServersInner`
-
-NewListHosts200ResponseAllOfServersInnerWithDefaults instantiates a new ListHosts200ResponseAllOfServersInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListHosts200ResponseAllOfServersInner) GetId() int64`

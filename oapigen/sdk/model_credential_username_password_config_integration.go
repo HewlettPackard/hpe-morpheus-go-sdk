@@ -26,14 +26,6 @@ type CredentialUsernamePasswordConfigIntegration struct {
 
 type _CredentialUsernamePasswordConfigIntegration CredentialUsernamePasswordConfigIntegration
 
-// NewCredentialUsernamePasswordConfigIntegrationWithDefaults instantiates a new CredentialUsernamePasswordConfigIntegration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCredentialUsernamePasswordConfigIntegrationWithDefaults() *CredentialUsernamePasswordConfigIntegration {
-	this := CredentialUsernamePasswordConfigIntegration{}
-	return &this
-}
-
 func (o CredentialUsernamePasswordConfigIntegration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

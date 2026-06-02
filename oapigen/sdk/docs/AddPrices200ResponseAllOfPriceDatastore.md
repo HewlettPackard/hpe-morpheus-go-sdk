@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddPrices200ResponseAllOfPriceDatastoreWithDefaults
-
-`func NewAddPrices200ResponseAllOfPriceDatastoreWithDefaults() *AddPrices200ResponseAllOfPriceDatastore`
-
-NewAddPrices200ResponseAllOfPriceDatastoreWithDefaults instantiates a new AddPrices200ResponseAllOfPriceDatastore object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddPrices200ResponseAllOfPriceDatastore) GetId() int64`

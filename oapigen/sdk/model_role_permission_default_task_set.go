@@ -29,14 +29,6 @@ type RolePermissionDefaultTaskSet struct {
 
 type _RolePermissionDefaultTaskSet RolePermissionDefaultTaskSet
 
-// NewRolePermissionDefaultTaskSetWithDefaults instantiates a new RolePermissionDefaultTaskSet object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRolePermissionDefaultTaskSetWithDefaults() *RolePermissionDefaultTaskSet {
-	this := RolePermissionDefaultTaskSet{}
-	return &this
-}
-
 func (o RolePermissionDefaultTaskSet) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type AddVDIPoolsRequest struct {
 
 type _AddVDIPoolsRequest AddVDIPoolsRequest
 
-// NewAddVDIPoolsRequestWithDefaults instantiates a new AddVDIPoolsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddVDIPoolsRequestWithDefaults() *AddVDIPoolsRequest {
-	this := AddVDIPoolsRequest{}
-	return &this
-}
-
 func (o AddVDIPoolsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

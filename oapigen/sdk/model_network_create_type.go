@@ -27,14 +27,6 @@ type NetworkCreateType struct {
 
 type _NetworkCreateType NetworkCreateType
 
-// NewNetworkCreateTypeWithDefaults instantiates a new NetworkCreateType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkCreateTypeWithDefaults() *NetworkCreateType {
-	this := NetworkCreateType{}
-	return &this
-}
-
 func (o NetworkCreateType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

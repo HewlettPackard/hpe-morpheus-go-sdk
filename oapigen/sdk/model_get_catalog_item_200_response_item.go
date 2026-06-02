@@ -37,14 +37,6 @@ type GetCatalogItem200ResponseItem struct {
 
 type _GetCatalogItem200ResponseItem GetCatalogItem200ResponseItem
 
-// NewGetCatalogItem200ResponseItemWithDefaults instantiates a new GetCatalogItem200ResponseItem object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCatalogItem200ResponseItemWithDefaults() *GetCatalogItem200ResponseItem {
-	this := GetCatalogItem200ResponseItem{}
-	return &this
-}
-
 func (o GetCatalogItem200ResponseItem) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

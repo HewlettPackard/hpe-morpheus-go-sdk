@@ -56,14 +56,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInnerWithDefaults
-
-`func NewListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInnerWithDefaults() *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInner`
-
-NewListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInnerWithDefaults instantiates a new ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInner) GetId() int64`

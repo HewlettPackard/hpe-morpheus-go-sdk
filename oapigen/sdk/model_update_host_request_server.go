@@ -61,22 +61,6 @@ type UpdateHostRequestServer struct {
 
 type _UpdateHostRequestServer UpdateHostRequestServer
 
-// NewUpdateHostRequestServerWithDefaults instantiates a new UpdateHostRequestServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateHostRequestServerWithDefaults() *UpdateHostRequestServer {
-	this := UpdateHostRequestServer{}
-	var enabled bool = true
-	this.Enabled = &enabled
-	var manageInternalFirewall bool = true
-	this.ManageInternalFirewall = &manageInternalFirewall
-	var enableLogs bool = true
-	this.EnableLogs = &enableLogs
-	var guestConsolePreferred bool = true
-	this.GuestConsolePreferred = &guestConsolePreferred
-	return &this
-}
-
 func (o UpdateHostRequestServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

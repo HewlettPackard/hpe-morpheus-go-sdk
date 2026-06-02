@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateHostResize200ResponseAllOfServerVolumesInnerOwnerWithDefaults
-
-`func NewUpdateHostResize200ResponseAllOfServerVolumesInnerOwnerWithDefaults() *UpdateHostResize200ResponseAllOfServerVolumesInnerOwner`
-
-NewUpdateHostResize200ResponseAllOfServerVolumesInnerOwnerWithDefaults instantiates a new UpdateHostResize200ResponseAllOfServerVolumesInnerOwner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateHostResize200ResponseAllOfServerVolumesInnerOwner) GetId() int64`

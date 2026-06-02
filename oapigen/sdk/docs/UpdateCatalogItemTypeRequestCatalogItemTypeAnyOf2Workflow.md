@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2WorkflowWithDefaults
-
-`func NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2WorkflowWithDefaults() *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Workflow`
-
-NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2WorkflowWithDefaults instantiates a new UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Workflow object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Workflow) GetId() int64`

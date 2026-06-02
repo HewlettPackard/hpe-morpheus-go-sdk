@@ -61,24 +61,6 @@ type WorkflowCatalogItemType struct {
 
 type _WorkflowCatalogItemType WorkflowCatalogItemType
 
-// NewWorkflowCatalogItemTypeWithDefaults instantiates a new WorkflowCatalogItemType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWorkflowCatalogItemTypeWithDefaults() *WorkflowCatalogItemType {
-	this := WorkflowCatalogItemType{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	var enabled bool = true
-	this.Enabled = &enabled
-	var featured bool = false
-	this.Featured = &featured
-	var allowQuantity bool = false
-	this.AllowQuantity = &allowQuantity
-	var formType string = "optionTypes"
-	this.FormType = &formType
-	return &this
-}
-
 func (o WorkflowCatalogItemType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

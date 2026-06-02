@@ -27,14 +27,6 @@ type ResetPassword200Response struct {
 
 type _ResetPassword200Response ResetPassword200Response
 
-// NewResetPassword200ResponseWithDefaults instantiates a new ResetPassword200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewResetPassword200ResponseWithDefaults() *ResetPassword200Response {
-	this := ResetPassword200Response{}
-	return &this
-}
-
 func (o ResetPassword200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

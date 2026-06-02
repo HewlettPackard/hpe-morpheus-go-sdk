@@ -26,14 +26,6 @@ type IntegrationConfigIntegrationCredentialOneOf1 struct {
 
 type _IntegrationConfigIntegrationCredentialOneOf1 IntegrationConfigIntegrationCredentialOneOf1
 
-// NewIntegrationConfigIntegrationCredentialOneOf1WithDefaults instantiates a new IntegrationConfigIntegrationCredentialOneOf1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationConfigIntegrationCredentialOneOf1WithDefaults() *IntegrationConfigIntegrationCredentialOneOf1 {
-	this := IntegrationConfigIntegrationCredentialOneOf1{}
-	return &this
-}
-
 func (o IntegrationConfigIntegrationCredentialOneOf1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

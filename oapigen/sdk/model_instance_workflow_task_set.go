@@ -27,14 +27,6 @@ type InstanceWorkflowTaskSet struct {
 
 type _InstanceWorkflowTaskSet InstanceWorkflowTaskSet
 
-// NewInstanceWorkflowTaskSetWithDefaults instantiates a new InstanceWorkflowTaskSet object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceWorkflowTaskSetWithDefaults() *InstanceWorkflowTaskSet {
-	this := InstanceWorkflowTaskSet{}
-	return &this
-}
-
 func (o InstanceWorkflowTaskSet) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

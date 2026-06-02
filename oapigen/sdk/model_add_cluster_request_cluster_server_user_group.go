@@ -27,14 +27,6 @@ type AddClusterRequestClusterServerUserGroup struct {
 
 type _AddClusterRequestClusterServerUserGroup AddClusterRequestClusterServerUserGroup
 
-// NewAddClusterRequestClusterServerUserGroupWithDefaults instantiates a new AddClusterRequestClusterServerUserGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterRequestClusterServerUserGroupWithDefaults() *AddClusterRequestClusterServerUserGroup {
-	this := AddClusterRequestClusterServerUserGroup{}
-	return &this
-}
-
 func (o AddClusterRequestClusterServerUserGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

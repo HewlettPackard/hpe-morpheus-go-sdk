@@ -31,14 +31,6 @@ type PreseedScript struct {
 
 type _PreseedScript PreseedScript
 
-// NewPreseedScriptWithDefaults instantiates a new PreseedScript object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPreseedScriptWithDefaults() *PreseedScript {
-	this := PreseedScript{}
-	return &this
-}
-
 func (o PreseedScript) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

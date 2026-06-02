@@ -39,16 +39,6 @@ type WebGetConfig3 struct {
 
 type _WebGetConfig3 WebGetConfig3
 
-// NewWebGetConfig3WithDefaults instantiates a new WebGetConfig3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWebGetConfig3WithDefaults() *WebGetConfig3 {
-	this := WebGetConfig3{}
-	var ignoreSSL bool = false
-	this.IgnoreSSL = &ignoreSSL
-	return &this
-}
-
 func (o WebGetConfig3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

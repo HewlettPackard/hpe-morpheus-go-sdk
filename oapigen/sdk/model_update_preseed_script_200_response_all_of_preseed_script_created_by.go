@@ -26,14 +26,6 @@ type UpdatePreseedScript200ResponseAllOfPreseedScriptCreatedBy struct {
 
 type _UpdatePreseedScript200ResponseAllOfPreseedScriptCreatedBy UpdatePreseedScript200ResponseAllOfPreseedScriptCreatedBy
 
-// NewUpdatePreseedScript200ResponseAllOfPreseedScriptCreatedByWithDefaults instantiates a new UpdatePreseedScript200ResponseAllOfPreseedScriptCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePreseedScript200ResponseAllOfPreseedScriptCreatedByWithDefaults() *UpdatePreseedScript200ResponseAllOfPreseedScriptCreatedBy {
-	this := UpdatePreseedScript200ResponseAllOfPreseedScriptCreatedBy{}
-	return &this
-}
-
 func (o UpdatePreseedScript200ResponseAllOfPreseedScriptCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

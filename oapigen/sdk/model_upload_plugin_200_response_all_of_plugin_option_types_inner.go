@@ -66,14 +66,6 @@ type UploadPlugin200ResponseAllOfPluginOptionTypesInner struct {
 
 type _UploadPlugin200ResponseAllOfPluginOptionTypesInner UploadPlugin200ResponseAllOfPluginOptionTypesInner
 
-// NewUploadPlugin200ResponseAllOfPluginOptionTypesInnerWithDefaults instantiates a new UploadPlugin200ResponseAllOfPluginOptionTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUploadPlugin200ResponseAllOfPluginOptionTypesInnerWithDefaults() *UploadPlugin200ResponseAllOfPluginOptionTypesInner {
-	this := UploadPlugin200ResponseAllOfPluginOptionTypesInner{}
-	return &this
-}
-
 func (o UploadPlugin200ResponseAllOfPluginOptionTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

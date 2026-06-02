@@ -42,14 +42,6 @@ type ListTokens200ResponseAllOfTokensInner struct {
 
 type _ListTokens200ResponseAllOfTokensInner ListTokens200ResponseAllOfTokensInner
 
-// NewListTokens200ResponseAllOfTokensInnerWithDefaults instantiates a new ListTokens200ResponseAllOfTokensInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListTokens200ResponseAllOfTokensInnerWithDefaults() *ListTokens200ResponseAllOfTokensInner {
-	this := ListTokens200ResponseAllOfTokensInner{}
-	return &this
-}
-
 func (o ListTokens200ResponseAllOfTokensInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

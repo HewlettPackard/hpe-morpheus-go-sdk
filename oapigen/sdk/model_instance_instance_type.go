@@ -30,14 +30,6 @@ type InstanceInstanceType struct {
 
 type _InstanceInstanceType InstanceInstanceType
 
-// NewInstanceInstanceTypeWithDefaults instantiates a new InstanceInstanceType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceInstanceTypeWithDefaults() *InstanceInstanceType {
-	this := InstanceInstanceType{}
-	return &this
-}
-
 func (o InstanceInstanceType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

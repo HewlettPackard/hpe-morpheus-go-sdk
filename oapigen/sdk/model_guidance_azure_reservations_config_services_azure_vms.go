@@ -28,14 +28,6 @@ type GuidanceAzureReservationsConfigServicesAzureVms struct {
 
 type _GuidanceAzureReservationsConfigServicesAzureVms GuidanceAzureReservationsConfigServicesAzureVms
 
-// NewGuidanceAzureReservationsConfigServicesAzureVmsWithDefaults instantiates a new GuidanceAzureReservationsConfigServicesAzureVms object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGuidanceAzureReservationsConfigServicesAzureVmsWithDefaults() *GuidanceAzureReservationsConfigServicesAzureVms {
-	this := GuidanceAzureReservationsConfigServicesAzureVms{}
-	return &this
-}
-
 func (o GuidanceAzureReservationsConfigServicesAzureVms) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

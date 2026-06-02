@@ -29,14 +29,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7WithDefaults
-
-`func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7WithDefaults() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7`
-
-NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7WithDefaults instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetLifecycleType
 
 `func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) GetLifecycleType() string`

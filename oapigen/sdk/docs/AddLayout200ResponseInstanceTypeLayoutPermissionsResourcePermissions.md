@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsWithDefaults
-
-`func NewAddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsWithDefaults() *AddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions`
-
-NewAddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsWithDefaults instantiates a new AddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetDefaultStore
 
 `func (o *AddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) GetDefaultStore() bool`

@@ -28,14 +28,6 @@ type GetEnvVariables200Response struct {
 
 type _GetEnvVariables200Response GetEnvVariables200Response
 
-// NewGetEnvVariables200ResponseWithDefaults instantiates a new GetEnvVariables200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetEnvVariables200ResponseWithDefaults() *GetEnvVariables200Response {
-	this := GetEnvVariables200Response{}
-	return &this
-}
-
 func (o GetEnvVariables200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

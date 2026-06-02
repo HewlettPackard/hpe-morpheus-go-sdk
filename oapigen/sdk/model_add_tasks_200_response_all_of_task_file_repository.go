@@ -27,14 +27,6 @@ type AddTasks200ResponseAllOfTaskFileRepository struct {
 
 type _AddTasks200ResponseAllOfTaskFileRepository AddTasks200ResponseAllOfTaskFileRepository
 
-// NewAddTasks200ResponseAllOfTaskFileRepositoryWithDefaults instantiates a new AddTasks200ResponseAllOfTaskFileRepository object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddTasks200ResponseAllOfTaskFileRepositoryWithDefaults() *AddTasks200ResponseAllOfTaskFileRepository {
-	this := AddTasks200ResponseAllOfTaskFileRepository{}
-	return &this
-}
-
 func (o AddTasks200ResponseAllOfTaskFileRepository) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

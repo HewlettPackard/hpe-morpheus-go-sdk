@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateCloudResourcePool200ResponseResourcePoolAllOfConfigAnyOfWithDefaults
-
-`func NewUpdateCloudResourcePool200ResponseResourcePoolAllOfConfigAnyOfWithDefaults() *UpdateCloudResourcePool200ResponseResourcePoolAllOfConfigAnyOf`
-
-NewUpdateCloudResourcePool200ResponseResourcePoolAllOfConfigAnyOfWithDefaults instantiates a new UpdateCloudResourcePool200ResponseResourcePoolAllOfConfigAnyOf object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetCidrBlock
 
 `func (o *UpdateCloudResourcePool200ResponseResourcePoolAllOfConfigAnyOf) GetCidrBlock() string`

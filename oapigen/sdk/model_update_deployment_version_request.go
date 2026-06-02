@@ -26,14 +26,6 @@ type UpdateDeploymentVersionRequest struct {
 
 type _UpdateDeploymentVersionRequest UpdateDeploymentVersionRequest
 
-// NewUpdateDeploymentVersionRequestWithDefaults instantiates a new UpdateDeploymentVersionRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateDeploymentVersionRequestWithDefaults() *UpdateDeploymentVersionRequest {
-	this := UpdateDeploymentVersionRequest{}
-	return &this
-}
-
 func (o UpdateDeploymentVersionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

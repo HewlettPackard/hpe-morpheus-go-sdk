@@ -28,14 +28,6 @@ type ImageBuildsConfigInstanceLayout struct {
 
 type _ImageBuildsConfigInstanceLayout ImageBuildsConfigInstanceLayout
 
-// NewImageBuildsConfigInstanceLayoutWithDefaults instantiates a new ImageBuildsConfigInstanceLayout object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewImageBuildsConfigInstanceLayoutWithDefaults() *ImageBuildsConfigInstanceLayout {
-	this := ImageBuildsConfigInstanceLayout{}
-	return &this
-}
-
 func (o ImageBuildsConfigInstanceLayout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type UpdateBlueprint200ResponseBlueprintOwner struct {
 
 type _UpdateBlueprint200ResponseBlueprintOwner UpdateBlueprint200ResponseBlueprintOwner
 
-// NewUpdateBlueprint200ResponseBlueprintOwnerWithDefaults instantiates a new UpdateBlueprint200ResponseBlueprintOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBlueprint200ResponseBlueprintOwnerWithDefaults() *UpdateBlueprint200ResponseBlueprintOwner {
-	this := UpdateBlueprint200ResponseBlueprintOwner{}
-	return &this
-}
-
 func (o UpdateBlueprint200ResponseBlueprintOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

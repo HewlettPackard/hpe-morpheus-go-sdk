@@ -38,16 +38,6 @@ type InstancesNetworkInterfaces struct {
 
 type _InstancesNetworkInterfaces InstancesNetworkInterfaces
 
-// NewInstancesNetworkInterfacesWithDefaults instantiates a new InstancesNetworkInterfaces object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstancesNetworkInterfacesWithDefaults() *InstancesNetworkInterfaces {
-	this := InstancesNetworkInterfaces{}
-	var ipMode string = ""
-	this.IpMode = &ipMode
-	return &this
-}
-
 func (o InstancesNetworkInterfaces) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

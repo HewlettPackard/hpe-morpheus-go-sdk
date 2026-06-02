@@ -30,14 +30,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListHealth200ResponseAllOfHealthDatabaseWithDefaults
-
-`func NewListHealth200ResponseAllOfHealthDatabaseWithDefaults() *ListHealth200ResponseAllOfHealthDatabase`
-
-NewListHealth200ResponseAllOfHealthDatabaseWithDefaults instantiates a new ListHealth200ResponseAllOfHealthDatabase object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *ListHealth200ResponseAllOfHealthDatabase) GetSuccess() bool`

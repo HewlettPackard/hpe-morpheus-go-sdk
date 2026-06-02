@@ -27,14 +27,6 @@ type ListClusterAffinityGroups200ResponseAllOfAffinityGroupsInnerResourcePermiss
 
 type _ListClusterAffinityGroups200ResponseAllOfAffinityGroupsInnerResourcePermissions ListClusterAffinityGroups200ResponseAllOfAffinityGroupsInnerResourcePermissions
 
-// NewListClusterAffinityGroups200ResponseAllOfAffinityGroupsInnerResourcePermissionsWithDefaults instantiates a new ListClusterAffinityGroups200ResponseAllOfAffinityGroupsInnerResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterAffinityGroups200ResponseAllOfAffinityGroupsInnerResourcePermissionsWithDefaults() *ListClusterAffinityGroups200ResponseAllOfAffinityGroupsInnerResourcePermissions {
-	this := ListClusterAffinityGroups200ResponseAllOfAffinityGroupsInnerResourcePermissions{}
-	return &this
-}
-
 func (o ListClusterAffinityGroups200ResponseAllOfAffinityGroupsInnerResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

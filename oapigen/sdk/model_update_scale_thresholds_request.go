@@ -26,14 +26,6 @@ type UpdateScaleThresholdsRequest struct {
 
 type _UpdateScaleThresholdsRequest UpdateScaleThresholdsRequest
 
-// NewUpdateScaleThresholdsRequestWithDefaults instantiates a new UpdateScaleThresholdsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateScaleThresholdsRequestWithDefaults() *UpdateScaleThresholdsRequest {
-	this := UpdateScaleThresholdsRequest{}
-	return &this
-}
-
 func (o UpdateScaleThresholdsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

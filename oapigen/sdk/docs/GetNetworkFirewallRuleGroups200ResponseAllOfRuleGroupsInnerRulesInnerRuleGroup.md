@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroupWithDefaults
-
-`func NewGetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroupWithDefaults() *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup`
-
-NewGetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroupWithDefaults instantiates a new GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup) GetId() int64`

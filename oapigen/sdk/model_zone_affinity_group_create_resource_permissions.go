@@ -27,14 +27,6 @@ type ZoneAffinityGroupCreateResourcePermissions struct {
 
 type _ZoneAffinityGroupCreateResourcePermissions ZoneAffinityGroupCreateResourcePermissions
 
-// NewZoneAffinityGroupCreateResourcePermissionsWithDefaults instantiates a new ZoneAffinityGroupCreateResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneAffinityGroupCreateResourcePermissionsWithDefaults() *ZoneAffinityGroupCreateResourcePermissions {
-	this := ZoneAffinityGroupCreateResourcePermissions{}
-	return &this
-}
-
 func (o ZoneAffinityGroupCreateResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

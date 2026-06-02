@@ -26,14 +26,6 @@ type ElasticCheck1AllOfCheckType struct {
 
 type _ElasticCheck1AllOfCheckType ElasticCheck1AllOfCheckType
 
-// NewElasticCheck1AllOfCheckTypeWithDefaults instantiates a new ElasticCheck1AllOfCheckType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewElasticCheck1AllOfCheckTypeWithDefaults() *ElasticCheck1AllOfCheckType {
-	this := ElasticCheck1AllOfCheckType{}
-	return &this
-}
-
 func (o ElasticCheck1AllOfCheckType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

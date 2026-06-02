@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddImageBuild200ResponseAllOfImageBuildLastResultCreatedByWithDefaults
-
-`func NewAddImageBuild200ResponseAllOfImageBuildLastResultCreatedByWithDefaults() *AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy`
-
-NewAddImageBuild200ResponseAllOfImageBuildLastResultCreatedByWithDefaults instantiates a new AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetUsername
 
 `func (o *AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy) GetUsername() string`

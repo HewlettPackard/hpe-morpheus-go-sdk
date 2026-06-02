@@ -26,14 +26,6 @@ type DeleteNetworkPool200Response struct {
 
 type _DeleteNetworkPool200Response DeleteNetworkPool200Response
 
-// NewDeleteNetworkPool200ResponseWithDefaults instantiates a new DeleteNetworkPool200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteNetworkPool200ResponseWithDefaults() *DeleteNetworkPool200Response {
-	this := DeleteNetworkPool200Response{}
-	return &this
-}
-
 func (o DeleteNetworkPool200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

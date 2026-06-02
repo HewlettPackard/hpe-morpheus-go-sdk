@@ -34,14 +34,6 @@ type AddClusterWorkerRequestServerConfigAnyOfOneOf5 struct {
 
 type _AddClusterWorkerRequestServerConfigAnyOfOneOf5 AddClusterWorkerRequestServerConfigAnyOfOneOf5
 
-// NewAddClusterWorkerRequestServerConfigAnyOfOneOf5WithDefaults instantiates a new AddClusterWorkerRequestServerConfigAnyOfOneOf5 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterWorkerRequestServerConfigAnyOfOneOf5WithDefaults() *AddClusterWorkerRequestServerConfigAnyOfOneOf5 {
-	this := AddClusterWorkerRequestServerConfigAnyOfOneOf5{}
-	return &this
-}
-
 func (o AddClusterWorkerRequestServerConfigAnyOfOneOf5) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

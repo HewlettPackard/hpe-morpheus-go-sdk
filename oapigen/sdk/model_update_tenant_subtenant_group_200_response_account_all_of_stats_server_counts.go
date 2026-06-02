@@ -32,14 +32,6 @@ type UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts struct {
 
 type _UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts
 
-// NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCountsWithDefaults instantiates a new UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCountsWithDefaults() *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts {
-	this := UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts{}
-	return &this
-}
-
 func (o UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

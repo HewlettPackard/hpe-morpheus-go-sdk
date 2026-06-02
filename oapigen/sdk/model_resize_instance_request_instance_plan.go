@@ -26,14 +26,6 @@ type ResizeInstanceRequestInstancePlan struct {
 
 type _ResizeInstanceRequestInstancePlan ResizeInstanceRequestInstancePlan
 
-// NewResizeInstanceRequestInstancePlanWithDefaults instantiates a new ResizeInstanceRequestInstancePlan object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewResizeInstanceRequestInstancePlanWithDefaults() *ResizeInstanceRequestInstancePlan {
-	this := ResizeInstanceRequestInstancePlan{}
-	return &this
-}
-
 func (o ResizeInstanceRequestInstancePlan) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

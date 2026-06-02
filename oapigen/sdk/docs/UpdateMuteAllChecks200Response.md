@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateMuteAllChecks200ResponseWithDefaults
-
-`func NewUpdateMuteAllChecks200ResponseWithDefaults() *UpdateMuteAllChecks200Response`
-
-NewUpdateMuteAllChecks200ResponseWithDefaults instantiates a new UpdateMuteAllChecks200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *UpdateMuteAllChecks200Response) GetSuccess() bool`

@@ -27,14 +27,6 @@ type CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitor s
 
 type _CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitor CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitor
 
-// NewCreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitorWithDefaults instantiates a new CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitor object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitorWithDefaults() *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitor {
-	this := CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitor{}
-	return &this
-}
-
 func (o CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfigMonitor) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

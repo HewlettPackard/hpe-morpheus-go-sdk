@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewExecuteInstanceAction200ResponseWithDefaults
-
-`func NewExecuteInstanceAction200ResponseWithDefaults() *ExecuteInstanceAction200Response`
-
-NewExecuteInstanceAction200ResponseWithDefaults instantiates a new ExecuteInstanceAction200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *ExecuteInstanceAction200Response) GetSuccess() bool`

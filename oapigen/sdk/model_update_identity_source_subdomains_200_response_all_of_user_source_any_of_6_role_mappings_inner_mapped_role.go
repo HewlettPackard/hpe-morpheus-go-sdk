@@ -28,14 +28,6 @@ type UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6RoleMappingsI
 
 type _UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6RoleMappingsInnerMappedRole UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6RoleMappingsInnerMappedRole
 
-// NewUpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6RoleMappingsInnerMappedRoleWithDefaults instantiates a new UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6RoleMappingsInnerMappedRole object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6RoleMappingsInnerMappedRoleWithDefaults() *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6RoleMappingsInnerMappedRole {
-	this := UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6RoleMappingsInnerMappedRole{}
-	return &this
-}
-
 func (o UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf6RoleMappingsInnerMappedRole) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

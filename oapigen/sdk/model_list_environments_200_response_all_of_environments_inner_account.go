@@ -27,14 +27,6 @@ type ListEnvironments200ResponseAllOfEnvironmentsInnerAccount struct {
 
 type _ListEnvironments200ResponseAllOfEnvironmentsInnerAccount ListEnvironments200ResponseAllOfEnvironmentsInnerAccount
 
-// NewListEnvironments200ResponseAllOfEnvironmentsInnerAccountWithDefaults instantiates a new ListEnvironments200ResponseAllOfEnvironmentsInnerAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListEnvironments200ResponseAllOfEnvironmentsInnerAccountWithDefaults() *ListEnvironments200ResponseAllOfEnvironmentsInnerAccount {
-	this := ListEnvironments200ResponseAllOfEnvironmentsInnerAccount{}
-	return &this
-}
-
 func (o ListEnvironments200ResponseAllOfEnvironmentsInnerAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

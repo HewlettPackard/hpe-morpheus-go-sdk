@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewNestedWorkflowTaskConfig3WithDefaults
-
-`func NewNestedWorkflowTaskConfig3WithDefaults() *NestedWorkflowTaskConfig3`
-
-NewNestedWorkflowTaskConfig3WithDefaults instantiates a new NestedWorkflowTaskConfig3 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetOperationalWorkflowId
 
 `func (o *NestedWorkflowTaskConfig3) GetOperationalWorkflowId() string`

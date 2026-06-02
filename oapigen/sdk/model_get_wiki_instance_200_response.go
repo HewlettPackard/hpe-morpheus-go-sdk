@@ -26,14 +26,6 @@ type GetWikiInstance200Response struct {
 
 type _GetWikiInstance200Response GetWikiInstance200Response
 
-// NewGetWikiInstance200ResponseWithDefaults instantiates a new GetWikiInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetWikiInstance200ResponseWithDefaults() *GetWikiInstance200Response {
-	this := GetWikiInstance200Response{}
-	return &this
-}
-
 func (o GetWikiInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

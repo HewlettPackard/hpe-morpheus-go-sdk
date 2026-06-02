@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetBackupResults200ResponseResultBackupWithDefaults
-
-`func NewGetBackupResults200ResponseResultBackupWithDefaults() *GetBackupResults200ResponseResultBackup`
-
-NewGetBackupResults200ResponseResultBackupWithDefaults instantiates a new GetBackupResults200ResponseResultBackup object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetBackupResults200ResponseResultBackup) GetId() int64`

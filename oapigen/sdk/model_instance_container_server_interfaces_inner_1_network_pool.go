@@ -27,14 +27,6 @@ type InstanceContainerServerInterfacesInner1NetworkPool struct {
 
 type _InstanceContainerServerInterfacesInner1NetworkPool InstanceContainerServerInterfacesInner1NetworkPool
 
-// NewInstanceContainerServerInterfacesInner1NetworkPoolWithDefaults instantiates a new InstanceContainerServerInterfacesInner1NetworkPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainerServerInterfacesInner1NetworkPoolWithDefaults() *InstanceContainerServerInterfacesInner1NetworkPool {
-	this := InstanceContainerServerInterfacesInner1NetworkPool{}
-	return &this
-}
-
 func (o InstanceContainerServerInterfacesInner1NetworkPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddIntegrationsRequestOneOf4WithDefaults
-
-`func NewAddIntegrationsRequestOneOf4WithDefaults() *AddIntegrationsRequestOneOf4`
-
-NewAddIntegrationsRequestOneOf4WithDefaults instantiates a new AddIntegrationsRequestOneOf4 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetIntegration
 
 `func (o *AddIntegrationsRequestOneOf4) GetIntegration() AddIntegrationsRequestOneOf4Integration`

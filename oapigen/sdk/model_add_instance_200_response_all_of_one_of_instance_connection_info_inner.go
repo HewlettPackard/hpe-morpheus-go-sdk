@@ -28,14 +28,6 @@ type AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner struct {
 
 type _AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner
 
-// NewAddInstance200ResponseAllOfOneOfInstanceConnectionInfoInnerWithDefaults instantiates a new AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstance200ResponseAllOfOneOfInstanceConnectionInfoInnerWithDefaults() *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner {
-	this := AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner{}
-	return &this
-}
-
 func (o AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

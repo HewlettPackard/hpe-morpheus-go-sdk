@@ -46,14 +46,6 @@ type ListSecurityGroupRules200ResponseAllOfRulesInner struct {
 
 type _ListSecurityGroupRules200ResponseAllOfRulesInner ListSecurityGroupRules200ResponseAllOfRulesInner
 
-// NewListSecurityGroupRules200ResponseAllOfRulesInnerWithDefaults instantiates a new ListSecurityGroupRules200ResponseAllOfRulesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListSecurityGroupRules200ResponseAllOfRulesInnerWithDefaults() *ListSecurityGroupRules200ResponseAllOfRulesInner {
-	this := ListSecurityGroupRules200ResponseAllOfRulesInner{}
-	return &this
-}
-
 func (o ListSecurityGroupRules200ResponseAllOfRulesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

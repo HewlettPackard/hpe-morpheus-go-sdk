@@ -27,14 +27,6 @@ type StorageServerStorageQuotaPolicyTypeConfiguration14 struct {
 
 type _StorageServerStorageQuotaPolicyTypeConfiguration14 StorageServerStorageQuotaPolicyTypeConfiguration14
 
-// NewStorageServerStorageQuotaPolicyTypeConfiguration14WithDefaults instantiates a new StorageServerStorageQuotaPolicyTypeConfiguration14 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewStorageServerStorageQuotaPolicyTypeConfiguration14WithDefaults() *StorageServerStorageQuotaPolicyTypeConfiguration14 {
-	this := StorageServerStorageQuotaPolicyTypeConfiguration14{}
-	return &this
-}
-
 func (o StorageServerStorageQuotaPolicyTypeConfiguration14) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

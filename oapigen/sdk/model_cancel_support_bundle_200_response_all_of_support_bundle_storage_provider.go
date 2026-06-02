@@ -27,14 +27,6 @@ type CancelSupportBundle200ResponseAllOfSupportBundleStorageProvider struct {
 
 type _CancelSupportBundle200ResponseAllOfSupportBundleStorageProvider CancelSupportBundle200ResponseAllOfSupportBundleStorageProvider
 
-// NewCancelSupportBundle200ResponseAllOfSupportBundleStorageProviderWithDefaults instantiates a new CancelSupportBundle200ResponseAllOfSupportBundleStorageProvider object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCancelSupportBundle200ResponseAllOfSupportBundleStorageProviderWithDefaults() *CancelSupportBundle200ResponseAllOfSupportBundleStorageProvider {
-	this := CancelSupportBundle200ResponseAllOfSupportBundleStorageProvider{}
-	return &this
-}
-
 func (o CancelSupportBundle200ResponseAllOfSupportBundleStorageProvider) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

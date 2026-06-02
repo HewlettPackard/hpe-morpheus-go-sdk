@@ -35,14 +35,6 @@ type LibraryScriptTaskConfig6 struct {
 
 type _LibraryScriptTaskConfig6 LibraryScriptTaskConfig6
 
-// NewLibraryScriptTaskConfig6WithDefaults instantiates a new LibraryScriptTaskConfig6 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLibraryScriptTaskConfig6WithDefaults() *LibraryScriptTaskConfig6 {
-	this := LibraryScriptTaskConfig6{}
-	return &this
-}
-
 func (o LibraryScriptTaskConfig6) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

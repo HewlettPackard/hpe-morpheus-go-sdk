@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKeyWithDefaults
-
-`func NewGetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKeyWithDefaults() *GetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKey`
-
-NewGetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKeyWithDefaults instantiates a new GetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKey object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKey) GetId() int64`

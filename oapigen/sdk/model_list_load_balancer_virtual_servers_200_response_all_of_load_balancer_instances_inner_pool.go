@@ -27,14 +27,6 @@ type ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerPoo
 
 type _ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerPool ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerPool
 
-// NewListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerPoolWithDefaults instantiates a new ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerPoolWithDefaults() *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerPool {
-	this := ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerPool{}
-	return &this
-}
-
 func (o ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

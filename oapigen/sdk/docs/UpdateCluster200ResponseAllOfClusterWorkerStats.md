@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateCluster200ResponseAllOfClusterWorkerStatsWithDefaults
-
-`func NewUpdateCluster200ResponseAllOfClusterWorkerStatsWithDefaults() *UpdateCluster200ResponseAllOfClusterWorkerStats`
-
-NewUpdateCluster200ResponseAllOfClusterWorkerStatsWithDefaults instantiates a new UpdateCluster200ResponseAllOfClusterWorkerStats object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetUsedStorage
 
 `func (o *UpdateCluster200ResponseAllOfClusterWorkerStats) GetUsedStorage() int64`

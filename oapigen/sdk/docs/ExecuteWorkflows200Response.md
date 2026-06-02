@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewExecuteWorkflows200ResponseWithDefaults
-
-`func NewExecuteWorkflows200ResponseWithDefaults() *ExecuteWorkflows200Response`
-
-NewExecuteWorkflows200ResponseWithDefaults instantiates a new ExecuteWorkflows200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetJob
 
 `func (o *ExecuteWorkflows200Response) GetJob() ExecuteWorkflows200ResponseAllOfJob`

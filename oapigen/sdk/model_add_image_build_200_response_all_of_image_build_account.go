@@ -27,14 +27,6 @@ type AddImageBuild200ResponseAllOfImageBuildAccount struct {
 
 type _AddImageBuild200ResponseAllOfImageBuildAccount AddImageBuild200ResponseAllOfImageBuildAccount
 
-// NewAddImageBuild200ResponseAllOfImageBuildAccountWithDefaults instantiates a new AddImageBuild200ResponseAllOfImageBuildAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddImageBuild200ResponseAllOfImageBuildAccountWithDefaults() *AddImageBuild200ResponseAllOfImageBuildAccount {
-	this := AddImageBuild200ResponseAllOfImageBuildAccount{}
-	return &this
-}
-
 func (o AddImageBuild200ResponseAllOfImageBuildAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

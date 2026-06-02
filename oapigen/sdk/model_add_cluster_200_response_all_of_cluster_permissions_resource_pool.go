@@ -28,14 +28,6 @@ type AddCluster200ResponseAllOfClusterPermissionsResourcePool struct {
 
 type _AddCluster200ResponseAllOfClusterPermissionsResourcePool AddCluster200ResponseAllOfClusterPermissionsResourcePool
 
-// NewAddCluster200ResponseAllOfClusterPermissionsResourcePoolWithDefaults instantiates a new AddCluster200ResponseAllOfClusterPermissionsResourcePool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCluster200ResponseAllOfClusterPermissionsResourcePoolWithDefaults() *AddCluster200ResponseAllOfClusterPermissionsResourcePool {
-	this := AddCluster200ResponseAllOfClusterPermissionsResourcePool{}
-	return &this
-}
-
 func (o AddCluster200ResponseAllOfClusterPermissionsResourcePool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

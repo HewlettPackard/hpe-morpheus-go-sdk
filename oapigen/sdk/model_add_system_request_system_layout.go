@@ -27,14 +27,6 @@ type AddSystemRequestSystemLayout struct {
 
 type _AddSystemRequestSystemLayout AddSystemRequestSystemLayout
 
-// NewAddSystemRequestSystemLayoutWithDefaults instantiates a new AddSystemRequestSystemLayout object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddSystemRequestSystemLayoutWithDefaults() *AddSystemRequestSystemLayout {
-	this := AddSystemRequestSystemLayout{}
-	return &this
-}
-
 func (o AddSystemRequestSystemLayout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

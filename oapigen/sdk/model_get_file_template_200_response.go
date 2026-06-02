@@ -26,14 +26,6 @@ type GetFileTemplate200Response struct {
 
 type _GetFileTemplate200Response GetFileTemplate200Response
 
-// NewGetFileTemplate200ResponseWithDefaults instantiates a new GetFileTemplate200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetFileTemplate200ResponseWithDefaults() *GetFileTemplate200Response {
-	this := GetFileTemplate200Response{}
-	return &this
-}
-
 func (o GetFileTemplate200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

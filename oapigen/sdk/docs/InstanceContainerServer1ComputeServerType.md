@@ -22,14 +22,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInstanceContainerServer1ComputeServerTypeWithDefaults
-
-`func NewInstanceContainerServer1ComputeServerTypeWithDefaults() *InstanceContainerServer1ComputeServerType`
-
-NewInstanceContainerServer1ComputeServerTypeWithDefaults instantiates a new InstanceContainerServer1ComputeServerType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *InstanceContainerServer1ComputeServerType) GetId() int64`

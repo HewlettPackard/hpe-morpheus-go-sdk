@@ -40,16 +40,6 @@ type BlueprintHelmCreateSuccess struct {
 
 type _BlueprintHelmCreateSuccess BlueprintHelmCreateSuccess
 
-// NewBlueprintHelmCreateSuccessWithDefaults instantiates a new BlueprintHelmCreateSuccess object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintHelmCreateSuccessWithDefaults() *BlueprintHelmCreateSuccess {
-	this := BlueprintHelmCreateSuccess{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o BlueprintHelmCreateSuccess) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

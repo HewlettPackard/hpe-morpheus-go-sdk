@@ -34,14 +34,6 @@ type CheckMysqlConfig struct {
 
 type _CheckMysqlConfig CheckMysqlConfig
 
-// NewCheckMysqlConfigWithDefaults instantiates a new CheckMysqlConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCheckMysqlConfigWithDefaults() *CheckMysqlConfig {
-	this := CheckMysqlConfig{}
-	return &this
-}
-
 func (o CheckMysqlConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

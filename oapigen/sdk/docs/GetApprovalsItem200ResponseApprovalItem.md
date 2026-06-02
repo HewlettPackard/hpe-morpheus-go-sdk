@@ -32,14 +32,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetApprovalsItem200ResponseApprovalItemWithDefaults
-
-`func NewGetApprovalsItem200ResponseApprovalItemWithDefaults() *GetApprovalsItem200ResponseApprovalItem`
-
-NewGetApprovalsItem200ResponseApprovalItemWithDefaults instantiates a new GetApprovalsItem200ResponseApprovalItem object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetApprovalsItem200ResponseApprovalItem) GetId() int64`

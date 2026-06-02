@@ -27,14 +27,6 @@ type ListClusterLayouts200Response struct {
 
 type _ListClusterLayouts200Response ListClusterLayouts200Response
 
-// NewListClusterLayouts200ResponseWithDefaults instantiates a new ListClusterLayouts200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterLayouts200ResponseWithDefaults() *ListClusterLayouts200Response {
-	this := ListClusterLayouts200Response{}
-	return &this
-}
-
 func (o ListClusterLayouts200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

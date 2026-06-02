@@ -52,14 +52,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInnerWithDefaults
-
-`func NewUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInnerWithDefaults() *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner`
-
-NewUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInnerWithDefaults instantiates a new UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) GetId() int64`

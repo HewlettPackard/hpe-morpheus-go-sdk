@@ -27,14 +27,6 @@ type CatalogTypeOptionTypesInnerOptionList struct {
 
 type _CatalogTypeOptionTypesInnerOptionList CatalogTypeOptionTypesInnerOptionList
 
-// NewCatalogTypeOptionTypesInnerOptionListWithDefaults instantiates a new CatalogTypeOptionTypesInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCatalogTypeOptionTypesInnerOptionListWithDefaults() *CatalogTypeOptionTypesInnerOptionList {
-	this := CatalogTypeOptionTypesInnerOptionList{}
-	return &this
-}
-
 func (o CatalogTypeOptionTypesInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

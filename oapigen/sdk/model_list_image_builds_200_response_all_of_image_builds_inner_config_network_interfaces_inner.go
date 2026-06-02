@@ -32,14 +32,6 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner
 
-// NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerWithDefaults instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerWithDefaults() *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner {
-	this := ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner{}
-	return &this
-}
-
 func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

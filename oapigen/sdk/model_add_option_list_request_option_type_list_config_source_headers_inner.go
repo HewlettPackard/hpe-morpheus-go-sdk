@@ -31,16 +31,6 @@ type AddOptionListRequestOptionTypeListConfigSourceHeadersInner struct {
 
 type _AddOptionListRequestOptionTypeListConfigSourceHeadersInner AddOptionListRequestOptionTypeListConfigSourceHeadersInner
 
-// NewAddOptionListRequestOptionTypeListConfigSourceHeadersInnerWithDefaults instantiates a new AddOptionListRequestOptionTypeListConfigSourceHeadersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddOptionListRequestOptionTypeListConfigSourceHeadersInnerWithDefaults() *AddOptionListRequestOptionTypeListConfigSourceHeadersInner {
-	this := AddOptionListRequestOptionTypeListConfigSourceHeadersInner{}
-	var masked bool = false
-	this.Masked = &masked
-	return &this
-}
-
 func (o AddOptionListRequestOptionTypeListConfigSourceHeadersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

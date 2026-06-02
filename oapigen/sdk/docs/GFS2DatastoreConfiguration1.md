@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGFS2DatastoreConfiguration1WithDefaults
-
-`func NewGFS2DatastoreConfiguration1WithDefaults() *GFS2DatastoreConfiguration1`
-
-NewGFS2DatastoreConfiguration1WithDefaults instantiates a new GFS2DatastoreConfiguration1 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetBlockDevice
 
 `func (o *GFS2DatastoreConfiguration1) GetBlockDevice() string`

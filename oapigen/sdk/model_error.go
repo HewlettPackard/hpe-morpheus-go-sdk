@@ -31,16 +31,6 @@ type Error struct {
 
 type _Error Error
 
-// NewErrorWithDefaults instantiates a new Error object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewErrorWithDefaults() *Error {
-	this := Error{}
-	var success bool = true
-	this.Success = &success
-	return &this
-}
-
 func (o Error) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

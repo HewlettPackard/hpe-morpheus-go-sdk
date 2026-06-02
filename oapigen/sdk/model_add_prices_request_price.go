@@ -56,14 +56,6 @@ type AddPricesRequestPrice struct {
 
 type _AddPricesRequestPrice AddPricesRequestPrice
 
-// NewAddPricesRequestPriceWithDefaults instantiates a new AddPricesRequestPrice object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPricesRequestPriceWithDefaults() *AddPricesRequestPrice {
-	this := AddPricesRequestPrice{}
-	return &this
-}
-
 func (o AddPricesRequestPrice) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

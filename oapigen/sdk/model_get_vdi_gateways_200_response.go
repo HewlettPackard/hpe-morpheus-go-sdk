@@ -26,14 +26,6 @@ type GetVDIGateways200Response struct {
 
 type _GetVDIGateways200Response GetVDIGateways200Response
 
-// NewGetVDIGateways200ResponseWithDefaults instantiates a new GetVDIGateways200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetVDIGateways200ResponseWithDefaults() *GetVDIGateways200Response {
-	this := GetVDIGateways200Response{}
-	return &this
-}
-
 func (o GetVDIGateways200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

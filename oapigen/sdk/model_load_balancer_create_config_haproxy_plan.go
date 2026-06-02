@@ -27,14 +27,6 @@ type LoadBalancerCreateConfigHaproxyPlan struct {
 
 type _LoadBalancerCreateConfigHaproxyPlan LoadBalancerCreateConfigHaproxyPlan
 
-// NewLoadBalancerCreateConfigHaproxyPlanWithDefaults instantiates a new LoadBalancerCreateConfigHaproxyPlan object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLoadBalancerCreateConfigHaproxyPlanWithDefaults() *LoadBalancerCreateConfigHaproxyPlan {
-	this := LoadBalancerCreateConfigHaproxyPlan{}
-	return &this
-}
-
 func (o LoadBalancerCreateConfigHaproxyPlan) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

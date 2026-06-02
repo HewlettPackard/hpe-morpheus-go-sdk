@@ -32,14 +32,6 @@ type ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner s
 
 type _ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner
 
-// NewListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInnerWithDefaults instantiates a new ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInnerWithDefaults() *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner {
-	this := ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner{}
-	return &this
-}
-
 func (o ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

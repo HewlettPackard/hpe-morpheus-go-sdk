@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddVDIGateways200ResponseAnyOfWithDefaults
-
-`func NewAddVDIGateways200ResponseAnyOfWithDefaults() *AddVDIGateways200ResponseAnyOf`
-
-NewAddVDIGateways200ResponseAnyOfWithDefaults instantiates a new AddVDIGateways200ResponseAnyOf object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetVdiGateway
 
 `func (o *AddVDIGateways200ResponseAnyOf) GetVdiGateway() AddVDIGateways200ResponseAnyOfVdiGateway`

@@ -27,14 +27,6 @@ type SubnetTypeOptionTypesInnerOptionList struct {
 
 type _SubnetTypeOptionTypesInnerOptionList SubnetTypeOptionTypesInnerOptionList
 
-// NewSubnetTypeOptionTypesInnerOptionListWithDefaults instantiates a new SubnetTypeOptionTypesInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSubnetTypeOptionTypesInnerOptionListWithDefaults() *SubnetTypeOptionTypesInnerOptionList {
-	this := SubnetTypeOptionTypesInnerOptionList{}
-	return &this
-}
-
 func (o SubnetTypeOptionTypesInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

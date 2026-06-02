@@ -44,20 +44,6 @@ type ResizeInstanceRequestVolumesInner struct {
 
 type _ResizeInstanceRequestVolumesInner ResizeInstanceRequestVolumesInner
 
-// NewResizeInstanceRequestVolumesInnerWithDefaults instantiates a new ResizeInstanceRequestVolumesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewResizeInstanceRequestVolumesInnerWithDefaults() *ResizeInstanceRequestVolumesInner {
-	this := ResizeInstanceRequestVolumesInner{}
-	var id int64 = -1
-	this.Id = &id
-	var rootVolume bool = true
-	this.RootVolume = &rootVolume
-	var name string = "root"
-	this.Name = &name
-	return &this
-}
-
 func (o ResizeInstanceRequestVolumesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -31,14 +31,6 @@ type SecurityPackageType struct {
 
 type _SecurityPackageType SecurityPackageType
 
-// NewSecurityPackageTypeWithDefaults instantiates a new SecurityPackageType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSecurityPackageTypeWithDefaults() *SecurityPackageType {
-	this := SecurityPackageType{}
-	return &this
-}
-
 func (o SecurityPackageType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -35,18 +35,6 @@ type TokenPasswordRequest struct {
 
 type _TokenPasswordRequest TokenPasswordRequest
 
-// NewTokenPasswordRequestWithDefaults instantiates a new TokenPasswordRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTokenPasswordRequestWithDefaults() *TokenPasswordRequest {
-	this := TokenPasswordRequest{}
-	var clientId string = "morph-api"
-	this.ClientId = clientId
-	var grantType string = "password"
-	this.GrantType = grantType
-	return &this
-}
-
 func (o TokenPasswordRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

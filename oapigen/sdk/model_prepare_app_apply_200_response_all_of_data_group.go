@@ -27,14 +27,6 @@ type PrepareAppApply200ResponseAllOfDataGroup struct {
 
 type _PrepareAppApply200ResponseAllOfDataGroup PrepareAppApply200ResponseAllOfDataGroup
 
-// NewPrepareAppApply200ResponseAllOfDataGroupWithDefaults instantiates a new PrepareAppApply200ResponseAllOfDataGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPrepareAppApply200ResponseAllOfDataGroupWithDefaults() *PrepareAppApply200ResponseAllOfDataGroup {
-	this := PrepareAppApply200ResponseAllOfDataGroup{}
-	return &this
-}
-
 func (o PrepareAppApply200ResponseAllOfDataGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

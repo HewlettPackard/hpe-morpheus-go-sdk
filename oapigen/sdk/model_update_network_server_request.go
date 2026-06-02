@@ -26,14 +26,6 @@ type UpdateNetworkServerRequest struct {
 
 type _UpdateNetworkServerRequest UpdateNetworkServerRequest
 
-// NewUpdateNetworkServerRequestWithDefaults instantiates a new UpdateNetworkServerRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkServerRequestWithDefaults() *UpdateNetworkServerRequest {
-	this := UpdateNetworkServerRequest{}
-	return &this
-}
-
 func (o UpdateNetworkServerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

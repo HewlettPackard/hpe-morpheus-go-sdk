@@ -33,16 +33,6 @@ type UpdatePreseedScript200Response struct {
 
 type _UpdatePreseedScript200Response UpdatePreseedScript200Response
 
-// NewUpdatePreseedScript200ResponseWithDefaults instantiates a new UpdatePreseedScript200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePreseedScript200ResponseWithDefaults() *UpdatePreseedScript200Response {
-	this := UpdatePreseedScript200Response{}
-	var success bool = true
-	this.Success = &success
-	return &this
-}
-
 func (o UpdatePreseedScript200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

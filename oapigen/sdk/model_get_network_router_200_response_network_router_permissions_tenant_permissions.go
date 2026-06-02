@@ -26,14 +26,6 @@ type GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions struct
 
 type _GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions
 
-// NewGetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissionsWithDefaults instantiates a new GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissionsWithDefaults() *GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions {
-	this := GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions{}
-	return &this
-}
-
 func (o GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type DeleteCertificate200Response struct {
 
 type _DeleteCertificate200Response DeleteCertificate200Response
 
-// NewDeleteCertificate200ResponseWithDefaults instantiates a new DeleteCertificate200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteCertificate200ResponseWithDefaults() *DeleteCertificate200Response {
-	this := DeleteCertificate200Response{}
-	return &this
-}
-
 func (o DeleteCertificate200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

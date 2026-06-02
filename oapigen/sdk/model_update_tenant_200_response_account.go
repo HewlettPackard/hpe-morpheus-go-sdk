@@ -43,14 +43,6 @@ type UpdateTenant200ResponseAccount struct {
 
 type _UpdateTenant200ResponseAccount UpdateTenant200ResponseAccount
 
-// NewUpdateTenant200ResponseAccountWithDefaults instantiates a new UpdateTenant200ResponseAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateTenant200ResponseAccountWithDefaults() *UpdateTenant200ResponseAccount {
-	this := UpdateTenant200ResponseAccount{}
-	return &this
-}
-
 func (o UpdateTenant200ResponseAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

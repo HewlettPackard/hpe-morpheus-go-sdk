@@ -26,14 +26,6 @@ type ClusterDatastoresZonePool struct {
 
 type _ClusterDatastoresZonePool ClusterDatastoresZonePool
 
-// NewClusterDatastoresZonePoolWithDefaults instantiates a new ClusterDatastoresZonePool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterDatastoresZonePoolWithDefaults() *ClusterDatastoresZonePool {
-	this := ClusterDatastoresZonePool{}
-	return &this
-}
-
 func (o ClusterDatastoresZonePool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

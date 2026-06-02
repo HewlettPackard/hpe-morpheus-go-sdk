@@ -26,14 +26,6 @@ type ExtendExpirationInstance200Response struct {
 
 type _ExtendExpirationInstance200Response ExtendExpirationInstance200Response
 
-// NewExtendExpirationInstance200ResponseWithDefaults instantiates a new ExtendExpirationInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewExtendExpirationInstance200ResponseWithDefaults() *ExtendExpirationInstance200Response {
-	this := ExtendExpirationInstance200Response{}
-	return &this
-}
-
 func (o ExtendExpirationInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

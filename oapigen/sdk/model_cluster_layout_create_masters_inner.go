@@ -28,16 +28,6 @@ type ClusterLayoutCreateMastersInner struct {
 
 type _ClusterLayoutCreateMastersInner ClusterLayoutCreateMastersInner
 
-// NewClusterLayoutCreateMastersInnerWithDefaults instantiates a new ClusterLayoutCreateMastersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterLayoutCreateMastersInnerWithDefaults() *ClusterLayoutCreateMastersInner {
-	this := ClusterLayoutCreateMastersInner{}
-	var nodeCount int64 = 1
-	this.NodeCount = &nodeCount
-	return &this
-}
-
 func (o ClusterLayoutCreateMastersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -42,18 +42,6 @@ type CreateInstanceScheduleRequestInstanceSchedule struct {
 
 type _CreateInstanceScheduleRequestInstanceSchedule CreateInstanceScheduleRequestInstanceSchedule
 
-// NewCreateInstanceScheduleRequestInstanceScheduleWithDefaults instantiates a new CreateInstanceScheduleRequestInstanceSchedule object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateInstanceScheduleRequestInstanceScheduleWithDefaults() *CreateInstanceScheduleRequestInstanceSchedule {
-	this := CreateInstanceScheduleRequestInstanceSchedule{}
-	var scheduleType string = "dayOfWeek"
-	this.ScheduleType = &scheduleType
-	var scheduleTimezone string = "UTC"
-	this.ScheduleTimezone = &scheduleTimezone
-	return &this
-}
-
 func (o CreateInstanceScheduleRequestInstanceSchedule) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

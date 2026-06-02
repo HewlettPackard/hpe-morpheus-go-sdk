@@ -26,14 +26,6 @@ type GenerateKeyPairsRequest struct {
 
 type _GenerateKeyPairsRequest GenerateKeyPairsRequest
 
-// NewGenerateKeyPairsRequestWithDefaults instantiates a new GenerateKeyPairsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGenerateKeyPairsRequestWithDefaults() *GenerateKeyPairsRequest {
-	this := GenerateKeyPairsRequest{}
-	return &this
-}
-
 func (o GenerateKeyPairsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

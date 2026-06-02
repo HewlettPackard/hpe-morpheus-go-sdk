@@ -34,14 +34,6 @@ type ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner struc
 
 type _ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner
 
-// NewListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInnerWithDefaults instantiates a new ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInnerWithDefaults() *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner {
-	this := ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner{}
-	return &this
-}
-
 func (o ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

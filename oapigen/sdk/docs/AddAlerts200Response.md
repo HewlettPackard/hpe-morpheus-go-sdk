@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddAlerts200ResponseWithDefaults
-
-`func NewAddAlerts200ResponseWithDefaults() *AddAlerts200Response`
-
-NewAddAlerts200ResponseWithDefaults instantiates a new AddAlerts200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAlert
 
 `func (o *AddAlerts200Response) GetAlert() AddAlerts200ResponseAllOfAlert`

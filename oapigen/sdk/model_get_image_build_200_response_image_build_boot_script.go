@@ -27,14 +27,6 @@ type GetImageBuild200ResponseImageBuildBootScript struct {
 
 type _GetImageBuild200ResponseImageBuildBootScript GetImageBuild200ResponseImageBuildBootScript
 
-// NewGetImageBuild200ResponseImageBuildBootScriptWithDefaults instantiates a new GetImageBuild200ResponseImageBuildBootScript object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetImageBuild200ResponseImageBuildBootScriptWithDefaults() *GetImageBuild200ResponseImageBuildBootScript {
-	this := GetImageBuild200ResponseImageBuildBootScript{}
-	return &this
-}
-
 func (o GetImageBuild200ResponseImageBuildBootScript) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

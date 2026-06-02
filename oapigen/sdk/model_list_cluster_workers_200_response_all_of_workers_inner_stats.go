@@ -32,14 +32,6 @@ type ListClusterWorkers200ResponseAllOfWorkersInnerStats struct {
 
 type _ListClusterWorkers200ResponseAllOfWorkersInnerStats ListClusterWorkers200ResponseAllOfWorkersInnerStats
 
-// NewListClusterWorkers200ResponseAllOfWorkersInnerStatsWithDefaults instantiates a new ListClusterWorkers200ResponseAllOfWorkersInnerStats object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterWorkers200ResponseAllOfWorkersInnerStatsWithDefaults() *ListClusterWorkers200ResponseAllOfWorkersInnerStats {
-	this := ListClusterWorkers200ResponseAllOfWorkersInnerStats{}
-	return &this
-}
-
 func (o ListClusterWorkers200ResponseAllOfWorkersInnerStats) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

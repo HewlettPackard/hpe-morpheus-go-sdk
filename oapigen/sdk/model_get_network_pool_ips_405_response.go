@@ -26,14 +26,6 @@ type GetNetworkPoolIps405Response struct {
 
 type _GetNetworkPoolIps405Response GetNetworkPoolIps405Response
 
-// NewGetNetworkPoolIps405ResponseWithDefaults instantiates a new GetNetworkPoolIps405Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkPoolIps405ResponseWithDefaults() *GetNetworkPoolIps405Response {
-	this := GetNetworkPoolIps405Response{}
-	return &this
-}
-
 func (o GetNetworkPoolIps405Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

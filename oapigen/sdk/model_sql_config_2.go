@@ -47,14 +47,6 @@ type SQLConfig2 struct {
 
 type _SQLConfig2 SQLConfig2
 
-// NewSQLConfig2WithDefaults instantiates a new SQLConfig2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSQLConfig2WithDefaults() *SQLConfig2 {
-	this := SQLConfig2{}
-	return &this
-}
-
 func (o SQLConfig2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type AddSystemRequestSystemType struct {
 
 type _AddSystemRequestSystemType AddSystemRequestSystemType
 
-// NewAddSystemRequestSystemTypeWithDefaults instantiates a new AddSystemRequestSystemType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddSystemRequestSystemTypeWithDefaults() *AddSystemRequestSystemType {
-	this := AddSystemRequestSystemType{}
-	return &this
-}
-
 func (o AddSystemRequestSystemType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

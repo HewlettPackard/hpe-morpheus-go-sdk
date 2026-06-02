@@ -27,14 +27,6 @@ type GetWikiApp200ResponsePageCreatedBy struct {
 
 type _GetWikiApp200ResponsePageCreatedBy GetWikiApp200ResponsePageCreatedBy
 
-// NewGetWikiApp200ResponsePageCreatedByWithDefaults instantiates a new GetWikiApp200ResponsePageCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetWikiApp200ResponsePageCreatedByWithDefaults() *GetWikiApp200ResponsePageCreatedBy {
-	this := GetWikiApp200ResponsePageCreatedBy{}
-	return &this
-}
-
 func (o GetWikiApp200ResponsePageCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

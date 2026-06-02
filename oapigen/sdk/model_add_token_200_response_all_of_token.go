@@ -42,14 +42,6 @@ type AddToken200ResponseAllOfToken struct {
 
 type _AddToken200ResponseAllOfToken AddToken200ResponseAllOfToken
 
-// NewAddToken200ResponseAllOfTokenWithDefaults instantiates a new AddToken200ResponseAllOfToken object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddToken200ResponseAllOfTokenWithDefaults() *AddToken200ResponseAllOfToken {
-	this := AddToken200ResponseAllOfToken{}
-	return &this
-}
-
 func (o AddToken200ResponseAllOfToken) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

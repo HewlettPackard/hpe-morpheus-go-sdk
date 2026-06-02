@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListTenantSubtenantIdentitySources200ResponseWithDefaults
-
-`func NewListTenantSubtenantIdentitySources200ResponseWithDefaults() *ListTenantSubtenantIdentitySources200Response`
-
-NewListTenantSubtenantIdentitySources200ResponseWithDefaults instantiates a new ListTenantSubtenantIdentitySources200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetUserSources
 
 `func (o *ListTenantSubtenantIdentitySources200Response) GetUserSources() []ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInner`

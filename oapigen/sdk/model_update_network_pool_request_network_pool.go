@@ -32,14 +32,6 @@ type UpdateNetworkPoolRequestNetworkPool struct {
 
 type _UpdateNetworkPoolRequestNetworkPool UpdateNetworkPoolRequestNetworkPool
 
-// NewUpdateNetworkPoolRequestNetworkPoolWithDefaults instantiates a new UpdateNetworkPoolRequestNetworkPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkPoolRequestNetworkPoolWithDefaults() *UpdateNetworkPoolRequestNetworkPool {
-	this := UpdateNetworkPoolRequestNetworkPool{}
-	return &this
-}
-
 func (o UpdateNetworkPoolRequestNetworkPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -43,20 +43,6 @@ type UpdateScriptRequestContainerScript struct {
 
 type _UpdateScriptRequestContainerScript UpdateScriptRequestContainerScript
 
-// NewUpdateScriptRequestContainerScriptWithDefaults instantiates a new UpdateScriptRequestContainerScript object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateScriptRequestContainerScriptWithDefaults() *UpdateScriptRequestContainerScript {
-	this := UpdateScriptRequestContainerScript{}
-	var scriptVersion string = "1"
-	this.ScriptVersion = &scriptVersion
-	var scriptType string = "bash"
-	this.ScriptType = &scriptType
-	var sudoUser bool = false
-	this.SudoUser = &sudoUser
-	return &this
-}
-
 func (o UpdateScriptRequestContainerScript) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

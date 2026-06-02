@@ -38,14 +38,6 @@ type GetWikiApp200ResponsePage struct {
 
 type _GetWikiApp200ResponsePage GetWikiApp200ResponsePage
 
-// NewGetWikiApp200ResponsePageWithDefaults instantiates a new GetWikiApp200ResponsePage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetWikiApp200ResponsePageWithDefaults() *GetWikiApp200ResponsePage {
-	this := GetWikiApp200ResponsePage{}
-	return &this
-}
-
 func (o GetWikiApp200ResponsePage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

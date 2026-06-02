@@ -34,14 +34,6 @@ type ListCypherKeys200ResponseAllOfCyphersInner struct {
 
 type _ListCypherKeys200ResponseAllOfCyphersInner ListCypherKeys200ResponseAllOfCyphersInner
 
-// NewListCypherKeys200ResponseAllOfCyphersInnerWithDefaults instantiates a new ListCypherKeys200ResponseAllOfCyphersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCypherKeys200ResponseAllOfCyphersInnerWithDefaults() *ListCypherKeys200ResponseAllOfCyphersInner {
-	this := ListCypherKeys200ResponseAllOfCyphersInner{}
-	return &this
-}
-
 func (o ListCypherKeys200ResponseAllOfCyphersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetGuidanceStats200ResponseStatsSeverityWithDefaults
-
-`func NewGetGuidanceStats200ResponseStatsSeverityWithDefaults() *GetGuidanceStats200ResponseStatsSeverity`
-
-NewGetGuidanceStats200ResponseStatsSeverityWithDefaults instantiates a new GetGuidanceStats200ResponseStatsSeverity object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetLow
 
 `func (o *GetGuidanceStats200ResponseStatsSeverity) GetLow() int64`

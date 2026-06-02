@@ -35,14 +35,6 @@ type ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType struct {
 
 type _ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType
 
-// NewListVirtualImages200ResponseAllOfVirtualImagesInnerOsTypeWithDefaults instantiates a new ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListVirtualImages200ResponseAllOfVirtualImagesInnerOsTypeWithDefaults() *ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType {
-	this := ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType{}
-	return &this
-}
-
 func (o ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

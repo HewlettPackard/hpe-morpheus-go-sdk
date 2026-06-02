@@ -28,14 +28,6 @@ type GetPowerSchedules200Response struct {
 
 type _GetPowerSchedules200Response GetPowerSchedules200Response
 
-// NewGetPowerSchedules200ResponseWithDefaults instantiates a new GetPowerSchedules200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetPowerSchedules200ResponseWithDefaults() *GetPowerSchedules200Response {
-	this := GetPowerSchedules200Response{}
-	return &this
-}
-
 func (o GetPowerSchedules200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

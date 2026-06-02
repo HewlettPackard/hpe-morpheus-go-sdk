@@ -51,20 +51,6 @@ type UserSourceCreateSaml struct {
 
 type _UserSourceCreateSaml UserSourceCreateSaml
 
-// NewUserSourceCreateSamlWithDefaults instantiates a new UserSourceCreateSaml object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserSourceCreateSamlWithDefaults() *UserSourceCreateSaml {
-	this := UserSourceCreateSaml{}
-	var doNotIncludeSAMLRequest bool = false
-	this.DoNotIncludeSAMLRequest = &doNotIncludeSAMLRequest
-	var sAMLSignatureMode string = "NoSignature"
-	this.SAMLSignatureMode = &sAMLSignatureMode
-	var doNotValidateSignature bool = true
-	this.DoNotValidateSignature = &doNotValidateSignature
-	return &this
-}
-
 func (o UserSourceCreateSaml) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

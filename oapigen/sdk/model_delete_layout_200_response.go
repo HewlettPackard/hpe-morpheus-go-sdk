@@ -26,14 +26,6 @@ type DeleteLayout200Response struct {
 
 type _DeleteLayout200Response DeleteLayout200Response
 
-// NewDeleteLayout200ResponseWithDefaults instantiates a new DeleteLayout200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteLayout200ResponseWithDefaults() *DeleteLayout200Response {
-	this := DeleteLayout200Response{}
-	return &this
-}
-
 func (o DeleteLayout200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -43,14 +43,6 @@ type ExecutionRequest struct {
 
 type _ExecutionRequest ExecutionRequest
 
-// NewExecutionRequestWithDefaults instantiates a new ExecutionRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewExecutionRequestWithDefaults() *ExecutionRequest {
-	this := ExecutionRequest{}
-	return &this
-}
-
 func (o ExecutionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

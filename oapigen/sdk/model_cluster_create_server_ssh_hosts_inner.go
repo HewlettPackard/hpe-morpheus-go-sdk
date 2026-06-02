@@ -29,14 +29,6 @@ type ClusterCreateServerSshHostsInner struct {
 
 type _ClusterCreateServerSshHostsInner ClusterCreateServerSshHostsInner
 
-// NewClusterCreateServerSshHostsInnerWithDefaults instantiates a new ClusterCreateServerSshHostsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterCreateServerSshHostsInnerWithDefaults() *ClusterCreateServerSshHostsInner {
-	this := ClusterCreateServerSshHostsInner{}
-	return &this
-}
-
 func (o ClusterCreateServerSshHostsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

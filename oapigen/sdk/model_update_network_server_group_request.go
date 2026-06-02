@@ -26,14 +26,6 @@ type UpdateNetworkServerGroupRequest struct {
 
 type _UpdateNetworkServerGroupRequest UpdateNetworkServerGroupRequest
 
-// NewUpdateNetworkServerGroupRequestWithDefaults instantiates a new UpdateNetworkServerGroupRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkServerGroupRequestWithDefaults() *UpdateNetworkServerGroupRequest {
-	this := UpdateNetworkServerGroupRequest{}
-	return &this
-}
-
 func (o UpdateNetworkServerGroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

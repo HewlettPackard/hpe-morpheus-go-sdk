@@ -27,14 +27,6 @@ type GuidanceVmwareSizingResourceOwner struct {
 
 type _GuidanceVmwareSizingResourceOwner GuidanceVmwareSizingResourceOwner
 
-// NewGuidanceVmwareSizingResourceOwnerWithDefaults instantiates a new GuidanceVmwareSizingResourceOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGuidanceVmwareSizingResourceOwnerWithDefaults() *GuidanceVmwareSizingResourceOwner {
-	this := GuidanceVmwareSizingResourceOwner{}
-	return &this
-}
-
 func (o GuidanceVmwareSizingResourceOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

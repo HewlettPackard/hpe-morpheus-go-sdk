@@ -31,14 +31,6 @@ type CloudFoundryResourcePoolConfig struct {
 
 type _CloudFoundryResourcePoolConfig CloudFoundryResourcePoolConfig
 
-// NewCloudFoundryResourcePoolConfigWithDefaults instantiates a new CloudFoundryResourcePoolConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCloudFoundryResourcePoolConfigWithDefaults() *CloudFoundryResourcePoolConfig {
-	this := CloudFoundryResourcePoolConfig{}
-	return &this
-}
-
 func (o CloudFoundryResourcePoolConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

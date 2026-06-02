@@ -28,14 +28,6 @@ type ClusterServersInnerTypeSet struct {
 
 type _ClusterServersInnerTypeSet ClusterServersInnerTypeSet
 
-// NewClusterServersInnerTypeSetWithDefaults instantiates a new ClusterServersInnerTypeSet object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterServersInnerTypeSetWithDefaults() *ClusterServersInnerTypeSet {
-	this := ClusterServersInnerTypeSet{}
-	return &this
-}
-
 func (o ClusterServersInnerTypeSet) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

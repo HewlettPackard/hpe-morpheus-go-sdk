@@ -29,14 +29,6 @@ type GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsV
 
 type _GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue
 
-// NewGetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueWithDefaults instantiates a new GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueWithDefaults() *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue {
-	this := GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue{}
-	return &this
-}
-
 func (o GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

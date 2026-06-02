@@ -27,14 +27,6 @@ type ListSpecTemplates200ResponseAllOfSpecTemplatesInnerAccount struct {
 
 type _ListSpecTemplates200ResponseAllOfSpecTemplatesInnerAccount ListSpecTemplates200ResponseAllOfSpecTemplatesInnerAccount
 
-// NewListSpecTemplates200ResponseAllOfSpecTemplatesInnerAccountWithDefaults instantiates a new ListSpecTemplates200ResponseAllOfSpecTemplatesInnerAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListSpecTemplates200ResponseAllOfSpecTemplatesInnerAccountWithDefaults() *ListSpecTemplates200ResponseAllOfSpecTemplatesInnerAccount {
-	this := ListSpecTemplates200ResponseAllOfSpecTemplatesInnerAccount{}
-	return &this
-}
-
 func (o ListSpecTemplates200ResponseAllOfSpecTemplatesInnerAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInstanceConfigObject2VolumesInnerWithDefaults
-
-`func NewInstanceConfigObject2VolumesInnerWithDefaults() *InstanceConfigObject2VolumesInner`
-
-NewInstanceConfigObject2VolumesInnerWithDefaults instantiates a new InstanceConfigObject2VolumesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *InstanceConfigObject2VolumesInner) GetId() int64`

@@ -36,14 +36,6 @@ type CreateNetworkServerGroupRequestGroupMembersInner struct {
 
 type _CreateNetworkServerGroupRequestGroupMembersInner CreateNetworkServerGroupRequestGroupMembersInner
 
-// NewCreateNetworkServerGroupRequestGroupMembersInnerWithDefaults instantiates a new CreateNetworkServerGroupRequestGroupMembersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkServerGroupRequestGroupMembersInnerWithDefaults() *CreateNetworkServerGroupRequestGroupMembersInner {
-	this := CreateNetworkServerGroupRequestGroupMembersInner{}
-	return &this
-}
-
 func (o CreateNetworkServerGroupRequestGroupMembersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

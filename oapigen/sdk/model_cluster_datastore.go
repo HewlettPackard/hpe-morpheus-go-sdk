@@ -54,14 +54,6 @@ type ClusterDatastore struct {
 
 type _ClusterDatastore ClusterDatastore
 
-// NewClusterDatastoreWithDefaults instantiates a new ClusterDatastore object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterDatastoreWithDefaults() *ClusterDatastore {
-	this := ClusterDatastore{}
-	return &this
-}
-
 func (o ClusterDatastore) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

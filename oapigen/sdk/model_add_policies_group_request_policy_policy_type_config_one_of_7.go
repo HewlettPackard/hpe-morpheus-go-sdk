@@ -38,18 +38,6 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 struct {
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7
 
-// NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7WithDefaults instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7WithDefaults() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 {
-	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7{}
-	var lifecycleAutoRenew string = "off"
-	this.LifecycleAutoRenew = &lifecycleAutoRenew
-	var lifecycleAllowExtend string = "off"
-	this.LifecycleAllowExtend = &lifecycleAllowExtend
-	return &this
-}
-
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -34,14 +34,6 @@ type GetMonitoringSettings200ResponseMonitoringSettings struct {
 
 type _GetMonitoringSettings200ResponseMonitoringSettings GetMonitoringSettings200ResponseMonitoringSettings
 
-// NewGetMonitoringSettings200ResponseMonitoringSettingsWithDefaults instantiates a new GetMonitoringSettings200ResponseMonitoringSettings object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetMonitoringSettings200ResponseMonitoringSettingsWithDefaults() *GetMonitoringSettings200ResponseMonitoringSettings {
-	this := GetMonitoringSettings200ResponseMonitoringSettings{}
-	return &this
-}
-
 func (o GetMonitoringSettings200ResponseMonitoringSettings) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

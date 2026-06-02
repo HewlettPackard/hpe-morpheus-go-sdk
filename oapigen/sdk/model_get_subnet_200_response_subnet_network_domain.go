@@ -27,14 +27,6 @@ type GetSubnet200ResponseSubnetNetworkDomain struct {
 
 type _GetSubnet200ResponseSubnetNetworkDomain GetSubnet200ResponseSubnetNetworkDomain
 
-// NewGetSubnet200ResponseSubnetNetworkDomainWithDefaults instantiates a new GetSubnet200ResponseSubnetNetworkDomain object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSubnet200ResponseSubnetNetworkDomainWithDefaults() *GetSubnet200ResponseSubnetNetworkDomain {
-	this := GetSubnet200ResponseSubnetNetworkDomain{}
-	return &this
-}
-
 func (o GetSubnet200ResponseSubnetNetworkDomain) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

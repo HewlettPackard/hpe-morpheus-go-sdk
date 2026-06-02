@@ -31,16 +31,6 @@ type ListApplianceSettings4XXResponse struct {
 
 type _ListApplianceSettings4XXResponse ListApplianceSettings4XXResponse
 
-// NewListApplianceSettings4XXResponseWithDefaults instantiates a new ListApplianceSettings4XXResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListApplianceSettings4XXResponseWithDefaults() *ListApplianceSettings4XXResponse {
-	this := ListApplianceSettings4XXResponse{}
-	var success bool = true
-	this.Success = &success
-	return &this
-}
-
 func (o ListApplianceSettings4XXResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

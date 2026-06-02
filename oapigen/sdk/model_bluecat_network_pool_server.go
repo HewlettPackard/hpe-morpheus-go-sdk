@@ -45,20 +45,6 @@ type BluecatNetworkPoolServer struct {
 
 type _BluecatNetworkPoolServer BluecatNetworkPoolServer
 
-// NewBluecatNetworkPoolServerWithDefaults instantiates a new BluecatNetworkPoolServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBluecatNetworkPoolServerWithDefaults() *BluecatNetworkPoolServer {
-	this := BluecatNetworkPoolServer{}
-	var enabled bool = true
-	this.Enabled = &enabled
-	var serviceThrottleRate int64 = 0
-	this.ServiceThrottleRate = *NewNullableInt64(&serviceThrottleRate)
-	var ignoreSsl bool = true
-	this.IgnoreSsl = &ignoreSsl
-	return &this
-}
-
 func (o BluecatNetworkPoolServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

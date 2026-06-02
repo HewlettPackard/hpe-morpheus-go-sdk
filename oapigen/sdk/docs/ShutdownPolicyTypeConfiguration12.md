@@ -29,14 +29,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewShutdownPolicyTypeConfiguration12WithDefaults
-
-`func NewShutdownPolicyTypeConfiguration12WithDefaults() *ShutdownPolicyTypeConfiguration12`
-
-NewShutdownPolicyTypeConfiguration12WithDefaults instantiates a new ShutdownPolicyTypeConfiguration12 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetShutdownType
 
 `func (o *ShutdownPolicyTypeConfiguration12) GetShutdownType() string`

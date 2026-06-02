@@ -28,14 +28,6 @@ type AddCatalogCartItem200ResponseAllOfItemType struct {
 
 type _AddCatalogCartItem200ResponseAllOfItemType AddCatalogCartItem200ResponseAllOfItemType
 
-// NewAddCatalogCartItem200ResponseAllOfItemTypeWithDefaults instantiates a new AddCatalogCartItem200ResponseAllOfItemType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCatalogCartItem200ResponseAllOfItemTypeWithDefaults() *AddCatalogCartItem200ResponseAllOfItemType {
-	this := AddCatalogCartItem200ResponseAllOfItemType{}
-	return &this
-}
-
 func (o AddCatalogCartItem200ResponseAllOfItemType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

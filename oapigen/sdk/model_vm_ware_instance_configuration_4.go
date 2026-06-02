@@ -41,20 +41,6 @@ type VMWareInstanceConfiguration4 struct {
 
 type _VMWareInstanceConfiguration4 VMWareInstanceConfiguration4
 
-// NewVMWareInstanceConfiguration4WithDefaults instantiates a new VMWareInstanceConfiguration4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewVMWareInstanceConfiguration4WithDefaults() *VMWareInstanceConfiguration4 {
-	this := VMWareInstanceConfiguration4{}
-	var noAgent bool = false
-	this.NoAgent = *NewNullableBool(&noAgent)
-	var nestedVirtualization string = "off"
-	this.NestedVirtualization = &nestedVirtualization
-	var createUser bool = false
-	this.CreateUser = *NewNullableBool(&createUser)
-	return &this
-}
-
 func (o VMWareInstanceConfiguration4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

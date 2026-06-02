@@ -28,14 +28,6 @@ type AppStateInput struct {
 
 type _AppStateInput AppStateInput
 
-// NewAppStateInputWithDefaults instantiates a new AppStateInput object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppStateInputWithDefaults() *AppStateInput {
-	this := AppStateInput{}
-	return &this
-}
-
 func (o AppStateInput) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

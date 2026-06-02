@@ -40,14 +40,6 @@ type IntegrationRoute53 struct {
 
 type _IntegrationRoute53 IntegrationRoute53
 
-// NewIntegrationRoute53WithDefaults instantiates a new IntegrationRoute53 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationRoute53WithDefaults() *IntegrationRoute53 {
-	this := IntegrationRoute53{}
-	return &this
-}
-
 func (o IntegrationRoute53) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

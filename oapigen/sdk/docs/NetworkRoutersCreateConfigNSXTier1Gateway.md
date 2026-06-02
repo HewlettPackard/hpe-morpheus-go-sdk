@@ -28,14 +28,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewNetworkRoutersCreateConfigNSXTier1GatewayWithDefaults
-
-`func NewNetworkRoutersCreateConfigNSXTier1GatewayWithDefaults() *NetworkRoutersCreateConfigNSXTier1Gateway`
-
-NewNetworkRoutersCreateConfigNSXTier1GatewayWithDefaults instantiates a new NetworkRoutersCreateConfigNSXTier1Gateway object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetTier0Gateway
 
 `func (o *NetworkRoutersCreateConfigNSXTier1Gateway) GetTier0Gateway() string`

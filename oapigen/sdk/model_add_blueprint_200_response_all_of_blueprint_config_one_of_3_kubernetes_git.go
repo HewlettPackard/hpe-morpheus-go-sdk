@@ -33,14 +33,6 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf3KubernetesGit struct {
 
 type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf3KubernetesGit AddBlueprint200ResponseAllOfBlueprintConfigOneOf3KubernetesGit
 
-// NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf3KubernetesGitWithDefaults instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf3KubernetesGit object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf3KubernetesGitWithDefaults() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3KubernetesGit {
-	this := AddBlueprint200ResponseAllOfBlueprintConfigOneOf3KubernetesGit{}
-	return &this
-}
-
 func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf3KubernetesGit) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

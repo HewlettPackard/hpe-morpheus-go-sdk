@@ -46,14 +46,6 @@ type IdentitySourcesSAMLConfig struct {
 
 type _IdentitySourcesSAMLConfig IdentitySourcesSAMLConfig
 
-// NewIdentitySourcesSAMLConfigWithDefaults instantiates a new IdentitySourcesSAMLConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIdentitySourcesSAMLConfigWithDefaults() *IdentitySourcesSAMLConfig {
-	this := IdentitySourcesSAMLConfig{}
-	return &this
-}
-
 func (o IdentitySourcesSAMLConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

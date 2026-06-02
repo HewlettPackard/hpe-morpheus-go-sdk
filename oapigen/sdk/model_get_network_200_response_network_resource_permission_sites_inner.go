@@ -27,14 +27,6 @@ type GetNetwork200ResponseNetworkResourcePermissionSitesInner struct {
 
 type _GetNetwork200ResponseNetworkResourcePermissionSitesInner GetNetwork200ResponseNetworkResourcePermissionSitesInner
 
-// NewGetNetwork200ResponseNetworkResourcePermissionSitesInnerWithDefaults instantiates a new GetNetwork200ResponseNetworkResourcePermissionSitesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetwork200ResponseNetworkResourcePermissionSitesInnerWithDefaults() *GetNetwork200ResponseNetworkResourcePermissionSitesInner {
-	this := GetNetwork200ResponseNetworkResourcePermissionSitesInner{}
-	return &this
-}
-
 func (o GetNetwork200ResponseNetworkResourcePermissionSitesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

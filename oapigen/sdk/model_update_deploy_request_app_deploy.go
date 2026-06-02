@@ -27,14 +27,6 @@ type UpdateDeployRequestAppDeploy struct {
 
 type _UpdateDeployRequestAppDeploy UpdateDeployRequestAppDeploy
 
-// NewUpdateDeployRequestAppDeployWithDefaults instantiates a new UpdateDeployRequestAppDeploy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateDeployRequestAppDeployWithDefaults() *UpdateDeployRequestAppDeploy {
-	this := UpdateDeployRequestAppDeploy{}
-	return &this
-}
-
 func (o UpdateDeployRequestAppDeploy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

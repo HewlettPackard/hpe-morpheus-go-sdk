@@ -29,14 +29,6 @@ type AddRoles200ResponseAllOfClusterTypePermissionsInner struct {
 
 type _AddRoles200ResponseAllOfClusterTypePermissionsInner AddRoles200ResponseAllOfClusterTypePermissionsInner
 
-// NewAddRoles200ResponseAllOfClusterTypePermissionsInnerWithDefaults instantiates a new AddRoles200ResponseAllOfClusterTypePermissionsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddRoles200ResponseAllOfClusterTypePermissionsInnerWithDefaults() *AddRoles200ResponseAllOfClusterTypePermissionsInner {
-	this := AddRoles200ResponseAllOfClusterTypePermissionsInner{}
-	return &this
-}
-
 func (o AddRoles200ResponseAllOfClusterTypePermissionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

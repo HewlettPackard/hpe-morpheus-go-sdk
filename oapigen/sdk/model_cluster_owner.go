@@ -27,14 +27,6 @@ type ClusterOwner struct {
 
 type _ClusterOwner ClusterOwner
 
-// NewClusterOwnerWithDefaults instantiates a new ClusterOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterOwnerWithDefaults() *ClusterOwner {
-	this := ClusterOwner{}
-	return &this
-}
-
 func (o ClusterOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

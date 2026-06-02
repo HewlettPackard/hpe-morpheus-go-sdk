@@ -27,14 +27,6 @@ type CustomOptionsForAmazon struct {
 
 type _CustomOptionsForAmazon CustomOptionsForAmazon
 
-// NewCustomOptionsForAmazonWithDefaults instantiates a new CustomOptionsForAmazon object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCustomOptionsForAmazonWithDefaults() *CustomOptionsForAmazon {
-	this := CustomOptionsForAmazon{}
-	return &this
-}
-
 func (o CustomOptionsForAmazon) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

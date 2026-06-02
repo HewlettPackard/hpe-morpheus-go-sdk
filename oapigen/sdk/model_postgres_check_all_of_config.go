@@ -57,16 +57,6 @@ type PostgresCheckAllOfConfig struct {
 
 type _PostgresCheckAllOfConfig PostgresCheckAllOfConfig
 
-// NewPostgresCheckAllOfConfigWithDefaults instantiates a new PostgresCheckAllOfConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPostgresCheckAllOfConfigWithDefaults() *PostgresCheckAllOfConfig {
-	this := PostgresCheckAllOfConfig{}
-	var tunnelOn string = "off"
-	this.TunnelOn = &tunnelOn
-	return &this
-}
-
 func (o PostgresCheckAllOfConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

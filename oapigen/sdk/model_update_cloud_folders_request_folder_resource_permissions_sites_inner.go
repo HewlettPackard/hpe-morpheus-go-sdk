@@ -26,14 +26,6 @@ type UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner struct {
 
 type _UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner
 
-// NewUpdateCloudFoldersRequestFolderResourcePermissionsSitesInnerWithDefaults instantiates a new UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCloudFoldersRequestFolderResourcePermissionsSitesInnerWithDefaults() *UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner {
-	this := UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner{}
-	return &this
-}
-
 func (o UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

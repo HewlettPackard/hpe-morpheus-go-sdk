@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateIncidents200ResponseWithDefaults
-
-`func NewUpdateIncidents200ResponseWithDefaults() *UpdateIncidents200Response`
-
-NewUpdateIncidents200ResponseWithDefaults instantiates a new UpdateIncidents200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetIncident
 
 `func (o *UpdateIncidents200Response) GetIncident() UpdateIncidents200ResponseAllOfIncident`

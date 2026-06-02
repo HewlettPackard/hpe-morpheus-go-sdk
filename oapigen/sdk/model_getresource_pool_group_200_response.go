@@ -26,14 +26,6 @@ type GetresourcePoolGroup200Response struct {
 
 type _GetresourcePoolGroup200Response GetresourcePoolGroup200Response
 
-// NewGetresourcePoolGroup200ResponseWithDefaults instantiates a new GetresourcePoolGroup200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetresourcePoolGroup200ResponseWithDefaults() *GetresourcePoolGroup200Response {
-	this := GetresourcePoolGroup200Response{}
-	return &this
-}
-
 func (o GetresourcePoolGroup200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

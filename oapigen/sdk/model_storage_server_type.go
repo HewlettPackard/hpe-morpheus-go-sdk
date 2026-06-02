@@ -55,14 +55,6 @@ type StorageServerType struct {
 
 type _StorageServerType StorageServerType
 
-// NewStorageServerTypeWithDefaults instantiates a new StorageServerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewStorageServerTypeWithDefaults() *StorageServerType {
-	this := StorageServerType{}
-	return &this
-}
-
 func (o StorageServerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

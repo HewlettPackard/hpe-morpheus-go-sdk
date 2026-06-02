@@ -27,16 +27,6 @@ type MaxMemoryPolicyTypeConfiguration15 struct {
 
 type _MaxMemoryPolicyTypeConfiguration15 MaxMemoryPolicyTypeConfiguration15
 
-// NewMaxMemoryPolicyTypeConfiguration15WithDefaults instantiates a new MaxMemoryPolicyTypeConfiguration15 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxMemoryPolicyTypeConfiguration15WithDefaults() *MaxMemoryPolicyTypeConfiguration15 {
-	this := MaxMemoryPolicyTypeConfiguration15{}
-	var excludeContainers string = "off"
-	this.ExcludeContainers = &excludeContainers
-	return &this
-}
-
 func (o MaxMemoryPolicyTypeConfiguration15) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

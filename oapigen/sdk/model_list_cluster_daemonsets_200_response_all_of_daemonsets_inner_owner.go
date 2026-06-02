@@ -26,14 +26,6 @@ type ListClusterDaemonsets200ResponseAllOfDaemonsetsInnerOwner struct {
 
 type _ListClusterDaemonsets200ResponseAllOfDaemonsetsInnerOwner ListClusterDaemonsets200ResponseAllOfDaemonsetsInnerOwner
 
-// NewListClusterDaemonsets200ResponseAllOfDaemonsetsInnerOwnerWithDefaults instantiates a new ListClusterDaemonsets200ResponseAllOfDaemonsetsInnerOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterDaemonsets200ResponseAllOfDaemonsetsInnerOwnerWithDefaults() *ListClusterDaemonsets200ResponseAllOfDaemonsetsInnerOwner {
-	this := ListClusterDaemonsets200ResponseAllOfDaemonsetsInnerOwner{}
-	return &this
-}
-
 func (o ListClusterDaemonsets200ResponseAllOfDaemonsetsInnerOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -39,14 +39,6 @@ type ClusterStatefulSets struct {
 
 type _ClusterStatefulSets ClusterStatefulSets
 
-// NewClusterStatefulSetsWithDefaults instantiates a new ClusterStatefulSets object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterStatefulSetsWithDefaults() *ClusterStatefulSets {
-	this := ClusterStatefulSets{}
-	return &this
-}
-
 func (o ClusterStatefulSets) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

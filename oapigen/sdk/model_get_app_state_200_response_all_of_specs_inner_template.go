@@ -27,14 +27,6 @@ type GetAppState200ResponseAllOfSpecsInnerTemplate struct {
 
 type _GetAppState200ResponseAllOfSpecsInnerTemplate GetAppState200ResponseAllOfSpecsInnerTemplate
 
-// NewGetAppState200ResponseAllOfSpecsInnerTemplateWithDefaults instantiates a new GetAppState200ResponseAllOfSpecsInnerTemplate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetAppState200ResponseAllOfSpecsInnerTemplateWithDefaults() *GetAppState200ResponseAllOfSpecsInnerTemplate {
-	this := GetAppState200ResponseAllOfSpecsInnerTemplate{}
-	return &this
-}
-
 func (o GetAppState200ResponseAllOfSpecsInnerTemplate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

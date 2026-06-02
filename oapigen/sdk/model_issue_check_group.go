@@ -27,14 +27,6 @@ type IssueCheckGroup struct {
 
 type _IssueCheckGroup IssueCheckGroup
 
-// NewIssueCheckGroupWithDefaults instantiates a new IssueCheckGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIssueCheckGroupWithDefaults() *IssueCheckGroup {
-	this := IssueCheckGroup{}
-	return &this
-}
-
 func (o IssueCheckGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

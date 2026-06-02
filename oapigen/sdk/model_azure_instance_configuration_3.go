@@ -47,16 +47,6 @@ type AzureInstanceConfiguration3 struct {
 
 type _AzureInstanceConfiguration3 AzureInstanceConfiguration3
 
-// NewAzureInstanceConfiguration3WithDefaults instantiates a new AzureInstanceConfiguration3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAzureInstanceConfiguration3WithDefaults() *AzureInstanceConfiguration3 {
-	this := AzureInstanceConfiguration3{}
-	var createUser bool = true
-	this.CreateUser = &createUser
-	return &this
-}
-
 func (o AzureInstanceConfiguration3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListLoadBalancers200ResponseAllOfLoadBalancersInnerTypeWithDefaults
-
-`func NewListLoadBalancers200ResponseAllOfLoadBalancersInnerTypeWithDefaults() *ListLoadBalancers200ResponseAllOfLoadBalancersInnerType`
-
-NewListLoadBalancers200ResponseAllOfLoadBalancersInnerTypeWithDefaults instantiates a new ListLoadBalancers200ResponseAllOfLoadBalancersInnerType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInnerType) GetId() int64`

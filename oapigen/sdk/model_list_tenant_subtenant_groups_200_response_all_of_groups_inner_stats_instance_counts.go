@@ -26,14 +26,6 @@ type ListTenantSubtenantGroups200ResponseAllOfGroupsInnerStatsInstanceCounts str
 
 type _ListTenantSubtenantGroups200ResponseAllOfGroupsInnerStatsInstanceCounts ListTenantSubtenantGroups200ResponseAllOfGroupsInnerStatsInstanceCounts
 
-// NewListTenantSubtenantGroups200ResponseAllOfGroupsInnerStatsInstanceCountsWithDefaults instantiates a new ListTenantSubtenantGroups200ResponseAllOfGroupsInnerStatsInstanceCounts object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListTenantSubtenantGroups200ResponseAllOfGroupsInnerStatsInstanceCountsWithDefaults() *ListTenantSubtenantGroups200ResponseAllOfGroupsInnerStatsInstanceCounts {
-	this := ListTenantSubtenantGroups200ResponseAllOfGroupsInnerStatsInstanceCounts{}
-	return &this
-}
-
 func (o ListTenantSubtenantGroups200ResponseAllOfGroupsInnerStatsInstanceCounts) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

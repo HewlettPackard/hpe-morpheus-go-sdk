@@ -26,14 +26,6 @@ type UpdateImageBuildRequestImageBuildZone struct {
 
 type _UpdateImageBuildRequestImageBuildZone UpdateImageBuildRequestImageBuildZone
 
-// NewUpdateImageBuildRequestImageBuildZoneWithDefaults instantiates a new UpdateImageBuildRequestImageBuildZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateImageBuildRequestImageBuildZoneWithDefaults() *UpdateImageBuildRequestImageBuildZone {
-	this := UpdateImageBuildRequestImageBuildZone{}
-	return &this
-}
-
 func (o UpdateImageBuildRequestImageBuildZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

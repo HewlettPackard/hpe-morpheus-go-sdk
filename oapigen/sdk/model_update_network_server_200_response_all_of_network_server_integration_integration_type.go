@@ -28,14 +28,6 @@ type UpdateNetworkServer200ResponseAllOfNetworkServerIntegrationIntegrationType 
 
 type _UpdateNetworkServer200ResponseAllOfNetworkServerIntegrationIntegrationType UpdateNetworkServer200ResponseAllOfNetworkServerIntegrationIntegrationType
 
-// NewUpdateNetworkServer200ResponseAllOfNetworkServerIntegrationIntegrationTypeWithDefaults instantiates a new UpdateNetworkServer200ResponseAllOfNetworkServerIntegrationIntegrationType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkServer200ResponseAllOfNetworkServerIntegrationIntegrationTypeWithDefaults() *UpdateNetworkServer200ResponseAllOfNetworkServerIntegrationIntegrationType {
-	this := UpdateNetworkServer200ResponseAllOfNetworkServerIntegrationIntegrationType{}
-	return &this
-}
-
 func (o UpdateNetworkServer200ResponseAllOfNetworkServerIntegrationIntegrationType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -30,14 +30,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSQLConfig2WithDefaults
-
-`func NewSQLConfig2WithDefaults() *SQLConfig2`
-
-NewSQLConfig2WithDefaults instantiates a new SQLConfig2 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetDbHost
 
 `func (o *SQLConfig2) GetDbHost() string`

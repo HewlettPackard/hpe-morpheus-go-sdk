@@ -27,14 +27,6 @@ type ZoneAccount struct {
 
 type _ZoneAccount ZoneAccount
 
-// NewZoneAccountWithDefaults instantiates a new ZoneAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneAccountWithDefaults() *ZoneAccount {
-	this := ZoneAccount{}
-	return &this
-}
-
 func (o ZoneAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

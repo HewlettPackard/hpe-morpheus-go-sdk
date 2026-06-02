@@ -26,14 +26,6 @@ type ListActivity5XXResponse struct {
 
 type _ListActivity5XXResponse ListActivity5XXResponse
 
-// NewListActivity5XXResponseWithDefaults instantiates a new ListActivity5XXResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListActivity5XXResponseWithDefaults() *ListActivity5XXResponse {
-	this := ListActivity5XXResponse{}
-	return &this
-}
-
 func (o ListActivity5XXResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

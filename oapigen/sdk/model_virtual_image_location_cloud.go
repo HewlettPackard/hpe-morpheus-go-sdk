@@ -28,14 +28,6 @@ type VirtualImageLocationCloud struct {
 
 type _VirtualImageLocationCloud VirtualImageLocationCloud
 
-// NewVirtualImageLocationCloudWithDefaults instantiates a new VirtualImageLocationCloud object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewVirtualImageLocationCloudWithDefaults() *VirtualImageLocationCloud {
-	this := VirtualImageLocationCloud{}
-	return &this
-}
-
 func (o VirtualImageLocationCloud) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

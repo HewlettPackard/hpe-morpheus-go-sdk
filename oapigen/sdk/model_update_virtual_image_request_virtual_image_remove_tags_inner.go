@@ -27,14 +27,6 @@ type UpdateVirtualImageRequestVirtualImageRemoveTagsInner struct {
 
 type _UpdateVirtualImageRequestVirtualImageRemoveTagsInner UpdateVirtualImageRequestVirtualImageRemoveTagsInner
 
-// NewUpdateVirtualImageRequestVirtualImageRemoveTagsInnerWithDefaults instantiates a new UpdateVirtualImageRequestVirtualImageRemoveTagsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateVirtualImageRequestVirtualImageRemoveTagsInnerWithDefaults() *UpdateVirtualImageRequestVirtualImageRemoveTagsInner {
-	this := UpdateVirtualImageRequestVirtualImageRemoveTagsInner{}
-	return &this
-}
-
 func (o UpdateVirtualImageRequestVirtualImageRemoveTagsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

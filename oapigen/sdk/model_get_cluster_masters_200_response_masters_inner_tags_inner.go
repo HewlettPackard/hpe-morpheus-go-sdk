@@ -27,14 +27,6 @@ type GetClusterMasters200ResponseMastersInnerTagsInner struct {
 
 type _GetClusterMasters200ResponseMastersInnerTagsInner GetClusterMasters200ResponseMastersInnerTagsInner
 
-// NewGetClusterMasters200ResponseMastersInnerTagsInnerWithDefaults instantiates a new GetClusterMasters200ResponseMastersInnerTagsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterMasters200ResponseMastersInnerTagsInnerWithDefaults() *GetClusterMasters200ResponseMastersInnerTagsInner {
-	this := GetClusterMasters200ResponseMastersInnerTagsInner{}
-	return &this
-}
-
 func (o GetClusterMasters200ResponseMastersInnerTagsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

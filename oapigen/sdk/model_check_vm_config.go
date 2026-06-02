@@ -32,14 +32,6 @@ type CheckVmConfig struct {
 
 type _CheckVmConfig CheckVmConfig
 
-// NewCheckVmConfigWithDefaults instantiates a new CheckVmConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCheckVmConfigWithDefaults() *CheckVmConfig {
-	this := CheckVmConfig{}
-	return &this
-}
-
 func (o CheckVmConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

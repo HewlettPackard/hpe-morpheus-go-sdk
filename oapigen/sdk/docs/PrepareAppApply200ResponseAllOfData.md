@@ -27,14 +27,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPrepareAppApply200ResponseAllOfDataWithDefaults
-
-`func NewPrepareAppApply200ResponseAllOfDataWithDefaults() *PrepareAppApply200ResponseAllOfData`
-
-NewPrepareAppApply200ResponseAllOfDataWithDefaults instantiates a new PrepareAppApply200ResponseAllOfData object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetImage
 
 `func (o *PrepareAppApply200ResponseAllOfData) GetImage() string`

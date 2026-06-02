@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetArchiveFileLinks200ResponseWithDefaults
-
-`func NewGetArchiveFileLinks200ResponseWithDefaults() *GetArchiveFileLinks200Response`
-
-NewGetArchiveFileLinks200ResponseWithDefaults instantiates a new GetArchiveFileLinks200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetArchiveFileLinks
 
 `func (o *GetArchiveFileLinks200Response) GetArchiveFileLinks() []GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner`

@@ -68,18 +68,6 @@ type UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServer struct {
 
 type _UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServer UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServer
 
-// NewUpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerWithDefaults instantiates a new UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerWithDefaults() *UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServer {
-	this := UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServer{}
-	var serviceThrottleRate int64 = 0
-	this.ServiceThrottleRate = *NewNullableInt64(&serviceThrottleRate)
-	var ignoreSsl bool = true
-	this.IgnoreSsl = *NewNullableBool(&ignoreSsl)
-	return &this
-}
-
 func (o UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

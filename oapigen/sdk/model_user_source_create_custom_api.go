@@ -33,14 +33,6 @@ type UserSourceCreateCustomApi struct {
 
 type _UserSourceCreateCustomApi UserSourceCreateCustomApi
 
-// NewUserSourceCreateCustomApiWithDefaults instantiates a new UserSourceCreateCustomApi object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserSourceCreateCustomApiWithDefaults() *UserSourceCreateCustomApi {
-	this := UserSourceCreateCustomApi{}
-	return &this
-}
-
 func (o UserSourceCreateCustomApi) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -29,14 +29,6 @@ type GetSubnet200ResponseSubnetResourcePermission struct {
 
 type _GetSubnet200ResponseSubnetResourcePermission GetSubnet200ResponseSubnetResourcePermission
 
-// NewGetSubnet200ResponseSubnetResourcePermissionWithDefaults instantiates a new GetSubnet200ResponseSubnetResourcePermission object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSubnet200ResponseSubnetResourcePermissionWithDefaults() *GetSubnet200ResponseSubnetResourcePermission {
-	this := GetSubnet200ResponseSubnetResourcePermission{}
-	return &this
-}
-
 func (o GetSubnet200ResponseSubnetResourcePermission) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

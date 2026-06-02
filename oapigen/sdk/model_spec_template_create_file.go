@@ -34,16 +34,6 @@ type SpecTemplateCreateFile struct {
 
 type _SpecTemplateCreateFile SpecTemplateCreateFile
 
-// NewSpecTemplateCreateFileWithDefaults instantiates a new SpecTemplateCreateFile object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSpecTemplateCreateFileWithDefaults() *SpecTemplateCreateFile {
-	this := SpecTemplateCreateFile{}
-	var sourceType string = "local"
-	this.SourceType = sourceType
-	return &this
-}
-
 func (o SpecTemplateCreateFile) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type LogSort struct {
 
 type _LogSort LogSort
 
-// NewLogSortWithDefaults instantiates a new LogSort object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLogSortWithDefaults() *LogSort {
-	this := LogSort{}
-	return &this
-}
-
 func (o LogSort) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -21,14 +21,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateTenantRequestAccountWithDefaults
-
-`func NewUpdateTenantRequestAccountWithDefaults() *UpdateTenantRequestAccount`
-
-NewUpdateTenantRequestAccountWithDefaults instantiates a new UpdateTenantRequestAccount object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetName
 
 `func (o *UpdateTenantRequestAccount) GetName() string`

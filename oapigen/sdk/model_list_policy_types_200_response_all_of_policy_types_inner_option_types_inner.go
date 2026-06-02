@@ -66,14 +66,6 @@ type ListPolicyTypes200ResponseAllOfPolicyTypesInnerOptionTypesInner struct {
 
 type _ListPolicyTypes200ResponseAllOfPolicyTypesInnerOptionTypesInner ListPolicyTypes200ResponseAllOfPolicyTypesInnerOptionTypesInner
 
-// NewListPolicyTypes200ResponseAllOfPolicyTypesInnerOptionTypesInnerWithDefaults instantiates a new ListPolicyTypes200ResponseAllOfPolicyTypesInnerOptionTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListPolicyTypes200ResponseAllOfPolicyTypesInnerOptionTypesInnerWithDefaults() *ListPolicyTypes200ResponseAllOfPolicyTypesInnerOptionTypesInner {
-	this := ListPolicyTypes200ResponseAllOfPolicyTypesInnerOptionTypesInner{}
-	return &this
-}
-
 func (o ListPolicyTypes200ResponseAllOfPolicyTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -39,16 +39,6 @@ type UserSourceCreateActiveDirectory struct {
 
 type _UserSourceCreateActiveDirectory UserSourceCreateActiveDirectory
 
-// NewUserSourceCreateActiveDirectoryWithDefaults instantiates a new UserSourceCreateActiveDirectory object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserSourceCreateActiveDirectoryWithDefaults() *UserSourceCreateActiveDirectory {
-	this := UserSourceCreateActiveDirectory{}
-	var searchMemberGroups bool = false
-	this.SearchMemberGroups = &searchMemberGroups
-	return &this
-}
-
 func (o UserSourceCreateActiveDirectory) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

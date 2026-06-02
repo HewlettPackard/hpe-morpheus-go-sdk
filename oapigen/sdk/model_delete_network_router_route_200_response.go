@@ -26,14 +26,6 @@ type DeleteNetworkRouterRoute200Response struct {
 
 type _DeleteNetworkRouterRoute200Response DeleteNetworkRouterRoute200Response
 
-// NewDeleteNetworkRouterRoute200ResponseWithDefaults instantiates a new DeleteNetworkRouterRoute200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteNetworkRouterRoute200ResponseWithDefaults() *DeleteNetworkRouterRoute200Response {
-	this := DeleteNetworkRouterRoute200Response{}
-	return &this
-}
-
 func (o DeleteNetworkRouterRoute200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

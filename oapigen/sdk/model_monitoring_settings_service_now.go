@@ -38,14 +38,6 @@ type MonitoringSettingsServiceNow struct {
 
 type _MonitoringSettingsServiceNow MonitoringSettingsServiceNow
 
-// NewMonitoringSettingsServiceNowWithDefaults instantiates a new MonitoringSettingsServiceNow object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMonitoringSettingsServiceNowWithDefaults() *MonitoringSettingsServiceNow {
-	this := MonitoringSettingsServiceNow{}
-	return &this
-}
-
 func (o MonitoringSettingsServiceNow) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

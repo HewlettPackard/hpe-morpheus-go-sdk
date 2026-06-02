@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddAppInstance200ResponseWithDefaults
-
-`func NewAddAppInstance200ResponseWithDefaults() *AddAppInstance200Response`
-
-NewAddAppInstance200ResponseWithDefaults instantiates a new AddAppInstance200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetApp
 
 `func (o *AddAppInstance200Response) GetApp() UpdateApp200ResponseApp`

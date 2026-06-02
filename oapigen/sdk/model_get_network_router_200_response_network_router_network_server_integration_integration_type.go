@@ -28,14 +28,6 @@ type GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegrationIntegration
 
 type _GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegrationIntegrationType GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegrationIntegrationType
 
-// NewGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegrationIntegrationTypeWithDefaults instantiates a new GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegrationIntegrationType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegrationIntegrationTypeWithDefaults() *GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegrationIntegrationType {
-	this := GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegrationIntegrationType{}
-	return &this
-}
-
 func (o GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegrationIntegrationType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

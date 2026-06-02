@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRolePermissionDefaultVDIPoolWithDefaults
-
-`func NewRolePermissionDefaultVDIPoolWithDefaults() *RolePermissionDefaultVDIPool`
-
-NewRolePermissionDefaultVDIPoolWithDefaults instantiates a new RolePermissionDefaultVDIPool object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPermissionCode
 
 `func (o *RolePermissionDefaultVDIPool) GetPermissionCode() string`

@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListJobExecutions200ResponseWithDefaults
-
-`func NewListJobExecutions200ResponseWithDefaults() *ListJobExecutions200Response`
-
-NewListJobExecutions200ResponseWithDefaults instantiates a new ListJobExecutions200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetJobExecutions
 
 `func (o *ListJobExecutions200Response) GetJobExecutions() []ListJobExecutions200ResponseAllOfJobExecutionsInner`

@@ -26,14 +26,6 @@ type SaveClusterDatastoreRequestDatastoreStorageServer struct {
 
 type _SaveClusterDatastoreRequestDatastoreStorageServer SaveClusterDatastoreRequestDatastoreStorageServer
 
-// NewSaveClusterDatastoreRequestDatastoreStorageServerWithDefaults instantiates a new SaveClusterDatastoreRequestDatastoreStorageServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveClusterDatastoreRequestDatastoreStorageServerWithDefaults() *SaveClusterDatastoreRequestDatastoreStorageServer {
-	this := SaveClusterDatastoreRequestDatastoreStorageServer{}
-	return &this
-}
-
 func (o SaveClusterDatastoreRequestDatastoreStorageServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

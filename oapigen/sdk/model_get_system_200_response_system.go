@@ -49,14 +49,6 @@ type GetSystem200ResponseSystem struct {
 
 type _GetSystem200ResponseSystem GetSystem200ResponseSystem
 
-// NewGetSystem200ResponseSystemWithDefaults instantiates a new GetSystem200ResponseSystem object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSystem200ResponseSystemWithDefaults() *GetSystem200ResponseSystem {
-	this := GetSystem200ResponseSystem{}
-	return &this
-}
-
 func (o GetSystem200ResponseSystem) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

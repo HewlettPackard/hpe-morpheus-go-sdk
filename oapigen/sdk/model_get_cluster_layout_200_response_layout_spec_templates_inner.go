@@ -42,14 +42,6 @@ type GetClusterLayout200ResponseLayoutSpecTemplatesInner struct {
 
 type _GetClusterLayout200ResponseLayoutSpecTemplatesInner GetClusterLayout200ResponseLayoutSpecTemplatesInner
 
-// NewGetClusterLayout200ResponseLayoutSpecTemplatesInnerWithDefaults instantiates a new GetClusterLayout200ResponseLayoutSpecTemplatesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterLayout200ResponseLayoutSpecTemplatesInnerWithDefaults() *GetClusterLayout200ResponseLayoutSpecTemplatesInner {
-	this := GetClusterLayout200ResponseLayoutSpecTemplatesInner{}
-	return &this
-}
-
 func (o GetClusterLayout200ResponseLayoutSpecTemplatesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

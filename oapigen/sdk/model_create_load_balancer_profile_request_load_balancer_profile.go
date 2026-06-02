@@ -33,14 +33,6 @@ type CreateLoadBalancerProfileRequestLoadBalancerProfile struct {
 
 type _CreateLoadBalancerProfileRequestLoadBalancerProfile CreateLoadBalancerProfileRequestLoadBalancerProfile
 
-// NewCreateLoadBalancerProfileRequestLoadBalancerProfileWithDefaults instantiates a new CreateLoadBalancerProfileRequestLoadBalancerProfile object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateLoadBalancerProfileRequestLoadBalancerProfileWithDefaults() *CreateLoadBalancerProfileRequestLoadBalancerProfile {
-	this := CreateLoadBalancerProfileRequestLoadBalancerProfile{}
-	return &this
-}
-
 func (o CreateLoadBalancerProfileRequestLoadBalancerProfile) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -31,14 +31,6 @@ type AddInstanceRequestPortsInner struct {
 
 type _AddInstanceRequestPortsInner AddInstanceRequestPortsInner
 
-// NewAddInstanceRequestPortsInnerWithDefaults instantiates a new AddInstanceRequestPortsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstanceRequestPortsInnerWithDefaults() *AddInstanceRequestPortsInner {
-	this := AddInstanceRequestPortsInner{}
-	return &this
-}
-
 func (o AddInstanceRequestPortsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

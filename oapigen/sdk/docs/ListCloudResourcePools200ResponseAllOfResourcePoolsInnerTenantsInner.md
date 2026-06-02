@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListCloudResourcePools200ResponseAllOfResourcePoolsInnerTenantsInnerWithDefaults
-
-`func NewListCloudResourcePools200ResponseAllOfResourcePoolsInnerTenantsInnerWithDefaults() *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerTenantsInner`
-
-NewListCloudResourcePools200ResponseAllOfResourcePoolsInnerTenantsInnerWithDefaults instantiates a new ListCloudResourcePools200ResponseAllOfResourcePoolsInnerTenantsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerTenantsInner) GetId() int64`

@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewClusterResourceNamePolicyTypeConfiguration11WithDefaults
-
-`func NewClusterResourceNamePolicyTypeConfiguration11WithDefaults() *ClusterResourceNamePolicyTypeConfiguration11`
-
-NewClusterResourceNamePolicyTypeConfiguration11WithDefaults instantiates a new ClusterResourceNamePolicyTypeConfiguration11 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetServerNamingType
 
 `func (o *ClusterResourceNamePolicyTypeConfiguration11) GetServerNamingType() string`

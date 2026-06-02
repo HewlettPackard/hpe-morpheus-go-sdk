@@ -31,14 +31,6 @@ type GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRanges struct {
 
 type _GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRanges GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRanges
 
-// NewGetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRangesWithDefaults instantiates a new GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRanges object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRangesWithDefaults() *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRanges {
-	this := GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRanges{}
-	return &this
-}
-
 func (o GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionConfigRanges) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

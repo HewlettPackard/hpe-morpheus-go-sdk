@@ -55,20 +55,6 @@ type MigrationCreate struct {
 
 type _MigrationCreate MigrationCreate
 
-// NewMigrationCreateWithDefaults instantiates a new MigrationCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMigrationCreateWithDefaults() *MigrationCreate {
-	this := MigrationCreate{}
-	var skippedPrechecks bool = false
-	this.SkippedPrechecks = &skippedPrechecks
-	var installGuestTools bool = true
-	this.InstallGuestTools = &installGuestTools
-	var reInitializeServerOnMigration bool = false
-	this.ReInitializeServerOnMigration = &reInitializeServerOnMigration
-	return &this
-}
-
 func (o MigrationCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

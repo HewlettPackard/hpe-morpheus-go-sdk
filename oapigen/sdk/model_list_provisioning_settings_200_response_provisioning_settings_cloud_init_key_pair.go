@@ -27,14 +27,6 @@ type ListProvisioningSettings200ResponseProvisioningSettingsCloudInitKeyPair str
 
 type _ListProvisioningSettings200ResponseProvisioningSettingsCloudInitKeyPair ListProvisioningSettings200ResponseProvisioningSettingsCloudInitKeyPair
 
-// NewListProvisioningSettings200ResponseProvisioningSettingsCloudInitKeyPairWithDefaults instantiates a new ListProvisioningSettings200ResponseProvisioningSettingsCloudInitKeyPair object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListProvisioningSettings200ResponseProvisioningSettingsCloudInitKeyPairWithDefaults() *ListProvisioningSettings200ResponseProvisioningSettingsCloudInitKeyPair {
-	this := ListProvisioningSettings200ResponseProvisioningSettingsCloudInitKeyPair{}
-	return &this
-}
-
 func (o ListProvisioningSettings200ResponseProvisioningSettingsCloudInitKeyPair) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

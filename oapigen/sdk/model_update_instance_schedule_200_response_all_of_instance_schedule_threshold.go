@@ -53,38 +53,6 @@ type UpdateInstanceSchedule200ResponseAllOfInstanceScheduleThreshold struct {
 
 type _UpdateInstanceSchedule200ResponseAllOfInstanceScheduleThreshold UpdateInstanceSchedule200ResponseAllOfInstanceScheduleThreshold
 
-// NewUpdateInstanceSchedule200ResponseAllOfInstanceScheduleThresholdWithDefaults instantiates a new UpdateInstanceSchedule200ResponseAllOfInstanceScheduleThreshold object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstanceSchedule200ResponseAllOfInstanceScheduleThresholdWithDefaults() *UpdateInstanceSchedule200ResponseAllOfInstanceScheduleThreshold {
-	this := UpdateInstanceSchedule200ResponseAllOfInstanceScheduleThreshold{}
-	var autoUp bool = false
-	this.AutoUp = &autoUp
-	var autoDown bool = false
-	this.AutoDown = &autoDown
-	var scaleIncrement int64 = 1
-	this.ScaleIncrement = &scaleIncrement
-	var cpuEnabled bool = false
-	this.CpuEnabled = &cpuEnabled
-	var minCpu float64 = 0
-	this.MinCpu = &minCpu
-	var maxCpu float64 = 0
-	this.MaxCpu = &maxCpu
-	var memoryEnabled bool = false
-	this.MemoryEnabled = &memoryEnabled
-	var minMemory float64 = 0
-	this.MinMemory = &minMemory
-	var maxMemory float64 = 0
-	this.MaxMemory = &maxMemory
-	var diskEnabled bool = false
-	this.DiskEnabled = &diskEnabled
-	var minDisk float64 = 0
-	this.MinDisk = &minDisk
-	var maxDisk float64 = 0
-	this.MaxDisk = &maxDisk
-	return &this
-}
-
 func (o UpdateInstanceSchedule200ResponseAllOfInstanceScheduleThreshold) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetIdentitySources200ResponseUserSourceAnyOf5ProviderSettingsWithDefaults
-
-`func NewGetIdentitySources200ResponseUserSourceAnyOf5ProviderSettingsWithDefaults() *GetIdentitySources200ResponseUserSourceAnyOf5ProviderSettings`
-
-NewGetIdentitySources200ResponseUserSourceAnyOf5ProviderSettingsWithDefaults instantiates a new GetIdentitySources200ResponseUserSourceAnyOf5ProviderSettings object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetEntityId
 
 `func (o *GetIdentitySources200ResponseUserSourceAnyOf5ProviderSettings) GetEntityId() string`

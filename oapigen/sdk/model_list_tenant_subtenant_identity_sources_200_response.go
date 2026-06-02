@@ -27,14 +27,6 @@ type ListTenantSubtenantIdentitySources200Response struct {
 
 type _ListTenantSubtenantIdentitySources200Response ListTenantSubtenantIdentitySources200Response
 
-// NewListTenantSubtenantIdentitySources200ResponseWithDefaults instantiates a new ListTenantSubtenantIdentitySources200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListTenantSubtenantIdentitySources200ResponseWithDefaults() *ListTenantSubtenantIdentitySources200Response {
-	this := ListTenantSubtenantIdentitySources200Response{}
-	return &this
-}
-
 func (o ListTenantSubtenantIdentitySources200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

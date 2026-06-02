@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewApprovePolicyTypeConfiguration15WithDefaults
-
-`func NewApprovePolicyTypeConfiguration15WithDefaults() *ApprovePolicyTypeConfiguration15`
-
-NewApprovePolicyTypeConfiguration15WithDefaults instantiates a new ApprovePolicyTypeConfiguration15 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAccountIntegrationId
 
 `func (o *ApprovePolicyTypeConfiguration15) GetAccountIntegrationId() string`

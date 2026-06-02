@@ -27,14 +27,6 @@ type CreateLoadBalancerRequestLoadBalancerZone struct {
 
 type _CreateLoadBalancerRequestLoadBalancerZone CreateLoadBalancerRequestLoadBalancerZone
 
-// NewCreateLoadBalancerRequestLoadBalancerZoneWithDefaults instantiates a new CreateLoadBalancerRequestLoadBalancerZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateLoadBalancerRequestLoadBalancerZoneWithDefaults() *CreateLoadBalancerRequestLoadBalancerZone {
-	this := CreateLoadBalancerRequestLoadBalancerZone{}
-	return &this
-}
-
 func (o CreateLoadBalancerRequestLoadBalancerZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

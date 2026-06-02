@@ -22,14 +22,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetSecurityPackageType200ResponseSecurityPackageTypeWithDefaults
-
-`func NewGetSecurityPackageType200ResponseSecurityPackageTypeWithDefaults() *GetSecurityPackageType200ResponseSecurityPackageType`
-
-NewGetSecurityPackageType200ResponseSecurityPackageTypeWithDefaults instantiates a new GetSecurityPackageType200ResponseSecurityPackageType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetSecurityPackageType200ResponseSecurityPackageType) GetId() int64`

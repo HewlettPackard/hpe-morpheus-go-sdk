@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInnerWithDefaults
-
-`func NewListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInnerWithDefaults() *ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner`
-
-NewListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInnerWithDefaults instantiates a new ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetCode
 
 `func (o *ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner) GetCode() string`

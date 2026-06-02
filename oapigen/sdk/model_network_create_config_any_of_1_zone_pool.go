@@ -27,14 +27,6 @@ type NetworkCreateConfigAnyOf1ZonePool struct {
 
 type _NetworkCreateConfigAnyOf1ZonePool NetworkCreateConfigAnyOf1ZonePool
 
-// NewNetworkCreateConfigAnyOf1ZonePoolWithDefaults instantiates a new NetworkCreateConfigAnyOf1ZonePool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkCreateConfigAnyOf1ZonePoolWithDefaults() *NetworkCreateConfigAnyOf1ZonePool {
-	this := NetworkCreateConfigAnyOf1ZonePool{}
-	return &this
-}
-
 func (o NetworkCreateConfigAnyOf1ZonePool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

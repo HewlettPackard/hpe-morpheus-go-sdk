@@ -26,14 +26,6 @@ type WorkflowJobPayloadTargetsInner struct {
 
 type _WorkflowJobPayloadTargetsInner WorkflowJobPayloadTargetsInner
 
-// NewWorkflowJobPayloadTargetsInnerWithDefaults instantiates a new WorkflowJobPayloadTargetsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWorkflowJobPayloadTargetsInnerWithDefaults() *WorkflowJobPayloadTargetsInner {
-	this := WorkflowJobPayloadTargetsInner{}
-	return &this
-}
-
 func (o WorkflowJobPayloadTargetsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

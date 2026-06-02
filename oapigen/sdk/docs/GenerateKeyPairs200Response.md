@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGenerateKeyPairs200ResponseWithDefaults
-
-`func NewGenerateKeyPairs200ResponseWithDefaults() *GenerateKeyPairs200Response`
-
-NewGenerateKeyPairs200ResponseWithDefaults instantiates a new GenerateKeyPairs200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetKeyPair
 
 `func (o *GenerateKeyPairs200Response) GetKeyPair() GenerateKeyPairs200ResponseKeyPair`

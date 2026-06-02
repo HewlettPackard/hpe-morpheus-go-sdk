@@ -40,14 +40,6 @@ type IntegrationBindDNS struct {
 
 type _IntegrationBindDNS IntegrationBindDNS
 
-// NewIntegrationBindDNSWithDefaults instantiates a new IntegrationBindDNS object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationBindDNSWithDefaults() *IntegrationBindDNS {
-	this := IntegrationBindDNS{}
-	return &this
-}
-
 func (o IntegrationBindDNS) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

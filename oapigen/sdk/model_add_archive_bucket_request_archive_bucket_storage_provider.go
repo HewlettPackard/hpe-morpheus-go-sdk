@@ -26,14 +26,6 @@ type AddArchiveBucketRequestArchiveBucketStorageProvider struct {
 
 type _AddArchiveBucketRequestArchiveBucketStorageProvider AddArchiveBucketRequestArchiveBucketStorageProvider
 
-// NewAddArchiveBucketRequestArchiveBucketStorageProviderWithDefaults instantiates a new AddArchiveBucketRequestArchiveBucketStorageProvider object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddArchiveBucketRequestArchiveBucketStorageProviderWithDefaults() *AddArchiveBucketRequestArchiveBucketStorageProvider {
-	this := AddArchiveBucketRequestArchiveBucketStorageProvider{}
-	return &this
-}
-
 func (o AddArchiveBucketRequestArchiveBucketStorageProvider) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

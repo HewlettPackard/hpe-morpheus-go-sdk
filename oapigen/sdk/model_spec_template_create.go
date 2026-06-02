@@ -32,14 +32,6 @@ type SpecTemplateCreate struct {
 
 type _SpecTemplateCreate SpecTemplateCreate
 
-// NewSpecTemplateCreateWithDefaults instantiates a new SpecTemplateCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSpecTemplateCreateWithDefaults() *SpecTemplateCreate {
-	this := SpecTemplateCreate{}
-	return &this
-}
-
 func (o SpecTemplateCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions st
 
 type _SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions
 
-// NewSaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissionsWithDefaults instantiates a new SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissionsWithDefaults() *SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions {
-	this := SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions{}
-	return &this
-}
-
 func (o SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

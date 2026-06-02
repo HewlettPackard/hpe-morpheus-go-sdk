@@ -31,16 +31,6 @@ type DeleteRole400Response struct {
 
 type _DeleteRole400Response DeleteRole400Response
 
-// NewDeleteRole400ResponseWithDefaults instantiates a new DeleteRole400Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteRole400ResponseWithDefaults() *DeleteRole400Response {
-	this := DeleteRole400Response{}
-	var success bool = true
-	this.Success = &success
-	return &this
-}
-
 func (o DeleteRole400Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

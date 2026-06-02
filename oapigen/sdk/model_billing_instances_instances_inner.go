@@ -35,14 +35,6 @@ type BillingInstancesInstancesInner struct {
 
 type _BillingInstancesInstancesInner BillingInstancesInstancesInner
 
-// NewBillingInstancesInstancesInnerWithDefaults instantiates a new BillingInstancesInstancesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBillingInstancesInstancesInnerWithDefaults() *BillingInstancesInstancesInner {
-	this := BillingInstancesInstancesInner{}
-	return &this
-}
-
 func (o BillingInstancesInstancesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

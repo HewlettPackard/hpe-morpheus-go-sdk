@@ -27,14 +27,6 @@ type ListVdi200ResponseAllOfDesktopsInnerAllocationPool struct {
 
 type _ListVdi200ResponseAllOfDesktopsInnerAllocationPool ListVdi200ResponseAllOfDesktopsInnerAllocationPool
 
-// NewListVdi200ResponseAllOfDesktopsInnerAllocationPoolWithDefaults instantiates a new ListVdi200ResponseAllOfDesktopsInnerAllocationPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListVdi200ResponseAllOfDesktopsInnerAllocationPoolWithDefaults() *ListVdi200ResponseAllOfDesktopsInnerAllocationPool {
-	this := ListVdi200ResponseAllOfDesktopsInnerAllocationPool{}
-	return &this
-}
-
 func (o ListVdi200ResponseAllOfDesktopsInnerAllocationPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

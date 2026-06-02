@@ -27,14 +27,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewEmailTaskConfig4WithDefaults
-
-`func NewEmailTaskConfig4WithDefaults() *EmailTaskConfig4`
-
-NewEmailTaskConfig4WithDefaults instantiates a new EmailTaskConfig4 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetLocalScriptGitId
 
 `func (o *EmailTaskConfig4) GetLocalScriptGitId() string`

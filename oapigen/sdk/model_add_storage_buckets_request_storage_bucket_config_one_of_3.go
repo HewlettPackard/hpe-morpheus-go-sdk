@@ -27,14 +27,6 @@ type AddStorageBucketsRequestStorageBucketConfigOneOf3 struct {
 
 type _AddStorageBucketsRequestStorageBucketConfigOneOf3 AddStorageBucketsRequestStorageBucketConfigOneOf3
 
-// NewAddStorageBucketsRequestStorageBucketConfigOneOf3WithDefaults instantiates a new AddStorageBucketsRequestStorageBucketConfigOneOf3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddStorageBucketsRequestStorageBucketConfigOneOf3WithDefaults() *AddStorageBucketsRequestStorageBucketConfigOneOf3 {
-	this := AddStorageBucketsRequestStorageBucketConfigOneOf3{}
-	return &this
-}
-
 func (o AddStorageBucketsRequestStorageBucketConfigOneOf3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer s
 
 type _GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer
 
-// NewGetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServerWithDefaults instantiates a new GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServerWithDefaults() *GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer {
-	this := GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer{}
-	return &this
-}
-
 func (o GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

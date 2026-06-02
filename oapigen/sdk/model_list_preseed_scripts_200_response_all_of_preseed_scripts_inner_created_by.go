@@ -26,14 +26,6 @@ type ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy struct {
 
 type _ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy
 
-// NewListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedByWithDefaults instantiates a new ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedByWithDefaults() *ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy {
-	this := ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy{}
-	return &this
-}
-
 func (o ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

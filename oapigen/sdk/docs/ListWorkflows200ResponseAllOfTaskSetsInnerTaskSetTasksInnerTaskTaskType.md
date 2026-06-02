@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskTypeWithDefaults
-
-`func NewListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskTypeWithDefaults() *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskType`
-
-NewListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskTypeWithDefaults instantiates a new ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskType) GetId() int64`

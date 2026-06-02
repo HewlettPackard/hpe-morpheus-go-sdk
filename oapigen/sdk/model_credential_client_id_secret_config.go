@@ -38,16 +38,6 @@ type CredentialClientIDSecretConfig struct {
 
 type _CredentialClientIDSecretConfig CredentialClientIDSecretConfig
 
-// NewCredentialClientIDSecretConfigWithDefaults instantiates a new CredentialClientIDSecretConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCredentialClientIDSecretConfigWithDefaults() *CredentialClientIDSecretConfig {
-	this := CredentialClientIDSecretConfig{}
-	var enabled bool = true
-	this.Enabled = &enabled
-	return &this
-}
-
 func (o CredentialClientIDSecretConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type AddClusterRequestClusterServerTagsInner struct {
 
 type _AddClusterRequestClusterServerTagsInner AddClusterRequestClusterServerTagsInner
 
-// NewAddClusterRequestClusterServerTagsInnerWithDefaults instantiates a new AddClusterRequestClusterServerTagsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterRequestClusterServerTagsInnerWithDefaults() *AddClusterRequestClusterServerTagsInner {
-	this := AddClusterRequestClusterServerTagsInner{}
-	return &this
-}
-
 func (o AddClusterRequestClusterServerTagsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

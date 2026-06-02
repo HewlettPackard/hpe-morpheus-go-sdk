@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateDatastores200ResponseDatastoreAllOfZonePoolWithDefaults
-
-`func NewUpdateDatastores200ResponseDatastoreAllOfZonePoolWithDefaults() *UpdateDatastores200ResponseDatastoreAllOfZonePool`
-
-NewUpdateDatastores200ResponseDatastoreAllOfZonePoolWithDefaults instantiates a new UpdateDatastores200ResponseDatastoreAllOfZonePool object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateDatastores200ResponseDatastoreAllOfZonePool) GetId() int64`

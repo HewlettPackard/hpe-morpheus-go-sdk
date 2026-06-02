@@ -56,14 +56,6 @@ type ContainerTypeCreate struct {
 
 type _ContainerTypeCreate ContainerTypeCreate
 
-// NewContainerTypeCreateWithDefaults instantiates a new ContainerTypeCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewContainerTypeCreateWithDefaults() *ContainerTypeCreate {
-	this := ContainerTypeCreate{}
-	return &this
-}
-
 func (o ContainerTypeCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

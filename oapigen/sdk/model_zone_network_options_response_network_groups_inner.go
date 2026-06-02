@@ -27,14 +27,6 @@ type ZoneNetworkOptionsResponseNetworkGroupsInner struct {
 
 type _ZoneNetworkOptionsResponseNetworkGroupsInner ZoneNetworkOptionsResponseNetworkGroupsInner
 
-// NewZoneNetworkOptionsResponseNetworkGroupsInnerWithDefaults instantiates a new ZoneNetworkOptionsResponseNetworkGroupsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneNetworkOptionsResponseNetworkGroupsInnerWithDefaults() *ZoneNetworkOptionsResponseNetworkGroupsInner {
-	this := ZoneNetworkOptionsResponseNetworkGroupsInner{}
-	return &this
-}
-
 func (o ZoneNetworkOptionsResponseNetworkGroupsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

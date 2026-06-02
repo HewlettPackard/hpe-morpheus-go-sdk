@@ -27,14 +27,6 @@ type UpdateWikiApp200ResponseAllOfPageUpdatedBy struct {
 
 type _UpdateWikiApp200ResponseAllOfPageUpdatedBy UpdateWikiApp200ResponseAllOfPageUpdatedBy
 
-// NewUpdateWikiApp200ResponseAllOfPageUpdatedByWithDefaults instantiates a new UpdateWikiApp200ResponseAllOfPageUpdatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateWikiApp200ResponseAllOfPageUpdatedByWithDefaults() *UpdateWikiApp200ResponseAllOfPageUpdatedBy {
-	this := UpdateWikiApp200ResponseAllOfPageUpdatedBy{}
-	return &this
-}
-
 func (o UpdateWikiApp200ResponseAllOfPageUpdatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

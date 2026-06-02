@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetDatastores200ResponseAllOfDatastoreLocationsInnerWithDefaults
-
-`func NewGetDatastores200ResponseAllOfDatastoreLocationsInnerWithDefaults() *GetDatastores200ResponseAllOfDatastoreLocationsInner`
-
-NewGetDatastores200ResponseAllOfDatastoreLocationsInnerWithDefaults instantiates a new GetDatastores200ResponseAllOfDatastoreLocationsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetRefType
 
 `func (o *GetDatastores200ResponseAllOfDatastoreLocationsInner) GetRefType() string`

@@ -40,14 +40,6 @@ type ChefBootstrapTaskConfig4 struct {
 
 type _ChefBootstrapTaskConfig4 ChefBootstrapTaskConfig4
 
-// NewChefBootstrapTaskConfig4WithDefaults instantiates a new ChefBootstrapTaskConfig4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewChefBootstrapTaskConfig4WithDefaults() *ChefBootstrapTaskConfig4 {
-	this := ChefBootstrapTaskConfig4{}
-	return &this
-}
-
 func (o ChefBootstrapTaskConfig4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

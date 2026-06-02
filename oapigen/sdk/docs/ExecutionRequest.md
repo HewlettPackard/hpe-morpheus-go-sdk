@@ -33,14 +33,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewExecutionRequestWithDefaults
-
-`func NewExecutionRequestWithDefaults() *ExecutionRequest`
-
-NewExecutionRequestWithDefaults instantiates a new ExecutionRequest object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ExecutionRequest) GetId() int64`

@@ -27,14 +27,6 @@ type BluecatNetworkPoolServerUpdateCredential struct {
 
 type _BluecatNetworkPoolServerUpdateCredential BluecatNetworkPoolServerUpdateCredential
 
-// NewBluecatNetworkPoolServerUpdateCredentialWithDefaults instantiates a new BluecatNetworkPoolServerUpdateCredential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBluecatNetworkPoolServerUpdateCredentialWithDefaults() *BluecatNetworkPoolServerUpdateCredential {
-	this := BluecatNetworkPoolServerUpdateCredential{}
-	return &this
-}
-
 func (o BluecatNetworkPoolServerUpdateCredential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

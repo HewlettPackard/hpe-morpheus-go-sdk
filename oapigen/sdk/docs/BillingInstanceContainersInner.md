@@ -39,14 +39,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewBillingInstanceContainersInnerWithDefaults
-
-`func NewBillingInstanceContainersInnerWithDefaults() *BillingInstanceContainersInner`
-
-NewBillingInstanceContainersInnerWithDefaults instantiates a new BillingInstanceContainersInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetRefType
 
 `func (o *BillingInstanceContainersInner) GetRefType() string`

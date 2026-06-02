@@ -66,14 +66,6 @@ type ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner s
 
 type _ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
 
-// NewListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInnerWithDefaults instantiates a new ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInnerWithDefaults() *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
-	this := ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner{}
-	return &this
-}
-
 func (o ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

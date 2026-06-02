@@ -26,14 +26,6 @@ type LinkedCloneSnapshotInstance200Response struct {
 
 type _LinkedCloneSnapshotInstance200Response LinkedCloneSnapshotInstance200Response
 
-// NewLinkedCloneSnapshotInstance200ResponseWithDefaults instantiates a new LinkedCloneSnapshotInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLinkedCloneSnapshotInstance200ResponseWithDefaults() *LinkedCloneSnapshotInstance200Response {
-	this := LinkedCloneSnapshotInstance200Response{}
-	return &this
-}
-
 func (o LinkedCloneSnapshotInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

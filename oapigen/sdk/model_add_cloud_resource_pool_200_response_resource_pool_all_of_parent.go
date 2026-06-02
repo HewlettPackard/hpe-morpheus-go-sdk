@@ -27,14 +27,6 @@ type AddCloudResourcePool200ResponseResourcePoolAllOfParent struct {
 
 type _AddCloudResourcePool200ResponseResourcePoolAllOfParent AddCloudResourcePool200ResponseResourcePoolAllOfParent
 
-// NewAddCloudResourcePool200ResponseResourcePoolAllOfParentWithDefaults instantiates a new AddCloudResourcePool200ResponseResourcePoolAllOfParent object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCloudResourcePool200ResponseResourcePoolAllOfParentWithDefaults() *AddCloudResourcePool200ResponseResourcePoolAllOfParent {
-	this := AddCloudResourcePool200ResponseResourcePoolAllOfParent{}
-	return &this
-}
-
 func (o AddCloudResourcePool200ResponseResourcePoolAllOfParent) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

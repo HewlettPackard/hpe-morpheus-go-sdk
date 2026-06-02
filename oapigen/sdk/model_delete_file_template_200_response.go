@@ -26,14 +26,6 @@ type DeleteFileTemplate200Response struct {
 
 type _DeleteFileTemplate200Response DeleteFileTemplate200Response
 
-// NewDeleteFileTemplate200ResponseWithDefaults instantiates a new DeleteFileTemplate200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteFileTemplate200ResponseWithDefaults() *DeleteFileTemplate200Response {
-	this := DeleteFileTemplate200Response{}
-	return &this
-}
-
 func (o DeleteFileTemplate200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

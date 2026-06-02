@@ -27,14 +27,6 @@ type AddCheckGroups200ResponseAllOfCheckGroupCreatedBy struct {
 
 type _AddCheckGroups200ResponseAllOfCheckGroupCreatedBy AddCheckGroups200ResponseAllOfCheckGroupCreatedBy
 
-// NewAddCheckGroups200ResponseAllOfCheckGroupCreatedByWithDefaults instantiates a new AddCheckGroups200ResponseAllOfCheckGroupCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCheckGroups200ResponseAllOfCheckGroupCreatedByWithDefaults() *AddCheckGroups200ResponseAllOfCheckGroupCreatedBy {
-	this := AddCheckGroups200ResponseAllOfCheckGroupCreatedBy{}
-	return &this
-}
-
 func (o AddCheckGroups200ResponseAllOfCheckGroupCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

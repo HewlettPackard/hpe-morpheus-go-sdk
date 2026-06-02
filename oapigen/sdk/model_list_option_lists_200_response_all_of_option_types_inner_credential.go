@@ -26,14 +26,6 @@ type ListOptionLists200ResponseAllOfOptionTypesInnerCredential struct {
 
 type _ListOptionLists200ResponseAllOfOptionTypesInnerCredential ListOptionLists200ResponseAllOfOptionTypesInnerCredential
 
-// NewListOptionLists200ResponseAllOfOptionTypesInnerCredentialWithDefaults instantiates a new ListOptionLists200ResponseAllOfOptionTypesInnerCredential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListOptionLists200ResponseAllOfOptionTypesInnerCredentialWithDefaults() *ListOptionLists200ResponseAllOfOptionTypesInnerCredential {
-	this := ListOptionLists200ResponseAllOfOptionTypesInnerCredential{}
-	return &this
-}
-
 func (o ListOptionLists200ResponseAllOfOptionTypesInnerCredential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

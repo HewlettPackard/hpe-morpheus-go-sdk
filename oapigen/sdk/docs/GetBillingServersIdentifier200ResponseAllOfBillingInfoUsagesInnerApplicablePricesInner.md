@@ -23,14 +23,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerWithDefaults
-
-`func NewGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerWithDefaults() *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner`
-
-NewGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerWithDefaults instantiates a new GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetStartDate
 
 `func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) GetStartDate() time.Time`

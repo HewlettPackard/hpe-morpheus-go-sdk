@@ -37,14 +37,6 @@ type GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValueTermOptio
 
 type _GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary
 
-// NewGuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummaryWithDefaults instantiates a new GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummaryWithDefaults() *GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary {
-	this := GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary{}
-	return &this
-}
-
 func (o GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

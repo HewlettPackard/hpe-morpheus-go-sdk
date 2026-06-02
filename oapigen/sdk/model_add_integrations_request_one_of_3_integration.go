@@ -58,18 +58,6 @@ type AddIntegrationsRequestOneOf3Integration struct {
 
 type _AddIntegrationsRequestOneOf3Integration AddIntegrationsRequestOneOf3Integration
 
-// NewAddIntegrationsRequestOneOf3IntegrationWithDefaults instantiates a new AddIntegrationsRequestOneOf3Integration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIntegrationsRequestOneOf3IntegrationWithDefaults() *AddIntegrationsRequestOneOf3Integration {
-	this := AddIntegrationsRequestOneOf3Integration{}
-	var serviceMode string = "single"
-	this.ServiceMode = &serviceMode
-	var servicePort int32 = 22
-	this.ServicePort = &servicePort
-	return &this
-}
-
 func (o AddIntegrationsRequestOneOf3Integration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -34,14 +34,6 @@ type NetworkPoolServerType struct {
 
 type _NetworkPoolServerType NetworkPoolServerType
 
-// NewNetworkPoolServerTypeWithDefaults instantiates a new NetworkPoolServerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkPoolServerTypeWithDefaults() *NetworkPoolServerType {
-	this := NetworkPoolServerType{}
-	return &this
-}
-
 func (o NetworkPoolServerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

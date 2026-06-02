@@ -26,14 +26,6 @@ type DeleteAllSnapshotsInstance200Response struct {
 
 type _DeleteAllSnapshotsInstance200Response DeleteAllSnapshotsInstance200Response
 
-// NewDeleteAllSnapshotsInstance200ResponseWithDefaults instantiates a new DeleteAllSnapshotsInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteAllSnapshotsInstance200ResponseWithDefaults() *DeleteAllSnapshotsInstance200Response {
-	this := DeleteAllSnapshotsInstance200Response{}
-	return &this
-}
-
 func (o DeleteAllSnapshotsInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

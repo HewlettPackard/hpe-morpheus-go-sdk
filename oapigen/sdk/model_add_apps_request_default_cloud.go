@@ -26,14 +26,6 @@ type AddAppsRequestDefaultCloud struct {
 
 type _AddAppsRequestDefaultCloud AddAppsRequestDefaultCloud
 
-// NewAddAppsRequestDefaultCloudWithDefaults instantiates a new AddAppsRequestDefaultCloud object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddAppsRequestDefaultCloudWithDefaults() *AddAppsRequestDefaultCloud {
-	this := AddAppsRequestDefaultCloud{}
-	return &this
-}
-
 func (o AddAppsRequestDefaultCloud) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

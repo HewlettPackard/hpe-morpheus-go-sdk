@@ -39,16 +39,6 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf2 struct {
 
 type _AddIdentitySourcesRequestUserSourceConfigOneOf2 AddIdentitySourcesRequestUserSourceConfigOneOf2
 
-// NewAddIdentitySourcesRequestUserSourceConfigOneOf2WithDefaults instantiates a new AddIdentitySourcesRequestUserSourceConfigOneOf2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIdentitySourcesRequestUserSourceConfigOneOf2WithDefaults() *AddIdentitySourcesRequestUserSourceConfigOneOf2 {
-	this := AddIdentitySourcesRequestUserSourceConfigOneOf2{}
-	var searchMemberGroups bool = false
-	this.SearchMemberGroups = &searchMemberGroups
-	return &this
-}
-
 func (o AddIdentitySourcesRequestUserSourceConfigOneOf2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type GetCloudAffinityGroup200ResponseAffinityGroupTenantsInner struct {
 
 type _GetCloudAffinityGroup200ResponseAffinityGroupTenantsInner GetCloudAffinityGroup200ResponseAffinityGroupTenantsInner
 
-// NewGetCloudAffinityGroup200ResponseAffinityGroupTenantsInnerWithDefaults instantiates a new GetCloudAffinityGroup200ResponseAffinityGroupTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCloudAffinityGroup200ResponseAffinityGroupTenantsInnerWithDefaults() *GetCloudAffinityGroup200ResponseAffinityGroupTenantsInner {
-	this := GetCloudAffinityGroup200ResponseAffinityGroupTenantsInner{}
-	return &this
-}
-
 func (o GetCloudAffinityGroup200ResponseAffinityGroupTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -45,14 +45,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInstanceConfigObject1ConfigWithDefaults
-
-`func NewInstanceConfigObject1ConfigWithDefaults() *InstanceConfigObject1Config`
-
-NewInstanceConfigObject1ConfigWithDefaults instantiates a new InstanceConfigObject1Config object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetResourcePoolId
 
 `func (o *InstanceConfigObject1Config) GetResourcePoolId() string`

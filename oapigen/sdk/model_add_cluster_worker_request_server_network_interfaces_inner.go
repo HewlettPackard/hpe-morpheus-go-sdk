@@ -32,16 +32,6 @@ type AddClusterWorkerRequestServerNetworkInterfacesInner struct {
 
 type _AddClusterWorkerRequestServerNetworkInterfacesInner AddClusterWorkerRequestServerNetworkInterfacesInner
 
-// NewAddClusterWorkerRequestServerNetworkInterfacesInnerWithDefaults instantiates a new AddClusterWorkerRequestServerNetworkInterfacesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterWorkerRequestServerNetworkInterfacesInnerWithDefaults() *AddClusterWorkerRequestServerNetworkInterfacesInner {
-	this := AddClusterWorkerRequestServerNetworkInterfacesInner{}
-	var ipMode string = ""
-	this.IpMode = &ipMode
-	return &this
-}
-
 func (o AddClusterWorkerRequestServerNetworkInterfacesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

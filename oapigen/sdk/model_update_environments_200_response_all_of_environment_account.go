@@ -27,14 +27,6 @@ type UpdateEnvironments200ResponseAllOfEnvironmentAccount struct {
 
 type _UpdateEnvironments200ResponseAllOfEnvironmentAccount UpdateEnvironments200ResponseAllOfEnvironmentAccount
 
-// NewUpdateEnvironments200ResponseAllOfEnvironmentAccountWithDefaults instantiates a new UpdateEnvironments200ResponseAllOfEnvironmentAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateEnvironments200ResponseAllOfEnvironmentAccountWithDefaults() *UpdateEnvironments200ResponseAllOfEnvironmentAccount {
-	this := UpdateEnvironments200ResponseAllOfEnvironmentAccount{}
-	return &this
-}
-
 func (o UpdateEnvironments200ResponseAllOfEnvironmentAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

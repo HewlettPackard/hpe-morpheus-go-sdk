@@ -27,14 +27,6 @@ type ValidateAppState200Response struct {
 
 type _ValidateAppState200Response ValidateAppState200Response
 
-// NewValidateAppState200ResponseWithDefaults instantiates a new ValidateAppState200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewValidateAppState200ResponseWithDefaults() *ValidateAppState200Response {
-	this := ValidateAppState200Response{}
-	return &this
-}
-
 func (o ValidateAppState200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

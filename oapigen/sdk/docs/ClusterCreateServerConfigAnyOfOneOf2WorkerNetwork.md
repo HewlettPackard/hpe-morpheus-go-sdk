@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewClusterCreateServerConfigAnyOfOneOf2WorkerNetworkWithDefaults
-
-`func NewClusterCreateServerConfigAnyOfOneOf2WorkerNetworkWithDefaults() *ClusterCreateServerConfigAnyOfOneOf2WorkerNetwork`
-
-NewClusterCreateServerConfigAnyOfOneOf2WorkerNetworkWithDefaults instantiates a new ClusterCreateServerConfigAnyOfOneOf2WorkerNetwork object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ClusterCreateServerConfigAnyOfOneOf2WorkerNetwork) GetId() []string`

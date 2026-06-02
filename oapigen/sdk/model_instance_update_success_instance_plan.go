@@ -27,14 +27,6 @@ type InstanceUpdateSuccessInstancePlan struct {
 
 type _InstanceUpdateSuccessInstancePlan InstanceUpdateSuccessInstancePlan
 
-// NewInstanceUpdateSuccessInstancePlanWithDefaults instantiates a new InstanceUpdateSuccessInstancePlan object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceUpdateSuccessInstancePlanWithDefaults() *InstanceUpdateSuccessInstancePlan {
-	this := InstanceUpdateSuccessInstancePlan{}
-	return &this
-}
-
 func (o InstanceUpdateSuccessInstancePlan) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

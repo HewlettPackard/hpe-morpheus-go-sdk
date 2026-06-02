@@ -26,14 +26,6 @@ type PushCheck1AllOfCheckType struct {
 
 type _PushCheck1AllOfCheckType PushCheck1AllOfCheckType
 
-// NewPushCheck1AllOfCheckTypeWithDefaults instantiates a new PushCheck1AllOfCheckType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPushCheck1AllOfCheckTypeWithDefaults() *PushCheck1AllOfCheckType {
-	this := PushCheck1AllOfCheckType{}
-	return &this
-}
-
 func (o PushCheck1AllOfCheckType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

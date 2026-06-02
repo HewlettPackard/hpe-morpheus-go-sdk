@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetAlerts200ResponseAllOfChecksInnerAccountWithDefaults
-
-`func NewGetAlerts200ResponseAllOfChecksInnerAccountWithDefaults() *GetAlerts200ResponseAllOfChecksInnerAccount`
-
-NewGetAlerts200ResponseAllOfChecksInnerAccountWithDefaults instantiates a new GetAlerts200ResponseAllOfChecksInnerAccount object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetAlerts200ResponseAllOfChecksInnerAccount) GetId() int64`

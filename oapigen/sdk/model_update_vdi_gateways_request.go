@@ -26,14 +26,6 @@ type UpdateVDIGatewaysRequest struct {
 
 type _UpdateVDIGatewaysRequest UpdateVDIGatewaysRequest
 
-// NewUpdateVDIGatewaysRequestWithDefaults instantiates a new UpdateVDIGatewaysRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateVDIGatewaysRequestWithDefaults() *UpdateVDIGatewaysRequest {
-	this := UpdateVDIGatewaysRequest{}
-	return &this
-}
-
 func (o UpdateVDIGatewaysRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

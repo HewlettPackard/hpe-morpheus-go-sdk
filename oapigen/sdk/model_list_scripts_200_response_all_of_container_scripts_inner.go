@@ -42,14 +42,6 @@ type ListScripts200ResponseAllOfContainerScriptsInner struct {
 
 type _ListScripts200ResponseAllOfContainerScriptsInner ListScripts200ResponseAllOfContainerScriptsInner
 
-// NewListScripts200ResponseAllOfContainerScriptsInnerWithDefaults instantiates a new ListScripts200ResponseAllOfContainerScriptsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListScripts200ResponseAllOfContainerScriptsInnerWithDefaults() *ListScripts200ResponseAllOfContainerScriptsInner {
-	this := ListScripts200ResponseAllOfContainerScriptsInner{}
-	return &this
-}
-
 func (o ListScripts200ResponseAllOfContainerScriptsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

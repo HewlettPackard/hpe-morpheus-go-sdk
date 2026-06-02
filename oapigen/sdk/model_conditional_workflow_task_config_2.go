@@ -35,14 +35,6 @@ type ConditionalWorkflowTaskConfig2 struct {
 
 type _ConditionalWorkflowTaskConfig2 ConditionalWorkflowTaskConfig2
 
-// NewConditionalWorkflowTaskConfig2WithDefaults instantiates a new ConditionalWorkflowTaskConfig2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewConditionalWorkflowTaskConfig2WithDefaults() *ConditionalWorkflowTaskConfig2 {
-	this := ConditionalWorkflowTaskConfig2{}
-	return &this
-}
-
 func (o ConditionalWorkflowTaskConfig2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

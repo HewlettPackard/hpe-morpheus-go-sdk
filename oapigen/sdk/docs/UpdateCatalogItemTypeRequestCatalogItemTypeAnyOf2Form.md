@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2FormWithDefaults
-
-`func NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2FormWithDefaults() *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Form`
-
-NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2FormWithDefaults instantiates a new UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Form object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Form) GetId() int64`

@@ -27,14 +27,6 @@ type UpdateIdentitySourcesRequestUserSourceDefaultAccountRole struct {
 
 type _UpdateIdentitySourcesRequestUserSourceDefaultAccountRole UpdateIdentitySourcesRequestUserSourceDefaultAccountRole
 
-// NewUpdateIdentitySourcesRequestUserSourceDefaultAccountRoleWithDefaults instantiates a new UpdateIdentitySourcesRequestUserSourceDefaultAccountRole object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIdentitySourcesRequestUserSourceDefaultAccountRoleWithDefaults() *UpdateIdentitySourcesRequestUserSourceDefaultAccountRole {
-	this := UpdateIdentitySourcesRequestUserSourceDefaultAccountRole{}
-	return &this
-}
-
 func (o UpdateIdentitySourcesRequestUserSourceDefaultAccountRole) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

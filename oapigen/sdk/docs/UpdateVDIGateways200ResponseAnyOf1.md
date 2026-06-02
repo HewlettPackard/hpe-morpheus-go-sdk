@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateVDIGateways200ResponseAnyOf1WithDefaults
-
-`func NewUpdateVDIGateways200ResponseAnyOf1WithDefaults() *UpdateVDIGateways200ResponseAnyOf1`
-
-NewUpdateVDIGateways200ResponseAnyOf1WithDefaults instantiates a new UpdateVDIGateways200ResponseAnyOf1 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *UpdateVDIGateways200ResponseAnyOf1) GetSuccess() bool`

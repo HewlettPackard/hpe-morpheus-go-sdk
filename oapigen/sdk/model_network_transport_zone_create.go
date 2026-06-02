@@ -33,14 +33,6 @@ type NetworkTransportZoneCreate struct {
 
 type _NetworkTransportZoneCreate NetworkTransportZoneCreate
 
-// NewNetworkTransportZoneCreateWithDefaults instantiates a new NetworkTransportZoneCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkTransportZoneCreateWithDefaults() *NetworkTransportZoneCreate {
-	this := NetworkTransportZoneCreate{}
-	return &this
-}
-
 func (o NetworkTransportZoneCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

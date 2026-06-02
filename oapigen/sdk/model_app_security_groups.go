@@ -29,14 +29,6 @@ type AppSecurityGroups struct {
 
 type _AppSecurityGroups AppSecurityGroups
 
-// NewAppSecurityGroupsWithDefaults instantiates a new AppSecurityGroups object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppSecurityGroupsWithDefaults() *AppSecurityGroups {
-	this := AppSecurityGroups{}
-	return &this
-}
-
 func (o AppSecurityGroups) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

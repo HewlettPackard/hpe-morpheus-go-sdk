@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNetworkServer200ResponseNetworkServerCredentialWithDefaults
-
-`func NewGetNetworkServer200ResponseNetworkServerCredentialWithDefaults() *GetNetworkServer200ResponseNetworkServerCredential`
-
-NewGetNetworkServer200ResponseNetworkServerCredentialWithDefaults instantiates a new GetNetworkServer200ResponseNetworkServerCredential object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetNetworkServer200ResponseNetworkServerCredential) GetId() int64`

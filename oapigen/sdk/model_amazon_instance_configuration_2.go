@@ -43,20 +43,6 @@ type AmazonInstanceConfiguration2 struct {
 
 type _AmazonInstanceConfiguration2 AmazonInstanceConfiguration2
 
-// NewAmazonInstanceConfiguration2WithDefaults instantiates a new AmazonInstanceConfiguration2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAmazonInstanceConfiguration2WithDefaults() *AmazonInstanceConfiguration2 {
-	this := AmazonInstanceConfiguration2{}
-	var noAgent bool = false
-	this.NoAgent = *NewNullableBool(&noAgent)
-	var createUser bool = false
-	this.CreateUser = *NewNullableBool(&createUser)
-	var isEC2 string = "false"
-	this.IsEC2 = &isEC2
-	return &this
-}
-
 func (o AmazonInstanceConfiguration2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

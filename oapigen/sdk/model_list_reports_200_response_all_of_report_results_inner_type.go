@@ -29,14 +29,6 @@ type ListReports200ResponseAllOfReportResultsInnerType struct {
 
 type _ListReports200ResponseAllOfReportResultsInnerType ListReports200ResponseAllOfReportResultsInnerType
 
-// NewListReports200ResponseAllOfReportResultsInnerTypeWithDefaults instantiates a new ListReports200ResponseAllOfReportResultsInnerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListReports200ResponseAllOfReportResultsInnerTypeWithDefaults() *ListReports200ResponseAllOfReportResultsInnerType {
-	this := ListReports200ResponseAllOfReportResultsInnerType{}
-	return &this
-}
-
 func (o ListReports200ResponseAllOfReportResultsInnerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

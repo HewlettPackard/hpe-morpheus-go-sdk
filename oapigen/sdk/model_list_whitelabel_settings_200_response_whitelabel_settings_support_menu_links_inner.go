@@ -28,14 +28,6 @@ type ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner st
 
 type _ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner
 
-// NewListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInnerWithDefaults instantiates a new ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInnerWithDefaults() *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner {
-	this := ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner{}
-	return &this
-}
-
 func (o ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -28,14 +28,6 @@ type InstancesNetworkInterfaces7Network struct {
 
 type _InstancesNetworkInterfaces7Network InstancesNetworkInterfaces7Network
 
-// NewInstancesNetworkInterfaces7NetworkWithDefaults instantiates a new InstancesNetworkInterfaces7Network object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstancesNetworkInterfaces7NetworkWithDefaults() *InstancesNetworkInterfaces7Network {
-	this := InstancesNetworkInterfaces7Network{}
-	return &this
-}
-
 func (o InstancesNetworkInterfaces7Network) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

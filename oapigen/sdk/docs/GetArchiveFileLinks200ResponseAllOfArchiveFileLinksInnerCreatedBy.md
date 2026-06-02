@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedByWithDefaults
-
-`func NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedByWithDefaults() *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy`
-
-NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedByWithDefaults instantiates a new GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetUsername
 
 `func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy) GetUsername() string`

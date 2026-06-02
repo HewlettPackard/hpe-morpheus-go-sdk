@@ -29,14 +29,6 @@ type AddStorageServersRequestStorageServerCredential struct {
 
 type _AddStorageServersRequestStorageServerCredential AddStorageServersRequestStorageServerCredential
 
-// NewAddStorageServersRequestStorageServerCredentialWithDefaults instantiates a new AddStorageServersRequestStorageServerCredential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddStorageServersRequestStorageServerCredentialWithDefaults() *AddStorageServersRequestStorageServerCredential {
-	this := AddStorageServersRequestStorageServerCredential{}
-	return &this
-}
-
 func (o AddStorageServersRequestStorageServerCredential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

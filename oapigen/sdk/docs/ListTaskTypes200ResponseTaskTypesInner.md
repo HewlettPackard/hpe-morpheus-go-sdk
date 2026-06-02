@@ -30,14 +30,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListTaskTypes200ResponseTaskTypesInnerWithDefaults
-
-`func NewListTaskTypes200ResponseTaskTypesInnerWithDefaults() *ListTaskTypes200ResponseTaskTypesInner`
-
-NewListTaskTypes200ResponseTaskTypesInnerWithDefaults instantiates a new ListTaskTypes200ResponseTaskTypesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListTaskTypes200ResponseTaskTypesInner) GetId() int64`

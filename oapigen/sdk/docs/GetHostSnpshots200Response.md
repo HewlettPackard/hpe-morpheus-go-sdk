@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetHostSnpshots200ResponseWithDefaults
-
-`func NewGetHostSnpshots200ResponseWithDefaults() *GetHostSnpshots200Response`
-
-NewGetHostSnpshots200ResponseWithDefaults instantiates a new GetHostSnpshots200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSnapshots
 
 `func (o *GetHostSnpshots200Response) GetSnapshots() []GetHostSnpshots200ResponseSnapshotsInner`

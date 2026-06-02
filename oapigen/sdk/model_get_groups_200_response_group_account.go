@@ -27,14 +27,6 @@ type GetGroups200ResponseGroupAccount struct {
 
 type _GetGroups200ResponseGroupAccount GetGroups200ResponseGroupAccount
 
-// NewGetGroups200ResponseGroupAccountWithDefaults instantiates a new GetGroups200ResponseGroupAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetGroups200ResponseGroupAccountWithDefaults() *GetGroups200ResponseGroupAccount {
-	this := GetGroups200ResponseGroupAccount{}
-	return &this
-}
-
 func (o GetGroups200ResponseGroupAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -36,22 +36,6 @@ type ListUsages200ResponseMeta struct {
 
 type _ListUsages200ResponseMeta ListUsages200ResponseMeta
 
-// NewListUsages200ResponseMetaWithDefaults instantiates a new ListUsages200ResponseMeta object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListUsages200ResponseMetaWithDefaults() *ListUsages200ResponseMeta {
-	this := ListUsages200ResponseMeta{}
-	var offset int64 = 0
-	this.Offset = &offset
-	var max int64 = 25
-	this.Max = &max
-	var size int64 = 0
-	this.Size = &size
-	var total int64 = 0
-	this.Total = &total
-	return &this
-}
-
 func (o ListUsages200ResponseMeta) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

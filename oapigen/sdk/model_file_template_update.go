@@ -45,14 +45,6 @@ type FileTemplateUpdate struct {
 
 type _FileTemplateUpdate FileTemplateUpdate
 
-// NewFileTemplateUpdateWithDefaults instantiates a new FileTemplateUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewFileTemplateUpdateWithDefaults() *FileTemplateUpdate {
-	this := FileTemplateUpdate{}
-	return &this
-}
-
 func (o FileTemplateUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

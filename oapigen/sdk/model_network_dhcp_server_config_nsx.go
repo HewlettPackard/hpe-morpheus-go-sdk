@@ -31,14 +31,6 @@ type NetworkDhcpServerConfigNSX struct {
 
 type _NetworkDhcpServerConfigNSX NetworkDhcpServerConfigNSX
 
-// NewNetworkDhcpServerConfigNSXWithDefaults instantiates a new NetworkDhcpServerConfigNSX object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkDhcpServerConfigNSXWithDefaults() *NetworkDhcpServerConfigNSX {
-	this := NetworkDhcpServerConfigNSX{}
-	return &this
-}
-
 func (o NetworkDhcpServerConfigNSX) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

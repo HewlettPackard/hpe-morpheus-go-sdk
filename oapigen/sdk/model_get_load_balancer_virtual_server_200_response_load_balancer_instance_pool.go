@@ -27,14 +27,6 @@ type GetLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool struct {
 
 type _GetLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool GetLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool
 
-// NewGetLoadBalancerVirtualServer200ResponseLoadBalancerInstancePoolWithDefaults instantiates a new GetLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetLoadBalancerVirtualServer200ResponseLoadBalancerInstancePoolWithDefaults() *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool {
-	this := GetLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool{}
-	return &this
-}
-
 func (o GetLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

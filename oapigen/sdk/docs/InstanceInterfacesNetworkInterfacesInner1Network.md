@@ -22,14 +22,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInstanceInterfacesNetworkInterfacesInner1NetworkWithDefaults
-
-`func NewInstanceInterfacesNetworkInterfacesInner1NetworkWithDefaults() *InstanceInterfacesNetworkInterfacesInner1Network`
-
-NewInstanceInterfacesNetworkInterfacesInner1NetworkWithDefaults instantiates a new InstanceInterfacesNetworkInterfacesInner1Network object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *InstanceInterfacesNetworkInterfacesInner1Network) GetId() int64`

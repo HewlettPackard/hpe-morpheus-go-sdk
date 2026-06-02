@@ -27,14 +27,6 @@ type GetCloudAffinityGroup200ResponseAffinityGroupResourcePermissions struct {
 
 type _GetCloudAffinityGroup200ResponseAffinityGroupResourcePermissions GetCloudAffinityGroup200ResponseAffinityGroupResourcePermissions
 
-// NewGetCloudAffinityGroup200ResponseAffinityGroupResourcePermissionsWithDefaults instantiates a new GetCloudAffinityGroup200ResponseAffinityGroupResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCloudAffinityGroup200ResponseAffinityGroupResourcePermissionsWithDefaults() *GetCloudAffinityGroup200ResponseAffinityGroupResourcePermissions {
-	this := GetCloudAffinityGroup200ResponseAffinityGroupResourcePermissions{}
-	return &this
-}
-
 func (o GetCloudAffinityGroup200ResponseAffinityGroupResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

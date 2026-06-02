@@ -23,14 +23,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddCredentials200ResponseAllOfCredentialConfigWithDefaults
-
-`func NewAddCredentials200ResponseAllOfCredentialConfigWithDefaults() *AddCredentials200ResponseAllOfCredentialConfig`
-
-NewAddCredentials200ResponseAllOfCredentialConfigWithDefaults instantiates a new AddCredentials200ResponseAllOfCredentialConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetClientSecret
 
 `func (o *AddCredentials200ResponseAllOfCredentialConfig) GetClientSecret() string`

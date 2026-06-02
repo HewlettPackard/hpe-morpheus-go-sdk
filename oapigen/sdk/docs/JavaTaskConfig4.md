@@ -25,14 +25,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewJavaTaskConfig4WithDefaults
-
-`func NewJavaTaskConfig4WithDefaults() *JavaTaskConfig4`
-
-NewJavaTaskConfig4WithDefaults instantiates a new JavaTaskConfig4 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetUsername
 
 `func (o *JavaTaskConfig4) GetUsername() string`

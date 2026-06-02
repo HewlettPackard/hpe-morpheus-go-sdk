@@ -26,14 +26,6 @@ type UpdateTasksRequestTaskCredentialOneOf1 struct {
 
 type _UpdateTasksRequestTaskCredentialOneOf1 UpdateTasksRequestTaskCredentialOneOf1
 
-// NewUpdateTasksRequestTaskCredentialOneOf1WithDefaults instantiates a new UpdateTasksRequestTaskCredentialOneOf1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateTasksRequestTaskCredentialOneOf1WithDefaults() *UpdateTasksRequestTaskCredentialOneOf1 {
-	this := UpdateTasksRequestTaskCredentialOneOf1{}
-	return &this
-}
-
 func (o UpdateTasksRequestTaskCredentialOneOf1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

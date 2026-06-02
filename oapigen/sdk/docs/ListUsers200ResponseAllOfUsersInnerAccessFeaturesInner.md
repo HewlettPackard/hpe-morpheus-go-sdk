@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListUsers200ResponseAllOfUsersInnerAccessFeaturesInnerWithDefaults
-
-`func NewListUsers200ResponseAllOfUsersInnerAccessFeaturesInnerWithDefaults() *ListUsers200ResponseAllOfUsersInnerAccessFeaturesInner`
-
-NewListUsers200ResponseAllOfUsersInnerAccessFeaturesInnerWithDefaults instantiates a new ListUsers200ResponseAllOfUsersInnerAccessFeaturesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetCode
 
 `func (o *ListUsers200ResponseAllOfUsersInnerAccessFeaturesInner) GetCode() string`

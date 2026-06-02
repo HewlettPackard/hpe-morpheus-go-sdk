@@ -38,22 +38,6 @@ type UpdateCheckGroupsRequestCheckGroup struct {
 
 type _UpdateCheckGroupsRequestCheckGroup UpdateCheckGroupsRequestCheckGroup
 
-// NewUpdateCheckGroupsRequestCheckGroupWithDefaults instantiates a new UpdateCheckGroupsRequestCheckGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCheckGroupsRequestCheckGroupWithDefaults() *UpdateCheckGroupsRequestCheckGroup {
-	this := UpdateCheckGroupsRequestCheckGroup{}
-	var minHappy int32 = 1
-	this.MinHappy = &minHappy
-	var inUptime bool = true
-	this.InUptime = &inUptime
-	var severity string = "critical"
-	this.Severity = &severity
-	var active bool = true
-	this.Active = &active
-	return &this
-}
-
 func (o UpdateCheckGroupsRequestCheckGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

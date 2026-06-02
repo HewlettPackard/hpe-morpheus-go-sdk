@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateEnvironments200ResponseWithDefaults
-
-`func NewUpdateEnvironments200ResponseWithDefaults() *UpdateEnvironments200Response`
-
-NewUpdateEnvironments200ResponseWithDefaults instantiates a new UpdateEnvironments200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetEnvironment
 
 `func (o *UpdateEnvironments200Response) GetEnvironment() UpdateEnvironments200ResponseAllOfEnvironment`

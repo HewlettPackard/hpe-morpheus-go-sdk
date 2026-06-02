@@ -76,32 +76,6 @@ type AddVirtualImageRequestVirtualImage struct {
 
 type _AddVirtualImageRequestVirtualImage AddVirtualImageRequestVirtualImage
 
-// NewAddVirtualImageRequestVirtualImageWithDefaults instantiates a new AddVirtualImageRequestVirtualImage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddVirtualImageRequestVirtualImageWithDefaults() *AddVirtualImageRequestVirtualImage {
-	this := AddVirtualImageRequestVirtualImage{}
-	var isCloudInit bool = true
-	this.IsCloudInit = &isCloudInit
-	var installAgent bool = true
-	this.InstallAgent = &installAgent
-	var visibility string = "private"
-	this.Visibility = &visibility
-	var isAutoJoinDomain bool = false
-	this.IsAutoJoinDomain = &isAutoJoinDomain
-	var virtioSupported bool = true
-	this.VirtioSupported = &virtioSupported
-	var vmToolsInstalled bool = true
-	this.VmToolsInstalled = &vmToolsInstalled
-	var isForceCustomization bool = false
-	this.IsForceCustomization = &isForceCustomization
-	var trialVersion bool = false
-	this.TrialVersion = &trialVersion
-	var isSysprep bool = false
-	this.IsSysprep = &isSysprep
-	return &this
-}
-
 func (o AddVirtualImageRequestVirtualImage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

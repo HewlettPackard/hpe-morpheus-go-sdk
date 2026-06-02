@@ -26,14 +26,6 @@ type AddArchiveFile200ResponseAllOfArchiveFileCreatedBy struct {
 
 type _AddArchiveFile200ResponseAllOfArchiveFileCreatedBy AddArchiveFile200ResponseAllOfArchiveFileCreatedBy
 
-// NewAddArchiveFile200ResponseAllOfArchiveFileCreatedByWithDefaults instantiates a new AddArchiveFile200ResponseAllOfArchiveFileCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddArchiveFile200ResponseAllOfArchiveFileCreatedByWithDefaults() *AddArchiveFile200ResponseAllOfArchiveFileCreatedBy {
-	this := AddArchiveFile200ResponseAllOfArchiveFileCreatedBy{}
-	return &this
-}
-
 func (o AddArchiveFile200ResponseAllOfArchiveFileCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

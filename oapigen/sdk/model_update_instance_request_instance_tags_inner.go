@@ -27,14 +27,6 @@ type UpdateInstanceRequestInstanceTagsInner struct {
 
 type _UpdateInstanceRequestInstanceTagsInner UpdateInstanceRequestInstanceTagsInner
 
-// NewUpdateInstanceRequestInstanceTagsInnerWithDefaults instantiates a new UpdateInstanceRequestInstanceTagsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstanceRequestInstanceTagsInnerWithDefaults() *UpdateInstanceRequestInstanceTagsInner {
-	this := UpdateInstanceRequestInstanceTagsInner{}
-	return &this
-}
-
 func (o UpdateInstanceRequestInstanceTagsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

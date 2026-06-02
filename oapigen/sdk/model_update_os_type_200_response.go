@@ -26,14 +26,6 @@ type UpdateOsType200Response struct {
 
 type _UpdateOsType200Response UpdateOsType200Response
 
-// NewUpdateOsType200ResponseWithDefaults instantiates a new UpdateOsType200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateOsType200ResponseWithDefaults() *UpdateOsType200Response {
-	this := UpdateOsType200Response{}
-	return &this
-}
-
 func (o UpdateOsType200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

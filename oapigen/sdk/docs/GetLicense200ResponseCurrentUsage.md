@@ -28,14 +28,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetLicense200ResponseCurrentUsageWithDefaults
-
-`func NewGetLicense200ResponseCurrentUsageWithDefaults() *GetLicense200ResponseCurrentUsage`
-
-NewGetLicense200ResponseCurrentUsageWithDefaults instantiates a new GetLicense200ResponseCurrentUsage object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMemory
 
 `func (o *GetLicense200ResponseCurrentUsage) GetMemory() int64`

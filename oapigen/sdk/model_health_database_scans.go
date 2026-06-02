@@ -32,14 +32,6 @@ type HealthDatabaseScans struct {
 
 type _HealthDatabaseScans HealthDatabaseScans
 
-// NewHealthDatabaseScansWithDefaults instantiates a new HealthDatabaseScans object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewHealthDatabaseScansWithDefaults() *HealthDatabaseScans {
-	this := HealthDatabaseScans{}
-	return &this
-}
-
 func (o HealthDatabaseScans) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

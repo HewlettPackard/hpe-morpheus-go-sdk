@@ -33,14 +33,6 @@ type ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermis
 
 type _ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions
 
-// NewListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissionsWithDefaults instantiates a new ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissionsWithDefaults() *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions {
-	this := ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions{}
-	return &this
-}
-
 func (o ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

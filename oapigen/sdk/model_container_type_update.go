@@ -56,14 +56,6 @@ type ContainerTypeUpdate struct {
 
 type _ContainerTypeUpdate ContainerTypeUpdate
 
-// NewContainerTypeUpdateWithDefaults instantiates a new ContainerTypeUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewContainerTypeUpdateWithDefaults() *ContainerTypeUpdate {
-	this := ContainerTypeUpdate{}
-	return &this
-}
-
 func (o ContainerTypeUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

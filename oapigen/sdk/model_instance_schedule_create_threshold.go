@@ -53,36 +53,6 @@ type InstanceScheduleCreateThreshold struct {
 
 type _InstanceScheduleCreateThreshold InstanceScheduleCreateThreshold
 
-// NewInstanceScheduleCreateThresholdWithDefaults instantiates a new InstanceScheduleCreateThreshold object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceScheduleCreateThresholdWithDefaults() *InstanceScheduleCreateThreshold {
-	this := InstanceScheduleCreateThreshold{}
-	var autoUp bool = false
-	this.AutoUp = &autoUp
-	var autoDown bool = false
-	this.AutoDown = &autoDown
-	var cpuEnabled bool = false
-	this.CpuEnabled = &cpuEnabled
-	var minCpu float64 = 0
-	this.MinCpu = &minCpu
-	var maxCpu float64 = 0
-	this.MaxCpu = &maxCpu
-	var memoryEnabled bool = false
-	this.MemoryEnabled = &memoryEnabled
-	var minMemory float64 = 0
-	this.MinMemory = &minMemory
-	var maxMemory float64 = 0
-	this.MaxMemory = &maxMemory
-	var diskEnabled bool = false
-	this.DiskEnabled = &diskEnabled
-	var minDisk float64 = 0
-	this.MinDisk = &minDisk
-	var maxDisk float64 = 0
-	this.MaxDisk = &maxDisk
-	return &this
-}
-
 func (o InstanceScheduleCreateThreshold) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

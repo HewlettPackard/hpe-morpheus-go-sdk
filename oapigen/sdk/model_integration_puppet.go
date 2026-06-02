@@ -38,14 +38,6 @@ type IntegrationPuppet struct {
 
 type _IntegrationPuppet IntegrationPuppet
 
-// NewIntegrationPuppetWithDefaults instantiates a new IntegrationPuppet object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationPuppetWithDefaults() *IntegrationPuppet {
-	this := IntegrationPuppet{}
-	return &this
-}
-
 func (o IntegrationPuppet) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

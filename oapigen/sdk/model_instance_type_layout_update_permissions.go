@@ -26,14 +26,6 @@ type InstanceTypeLayoutUpdatePermissions struct {
 
 type _InstanceTypeLayoutUpdatePermissions InstanceTypeLayoutUpdatePermissions
 
-// NewInstanceTypeLayoutUpdatePermissionsWithDefaults instantiates a new InstanceTypeLayoutUpdatePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceTypeLayoutUpdatePermissionsWithDefaults() *InstanceTypeLayoutUpdatePermissions {
-	this := InstanceTypeLayoutUpdatePermissions{}
-	return &this
-}
-
 func (o InstanceTypeLayoutUpdatePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

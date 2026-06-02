@@ -28,14 +28,6 @@ type InstanceCreateSuccessInstanceCluster struct {
 
 type _InstanceCreateSuccessInstanceCluster InstanceCreateSuccessInstanceCluster
 
-// NewInstanceCreateSuccessInstanceClusterWithDefaults instantiates a new InstanceCreateSuccessInstanceCluster object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceCreateSuccessInstanceClusterWithDefaults() *InstanceCreateSuccessInstanceCluster {
-	this := InstanceCreateSuccessInstanceCluster{}
-	return &this
-}
-
 func (o InstanceCreateSuccessInstanceCluster) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

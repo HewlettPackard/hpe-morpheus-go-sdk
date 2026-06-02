@@ -29,14 +29,6 @@ type DefaultTaskPermission struct {
 
 type _DefaultTaskPermission DefaultTaskPermission
 
-// NewDefaultTaskPermissionWithDefaults instantiates a new DefaultTaskPermission object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDefaultTaskPermissionWithDefaults() *DefaultTaskPermission {
-	this := DefaultTaskPermission{}
-	return &this
-}
-
 func (o DefaultTaskPermission) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -32,14 +32,6 @@ type NetworkService struct {
 
 type _NetworkService NetworkService
 
-// NewNetworkServiceWithDefaults instantiates a new NetworkService object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkServiceWithDefaults() *NetworkService {
-	this := NetworkService{}
-	return &this
-}
-
 func (o NetworkService) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

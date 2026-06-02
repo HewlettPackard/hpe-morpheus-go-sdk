@@ -49,14 +49,6 @@ type SetupRequest struct {
 
 type _SetupRequest SetupRequest
 
-// NewSetupRequestWithDefaults instantiates a new SetupRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSetupRequestWithDefaults() *SetupRequest {
-	this := SetupRequest{}
-	return &this
-}
-
 func (o SetupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

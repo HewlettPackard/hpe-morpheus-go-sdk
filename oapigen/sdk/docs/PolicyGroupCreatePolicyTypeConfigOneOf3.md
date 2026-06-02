@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPolicyGroupCreatePolicyTypeConfigOneOf3WithDefaults
-
-`func NewPolicyGroupCreatePolicyTypeConfigOneOf3WithDefaults() *PolicyGroupCreatePolicyTypeConfigOneOf3`
-
-NewPolicyGroupCreatePolicyTypeConfigOneOf3WithDefaults instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf3 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMaxPrice
 
 `func (o *PolicyGroupCreatePolicyTypeConfigOneOf3) GetMaxPrice() float32`

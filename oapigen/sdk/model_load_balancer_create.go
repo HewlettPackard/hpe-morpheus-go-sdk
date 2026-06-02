@@ -41,16 +41,6 @@ type LoadBalancerCreate struct {
 
 type _LoadBalancerCreate LoadBalancerCreate
 
-// NewLoadBalancerCreateWithDefaults instantiates a new LoadBalancerCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLoadBalancerCreateWithDefaults() *LoadBalancerCreate {
-	this := LoadBalancerCreate{}
-	var visibility string = "public"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o LoadBalancerCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

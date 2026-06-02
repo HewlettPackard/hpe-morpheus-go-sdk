@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInstanceContainerServer3OwnerWithDefaults
-
-`func NewInstanceContainerServer3OwnerWithDefaults() *InstanceContainerServer3Owner`
-
-NewInstanceContainerServer3OwnerWithDefaults instantiates a new InstanceContainerServer3Owner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *InstanceContainerServer3Owner) GetId() int64`

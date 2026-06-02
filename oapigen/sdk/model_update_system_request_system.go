@@ -42,14 +42,6 @@ type UpdateSystemRequestSystem struct {
 
 type _UpdateSystemRequestSystem UpdateSystemRequestSystem
 
-// NewUpdateSystemRequestSystemWithDefaults instantiates a new UpdateSystemRequestSystem object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateSystemRequestSystemWithDefaults() *UpdateSystemRequestSystem {
-	this := UpdateSystemRequestSystem{}
-	return &this
-}
-
 func (o UpdateSystemRequestSystem) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

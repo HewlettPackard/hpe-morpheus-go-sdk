@@ -27,14 +27,6 @@ type ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket struct {
 
 type _ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket
 
-// NewListBackupSettings200ResponseBackupSettingsDefaultStorageBucketWithDefaults instantiates a new ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListBackupSettings200ResponseBackupSettingsDefaultStorageBucketWithDefaults() *ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket {
-	this := ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket{}
-	return &this
-}
-
 func (o ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewMySqlCheck1AllOfCheckTypeWithDefaults
-
-`func NewMySqlCheck1AllOfCheckTypeWithDefaults() *MySqlCheck1AllOfCheckType`
-
-NewMySqlCheck1AllOfCheckTypeWithDefaults instantiates a new MySqlCheck1AllOfCheckType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetCode
 
 `func (o *MySqlCheck1AllOfCheckType) GetCode() string`

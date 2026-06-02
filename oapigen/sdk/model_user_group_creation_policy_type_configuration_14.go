@@ -26,14 +26,6 @@ type UserGroupCreationPolicyTypeConfiguration14 struct {
 
 type _UserGroupCreationPolicyTypeConfiguration14 UserGroupCreationPolicyTypeConfiguration14
 
-// NewUserGroupCreationPolicyTypeConfiguration14WithDefaults instantiates a new UserGroupCreationPolicyTypeConfiguration14 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserGroupCreationPolicyTypeConfiguration14WithDefaults() *UserGroupCreationPolicyTypeConfiguration14 {
-	this := UserGroupCreationPolicyTypeConfiguration14{}
-	return &this
-}
-
 func (o UserGroupCreationPolicyTypeConfiguration14) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

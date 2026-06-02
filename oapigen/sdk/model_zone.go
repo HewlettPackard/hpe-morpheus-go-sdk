@@ -89,14 +89,6 @@ type Zone struct {
 
 type _Zone Zone
 
-// NewZoneWithDefaults instantiates a new Zone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneWithDefaults() *Zone {
-	this := Zone{}
-	return &this
-}
-
 func (o Zone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

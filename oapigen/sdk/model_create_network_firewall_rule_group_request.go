@@ -26,14 +26,6 @@ type CreateNetworkFirewallRuleGroupRequest struct {
 
 type _CreateNetworkFirewallRuleGroupRequest CreateNetworkFirewallRuleGroupRequest
 
-// NewCreateNetworkFirewallRuleGroupRequestWithDefaults instantiates a new CreateNetworkFirewallRuleGroupRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkFirewallRuleGroupRequestWithDefaults() *CreateNetworkFirewallRuleGroupRequest {
-	this := CreateNetworkFirewallRuleGroupRequest{}
-	return &this
-}
-
 func (o CreateNetworkFirewallRuleGroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -29,14 +29,6 @@ type UpdateInstanceRequestConfig struct {
 
 type _UpdateInstanceRequestConfig UpdateInstanceRequestConfig
 
-// NewUpdateInstanceRequestConfigWithDefaults instantiates a new UpdateInstanceRequestConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstanceRequestConfigWithDefaults() *UpdateInstanceRequestConfig {
-	this := UpdateInstanceRequestConfig{}
-	return &this
-}
-
 func (o UpdateInstanceRequestConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

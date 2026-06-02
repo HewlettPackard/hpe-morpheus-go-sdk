@@ -39,14 +39,6 @@ type InstanceContainerPortsInner struct {
 
 type _InstanceContainerPortsInner InstanceContainerPortsInner
 
-// NewInstanceContainerPortsInnerWithDefaults instantiates a new InstanceContainerPortsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainerPortsInnerWithDefaults() *InstanceContainerPortsInner {
-	this := InstanceContainerPortsInner{}
-	return &this
-}
-
 func (o InstanceContainerPortsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

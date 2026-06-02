@@ -27,14 +27,6 @@ type NSXTBGPNeighborConfig5 struct {
 
 type _NSXTBGPNeighborConfig5 NSXTBGPNeighborConfig5
 
-// NewNSXTBGPNeighborConfig5WithDefaults instantiates a new NSXTBGPNeighborConfig5 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNSXTBGPNeighborConfig5WithDefaults() *NSXTBGPNeighborConfig5 {
-	this := NSXTBGPNeighborConfig5{}
-	return &this
-}
-
 func (o NSXTBGPNeighborConfig5) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

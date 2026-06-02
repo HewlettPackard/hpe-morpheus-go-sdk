@@ -26,14 +26,6 @@ type RefreshClouds200Response struct {
 
 type _RefreshClouds200Response RefreshClouds200Response
 
-// NewRefreshClouds200ResponseWithDefaults instantiates a new RefreshClouds200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRefreshClouds200ResponseWithDefaults() *RefreshClouds200Response {
-	this := RefreshClouds200Response{}
-	return &this
-}
-
 func (o RefreshClouds200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

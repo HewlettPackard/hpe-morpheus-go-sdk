@@ -31,16 +31,6 @@ type Model200SuccessExpanded struct {
 
 type _Model200SuccessExpanded Model200SuccessExpanded
 
-// NewModel200SuccessExpandedWithDefaults instantiates a new Model200SuccessExpanded object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewModel200SuccessExpandedWithDefaults() *Model200SuccessExpanded {
-	this := Model200SuccessExpanded{}
-	var success bool = true
-	this.Success = &success
-	return &this
-}
-
 func (o Model200SuccessExpanded) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -29,14 +29,6 @@ type GFS2DatastoreConfiguration3 struct {
 
 type _GFS2DatastoreConfiguration3 GFS2DatastoreConfiguration3
 
-// NewGFS2DatastoreConfiguration3WithDefaults instantiates a new GFS2DatastoreConfiguration3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGFS2DatastoreConfiguration3WithDefaults() *GFS2DatastoreConfiguration3 {
-	this := GFS2DatastoreConfiguration3{}
-	return &this
-}
-
 func (o GFS2DatastoreConfiguration3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

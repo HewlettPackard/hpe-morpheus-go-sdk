@@ -29,14 +29,6 @@ type MonitoringSettingsServiceNowIntegration struct {
 
 type _MonitoringSettingsServiceNowIntegration MonitoringSettingsServiceNowIntegration
 
-// NewMonitoringSettingsServiceNowIntegrationWithDefaults instantiates a new MonitoringSettingsServiceNowIntegration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMonitoringSettingsServiceNowIntegrationWithDefaults() *MonitoringSettingsServiceNowIntegration {
-	this := MonitoringSettingsServiceNowIntegration{}
-	return &this
-}
-
 func (o MonitoringSettingsServiceNowIntegration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

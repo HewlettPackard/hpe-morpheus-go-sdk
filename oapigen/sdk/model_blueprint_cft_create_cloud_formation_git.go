@@ -33,14 +33,6 @@ type BlueprintCFTCreateCloudFormationGit struct {
 
 type _BlueprintCFTCreateCloudFormationGit BlueprintCFTCreateCloudFormationGit
 
-// NewBlueprintCFTCreateCloudFormationGitWithDefaults instantiates a new BlueprintCFTCreateCloudFormationGit object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintCFTCreateCloudFormationGitWithDefaults() *BlueprintCFTCreateCloudFormationGit {
-	this := BlueprintCFTCreateCloudFormationGit{}
-	return &this
-}
-
 func (o BlueprintCFTCreateCloudFormationGit) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type Ping200Response struct {
 
 type _Ping200Response Ping200Response
 
-// NewPing200ResponseWithDefaults instantiates a new Ping200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPing200ResponseWithDefaults() *Ping200Response {
-	this := Ping200Response{}
-	return &this
-}
-
 func (o Ping200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

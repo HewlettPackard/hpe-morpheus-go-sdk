@@ -26,14 +26,6 @@ type EjectInstance200Response struct {
 
 type _EjectInstance200Response EjectInstance200Response
 
-// NewEjectInstance200ResponseWithDefaults instantiates a new EjectInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewEjectInstance200ResponseWithDefaults() *EjectInstance200Response {
-	this := EjectInstance200Response{}
-	return &this
-}
-
 func (o EjectInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

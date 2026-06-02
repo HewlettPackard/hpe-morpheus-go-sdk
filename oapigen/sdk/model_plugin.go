@@ -45,14 +45,6 @@ type Plugin struct {
 
 type _Plugin Plugin
 
-// NewPluginWithDefaults instantiates a new Plugin object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPluginWithDefaults() *Plugin {
-	this := Plugin{}
-	return &this
-}
-
 func (o Plugin) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -60,14 +60,6 @@ type UpdateCatalogItemType200ResponseAllOfCatalogItemType struct {
 
 type _UpdateCatalogItemType200ResponseAllOfCatalogItemType UpdateCatalogItemType200ResponseAllOfCatalogItemType
 
-// NewUpdateCatalogItemType200ResponseAllOfCatalogItemTypeWithDefaults instantiates a new UpdateCatalogItemType200ResponseAllOfCatalogItemType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCatalogItemType200ResponseAllOfCatalogItemTypeWithDefaults() *UpdateCatalogItemType200ResponseAllOfCatalogItemType {
-	this := UpdateCatalogItemType200ResponseAllOfCatalogItemType{}
-	return &this
-}
-
 func (o UpdateCatalogItemType200ResponseAllOfCatalogItemType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

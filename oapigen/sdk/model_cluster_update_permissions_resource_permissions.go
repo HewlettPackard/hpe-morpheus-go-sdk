@@ -33,14 +33,6 @@ type ClusterUpdatePermissionsResourcePermissions struct {
 
 type _ClusterUpdatePermissionsResourcePermissions ClusterUpdatePermissionsResourcePermissions
 
-// NewClusterUpdatePermissionsResourcePermissionsWithDefaults instantiates a new ClusterUpdatePermissionsResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterUpdatePermissionsResourcePermissionsWithDefaults() *ClusterUpdatePermissionsResourcePermissions {
-	this := ClusterUpdatePermissionsResourcePermissions{}
-	return &this
-}
-
 func (o ClusterUpdatePermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

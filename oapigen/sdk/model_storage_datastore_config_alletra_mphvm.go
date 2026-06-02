@@ -29,14 +29,6 @@ type StorageDatastoreConfigAlletraMPHVM struct {
 
 type _StorageDatastoreConfigAlletraMPHVM StorageDatastoreConfigAlletraMPHVM
 
-// NewStorageDatastoreConfigAlletraMPHVMWithDefaults instantiates a new StorageDatastoreConfigAlletraMPHVM object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewStorageDatastoreConfigAlletraMPHVMWithDefaults() *StorageDatastoreConfigAlletraMPHVM {
-	this := StorageDatastoreConfigAlletraMPHVM{}
-	return &this
-}
-
 func (o StorageDatastoreConfigAlletraMPHVM) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type CatalogTypeForm struct {
 
 type _CatalogTypeForm CatalogTypeForm
 
-// NewCatalogTypeFormWithDefaults instantiates a new CatalogTypeForm object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCatalogTypeFormWithDefaults() *CatalogTypeForm {
-	this := CatalogTypeForm{}
-	return &this
-}
-
 func (o CatalogTypeForm) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -33,14 +33,6 @@ type GetStorageServerTypes200ResponseStorageServerTypeStorageVolumeTypesInner st
 
 type _GetStorageServerTypes200ResponseStorageServerTypeStorageVolumeTypesInner GetStorageServerTypes200ResponseStorageServerTypeStorageVolumeTypesInner
 
-// NewGetStorageServerTypes200ResponseStorageServerTypeStorageVolumeTypesInnerWithDefaults instantiates a new GetStorageServerTypes200ResponseStorageServerTypeStorageVolumeTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetStorageServerTypes200ResponseStorageServerTypeStorageVolumeTypesInnerWithDefaults() *GetStorageServerTypes200ResponseStorageServerTypeStorageVolumeTypesInner {
-	this := GetStorageServerTypes200ResponseStorageServerTypeStorageVolumeTypesInner{}
-	return &this
-}
-
 func (o GetStorageServerTypes200ResponseStorageServerTypeStorageVolumeTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type GetHistory200ResponseProcessEventsInnerProcessType struct {
 
 type _GetHistory200ResponseProcessEventsInnerProcessType GetHistory200ResponseProcessEventsInnerProcessType
 
-// NewGetHistory200ResponseProcessEventsInnerProcessTypeWithDefaults instantiates a new GetHistory200ResponseProcessEventsInnerProcessType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetHistory200ResponseProcessEventsInnerProcessTypeWithDefaults() *GetHistory200ResponseProcessEventsInnerProcessType {
-	this := GetHistory200ResponseProcessEventsInnerProcessType{}
-	return &this
-}
-
 func (o GetHistory200ResponseProcessEventsInnerProcessType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

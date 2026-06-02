@@ -27,14 +27,6 @@ type ListBootScripts200ResponseAllOfBootScriptsInnerAccount struct {
 
 type _ListBootScripts200ResponseAllOfBootScriptsInnerAccount ListBootScripts200ResponseAllOfBootScriptsInnerAccount
 
-// NewListBootScripts200ResponseAllOfBootScriptsInnerAccountWithDefaults instantiates a new ListBootScripts200ResponseAllOfBootScriptsInnerAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListBootScripts200ResponseAllOfBootScriptsInnerAccountWithDefaults() *ListBootScripts200ResponseAllOfBootScriptsInnerAccount {
-	this := ListBootScripts200ResponseAllOfBootScriptsInnerAccount{}
-	return &this
-}
-
 func (o ListBootScripts200ResponseAllOfBootScriptsInnerAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

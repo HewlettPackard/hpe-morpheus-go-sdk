@@ -46,14 +46,6 @@ type IdentitySourcesLDAPConfig struct {
 
 type _IdentitySourcesLDAPConfig IdentitySourcesLDAPConfig
 
-// NewIdentitySourcesLDAPConfigWithDefaults instantiates a new IdentitySourcesLDAPConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIdentitySourcesLDAPConfigWithDefaults() *IdentitySourcesLDAPConfig {
-	this := IdentitySourcesLDAPConfig{}
-	return &this
-}
-
 func (o IdentitySourcesLDAPConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

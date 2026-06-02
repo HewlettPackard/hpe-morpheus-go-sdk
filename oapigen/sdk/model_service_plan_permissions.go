@@ -27,14 +27,6 @@ type ServicePlanPermissions struct {
 
 type _ServicePlanPermissions ServicePlanPermissions
 
-// NewServicePlanPermissionsWithDefaults instantiates a new ServicePlanPermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewServicePlanPermissionsWithDefaults() *ServicePlanPermissions {
-	this := ServicePlanPermissions{}
-	return &this
-}
-
 func (o ServicePlanPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

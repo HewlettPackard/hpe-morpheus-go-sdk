@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddBlueprintRequestOneOf3KubernetesGitWithDefaults
-
-`func NewAddBlueprintRequestOneOf3KubernetesGitWithDefaults() *AddBlueprintRequestOneOf3KubernetesGit`
-
-NewAddBlueprintRequestOneOf3KubernetesGitWithDefaults instantiates a new AddBlueprintRequestOneOf3KubernetesGit object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetRepoId
 
 `func (o *AddBlueprintRequestOneOf3KubernetesGit) GetRepoId() int64`

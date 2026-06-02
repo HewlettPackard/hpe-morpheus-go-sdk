@@ -29,16 +29,6 @@ type TestLicenseRequest struct {
 
 type _TestLicenseRequest TestLicenseRequest
 
-// NewTestLicenseRequestWithDefaults instantiates a new TestLicenseRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTestLicenseRequestWithDefaults() *TestLicenseRequest {
-	this := TestLicenseRequest{}
-	var installAction string = "replace"
-	this.InstallAction = &installAction
-	return &this
-}
-
 func (o TestLicenseRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

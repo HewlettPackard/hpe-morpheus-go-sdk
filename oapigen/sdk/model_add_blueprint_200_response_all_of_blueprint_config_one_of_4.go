@@ -38,16 +38,6 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf4 struct {
 
 type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf4 AddBlueprint200ResponseAllOfBlueprintConfigOneOf4
 
-// NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf4WithDefaults instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf4WithDefaults() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4 {
-	this := AddBlueprint200ResponseAllOfBlueprintConfigOneOf4{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

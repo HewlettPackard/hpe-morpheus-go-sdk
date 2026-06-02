@@ -27,14 +27,6 @@ type InstanceContainerServerInstancesInnerInner1 struct {
 
 type _InstanceContainerServerInstancesInnerInner1 InstanceContainerServerInstancesInnerInner1
 
-// NewInstanceContainerServerInstancesInnerInner1WithDefaults instantiates a new InstanceContainerServerInstancesInnerInner1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainerServerInstancesInnerInner1WithDefaults() *InstanceContainerServerInstancesInnerInner1 {
-	this := InstanceContainerServerInstancesInnerInner1{}
-	return &this
-}
-
 func (o InstanceContainerServerInstancesInnerInner1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

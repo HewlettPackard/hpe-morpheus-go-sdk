@@ -27,14 +27,6 @@ type GetClusterAffinityGroup200ResponseAffinityGroupServersInner struct {
 
 type _GetClusterAffinityGroup200ResponseAffinityGroupServersInner GetClusterAffinityGroup200ResponseAffinityGroupServersInner
 
-// NewGetClusterAffinityGroup200ResponseAffinityGroupServersInnerWithDefaults instantiates a new GetClusterAffinityGroup200ResponseAffinityGroupServersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterAffinityGroup200ResponseAffinityGroupServersInnerWithDefaults() *GetClusterAffinityGroup200ResponseAffinityGroupServersInner {
-	this := GetClusterAffinityGroup200ResponseAffinityGroupServersInner{}
-	return &this
-}
-
 func (o GetClusterAffinityGroup200ResponseAffinityGroupServersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

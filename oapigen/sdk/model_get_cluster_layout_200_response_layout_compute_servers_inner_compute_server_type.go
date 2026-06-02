@@ -30,14 +30,6 @@ type GetClusterLayout200ResponseLayoutComputeServersInnerComputeServerType struc
 
 type _GetClusterLayout200ResponseLayoutComputeServersInnerComputeServerType GetClusterLayout200ResponseLayoutComputeServersInnerComputeServerType
 
-// NewGetClusterLayout200ResponseLayoutComputeServersInnerComputeServerTypeWithDefaults instantiates a new GetClusterLayout200ResponseLayoutComputeServersInnerComputeServerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterLayout200ResponseLayoutComputeServersInnerComputeServerTypeWithDefaults() *GetClusterLayout200ResponseLayoutComputeServersInnerComputeServerType {
-	this := GetClusterLayout200ResponseLayoutComputeServersInnerComputeServerType{}
-	return &this
-}
-
 func (o GetClusterLayout200ResponseLayoutComputeServersInnerComputeServerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

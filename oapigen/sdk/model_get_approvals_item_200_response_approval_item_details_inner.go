@@ -35,14 +35,6 @@ type GetApprovalsItem200ResponseApprovalItemDetailsInner struct {
 
 type _GetApprovalsItem200ResponseApprovalItemDetailsInner GetApprovalsItem200ResponseApprovalItemDetailsInner
 
-// NewGetApprovalsItem200ResponseApprovalItemDetailsInnerWithDefaults instantiates a new GetApprovalsItem200ResponseApprovalItemDetailsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetApprovalsItem200ResponseApprovalItemDetailsInnerWithDefaults() *GetApprovalsItem200ResponseApprovalItemDetailsInner {
-	this := GetApprovalsItem200ResponseApprovalItemDetailsInner{}
-	return &this
-}
-
 func (o GetApprovalsItem200ResponseApprovalItemDetailsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

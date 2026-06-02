@@ -26,14 +26,6 @@ type SaveCloudAffinityGroupRequestAffinityGroupPool struct {
 
 type _SaveCloudAffinityGroupRequestAffinityGroupPool SaveCloudAffinityGroupRequestAffinityGroupPool
 
-// NewSaveCloudAffinityGroupRequestAffinityGroupPoolWithDefaults instantiates a new SaveCloudAffinityGroupRequestAffinityGroupPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveCloudAffinityGroupRequestAffinityGroupPoolWithDefaults() *SaveCloudAffinityGroupRequestAffinityGroupPool {
-	this := SaveCloudAffinityGroupRequestAffinityGroupPool{}
-	return &this
-}
-
 func (o SaveCloudAffinityGroupRequestAffinityGroupPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

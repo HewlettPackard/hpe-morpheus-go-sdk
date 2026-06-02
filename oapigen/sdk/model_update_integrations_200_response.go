@@ -27,14 +27,6 @@ type UpdateIntegrations200Response struct {
 
 type _UpdateIntegrations200Response UpdateIntegrations200Response
 
-// NewUpdateIntegrations200ResponseWithDefaults instantiates a new UpdateIntegrations200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIntegrations200ResponseWithDefaults() *UpdateIntegrations200Response {
-	this := UpdateIntegrations200Response{}
-	return &this
-}
-
 func (o UpdateIntegrations200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

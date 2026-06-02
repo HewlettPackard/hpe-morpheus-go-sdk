@@ -26,14 +26,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetVDIPools200ResponseVdiPoolConfigVolumesInnerWithDefaults
-
-`func NewGetVDIPools200ResponseVdiPoolConfigVolumesInnerWithDefaults() *GetVDIPools200ResponseVdiPoolConfigVolumesInner`
-
-NewGetVDIPools200ResponseVdiPoolConfigVolumesInnerWithDefaults instantiates a new GetVDIPools200ResponseVdiPoolConfigVolumesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetVolumeCustomizable
 
 `func (o *GetVDIPools200ResponseVdiPoolConfigVolumesInner) GetVolumeCustomizable() bool`

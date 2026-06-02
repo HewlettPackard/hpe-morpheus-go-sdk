@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNetworkDomain200ResponseWithDefaults
-
-`func NewGetNetworkDomain200ResponseWithDefaults() *GetNetworkDomain200Response`
-
-NewGetNetworkDomain200ResponseWithDefaults instantiates a new GetNetworkDomain200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetNetworkDomain
 
 `func (o *GetNetworkDomain200Response) GetNetworkDomain() GetNetworkDomain200ResponseNetworkDomain`

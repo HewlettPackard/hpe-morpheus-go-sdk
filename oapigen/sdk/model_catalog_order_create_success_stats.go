@@ -28,14 +28,6 @@ type CatalogOrderCreateSuccessStats struct {
 
 type _CatalogOrderCreateSuccessStats CatalogOrderCreateSuccessStats
 
-// NewCatalogOrderCreateSuccessStatsWithDefaults instantiates a new CatalogOrderCreateSuccessStats object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCatalogOrderCreateSuccessStatsWithDefaults() *CatalogOrderCreateSuccessStats {
-	this := CatalogOrderCreateSuccessStats{}
-	return &this
-}
-
 func (o CatalogOrderCreateSuccessStats) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -66,14 +66,6 @@ type GetInput200ResponseOptionType struct {
 
 type _GetInput200ResponseOptionType GetInput200ResponseOptionType
 
-// NewGetInput200ResponseOptionTypeWithDefaults instantiates a new GetInput200ResponseOptionType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInput200ResponseOptionTypeWithDefaults() *GetInput200ResponseOptionType {
-	this := GetInput200ResponseOptionType{}
-	return &this
-}
-
 func (o GetInput200ResponseOptionType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

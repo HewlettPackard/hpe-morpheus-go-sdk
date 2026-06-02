@@ -66,14 +66,6 @@ type ListPlugins200ResponseAllOfPluginsInnerOptionTypesInner struct {
 
 type _ListPlugins200ResponseAllOfPluginsInnerOptionTypesInner ListPlugins200ResponseAllOfPluginsInnerOptionTypesInner
 
-// NewListPlugins200ResponseAllOfPluginsInnerOptionTypesInnerWithDefaults instantiates a new ListPlugins200ResponseAllOfPluginsInnerOptionTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListPlugins200ResponseAllOfPluginsInnerOptionTypesInnerWithDefaults() *ListPlugins200ResponseAllOfPluginsInnerOptionTypesInner {
-	this := ListPlugins200ResponseAllOfPluginsInnerOptionTypesInner{}
-	return &this
-}
-
 func (o ListPlugins200ResponseAllOfPluginsInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

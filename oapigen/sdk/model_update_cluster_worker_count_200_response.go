@@ -26,14 +26,6 @@ type UpdateClusterWorkerCount200Response struct {
 
 type _UpdateClusterWorkerCount200Response UpdateClusterWorkerCount200Response
 
-// NewUpdateClusterWorkerCount200ResponseWithDefaults instantiates a new UpdateClusterWorkerCount200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateClusterWorkerCount200ResponseWithDefaults() *UpdateClusterWorkerCount200Response {
-	this := UpdateClusterWorkerCount200Response{}
-	return &this
-}
-
 func (o UpdateClusterWorkerCount200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

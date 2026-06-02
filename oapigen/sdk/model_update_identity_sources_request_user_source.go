@@ -42,14 +42,6 @@ type UpdateIdentitySourcesRequestUserSource struct {
 
 type _UpdateIdentitySourcesRequestUserSource UpdateIdentitySourcesRequestUserSource
 
-// NewUpdateIdentitySourcesRequestUserSourceWithDefaults instantiates a new UpdateIdentitySourcesRequestUserSource object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIdentitySourcesRequestUserSourceWithDefaults() *UpdateIdentitySourcesRequestUserSource {
-	this := UpdateIdentitySourcesRequestUserSource{}
-	return &this
-}
-
 func (o UpdateIdentitySourcesRequestUserSource) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

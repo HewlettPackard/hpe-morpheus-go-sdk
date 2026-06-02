@@ -27,14 +27,6 @@ type GetClusterMasters200ResponseMastersInnerAccount struct {
 
 type _GetClusterMasters200ResponseMastersInnerAccount GetClusterMasters200ResponseMastersInnerAccount
 
-// NewGetClusterMasters200ResponseMastersInnerAccountWithDefaults instantiates a new GetClusterMasters200ResponseMastersInnerAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterMasters200ResponseMastersInnerAccountWithDefaults() *GetClusterMasters200ResponseMastersInnerAccount {
-	this := GetClusterMasters200ResponseMastersInnerAccount{}
-	return &this
-}
-
 func (o GetClusterMasters200ResponseMastersInnerAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -29,14 +29,6 @@ type BillingZonesZonesInnerVirtualImages struct {
 
 type _BillingZonesZonesInnerVirtualImages BillingZonesZonesInnerVirtualImages
 
-// NewBillingZonesZonesInnerVirtualImagesWithDefaults instantiates a new BillingZonesZonesInnerVirtualImages object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBillingZonesZonesInnerVirtualImagesWithDefaults() *BillingZonesZonesInnerVirtualImages {
-	this := BillingZonesZonesInnerVirtualImages{}
-	return &this
-}
-
 func (o BillingZonesZonesInnerVirtualImages) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

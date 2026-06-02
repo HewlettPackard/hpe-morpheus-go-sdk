@@ -27,14 +27,6 @@ type GetClouds200ResponseZoneNetworkDomain struct {
 
 type _GetClouds200ResponseZoneNetworkDomain GetClouds200ResponseZoneNetworkDomain
 
-// NewGetClouds200ResponseZoneNetworkDomainWithDefaults instantiates a new GetClouds200ResponseZoneNetworkDomain object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClouds200ResponseZoneNetworkDomainWithDefaults() *GetClouds200ResponseZoneNetworkDomain {
-	this := GetClouds200ResponseZoneNetworkDomain{}
-	return &this
-}
-
 func (o GetClouds200ResponseZoneNetworkDomain) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

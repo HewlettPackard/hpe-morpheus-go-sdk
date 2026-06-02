@@ -53,14 +53,6 @@ type GetOsType200ResponseOsType struct {
 
 type _GetOsType200ResponseOsType GetOsType200ResponseOsType
 
-// NewGetOsType200ResponseOsTypeWithDefaults instantiates a new GetOsType200ResponseOsType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetOsType200ResponseOsTypeWithDefaults() *GetOsType200ResponseOsType {
-	this := GetOsType200ResponseOsType{}
-	return &this
-}
-
 func (o GetOsType200ResponseOsType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

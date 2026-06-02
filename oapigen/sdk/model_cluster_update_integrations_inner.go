@@ -27,14 +27,6 @@ type ClusterUpdateIntegrationsInner struct {
 
 type _ClusterUpdateIntegrationsInner ClusterUpdateIntegrationsInner
 
-// NewClusterUpdateIntegrationsInnerWithDefaults instantiates a new ClusterUpdateIntegrationsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterUpdateIntegrationsInnerWithDefaults() *ClusterUpdateIntegrationsInner {
-	this := ClusterUpdateIntegrationsInner{}
-	return &this
-}
-
 func (o ClusterUpdateIntegrationsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

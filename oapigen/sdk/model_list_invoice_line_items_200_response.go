@@ -28,14 +28,6 @@ type ListInvoiceLineItems200Response struct {
 
 type _ListInvoiceLineItems200Response ListInvoiceLineItems200Response
 
-// NewListInvoiceLineItems200ResponseWithDefaults instantiates a new ListInvoiceLineItems200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListInvoiceLineItems200ResponseWithDefaults() *ListInvoiceLineItems200Response {
-	this := ListInvoiceLineItems200Response{}
-	return &this
-}
-
 func (o ListInvoiceLineItems200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

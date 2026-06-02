@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorLoadBalancerWithDefaults
-
-`func NewCreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorLoadBalancerWithDefaults() *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorLoadBalancer`
-
-NewCreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorLoadBalancerWithDefaults instantiates a new CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorLoadBalancer object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorLoadBalancer) GetId() int64`

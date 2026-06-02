@@ -34,16 +34,6 @@ type UpdateTenantRequestAccount struct {
 
 type _UpdateTenantRequestAccount UpdateTenantRequestAccount
 
-// NewUpdateTenantRequestAccountWithDefaults instantiates a new UpdateTenantRequestAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateTenantRequestAccountWithDefaults() *UpdateTenantRequestAccount {
-	this := UpdateTenantRequestAccount{}
-	var currency string = "USD"
-	this.Currency = &currency
-	return &this
-}
-
 func (o UpdateTenantRequestAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

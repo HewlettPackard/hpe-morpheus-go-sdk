@@ -38,14 +38,6 @@ type CatalogType struct {
 
 type _CatalogType CatalogType
 
-// NewCatalogTypeWithDefaults instantiates a new CatalogType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCatalogTypeWithDefaults() *CatalogType {
-	this := CatalogType{}
-	return &this
-}
-
 func (o CatalogType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

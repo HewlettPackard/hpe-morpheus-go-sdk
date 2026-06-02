@@ -35,16 +35,6 @@ type AddInstanceDeployRequestAppDeploy struct {
 
 type _AddInstanceDeployRequestAppDeploy AddInstanceDeployRequestAppDeploy
 
-// NewAddInstanceDeployRequestAppDeployWithDefaults instantiates a new AddInstanceDeployRequestAppDeploy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstanceDeployRequestAppDeployWithDefaults() *AddInstanceDeployRequestAppDeploy {
-	this := AddInstanceDeployRequestAppDeploy{}
-	var stageOnly bool = false
-	this.StageOnly = &stageOnly
-	return &this
-}
-
 func (o AddInstanceDeployRequestAppDeploy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

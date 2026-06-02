@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddBaremetalHost200ResponseServerSourceImageWithDefaults
-
-`func NewAddBaremetalHost200ResponseServerSourceImageWithDefaults() *AddBaremetalHost200ResponseServerSourceImage`
-
-NewAddBaremetalHost200ResponseServerSourceImageWithDefaults instantiates a new AddBaremetalHost200ResponseServerSourceImage object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddBaremetalHost200ResponseServerSourceImage) GetId() int64`

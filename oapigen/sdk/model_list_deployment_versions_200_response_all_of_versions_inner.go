@@ -37,14 +37,6 @@ type ListDeploymentVersions200ResponseAllOfVersionsInner struct {
 
 type _ListDeploymentVersions200ResponseAllOfVersionsInner ListDeploymentVersions200ResponseAllOfVersionsInner
 
-// NewListDeploymentVersions200ResponseAllOfVersionsInnerWithDefaults instantiates a new ListDeploymentVersions200ResponseAllOfVersionsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListDeploymentVersions200ResponseAllOfVersionsInnerWithDefaults() *ListDeploymentVersions200ResponseAllOfVersionsInner {
-	this := ListDeploymentVersions200ResponseAllOfVersionsInner{}
-	return &this
-}
-
 func (o ListDeploymentVersions200ResponseAllOfVersionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

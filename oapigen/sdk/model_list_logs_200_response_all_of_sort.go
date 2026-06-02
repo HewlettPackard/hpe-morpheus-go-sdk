@@ -26,14 +26,6 @@ type ListLogs200ResponseAllOfSort struct {
 
 type _ListLogs200ResponseAllOfSort ListLogs200ResponseAllOfSort
 
-// NewListLogs200ResponseAllOfSortWithDefaults instantiates a new ListLogs200ResponseAllOfSort object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListLogs200ResponseAllOfSortWithDefaults() *ListLogs200ResponseAllOfSort {
-	this := ListLogs200ResponseAllOfSort{}
-	return &this
-}
-
 func (o ListLogs200ResponseAllOfSort) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateCredentialsRequestCredentialOneOf1IntegrationWithDefaults
-
-`func NewUpdateCredentialsRequestCredentialOneOf1IntegrationWithDefaults() *UpdateCredentialsRequestCredentialOneOf1Integration`
-
-NewUpdateCredentialsRequestCredentialOneOf1IntegrationWithDefaults instantiates a new UpdateCredentialsRequestCredentialOneOf1Integration object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateCredentialsRequestCredentialOneOf1Integration) GetId() UpdateCredentialsRequestCredentialOneOf1IntegrationId`

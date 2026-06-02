@@ -26,14 +26,6 @@ type GetCloudFolders200Response struct {
 
 type _GetCloudFolders200Response GetCloudFolders200Response
 
-// NewGetCloudFolders200ResponseWithDefaults instantiates a new GetCloudFolders200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCloudFolders200ResponseWithDefaults() *GetCloudFolders200Response {
-	this := GetCloudFolders200Response{}
-	return &this
-}
-
 func (o GetCloudFolders200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

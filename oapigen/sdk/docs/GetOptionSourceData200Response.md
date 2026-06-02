@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetOptionSourceData200ResponseWithDefaults
-
-`func NewGetOptionSourceData200ResponseWithDefaults() *GetOptionSourceData200Response`
-
-NewGetOptionSourceData200ResponseWithDefaults instantiates a new GetOptionSourceData200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetData
 
 `func (o *GetOptionSourceData200Response) GetData() []map[string]interface{}`

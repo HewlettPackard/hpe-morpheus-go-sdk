@@ -27,14 +27,6 @@ type GetHistory200ResponseProcessProcessType struct {
 
 type _GetHistory200ResponseProcessProcessType GetHistory200ResponseProcessProcessType
 
-// NewGetHistory200ResponseProcessProcessTypeWithDefaults instantiates a new GetHistory200ResponseProcessProcessType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetHistory200ResponseProcessProcessTypeWithDefaults() *GetHistory200ResponseProcessProcessType {
-	this := GetHistory200ResponseProcessProcessType{}
-	return &this
-}
-
 func (o GetHistory200ResponseProcessProcessType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

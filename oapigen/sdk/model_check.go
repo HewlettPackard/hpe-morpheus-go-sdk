@@ -63,14 +63,6 @@ type Check struct {
 
 type _Check Check
 
-// NewCheckWithDefaults instantiates a new Check object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCheckWithDefaults() *Check {
-	this := Check{}
-	return &this
-}
-
 func (o Check) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

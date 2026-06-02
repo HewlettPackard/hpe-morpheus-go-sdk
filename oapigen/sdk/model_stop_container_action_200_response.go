@@ -27,14 +27,6 @@ type StopContainerAction200Response struct {
 
 type _StopContainerAction200Response StopContainerAction200Response
 
-// NewStopContainerAction200ResponseWithDefaults instantiates a new StopContainerAction200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewStopContainerAction200ResponseWithDefaults() *StopContainerAction200Response {
-	this := StopContainerAction200Response{}
-	return &this
-}
-
 func (o StopContainerAction200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

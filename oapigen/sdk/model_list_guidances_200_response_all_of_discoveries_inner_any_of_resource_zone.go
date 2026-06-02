@@ -27,14 +27,6 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceZone struct {
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceZone ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceZone
 
-// NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceZoneWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceZoneWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceZone {
-	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceZone{}
-	return &this
-}
-
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -39,14 +39,6 @@ type ZoneFolder struct {
 
 type _ZoneFolder ZoneFolder
 
-// NewZoneFolderWithDefaults instantiates a new ZoneFolder object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneFolderWithDefaults() *ZoneFolder {
-	this := ZoneFolder{}
-	return &this
-}
-
 func (o ZoneFolder) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

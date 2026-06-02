@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewDeleteChecks200ResponseWithDefaults
-
-`func NewDeleteChecks200ResponseWithDefaults() *DeleteChecks200Response`
-
-NewDeleteChecks200ResponseWithDefaults instantiates a new DeleteChecks200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *DeleteChecks200Response) GetSuccess() bool`

@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateMuteAllCheckAppsRequestWithDefaults
-
-`func NewUpdateMuteAllCheckAppsRequestWithDefaults() *UpdateMuteAllCheckAppsRequest`
-
-NewUpdateMuteAllCheckAppsRequestWithDefaults instantiates a new UpdateMuteAllCheckAppsRequest object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMuted
 
 `func (o *UpdateMuteAllCheckAppsRequest) GetMuted() bool`

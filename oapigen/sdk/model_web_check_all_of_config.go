@@ -49,18 +49,6 @@ type WebCheckAllOfConfig struct {
 
 type _WebCheckAllOfConfig WebCheckAllOfConfig
 
-// NewWebCheckAllOfConfigWithDefaults instantiates a new WebCheckAllOfConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWebCheckAllOfConfigWithDefaults() *WebCheckAllOfConfig {
-	this := WebCheckAllOfConfig{}
-	var ignoreSSL bool = false
-	this.IgnoreSSL = &ignoreSSL
-	var tunnelOn string = "off"
-	this.TunnelOn = &tunnelOn
-	return &this
-}
-
 func (o WebCheckAllOfConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

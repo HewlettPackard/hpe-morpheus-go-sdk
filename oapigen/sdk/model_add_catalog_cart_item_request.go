@@ -26,14 +26,6 @@ type AddCatalogCartItemRequest struct {
 
 type _AddCatalogCartItemRequest AddCatalogCartItemRequest
 
-// NewAddCatalogCartItemRequestWithDefaults instantiates a new AddCatalogCartItemRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCatalogCartItemRequestWithDefaults() *AddCatalogCartItemRequest {
-	this := AddCatalogCartItemRequest{}
-	return &this
-}
-
 func (o AddCatalogCartItemRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

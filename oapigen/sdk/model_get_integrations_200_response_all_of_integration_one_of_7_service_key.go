@@ -27,14 +27,6 @@ type GetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKey struct {
 
 type _GetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKey GetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKey
 
-// NewGetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKeyWithDefaults instantiates a new GetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKey object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKeyWithDefaults() *GetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKey {
-	this := GetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKey{}
-	return &this
-}
-
 func (o GetIntegrations200ResponseAllOfIntegrationOneOf7ServiceKey) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

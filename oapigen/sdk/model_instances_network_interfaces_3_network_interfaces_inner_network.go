@@ -28,14 +28,6 @@ type InstancesNetworkInterfaces3NetworkInterfacesInnerNetwork struct {
 
 type _InstancesNetworkInterfaces3NetworkInterfacesInnerNetwork InstancesNetworkInterfaces3NetworkInterfacesInnerNetwork
 
-// NewInstancesNetworkInterfaces3NetworkInterfacesInnerNetworkWithDefaults instantiates a new InstancesNetworkInterfaces3NetworkInterfacesInnerNetwork object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstancesNetworkInterfaces3NetworkInterfacesInnerNetworkWithDefaults() *InstancesNetworkInterfaces3NetworkInterfacesInnerNetwork {
-	this := InstancesNetworkInterfaces3NetworkInterfacesInnerNetwork{}
-	return &this
-}
-
 func (o InstancesNetworkInterfaces3NetworkInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -29,16 +29,6 @@ type NetworkPoolServerCreatePhpIpamConfig struct {
 
 type _NetworkPoolServerCreatePhpIpamConfig NetworkPoolServerCreatePhpIpamConfig
 
-// NewNetworkPoolServerCreatePhpIpamConfigWithDefaults instantiates a new NetworkPoolServerCreatePhpIpamConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkPoolServerCreatePhpIpamConfigWithDefaults() *NetworkPoolServerCreatePhpIpamConfig {
-	this := NetworkPoolServerCreatePhpIpamConfig{}
-	var inventoryExisting string = "off"
-	this.InventoryExisting = &inventoryExisting
-	return &this
-}
-
 func (o NetworkPoolServerCreatePhpIpamConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -63,14 +63,6 @@ type LineItem struct {
 
 type _LineItem LineItem
 
-// NewLineItemWithDefaults instantiates a new LineItem object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLineItemWithDefaults() *LineItem {
-	this := LineItem{}
-	return &this
-}
-
 func (o LineItem) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type AddInstanceRequestInstanceLayout struct {
 
 type _AddInstanceRequestInstanceLayout AddInstanceRequestInstanceLayout
 
-// NewAddInstanceRequestInstanceLayoutWithDefaults instantiates a new AddInstanceRequestInstanceLayout object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstanceRequestInstanceLayoutWithDefaults() *AddInstanceRequestInstanceLayout {
-	this := AddInstanceRequestInstanceLayout{}
-	return &this
-}
-
 func (o AddInstanceRequestInstanceLayout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerNe
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerNetworkPool ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerNetworkPool
 
-// NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerNetworkPoolWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerNetworkPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerNetworkPoolWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerNetworkPool {
-	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerNetworkPool{}
-	return &this
-}
-
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerNetworkPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

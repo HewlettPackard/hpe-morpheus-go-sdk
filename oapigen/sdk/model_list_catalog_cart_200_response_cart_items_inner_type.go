@@ -28,14 +28,6 @@ type ListCatalogCart200ResponseCartItemsInnerType struct {
 
 type _ListCatalogCart200ResponseCartItemsInnerType ListCatalogCart200ResponseCartItemsInnerType
 
-// NewListCatalogCart200ResponseCartItemsInnerTypeWithDefaults instantiates a new ListCatalogCart200ResponseCartItemsInnerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCatalogCart200ResponseCartItemsInnerTypeWithDefaults() *ListCatalogCart200ResponseCartItemsInnerType {
-	this := ListCatalogCart200ResponseCartItemsInnerType{}
-	return &this
-}
-
 func (o ListCatalogCart200ResponseCartItemsInnerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

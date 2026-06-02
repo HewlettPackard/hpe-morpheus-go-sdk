@@ -26,14 +26,6 @@ type NetworkInterfaceUpdateSuccessServerInterfacesInnerNetwork struct {
 
 type _NetworkInterfaceUpdateSuccessServerInterfacesInnerNetwork NetworkInterfaceUpdateSuccessServerInterfacesInnerNetwork
 
-// NewNetworkInterfaceUpdateSuccessServerInterfacesInnerNetworkWithDefaults instantiates a new NetworkInterfaceUpdateSuccessServerInterfacesInnerNetwork object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkInterfaceUpdateSuccessServerInterfacesInnerNetworkWithDefaults() *NetworkInterfaceUpdateSuccessServerInterfacesInnerNetwork {
-	this := NetworkInterfaceUpdateSuccessServerInterfacesInnerNetwork{}
-	return &this
-}
-
 func (o NetworkInterfaceUpdateSuccessServerInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type Model503Error struct {
 
 type _Model503Error Model503Error
 
-// NewModel503ErrorWithDefaults instantiates a new Model503Error object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewModel503ErrorWithDefaults() *Model503Error {
-	this := Model503Error{}
-	return &this
-}
-
 func (o Model503Error) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

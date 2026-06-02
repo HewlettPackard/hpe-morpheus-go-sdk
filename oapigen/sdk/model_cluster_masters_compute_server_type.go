@@ -30,14 +30,6 @@ type ClusterMastersComputeServerType struct {
 
 type _ClusterMastersComputeServerType ClusterMastersComputeServerType
 
-// NewClusterMastersComputeServerTypeWithDefaults instantiates a new ClusterMastersComputeServerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterMastersComputeServerTypeWithDefaults() *ClusterMastersComputeServerType {
-	this := ClusterMastersComputeServerType{}
-	return &this
-}
-
 func (o ClusterMastersComputeServerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

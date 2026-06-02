@@ -31,14 +31,6 @@ type ApplyTemplateRequest struct {
 
 type _ApplyTemplateRequest ApplyTemplateRequest
 
-// NewApplyTemplateRequestWithDefaults instantiates a new ApplyTemplateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewApplyTemplateRequestWithDefaults() *ApplyTemplateRequest {
-	this := ApplyTemplateRequest{}
-	return &this
-}
-
 func (o ApplyTemplateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

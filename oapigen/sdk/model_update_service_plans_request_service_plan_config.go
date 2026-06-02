@@ -30,18 +30,6 @@ type UpdateServicePlansRequestServicePlanConfig struct {
 
 type _UpdateServicePlansRequestServicePlanConfig UpdateServicePlansRequestServicePlanConfig
 
-// NewUpdateServicePlansRequestServicePlanConfigWithDefaults instantiates a new UpdateServicePlansRequestServicePlanConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateServicePlansRequestServicePlanConfigWithDefaults() *UpdateServicePlansRequestServicePlanConfig {
-	this := UpdateServicePlansRequestServicePlanConfig{}
-	var storageSizeType string = "gb"
-	this.StorageSizeType = &storageSizeType
-	var memorySizeType string = "mb"
-	this.MemorySizeType = &memorySizeType
-	return &this
-}
-
 func (o UpdateServicePlansRequestServicePlanConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

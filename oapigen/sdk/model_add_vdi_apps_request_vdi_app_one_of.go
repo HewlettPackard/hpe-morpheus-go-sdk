@@ -34,14 +34,6 @@ type AddVDIAppsRequestVdiAppOneOf struct {
 
 type _AddVDIAppsRequestVdiAppOneOf AddVDIAppsRequestVdiAppOneOf
 
-// NewAddVDIAppsRequestVdiAppOneOfWithDefaults instantiates a new AddVDIAppsRequestVdiAppOneOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddVDIAppsRequestVdiAppOneOfWithDefaults() *AddVDIAppsRequestVdiAppOneOf {
-	this := AddVDIAppsRequestVdiAppOneOf{}
-	return &this
-}
-
 func (o AddVDIAppsRequestVdiAppOneOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

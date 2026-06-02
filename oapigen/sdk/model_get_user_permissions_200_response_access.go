@@ -36,14 +36,6 @@ type GetUserPermissions200ResponseAccess struct {
 
 type _GetUserPermissions200ResponseAccess GetUserPermissions200ResponseAccess
 
-// NewGetUserPermissions200ResponseAccessWithDefaults instantiates a new GetUserPermissions200ResponseAccess object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetUserPermissions200ResponseAccessWithDefaults() *GetUserPermissions200ResponseAccess {
-	this := GetUserPermissions200ResponseAccess{}
-	return &this
-}
-
 func (o GetUserPermissions200ResponseAccess) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

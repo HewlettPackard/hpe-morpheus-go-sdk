@@ -28,14 +28,6 @@ type CreateNetworkServerGroupRequestGroupPermissionsResourcePool struct {
 
 type _CreateNetworkServerGroupRequestGroupPermissionsResourcePool CreateNetworkServerGroupRequestGroupPermissionsResourcePool
 
-// NewCreateNetworkServerGroupRequestGroupPermissionsResourcePoolWithDefaults instantiates a new CreateNetworkServerGroupRequestGroupPermissionsResourcePool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkServerGroupRequestGroupPermissionsResourcePoolWithDefaults() *CreateNetworkServerGroupRequestGroupPermissionsResourcePool {
-	this := CreateNetworkServerGroupRequestGroupPermissionsResourcePool{}
-	return &this
-}
-
 func (o CreateNetworkServerGroupRequestGroupPermissionsResourcePool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

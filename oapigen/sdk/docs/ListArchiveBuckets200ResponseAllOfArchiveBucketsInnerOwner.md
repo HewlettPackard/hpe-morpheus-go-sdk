@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListArchiveBuckets200ResponseAllOfArchiveBucketsInnerOwnerWithDefaults
-
-`func NewListArchiveBuckets200ResponseAllOfArchiveBucketsInnerOwnerWithDefaults() *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerOwner`
-
-NewListArchiveBuckets200ResponseAllOfArchiveBucketsInnerOwnerWithDefaults instantiates a new ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerOwner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerOwner) GetId() int64`

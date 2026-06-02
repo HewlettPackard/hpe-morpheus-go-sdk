@@ -28,14 +28,6 @@ type GetCluster200ResponseClusterZone struct {
 
 type _GetCluster200ResponseClusterZone GetCluster200ResponseClusterZone
 
-// NewGetCluster200ResponseClusterZoneWithDefaults instantiates a new GetCluster200ResponseClusterZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCluster200ResponseClusterZoneWithDefaults() *GetCluster200ResponseClusterZone {
-	this := GetCluster200ResponseClusterZone{}
-	return &this
-}
-
 func (o GetCluster200ResponseClusterZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

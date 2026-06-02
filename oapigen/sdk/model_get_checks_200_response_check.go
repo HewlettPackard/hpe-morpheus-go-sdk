@@ -63,14 +63,6 @@ type GetChecks200ResponseCheck struct {
 
 type _GetChecks200ResponseCheck GetChecks200ResponseCheck
 
-// NewGetChecks200ResponseCheckWithDefaults instantiates a new GetChecks200ResponseCheck object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetChecks200ResponseCheckWithDefaults() *GetChecks200ResponseCheck {
-	this := GetChecks200ResponseCheck{}
-	return &this
-}
-
 func (o GetChecks200ResponseCheck) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

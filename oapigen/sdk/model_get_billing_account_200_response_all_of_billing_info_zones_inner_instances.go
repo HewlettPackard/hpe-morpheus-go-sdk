@@ -29,14 +29,6 @@ type GetBillingAccount200ResponseAllOfBillingInfoZonesInnerInstances struct {
 
 type _GetBillingAccount200ResponseAllOfBillingInfoZonesInnerInstances GetBillingAccount200ResponseAllOfBillingInfoZonesInnerInstances
 
-// NewGetBillingAccount200ResponseAllOfBillingInfoZonesInnerInstancesWithDefaults instantiates a new GetBillingAccount200ResponseAllOfBillingInfoZonesInnerInstances object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetBillingAccount200ResponseAllOfBillingInfoZonesInnerInstancesWithDefaults() *GetBillingAccount200ResponseAllOfBillingInfoZonesInnerInstances {
-	this := GetBillingAccount200ResponseAllOfBillingInfoZonesInnerInstances{}
-	return &this
-}
-
 func (o GetBillingAccount200ResponseAllOfBillingInfoZonesInnerInstances) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

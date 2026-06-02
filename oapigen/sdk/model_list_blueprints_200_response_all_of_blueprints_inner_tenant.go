@@ -27,14 +27,6 @@ type ListBlueprints200ResponseAllOfBlueprintsInnerTenant struct {
 
 type _ListBlueprints200ResponseAllOfBlueprintsInnerTenant ListBlueprints200ResponseAllOfBlueprintsInnerTenant
 
-// NewListBlueprints200ResponseAllOfBlueprintsInnerTenantWithDefaults instantiates a new ListBlueprints200ResponseAllOfBlueprintsInnerTenant object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListBlueprints200ResponseAllOfBlueprintsInnerTenantWithDefaults() *ListBlueprints200ResponseAllOfBlueprintsInnerTenant {
-	this := ListBlueprints200ResponseAllOfBlueprintsInnerTenant{}
-	return &this
-}
-
 func (o ListBlueprints200ResponseAllOfBlueprintsInnerTenant) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

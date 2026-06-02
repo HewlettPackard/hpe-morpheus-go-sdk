@@ -27,14 +27,6 @@ type AddBaremetalHost200ResponseServerOwner struct {
 
 type _AddBaremetalHost200ResponseServerOwner AddBaremetalHost200ResponseServerOwner
 
-// NewAddBaremetalHost200ResponseServerOwnerWithDefaults instantiates a new AddBaremetalHost200ResponseServerOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBaremetalHost200ResponseServerOwnerWithDefaults() *AddBaremetalHost200ResponseServerOwner {
-	this := AddBaremetalHost200ResponseServerOwner{}
-	return &this
-}
-
 func (o AddBaremetalHost200ResponseServerOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

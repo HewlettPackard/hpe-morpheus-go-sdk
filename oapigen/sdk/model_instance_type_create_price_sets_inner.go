@@ -27,14 +27,6 @@ type InstanceTypeCreatePriceSetsInner struct {
 
 type _InstanceTypeCreatePriceSetsInner InstanceTypeCreatePriceSetsInner
 
-// NewInstanceTypeCreatePriceSetsInnerWithDefaults instantiates a new InstanceTypeCreatePriceSetsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceTypeCreatePriceSetsInnerWithDefaults() *InstanceTypeCreatePriceSetsInner {
-	this := InstanceTypeCreatePriceSetsInner{}
-	return &this
-}
-
 func (o InstanceTypeCreatePriceSetsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

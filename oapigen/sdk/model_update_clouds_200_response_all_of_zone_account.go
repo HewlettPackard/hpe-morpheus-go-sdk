@@ -27,14 +27,6 @@ type UpdateClouds200ResponseAllOfZoneAccount struct {
 
 type _UpdateClouds200ResponseAllOfZoneAccount UpdateClouds200ResponseAllOfZoneAccount
 
-// NewUpdateClouds200ResponseAllOfZoneAccountWithDefaults instantiates a new UpdateClouds200ResponseAllOfZoneAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateClouds200ResponseAllOfZoneAccountWithDefaults() *UpdateClouds200ResponseAllOfZoneAccount {
-	this := UpdateClouds200ResponseAllOfZoneAccount{}
-	return &this
-}
-
 func (o UpdateClouds200ResponseAllOfZoneAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

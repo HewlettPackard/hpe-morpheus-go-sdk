@@ -47,14 +47,6 @@ type GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner struct {
 
 type _GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner
 
-// NewGetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerWithDefaults instantiates a new GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerWithDefaults() *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner {
-	this := GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner{}
-	return &this
-}
-
 func (o GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

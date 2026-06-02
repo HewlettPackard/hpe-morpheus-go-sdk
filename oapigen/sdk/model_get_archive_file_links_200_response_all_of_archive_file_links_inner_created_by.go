@@ -26,14 +26,6 @@ type GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy struct {
 
 type _GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy
 
-// NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedByWithDefaults instantiates a new GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedByWithDefaults() *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy {
-	this := GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy{}
-	return &this
-}
-
 func (o GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

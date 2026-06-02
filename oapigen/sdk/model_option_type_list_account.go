@@ -27,14 +27,6 @@ type OptionTypeListAccount struct {
 
 type _OptionTypeListAccount OptionTypeListAccount
 
-// NewOptionTypeListAccountWithDefaults instantiates a new OptionTypeListAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOptionTypeListAccountWithDefaults() *OptionTypeListAccount {
-	this := OptionTypeListAccount{}
-	return &this
-}
-
 func (o OptionTypeListAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

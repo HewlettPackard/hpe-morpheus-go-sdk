@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListVDIAllocations200ResponseAllOfVdiAllocationsInnerUserWithDefaults
-
-`func NewListVDIAllocations200ResponseAllOfVdiAllocationsInnerUserWithDefaults() *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser`
-
-NewListVDIAllocations200ResponseAllOfVdiAllocationsInnerUserWithDefaults instantiates a new ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) GetId() int64`

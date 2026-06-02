@@ -27,14 +27,6 @@ type NetworkFirewallRuleUpdateConfig struct {
 
 type _NetworkFirewallRuleUpdateConfig NetworkFirewallRuleUpdateConfig
 
-// NewNetworkFirewallRuleUpdateConfigWithDefaults instantiates a new NetworkFirewallRuleUpdateConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkFirewallRuleUpdateConfigWithDefaults() *NetworkFirewallRuleUpdateConfig {
-	this := NetworkFirewallRuleUpdateConfig{}
-	return &this
-}
-
 func (o NetworkFirewallRuleUpdateConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

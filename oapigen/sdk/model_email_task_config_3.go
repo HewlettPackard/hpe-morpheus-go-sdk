@@ -36,14 +36,6 @@ type EmailTaskConfig3 struct {
 
 type _EmailTaskConfig3 EmailTaskConfig3
 
-// NewEmailTaskConfig3WithDefaults instantiates a new EmailTaskConfig3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewEmailTaskConfig3WithDefaults() *EmailTaskConfig3 {
-	this := EmailTaskConfig3{}
-	return &this
-}
-
 func (o EmailTaskConfig3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

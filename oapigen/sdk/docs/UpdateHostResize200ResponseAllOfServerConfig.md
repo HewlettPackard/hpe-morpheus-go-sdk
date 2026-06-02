@@ -27,14 +27,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateHostResize200ResponseAllOfServerConfigWithDefaults
-
-`func NewUpdateHostResize200ResponseAllOfServerConfigWithDefaults() *UpdateHostResize200ResponseAllOfServerConfig`
-
-NewUpdateHostResize200ResponseAllOfServerConfigWithDefaults instantiates a new UpdateHostResize200ResponseAllOfServerConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPoolProviderType
 
 `func (o *UpdateHostResize200ResponseAllOfServerConfig) GetPoolProviderType() string`

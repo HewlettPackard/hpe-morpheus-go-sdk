@@ -26,14 +26,6 @@ type ListHosts200ResponseAllOfServersInnerSshKeyPair struct {
 
 type _ListHosts200ResponseAllOfServersInnerSshKeyPair ListHosts200ResponseAllOfServersInnerSshKeyPair
 
-// NewListHosts200ResponseAllOfServersInnerSshKeyPairWithDefaults instantiates a new ListHosts200ResponseAllOfServersInnerSshKeyPair object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListHosts200ResponseAllOfServersInnerSshKeyPairWithDefaults() *ListHosts200ResponseAllOfServersInnerSshKeyPair {
-	this := ListHosts200ResponseAllOfServersInnerSshKeyPair{}
-	return &this
-}
-
 func (o ListHosts200ResponseAllOfServersInnerSshKeyPair) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

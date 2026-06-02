@@ -44,14 +44,6 @@ type GetOptionList200ResponseOptionTypesInner struct {
 
 type _GetOptionList200ResponseOptionTypesInner GetOptionList200ResponseOptionTypesInner
 
-// NewGetOptionList200ResponseOptionTypesInnerWithDefaults instantiates a new GetOptionList200ResponseOptionTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetOptionList200ResponseOptionTypesInnerWithDefaults() *GetOptionList200ResponseOptionTypesInner {
-	this := GetOptionList200ResponseOptionTypesInner{}
-	return &this
-}
-
 func (o GetOptionList200ResponseOptionTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -34,16 +34,6 @@ type IntegrationConfigIntegration struct {
 
 type _IntegrationConfigIntegration IntegrationConfigIntegration
 
-// NewIntegrationConfigIntegrationWithDefaults instantiates a new IntegrationConfigIntegration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationConfigIntegrationWithDefaults() *IntegrationConfigIntegration {
-	this := IntegrationConfigIntegration{}
-	var refresh bool = true
-	this.Refresh = &refresh
-	return &this
-}
-
 func (o IntegrationConfigIntegration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

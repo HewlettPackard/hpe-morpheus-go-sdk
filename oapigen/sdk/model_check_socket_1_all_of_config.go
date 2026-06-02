@@ -48,16 +48,6 @@ type CheckSocket1AllOfConfig struct {
 
 type _CheckSocket1AllOfConfig CheckSocket1AllOfConfig
 
-// NewCheckSocket1AllOfConfigWithDefaults instantiates a new CheckSocket1AllOfConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCheckSocket1AllOfConfigWithDefaults() *CheckSocket1AllOfConfig {
-	this := CheckSocket1AllOfConfig{}
-	var tunnelOn string = "off"
-	this.TunnelOn = &tunnelOn
-	return &this
-}
-
 func (o CheckSocket1AllOfConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

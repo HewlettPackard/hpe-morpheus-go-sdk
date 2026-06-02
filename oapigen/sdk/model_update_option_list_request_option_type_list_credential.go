@@ -27,14 +27,6 @@ type UpdateOptionListRequestOptionTypeListCredential struct {
 
 type _UpdateOptionListRequestOptionTypeListCredential UpdateOptionListRequestOptionTypeListCredential
 
-// NewUpdateOptionListRequestOptionTypeListCredentialWithDefaults instantiates a new UpdateOptionListRequestOptionTypeListCredential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateOptionListRequestOptionTypeListCredentialWithDefaults() *UpdateOptionListRequestOptionTypeListCredential {
-	this := UpdateOptionListRequestOptionTypeListCredential{}
-	return &this
-}
-
 func (o UpdateOptionListRequestOptionTypeListCredential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

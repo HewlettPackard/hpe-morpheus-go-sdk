@@ -28,14 +28,6 @@ type ListProvisioningSettings200ResponseProvisioningSettingsDefaultTemplateType 
 
 type _ListProvisioningSettings200ResponseProvisioningSettingsDefaultTemplateType ListProvisioningSettings200ResponseProvisioningSettingsDefaultTemplateType
 
-// NewListProvisioningSettings200ResponseProvisioningSettingsDefaultTemplateTypeWithDefaults instantiates a new ListProvisioningSettings200ResponseProvisioningSettingsDefaultTemplateType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListProvisioningSettings200ResponseProvisioningSettingsDefaultTemplateTypeWithDefaults() *ListProvisioningSettings200ResponseProvisioningSettingsDefaultTemplateType {
-	this := ListProvisioningSettings200ResponseProvisioningSettingsDefaultTemplateType{}
-	return &this
-}
-
 func (o ListProvisioningSettings200ResponseProvisioningSettingsDefaultTemplateType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

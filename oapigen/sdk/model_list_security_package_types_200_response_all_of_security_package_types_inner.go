@@ -31,14 +31,6 @@ type ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner struct {
 
 type _ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner
 
-// NewListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInnerWithDefaults instantiates a new ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInnerWithDefaults() *ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner {
-	this := ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner{}
-	return &this
-}
-
 func (o ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

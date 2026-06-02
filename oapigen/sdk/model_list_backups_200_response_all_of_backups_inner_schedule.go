@@ -31,14 +31,6 @@ type ListBackups200ResponseAllOfBackupsInnerSchedule struct {
 
 type _ListBackups200ResponseAllOfBackupsInnerSchedule ListBackups200ResponseAllOfBackupsInnerSchedule
 
-// NewListBackups200ResponseAllOfBackupsInnerScheduleWithDefaults instantiates a new ListBackups200ResponseAllOfBackupsInnerSchedule object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListBackups200ResponseAllOfBackupsInnerScheduleWithDefaults() *ListBackups200ResponseAllOfBackupsInnerSchedule {
-	this := ListBackups200ResponseAllOfBackupsInnerSchedule{}
-	return &this
-}
-
 func (o ListBackups200ResponseAllOfBackupsInnerSchedule) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

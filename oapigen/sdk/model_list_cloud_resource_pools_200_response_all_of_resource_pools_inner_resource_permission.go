@@ -33,14 +33,6 @@ type ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission 
 
 type _ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission
 
-// NewListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermissionWithDefaults instantiates a new ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermissionWithDefaults() *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission {
-	this := ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission{}
-	return &this
-}
-
 func (o ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -57,16 +57,6 @@ type SqlCheckAllOfConfig struct {
 
 type _SqlCheckAllOfConfig SqlCheckAllOfConfig
 
-// NewSqlCheckAllOfConfigWithDefaults instantiates a new SqlCheckAllOfConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSqlCheckAllOfConfigWithDefaults() *SqlCheckAllOfConfig {
-	this := SqlCheckAllOfConfig{}
-	var tunnelOn string = "off"
-	this.TunnelOn = &tunnelOn
-	return &this
-}
-
 func (o SqlCheckAllOfConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

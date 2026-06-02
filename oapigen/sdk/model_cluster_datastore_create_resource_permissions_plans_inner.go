@@ -28,14 +28,6 @@ type ClusterDatastoreCreateResourcePermissionsPlansInner struct {
 
 type _ClusterDatastoreCreateResourcePermissionsPlansInner ClusterDatastoreCreateResourcePermissionsPlansInner
 
-// NewClusterDatastoreCreateResourcePermissionsPlansInnerWithDefaults instantiates a new ClusterDatastoreCreateResourcePermissionsPlansInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterDatastoreCreateResourcePermissionsPlansInnerWithDefaults() *ClusterDatastoreCreateResourcePermissionsPlansInner {
-	this := ClusterDatastoreCreateResourcePermissionsPlansInner{}
-	return &this
-}
-
 func (o ClusterDatastoreCreateResourcePermissionsPlansInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

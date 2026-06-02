@@ -55,20 +55,6 @@ type AddLayoutRequestInstanceTypeLayout struct {
 
 type _AddLayoutRequestInstanceTypeLayout AddLayoutRequestInstanceTypeLayout
 
-// NewAddLayoutRequestInstanceTypeLayoutWithDefaults instantiates a new AddLayoutRequestInstanceTypeLayout object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLayoutRequestInstanceTypeLayoutWithDefaults() *AddLayoutRequestInstanceTypeLayout {
-	this := AddLayoutRequestInstanceTypeLayout{}
-	var creatable bool = true
-	this.Creatable = &creatable
-	var hasAutoScale bool = false
-	this.HasAutoScale = &hasAutoScale
-	var supportsConvertToManaged bool = false
-	this.SupportsConvertToManaged = &supportsConvertToManaged
-	return &this
-}
-
 func (o AddLayoutRequestInstanceTypeLayout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

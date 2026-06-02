@@ -33,18 +33,6 @@ type AddClusterLayoutsRequestLayoutEnvironmentVariablesInner struct {
 
 type _AddClusterLayoutsRequestLayoutEnvironmentVariablesInner AddClusterLayoutsRequestLayoutEnvironmentVariablesInner
 
-// NewAddClusterLayoutsRequestLayoutEnvironmentVariablesInnerWithDefaults instantiates a new AddClusterLayoutsRequestLayoutEnvironmentVariablesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterLayoutsRequestLayoutEnvironmentVariablesInnerWithDefaults() *AddClusterLayoutsRequestLayoutEnvironmentVariablesInner {
-	this := AddClusterLayoutsRequestLayoutEnvironmentVariablesInner{}
-	var masked bool = false
-	this.Masked = &masked
-	var export bool = false
-	this.Export = &export
-	return &this
-}
-
 func (o AddClusterLayoutsRequestLayoutEnvironmentVariablesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

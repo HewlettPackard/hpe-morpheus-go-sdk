@@ -28,14 +28,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateClusterAffinityGroup200ResponseAllOfAffinityGroupWithDefaults
-
-`func NewUpdateClusterAffinityGroup200ResponseAllOfAffinityGroupWithDefaults() *UpdateClusterAffinityGroup200ResponseAllOfAffinityGroup`
-
-NewUpdateClusterAffinityGroup200ResponseAllOfAffinityGroupWithDefaults instantiates a new UpdateClusterAffinityGroup200ResponseAllOfAffinityGroup object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateClusterAffinityGroup200ResponseAllOfAffinityGroup) GetId() int64`

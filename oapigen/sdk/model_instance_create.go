@@ -56,18 +56,6 @@ type InstanceCreate struct {
 
 type _InstanceCreate InstanceCreate
 
-// NewInstanceCreateWithDefaults instantiates a new InstanceCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceCreateWithDefaults() *InstanceCreate {
-	this := InstanceCreate{}
-	var copies int64 = 1
-	this.Copies = &copies
-	var layoutSize int64 = 1
-	this.LayoutSize = &layoutSize
-	return &this
-}
-
 func (o InstanceCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

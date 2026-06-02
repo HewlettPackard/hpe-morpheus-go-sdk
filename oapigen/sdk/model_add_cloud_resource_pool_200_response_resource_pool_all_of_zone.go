@@ -27,14 +27,6 @@ type AddCloudResourcePool200ResponseResourcePoolAllOfZone struct {
 
 type _AddCloudResourcePool200ResponseResourcePoolAllOfZone AddCloudResourcePool200ResponseResourcePoolAllOfZone
 
-// NewAddCloudResourcePool200ResponseResourcePoolAllOfZoneWithDefaults instantiates a new AddCloudResourcePool200ResponseResourcePoolAllOfZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCloudResourcePool200ResponseResourcePoolAllOfZoneWithDefaults() *AddCloudResourcePool200ResponseResourcePoolAllOfZone {
-	this := AddCloudResourcePool200ResponseResourcePoolAllOfZone{}
-	return &this
-}
-
 func (o AddCloudResourcePool200ResponseResourcePoolAllOfZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

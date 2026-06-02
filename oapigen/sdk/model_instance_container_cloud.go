@@ -27,14 +27,6 @@ type InstanceContainerCloud struct {
 
 type _InstanceContainerCloud InstanceContainerCloud
 
-// NewInstanceContainerCloudWithDefaults instantiates a new InstanceContainerCloud object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainerCloudWithDefaults() *InstanceContainerCloud {
-	this := InstanceContainerCloud{}
-	return &this
-}
-
 func (o InstanceContainerCloud) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

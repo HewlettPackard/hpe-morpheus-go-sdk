@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListCodeRepositories200ResponseWithDefaults
-
-`func NewListCodeRepositories200ResponseWithDefaults() *ListCodeRepositories200Response`
-
-NewListCodeRepositories200ResponseWithDefaults instantiates a new ListCodeRepositories200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *ListCodeRepositories200Response) GetSuccess() bool`

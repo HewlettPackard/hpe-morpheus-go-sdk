@@ -29,14 +29,6 @@ type Search struct {
 
 type _Search Search
 
-// NewSearchWithDefaults instantiates a new Search object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSearchWithDefaults() *Search {
-	this := Search{}
-	return &this
-}
-
 func (o Search) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

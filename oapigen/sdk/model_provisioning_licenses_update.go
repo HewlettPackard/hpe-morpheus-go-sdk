@@ -37,16 +37,6 @@ type ProvisioningLicensesUpdate struct {
 
 type _ProvisioningLicensesUpdate ProvisioningLicensesUpdate
 
-// NewProvisioningLicensesUpdateWithDefaults instantiates a new ProvisioningLicensesUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewProvisioningLicensesUpdateWithDefaults() *ProvisioningLicensesUpdate {
-	this := ProvisioningLicensesUpdate{}
-	var copies int64 = 1
-	this.Copies = &copies
-	return &this
-}
-
 func (o ProvisioningLicensesUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

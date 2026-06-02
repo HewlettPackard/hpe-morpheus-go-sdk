@@ -27,14 +27,6 @@ type ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFileReposito
 
 type _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFileRepository ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFileRepository
 
-// NewListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFileRepositoryWithDefaults instantiates a new ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFileRepository object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFileRepositoryWithDefaults() *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFileRepository {
-	this := ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFileRepository{}
-	return &this
-}
-
 func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFileRepository) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

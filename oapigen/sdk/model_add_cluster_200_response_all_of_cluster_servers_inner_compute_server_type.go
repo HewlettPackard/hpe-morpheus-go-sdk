@@ -28,14 +28,6 @@ type AddCluster200ResponseAllOfClusterServersInnerComputeServerType struct {
 
 type _AddCluster200ResponseAllOfClusterServersInnerComputeServerType AddCluster200ResponseAllOfClusterServersInnerComputeServerType
 
-// NewAddCluster200ResponseAllOfClusterServersInnerComputeServerTypeWithDefaults instantiates a new AddCluster200ResponseAllOfClusterServersInnerComputeServerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCluster200ResponseAllOfClusterServersInnerComputeServerTypeWithDefaults() *AddCluster200ResponseAllOfClusterServersInnerComputeServerType {
-	this := AddCluster200ResponseAllOfClusterServersInnerComputeServerType{}
-	return &this
-}
-
 func (o AddCluster200ResponseAllOfClusterServersInnerComputeServerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

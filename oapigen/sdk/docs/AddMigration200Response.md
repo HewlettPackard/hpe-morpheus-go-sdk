@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddMigration200ResponseWithDefaults
-
-`func NewAddMigration200ResponseWithDefaults() *AddMigration200Response`
-
-NewAddMigration200ResponseWithDefaults instantiates a new AddMigration200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMigration
 
 `func (o *AddMigration200Response) GetMigration() AddMigration200ResponseAnyOfMigration`

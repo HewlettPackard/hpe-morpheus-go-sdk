@@ -27,14 +27,6 @@ type UpdateHostCloudRequestServersInner struct {
 
 type _UpdateHostCloudRequestServersInner UpdateHostCloudRequestServersInner
 
-// NewUpdateHostCloudRequestServersInnerWithDefaults instantiates a new UpdateHostCloudRequestServersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateHostCloudRequestServersInnerWithDefaults() *UpdateHostCloudRequestServersInner {
-	this := UpdateHostCloudRequestServersInner{}
-	return &this
-}
-
 func (o UpdateHostCloudRequestServersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

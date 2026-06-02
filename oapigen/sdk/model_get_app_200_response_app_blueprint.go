@@ -28,14 +28,6 @@ type GetApp200ResponseAppBlueprint struct {
 
 type _GetApp200ResponseAppBlueprint GetApp200ResponseAppBlueprint
 
-// NewGetApp200ResponseAppBlueprintWithDefaults instantiates a new GetApp200ResponseAppBlueprint object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetApp200ResponseAppBlueprintWithDefaults() *GetApp200ResponseAppBlueprint {
-	this := GetApp200ResponseAppBlueprint{}
-	return &this
-}
-
 func (o GetApp200ResponseAppBlueprint) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

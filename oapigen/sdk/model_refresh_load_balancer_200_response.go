@@ -28,14 +28,6 @@ type RefreshLoadBalancer200Response struct {
 
 type _RefreshLoadBalancer200Response RefreshLoadBalancer200Response
 
-// NewRefreshLoadBalancer200ResponseWithDefaults instantiates a new RefreshLoadBalancer200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRefreshLoadBalancer200ResponseWithDefaults() *RefreshLoadBalancer200Response {
-	this := RefreshLoadBalancer200Response{}
-	return &this
-}
-
 func (o RefreshLoadBalancer200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

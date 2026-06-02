@@ -87,16 +87,6 @@ type NetworkCreate struct {
 
 type _NetworkCreate NetworkCreate
 
-// NewNetworkCreateWithDefaults instantiates a new NetworkCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkCreateWithDefaults() *NetworkCreate {
-	this := NetworkCreate{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o NetworkCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

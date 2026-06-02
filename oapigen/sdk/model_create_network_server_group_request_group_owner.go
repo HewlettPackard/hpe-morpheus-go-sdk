@@ -26,14 +26,6 @@ type CreateNetworkServerGroupRequestGroupOwner struct {
 
 type _CreateNetworkServerGroupRequestGroupOwner CreateNetworkServerGroupRequestGroupOwner
 
-// NewCreateNetworkServerGroupRequestGroupOwnerWithDefaults instantiates a new CreateNetworkServerGroupRequestGroupOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkServerGroupRequestGroupOwnerWithDefaults() *CreateNetworkServerGroupRequestGroupOwner {
-	this := CreateNetworkServerGroupRequestGroupOwner{}
-	return &this
-}
-
 func (o CreateNetworkServerGroupRequestGroupOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

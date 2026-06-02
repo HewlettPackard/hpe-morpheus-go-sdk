@@ -44,14 +44,6 @@ type AddVirtualImage200ResponseAllOfVirtualImageLocationsInner struct {
 
 type _AddVirtualImage200ResponseAllOfVirtualImageLocationsInner AddVirtualImage200ResponseAllOfVirtualImageLocationsInner
 
-// NewAddVirtualImage200ResponseAllOfVirtualImageLocationsInnerWithDefaults instantiates a new AddVirtualImage200ResponseAllOfVirtualImageLocationsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddVirtualImage200ResponseAllOfVirtualImageLocationsInnerWithDefaults() *AddVirtualImage200ResponseAllOfVirtualImageLocationsInner {
-	this := AddVirtualImage200ResponseAllOfVirtualImageLocationsInner{}
-	return &this
-}
-
 func (o AddVirtualImage200ResponseAllOfVirtualImageLocationsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

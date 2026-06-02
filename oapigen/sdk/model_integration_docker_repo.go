@@ -44,14 +44,6 @@ type IntegrationDockerRepo struct {
 
 type _IntegrationDockerRepo IntegrationDockerRepo
 
-// NewIntegrationDockerRepoWithDefaults instantiates a new IntegrationDockerRepo object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationDockerRepoWithDefaults() *IntegrationDockerRepo {
-	this := IntegrationDockerRepo{}
-	return &this
-}
-
 func (o IntegrationDockerRepo) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

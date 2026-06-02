@@ -29,14 +29,6 @@ type GetUser200ResponseUserAccessReportTypesInner struct {
 
 type _GetUser200ResponseUserAccessReportTypesInner GetUser200ResponseUserAccessReportTypesInner
 
-// NewGetUser200ResponseUserAccessReportTypesInnerWithDefaults instantiates a new GetUser200ResponseUserAccessReportTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetUser200ResponseUserAccessReportTypesInnerWithDefaults() *GetUser200ResponseUserAccessReportTypesInner {
-	this := GetUser200ResponseUserAccessReportTypesInner{}
-	return &this
-}
-
 func (o GetUser200ResponseUserAccessReportTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

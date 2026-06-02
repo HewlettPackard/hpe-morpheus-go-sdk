@@ -57,14 +57,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerWithDefaults
-
-`func NewGetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerWithDefaults() *GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInner`
-
-NewGetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerWithDefaults instantiates a new GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInner) GetId() int64`

@@ -26,14 +26,6 @@ type UpdateUserRequest struct {
 
 type _UpdateUserRequest UpdateUserRequest
 
-// NewUpdateUserRequestWithDefaults instantiates a new UpdateUserRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateUserRequestWithDefaults() *UpdateUserRequest {
-	this := UpdateUserRequest{}
-	return &this
-}
-
 func (o UpdateUserRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type InstanceServicePlanDatastoresStoreInner struct {
 
 type _InstanceServicePlanDatastoresStoreInner InstanceServicePlanDatastoresStoreInner
 
-// NewInstanceServicePlanDatastoresStoreInnerWithDefaults instantiates a new InstanceServicePlanDatastoresStoreInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceServicePlanDatastoresStoreInnerWithDefaults() *InstanceServicePlanDatastoresStoreInner {
-	this := InstanceServicePlanDatastoresStoreInner{}
-	return &this
-}
-
 func (o InstanceServicePlanDatastoresStoreInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

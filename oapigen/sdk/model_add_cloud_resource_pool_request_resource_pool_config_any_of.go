@@ -29,16 +29,6 @@ type AddCloudResourcePoolRequestResourcePoolConfigAnyOf struct {
 
 type _AddCloudResourcePoolRequestResourcePoolConfigAnyOf AddCloudResourcePoolRequestResourcePoolConfigAnyOf
 
-// NewAddCloudResourcePoolRequestResourcePoolConfigAnyOfWithDefaults instantiates a new AddCloudResourcePoolRequestResourcePoolConfigAnyOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCloudResourcePoolRequestResourcePoolConfigAnyOfWithDefaults() *AddCloudResourcePoolRequestResourcePoolConfigAnyOf {
-	this := AddCloudResourcePoolRequestResourcePoolConfigAnyOf{}
-	var tenancy string = "default"
-	this.Tenancy = &tenancy
-	return &this
-}
-
 func (o AddCloudResourcePoolRequestResourcePoolConfigAnyOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

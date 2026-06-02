@@ -44,14 +44,6 @@ type IntegrationvRO struct {
 
 type _IntegrationvRO IntegrationvRO
 
-// NewIntegrationvROWithDefaults instantiates a new IntegrationvRO object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationvROWithDefaults() *IntegrationvRO {
-	this := IntegrationvRO{}
-	return &this
-}
-
 func (o IntegrationvRO) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

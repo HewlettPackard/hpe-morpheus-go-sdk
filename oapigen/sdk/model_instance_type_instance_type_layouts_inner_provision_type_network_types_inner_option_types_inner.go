@@ -66,14 +66,6 @@ type InstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTyp
 
 type _InstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner InstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner
 
-// NewInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerWithDefaults instantiates a new InstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerWithDefaults() *InstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner {
-	this := InstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner{}
-	return &this
-}
-
 func (o InstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

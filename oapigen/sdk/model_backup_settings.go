@@ -31,14 +31,6 @@ type BackupSettings struct {
 
 type _BackupSettings BackupSettings
 
-// NewBackupSettingsWithDefaults instantiates a new BackupSettings object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBackupSettingsWithDefaults() *BackupSettings {
-	this := BackupSettings{}
-	return &this
-}
-
 func (o BackupSettings) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

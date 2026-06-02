@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInnerWithDefaults
-
-`func NewListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInnerWithDefaults() *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner`
-
-NewListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInnerWithDefaults instantiates a new ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetUrl
 
 `func (o *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) GetUrl() string`

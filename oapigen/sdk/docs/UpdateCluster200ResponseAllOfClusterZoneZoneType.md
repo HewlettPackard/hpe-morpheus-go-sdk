@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateCluster200ResponseAllOfClusterZoneZoneTypeWithDefaults
-
-`func NewUpdateCluster200ResponseAllOfClusterZoneZoneTypeWithDefaults() *UpdateCluster200ResponseAllOfClusterZoneZoneType`
-
-NewUpdateCluster200ResponseAllOfClusterZoneZoneTypeWithDefaults instantiates a new UpdateCluster200ResponseAllOfClusterZoneZoneType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateCluster200ResponseAllOfClusterZoneZoneType) GetId() int64`

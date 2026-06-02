@@ -51,14 +51,6 @@ type AddOsTypesRequestOsType struct {
 
 type _AddOsTypesRequestOsType AddOsTypesRequestOsType
 
-// NewAddOsTypesRequestOsTypeWithDefaults instantiates a new AddOsTypesRequestOsType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddOsTypesRequestOsTypeWithDefaults() *AddOsTypesRequestOsType {
-	this := AddOsTypesRequestOsType{}
-	return &this
-}
-
 func (o AddOsTypesRequestOsType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

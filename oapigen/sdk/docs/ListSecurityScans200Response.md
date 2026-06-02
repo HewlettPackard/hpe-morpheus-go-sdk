@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListSecurityScans200ResponseWithDefaults
-
-`func NewListSecurityScans200ResponseWithDefaults() *ListSecurityScans200Response`
-
-NewListSecurityScans200ResponseWithDefaults instantiates a new ListSecurityScans200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSecurityScans
 
 `func (o *ListSecurityScans200Response) GetSecurityScans() []ListSecurityScans200ResponseAllOfSecurityScansInner`

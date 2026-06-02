@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetCloudDatastores200ResponseAllOfDatastoreResourcePermissionSitesInnerWithDefaults
-
-`func NewGetCloudDatastores200ResponseAllOfDatastoreResourcePermissionSitesInnerWithDefaults() *GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionSitesInner`
-
-NewGetCloudDatastores200ResponseAllOfDatastoreResourcePermissionSitesInnerWithDefaults instantiates a new GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionSitesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionSitesInner) GetId() int64`

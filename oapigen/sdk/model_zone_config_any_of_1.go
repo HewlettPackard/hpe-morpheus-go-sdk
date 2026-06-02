@@ -64,14 +64,6 @@ type ZoneConfigAnyOf1 struct {
 
 type _ZoneConfigAnyOf1 ZoneConfigAnyOf1
 
-// NewZoneConfigAnyOf1WithDefaults instantiates a new ZoneConfigAnyOf1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneConfigAnyOf1WithDefaults() *ZoneConfigAnyOf1 {
-	this := ZoneConfigAnyOf1{}
-	return &this
-}
-
 func (o ZoneConfigAnyOf1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

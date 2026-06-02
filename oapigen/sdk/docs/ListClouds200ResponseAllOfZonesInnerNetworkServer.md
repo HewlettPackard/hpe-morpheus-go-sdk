@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListClouds200ResponseAllOfZonesInnerNetworkServerWithDefaults
-
-`func NewListClouds200ResponseAllOfZonesInnerNetworkServerWithDefaults() *ListClouds200ResponseAllOfZonesInnerNetworkServer`
-
-NewListClouds200ResponseAllOfZonesInnerNetworkServerWithDefaults instantiates a new ListClouds200ResponseAllOfZonesInnerNetworkServer object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListClouds200ResponseAllOfZonesInnerNetworkServer) GetId() int64`

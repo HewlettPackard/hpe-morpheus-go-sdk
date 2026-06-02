@@ -27,14 +27,6 @@ type ListProvisioningLicenses200ResponseAllOfLicensesInnerVirtualImagesInner str
 
 type _ListProvisioningLicenses200ResponseAllOfLicensesInnerVirtualImagesInner ListProvisioningLicenses200ResponseAllOfLicensesInnerVirtualImagesInner
 
-// NewListProvisioningLicenses200ResponseAllOfLicensesInnerVirtualImagesInnerWithDefaults instantiates a new ListProvisioningLicenses200ResponseAllOfLicensesInnerVirtualImagesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListProvisioningLicenses200ResponseAllOfLicensesInnerVirtualImagesInnerWithDefaults() *ListProvisioningLicenses200ResponseAllOfLicensesInnerVirtualImagesInner {
-	this := ListProvisioningLicenses200ResponseAllOfLicensesInnerVirtualImagesInner{}
-	return &this
-}
-
 func (o ListProvisioningLicenses200ResponseAllOfLicensesInnerVirtualImagesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

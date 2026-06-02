@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetServicePlans200ResponseServicePlanPermissionsResourcePermissionsWithDefaults
-
-`func NewGetServicePlans200ResponseServicePlanPermissionsResourcePermissionsWithDefaults() *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions`
-
-NewGetServicePlans200ResponseServicePlanPermissionsResourcePermissionsWithDefaults instantiates a new GetServicePlans200ResponseServicePlanPermissionsResourcePermissions object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetDefaultStore
 
 `func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetDefaultStore() bool`

@@ -26,14 +26,6 @@ type Model406Error struct {
 
 type _Model406Error Model406Error
 
-// NewModel406ErrorWithDefaults instantiates a new Model406Error object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewModel406ErrorWithDefaults() *Model406Error {
-	this := Model406Error{}
-	return &this
-}
-
 func (o Model406Error) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

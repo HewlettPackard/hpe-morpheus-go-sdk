@@ -63,46 +63,6 @@ type AddPowerSchedulesRequestSchedule struct {
 
 type _AddPowerSchedulesRequestSchedule AddPowerSchedulesRequestSchedule
 
-// NewAddPowerSchedulesRequestScheduleWithDefaults instantiates a new AddPowerSchedulesRequestSchedule object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPowerSchedulesRequestScheduleWithDefaults() *AddPowerSchedulesRequestSchedule {
-	this := AddPowerSchedulesRequestSchedule{}
-	var scheduleTimezone string = "UTC"
-	this.ScheduleTimezone = &scheduleTimezone
-	var enabled bool = true
-	this.Enabled = &enabled
-	var mondayOnTime string = "00:00"
-	this.MondayOnTime = &mondayOnTime
-	var mondayOffTime string = "24:00"
-	this.MondayOffTime = &mondayOffTime
-	var tuesdayOnTime string = "00:00"
-	this.TuesdayOnTime = &tuesdayOnTime
-	var tuesdayOffTime string = "24:00"
-	this.TuesdayOffTime = &tuesdayOffTime
-	var wednesdayOnTime string = "00:00"
-	this.WednesdayOnTime = &wednesdayOnTime
-	var wednesdayOffTime string = "24:00"
-	this.WednesdayOffTime = &wednesdayOffTime
-	var thursdayOnTime string = "00:00"
-	this.ThursdayOnTime = &thursdayOnTime
-	var thursdayOffTime string = "24:00"
-	this.ThursdayOffTime = &thursdayOffTime
-	var fridayOnTime string = "00:00"
-	this.FridayOnTime = &fridayOnTime
-	var fridayOffTime string = "24:00"
-	this.FridayOffTime = &fridayOffTime
-	var saturdayOnTime string = "00:00"
-	this.SaturdayOnTime = &saturdayOnTime
-	var saturdayOffTime string = "24:00"
-	this.SaturdayOffTime = &saturdayOffTime
-	var sundayOnTime string = "00:00"
-	this.SundayOnTime = &sundayOnTime
-	var sundayOffTime string = "24:00"
-	this.SundayOffTime = &sundayOffTime
-	return &this
-}
-
 func (o AddPowerSchedulesRequestSchedule) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

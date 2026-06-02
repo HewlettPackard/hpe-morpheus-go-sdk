@@ -26,14 +26,6 @@ type StorageDatastoreCreateTenantPermissionsAccountsInner struct {
 
 type _StorageDatastoreCreateTenantPermissionsAccountsInner StorageDatastoreCreateTenantPermissionsAccountsInner
 
-// NewStorageDatastoreCreateTenantPermissionsAccountsInnerWithDefaults instantiates a new StorageDatastoreCreateTenantPermissionsAccountsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewStorageDatastoreCreateTenantPermissionsAccountsInnerWithDefaults() *StorageDatastoreCreateTenantPermissionsAccountsInner {
-	this := StorageDatastoreCreateTenantPermissionsAccountsInner{}
-	return &this
-}
-
 func (o StorageDatastoreCreateTenantPermissionsAccountsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

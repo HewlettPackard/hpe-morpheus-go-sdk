@@ -27,14 +27,6 @@ type ListIncidents200ResponseAllOfIncidentsInnerChecksInnerCreatedBy struct {
 
 type _ListIncidents200ResponseAllOfIncidentsInnerChecksInnerCreatedBy ListIncidents200ResponseAllOfIncidentsInnerChecksInnerCreatedBy
 
-// NewListIncidents200ResponseAllOfIncidentsInnerChecksInnerCreatedByWithDefaults instantiates a new ListIncidents200ResponseAllOfIncidentsInnerChecksInnerCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListIncidents200ResponseAllOfIncidentsInnerChecksInnerCreatedByWithDefaults() *ListIncidents200ResponseAllOfIncidentsInnerChecksInnerCreatedBy {
-	this := ListIncidents200ResponseAllOfIncidentsInnerChecksInnerCreatedBy{}
-	return &this
-}
-
 func (o ListIncidents200ResponseAllOfIncidentsInnerChecksInnerCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

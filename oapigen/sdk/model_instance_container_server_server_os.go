@@ -35,14 +35,6 @@ type InstanceContainerServerServerOs struct {
 
 type _InstanceContainerServerServerOs InstanceContainerServerServerOs
 
-// NewInstanceContainerServerServerOsWithDefaults instantiates a new InstanceContainerServerServerOs object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainerServerServerOsWithDefaults() *InstanceContainerServerServerOs {
-	this := InstanceContainerServerServerOs{}
-	return &this
-}
-
 func (o InstanceContainerServerServerOs) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

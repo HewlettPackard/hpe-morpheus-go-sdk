@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInnerWithDefaults
-
-`func NewListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInnerWithDefaults() *ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner`
-
-NewListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInnerWithDefaults instantiates a new ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListUsers200ResponseAllOfUsersInnerAccessVdiPoolsInner) GetId() int64`

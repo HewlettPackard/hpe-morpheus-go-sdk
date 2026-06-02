@@ -26,14 +26,6 @@ type AddIncident200ResponseAllOfIncidentChecksInnerContainer struct {
 
 type _AddIncident200ResponseAllOfIncidentChecksInnerContainer AddIncident200ResponseAllOfIncidentChecksInnerContainer
 
-// NewAddIncident200ResponseAllOfIncidentChecksInnerContainerWithDefaults instantiates a new AddIncident200ResponseAllOfIncidentChecksInnerContainer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIncident200ResponseAllOfIncidentChecksInnerContainerWithDefaults() *AddIncident200ResponseAllOfIncidentChecksInnerContainer {
-	this := AddIncident200ResponseAllOfIncidentChecksInnerContainer{}
-	return &this
-}
-
 func (o AddIncident200ResponseAllOfIncidentChecksInnerContainer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

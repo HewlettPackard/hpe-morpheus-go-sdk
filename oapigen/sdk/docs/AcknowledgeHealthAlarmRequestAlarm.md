@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAcknowledgeHealthAlarmRequestAlarmWithDefaults
-
-`func NewAcknowledgeHealthAlarmRequestAlarmWithDefaults() *AcknowledgeHealthAlarmRequestAlarm`
-
-NewAcknowledgeHealthAlarmRequestAlarmWithDefaults instantiates a new AcknowledgeHealthAlarmRequestAlarm object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAcknowledged
 
 `func (o *AcknowledgeHealthAlarmRequestAlarm) GetAcknowledged() bool`

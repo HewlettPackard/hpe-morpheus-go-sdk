@@ -27,14 +27,6 @@ type UpdateInstanceTypeRequestInstanceTypePriceSetsInner struct {
 
 type _UpdateInstanceTypeRequestInstanceTypePriceSetsInner UpdateInstanceTypeRequestInstanceTypePriceSetsInner
 
-// NewUpdateInstanceTypeRequestInstanceTypePriceSetsInnerWithDefaults instantiates a new UpdateInstanceTypeRequestInstanceTypePriceSetsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstanceTypeRequestInstanceTypePriceSetsInnerWithDefaults() *UpdateInstanceTypeRequestInstanceTypePriceSetsInner {
-	this := UpdateInstanceTypeRequestInstanceTypePriceSetsInner{}
-	return &this
-}
-
 func (o UpdateInstanceTypeRequestInstanceTypePriceSetsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

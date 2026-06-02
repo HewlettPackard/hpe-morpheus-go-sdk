@@ -38,14 +38,6 @@ type SocketConfig8 struct {
 
 type _SocketConfig8 SocketConfig8
 
-// NewSocketConfig8WithDefaults instantiates a new SocketConfig8 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSocketConfig8WithDefaults() *SocketConfig8 {
-	this := SocketConfig8{}
-	return &this
-}
-
 func (o SocketConfig8) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

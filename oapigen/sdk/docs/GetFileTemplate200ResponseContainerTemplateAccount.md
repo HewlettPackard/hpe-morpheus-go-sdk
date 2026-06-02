@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetFileTemplate200ResponseContainerTemplateAccountWithDefaults
-
-`func NewGetFileTemplate200ResponseContainerTemplateAccountWithDefaults() *GetFileTemplate200ResponseContainerTemplateAccount`
-
-NewGetFileTemplate200ResponseContainerTemplateAccountWithDefaults instantiates a new GetFileTemplate200ResponseContainerTemplateAccount object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetFileTemplate200ResponseContainerTemplateAccount) GetId() int64`

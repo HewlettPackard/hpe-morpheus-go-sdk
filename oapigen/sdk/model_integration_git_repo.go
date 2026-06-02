@@ -40,14 +40,6 @@ type IntegrationGitRepo struct {
 
 type _IntegrationGitRepo IntegrationGitRepo
 
-// NewIntegrationGitRepoWithDefaults instantiates a new IntegrationGitRepo object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationGitRepoWithDefaults() *IntegrationGitRepo {
-	this := IntegrationGitRepo{}
-	return &this
-}
-
 func (o IntegrationGitRepo) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

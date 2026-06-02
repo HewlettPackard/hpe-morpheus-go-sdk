@@ -28,14 +28,6 @@ type ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner str
 
 type _ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner
 
-// NewListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInnerWithDefaults instantiates a new ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInnerWithDefaults() *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner {
-	this := ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner{}
-	return &this
-}
-
 func (o ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

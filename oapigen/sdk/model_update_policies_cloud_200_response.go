@@ -27,14 +27,6 @@ type UpdatePoliciesCloud200Response struct {
 
 type _UpdatePoliciesCloud200Response UpdatePoliciesCloud200Response
 
-// NewUpdatePoliciesCloud200ResponseWithDefaults instantiates a new UpdatePoliciesCloud200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePoliciesCloud200ResponseWithDefaults() *UpdatePoliciesCloud200Response {
-	this := UpdatePoliciesCloud200Response{}
-	return &this
-}
-
 func (o UpdatePoliciesCloud200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

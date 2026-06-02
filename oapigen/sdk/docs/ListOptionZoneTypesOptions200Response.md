@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListOptionZoneTypesOptions200ResponseWithDefaults
-
-`func NewListOptionZoneTypesOptions200ResponseWithDefaults() *ListOptionZoneTypesOptions200Response`
-
-NewListOptionZoneTypesOptions200ResponseWithDefaults instantiates a new ListOptionZoneTypesOptions200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetData
 
 `func (o *ListOptionZoneTypesOptions200Response) GetData() []ListOptionZoneTypesOptions200ResponseAllOfDataInner`

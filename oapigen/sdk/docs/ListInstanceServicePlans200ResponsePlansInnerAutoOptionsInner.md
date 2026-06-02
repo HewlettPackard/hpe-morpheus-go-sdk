@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListInstanceServicePlans200ResponsePlansInnerAutoOptionsInnerWithDefaults
-
-`func NewListInstanceServicePlans200ResponsePlansInnerAutoOptionsInnerWithDefaults() *ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner`
-
-NewListInstanceServicePlans200ResponsePlansInnerAutoOptionsInnerWithDefaults instantiates a new ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner) GetId() string`

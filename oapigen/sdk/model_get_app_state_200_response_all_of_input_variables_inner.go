@@ -29,14 +29,6 @@ type GetAppState200ResponseAllOfInputVariablesInner struct {
 
 type _GetAppState200ResponseAllOfInputVariablesInner GetAppState200ResponseAllOfInputVariablesInner
 
-// NewGetAppState200ResponseAllOfInputVariablesInnerWithDefaults instantiates a new GetAppState200ResponseAllOfInputVariablesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetAppState200ResponseAllOfInputVariablesInnerWithDefaults() *GetAppState200ResponseAllOfInputVariablesInner {
-	this := GetAppState200ResponseAllOfInputVariablesInner{}
-	return &this
-}
-
 func (o GetAppState200ResponseAllOfInputVariablesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

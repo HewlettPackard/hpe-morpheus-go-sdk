@@ -29,14 +29,6 @@ type RolePermissionDefaultCloud struct {
 
 type _RolePermissionDefaultCloud RolePermissionDefaultCloud
 
-// NewRolePermissionDefaultCloudWithDefaults instantiates a new RolePermissionDefaultCloud object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRolePermissionDefaultCloudWithDefaults() *RolePermissionDefaultCloud {
-	this := RolePermissionDefaultCloud{}
-	return &this
-}
-
 func (o RolePermissionDefaultCloud) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

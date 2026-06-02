@@ -27,14 +27,6 @@ type RestartInstance200Response struct {
 
 type _RestartInstance200Response RestartInstance200Response
 
-// NewRestartInstance200ResponseWithDefaults instantiates a new RestartInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRestartInstance200ResponseWithDefaults() *RestartInstance200Response {
-	this := RestartInstance200Response{}
-	return &this
-}
-
 func (o RestartInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

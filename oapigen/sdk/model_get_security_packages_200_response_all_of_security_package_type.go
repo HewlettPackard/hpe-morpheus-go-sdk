@@ -28,14 +28,6 @@ type GetSecurityPackages200ResponseAllOfSecurityPackageType struct {
 
 type _GetSecurityPackages200ResponseAllOfSecurityPackageType GetSecurityPackages200ResponseAllOfSecurityPackageType
 
-// NewGetSecurityPackages200ResponseAllOfSecurityPackageTypeWithDefaults instantiates a new GetSecurityPackages200ResponseAllOfSecurityPackageType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSecurityPackages200ResponseAllOfSecurityPackageTypeWithDefaults() *GetSecurityPackages200ResponseAllOfSecurityPackageType {
-	this := GetSecurityPackages200ResponseAllOfSecurityPackageType{}
-	return &this
-}
-
 func (o GetSecurityPackages200ResponseAllOfSecurityPackageType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

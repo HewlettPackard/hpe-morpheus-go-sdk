@@ -26,14 +26,6 @@ type ClusterLayoutUpdateMastersInnerContainerType struct {
 
 type _ClusterLayoutUpdateMastersInnerContainerType ClusterLayoutUpdateMastersInnerContainerType
 
-// NewClusterLayoutUpdateMastersInnerContainerTypeWithDefaults instantiates a new ClusterLayoutUpdateMastersInnerContainerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterLayoutUpdateMastersInnerContainerTypeWithDefaults() *ClusterLayoutUpdateMastersInnerContainerType {
-	this := ClusterLayoutUpdateMastersInnerContainerType{}
-	return &this
-}
-
 func (o ClusterLayoutUpdateMastersInnerContainerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

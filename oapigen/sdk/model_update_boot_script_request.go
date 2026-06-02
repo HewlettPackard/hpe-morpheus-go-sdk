@@ -26,14 +26,6 @@ type UpdateBootScriptRequest struct {
 
 type _UpdateBootScriptRequest UpdateBootScriptRequest
 
-// NewUpdateBootScriptRequestWithDefaults instantiates a new UpdateBootScriptRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBootScriptRequestWithDefaults() *UpdateBootScriptRequest {
-	this := UpdateBootScriptRequest{}
-	return &this
-}
-
 func (o UpdateBootScriptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

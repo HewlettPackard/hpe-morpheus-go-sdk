@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateWikiCluster200ResponseAllOfPageUpdatedByWithDefaults
-
-`func NewUpdateWikiCluster200ResponseAllOfPageUpdatedByWithDefaults() *UpdateWikiCluster200ResponseAllOfPageUpdatedBy`
-
-NewUpdateWikiCluster200ResponseAllOfPageUpdatedByWithDefaults instantiates a new UpdateWikiCluster200ResponseAllOfPageUpdatedBy object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateWikiCluster200ResponseAllOfPageUpdatedBy) GetId() int64`

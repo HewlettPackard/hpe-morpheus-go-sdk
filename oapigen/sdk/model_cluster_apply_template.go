@@ -27,14 +27,6 @@ type ClusterApplyTemplate struct {
 
 type _ClusterApplyTemplate ClusterApplyTemplate
 
-// NewClusterApplyTemplateWithDefaults instantiates a new ClusterApplyTemplate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterApplyTemplateWithDefaults() *ClusterApplyTemplate {
-	this := ClusterApplyTemplate{}
-	return &this
-}
-
 func (o ClusterApplyTemplate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -31,16 +31,6 @@ type CreateNetworkRouterFirewallRuleRequestRule struct {
 
 type _CreateNetworkRouterFirewallRuleRequestRule CreateNetworkRouterFirewallRuleRequestRule
 
-// NewCreateNetworkRouterFirewallRuleRequestRuleWithDefaults instantiates a new CreateNetworkRouterFirewallRuleRequestRule object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkRouterFirewallRuleRequestRuleWithDefaults() *CreateNetworkRouterFirewallRuleRequestRule {
-	this := CreateNetworkRouterFirewallRuleRequestRule{}
-	var enabled bool = true
-	this.Enabled = &enabled
-	return &this
-}
-
 func (o CreateNetworkRouterFirewallRuleRequestRule) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

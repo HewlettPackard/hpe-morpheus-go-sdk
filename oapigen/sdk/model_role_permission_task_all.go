@@ -29,14 +29,6 @@ type RolePermissionTaskAll struct {
 
 type _RolePermissionTaskAll RolePermissionTaskAll
 
-// NewRolePermissionTaskAllWithDefaults instantiates a new RolePermissionTaskAll object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRolePermissionTaskAllWithDefaults() *RolePermissionTaskAll {
-	this := RolePermissionTaskAll{}
-	return &this
-}
-
 func (o RolePermissionTaskAll) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

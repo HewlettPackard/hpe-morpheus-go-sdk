@@ -40,16 +40,6 @@ type BlueprintCFTCreateSuccess struct {
 
 type _BlueprintCFTCreateSuccess BlueprintCFTCreateSuccess
 
-// NewBlueprintCFTCreateSuccessWithDefaults instantiates a new BlueprintCFTCreateSuccess object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintCFTCreateSuccessWithDefaults() *BlueprintCFTCreateSuccess {
-	this := BlueprintCFTCreateSuccess{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o BlueprintCFTCreateSuccess) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

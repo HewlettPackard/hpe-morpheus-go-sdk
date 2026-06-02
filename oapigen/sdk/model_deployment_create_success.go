@@ -34,14 +34,6 @@ type DeploymentCreateSuccess struct {
 
 type _DeploymentCreateSuccess DeploymentCreateSuccess
 
-// NewDeploymentCreateSuccessWithDefaults instantiates a new DeploymentCreateSuccess object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeploymentCreateSuccessWithDefaults() *DeploymentCreateSuccess {
-	this := DeploymentCreateSuccess{}
-	return &this
-}
-
 func (o DeploymentCreateSuccess) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -30,14 +30,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCheckSocket1AllOfConfigWithDefaults
-
-`func NewCheckSocket1AllOfConfigWithDefaults() *CheckSocket1AllOfConfig`
-
-NewCheckSocket1AllOfConfigWithDefaults instantiates a new CheckSocket1AllOfConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetHost
 
 `func (o *CheckSocket1AllOfConfig) GetHost() string`

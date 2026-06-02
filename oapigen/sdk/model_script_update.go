@@ -43,20 +43,6 @@ type ScriptUpdate struct {
 
 type _ScriptUpdate ScriptUpdate
 
-// NewScriptUpdateWithDefaults instantiates a new ScriptUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewScriptUpdateWithDefaults() *ScriptUpdate {
-	this := ScriptUpdate{}
-	var scriptVersion string = "1"
-	this.ScriptVersion = &scriptVersion
-	var scriptType string = "bash"
-	this.ScriptType = &scriptType
-	var sudoUser bool = false
-	this.SudoUser = &sudoUser
-	return &this
-}
-
 func (o ScriptUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

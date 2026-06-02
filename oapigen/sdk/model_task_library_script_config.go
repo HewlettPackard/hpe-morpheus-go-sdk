@@ -35,14 +35,6 @@ type TaskLibraryScriptConfig struct {
 
 type _TaskLibraryScriptConfig TaskLibraryScriptConfig
 
-// NewTaskLibraryScriptConfigWithDefaults instantiates a new TaskLibraryScriptConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTaskLibraryScriptConfigWithDefaults() *TaskLibraryScriptConfig {
-	this := TaskLibraryScriptConfig{}
-	return &this
-}
-
 func (o TaskLibraryScriptConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

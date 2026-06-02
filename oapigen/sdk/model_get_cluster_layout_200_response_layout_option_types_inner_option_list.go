@@ -27,14 +27,6 @@ type GetClusterLayout200ResponseLayoutOptionTypesInnerOptionList struct {
 
 type _GetClusterLayout200ResponseLayoutOptionTypesInnerOptionList GetClusterLayout200ResponseLayoutOptionTypesInnerOptionList
 
-// NewGetClusterLayout200ResponseLayoutOptionTypesInnerOptionListWithDefaults instantiates a new GetClusterLayout200ResponseLayoutOptionTypesInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterLayout200ResponseLayoutOptionTypesInnerOptionListWithDefaults() *GetClusterLayout200ResponseLayoutOptionTypesInnerOptionList {
-	this := GetClusterLayout200ResponseLayoutOptionTypesInnerOptionList{}
-	return &this
-}
-
 func (o GetClusterLayout200ResponseLayoutOptionTypesInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

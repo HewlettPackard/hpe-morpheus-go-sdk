@@ -27,14 +27,6 @@ type GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerOptionList
 
 type _GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerOptionList GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerOptionList
 
-// NewGetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerOptionListWithDefaults instantiates a new GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerOptionListWithDefaults() *GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerOptionList {
-	this := GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerOptionList{}
-	return &this
-}
-
 func (o GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

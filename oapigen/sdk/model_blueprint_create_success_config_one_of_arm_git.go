@@ -33,14 +33,6 @@ type BlueprintCreateSuccessConfigOneOfArmGit struct {
 
 type _BlueprintCreateSuccessConfigOneOfArmGit BlueprintCreateSuccessConfigOneOfArmGit
 
-// NewBlueprintCreateSuccessConfigOneOfArmGitWithDefaults instantiates a new BlueprintCreateSuccessConfigOneOfArmGit object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintCreateSuccessConfigOneOfArmGitWithDefaults() *BlueprintCreateSuccessConfigOneOfArmGit {
-	this := BlueprintCreateSuccessConfigOneOfArmGit{}
-	return &this
-}
-
 func (o BlueprintCreateSuccessConfigOneOfArmGit) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

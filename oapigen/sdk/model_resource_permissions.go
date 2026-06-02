@@ -33,14 +33,6 @@ type ResourcePermissions struct {
 
 type _ResourcePermissions ResourcePermissions
 
-// NewResourcePermissionsWithDefaults instantiates a new ResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewResourcePermissionsWithDefaults() *ResourcePermissions {
-	this := ResourcePermissions{}
-	return &this
-}
-
 func (o ResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

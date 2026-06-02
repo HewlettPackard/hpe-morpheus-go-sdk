@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateVDIPools200ResponseAnyOf1WithDefaults
-
-`func NewUpdateVDIPools200ResponseAnyOf1WithDefaults() *UpdateVDIPools200ResponseAnyOf1`
-
-NewUpdateVDIPools200ResponseAnyOf1WithDefaults instantiates a new UpdateVDIPools200ResponseAnyOf1 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *UpdateVDIPools200ResponseAnyOf1) GetSuccess() bool`

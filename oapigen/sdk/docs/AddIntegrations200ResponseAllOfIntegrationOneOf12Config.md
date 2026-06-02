@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddIntegrations200ResponseAllOfIntegrationOneOf12ConfigWithDefaults
-
-`func NewAddIntegrations200ResponseAllOfIntegrationOneOf12ConfigWithDefaults() *AddIntegrations200ResponseAllOfIntegrationOneOf12Config`
-
-NewAddIntegrations200ResponseAllOfIntegrationOneOf12ConfigWithDefaults instantiates a new AddIntegrations200ResponseAllOfIntegrationOneOf12Config object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetApprovalUser
 
 `func (o *AddIntegrations200ResponseAllOfIntegrationOneOf12Config) GetApprovalUser() string`

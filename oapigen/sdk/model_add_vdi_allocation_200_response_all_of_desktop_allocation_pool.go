@@ -27,14 +27,6 @@ type AddVdiAllocation200ResponseAllOfDesktopAllocationPool struct {
 
 type _AddVdiAllocation200ResponseAllOfDesktopAllocationPool AddVdiAllocation200ResponseAllOfDesktopAllocationPool
 
-// NewAddVdiAllocation200ResponseAllOfDesktopAllocationPoolWithDefaults instantiates a new AddVdiAllocation200ResponseAllOfDesktopAllocationPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddVdiAllocation200ResponseAllOfDesktopAllocationPoolWithDefaults() *AddVdiAllocation200ResponseAllOfDesktopAllocationPool {
-	this := AddVdiAllocation200ResponseAllOfDesktopAllocationPool{}
-	return &this
-}
-
 func (o AddVdiAllocation200ResponseAllOfDesktopAllocationPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

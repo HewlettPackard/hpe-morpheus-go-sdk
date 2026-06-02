@@ -28,14 +28,6 @@ type GetVdi200ResponseDesktopAllocationUser struct {
 
 type _GetVdi200ResponseDesktopAllocationUser GetVdi200ResponseDesktopAllocationUser
 
-// NewGetVdi200ResponseDesktopAllocationUserWithDefaults instantiates a new GetVdi200ResponseDesktopAllocationUser object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetVdi200ResponseDesktopAllocationUserWithDefaults() *GetVdi200ResponseDesktopAllocationUser {
-	this := GetVdi200ResponseDesktopAllocationUser{}
-	return &this
-}
-
 func (o GetVdi200ResponseDesktopAllocationUser) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

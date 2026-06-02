@@ -26,14 +26,6 @@ type AddBaremetalHostRequest struct {
 
 type _AddBaremetalHostRequest AddBaremetalHostRequest
 
-// NewAddBaremetalHostRequestWithDefaults instantiates a new AddBaremetalHostRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBaremetalHostRequestWithDefaults() *AddBaremetalHostRequest {
-	this := AddBaremetalHostRequest{}
-	return &this
-}
-
 func (o AddBaremetalHostRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

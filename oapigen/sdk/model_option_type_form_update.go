@@ -36,14 +36,6 @@ type OptionTypeFormUpdate struct {
 
 type _OptionTypeFormUpdate OptionTypeFormUpdate
 
-// NewOptionTypeFormUpdateWithDefaults instantiates a new OptionTypeFormUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOptionTypeFormUpdateWithDefaults() *OptionTypeFormUpdate {
-	this := OptionTypeFormUpdate{}
-	return &this
-}
-
 func (o OptionTypeFormUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

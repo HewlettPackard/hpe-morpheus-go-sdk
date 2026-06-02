@@ -29,14 +29,6 @@ type GuidanceStats struct {
 
 type _GuidanceStats GuidanceStats
 
-// NewGuidanceStatsWithDefaults instantiates a new GuidanceStats object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGuidanceStatsWithDefaults() *GuidanceStats {
-	this := GuidanceStats{}
-	return &this
-}
-
 func (o GuidanceStats) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -33,14 +33,6 @@ type BlueprintMorpheusCreateSuccessConfig struct {
 
 type _BlueprintMorpheusCreateSuccessConfig BlueprintMorpheusCreateSuccessConfig
 
-// NewBlueprintMorpheusCreateSuccessConfigWithDefaults instantiates a new BlueprintMorpheusCreateSuccessConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintMorpheusCreateSuccessConfigWithDefaults() *BlueprintMorpheusCreateSuccessConfig {
-	this := BlueprintMorpheusCreateSuccessConfig{}
-	return &this
-}
-
 func (o BlueprintMorpheusCreateSuccessConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

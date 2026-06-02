@@ -27,14 +27,6 @@ type GetContainer200ResponseContainerInstance struct {
 
 type _GetContainer200ResponseContainerInstance GetContainer200ResponseContainerInstance
 
-// NewGetContainer200ResponseContainerInstanceWithDefaults instantiates a new GetContainer200ResponseContainerInstance object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetContainer200ResponseContainerInstanceWithDefaults() *GetContainer200ResponseContainerInstance {
-	this := GetContainer200ResponseContainerInstance{}
-	return &this
-}
-
 func (o GetContainer200ResponseContainerInstance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

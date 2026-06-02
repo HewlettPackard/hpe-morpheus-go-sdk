@@ -38,18 +38,6 @@ type ShutdownPolicyTypeConfiguration15 struct {
 
 type _ShutdownPolicyTypeConfiguration15 ShutdownPolicyTypeConfiguration15
 
-// NewShutdownPolicyTypeConfiguration15WithDefaults instantiates a new ShutdownPolicyTypeConfiguration15 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewShutdownPolicyTypeConfiguration15WithDefaults() *ShutdownPolicyTypeConfiguration15 {
-	this := ShutdownPolicyTypeConfiguration15{}
-	var shutdownAutoRenew string = "off"
-	this.ShutdownAutoRenew = &shutdownAutoRenew
-	var shutdownAllowExtend string = "off"
-	this.ShutdownAllowExtend = &shutdownAllowExtend
-	return &this
-}
-
 func (o ShutdownPolicyTypeConfiguration15) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

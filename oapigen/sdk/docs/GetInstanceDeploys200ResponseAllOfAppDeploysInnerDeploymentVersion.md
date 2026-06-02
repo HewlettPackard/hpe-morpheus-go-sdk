@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersionWithDefaults
-
-`func NewGetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersionWithDefaults() *GetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion`
-
-NewGetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersionWithDefaults instantiates a new GetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) GetId() int64`

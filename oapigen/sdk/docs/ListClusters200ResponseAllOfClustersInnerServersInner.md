@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListClusters200ResponseAllOfClustersInnerServersInnerWithDefaults
-
-`func NewListClusters200ResponseAllOfClustersInnerServersInnerWithDefaults() *ListClusters200ResponseAllOfClustersInnerServersInner`
-
-NewListClusters200ResponseAllOfClustersInnerServersInnerWithDefaults instantiates a new ListClusters200ResponseAllOfClustersInnerServersInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListClusters200ResponseAllOfClustersInnerServersInner) GetId() int64`

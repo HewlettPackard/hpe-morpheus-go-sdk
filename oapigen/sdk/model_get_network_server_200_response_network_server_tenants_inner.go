@@ -27,14 +27,6 @@ type GetNetworkServer200ResponseNetworkServerTenantsInner struct {
 
 type _GetNetworkServer200ResponseNetworkServerTenantsInner GetNetworkServer200ResponseNetworkServerTenantsInner
 
-// NewGetNetworkServer200ResponseNetworkServerTenantsInnerWithDefaults instantiates a new GetNetworkServer200ResponseNetworkServerTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkServer200ResponseNetworkServerTenantsInnerWithDefaults() *GetNetworkServer200ResponseNetworkServerTenantsInner {
-	this := GetNetworkServer200ResponseNetworkServerTenantsInner{}
-	return &this
-}
-
 func (o GetNetworkServer200ResponseNetworkServerTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

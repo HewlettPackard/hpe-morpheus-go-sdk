@@ -36,14 +36,6 @@ type ZoneDatastoreCreateResourcePermissions struct {
 
 type _ZoneDatastoreCreateResourcePermissions ZoneDatastoreCreateResourcePermissions
 
-// NewZoneDatastoreCreateResourcePermissionsWithDefaults instantiates a new ZoneDatastoreCreateResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneDatastoreCreateResourcePermissionsWithDefaults() *ZoneDatastoreCreateResourcePermissions {
-	this := ZoneDatastoreCreateResourcePermissions{}
-	return &this
-}
-
 func (o ZoneDatastoreCreateResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

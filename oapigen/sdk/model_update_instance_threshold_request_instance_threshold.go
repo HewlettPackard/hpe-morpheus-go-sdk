@@ -51,36 +51,6 @@ type UpdateInstanceThresholdRequestInstanceThreshold struct {
 
 type _UpdateInstanceThresholdRequestInstanceThreshold UpdateInstanceThresholdRequestInstanceThreshold
 
-// NewUpdateInstanceThresholdRequestInstanceThresholdWithDefaults instantiates a new UpdateInstanceThresholdRequestInstanceThreshold object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstanceThresholdRequestInstanceThresholdWithDefaults() *UpdateInstanceThresholdRequestInstanceThreshold {
-	this := UpdateInstanceThresholdRequestInstanceThreshold{}
-	var autoUp bool = false
-	this.AutoUp = &autoUp
-	var autoDown bool = false
-	this.AutoDown = &autoDown
-	var cpuEnabled bool = false
-	this.CpuEnabled = &cpuEnabled
-	var minCpu float32 = 0
-	this.MinCpu = &minCpu
-	var maxCpu float32 = 0
-	this.MaxCpu = &maxCpu
-	var memoryEnabled bool = false
-	this.MemoryEnabled = &memoryEnabled
-	var minMemory float32 = 0
-	this.MinMemory = &minMemory
-	var maxMemory float32 = 0
-	this.MaxMemory = &maxMemory
-	var diskEnabled bool = false
-	this.DiskEnabled = &diskEnabled
-	var minDisk float32 = 0
-	this.MinDisk = &minDisk
-	var maxDisk float32 = 0
-	this.MaxDisk = &maxDisk
-	return &this
-}
-
 func (o UpdateInstanceThresholdRequestInstanceThreshold) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

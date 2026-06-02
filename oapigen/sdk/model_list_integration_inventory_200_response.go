@@ -27,14 +27,6 @@ type ListIntegrationInventory200Response struct {
 
 type _ListIntegrationInventory200Response ListIntegrationInventory200Response
 
-// NewListIntegrationInventory200ResponseWithDefaults instantiates a new ListIntegrationInventory200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListIntegrationInventory200ResponseWithDefaults() *ListIntegrationInventory200Response {
-	this := ListIntegrationInventory200Response{}
-	return &this
-}
-
 func (o ListIntegrationInventory200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

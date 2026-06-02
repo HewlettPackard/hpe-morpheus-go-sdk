@@ -27,14 +27,6 @@ type ClusterHistoryItemCreatedBy struct {
 
 type _ClusterHistoryItemCreatedBy ClusterHistoryItemCreatedBy
 
-// NewClusterHistoryItemCreatedByWithDefaults instantiates a new ClusterHistoryItemCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterHistoryItemCreatedByWithDefaults() *ClusterHistoryItemCreatedBy {
-	this := ClusterHistoryItemCreatedBy{}
-	return &this
-}
-
 func (o ClusterHistoryItemCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

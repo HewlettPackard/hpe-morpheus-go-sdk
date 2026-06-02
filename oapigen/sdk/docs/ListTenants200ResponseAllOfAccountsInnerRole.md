@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListTenants200ResponseAllOfAccountsInnerRoleWithDefaults
-
-`func NewListTenants200ResponseAllOfAccountsInnerRoleWithDefaults() *ListTenants200ResponseAllOfAccountsInnerRole`
-
-NewListTenants200ResponseAllOfAccountsInnerRoleWithDefaults instantiates a new ListTenants200ResponseAllOfAccountsInnerRole object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListTenants200ResponseAllOfAccountsInnerRole) GetId() int64`

@@ -72,14 +72,6 @@ type WhitelabelSettingsUpdate struct {
 
 type _WhitelabelSettingsUpdate WhitelabelSettingsUpdate
 
-// NewWhitelabelSettingsUpdateWithDefaults instantiates a new WhitelabelSettingsUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWhitelabelSettingsUpdateWithDefaults() *WhitelabelSettingsUpdate {
-	this := WhitelabelSettingsUpdate{}
-	return &this
-}
-
 func (o WhitelabelSettingsUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

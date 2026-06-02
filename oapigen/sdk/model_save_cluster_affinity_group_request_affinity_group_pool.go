@@ -26,14 +26,6 @@ type SaveClusterAffinityGroupRequestAffinityGroupPool struct {
 
 type _SaveClusterAffinityGroupRequestAffinityGroupPool SaveClusterAffinityGroupRequestAffinityGroupPool
 
-// NewSaveClusterAffinityGroupRequestAffinityGroupPoolWithDefaults instantiates a new SaveClusterAffinityGroupRequestAffinityGroupPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveClusterAffinityGroupRequestAffinityGroupPoolWithDefaults() *SaveClusterAffinityGroupRequestAffinityGroupPool {
-	this := SaveClusterAffinityGroupRequestAffinityGroupPool{}
-	return &this
-}
-
 func (o SaveClusterAffinityGroupRequestAffinityGroupPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

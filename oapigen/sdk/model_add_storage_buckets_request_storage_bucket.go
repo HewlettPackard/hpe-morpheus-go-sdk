@@ -50,24 +50,6 @@ type AddStorageBucketsRequestStorageBucket struct {
 
 type _AddStorageBucketsRequestStorageBucket AddStorageBucketsRequestStorageBucket
 
-// NewAddStorageBucketsRequestStorageBucketWithDefaults instantiates a new AddStorageBucketsRequestStorageBucket object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddStorageBucketsRequestStorageBucketWithDefaults() *AddStorageBucketsRequestStorageBucket {
-	this := AddStorageBucketsRequestStorageBucket{}
-	var defaultBackupTarget bool = false
-	this.DefaultBackupTarget = &defaultBackupTarget
-	var defaultDeploymentTarget bool = false
-	this.DefaultDeploymentTarget = &defaultDeploymentTarget
-	var defaultVirtualImageTarget bool = false
-	this.DefaultVirtualImageTarget = &defaultVirtualImageTarget
-	var retentionPolicyType string = "none"
-	this.RetentionPolicyType = &retentionPolicyType
-	var createBucket bool = false
-	this.CreateBucket = &createBucket
-	return &this
-}
-
 func (o AddStorageBucketsRequestStorageBucket) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

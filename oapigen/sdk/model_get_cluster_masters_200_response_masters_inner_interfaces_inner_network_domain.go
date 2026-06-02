@@ -27,14 +27,6 @@ type GetClusterMasters200ResponseMastersInnerInterfacesInnerNetworkDomain struct
 
 type _GetClusterMasters200ResponseMastersInnerInterfacesInnerNetworkDomain GetClusterMasters200ResponseMastersInnerInterfacesInnerNetworkDomain
 
-// NewGetClusterMasters200ResponseMastersInnerInterfacesInnerNetworkDomainWithDefaults instantiates a new GetClusterMasters200ResponseMastersInnerInterfacesInnerNetworkDomain object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterMasters200ResponseMastersInnerInterfacesInnerNetworkDomainWithDefaults() *GetClusterMasters200ResponseMastersInnerInterfacesInnerNetworkDomain {
-	this := GetClusterMasters200ResponseMastersInnerInterfacesInnerNetworkDomain{}
-	return &this
-}
-
 func (o GetClusterMasters200ResponseMastersInnerInterfacesInnerNetworkDomain) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

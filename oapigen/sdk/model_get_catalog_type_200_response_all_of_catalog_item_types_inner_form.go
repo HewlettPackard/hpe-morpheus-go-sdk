@@ -27,14 +27,6 @@ type GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm struct {
 
 type _GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm
 
-// NewGetCatalogType200ResponseAllOfCatalogItemTypesInnerFormWithDefaults instantiates a new GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCatalogType200ResponseAllOfCatalogItemTypesInnerFormWithDefaults() *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm {
-	this := GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm{}
-	return &this
-}
-
 func (o GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

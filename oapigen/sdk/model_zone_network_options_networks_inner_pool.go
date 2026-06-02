@@ -27,14 +27,6 @@ type ZoneNetworkOptionsNetworksInnerPool struct {
 
 type _ZoneNetworkOptionsNetworksInnerPool ZoneNetworkOptionsNetworksInnerPool
 
-// NewZoneNetworkOptionsNetworksInnerPoolWithDefaults instantiates a new ZoneNetworkOptionsNetworksInnerPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneNetworkOptionsNetworksInnerPoolWithDefaults() *ZoneNetworkOptionsNetworksInnerPool {
-	this := ZoneNetworkOptionsNetworksInnerPool{}
-	return &this
-}
-
 func (o ZoneNetworkOptionsNetworksInnerPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

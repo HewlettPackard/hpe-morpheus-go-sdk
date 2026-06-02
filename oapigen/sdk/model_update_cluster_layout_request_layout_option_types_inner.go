@@ -26,14 +26,6 @@ type UpdateClusterLayoutRequestLayoutOptionTypesInner struct {
 
 type _UpdateClusterLayoutRequestLayoutOptionTypesInner UpdateClusterLayoutRequestLayoutOptionTypesInner
 
-// NewUpdateClusterLayoutRequestLayoutOptionTypesInnerWithDefaults instantiates a new UpdateClusterLayoutRequestLayoutOptionTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateClusterLayoutRequestLayoutOptionTypesInnerWithDefaults() *UpdateClusterLayoutRequestLayoutOptionTypesInner {
-	this := UpdateClusterLayoutRequestLayoutOptionTypesInner{}
-	return &this
-}
-
 func (o UpdateClusterLayoutRequestLayoutOptionTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

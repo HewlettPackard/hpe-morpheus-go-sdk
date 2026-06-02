@@ -26,14 +26,6 @@ type ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup struct {
 
 type _ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup
 
-// NewListInstances200ResponseAllOfInstancesInnerConfigReplicationGroupWithDefaults instantiates a new ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListInstances200ResponseAllOfInstancesInnerConfigReplicationGroupWithDefaults() *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup {
-	this := ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup{}
-	return &this
-}
-
 func (o ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

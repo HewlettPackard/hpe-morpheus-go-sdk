@@ -39,16 +39,6 @@ type UserSourceCreateUserSourceConfigOneOf2 struct {
 
 type _UserSourceCreateUserSourceConfigOneOf2 UserSourceCreateUserSourceConfigOneOf2
 
-// NewUserSourceCreateUserSourceConfigOneOf2WithDefaults instantiates a new UserSourceCreateUserSourceConfigOneOf2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserSourceCreateUserSourceConfigOneOf2WithDefaults() *UserSourceCreateUserSourceConfigOneOf2 {
-	this := UserSourceCreateUserSourceConfigOneOf2{}
-	var searchMemberGroups bool = false
-	this.SearchMemberGroups = &searchMemberGroups
-	return &this
-}
-
 func (o UserSourceCreateUserSourceConfigOneOf2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

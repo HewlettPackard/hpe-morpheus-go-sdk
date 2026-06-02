@@ -29,14 +29,6 @@ type GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf1 struct {
 
 type _GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf1 GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf1
 
-// NewGetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf1WithDefaults instantiates a new GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf1WithDefaults() *GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf1 {
-	this := GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf1{}
-	return &this
-}
-
 func (o GetCloudResourcePools200ResponseAllOfResourcePoolConfigAnyOf1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

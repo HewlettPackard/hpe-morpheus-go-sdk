@@ -27,14 +27,6 @@ type UsagesActivityInnerUser struct {
 
 type _UsagesActivityInnerUser UsagesActivityInnerUser
 
-// NewUsagesActivityInnerUserWithDefaults instantiates a new UsagesActivityInnerUser object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUsagesActivityInnerUserWithDefaults() *UsagesActivityInnerUser {
-	this := UsagesActivityInnerUser{}
-	return &this
-}
-
 func (o UsagesActivityInnerUser) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

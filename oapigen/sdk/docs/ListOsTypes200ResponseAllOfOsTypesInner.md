@@ -32,14 +32,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListOsTypes200ResponseAllOfOsTypesInnerWithDefaults
-
-`func NewListOsTypes200ResponseAllOfOsTypesInnerWithDefaults() *ListOsTypes200ResponseAllOfOsTypesInner`
-
-NewListOsTypes200ResponseAllOfOsTypesInnerWithDefaults instantiates a new ListOsTypes200ResponseAllOfOsTypesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListOsTypes200ResponseAllOfOsTypesInner) GetId() int64`

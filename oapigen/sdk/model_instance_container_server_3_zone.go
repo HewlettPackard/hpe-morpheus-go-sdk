@@ -27,14 +27,6 @@ type InstanceContainerServer3Zone struct {
 
 type _InstanceContainerServer3Zone InstanceContainerServer3Zone
 
-// NewInstanceContainerServer3ZoneWithDefaults instantiates a new InstanceContainerServer3Zone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainerServer3ZoneWithDefaults() *InstanceContainerServer3Zone {
-	this := InstanceContainerServer3Zone{}
-	return &this
-}
-
 func (o InstanceContainerServer3Zone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

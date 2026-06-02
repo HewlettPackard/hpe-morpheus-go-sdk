@@ -27,14 +27,6 @@ type RemoveAppInstanceRequest struct {
 
 type _RemoveAppInstanceRequest RemoveAppInstanceRequest
 
-// NewRemoveAppInstanceRequestWithDefaults instantiates a new RemoveAppInstanceRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRemoveAppInstanceRequestWithDefaults() *RemoveAppInstanceRequest {
-	this := RemoveAppInstanceRequest{}
-	return &this
-}
-
 func (o RemoveAppInstanceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -34,14 +34,6 @@ type SubnetType struct {
 
 type _SubnetType SubnetType
 
-// NewSubnetTypeWithDefaults instantiates a new SubnetType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSubnetTypeWithDefaults() *SubnetType {
-	this := SubnetType{}
-	return &this
-}
-
 func (o SubnetType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

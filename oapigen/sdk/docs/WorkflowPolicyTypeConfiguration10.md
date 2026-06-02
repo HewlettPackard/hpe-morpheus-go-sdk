@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewWorkflowPolicyTypeConfiguration10WithDefaults
-
-`func NewWorkflowPolicyTypeConfiguration10WithDefaults() *WorkflowPolicyTypeConfiguration10`
-
-NewWorkflowPolicyTypeConfiguration10WithDefaults instantiates a new WorkflowPolicyTypeConfiguration10 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetWorkflowId
 
 `func (o *WorkflowPolicyTypeConfiguration10) GetWorkflowId() string`

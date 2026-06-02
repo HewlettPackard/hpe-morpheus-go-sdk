@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateVDIApps200ResponseAnyOfVdiAppWithDefaults
-
-`func NewUpdateVDIApps200ResponseAnyOfVdiAppWithDefaults() *UpdateVDIApps200ResponseAnyOfVdiApp`
-
-NewUpdateVDIApps200ResponseAnyOfVdiAppWithDefaults instantiates a new UpdateVDIApps200ResponseAnyOfVdiApp object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateVDIApps200ResponseAnyOfVdiApp) GetId() int64`

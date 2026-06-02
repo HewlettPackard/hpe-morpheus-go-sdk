@@ -27,14 +27,6 @@ type InstanceConfigObject1MetadataInner struct {
 
 type _InstanceConfigObject1MetadataInner InstanceConfigObject1MetadataInner
 
-// NewInstanceConfigObject1MetadataInnerWithDefaults instantiates a new InstanceConfigObject1MetadataInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigObject1MetadataInnerWithDefaults() *InstanceConfigObject1MetadataInner {
-	this := InstanceConfigObject1MetadataInner{}
-	return &this
-}
-
 func (o InstanceConfigObject1MetadataInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

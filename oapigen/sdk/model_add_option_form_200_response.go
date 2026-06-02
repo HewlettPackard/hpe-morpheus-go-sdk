@@ -26,14 +26,6 @@ type AddOptionForm200Response struct {
 
 type _AddOptionForm200Response AddOptionForm200Response
 
-// NewAddOptionForm200ResponseWithDefaults instantiates a new AddOptionForm200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddOptionForm200ResponseWithDefaults() *AddOptionForm200Response {
-	this := AddOptionForm200Response{}
-	return &this
-}
-
 func (o AddOptionForm200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

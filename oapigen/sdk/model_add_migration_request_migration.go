@@ -55,20 +55,6 @@ type AddMigrationRequestMigration struct {
 
 type _AddMigrationRequestMigration AddMigrationRequestMigration
 
-// NewAddMigrationRequestMigrationWithDefaults instantiates a new AddMigrationRequestMigration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddMigrationRequestMigrationWithDefaults() *AddMigrationRequestMigration {
-	this := AddMigrationRequestMigration{}
-	var skippedPrechecks bool = false
-	this.SkippedPrechecks = &skippedPrechecks
-	var installGuestTools bool = true
-	this.InstallGuestTools = &installGuestTools
-	var reInitializeServerOnMigration bool = false
-	this.ReInitializeServerOnMigration = &reInitializeServerOnMigration
-	return &this
-}
-
 func (o AddMigrationRequestMigration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

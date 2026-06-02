@@ -27,14 +27,6 @@ type AddArchiveBucket200ResponseAllOfArchiveBucketOwner struct {
 
 type _AddArchiveBucket200ResponseAllOfArchiveBucketOwner AddArchiveBucket200ResponseAllOfArchiveBucketOwner
 
-// NewAddArchiveBucket200ResponseAllOfArchiveBucketOwnerWithDefaults instantiates a new AddArchiveBucket200ResponseAllOfArchiveBucketOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddArchiveBucket200ResponseAllOfArchiveBucketOwnerWithDefaults() *AddArchiveBucket200ResponseAllOfArchiveBucketOwner {
-	this := AddArchiveBucket200ResponseAllOfArchiveBucketOwner{}
-	return &this
-}
-
 func (o AddArchiveBucket200ResponseAllOfArchiveBucketOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

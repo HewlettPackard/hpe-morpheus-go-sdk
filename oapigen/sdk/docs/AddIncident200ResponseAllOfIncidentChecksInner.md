@@ -53,14 +53,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddIncident200ResponseAllOfIncidentChecksInnerWithDefaults
-
-`func NewAddIncident200ResponseAllOfIncidentChecksInnerWithDefaults() *AddIncident200ResponseAllOfIncidentChecksInner`
-
-NewAddIncident200ResponseAllOfIncidentChecksInnerWithDefaults instantiates a new AddIncident200ResponseAllOfIncidentChecksInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetId() int64`

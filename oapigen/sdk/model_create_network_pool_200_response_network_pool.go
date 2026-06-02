@@ -56,14 +56,6 @@ type CreateNetworkPool200ResponseNetworkPool struct {
 
 type _CreateNetworkPool200ResponseNetworkPool CreateNetworkPool200ResponseNetworkPool
 
-// NewCreateNetworkPool200ResponseNetworkPoolWithDefaults instantiates a new CreateNetworkPool200ResponseNetworkPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkPool200ResponseNetworkPoolWithDefaults() *CreateNetworkPool200ResponseNetworkPool {
-	this := CreateNetworkPool200ResponseNetworkPool{}
-	return &this
-}
-
 func (o CreateNetworkPool200ResponseNetworkPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

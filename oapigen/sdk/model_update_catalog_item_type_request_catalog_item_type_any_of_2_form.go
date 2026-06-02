@@ -27,14 +27,6 @@ type UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Form struct {
 
 type _UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Form UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Form
 
-// NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2FormWithDefaults instantiates a new UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Form object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2FormWithDefaults() *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Form {
-	this := UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Form{}
-	return &this
-}
-
 func (o UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Form) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

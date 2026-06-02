@@ -27,14 +27,6 @@ type UpdateClusterPermissionsRequestPermissionsResourcePool struct {
 
 type _UpdateClusterPermissionsRequestPermissionsResourcePool UpdateClusterPermissionsRequestPermissionsResourcePool
 
-// NewUpdateClusterPermissionsRequestPermissionsResourcePoolWithDefaults instantiates a new UpdateClusterPermissionsRequestPermissionsResourcePool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateClusterPermissionsRequestPermissionsResourcePoolWithDefaults() *UpdateClusterPermissionsRequestPermissionsResourcePool {
-	this := UpdateClusterPermissionsRequestPermissionsResourcePool{}
-	return &this
-}
-
 func (o UpdateClusterPermissionsRequestPermissionsResourcePool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

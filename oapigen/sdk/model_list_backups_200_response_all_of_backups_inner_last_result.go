@@ -32,14 +32,6 @@ type ListBackups200ResponseAllOfBackupsInnerLastResult struct {
 
 type _ListBackups200ResponseAllOfBackupsInnerLastResult ListBackups200ResponseAllOfBackupsInnerLastResult
 
-// NewListBackups200ResponseAllOfBackupsInnerLastResultWithDefaults instantiates a new ListBackups200ResponseAllOfBackupsInnerLastResult object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListBackups200ResponseAllOfBackupsInnerLastResultWithDefaults() *ListBackups200ResponseAllOfBackupsInnerLastResult {
-	this := ListBackups200ResponseAllOfBackupsInnerLastResult{}
-	return &this
-}
-
 func (o ListBackups200ResponseAllOfBackupsInnerLastResult) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

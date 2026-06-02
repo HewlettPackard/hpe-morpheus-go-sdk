@@ -26,14 +26,6 @@ type AddInstance200ResponseAllOfOneOfInstanceConfigNetworkDomain struct {
 
 type _AddInstance200ResponseAllOfOneOfInstanceConfigNetworkDomain AddInstance200ResponseAllOfOneOfInstanceConfigNetworkDomain
 
-// NewAddInstance200ResponseAllOfOneOfInstanceConfigNetworkDomainWithDefaults instantiates a new AddInstance200ResponseAllOfOneOfInstanceConfigNetworkDomain object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstance200ResponseAllOfOneOfInstanceConfigNetworkDomainWithDefaults() *AddInstance200ResponseAllOfOneOfInstanceConfigNetworkDomain {
-	this := AddInstance200ResponseAllOfOneOfInstanceConfigNetworkDomain{}
-	return &this
-}
-
 func (o AddInstance200ResponseAllOfOneOfInstanceConfigNetworkDomain) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

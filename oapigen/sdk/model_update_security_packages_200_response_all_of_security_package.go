@@ -37,14 +37,6 @@ type UpdateSecurityPackages200ResponseAllOfSecurityPackage struct {
 
 type _UpdateSecurityPackages200ResponseAllOfSecurityPackage UpdateSecurityPackages200ResponseAllOfSecurityPackage
 
-// NewUpdateSecurityPackages200ResponseAllOfSecurityPackageWithDefaults instantiates a new UpdateSecurityPackages200ResponseAllOfSecurityPackage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateSecurityPackages200ResponseAllOfSecurityPackageWithDefaults() *UpdateSecurityPackages200ResponseAllOfSecurityPackage {
-	this := UpdateSecurityPackages200ResponseAllOfSecurityPackage{}
-	return &this
-}
-
 func (o UpdateSecurityPackages200ResponseAllOfSecurityPackage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

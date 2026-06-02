@@ -26,14 +26,6 @@ type MaxContainersPolicyTypeConfiguration3 struct {
 
 type _MaxContainersPolicyTypeConfiguration3 MaxContainersPolicyTypeConfiguration3
 
-// NewMaxContainersPolicyTypeConfiguration3WithDefaults instantiates a new MaxContainersPolicyTypeConfiguration3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxContainersPolicyTypeConfiguration3WithDefaults() *MaxContainersPolicyTypeConfiguration3 {
-	this := MaxContainersPolicyTypeConfiguration3{}
-	return &this
-}
-
 func (o MaxContainersPolicyTypeConfiguration3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

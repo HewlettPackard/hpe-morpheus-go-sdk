@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetCloudAffinityGroup200ResponseAffinityGroupPoolWithDefaults
-
-`func NewGetCloudAffinityGroup200ResponseAffinityGroupPoolWithDefaults() *GetCloudAffinityGroup200ResponseAffinityGroupPool`
-
-NewGetCloudAffinityGroup200ResponseAffinityGroupPoolWithDefaults instantiates a new GetCloudAffinityGroup200ResponseAffinityGroupPool object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetCloudAffinityGroup200ResponseAffinityGroupPool) GetId() int64`

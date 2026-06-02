@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetInstanceHistory200ResponseAllOfProcessesInnerEventsInnerUpdatedByWithDefaults
-
-`func NewGetInstanceHistory200ResponseAllOfProcessesInnerEventsInnerUpdatedByWithDefaults() *GetInstanceHistory200ResponseAllOfProcessesInnerEventsInnerUpdatedBy`
-
-NewGetInstanceHistory200ResponseAllOfProcessesInnerEventsInnerUpdatedByWithDefaults instantiates a new GetInstanceHistory200ResponseAllOfProcessesInnerEventsInnerUpdatedBy object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetUsername
 
 `func (o *GetInstanceHistory200ResponseAllOfProcessesInnerEventsInnerUpdatedBy) GetUsername() string`

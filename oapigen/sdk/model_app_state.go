@@ -33,14 +33,6 @@ type AppState struct {
 
 type _AppState AppState
 
-// NewAppStateWithDefaults instantiates a new AppState object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppStateWithDefaults() *AppState {
-	this := AppState{}
-	return &this
-}
-
 func (o AppState) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

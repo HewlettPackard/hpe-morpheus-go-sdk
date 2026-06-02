@@ -26,14 +26,6 @@ type GetWikiCluster200Response struct {
 
 type _GetWikiCluster200Response GetWikiCluster200Response
 
-// NewGetWikiCluster200ResponseWithDefaults instantiates a new GetWikiCluster200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetWikiCluster200ResponseWithDefaults() *GetWikiCluster200Response {
-	this := GetWikiCluster200Response{}
-	return &this
-}
-
 func (o GetWikiCluster200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

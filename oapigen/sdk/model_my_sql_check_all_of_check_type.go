@@ -26,14 +26,6 @@ type MySqlCheckAllOfCheckType struct {
 
 type _MySqlCheckAllOfCheckType MySqlCheckAllOfCheckType
 
-// NewMySqlCheckAllOfCheckTypeWithDefaults instantiates a new MySqlCheckAllOfCheckType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMySqlCheckAllOfCheckTypeWithDefaults() *MySqlCheckAllOfCheckType {
-	this := MySqlCheckAllOfCheckType{}
-	return &this
-}
-
 func (o MySqlCheckAllOfCheckType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

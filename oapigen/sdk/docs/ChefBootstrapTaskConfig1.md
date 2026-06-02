@@ -31,14 +31,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewChefBootstrapTaskConfig1WithDefaults
-
-`func NewChefBootstrapTaskConfig1WithDefaults() *ChefBootstrapTaskConfig1`
-
-NewChefBootstrapTaskConfig1WithDefaults instantiates a new ChefBootstrapTaskConfig1 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetChefDataKey
 
 `func (o *ChefBootstrapTaskConfig1) GetChefDataKey() string`

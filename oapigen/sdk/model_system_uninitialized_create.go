@@ -39,14 +39,6 @@ type SystemUninitializedCreate struct {
 
 type _SystemUninitializedCreate SystemUninitializedCreate
 
-// NewSystemUninitializedCreateWithDefaults instantiates a new SystemUninitializedCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSystemUninitializedCreateWithDefaults() *SystemUninitializedCreate {
-	this := SystemUninitializedCreate{}
-	return &this
-}
-
 func (o SystemUninitializedCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

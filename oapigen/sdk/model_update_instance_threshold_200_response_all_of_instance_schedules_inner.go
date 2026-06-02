@@ -49,18 +49,6 @@ type UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInner struct {
 
 type _UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInner UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInner
 
-// NewUpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerWithDefaults instantiates a new UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerWithDefaults() *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInner {
-	this := UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInner{}
-	var scheduleType string = "dayOfWeek"
-	this.ScheduleType = &scheduleType
-	var scheduleTimezone string = "UTC"
-	this.ScheduleTimezone = &scheduleTimezone
-	return &this
-}
-
 func (o UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

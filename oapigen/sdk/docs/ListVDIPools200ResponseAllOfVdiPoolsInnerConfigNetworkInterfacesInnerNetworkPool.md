@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetworkPoolWithDefaults
-
-`func NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetworkPoolWithDefaults() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetworkPool`
-
-NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetworkPoolWithDefaults instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetworkPool object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetworkPool) GetId() int64`

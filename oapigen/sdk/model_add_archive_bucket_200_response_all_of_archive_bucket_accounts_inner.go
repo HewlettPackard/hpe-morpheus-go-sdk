@@ -27,14 +27,6 @@ type AddArchiveBucket200ResponseAllOfArchiveBucketAccountsInner struct {
 
 type _AddArchiveBucket200ResponseAllOfArchiveBucketAccountsInner AddArchiveBucket200ResponseAllOfArchiveBucketAccountsInner
 
-// NewAddArchiveBucket200ResponseAllOfArchiveBucketAccountsInnerWithDefaults instantiates a new AddArchiveBucket200ResponseAllOfArchiveBucketAccountsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddArchiveBucket200ResponseAllOfArchiveBucketAccountsInnerWithDefaults() *AddArchiveBucket200ResponseAllOfArchiveBucketAccountsInner {
-	this := AddArchiveBucket200ResponseAllOfArchiveBucketAccountsInner{}
-	return &this
-}
-
 func (o AddArchiveBucket200ResponseAllOfArchiveBucketAccountsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

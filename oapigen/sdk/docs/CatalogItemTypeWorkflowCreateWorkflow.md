@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCatalogItemTypeWorkflowCreateWorkflowWithDefaults
-
-`func NewCatalogItemTypeWorkflowCreateWorkflowWithDefaults() *CatalogItemTypeWorkflowCreateWorkflow`
-
-NewCatalogItemTypeWorkflowCreateWorkflowWithDefaults instantiates a new CatalogItemTypeWorkflowCreateWorkflow object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *CatalogItemTypeWorkflowCreateWorkflow) GetId() int64`

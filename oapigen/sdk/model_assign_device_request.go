@@ -27,14 +27,6 @@ type AssignDeviceRequest struct {
 
 type _AssignDeviceRequest AssignDeviceRequest
 
-// NewAssignDeviceRequestWithDefaults instantiates a new AssignDeviceRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAssignDeviceRequestWithDefaults() *AssignDeviceRequest {
-	this := AssignDeviceRequest{}
-	return &this
-}
-
 func (o AssignDeviceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

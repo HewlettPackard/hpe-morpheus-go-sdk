@@ -27,14 +27,6 @@ type ActivityActivityInnerUser struct {
 
 type _ActivityActivityInnerUser ActivityActivityInnerUser
 
-// NewActivityActivityInnerUserWithDefaults instantiates a new ActivityActivityInnerUser object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewActivityActivityInnerUserWithDefaults() *ActivityActivityInnerUser {
-	this := ActivityActivityInnerUser{}
-	return &this
-}
-
 func (o ActivityActivityInnerUser) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

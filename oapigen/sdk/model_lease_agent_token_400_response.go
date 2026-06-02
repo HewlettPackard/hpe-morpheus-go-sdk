@@ -27,14 +27,6 @@ type LeaseAgentToken400Response struct {
 
 type _LeaseAgentToken400Response LeaseAgentToken400Response
 
-// NewLeaseAgentToken400ResponseWithDefaults instantiates a new LeaseAgentToken400Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLeaseAgentToken400ResponseWithDefaults() *LeaseAgentToken400Response {
-	this := LeaseAgentToken400Response{}
-	return &this
-}
-
 func (o LeaseAgentToken400Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

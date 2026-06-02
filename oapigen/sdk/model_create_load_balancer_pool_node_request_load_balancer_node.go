@@ -37,14 +37,6 @@ type CreateLoadBalancerPoolNodeRequestLoadBalancerNode struct {
 
 type _CreateLoadBalancerPoolNodeRequestLoadBalancerNode CreateLoadBalancerPoolNodeRequestLoadBalancerNode
 
-// NewCreateLoadBalancerPoolNodeRequestLoadBalancerNodeWithDefaults instantiates a new CreateLoadBalancerPoolNodeRequestLoadBalancerNode object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateLoadBalancerPoolNodeRequestLoadBalancerNodeWithDefaults() *CreateLoadBalancerPoolNodeRequestLoadBalancerNode {
-	this := CreateLoadBalancerPoolNodeRequestLoadBalancerNode{}
-	return &this
-}
-
 func (o CreateLoadBalancerPoolNodeRequestLoadBalancerNode) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

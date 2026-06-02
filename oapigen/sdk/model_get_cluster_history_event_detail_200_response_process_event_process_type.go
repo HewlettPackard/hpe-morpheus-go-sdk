@@ -27,14 +27,6 @@ type GetClusterHistoryEventDetail200ResponseProcessEventProcessType struct {
 
 type _GetClusterHistoryEventDetail200ResponseProcessEventProcessType GetClusterHistoryEventDetail200ResponseProcessEventProcessType
 
-// NewGetClusterHistoryEventDetail200ResponseProcessEventProcessTypeWithDefaults instantiates a new GetClusterHistoryEventDetail200ResponseProcessEventProcessType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterHistoryEventDetail200ResponseProcessEventProcessTypeWithDefaults() *GetClusterHistoryEventDetail200ResponseProcessEventProcessType {
-	this := GetClusterHistoryEventDetail200ResponseProcessEventProcessType{}
-	return &this
-}
-
 func (o GetClusterHistoryEventDetail200ResponseProcessEventProcessType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

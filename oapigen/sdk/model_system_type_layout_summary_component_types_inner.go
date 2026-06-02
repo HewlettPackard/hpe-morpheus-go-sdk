@@ -33,14 +33,6 @@ type SystemTypeLayoutSummaryComponentTypesInner struct {
 
 type _SystemTypeLayoutSummaryComponentTypesInner SystemTypeLayoutSummaryComponentTypesInner
 
-// NewSystemTypeLayoutSummaryComponentTypesInnerWithDefaults instantiates a new SystemTypeLayoutSummaryComponentTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSystemTypeLayoutSummaryComponentTypesInnerWithDefaults() *SystemTypeLayoutSummaryComponentTypesInner {
-	this := SystemTypeLayoutSummaryComponentTypesInner{}
-	return &this
-}
-
 func (o SystemTypeLayoutSummaryComponentTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

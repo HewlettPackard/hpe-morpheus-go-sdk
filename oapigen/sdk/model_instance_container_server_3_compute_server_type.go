@@ -31,14 +31,6 @@ type InstanceContainerServer3ComputeServerType struct {
 
 type _InstanceContainerServer3ComputeServerType InstanceContainerServer3ComputeServerType
 
-// NewInstanceContainerServer3ComputeServerTypeWithDefaults instantiates a new InstanceContainerServer3ComputeServerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainerServer3ComputeServerTypeWithDefaults() *InstanceContainerServer3ComputeServerType {
-	this := InstanceContainerServer3ComputeServerType{}
-	return &this
-}
-
 func (o InstanceContainerServer3ComputeServerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

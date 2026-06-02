@@ -27,14 +27,6 @@ type UpdateWikiCluster200ResponseAllOfPageCreatedBy struct {
 
 type _UpdateWikiCluster200ResponseAllOfPageCreatedBy UpdateWikiCluster200ResponseAllOfPageCreatedBy
 
-// NewUpdateWikiCluster200ResponseAllOfPageCreatedByWithDefaults instantiates a new UpdateWikiCluster200ResponseAllOfPageCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateWikiCluster200ResponseAllOfPageCreatedByWithDefaults() *UpdateWikiCluster200ResponseAllOfPageCreatedBy {
-	this := UpdateWikiCluster200ResponseAllOfPageCreatedBy{}
-	return &this
-}
-
 func (o UpdateWikiCluster200ResponseAllOfPageCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

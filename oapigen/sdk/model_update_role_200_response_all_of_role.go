@@ -45,14 +45,6 @@ type UpdateRole200ResponseAllOfRole struct {
 
 type _UpdateRole200ResponseAllOfRole UpdateRole200ResponseAllOfRole
 
-// NewUpdateRole200ResponseAllOfRoleWithDefaults instantiates a new UpdateRole200ResponseAllOfRole object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateRole200ResponseAllOfRoleWithDefaults() *UpdateRole200ResponseAllOfRole {
-	this := UpdateRole200ResponseAllOfRole{}
-	return &this
-}
-
 func (o UpdateRole200ResponseAllOfRole) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

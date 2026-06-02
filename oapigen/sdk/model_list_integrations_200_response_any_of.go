@@ -26,14 +26,6 @@ type ListIntegrations200ResponseAnyOf struct {
 
 type _ListIntegrations200ResponseAnyOf ListIntegrations200ResponseAnyOf
 
-// NewListIntegrations200ResponseAnyOfWithDefaults instantiates a new ListIntegrations200ResponseAnyOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListIntegrations200ResponseAnyOfWithDefaults() *ListIntegrations200ResponseAnyOf {
-	this := ListIntegrations200ResponseAnyOf{}
-	return &this
-}
-
 func (o ListIntegrations200ResponseAnyOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

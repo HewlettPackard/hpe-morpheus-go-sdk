@@ -27,14 +27,6 @@ type UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner struct {
 
 type _UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner
 
-// NewUpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInnerWithDefaults instantiates a new UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInnerWithDefaults() *UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner {
-	this := UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner{}
-	return &this
-}
-
 func (o UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

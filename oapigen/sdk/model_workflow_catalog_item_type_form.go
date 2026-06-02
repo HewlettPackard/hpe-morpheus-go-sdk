@@ -27,14 +27,6 @@ type WorkflowCatalogItemTypeForm struct {
 
 type _WorkflowCatalogItemTypeForm WorkflowCatalogItemTypeForm
 
-// NewWorkflowCatalogItemTypeFormWithDefaults instantiates a new WorkflowCatalogItemTypeForm object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWorkflowCatalogItemTypeFormWithDefaults() *WorkflowCatalogItemTypeForm {
-	this := WorkflowCatalogItemTypeForm{}
-	return &this
-}
-
 func (o WorkflowCatalogItemTypeForm) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRolePermissionPersonaWithDefaults
-
-`func NewRolePermissionPersonaWithDefaults() *RolePermissionPersona`
-
-NewRolePermissionPersonaWithDefaults instantiates a new RolePermissionPersona object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPersonaCode
 
 `func (o *RolePermissionPersona) GetPersonaCode() string`

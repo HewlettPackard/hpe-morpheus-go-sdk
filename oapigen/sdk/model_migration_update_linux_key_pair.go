@@ -29,14 +29,6 @@ type MigrationUpdateLinuxKeyPair struct {
 
 type _MigrationUpdateLinuxKeyPair MigrationUpdateLinuxKeyPair
 
-// NewMigrationUpdateLinuxKeyPairWithDefaults instantiates a new MigrationUpdateLinuxKeyPair object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMigrationUpdateLinuxKeyPairWithDefaults() *MigrationUpdateLinuxKeyPair {
-	this := MigrationUpdateLinuxKeyPair{}
-	return &this
-}
-
 func (o MigrationUpdateLinuxKeyPair) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -39,14 +39,6 @@ type CreateTenantSubtenantGroup200ResponseAccount struct {
 
 type _CreateTenantSubtenantGroup200ResponseAccount CreateTenantSubtenantGroup200ResponseAccount
 
-// NewCreateTenantSubtenantGroup200ResponseAccountWithDefaults instantiates a new CreateTenantSubtenantGroup200ResponseAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateTenantSubtenantGroup200ResponseAccountWithDefaults() *CreateTenantSubtenantGroup200ResponseAccount {
-	this := CreateTenantSubtenantGroup200ResponseAccount{}
-	return &this
-}
-
 func (o CreateTenantSubtenantGroup200ResponseAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -30,14 +30,6 @@ type GetArchiveBucket200Response struct {
 
 type _GetArchiveBucket200Response GetArchiveBucket200Response
 
-// NewGetArchiveBucket200ResponseWithDefaults instantiates a new GetArchiveBucket200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetArchiveBucket200ResponseWithDefaults() *GetArchiveBucket200Response {
-	this := GetArchiveBucket200Response{}
-	return &this
-}
-
 func (o GetArchiveBucket200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

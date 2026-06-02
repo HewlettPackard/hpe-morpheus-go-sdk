@@ -44,14 +44,6 @@ type SecurityScan struct {
 
 type _SecurityScan SecurityScan
 
-// NewSecurityScanWithDefaults instantiates a new SecurityScan object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSecurityScanWithDefaults() *SecurityScan {
-	this := SecurityScan{}
-	return &this
-}
-
 func (o SecurityScan) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

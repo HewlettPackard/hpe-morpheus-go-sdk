@@ -26,14 +26,6 @@ type AddSystemRequest struct {
 
 type _AddSystemRequest AddSystemRequest
 
-// NewAddSystemRequestWithDefaults instantiates a new AddSystemRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddSystemRequestWithDefaults() *AddSystemRequest {
-	this := AddSystemRequest{}
-	return &this
-}
-
 func (o AddSystemRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

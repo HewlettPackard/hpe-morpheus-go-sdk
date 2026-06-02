@@ -26,14 +26,6 @@ type Model400Error struct {
 
 type _Model400Error Model400Error
 
-// NewModel400ErrorWithDefaults instantiates a new Model400Error object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewModel400ErrorWithDefaults() *Model400Error {
-	this := Model400Error{}
-	return &this
-}
-
 func (o Model400Error) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type ListClusterDatastores200ResponseAllOfDatastoresInnerZone struct {
 
 type _ListClusterDatastores200ResponseAllOfDatastoresInnerZone ListClusterDatastores200ResponseAllOfDatastoresInnerZone
 
-// NewListClusterDatastores200ResponseAllOfDatastoresInnerZoneWithDefaults instantiates a new ListClusterDatastores200ResponseAllOfDatastoresInnerZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterDatastores200ResponseAllOfDatastoresInnerZoneWithDefaults() *ListClusterDatastores200ResponseAllOfDatastoresInnerZone {
-	this := ListClusterDatastores200ResponseAllOfDatastoresInnerZone{}
-	return &this
-}
-
 func (o ListClusterDatastores200ResponseAllOfDatastoresInnerZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

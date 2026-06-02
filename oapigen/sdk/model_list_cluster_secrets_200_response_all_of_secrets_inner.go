@@ -29,14 +29,6 @@ type ListClusterSecrets200ResponseAllOfSecretsInner struct {
 
 type _ListClusterSecrets200ResponseAllOfSecretsInner ListClusterSecrets200ResponseAllOfSecretsInner
 
-// NewListClusterSecrets200ResponseAllOfSecretsInnerWithDefaults instantiates a new ListClusterSecrets200ResponseAllOfSecretsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterSecrets200ResponseAllOfSecretsInnerWithDefaults() *ListClusterSecrets200ResponseAllOfSecretsInner {
-	this := ListClusterSecrets200ResponseAllOfSecretsInner{}
-	return &this
-}
-
 func (o ListClusterSecrets200ResponseAllOfSecretsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -29,14 +29,6 @@ type ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner struct {
 
 type _ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner
 
-// NewListClusterNetworkEndpoints200ResponseAllOfEndpointsInnerWithDefaults instantiates a new ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterNetworkEndpoints200ResponseAllOfEndpointsInnerWithDefaults() *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner {
-	this := ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner{}
-	return &this
-}
-
 func (o ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

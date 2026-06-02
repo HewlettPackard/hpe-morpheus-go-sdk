@@ -29,14 +29,6 @@ type InstanceCreateSuccessInstanceConfigBackup struct {
 
 type _InstanceCreateSuccessInstanceConfigBackup InstanceCreateSuccessInstanceConfigBackup
 
-// NewInstanceCreateSuccessInstanceConfigBackupWithDefaults instantiates a new InstanceCreateSuccessInstanceConfigBackup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceCreateSuccessInstanceConfigBackupWithDefaults() *InstanceCreateSuccessInstanceConfigBackup {
-	this := InstanceCreateSuccessInstanceConfigBackup{}
-	return &this
-}
-
 func (o InstanceCreateSuccessInstanceConfigBackup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

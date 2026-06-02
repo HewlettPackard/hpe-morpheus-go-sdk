@@ -27,14 +27,6 @@ type ListOptionChefServerOptions200Response struct {
 
 type _ListOptionChefServerOptions200Response ListOptionChefServerOptions200Response
 
-// NewListOptionChefServerOptions200ResponseWithDefaults instantiates a new ListOptionChefServerOptions200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListOptionChefServerOptions200ResponseWithDefaults() *ListOptionChefServerOptions200Response {
-	this := ListOptionChefServerOptions200Response{}
-	return &this
-}
-
 func (o ListOptionChefServerOptions200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

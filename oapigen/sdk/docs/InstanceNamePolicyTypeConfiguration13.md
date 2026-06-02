@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInstanceNamePolicyTypeConfiguration13WithDefaults
-
-`func NewInstanceNamePolicyTypeConfiguration13WithDefaults() *InstanceNamePolicyTypeConfiguration13`
-
-NewInstanceNamePolicyTypeConfiguration13WithDefaults instantiates a new InstanceNamePolicyTypeConfiguration13 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetNamingType
 
 `func (o *InstanceNamePolicyTypeConfiguration13) GetNamingType() string`

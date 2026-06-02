@@ -42,14 +42,6 @@ type BackupServerHost struct {
 
 type _BackupServerHost BackupServerHost
 
-// NewBackupServerHostWithDefaults instantiates a new BackupServerHost object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBackupServerHostWithDefaults() *BackupServerHost {
-	this := BackupServerHost{}
-	return &this
-}
-
 func (o BackupServerHost) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -33,20 +33,6 @@ type UpdateCloudFoldersRequestFolder struct {
 
 type _UpdateCloudFoldersRequestFolder UpdateCloudFoldersRequestFolder
 
-// NewUpdateCloudFoldersRequestFolderWithDefaults instantiates a new UpdateCloudFoldersRequestFolder object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCloudFoldersRequestFolderWithDefaults() *UpdateCloudFoldersRequestFolder {
-	this := UpdateCloudFoldersRequestFolder{}
-	var defaultFolder bool = false
-	this.DefaultFolder = &defaultFolder
-	var defaultImage bool = false
-	this.DefaultImage = &defaultImage
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o UpdateCloudFoldersRequestFolder) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

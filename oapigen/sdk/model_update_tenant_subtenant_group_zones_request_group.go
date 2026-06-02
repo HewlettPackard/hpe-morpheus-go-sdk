@@ -27,14 +27,6 @@ type UpdateTenantSubtenantGroupZonesRequestGroup struct {
 
 type _UpdateTenantSubtenantGroupZonesRequestGroup UpdateTenantSubtenantGroupZonesRequestGroup
 
-// NewUpdateTenantSubtenantGroupZonesRequestGroupWithDefaults instantiates a new UpdateTenantSubtenantGroupZonesRequestGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateTenantSubtenantGroupZonesRequestGroupWithDefaults() *UpdateTenantSubtenantGroupZonesRequestGroup {
-	this := UpdateTenantSubtenantGroupZonesRequestGroup{}
-	return &this
-}
-
 func (o UpdateTenantSubtenantGroupZonesRequestGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

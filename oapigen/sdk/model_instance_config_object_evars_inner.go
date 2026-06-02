@@ -27,14 +27,6 @@ type InstanceConfigObjectEvarsInner struct {
 
 type _InstanceConfigObjectEvarsInner InstanceConfigObjectEvarsInner
 
-// NewInstanceConfigObjectEvarsInnerWithDefaults instantiates a new InstanceConfigObjectEvarsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigObjectEvarsInnerWithDefaults() *InstanceConfigObjectEvarsInner {
-	this := InstanceConfigObjectEvarsInner{}
-	return &this
-}
-
 func (o InstanceConfigObjectEvarsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

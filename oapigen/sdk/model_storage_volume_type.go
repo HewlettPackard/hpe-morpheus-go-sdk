@@ -39,14 +39,6 @@ type StorageVolumeType struct {
 
 type _StorageVolumeType StorageVolumeType
 
-// NewStorageVolumeTypeWithDefaults instantiates a new StorageVolumeType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewStorageVolumeTypeWithDefaults() *StorageVolumeType {
-	this := StorageVolumeType{}
-	return &this
-}
-
 func (o StorageVolumeType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

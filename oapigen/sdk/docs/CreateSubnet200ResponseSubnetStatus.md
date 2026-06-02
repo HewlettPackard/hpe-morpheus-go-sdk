@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCreateSubnet200ResponseSubnetStatusWithDefaults
-
-`func NewCreateSubnet200ResponseSubnetStatusWithDefaults() *CreateSubnet200ResponseSubnetStatus`
-
-NewCreateSubnet200ResponseSubnetStatusWithDefaults instantiates a new CreateSubnet200ResponseSubnetStatus object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetName
 
 `func (o *CreateSubnet200ResponseSubnetStatus) GetName() string`

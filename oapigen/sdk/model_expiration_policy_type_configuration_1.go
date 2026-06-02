@@ -38,18 +38,6 @@ type ExpirationPolicyTypeConfiguration1 struct {
 
 type _ExpirationPolicyTypeConfiguration1 ExpirationPolicyTypeConfiguration1
 
-// NewExpirationPolicyTypeConfiguration1WithDefaults instantiates a new ExpirationPolicyTypeConfiguration1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewExpirationPolicyTypeConfiguration1WithDefaults() *ExpirationPolicyTypeConfiguration1 {
-	this := ExpirationPolicyTypeConfiguration1{}
-	var lifecycleAutoRenew string = "off"
-	this.LifecycleAutoRenew = &lifecycleAutoRenew
-	var lifecycleAllowExtend string = "off"
-	this.LifecycleAllowExtend = &lifecycleAllowExtend
-	return &this
-}
-
 func (o ExpirationPolicyTypeConfiguration1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

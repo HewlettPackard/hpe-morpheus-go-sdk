@@ -26,14 +26,6 @@ type AddCloudsRequestZoneZoneTypeAnyOf1 struct {
 
 type _AddCloudsRequestZoneZoneTypeAnyOf1 AddCloudsRequestZoneZoneTypeAnyOf1
 
-// NewAddCloudsRequestZoneZoneTypeAnyOf1WithDefaults instantiates a new AddCloudsRequestZoneZoneTypeAnyOf1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCloudsRequestZoneZoneTypeAnyOf1WithDefaults() *AddCloudsRequestZoneZoneTypeAnyOf1 {
-	this := AddCloudsRequestZoneZoneTypeAnyOf1{}
-	return &this
-}
-
 func (o AddCloudsRequestZoneZoneTypeAnyOf1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

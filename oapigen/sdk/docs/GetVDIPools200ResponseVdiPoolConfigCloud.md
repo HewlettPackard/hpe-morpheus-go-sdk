@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetVDIPools200ResponseVdiPoolConfigCloudWithDefaults
-
-`func NewGetVDIPools200ResponseVdiPoolConfigCloudWithDefaults() *GetVDIPools200ResponseVdiPoolConfigCloud`
-
-NewGetVDIPools200ResponseVdiPoolConfigCloudWithDefaults instantiates a new GetVDIPools200ResponseVdiPoolConfigCloud object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetVDIPools200ResponseVdiPoolConfigCloud) GetId() int64`

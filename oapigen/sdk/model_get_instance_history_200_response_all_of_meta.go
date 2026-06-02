@@ -33,22 +33,6 @@ type GetInstanceHistory200ResponseAllOfMeta struct {
 
 type _GetInstanceHistory200ResponseAllOfMeta GetInstanceHistory200ResponseAllOfMeta
 
-// NewGetInstanceHistory200ResponseAllOfMetaWithDefaults instantiates a new GetInstanceHistory200ResponseAllOfMeta object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstanceHistory200ResponseAllOfMetaWithDefaults() *GetInstanceHistory200ResponseAllOfMeta {
-	this := GetInstanceHistory200ResponseAllOfMeta{}
-	var offset int64 = 0
-	this.Offset = &offset
-	var max int64 = 25
-	this.Max = &max
-	var size int64 = 0
-	this.Size = &size
-	var total int64 = 0
-	this.Total = &total
-	return &this
-}
-
 func (o GetInstanceHistory200ResponseAllOfMeta) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

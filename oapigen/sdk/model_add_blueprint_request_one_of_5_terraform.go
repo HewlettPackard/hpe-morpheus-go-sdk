@@ -34,14 +34,6 @@ type AddBlueprintRequestOneOf5Terraform struct {
 
 type _AddBlueprintRequestOneOf5Terraform AddBlueprintRequestOneOf5Terraform
 
-// NewAddBlueprintRequestOneOf5TerraformWithDefaults instantiates a new AddBlueprintRequestOneOf5Terraform object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBlueprintRequestOneOf5TerraformWithDefaults() *AddBlueprintRequestOneOf5Terraform {
-	this := AddBlueprintRequestOneOf5Terraform{}
-	return &this
-}
-
 func (o AddBlueprintRequestOneOf5Terraform) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

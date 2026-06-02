@@ -26,14 +26,6 @@ type InstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInner struct {
 
 type _InstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInner InstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInner
 
-// NewInstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInnerWithDefaults instantiates a new InstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInnerWithDefaults() *InstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInner {
-	this := InstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInner{}
-	return &this
-}
-
 func (o InstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

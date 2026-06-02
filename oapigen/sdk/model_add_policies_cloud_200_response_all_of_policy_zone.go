@@ -27,14 +27,6 @@ type AddPoliciesCloud200ResponseAllOfPolicyZone struct {
 
 type _AddPoliciesCloud200ResponseAllOfPolicyZone AddPoliciesCloud200ResponseAllOfPolicyZone
 
-// NewAddPoliciesCloud200ResponseAllOfPolicyZoneWithDefaults instantiates a new AddPoliciesCloud200ResponseAllOfPolicyZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPoliciesCloud200ResponseAllOfPolicyZoneWithDefaults() *AddPoliciesCloud200ResponseAllOfPolicyZone {
-	this := AddPoliciesCloud200ResponseAllOfPolicyZone{}
-	return &this
-}
-
 func (o AddPoliciesCloud200ResponseAllOfPolicyZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

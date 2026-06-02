@@ -27,14 +27,6 @@ type GetStorageBuckets200ResponseStorageBucketStorageServer struct {
 
 type _GetStorageBuckets200ResponseStorageBucketStorageServer GetStorageBuckets200ResponseStorageBucketStorageServer
 
-// NewGetStorageBuckets200ResponseStorageBucketStorageServerWithDefaults instantiates a new GetStorageBuckets200ResponseStorageBucketStorageServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetStorageBuckets200ResponseStorageBucketStorageServerWithDefaults() *GetStorageBuckets200ResponseStorageBucketStorageServer {
-	this := GetStorageBuckets200ResponseStorageBucketStorageServer{}
-	return &this
-}
-
 func (o GetStorageBuckets200ResponseStorageBucketStorageServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -35,14 +35,6 @@ type PuppetTaskConfig3 struct {
 
 type _PuppetTaskConfig3 PuppetTaskConfig3
 
-// NewPuppetTaskConfig3WithDefaults instantiates a new PuppetTaskConfig3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPuppetTaskConfig3WithDefaults() *PuppetTaskConfig3 {
-	this := PuppetTaskConfig3{}
-	return &this
-}
-
 func (o PuppetTaskConfig3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

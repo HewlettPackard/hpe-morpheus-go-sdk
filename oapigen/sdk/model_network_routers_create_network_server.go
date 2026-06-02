@@ -27,14 +27,6 @@ type NetworkRoutersCreateNetworkServer struct {
 
 type _NetworkRoutersCreateNetworkServer NetworkRoutersCreateNetworkServer
 
-// NewNetworkRoutersCreateNetworkServerWithDefaults instantiates a new NetworkRoutersCreateNetworkServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkRoutersCreateNetworkServerWithDefaults() *NetworkRoutersCreateNetworkServer {
-	this := NetworkRoutersCreateNetworkServer{}
-	return &this
-}
-
 func (o NetworkRoutersCreateNetworkServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

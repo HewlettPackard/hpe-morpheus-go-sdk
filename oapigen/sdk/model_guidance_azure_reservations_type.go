@@ -29,14 +29,6 @@ type GuidanceAzureReservationsType struct {
 
 type _GuidanceAzureReservationsType GuidanceAzureReservationsType
 
-// NewGuidanceAzureReservationsTypeWithDefaults instantiates a new GuidanceAzureReservationsType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGuidanceAzureReservationsTypeWithDefaults() *GuidanceAzureReservationsType {
-	this := GuidanceAzureReservationsType{}
-	return &this
-}
-
 func (o GuidanceAzureReservationsType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

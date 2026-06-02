@@ -27,14 +27,6 @@ type ListOptionAnsibleTowerInventoryOptions200ResponseAllOfDataInner struct {
 
 type _ListOptionAnsibleTowerInventoryOptions200ResponseAllOfDataInner ListOptionAnsibleTowerInventoryOptions200ResponseAllOfDataInner
 
-// NewListOptionAnsibleTowerInventoryOptions200ResponseAllOfDataInnerWithDefaults instantiates a new ListOptionAnsibleTowerInventoryOptions200ResponseAllOfDataInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListOptionAnsibleTowerInventoryOptions200ResponseAllOfDataInnerWithDefaults() *ListOptionAnsibleTowerInventoryOptions200ResponseAllOfDataInner {
-	this := ListOptionAnsibleTowerInventoryOptions200ResponseAllOfDataInner{}
-	return &this
-}
-
 func (o ListOptionAnsibleTowerInventoryOptions200ResponseAllOfDataInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type NetworkInterfaceUpdateSuccessNetworkInterfaceNetworkDomain struct {
 
 type _NetworkInterfaceUpdateSuccessNetworkInterfaceNetworkDomain NetworkInterfaceUpdateSuccessNetworkInterfaceNetworkDomain
 
-// NewNetworkInterfaceUpdateSuccessNetworkInterfaceNetworkDomainWithDefaults instantiates a new NetworkInterfaceUpdateSuccessNetworkInterfaceNetworkDomain object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkInterfaceUpdateSuccessNetworkInterfaceNetworkDomainWithDefaults() *NetworkInterfaceUpdateSuccessNetworkInterfaceNetworkDomain {
-	this := NetworkInterfaceUpdateSuccessNetworkInterfaceNetworkDomain{}
-	return &this
-}
-
 func (o NetworkInterfaceUpdateSuccessNetworkInterfaceNetworkDomain) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type AddVDIApps200ResponseAnyOf1 struct {
 
 type _AddVDIApps200ResponseAnyOf1 AddVDIApps200ResponseAnyOf1
 
-// NewAddVDIApps200ResponseAnyOf1WithDefaults instantiates a new AddVDIApps200ResponseAnyOf1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddVDIApps200ResponseAnyOf1WithDefaults() *AddVDIApps200ResponseAnyOf1 {
-	this := AddVDIApps200ResponseAnyOf1{}
-	return &this
-}
-
 func (o AddVDIApps200ResponseAnyOf1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

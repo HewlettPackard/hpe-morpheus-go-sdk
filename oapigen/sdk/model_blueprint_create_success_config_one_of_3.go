@@ -41,16 +41,6 @@ type BlueprintCreateSuccessConfigOneOf3 struct {
 
 type _BlueprintCreateSuccessConfigOneOf3 BlueprintCreateSuccessConfigOneOf3
 
-// NewBlueprintCreateSuccessConfigOneOf3WithDefaults instantiates a new BlueprintCreateSuccessConfigOneOf3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintCreateSuccessConfigOneOf3WithDefaults() *BlueprintCreateSuccessConfigOneOf3 {
-	this := BlueprintCreateSuccessConfigOneOf3{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o BlueprintCreateSuccessConfigOneOf3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

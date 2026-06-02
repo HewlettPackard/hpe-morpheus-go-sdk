@@ -27,14 +27,6 @@ type UpdateTasksRequestTaskFileRepository struct {
 
 type _UpdateTasksRequestTaskFileRepository UpdateTasksRequestTaskFileRepository
 
-// NewUpdateTasksRequestTaskFileRepositoryWithDefaults instantiates a new UpdateTasksRequestTaskFileRepository object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateTasksRequestTaskFileRepositoryWithDefaults() *UpdateTasksRequestTaskFileRepository {
-	this := UpdateTasksRequestTaskFileRepository{}
-	return &this
-}
-
 func (o UpdateTasksRequestTaskFileRepository) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

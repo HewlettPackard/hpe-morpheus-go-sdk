@@ -39,16 +39,6 @@ type CheckWebConfig struct {
 
 type _CheckWebConfig CheckWebConfig
 
-// NewCheckWebConfigWithDefaults instantiates a new CheckWebConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCheckWebConfigWithDefaults() *CheckWebConfig {
-	this := CheckWebConfig{}
-	var ignoreSSL bool = false
-	this.IgnoreSSL = &ignoreSSL
-	return &this
-}
-
 func (o CheckWebConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

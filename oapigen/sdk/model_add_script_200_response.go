@@ -27,14 +27,6 @@ type AddScript200Response struct {
 
 type _AddScript200Response AddScript200Response
 
-// NewAddScript200ResponseWithDefaults instantiates a new AddScript200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddScript200ResponseWithDefaults() *AddScript200Response {
-	this := AddScript200Response{}
-	return &this
-}
-
 func (o AddScript200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

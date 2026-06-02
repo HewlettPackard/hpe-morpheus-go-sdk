@@ -28,14 +28,6 @@ type ListTenants200ResponseAllOfAccountsInnerParent struct {
 
 type _ListTenants200ResponseAllOfAccountsInnerParent ListTenants200ResponseAllOfAccountsInnerParent
 
-// NewListTenants200ResponseAllOfAccountsInnerParentWithDefaults instantiates a new ListTenants200ResponseAllOfAccountsInnerParent object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListTenants200ResponseAllOfAccountsInnerParentWithDefaults() *ListTenants200ResponseAllOfAccountsInnerParent {
-	this := ListTenants200ResponseAllOfAccountsInnerParent{}
-	return &this
-}
-
 func (o ListTenants200ResponseAllOfAccountsInnerParent) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

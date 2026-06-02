@@ -27,14 +27,6 @@ type ListProvisioningLicenses200ResponseAllOfLicensesInnerAccount struct {
 
 type _ListProvisioningLicenses200ResponseAllOfLicensesInnerAccount ListProvisioningLicenses200ResponseAllOfLicensesInnerAccount
 
-// NewListProvisioningLicenses200ResponseAllOfLicensesInnerAccountWithDefaults instantiates a new ListProvisioningLicenses200ResponseAllOfLicensesInnerAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListProvisioningLicenses200ResponseAllOfLicensesInnerAccountWithDefaults() *ListProvisioningLicenses200ResponseAllOfLicensesInnerAccount {
-	this := ListProvisioningLicenses200ResponseAllOfLicensesInnerAccount{}
-	return &this
-}
-
 func (o ListProvisioningLicenses200ResponseAllOfLicensesInnerAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

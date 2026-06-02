@@ -29,14 +29,6 @@ type Creds struct {
 
 type _Creds Creds
 
-// NewCredsWithDefaults instantiates a new Creds object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCredsWithDefaults() *Creds {
-	this := Creds{}
-	return &this
-}
-
 func (o Creds) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

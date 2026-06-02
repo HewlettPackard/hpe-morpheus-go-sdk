@@ -49,14 +49,6 @@ type OsTypeUpdate struct {
 
 type _OsTypeUpdate OsTypeUpdate
 
-// NewOsTypeUpdateWithDefaults instantiates a new OsTypeUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOsTypeUpdateWithDefaults() *OsTypeUpdate {
-	this := OsTypeUpdate{}
-	return &this
-}
-
 func (o OsTypeUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type ClusterMastersTagsInner struct {
 
 type _ClusterMastersTagsInner ClusterMastersTagsInner
 
-// NewClusterMastersTagsInnerWithDefaults instantiates a new ClusterMastersTagsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterMastersTagsInnerWithDefaults() *ClusterMastersTagsInner {
-	this := ClusterMastersTagsInner{}
-	return &this
-}
-
 func (o ClusterMastersTagsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

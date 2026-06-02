@@ -26,14 +26,6 @@ type UpdateNetworkRouterNat200Response struct {
 
 type _UpdateNetworkRouterNat200Response UpdateNetworkRouterNat200Response
 
-// NewUpdateNetworkRouterNat200ResponseWithDefaults instantiates a new UpdateNetworkRouterNat200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkRouterNat200ResponseWithDefaults() *UpdateNetworkRouterNat200Response {
-	this := UpdateNetworkRouterNat200Response{}
-	return &this
-}
-
 func (o UpdateNetworkRouterNat200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

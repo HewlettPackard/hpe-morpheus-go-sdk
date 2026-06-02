@@ -26,14 +26,6 @@ type GetClusterAffinityGroup200ResponseAffinityGroupPool struct {
 
 type _GetClusterAffinityGroup200ResponseAffinityGroupPool GetClusterAffinityGroup200ResponseAffinityGroupPool
 
-// NewGetClusterAffinityGroup200ResponseAffinityGroupPoolWithDefaults instantiates a new GetClusterAffinityGroup200ResponseAffinityGroupPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterAffinityGroup200ResponseAffinityGroupPoolWithDefaults() *GetClusterAffinityGroup200ResponseAffinityGroupPool {
-	this := GetClusterAffinityGroup200ResponseAffinityGroupPool{}
-	return &this
-}
-
 func (o GetClusterAffinityGroup200ResponseAffinityGroupPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

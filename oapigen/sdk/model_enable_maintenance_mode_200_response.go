@@ -26,14 +26,6 @@ type EnableMaintenanceMode200Response struct {
 
 type _EnableMaintenanceMode200Response EnableMaintenanceMode200Response
 
-// NewEnableMaintenanceMode200ResponseWithDefaults instantiates a new EnableMaintenanceMode200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewEnableMaintenanceMode200ResponseWithDefaults() *EnableMaintenanceMode200Response {
-	this := EnableMaintenanceMode200Response{}
-	return &this
-}
-
 func (o EnableMaintenanceMode200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

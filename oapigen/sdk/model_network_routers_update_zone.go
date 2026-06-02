@@ -27,14 +27,6 @@ type NetworkRoutersUpdateZone struct {
 
 type _NetworkRoutersUpdateZone NetworkRoutersUpdateZone
 
-// NewNetworkRoutersUpdateZoneWithDefaults instantiates a new NetworkRoutersUpdateZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkRoutersUpdateZoneWithDefaults() *NetworkRoutersUpdateZone {
-	this := NetworkRoutersUpdateZone{}
-	return &this
-}
-
 func (o NetworkRoutersUpdateZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -33,14 +33,6 @@ type BlueprintCreateSuccessConfigOneOf5TerraformGit struct {
 
 type _BlueprintCreateSuccessConfigOneOf5TerraformGit BlueprintCreateSuccessConfigOneOf5TerraformGit
 
-// NewBlueprintCreateSuccessConfigOneOf5TerraformGitWithDefaults instantiates a new BlueprintCreateSuccessConfigOneOf5TerraformGit object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintCreateSuccessConfigOneOf5TerraformGitWithDefaults() *BlueprintCreateSuccessConfigOneOf5TerraformGit {
-	this := BlueprintCreateSuccessConfigOneOf5TerraformGit{}
-	return &this
-}
-
 func (o BlueprintCreateSuccessConfigOneOf5TerraformGit) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

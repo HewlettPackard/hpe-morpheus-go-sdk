@@ -27,14 +27,6 @@ type UpdateApp200ResponseAppInstancesInner struct {
 
 type _UpdateApp200ResponseAppInstancesInner UpdateApp200ResponseAppInstancesInner
 
-// NewUpdateApp200ResponseAppInstancesInnerWithDefaults instantiates a new UpdateApp200ResponseAppInstancesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateApp200ResponseAppInstancesInnerWithDefaults() *UpdateApp200ResponseAppInstancesInner {
-	this := UpdateApp200ResponseAppInstancesInner{}
-	return &this
-}
-
 func (o UpdateApp200ResponseAppInstancesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

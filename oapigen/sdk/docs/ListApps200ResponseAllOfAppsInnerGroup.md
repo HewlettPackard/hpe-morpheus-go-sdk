@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListApps200ResponseAllOfAppsInnerGroupWithDefaults
-
-`func NewListApps200ResponseAllOfAppsInnerGroupWithDefaults() *ListApps200ResponseAllOfAppsInnerGroup`
-
-NewListApps200ResponseAllOfAppsInnerGroupWithDefaults instantiates a new ListApps200ResponseAllOfAppsInnerGroup object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListApps200ResponseAllOfAppsInnerGroup) GetId() int64`

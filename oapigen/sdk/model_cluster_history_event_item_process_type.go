@@ -27,14 +27,6 @@ type ClusterHistoryEventItemProcessType struct {
 
 type _ClusterHistoryEventItemProcessType ClusterHistoryEventItemProcessType
 
-// NewClusterHistoryEventItemProcessTypeWithDefaults instantiates a new ClusterHistoryEventItemProcessType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterHistoryEventItemProcessTypeWithDefaults() *ClusterHistoryEventItemProcessType {
-	this := ClusterHistoryEventItemProcessType{}
-	return &this
-}
-
 func (o ClusterHistoryEventItemProcessType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

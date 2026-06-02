@@ -26,14 +26,6 @@ type GetNetworkDhcpRelay200Response struct {
 
 type _GetNetworkDhcpRelay200Response GetNetworkDhcpRelay200Response
 
-// NewGetNetworkDhcpRelay200ResponseWithDefaults instantiates a new GetNetworkDhcpRelay200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkDhcpRelay200ResponseWithDefaults() *GetNetworkDhcpRelay200Response {
-	this := GetNetworkDhcpRelay200Response{}
-	return &this
-}
-
 func (o GetNetworkDhcpRelay200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

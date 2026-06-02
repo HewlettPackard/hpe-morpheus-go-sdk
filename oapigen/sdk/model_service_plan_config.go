@@ -28,14 +28,6 @@ type ServicePlanConfig struct {
 
 type _ServicePlanConfig ServicePlanConfig
 
-// NewServicePlanConfigWithDefaults instantiates a new ServicePlanConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewServicePlanConfigWithDefaults() *ServicePlanConfig {
-	this := ServicePlanConfig{}
-	return &this
-}
-
 func (o ServicePlanConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

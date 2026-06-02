@@ -52,14 +52,6 @@ type ListHosts200ResponseAllOfServersInnerInterfacesInner struct {
 
 type _ListHosts200ResponseAllOfServersInnerInterfacesInner ListHosts200ResponseAllOfServersInnerInterfacesInner
 
-// NewListHosts200ResponseAllOfServersInnerInterfacesInnerWithDefaults instantiates a new ListHosts200ResponseAllOfServersInnerInterfacesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListHosts200ResponseAllOfServersInnerInterfacesInnerWithDefaults() *ListHosts200ResponseAllOfServersInnerInterfacesInner {
-	this := ListHosts200ResponseAllOfServersInnerInterfacesInner{}
-	return &this
-}
-
 func (o ListHosts200ResponseAllOfServersInnerInterfacesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

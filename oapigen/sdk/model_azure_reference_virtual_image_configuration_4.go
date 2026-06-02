@@ -33,14 +33,6 @@ type AzureReferenceVirtualImageConfiguration4 struct {
 
 type _AzureReferenceVirtualImageConfiguration4 AzureReferenceVirtualImageConfiguration4
 
-// NewAzureReferenceVirtualImageConfiguration4WithDefaults instantiates a new AzureReferenceVirtualImageConfiguration4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAzureReferenceVirtualImageConfiguration4WithDefaults() *AzureReferenceVirtualImageConfiguration4 {
-	this := AzureReferenceVirtualImageConfiguration4{}
-	return &this
-}
-
 func (o AzureReferenceVirtualImageConfiguration4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

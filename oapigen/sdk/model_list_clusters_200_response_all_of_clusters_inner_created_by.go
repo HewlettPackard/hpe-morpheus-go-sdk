@@ -27,14 +27,6 @@ type ListClusters200ResponseAllOfClustersInnerCreatedBy struct {
 
 type _ListClusters200ResponseAllOfClustersInnerCreatedBy ListClusters200ResponseAllOfClustersInnerCreatedBy
 
-// NewListClusters200ResponseAllOfClustersInnerCreatedByWithDefaults instantiates a new ListClusters200ResponseAllOfClustersInnerCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusters200ResponseAllOfClustersInnerCreatedByWithDefaults() *ListClusters200ResponseAllOfClustersInnerCreatedBy {
-	this := ListClusters200ResponseAllOfClustersInnerCreatedBy{}
-	return &this
-}
-
 func (o ListClusters200ResponseAllOfClustersInnerCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

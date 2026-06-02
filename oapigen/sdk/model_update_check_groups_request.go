@@ -26,14 +26,6 @@ type UpdateCheckGroupsRequest struct {
 
 type _UpdateCheckGroupsRequest UpdateCheckGroupsRequest
 
-// NewUpdateCheckGroupsRequestWithDefaults instantiates a new UpdateCheckGroupsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCheckGroupsRequestWithDefaults() *UpdateCheckGroupsRequest {
-	this := UpdateCheckGroupsRequest{}
-	return &this
-}
-
 func (o UpdateCheckGroupsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

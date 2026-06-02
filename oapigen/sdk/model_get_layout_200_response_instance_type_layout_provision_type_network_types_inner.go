@@ -50,14 +50,6 @@ type GetLayout200ResponseInstanceTypeLayoutProvisionTypeNetworkTypesInner struct
 
 type _GetLayout200ResponseInstanceTypeLayoutProvisionTypeNetworkTypesInner GetLayout200ResponseInstanceTypeLayoutProvisionTypeNetworkTypesInner
 
-// NewGetLayout200ResponseInstanceTypeLayoutProvisionTypeNetworkTypesInnerWithDefaults instantiates a new GetLayout200ResponseInstanceTypeLayoutProvisionTypeNetworkTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetLayout200ResponseInstanceTypeLayoutProvisionTypeNetworkTypesInnerWithDefaults() *GetLayout200ResponseInstanceTypeLayoutProvisionTypeNetworkTypesInner {
-	this := GetLayout200ResponseInstanceTypeLayoutProvisionTypeNetworkTypesInner{}
-	return &this
-}
-
 func (o GetLayout200ResponseInstanceTypeLayoutProvisionTypeNetworkTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

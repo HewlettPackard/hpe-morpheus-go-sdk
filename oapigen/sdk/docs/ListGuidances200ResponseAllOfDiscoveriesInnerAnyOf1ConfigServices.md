@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesWithDefaults
-
-`func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices`
-
-NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAzureVms
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices) GetAzureVms() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms`

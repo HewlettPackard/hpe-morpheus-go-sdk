@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddInstance200ResponseAllOfOneOfInstanceInstancePriceWithDefaults
-
-`func NewAddInstance200ResponseAllOfOneOfInstanceInstancePriceWithDefaults() *AddInstance200ResponseAllOfOneOfInstanceInstancePrice`
-
-NewAddInstance200ResponseAllOfOneOfInstanceInstancePriceWithDefaults instantiates a new AddInstance200ResponseAllOfOneOfInstanceInstancePrice object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPrice
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) GetPrice() float32`

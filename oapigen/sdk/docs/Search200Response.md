@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSearch200ResponseWithDefaults
-
-`func NewSearch200ResponseWithDefaults() *Search200Response`
-
-NewSearch200ResponseWithDefaults instantiates a new Search200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetHits
 
 `func (o *Search200Response) GetHits() []Search200ResponseHitsInner`

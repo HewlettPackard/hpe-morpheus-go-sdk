@@ -53,20 +53,6 @@ type UpdateClusterLayoutRequestLayout struct {
 
 type _UpdateClusterLayoutRequestLayout UpdateClusterLayoutRequestLayout
 
-// NewUpdateClusterLayoutRequestLayoutWithDefaults instantiates a new UpdateClusterLayoutRequestLayout object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateClusterLayoutRequestLayoutWithDefaults() *UpdateClusterLayoutRequestLayout {
-	this := UpdateClusterLayoutRequestLayout{}
-	var creatable bool = true
-	this.Creatable = &creatable
-	var hasAutoScale bool = false
-	this.HasAutoScale = &hasAutoScale
-	var installContainerRuntime bool = false
-	this.InstallContainerRuntime = &installContainerRuntime
-	return &this
-}
-
 func (o UpdateClusterLayoutRequestLayout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

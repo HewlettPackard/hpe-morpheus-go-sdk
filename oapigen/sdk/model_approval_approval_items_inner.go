@@ -41,14 +41,6 @@ type ApprovalApprovalItemsInner struct {
 
 type _ApprovalApprovalItemsInner ApprovalApprovalItemsInner
 
-// NewApprovalApprovalItemsInnerWithDefaults instantiates a new ApprovalApprovalItemsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewApprovalApprovalItemsInnerWithDefaults() *ApprovalApprovalItemsInner {
-	this := ApprovalApprovalItemsInner{}
-	return &this
-}
-
 func (o ApprovalApprovalItemsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

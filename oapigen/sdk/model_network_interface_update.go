@@ -27,14 +27,6 @@ type NetworkInterfaceUpdate struct {
 
 type _NetworkInterfaceUpdate NetworkInterfaceUpdate
 
-// NewNetworkInterfaceUpdateWithDefaults instantiates a new NetworkInterfaceUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkInterfaceUpdateWithDefaults() *NetworkInterfaceUpdate {
-	this := NetworkInterfaceUpdate{}
-	return &this
-}
-
 func (o NetworkInterfaceUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

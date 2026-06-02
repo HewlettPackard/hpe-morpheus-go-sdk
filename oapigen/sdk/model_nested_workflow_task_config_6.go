@@ -29,14 +29,6 @@ type NestedWorkflowTaskConfig6 struct {
 
 type _NestedWorkflowTaskConfig6 NestedWorkflowTaskConfig6
 
-// NewNestedWorkflowTaskConfig6WithDefaults instantiates a new NestedWorkflowTaskConfig6 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNestedWorkflowTaskConfig6WithDefaults() *NestedWorkflowTaskConfig6 {
-	this := NestedWorkflowTaskConfig6{}
-	return &this
-}
-
 func (o NestedWorkflowTaskConfig6) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

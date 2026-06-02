@@ -26,14 +26,6 @@ type UserCreateRolesInner struct {
 
 type _UserCreateRolesInner UserCreateRolesInner
 
-// NewUserCreateRolesInnerWithDefaults instantiates a new UserCreateRolesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserCreateRolesInnerWithDefaults() *UserCreateRolesInner {
-	this := UserCreateRolesInner{}
-	return &this
-}
-
 func (o UserCreateRolesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

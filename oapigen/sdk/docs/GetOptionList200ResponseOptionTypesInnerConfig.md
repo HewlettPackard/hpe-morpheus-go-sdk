@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetOptionList200ResponseOptionTypesInnerConfigWithDefaults
-
-`func NewGetOptionList200ResponseOptionTypesInnerConfigWithDefaults() *GetOptionList200ResponseOptionTypesInnerConfig`
-
-NewGetOptionList200ResponseOptionTypesInnerConfigWithDefaults instantiates a new GetOptionList200ResponseOptionTypesInnerConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSourceHeaders
 
 `func (o *GetOptionList200ResponseOptionTypesInnerConfig) GetSourceHeaders() []GetOptionList200ResponseOptionTypesInnerConfigSourceHeadersInner`

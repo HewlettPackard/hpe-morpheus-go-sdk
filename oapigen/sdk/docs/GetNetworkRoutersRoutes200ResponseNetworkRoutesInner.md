@@ -36,14 +36,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNetworkRoutersRoutes200ResponseNetworkRoutesInnerWithDefaults
-
-`func NewGetNetworkRoutersRoutes200ResponseNetworkRoutesInnerWithDefaults() *GetNetworkRoutersRoutes200ResponseNetworkRoutesInner`
-
-NewGetNetworkRoutersRoutes200ResponseNetworkRoutesInnerWithDefaults instantiates a new GetNetworkRoutersRoutes200ResponseNetworkRoutesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetNetworkRoutersRoutes200ResponseNetworkRoutesInner) GetId() int64`

@@ -66,14 +66,6 @@ type IntegrationTypeOptionTypeInner struct {
 
 type _IntegrationTypeOptionTypeInner IntegrationTypeOptionTypeInner
 
-// NewIntegrationTypeOptionTypeInnerWithDefaults instantiates a new IntegrationTypeOptionTypeInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationTypeOptionTypeInnerWithDefaults() *IntegrationTypeOptionTypeInner {
-	this := IntegrationTypeOptionTypeInner{}
-	return &this
-}
-
 func (o IntegrationTypeOptionTypeInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

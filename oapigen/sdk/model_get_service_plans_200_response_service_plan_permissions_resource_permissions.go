@@ -33,14 +33,6 @@ type GetServicePlans200ResponseServicePlanPermissionsResourcePermissions struct 
 
 type _GetServicePlans200ResponseServicePlanPermissionsResourcePermissions GetServicePlans200ResponseServicePlanPermissionsResourcePermissions
 
-// NewGetServicePlans200ResponseServicePlanPermissionsResourcePermissionsWithDefaults instantiates a new GetServicePlans200ResponseServicePlanPermissionsResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetServicePlans200ResponseServicePlanPermissionsResourcePermissionsWithDefaults() *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions {
-	this := GetServicePlans200ResponseServicePlanPermissionsResourcePermissions{}
-	return &this
-}
-
 func (o GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

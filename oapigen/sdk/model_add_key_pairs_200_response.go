@@ -27,14 +27,6 @@ type AddKeyPairs200Response struct {
 
 type _AddKeyPairs200Response AddKeyPairs200Response
 
-// NewAddKeyPairs200ResponseWithDefaults instantiates a new AddKeyPairs200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddKeyPairs200ResponseWithDefaults() *AddKeyPairs200Response {
-	this := AddKeyPairs200Response{}
-	return &this
-}
-
 func (o AddKeyPairs200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

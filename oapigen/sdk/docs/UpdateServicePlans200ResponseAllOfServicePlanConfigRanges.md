@@ -28,14 +28,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateServicePlans200ResponseAllOfServicePlanConfigRangesWithDefaults
-
-`func NewUpdateServicePlans200ResponseAllOfServicePlanConfigRangesWithDefaults() *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges`
-
-NewUpdateServicePlans200ResponseAllOfServicePlanConfigRangesWithDefaults instantiates a new UpdateServicePlans200ResponseAllOfServicePlanConfigRanges object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMinStorage
 
 `func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) GetMinStorage() int64`

@@ -49,18 +49,6 @@ type GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner struct {
 
 type _GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner
 
-// NewGetInstanceSchedules200ResponseAllOfInstanceSchedulesInnerWithDefaults instantiates a new GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstanceSchedules200ResponseAllOfInstanceSchedulesInnerWithDefaults() *GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner {
-	this := GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner{}
-	var scheduleType string = "dayOfWeek"
-	this.ScheduleType = &scheduleType
-	var scheduleTimezone string = "UTC"
-	this.ScheduleTimezone = &scheduleTimezone
-	return &this
-}
-
 func (o GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

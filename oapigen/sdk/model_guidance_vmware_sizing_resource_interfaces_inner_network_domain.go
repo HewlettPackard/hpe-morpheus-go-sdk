@@ -27,14 +27,6 @@ type GuidanceVmwareSizingResourceInterfacesInnerNetworkDomain struct {
 
 type _GuidanceVmwareSizingResourceInterfacesInnerNetworkDomain GuidanceVmwareSizingResourceInterfacesInnerNetworkDomain
 
-// NewGuidanceVmwareSizingResourceInterfacesInnerNetworkDomainWithDefaults instantiates a new GuidanceVmwareSizingResourceInterfacesInnerNetworkDomain object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGuidanceVmwareSizingResourceInterfacesInnerNetworkDomainWithDefaults() *GuidanceVmwareSizingResourceInterfacesInnerNetworkDomain {
-	this := GuidanceVmwareSizingResourceInterfacesInnerNetworkDomain{}
-	return &this
-}
-
 func (o GuidanceVmwareSizingResourceInterfacesInnerNetworkDomain) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

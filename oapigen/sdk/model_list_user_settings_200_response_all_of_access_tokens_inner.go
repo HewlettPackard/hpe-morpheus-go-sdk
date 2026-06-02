@@ -32,14 +32,6 @@ type ListUserSettings200ResponseAllOfAccessTokensInner struct {
 
 type _ListUserSettings200ResponseAllOfAccessTokensInner ListUserSettings200ResponseAllOfAccessTokensInner
 
-// NewListUserSettings200ResponseAllOfAccessTokensInnerWithDefaults instantiates a new ListUserSettings200ResponseAllOfAccessTokensInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListUserSettings200ResponseAllOfAccessTokensInnerWithDefaults() *ListUserSettings200ResponseAllOfAccessTokensInner {
-	this := ListUserSettings200ResponseAllOfAccessTokensInner{}
-	return &this
-}
-
 func (o ListUserSettings200ResponseAllOfAccessTokensInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

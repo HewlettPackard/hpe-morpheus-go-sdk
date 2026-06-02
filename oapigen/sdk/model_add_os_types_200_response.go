@@ -27,14 +27,6 @@ type AddOsTypes200Response struct {
 
 type _AddOsTypes200Response AddOsTypes200Response
 
-// NewAddOsTypes200ResponseWithDefaults instantiates a new AddOsTypes200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddOsTypes200ResponseWithDefaults() *AddOsTypes200Response {
-	this := AddOsTypes200Response{}
-	return &this
-}
-
 func (o AddOsTypes200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

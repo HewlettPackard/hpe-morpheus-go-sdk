@@ -41,14 +41,6 @@ type IntegrationAnsibleTower struct {
 
 type _IntegrationAnsibleTower IntegrationAnsibleTower
 
-// NewIntegrationAnsibleTowerWithDefaults instantiates a new IntegrationAnsibleTower object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationAnsibleTowerWithDefaults() *IntegrationAnsibleTower {
-	this := IntegrationAnsibleTower{}
-	return &this
-}
-
 func (o IntegrationAnsibleTower) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

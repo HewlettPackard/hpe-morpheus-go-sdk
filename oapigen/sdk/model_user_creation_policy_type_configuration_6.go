@@ -27,14 +27,6 @@ type UserCreationPolicyTypeConfiguration6 struct {
 
 type _UserCreationPolicyTypeConfiguration6 UserCreationPolicyTypeConfiguration6
 
-// NewUserCreationPolicyTypeConfiguration6WithDefaults instantiates a new UserCreationPolicyTypeConfiguration6 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserCreationPolicyTypeConfiguration6WithDefaults() *UserCreationPolicyTypeConfiguration6 {
-	this := UserCreationPolicyTypeConfiguration6{}
-	return &this
-}
-
 func (o UserCreationPolicyTypeConfiguration6) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

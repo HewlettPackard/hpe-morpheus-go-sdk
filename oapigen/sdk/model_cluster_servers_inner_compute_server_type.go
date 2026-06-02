@@ -28,14 +28,6 @@ type ClusterServersInnerComputeServerType struct {
 
 type _ClusterServersInnerComputeServerType ClusterServersInnerComputeServerType
 
-// NewClusterServersInnerComputeServerTypeWithDefaults instantiates a new ClusterServersInnerComputeServerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterServersInnerComputeServerTypeWithDefaults() *ClusterServersInnerComputeServerType {
-	this := ClusterServersInnerComputeServerType{}
-	return &this
-}
-
 func (o ClusterServersInnerComputeServerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

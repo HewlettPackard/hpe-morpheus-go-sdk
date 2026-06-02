@@ -27,14 +27,6 @@ type SpecTemplateUpdateFileRepository struct {
 
 type _SpecTemplateUpdateFileRepository SpecTemplateUpdateFileRepository
 
-// NewSpecTemplateUpdateFileRepositoryWithDefaults instantiates a new SpecTemplateUpdateFileRepository object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSpecTemplateUpdateFileRepositoryWithDefaults() *SpecTemplateUpdateFileRepository {
-	this := SpecTemplateUpdateFileRepository{}
-	return &this
-}
-
 func (o SpecTemplateUpdateFileRepository) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

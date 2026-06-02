@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddInstance200ResponseAllOfOneOfInstanceConfigBackupWithDefaults
-
-`func NewAddInstance200ResponseAllOfOneOfInstanceConfigBackupWithDefaults() *AddInstance200ResponseAllOfOneOfInstanceConfigBackup`
-
-NewAddInstance200ResponseAllOfOneOfInstanceConfigBackupWithDefaults instantiates a new AddInstance200ResponseAllOfOneOfInstanceConfigBackup object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetCreateBackup
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceConfigBackup) GetCreateBackup() bool`

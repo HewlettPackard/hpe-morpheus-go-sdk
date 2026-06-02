@@ -38,16 +38,6 @@ type UpdateLoadBalancerRequestLoadBalancer struct {
 
 type _UpdateLoadBalancerRequestLoadBalancer UpdateLoadBalancerRequestLoadBalancer
 
-// NewUpdateLoadBalancerRequestLoadBalancerWithDefaults instantiates a new UpdateLoadBalancerRequestLoadBalancer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateLoadBalancerRequestLoadBalancerWithDefaults() *UpdateLoadBalancerRequestLoadBalancer {
-	this := UpdateLoadBalancerRequestLoadBalancer{}
-	var visibility string = "public"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o UpdateLoadBalancerRequestLoadBalancer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInnerZone str
 
 type _ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInnerZone ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInnerZone
 
-// NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInnerZoneWithDefaults instantiates a new ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInnerZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInnerZoneWithDefaults() *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInnerZone {
-	this := ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInnerZone{}
-	return &this
-}
-
 func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInnerZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

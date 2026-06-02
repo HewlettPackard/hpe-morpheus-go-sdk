@@ -31,18 +31,6 @@ type UpdateIntegrationsRequestOneOf2IntegrationConfig struct {
 
 type _UpdateIntegrationsRequestOneOf2IntegrationConfig UpdateIntegrationsRequestOneOf2IntegrationConfig
 
-// NewUpdateIntegrationsRequestOneOf2IntegrationConfigWithDefaults instantiates a new UpdateIntegrationsRequestOneOf2IntegrationConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIntegrationsRequestOneOf2IntegrationConfigWithDefaults() *UpdateIntegrationsRequestOneOf2IntegrationConfig {
-	this := UpdateIntegrationsRequestOneOf2IntegrationConfig{}
-	var ignoreCertErrors bool = false
-	this.IgnoreCertErrors = &ignoreCertErrors
-	var cmdbMode string = "TABLE"
-	this.CmdbMode = &cmdbMode
-	return &this
-}
-
 func (o UpdateIntegrationsRequestOneOf2IntegrationConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

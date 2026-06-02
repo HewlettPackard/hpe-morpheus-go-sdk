@@ -28,14 +28,6 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms s
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms
 
-// NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms {
-	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms{}
-	return &this
-}
-
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

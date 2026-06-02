@@ -27,14 +27,6 @@ type UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions st
 
 type _UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions
 
-// NewUpdateCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissionsWithDefaults instantiates a new UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissionsWithDefaults() *UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions {
-	this := UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions{}
-	return &this
-}
-
 func (o UpdateCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

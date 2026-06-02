@@ -26,14 +26,6 @@ type GetNetworkTransportZone200ResponseNetworkScopeZone struct {
 
 type _GetNetworkTransportZone200ResponseNetworkScopeZone GetNetworkTransportZone200ResponseNetworkScopeZone
 
-// NewGetNetworkTransportZone200ResponseNetworkScopeZoneWithDefaults instantiates a new GetNetworkTransportZone200ResponseNetworkScopeZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkTransportZone200ResponseNetworkScopeZoneWithDefaults() *GetNetworkTransportZone200ResponseNetworkScopeZone {
-	this := GetNetworkTransportZone200ResponseNetworkScopeZone{}
-	return &this
-}
-
 func (o GetNetworkTransportZone200ResponseNetworkScopeZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type ListApps200ResponseAllOfAppsInnerOwner struct {
 
 type _ListApps200ResponseAllOfAppsInnerOwner ListApps200ResponseAllOfAppsInnerOwner
 
-// NewListApps200ResponseAllOfAppsInnerOwnerWithDefaults instantiates a new ListApps200ResponseAllOfAppsInnerOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListApps200ResponseAllOfAppsInnerOwnerWithDefaults() *ListApps200ResponseAllOfAppsInnerOwner {
-	this := ListApps200ResponseAllOfAppsInnerOwner{}
-	return &this
-}
-
 func (o ListApps200ResponseAllOfAppsInnerOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

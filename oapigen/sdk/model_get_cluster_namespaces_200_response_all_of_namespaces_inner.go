@@ -33,14 +33,6 @@ type GetClusterNamespaces200ResponseAllOfNamespacesInner struct {
 
 type _GetClusterNamespaces200ResponseAllOfNamespacesInner GetClusterNamespaces200ResponseAllOfNamespacesInner
 
-// NewGetClusterNamespaces200ResponseAllOfNamespacesInnerWithDefaults instantiates a new GetClusterNamespaces200ResponseAllOfNamespacesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterNamespaces200ResponseAllOfNamespacesInnerWithDefaults() *GetClusterNamespaces200ResponseAllOfNamespacesInner {
-	this := GetClusterNamespaces200ResponseAllOfNamespacesInner{}
-	return &this
-}
-
 func (o GetClusterNamespaces200ResponseAllOfNamespacesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

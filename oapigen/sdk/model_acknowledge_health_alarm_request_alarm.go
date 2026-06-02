@@ -27,14 +27,6 @@ type AcknowledgeHealthAlarmRequestAlarm struct {
 
 type _AcknowledgeHealthAlarmRequestAlarm AcknowledgeHealthAlarmRequestAlarm
 
-// NewAcknowledgeHealthAlarmRequestAlarmWithDefaults instantiates a new AcknowledgeHealthAlarmRequestAlarm object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAcknowledgeHealthAlarmRequestAlarmWithDefaults() *AcknowledgeHealthAlarmRequestAlarm {
-	this := AcknowledgeHealthAlarmRequestAlarm{}
-	return &this
-}
-
 func (o AcknowledgeHealthAlarmRequestAlarm) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

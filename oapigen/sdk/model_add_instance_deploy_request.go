@@ -26,14 +26,6 @@ type AddInstanceDeployRequest struct {
 
 type _AddInstanceDeployRequest AddInstanceDeployRequest
 
-// NewAddInstanceDeployRequestWithDefaults instantiates a new AddInstanceDeployRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstanceDeployRequestWithDefaults() *AddInstanceDeployRequest {
-	this := AddInstanceDeployRequest{}
-	return &this
-}
-
 func (o AddInstanceDeployRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

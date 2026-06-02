@@ -26,14 +26,6 @@ type GetClusterHistoryEventDetail200Response struct {
 
 type _GetClusterHistoryEventDetail200Response GetClusterHistoryEventDetail200Response
 
-// NewGetClusterHistoryEventDetail200ResponseWithDefaults instantiates a new GetClusterHistoryEventDetail200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterHistoryEventDetail200ResponseWithDefaults() *GetClusterHistoryEventDetail200Response {
-	this := GetClusterHistoryEventDetail200Response{}
-	return &this
-}
-
 func (o GetClusterHistoryEventDetail200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

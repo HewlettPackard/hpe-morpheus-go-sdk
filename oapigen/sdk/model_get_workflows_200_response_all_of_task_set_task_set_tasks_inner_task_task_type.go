@@ -28,14 +28,6 @@ type GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskType struct {
 
 type _GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskType GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskType
 
-// NewGetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskTypeWithDefaults instantiates a new GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskTypeWithDefaults() *GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskType {
-	this := GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskType{}
-	return &this
-}
-
 func (o GetWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

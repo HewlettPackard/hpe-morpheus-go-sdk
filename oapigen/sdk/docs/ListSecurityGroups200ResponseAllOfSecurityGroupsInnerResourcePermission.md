@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionWithDefaults
-
-`func NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionWithDefaults() *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission`
-
-NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionWithDefaults instantiates a new ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetDefaultStore
 
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetDefaultStore() bool`

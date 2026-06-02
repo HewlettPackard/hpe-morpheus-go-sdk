@@ -32,14 +32,6 @@ type CreateNetworksRequestNetworkConfigAnyOf1 struct {
 
 type _CreateNetworksRequestNetworkConfigAnyOf1 CreateNetworksRequestNetworkConfigAnyOf1
 
-// NewCreateNetworksRequestNetworkConfigAnyOf1WithDefaults instantiates a new CreateNetworksRequestNetworkConfigAnyOf1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworksRequestNetworkConfigAnyOf1WithDefaults() *CreateNetworksRequestNetworkConfigAnyOf1 {
-	this := CreateNetworksRequestNetworkConfigAnyOf1{}
-	return &this
-}
-
 func (o CreateNetworksRequestNetworkConfigAnyOf1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

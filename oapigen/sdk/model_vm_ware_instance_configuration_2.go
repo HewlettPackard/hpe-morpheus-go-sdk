@@ -41,20 +41,6 @@ type VMWareInstanceConfiguration2 struct {
 
 type _VMWareInstanceConfiguration2 VMWareInstanceConfiguration2
 
-// NewVMWareInstanceConfiguration2WithDefaults instantiates a new VMWareInstanceConfiguration2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewVMWareInstanceConfiguration2WithDefaults() *VMWareInstanceConfiguration2 {
-	this := VMWareInstanceConfiguration2{}
-	var noAgent bool = false
-	this.NoAgent = *NewNullableBool(&noAgent)
-	var nestedVirtualization string = "off"
-	this.NestedVirtualization = &nestedVirtualization
-	var createUser bool = false
-	this.CreateUser = *NewNullableBool(&createUser)
-	return &this
-}
-
 func (o VMWareInstanceConfiguration2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

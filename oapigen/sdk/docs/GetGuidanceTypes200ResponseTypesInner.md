@@ -21,14 +21,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetGuidanceTypes200ResponseTypesInnerWithDefaults
-
-`func NewGetGuidanceTypes200ResponseTypesInnerWithDefaults() *GetGuidanceTypes200ResponseTypesInner`
-
-NewGetGuidanceTypes200ResponseTypesInnerWithDefaults instantiates a new GetGuidanceTypes200ResponseTypesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetGuidanceTypes200ResponseTypesInner) GetId() int64`

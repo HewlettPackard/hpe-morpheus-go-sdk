@@ -27,14 +27,6 @@ type ListClusterWorkers200ResponseAllOfWorkersInnerOwner struct {
 
 type _ListClusterWorkers200ResponseAllOfWorkersInnerOwner ListClusterWorkers200ResponseAllOfWorkersInnerOwner
 
-// NewListClusterWorkers200ResponseAllOfWorkersInnerOwnerWithDefaults instantiates a new ListClusterWorkers200ResponseAllOfWorkersInnerOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterWorkers200ResponseAllOfWorkersInnerOwnerWithDefaults() *ListClusterWorkers200ResponseAllOfWorkersInnerOwner {
-	this := ListClusterWorkers200ResponseAllOfWorkersInnerOwner{}
-	return &this
-}
-
 func (o ListClusterWorkers200ResponseAllOfWorkersInnerOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

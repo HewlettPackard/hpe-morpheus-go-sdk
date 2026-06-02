@@ -59,14 +59,6 @@ type ZoneAzureConfig struct {
 
 type _ZoneAzureConfig ZoneAzureConfig
 
-// NewZoneAzureConfigWithDefaults instantiates a new ZoneAzureConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneAzureConfigWithDefaults() *ZoneAzureConfig {
-	this := ZoneAzureConfig{}
-	return &this
-}
-
 func (o ZoneAzureConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

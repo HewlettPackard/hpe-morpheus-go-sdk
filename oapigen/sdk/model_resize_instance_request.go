@@ -33,16 +33,6 @@ type ResizeInstanceRequest struct {
 
 type _ResizeInstanceRequest ResizeInstanceRequest
 
-// NewResizeInstanceRequestWithDefaults instantiates a new ResizeInstanceRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewResizeInstanceRequestWithDefaults() *ResizeInstanceRequest {
-	this := ResizeInstanceRequest{}
-	var deleteOriginalVolumes bool = false
-	this.DeleteOriginalVolumes = &deleteOriginalVolumes
-	return &this
-}
-
 func (o ResizeInstanceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

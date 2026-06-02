@@ -37,14 +37,6 @@ type UserGroup struct {
 
 type _UserGroup UserGroup
 
-// NewUserGroupWithDefaults instantiates a new UserGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserGroupWithDefaults() *UserGroup {
-	this := UserGroup{}
-	return &this
-}
-
 func (o UserGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

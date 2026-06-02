@@ -29,14 +29,6 @@ type NSXVBGPNeighborConfig3 struct {
 
 type _NSXVBGPNeighborConfig3 NSXVBGPNeighborConfig3
 
-// NewNSXVBGPNeighborConfig3WithDefaults instantiates a new NSXVBGPNeighborConfig3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNSXVBGPNeighborConfig3WithDefaults() *NSXVBGPNeighborConfig3 {
-	this := NSXVBGPNeighborConfig3{}
-	return &this
-}
-
 func (o NSXVBGPNeighborConfig3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

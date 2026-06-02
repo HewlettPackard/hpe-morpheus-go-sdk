@@ -32,14 +32,6 @@ type ClusterServerCreateConfigHKS struct {
 
 type _ClusterServerCreateConfigHKS ClusterServerCreateConfigHKS
 
-// NewClusterServerCreateConfigHKSWithDefaults instantiates a new ClusterServerCreateConfigHKS object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterServerCreateConfigHKSWithDefaults() *ClusterServerCreateConfigHKS {
-	this := ClusterServerCreateConfigHKS{}
-	return &this
-}
-
 func (o ClusterServerCreateConfigHKS) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

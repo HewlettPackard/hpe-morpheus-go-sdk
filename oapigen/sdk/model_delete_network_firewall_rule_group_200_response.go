@@ -26,14 +26,6 @@ type DeleteNetworkFirewallRuleGroup200Response struct {
 
 type _DeleteNetworkFirewallRuleGroup200Response DeleteNetworkFirewallRuleGroup200Response
 
-// NewDeleteNetworkFirewallRuleGroup200ResponseWithDefaults instantiates a new DeleteNetworkFirewallRuleGroup200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteNetworkFirewallRuleGroup200ResponseWithDefaults() *DeleteNetworkFirewallRuleGroup200Response {
-	this := DeleteNetworkFirewallRuleGroup200Response{}
-	return &this
-}
-
 func (o DeleteNetworkFirewallRuleGroup200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

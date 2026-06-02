@@ -26,14 +26,6 @@ type DeleteUserSettingsAccessToken200Response struct {
 
 type _DeleteUserSettingsAccessToken200Response DeleteUserSettingsAccessToken200Response
 
-// NewDeleteUserSettingsAccessToken200ResponseWithDefaults instantiates a new DeleteUserSettingsAccessToken200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteUserSettingsAccessToken200ResponseWithDefaults() *DeleteUserSettingsAccessToken200Response {
-	this := DeleteUserSettingsAccessToken200Response{}
-	return &this
-}
-
 func (o DeleteUserSettingsAccessToken200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

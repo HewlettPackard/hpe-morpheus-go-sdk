@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewDeleteNetworkRouterRoute200ResponseWithDefaults
-
-`func NewDeleteNetworkRouterRoute200ResponseWithDefaults() *DeleteNetworkRouterRoute200Response`
-
-NewDeleteNetworkRouterRoute200ResponseWithDefaults instantiates a new DeleteNetworkRouterRoute200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *DeleteNetworkRouterRoute200Response) GetSuccess() bool`

@@ -28,14 +28,6 @@ type GuidanceVmwareSizingPlanBeforeActionConfig struct {
 
 type _GuidanceVmwareSizingPlanBeforeActionConfig GuidanceVmwareSizingPlanBeforeActionConfig
 
-// NewGuidanceVmwareSizingPlanBeforeActionConfigWithDefaults instantiates a new GuidanceVmwareSizingPlanBeforeActionConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGuidanceVmwareSizingPlanBeforeActionConfigWithDefaults() *GuidanceVmwareSizingPlanBeforeActionConfig {
-	this := GuidanceVmwareSizingPlanBeforeActionConfig{}
-	return &this
-}
-
 func (o GuidanceVmwareSizingPlanBeforeActionConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

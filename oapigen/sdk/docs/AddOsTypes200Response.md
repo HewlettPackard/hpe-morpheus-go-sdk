@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddOsTypes200ResponseWithDefaults
-
-`func NewAddOsTypes200ResponseWithDefaults() *AddOsTypes200Response`
-
-NewAddOsTypes200ResponseWithDefaults instantiates a new AddOsTypes200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *AddOsTypes200Response) GetSuccess() bool`

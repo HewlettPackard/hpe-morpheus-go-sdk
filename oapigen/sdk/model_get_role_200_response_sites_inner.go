@@ -28,14 +28,6 @@ type GetRole200ResponseSitesInner struct {
 
 type _GetRole200ResponseSitesInner GetRole200ResponseSitesInner
 
-// NewGetRole200ResponseSitesInnerWithDefaults instantiates a new GetRole200ResponseSitesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetRole200ResponseSitesInnerWithDefaults() *GetRole200ResponseSitesInner {
-	this := GetRole200ResponseSitesInner{}
-	return &this
-}
-
 func (o GetRole200ResponseSitesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

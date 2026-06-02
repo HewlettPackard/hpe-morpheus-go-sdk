@@ -42,14 +42,6 @@ type AddIncidentRequestIncident struct {
 
 type _AddIncidentRequestIncident AddIncidentRequestIncident
 
-// NewAddIncidentRequestIncidentWithDefaults instantiates a new AddIncidentRequestIncident object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIncidentRequestIncidentWithDefaults() *AddIncidentRequestIncident {
-	this := AddIncidentRequestIncident{}
-	return &this
-}
-
 func (o AddIncidentRequestIncident) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type UpdateCluster200ResponseAllOfClusterPermissions struct {
 
 type _UpdateCluster200ResponseAllOfClusterPermissions UpdateCluster200ResponseAllOfClusterPermissions
 
-// NewUpdateCluster200ResponseAllOfClusterPermissionsWithDefaults instantiates a new UpdateCluster200ResponseAllOfClusterPermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCluster200ResponseAllOfClusterPermissionsWithDefaults() *UpdateCluster200ResponseAllOfClusterPermissions {
-	this := UpdateCluster200ResponseAllOfClusterPermissions{}
-	return &this
-}
-
 func (o UpdateCluster200ResponseAllOfClusterPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetGuidances200ResponseDiscoveryAnyOfZoneZoneTypeWithDefaults
-
-`func NewGetGuidances200ResponseDiscoveryAnyOfZoneZoneTypeWithDefaults() *GetGuidances200ResponseDiscoveryAnyOfZoneZoneType`
-
-NewGetGuidances200ResponseDiscoveryAnyOfZoneZoneTypeWithDefaults instantiates a new GetGuidances200ResponseDiscoveryAnyOfZoneZoneType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetGuidances200ResponseDiscoveryAnyOfZoneZoneType) GetId() int64`

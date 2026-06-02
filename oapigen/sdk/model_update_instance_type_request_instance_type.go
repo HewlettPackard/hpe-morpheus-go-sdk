@@ -53,16 +53,6 @@ type UpdateInstanceTypeRequestInstanceType struct {
 
 type _UpdateInstanceTypeRequestInstanceType UpdateInstanceTypeRequestInstanceType
 
-// NewUpdateInstanceTypeRequestInstanceTypeWithDefaults instantiates a new UpdateInstanceTypeRequestInstanceType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstanceTypeRequestInstanceTypeWithDefaults() *UpdateInstanceTypeRequestInstanceType {
-	this := UpdateInstanceTypeRequestInstanceType{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o UpdateInstanceTypeRequestInstanceType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

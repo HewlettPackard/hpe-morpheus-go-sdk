@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListPoliciesGroup200ResponseAllOfPoliciesInnerOwnerWithDefaults
-
-`func NewListPoliciesGroup200ResponseAllOfPoliciesInnerOwnerWithDefaults() *ListPoliciesGroup200ResponseAllOfPoliciesInnerOwner`
-
-NewListPoliciesGroup200ResponseAllOfPoliciesInnerOwnerWithDefaults instantiates a new ListPoliciesGroup200ResponseAllOfPoliciesInnerOwner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListPoliciesGroup200ResponseAllOfPoliciesInnerOwner) GetId() int64`

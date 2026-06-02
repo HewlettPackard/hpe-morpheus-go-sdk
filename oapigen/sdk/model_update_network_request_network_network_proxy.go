@@ -27,14 +27,6 @@ type UpdateNetworkRequestNetworkNetworkProxy struct {
 
 type _UpdateNetworkRequestNetworkNetworkProxy UpdateNetworkRequestNetworkNetworkProxy
 
-// NewUpdateNetworkRequestNetworkNetworkProxyWithDefaults instantiates a new UpdateNetworkRequestNetworkNetworkProxy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkRequestNetworkNetworkProxyWithDefaults() *UpdateNetworkRequestNetworkNetworkProxy {
-	this := UpdateNetworkRequestNetworkNetworkProxy{}
-	return &this
-}
-
 func (o UpdateNetworkRequestNetworkNetworkProxy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

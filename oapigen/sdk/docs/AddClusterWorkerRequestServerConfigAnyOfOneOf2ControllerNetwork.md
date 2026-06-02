@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetworkWithDefaults
-
-`func NewAddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetworkWithDefaults() *AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork`
-
-NewAddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetworkWithDefaults instantiates a new AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork) GetId() []string`

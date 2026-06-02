@@ -26,14 +26,6 @@ type Model200Success struct {
 
 type _Model200Success Model200Success
 
-// NewModel200SuccessWithDefaults instantiates a new Model200Success object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewModel200SuccessWithDefaults() *Model200Success {
-	this := Model200Success{}
-	return &this
-}
-
 func (o Model200Success) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

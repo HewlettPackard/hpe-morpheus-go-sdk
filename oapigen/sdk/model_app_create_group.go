@@ -26,14 +26,6 @@ type AppCreateGroup struct {
 
 type _AppCreateGroup AppCreateGroup
 
-// NewAppCreateGroupWithDefaults instantiates a new AppCreateGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppCreateGroupWithDefaults() *AppCreateGroup {
-	this := AppCreateGroup{}
-	return &this
-}
-
 func (o AppCreateGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

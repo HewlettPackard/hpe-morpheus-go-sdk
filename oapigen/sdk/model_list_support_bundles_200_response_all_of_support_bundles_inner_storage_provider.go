@@ -27,14 +27,6 @@ type ListSupportBundles200ResponseAllOfSupportBundlesInnerStorageProvider struct
 
 type _ListSupportBundles200ResponseAllOfSupportBundlesInnerStorageProvider ListSupportBundles200ResponseAllOfSupportBundlesInnerStorageProvider
 
-// NewListSupportBundles200ResponseAllOfSupportBundlesInnerStorageProviderWithDefaults instantiates a new ListSupportBundles200ResponseAllOfSupportBundlesInnerStorageProvider object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListSupportBundles200ResponseAllOfSupportBundlesInnerStorageProviderWithDefaults() *ListSupportBundles200ResponseAllOfSupportBundlesInnerStorageProvider {
-	this := ListSupportBundles200ResponseAllOfSupportBundlesInnerStorageProvider{}
-	return &this
-}
-
 func (o ListSupportBundles200ResponseAllOfSupportBundlesInnerStorageProvider) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

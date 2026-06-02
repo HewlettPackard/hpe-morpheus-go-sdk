@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetCheckTypes200ResponseWithDefaults
-
-`func NewGetCheckTypes200ResponseWithDefaults() *GetCheckTypes200Response`
-
-NewGetCheckTypes200ResponseWithDefaults instantiates a new GetCheckTypes200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetCheckType
 
 `func (o *GetCheckTypes200Response) GetCheckType() GetCheckTypes200ResponseCheckType`

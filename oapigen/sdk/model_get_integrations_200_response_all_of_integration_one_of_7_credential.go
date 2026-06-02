@@ -29,14 +29,6 @@ type GetIntegrations200ResponseAllOfIntegrationOneOf7Credential struct {
 
 type _GetIntegrations200ResponseAllOfIntegrationOneOf7Credential GetIntegrations200ResponseAllOfIntegrationOneOf7Credential
 
-// NewGetIntegrations200ResponseAllOfIntegrationOneOf7CredentialWithDefaults instantiates a new GetIntegrations200ResponseAllOfIntegrationOneOf7Credential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetIntegrations200ResponseAllOfIntegrationOneOf7CredentialWithDefaults() *GetIntegrations200ResponseAllOfIntegrationOneOf7Credential {
-	this := GetIntegrations200ResponseAllOfIntegrationOneOf7Credential{}
-	return &this
-}
-
 func (o GetIntegrations200ResponseAllOfIntegrationOneOf7Credential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

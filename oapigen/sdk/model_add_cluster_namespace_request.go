@@ -26,14 +26,6 @@ type AddClusterNamespaceRequest struct {
 
 type _AddClusterNamespaceRequest AddClusterNamespaceRequest
 
-// NewAddClusterNamespaceRequestWithDefaults instantiates a new AddClusterNamespaceRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterNamespaceRequestWithDefaults() *AddClusterNamespaceRequest {
-	this := AddClusterNamespaceRequest{}
-	return &this
-}
-
 func (o AddClusterNamespaceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

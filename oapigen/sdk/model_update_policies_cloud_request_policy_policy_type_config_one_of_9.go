@@ -27,14 +27,6 @@ type UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf9 struct {
 
 type _UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf9 UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf9
 
-// NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf9WithDefaults instantiates a new UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf9 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf9WithDefaults() *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf9 {
-	this := UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf9{}
-	return &this
-}
-
 func (o UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf9) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

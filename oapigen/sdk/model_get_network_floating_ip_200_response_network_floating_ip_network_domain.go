@@ -27,14 +27,6 @@ type GetNetworkFloatingIp200ResponseNetworkFloatingIpNetworkDomain struct {
 
 type _GetNetworkFloatingIp200ResponseNetworkFloatingIpNetworkDomain GetNetworkFloatingIp200ResponseNetworkFloatingIpNetworkDomain
 
-// NewGetNetworkFloatingIp200ResponseNetworkFloatingIpNetworkDomainWithDefaults instantiates a new GetNetworkFloatingIp200ResponseNetworkFloatingIpNetworkDomain object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkFloatingIp200ResponseNetworkFloatingIpNetworkDomainWithDefaults() *GetNetworkFloatingIp200ResponseNetworkFloatingIpNetworkDomain {
-	this := GetNetworkFloatingIp200ResponseNetworkFloatingIpNetworkDomain{}
-	return &this
-}
-
 func (o GetNetworkFloatingIp200ResponseNetworkFloatingIpNetworkDomain) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

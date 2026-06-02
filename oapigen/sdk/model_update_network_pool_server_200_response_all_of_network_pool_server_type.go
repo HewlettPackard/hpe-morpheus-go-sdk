@@ -28,14 +28,6 @@ type UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType struct {
 
 type _UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType
 
-// NewUpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerTypeWithDefaults instantiates a new UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerTypeWithDefaults() *UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType {
-	this := UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType{}
-	return &this
-}
-
 func (o UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

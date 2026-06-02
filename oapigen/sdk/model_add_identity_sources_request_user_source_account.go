@@ -27,14 +27,6 @@ type AddIdentitySourcesRequestUserSourceAccount struct {
 
 type _AddIdentitySourcesRequestUserSourceAccount AddIdentitySourcesRequestUserSourceAccount
 
-// NewAddIdentitySourcesRequestUserSourceAccountWithDefaults instantiates a new AddIdentitySourcesRequestUserSourceAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIdentitySourcesRequestUserSourceAccountWithDefaults() *AddIdentitySourcesRequestUserSourceAccount {
-	this := AddIdentitySourcesRequestUserSourceAccount{}
-	return &this
-}
-
 func (o AddIdentitySourcesRequestUserSourceAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

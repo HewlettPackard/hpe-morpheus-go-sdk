@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSaveClusterAffinityGroup200ResponseWithDefaults
-
-`func NewSaveClusterAffinityGroup200ResponseWithDefaults() *SaveClusterAffinityGroup200Response`
-
-NewSaveClusterAffinityGroup200ResponseWithDefaults instantiates a new SaveClusterAffinityGroup200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAffinityGroup
 
 `func (o *SaveClusterAffinityGroup200Response) GetAffinityGroup() SaveClusterAffinityGroup200ResponseAllOfAffinityGroup`

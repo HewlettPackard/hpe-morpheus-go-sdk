@@ -28,14 +28,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddPriceSets200ResponseAllOfBudgetWithDefaults
-
-`func NewAddPriceSets200ResponseAllOfBudgetWithDefaults() *AddPriceSets200ResponseAllOfBudget`
-
-NewAddPriceSets200ResponseAllOfBudgetWithDefaults instantiates a new AddPriceSets200ResponseAllOfBudget object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddPriceSets200ResponseAllOfBudget) GetId() int64`

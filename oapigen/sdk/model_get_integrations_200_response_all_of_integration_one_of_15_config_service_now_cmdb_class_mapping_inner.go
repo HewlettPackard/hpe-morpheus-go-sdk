@@ -29,14 +29,6 @@ type GetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassM
 
 type _GetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInner GetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInner
 
-// NewGetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInnerWithDefaults instantiates a new GetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInnerWithDefaults() *GetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInner {
-	this := GetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInner{}
-	return &this
-}
-
 func (o GetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

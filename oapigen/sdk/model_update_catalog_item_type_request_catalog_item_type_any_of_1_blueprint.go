@@ -27,14 +27,6 @@ type UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1Blueprint struct {
 
 type _UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1Blueprint UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1Blueprint
 
-// NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1BlueprintWithDefaults instantiates a new UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1Blueprint object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1BlueprintWithDefaults() *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1Blueprint {
-	this := UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1Blueprint{}
-	return &this
-}
-
 func (o UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1Blueprint) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

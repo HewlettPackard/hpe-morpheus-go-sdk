@@ -33,14 +33,6 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf5TerraformGit struct {
 
 type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf5TerraformGit AddBlueprint200ResponseAllOfBlueprintConfigOneOf5TerraformGit
 
-// NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf5TerraformGitWithDefaults instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf5TerraformGit object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf5TerraformGitWithDefaults() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5TerraformGit {
-	this := AddBlueprint200ResponseAllOfBlueprintConfigOneOf5TerraformGit{}
-	return &this
-}
-
 func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf5TerraformGit) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

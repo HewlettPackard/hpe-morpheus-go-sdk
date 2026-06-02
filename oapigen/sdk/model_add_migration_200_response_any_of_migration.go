@@ -53,14 +53,6 @@ type AddMigration200ResponseAnyOfMigration struct {
 
 type _AddMigration200ResponseAnyOfMigration AddMigration200ResponseAnyOfMigration
 
-// NewAddMigration200ResponseAnyOfMigrationWithDefaults instantiates a new AddMigration200ResponseAnyOfMigration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddMigration200ResponseAnyOfMigrationWithDefaults() *AddMigration200ResponseAnyOfMigration {
-	this := AddMigration200ResponseAnyOfMigration{}
-	return &this
-}
-
 func (o AddMigration200ResponseAnyOfMigration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

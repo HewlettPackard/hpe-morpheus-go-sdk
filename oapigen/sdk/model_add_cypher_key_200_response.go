@@ -30,14 +30,6 @@ type AddCypherKey200Response struct {
 
 type _AddCypherKey200Response AddCypherKey200Response
 
-// NewAddCypherKey200ResponseWithDefaults instantiates a new AddCypherKey200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCypherKey200ResponseWithDefaults() *AddCypherKey200Response {
-	this := AddCypherKey200Response{}
-	return &this
-}
-
 func (o AddCypherKey200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

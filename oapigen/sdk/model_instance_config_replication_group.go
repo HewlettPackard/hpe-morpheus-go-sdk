@@ -26,14 +26,6 @@ type InstanceConfigReplicationGroup struct {
 
 type _InstanceConfigReplicationGroup InstanceConfigReplicationGroup
 
-// NewInstanceConfigReplicationGroupWithDefaults instantiates a new InstanceConfigReplicationGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigReplicationGroupWithDefaults() *InstanceConfigReplicationGroup {
-	this := InstanceConfigReplicationGroup{}
-	return &this
-}
-
 func (o InstanceConfigReplicationGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

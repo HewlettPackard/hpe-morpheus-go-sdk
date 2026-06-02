@@ -27,14 +27,6 @@ type AllocateNetworkFloatingIp200Response struct {
 
 type _AllocateNetworkFloatingIp200Response AllocateNetworkFloatingIp200Response
 
-// NewAllocateNetworkFloatingIp200ResponseWithDefaults instantiates a new AllocateNetworkFloatingIp200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAllocateNetworkFloatingIp200ResponseWithDefaults() *AllocateNetworkFloatingIp200Response {
-	this := AllocateNetworkFloatingIp200Response{}
-	return &this
-}
-
 func (o AllocateNetworkFloatingIp200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

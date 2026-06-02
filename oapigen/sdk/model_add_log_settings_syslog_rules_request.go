@@ -26,14 +26,6 @@ type AddLogSettingsSyslogRulesRequest struct {
 
 type _AddLogSettingsSyslogRulesRequest AddLogSettingsSyslogRulesRequest
 
-// NewAddLogSettingsSyslogRulesRequestWithDefaults instantiates a new AddLogSettingsSyslogRulesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLogSettingsSyslogRulesRequestWithDefaults() *AddLogSettingsSyslogRulesRequest {
-	this := AddLogSettingsSyslogRulesRequest{}
-	return &this
-}
-
 func (o AddLogSettingsSyslogRulesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

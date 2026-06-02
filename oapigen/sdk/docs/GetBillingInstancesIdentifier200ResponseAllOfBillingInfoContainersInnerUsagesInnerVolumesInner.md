@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerVolumesInnerWithDefaults
-
-`func NewGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerVolumesInnerWithDefaults() *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerVolumesInner`
-
-NewGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerVolumesInnerWithDefaults instantiates a new GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerVolumesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSize
 
 `func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerVolumesInner) GetSize() int64`

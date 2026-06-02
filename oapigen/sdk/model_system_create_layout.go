@@ -27,14 +27,6 @@ type SystemCreateLayout struct {
 
 type _SystemCreateLayout SystemCreateLayout
 
-// NewSystemCreateLayoutWithDefaults instantiates a new SystemCreateLayout object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSystemCreateLayoutWithDefaults() *SystemCreateLayout {
-	this := SystemCreateLayout{}
-	return &this
-}
-
 func (o SystemCreateLayout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetPowerSchedules200ResponseAllOfInstancesInnerWithDefaults
-
-`func NewGetPowerSchedules200ResponseAllOfInstancesInnerWithDefaults() *GetPowerSchedules200ResponseAllOfInstancesInner`
-
-NewGetPowerSchedules200ResponseAllOfInstancesInnerWithDefaults instantiates a new GetPowerSchedules200ResponseAllOfInstancesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetPowerSchedules200ResponseAllOfInstancesInner) GetId() int64`

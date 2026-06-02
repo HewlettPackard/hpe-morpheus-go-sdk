@@ -28,14 +28,6 @@ type ClustersLayout struct {
 
 type _ClustersLayout ClustersLayout
 
-// NewClustersLayoutWithDefaults instantiates a new ClustersLayout object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClustersLayoutWithDefaults() *ClustersLayout {
-	this := ClustersLayout{}
-	return &this
-}
-
 func (o ClustersLayout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

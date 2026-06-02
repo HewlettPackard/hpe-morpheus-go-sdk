@@ -27,14 +27,6 @@ type GetPrepareApplyInstance200Response struct {
 
 type _GetPrepareApplyInstance200Response GetPrepareApplyInstance200Response
 
-// NewGetPrepareApplyInstance200ResponseWithDefaults instantiates a new GetPrepareApplyInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetPrepareApplyInstance200ResponseWithDefaults() *GetPrepareApplyInstance200Response {
-	this := GetPrepareApplyInstance200Response{}
-	return &this
-}
-
 func (o GetPrepareApplyInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

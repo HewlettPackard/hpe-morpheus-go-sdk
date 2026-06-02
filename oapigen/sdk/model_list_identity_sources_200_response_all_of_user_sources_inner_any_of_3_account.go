@@ -27,14 +27,6 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Account struct {
 
 type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Account ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Account
 
-// NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3AccountWithDefaults instantiates a new ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Account object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3AccountWithDefaults() *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Account {
-	this := ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Account{}
-	return &this
-}
-
 func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Account) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

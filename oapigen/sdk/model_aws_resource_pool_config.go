@@ -29,16 +29,6 @@ type AwsResourcePoolConfig struct {
 
 type _AwsResourcePoolConfig AwsResourcePoolConfig
 
-// NewAwsResourcePoolConfigWithDefaults instantiates a new AwsResourcePoolConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsResourcePoolConfigWithDefaults() *AwsResourcePoolConfig {
-	this := AwsResourcePoolConfig{}
-	var tenancy string = "default"
-	this.Tenancy = &tenancy
-	return &this
-}
-
 func (o AwsResourcePoolConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

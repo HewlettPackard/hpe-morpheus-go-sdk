@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListClusterVolumes200ResponseWithDefaults
-
-`func NewListClusterVolumes200ResponseWithDefaults() *ListClusterVolumes200Response`
-
-NewListClusterVolumes200ResponseWithDefaults instantiates a new ListClusterVolumes200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetVolumes
 
 `func (o *ListClusterVolumes200Response) GetVolumes() []ListClusterVolumes200ResponseAllOfVolumesInner`

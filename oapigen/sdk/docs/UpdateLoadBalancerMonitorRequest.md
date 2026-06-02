@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateLoadBalancerMonitorRequestWithDefaults
-
-`func NewUpdateLoadBalancerMonitorRequestWithDefaults() *UpdateLoadBalancerMonitorRequest`
-
-NewUpdateLoadBalancerMonitorRequestWithDefaults instantiates a new UpdateLoadBalancerMonitorRequest object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetLoadBalancerMonitor
 
 `func (o *UpdateLoadBalancerMonitorRequest) GetLoadBalancerMonitor() UpdateLoadBalancerMonitorRequestLoadBalancerMonitor`

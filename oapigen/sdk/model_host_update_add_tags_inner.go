@@ -27,14 +27,6 @@ type HostUpdateAddTagsInner struct {
 
 type _HostUpdateAddTagsInner HostUpdateAddTagsInner
 
-// NewHostUpdateAddTagsInnerWithDefaults instantiates a new HostUpdateAddTagsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewHostUpdateAddTagsInnerWithDefaults() *HostUpdateAddTagsInner {
-	this := HostUpdateAddTagsInner{}
-	return &this
-}
-
 func (o HostUpdateAddTagsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

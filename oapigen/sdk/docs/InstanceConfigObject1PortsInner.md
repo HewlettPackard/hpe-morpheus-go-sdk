@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInstanceConfigObject1PortsInnerWithDefaults
-
-`func NewInstanceConfigObject1PortsInnerWithDefaults() *InstanceConfigObject1PortsInner`
-
-NewInstanceConfigObject1PortsInnerWithDefaults instantiates a new InstanceConfigObject1PortsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPort
 
 `func (o *InstanceConfigObject1PortsInner) GetPort() int64`

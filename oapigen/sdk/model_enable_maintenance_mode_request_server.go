@@ -35,16 +35,6 @@ type EnableMaintenanceModeRequestServer struct {
 
 type _EnableMaintenanceModeRequestServer EnableMaintenanceModeRequestServer
 
-// NewEnableMaintenanceModeRequestServerWithDefaults instantiates a new EnableMaintenanceModeRequestServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewEnableMaintenanceModeRequestServerWithDefaults() *EnableMaintenanceModeRequestServer {
-	this := EnableMaintenanceModeRequestServer{}
-	var movePoweredOff bool = true
-	this.MovePoweredOff = &movePoweredOff
-	return &this
-}
-
 func (o EnableMaintenanceModeRequestServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

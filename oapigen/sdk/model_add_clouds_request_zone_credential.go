@@ -27,16 +27,6 @@ type AddCloudsRequestZoneCredential struct {
 
 type _AddCloudsRequestZoneCredential AddCloudsRequestZoneCredential
 
-// NewAddCloudsRequestZoneCredentialWithDefaults instantiates a new AddCloudsRequestZoneCredential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCloudsRequestZoneCredentialWithDefaults() *AddCloudsRequestZoneCredential {
-	this := AddCloudsRequestZoneCredential{}
-	var type_ string = "local"
-	this.Type = &type_
-	return &this
-}
-
 func (o AddCloudsRequestZoneCredential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

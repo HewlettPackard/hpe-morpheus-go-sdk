@@ -26,14 +26,6 @@ type TenantsAvailableRoles struct {
 
 type _TenantsAvailableRoles TenantsAvailableRoles
 
-// NewTenantsAvailableRolesWithDefaults instantiates a new TenantsAvailableRoles object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTenantsAvailableRolesWithDefaults() *TenantsAvailableRoles {
-	this := TenantsAvailableRoles{}
-	return &this
-}
-
 func (o TenantsAvailableRoles) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

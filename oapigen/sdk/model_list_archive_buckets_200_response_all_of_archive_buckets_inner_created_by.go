@@ -26,14 +26,6 @@ type ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy struct {
 
 type _ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy
 
-// NewListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedByWithDefaults instantiates a new ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedByWithDefaults() *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy {
-	this := ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy{}
-	return &this
-}
-
 func (o ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

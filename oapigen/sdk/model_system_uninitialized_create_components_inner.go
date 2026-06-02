@@ -35,14 +35,6 @@ type SystemUninitializedCreateComponentsInner struct {
 
 type _SystemUninitializedCreateComponentsInner SystemUninitializedCreateComponentsInner
 
-// NewSystemUninitializedCreateComponentsInnerWithDefaults instantiates a new SystemUninitializedCreateComponentsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSystemUninitializedCreateComponentsInnerWithDefaults() *SystemUninitializedCreateComponentsInner {
-	this := SystemUninitializedCreateComponentsInner{}
-	return &this
-}
-
 func (o SystemUninitializedCreateComponentsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

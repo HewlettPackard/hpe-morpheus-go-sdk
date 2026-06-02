@@ -27,14 +27,6 @@ type GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy struct {
 
 type _GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy
 
-// NewGetInstanceHistory200ResponseAllOfProcessesInnerUpdatedByWithDefaults instantiates a new GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstanceHistory200ResponseAllOfProcessesInnerUpdatedByWithDefaults() *GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy {
-	this := GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy{}
-	return &this
-}
-
 func (o GetInstanceHistory200ResponseAllOfProcessesInnerUpdatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

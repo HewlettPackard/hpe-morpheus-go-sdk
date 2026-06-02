@@ -43,14 +43,6 @@ type IntegrationAnsibleConfigIntegrationConfig struct {
 
 type _IntegrationAnsibleConfigIntegrationConfig IntegrationAnsibleConfigIntegrationConfig
 
-// NewIntegrationAnsibleConfigIntegrationConfigWithDefaults instantiates a new IntegrationAnsibleConfigIntegrationConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationAnsibleConfigIntegrationConfigWithDefaults() *IntegrationAnsibleConfigIntegrationConfig {
-	this := IntegrationAnsibleConfigIntegrationConfig{}
-	return &this
-}
-
 func (o IntegrationAnsibleConfigIntegrationConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

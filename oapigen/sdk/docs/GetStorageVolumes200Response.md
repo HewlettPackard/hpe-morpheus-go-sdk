@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetStorageVolumes200ResponseWithDefaults
-
-`func NewGetStorageVolumes200ResponseWithDefaults() *GetStorageVolumes200Response`
-
-NewGetStorageVolumes200ResponseWithDefaults instantiates a new GetStorageVolumes200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetStorageVolume
 
 `func (o *GetStorageVolumes200Response) GetStorageVolume() GetStorageVolumes200ResponseStorageVolume`

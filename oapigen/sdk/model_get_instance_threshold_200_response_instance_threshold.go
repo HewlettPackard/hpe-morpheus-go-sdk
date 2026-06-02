@@ -50,14 +50,6 @@ type GetInstanceThreshold200ResponseInstanceThreshold struct {
 
 type _GetInstanceThreshold200ResponseInstanceThreshold GetInstanceThreshold200ResponseInstanceThreshold
 
-// NewGetInstanceThreshold200ResponseInstanceThresholdWithDefaults instantiates a new GetInstanceThreshold200ResponseInstanceThreshold object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstanceThreshold200ResponseInstanceThresholdWithDefaults() *GetInstanceThreshold200ResponseInstanceThreshold {
-	this := GetInstanceThreshold200ResponseInstanceThreshold{}
-	return &this
-}
-
 func (o GetInstanceThreshold200ResponseInstanceThreshold) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -28,14 +28,6 @@ type ListClusterVolumes200ResponseAllOfVolumesInnerType struct {
 
 type _ListClusterVolumes200ResponseAllOfVolumesInnerType ListClusterVolumes200ResponseAllOfVolumesInnerType
 
-// NewListClusterVolumes200ResponseAllOfVolumesInnerTypeWithDefaults instantiates a new ListClusterVolumes200ResponseAllOfVolumesInnerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterVolumes200ResponseAllOfVolumesInnerTypeWithDefaults() *ListClusterVolumes200ResponseAllOfVolumesInnerType {
-	this := ListClusterVolumes200ResponseAllOfVolumesInnerType{}
-	return &this
-}
-
 func (o ListClusterVolumes200ResponseAllOfVolumesInnerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type SystemCreateType struct {
 
 type _SystemCreateType SystemCreateType
 
-// NewSystemCreateTypeWithDefaults instantiates a new SystemCreateType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSystemCreateTypeWithDefaults() *SystemCreateType {
-	this := SystemCreateType{}
-	return &this
-}
-
 func (o SystemCreateType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -34,18 +34,6 @@ type ClusterDatastoreUpdate struct {
 
 type _ClusterDatastoreUpdate ClusterDatastoreUpdate
 
-// NewClusterDatastoreUpdateWithDefaults instantiates a new ClusterDatastoreUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterDatastoreUpdateWithDefaults() *ClusterDatastoreUpdate {
-	this := ClusterDatastoreUpdate{}
-	var active bool = true
-	this.Active = &active
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o ClusterDatastoreUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

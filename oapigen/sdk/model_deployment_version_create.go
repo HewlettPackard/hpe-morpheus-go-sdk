@@ -34,14 +34,6 @@ type DeploymentVersionCreate struct {
 
 type _DeploymentVersionCreate DeploymentVersionCreate
 
-// NewDeploymentVersionCreateWithDefaults instantiates a new DeploymentVersionCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeploymentVersionCreateWithDefaults() *DeploymentVersionCreate {
-	this := DeploymentVersionCreate{}
-	return &this
-}
-
 func (o DeploymentVersionCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

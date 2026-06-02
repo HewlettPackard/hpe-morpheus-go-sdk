@@ -40,14 +40,6 @@ type Policy struct {
 
 type _Policy Policy
 
-// NewPolicyWithDefaults instantiates a new Policy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPolicyWithDefaults() *Policy {
-	this := Policy{}
-	return &this
-}
-
 func (o Policy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

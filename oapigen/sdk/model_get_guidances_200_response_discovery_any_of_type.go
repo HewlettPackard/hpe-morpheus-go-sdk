@@ -29,14 +29,6 @@ type GetGuidances200ResponseDiscoveryAnyOfType struct {
 
 type _GetGuidances200ResponseDiscoveryAnyOfType GetGuidances200ResponseDiscoveryAnyOfType
 
-// NewGetGuidances200ResponseDiscoveryAnyOfTypeWithDefaults instantiates a new GetGuidances200ResponseDiscoveryAnyOfType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetGuidances200ResponseDiscoveryAnyOfTypeWithDefaults() *GetGuidances200ResponseDiscoveryAnyOfType {
-	this := GetGuidances200ResponseDiscoveryAnyOfType{}
-	return &this
-}
-
 func (o GetGuidances200ResponseDiscoveryAnyOfType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

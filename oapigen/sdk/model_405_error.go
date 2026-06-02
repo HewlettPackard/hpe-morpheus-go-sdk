@@ -26,14 +26,6 @@ type Model405Error struct {
 
 type _Model405Error Model405Error
 
-// NewModel405ErrorWithDefaults instantiates a new Model405Error object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewModel405ErrorWithDefaults() *Model405Error {
-	this := Model405Error{}
-	return &this
-}
-
 func (o Model405Error) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

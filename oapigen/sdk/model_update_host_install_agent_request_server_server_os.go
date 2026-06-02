@@ -27,14 +27,6 @@ type UpdateHostInstallAgentRequestServerServerOs struct {
 
 type _UpdateHostInstallAgentRequestServerServerOs UpdateHostInstallAgentRequestServerServerOs
 
-// NewUpdateHostInstallAgentRequestServerServerOsWithDefaults instantiates a new UpdateHostInstallAgentRequestServerServerOs object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateHostInstallAgentRequestServerServerOsWithDefaults() *UpdateHostInstallAgentRequestServerServerOs {
-	this := UpdateHostInstallAgentRequestServerServerOs{}
-	return &this
-}
-
 func (o UpdateHostInstallAgentRequestServerServerOs) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

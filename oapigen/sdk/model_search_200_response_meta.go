@@ -33,22 +33,6 @@ type Search200ResponseMeta struct {
 
 type _Search200ResponseMeta Search200ResponseMeta
 
-// NewSearch200ResponseMetaWithDefaults instantiates a new Search200ResponseMeta object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSearch200ResponseMetaWithDefaults() *Search200ResponseMeta {
-	this := Search200ResponseMeta{}
-	var offset int64 = 0
-	this.Offset = &offset
-	var max int64 = 25
-	this.Max = &max
-	var size int64 = 0
-	this.Size = &size
-	var total int64 = 0
-	this.Total = &total
-	return &this
-}
-
 func (o Search200ResponseMeta) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

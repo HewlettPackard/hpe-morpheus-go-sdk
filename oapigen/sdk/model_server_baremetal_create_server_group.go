@@ -26,14 +26,6 @@ type ServerBaremetalCreateServerGroup struct {
 
 type _ServerBaremetalCreateServerGroup ServerBaremetalCreateServerGroup
 
-// NewServerBaremetalCreateServerGroupWithDefaults instantiates a new ServerBaremetalCreateServerGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewServerBaremetalCreateServerGroupWithDefaults() *ServerBaremetalCreateServerGroup {
-	this := ServerBaremetalCreateServerGroup{}
-	return &this
-}
-
 func (o ServerBaremetalCreateServerGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

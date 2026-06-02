@@ -26,14 +26,6 @@ type IssueIncident struct {
 
 type _IssueIncident IssueIncident
 
-// NewIssueIncidentWithDefaults instantiates a new IssueIncident object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIssueIncidentWithDefaults() *IssueIncident {
-	this := IssueIncident{}
-	return &this
-}
-
 func (o IssueIncident) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

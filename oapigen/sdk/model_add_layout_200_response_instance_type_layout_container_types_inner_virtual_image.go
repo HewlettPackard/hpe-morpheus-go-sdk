@@ -27,14 +27,6 @@ type AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerVirtualImage struc
 
 type _AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerVirtualImage AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerVirtualImage
 
-// NewAddLayout200ResponseInstanceTypeLayoutContainerTypesInnerVirtualImageWithDefaults instantiates a new AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerVirtualImage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLayout200ResponseInstanceTypeLayoutContainerTypesInnerVirtualImageWithDefaults() *AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerVirtualImage {
-	this := AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerVirtualImage{}
-	return &this
-}
-
 func (o AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerVirtualImage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

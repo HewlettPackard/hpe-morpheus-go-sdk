@@ -27,14 +27,6 @@ type ListPoliciesCloud200ResponseAllOfPoliciesInnerOwner struct {
 
 type _ListPoliciesCloud200ResponseAllOfPoliciesInnerOwner ListPoliciesCloud200ResponseAllOfPoliciesInnerOwner
 
-// NewListPoliciesCloud200ResponseAllOfPoliciesInnerOwnerWithDefaults instantiates a new ListPoliciesCloud200ResponseAllOfPoliciesInnerOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListPoliciesCloud200ResponseAllOfPoliciesInnerOwnerWithDefaults() *ListPoliciesCloud200ResponseAllOfPoliciesInnerOwner {
-	this := ListPoliciesCloud200ResponseAllOfPoliciesInnerOwner{}
-	return &this
-}
-
 func (o ListPoliciesCloud200ResponseAllOfPoliciesInnerOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

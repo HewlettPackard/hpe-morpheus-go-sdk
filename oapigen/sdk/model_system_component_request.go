@@ -35,14 +35,6 @@ type SystemComponentRequest struct {
 
 type _SystemComponentRequest SystemComponentRequest
 
-// NewSystemComponentRequestWithDefaults instantiates a new SystemComponentRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSystemComponentRequestWithDefaults() *SystemComponentRequest {
-	this := SystemComponentRequest{}
-	return &this
-}
-
 func (o SystemComponentRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

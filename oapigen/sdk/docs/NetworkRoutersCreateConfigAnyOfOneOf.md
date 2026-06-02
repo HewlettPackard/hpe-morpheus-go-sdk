@@ -44,14 +44,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewNetworkRoutersCreateConfigAnyOfOneOfWithDefaults
-
-`func NewNetworkRoutersCreateConfigAnyOfOneOfWithDefaults() *NetworkRoutersCreateConfigAnyOfOneOf`
-
-NewNetworkRoutersCreateConfigAnyOfOneOfWithDefaults instantiates a new NetworkRoutersCreateConfigAnyOfOneOf object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetHaMode
 
 `func (o *NetworkRoutersCreateConfigAnyOfOneOf) GetHaMode() string`

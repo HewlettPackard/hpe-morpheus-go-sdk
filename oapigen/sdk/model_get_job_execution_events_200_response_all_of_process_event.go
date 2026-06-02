@@ -57,14 +57,6 @@ type GetJobExecutionEvents200ResponseAllOfProcessEvent struct {
 
 type _GetJobExecutionEvents200ResponseAllOfProcessEvent GetJobExecutionEvents200ResponseAllOfProcessEvent
 
-// NewGetJobExecutionEvents200ResponseAllOfProcessEventWithDefaults instantiates a new GetJobExecutionEvents200ResponseAllOfProcessEvent object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetJobExecutionEvents200ResponseAllOfProcessEventWithDefaults() *GetJobExecutionEvents200ResponseAllOfProcessEvent {
-	this := GetJobExecutionEvents200ResponseAllOfProcessEvent{}
-	return &this
-}
-
 func (o GetJobExecutionEvents200ResponseAllOfProcessEvent) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

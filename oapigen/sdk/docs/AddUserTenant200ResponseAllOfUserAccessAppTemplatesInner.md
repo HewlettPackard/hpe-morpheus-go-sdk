@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddUserTenant200ResponseAllOfUserAccessAppTemplatesInnerWithDefaults
-
-`func NewAddUserTenant200ResponseAllOfUserAccessAppTemplatesInnerWithDefaults() *AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner`
-
-NewAddUserTenant200ResponseAllOfUserAccessAppTemplatesInnerWithDefaults instantiates a new AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner) GetId() int64`

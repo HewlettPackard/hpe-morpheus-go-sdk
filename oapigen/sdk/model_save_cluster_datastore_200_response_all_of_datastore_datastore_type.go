@@ -26,14 +26,6 @@ type SaveClusterDatastore200ResponseAllOfDatastoreDatastoreType struct {
 
 type _SaveClusterDatastore200ResponseAllOfDatastoreDatastoreType SaveClusterDatastore200ResponseAllOfDatastoreDatastoreType
 
-// NewSaveClusterDatastore200ResponseAllOfDatastoreDatastoreTypeWithDefaults instantiates a new SaveClusterDatastore200ResponseAllOfDatastoreDatastoreType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveClusterDatastore200ResponseAllOfDatastoreDatastoreTypeWithDefaults() *SaveClusterDatastore200ResponseAllOfDatastoreDatastoreType {
-	this := SaveClusterDatastore200ResponseAllOfDatastoreDatastoreType{}
-	return &this
-}
-
 func (o SaveClusterDatastore200ResponseAllOfDatastoreDatastoreType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

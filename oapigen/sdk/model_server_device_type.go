@@ -33,14 +33,6 @@ type ServerDeviceType struct {
 
 type _ServerDeviceType ServerDeviceType
 
-// NewServerDeviceTypeWithDefaults instantiates a new ServerDeviceType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewServerDeviceTypeWithDefaults() *ServerDeviceType {
-	this := ServerDeviceType{}
-	return &this
-}
-
 func (o ServerDeviceType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

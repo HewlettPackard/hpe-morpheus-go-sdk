@@ -29,14 +29,6 @@ type ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers struc
 
 type _ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers
 
-// NewListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServersWithDefaults instantiates a new ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServersWithDefaults() *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers {
-	this := ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers{}
-	return &this
-}
-
 func (o ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

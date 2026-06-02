@@ -26,14 +26,6 @@ type AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy struct {
 
 type _AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy
 
-// NewAddImageBuild200ResponseAllOfImageBuildLastResultCreatedByWithDefaults instantiates a new AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddImageBuild200ResponseAllOfImageBuildLastResultCreatedByWithDefaults() *AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy {
-	this := AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy{}
-	return &this
-}
-
 func (o AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

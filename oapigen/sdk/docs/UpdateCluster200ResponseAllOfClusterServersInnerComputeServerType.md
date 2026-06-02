@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateCluster200ResponseAllOfClusterServersInnerComputeServerTypeWithDefaults
-
-`func NewUpdateCluster200ResponseAllOfClusterServersInnerComputeServerTypeWithDefaults() *UpdateCluster200ResponseAllOfClusterServersInnerComputeServerType`
-
-NewUpdateCluster200ResponseAllOfClusterServersInnerComputeServerTypeWithDefaults instantiates a new UpdateCluster200ResponseAllOfClusterServersInnerComputeServerType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateCluster200ResponseAllOfClusterServersInnerComputeServerType) GetId() int64`

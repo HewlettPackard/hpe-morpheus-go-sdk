@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateInvoicesRequestInvoiceWithDefaults
-
-`func NewUpdateInvoicesRequestInvoiceWithDefaults() *UpdateInvoicesRequestInvoice`
-
-NewUpdateInvoicesRequestInvoiceWithDefaults instantiates a new UpdateInvoicesRequestInvoice object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetTags
 
 `func (o *UpdateInvoicesRequestInvoice) GetTags() []map[string]interface{}`

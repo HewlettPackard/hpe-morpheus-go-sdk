@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetClusterDeployment200ResponseResourceWithDefaults
-
-`func NewGetClusterDeployment200ResponseResourceWithDefaults() *GetClusterDeployment200ResponseResource`
-
-NewGetClusterDeployment200ResponseResourceWithDefaults instantiates a new GetClusterDeployment200ResponseResource object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetClusterDeployment200ResponseResource) GetId() int64`

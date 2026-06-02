@@ -26,14 +26,6 @@ type SuspendInstance200Response struct {
 
 type _SuspendInstance200Response SuspendInstance200Response
 
-// NewSuspendInstance200ResponseWithDefaults instantiates a new SuspendInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSuspendInstance200ResponseWithDefaults() *SuspendInstance200Response {
-	this := SuspendInstance200Response{}
-	return &this
-}
-
 func (o SuspendInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

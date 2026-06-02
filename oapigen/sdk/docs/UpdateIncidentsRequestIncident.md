@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateIncidentsRequestIncidentWithDefaults
-
-`func NewUpdateIncidentsRequestIncidentWithDefaults() *UpdateIncidentsRequestIncident`
-
-NewUpdateIncidentsRequestIncidentWithDefaults instantiates a new UpdateIncidentsRequestIncident object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetResolution
 
 `func (o *UpdateIncidentsRequestIncident) GetResolution() string`

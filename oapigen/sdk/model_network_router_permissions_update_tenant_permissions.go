@@ -27,14 +27,6 @@ type NetworkRouterPermissionsUpdateTenantPermissions struct {
 
 type _NetworkRouterPermissionsUpdateTenantPermissions NetworkRouterPermissionsUpdateTenantPermissions
 
-// NewNetworkRouterPermissionsUpdateTenantPermissionsWithDefaults instantiates a new NetworkRouterPermissionsUpdateTenantPermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkRouterPermissionsUpdateTenantPermissionsWithDefaults() *NetworkRouterPermissionsUpdateTenantPermissions {
-	this := NetworkRouterPermissionsUpdateTenantPermissions{}
-	return &this
-}
-
 func (o NetworkRouterPermissionsUpdateTenantPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

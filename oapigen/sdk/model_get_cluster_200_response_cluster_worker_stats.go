@@ -33,14 +33,6 @@ type GetCluster200ResponseClusterWorkerStats struct {
 
 type _GetCluster200ResponseClusterWorkerStats GetCluster200ResponseClusterWorkerStats
 
-// NewGetCluster200ResponseClusterWorkerStatsWithDefaults instantiates a new GetCluster200ResponseClusterWorkerStats object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCluster200ResponseClusterWorkerStatsWithDefaults() *GetCluster200ResponseClusterWorkerStats {
-	this := GetCluster200ResponseClusterWorkerStats{}
-	return &this
-}
-
 func (o GetCluster200ResponseClusterWorkerStats) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

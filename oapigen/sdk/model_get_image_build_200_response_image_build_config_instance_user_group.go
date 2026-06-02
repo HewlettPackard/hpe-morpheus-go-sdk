@@ -26,14 +26,6 @@ type GetImageBuild200ResponseImageBuildConfigInstanceUserGroup struct {
 
 type _GetImageBuild200ResponseImageBuildConfigInstanceUserGroup GetImageBuild200ResponseImageBuildConfigInstanceUserGroup
 
-// NewGetImageBuild200ResponseImageBuildConfigInstanceUserGroupWithDefaults instantiates a new GetImageBuild200ResponseImageBuildConfigInstanceUserGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetImageBuild200ResponseImageBuildConfigInstanceUserGroupWithDefaults() *GetImageBuild200ResponseImageBuildConfigInstanceUserGroup {
-	this := GetImageBuild200ResponseImageBuildConfigInstanceUserGroup{}
-	return &this
-}
-
 func (o GetImageBuild200ResponseImageBuildConfigInstanceUserGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

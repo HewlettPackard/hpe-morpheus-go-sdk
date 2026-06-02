@@ -26,14 +26,6 @@ type UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Workflow struct {
 
 type _UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Workflow UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Workflow
 
-// NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2WorkflowWithDefaults instantiates a new UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Workflow object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2WorkflowWithDefaults() *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Workflow {
-	this := UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Workflow{}
-	return &this
-}
-
 func (o UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2Workflow) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

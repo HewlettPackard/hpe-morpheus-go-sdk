@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListSystemTypes200ResponseWithDefaults
-
-`func NewListSystemTypes200ResponseWithDefaults() *ListSystemTypes200Response`
-
-NewListSystemTypes200ResponseWithDefaults instantiates a new ListSystemTypes200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSystemTypes
 
 `func (o *ListSystemTypes200Response) GetSystemTypes() []ListSystemTypes200ResponseSystemTypesInner`

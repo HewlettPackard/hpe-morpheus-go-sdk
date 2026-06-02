@@ -40,14 +40,6 @@ type ListCertificates200ResponseCertificatesInner struct {
 
 type _ListCertificates200ResponseCertificatesInner ListCertificates200ResponseCertificatesInner
 
-// NewListCertificates200ResponseCertificatesInnerWithDefaults instantiates a new ListCertificates200ResponseCertificatesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCertificates200ResponseCertificatesInnerWithDefaults() *ListCertificates200ResponseCertificatesInner {
-	this := ListCertificates200ResponseCertificatesInner{}
-	return &this
-}
-
 func (o ListCertificates200ResponseCertificatesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

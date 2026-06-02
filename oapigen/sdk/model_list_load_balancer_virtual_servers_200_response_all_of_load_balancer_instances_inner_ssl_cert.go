@@ -27,14 +27,6 @@ type ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSsl
 
 type _ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslCert ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslCert
 
-// NewListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslCertWithDefaults instantiates a new ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslCert object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslCertWithDefaults() *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslCert {
-	this := ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslCert{}
-	return &this
-}
-
 func (o ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslCert) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

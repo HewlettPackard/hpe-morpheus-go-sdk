@@ -26,14 +26,6 @@ type AddPreseedScriptRequest struct {
 
 type _AddPreseedScriptRequest AddPreseedScriptRequest
 
-// NewAddPreseedScriptRequestWithDefaults instantiates a new AddPreseedScriptRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPreseedScriptRequestWithDefaults() *AddPreseedScriptRequest {
-	this := AddPreseedScriptRequest{}
-	return &this
-}
-
 func (o AddPreseedScriptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

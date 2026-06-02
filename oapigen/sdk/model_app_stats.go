@@ -26,14 +26,6 @@ type AppStats struct {
 
 type _AppStats AppStats
 
-// NewAppStatsWithDefaults instantiates a new AppStats object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppStatsWithDefaults() *AppStats {
-	this := AppStats{}
-	return &this
-}
-
 func (o AppStats) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

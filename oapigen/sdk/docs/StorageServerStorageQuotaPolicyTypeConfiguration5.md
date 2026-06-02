@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewStorageServerStorageQuotaPolicyTypeConfiguration5WithDefaults
-
-`func NewStorageServerStorageQuotaPolicyTypeConfiguration5WithDefaults() *StorageServerStorageQuotaPolicyTypeConfiguration5`
-
-NewStorageServerStorageQuotaPolicyTypeConfiguration5WithDefaults instantiates a new StorageServerStorageQuotaPolicyTypeConfiguration5 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetStorageServerId
 
 `func (o *StorageServerStorageQuotaPolicyTypeConfiguration5) GetStorageServerId() string`

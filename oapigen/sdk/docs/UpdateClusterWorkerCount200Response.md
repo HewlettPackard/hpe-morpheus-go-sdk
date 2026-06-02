@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateClusterWorkerCount200ResponseWithDefaults
-
-`func NewUpdateClusterWorkerCount200ResponseWithDefaults() *UpdateClusterWorkerCount200Response`
-
-NewUpdateClusterWorkerCount200ResponseWithDefaults instantiates a new UpdateClusterWorkerCount200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *UpdateClusterWorkerCount200Response) GetSuccess() bool`

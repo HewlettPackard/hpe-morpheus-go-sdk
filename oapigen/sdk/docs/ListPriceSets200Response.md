@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListPriceSets200ResponseWithDefaults
-
-`func NewListPriceSets200ResponseWithDefaults() *ListPriceSets200Response`
-
-NewListPriceSets200ResponseWithDefaults instantiates a new ListPriceSets200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPriceSets
 
 `func (o *ListPriceSets200Response) GetPriceSets() []ListPriceSets200ResponseAllOfPriceSetsInner`

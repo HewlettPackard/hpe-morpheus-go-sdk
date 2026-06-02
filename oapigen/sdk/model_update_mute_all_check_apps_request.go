@@ -27,16 +27,6 @@ type UpdateMuteAllCheckAppsRequest struct {
 
 type _UpdateMuteAllCheckAppsRequest UpdateMuteAllCheckAppsRequest
 
-// NewUpdateMuteAllCheckAppsRequestWithDefaults instantiates a new UpdateMuteAllCheckAppsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateMuteAllCheckAppsRequestWithDefaults() *UpdateMuteAllCheckAppsRequest {
-	this := UpdateMuteAllCheckAppsRequest{}
-	var muted bool = true
-	this.Muted = muted
-	return &this
-}
-
 func (o UpdateMuteAllCheckAppsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

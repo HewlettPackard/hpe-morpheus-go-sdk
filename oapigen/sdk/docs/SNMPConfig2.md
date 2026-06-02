@@ -29,14 +29,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSNMPConfig2WithDefaults
-
-`func NewSNMPConfig2WithDefaults() *SNMPConfig2`
-
-NewSNMPConfig2WithDefaults instantiates a new SNMPConfig2 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetHost
 
 `func (o *SNMPConfig2) GetHost() string`

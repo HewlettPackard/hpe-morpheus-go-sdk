@@ -31,14 +31,6 @@ type InstanceConfigObjectPortsInner struct {
 
 type _InstanceConfigObjectPortsInner InstanceConfigObjectPortsInner
 
-// NewInstanceConfigObjectPortsInnerWithDefaults instantiates a new InstanceConfigObjectPortsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigObjectPortsInnerWithDefaults() *InstanceConfigObjectPortsInner {
-	this := InstanceConfigObjectPortsInner{}
-	return &this
-}
-
 func (o InstanceConfigObjectPortsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

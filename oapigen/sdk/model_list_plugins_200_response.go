@@ -27,14 +27,6 @@ type ListPlugins200Response struct {
 
 type _ListPlugins200Response ListPlugins200Response
 
-// NewListPlugins200ResponseWithDefaults instantiates a new ListPlugins200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListPlugins200ResponseWithDefaults() *ListPlugins200Response {
-	this := ListPlugins200Response{}
-	return &this
-}
-
 func (o ListPlugins200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

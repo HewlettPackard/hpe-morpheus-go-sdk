@@ -27,14 +27,6 @@ type GetImageBuild200ResponseImageBuildZone struct {
 
 type _GetImageBuild200ResponseImageBuildZone GetImageBuild200ResponseImageBuildZone
 
-// NewGetImageBuild200ResponseImageBuildZoneWithDefaults instantiates a new GetImageBuild200ResponseImageBuildZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetImageBuild200ResponseImageBuildZoneWithDefaults() *GetImageBuild200ResponseImageBuildZone {
-	this := GetImageBuild200ResponseImageBuildZone{}
-	return &this
-}
-
 func (o GetImageBuild200ResponseImageBuildZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

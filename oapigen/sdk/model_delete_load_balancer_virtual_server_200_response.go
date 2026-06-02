@@ -26,14 +26,6 @@ type DeleteLoadBalancerVirtualServer200Response struct {
 
 type _DeleteLoadBalancerVirtualServer200Response DeleteLoadBalancerVirtualServer200Response
 
-// NewDeleteLoadBalancerVirtualServer200ResponseWithDefaults instantiates a new DeleteLoadBalancerVirtualServer200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteLoadBalancerVirtualServer200ResponseWithDefaults() *DeleteLoadBalancerVirtualServer200Response {
-	this := DeleteLoadBalancerVirtualServer200Response{}
-	return &this
-}
-
 func (o DeleteLoadBalancerVirtualServer200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

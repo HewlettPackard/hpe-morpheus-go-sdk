@@ -26,14 +26,6 @@ type UpdateServicePlans200ResponseAllOfServicePlanPermissionsTenantPermissions s
 
 type _UpdateServicePlans200ResponseAllOfServicePlanPermissionsTenantPermissions UpdateServicePlans200ResponseAllOfServicePlanPermissionsTenantPermissions
 
-// NewUpdateServicePlans200ResponseAllOfServicePlanPermissionsTenantPermissionsWithDefaults instantiates a new UpdateServicePlans200ResponseAllOfServicePlanPermissionsTenantPermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateServicePlans200ResponseAllOfServicePlanPermissionsTenantPermissionsWithDefaults() *UpdateServicePlans200ResponseAllOfServicePlanPermissionsTenantPermissions {
-	this := UpdateServicePlans200ResponseAllOfServicePlanPermissionsTenantPermissions{}
-	return &this
-}
-
 func (o UpdateServicePlans200ResponseAllOfServicePlanPermissionsTenantPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

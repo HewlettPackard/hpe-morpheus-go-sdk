@@ -26,14 +26,6 @@ type CreateNetworkPoolIp410Response struct {
 
 type _CreateNetworkPoolIp410Response CreateNetworkPoolIp410Response
 
-// NewCreateNetworkPoolIp410ResponseWithDefaults instantiates a new CreateNetworkPoolIp410Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkPoolIp410ResponseWithDefaults() *CreateNetworkPoolIp410Response {
-	this := CreateNetworkPoolIp410Response{}
-	return &this
-}
-
 func (o CreateNetworkPoolIp410Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

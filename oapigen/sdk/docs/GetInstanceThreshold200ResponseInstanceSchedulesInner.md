@@ -30,14 +30,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetInstanceThreshold200ResponseInstanceSchedulesInnerWithDefaults
-
-`func NewGetInstanceThreshold200ResponseInstanceSchedulesInnerWithDefaults() *GetInstanceThreshold200ResponseInstanceSchedulesInner`
-
-NewGetInstanceThreshold200ResponseInstanceSchedulesInnerWithDefaults instantiates a new GetInstanceThreshold200ResponseInstanceSchedulesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetId() int64`

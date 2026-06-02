@@ -26,14 +26,6 @@ type SnapshotInstanceRequest struct {
 
 type _SnapshotInstanceRequest SnapshotInstanceRequest
 
-// NewSnapshotInstanceRequestWithDefaults instantiates a new SnapshotInstanceRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSnapshotInstanceRequestWithDefaults() *SnapshotInstanceRequest {
-	this := SnapshotInstanceRequest{}
-	return &this
-}
-
 func (o SnapshotInstanceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

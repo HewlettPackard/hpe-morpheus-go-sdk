@@ -26,14 +26,6 @@ type ListCypherKeys200ResponseAllOfData struct {
 
 type _ListCypherKeys200ResponseAllOfData ListCypherKeys200ResponseAllOfData
 
-// NewListCypherKeys200ResponseAllOfDataWithDefaults instantiates a new ListCypherKeys200ResponseAllOfData object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCypherKeys200ResponseAllOfDataWithDefaults() *ListCypherKeys200ResponseAllOfData {
-	this := ListCypherKeys200ResponseAllOfData{}
-	return &this
-}
-
 func (o ListCypherKeys200ResponseAllOfData) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

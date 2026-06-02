@@ -27,14 +27,6 @@ type LeaseAgentToken200ResponseHeaders struct {
 
 type _LeaseAgentToken200ResponseHeaders LeaseAgentToken200ResponseHeaders
 
-// NewLeaseAgentToken200ResponseHeadersWithDefaults instantiates a new LeaseAgentToken200ResponseHeaders object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLeaseAgentToken200ResponseHeadersWithDefaults() *LeaseAgentToken200ResponseHeaders {
-	this := LeaseAgentToken200ResponseHeaders{}
-	return &this
-}
-
 func (o LeaseAgentToken200ResponseHeaders) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

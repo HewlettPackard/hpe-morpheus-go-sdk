@@ -31,16 +31,6 @@ type RemoveTenant400Response struct {
 
 type _RemoveTenant400Response RemoveTenant400Response
 
-// NewRemoveTenant400ResponseWithDefaults instantiates a new RemoveTenant400Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRemoveTenant400ResponseWithDefaults() *RemoveTenant400Response {
-	this := RemoveTenant400Response{}
-	var success bool = true
-	this.Success = &success
-	return &this
-}
-
 func (o RemoveTenant400Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

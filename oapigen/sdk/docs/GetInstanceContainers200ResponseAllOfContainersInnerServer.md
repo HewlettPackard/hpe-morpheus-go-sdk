@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetInstanceContainers200ResponseAllOfContainersInnerServerWithDefaults
-
-`func NewGetInstanceContainers200ResponseAllOfContainersInnerServerWithDefaults() *GetInstanceContainers200ResponseAllOfContainersInnerServer`
-
-NewGetInstanceContainers200ResponseAllOfContainersInnerServerWithDefaults instantiates a new GetInstanceContainers200ResponseAllOfContainersInnerServer object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetInstanceContainers200ResponseAllOfContainersInnerServer) GetId() int32`

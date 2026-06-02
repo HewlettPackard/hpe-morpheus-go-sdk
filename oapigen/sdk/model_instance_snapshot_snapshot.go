@@ -33,20 +33,6 @@ type InstanceSnapshotSnapshot struct {
 
 type _InstanceSnapshotSnapshot InstanceSnapshotSnapshot
 
-// NewInstanceSnapshotSnapshotWithDefaults instantiates a new InstanceSnapshotSnapshot object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceSnapshotSnapshotWithDefaults() *InstanceSnapshotSnapshot {
-	this := InstanceSnapshotSnapshot{}
-	var name string = "{serverName}.{timestamp}"
-	this.Name = &name
-	var memorySnapshot bool = false
-	this.MemorySnapshot = &memorySnapshot
-	var forExport bool = false
-	this.ForExport = &forExport
-	return &this
-}
-
 func (o InstanceSnapshotSnapshot) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -33,14 +33,6 @@ type BillingServersServersInnerUsagesInnerApplicablePricesInner struct {
 
 type _BillingServersServersInnerUsagesInnerApplicablePricesInner BillingServersServersInnerUsagesInnerApplicablePricesInner
 
-// NewBillingServersServersInnerUsagesInnerApplicablePricesInnerWithDefaults instantiates a new BillingServersServersInnerUsagesInnerApplicablePricesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBillingServersServersInnerUsagesInnerApplicablePricesInnerWithDefaults() *BillingServersServersInnerUsagesInnerApplicablePricesInner {
-	this := BillingServersServersInnerUsagesInnerApplicablePricesInner{}
-	return &this
-}
-
 func (o BillingServersServersInnerUsagesInnerApplicablePricesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

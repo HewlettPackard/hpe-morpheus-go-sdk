@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListEnvironments200ResponseAllOfEnvironmentsInnerAccountWithDefaults
-
-`func NewListEnvironments200ResponseAllOfEnvironmentsInnerAccountWithDefaults() *ListEnvironments200ResponseAllOfEnvironmentsInnerAccount`
-
-NewListEnvironments200ResponseAllOfEnvironmentsInnerAccountWithDefaults instantiates a new ListEnvironments200ResponseAllOfEnvironmentsInnerAccount object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListEnvironments200ResponseAllOfEnvironmentsInnerAccount) GetId() int64`

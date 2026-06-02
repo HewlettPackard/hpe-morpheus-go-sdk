@@ -39,20 +39,6 @@ type AddClusterRequestClusterServerVolumesInner struct {
 
 type _AddClusterRequestClusterServerVolumesInner AddClusterRequestClusterServerVolumesInner
 
-// NewAddClusterRequestClusterServerVolumesInnerWithDefaults instantiates a new AddClusterRequestClusterServerVolumesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterRequestClusterServerVolumesInnerWithDefaults() *AddClusterRequestClusterServerVolumesInner {
-	this := AddClusterRequestClusterServerVolumesInner{}
-	var id int64 = -1
-	this.Id = &id
-	var rootVolume bool = true
-	this.RootVolume = &rootVolume
-	var name string = "root"
-	this.Name = name
-	return &this
-}
-
 func (o AddClusterRequestClusterServerVolumesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

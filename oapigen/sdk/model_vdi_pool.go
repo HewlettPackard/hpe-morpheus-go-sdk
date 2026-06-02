@@ -62,14 +62,6 @@ type VdiPool struct {
 
 type _VdiPool VdiPool
 
-// NewVdiPoolWithDefaults instantiates a new VdiPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewVdiPoolWithDefaults() *VdiPool {
-	this := VdiPool{}
-	return &this
-}
-
 func (o VdiPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetJobs200ResponseAllOfJobAnyOf2CustomOptionsWithDefaults
-
-`func NewGetJobs200ResponseAllOfJobAnyOf2CustomOptionsWithDefaults() *GetJobs200ResponseAllOfJobAnyOf2CustomOptions`
-
-NewGetJobs200ResponseAllOfJobAnyOf2CustomOptionsWithDefaults instantiates a new GetJobs200ResponseAllOfJobAnyOf2CustomOptions object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetCheckTime
 
 `func (o *GetJobs200ResponseAllOfJobAnyOf2CustomOptions) GetCheckTime() int64`

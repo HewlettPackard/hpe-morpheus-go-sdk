@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTagsPolicyTypeConfiguration4WithDefaults
-
-`func NewTagsPolicyTypeConfiguration4WithDefaults() *TagsPolicyTypeConfiguration4`
-
-NewTagsPolicyTypeConfiguration4WithDefaults instantiates a new TagsPolicyTypeConfiguration4 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetStrict
 
 `func (o *TagsPolicyTypeConfiguration4) GetStrict() bool`

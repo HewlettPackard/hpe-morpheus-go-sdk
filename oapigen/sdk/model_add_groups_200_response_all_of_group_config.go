@@ -31,14 +31,6 @@ type AddGroups200ResponseAllOfGroupConfig struct {
 
 type _AddGroups200ResponseAllOfGroupConfig AddGroups200ResponseAllOfGroupConfig
 
-// NewAddGroups200ResponseAllOfGroupConfigWithDefaults instantiates a new AddGroups200ResponseAllOfGroupConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddGroups200ResponseAllOfGroupConfigWithDefaults() *AddGroups200ResponseAllOfGroupConfig {
-	this := AddGroups200ResponseAllOfGroupConfig{}
-	return &this
-}
-
 func (o AddGroups200ResponseAllOfGroupConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

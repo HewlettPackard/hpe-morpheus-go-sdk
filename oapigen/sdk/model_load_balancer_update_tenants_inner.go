@@ -26,14 +26,6 @@ type LoadBalancerUpdateTenantsInner struct {
 
 type _LoadBalancerUpdateTenantsInner LoadBalancerUpdateTenantsInner
 
-// NewLoadBalancerUpdateTenantsInnerWithDefaults instantiates a new LoadBalancerUpdateTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLoadBalancerUpdateTenantsInnerWithDefaults() *LoadBalancerUpdateTenantsInner {
-	this := LoadBalancerUpdateTenantsInner{}
-	return &this
-}
-
 func (o LoadBalancerUpdateTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

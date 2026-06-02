@@ -40,14 +40,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListCredentials200ResponseAllOfCredentialsInnerWithDefaults
-
-`func NewListCredentials200ResponseAllOfCredentialsInnerWithDefaults() *ListCredentials200ResponseAllOfCredentialsInner`
-
-NewListCredentials200ResponseAllOfCredentialsInnerWithDefaults instantiates a new ListCredentials200ResponseAllOfCredentialsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInner) GetId() int64`

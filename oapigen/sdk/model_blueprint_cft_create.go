@@ -32,14 +32,6 @@ type BlueprintCFTCreate struct {
 
 type _BlueprintCFTCreate BlueprintCFTCreate
 
-// NewBlueprintCFTCreateWithDefaults instantiates a new BlueprintCFTCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintCFTCreateWithDefaults() *BlueprintCFTCreate {
-	this := BlueprintCFTCreate{}
-	return &this
-}
-
 func (o BlueprintCFTCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -28,14 +28,6 @@ type UpdateNodeTypeRequestContainerTypeContainerPortsInner struct {
 
 type _UpdateNodeTypeRequestContainerTypeContainerPortsInner UpdateNodeTypeRequestContainerTypeContainerPortsInner
 
-// NewUpdateNodeTypeRequestContainerTypeContainerPortsInnerWithDefaults instantiates a new UpdateNodeTypeRequestContainerTypeContainerPortsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNodeTypeRequestContainerTypeContainerPortsInnerWithDefaults() *UpdateNodeTypeRequestContainerTypeContainerPortsInner {
-	this := UpdateNodeTypeRequestContainerTypeContainerPortsInner{}
-	return &this
-}
-
 func (o UpdateNodeTypeRequestContainerTypeContainerPortsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

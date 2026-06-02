@@ -27,14 +27,6 @@ type GetNetworkPoolIp200Response struct {
 
 type _GetNetworkPoolIp200Response GetNetworkPoolIp200Response
 
-// NewGetNetworkPoolIp200ResponseWithDefaults instantiates a new GetNetworkPoolIp200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkPoolIp200ResponseWithDefaults() *GetNetworkPoolIp200Response {
-	this := GetNetworkPoolIp200Response{}
-	return &this
-}
-
 func (o GetNetworkPoolIp200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -31,14 +31,6 @@ type NetworkTypeAzureConfig struct {
 
 type _NetworkTypeAzureConfig NetworkTypeAzureConfig
 
-// NewNetworkTypeAzureConfigWithDefaults instantiates a new NetworkTypeAzureConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkTypeAzureConfigWithDefaults() *NetworkTypeAzureConfig {
-	this := NetworkTypeAzureConfig{}
-	return &this
-}
-
 func (o NetworkTypeAzureConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

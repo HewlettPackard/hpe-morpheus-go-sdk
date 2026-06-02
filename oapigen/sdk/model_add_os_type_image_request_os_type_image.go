@@ -33,14 +33,6 @@ type AddOsTypeImageRequestOsTypeImage struct {
 
 type _AddOsTypeImageRequestOsTypeImage AddOsTypeImageRequestOsTypeImage
 
-// NewAddOsTypeImageRequestOsTypeImageWithDefaults instantiates a new AddOsTypeImageRequestOsTypeImage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddOsTypeImageRequestOsTypeImageWithDefaults() *AddOsTypeImageRequestOsTypeImage {
-	this := AddOsTypeImageRequestOsTypeImage{}
-	return &this
-}
-
 func (o AddOsTypeImageRequestOsTypeImage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

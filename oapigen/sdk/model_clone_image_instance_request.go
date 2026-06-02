@@ -29,16 +29,6 @@ type CloneImageInstanceRequest struct {
 
 type _CloneImageInstanceRequest CloneImageInstanceRequest
 
-// NewCloneImageInstanceRequestWithDefaults instantiates a new CloneImageInstanceRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCloneImageInstanceRequestWithDefaults() *CloneImageInstanceRequest {
-	this := CloneImageInstanceRequest{}
-	var templateName string = "{server.name}-{timestamp}"
-	this.TemplateName = &templateName
-	return &this
-}
-
 func (o CloneImageInstanceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

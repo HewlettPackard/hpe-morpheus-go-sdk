@@ -30,14 +30,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetCloudFolders200ResponseAllOfFolderWithDefaults
-
-`func NewGetCloudFolders200ResponseAllOfFolderWithDefaults() *GetCloudFolders200ResponseAllOfFolder`
-
-NewGetCloudFolders200ResponseAllOfFolderWithDefaults instantiates a new GetCloudFolders200ResponseAllOfFolder object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetCloudFolders200ResponseAllOfFolder) GetId() int64`

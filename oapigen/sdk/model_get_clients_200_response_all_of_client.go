@@ -33,14 +33,6 @@ type GetClients200ResponseAllOfClient struct {
 
 type _GetClients200ResponseAllOfClient GetClients200ResponseAllOfClient
 
-// NewGetClients200ResponseAllOfClientWithDefaults instantiates a new GetClients200ResponseAllOfClient object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClients200ResponseAllOfClientWithDefaults() *GetClients200ResponseAllOfClient {
-	this := GetClients200ResponseAllOfClient{}
-	return &this
-}
-
 func (o GetClients200ResponseAllOfClient) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

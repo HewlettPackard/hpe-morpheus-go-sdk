@@ -27,14 +27,6 @@ type GetPlugin200ResponseAllOfPluginProvidersInner struct {
 
 type _GetPlugin200ResponseAllOfPluginProvidersInner GetPlugin200ResponseAllOfPluginProvidersInner
 
-// NewGetPlugin200ResponseAllOfPluginProvidersInnerWithDefaults instantiates a new GetPlugin200ResponseAllOfPluginProvidersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetPlugin200ResponseAllOfPluginProvidersInnerWithDefaults() *GetPlugin200ResponseAllOfPluginProvidersInner {
-	this := GetPlugin200ResponseAllOfPluginProvidersInner{}
-	return &this
-}
-
 func (o GetPlugin200ResponseAllOfPluginProvidersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

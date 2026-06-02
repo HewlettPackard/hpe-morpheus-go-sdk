@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfIntegrationTypeWithDefaults
-
-`func NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfIntegrationTypeWithDefaults() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfIntegrationType`
-
-NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfIntegrationTypeWithDefaults instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfIntegrationType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfIntegrationType) GetId() int64`

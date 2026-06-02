@@ -28,14 +28,6 @@ type GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType
 
 type _GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType
 
-// NewGetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerTypeWithDefaults instantiates a new GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerTypeWithDefaults() *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType {
-	this := GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType{}
-	return &this
-}
-
 func (o GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type HostnamePolicyTypeConfiguration5 struct {
 
 type _HostnamePolicyTypeConfiguration5 HostnamePolicyTypeConfiguration5
 
-// NewHostnamePolicyTypeConfiguration5WithDefaults instantiates a new HostnamePolicyTypeConfiguration5 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewHostnamePolicyTypeConfiguration5WithDefaults() *HostnamePolicyTypeConfiguration5 {
-	this := HostnamePolicyTypeConfiguration5{}
-	return &this
-}
-
 func (o HostnamePolicyTypeConfiguration5) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

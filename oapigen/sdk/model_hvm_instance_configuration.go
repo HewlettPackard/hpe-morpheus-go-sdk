@@ -39,24 +39,6 @@ type HVMInstanceConfiguration struct {
 
 type _HVMInstanceConfiguration HVMInstanceConfiguration
 
-// NewHVMInstanceConfigurationWithDefaults instantiates a new HVMInstanceConfiguration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewHVMInstanceConfigurationWithDefaults() *HVMInstanceConfiguration {
-	this := HVMInstanceConfiguration{}
-	var noAgent bool = false
-	this.NoAgent = *NewNullableBool(&noAgent)
-	var nestedVirtualization string = "off"
-	this.NestedVirtualization = &nestedVirtualization
-	var createUser bool = false
-	this.CreateUser = *NewNullableBool(&createUser)
-	var poolProviderType string = "mvm"
-	this.PoolProviderType = &poolProviderType
-	var provisionPoweredOff bool = false
-	this.ProvisionPoweredOff = &provisionPoweredOff
-	return &this
-}
-
 func (o HVMInstanceConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

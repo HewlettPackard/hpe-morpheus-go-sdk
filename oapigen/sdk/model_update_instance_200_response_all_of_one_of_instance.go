@@ -31,14 +31,6 @@ type UpdateInstance200ResponseAllOfOneOfInstance struct {
 
 type _UpdateInstance200ResponseAllOfOneOfInstance UpdateInstance200ResponseAllOfOneOfInstance
 
-// NewUpdateInstance200ResponseAllOfOneOfInstanceWithDefaults instantiates a new UpdateInstance200ResponseAllOfOneOfInstance object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstance200ResponseAllOfOneOfInstanceWithDefaults() *UpdateInstance200ResponseAllOfOneOfInstance {
-	this := UpdateInstance200ResponseAllOfOneOfInstance{}
-	return &this
-}
-
 func (o UpdateInstance200ResponseAllOfOneOfInstance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -37,14 +37,6 @@ type GetInstanceDeploys200ResponseAllOfAppDeploysInner struct {
 
 type _GetInstanceDeploys200ResponseAllOfAppDeploysInner GetInstanceDeploys200ResponseAllOfAppDeploysInner
 
-// NewGetInstanceDeploys200ResponseAllOfAppDeploysInnerWithDefaults instantiates a new GetInstanceDeploys200ResponseAllOfAppDeploysInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstanceDeploys200ResponseAllOfAppDeploysInnerWithDefaults() *GetInstanceDeploys200ResponseAllOfAppDeploysInner {
-	this := GetInstanceDeploys200ResponseAllOfAppDeploysInner{}
-	return &this
-}
-
 func (o GetInstanceDeploys200ResponseAllOfAppDeploysInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

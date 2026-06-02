@@ -27,14 +27,6 @@ type UpdateCluster200ResponseAllOfClusterSite struct {
 
 type _UpdateCluster200ResponseAllOfClusterSite UpdateCluster200ResponseAllOfClusterSite
 
-// NewUpdateCluster200ResponseAllOfClusterSiteWithDefaults instantiates a new UpdateCluster200ResponseAllOfClusterSite object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCluster200ResponseAllOfClusterSiteWithDefaults() *UpdateCluster200ResponseAllOfClusterSite {
-	this := UpdateCluster200ResponseAllOfClusterSite{}
-	return &this
-}
-
 func (o UpdateCluster200ResponseAllOfClusterSite) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

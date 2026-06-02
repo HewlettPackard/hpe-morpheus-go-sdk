@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateRoleBlueprintAccess200ResponseWithDefaults
-
-`func NewUpdateRoleBlueprintAccess200ResponseWithDefaults() *UpdateRoleBlueprintAccess200Response`
-
-NewUpdateRoleBlueprintAccess200ResponseWithDefaults instantiates a new UpdateRoleBlueprintAccess200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAccess
 
 `func (o *UpdateRoleBlueprintAccess200Response) GetAccess() string`

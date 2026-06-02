@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListExecuteSchedules200ResponseWithDefaults
-
-`func NewListExecuteSchedules200ResponseWithDefaults() *ListExecuteSchedules200Response`
-
-NewListExecuteSchedules200ResponseWithDefaults instantiates a new ListExecuteSchedules200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSchedules
 
 `func (o *ListExecuteSchedules200Response) GetSchedules() []ListExecuteSchedules200ResponseAllOfSchedulesInner`

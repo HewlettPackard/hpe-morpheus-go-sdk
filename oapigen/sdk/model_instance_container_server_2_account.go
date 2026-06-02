@@ -27,14 +27,6 @@ type InstanceContainerServer2Account struct {
 
 type _InstanceContainerServer2Account InstanceContainerServer2Account
 
-// NewInstanceContainerServer2AccountWithDefaults instantiates a new InstanceContainerServer2Account object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainerServer2AccountWithDefaults() *InstanceContainerServer2Account {
-	this := InstanceContainerServer2Account{}
-	return &this
-}
-
 func (o InstanceContainerServer2Account) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

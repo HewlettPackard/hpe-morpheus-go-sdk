@@ -39,14 +39,6 @@ type GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner struct {
 
 type _GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner
 
-// NewGetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerWithDefaults instantiates a new GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInnerWithDefaults() *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner {
-	this := GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner{}
-	return &this
-}
-
 func (o GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

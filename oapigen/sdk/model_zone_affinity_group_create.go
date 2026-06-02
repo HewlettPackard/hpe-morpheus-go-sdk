@@ -39,16 +39,6 @@ type ZoneAffinityGroupCreate struct {
 
 type _ZoneAffinityGroupCreate ZoneAffinityGroupCreate
 
-// NewZoneAffinityGroupCreateWithDefaults instantiates a new ZoneAffinityGroupCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneAffinityGroupCreateWithDefaults() *ZoneAffinityGroupCreate {
-	this := ZoneAffinityGroupCreate{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o ZoneAffinityGroupCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -32,14 +32,6 @@ type ClusterCreateServerConfigAnyOfOneOf4 struct {
 
 type _ClusterCreateServerConfigAnyOfOneOf4 ClusterCreateServerConfigAnyOfOneOf4
 
-// NewClusterCreateServerConfigAnyOfOneOf4WithDefaults instantiates a new ClusterCreateServerConfigAnyOfOneOf4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterCreateServerConfigAnyOfOneOf4WithDefaults() *ClusterCreateServerConfigAnyOfOneOf4 {
-	this := ClusterCreateServerConfigAnyOfOneOf4{}
-	return &this
-}
-
 func (o ClusterCreateServerConfigAnyOfOneOf4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

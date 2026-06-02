@@ -50,20 +50,6 @@ type AddStorageServersRequestStorageServer struct {
 
 type _AddStorageServersRequestStorageServer AddStorageServersRequestStorageServer
 
-// NewAddStorageServersRequestStorageServerWithDefaults instantiates a new AddStorageServersRequestStorageServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddStorageServersRequestStorageServerWithDefaults() *AddStorageServersRequestStorageServer {
-	this := AddStorageServersRequestStorageServer{}
-	var enabled bool = true
-	this.Enabled = &enabled
-	var visibility string = "private"
-	this.Visibility = &visibility
-	var servicePort int32 = 22
-	this.ServicePort = &servicePort
-	return &this
-}
-
 func (o AddStorageServersRequestStorageServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

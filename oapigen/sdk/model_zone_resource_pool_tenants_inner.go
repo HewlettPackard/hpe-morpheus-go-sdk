@@ -27,14 +27,6 @@ type ZoneResourcePoolTenantsInner struct {
 
 type _ZoneResourcePoolTenantsInner ZoneResourcePoolTenantsInner
 
-// NewZoneResourcePoolTenantsInnerWithDefaults instantiates a new ZoneResourcePoolTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneResourcePoolTenantsInnerWithDefaults() *ZoneResourcePoolTenantsInner {
-	this := ZoneResourcePoolTenantsInner{}
-	return &this
-}
-
 func (o ZoneResourcePoolTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

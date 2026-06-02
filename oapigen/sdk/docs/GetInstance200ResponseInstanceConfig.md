@@ -51,14 +51,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetInstance200ResponseInstanceConfigWithDefaults
-
-`func NewGetInstance200ResponseInstanceConfigWithDefaults() *GetInstance200ResponseInstanceConfig`
-
-NewGetInstance200ResponseInstanceConfigWithDefaults instantiates a new GetInstance200ResponseInstanceConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetCreateUser
 
 `func (o *GetInstance200ResponseInstanceConfig) GetCreateUser() bool`

@@ -26,14 +26,6 @@ type InstanceConfigObject2Layout struct {
 
 type _InstanceConfigObject2Layout InstanceConfigObject2Layout
 
-// NewInstanceConfigObject2LayoutWithDefaults instantiates a new InstanceConfigObject2Layout object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigObject2LayoutWithDefaults() *InstanceConfigObject2Layout {
-	this := InstanceConfigObject2Layout{}
-	return &this
-}
-
 func (o InstanceConfigObject2Layout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -28,16 +28,6 @@ type UpdateHostExecuteWorkflowRequest struct {
 
 type _UpdateHostExecuteWorkflowRequest UpdateHostExecuteWorkflowRequest
 
-// NewUpdateHostExecuteWorkflowRequestWithDefaults instantiates a new UpdateHostExecuteWorkflowRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateHostExecuteWorkflowRequestWithDefaults() *UpdateHostExecuteWorkflowRequest {
-	this := UpdateHostExecuteWorkflowRequest{}
-	var taskPhase string = "provision"
-	this.TaskPhase = &taskPhase
-	return &this
-}
-
 func (o UpdateHostExecuteWorkflowRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

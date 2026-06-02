@@ -27,14 +27,6 @@ type ClusterMastersZone struct {
 
 type _ClusterMastersZone ClusterMastersZone
 
-// NewClusterMastersZoneWithDefaults instantiates a new ClusterMastersZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterMastersZoneWithDefaults() *ClusterMastersZone {
-	this := ClusterMastersZone{}
-	return &this
-}
-
 func (o ClusterMastersZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

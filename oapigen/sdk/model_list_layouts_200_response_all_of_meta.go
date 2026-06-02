@@ -33,22 +33,6 @@ type ListLayouts200ResponseAllOfMeta struct {
 
 type _ListLayouts200ResponseAllOfMeta ListLayouts200ResponseAllOfMeta
 
-// NewListLayouts200ResponseAllOfMetaWithDefaults instantiates a new ListLayouts200ResponseAllOfMeta object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListLayouts200ResponseAllOfMetaWithDefaults() *ListLayouts200ResponseAllOfMeta {
-	this := ListLayouts200ResponseAllOfMeta{}
-	var offset int64 = 0
-	this.Offset = &offset
-	var max int64 = 25
-	this.Max = &max
-	var size int64 = 0
-	this.Size = &size
-	var total int64 = 0
-	this.Total = &total
-	return &this
-}
-
 func (o ListLayouts200ResponseAllOfMeta) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

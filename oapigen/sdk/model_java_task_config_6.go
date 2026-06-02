@@ -34,14 +34,6 @@ type JavaTaskConfig6 struct {
 
 type _JavaTaskConfig6 JavaTaskConfig6
 
-// NewJavaTaskConfig6WithDefaults instantiates a new JavaTaskConfig6 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewJavaTaskConfig6WithDefaults() *JavaTaskConfig6 {
-	this := JavaTaskConfig6{}
-	return &this
-}
-
 func (o JavaTaskConfig6) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

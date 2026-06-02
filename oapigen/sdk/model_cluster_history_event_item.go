@@ -57,14 +57,6 @@ type ClusterHistoryEventItem struct {
 
 type _ClusterHistoryEventItem ClusterHistoryEventItem
 
-// NewClusterHistoryEventItemWithDefaults instantiates a new ClusterHistoryEventItem object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterHistoryEventItemWithDefaults() *ClusterHistoryEventItem {
-	this := ClusterHistoryEventItem{}
-	return &this
-}
-
 func (o ClusterHistoryEventItem) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

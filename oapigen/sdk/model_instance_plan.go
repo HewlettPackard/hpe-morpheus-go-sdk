@@ -28,14 +28,6 @@ type InstancePlan struct {
 
 type _InstancePlan InstancePlan
 
-// NewInstancePlanWithDefaults instantiates a new InstancePlan object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstancePlanWithDefaults() *InstancePlan {
-	this := InstancePlan{}
-	return &this
-}
-
 func (o InstancePlan) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

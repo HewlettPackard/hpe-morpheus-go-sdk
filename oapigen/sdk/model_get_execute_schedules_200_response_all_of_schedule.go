@@ -36,14 +36,6 @@ type GetExecuteSchedules200ResponseAllOfSchedule struct {
 
 type _GetExecuteSchedules200ResponseAllOfSchedule GetExecuteSchedules200ResponseAllOfSchedule
 
-// NewGetExecuteSchedules200ResponseAllOfScheduleWithDefaults instantiates a new GetExecuteSchedules200ResponseAllOfSchedule object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetExecuteSchedules200ResponseAllOfScheduleWithDefaults() *GetExecuteSchedules200ResponseAllOfSchedule {
-	this := GetExecuteSchedules200ResponseAllOfSchedule{}
-	return &this
-}
-
 func (o GetExecuteSchedules200ResponseAllOfSchedule) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

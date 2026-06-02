@@ -26,14 +26,6 @@ type UpdateProvisioningSettingsRequest struct {
 
 type _UpdateProvisioningSettingsRequest UpdateProvisioningSettingsRequest
 
-// NewUpdateProvisioningSettingsRequestWithDefaults instantiates a new UpdateProvisioningSettingsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateProvisioningSettingsRequestWithDefaults() *UpdateProvisioningSettingsRequest {
-	this := UpdateProvisioningSettingsRequest{}
-	return &this
-}
-
 func (o UpdateProvisioningSettingsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

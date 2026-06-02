@@ -28,14 +28,6 @@ type GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInn
 
 type _GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner
 
-// NewGetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInnerWithDefaults instantiates a new GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInnerWithDefaults() *GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner {
-	this := GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner{}
-	return &this
-}
-
 func (o GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

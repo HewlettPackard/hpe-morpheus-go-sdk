@@ -37,20 +37,6 @@ type UpdateExecuteSchedulesRequestSchedule struct {
 
 type _UpdateExecuteSchedulesRequestSchedule UpdateExecuteSchedulesRequestSchedule
 
-// NewUpdateExecuteSchedulesRequestScheduleWithDefaults instantiates a new UpdateExecuteSchedulesRequestSchedule object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateExecuteSchedulesRequestScheduleWithDefaults() *UpdateExecuteSchedulesRequestSchedule {
-	this := UpdateExecuteSchedulesRequestSchedule{}
-	var scheduleTimezone string = "UTC"
-	this.ScheduleTimezone = &scheduleTimezone
-	var cron string = "0 0 * * *"
-	this.Cron = &cron
-	var enabled bool = true
-	this.Enabled = &enabled
-	return &this
-}
-
 func (o UpdateExecuteSchedulesRequestSchedule) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -29,14 +29,6 @@ type InstancesConfigCustomOptions struct {
 
 type _InstancesConfigCustomOptions InstancesConfigCustomOptions
 
-// NewInstancesConfigCustomOptionsWithDefaults instantiates a new InstancesConfigCustomOptions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstancesConfigCustomOptionsWithDefaults() *InstancesConfigCustomOptions {
-	this := InstancesConfigCustomOptions{}
-	return &this
-}
-
 func (o InstancesConfigCustomOptions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

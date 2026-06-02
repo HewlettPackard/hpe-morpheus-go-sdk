@@ -31,18 +31,6 @@ type TokenRefreshTokenRequest struct {
 
 type _TokenRefreshTokenRequest TokenRefreshTokenRequest
 
-// NewTokenRefreshTokenRequestWithDefaults instantiates a new TokenRefreshTokenRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTokenRefreshTokenRequestWithDefaults() *TokenRefreshTokenRequest {
-	this := TokenRefreshTokenRequest{}
-	var clientId string = "morph-api"
-	this.ClientId = clientId
-	var grantType string = "refresh_token"
-	this.GrantType = grantType
-	return &this
-}
-
 func (o TokenRefreshTokenRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

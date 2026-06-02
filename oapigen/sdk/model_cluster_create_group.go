@@ -27,14 +27,6 @@ type ClusterCreateGroup struct {
 
 type _ClusterCreateGroup ClusterCreateGroup
 
-// NewClusterCreateGroupWithDefaults instantiates a new ClusterCreateGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterCreateGroupWithDefaults() *ClusterCreateGroup {
-	this := ClusterCreateGroup{}
-	return &this
-}
-
 func (o ClusterCreateGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

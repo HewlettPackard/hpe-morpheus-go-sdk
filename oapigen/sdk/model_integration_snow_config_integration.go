@@ -40,16 +40,6 @@ type IntegrationSNOWConfigIntegration struct {
 
 type _IntegrationSNOWConfigIntegration IntegrationSNOWConfigIntegration
 
-// NewIntegrationSNOWConfigIntegrationWithDefaults instantiates a new IntegrationSNOWConfigIntegration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationSNOWConfigIntegrationWithDefaults() *IntegrationSNOWConfigIntegration {
-	this := IntegrationSNOWConfigIntegration{}
-	var refresh bool = true
-	this.Refresh = &refresh
-	return &this
-}
-
 func (o IntegrationSNOWConfigIntegration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -22,14 +22,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCypherAccessPolicyTypeConfiguration11WithDefaults
-
-`func NewCypherAccessPolicyTypeConfiguration11WithDefaults() *CypherAccessPolicyTypeConfiguration11`
-
-NewCypherAccessPolicyTypeConfiguration11WithDefaults instantiates a new CypherAccessPolicyTypeConfiguration11 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetKeyPattern
 
 `func (o *CypherAccessPolicyTypeConfiguration11) GetKeyPattern() string`

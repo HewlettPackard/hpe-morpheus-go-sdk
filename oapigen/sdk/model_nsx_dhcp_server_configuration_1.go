@@ -31,14 +31,6 @@ type NSXDHCPServerConfiguration1 struct {
 
 type _NSXDHCPServerConfiguration1 NSXDHCPServerConfiguration1
 
-// NewNSXDHCPServerConfiguration1WithDefaults instantiates a new NSXDHCPServerConfiguration1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNSXDHCPServerConfiguration1WithDefaults() *NSXDHCPServerConfiguration1 {
-	this := NSXDHCPServerConfiguration1{}
-	return &this
-}
-
 func (o NSXDHCPServerConfiguration1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

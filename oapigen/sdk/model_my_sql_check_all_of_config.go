@@ -44,16 +44,6 @@ type MySqlCheckAllOfConfig struct {
 
 type _MySqlCheckAllOfConfig MySqlCheckAllOfConfig
 
-// NewMySqlCheckAllOfConfigWithDefaults instantiates a new MySqlCheckAllOfConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMySqlCheckAllOfConfigWithDefaults() *MySqlCheckAllOfConfig {
-	this := MySqlCheckAllOfConfig{}
-	var tunnelOn string = "off"
-	this.TunnelOn = &tunnelOn
-	return &this
-}
-
 func (o MySqlCheckAllOfConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

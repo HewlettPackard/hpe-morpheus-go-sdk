@@ -26,14 +26,6 @@ type UpdateStorageVolumesRequestStorageVolumeStorageGroup struct {
 
 type _UpdateStorageVolumesRequestStorageVolumeStorageGroup UpdateStorageVolumesRequestStorageVolumeStorageGroup
 
-// NewUpdateStorageVolumesRequestStorageVolumeStorageGroupWithDefaults instantiates a new UpdateStorageVolumesRequestStorageVolumeStorageGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateStorageVolumesRequestStorageVolumeStorageGroupWithDefaults() *UpdateStorageVolumesRequestStorageVolumeStorageGroup {
-	this := UpdateStorageVolumesRequestStorageVolumeStorageGroup{}
-	return &this
-}
-
 func (o UpdateStorageVolumesRequestStorageVolumeStorageGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

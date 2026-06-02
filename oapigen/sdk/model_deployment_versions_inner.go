@@ -36,14 +36,6 @@ type DeploymentVersionsInner struct {
 
 type _DeploymentVersionsInner DeploymentVersionsInner
 
-// NewDeploymentVersionsInnerWithDefaults instantiates a new DeploymentVersionsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeploymentVersionsInnerWithDefaults() *DeploymentVersionsInner {
-	this := DeploymentVersionsInner{}
-	return &this
-}
-
 func (o DeploymentVersionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

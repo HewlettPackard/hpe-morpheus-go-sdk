@@ -27,14 +27,6 @@ type InstanceConfigObject1SecurityGroupsInner struct {
 
 type _InstanceConfigObject1SecurityGroupsInner InstanceConfigObject1SecurityGroupsInner
 
-// NewInstanceConfigObject1SecurityGroupsInnerWithDefaults instantiates a new InstanceConfigObject1SecurityGroupsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigObject1SecurityGroupsInnerWithDefaults() *InstanceConfigObject1SecurityGroupsInner {
-	this := InstanceConfigObject1SecurityGroupsInner{}
-	return &this
-}
-
 func (o InstanceConfigObject1SecurityGroupsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -33,14 +33,6 @@ type UpdateContactsRequestContact struct {
 
 type _UpdateContactsRequestContact UpdateContactsRequestContact
 
-// NewUpdateContactsRequestContactWithDefaults instantiates a new UpdateContactsRequestContact object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateContactsRequestContactWithDefaults() *UpdateContactsRequestContact {
-	this := UpdateContactsRequestContact{}
-	return &this
-}
-
 func (o UpdateContactsRequestContact) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

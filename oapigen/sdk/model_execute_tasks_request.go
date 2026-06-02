@@ -26,14 +26,6 @@ type ExecuteTasksRequest struct {
 
 type _ExecuteTasksRequest ExecuteTasksRequest
 
-// NewExecuteTasksRequestWithDefaults instantiates a new ExecuteTasksRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewExecuteTasksRequestWithDefaults() *ExecuteTasksRequest {
-	this := ExecuteTasksRequest{}
-	return &this
-}
-
 func (o ExecuteTasksRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

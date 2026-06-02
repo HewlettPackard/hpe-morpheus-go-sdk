@@ -27,14 +27,6 @@ type ServerServicePlansDatastores struct {
 
 type _ServerServicePlansDatastores ServerServicePlansDatastores
 
-// NewServerServicePlansDatastoresWithDefaults instantiates a new ServerServicePlansDatastores object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewServerServicePlansDatastoresWithDefaults() *ServerServicePlansDatastores {
-	this := ServerServicePlansDatastores{}
-	return &this
-}
-
 func (o ServerServicePlansDatastores) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

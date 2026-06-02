@@ -27,14 +27,6 @@ type GetFileTemplate200ResponseContainerTemplateAccount struct {
 
 type _GetFileTemplate200ResponseContainerTemplateAccount GetFileTemplate200ResponseContainerTemplateAccount
 
-// NewGetFileTemplate200ResponseContainerTemplateAccountWithDefaults instantiates a new GetFileTemplate200ResponseContainerTemplateAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetFileTemplate200ResponseContainerTemplateAccountWithDefaults() *GetFileTemplate200ResponseContainerTemplateAccount {
-	this := GetFileTemplate200ResponseContainerTemplateAccount{}
-	return &this
-}
-
 func (o GetFileTemplate200ResponseContainerTemplateAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

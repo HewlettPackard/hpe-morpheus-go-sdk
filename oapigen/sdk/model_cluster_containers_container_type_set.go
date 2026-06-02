@@ -28,14 +28,6 @@ type ClusterContainersContainerTypeSet struct {
 
 type _ClusterContainersContainerTypeSet ClusterContainersContainerTypeSet
 
-// NewClusterContainersContainerTypeSetWithDefaults instantiates a new ClusterContainersContainerTypeSet object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterContainersContainerTypeSetWithDefaults() *ClusterContainersContainerTypeSet {
-	this := ClusterContainersContainerTypeSet{}
-	return &this
-}
-
 func (o ClusterContainersContainerTypeSet) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

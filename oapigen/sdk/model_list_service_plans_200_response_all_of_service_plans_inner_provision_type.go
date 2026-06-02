@@ -32,14 +32,6 @@ type ListServicePlans200ResponseAllOfServicePlansInnerProvisionType struct {
 
 type _ListServicePlans200ResponseAllOfServicePlansInnerProvisionType ListServicePlans200ResponseAllOfServicePlansInnerProvisionType
 
-// NewListServicePlans200ResponseAllOfServicePlansInnerProvisionTypeWithDefaults instantiates a new ListServicePlans200ResponseAllOfServicePlansInnerProvisionType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListServicePlans200ResponseAllOfServicePlansInnerProvisionTypeWithDefaults() *ListServicePlans200ResponseAllOfServicePlansInnerProvisionType {
-	this := ListServicePlans200ResponseAllOfServicePlansInnerProvisionType{}
-	return &this
-}
-
 func (o ListServicePlans200ResponseAllOfServicePlansInnerProvisionType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

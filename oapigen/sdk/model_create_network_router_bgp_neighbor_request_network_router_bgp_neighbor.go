@@ -60,22 +60,6 @@ type CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor struct {
 
 type _CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor
 
-// NewCreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborWithDefaults instantiates a new CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborWithDefaults() *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor {
-	this := CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor{}
-	var weight int64 = 60
-	this.Weight = &weight
-	var keepAlive int64 = 60
-	this.KeepAlive = &keepAlive
-	var holdDown int64 = 180
-	this.HoldDown = &holdDown
-	var hopLimit int64 = 1
-	this.HopLimit = &hopLimit
-	return &this
-}
-
 func (o CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

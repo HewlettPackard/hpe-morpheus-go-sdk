@@ -26,14 +26,6 @@ type GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccount struct
 
 type _GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccount GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccount
 
-// NewGetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccountWithDefaults instantiates a new GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccountWithDefaults() *GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccount {
-	this := GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccount{}
-	return &this
-}
-
 func (o GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

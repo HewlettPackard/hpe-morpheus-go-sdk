@@ -27,14 +27,6 @@ type ListSubnetTypes200Response struct {
 
 type _ListSubnetTypes200Response ListSubnetTypes200Response
 
-// NewListSubnetTypes200ResponseWithDefaults instantiates a new ListSubnetTypes200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListSubnetTypes200ResponseWithDefaults() *ListSubnetTypes200Response {
-	this := ListSubnetTypes200Response{}
-	return &this
-}
-
 func (o ListSubnetTypes200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

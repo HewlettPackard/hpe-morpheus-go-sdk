@@ -27,14 +27,6 @@ type GetSecurityGroupRules200ResponseRuleSourceTier struct {
 
 type _GetSecurityGroupRules200ResponseRuleSourceTier GetSecurityGroupRules200ResponseRuleSourceTier
 
-// NewGetSecurityGroupRules200ResponseRuleSourceTierWithDefaults instantiates a new GetSecurityGroupRules200ResponseRuleSourceTier object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSecurityGroupRules200ResponseRuleSourceTierWithDefaults() *GetSecurityGroupRules200ResponseRuleSourceTier {
-	this := GetSecurityGroupRules200ResponseRuleSourceTier{}
-	return &this
-}
-
 func (o GetSecurityGroupRules200ResponseRuleSourceTier) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

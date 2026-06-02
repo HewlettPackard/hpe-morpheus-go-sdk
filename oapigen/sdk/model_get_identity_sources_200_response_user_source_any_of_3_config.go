@@ -30,14 +30,6 @@ type GetIdentitySources200ResponseUserSourceAnyOf3Config struct {
 
 type _GetIdentitySources200ResponseUserSourceAnyOf3Config GetIdentitySources200ResponseUserSourceAnyOf3Config
 
-// NewGetIdentitySources200ResponseUserSourceAnyOf3ConfigWithDefaults instantiates a new GetIdentitySources200ResponseUserSourceAnyOf3Config object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetIdentitySources200ResponseUserSourceAnyOf3ConfigWithDefaults() *GetIdentitySources200ResponseUserSourceAnyOf3Config {
-	this := GetIdentitySources200ResponseUserSourceAnyOf3Config{}
-	return &this
-}
-
 func (o GetIdentitySources200ResponseUserSourceAnyOf3Config) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

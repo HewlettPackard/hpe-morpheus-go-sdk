@@ -29,14 +29,6 @@ type UpdateStorageServers200ResponseAllOfStorageServerCredential struct {
 
 type _UpdateStorageServers200ResponseAllOfStorageServerCredential UpdateStorageServers200ResponseAllOfStorageServerCredential
 
-// NewUpdateStorageServers200ResponseAllOfStorageServerCredentialWithDefaults instantiates a new UpdateStorageServers200ResponseAllOfStorageServerCredential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateStorageServers200ResponseAllOfStorageServerCredentialWithDefaults() *UpdateStorageServers200ResponseAllOfStorageServerCredential {
-	this := UpdateStorageServers200ResponseAllOfStorageServerCredential{}
-	return &this
-}
-
 func (o UpdateStorageServers200ResponseAllOfStorageServerCredential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

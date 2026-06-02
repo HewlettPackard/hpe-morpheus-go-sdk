@@ -26,14 +26,6 @@ type DeleteSpecTemplate200Response struct {
 
 type _DeleteSpecTemplate200Response DeleteSpecTemplate200Response
 
-// NewDeleteSpecTemplate200ResponseWithDefaults instantiates a new DeleteSpecTemplate200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteSpecTemplate200ResponseWithDefaults() *DeleteSpecTemplate200Response {
-	this := DeleteSpecTemplate200Response{}
-	return &this
-}
-
 func (o DeleteSpecTemplate200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

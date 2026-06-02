@@ -27,14 +27,6 @@ type ProvisioningLicenseReservations struct {
 
 type _ProvisioningLicenseReservations ProvisioningLicenseReservations
 
-// NewProvisioningLicenseReservationsWithDefaults instantiates a new ProvisioningLicenseReservations object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewProvisioningLicenseReservationsWithDefaults() *ProvisioningLicenseReservations {
-	this := ProvisioningLicenseReservations{}
-	return &this
-}
-
 func (o ProvisioningLicenseReservations) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

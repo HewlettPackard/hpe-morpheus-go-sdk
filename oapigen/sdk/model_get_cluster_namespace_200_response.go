@@ -26,14 +26,6 @@ type GetClusterNamespace200Response struct {
 
 type _GetClusterNamespace200Response GetClusterNamespace200Response
 
-// NewGetClusterNamespace200ResponseWithDefaults instantiates a new GetClusterNamespace200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterNamespace200ResponseWithDefaults() *GetClusterNamespace200Response {
-	this := GetClusterNamespace200Response{}
-	return &this
-}
-
 func (o GetClusterNamespace200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

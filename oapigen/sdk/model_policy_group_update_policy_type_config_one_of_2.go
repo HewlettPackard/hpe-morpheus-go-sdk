@@ -26,14 +26,6 @@ type PolicyGroupUpdatePolicyTypeConfigOneOf2 struct {
 
 type _PolicyGroupUpdatePolicyTypeConfigOneOf2 PolicyGroupUpdatePolicyTypeConfigOneOf2
 
-// NewPolicyGroupUpdatePolicyTypeConfigOneOf2WithDefaults instantiates a new PolicyGroupUpdatePolicyTypeConfigOneOf2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPolicyGroupUpdatePolicyTypeConfigOneOf2WithDefaults() *PolicyGroupUpdatePolicyTypeConfigOneOf2 {
-	this := PolicyGroupUpdatePolicyTypeConfigOneOf2{}
-	return &this
-}
-
 func (o PolicyGroupUpdatePolicyTypeConfigOneOf2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

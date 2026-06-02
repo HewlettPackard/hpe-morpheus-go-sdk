@@ -26,14 +26,6 @@ type DeleteNetworkDhcpServer200Response struct {
 
 type _DeleteNetworkDhcpServer200Response DeleteNetworkDhcpServer200Response
 
-// NewDeleteNetworkDhcpServer200ResponseWithDefaults instantiates a new DeleteNetworkDhcpServer200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteNetworkDhcpServer200ResponseWithDefaults() *DeleteNetworkDhcpServer200Response {
-	this := DeleteNetworkDhcpServer200Response{}
-	return &this
-}
-
 func (o DeleteNetworkDhcpServer200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

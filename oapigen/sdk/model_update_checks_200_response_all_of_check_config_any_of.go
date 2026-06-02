@@ -32,14 +32,6 @@ type UpdateChecks200ResponseAllOfCheckConfigAnyOf struct {
 
 type _UpdateChecks200ResponseAllOfCheckConfigAnyOf UpdateChecks200ResponseAllOfCheckConfigAnyOf
 
-// NewUpdateChecks200ResponseAllOfCheckConfigAnyOfWithDefaults instantiates a new UpdateChecks200ResponseAllOfCheckConfigAnyOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateChecks200ResponseAllOfCheckConfigAnyOfWithDefaults() *UpdateChecks200ResponseAllOfCheckConfigAnyOf {
-	this := UpdateChecks200ResponseAllOfCheckConfigAnyOf{}
-	return &this
-}
-
 func (o UpdateChecks200ResponseAllOfCheckConfigAnyOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type ServicePlanPermissionsResourcePermissionsAccount struct {
 
 type _ServicePlanPermissionsResourcePermissionsAccount ServicePlanPermissionsResourcePermissionsAccount
 
-// NewServicePlanPermissionsResourcePermissionsAccountWithDefaults instantiates a new ServicePlanPermissionsResourcePermissionsAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewServicePlanPermissionsResourcePermissionsAccountWithDefaults() *ServicePlanPermissionsResourcePermissionsAccount {
-	this := ServicePlanPermissionsResourcePermissionsAccount{}
-	return &this
-}
-
 func (o ServicePlanPermissionsResourcePermissionsAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

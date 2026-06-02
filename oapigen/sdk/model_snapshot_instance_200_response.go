@@ -28,14 +28,6 @@ type SnapshotInstance200Response struct {
 
 type _SnapshotInstance200Response SnapshotInstance200Response
 
-// NewSnapshotInstance200ResponseWithDefaults instantiates a new SnapshotInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSnapshotInstance200ResponseWithDefaults() *SnapshotInstance200Response {
-	this := SnapshotInstance200Response{}
-	return &this
-}
-
 func (o SnapshotInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

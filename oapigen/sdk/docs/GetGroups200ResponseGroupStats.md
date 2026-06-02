@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetGroups200ResponseGroupStatsWithDefaults
-
-`func NewGetGroups200ResponseGroupStatsWithDefaults() *GetGroups200ResponseGroupStats`
-
-NewGetGroups200ResponseGroupStatsWithDefaults instantiates a new GetGroups200ResponseGroupStats object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetInstanceCounts
 
 `func (o *GetGroups200ResponseGroupStats) GetInstanceCounts() GetGroups200ResponseGroupStatsInstanceCounts`

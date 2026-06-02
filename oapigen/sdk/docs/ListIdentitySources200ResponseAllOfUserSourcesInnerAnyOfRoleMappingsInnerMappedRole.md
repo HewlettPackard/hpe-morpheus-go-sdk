@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInnerMappedRoleWithDefaults
-
-`func NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInnerMappedRoleWithDefaults() *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInnerMappedRole`
-
-NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInnerMappedRoleWithDefaults instantiates a new ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInnerMappedRole object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInnerMappedRole) GetId() int64`

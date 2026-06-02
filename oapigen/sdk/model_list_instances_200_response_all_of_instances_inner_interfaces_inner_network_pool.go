@@ -27,14 +27,6 @@ type ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool struc
 
 type _ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool
 
-// NewListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPoolWithDefaults instantiates a new ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPoolWithDefaults() *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool {
-	this := ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool{}
-	return &this
-}
-
 func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

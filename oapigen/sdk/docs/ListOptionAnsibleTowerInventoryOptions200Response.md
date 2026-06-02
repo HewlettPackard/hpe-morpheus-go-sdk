@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListOptionAnsibleTowerInventoryOptions200ResponseWithDefaults
-
-`func NewListOptionAnsibleTowerInventoryOptions200ResponseWithDefaults() *ListOptionAnsibleTowerInventoryOptions200Response`
-
-NewListOptionAnsibleTowerInventoryOptions200ResponseWithDefaults instantiates a new ListOptionAnsibleTowerInventoryOptions200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetData
 
 `func (o *ListOptionAnsibleTowerInventoryOptions200Response) GetData() []ListOptionAnsibleTowerInventoryOptions200ResponseAllOfDataInner`

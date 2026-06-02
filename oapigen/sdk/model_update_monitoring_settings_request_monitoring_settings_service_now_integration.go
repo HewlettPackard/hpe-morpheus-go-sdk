@@ -29,14 +29,6 @@ type UpdateMonitoringSettingsRequestMonitoringSettingsServiceNowIntegration stru
 
 type _UpdateMonitoringSettingsRequestMonitoringSettingsServiceNowIntegration UpdateMonitoringSettingsRequestMonitoringSettingsServiceNowIntegration
 
-// NewUpdateMonitoringSettingsRequestMonitoringSettingsServiceNowIntegrationWithDefaults instantiates a new UpdateMonitoringSettingsRequestMonitoringSettingsServiceNowIntegration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateMonitoringSettingsRequestMonitoringSettingsServiceNowIntegrationWithDefaults() *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNowIntegration {
-	this := UpdateMonitoringSettingsRequestMonitoringSettingsServiceNowIntegration{}
-	return &this
-}
-
 func (o UpdateMonitoringSettingsRequestMonitoringSettingsServiceNowIntegration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

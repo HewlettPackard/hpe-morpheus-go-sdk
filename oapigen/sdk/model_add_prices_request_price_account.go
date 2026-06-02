@@ -27,14 +27,6 @@ type AddPricesRequestPriceAccount struct {
 
 type _AddPricesRequestPriceAccount AddPricesRequestPriceAccount
 
-// NewAddPricesRequestPriceAccountWithDefaults instantiates a new AddPricesRequestPriceAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPricesRequestPriceAccountWithDefaults() *AddPricesRequestPriceAccount {
-	this := AddPricesRequestPriceAccount{}
-	return &this
-}
-
 func (o AddPricesRequestPriceAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

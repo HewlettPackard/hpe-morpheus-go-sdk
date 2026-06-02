@@ -27,14 +27,6 @@ type NetworkPoolServerCreatePhpIpamCredential struct {
 
 type _NetworkPoolServerCreatePhpIpamCredential NetworkPoolServerCreatePhpIpamCredential
 
-// NewNetworkPoolServerCreatePhpIpamCredentialWithDefaults instantiates a new NetworkPoolServerCreatePhpIpamCredential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkPoolServerCreatePhpIpamCredentialWithDefaults() *NetworkPoolServerCreatePhpIpamCredential {
-	this := NetworkPoolServerCreatePhpIpamCredential{}
-	return &this
-}
-
 func (o NetworkPoolServerCreatePhpIpamCredential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

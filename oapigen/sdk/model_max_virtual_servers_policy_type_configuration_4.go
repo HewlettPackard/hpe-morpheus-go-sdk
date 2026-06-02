@@ -26,14 +26,6 @@ type MaxVirtualServersPolicyTypeConfiguration4 struct {
 
 type _MaxVirtualServersPolicyTypeConfiguration4 MaxVirtualServersPolicyTypeConfiguration4
 
-// NewMaxVirtualServersPolicyTypeConfiguration4WithDefaults instantiates a new MaxVirtualServersPolicyTypeConfiguration4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxVirtualServersPolicyTypeConfiguration4WithDefaults() *MaxVirtualServersPolicyTypeConfiguration4 {
-	this := MaxVirtualServersPolicyTypeConfiguration4{}
-	return &this
-}
-
 func (o MaxVirtualServersPolicyTypeConfiguration4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

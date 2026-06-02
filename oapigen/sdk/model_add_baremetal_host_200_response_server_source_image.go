@@ -28,14 +28,6 @@ type AddBaremetalHost200ResponseServerSourceImage struct {
 
 type _AddBaremetalHost200ResponseServerSourceImage AddBaremetalHost200ResponseServerSourceImage
 
-// NewAddBaremetalHost200ResponseServerSourceImageWithDefaults instantiates a new AddBaremetalHost200ResponseServerSourceImage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBaremetalHost200ResponseServerSourceImageWithDefaults() *AddBaremetalHost200ResponseServerSourceImage {
-	this := AddBaremetalHost200ResponseServerSourceImage{}
-	return &this
-}
-
 func (o AddBaremetalHost200ResponseServerSourceImage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

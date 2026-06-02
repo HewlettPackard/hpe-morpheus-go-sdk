@@ -27,14 +27,6 @@ type ClusterCreateServerUserGroup struct {
 
 type _ClusterCreateServerUserGroup ClusterCreateServerUserGroup
 
-// NewClusterCreateServerUserGroupWithDefaults instantiates a new ClusterCreateServerUserGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterCreateServerUserGroupWithDefaults() *ClusterCreateServerUserGroup {
-	this := ClusterCreateServerUserGroup{}
-	return &this
-}
-
 func (o ClusterCreateServerUserGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

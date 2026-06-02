@@ -68,26 +68,6 @@ type AddCloudsRequestZone struct {
 
 type _AddCloudsRequestZone AddCloudsRequestZone
 
-// NewAddCloudsRequestZoneWithDefaults instantiates a new AddCloudsRequestZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCloudsRequestZoneWithDefaults() *AddCloudsRequestZone {
-	this := AddCloudsRequestZone{}
-	var agentMode string = "cloudInit"
-	this.AgentMode = &agentMode
-	var visibility string = "private"
-	this.Visibility = &visibility
-	var enabled bool = true
-	this.Enabled = &enabled
-	var autoRecoverPowerState bool = false
-	this.AutoRecoverPowerState = &autoRecoverPowerState
-	var scalePriority int64 = 1
-	this.ScalePriority = &scalePriority
-	var securityMode string = "off"
-	this.SecurityMode = &securityMode
-	return &this
-}
-
 func (o AddCloudsRequestZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type UpdateBlueprintRequestOneOf5Config struct {
 
 type _UpdateBlueprintRequestOneOf5Config UpdateBlueprintRequestOneOf5Config
 
-// NewUpdateBlueprintRequestOneOf5ConfigWithDefaults instantiates a new UpdateBlueprintRequestOneOf5Config object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBlueprintRequestOneOf5ConfigWithDefaults() *UpdateBlueprintRequestOneOf5Config {
-	this := UpdateBlueprintRequestOneOf5Config{}
-	return &this
-}
-
 func (o UpdateBlueprintRequestOneOf5Config) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

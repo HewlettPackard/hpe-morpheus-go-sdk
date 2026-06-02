@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetClusterHistoryEventDetail200ResponseWithDefaults
-
-`func NewGetClusterHistoryEventDetail200ResponseWithDefaults() *GetClusterHistoryEventDetail200Response`
-
-NewGetClusterHistoryEventDetail200ResponseWithDefaults instantiates a new GetClusterHistoryEventDetail200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetProcessEvent
 
 `func (o *GetClusterHistoryEventDetail200Response) GetProcessEvent() GetClusterHistoryEventDetail200ResponseProcessEvent`

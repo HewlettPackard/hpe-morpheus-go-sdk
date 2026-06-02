@@ -26,14 +26,6 @@ type GetClouds200ResponseZoneStats struct {
 
 type _GetClouds200ResponseZoneStats GetClouds200ResponseZoneStats
 
-// NewGetClouds200ResponseZoneStatsWithDefaults instantiates a new GetClouds200ResponseZoneStats object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClouds200ResponseZoneStatsWithDefaults() *GetClouds200ResponseZoneStats {
-	this := GetClouds200ResponseZoneStats{}
-	return &this
-}
-
 func (o GetClouds200ResponseZoneStats) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

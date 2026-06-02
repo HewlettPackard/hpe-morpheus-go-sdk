@@ -31,14 +31,6 @@ type CatalogCartItemsInnerInstance struct {
 
 type _CatalogCartItemsInnerInstance CatalogCartItemsInnerInstance
 
-// NewCatalogCartItemsInnerInstanceWithDefaults instantiates a new CatalogCartItemsInnerInstance object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCatalogCartItemsInnerInstanceWithDefaults() *CatalogCartItemsInnerInstance {
-	this := CatalogCartItemsInnerInstance{}
-	return &this
-}
-
 func (o CatalogCartItemsInnerInstance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

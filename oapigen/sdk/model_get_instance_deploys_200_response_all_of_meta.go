@@ -33,22 +33,6 @@ type GetInstanceDeploys200ResponseAllOfMeta struct {
 
 type _GetInstanceDeploys200ResponseAllOfMeta GetInstanceDeploys200ResponseAllOfMeta
 
-// NewGetInstanceDeploys200ResponseAllOfMetaWithDefaults instantiates a new GetInstanceDeploys200ResponseAllOfMeta object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstanceDeploys200ResponseAllOfMetaWithDefaults() *GetInstanceDeploys200ResponseAllOfMeta {
-	this := GetInstanceDeploys200ResponseAllOfMeta{}
-	var offset int64 = 0
-	this.Offset = &offset
-	var max int64 = 25
-	this.Max = &max
-	var size int64 = 0
-	this.Size = &size
-	var total int64 = 0
-	this.Total = &total
-	return &this
-}
-
 func (o GetInstanceDeploys200ResponseAllOfMeta) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

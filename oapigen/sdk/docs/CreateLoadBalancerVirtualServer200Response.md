@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCreateLoadBalancerVirtualServer200ResponseWithDefaults
-
-`func NewCreateLoadBalancerVirtualServer200ResponseWithDefaults() *CreateLoadBalancerVirtualServer200Response`
-
-NewCreateLoadBalancerVirtualServer200ResponseWithDefaults instantiates a new CreateLoadBalancerVirtualServer200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetLoadBalancerInstance
 
 `func (o *CreateLoadBalancerVirtualServer200Response) GetLoadBalancerInstance() CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance`

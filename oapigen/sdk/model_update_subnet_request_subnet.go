@@ -49,16 +49,6 @@ type UpdateSubnetRequestSubnet struct {
 
 type _UpdateSubnetRequestSubnet UpdateSubnetRequestSubnet
 
-// NewUpdateSubnetRequestSubnetWithDefaults instantiates a new UpdateSubnetRequestSubnet object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateSubnetRequestSubnetWithDefaults() *UpdateSubnetRequestSubnet {
-	this := UpdateSubnetRequestSubnet{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o UpdateSubnetRequestSubnet) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

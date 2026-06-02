@@ -27,14 +27,6 @@ type ListWorkflows200Response struct {
 
 type _ListWorkflows200Response ListWorkflows200Response
 
-// NewListWorkflows200ResponseWithDefaults instantiates a new ListWorkflows200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListWorkflows200ResponseWithDefaults() *ListWorkflows200Response {
-	this := ListWorkflows200Response{}
-	return &this
-}
-
 func (o ListWorkflows200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

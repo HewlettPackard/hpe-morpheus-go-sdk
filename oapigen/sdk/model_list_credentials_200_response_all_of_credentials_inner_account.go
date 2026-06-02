@@ -27,14 +27,6 @@ type ListCredentials200ResponseAllOfCredentialsInnerAccount struct {
 
 type _ListCredentials200ResponseAllOfCredentialsInnerAccount ListCredentials200ResponseAllOfCredentialsInnerAccount
 
-// NewListCredentials200ResponseAllOfCredentialsInnerAccountWithDefaults instantiates a new ListCredentials200ResponseAllOfCredentialsInnerAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCredentials200ResponseAllOfCredentialsInnerAccountWithDefaults() *ListCredentials200ResponseAllOfCredentialsInnerAccount {
-	this := ListCredentials200ResponseAllOfCredentialsInnerAccount{}
-	return &this
-}
-
 func (o ListCredentials200ResponseAllOfCredentialsInnerAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

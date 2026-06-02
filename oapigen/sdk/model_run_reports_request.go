@@ -26,14 +26,6 @@ type RunReportsRequest struct {
 
 type _RunReportsRequest RunReportsRequest
 
-// NewRunReportsRequestWithDefaults instantiates a new RunReportsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRunReportsRequestWithDefaults() *RunReportsRequest {
-	this := RunReportsRequest{}
-	return &this
-}
-
 func (o RunReportsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

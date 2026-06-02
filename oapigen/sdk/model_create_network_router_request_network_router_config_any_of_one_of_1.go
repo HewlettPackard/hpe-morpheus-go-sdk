@@ -37,14 +37,6 @@ type CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1 struct {
 
 type _CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1 CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1
 
-// NewCreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1WithDefaults instantiates a new CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1WithDefaults() *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1 {
-	this := CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1{}
-	return &this
-}
-
 func (o CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

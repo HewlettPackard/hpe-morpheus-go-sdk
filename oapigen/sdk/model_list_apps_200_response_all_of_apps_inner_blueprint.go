@@ -28,14 +28,6 @@ type ListApps200ResponseAllOfAppsInnerBlueprint struct {
 
 type _ListApps200ResponseAllOfAppsInnerBlueprint ListApps200ResponseAllOfAppsInnerBlueprint
 
-// NewListApps200ResponseAllOfAppsInnerBlueprintWithDefaults instantiates a new ListApps200ResponseAllOfAppsInnerBlueprint object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListApps200ResponseAllOfAppsInnerBlueprintWithDefaults() *ListApps200ResponseAllOfAppsInnerBlueprint {
-	this := ListApps200ResponseAllOfAppsInnerBlueprint{}
-	return &this
-}
-
 func (o ListApps200ResponseAllOfAppsInnerBlueprint) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

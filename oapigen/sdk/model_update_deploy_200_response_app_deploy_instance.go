@@ -27,14 +27,6 @@ type UpdateDeploy200ResponseAppDeployInstance struct {
 
 type _UpdateDeploy200ResponseAppDeployInstance UpdateDeploy200ResponseAppDeployInstance
 
-// NewUpdateDeploy200ResponseAppDeployInstanceWithDefaults instantiates a new UpdateDeploy200ResponseAppDeployInstance object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateDeploy200ResponseAppDeployInstanceWithDefaults() *UpdateDeploy200ResponseAppDeployInstance {
-	this := UpdateDeploy200ResponseAppDeployInstance{}
-	return &this
-}
-
 func (o UpdateDeploy200ResponseAppDeployInstance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

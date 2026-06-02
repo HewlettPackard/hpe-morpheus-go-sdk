@@ -27,14 +27,6 @@ type NetworkRouterTypeRuleGroupOptionTypesInnerOptionList struct {
 
 type _NetworkRouterTypeRuleGroupOptionTypesInnerOptionList NetworkRouterTypeRuleGroupOptionTypesInnerOptionList
 
-// NewNetworkRouterTypeRuleGroupOptionTypesInnerOptionListWithDefaults instantiates a new NetworkRouterTypeRuleGroupOptionTypesInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkRouterTypeRuleGroupOptionTypesInnerOptionListWithDefaults() *NetworkRouterTypeRuleGroupOptionTypesInnerOptionList {
-	this := NetworkRouterTypeRuleGroupOptionTypesInnerOptionList{}
-	return &this
-}
-
 func (o NetworkRouterTypeRuleGroupOptionTypesInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

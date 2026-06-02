@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCreateResourcePoolGroup200ResponseResourcePoolGroupResourcePermissionWithDefaults
-
-`func NewCreateResourcePoolGroup200ResponseResourcePoolGroupResourcePermissionWithDefaults() *CreateResourcePoolGroup200ResponseResourcePoolGroupResourcePermission`
-
-NewCreateResourcePoolGroup200ResponseResourcePoolGroupResourcePermissionWithDefaults instantiates a new CreateResourcePoolGroup200ResponseResourcePoolGroupResourcePermission object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAll
 
 `func (o *CreateResourcePoolGroup200ResponseResourcePoolGroupResourcePermission) GetAll() bool`

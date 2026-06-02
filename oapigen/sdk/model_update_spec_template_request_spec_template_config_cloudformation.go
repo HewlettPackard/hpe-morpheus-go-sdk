@@ -28,14 +28,6 @@ type UpdateSpecTemplateRequestSpecTemplateConfigCloudformation struct {
 
 type _UpdateSpecTemplateRequestSpecTemplateConfigCloudformation UpdateSpecTemplateRequestSpecTemplateConfigCloudformation
 
-// NewUpdateSpecTemplateRequestSpecTemplateConfigCloudformationWithDefaults instantiates a new UpdateSpecTemplateRequestSpecTemplateConfigCloudformation object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateSpecTemplateRequestSpecTemplateConfigCloudformationWithDefaults() *UpdateSpecTemplateRequestSpecTemplateConfigCloudformation {
-	this := UpdateSpecTemplateRequestSpecTemplateConfigCloudformation{}
-	return &this
-}
-
 func (o UpdateSpecTemplateRequestSpecTemplateConfigCloudformation) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

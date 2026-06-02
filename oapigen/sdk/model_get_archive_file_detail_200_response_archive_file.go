@@ -38,14 +38,6 @@ type GetArchiveFileDetail200ResponseArchiveFile struct {
 
 type _GetArchiveFileDetail200ResponseArchiveFile GetArchiveFileDetail200ResponseArchiveFile
 
-// NewGetArchiveFileDetail200ResponseArchiveFileWithDefaults instantiates a new GetArchiveFileDetail200ResponseArchiveFile object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetArchiveFileDetail200ResponseArchiveFileWithDefaults() *GetArchiveFileDetail200ResponseArchiveFile {
-	this := GetArchiveFileDetail200ResponseArchiveFile{}
-	return &this
-}
-
 func (o GetArchiveFileDetail200ResponseArchiveFile) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

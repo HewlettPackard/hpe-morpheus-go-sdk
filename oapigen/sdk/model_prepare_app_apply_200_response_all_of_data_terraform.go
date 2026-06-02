@@ -29,14 +29,6 @@ type PrepareAppApply200ResponseAllOfDataTerraform struct {
 
 type _PrepareAppApply200ResponseAllOfDataTerraform PrepareAppApply200ResponseAllOfDataTerraform
 
-// NewPrepareAppApply200ResponseAllOfDataTerraformWithDefaults instantiates a new PrepareAppApply200ResponseAllOfDataTerraform object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPrepareAppApply200ResponseAllOfDataTerraformWithDefaults() *PrepareAppApply200ResponseAllOfDataTerraform {
-	this := PrepareAppApply200ResponseAllOfDataTerraform{}
-	return &this
-}
-
 func (o PrepareAppApply200ResponseAllOfDataTerraform) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

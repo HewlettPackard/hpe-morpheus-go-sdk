@@ -33,14 +33,6 @@ type ZoneNetworkOptionsResponse struct {
 
 type _ZoneNetworkOptionsResponse ZoneNetworkOptionsResponse
 
-// NewZoneNetworkOptionsResponseWithDefaults instantiates a new ZoneNetworkOptionsResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneNetworkOptionsResponseWithDefaults() *ZoneNetworkOptionsResponse {
-	this := ZoneNetworkOptionsResponse{}
-	return &this
-}
-
 func (o ZoneNetworkOptionsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

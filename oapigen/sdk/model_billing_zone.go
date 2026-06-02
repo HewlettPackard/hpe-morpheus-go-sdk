@@ -41,14 +41,6 @@ type BillingZone struct {
 
 type _BillingZone BillingZone
 
-// NewBillingZoneWithDefaults instantiates a new BillingZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBillingZoneWithDefaults() *BillingZone {
-	this := BillingZone{}
-	return &this
-}
-
 func (o BillingZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

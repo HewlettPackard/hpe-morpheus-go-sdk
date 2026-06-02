@@ -27,14 +27,6 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings struct {
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings
 
-// NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavingsWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavingsWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings {
-	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings{}
-	return &this
-}
-
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

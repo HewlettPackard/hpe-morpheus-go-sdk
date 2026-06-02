@@ -27,14 +27,6 @@ type NetworkPoolServerUpdateInfobloxCredential struct {
 
 type _NetworkPoolServerUpdateInfobloxCredential NetworkPoolServerUpdateInfobloxCredential
 
-// NewNetworkPoolServerUpdateInfobloxCredentialWithDefaults instantiates a new NetworkPoolServerUpdateInfobloxCredential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkPoolServerUpdateInfobloxCredentialWithDefaults() *NetworkPoolServerUpdateInfobloxCredential {
-	this := NetworkPoolServerUpdateInfobloxCredential{}
-	return &this
-}
-
 func (o NetworkPoolServerUpdateInfobloxCredential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

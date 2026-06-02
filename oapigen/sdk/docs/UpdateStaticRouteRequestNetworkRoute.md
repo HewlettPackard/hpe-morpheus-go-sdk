@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateStaticRouteRequestNetworkRouteWithDefaults
-
-`func NewUpdateStaticRouteRequestNetworkRouteWithDefaults() *UpdateStaticRouteRequestNetworkRoute`
-
-NewUpdateStaticRouteRequestNetworkRouteWithDefaults instantiates a new UpdateStaticRouteRequestNetworkRoute object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSource
 
 `func (o *UpdateStaticRouteRequestNetworkRoute) GetSource() string`

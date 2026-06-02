@@ -45,14 +45,6 @@ type SaveDatastoreRequestDatastore struct {
 
 type _SaveDatastoreRequestDatastore SaveDatastoreRequestDatastore
 
-// NewSaveDatastoreRequestDatastoreWithDefaults instantiates a new SaveDatastoreRequestDatastore object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveDatastoreRequestDatastoreWithDefaults() *SaveDatastoreRequestDatastore {
-	this := SaveDatastoreRequestDatastore{}
-	return &this
-}
-
 func (o SaveDatastoreRequestDatastore) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

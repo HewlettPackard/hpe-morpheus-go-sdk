@@ -28,14 +28,6 @@ type AddIntegrations200ResponseAllOfIntegrationOneOf6IntegrationType struct {
 
 type _AddIntegrations200ResponseAllOfIntegrationOneOf6IntegrationType AddIntegrations200ResponseAllOfIntegrationOneOf6IntegrationType
 
-// NewAddIntegrations200ResponseAllOfIntegrationOneOf6IntegrationTypeWithDefaults instantiates a new AddIntegrations200ResponseAllOfIntegrationOneOf6IntegrationType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIntegrations200ResponseAllOfIntegrationOneOf6IntegrationTypeWithDefaults() *AddIntegrations200ResponseAllOfIntegrationOneOf6IntegrationType {
-	this := AddIntegrations200ResponseAllOfIntegrationOneOf6IntegrationType{}
-	return &this
-}
-
 func (o AddIntegrations200ResponseAllOfIntegrationOneOf6IntegrationType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

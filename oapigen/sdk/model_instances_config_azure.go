@@ -47,16 +47,6 @@ type InstancesConfigAzure struct {
 
 type _InstancesConfigAzure InstancesConfigAzure
 
-// NewInstancesConfigAzureWithDefaults instantiates a new InstancesConfigAzure object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstancesConfigAzureWithDefaults() *InstancesConfigAzure {
-	this := InstancesConfigAzure{}
-	var createUser bool = true
-	this.CreateUser = &createUser
-	return &this
-}
-
 func (o InstancesConfigAzure) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

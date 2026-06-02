@@ -27,14 +27,6 @@ type AddCertificate200ResponseAllOfCertificateType struct {
 
 type _AddCertificate200ResponseAllOfCertificateType AddCertificate200ResponseAllOfCertificateType
 
-// NewAddCertificate200ResponseAllOfCertificateTypeWithDefaults instantiates a new AddCertificate200ResponseAllOfCertificateType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCertificate200ResponseAllOfCertificateTypeWithDefaults() *AddCertificate200ResponseAllOfCertificateType {
-	this := AddCertificate200ResponseAllOfCertificateType{}
-	return &this
-}
-
 func (o AddCertificate200ResponseAllOfCertificateType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

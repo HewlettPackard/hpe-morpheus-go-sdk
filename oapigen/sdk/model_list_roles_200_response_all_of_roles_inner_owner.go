@@ -27,14 +27,6 @@ type ListRoles200ResponseAllOfRolesInnerOwner struct {
 
 type _ListRoles200ResponseAllOfRolesInnerOwner ListRoles200ResponseAllOfRolesInnerOwner
 
-// NewListRoles200ResponseAllOfRolesInnerOwnerWithDefaults instantiates a new ListRoles200ResponseAllOfRolesInnerOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListRoles200ResponseAllOfRolesInnerOwnerWithDefaults() *ListRoles200ResponseAllOfRolesInnerOwner {
-	this := ListRoles200ResponseAllOfRolesInnerOwner{}
-	return &this
-}
-
 func (o ListRoles200ResponseAllOfRolesInnerOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

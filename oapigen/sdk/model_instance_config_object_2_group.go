@@ -28,14 +28,6 @@ type InstanceConfigObject2Group struct {
 
 type _InstanceConfigObject2Group InstanceConfigObject2Group
 
-// NewInstanceConfigObject2GroupWithDefaults instantiates a new InstanceConfigObject2Group object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigObject2GroupWithDefaults() *InstanceConfigObject2Group {
-	this := InstanceConfigObject2Group{}
-	return &this
-}
-
 func (o InstanceConfigObject2Group) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

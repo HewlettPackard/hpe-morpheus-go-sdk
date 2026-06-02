@@ -27,16 +27,6 @@ type MaxMemoryPolicyTypeConfiguration8 struct {
 
 type _MaxMemoryPolicyTypeConfiguration8 MaxMemoryPolicyTypeConfiguration8
 
-// NewMaxMemoryPolicyTypeConfiguration8WithDefaults instantiates a new MaxMemoryPolicyTypeConfiguration8 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxMemoryPolicyTypeConfiguration8WithDefaults() *MaxMemoryPolicyTypeConfiguration8 {
-	this := MaxMemoryPolicyTypeConfiguration8{}
-	var excludeContainers string = "off"
-	this.ExcludeContainers = &excludeContainers
-	return &this
-}
-
 func (o MaxMemoryPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

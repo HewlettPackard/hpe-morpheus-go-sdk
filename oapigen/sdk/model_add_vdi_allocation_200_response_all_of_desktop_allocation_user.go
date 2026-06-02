@@ -28,14 +28,6 @@ type AddVdiAllocation200ResponseAllOfDesktopAllocationUser struct {
 
 type _AddVdiAllocation200ResponseAllOfDesktopAllocationUser AddVdiAllocation200ResponseAllOfDesktopAllocationUser
 
-// NewAddVdiAllocation200ResponseAllOfDesktopAllocationUserWithDefaults instantiates a new AddVdiAllocation200ResponseAllOfDesktopAllocationUser object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddVdiAllocation200ResponseAllOfDesktopAllocationUserWithDefaults() *AddVdiAllocation200ResponseAllOfDesktopAllocationUser {
-	this := AddVdiAllocation200ResponseAllOfDesktopAllocationUser{}
-	return &this
-}
-
 func (o AddVdiAllocation200ResponseAllOfDesktopAllocationUser) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

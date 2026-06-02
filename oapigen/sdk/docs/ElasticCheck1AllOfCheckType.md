@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewElasticCheck1AllOfCheckTypeWithDefaults
-
-`func NewElasticCheck1AllOfCheckTypeWithDefaults() *ElasticCheck1AllOfCheckType`
-
-NewElasticCheck1AllOfCheckTypeWithDefaults instantiates a new ElasticCheck1AllOfCheckType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetCode
 
 `func (o *ElasticCheck1AllOfCheckType) GetCode() string`

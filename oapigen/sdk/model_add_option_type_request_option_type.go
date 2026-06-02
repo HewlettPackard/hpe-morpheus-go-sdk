@@ -50,22 +50,6 @@ type AddOptionTypeRequestOptionType struct {
 
 type _AddOptionTypeRequestOptionType AddOptionTypeRequestOptionType
 
-// NewAddOptionTypeRequestOptionTypeWithDefaults instantiates a new AddOptionTypeRequestOptionType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddOptionTypeRequestOptionTypeWithDefaults() *AddOptionTypeRequestOptionType {
-	this := AddOptionTypeRequestOptionType{}
-	var type_ string = "text"
-	this.Type = &type_
-	var required bool = false
-	this.Required = &required
-	var exportMeta bool = false
-	this.ExportMeta = &exportMeta
-	var editable bool = false
-	this.Editable = &editable
-	return &this
-}
-
 func (o AddOptionTypeRequestOptionType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

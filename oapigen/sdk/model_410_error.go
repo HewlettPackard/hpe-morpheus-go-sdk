@@ -26,14 +26,6 @@ type Model410Error struct {
 
 type _Model410Error Model410Error
 
-// NewModel410ErrorWithDefaults instantiates a new Model410Error object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewModel410ErrorWithDefaults() *Model410Error {
-	this := Model410Error{}
-	return &this
-}
-
 func (o Model410Error) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

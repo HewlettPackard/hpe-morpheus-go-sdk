@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInnerWithDefaults
-
-`func NewGetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInnerWithDefaults() *GetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInner`
-
-NewGetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInnerWithDefaults instantiates a new GetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInner) GetId() string`

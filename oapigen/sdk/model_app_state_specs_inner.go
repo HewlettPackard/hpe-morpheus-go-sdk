@@ -29,14 +29,6 @@ type AppStateSpecsInner struct {
 
 type _AppStateSpecsInner AppStateSpecsInner
 
-// NewAppStateSpecsInnerWithDefaults instantiates a new AppStateSpecsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppStateSpecsInnerWithDefaults() *AppStateSpecsInner {
-	this := AppStateSpecsInner{}
-	return &this
-}
-
 func (o AppStateSpecsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

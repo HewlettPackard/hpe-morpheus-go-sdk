@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewDeleteRole400ResponseWithDefaults
-
-`func NewDeleteRole400ResponseWithDefaults() *DeleteRole400Response`
-
-NewDeleteRole400ResponseWithDefaults instantiates a new DeleteRole400Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *DeleteRole400Response) GetSuccess() bool`

@@ -31,14 +31,6 @@ type AddIntegrationSnowObjectsRequestObject struct {
 
 type _AddIntegrationSnowObjectsRequestObject AddIntegrationSnowObjectsRequestObject
 
-// NewAddIntegrationSnowObjectsRequestObjectWithDefaults instantiates a new AddIntegrationSnowObjectsRequestObject object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIntegrationSnowObjectsRequestObjectWithDefaults() *AddIntegrationSnowObjectsRequestObject {
-	this := AddIntegrationSnowObjectsRequestObject{}
-	return &this
-}
-
 func (o AddIntegrationSnowObjectsRequestObject) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

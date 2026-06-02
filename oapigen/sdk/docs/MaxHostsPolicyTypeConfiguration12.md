@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewMaxHostsPolicyTypeConfiguration12WithDefaults
-
-`func NewMaxHostsPolicyTypeConfiguration12WithDefaults() *MaxHostsPolicyTypeConfiguration12`
-
-NewMaxHostsPolicyTypeConfiguration12WithDefaults instantiates a new MaxHostsPolicyTypeConfiguration12 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMaxHosts
 
 `func (o *MaxHostsPolicyTypeConfiguration12) GetMaxHosts() string`

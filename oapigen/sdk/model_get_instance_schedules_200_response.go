@@ -26,14 +26,6 @@ type GetInstanceSchedules200Response struct {
 
 type _GetInstanceSchedules200Response GetInstanceSchedules200Response
 
-// NewGetInstanceSchedules200ResponseWithDefaults instantiates a new GetInstanceSchedules200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstanceSchedules200ResponseWithDefaults() *GetInstanceSchedules200Response {
-	this := GetInstanceSchedules200Response{}
-	return &this
-}
-
 func (o GetInstanceSchedules200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

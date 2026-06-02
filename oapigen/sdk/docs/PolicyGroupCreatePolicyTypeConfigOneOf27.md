@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPolicyGroupCreatePolicyTypeConfigOneOf27WithDefaults
-
-`func NewPolicyGroupCreatePolicyTypeConfigOneOf27WithDefaults() *PolicyGroupCreatePolicyTypeConfigOneOf27`
-
-NewPolicyGroupCreatePolicyTypeConfigOneOf27WithDefaults instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf27 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetStorageServerId
 
 `func (o *PolicyGroupCreatePolicyTypeConfigOneOf27) GetStorageServerId() string`

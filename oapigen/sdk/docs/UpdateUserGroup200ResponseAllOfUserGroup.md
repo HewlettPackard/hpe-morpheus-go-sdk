@@ -27,14 +27,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateUserGroup200ResponseAllOfUserGroupWithDefaults
-
-`func NewUpdateUserGroup200ResponseAllOfUserGroupWithDefaults() *UpdateUserGroup200ResponseAllOfUserGroup`
-
-NewUpdateUserGroup200ResponseAllOfUserGroupWithDefaults instantiates a new UpdateUserGroup200ResponseAllOfUserGroup object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateUserGroup200ResponseAllOfUserGroup) GetId() int64`

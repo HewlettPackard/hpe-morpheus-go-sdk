@@ -32,16 +32,6 @@ type NetworkDhcpServerCreate struct {
 
 type _NetworkDhcpServerCreate NetworkDhcpServerCreate
 
-// NewNetworkDhcpServerCreateWithDefaults instantiates a new NetworkDhcpServerCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkDhcpServerCreateWithDefaults() *NetworkDhcpServerCreate {
-	this := NetworkDhcpServerCreate{}
-	var leaseTime int64 = 86400
-	this.LeaseTime = leaseTime
-	return &this
-}
-
 func (o NetworkDhcpServerCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

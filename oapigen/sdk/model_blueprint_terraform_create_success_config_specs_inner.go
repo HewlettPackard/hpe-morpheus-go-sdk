@@ -28,14 +28,6 @@ type BlueprintTerraformCreateSuccessConfigSpecsInner struct {
 
 type _BlueprintTerraformCreateSuccessConfigSpecsInner BlueprintTerraformCreateSuccessConfigSpecsInner
 
-// NewBlueprintTerraformCreateSuccessConfigSpecsInnerWithDefaults instantiates a new BlueprintTerraformCreateSuccessConfigSpecsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintTerraformCreateSuccessConfigSpecsInnerWithDefaults() *BlueprintTerraformCreateSuccessConfigSpecsInner {
-	this := BlueprintTerraformCreateSuccessConfigSpecsInner{}
-	return &this
-}
-
 func (o BlueprintTerraformCreateSuccessConfigSpecsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

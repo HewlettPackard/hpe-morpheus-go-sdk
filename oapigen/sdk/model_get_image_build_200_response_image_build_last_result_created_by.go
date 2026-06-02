@@ -26,14 +26,6 @@ type GetImageBuild200ResponseImageBuildLastResultCreatedBy struct {
 
 type _GetImageBuild200ResponseImageBuildLastResultCreatedBy GetImageBuild200ResponseImageBuildLastResultCreatedBy
 
-// NewGetImageBuild200ResponseImageBuildLastResultCreatedByWithDefaults instantiates a new GetImageBuild200ResponseImageBuildLastResultCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetImageBuild200ResponseImageBuildLastResultCreatedByWithDefaults() *GetImageBuild200ResponseImageBuildLastResultCreatedBy {
-	this := GetImageBuild200ResponseImageBuildLastResultCreatedBy{}
-	return &this
-}
-
 func (o GetImageBuild200ResponseImageBuildLastResultCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

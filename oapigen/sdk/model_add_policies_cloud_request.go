@@ -26,14 +26,6 @@ type AddPoliciesCloudRequest struct {
 
 type _AddPoliciesCloudRequest AddPoliciesCloudRequest
 
-// NewAddPoliciesCloudRequestWithDefaults instantiates a new AddPoliciesCloudRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPoliciesCloudRequestWithDefaults() *AddPoliciesCloudRequest {
-	this := AddPoliciesCloudRequest{}
-	return &this
-}
-
 func (o AddPoliciesCloudRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

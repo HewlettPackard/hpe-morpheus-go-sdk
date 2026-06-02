@@ -37,14 +37,6 @@ type RunDeploy200ResponseAppDeploy struct {
 
 type _RunDeploy200ResponseAppDeploy RunDeploy200ResponseAppDeploy
 
-// NewRunDeploy200ResponseAppDeployWithDefaults instantiates a new RunDeploy200ResponseAppDeploy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRunDeploy200ResponseAppDeployWithDefaults() *RunDeploy200ResponseAppDeploy {
-	this := RunDeploy200ResponseAppDeploy{}
-	return &this
-}
-
 func (o RunDeploy200ResponseAppDeploy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

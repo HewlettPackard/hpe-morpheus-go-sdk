@@ -27,14 +27,6 @@ type SuccessError struct {
 
 type _SuccessError SuccessError
 
-// NewSuccessErrorWithDefaults instantiates a new SuccessError object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSuccessErrorWithDefaults() *SuccessError {
-	this := SuccessError{}
-	return &this
-}
-
 func (o SuccessError) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

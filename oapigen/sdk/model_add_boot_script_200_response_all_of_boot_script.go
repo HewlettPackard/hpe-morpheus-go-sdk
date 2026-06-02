@@ -32,14 +32,6 @@ type AddBootScript200ResponseAllOfBootScript struct {
 
 type _AddBootScript200ResponseAllOfBootScript AddBootScript200ResponseAllOfBootScript
 
-// NewAddBootScript200ResponseAllOfBootScriptWithDefaults instantiates a new AddBootScript200ResponseAllOfBootScript object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBootScript200ResponseAllOfBootScriptWithDefaults() *AddBootScript200ResponseAllOfBootScript {
-	this := AddBootScript200ResponseAllOfBootScript{}
-	return &this
-}
-
 func (o AddBootScript200ResponseAllOfBootScript) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

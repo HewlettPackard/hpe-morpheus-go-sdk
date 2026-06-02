@@ -26,14 +26,6 @@ type InstanceCreateSuccessInstanceConfigSite struct {
 
 type _InstanceCreateSuccessInstanceConfigSite InstanceCreateSuccessInstanceConfigSite
 
-// NewInstanceCreateSuccessInstanceConfigSiteWithDefaults instantiates a new InstanceCreateSuccessInstanceConfigSite object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceCreateSuccessInstanceConfigSiteWithDefaults() *InstanceCreateSuccessInstanceConfigSite {
-	this := InstanceCreateSuccessInstanceConfigSite{}
-	return &this
-}
-
 func (o InstanceCreateSuccessInstanceConfigSite) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

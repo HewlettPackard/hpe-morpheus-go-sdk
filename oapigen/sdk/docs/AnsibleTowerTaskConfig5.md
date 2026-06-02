@@ -27,14 +27,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAnsibleTowerTaskConfig5WithDefaults
-
-`func NewAnsibleTowerTaskConfig5WithDefaults() *AnsibleTowerTaskConfig5`
-
-NewAnsibleTowerTaskConfig5WithDefaults instantiates a new AnsibleTowerTaskConfig5 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPassword
 
 `func (o *AnsibleTowerTaskConfig5) GetPassword() string`

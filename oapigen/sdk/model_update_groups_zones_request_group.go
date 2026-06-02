@@ -27,14 +27,6 @@ type UpdateGroupsZonesRequestGroup struct {
 
 type _UpdateGroupsZonesRequestGroup UpdateGroupsZonesRequestGroup
 
-// NewUpdateGroupsZonesRequestGroupWithDefaults instantiates a new UpdateGroupsZonesRequestGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateGroupsZonesRequestGroupWithDefaults() *UpdateGroupsZonesRequestGroup {
-	this := UpdateGroupsZonesRequestGroup{}
-	return &this
-}
-
 func (o UpdateGroupsZonesRequestGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

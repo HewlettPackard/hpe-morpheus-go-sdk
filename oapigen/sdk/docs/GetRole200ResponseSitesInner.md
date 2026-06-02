@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetRole200ResponseSitesInnerWithDefaults
-
-`func NewGetRole200ResponseSitesInnerWithDefaults() *GetRole200ResponseSitesInner`
-
-NewGetRole200ResponseSitesInnerWithDefaults instantiates a new GetRole200ResponseSitesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetRole200ResponseSitesInner) GetId() int64`

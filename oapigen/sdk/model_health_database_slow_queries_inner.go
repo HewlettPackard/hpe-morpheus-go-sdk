@@ -28,14 +28,6 @@ type HealthDatabaseSlowQueriesInner struct {
 
 type _HealthDatabaseSlowQueriesInner HealthDatabaseSlowQueriesInner
 
-// NewHealthDatabaseSlowQueriesInnerWithDefaults instantiates a new HealthDatabaseSlowQueriesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewHealthDatabaseSlowQueriesInnerWithDefaults() *HealthDatabaseSlowQueriesInner {
-	this := HealthDatabaseSlowQueriesInner{}
-	return &this
-}
-
 func (o HealthDatabaseSlowQueriesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

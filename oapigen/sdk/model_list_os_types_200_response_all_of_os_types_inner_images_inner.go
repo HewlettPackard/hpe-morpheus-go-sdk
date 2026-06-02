@@ -32,14 +32,6 @@ type ListOsTypes200ResponseAllOfOsTypesInnerImagesInner struct {
 
 type _ListOsTypes200ResponseAllOfOsTypesInnerImagesInner ListOsTypes200ResponseAllOfOsTypesInnerImagesInner
 
-// NewListOsTypes200ResponseAllOfOsTypesInnerImagesInnerWithDefaults instantiates a new ListOsTypes200ResponseAllOfOsTypesInnerImagesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListOsTypes200ResponseAllOfOsTypesInnerImagesInnerWithDefaults() *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner {
-	this := ListOsTypes200ResponseAllOfOsTypesInnerImagesInner{}
-	return &this
-}
-
 func (o ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

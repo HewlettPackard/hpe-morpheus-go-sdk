@@ -27,14 +27,6 @@ type ApplyAppStateRequest struct {
 
 type _ApplyAppStateRequest ApplyAppStateRequest
 
-// NewApplyAppStateRequestWithDefaults instantiates a new ApplyAppStateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewApplyAppStateRequestWithDefaults() *ApplyAppStateRequest {
-	this := ApplyAppStateRequest{}
-	return &this
-}
-
 func (o ApplyAppStateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateScript200ResponseWithDefaults
-
-`func NewUpdateScript200ResponseWithDefaults() *UpdateScript200Response`
-
-NewUpdateScript200ResponseWithDefaults instantiates a new UpdateScript200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *UpdateScript200Response) GetSuccess() bool`

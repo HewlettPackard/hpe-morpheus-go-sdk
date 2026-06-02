@@ -28,14 +28,6 @@ type ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner s
 
 type _ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner
 
-// NewListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInnerWithDefaults instantiates a new ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInnerWithDefaults() *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner {
-	this := ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner{}
-	return &this
-}
-
 func (o ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

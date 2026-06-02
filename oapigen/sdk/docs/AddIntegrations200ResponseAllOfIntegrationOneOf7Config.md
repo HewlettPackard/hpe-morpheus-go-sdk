@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddIntegrations200ResponseAllOfIntegrationOneOf7ConfigWithDefaults
-
-`func NewAddIntegrations200ResponseAllOfIntegrationOneOf7ConfigWithDefaults() *AddIntegrations200ResponseAllOfIntegrationOneOf7Config`
-
-NewAddIntegrations200ResponseAllOfIntegrationOneOf7ConfigWithDefaults instantiates a new AddIntegrations200ResponseAllOfIntegrationOneOf7Config object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetDefaultBranch
 
 `func (o *AddIntegrations200ResponseAllOfIntegrationOneOf7Config) GetDefaultBranch() string`

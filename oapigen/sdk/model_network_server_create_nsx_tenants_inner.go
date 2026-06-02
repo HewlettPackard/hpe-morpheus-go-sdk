@@ -26,14 +26,6 @@ type NetworkServerCreateNSXTenantsInner struct {
 
 type _NetworkServerCreateNSXTenantsInner NetworkServerCreateNSXTenantsInner
 
-// NewNetworkServerCreateNSXTenantsInnerWithDefaults instantiates a new NetworkServerCreateNSXTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkServerCreateNSXTenantsInnerWithDefaults() *NetworkServerCreateNSXTenantsInner {
-	this := NetworkServerCreateNSXTenantsInner{}
-	return &this
-}
-
 func (o NetworkServerCreateNSXTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

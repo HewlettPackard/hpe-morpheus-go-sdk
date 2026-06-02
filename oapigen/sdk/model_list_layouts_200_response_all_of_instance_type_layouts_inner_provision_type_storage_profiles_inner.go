@@ -29,14 +29,6 @@ type ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProf
 
 type _ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner
 
-// NewListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInnerWithDefaults instantiates a new ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInnerWithDefaults() *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner {
-	this := ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner{}
-	return &this
-}
-
 func (o ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type ListMigrations200Response struct {
 
 type _ListMigrations200Response ListMigrations200Response
 
-// NewListMigrations200ResponseWithDefaults instantiates a new ListMigrations200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListMigrations200ResponseWithDefaults() *ListMigrations200Response {
-	this := ListMigrations200Response{}
-	return &this
-}
-
 func (o ListMigrations200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

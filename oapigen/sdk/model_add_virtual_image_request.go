@@ -26,14 +26,6 @@ type AddVirtualImageRequest struct {
 
 type _AddVirtualImageRequest AddVirtualImageRequest
 
-// NewAddVirtualImageRequestWithDefaults instantiates a new AddVirtualImageRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddVirtualImageRequestWithDefaults() *AddVirtualImageRequest {
-	this := AddVirtualImageRequest{}
-	return &this
-}
-
 func (o AddVirtualImageRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

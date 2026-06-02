@@ -33,14 +33,6 @@ type CreateNetworkPoolIpRequestNetworkPoolIp struct {
 
 type _CreateNetworkPoolIpRequestNetworkPoolIp CreateNetworkPoolIpRequestNetworkPoolIp
 
-// NewCreateNetworkPoolIpRequestNetworkPoolIpWithDefaults instantiates a new CreateNetworkPoolIpRequestNetworkPoolIp object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkPoolIpRequestNetworkPoolIpWithDefaults() *CreateNetworkPoolIpRequestNetworkPoolIp {
-	this := CreateNetworkPoolIpRequestNetworkPoolIp{}
-	return &this
-}
-
 func (o CreateNetworkPoolIpRequestNetworkPoolIp) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

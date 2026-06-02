@@ -28,14 +28,6 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInner struct {
 
 type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInner AddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInner
 
-// NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInnerWithDefaults instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInnerWithDefaults() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInner {
-	this := AddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInner{}
-	return &this
-}
-
 func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

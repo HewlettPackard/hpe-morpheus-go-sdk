@@ -45,14 +45,6 @@ type BackupTypeInstance struct {
 
 type _BackupTypeInstance BackupTypeInstance
 
-// NewBackupTypeInstanceWithDefaults instantiates a new BackupTypeInstance object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBackupTypeInstanceWithDefaults() *BackupTypeInstance {
-	this := BackupTypeInstance{}
-	return &this
-}
-
 func (o BackupTypeInstance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

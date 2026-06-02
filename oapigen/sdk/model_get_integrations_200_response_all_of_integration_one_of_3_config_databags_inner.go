@@ -27,14 +27,6 @@ type GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner struct 
 
 type _GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner
 
-// NewGetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInnerWithDefaults instantiates a new GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInnerWithDefaults() *GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner {
-	this := GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner{}
-	return &this
-}
-
 func (o GetIntegrations200ResponseAllOfIntegrationOneOf3ConfigDatabagsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -28,14 +28,6 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceSourceImage struc
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceSourceImage ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceSourceImage
 
-// NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceSourceImageWithDefaults instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceSourceImage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceSourceImageWithDefaults() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceSourceImage {
-	this := ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceSourceImage{}
-	return &this
-}
-
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceSourceImage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

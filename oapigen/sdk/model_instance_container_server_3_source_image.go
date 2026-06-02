@@ -28,14 +28,6 @@ type InstanceContainerServer3SourceImage struct {
 
 type _InstanceContainerServer3SourceImage InstanceContainerServer3SourceImage
 
-// NewInstanceContainerServer3SourceImageWithDefaults instantiates a new InstanceContainerServer3SourceImage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainerServer3SourceImageWithDefaults() *InstanceContainerServer3SourceImage {
-	this := InstanceContainerServer3SourceImage{}
-	return &this
-}
-
 func (o InstanceContainerServer3SourceImage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

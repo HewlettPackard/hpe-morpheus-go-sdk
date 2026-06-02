@@ -26,14 +26,6 @@ type AddSpecTemplateRequestSpecTemplateConfig struct {
 
 type _AddSpecTemplateRequestSpecTemplateConfig AddSpecTemplateRequestSpecTemplateConfig
 
-// NewAddSpecTemplateRequestSpecTemplateConfigWithDefaults instantiates a new AddSpecTemplateRequestSpecTemplateConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddSpecTemplateRequestSpecTemplateConfigWithDefaults() *AddSpecTemplateRequestSpecTemplateConfig {
-	this := AddSpecTemplateRequestSpecTemplateConfig{}
-	return &this
-}
-
 func (o AddSpecTemplateRequestSpecTemplateConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount str
 
 type _SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount
 
-// NewSaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccountWithDefaults instantiates a new SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccountWithDefaults() *SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount {
-	this := SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount{}
-	return &this
-}
-
 func (o SaveClusterDatastore200ResponseAllOfDatastoreResourcePermissionsAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

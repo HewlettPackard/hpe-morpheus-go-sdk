@@ -31,14 +31,6 @@ type UpdateDatastores200ResponseDatastoreAllOfLocationsInner struct {
 
 type _UpdateDatastores200ResponseDatastoreAllOfLocationsInner UpdateDatastores200ResponseDatastoreAllOfLocationsInner
 
-// NewUpdateDatastores200ResponseDatastoreAllOfLocationsInnerWithDefaults instantiates a new UpdateDatastores200ResponseDatastoreAllOfLocationsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateDatastores200ResponseDatastoreAllOfLocationsInnerWithDefaults() *UpdateDatastores200ResponseDatastoreAllOfLocationsInner {
-	this := UpdateDatastores200ResponseDatastoreAllOfLocationsInner{}
-	return &this
-}
-
 func (o UpdateDatastores200ResponseDatastoreAllOfLocationsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type GetPowerSchedules200ResponseAllOfServersInner struct {
 
 type _GetPowerSchedules200ResponseAllOfServersInner GetPowerSchedules200ResponseAllOfServersInner
 
-// NewGetPowerSchedules200ResponseAllOfServersInnerWithDefaults instantiates a new GetPowerSchedules200ResponseAllOfServersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetPowerSchedules200ResponseAllOfServersInnerWithDefaults() *GetPowerSchedules200ResponseAllOfServersInner {
-	this := GetPowerSchedules200ResponseAllOfServersInner{}
-	return &this
-}
-
 func (o GetPowerSchedules200ResponseAllOfServersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

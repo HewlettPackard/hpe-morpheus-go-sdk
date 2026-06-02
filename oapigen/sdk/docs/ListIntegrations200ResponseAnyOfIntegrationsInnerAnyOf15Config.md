@@ -26,14 +26,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigWithDefaults
-
-`func NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigWithDefaults() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config`
-
-NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigWithDefaults instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetIncidentAccess
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) GetIncidentAccess() bool`

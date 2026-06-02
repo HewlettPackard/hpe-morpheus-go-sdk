@@ -23,14 +23,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateIdentitySources200ResponseAllOfTaskOneOf4ConfigWithDefaults
-
-`func NewUpdateIdentitySources200ResponseAllOfTaskOneOf4ConfigWithDefaults() *UpdateIdentitySources200ResponseAllOfTaskOneOf4Config`
-
-NewUpdateIdentitySources200ResponseAllOfTaskOneOf4ConfigWithDefaults instantiates a new UpdateIdentitySources200ResponseAllOfTaskOneOf4Config object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSubdomain
 
 `func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf4Config) GetSubdomain() string`

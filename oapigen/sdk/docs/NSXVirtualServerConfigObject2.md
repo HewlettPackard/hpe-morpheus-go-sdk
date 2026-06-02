@@ -22,14 +22,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewNSXVirtualServerConfigObject2WithDefaults
-
-`func NewNSXVirtualServerConfigObject2WithDefaults() *NSXVirtualServerConfigObject2`
-
-NewNSXVirtualServerConfigObject2WithDefaults instantiates a new NSXVirtualServerConfigObject2 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetApplicationProfile
 
 `func (o *NSXVirtualServerConfigObject2) GetApplicationProfile() int64`

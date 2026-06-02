@@ -41,14 +41,6 @@ type SupportBundle struct {
 
 type _SupportBundle SupportBundle
 
-// NewSupportBundleWithDefaults instantiates a new SupportBundle object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSupportBundleWithDefaults() *SupportBundle {
-	this := SupportBundle{}
-	return &this
-}
-
 func (o SupportBundle) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

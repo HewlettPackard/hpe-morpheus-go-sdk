@@ -33,14 +33,6 @@ type AddClient200ResponseAllOfClient struct {
 
 type _AddClient200ResponseAllOfClient AddClient200ResponseAllOfClient
 
-// NewAddClient200ResponseAllOfClientWithDefaults instantiates a new AddClient200ResponseAllOfClient object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClient200ResponseAllOfClientWithDefaults() *AddClient200ResponseAllOfClient {
-	this := AddClient200ResponseAllOfClient{}
-	return &this
-}
-
 func (o AddClient200ResponseAllOfClient) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

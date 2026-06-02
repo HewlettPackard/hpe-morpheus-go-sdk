@@ -26,14 +26,6 @@ type CatalogItemTypeWorkflowUpdateWorkflow struct {
 
 type _CatalogItemTypeWorkflowUpdateWorkflow CatalogItemTypeWorkflowUpdateWorkflow
 
-// NewCatalogItemTypeWorkflowUpdateWorkflowWithDefaults instantiates a new CatalogItemTypeWorkflowUpdateWorkflow object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCatalogItemTypeWorkflowUpdateWorkflowWithDefaults() *CatalogItemTypeWorkflowUpdateWorkflow {
-	this := CatalogItemTypeWorkflowUpdateWorkflow{}
-	return &this
-}
-
 func (o CatalogItemTypeWorkflowUpdateWorkflow) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

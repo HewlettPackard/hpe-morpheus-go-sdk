@@ -38,14 +38,6 @@ type SocketConfig9 struct {
 
 type _SocketConfig9 SocketConfig9
 
-// NewSocketConfig9WithDefaults instantiates a new SocketConfig9 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSocketConfig9WithDefaults() *SocketConfig9 {
-	this := SocketConfig9{}
-	return &this
-}
-
 func (o SocketConfig9) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

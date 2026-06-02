@@ -29,14 +29,6 @@ type InstanceEnvsEnvsInner struct {
 
 type _InstanceEnvsEnvsInner InstanceEnvsEnvsInner
 
-// NewInstanceEnvsEnvsInnerWithDefaults instantiates a new InstanceEnvsEnvsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceEnvsEnvsInnerWithDefaults() *InstanceEnvsEnvsInner {
-	this := InstanceEnvsEnvsInner{}
-	return &this
-}
-
 func (o InstanceEnvsEnvsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

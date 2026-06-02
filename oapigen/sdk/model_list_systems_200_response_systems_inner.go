@@ -49,14 +49,6 @@ type ListSystems200ResponseSystemsInner struct {
 
 type _ListSystems200ResponseSystemsInner ListSystems200ResponseSystemsInner
 
-// NewListSystems200ResponseSystemsInnerWithDefaults instantiates a new ListSystems200ResponseSystemsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListSystems200ResponseSystemsInnerWithDefaults() *ListSystems200ResponseSystemsInner {
-	this := ListSystems200ResponseSystemsInner{}
-	return &this
-}
-
 func (o ListSystems200ResponseSystemsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

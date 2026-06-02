@@ -46,14 +46,6 @@ type IdentitySourcesADConfig struct {
 
 type _IdentitySourcesADConfig IdentitySourcesADConfig
 
-// NewIdentitySourcesADConfigWithDefaults instantiates a new IdentitySourcesADConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIdentitySourcesADConfigWithDefaults() *IdentitySourcesADConfig {
-	this := IdentitySourcesADConfig{}
-	return &this
-}
-
 func (o IdentitySourcesADConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

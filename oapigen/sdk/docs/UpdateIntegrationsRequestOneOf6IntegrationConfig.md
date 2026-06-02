@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateIntegrationsRequestOneOf6IntegrationConfigWithDefaults
-
-`func NewUpdateIntegrationsRequestOneOf6IntegrationConfigWithDefaults() *UpdateIntegrationsRequestOneOf6IntegrationConfig`
-
-NewUpdateIntegrationsRequestOneOf6IntegrationConfigWithDefaults instantiates a new UpdateIntegrationsRequestOneOf6IntegrationConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetCacheEnabled
 
 `func (o *UpdateIntegrationsRequestOneOf6IntegrationConfig) GetCacheEnabled() bool`

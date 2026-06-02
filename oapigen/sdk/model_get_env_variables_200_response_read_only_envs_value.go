@@ -29,14 +29,6 @@ type GetEnvVariables200ResponseReadOnlyEnvsValue struct {
 
 type _GetEnvVariables200ResponseReadOnlyEnvsValue GetEnvVariables200ResponseReadOnlyEnvsValue
 
-// NewGetEnvVariables200ResponseReadOnlyEnvsValueWithDefaults instantiates a new GetEnvVariables200ResponseReadOnlyEnvsValue object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetEnvVariables200ResponseReadOnlyEnvsValueWithDefaults() *GetEnvVariables200ResponseReadOnlyEnvsValue {
-	this := GetEnvVariables200ResponseReadOnlyEnvsValue{}
-	return &this
-}
-
 func (o GetEnvVariables200ResponseReadOnlyEnvsValue) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

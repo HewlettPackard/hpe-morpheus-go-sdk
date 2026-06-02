@@ -32,14 +32,6 @@ type ControllerType struct {
 
 type _ControllerType ControllerType
 
-// NewControllerTypeWithDefaults instantiates a new ControllerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewControllerTypeWithDefaults() *ControllerType {
-	this := ControllerType{}
-	return &this
-}
-
 func (o ControllerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

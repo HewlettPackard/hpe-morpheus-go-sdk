@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCountsWithDefaults
-
-`func NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCountsWithDefaults() *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts`
-
-NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCountsWithDefaults instantiates a new UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAll
 
 `func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts) GetAll() int64`

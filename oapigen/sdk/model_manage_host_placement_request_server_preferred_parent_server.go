@@ -27,14 +27,6 @@ type ManageHostPlacementRequestServerPreferredParentServer struct {
 
 type _ManageHostPlacementRequestServerPreferredParentServer ManageHostPlacementRequestServerPreferredParentServer
 
-// NewManageHostPlacementRequestServerPreferredParentServerWithDefaults instantiates a new ManageHostPlacementRequestServerPreferredParentServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewManageHostPlacementRequestServerPreferredParentServerWithDefaults() *ManageHostPlacementRequestServerPreferredParentServer {
-	this := ManageHostPlacementRequestServerPreferredParentServer{}
-	return &this
-}
-
 func (o ManageHostPlacementRequestServerPreferredParentServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -65,14 +65,6 @@ type ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInn
 
 type _ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInner ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInner
 
-// NewListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInnerWithDefaults instantiates a new ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInnerWithDefaults() *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInner {
-	this := ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInner{}
-	return &this
-}
-
 func (o ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

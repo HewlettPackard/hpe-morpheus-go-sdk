@@ -29,14 +29,6 @@ type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwor
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork
 
-// NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetworkWithDefaults instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetworkWithDefaults() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork {
-	this := ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork{}
-	return &this
-}
-
 func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

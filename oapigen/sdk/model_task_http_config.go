@@ -41,14 +41,6 @@ type TaskHttpConfig struct {
 
 type _TaskHttpConfig TaskHttpConfig
 
-// NewTaskHttpConfigWithDefaults instantiates a new TaskHttpConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTaskHttpConfigWithDefaults() *TaskHttpConfig {
-	this := TaskHttpConfig{}
-	return &this
-}
-
 func (o TaskHttpConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

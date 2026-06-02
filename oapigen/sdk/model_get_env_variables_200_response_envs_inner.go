@@ -29,14 +29,6 @@ type GetEnvVariables200ResponseEnvsInner struct {
 
 type _GetEnvVariables200ResponseEnvsInner GetEnvVariables200ResponseEnvsInner
 
-// NewGetEnvVariables200ResponseEnvsInnerWithDefaults instantiates a new GetEnvVariables200ResponseEnvsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetEnvVariables200ResponseEnvsInnerWithDefaults() *GetEnvVariables200ResponseEnvsInner {
-	this := GetEnvVariables200ResponseEnvsInner{}
-	return &this
-}
-
 func (o GetEnvVariables200ResponseEnvsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

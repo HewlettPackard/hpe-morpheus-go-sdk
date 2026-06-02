@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewStopInstance200ResponseWithDefaults
-
-`func NewStopInstance200ResponseWithDefaults() *StopInstance200Response`
-
-NewStopInstance200ResponseWithDefaults instantiates a new StopInstance200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetResults
 
 `func (o *StopInstance200Response) GetResults() map[string]interface{}`

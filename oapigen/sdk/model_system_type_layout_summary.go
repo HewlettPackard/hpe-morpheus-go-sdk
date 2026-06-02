@@ -33,14 +33,6 @@ type SystemTypeLayoutSummary struct {
 
 type _SystemTypeLayoutSummary SystemTypeLayoutSummary
 
-// NewSystemTypeLayoutSummaryWithDefaults instantiates a new SystemTypeLayoutSummary object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSystemTypeLayoutSummaryWithDefaults() *SystemTypeLayoutSummary {
-	this := SystemTypeLayoutSummary{}
-	return &this
-}
-
 func (o SystemTypeLayoutSummary) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

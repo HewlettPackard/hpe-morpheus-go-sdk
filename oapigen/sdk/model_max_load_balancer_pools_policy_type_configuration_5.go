@@ -26,14 +26,6 @@ type MaxLoadBalancerPoolsPolicyTypeConfiguration5 struct {
 
 type _MaxLoadBalancerPoolsPolicyTypeConfiguration5 MaxLoadBalancerPoolsPolicyTypeConfiguration5
 
-// NewMaxLoadBalancerPoolsPolicyTypeConfiguration5WithDefaults instantiates a new MaxLoadBalancerPoolsPolicyTypeConfiguration5 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxLoadBalancerPoolsPolicyTypeConfiguration5WithDefaults() *MaxLoadBalancerPoolsPolicyTypeConfiguration5 {
-	this := MaxLoadBalancerPoolsPolicyTypeConfiguration5{}
-	return &this
-}
-
 func (o MaxLoadBalancerPoolsPolicyTypeConfiguration5) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

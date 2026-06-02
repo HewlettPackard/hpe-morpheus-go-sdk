@@ -26,14 +26,6 @@ type UpdateLayout200Response struct {
 
 type _UpdateLayout200Response UpdateLayout200Response
 
-// NewUpdateLayout200ResponseWithDefaults instantiates a new UpdateLayout200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateLayout200ResponseWithDefaults() *UpdateLayout200Response {
-	this := UpdateLayout200Response{}
-	return &this
-}
-
 func (o UpdateLayout200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -30,14 +30,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListClusterContainers200ResponseAllOfContainersInnerStatsWithDefaults
-
-`func NewListClusterContainers200ResponseAllOfContainersInnerStatsWithDefaults() *ListClusterContainers200ResponseAllOfContainersInnerStats`
-
-NewListClusterContainers200ResponseAllOfContainersInnerStatsWithDefaults instantiates a new ListClusterContainers200ResponseAllOfContainersInnerStats object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetTs
 
 `func (o *ListClusterContainers200ResponseAllOfContainersInnerStats) GetTs() time.Time`

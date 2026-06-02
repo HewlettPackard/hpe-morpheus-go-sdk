@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationGitWithDefaults
-
-`func NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationGitWithDefaults() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationGit`
-
-NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationGitWithDefaults instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationGit object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetRepoId
 
 `func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationGit) GetRepoId() int64`

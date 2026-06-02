@@ -29,14 +29,6 @@ type BillingZonesInnerDiscoveredServers struct {
 
 type _BillingZonesInnerDiscoveredServers BillingZonesInnerDiscoveredServers
 
-// NewBillingZonesInnerDiscoveredServersWithDefaults instantiates a new BillingZonesInnerDiscoveredServers object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBillingZonesInnerDiscoveredServersWithDefaults() *BillingZonesInnerDiscoveredServers {
-	this := BillingZonesInnerDiscoveredServers{}
-	return &this
-}
-
 func (o BillingZonesInnerDiscoveredServers) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

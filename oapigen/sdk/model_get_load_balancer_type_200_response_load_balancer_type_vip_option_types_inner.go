@@ -66,14 +66,6 @@ type GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInner struct {
 
 type _GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInner GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInner
 
-// NewGetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerWithDefaults instantiates a new GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInnerWithDefaults() *GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInner {
-	this := GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInner{}
-	return &this
-}
-
 func (o GetLoadBalancerType200ResponseLoadBalancerTypeVipOptionTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

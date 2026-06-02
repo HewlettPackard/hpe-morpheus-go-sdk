@@ -29,14 +29,6 @@ type UpdateNetworkRequestNetworkResourcePermissions struct {
 
 type _UpdateNetworkRequestNetworkResourcePermissions UpdateNetworkRequestNetworkResourcePermissions
 
-// NewUpdateNetworkRequestNetworkResourcePermissionsWithDefaults instantiates a new UpdateNetworkRequestNetworkResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkRequestNetworkResourcePermissionsWithDefaults() *UpdateNetworkRequestNetworkResourcePermissions {
-	this := UpdateNetworkRequestNetworkResourcePermissions{}
-	return &this
-}
-
 func (o UpdateNetworkRequestNetworkResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

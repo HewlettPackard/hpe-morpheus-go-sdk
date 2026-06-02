@@ -27,14 +27,6 @@ type AddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInnerOptionList st
 
 type _AddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInnerOptionList AddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInnerOptionList
 
-// NewAddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInnerOptionListWithDefaults instantiates a new AddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInnerOptionListWithDefaults() *AddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInnerOptionList {
-	this := AddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInnerOptionList{}
-	return &this
-}
-
 func (o AddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

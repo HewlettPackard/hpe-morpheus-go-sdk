@@ -27,14 +27,6 @@ type GetInstanceActions200ResponseActionsInner struct {
 
 type _GetInstanceActions200ResponseActionsInner GetInstanceActions200ResponseActionsInner
 
-// NewGetInstanceActions200ResponseActionsInnerWithDefaults instantiates a new GetInstanceActions200ResponseActionsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstanceActions200ResponseActionsInnerWithDefaults() *GetInstanceActions200ResponseActionsInner {
-	this := GetInstanceActions200ResponseActionsInner{}
-	return &this
-}
-
 func (o GetInstanceActions200ResponseActionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

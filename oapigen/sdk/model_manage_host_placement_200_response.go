@@ -26,14 +26,6 @@ type ManageHostPlacement200Response struct {
 
 type _ManageHostPlacement200Response ManageHostPlacement200Response
 
-// NewManageHostPlacement200ResponseWithDefaults instantiates a new ManageHostPlacement200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewManageHostPlacement200ResponseWithDefaults() *ManageHostPlacement200Response {
-	this := ManageHostPlacement200Response{}
-	return &this
-}
-
 func (o ManageHostPlacement200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -29,14 +29,6 @@ type ResourceData struct {
 
 type _ResourceData ResourceData
 
-// NewResourceDataWithDefaults instantiates a new ResourceData object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewResourceDataWithDefaults() *ResourceData {
-	this := ResourceData{}
-	return &this
-}
-
 func (o ResourceData) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

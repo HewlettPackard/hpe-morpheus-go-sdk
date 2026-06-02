@@ -27,14 +27,6 @@ type ClusterTypesOptionTypesInnerOptionList struct {
 
 type _ClusterTypesOptionTypesInnerOptionList ClusterTypesOptionTypesInnerOptionList
 
-// NewClusterTypesOptionTypesInnerOptionListWithDefaults instantiates a new ClusterTypesOptionTypesInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterTypesOptionTypesInnerOptionListWithDefaults() *ClusterTypesOptionTypesInnerOptionList {
-	this := ClusterTypesOptionTypesInnerOptionList{}
-	return &this
-}
-
 func (o ClusterTypesOptionTypesInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

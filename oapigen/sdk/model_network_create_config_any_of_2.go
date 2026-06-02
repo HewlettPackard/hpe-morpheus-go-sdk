@@ -29,18 +29,6 @@ type NetworkCreateConfigAnyOf2 struct {
 
 type _NetworkCreateConfigAnyOf2 NetworkCreateConfigAnyOf2
 
-// NewNetworkCreateConfigAnyOf2WithDefaults instantiates a new NetworkCreateConfigAnyOf2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkCreateConfigAnyOf2WithDefaults() *NetworkCreateConfigAnyOf2 {
-	this := NetworkCreateConfigAnyOf2{}
-	var mtu string = "1460"
-	this.Mtu = mtu
-	var autoCreate bool = true
-	this.AutoCreate = autoCreate
-	return &this
-}
-
 func (o NetworkCreateConfigAnyOf2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

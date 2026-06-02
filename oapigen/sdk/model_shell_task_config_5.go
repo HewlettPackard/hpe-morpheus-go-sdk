@@ -33,14 +33,6 @@ type ShellTaskConfig5 struct {
 
 type _ShellTaskConfig5 ShellTaskConfig5
 
-// NewShellTaskConfig5WithDefaults instantiates a new ShellTaskConfig5 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewShellTaskConfig5WithDefaults() *ShellTaskConfig5 {
-	this := ShellTaskConfig5{}
-	return &this
-}
-
 func (o ShellTaskConfig5) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type AddIntegrationsRequestOneOf5 struct {
 
 type _AddIntegrationsRequestOneOf5 AddIntegrationsRequestOneOf5
 
-// NewAddIntegrationsRequestOneOf5WithDefaults instantiates a new AddIntegrationsRequestOneOf5 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIntegrationsRequestOneOf5WithDefaults() *AddIntegrationsRequestOneOf5 {
-	this := AddIntegrationsRequestOneOf5{}
-	return &this
-}
-
 func (o AddIntegrationsRequestOneOf5) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

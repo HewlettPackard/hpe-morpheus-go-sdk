@@ -61,14 +61,6 @@ type ListLoadBalancers200ResponseAllOfLoadBalancersInner struct {
 
 type _ListLoadBalancers200ResponseAllOfLoadBalancersInner ListLoadBalancers200ResponseAllOfLoadBalancersInner
 
-// NewListLoadBalancers200ResponseAllOfLoadBalancersInnerWithDefaults instantiates a new ListLoadBalancers200ResponseAllOfLoadBalancersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListLoadBalancers200ResponseAllOfLoadBalancersInnerWithDefaults() *ListLoadBalancers200ResponseAllOfLoadBalancersInner {
-	this := ListLoadBalancers200ResponseAllOfLoadBalancersInner{}
-	return &this
-}
-
 func (o ListLoadBalancers200ResponseAllOfLoadBalancersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

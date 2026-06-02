@@ -27,14 +27,6 @@ type AddMigrationRequestMigrationNetworksInnerDestinationNetwork struct {
 
 type _AddMigrationRequestMigrationNetworksInnerDestinationNetwork AddMigrationRequestMigrationNetworksInnerDestinationNetwork
 
-// NewAddMigrationRequestMigrationNetworksInnerDestinationNetworkWithDefaults instantiates a new AddMigrationRequestMigrationNetworksInnerDestinationNetwork object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddMigrationRequestMigrationNetworksInnerDestinationNetworkWithDefaults() *AddMigrationRequestMigrationNetworksInnerDestinationNetwork {
-	this := AddMigrationRequestMigrationNetworksInnerDestinationNetwork{}
-	return &this
-}
-
 func (o AddMigrationRequestMigrationNetworksInnerDestinationNetwork) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -31,14 +31,6 @@ type GetSystem200ResponseSystemComponentsInner struct {
 
 type _GetSystem200ResponseSystemComponentsInner GetSystem200ResponseSystemComponentsInner
 
-// NewGetSystem200ResponseSystemComponentsInnerWithDefaults instantiates a new GetSystem200ResponseSystemComponentsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSystem200ResponseSystemComponentsInnerWithDefaults() *GetSystem200ResponseSystemComponentsInner {
-	this := GetSystem200ResponseSystemComponentsInner{}
-	return &this
-}
-
 func (o GetSystem200ResponseSystemComponentsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

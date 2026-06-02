@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateServicePlans200ResponseAllOfServicePlanConfigWithDefaults
-
-`func NewUpdateServicePlans200ResponseAllOfServicePlanConfigWithDefaults() *UpdateServicePlans200ResponseAllOfServicePlanConfig`
-
-NewUpdateServicePlans200ResponseAllOfServicePlanConfigWithDefaults instantiates a new UpdateServicePlans200ResponseAllOfServicePlanConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetStorageSizeType
 
 `func (o *UpdateServicePlans200ResponseAllOfServicePlanConfig) GetStorageSizeType() string`

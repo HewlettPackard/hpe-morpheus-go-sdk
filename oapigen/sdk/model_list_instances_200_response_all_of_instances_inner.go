@@ -108,14 +108,6 @@ type ListInstances200ResponseAllOfInstancesInner struct {
 
 type _ListInstances200ResponseAllOfInstancesInner ListInstances200ResponseAllOfInstancesInner
 
-// NewListInstances200ResponseAllOfInstancesInnerWithDefaults instantiates a new ListInstances200ResponseAllOfInstancesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListInstances200ResponseAllOfInstancesInnerWithDefaults() *ListInstances200ResponseAllOfInstancesInner {
-	this := ListInstances200ResponseAllOfInstancesInner{}
-	return &this
-}
-
 func (o ListInstances200ResponseAllOfInstancesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

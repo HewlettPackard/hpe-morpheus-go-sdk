@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListHealth200ResponseAllOfHealthElasticMasterWithDefaults
-
-`func NewListHealth200ResponseAllOfHealthElasticMasterWithDefaults() *ListHealth200ResponseAllOfHealthElasticMaster`
-
-NewListHealth200ResponseAllOfHealthElasticMasterWithDefaults instantiates a new ListHealth200ResponseAllOfHealthElasticMaster object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListHealth200ResponseAllOfHealthElasticMaster) GetId() string`

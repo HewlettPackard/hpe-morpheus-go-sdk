@@ -26,14 +26,6 @@ type ListDatastores200ResponseAllOfDatastoresInnerStorageServer struct {
 
 type _ListDatastores200ResponseAllOfDatastoresInnerStorageServer ListDatastores200ResponseAllOfDatastoresInnerStorageServer
 
-// NewListDatastores200ResponseAllOfDatastoresInnerStorageServerWithDefaults instantiates a new ListDatastores200ResponseAllOfDatastoresInnerStorageServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListDatastores200ResponseAllOfDatastoresInnerStorageServerWithDefaults() *ListDatastores200ResponseAllOfDatastoresInnerStorageServer {
-	this := ListDatastores200ResponseAllOfDatastoresInnerStorageServer{}
-	return &this
-}
-
 func (o ListDatastores200ResponseAllOfDatastoresInnerStorageServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

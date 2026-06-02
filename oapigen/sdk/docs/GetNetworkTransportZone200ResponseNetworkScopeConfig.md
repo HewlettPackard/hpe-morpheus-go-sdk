@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNetworkTransportZone200ResponseNetworkScopeConfigWithDefaults
-
-`func NewGetNetworkTransportZone200ResponseNetworkScopeConfigWithDefaults() *GetNetworkTransportZone200ResponseNetworkScopeConfig`
-
-NewGetNetworkTransportZone200ResponseNetworkScopeConfigWithDefaults instantiates a new GetNetworkTransportZone200ResponseNetworkScopeConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetNvdsName
 
 `func (o *GetNetworkTransportZone200ResponseNetworkScopeConfig) GetNvdsName() string`

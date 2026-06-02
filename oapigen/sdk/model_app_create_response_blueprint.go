@@ -28,14 +28,6 @@ type AppCreateResponseBlueprint struct {
 
 type _AppCreateResponseBlueprint AppCreateResponseBlueprint
 
-// NewAppCreateResponseBlueprintWithDefaults instantiates a new AppCreateResponseBlueprint object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppCreateResponseBlueprintWithDefaults() *AppCreateResponseBlueprint {
-	this := AppCreateResponseBlueprint{}
-	return &this
-}
-
 func (o AppCreateResponseBlueprint) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

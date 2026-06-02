@@ -27,14 +27,6 @@ type GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner struct {
 
 type _GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner
 
-// NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInnerWithDefaults instantiates a new GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInnerWithDefaults() *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner {
-	this := GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner{}
-	return &this
-}
-
 func (o GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

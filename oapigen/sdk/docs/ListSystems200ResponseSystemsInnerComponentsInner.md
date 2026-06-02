@@ -22,14 +22,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListSystems200ResponseSystemsInnerComponentsInnerWithDefaults
-
-`func NewListSystems200ResponseSystemsInnerComponentsInnerWithDefaults() *ListSystems200ResponseSystemsInnerComponentsInner`
-
-NewListSystems200ResponseSystemsInnerComponentsInnerWithDefaults instantiates a new ListSystems200ResponseSystemsInnerComponentsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListSystems200ResponseSystemsInnerComponentsInner) GetId() int64`

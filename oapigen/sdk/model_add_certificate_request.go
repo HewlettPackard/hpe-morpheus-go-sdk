@@ -26,14 +26,6 @@ type AddCertificateRequest struct {
 
 type _AddCertificateRequest AddCertificateRequest
 
-// NewAddCertificateRequestWithDefaults instantiates a new AddCertificateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCertificateRequestWithDefaults() *AddCertificateRequest {
-	this := AddCertificateRequest{}
-	return &this
-}
-
 func (o AddCertificateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

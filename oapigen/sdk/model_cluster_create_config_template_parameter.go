@@ -39,14 +39,6 @@ type ClusterCreateConfigTemplateParameter struct {
 
 type _ClusterCreateConfigTemplateParameter ClusterCreateConfigTemplateParameter
 
-// NewClusterCreateConfigTemplateParameterWithDefaults instantiates a new ClusterCreateConfigTemplateParameter object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterCreateConfigTemplateParameterWithDefaults() *ClusterCreateConfigTemplateParameter {
-	this := ClusterCreateConfigTemplateParameter{}
-	return &this
-}
-
 func (o ClusterCreateConfigTemplateParameter) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

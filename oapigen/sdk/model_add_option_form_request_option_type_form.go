@@ -36,14 +36,6 @@ type AddOptionFormRequestOptionTypeForm struct {
 
 type _AddOptionFormRequestOptionTypeForm AddOptionFormRequestOptionTypeForm
 
-// NewAddOptionFormRequestOptionTypeFormWithDefaults instantiates a new AddOptionFormRequestOptionTypeForm object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddOptionFormRequestOptionTypeFormWithDefaults() *AddOptionFormRequestOptionTypeForm {
-	this := AddOptionFormRequestOptionTypeForm{}
-	return &this
-}
-
 func (o AddOptionFormRequestOptionTypeForm) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

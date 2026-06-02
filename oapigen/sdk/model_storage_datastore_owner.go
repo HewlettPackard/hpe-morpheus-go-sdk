@@ -26,14 +26,6 @@ type StorageDatastoreOwner struct {
 
 type _StorageDatastoreOwner StorageDatastoreOwner
 
-// NewStorageDatastoreOwnerWithDefaults instantiates a new StorageDatastoreOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewStorageDatastoreOwnerWithDefaults() *StorageDatastoreOwner {
-	this := StorageDatastoreOwner{}
-	return &this
-}
-
 func (o StorageDatastoreOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

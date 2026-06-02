@@ -29,14 +29,6 @@ type DefaultVDIPoolPermission struct {
 
 type _DefaultVDIPoolPermission DefaultVDIPoolPermission
 
-// NewDefaultVDIPoolPermissionWithDefaults instantiates a new DefaultVDIPoolPermission object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDefaultVDIPoolPermissionWithDefaults() *DefaultVDIPoolPermission {
-	this := DefaultVDIPoolPermission{}
-	return &this
-}
-
 func (o DefaultVDIPoolPermission) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -29,14 +29,6 @@ type Search200Response struct {
 
 type _Search200Response Search200Response
 
-// NewSearch200ResponseWithDefaults instantiates a new Search200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSearch200ResponseWithDefaults() *Search200Response {
-	this := Search200Response{}
-	return &this
-}
-
 func (o Search200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -35,14 +35,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPostgresCheck1AllOfConfigWithDefaults
-
-`func NewPostgresCheck1AllOfConfigWithDefaults() *PostgresCheck1AllOfConfig`
-
-NewPostgresCheck1AllOfConfigWithDefaults instantiates a new PostgresCheck1AllOfConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetDbHost
 
 `func (o *PostgresCheck1AllOfConfig) GetDbHost() string`

@@ -51,22 +51,6 @@ type NetworkPoolServerCreateInfoblox struct {
 
 type _NetworkPoolServerCreateInfoblox NetworkPoolServerCreateInfoblox
 
-// NewNetworkPoolServerCreateInfobloxWithDefaults instantiates a new NetworkPoolServerCreateInfoblox object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkPoolServerCreateInfobloxWithDefaults() *NetworkPoolServerCreateInfoblox {
-	this := NetworkPoolServerCreateInfoblox{}
-	var enabled bool = true
-	this.Enabled = &enabled
-	var serviceThrottleRate int64 = 0
-	this.ServiceThrottleRate = *NewNullableInt64(&serviceThrottleRate)
-	var ignoreSsl bool = true
-	this.IgnoreSsl = &ignoreSsl
-	var serviceMode string = "static"
-	this.ServiceMode = &serviceMode
-	return &this
-}
-
 func (o NetworkPoolServerCreateInfoblox) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

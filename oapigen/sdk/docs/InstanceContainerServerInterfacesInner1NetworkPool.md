@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInstanceContainerServerInterfacesInner1NetworkPoolWithDefaults
-
-`func NewInstanceContainerServerInterfacesInner1NetworkPoolWithDefaults() *InstanceContainerServerInterfacesInner1NetworkPool`
-
-NewInstanceContainerServerInterfacesInner1NetworkPoolWithDefaults instantiates a new InstanceContainerServerInterfacesInner1NetworkPool object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *InstanceContainerServerInterfacesInner1NetworkPool) GetId() int64`

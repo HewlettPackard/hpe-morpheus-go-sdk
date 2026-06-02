@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRouterQuotaPolicyTypeConfiguration13WithDefaults
-
-`func NewRouterQuotaPolicyTypeConfiguration13WithDefaults() *RouterQuotaPolicyTypeConfiguration13`
-
-NewRouterQuotaPolicyTypeConfiguration13WithDefaults instantiates a new RouterQuotaPolicyTypeConfiguration13 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMaxRouters
 
 `func (o *RouterQuotaPolicyTypeConfiguration13) GetMaxRouters() string`

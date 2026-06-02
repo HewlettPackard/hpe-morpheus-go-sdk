@@ -27,14 +27,6 @@ type UpdateLayoutRequestInstanceTypeLayoutPriceSetsInner struct {
 
 type _UpdateLayoutRequestInstanceTypeLayoutPriceSetsInner UpdateLayoutRequestInstanceTypeLayoutPriceSetsInner
 
-// NewUpdateLayoutRequestInstanceTypeLayoutPriceSetsInnerWithDefaults instantiates a new UpdateLayoutRequestInstanceTypeLayoutPriceSetsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateLayoutRequestInstanceTypeLayoutPriceSetsInnerWithDefaults() *UpdateLayoutRequestInstanceTypeLayoutPriceSetsInner {
-	this := UpdateLayoutRequestInstanceTypeLayoutPriceSetsInner{}
-	return &this
-}
-
 func (o UpdateLayoutRequestInstanceTypeLayoutPriceSetsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

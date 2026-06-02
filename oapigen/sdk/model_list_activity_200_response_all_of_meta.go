@@ -33,22 +33,6 @@ type ListActivity200ResponseAllOfMeta struct {
 
 type _ListActivity200ResponseAllOfMeta ListActivity200ResponseAllOfMeta
 
-// NewListActivity200ResponseAllOfMetaWithDefaults instantiates a new ListActivity200ResponseAllOfMeta object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListActivity200ResponseAllOfMetaWithDefaults() *ListActivity200ResponseAllOfMeta {
-	this := ListActivity200ResponseAllOfMeta{}
-	var offset int64 = 0
-	this.Offset = &offset
-	var max int64 = 25
-	this.Max = &max
-	var size int64 = 0
-	this.Size = &size
-	var total int64 = 0
-	this.Total = &total
-	return &this
-}
-
 func (o ListActivity200ResponseAllOfMeta) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

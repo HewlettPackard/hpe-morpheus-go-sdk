@@ -33,14 +33,6 @@ type UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission struct 
 
 type _UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission
 
-// NewUpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionWithDefaults instantiates a new UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionWithDefaults() *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission {
-	this := UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission{}
-	return &this
-}
-
 func (o UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

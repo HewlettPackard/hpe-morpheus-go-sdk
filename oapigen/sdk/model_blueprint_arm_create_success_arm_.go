@@ -36,14 +36,6 @@ type BlueprintARMCreateSuccessArm struct {
 
 type _BlueprintARMCreateSuccessArm BlueprintARMCreateSuccessArm
 
-// NewBlueprintARMCreateSuccessArmWithDefaults instantiates a new BlueprintARMCreateSuccessArm object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintARMCreateSuccessArmWithDefaults() *BlueprintARMCreateSuccessArm {
-	this := BlueprintARMCreateSuccessArm{}
-	return &this
-}
-
 func (o BlueprintARMCreateSuccessArm) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

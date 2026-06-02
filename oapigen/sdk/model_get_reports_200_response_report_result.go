@@ -38,14 +38,6 @@ type GetReports200ResponseReportResult struct {
 
 type _GetReports200ResponseReportResult GetReports200ResponseReportResult
 
-// NewGetReports200ResponseReportResultWithDefaults instantiates a new GetReports200ResponseReportResult object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetReports200ResponseReportResultWithDefaults() *GetReports200ResponseReportResult {
-	this := GetReports200ResponseReportResult{}
-	return &this
-}
-
 func (o GetReports200ResponseReportResult) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

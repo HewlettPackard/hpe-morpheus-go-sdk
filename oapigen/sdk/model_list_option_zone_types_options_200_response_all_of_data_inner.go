@@ -29,14 +29,6 @@ type ListOptionZoneTypesOptions200ResponseAllOfDataInner struct {
 
 type _ListOptionZoneTypesOptions200ResponseAllOfDataInner ListOptionZoneTypesOptions200ResponseAllOfDataInner
 
-// NewListOptionZoneTypesOptions200ResponseAllOfDataInnerWithDefaults instantiates a new ListOptionZoneTypesOptions200ResponseAllOfDataInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListOptionZoneTypesOptions200ResponseAllOfDataInnerWithDefaults() *ListOptionZoneTypesOptions200ResponseAllOfDataInner {
-	this := ListOptionZoneTypesOptions200ResponseAllOfDataInner{}
-	return &this
-}
-
 func (o ListOptionZoneTypesOptions200ResponseAllOfDataInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

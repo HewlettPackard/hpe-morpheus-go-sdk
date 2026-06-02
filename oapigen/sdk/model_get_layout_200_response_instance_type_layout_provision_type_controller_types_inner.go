@@ -32,14 +32,6 @@ type GetLayout200ResponseInstanceTypeLayoutProvisionTypeControllerTypesInner str
 
 type _GetLayout200ResponseInstanceTypeLayoutProvisionTypeControllerTypesInner GetLayout200ResponseInstanceTypeLayoutProvisionTypeControllerTypesInner
 
-// NewGetLayout200ResponseInstanceTypeLayoutProvisionTypeControllerTypesInnerWithDefaults instantiates a new GetLayout200ResponseInstanceTypeLayoutProvisionTypeControllerTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetLayout200ResponseInstanceTypeLayoutProvisionTypeControllerTypesInnerWithDefaults() *GetLayout200ResponseInstanceTypeLayoutProvisionTypeControllerTypesInner {
-	this := GetLayout200ResponseInstanceTypeLayoutProvisionTypeControllerTypesInner{}
-	return &this
-}
-
 func (o GetLayout200ResponseInstanceTypeLayoutProvisionTypeControllerTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

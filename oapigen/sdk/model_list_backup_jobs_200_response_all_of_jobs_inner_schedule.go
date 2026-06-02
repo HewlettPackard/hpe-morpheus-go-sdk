@@ -31,14 +31,6 @@ type ListBackupJobs200ResponseAllOfJobsInnerSchedule struct {
 
 type _ListBackupJobs200ResponseAllOfJobsInnerSchedule ListBackupJobs200ResponseAllOfJobsInnerSchedule
 
-// NewListBackupJobs200ResponseAllOfJobsInnerScheduleWithDefaults instantiates a new ListBackupJobs200ResponseAllOfJobsInnerSchedule object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListBackupJobs200ResponseAllOfJobsInnerScheduleWithDefaults() *ListBackupJobs200ResponseAllOfJobsInnerSchedule {
-	this := ListBackupJobs200ResponseAllOfJobsInnerSchedule{}
-	return &this
-}
-
 func (o ListBackupJobs200ResponseAllOfJobsInnerSchedule) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

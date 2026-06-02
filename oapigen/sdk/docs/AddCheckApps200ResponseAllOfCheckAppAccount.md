@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddCheckApps200ResponseAllOfCheckAppAccountWithDefaults
-
-`func NewAddCheckApps200ResponseAllOfCheckAppAccountWithDefaults() *AddCheckApps200ResponseAllOfCheckAppAccount`
-
-NewAddCheckApps200ResponseAllOfCheckAppAccountWithDefaults instantiates a new AddCheckApps200ResponseAllOfCheckAppAccount object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddCheckApps200ResponseAllOfCheckAppAccount) GetId() int64`

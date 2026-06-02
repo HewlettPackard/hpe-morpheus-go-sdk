@@ -27,16 +27,6 @@ type NetworkPoolServerCreateBluecatConfig struct {
 
 type _NetworkPoolServerCreateBluecatConfig NetworkPoolServerCreateBluecatConfig
 
-// NewNetworkPoolServerCreateBluecatConfigWithDefaults instantiates a new NetworkPoolServerCreateBluecatConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkPoolServerCreateBluecatConfigWithDefaults() *NetworkPoolServerCreateBluecatConfig {
-	this := NetworkPoolServerCreateBluecatConfig{}
-	var inventoryExisting string = "off"
-	this.InventoryExisting = &inventoryExisting
-	return &this
-}
-
 func (o NetworkPoolServerCreateBluecatConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

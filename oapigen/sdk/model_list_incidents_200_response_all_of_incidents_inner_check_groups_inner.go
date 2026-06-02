@@ -27,14 +27,6 @@ type ListIncidents200ResponseAllOfIncidentsInnerCheckGroupsInner struct {
 
 type _ListIncidents200ResponseAllOfIncidentsInnerCheckGroupsInner ListIncidents200ResponseAllOfIncidentsInnerCheckGroupsInner
 
-// NewListIncidents200ResponseAllOfIncidentsInnerCheckGroupsInnerWithDefaults instantiates a new ListIncidents200ResponseAllOfIncidentsInnerCheckGroupsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListIncidents200ResponseAllOfIncidentsInnerCheckGroupsInnerWithDefaults() *ListIncidents200ResponseAllOfIncidentsInnerCheckGroupsInner {
-	this := ListIncidents200ResponseAllOfIncidentsInnerCheckGroupsInner{}
-	return &this
-}
-
 func (o ListIncidents200ResponseAllOfIncidentsInnerCheckGroupsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

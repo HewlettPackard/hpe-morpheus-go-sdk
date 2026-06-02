@@ -34,14 +34,6 @@ type WriteAttributesTaskConfig struct {
 
 type _WriteAttributesTaskConfig WriteAttributesTaskConfig
 
-// NewWriteAttributesTaskConfigWithDefaults instantiates a new WriteAttributesTaskConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWriteAttributesTaskConfigWithDefaults() *WriteAttributesTaskConfig {
-	this := WriteAttributesTaskConfig{}
-	return &this
-}
-
 func (o WriteAttributesTaskConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

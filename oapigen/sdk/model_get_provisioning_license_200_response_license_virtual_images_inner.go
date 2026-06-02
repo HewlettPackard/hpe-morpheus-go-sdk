@@ -27,14 +27,6 @@ type GetProvisioningLicense200ResponseLicenseVirtualImagesInner struct {
 
 type _GetProvisioningLicense200ResponseLicenseVirtualImagesInner GetProvisioningLicense200ResponseLicenseVirtualImagesInner
 
-// NewGetProvisioningLicense200ResponseLicenseVirtualImagesInnerWithDefaults instantiates a new GetProvisioningLicense200ResponseLicenseVirtualImagesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetProvisioningLicense200ResponseLicenseVirtualImagesInnerWithDefaults() *GetProvisioningLicense200ResponseLicenseVirtualImagesInner {
-	this := GetProvisioningLicense200ResponseLicenseVirtualImagesInner{}
-	return &this
-}
-
 func (o GetProvisioningLicense200ResponseLicenseVirtualImagesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

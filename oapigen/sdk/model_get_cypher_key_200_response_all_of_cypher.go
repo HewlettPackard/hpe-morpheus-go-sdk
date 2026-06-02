@@ -34,14 +34,6 @@ type GetCypherKey200ResponseAllOfCypher struct {
 
 type _GetCypherKey200ResponseAllOfCypher GetCypherKey200ResponseAllOfCypher
 
-// NewGetCypherKey200ResponseAllOfCypherWithDefaults instantiates a new GetCypherKey200ResponseAllOfCypher object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCypherKey200ResponseAllOfCypherWithDefaults() *GetCypherKey200ResponseAllOfCypher {
-	this := GetCypherKey200ResponseAllOfCypher{}
-	return &this
-}
-
 func (o GetCypherKey200ResponseAllOfCypher) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

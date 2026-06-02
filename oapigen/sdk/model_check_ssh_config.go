@@ -35,16 +35,6 @@ type CheckSshConfig struct {
 
 type _CheckSshConfig CheckSshConfig
 
-// NewCheckSshConfigWithDefaults instantiates a new CheckSshConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCheckSshConfigWithDefaults() *CheckSshConfig {
-	this := CheckSshConfig{}
-	var tunnelOn string = "off"
-	this.TunnelOn = &tunnelOn
-	return &this
-}
-
 func (o CheckSshConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

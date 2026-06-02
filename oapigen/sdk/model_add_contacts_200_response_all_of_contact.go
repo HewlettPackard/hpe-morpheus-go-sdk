@@ -30,14 +30,6 @@ type AddContacts200ResponseAllOfContact struct {
 
 type _AddContacts200ResponseAllOfContact AddContacts200ResponseAllOfContact
 
-// NewAddContacts200ResponseAllOfContactWithDefaults instantiates a new AddContacts200ResponseAllOfContact object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddContacts200ResponseAllOfContactWithDefaults() *AddContacts200ResponseAllOfContact {
-	this := AddContacts200ResponseAllOfContact{}
-	return &this
-}
-
 func (o AddContacts200ResponseAllOfContact) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

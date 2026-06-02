@@ -42,14 +42,6 @@ type IntegrationPowerDNS struct {
 
 type _IntegrationPowerDNS IntegrationPowerDNS
 
-// NewIntegrationPowerDNSWithDefaults instantiates a new IntegrationPowerDNS object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationPowerDNSWithDefaults() *IntegrationPowerDNS {
-	this := IntegrationPowerDNS{}
-	return &this
-}
-
 func (o IntegrationPowerDNS) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

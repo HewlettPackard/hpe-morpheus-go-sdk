@@ -29,14 +29,6 @@ type AddMigrationRequestMigrationLinuxKeyPair struct {
 
 type _AddMigrationRequestMigrationLinuxKeyPair AddMigrationRequestMigrationLinuxKeyPair
 
-// NewAddMigrationRequestMigrationLinuxKeyPairWithDefaults instantiates a new AddMigrationRequestMigrationLinuxKeyPair object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddMigrationRequestMigrationLinuxKeyPairWithDefaults() *AddMigrationRequestMigrationLinuxKeyPair {
-	this := AddMigrationRequestMigrationLinuxKeyPair{}
-	return &this
-}
-
 func (o AddMigrationRequestMigrationLinuxKeyPair) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

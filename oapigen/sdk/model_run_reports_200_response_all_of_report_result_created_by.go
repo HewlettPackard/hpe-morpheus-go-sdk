@@ -27,14 +27,6 @@ type RunReports200ResponseAllOfReportResultCreatedBy struct {
 
 type _RunReports200ResponseAllOfReportResultCreatedBy RunReports200ResponseAllOfReportResultCreatedBy
 
-// NewRunReports200ResponseAllOfReportResultCreatedByWithDefaults instantiates a new RunReports200ResponseAllOfReportResultCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRunReports200ResponseAllOfReportResultCreatedByWithDefaults() *RunReports200ResponseAllOfReportResultCreatedBy {
-	this := RunReports200ResponseAllOfReportResultCreatedBy{}
-	return &this
-}
-
 func (o RunReports200ResponseAllOfReportResultCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

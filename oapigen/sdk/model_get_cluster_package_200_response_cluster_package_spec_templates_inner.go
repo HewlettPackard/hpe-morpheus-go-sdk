@@ -28,14 +28,6 @@ type GetClusterPackage200ResponseClusterPackageSpecTemplatesInner struct {
 
 type _GetClusterPackage200ResponseClusterPackageSpecTemplatesInner GetClusterPackage200ResponseClusterPackageSpecTemplatesInner
 
-// NewGetClusterPackage200ResponseClusterPackageSpecTemplatesInnerWithDefaults instantiates a new GetClusterPackage200ResponseClusterPackageSpecTemplatesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterPackage200ResponseClusterPackageSpecTemplatesInnerWithDefaults() *GetClusterPackage200ResponseClusterPackageSpecTemplatesInner {
-	this := GetClusterPackage200ResponseClusterPackageSpecTemplatesInner{}
-	return &this
-}
-
 func (o GetClusterPackage200ResponseClusterPackageSpecTemplatesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -31,14 +31,6 @@ type UpdateStorageBucketsRequestStorageBucketConfigOneOf6 struct {
 
 type _UpdateStorageBucketsRequestStorageBucketConfigOneOf6 UpdateStorageBucketsRequestStorageBucketConfigOneOf6
 
-// NewUpdateStorageBucketsRequestStorageBucketConfigOneOf6WithDefaults instantiates a new UpdateStorageBucketsRequestStorageBucketConfigOneOf6 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateStorageBucketsRequestStorageBucketConfigOneOf6WithDefaults() *UpdateStorageBucketsRequestStorageBucketConfigOneOf6 {
-	this := UpdateStorageBucketsRequestStorageBucketConfigOneOf6{}
-	return &this
-}
-
 func (o UpdateStorageBucketsRequestStorageBucketConfigOneOf6) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

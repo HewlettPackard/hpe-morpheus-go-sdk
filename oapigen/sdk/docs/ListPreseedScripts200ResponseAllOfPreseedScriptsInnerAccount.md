@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListPreseedScripts200ResponseAllOfPreseedScriptsInnerAccountWithDefaults
-
-`func NewListPreseedScripts200ResponseAllOfPreseedScriptsInnerAccountWithDefaults() *ListPreseedScripts200ResponseAllOfPreseedScriptsInnerAccount`
-
-NewListPreseedScripts200ResponseAllOfPreseedScriptsInnerAccountWithDefaults instantiates a new ListPreseedScripts200ResponseAllOfPreseedScriptsInnerAccount object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInnerAccount) GetId() int64`

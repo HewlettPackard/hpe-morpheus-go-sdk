@@ -27,14 +27,6 @@ type ProvisioningSettingsUpdateCloudInitKeyPair struct {
 
 type _ProvisioningSettingsUpdateCloudInitKeyPair ProvisioningSettingsUpdateCloudInitKeyPair
 
-// NewProvisioningSettingsUpdateCloudInitKeyPairWithDefaults instantiates a new ProvisioningSettingsUpdateCloudInitKeyPair object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewProvisioningSettingsUpdateCloudInitKeyPairWithDefaults() *ProvisioningSettingsUpdateCloudInitKeyPair {
-	this := ProvisioningSettingsUpdateCloudInitKeyPair{}
-	return &this
-}
-
 func (o ProvisioningSettingsUpdateCloudInitKeyPair) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

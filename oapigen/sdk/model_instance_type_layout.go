@@ -49,14 +49,6 @@ type InstanceTypeLayout struct {
 
 type _InstanceTypeLayout InstanceTypeLayout
 
-// NewInstanceTypeLayoutWithDefaults instantiates a new InstanceTypeLayout object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceTypeLayoutWithDefaults() *InstanceTypeLayout {
-	this := InstanceTypeLayout{}
-	return &this
-}
-
 func (o InstanceTypeLayout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

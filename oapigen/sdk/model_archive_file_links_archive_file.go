@@ -28,14 +28,6 @@ type ArchiveFileLinksArchiveFile struct {
 
 type _ArchiveFileLinksArchiveFile ArchiveFileLinksArchiveFile
 
-// NewArchiveFileLinksArchiveFileWithDefaults instantiates a new ArchiveFileLinksArchiveFile object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewArchiveFileLinksArchiveFileWithDefaults() *ArchiveFileLinksArchiveFile {
-	this := ArchiveFileLinksArchiveFile{}
-	return &this
-}
-
 func (o ArchiveFileLinksArchiveFile) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

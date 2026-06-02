@@ -33,14 +33,6 @@ type GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInner struct {
 
 type _GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInner GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInner
 
-// NewGetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInnerWithDefaults instantiates a new GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInnerWithDefaults() *GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInner {
-	this := GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInner{}
-	return &this
-}
-
 func (o GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

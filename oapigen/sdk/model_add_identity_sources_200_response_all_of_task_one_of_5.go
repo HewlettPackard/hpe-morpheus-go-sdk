@@ -46,14 +46,6 @@ type AddIdentitySources200ResponseAllOfTaskOneOf5 struct {
 
 type _AddIdentitySources200ResponseAllOfTaskOneOf5 AddIdentitySources200ResponseAllOfTaskOneOf5
 
-// NewAddIdentitySources200ResponseAllOfTaskOneOf5WithDefaults instantiates a new AddIdentitySources200ResponseAllOfTaskOneOf5 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIdentitySources200ResponseAllOfTaskOneOf5WithDefaults() *AddIdentitySources200ResponseAllOfTaskOneOf5 {
-	this := AddIdentitySources200ResponseAllOfTaskOneOf5{}
-	return &this
-}
-
 func (o AddIdentitySources200ResponseAllOfTaskOneOf5) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

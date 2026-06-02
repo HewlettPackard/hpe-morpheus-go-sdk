@@ -51,14 +51,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetCheckApps200ResponseChecksInnerConfigWithDefaults
-
-`func NewGetCheckApps200ResponseChecksInnerConfigWithDefaults() *GetCheckApps200ResponseChecksInnerConfig`
-
-NewGetCheckApps200ResponseChecksInnerConfigWithDefaults instantiates a new GetCheckApps200ResponseChecksInnerConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetWebMethod
 
 `func (o *GetCheckApps200ResponseChecksInnerConfig) GetWebMethod() string`

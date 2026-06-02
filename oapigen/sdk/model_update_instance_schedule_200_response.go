@@ -27,14 +27,6 @@ type UpdateInstanceSchedule200Response struct {
 
 type _UpdateInstanceSchedule200Response UpdateInstanceSchedule200Response
 
-// NewUpdateInstanceSchedule200ResponseWithDefaults instantiates a new UpdateInstanceSchedule200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstanceSchedule200ResponseWithDefaults() *UpdateInstanceSchedule200Response {
-	this := UpdateInstanceSchedule200Response{}
-	return &this
-}
-
 func (o UpdateInstanceSchedule200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

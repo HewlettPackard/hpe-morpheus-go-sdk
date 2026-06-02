@@ -26,14 +26,6 @@ type AddTenantRequestAccountRole struct {
 
 type _AddTenantRequestAccountRole AddTenantRequestAccountRole
 
-// NewAddTenantRequestAccountRoleWithDefaults instantiates a new AddTenantRequestAccountRole object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddTenantRequestAccountRoleWithDefaults() *AddTenantRequestAccountRole {
-	this := AddTenantRequestAccountRole{}
-	return &this
-}
-
 func (o AddTenantRequestAccountRole) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

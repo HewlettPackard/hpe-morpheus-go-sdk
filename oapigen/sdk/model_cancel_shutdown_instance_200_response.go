@@ -26,14 +26,6 @@ type CancelShutdownInstance200Response struct {
 
 type _CancelShutdownInstance200Response CancelShutdownInstance200Response
 
-// NewCancelShutdownInstance200ResponseWithDefaults instantiates a new CancelShutdownInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCancelShutdownInstance200ResponseWithDefaults() *CancelShutdownInstance200Response {
-	this := CancelShutdownInstance200Response{}
-	return &this
-}
-
 func (o CancelShutdownInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateRole200ResponseAllOfRoleOwnerWithDefaults
-
-`func NewUpdateRole200ResponseAllOfRoleOwnerWithDefaults() *UpdateRole200ResponseAllOfRoleOwner`
-
-NewUpdateRole200ResponseAllOfRoleOwnerWithDefaults instantiates a new UpdateRole200ResponseAllOfRoleOwner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateRole200ResponseAllOfRoleOwner) GetId() int64`

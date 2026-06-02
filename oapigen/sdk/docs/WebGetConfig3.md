@@ -23,14 +23,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewWebGetConfig3WithDefaults
-
-`func NewWebGetConfig3WithDefaults() *WebGetConfig3`
-
-NewWebGetConfig3WithDefaults instantiates a new WebGetConfig3 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetWebMethod
 
 `func (o *WebGetConfig3) GetWebMethod() string`

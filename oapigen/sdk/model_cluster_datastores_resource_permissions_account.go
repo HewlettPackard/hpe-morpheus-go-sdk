@@ -26,14 +26,6 @@ type ClusterDatastoresResourcePermissionsAccount struct {
 
 type _ClusterDatastoresResourcePermissionsAccount ClusterDatastoresResourcePermissionsAccount
 
-// NewClusterDatastoresResourcePermissionsAccountWithDefaults instantiates a new ClusterDatastoresResourcePermissionsAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterDatastoresResourcePermissionsAccountWithDefaults() *ClusterDatastoresResourcePermissionsAccount {
-	this := ClusterDatastoresResourcePermissionsAccount{}
-	return &this
-}
-
 func (o ClusterDatastoresResourcePermissionsAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

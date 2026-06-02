@@ -50,14 +50,6 @@ type UserSettingsUpdate struct {
 
 type _UserSettingsUpdate UserSettingsUpdate
 
-// NewUserSettingsUpdateWithDefaults instantiates a new UserSettingsUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserSettingsUpdateWithDefaults() *UserSettingsUpdate {
-	this := UserSettingsUpdate{}
-	return &this
-}
-
 func (o UserSettingsUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type InstanceConfigNetworkDomain struct {
 
 type _InstanceConfigNetworkDomain InstanceConfigNetworkDomain
 
-// NewInstanceConfigNetworkDomainWithDefaults instantiates a new InstanceConfigNetworkDomain object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigNetworkDomainWithDefaults() *InstanceConfigNetworkDomain {
-	this := InstanceConfigNetworkDomain{}
-	return &this
-}
-
 func (o InstanceConfigNetworkDomain) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

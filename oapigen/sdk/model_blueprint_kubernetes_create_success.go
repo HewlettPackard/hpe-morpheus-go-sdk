@@ -41,16 +41,6 @@ type BlueprintKubernetesCreateSuccess struct {
 
 type _BlueprintKubernetesCreateSuccess BlueprintKubernetesCreateSuccess
 
-// NewBlueprintKubernetesCreateSuccessWithDefaults instantiates a new BlueprintKubernetesCreateSuccess object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintKubernetesCreateSuccessWithDefaults() *BlueprintKubernetesCreateSuccess {
-	this := BlueprintKubernetesCreateSuccess{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o BlueprintKubernetesCreateSuccess) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type ExtendShutdownInstance200Response struct {
 
 type _ExtendShutdownInstance200Response ExtendShutdownInstance200Response
 
-// NewExtendShutdownInstance200ResponseWithDefaults instantiates a new ExtendShutdownInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewExtendShutdownInstance200ResponseWithDefaults() *ExtendShutdownInstance200Response {
-	this := ExtendShutdownInstance200Response{}
-	return &this
-}
-
 func (o ExtendShutdownInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

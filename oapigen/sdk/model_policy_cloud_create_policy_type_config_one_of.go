@@ -29,14 +29,6 @@ type PolicyCloudCreatePolicyTypeConfigOneOf struct {
 
 type _PolicyCloudCreatePolicyTypeConfigOneOf PolicyCloudCreatePolicyTypeConfigOneOf
 
-// NewPolicyCloudCreatePolicyTypeConfigOneOfWithDefaults instantiates a new PolicyCloudCreatePolicyTypeConfigOneOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPolicyCloudCreatePolicyTypeConfigOneOfWithDefaults() *PolicyCloudCreatePolicyTypeConfigOneOf {
-	this := PolicyCloudCreatePolicyTypeConfigOneOf{}
-	return &this
-}
-
 func (o PolicyCloudCreatePolicyTypeConfigOneOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

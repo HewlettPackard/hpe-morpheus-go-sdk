@@ -27,14 +27,6 @@ type GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy struct {
 
 type _GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy
 
-// NewGetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedByWithDefaults instantiates a new GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedByWithDefaults() *GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy {
-	this := GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy{}
-	return &this
-}
-
 func (o GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

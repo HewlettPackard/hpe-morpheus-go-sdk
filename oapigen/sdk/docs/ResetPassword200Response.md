@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewResetPassword200ResponseWithDefaults
-
-`func NewResetPassword200ResponseWithDefaults() *ResetPassword200Response`
-
-NewResetPassword200ResponseWithDefaults instantiates a new ResetPassword200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *ResetPassword200Response) GetSuccess() bool`

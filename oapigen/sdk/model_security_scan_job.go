@@ -49,16 +49,6 @@ type SecurityScanJob struct {
 
 type _SecurityScanJob SecurityScanJob
 
-// NewSecurityScanJobWithDefaults instantiates a new SecurityScanJob object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSecurityScanJobWithDefaults() *SecurityScanJob {
-	this := SecurityScanJob{}
-	var enabled bool = true
-	this.Enabled = &enabled
-	return &this
-}
-
 func (o SecurityScanJob) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

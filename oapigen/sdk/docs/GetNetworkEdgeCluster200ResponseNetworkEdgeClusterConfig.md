@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfigWithDefaults
-
-`func NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfigWithDefaults() *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig`
-
-NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfigWithDefaults instantiates a new GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetClusterProfileBindings
 
 `func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) GetClusterProfileBindings() string`

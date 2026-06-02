@@ -27,14 +27,6 @@ type AddInstanceRequestEvarsInner struct {
 
 type _AddInstanceRequestEvarsInner AddInstanceRequestEvarsInner
 
-// NewAddInstanceRequestEvarsInnerWithDefaults instantiates a new AddInstanceRequestEvarsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstanceRequestEvarsInnerWithDefaults() *AddInstanceRequestEvarsInner {
-	this := AddInstanceRequestEvarsInner{}
-	return &this
-}
-
 func (o AddInstanceRequestEvarsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

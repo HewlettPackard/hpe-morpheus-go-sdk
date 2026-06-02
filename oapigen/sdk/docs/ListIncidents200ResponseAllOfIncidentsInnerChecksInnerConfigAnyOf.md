@@ -23,14 +23,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListIncidents200ResponseAllOfIncidentsInnerChecksInnerConfigAnyOfWithDefaults
-
-`func NewListIncidents200ResponseAllOfIncidentsInnerChecksInnerConfigAnyOfWithDefaults() *ListIncidents200ResponseAllOfIncidentsInnerChecksInnerConfigAnyOf`
-
-NewListIncidents200ResponseAllOfIncidentsInnerChecksInnerConfigAnyOfWithDefaults instantiates a new ListIncidents200ResponseAllOfIncidentsInnerChecksInnerConfigAnyOf object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetContainerName
 
 `func (o *ListIncidents200ResponseAllOfIncidentsInnerChecksInnerConfigAnyOf) GetContainerName() string`

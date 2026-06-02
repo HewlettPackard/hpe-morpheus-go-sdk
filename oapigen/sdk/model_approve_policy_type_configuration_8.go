@@ -29,14 +29,6 @@ type ApprovePolicyTypeConfiguration8 struct {
 
 type _ApprovePolicyTypeConfiguration8 ApprovePolicyTypeConfiguration8
 
-// NewApprovePolicyTypeConfiguration8WithDefaults instantiates a new ApprovePolicyTypeConfiguration8 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewApprovePolicyTypeConfiguration8WithDefaults() *ApprovePolicyTypeConfiguration8 {
-	this := ApprovePolicyTypeConfiguration8{}
-	return &this
-}
-
 func (o ApprovePolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

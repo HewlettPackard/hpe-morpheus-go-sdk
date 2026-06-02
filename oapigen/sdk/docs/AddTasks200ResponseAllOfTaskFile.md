@@ -22,14 +22,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddTasks200ResponseAllOfTaskFileWithDefaults
-
-`func NewAddTasks200ResponseAllOfTaskFileWithDefaults() *AddTasks200ResponseAllOfTaskFile`
-
-NewAddTasks200ResponseAllOfTaskFileWithDefaults instantiates a new AddTasks200ResponseAllOfTaskFile object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddTasks200ResponseAllOfTaskFile) GetId() int64`

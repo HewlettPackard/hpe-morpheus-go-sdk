@@ -32,16 +32,6 @@ type ClusterNamespaceCreate struct {
 
 type _ClusterNamespaceCreate ClusterNamespaceCreate
 
-// NewClusterNamespaceCreateWithDefaults instantiates a new ClusterNamespaceCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterNamespaceCreateWithDefaults() *ClusterNamespaceCreate {
-	this := ClusterNamespaceCreate{}
-	var active bool = false
-	this.Active = &active
-	return &this
-}
-
 func (o ClusterNamespaceCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

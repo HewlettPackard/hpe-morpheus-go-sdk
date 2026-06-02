@@ -26,14 +26,6 @@ type AddSecurityGroupLocationsRequest struct {
 
 type _AddSecurityGroupLocationsRequest AddSecurityGroupLocationsRequest
 
-// NewAddSecurityGroupLocationsRequestWithDefaults instantiates a new AddSecurityGroupLocationsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddSecurityGroupLocationsRequestWithDefaults() *AddSecurityGroupLocationsRequest {
-	this := AddSecurityGroupLocationsRequest{}
-	return &this
-}
-
 func (o AddSecurityGroupLocationsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

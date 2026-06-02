@@ -26,14 +26,6 @@ type UpdateInstanceThresholdRequest struct {
 
 type _UpdateInstanceThresholdRequest UpdateInstanceThresholdRequest
 
-// NewUpdateInstanceThresholdRequestWithDefaults instantiates a new UpdateInstanceThresholdRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstanceThresholdRequestWithDefaults() *UpdateInstanceThresholdRequest {
-	this := UpdateInstanceThresholdRequest{}
-	return &this
-}
-
 func (o UpdateInstanceThresholdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

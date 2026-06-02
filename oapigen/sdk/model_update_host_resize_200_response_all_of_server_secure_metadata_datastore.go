@@ -27,14 +27,6 @@ type UpdateHostResize200ResponseAllOfServerSecureMetadataDatastore struct {
 
 type _UpdateHostResize200ResponseAllOfServerSecureMetadataDatastore UpdateHostResize200ResponseAllOfServerSecureMetadataDatastore
 
-// NewUpdateHostResize200ResponseAllOfServerSecureMetadataDatastoreWithDefaults instantiates a new UpdateHostResize200ResponseAllOfServerSecureMetadataDatastore object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateHostResize200ResponseAllOfServerSecureMetadataDatastoreWithDefaults() *UpdateHostResize200ResponseAllOfServerSecureMetadataDatastore {
-	this := UpdateHostResize200ResponseAllOfServerSecureMetadataDatastore{}
-	return &this
-}
-
 func (o UpdateHostResize200ResponseAllOfServerSecureMetadataDatastore) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

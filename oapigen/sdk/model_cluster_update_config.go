@@ -27,14 +27,6 @@ type ClusterUpdateConfig struct {
 
 type _ClusterUpdateConfig ClusterUpdateConfig
 
-// NewClusterUpdateConfigWithDefaults instantiates a new ClusterUpdateConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterUpdateConfigWithDefaults() *ClusterUpdateConfig {
-	this := ClusterUpdateConfig{}
-	return &this
-}
-
 func (o ClusterUpdateConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

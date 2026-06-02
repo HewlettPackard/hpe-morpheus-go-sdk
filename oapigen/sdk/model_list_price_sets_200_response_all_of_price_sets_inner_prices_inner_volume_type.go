@@ -28,14 +28,6 @@ type ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType struct {
 
 type _ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType
 
-// NewListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeTypeWithDefaults instantiates a new ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeTypeWithDefaults() *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType {
-	this := ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType{}
-	return &this
-}
-
 func (o ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

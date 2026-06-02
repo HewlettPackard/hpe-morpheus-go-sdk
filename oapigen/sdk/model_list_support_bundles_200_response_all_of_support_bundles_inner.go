@@ -41,14 +41,6 @@ type ListSupportBundles200ResponseAllOfSupportBundlesInner struct {
 
 type _ListSupportBundles200ResponseAllOfSupportBundlesInner ListSupportBundles200ResponseAllOfSupportBundlesInner
 
-// NewListSupportBundles200ResponseAllOfSupportBundlesInnerWithDefaults instantiates a new ListSupportBundles200ResponseAllOfSupportBundlesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListSupportBundles200ResponseAllOfSupportBundlesInnerWithDefaults() *ListSupportBundles200ResponseAllOfSupportBundlesInner {
-	this := ListSupportBundles200ResponseAllOfSupportBundlesInner{}
-	return &this
-}
-
 func (o ListSupportBundles200ResponseAllOfSupportBundlesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

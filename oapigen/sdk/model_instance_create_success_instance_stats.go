@@ -33,14 +33,6 @@ type InstanceCreateSuccessInstanceStats struct {
 
 type _InstanceCreateSuccessInstanceStats InstanceCreateSuccessInstanceStats
 
-// NewInstanceCreateSuccessInstanceStatsWithDefaults instantiates a new InstanceCreateSuccessInstanceStats object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceCreateSuccessInstanceStatsWithDefaults() *InstanceCreateSuccessInstanceStats {
-	this := InstanceCreateSuccessInstanceStats{}
-	return &this
-}
-
 func (o InstanceCreateSuccessInstanceStats) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

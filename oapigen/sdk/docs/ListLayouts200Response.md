@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListLayouts200ResponseWithDefaults
-
-`func NewListLayouts200ResponseWithDefaults() *ListLayouts200Response`
-
-NewListLayouts200ResponseWithDefaults instantiates a new ListLayouts200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetInstanceTypeLayouts
 
 `func (o *ListLayouts200Response) GetInstanceTypeLayouts() []ListLayouts200ResponseAllOfInstanceTypeLayoutsInner`

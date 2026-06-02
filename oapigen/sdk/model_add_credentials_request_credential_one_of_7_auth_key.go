@@ -27,14 +27,6 @@ type AddCredentialsRequestCredentialOneOf7AuthKey struct {
 
 type _AddCredentialsRequestCredentialOneOf7AuthKey AddCredentialsRequestCredentialOneOf7AuthKey
 
-// NewAddCredentialsRequestCredentialOneOf7AuthKeyWithDefaults instantiates a new AddCredentialsRequestCredentialOneOf7AuthKey object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCredentialsRequestCredentialOneOf7AuthKeyWithDefaults() *AddCredentialsRequestCredentialOneOf7AuthKey {
-	this := AddCredentialsRequestCredentialOneOf7AuthKey{}
-	return &this
-}
-
 func (o AddCredentialsRequestCredentialOneOf7AuthKey) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

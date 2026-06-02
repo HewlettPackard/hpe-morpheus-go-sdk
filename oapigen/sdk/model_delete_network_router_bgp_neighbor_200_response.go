@@ -26,14 +26,6 @@ type DeleteNetworkRouterBgpNeighbor200Response struct {
 
 type _DeleteNetworkRouterBgpNeighbor200Response DeleteNetworkRouterBgpNeighbor200Response
 
-// NewDeleteNetworkRouterBgpNeighbor200ResponseWithDefaults instantiates a new DeleteNetworkRouterBgpNeighbor200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteNetworkRouterBgpNeighbor200ResponseWithDefaults() *DeleteNetworkRouterBgpNeighbor200Response {
-	this := DeleteNetworkRouterBgpNeighbor200Response{}
-	return &this
-}
-
 func (o DeleteNetworkRouterBgpNeighbor200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

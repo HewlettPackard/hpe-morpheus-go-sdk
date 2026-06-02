@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddVdiAllocation200ResponseAllOfDesktopAllocationPoolWithDefaults
-
-`func NewAddVdiAllocation200ResponseAllOfDesktopAllocationPoolWithDefaults() *AddVdiAllocation200ResponseAllOfDesktopAllocationPool`
-
-NewAddVdiAllocation200ResponseAllOfDesktopAllocationPoolWithDefaults instantiates a new AddVdiAllocation200ResponseAllOfDesktopAllocationPool object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationPool) GetId() int64`

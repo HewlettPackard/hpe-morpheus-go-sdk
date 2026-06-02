@@ -39,14 +39,6 @@ type ClusterDeployments struct {
 
 type _ClusterDeployments ClusterDeployments
 
-// NewClusterDeploymentsWithDefaults instantiates a new ClusterDeployments object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterDeploymentsWithDefaults() *ClusterDeployments {
-	this := ClusterDeployments{}
-	return &this
-}
-
 func (o ClusterDeployments) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

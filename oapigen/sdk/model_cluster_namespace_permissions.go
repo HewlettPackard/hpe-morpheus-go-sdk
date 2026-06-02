@@ -26,14 +26,6 @@ type ClusterNamespacePermissions struct {
 
 type _ClusterNamespacePermissions ClusterNamespacePermissions
 
-// NewClusterNamespacePermissionsWithDefaults instantiates a new ClusterNamespacePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterNamespacePermissionsWithDefaults() *ClusterNamespacePermissions {
-	this := ClusterNamespacePermissions{}
-	return &this
-}
-
 func (o ClusterNamespacePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

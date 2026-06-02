@@ -27,14 +27,6 @@ type SecurityGroupLocationAwsCustomOptions struct {
 
 type _SecurityGroupLocationAwsCustomOptions SecurityGroupLocationAwsCustomOptions
 
-// NewSecurityGroupLocationAwsCustomOptionsWithDefaults instantiates a new SecurityGroupLocationAwsCustomOptions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSecurityGroupLocationAwsCustomOptionsWithDefaults() *SecurityGroupLocationAwsCustomOptions {
-	this := SecurityGroupLocationAwsCustomOptions{}
-	return &this
-}
-
 func (o SecurityGroupLocationAwsCustomOptions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

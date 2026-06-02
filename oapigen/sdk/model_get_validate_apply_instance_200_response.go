@@ -27,14 +27,6 @@ type GetValidateApplyInstance200Response struct {
 
 type _GetValidateApplyInstance200Response GetValidateApplyInstance200Response
 
-// NewGetValidateApplyInstance200ResponseWithDefaults instantiates a new GetValidateApplyInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetValidateApplyInstance200ResponseWithDefaults() *GetValidateApplyInstance200Response {
-	this := GetValidateApplyInstance200Response{}
-	return &this
-}
-
 func (o GetValidateApplyInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

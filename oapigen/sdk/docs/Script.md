@@ -33,14 +33,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewScriptWithDefaults
-
-`func NewScriptWithDefaults() *Script`
-
-NewScriptWithDefaults instantiates a new Script object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *Script) GetId() int64`

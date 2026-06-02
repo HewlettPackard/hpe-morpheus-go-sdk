@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewWhoami200ResponseWithDefaults
-
-`func NewWhoami200ResponseWithDefaults() *Whoami200Response`
-
-NewWhoami200ResponseWithDefaults instantiates a new Whoami200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetUser
 
 `func (o *Whoami200Response) GetUser() Whoami200ResponseUser`

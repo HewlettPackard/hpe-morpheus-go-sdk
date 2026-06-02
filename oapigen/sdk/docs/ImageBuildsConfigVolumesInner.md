@@ -26,14 +26,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewImageBuildsConfigVolumesInnerWithDefaults
-
-`func NewImageBuildsConfigVolumesInnerWithDefaults() *ImageBuildsConfigVolumesInner`
-
-NewImageBuildsConfigVolumesInnerWithDefaults instantiates a new ImageBuildsConfigVolumesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetVolumeCustomizable
 
 `func (o *ImageBuildsConfigVolumesInner) GetVolumeCustomizable() bool`

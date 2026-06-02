@@ -27,14 +27,6 @@ type ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow struct {
 
 type _ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow
 
-// NewListJobs200ResponseAllOfJobsInnerAnyOfWorkflowWithDefaults instantiates a new ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListJobs200ResponseAllOfJobsInnerAnyOfWorkflowWithDefaults() *ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow {
-	this := ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow{}
-	return &this
-}
-
 func (o ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

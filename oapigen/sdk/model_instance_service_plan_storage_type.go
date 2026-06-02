@@ -53,14 +53,6 @@ type InstanceServicePlanStorageType struct {
 
 type _InstanceServicePlanStorageType InstanceServicePlanStorageType
 
-// NewInstanceServicePlanStorageTypeWithDefaults instantiates a new InstanceServicePlanStorageType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceServicePlanStorageTypeWithDefaults() *InstanceServicePlanStorageType {
-	this := InstanceServicePlanStorageType{}
-	return &this
-}
-
 func (o InstanceServicePlanStorageType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

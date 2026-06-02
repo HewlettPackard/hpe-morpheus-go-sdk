@@ -27,14 +27,6 @@ type AddInstanceRequestTagsInner struct {
 
 type _AddInstanceRequestTagsInner AddInstanceRequestTagsInner
 
-// NewAddInstanceRequestTagsInnerWithDefaults instantiates a new AddInstanceRequestTagsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstanceRequestTagsInnerWithDefaults() *AddInstanceRequestTagsInner {
-	this := AddInstanceRequestTagsInner{}
-	return &this
-}
-
 func (o AddInstanceRequestTagsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

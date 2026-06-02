@@ -37,16 +37,6 @@ type GoogleCloudInstanceConfiguration2 struct {
 
 type _GoogleCloudInstanceConfiguration2 GoogleCloudInstanceConfiguration2
 
-// NewGoogleCloudInstanceConfiguration2WithDefaults instantiates a new GoogleCloudInstanceConfiguration2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudInstanceConfiguration2WithDefaults() *GoogleCloudInstanceConfiguration2 {
-	this := GoogleCloudInstanceConfiguration2{}
-	var noAgent bool = false
-	this.NoAgent = *NewNullableBool(&noAgent)
-	return &this
-}
-
 func (o GoogleCloudInstanceConfiguration2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

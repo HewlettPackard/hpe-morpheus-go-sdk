@@ -28,14 +28,6 @@ type AddUserTenant200ResponseAllOfUserDefaultPersona struct {
 
 type _AddUserTenant200ResponseAllOfUserDefaultPersona AddUserTenant200ResponseAllOfUserDefaultPersona
 
-// NewAddUserTenant200ResponseAllOfUserDefaultPersonaWithDefaults instantiates a new AddUserTenant200ResponseAllOfUserDefaultPersona object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddUserTenant200ResponseAllOfUserDefaultPersonaWithDefaults() *AddUserTenant200ResponseAllOfUserDefaultPersona {
-	this := AddUserTenant200ResponseAllOfUserDefaultPersona{}
-	return &this
-}
-
 func (o AddUserTenant200ResponseAllOfUserDefaultPersona) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

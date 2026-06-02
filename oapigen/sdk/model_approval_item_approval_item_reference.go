@@ -29,14 +29,6 @@ type ApprovalItemApprovalItemReference struct {
 
 type _ApprovalItemApprovalItemReference ApprovalItemApprovalItemReference
 
-// NewApprovalItemApprovalItemReferenceWithDefaults instantiates a new ApprovalItemApprovalItemReference object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewApprovalItemApprovalItemReferenceWithDefaults() *ApprovalItemApprovalItemReference {
-	this := ApprovalItemApprovalItemReference{}
-	return &this
-}
-
 func (o ApprovalItemApprovalItemReference) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

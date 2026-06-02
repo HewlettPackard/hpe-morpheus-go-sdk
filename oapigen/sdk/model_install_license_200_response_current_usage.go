@@ -49,14 +49,6 @@ type InstallLicense200ResponseCurrentUsage struct {
 
 type _InstallLicense200ResponseCurrentUsage InstallLicense200ResponseCurrentUsage
 
-// NewInstallLicense200ResponseCurrentUsageWithDefaults instantiates a new InstallLicense200ResponseCurrentUsage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstallLicense200ResponseCurrentUsageWithDefaults() *InstallLicense200ResponseCurrentUsage {
-	this := InstallLicense200ResponseCurrentUsage{}
-	return &this
-}
-
 func (o InstallLicense200ResponseCurrentUsage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

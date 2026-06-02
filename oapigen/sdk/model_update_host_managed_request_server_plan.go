@@ -27,14 +27,6 @@ type UpdateHostManagedRequestServerPlan struct {
 
 type _UpdateHostManagedRequestServerPlan UpdateHostManagedRequestServerPlan
 
-// NewUpdateHostManagedRequestServerPlanWithDefaults instantiates a new UpdateHostManagedRequestServerPlan object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateHostManagedRequestServerPlanWithDefaults() *UpdateHostManagedRequestServerPlan {
-	this := UpdateHostManagedRequestServerPlan{}
-	return &this
-}
-
 func (o UpdateHostManagedRequestServerPlan) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount struct {
 
 type _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount
 
-// NewGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccountWithDefaults instantiates a new GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccountWithDefaults() *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount {
-	this := GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount{}
-	return &this
-}
-
 func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

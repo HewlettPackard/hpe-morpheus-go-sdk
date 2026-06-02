@@ -26,14 +26,6 @@ type ClusterServerCreateConfigEKSControllerNetwork struct {
 
 type _ClusterServerCreateConfigEKSControllerNetwork ClusterServerCreateConfigEKSControllerNetwork
 
-// NewClusterServerCreateConfigEKSControllerNetworkWithDefaults instantiates a new ClusterServerCreateConfigEKSControllerNetwork object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterServerCreateConfigEKSControllerNetworkWithDefaults() *ClusterServerCreateConfigEKSControllerNetwork {
-	this := ClusterServerCreateConfigEKSControllerNetwork{}
-	return &this
-}
-
 func (o ClusterServerCreateConfigEKSControllerNetwork) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

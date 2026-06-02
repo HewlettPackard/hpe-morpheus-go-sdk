@@ -27,14 +27,6 @@ type ListProvisioningSettings200ResponseProvisioningSettingsDeployStorageProvide
 
 type _ListProvisioningSettings200ResponseProvisioningSettingsDeployStorageProvider ListProvisioningSettings200ResponseProvisioningSettingsDeployStorageProvider
 
-// NewListProvisioningSettings200ResponseProvisioningSettingsDeployStorageProviderWithDefaults instantiates a new ListProvisioningSettings200ResponseProvisioningSettingsDeployStorageProvider object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListProvisioningSettings200ResponseProvisioningSettingsDeployStorageProviderWithDefaults() *ListProvisioningSettings200ResponseProvisioningSettingsDeployStorageProvider {
-	this := ListProvisioningSettings200ResponseProvisioningSettingsDeployStorageProvider{}
-	return &this
-}
-
 func (o ListProvisioningSettings200ResponseProvisioningSettingsDeployStorageProvider) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

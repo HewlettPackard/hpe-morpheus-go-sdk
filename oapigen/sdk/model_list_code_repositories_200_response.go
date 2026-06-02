@@ -27,14 +27,6 @@ type ListCodeRepositories200Response struct {
 
 type _ListCodeRepositories200Response ListCodeRepositories200Response
 
-// NewListCodeRepositories200ResponseWithDefaults instantiates a new ListCodeRepositories200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCodeRepositories200ResponseWithDefaults() *ListCodeRepositories200Response {
-	this := ListCodeRepositories200Response{}
-	return &this
-}
-
 func (o ListCodeRepositories200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

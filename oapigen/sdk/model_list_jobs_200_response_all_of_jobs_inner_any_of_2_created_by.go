@@ -28,14 +28,6 @@ type ListJobs200ResponseAllOfJobsInnerAnyOf2CreatedBy struct {
 
 type _ListJobs200ResponseAllOfJobsInnerAnyOf2CreatedBy ListJobs200ResponseAllOfJobsInnerAnyOf2CreatedBy
 
-// NewListJobs200ResponseAllOfJobsInnerAnyOf2CreatedByWithDefaults instantiates a new ListJobs200ResponseAllOfJobsInnerAnyOf2CreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListJobs200ResponseAllOfJobsInnerAnyOf2CreatedByWithDefaults() *ListJobs200ResponseAllOfJobsInnerAnyOf2CreatedBy {
-	this := ListJobs200ResponseAllOfJobsInnerAnyOf2CreatedBy{}
-	return &this
-}
-
 func (o ListJobs200ResponseAllOfJobsInnerAnyOf2CreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

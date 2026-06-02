@@ -38,14 +38,6 @@ type CreateNetworkPool200ResponseNetworkPoolIpRangesInner struct {
 
 type _CreateNetworkPool200ResponseNetworkPoolIpRangesInner CreateNetworkPool200ResponseNetworkPoolIpRangesInner
 
-// NewCreateNetworkPool200ResponseNetworkPoolIpRangesInnerWithDefaults instantiates a new CreateNetworkPool200ResponseNetworkPoolIpRangesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkPool200ResponseNetworkPoolIpRangesInnerWithDefaults() *CreateNetworkPool200ResponseNetworkPoolIpRangesInner {
-	this := CreateNetworkPool200ResponseNetworkPoolIpRangesInner{}
-	return &this
-}
-
 func (o CreateNetworkPool200ResponseNetworkPoolIpRangesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

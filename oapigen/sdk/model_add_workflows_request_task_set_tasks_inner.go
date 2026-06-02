@@ -29,16 +29,6 @@ type AddWorkflowsRequestTaskSetTasksInner struct {
 
 type _AddWorkflowsRequestTaskSetTasksInner AddWorkflowsRequestTaskSetTasksInner
 
-// NewAddWorkflowsRequestTaskSetTasksInnerWithDefaults instantiates a new AddWorkflowsRequestTaskSetTasksInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddWorkflowsRequestTaskSetTasksInnerWithDefaults() *AddWorkflowsRequestTaskSetTasksInner {
-	this := AddWorkflowsRequestTaskSetTasksInner{}
-	var taskPhase string = "provision"
-	this.TaskPhase = &taskPhase
-	return &this
-}
-
 func (o AddWorkflowsRequestTaskSetTasksInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

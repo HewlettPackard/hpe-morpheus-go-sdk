@@ -32,16 +32,6 @@ type UpdateClusterNamespaceRequestNamespace struct {
 
 type _UpdateClusterNamespaceRequestNamespace UpdateClusterNamespaceRequestNamespace
 
-// NewUpdateClusterNamespaceRequestNamespaceWithDefaults instantiates a new UpdateClusterNamespaceRequestNamespace object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateClusterNamespaceRequestNamespaceWithDefaults() *UpdateClusterNamespaceRequestNamespace {
-	this := UpdateClusterNamespaceRequestNamespace{}
-	var active bool = false
-	this.Active = &active
-	return &this
-}
-
 func (o UpdateClusterNamespaceRequestNamespace) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

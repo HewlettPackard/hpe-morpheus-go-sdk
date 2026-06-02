@@ -28,14 +28,6 @@ type InstanceNamePolicyTypeConfiguration3 struct {
 
 type _InstanceNamePolicyTypeConfiguration3 InstanceNamePolicyTypeConfiguration3
 
-// NewInstanceNamePolicyTypeConfiguration3WithDefaults instantiates a new InstanceNamePolicyTypeConfiguration3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceNamePolicyTypeConfiguration3WithDefaults() *InstanceNamePolicyTypeConfiguration3 {
-	this := InstanceNamePolicyTypeConfiguration3{}
-	return &this
-}
-
 func (o InstanceNamePolicyTypeConfiguration3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

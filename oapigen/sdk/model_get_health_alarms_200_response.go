@@ -27,14 +27,6 @@ type GetHealthAlarms200Response struct {
 
 type _GetHealthAlarms200Response GetHealthAlarms200Response
 
-// NewGetHealthAlarms200ResponseWithDefaults instantiates a new GetHealthAlarms200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetHealthAlarms200ResponseWithDefaults() *GetHealthAlarms200Response {
-	this := GetHealthAlarms200Response{}
-	return &this
-}
-
 func (o GetHealthAlarms200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

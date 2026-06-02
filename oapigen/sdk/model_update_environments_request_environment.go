@@ -35,18 +35,6 @@ type UpdateEnvironmentsRequestEnvironment struct {
 
 type _UpdateEnvironmentsRequestEnvironment UpdateEnvironmentsRequestEnvironment
 
-// NewUpdateEnvironmentsRequestEnvironmentWithDefaults instantiates a new UpdateEnvironmentsRequestEnvironment object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateEnvironmentsRequestEnvironmentWithDefaults() *UpdateEnvironmentsRequestEnvironment {
-	this := UpdateEnvironmentsRequestEnvironment{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	var sortOrder int64 = 0
-	this.SortOrder = &sortOrder
-	return &this
-}
-
 func (o UpdateEnvironmentsRequestEnvironment) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

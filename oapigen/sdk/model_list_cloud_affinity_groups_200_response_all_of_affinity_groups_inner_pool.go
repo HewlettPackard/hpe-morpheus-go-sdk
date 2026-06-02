@@ -26,14 +26,6 @@ type ListCloudAffinityGroups200ResponseAllOfAffinityGroupsInnerPool struct {
 
 type _ListCloudAffinityGroups200ResponseAllOfAffinityGroupsInnerPool ListCloudAffinityGroups200ResponseAllOfAffinityGroupsInnerPool
 
-// NewListCloudAffinityGroups200ResponseAllOfAffinityGroupsInnerPoolWithDefaults instantiates a new ListCloudAffinityGroups200ResponseAllOfAffinityGroupsInnerPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCloudAffinityGroups200ResponseAllOfAffinityGroupsInnerPoolWithDefaults() *ListCloudAffinityGroups200ResponseAllOfAffinityGroupsInnerPool {
-	this := ListCloudAffinityGroups200ResponseAllOfAffinityGroupsInnerPool{}
-	return &this
-}
-
 func (o ListCloudAffinityGroups200ResponseAllOfAffinityGroupsInnerPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type MigrationCreateNetworksInnerSourceNetwork struct {
 
 type _MigrationCreateNetworksInnerSourceNetwork MigrationCreateNetworksInnerSourceNetwork
 
-// NewMigrationCreateNetworksInnerSourceNetworkWithDefaults instantiates a new MigrationCreateNetworksInnerSourceNetwork object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMigrationCreateNetworksInnerSourceNetworkWithDefaults() *MigrationCreateNetworksInnerSourceNetwork {
-	this := MigrationCreateNetworksInnerSourceNetwork{}
-	return &this
-}
-
 func (o MigrationCreateNetworksInnerSourceNetwork) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

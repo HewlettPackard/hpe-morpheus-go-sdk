@@ -26,14 +26,6 @@ type MaxSnapshotsPolicyTypeConfiguration9 struct {
 
 type _MaxSnapshotsPolicyTypeConfiguration9 MaxSnapshotsPolicyTypeConfiguration9
 
-// NewMaxSnapshotsPolicyTypeConfiguration9WithDefaults instantiates a new MaxSnapshotsPolicyTypeConfiguration9 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxSnapshotsPolicyTypeConfiguration9WithDefaults() *MaxSnapshotsPolicyTypeConfiguration9 {
-	this := MaxSnapshotsPolicyTypeConfiguration9{}
-	return &this
-}
-
 func (o MaxSnapshotsPolicyTypeConfiguration9) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

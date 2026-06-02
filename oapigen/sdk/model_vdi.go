@@ -32,14 +32,6 @@ type Vdi struct {
 
 type _Vdi Vdi
 
-// NewVdiWithDefaults instantiates a new Vdi object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewVdiWithDefaults() *Vdi {
-	this := Vdi{}
-	return &this
-}
-
 func (o Vdi) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type AddProvisioningLicense200Response struct {
 
 type _AddProvisioningLicense200Response AddProvisioningLicense200Response
 
-// NewAddProvisioningLicense200ResponseWithDefaults instantiates a new AddProvisioningLicense200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddProvisioningLicense200ResponseWithDefaults() *AddProvisioningLicense200Response {
-	this := AddProvisioningLicense200Response{}
-	return &this
-}
-
 func (o AddProvisioningLicense200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -76,30 +76,6 @@ type AddVDIPoolsRequestVdiPoolOneOf struct {
 
 type _AddVDIPoolsRequestVdiPoolOneOf AddVDIPoolsRequestVdiPoolOneOf
 
-// NewAddVDIPoolsRequestVdiPoolOneOfWithDefaults instantiates a new AddVDIPoolsRequestVdiPoolOneOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddVDIPoolsRequestVdiPoolOneOfWithDefaults() *AddVDIPoolsRequestVdiPoolOneOf {
-	this := AddVDIPoolsRequestVdiPoolOneOf{}
-	var persistentUser bool = false
-	this.PersistentUser = &persistentUser
-	var recyclable bool = false
-	this.Recyclable = &recyclable
-	var allowCopy bool = false
-	this.AllowCopy = &allowCopy
-	var allowPrinter bool = false
-	this.AllowPrinter = &allowPrinter
-	var allowFileshare bool = false
-	this.AllowFileshare = &allowFileshare
-	var allowHypervisorConsole bool = false
-	this.AllowHypervisorConsole = &allowHypervisorConsole
-	var autoCreateLocalUserOnReservation bool = false
-	this.AutoCreateLocalUserOnReservation = &autoCreateLocalUserOnReservation
-	var enabled bool = true
-	this.Enabled = &enabled
-	return &this
-}
-
 func (o AddVDIPoolsRequestVdiPoolOneOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

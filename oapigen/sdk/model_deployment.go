@@ -35,14 +35,6 @@ type Deployment struct {
 
 type _Deployment Deployment
 
-// NewDeploymentWithDefaults instantiates a new Deployment object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeploymentWithDefaults() *Deployment {
-	this := Deployment{}
-	return &this
-}
-
 func (o Deployment) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

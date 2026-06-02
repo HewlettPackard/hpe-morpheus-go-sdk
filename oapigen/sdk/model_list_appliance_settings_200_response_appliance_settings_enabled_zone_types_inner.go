@@ -27,14 +27,6 @@ type ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner stru
 
 type _ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
 
-// NewListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInnerWithDefaults instantiates a new ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInnerWithDefaults() *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
-	this := ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner{}
-	return &this
-}
-
 func (o ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

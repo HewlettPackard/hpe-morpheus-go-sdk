@@ -26,14 +26,6 @@ type GetInstance200ResponseInstanceConfigUserGroup struct {
 
 type _GetInstance200ResponseInstanceConfigUserGroup GetInstance200ResponseInstanceConfigUserGroup
 
-// NewGetInstance200ResponseInstanceConfigUserGroupWithDefaults instantiates a new GetInstance200ResponseInstanceConfigUserGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstance200ResponseInstanceConfigUserGroupWithDefaults() *GetInstance200ResponseInstanceConfigUserGroup {
-	this := GetInstance200ResponseInstanceConfigUserGroup{}
-	return &this
-}
-
 func (o GetInstance200ResponseInstanceConfigUserGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

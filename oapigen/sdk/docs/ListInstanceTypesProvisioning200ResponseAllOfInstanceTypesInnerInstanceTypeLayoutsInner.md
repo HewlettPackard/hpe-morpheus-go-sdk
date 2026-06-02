@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInnerWithDefaults
-
-`func NewListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInnerWithDefaults() *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner`
-
-NewListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInnerWithDefaults instantiates a new ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) GetId() int64`

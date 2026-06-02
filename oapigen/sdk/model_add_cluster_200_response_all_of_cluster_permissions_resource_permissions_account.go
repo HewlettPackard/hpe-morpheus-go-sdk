@@ -26,14 +26,6 @@ type AddCluster200ResponseAllOfClusterPermissionsResourcePermissionsAccount stru
 
 type _AddCluster200ResponseAllOfClusterPermissionsResourcePermissionsAccount AddCluster200ResponseAllOfClusterPermissionsResourcePermissionsAccount
 
-// NewAddCluster200ResponseAllOfClusterPermissionsResourcePermissionsAccountWithDefaults instantiates a new AddCluster200ResponseAllOfClusterPermissionsResourcePermissionsAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCluster200ResponseAllOfClusterPermissionsResourcePermissionsAccountWithDefaults() *AddCluster200ResponseAllOfClusterPermissionsResourcePermissionsAccount {
-	this := AddCluster200ResponseAllOfClusterPermissionsResourcePermissionsAccount{}
-	return &this
-}
-
 func (o AddCluster200ResponseAllOfClusterPermissionsResourcePermissionsAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

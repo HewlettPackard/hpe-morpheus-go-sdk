@@ -28,14 +28,6 @@ type SaveDatastoreRequestDatastoreResourcePermissionsPlansInner struct {
 
 type _SaveDatastoreRequestDatastoreResourcePermissionsPlansInner SaveDatastoreRequestDatastoreResourcePermissionsPlansInner
 
-// NewSaveDatastoreRequestDatastoreResourcePermissionsPlansInnerWithDefaults instantiates a new SaveDatastoreRequestDatastoreResourcePermissionsPlansInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveDatastoreRequestDatastoreResourcePermissionsPlansInnerWithDefaults() *SaveDatastoreRequestDatastoreResourcePermissionsPlansInner {
-	this := SaveDatastoreRequestDatastoreResourcePermissionsPlansInner{}
-	return &this
-}
-
 func (o SaveDatastoreRequestDatastoreResourcePermissionsPlansInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

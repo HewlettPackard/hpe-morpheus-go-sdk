@@ -27,14 +27,6 @@ type RunWorkflowInstanceRequestTaskSet struct {
 
 type _RunWorkflowInstanceRequestTaskSet RunWorkflowInstanceRequestTaskSet
 
-// NewRunWorkflowInstanceRequestTaskSetWithDefaults instantiates a new RunWorkflowInstanceRequestTaskSet object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRunWorkflowInstanceRequestTaskSetWithDefaults() *RunWorkflowInstanceRequestTaskSet {
-	this := RunWorkflowInstanceRequestTaskSet{}
-	return &this
-}
-
 func (o RunWorkflowInstanceRequestTaskSet) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

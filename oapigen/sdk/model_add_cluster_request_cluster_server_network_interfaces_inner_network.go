@@ -26,14 +26,6 @@ type AddClusterRequestClusterServerNetworkInterfacesInnerNetwork struct {
 
 type _AddClusterRequestClusterServerNetworkInterfacesInnerNetwork AddClusterRequestClusterServerNetworkInterfacesInnerNetwork
 
-// NewAddClusterRequestClusterServerNetworkInterfacesInnerNetworkWithDefaults instantiates a new AddClusterRequestClusterServerNetworkInterfacesInnerNetwork object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterRequestClusterServerNetworkInterfacesInnerNetworkWithDefaults() *AddClusterRequestClusterServerNetworkInterfacesInnerNetwork {
-	this := AddClusterRequestClusterServerNetworkInterfacesInnerNetwork{}
-	return &this
-}
-
 func (o AddClusterRequestClusterServerNetworkInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -34,14 +34,6 @@ type HealthThreads struct {
 
 type _HealthThreads HealthThreads
 
-// NewHealthThreadsWithDefaults instantiates a new HealthThreads object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewHealthThreadsWithDefaults() *HealthThreads {
-	this := HealthThreads{}
-	return &this
-}
-
 func (o HealthThreads) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

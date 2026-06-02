@@ -27,14 +27,6 @@ type GetWikiCategories200ResponseCategoriesInner struct {
 
 type _GetWikiCategories200ResponseCategoriesInner GetWikiCategories200ResponseCategoriesInner
 
-// NewGetWikiCategories200ResponseCategoriesInnerWithDefaults instantiates a new GetWikiCategories200ResponseCategoriesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetWikiCategories200ResponseCategoriesInnerWithDefaults() *GetWikiCategories200ResponseCategoriesInner {
-	this := GetWikiCategories200ResponseCategoriesInner{}
-	return &this
-}
-
 func (o GetWikiCategories200ResponseCategoriesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

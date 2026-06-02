@@ -31,16 +31,6 @@ type DownloadSupportBundle409Response struct {
 
 type _DownloadSupportBundle409Response DownloadSupportBundle409Response
 
-// NewDownloadSupportBundle409ResponseWithDefaults instantiates a new DownloadSupportBundle409Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDownloadSupportBundle409ResponseWithDefaults() *DownloadSupportBundle409Response {
-	this := DownloadSupportBundle409Response{}
-	var success bool = true
-	this.Success = &success
-	return &this
-}
-
 func (o DownloadSupportBundle409Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

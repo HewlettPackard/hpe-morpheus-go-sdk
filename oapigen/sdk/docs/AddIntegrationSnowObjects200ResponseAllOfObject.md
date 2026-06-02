@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddIntegrationSnowObjects200ResponseAllOfObjectWithDefaults
-
-`func NewAddIntegrationSnowObjects200ResponseAllOfObjectWithDefaults() *AddIntegrationSnowObjects200ResponseAllOfObject`
-
-NewAddIntegrationSnowObjects200ResponseAllOfObjectWithDefaults instantiates a new AddIntegrationSnowObjects200ResponseAllOfObject object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddIntegrationSnowObjects200ResponseAllOfObject) GetId() int64`

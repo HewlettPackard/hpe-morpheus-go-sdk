@@ -26,14 +26,6 @@ type WebCheck1AllOfCheckType struct {
 
 type _WebCheck1AllOfCheckType WebCheck1AllOfCheckType
 
-// NewWebCheck1AllOfCheckTypeWithDefaults instantiates a new WebCheck1AllOfCheckType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWebCheck1AllOfCheckTypeWithDefaults() *WebCheck1AllOfCheckType {
-	this := WebCheck1AllOfCheckType{}
-	return &this
-}
-
 func (o WebCheck1AllOfCheckType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

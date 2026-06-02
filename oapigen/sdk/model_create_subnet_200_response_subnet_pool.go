@@ -27,14 +27,6 @@ type CreateSubnet200ResponseSubnetPool struct {
 
 type _CreateSubnet200ResponseSubnetPool CreateSubnet200ResponseSubnetPool
 
-// NewCreateSubnet200ResponseSubnetPoolWithDefaults instantiates a new CreateSubnet200ResponseSubnetPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateSubnet200ResponseSubnetPoolWithDefaults() *CreateSubnet200ResponseSubnetPool {
-	this := CreateSubnet200ResponseSubnetPool{}
-	return &this
-}
-
 func (o CreateSubnet200ResponseSubnetPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

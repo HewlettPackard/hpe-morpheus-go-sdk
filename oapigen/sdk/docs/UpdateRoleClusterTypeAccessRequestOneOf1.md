@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateRoleClusterTypeAccessRequestOneOf1WithDefaults
-
-`func NewUpdateRoleClusterTypeAccessRequestOneOf1WithDefaults() *UpdateRoleClusterTypeAccessRequestOneOf1`
-
-NewUpdateRoleClusterTypeAccessRequestOneOf1WithDefaults instantiates a new UpdateRoleClusterTypeAccessRequestOneOf1 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAllClusterTypes
 
 `func (o *UpdateRoleClusterTypeAccessRequestOneOf1) GetAllClusterTypes() bool`

@@ -37,14 +37,6 @@ type BlueprintCreateSuccessConfigOneOf1CloudFormation struct {
 
 type _BlueprintCreateSuccessConfigOneOf1CloudFormation BlueprintCreateSuccessConfigOneOf1CloudFormation
 
-// NewBlueprintCreateSuccessConfigOneOf1CloudFormationWithDefaults instantiates a new BlueprintCreateSuccessConfigOneOf1CloudFormation object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintCreateSuccessConfigOneOf1CloudFormationWithDefaults() *BlueprintCreateSuccessConfigOneOf1CloudFormation {
-	this := BlueprintCreateSuccessConfigOneOf1CloudFormation{}
-	return &this
-}
-
 func (o BlueprintCreateSuccessConfigOneOf1CloudFormation) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

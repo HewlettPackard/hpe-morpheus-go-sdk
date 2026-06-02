@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddCatalogCart200ResponseWithDefaults
-
-`func NewAddCatalogCart200ResponseWithDefaults() *AddCatalogCart200Response`
-
-NewAddCatalogCart200ResponseWithDefaults instantiates a new AddCatalogCart200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMsg
 
 `func (o *AddCatalogCart200Response) GetMsg() string`

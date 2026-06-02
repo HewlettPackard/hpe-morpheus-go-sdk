@@ -33,14 +33,6 @@ type VdiGateway struct {
 
 type _VdiGateway VdiGateway
 
-// NewVdiGatewayWithDefaults instantiates a new VdiGateway object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewVdiGatewayWithDefaults() *VdiGateway {
-	this := VdiGateway{}
-	return &this
-}
-
 func (o VdiGateway) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

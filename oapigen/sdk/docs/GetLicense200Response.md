@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetLicense200ResponseWithDefaults
-
-`func NewGetLicense200ResponseWithDefaults() *GetLicense200Response`
-
-NewGetLicense200ResponseWithDefaults instantiates a new GetLicense200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetLicense
 
 `func (o *GetLicense200Response) GetLicense() GetLicense200ResponseLicense`

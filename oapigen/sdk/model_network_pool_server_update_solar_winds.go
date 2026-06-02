@@ -41,18 +41,6 @@ type NetworkPoolServerUpdateSolarWinds struct {
 
 type _NetworkPoolServerUpdateSolarWinds NetworkPoolServerUpdateSolarWinds
 
-// NewNetworkPoolServerUpdateSolarWindsWithDefaults instantiates a new NetworkPoolServerUpdateSolarWinds object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkPoolServerUpdateSolarWindsWithDefaults() *NetworkPoolServerUpdateSolarWinds {
-	this := NetworkPoolServerUpdateSolarWinds{}
-	var enabled bool = true
-	this.Enabled = &enabled
-	var serviceThrottleRate int64 = 0
-	this.ServiceThrottleRate = *NewNullableInt64(&serviceThrottleRate)
-	return &this
-}
-
 func (o NetworkPoolServerUpdateSolarWinds) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

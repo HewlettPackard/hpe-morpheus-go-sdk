@@ -29,14 +29,6 @@ type ContainersAttachFloatingIpRequestConfig struct {
 
 type _ContainersAttachFloatingIpRequestConfig ContainersAttachFloatingIpRequestConfig
 
-// NewContainersAttachFloatingIpRequestConfigWithDefaults instantiates a new ContainersAttachFloatingIpRequestConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewContainersAttachFloatingIpRequestConfigWithDefaults() *ContainersAttachFloatingIpRequestConfig {
-	this := ContainersAttachFloatingIpRequestConfig{}
-	return &this
-}
-
 func (o ContainersAttachFloatingIpRequestConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

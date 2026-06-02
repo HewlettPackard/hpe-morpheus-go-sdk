@@ -33,22 +33,6 @@ type ListInstanceTypes200ResponseAllOfMeta struct {
 
 type _ListInstanceTypes200ResponseAllOfMeta ListInstanceTypes200ResponseAllOfMeta
 
-// NewListInstanceTypes200ResponseAllOfMetaWithDefaults instantiates a new ListInstanceTypes200ResponseAllOfMeta object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListInstanceTypes200ResponseAllOfMetaWithDefaults() *ListInstanceTypes200ResponseAllOfMeta {
-	this := ListInstanceTypes200ResponseAllOfMeta{}
-	var offset int64 = 0
-	this.Offset = &offset
-	var max int64 = 25
-	this.Max = &max
-	var size int64 = 0
-	this.Size = &size
-	var total int64 = 0
-	this.Total = &total
-	return &this
-}
-
 func (o ListInstanceTypes200ResponseAllOfMeta) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

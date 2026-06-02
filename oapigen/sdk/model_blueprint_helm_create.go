@@ -34,14 +34,6 @@ type BlueprintHelmCreate struct {
 
 type _BlueprintHelmCreate BlueprintHelmCreate
 
-// NewBlueprintHelmCreateWithDefaults instantiates a new BlueprintHelmCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintHelmCreateWithDefaults() *BlueprintHelmCreate {
-	this := BlueprintHelmCreate{}
-	return &this
-}
-
 func (o BlueprintHelmCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

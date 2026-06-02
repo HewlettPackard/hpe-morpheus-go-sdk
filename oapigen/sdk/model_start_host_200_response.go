@@ -26,14 +26,6 @@ type StartHost200Response struct {
 
 type _StartHost200Response StartHost200Response
 
-// NewStartHost200ResponseWithDefaults instantiates a new StartHost200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewStartHost200ResponseWithDefaults() *StartHost200Response {
-	this := StartHost200Response{}
-	return &this
-}
-
 func (o StartHost200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

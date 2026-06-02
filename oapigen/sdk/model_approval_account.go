@@ -27,14 +27,6 @@ type ApprovalAccount struct {
 
 type _ApprovalAccount ApprovalAccount
 
-// NewApprovalAccountWithDefaults instantiates a new ApprovalAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewApprovalAccountWithDefaults() *ApprovalAccount {
-	this := ApprovalAccount{}
-	return &this
-}
-
 func (o ApprovalAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

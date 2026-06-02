@@ -45,14 +45,6 @@ type StorageDatastoreCreate struct {
 
 type _StorageDatastoreCreate StorageDatastoreCreate
 
-// NewStorageDatastoreCreateWithDefaults instantiates a new StorageDatastoreCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewStorageDatastoreCreateWithDefaults() *StorageDatastoreCreate {
-	this := StorageDatastoreCreate{}
-	return &this
-}
-
 func (o StorageDatastoreCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

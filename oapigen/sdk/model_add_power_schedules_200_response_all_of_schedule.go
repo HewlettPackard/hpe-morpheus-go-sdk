@@ -64,14 +64,6 @@ type AddPowerSchedules200ResponseAllOfSchedule struct {
 
 type _AddPowerSchedules200ResponseAllOfSchedule AddPowerSchedules200ResponseAllOfSchedule
 
-// NewAddPowerSchedules200ResponseAllOfScheduleWithDefaults instantiates a new AddPowerSchedules200ResponseAllOfSchedule object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPowerSchedules200ResponseAllOfScheduleWithDefaults() *AddPowerSchedules200ResponseAllOfSchedule {
-	this := AddPowerSchedules200ResponseAllOfSchedule{}
-	return &this
-}
-
 func (o AddPowerSchedules200ResponseAllOfSchedule) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

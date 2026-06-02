@@ -27,14 +27,6 @@ type UpdateNetworkRequestNetworkZonePool struct {
 
 type _UpdateNetworkRequestNetworkZonePool UpdateNetworkRequestNetworkZonePool
 
-// NewUpdateNetworkRequestNetworkZonePoolWithDefaults instantiates a new UpdateNetworkRequestNetworkZonePool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkRequestNetworkZonePoolWithDefaults() *UpdateNetworkRequestNetworkZonePool {
-	this := UpdateNetworkRequestNetworkZonePool{}
-	return &this
-}
-
 func (o UpdateNetworkRequestNetworkZonePool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

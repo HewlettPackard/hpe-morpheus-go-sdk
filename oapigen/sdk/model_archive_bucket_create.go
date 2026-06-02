@@ -35,18 +35,6 @@ type ArchiveBucketCreate struct {
 
 type _ArchiveBucketCreate ArchiveBucketCreate
 
-// NewArchiveBucketCreateWithDefaults instantiates a new ArchiveBucketCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewArchiveBucketCreateWithDefaults() *ArchiveBucketCreate {
-	this := ArchiveBucketCreate{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	var isPublic bool = false
-	this.IsPublic = &isPublic
-	return &this
-}
-
 func (o ArchiveBucketCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

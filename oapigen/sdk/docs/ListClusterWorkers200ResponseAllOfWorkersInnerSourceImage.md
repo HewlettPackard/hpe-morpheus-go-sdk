@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListClusterWorkers200ResponseAllOfWorkersInnerSourceImageWithDefaults
-
-`func NewListClusterWorkers200ResponseAllOfWorkersInnerSourceImageWithDefaults() *ListClusterWorkers200ResponseAllOfWorkersInnerSourceImage`
-
-NewListClusterWorkers200ResponseAllOfWorkersInnerSourceImageWithDefaults instantiates a new ListClusterWorkers200ResponseAllOfWorkersInnerSourceImage object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListClusterWorkers200ResponseAllOfWorkersInnerSourceImage) GetId() int64`

@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetPoliciesGroup200ResponseWithDefaults
-
-`func NewGetPoliciesGroup200ResponseWithDefaults() *GetPoliciesGroup200Response`
-
-NewGetPoliciesGroup200ResponseWithDefaults instantiates a new GetPoliciesGroup200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPolicy
 
 `func (o *GetPoliciesGroup200Response) GetPolicy() GetPoliciesGroup200ResponseAllOfPolicy`

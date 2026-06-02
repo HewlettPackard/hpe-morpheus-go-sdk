@@ -33,14 +33,6 @@ type LoadBalancerCreateConfigNSXT struct {
 
 type _LoadBalancerCreateConfigNSXT LoadBalancerCreateConfigNSXT
 
-// NewLoadBalancerCreateConfigNSXTWithDefaults instantiates a new LoadBalancerCreateConfigNSXT object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLoadBalancerCreateConfigNSXTWithDefaults() *LoadBalancerCreateConfigNSXT {
-	this := LoadBalancerCreateConfigNSXT{}
-	return &this
-}
-
 func (o LoadBalancerCreateConfigNSXT) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

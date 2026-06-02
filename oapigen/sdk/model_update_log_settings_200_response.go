@@ -26,14 +26,6 @@ type UpdateLogSettings200Response struct {
 
 type _UpdateLogSettings200Response UpdateLogSettings200Response
 
-// NewUpdateLogSettings200ResponseWithDefaults instantiates a new UpdateLogSettings200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateLogSettings200ResponseWithDefaults() *UpdateLogSettings200Response {
-	this := UpdateLogSettings200Response{}
-	return &this
-}
-
 func (o UpdateLogSettings200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

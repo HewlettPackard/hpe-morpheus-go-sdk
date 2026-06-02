@@ -28,14 +28,6 @@ type AddWikiRequestPage struct {
 
 type _AddWikiRequestPage AddWikiRequestPage
 
-// NewAddWikiRequestPageWithDefaults instantiates a new AddWikiRequestPage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddWikiRequestPageWithDefaults() *AddWikiRequestPage {
-	this := AddWikiRequestPage{}
-	return &this
-}
-
 func (o AddWikiRequestPage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

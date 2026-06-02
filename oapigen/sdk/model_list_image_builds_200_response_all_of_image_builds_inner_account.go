@@ -27,14 +27,6 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerAccount struct {
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerAccount ListImageBuilds200ResponseAllOfImageBuildsInnerAccount
 
-// NewListImageBuilds200ResponseAllOfImageBuildsInnerAccountWithDefaults instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListImageBuilds200ResponseAllOfImageBuildsInnerAccountWithDefaults() *ListImageBuilds200ResponseAllOfImageBuildsInnerAccount {
-	this := ListImageBuilds200ResponseAllOfImageBuildsInnerAccount{}
-	return &this
-}
-
 func (o ListImageBuilds200ResponseAllOfImageBuildsInnerAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

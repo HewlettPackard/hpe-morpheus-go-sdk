@@ -28,14 +28,6 @@ type GetImageBuild200ResponseImageBuildConfigInstance struct {
 
 type _GetImageBuild200ResponseImageBuildConfigInstance GetImageBuild200ResponseImageBuildConfigInstance
 
-// NewGetImageBuild200ResponseImageBuildConfigInstanceWithDefaults instantiates a new GetImageBuild200ResponseImageBuildConfigInstance object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetImageBuild200ResponseImageBuildConfigInstanceWithDefaults() *GetImageBuild200ResponseImageBuildConfigInstance {
-	this := GetImageBuild200ResponseImageBuildConfigInstance{}
-	return &this
-}
-
 func (o GetImageBuild200ResponseImageBuildConfigInstance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

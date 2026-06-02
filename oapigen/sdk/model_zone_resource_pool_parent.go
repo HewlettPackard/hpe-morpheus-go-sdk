@@ -27,14 +27,6 @@ type ZoneResourcePoolParent struct {
 
 type _ZoneResourcePoolParent ZoneResourcePoolParent
 
-// NewZoneResourcePoolParentWithDefaults instantiates a new ZoneResourcePoolParent object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneResourcePoolParentWithDefaults() *ZoneResourcePoolParent {
-	this := ZoneResourcePoolParent{}
-	return &this
-}
-
 func (o ZoneResourcePoolParent) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

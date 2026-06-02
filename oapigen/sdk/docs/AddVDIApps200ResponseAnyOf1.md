@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddVDIApps200ResponseAnyOf1WithDefaults
-
-`func NewAddVDIApps200ResponseAnyOf1WithDefaults() *AddVDIApps200ResponseAnyOf1`
-
-NewAddVDIApps200ResponseAnyOf1WithDefaults instantiates a new AddVDIApps200ResponseAnyOf1 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *AddVDIApps200ResponseAnyOf1) GetSuccess() bool`

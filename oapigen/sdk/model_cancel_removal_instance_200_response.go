@@ -26,14 +26,6 @@ type CancelRemovalInstance200Response struct {
 
 type _CancelRemovalInstance200Response CancelRemovalInstance200Response
 
-// NewCancelRemovalInstance200ResponseWithDefaults instantiates a new CancelRemovalInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCancelRemovalInstance200ResponseWithDefaults() *CancelRemovalInstance200Response {
-	this := CancelRemovalInstance200Response{}
-	return &this
-}
-
 func (o CancelRemovalInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

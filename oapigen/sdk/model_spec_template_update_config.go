@@ -26,14 +26,6 @@ type SpecTemplateUpdateConfig struct {
 
 type _SpecTemplateUpdateConfig SpecTemplateUpdateConfig
 
-// NewSpecTemplateUpdateConfigWithDefaults instantiates a new SpecTemplateUpdateConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSpecTemplateUpdateConfigWithDefaults() *SpecTemplateUpdateConfig {
-	this := SpecTemplateUpdateConfig{}
-	return &this
-}
-
 func (o SpecTemplateUpdateConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

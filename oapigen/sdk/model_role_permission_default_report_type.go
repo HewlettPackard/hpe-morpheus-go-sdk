@@ -29,14 +29,6 @@ type RolePermissionDefaultReportType struct {
 
 type _RolePermissionDefaultReportType RolePermissionDefaultReportType
 
-// NewRolePermissionDefaultReportTypeWithDefaults instantiates a new RolePermissionDefaultReportType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRolePermissionDefaultReportTypeWithDefaults() *RolePermissionDefaultReportType {
-	this := RolePermissionDefaultReportType{}
-	return &this
-}
-
 func (o RolePermissionDefaultReportType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

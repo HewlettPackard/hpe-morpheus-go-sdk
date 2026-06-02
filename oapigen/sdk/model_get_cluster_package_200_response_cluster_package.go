@@ -39,14 +39,6 @@ type GetClusterPackage200ResponseClusterPackage struct {
 
 type _GetClusterPackage200ResponseClusterPackage GetClusterPackage200ResponseClusterPackage
 
-// NewGetClusterPackage200ResponseClusterPackageWithDefaults instantiates a new GetClusterPackage200ResponseClusterPackage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterPackage200ResponseClusterPackageWithDefaults() *GetClusterPackage200ResponseClusterPackage {
-	this := GetClusterPackage200ResponseClusterPackage{}
-	return &this
-}
-
 func (o GetClusterPackage200ResponseClusterPackage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

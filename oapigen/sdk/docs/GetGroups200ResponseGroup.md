@@ -31,14 +31,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetGroups200ResponseGroupWithDefaults
-
-`func NewGetGroups200ResponseGroupWithDefaults() *GetGroups200ResponseGroup`
-
-NewGetGroups200ResponseGroupWithDefaults instantiates a new GetGroups200ResponseGroup object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetGroups200ResponseGroup) GetId() int64`

@@ -25,14 +25,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListSubnetTypes200ResponseAllOfSubnetTypesInnerWithDefaults
-
-`func NewListSubnetTypes200ResponseAllOfSubnetTypesInnerWithDefaults() *ListSubnetTypes200ResponseAllOfSubnetTypesInner`
-
-NewListSubnetTypes200ResponseAllOfSubnetTypesInnerWithDefaults instantiates a new ListSubnetTypes200ResponseAllOfSubnetTypesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListSubnetTypes200ResponseAllOfSubnetTypesInner) GetId() int64`

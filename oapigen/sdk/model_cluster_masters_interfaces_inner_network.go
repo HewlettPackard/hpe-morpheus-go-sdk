@@ -27,14 +27,6 @@ type ClusterMastersInterfacesInnerNetwork struct {
 
 type _ClusterMastersInterfacesInnerNetwork ClusterMastersInterfacesInnerNetwork
 
-// NewClusterMastersInterfacesInnerNetworkWithDefaults instantiates a new ClusterMastersInterfacesInnerNetwork object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterMastersInterfacesInnerNetworkWithDefaults() *ClusterMastersInterfacesInnerNetwork {
-	this := ClusterMastersInterfacesInnerNetwork{}
-	return &this
-}
-
 func (o ClusterMastersInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type UpdatePriceSetsRequestPriceSetZonePool struct {
 
 type _UpdatePriceSetsRequestPriceSetZonePool UpdatePriceSetsRequestPriceSetZonePool
 
-// NewUpdatePriceSetsRequestPriceSetZonePoolWithDefaults instantiates a new UpdatePriceSetsRequestPriceSetZonePool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePriceSetsRequestPriceSetZonePoolWithDefaults() *UpdatePriceSetsRequestPriceSetZonePool {
-	this := UpdatePriceSetsRequestPriceSetZonePool{}
-	return &this
-}
-
 func (o UpdatePriceSetsRequestPriceSetZonePool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

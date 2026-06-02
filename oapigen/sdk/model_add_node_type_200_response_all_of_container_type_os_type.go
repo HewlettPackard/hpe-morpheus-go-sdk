@@ -27,14 +27,6 @@ type AddNodeType200ResponseAllOfContainerTypeOsType struct {
 
 type _AddNodeType200ResponseAllOfContainerTypeOsType AddNodeType200ResponseAllOfContainerTypeOsType
 
-// NewAddNodeType200ResponseAllOfContainerTypeOsTypeWithDefaults instantiates a new AddNodeType200ResponseAllOfContainerTypeOsType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddNodeType200ResponseAllOfContainerTypeOsTypeWithDefaults() *AddNodeType200ResponseAllOfContainerTypeOsType {
-	this := AddNodeType200ResponseAllOfContainerTypeOsType{}
-	return &this
-}
-
 func (o AddNodeType200ResponseAllOfContainerTypeOsType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

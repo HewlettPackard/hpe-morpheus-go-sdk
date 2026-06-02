@@ -73,14 +73,6 @@ type AddLayout200ResponseInstanceTypeLayoutProvisionType struct {
 
 type _AddLayout200ResponseInstanceTypeLayoutProvisionType AddLayout200ResponseInstanceTypeLayoutProvisionType
 
-// NewAddLayout200ResponseInstanceTypeLayoutProvisionTypeWithDefaults instantiates a new AddLayout200ResponseInstanceTypeLayoutProvisionType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLayout200ResponseInstanceTypeLayoutProvisionTypeWithDefaults() *AddLayout200ResponseInstanceTypeLayoutProvisionType {
-	this := AddLayout200ResponseInstanceTypeLayoutProvisionType{}
-	return &this
-}
-
 func (o AddLayout200ResponseInstanceTypeLayoutProvisionType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

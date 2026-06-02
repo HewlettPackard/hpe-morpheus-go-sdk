@@ -27,14 +27,6 @@ type UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket struct {
 
 type _UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket
 
-// NewUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucketWithDefaults instantiates a new UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucketWithDefaults() *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket {
-	this := UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket{}
-	return &this
-}
-
 func (o UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

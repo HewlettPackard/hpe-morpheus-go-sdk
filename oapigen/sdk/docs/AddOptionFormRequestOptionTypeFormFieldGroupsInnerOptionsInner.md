@@ -40,14 +40,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInnerWithDefaults
-
-`func NewAddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInnerWithDefaults() *AddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInner`
-
-NewAddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInnerWithDefaults instantiates a new AddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddOptionFormRequestOptionTypeFormFieldGroupsInnerOptionsInner) GetId() int64`

@@ -27,14 +27,6 @@ type InstanceContainerServerVolumeDatastore struct {
 
 type _InstanceContainerServerVolumeDatastore InstanceContainerServerVolumeDatastore
 
-// NewInstanceContainerServerVolumeDatastoreWithDefaults instantiates a new InstanceContainerServerVolumeDatastore object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainerServerVolumeDatastoreWithDefaults() *InstanceContainerServerVolumeDatastore {
-	this := InstanceContainerServerVolumeDatastore{}
-	return &this
-}
-
 func (o InstanceContainerServerVolumeDatastore) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

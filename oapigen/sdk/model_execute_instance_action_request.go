@@ -40,14 +40,6 @@ type ExecuteInstanceActionRequest struct {
 
 type _ExecuteInstanceActionRequest ExecuteInstanceActionRequest
 
-// NewExecuteInstanceActionRequestWithDefaults instantiates a new ExecuteInstanceActionRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewExecuteInstanceActionRequestWithDefaults() *ExecuteInstanceActionRequest {
-	this := ExecuteInstanceActionRequest{}
-	return &this
-}
-
 func (o ExecuteInstanceActionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

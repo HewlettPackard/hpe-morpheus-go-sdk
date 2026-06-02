@@ -45,22 +45,6 @@ type UpdateBudgetsRequestBudget struct {
 
 type _UpdateBudgetsRequestBudget UpdateBudgetsRequestBudget
 
-// NewUpdateBudgetsRequestBudgetWithDefaults instantiates a new UpdateBudgetsRequestBudget object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBudgetsRequestBudgetWithDefaults() *UpdateBudgetsRequestBudget {
-	this := UpdateBudgetsRequestBudget{}
-	var scope string = "account"
-	this.Scope = &scope
-	var period string = "year"
-	this.Period = &period
-	var interval string = "year"
-	this.Interval = &interval
-	var enabled bool = true
-	this.Enabled = &enabled
-	return &this
-}
-
 func (o UpdateBudgetsRequestBudget) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

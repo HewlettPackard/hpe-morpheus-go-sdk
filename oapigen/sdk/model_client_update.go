@@ -30,14 +30,6 @@ type ClientUpdate struct {
 
 type _ClientUpdate ClientUpdate
 
-// NewClientUpdateWithDefaults instantiates a new ClientUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClientUpdateWithDefaults() *ClientUpdate {
-	this := ClientUpdate{}
-	return &this
-}
-
 func (o ClientUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

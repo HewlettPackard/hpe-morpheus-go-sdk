@@ -27,14 +27,6 @@ type ImageBuildsConfigNetworkInterfacesInnerNetworkPool struct {
 
 type _ImageBuildsConfigNetworkInterfacesInnerNetworkPool ImageBuildsConfigNetworkInterfacesInnerNetworkPool
 
-// NewImageBuildsConfigNetworkInterfacesInnerNetworkPoolWithDefaults instantiates a new ImageBuildsConfigNetworkInterfacesInnerNetworkPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewImageBuildsConfigNetworkInterfacesInnerNetworkPoolWithDefaults() *ImageBuildsConfigNetworkInterfacesInnerNetworkPool {
-	this := ImageBuildsConfigNetworkInterfacesInnerNetworkPool{}
-	return &this
-}
-
 func (o ImageBuildsConfigNetworkInterfacesInnerNetworkPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

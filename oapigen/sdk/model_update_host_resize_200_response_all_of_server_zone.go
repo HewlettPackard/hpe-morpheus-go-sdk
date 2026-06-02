@@ -27,14 +27,6 @@ type UpdateHostResize200ResponseAllOfServerZone struct {
 
 type _UpdateHostResize200ResponseAllOfServerZone UpdateHostResize200ResponseAllOfServerZone
 
-// NewUpdateHostResize200ResponseAllOfServerZoneWithDefaults instantiates a new UpdateHostResize200ResponseAllOfServerZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateHostResize200ResponseAllOfServerZoneWithDefaults() *UpdateHostResize200ResponseAllOfServerZone {
-	this := UpdateHostResize200ResponseAllOfServerZone{}
-	return &this
-}
-
 func (o UpdateHostResize200ResponseAllOfServerZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

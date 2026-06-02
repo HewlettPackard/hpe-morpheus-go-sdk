@@ -27,14 +27,6 @@ type UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner str
 
 type _UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner
 
-// NewUpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInnerWithDefaults instantiates a new UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInnerWithDefaults() *UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner {
-	this := UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner{}
-	return &this
-}
-
 func (o UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

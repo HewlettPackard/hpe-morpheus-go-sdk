@@ -27,14 +27,6 @@ type ListPolicyTypes200Response struct {
 
 type _ListPolicyTypes200Response ListPolicyTypes200Response
 
-// NewListPolicyTypes200ResponseWithDefaults instantiates a new ListPolicyTypes200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListPolicyTypes200ResponseWithDefaults() *ListPolicyTypes200Response {
-	this := ListPolicyTypes200Response{}
-	return &this
-}
-
 func (o ListPolicyTypes200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

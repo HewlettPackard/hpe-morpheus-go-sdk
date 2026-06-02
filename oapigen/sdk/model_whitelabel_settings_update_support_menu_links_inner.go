@@ -28,14 +28,6 @@ type WhitelabelSettingsUpdateSupportMenuLinksInner struct {
 
 type _WhitelabelSettingsUpdateSupportMenuLinksInner WhitelabelSettingsUpdateSupportMenuLinksInner
 
-// NewWhitelabelSettingsUpdateSupportMenuLinksInnerWithDefaults instantiates a new WhitelabelSettingsUpdateSupportMenuLinksInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWhitelabelSettingsUpdateSupportMenuLinksInnerWithDefaults() *WhitelabelSettingsUpdateSupportMenuLinksInner {
-	this := WhitelabelSettingsUpdateSupportMenuLinksInner{}
-	return &this
-}
-
 func (o WhitelabelSettingsUpdateSupportMenuLinksInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

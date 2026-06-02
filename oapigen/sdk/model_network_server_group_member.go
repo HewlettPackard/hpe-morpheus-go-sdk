@@ -36,14 +36,6 @@ type NetworkServerGroupMember struct {
 
 type _NetworkServerGroupMember NetworkServerGroupMember
 
-// NewNetworkServerGroupMemberWithDefaults instantiates a new NetworkServerGroupMember object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkServerGroupMemberWithDefaults() *NetworkServerGroupMember {
-	this := NetworkServerGroupMember{}
-	return &this
-}
-
 func (o NetworkServerGroupMember) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

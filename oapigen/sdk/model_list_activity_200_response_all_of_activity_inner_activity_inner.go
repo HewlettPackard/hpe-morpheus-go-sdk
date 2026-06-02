@@ -35,14 +35,6 @@ type ListActivity200ResponseAllOfActivityInnerActivityInner struct {
 
 type _ListActivity200ResponseAllOfActivityInnerActivityInner ListActivity200ResponseAllOfActivityInnerActivityInner
 
-// NewListActivity200ResponseAllOfActivityInnerActivityInnerWithDefaults instantiates a new ListActivity200ResponseAllOfActivityInnerActivityInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListActivity200ResponseAllOfActivityInnerActivityInnerWithDefaults() *ListActivity200ResponseAllOfActivityInnerActivityInner {
-	this := ListActivity200ResponseAllOfActivityInnerActivityInner{}
-	return &this
-}
-
 func (o ListActivity200ResponseAllOfActivityInnerActivityInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -34,14 +34,6 @@ type AddEmailTemplate200ResponseEmailTemplate struct {
 
 type _AddEmailTemplate200ResponseEmailTemplate AddEmailTemplate200ResponseEmailTemplate
 
-// NewAddEmailTemplate200ResponseEmailTemplateWithDefaults instantiates a new AddEmailTemplate200ResponseEmailTemplate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddEmailTemplate200ResponseEmailTemplateWithDefaults() *AddEmailTemplate200ResponseEmailTemplate {
-	this := AddEmailTemplate200ResponseEmailTemplate{}
-	return &this
-}
-
 func (o AddEmailTemplate200ResponseEmailTemplate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

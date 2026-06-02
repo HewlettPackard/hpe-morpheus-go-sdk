@@ -28,14 +28,6 @@ type AttachServerVolumeRequestMountPoint struct {
 
 type _AttachServerVolumeRequestMountPoint AttachServerVolumeRequestMountPoint
 
-// NewAttachServerVolumeRequestMountPointWithDefaults instantiates a new AttachServerVolumeRequestMountPoint object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAttachServerVolumeRequestMountPointWithDefaults() *AttachServerVolumeRequestMountPoint {
-	this := AttachServerVolumeRequestMountPoint{}
-	return &this
-}
-
 func (o AttachServerVolumeRequestMountPoint) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

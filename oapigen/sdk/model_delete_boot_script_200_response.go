@@ -26,14 +26,6 @@ type DeleteBootScript200Response struct {
 
 type _DeleteBootScript200Response DeleteBootScript200Response
 
-// NewDeleteBootScript200ResponseWithDefaults instantiates a new DeleteBootScript200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteBootScript200ResponseWithDefaults() *DeleteBootScript200Response {
-	this := DeleteBootScript200Response{}
-	return &this
-}
-
 func (o DeleteBootScript200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

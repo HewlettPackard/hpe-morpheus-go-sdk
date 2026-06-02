@@ -27,14 +27,6 @@ type SolarWindsNetworkPoolServerUpdateCredential struct {
 
 type _SolarWindsNetworkPoolServerUpdateCredential SolarWindsNetworkPoolServerUpdateCredential
 
-// NewSolarWindsNetworkPoolServerUpdateCredentialWithDefaults instantiates a new SolarWindsNetworkPoolServerUpdateCredential object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSolarWindsNetworkPoolServerUpdateCredentialWithDefaults() *SolarWindsNetworkPoolServerUpdateCredential {
-	this := SolarWindsNetworkPoolServerUpdateCredential{}
-	return &this
-}
-
 func (o SolarWindsNetworkPoolServerUpdateCredential) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

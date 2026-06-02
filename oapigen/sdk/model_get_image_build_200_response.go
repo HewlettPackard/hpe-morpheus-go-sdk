@@ -27,14 +27,6 @@ type GetImageBuild200Response struct {
 
 type _GetImageBuild200Response GetImageBuild200Response
 
-// NewGetImageBuild200ResponseWithDefaults instantiates a new GetImageBuild200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetImageBuild200ResponseWithDefaults() *GetImageBuild200Response {
-	this := GetImageBuild200Response{}
-	return &this
-}
-
 func (o GetImageBuild200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

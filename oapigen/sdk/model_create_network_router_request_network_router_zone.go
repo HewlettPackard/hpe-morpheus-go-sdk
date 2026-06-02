@@ -27,14 +27,6 @@ type CreateNetworkRouterRequestNetworkRouterZone struct {
 
 type _CreateNetworkRouterRequestNetworkRouterZone CreateNetworkRouterRequestNetworkRouterZone
 
-// NewCreateNetworkRouterRequestNetworkRouterZoneWithDefaults instantiates a new CreateNetworkRouterRequestNetworkRouterZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkRouterRequestNetworkRouterZoneWithDefaults() *CreateNetworkRouterRequestNetworkRouterZone {
-	this := CreateNetworkRouterRequestNetworkRouterZone{}
-	return &this
-}
-
 func (o CreateNetworkRouterRequestNetworkRouterZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

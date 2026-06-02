@@ -26,14 +26,6 @@ type GetHostType200Response struct {
 
 type _GetHostType200Response GetHostType200Response
 
-// NewGetHostType200ResponseWithDefaults instantiates a new GetHostType200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetHostType200ResponseWithDefaults() *GetHostType200Response {
-	this := GetHostType200Response{}
-	return &this
-}
-
 func (o GetHostType200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

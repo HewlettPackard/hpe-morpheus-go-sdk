@@ -36,14 +36,6 @@ type SaveCloudDatastoreRequestDatastoreResourcePermissions struct {
 
 type _SaveCloudDatastoreRequestDatastoreResourcePermissions SaveCloudDatastoreRequestDatastoreResourcePermissions
 
-// NewSaveCloudDatastoreRequestDatastoreResourcePermissionsWithDefaults instantiates a new SaveCloudDatastoreRequestDatastoreResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveCloudDatastoreRequestDatastoreResourcePermissionsWithDefaults() *SaveCloudDatastoreRequestDatastoreResourcePermissions {
-	this := SaveCloudDatastoreRequestDatastoreResourcePermissions{}
-	return &this
-}
-
 func (o SaveCloudDatastoreRequestDatastoreResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

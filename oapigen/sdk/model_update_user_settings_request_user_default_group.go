@@ -27,14 +27,6 @@ type UpdateUserSettingsRequestUserDefaultGroup struct {
 
 type _UpdateUserSettingsRequestUserDefaultGroup UpdateUserSettingsRequestUserDefaultGroup
 
-// NewUpdateUserSettingsRequestUserDefaultGroupWithDefaults instantiates a new UpdateUserSettingsRequestUserDefaultGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateUserSettingsRequestUserDefaultGroupWithDefaults() *UpdateUserSettingsRequestUserDefaultGroup {
-	this := UpdateUserSettingsRequestUserDefaultGroup{}
-	return &this
-}
-
 func (o UpdateUserSettingsRequestUserDefaultGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

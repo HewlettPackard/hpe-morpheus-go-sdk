@@ -27,14 +27,6 @@ type ClusterHistoryEventsInnerProcessType struct {
 
 type _ClusterHistoryEventsInnerProcessType ClusterHistoryEventsInnerProcessType
 
-// NewClusterHistoryEventsInnerProcessTypeWithDefaults instantiates a new ClusterHistoryEventsInnerProcessType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterHistoryEventsInnerProcessTypeWithDefaults() *ClusterHistoryEventsInnerProcessType {
-	this := ClusterHistoryEventsInnerProcessType{}
-	return &this
-}
-
 func (o ClusterHistoryEventsInnerProcessType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

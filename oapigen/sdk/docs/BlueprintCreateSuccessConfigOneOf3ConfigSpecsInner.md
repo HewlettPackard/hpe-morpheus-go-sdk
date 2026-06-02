@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewBlueprintCreateSuccessConfigOneOf3ConfigSpecsInnerWithDefaults
-
-`func NewBlueprintCreateSuccessConfigOneOf3ConfigSpecsInnerWithDefaults() *BlueprintCreateSuccessConfigOneOf3ConfigSpecsInner`
-
-NewBlueprintCreateSuccessConfigOneOf3ConfigSpecsInnerWithDefaults instantiates a new BlueprintCreateSuccessConfigOneOf3ConfigSpecsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *BlueprintCreateSuccessConfigOneOf3ConfigSpecsInner) GetId() int64`

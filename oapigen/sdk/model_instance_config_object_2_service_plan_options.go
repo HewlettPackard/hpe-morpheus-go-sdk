@@ -31,14 +31,6 @@ type InstanceConfigObject2ServicePlanOptions struct {
 
 type _InstanceConfigObject2ServicePlanOptions InstanceConfigObject2ServicePlanOptions
 
-// NewInstanceConfigObject2ServicePlanOptionsWithDefaults instantiates a new InstanceConfigObject2ServicePlanOptions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigObject2ServicePlanOptionsWithDefaults() *InstanceConfigObject2ServicePlanOptions {
-	this := InstanceConfigObject2ServicePlanOptions{}
-	return &this
-}
-
 func (o InstanceConfigObject2ServicePlanOptions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

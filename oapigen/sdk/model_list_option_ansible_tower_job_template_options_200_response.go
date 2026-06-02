@@ -27,14 +27,6 @@ type ListOptionAnsibleTowerJobTemplateOptions200Response struct {
 
 type _ListOptionAnsibleTowerJobTemplateOptions200Response ListOptionAnsibleTowerJobTemplateOptions200Response
 
-// NewListOptionAnsibleTowerJobTemplateOptions200ResponseWithDefaults instantiates a new ListOptionAnsibleTowerJobTemplateOptions200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListOptionAnsibleTowerJobTemplateOptions200ResponseWithDefaults() *ListOptionAnsibleTowerJobTemplateOptions200Response {
-	this := ListOptionAnsibleTowerJobTemplateOptions200Response{}
-	return &this
-}
-
 func (o ListOptionAnsibleTowerJobTemplateOptions200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -28,14 +28,6 @@ type ListNetworkServers200ResponseAllOfNetworkServersInnerIntegrationIntegration
 
 type _ListNetworkServers200ResponseAllOfNetworkServersInnerIntegrationIntegrationType ListNetworkServers200ResponseAllOfNetworkServersInnerIntegrationIntegrationType
 
-// NewListNetworkServers200ResponseAllOfNetworkServersInnerIntegrationIntegrationTypeWithDefaults instantiates a new ListNetworkServers200ResponseAllOfNetworkServersInnerIntegrationIntegrationType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListNetworkServers200ResponseAllOfNetworkServersInnerIntegrationIntegrationTypeWithDefaults() *ListNetworkServers200ResponseAllOfNetworkServersInnerIntegrationIntegrationType {
-	this := ListNetworkServers200ResponseAllOfNetworkServersInnerIntegrationIntegrationType{}
-	return &this
-}
-
 func (o ListNetworkServers200ResponseAllOfNetworkServersInnerIntegrationIntegrationType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

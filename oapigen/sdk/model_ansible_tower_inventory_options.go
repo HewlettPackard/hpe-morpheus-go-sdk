@@ -27,14 +27,6 @@ type AnsibleTowerInventoryOptions struct {
 
 type _AnsibleTowerInventoryOptions AnsibleTowerInventoryOptions
 
-// NewAnsibleTowerInventoryOptionsWithDefaults instantiates a new AnsibleTowerInventoryOptions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAnsibleTowerInventoryOptionsWithDefaults() *AnsibleTowerInventoryOptions {
-	this := AnsibleTowerInventoryOptions{}
-	return &this
-}
-
 func (o AnsibleTowerInventoryOptions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -29,14 +29,6 @@ type TagsPolicyTypeConfiguration13 struct {
 
 type _TagsPolicyTypeConfiguration13 TagsPolicyTypeConfiguration13
 
-// NewTagsPolicyTypeConfiguration13WithDefaults instantiates a new TagsPolicyTypeConfiguration13 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTagsPolicyTypeConfiguration13WithDefaults() *TagsPolicyTypeConfiguration13 {
-	this := TagsPolicyTypeConfiguration13{}
-	return &this
-}
-
 func (o TagsPolicyTypeConfiguration13) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

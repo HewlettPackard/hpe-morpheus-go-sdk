@@ -26,14 +26,6 @@ type CreateNetworkDomainRequest struct {
 
 type _CreateNetworkDomainRequest CreateNetworkDomainRequest
 
-// NewCreateNetworkDomainRequestWithDefaults instantiates a new CreateNetworkDomainRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkDomainRequestWithDefaults() *CreateNetworkDomainRequest {
-	this := CreateNetworkDomainRequest{}
-	return &this
-}
-
 func (o CreateNetworkDomainRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

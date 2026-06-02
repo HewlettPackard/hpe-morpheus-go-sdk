@@ -51,18 +51,6 @@ type UpdateNetworkDomainRequestNetworkDomain struct {
 
 type _UpdateNetworkDomainRequestNetworkDomain UpdateNetworkDomainRequestNetworkDomain
 
-// NewUpdateNetworkDomainRequestNetworkDomainWithDefaults instantiates a new UpdateNetworkDomainRequestNetworkDomain object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkDomainRequestNetworkDomainWithDefaults() *UpdateNetworkDomainRequestNetworkDomain {
-	this := UpdateNetworkDomainRequestNetworkDomain{}
-	var publicZone bool = false
-	this.PublicZone = &publicZone
-	var domainController bool = true
-	this.DomainController = &domainController
-	return &this
-}
-
 func (o UpdateNetworkDomainRequestNetworkDomain) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

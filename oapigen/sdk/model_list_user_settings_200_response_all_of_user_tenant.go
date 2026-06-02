@@ -27,14 +27,6 @@ type ListUserSettings200ResponseAllOfUserTenant struct {
 
 type _ListUserSettings200ResponseAllOfUserTenant ListUserSettings200ResponseAllOfUserTenant
 
-// NewListUserSettings200ResponseAllOfUserTenantWithDefaults instantiates a new ListUserSettings200ResponseAllOfUserTenant object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListUserSettings200ResponseAllOfUserTenantWithDefaults() *ListUserSettings200ResponseAllOfUserTenant {
-	this := ListUserSettings200ResponseAllOfUserTenant{}
-	return &this
-}
-
 func (o ListUserSettings200ResponseAllOfUserTenant) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

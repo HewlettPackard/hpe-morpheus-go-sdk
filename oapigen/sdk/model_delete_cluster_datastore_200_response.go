@@ -27,14 +27,6 @@ type DeleteClusterDatastore200Response struct {
 
 type _DeleteClusterDatastore200Response DeleteClusterDatastore200Response
 
-// NewDeleteClusterDatastore200ResponseWithDefaults instantiates a new DeleteClusterDatastore200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteClusterDatastore200ResponseWithDefaults() *DeleteClusterDatastore200Response {
-	this := DeleteClusterDatastore200Response{}
-	return &this
-}
-
 func (o DeleteClusterDatastore200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type AddPreseedScript200ResponseAllOfPreseedScriptAccount struct {
 
 type _AddPreseedScript200ResponseAllOfPreseedScriptAccount AddPreseedScript200ResponseAllOfPreseedScriptAccount
 
-// NewAddPreseedScript200ResponseAllOfPreseedScriptAccountWithDefaults instantiates a new AddPreseedScript200ResponseAllOfPreseedScriptAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPreseedScript200ResponseAllOfPreseedScriptAccountWithDefaults() *AddPreseedScript200ResponseAllOfPreseedScriptAccount {
-	this := AddPreseedScript200ResponseAllOfPreseedScriptAccount{}
-	return &this
-}
-
 func (o AddPreseedScript200ResponseAllOfPreseedScriptAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

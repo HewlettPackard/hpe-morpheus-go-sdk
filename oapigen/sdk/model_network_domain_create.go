@@ -51,18 +51,6 @@ type NetworkDomainCreate struct {
 
 type _NetworkDomainCreate NetworkDomainCreate
 
-// NewNetworkDomainCreateWithDefaults instantiates a new NetworkDomainCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkDomainCreateWithDefaults() *NetworkDomainCreate {
-	this := NetworkDomainCreate{}
-	var publicZone bool = false
-	this.PublicZone = &publicZone
-	var domainController bool = true
-	this.DomainController = &domainController
-	return &this
-}
-
 func (o NetworkDomainCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

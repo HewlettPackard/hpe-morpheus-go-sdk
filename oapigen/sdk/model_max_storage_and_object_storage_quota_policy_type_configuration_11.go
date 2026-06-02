@@ -27,16 +27,6 @@ type MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration11 struct {
 
 type _MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration11 MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration11
 
-// NewMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration11WithDefaults instantiates a new MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration11 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration11WithDefaults() *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration11 {
-	this := MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration11{}
-	var excludeContainers string = "off"
-	this.ExcludeContainers = &excludeContainers
-	return &this
-}
-
 func (o MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration11) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

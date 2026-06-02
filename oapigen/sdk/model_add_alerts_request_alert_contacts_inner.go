@@ -30,14 +30,6 @@ type AddAlertsRequestAlertContactsInner struct {
 
 type _AddAlertsRequestAlertContactsInner AddAlertsRequestAlertContactsInner
 
-// NewAddAlertsRequestAlertContactsInnerWithDefaults instantiates a new AddAlertsRequestAlertContactsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddAlertsRequestAlertContactsInnerWithDefaults() *AddAlertsRequestAlertContactsInner {
-	this := AddAlertsRequestAlertContactsInner{}
-	return &this
-}
-
 func (o AddAlertsRequestAlertContactsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

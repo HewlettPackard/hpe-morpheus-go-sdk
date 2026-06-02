@@ -27,14 +27,6 @@ type GetAlerts200ResponseAllOfAppsInnerCreatedBy struct {
 
 type _GetAlerts200ResponseAllOfAppsInnerCreatedBy GetAlerts200ResponseAllOfAppsInnerCreatedBy
 
-// NewGetAlerts200ResponseAllOfAppsInnerCreatedByWithDefaults instantiates a new GetAlerts200ResponseAllOfAppsInnerCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetAlerts200ResponseAllOfAppsInnerCreatedByWithDefaults() *GetAlerts200ResponseAllOfAppsInnerCreatedBy {
-	this := GetAlerts200ResponseAllOfAppsInnerCreatedBy{}
-	return &this
-}
-
 func (o GetAlerts200ResponseAllOfAppsInnerCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

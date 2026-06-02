@@ -46,14 +46,6 @@ type CreateLoadBalancerVirtualServerRequestLoadBalancerInstance struct {
 
 type _CreateLoadBalancerVirtualServerRequestLoadBalancerInstance CreateLoadBalancerVirtualServerRequestLoadBalancerInstance
 
-// NewCreateLoadBalancerVirtualServerRequestLoadBalancerInstanceWithDefaults instantiates a new CreateLoadBalancerVirtualServerRequestLoadBalancerInstance object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateLoadBalancerVirtualServerRequestLoadBalancerInstanceWithDefaults() *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance {
-	this := CreateLoadBalancerVirtualServerRequestLoadBalancerInstance{}
-	return &this
-}
-
 func (o CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

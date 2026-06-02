@@ -27,14 +27,6 @@ type GetStorageVolumes200ResponseStorageVolumeDatastore struct {
 
 type _GetStorageVolumes200ResponseStorageVolumeDatastore GetStorageVolumes200ResponseStorageVolumeDatastore
 
-// NewGetStorageVolumes200ResponseStorageVolumeDatastoreWithDefaults instantiates a new GetStorageVolumes200ResponseStorageVolumeDatastore object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetStorageVolumes200ResponseStorageVolumeDatastoreWithDefaults() *GetStorageVolumes200ResponseStorageVolumeDatastore {
-	this := GetStorageVolumes200ResponseStorageVolumeDatastore{}
-	return &this
-}
-
 func (o GetStorageVolumes200ResponseStorageVolumeDatastore) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type ZoneCreateZoneTypeAnyOf struct {
 
 type _ZoneCreateZoneTypeAnyOf ZoneCreateZoneTypeAnyOf
 
-// NewZoneCreateZoneTypeAnyOfWithDefaults instantiates a new ZoneCreateZoneTypeAnyOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneCreateZoneTypeAnyOfWithDefaults() *ZoneCreateZoneTypeAnyOf {
-	this := ZoneCreateZoneTypeAnyOf{}
-	return &this
-}
-
 func (o ZoneCreateZoneTypeAnyOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

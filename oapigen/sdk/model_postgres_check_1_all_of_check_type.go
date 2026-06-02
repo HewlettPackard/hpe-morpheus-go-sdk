@@ -26,14 +26,6 @@ type PostgresCheck1AllOfCheckType struct {
 
 type _PostgresCheck1AllOfCheckType PostgresCheck1AllOfCheckType
 
-// NewPostgresCheck1AllOfCheckTypeWithDefaults instantiates a new PostgresCheck1AllOfCheckType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPostgresCheck1AllOfCheckTypeWithDefaults() *PostgresCheck1AllOfCheckType {
-	this := PostgresCheck1AllOfCheckType{}
-	return &this
-}
-
 func (o PostgresCheck1AllOfCheckType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

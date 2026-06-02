@@ -33,14 +33,6 @@ type ListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInner s
 
 type _ListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInner ListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInner
 
-// NewListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInnerWithDefaults instantiates a new ListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInnerWithDefaults() *ListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInner {
-	this := ListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInner{}
-	return &this
-}
-
 func (o ListSystemTypeLayouts200ResponseSystemTypeLayoutsInnerComponentTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

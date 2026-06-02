@@ -27,14 +27,6 @@ type CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration struct 
 
 type _CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration
 
-// NewCreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegrationWithDefaults instantiates a new CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegrationWithDefaults() *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration {
-	this := CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration{}
-	return &this
-}
-
 func (o CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

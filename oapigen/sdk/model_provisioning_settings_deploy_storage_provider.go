@@ -27,14 +27,6 @@ type ProvisioningSettingsDeployStorageProvider struct {
 
 type _ProvisioningSettingsDeployStorageProvider ProvisioningSettingsDeployStorageProvider
 
-// NewProvisioningSettingsDeployStorageProviderWithDefaults instantiates a new ProvisioningSettingsDeployStorageProvider object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewProvisioningSettingsDeployStorageProviderWithDefaults() *ProvisioningSettingsDeployStorageProvider {
-	this := ProvisioningSettingsDeployStorageProvider{}
-	return &this
-}
-
 func (o ProvisioningSettingsDeployStorageProvider) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

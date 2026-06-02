@@ -29,14 +29,6 @@ type AddMigration200ResponseAnyOfMigrationLinuxKeyPair struct {
 
 type _AddMigration200ResponseAnyOfMigrationLinuxKeyPair AddMigration200ResponseAnyOfMigrationLinuxKeyPair
 
-// NewAddMigration200ResponseAnyOfMigrationLinuxKeyPairWithDefaults instantiates a new AddMigration200ResponseAnyOfMigrationLinuxKeyPair object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddMigration200ResponseAnyOfMigrationLinuxKeyPairWithDefaults() *AddMigration200ResponseAnyOfMigrationLinuxKeyPair {
-	this := AddMigration200ResponseAnyOfMigrationLinuxKeyPair{}
-	return &this
-}
-
 func (o AddMigration200ResponseAnyOfMigrationLinuxKeyPair) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type UpdateHostResizeRequestServer struct {
 
 type _UpdateHostResizeRequestServer UpdateHostResizeRequestServer
 
-// NewUpdateHostResizeRequestServerWithDefaults instantiates a new UpdateHostResizeRequestServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateHostResizeRequestServerWithDefaults() *UpdateHostResizeRequestServer {
-	this := UpdateHostResizeRequestServer{}
-	return &this
-}
-
 func (o UpdateHostResizeRequestServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

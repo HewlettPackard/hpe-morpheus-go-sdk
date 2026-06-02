@@ -30,14 +30,6 @@ type ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeSer
 
 type _ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType
 
-// NewListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerTypeWithDefaults instantiates a new ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerTypeWithDefaults() *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType {
-	this := ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType{}
-	return &this
-}
-
 func (o ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

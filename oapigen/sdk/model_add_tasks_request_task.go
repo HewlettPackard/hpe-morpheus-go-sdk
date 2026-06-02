@@ -48,18 +48,6 @@ type AddTasksRequestTask struct {
 
 type _AddTasksRequestTask AddTasksRequestTask
 
-// NewAddTasksRequestTaskWithDefaults instantiates a new AddTasksRequestTask object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddTasksRequestTaskWithDefaults() *AddTasksRequestTask {
-	this := AddTasksRequestTask{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	var retryable bool = false
-	this.Retryable = &retryable
-	return &this
-}
-
 func (o AddTasksRequestTask) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

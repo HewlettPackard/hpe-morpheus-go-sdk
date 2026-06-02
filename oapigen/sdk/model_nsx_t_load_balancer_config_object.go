@@ -33,14 +33,6 @@ type NSXTLoadBalancerConfigObject struct {
 
 type _NSXTLoadBalancerConfigObject NSXTLoadBalancerConfigObject
 
-// NewNSXTLoadBalancerConfigObjectWithDefaults instantiates a new NSXTLoadBalancerConfigObject object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNSXTLoadBalancerConfigObjectWithDefaults() *NSXTLoadBalancerConfigObject {
-	this := NSXTLoadBalancerConfigObject{}
-	return &this
-}
-
 func (o NSXTLoadBalancerConfigObject) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

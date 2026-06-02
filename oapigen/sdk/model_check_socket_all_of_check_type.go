@@ -26,14 +26,6 @@ type CheckSocketAllOfCheckType struct {
 
 type _CheckSocketAllOfCheckType CheckSocketAllOfCheckType
 
-// NewCheckSocketAllOfCheckTypeWithDefaults instantiates a new CheckSocketAllOfCheckType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCheckSocketAllOfCheckTypeWithDefaults() *CheckSocketAllOfCheckType {
-	this := CheckSocketAllOfCheckType{}
-	return &this
-}
-
 func (o CheckSocketAllOfCheckType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

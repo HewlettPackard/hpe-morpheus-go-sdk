@@ -27,14 +27,6 @@ type GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy struct {
 
 type _GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy
 
-// NewGetAlerts200ResponseAllOfCheckGroupsInnerCreatedByWithDefaults instantiates a new GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetAlerts200ResponseAllOfCheckGroupsInnerCreatedByWithDefaults() *GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy {
-	this := GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy{}
-	return &this
-}
-
 func (o GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

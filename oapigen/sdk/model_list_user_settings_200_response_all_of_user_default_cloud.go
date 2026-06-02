@@ -27,14 +27,6 @@ type ListUserSettings200ResponseAllOfUserDefaultCloud struct {
 
 type _ListUserSettings200ResponseAllOfUserDefaultCloud ListUserSettings200ResponseAllOfUserDefaultCloud
 
-// NewListUserSettings200ResponseAllOfUserDefaultCloudWithDefaults instantiates a new ListUserSettings200ResponseAllOfUserDefaultCloud object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListUserSettings200ResponseAllOfUserDefaultCloudWithDefaults() *ListUserSettings200ResponseAllOfUserDefaultCloud {
-	this := ListUserSettings200ResponseAllOfUserDefaultCloud{}
-	return &this
-}
-
 func (o ListUserSettings200ResponseAllOfUserDefaultCloud) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

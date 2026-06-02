@@ -55,14 +55,6 @@ type GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor struct {
 
 type _GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor
 
-// NewGetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborWithDefaults instantiates a new GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborWithDefaults() *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor {
-	this := GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor{}
-	return &this
-}
-
 func (o GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

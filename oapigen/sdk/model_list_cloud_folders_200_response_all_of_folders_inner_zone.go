@@ -27,14 +27,6 @@ type ListCloudFolders200ResponseAllOfFoldersInnerZone struct {
 
 type _ListCloudFolders200ResponseAllOfFoldersInnerZone ListCloudFolders200ResponseAllOfFoldersInnerZone
 
-// NewListCloudFolders200ResponseAllOfFoldersInnerZoneWithDefaults instantiates a new ListCloudFolders200ResponseAllOfFoldersInnerZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCloudFolders200ResponseAllOfFoldersInnerZoneWithDefaults() *ListCloudFolders200ResponseAllOfFoldersInnerZone {
-	this := ListCloudFolders200ResponseAllOfFoldersInnerZone{}
-	return &this
-}
-
 func (o ListCloudFolders200ResponseAllOfFoldersInnerZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

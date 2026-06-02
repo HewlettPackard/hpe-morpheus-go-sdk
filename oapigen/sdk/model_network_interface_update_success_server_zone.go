@@ -35,14 +35,6 @@ type NetworkInterfaceUpdateSuccessServerZone struct {
 
 type _NetworkInterfaceUpdateSuccessServerZone NetworkInterfaceUpdateSuccessServerZone
 
-// NewNetworkInterfaceUpdateSuccessServerZoneWithDefaults instantiates a new NetworkInterfaceUpdateSuccessServerZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkInterfaceUpdateSuccessServerZoneWithDefaults() *NetworkInterfaceUpdateSuccessServerZone {
-	this := NetworkInterfaceUpdateSuccessServerZone{}
-	return &this
-}
-
 func (o NetworkInterfaceUpdateSuccessServerZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

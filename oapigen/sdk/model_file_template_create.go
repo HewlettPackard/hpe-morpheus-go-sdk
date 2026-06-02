@@ -45,14 +45,6 @@ type FileTemplateCreate struct {
 
 type _FileTemplateCreate FileTemplateCreate
 
-// NewFileTemplateCreateWithDefaults instantiates a new FileTemplateCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewFileTemplateCreateWithDefaults() *FileTemplateCreate {
-	this := FileTemplateCreate{}
-	return &this
-}
-
 func (o FileTemplateCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

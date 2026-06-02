@@ -29,14 +29,6 @@ type CatalogCart struct {
 
 type _CatalogCart CatalogCart
 
-// NewCatalogCartWithDefaults instantiates a new CatalogCart object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCatalogCartWithDefaults() *CatalogCart {
-	this := CatalogCart{}
-	return &this
-}
-
 func (o CatalogCart) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

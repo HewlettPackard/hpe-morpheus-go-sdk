@@ -35,16 +35,6 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config struct {
 
 type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config
 
-// NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigWithDefaults instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigWithDefaults() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config {
-	this := ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config{}
-	var cmdbMode string = "TABLE"
-	this.CmdbMode = &cmdbMode
-	return &this
-}
-
 func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

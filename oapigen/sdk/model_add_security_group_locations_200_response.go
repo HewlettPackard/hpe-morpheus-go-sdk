@@ -27,14 +27,6 @@ type AddSecurityGroupLocations200Response struct {
 
 type _AddSecurityGroupLocations200Response AddSecurityGroupLocations200Response
 
-// NewAddSecurityGroupLocations200ResponseWithDefaults instantiates a new AddSecurityGroupLocations200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddSecurityGroupLocations200ResponseWithDefaults() *AddSecurityGroupLocations200Response {
-	this := AddSecurityGroupLocations200Response{}
-	return &this
-}
-
 func (o AddSecurityGroupLocations200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

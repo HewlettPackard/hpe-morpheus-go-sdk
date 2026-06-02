@@ -33,14 +33,6 @@ type GroovyTaskConfig6 struct {
 
 type _GroovyTaskConfig6 GroovyTaskConfig6
 
-// NewGroovyTaskConfig6WithDefaults instantiates a new GroovyTaskConfig6 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGroovyTaskConfig6WithDefaults() *GroovyTaskConfig6 {
-	this := GroovyTaskConfig6{}
-	return &this
-}
-
 func (o GroovyTaskConfig6) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

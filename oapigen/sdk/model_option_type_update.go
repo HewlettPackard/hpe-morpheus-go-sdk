@@ -50,22 +50,6 @@ type OptionTypeUpdate struct {
 
 type _OptionTypeUpdate OptionTypeUpdate
 
-// NewOptionTypeUpdateWithDefaults instantiates a new OptionTypeUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOptionTypeUpdateWithDefaults() *OptionTypeUpdate {
-	this := OptionTypeUpdate{}
-	var type_ string = "text"
-	this.Type = &type_
-	var required bool = false
-	this.Required = &required
-	var exportMeta bool = false
-	this.ExportMeta = &exportMeta
-	var editable bool = false
-	this.Editable = &editable
-	return &this
-}
-
 func (o OptionTypeUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

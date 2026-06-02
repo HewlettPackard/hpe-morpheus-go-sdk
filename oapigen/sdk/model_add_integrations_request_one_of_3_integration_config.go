@@ -27,14 +27,6 @@ type AddIntegrationsRequestOneOf3IntegrationConfig struct {
 
 type _AddIntegrationsRequestOneOf3IntegrationConfig AddIntegrationsRequestOneOf3IntegrationConfig
 
-// NewAddIntegrationsRequestOneOf3IntegrationConfigWithDefaults instantiates a new AddIntegrationsRequestOneOf3IntegrationConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIntegrationsRequestOneOf3IntegrationConfigWithDefaults() *AddIntegrationsRequestOneOf3IntegrationConfig {
-	this := AddIntegrationsRequestOneOf3IntegrationConfig{}
-	return &this
-}
-
 func (o AddIntegrationsRequestOneOf3IntegrationConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

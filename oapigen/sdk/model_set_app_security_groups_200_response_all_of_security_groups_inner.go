@@ -29,14 +29,6 @@ type SetAppSecurityGroups200ResponseAllOfSecurityGroupsInner struct {
 
 type _SetAppSecurityGroups200ResponseAllOfSecurityGroupsInner SetAppSecurityGroups200ResponseAllOfSecurityGroupsInner
 
-// NewSetAppSecurityGroups200ResponseAllOfSecurityGroupsInnerWithDefaults instantiates a new SetAppSecurityGroups200ResponseAllOfSecurityGroupsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSetAppSecurityGroups200ResponseAllOfSecurityGroupsInnerWithDefaults() *SetAppSecurityGroups200ResponseAllOfSecurityGroupsInner {
-	this := SetAppSecurityGroups200ResponseAllOfSecurityGroupsInner{}
-	return &this
-}
-
 func (o SetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

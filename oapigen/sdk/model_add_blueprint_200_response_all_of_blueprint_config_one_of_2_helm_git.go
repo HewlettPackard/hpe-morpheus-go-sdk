@@ -33,14 +33,6 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf2HelmGit struct {
 
 type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf2HelmGit AddBlueprint200ResponseAllOfBlueprintConfigOneOf2HelmGit
 
-// NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf2HelmGitWithDefaults instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf2HelmGit object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf2HelmGitWithDefaults() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf2HelmGit {
-	this := AddBlueprint200ResponseAllOfBlueprintConfigOneOf2HelmGit{}
-	return &this
-}
-
 func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf2HelmGit) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

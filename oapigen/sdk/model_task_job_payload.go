@@ -45,16 +45,6 @@ type TaskJobPayload struct {
 
 type _TaskJobPayload TaskJobPayload
 
-// NewTaskJobPayloadWithDefaults instantiates a new TaskJobPayload object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTaskJobPayloadWithDefaults() *TaskJobPayload {
-	this := TaskJobPayload{}
-	var enabled bool = true
-	this.Enabled = &enabled
-	return &this
-}
-
 func (o TaskJobPayload) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

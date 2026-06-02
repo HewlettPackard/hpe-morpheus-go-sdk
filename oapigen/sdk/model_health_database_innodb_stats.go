@@ -37,14 +37,6 @@ type HealthDatabaseInnodbStats struct {
 
 type _HealthDatabaseInnodbStats HealthDatabaseInnodbStats
 
-// NewHealthDatabaseInnodbStatsWithDefaults instantiates a new HealthDatabaseInnodbStats object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewHealthDatabaseInnodbStatsWithDefaults() *HealthDatabaseInnodbStats {
-	this := HealthDatabaseInnodbStats{}
-	return &this
-}
-
 func (o HealthDatabaseInnodbStats) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

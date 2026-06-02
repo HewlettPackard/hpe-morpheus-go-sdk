@@ -36,14 +36,6 @@ type PythonTaskConfig5 struct {
 
 type _PythonTaskConfig5 PythonTaskConfig5
 
-// NewPythonTaskConfig5WithDefaults instantiates a new PythonTaskConfig5 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPythonTaskConfig5WithDefaults() *PythonTaskConfig5 {
-	this := PythonTaskConfig5{}
-	return &this
-}
-
 func (o PythonTaskConfig5) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

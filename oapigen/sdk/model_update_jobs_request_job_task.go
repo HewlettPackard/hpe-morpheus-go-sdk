@@ -26,14 +26,6 @@ type UpdateJobsRequestJobTask struct {
 
 type _UpdateJobsRequestJobTask UpdateJobsRequestJobTask
 
-// NewUpdateJobsRequestJobTaskWithDefaults instantiates a new UpdateJobsRequestJobTask object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateJobsRequestJobTaskWithDefaults() *UpdateJobsRequestJobTask {
-	this := UpdateJobsRequestJobTask{}
-	return &this
-}
-
 func (o UpdateJobsRequestJobTask) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

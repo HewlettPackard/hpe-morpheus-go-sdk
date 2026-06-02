@@ -26,14 +26,6 @@ type AddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount
 
 type _AddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount AddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount
 
-// NewAddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccountWithDefaults instantiates a new AddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccountWithDefaults() *AddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount {
-	this := AddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount{}
-	return &this
-}
-
 func (o AddLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

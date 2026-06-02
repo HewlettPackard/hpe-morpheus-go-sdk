@@ -27,14 +27,6 @@ type InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage struct 
 
 type _InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage
 
-// NewInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImageWithDefaults instantiates a new InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImageWithDefaults() *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage {
-	this := InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage{}
-	return &this
-}
-
 func (o InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

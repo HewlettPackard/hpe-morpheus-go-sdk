@@ -57,14 +57,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetLayout200ResponseInstanceTypeLayoutProvisionTypeCustomOptionTypesInnerWithDefaults
-
-`func NewGetLayout200ResponseInstanceTypeLayoutProvisionTypeCustomOptionTypesInnerWithDefaults() *GetLayout200ResponseInstanceTypeLayoutProvisionTypeCustomOptionTypesInner`
-
-NewGetLayout200ResponseInstanceTypeLayoutProvisionTypeCustomOptionTypesInnerWithDefaults instantiates a new GetLayout200ResponseInstanceTypeLayoutProvisionTypeCustomOptionTypesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeCustomOptionTypesInner) GetId() int64`

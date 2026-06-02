@@ -34,14 +34,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddInstance200ResponseAllOfOneOfInstanceVolumesInnerWithDefaults
-
-`func NewAddInstance200ResponseAllOfOneOfInstanceVolumesInnerWithDefaults() *AddInstance200ResponseAllOfOneOfInstanceVolumesInner`
-
-NewAddInstance200ResponseAllOfOneOfInstanceVolumesInnerWithDefaults instantiates a new AddInstance200ResponseAllOfOneOfInstanceVolumesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetControllerId
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceVolumesInner) GetControllerId() int64`

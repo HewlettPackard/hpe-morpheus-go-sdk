@@ -27,14 +27,6 @@ type InstanceContainerServerInterfacesInnerNetworkGroup struct {
 
 type _InstanceContainerServerInterfacesInnerNetworkGroup InstanceContainerServerInterfacesInnerNetworkGroup
 
-// NewInstanceContainerServerInterfacesInnerNetworkGroupWithDefaults instantiates a new InstanceContainerServerInterfacesInnerNetworkGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceContainerServerInterfacesInnerNetworkGroupWithDefaults() *InstanceContainerServerInterfacesInnerNetworkGroup {
-	this := InstanceContainerServerInterfacesInnerNetworkGroup{}
-	return &this
-}
-
 func (o InstanceContainerServerInterfacesInnerNetworkGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

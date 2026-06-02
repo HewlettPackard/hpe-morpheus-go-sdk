@@ -26,14 +26,6 @@ type ClusterServerCreateConfigGKEWorkerPlan struct {
 
 type _ClusterServerCreateConfigGKEWorkerPlan ClusterServerCreateConfigGKEWorkerPlan
 
-// NewClusterServerCreateConfigGKEWorkerPlanWithDefaults instantiates a new ClusterServerCreateConfigGKEWorkerPlan object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterServerCreateConfigGKEWorkerPlanWithDefaults() *ClusterServerCreateConfigGKEWorkerPlan {
-	this := ClusterServerCreateConfigGKEWorkerPlan{}
-	return &this
-}
-
 func (o ClusterServerCreateConfigGKEWorkerPlan) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

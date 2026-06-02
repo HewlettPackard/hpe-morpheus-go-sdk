@@ -49,18 +49,6 @@ type CreateInstanceSchedule200ResponseAllOfInstanceSchedule struct {
 
 type _CreateInstanceSchedule200ResponseAllOfInstanceSchedule CreateInstanceSchedule200ResponseAllOfInstanceSchedule
 
-// NewCreateInstanceSchedule200ResponseAllOfInstanceScheduleWithDefaults instantiates a new CreateInstanceSchedule200ResponseAllOfInstanceSchedule object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateInstanceSchedule200ResponseAllOfInstanceScheduleWithDefaults() *CreateInstanceSchedule200ResponseAllOfInstanceSchedule {
-	this := CreateInstanceSchedule200ResponseAllOfInstanceSchedule{}
-	var scheduleType string = "dayOfWeek"
-	this.ScheduleType = &scheduleType
-	var scheduleTimezone string = "UTC"
-	this.ScheduleTimezone = &scheduleTimezone
-	return &this
-}
-
 func (o CreateInstanceSchedule200ResponseAllOfInstanceSchedule) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

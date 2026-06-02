@@ -27,14 +27,6 @@ type ListClusterAffinityGroups200Response struct {
 
 type _ListClusterAffinityGroups200Response ListClusterAffinityGroups200Response
 
-// NewListClusterAffinityGroups200ResponseWithDefaults instantiates a new ListClusterAffinityGroups200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterAffinityGroups200ResponseWithDefaults() *ListClusterAffinityGroups200Response {
-	this := ListClusterAffinityGroups200Response{}
-	return &this
-}
-
 func (o ListClusterAffinityGroups200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

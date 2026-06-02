@@ -27,14 +27,6 @@ type UserSettingsUpdateDefaultPersona struct {
 
 type _UserSettingsUpdateDefaultPersona UserSettingsUpdateDefaultPersona
 
-// NewUserSettingsUpdateDefaultPersonaWithDefaults instantiates a new UserSettingsUpdateDefaultPersona object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserSettingsUpdateDefaultPersonaWithDefaults() *UserSettingsUpdateDefaultPersona {
-	this := UserSettingsUpdateDefaultPersona{}
-	return &this
-}
-
 func (o UserSettingsUpdateDefaultPersona) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

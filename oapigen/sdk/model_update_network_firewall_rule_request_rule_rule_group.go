@@ -27,14 +27,6 @@ type UpdateNetworkFirewallRuleRequestRuleRuleGroup struct {
 
 type _UpdateNetworkFirewallRuleRequestRuleRuleGroup UpdateNetworkFirewallRuleRequestRuleRuleGroup
 
-// NewUpdateNetworkFirewallRuleRequestRuleRuleGroupWithDefaults instantiates a new UpdateNetworkFirewallRuleRequestRuleRuleGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkFirewallRuleRequestRuleRuleGroupWithDefaults() *UpdateNetworkFirewallRuleRequestRuleRuleGroup {
-	this := UpdateNetworkFirewallRuleRequestRuleRuleGroup{}
-	return &this
-}
-
 func (o UpdateNetworkFirewallRuleRequestRuleRuleGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

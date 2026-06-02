@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListInstances200ResponseAllOfInstancesInnerConfigReplicationGroupWithDefaults
-
-`func NewListInstances200ResponseAllOfInstancesInnerConfigReplicationGroupWithDefaults() *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup`
-
-NewListInstances200ResponseAllOfInstancesInnerConfigReplicationGroupWithDefaults instantiates a new ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetProviderMethod
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) GetProviderMethod() string`

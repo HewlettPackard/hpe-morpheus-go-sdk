@@ -58,14 +58,6 @@ type UpdateServicePlans200ResponseAllOfServicePlan struct {
 
 type _UpdateServicePlans200ResponseAllOfServicePlan UpdateServicePlans200ResponseAllOfServicePlan
 
-// NewUpdateServicePlans200ResponseAllOfServicePlanWithDefaults instantiates a new UpdateServicePlans200ResponseAllOfServicePlan object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateServicePlans200ResponseAllOfServicePlanWithDefaults() *UpdateServicePlans200ResponseAllOfServicePlan {
-	this := UpdateServicePlans200ResponseAllOfServicePlan{}
-	return &this
-}
-
 func (o UpdateServicePlans200ResponseAllOfServicePlan) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

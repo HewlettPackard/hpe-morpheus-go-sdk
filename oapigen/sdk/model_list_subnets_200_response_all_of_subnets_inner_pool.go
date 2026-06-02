@@ -27,14 +27,6 @@ type ListSubnets200ResponseAllOfSubnetsInnerPool struct {
 
 type _ListSubnets200ResponseAllOfSubnetsInnerPool ListSubnets200ResponseAllOfSubnetsInnerPool
 
-// NewListSubnets200ResponseAllOfSubnetsInnerPoolWithDefaults instantiates a new ListSubnets200ResponseAllOfSubnetsInnerPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListSubnets200ResponseAllOfSubnetsInnerPoolWithDefaults() *ListSubnets200ResponseAllOfSubnetsInnerPool {
-	this := ListSubnets200ResponseAllOfSubnetsInnerPool{}
-	return &this
-}
-
 func (o ListSubnets200ResponseAllOfSubnetsInnerPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -36,14 +36,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGuidanceAzureReservationsConfigDetailListInnerWithDefaults
-
-`func NewGuidanceAzureReservationsConfigDetailListInnerWithDefaults() *GuidanceAzureReservationsConfigDetailListInner`
-
-NewGuidanceAzureReservationsConfigDetailListInnerWithDefaults instantiates a new GuidanceAzureReservationsConfigDetailListInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GuidanceAzureReservationsConfigDetailListInner) GetId() string`

@@ -62,14 +62,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListVirtualImages200ResponseAllOfVirtualImagesInnerWithDefaults
-
-`func NewListVirtualImages200ResponseAllOfVirtualImagesInnerWithDefaults() *ListVirtualImages200ResponseAllOfVirtualImagesInner`
-
-NewListVirtualImages200ResponseAllOfVirtualImagesInnerWithDefaults instantiates a new ListVirtualImages200ResponseAllOfVirtualImagesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetId() int64`

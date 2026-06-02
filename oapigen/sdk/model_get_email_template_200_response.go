@@ -27,14 +27,6 @@ type GetEmailTemplate200Response struct {
 
 type _GetEmailTemplate200Response GetEmailTemplate200Response
 
-// NewGetEmailTemplate200ResponseWithDefaults instantiates a new GetEmailTemplate200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetEmailTemplate200ResponseWithDefaults() *GetEmailTemplate200Response {
-	this := GetEmailTemplate200Response{}
-	return &this
-}
-
 func (o GetEmailTemplate200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

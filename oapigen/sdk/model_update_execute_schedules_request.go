@@ -26,14 +26,6 @@ type UpdateExecuteSchedulesRequest struct {
 
 type _UpdateExecuteSchedulesRequest UpdateExecuteSchedulesRequest
 
-// NewUpdateExecuteSchedulesRequestWithDefaults instantiates a new UpdateExecuteSchedulesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateExecuteSchedulesRequestWithDefaults() *UpdateExecuteSchedulesRequest {
-	this := UpdateExecuteSchedulesRequest{}
-	return &this
-}
-
 func (o UpdateExecuteSchedulesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -33,14 +33,6 @@ type GroovyTaskConfig1 struct {
 
 type _GroovyTaskConfig1 GroovyTaskConfig1
 
-// NewGroovyTaskConfig1WithDefaults instantiates a new GroovyTaskConfig1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGroovyTaskConfig1WithDefaults() *GroovyTaskConfig1 {
-	this := GroovyTaskConfig1{}
-	return &this
-}
-
 func (o GroovyTaskConfig1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

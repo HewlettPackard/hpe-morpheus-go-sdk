@@ -30,14 +30,6 @@ type GuidanceTypesInner struct {
 
 type _GuidanceTypesInner GuidanceTypesInner
 
-// NewGuidanceTypesInnerWithDefaults instantiates a new GuidanceTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGuidanceTypesInnerWithDefaults() *GuidanceTypesInner {
-	this := GuidanceTypesInner{}
-	return &this
-}
-
 func (o GuidanceTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

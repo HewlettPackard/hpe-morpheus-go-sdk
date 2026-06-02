@@ -26,14 +26,6 @@ type UpdateIntegrationsRequestOneOf6 struct {
 
 type _UpdateIntegrationsRequestOneOf6 UpdateIntegrationsRequestOneOf6
 
-// NewUpdateIntegrationsRequestOneOf6WithDefaults instantiates a new UpdateIntegrationsRequestOneOf6 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIntegrationsRequestOneOf6WithDefaults() *UpdateIntegrationsRequestOneOf6 {
-	this := UpdateIntegrationsRequestOneOf6{}
-	return &this
-}
-
 func (o UpdateIntegrationsRequestOneOf6) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

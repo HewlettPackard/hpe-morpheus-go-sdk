@@ -39,14 +39,6 @@ type GetClouds200ResponseZoneConfigAnyOf struct {
 
 type _GetClouds200ResponseZoneConfigAnyOf GetClouds200ResponseZoneConfigAnyOf
 
-// NewGetClouds200ResponseZoneConfigAnyOfWithDefaults instantiates a new GetClouds200ResponseZoneConfigAnyOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClouds200ResponseZoneConfigAnyOfWithDefaults() *GetClouds200ResponseZoneConfigAnyOf {
-	this := GetClouds200ResponseZoneConfigAnyOf{}
-	return &this
-}
-
 func (o GetClouds200ResponseZoneConfigAnyOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type InstanceCloneGroup struct {
 
 type _InstanceCloneGroup InstanceCloneGroup
 
-// NewInstanceCloneGroupWithDefaults instantiates a new InstanceCloneGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceCloneGroupWithDefaults() *InstanceCloneGroup {
-	this := InstanceCloneGroup{}
-	return &this
-}
-
 func (o InstanceCloneGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type GetInstance200Response struct {
 
 type _GetInstance200Response GetInstance200Response
 
-// NewGetInstance200ResponseWithDefaults instantiates a new GetInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstance200ResponseWithDefaults() *GetInstance200Response {
-	this := GetInstance200Response{}
-	return &this
-}
-
 func (o GetInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

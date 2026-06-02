@@ -26,14 +26,6 @@ type CreateNetworkDhcpServerRequest struct {
 
 type _CreateNetworkDhcpServerRequest CreateNetworkDhcpServerRequest
 
-// NewCreateNetworkDhcpServerRequestWithDefaults instantiates a new CreateNetworkDhcpServerRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkDhcpServerRequestWithDefaults() *CreateNetworkDhcpServerRequest {
-	this := CreateNetworkDhcpServerRequest{}
-	return &this
-}
-
 func (o CreateNetworkDhcpServerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

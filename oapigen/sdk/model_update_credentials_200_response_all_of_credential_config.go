@@ -32,14 +32,6 @@ type UpdateCredentials200ResponseAllOfCredentialConfig struct {
 
 type _UpdateCredentials200ResponseAllOfCredentialConfig UpdateCredentials200ResponseAllOfCredentialConfig
 
-// NewUpdateCredentials200ResponseAllOfCredentialConfigWithDefaults instantiates a new UpdateCredentials200ResponseAllOfCredentialConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCredentials200ResponseAllOfCredentialConfigWithDefaults() *UpdateCredentials200ResponseAllOfCredentialConfig {
-	this := UpdateCredentials200ResponseAllOfCredentialConfig{}
-	return &this
-}
-
 func (o UpdateCredentials200ResponseAllOfCredentialConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

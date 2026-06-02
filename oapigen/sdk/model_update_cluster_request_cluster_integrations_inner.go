@@ -27,14 +27,6 @@ type UpdateClusterRequestClusterIntegrationsInner struct {
 
 type _UpdateClusterRequestClusterIntegrationsInner UpdateClusterRequestClusterIntegrationsInner
 
-// NewUpdateClusterRequestClusterIntegrationsInnerWithDefaults instantiates a new UpdateClusterRequestClusterIntegrationsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateClusterRequestClusterIntegrationsInnerWithDefaults() *UpdateClusterRequestClusterIntegrationsInner {
-	this := UpdateClusterRequestClusterIntegrationsInner{}
-	return &this
-}
-
 func (o UpdateClusterRequestClusterIntegrationsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

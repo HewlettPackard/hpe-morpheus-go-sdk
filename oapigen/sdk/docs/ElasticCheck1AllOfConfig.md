@@ -28,14 +28,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewElasticCheck1AllOfConfigWithDefaults
-
-`func NewElasticCheck1AllOfConfigWithDefaults() *ElasticCheck1AllOfConfig`
-
-NewElasticCheck1AllOfConfigWithDefaults instantiates a new ElasticCheck1AllOfConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetEsHost
 
 `func (o *ElasticCheck1AllOfConfig) GetEsHost() string`

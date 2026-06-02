@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateInstance200ResponseAllOfOneOfInstanceSiteWithDefaults
-
-`func NewUpdateInstance200ResponseAllOfOneOfInstanceSiteWithDefaults() *UpdateInstance200ResponseAllOfOneOfInstanceSite`
-
-NewUpdateInstance200ResponseAllOfOneOfInstanceSiteWithDefaults instantiates a new UpdateInstance200ResponseAllOfOneOfInstanceSite object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *UpdateInstance200ResponseAllOfOneOfInstanceSite) GetId() int64`

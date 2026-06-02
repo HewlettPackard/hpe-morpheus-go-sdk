@@ -26,14 +26,6 @@ type ZoneDatastoreCreateStorageServer struct {
 
 type _ZoneDatastoreCreateStorageServer ZoneDatastoreCreateStorageServer
 
-// NewZoneDatastoreCreateStorageServerWithDefaults instantiates a new ZoneDatastoreCreateStorageServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneDatastoreCreateStorageServerWithDefaults() *ZoneDatastoreCreateStorageServer {
-	this := ZoneDatastoreCreateStorageServer{}
-	return &this
-}
-
 func (o ZoneDatastoreCreateStorageServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

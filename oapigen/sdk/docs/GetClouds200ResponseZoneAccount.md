@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetClouds200ResponseZoneAccountWithDefaults
-
-`func NewGetClouds200ResponseZoneAccountWithDefaults() *GetClouds200ResponseZoneAccount`
-
-NewGetClouds200ResponseZoneAccountWithDefaults instantiates a new GetClouds200ResponseZoneAccount object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *GetClouds200ResponseZoneAccount) GetId() int64`

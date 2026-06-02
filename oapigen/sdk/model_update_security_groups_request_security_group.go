@@ -35,16 +35,6 @@ type UpdateSecurityGroupsRequestSecurityGroup struct {
 
 type _UpdateSecurityGroupsRequestSecurityGroup UpdateSecurityGroupsRequestSecurityGroup
 
-// NewUpdateSecurityGroupsRequestSecurityGroupWithDefaults instantiates a new UpdateSecurityGroupsRequestSecurityGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateSecurityGroupsRequestSecurityGroupWithDefaults() *UpdateSecurityGroupsRequestSecurityGroup {
-	this := UpdateSecurityGroupsRequestSecurityGroup{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o UpdateSecurityGroupsRequestSecurityGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -42,14 +42,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListClusterDatastores200ResponseAllOfDatastoresInnerWithDefaults
-
-`func NewListClusterDatastores200ResponseAllOfDatastoresInnerWithDefaults() *ListClusterDatastores200ResponseAllOfDatastoresInner`
-
-NewListClusterDatastores200ResponseAllOfDatastoresInnerWithDefaults instantiates a new ListClusterDatastores200ResponseAllOfDatastoresInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetId() int64`

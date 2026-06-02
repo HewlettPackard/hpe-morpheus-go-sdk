@@ -28,14 +28,6 @@ type ClusterResourceNamePolicyTypeConfiguration13 struct {
 
 type _ClusterResourceNamePolicyTypeConfiguration13 ClusterResourceNamePolicyTypeConfiguration13
 
-// NewClusterResourceNamePolicyTypeConfiguration13WithDefaults instantiates a new ClusterResourceNamePolicyTypeConfiguration13 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterResourceNamePolicyTypeConfiguration13WithDefaults() *ClusterResourceNamePolicyTypeConfiguration13 {
-	this := ClusterResourceNamePolicyTypeConfiguration13{}
-	return &this
-}
-
 func (o ClusterResourceNamePolicyTypeConfiguration13) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

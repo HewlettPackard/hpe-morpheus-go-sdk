@@ -31,14 +31,6 @@ type CypherAccessPolicyTypeConfiguration10 struct {
 
 type _CypherAccessPolicyTypeConfiguration10 CypherAccessPolicyTypeConfiguration10
 
-// NewCypherAccessPolicyTypeConfiguration10WithDefaults instantiates a new CypherAccessPolicyTypeConfiguration10 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCypherAccessPolicyTypeConfiguration10WithDefaults() *CypherAccessPolicyTypeConfiguration10 {
-	this := CypherAccessPolicyTypeConfiguration10{}
-	return &this
-}
-
 func (o CypherAccessPolicyTypeConfiguration10) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

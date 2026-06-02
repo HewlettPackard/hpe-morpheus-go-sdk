@@ -30,14 +30,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCreateInstanceSchedule200ResponseAllOfInstanceScheduleWithDefaults
-
-`func NewCreateInstanceSchedule200ResponseAllOfInstanceScheduleWithDefaults() *CreateInstanceSchedule200ResponseAllOfInstanceSchedule`
-
-NewCreateInstanceSchedule200ResponseAllOfInstanceScheduleWithDefaults instantiates a new CreateInstanceSchedule200ResponseAllOfInstanceSchedule object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *CreateInstanceSchedule200ResponseAllOfInstanceSchedule) GetId() int64`

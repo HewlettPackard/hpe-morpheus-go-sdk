@@ -35,14 +35,6 @@ type AddBlueprintRequestOneOf3 struct {
 
 type _AddBlueprintRequestOneOf3 AddBlueprintRequestOneOf3
 
-// NewAddBlueprintRequestOneOf3WithDefaults instantiates a new AddBlueprintRequestOneOf3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBlueprintRequestOneOf3WithDefaults() *AddBlueprintRequestOneOf3 {
-	this := AddBlueprintRequestOneOf3{}
-	return &this
-}
-
 func (o AddBlueprintRequestOneOf3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -68,18 +68,6 @@ type NetworkPoolServer struct {
 
 type _NetworkPoolServer NetworkPoolServer
 
-// NewNetworkPoolServerWithDefaults instantiates a new NetworkPoolServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkPoolServerWithDefaults() *NetworkPoolServer {
-	this := NetworkPoolServer{}
-	var serviceThrottleRate int64 = 0
-	this.ServiceThrottleRate = *NewNullableInt64(&serviceThrottleRate)
-	var ignoreSsl bool = true
-	this.IgnoreSsl = *NewNullableBool(&ignoreSsl)
-	return &this
-}
-
 func (o NetworkPoolServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -28,14 +28,6 @@ type BlueprintKubernetesCreateConfigSpecsInner struct {
 
 type _BlueprintKubernetesCreateConfigSpecsInner BlueprintKubernetesCreateConfigSpecsInner
 
-// NewBlueprintKubernetesCreateConfigSpecsInnerWithDefaults instantiates a new BlueprintKubernetesCreateConfigSpecsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintKubernetesCreateConfigSpecsInnerWithDefaults() *BlueprintKubernetesCreateConfigSpecsInner {
-	this := BlueprintKubernetesCreateConfigSpecsInner{}
-	return &this
-}
-
 func (o BlueprintKubernetesCreateConfigSpecsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

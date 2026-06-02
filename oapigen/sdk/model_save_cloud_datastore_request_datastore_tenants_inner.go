@@ -29,14 +29,6 @@ type SaveCloudDatastoreRequestDatastoreTenantsInner struct {
 
 type _SaveCloudDatastoreRequestDatastoreTenantsInner SaveCloudDatastoreRequestDatastoreTenantsInner
 
-// NewSaveCloudDatastoreRequestDatastoreTenantsInnerWithDefaults instantiates a new SaveCloudDatastoreRequestDatastoreTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveCloudDatastoreRequestDatastoreTenantsInnerWithDefaults() *SaveCloudDatastoreRequestDatastoreTenantsInner {
-	this := SaveCloudDatastoreRequestDatastoreTenantsInner{}
-	return &this
-}
-
 func (o SaveCloudDatastoreRequestDatastoreTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

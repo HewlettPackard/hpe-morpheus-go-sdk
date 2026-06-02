@@ -26,14 +26,6 @@ type UpdateResourcePoolGroupRequest struct {
 
 type _UpdateResourcePoolGroupRequest UpdateResourcePoolGroupRequest
 
-// NewUpdateResourcePoolGroupRequestWithDefaults instantiates a new UpdateResourcePoolGroupRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateResourcePoolGroupRequestWithDefaults() *UpdateResourcePoolGroupRequest {
-	this := UpdateResourcePoolGroupRequest{}
-	return &this
-}
-
 func (o UpdateResourcePoolGroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

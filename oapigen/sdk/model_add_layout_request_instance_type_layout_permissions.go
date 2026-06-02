@@ -26,14 +26,6 @@ type AddLayoutRequestInstanceTypeLayoutPermissions struct {
 
 type _AddLayoutRequestInstanceTypeLayoutPermissions AddLayoutRequestInstanceTypeLayoutPermissions
 
-// NewAddLayoutRequestInstanceTypeLayoutPermissionsWithDefaults instantiates a new AddLayoutRequestInstanceTypeLayoutPermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLayoutRequestInstanceTypeLayoutPermissionsWithDefaults() *AddLayoutRequestInstanceTypeLayoutPermissions {
-	this := AddLayoutRequestInstanceTypeLayoutPermissions{}
-	return &this
-}
-
 func (o AddLayoutRequestInstanceTypeLayoutPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

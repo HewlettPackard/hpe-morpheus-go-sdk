@@ -33,14 +33,6 @@ type ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermi
 
 type _ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissions ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissions
 
-// NewListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissionsWithDefaults instantiates a new ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissionsWithDefaults() *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissions {
-	this := ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissions{}
-	return &this
-}
-
 func (o ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -28,14 +28,6 @@ type BudgetPolicyTypeConfiguration2 struct {
 
 type _BudgetPolicyTypeConfiguration2 BudgetPolicyTypeConfiguration2
 
-// NewBudgetPolicyTypeConfiguration2WithDefaults instantiates a new BudgetPolicyTypeConfiguration2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBudgetPolicyTypeConfiguration2WithDefaults() *BudgetPolicyTypeConfiguration2 {
-	this := BudgetPolicyTypeConfiguration2{}
-	return &this
-}
-
 func (o BudgetPolicyTypeConfiguration2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

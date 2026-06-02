@@ -29,14 +29,6 @@ type NetworkGroupsCreate struct {
 
 type _NetworkGroupsCreate NetworkGroupsCreate
 
-// NewNetworkGroupsCreateWithDefaults instantiates a new NetworkGroupsCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkGroupsCreateWithDefaults() *NetworkGroupsCreate {
-	this := NetworkGroupsCreate{}
-	return &this
-}
-
 func (o NetworkGroupsCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -60,14 +60,6 @@ type InstanceConfig struct {
 
 type _InstanceConfig InstanceConfig
 
-// NewInstanceConfigWithDefaults instantiates a new InstanceConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigWithDefaults() *InstanceConfig {
-	this := InstanceConfig{}
-	return &this
-}
-
 func (o InstanceConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

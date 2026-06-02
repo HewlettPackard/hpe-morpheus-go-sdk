@@ -27,14 +27,6 @@ type ClusterLayoutUpdateGroupType struct {
 
 type _ClusterLayoutUpdateGroupType ClusterLayoutUpdateGroupType
 
-// NewClusterLayoutUpdateGroupTypeWithDefaults instantiates a new ClusterLayoutUpdateGroupType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterLayoutUpdateGroupTypeWithDefaults() *ClusterLayoutUpdateGroupType {
-	this := ClusterLayoutUpdateGroupType{}
-	return &this
-}
-
 func (o ClusterLayoutUpdateGroupType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

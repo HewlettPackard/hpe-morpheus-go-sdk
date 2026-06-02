@@ -29,14 +29,6 @@ type UpdateSecurityGroupsRequestSecurityGroupTenantPermissions struct {
 
 type _UpdateSecurityGroupsRequestSecurityGroupTenantPermissions UpdateSecurityGroupsRequestSecurityGroupTenantPermissions
 
-// NewUpdateSecurityGroupsRequestSecurityGroupTenantPermissionsWithDefaults instantiates a new UpdateSecurityGroupsRequestSecurityGroupTenantPermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateSecurityGroupsRequestSecurityGroupTenantPermissionsWithDefaults() *UpdateSecurityGroupsRequestSecurityGroupTenantPermissions {
-	this := UpdateSecurityGroupsRequestSecurityGroupTenantPermissions{}
-	return &this
-}
-
 func (o UpdateSecurityGroupsRequestSecurityGroupTenantPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

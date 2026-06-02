@@ -101,14 +101,6 @@ type GetVirtualImage200ResponseVirtualImage struct {
 
 type _GetVirtualImage200ResponseVirtualImage GetVirtualImage200ResponseVirtualImage
 
-// NewGetVirtualImage200ResponseVirtualImageWithDefaults instantiates a new GetVirtualImage200ResponseVirtualImage object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetVirtualImage200ResponseVirtualImageWithDefaults() *GetVirtualImage200ResponseVirtualImage {
-	this := GetVirtualImage200ResponseVirtualImage{}
-	return &this
-}
-
 func (o GetVirtualImage200ResponseVirtualImage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

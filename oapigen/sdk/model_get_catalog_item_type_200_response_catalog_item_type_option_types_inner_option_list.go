@@ -27,14 +27,6 @@ type GetCatalogItemType200ResponseCatalogItemTypeOptionTypesInnerOptionList stru
 
 type _GetCatalogItemType200ResponseCatalogItemTypeOptionTypesInnerOptionList GetCatalogItemType200ResponseCatalogItemTypeOptionTypesInnerOptionList
 
-// NewGetCatalogItemType200ResponseCatalogItemTypeOptionTypesInnerOptionListWithDefaults instantiates a new GetCatalogItemType200ResponseCatalogItemTypeOptionTypesInnerOptionList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCatalogItemType200ResponseCatalogItemTypeOptionTypesInnerOptionListWithDefaults() *GetCatalogItemType200ResponseCatalogItemTypeOptionTypesInnerOptionList {
-	this := GetCatalogItemType200ResponseCatalogItemTypeOptionTypesInnerOptionList{}
-	return &this
-}
-
 func (o GetCatalogItemType200ResponseCatalogItemTypeOptionTypesInnerOptionList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

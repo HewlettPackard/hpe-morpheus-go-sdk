@@ -27,14 +27,6 @@ type GetNetworkServer200ResponseNetworkServerAccount struct {
 
 type _GetNetworkServer200ResponseNetworkServerAccount GetNetworkServer200ResponseNetworkServerAccount
 
-// NewGetNetworkServer200ResponseNetworkServerAccountWithDefaults instantiates a new GetNetworkServer200ResponseNetworkServerAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkServer200ResponseNetworkServerAccountWithDefaults() *GetNetworkServer200ResponseNetworkServerAccount {
-	this := GetNetworkServer200ResponseNetworkServerAccount{}
-	return &this
-}
-
 func (o GetNetworkServer200ResponseNetworkServerAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

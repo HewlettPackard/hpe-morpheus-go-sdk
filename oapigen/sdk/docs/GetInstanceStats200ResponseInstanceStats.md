@@ -27,14 +27,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetInstanceStats200ResponseInstanceStatsWithDefaults
-
-`func NewGetInstanceStats200ResponseInstanceStatsWithDefaults() *GetInstanceStats200ResponseInstanceStats`
-
-NewGetInstanceStats200ResponseInstanceStatsWithDefaults instantiates a new GetInstanceStats200ResponseInstanceStats object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMaxCpu
 
 `func (o *GetInstanceStats200ResponseInstanceStats) GetMaxCpu() float32`

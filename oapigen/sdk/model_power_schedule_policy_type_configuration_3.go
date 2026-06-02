@@ -28,14 +28,6 @@ type PowerSchedulePolicyTypeConfiguration3 struct {
 
 type _PowerSchedulePolicyTypeConfiguration3 PowerSchedulePolicyTypeConfiguration3
 
-// NewPowerSchedulePolicyTypeConfiguration3WithDefaults instantiates a new PowerSchedulePolicyTypeConfiguration3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPowerSchedulePolicyTypeConfiguration3WithDefaults() *PowerSchedulePolicyTypeConfiguration3 {
-	this := PowerSchedulePolicyTypeConfiguration3{}
-	return &this
-}
-
 func (o PowerSchedulePolicyTypeConfiguration3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

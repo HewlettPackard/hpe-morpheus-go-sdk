@@ -35,14 +35,6 @@ type ImageBuildsConfigVolumesInner struct {
 
 type _ImageBuildsConfigVolumesInner ImageBuildsConfigVolumesInner
 
-// NewImageBuildsConfigVolumesInnerWithDefaults instantiates a new ImageBuildsConfigVolumesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewImageBuildsConfigVolumesInnerWithDefaults() *ImageBuildsConfigVolumesInner {
-	this := ImageBuildsConfigVolumesInner{}
-	return &this
-}
-
 func (o ImageBuildsConfigVolumesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

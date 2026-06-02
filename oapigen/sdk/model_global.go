@@ -27,16 +27,6 @@ type Global struct {
 
 type _Global Global
 
-// NewGlobalWithDefaults instantiates a new Global object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGlobalWithDefaults() *Global {
-	this := Global{}
-	var global bool = false
-	this.Global = &global
-	return &this
-}
-
 func (o Global) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

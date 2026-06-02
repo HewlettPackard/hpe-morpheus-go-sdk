@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInstanceConfigObject1MetadataInnerWithDefaults
-
-`func NewInstanceConfigObject1MetadataInnerWithDefaults() *InstanceConfigObject1MetadataInner`
-
-NewInstanceConfigObject1MetadataInnerWithDefaults instantiates a new InstanceConfigObject1MetadataInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetName
 
 `func (o *InstanceConfigObject1MetadataInner) GetName() string`

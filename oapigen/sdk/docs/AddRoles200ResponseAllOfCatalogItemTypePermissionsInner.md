@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddRoles200ResponseAllOfCatalogItemTypePermissionsInnerWithDefaults
-
-`func NewAddRoles200ResponseAllOfCatalogItemTypePermissionsInnerWithDefaults() *AddRoles200ResponseAllOfCatalogItemTypePermissionsInner`
-
-NewAddRoles200ResponseAllOfCatalogItemTypePermissionsInnerWithDefaults instantiates a new AddRoles200ResponseAllOfCatalogItemTypePermissionsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddRoles200ResponseAllOfCatalogItemTypePermissionsInner) GetId() int64`

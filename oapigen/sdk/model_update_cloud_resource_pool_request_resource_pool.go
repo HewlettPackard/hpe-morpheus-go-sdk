@@ -35,16 +35,6 @@ type UpdateCloudResourcePoolRequestResourcePool struct {
 
 type _UpdateCloudResourcePoolRequestResourcePool UpdateCloudResourcePoolRequestResourcePool
 
-// NewUpdateCloudResourcePoolRequestResourcePoolWithDefaults instantiates a new UpdateCloudResourcePoolRequestResourcePool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCloudResourcePoolRequestResourcePoolWithDefaults() *UpdateCloudResourcePoolRequestResourcePool {
-	this := UpdateCloudResourcePoolRequestResourcePool{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o UpdateCloudResourcePoolRequestResourcePool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

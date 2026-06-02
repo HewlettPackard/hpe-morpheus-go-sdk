@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewFileShareStorageQuotaPolicyTypeConfiguration1WithDefaults
-
-`func NewFileShareStorageQuotaPolicyTypeConfiguration1WithDefaults() *FileShareStorageQuotaPolicyTypeConfiguration1`
-
-NewFileShareStorageQuotaPolicyTypeConfiguration1WithDefaults instantiates a new FileShareStorageQuotaPolicyTypeConfiguration1 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetMaxStorage
 
 `func (o *FileShareStorageQuotaPolicyTypeConfiguration1) GetMaxStorage() string`

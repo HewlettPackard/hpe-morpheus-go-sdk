@@ -29,14 +29,6 @@ type UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancer st
 
 type _UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancer UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancer
 
-// NewUpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerWithDefaults instantiates a new UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancerWithDefaults() *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancer {
-	this := UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancer{}
-	return &this
-}
-
 func (o UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateFileTemplate200ResponseWithDefaults
-
-`func NewUpdateFileTemplate200ResponseWithDefaults() *UpdateFileTemplate200Response`
-
-NewUpdateFileTemplate200ResponseWithDefaults instantiates a new UpdateFileTemplate200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *UpdateFileTemplate200Response) GetSuccess() bool`

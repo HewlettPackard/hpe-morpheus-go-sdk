@@ -26,14 +26,6 @@ type UpdateNodeTypeRequest struct {
 
 type _UpdateNodeTypeRequest UpdateNodeTypeRequest
 
-// NewUpdateNodeTypeRequestWithDefaults instantiates a new UpdateNodeTypeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNodeTypeRequestWithDefaults() *UpdateNodeTypeRequest {
-	this := UpdateNodeTypeRequest{}
-	return &this
-}
-
 func (o UpdateNodeTypeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

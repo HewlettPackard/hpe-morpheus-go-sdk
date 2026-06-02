@@ -25,14 +25,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewOptionTypeFormFieldGroupsInnerWithDefaults
-
-`func NewOptionTypeFormFieldGroupsInnerWithDefaults() *OptionTypeFormFieldGroupsInner`
-
-NewOptionTypeFormFieldGroupsInnerWithDefaults instantiates a new OptionTypeFormFieldGroupsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *OptionTypeFormFieldGroupsInner) GetId() int64`

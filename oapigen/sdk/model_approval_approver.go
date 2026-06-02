@@ -27,14 +27,6 @@ type ApprovalApprover struct {
 
 type _ApprovalApprover ApprovalApprover
 
-// NewApprovalApproverWithDefaults instantiates a new ApprovalApprover object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewApprovalApproverWithDefaults() *ApprovalApprover {
-	this := ApprovalApprover{}
-	return &this
-}
-
 func (o ApprovalApprover) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

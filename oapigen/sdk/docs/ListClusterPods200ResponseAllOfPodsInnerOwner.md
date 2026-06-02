@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListClusterPods200ResponseAllOfPodsInnerOwnerWithDefaults
-
-`func NewListClusterPods200ResponseAllOfPodsInnerOwnerWithDefaults() *ListClusterPods200ResponseAllOfPodsInnerOwner`
-
-NewListClusterPods200ResponseAllOfPodsInnerOwnerWithDefaults instantiates a new ListClusterPods200ResponseAllOfPodsInnerOwner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListClusterPods200ResponseAllOfPodsInnerOwner) GetId() int64`

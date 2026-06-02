@@ -24,14 +24,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddClusterWorkerRequestServerConfigAnyOfOneOf3WithDefaults
-
-`func NewAddClusterWorkerRequestServerConfigAnyOfOneOf3WithDefaults() *AddClusterWorkerRequestServerConfigAnyOfOneOf3`
-
-NewAddClusterWorkerRequestServerConfigAnyOfOneOf3WithDefaults instantiates a new AddClusterWorkerRequestServerConfigAnyOfOneOf3 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetGoogleZoneId
 
 `func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf3) GetGoogleZoneId() int64`

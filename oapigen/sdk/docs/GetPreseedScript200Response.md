@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetPreseedScript200ResponseWithDefaults
-
-`func NewGetPreseedScript200ResponseWithDefaults() *GetPreseedScript200Response`
-
-NewGetPreseedScript200ResponseWithDefaults instantiates a new GetPreseedScript200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPreseedScript
 
 `func (o *GetPreseedScript200Response) GetPreseedScript() GetPreseedScript200ResponsePreseedScript`

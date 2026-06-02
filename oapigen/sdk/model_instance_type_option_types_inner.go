@@ -66,14 +66,6 @@ type InstanceTypeOptionTypesInner struct {
 
 type _InstanceTypeOptionTypesInner InstanceTypeOptionTypesInner
 
-// NewInstanceTypeOptionTypesInnerWithDefaults instantiates a new InstanceTypeOptionTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceTypeOptionTypesInnerWithDefaults() *InstanceTypeOptionTypesInner {
-	this := InstanceTypeOptionTypesInner{}
-	return &this
-}
-
 func (o InstanceTypeOptionTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

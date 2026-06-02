@@ -38,16 +38,6 @@ type CredentialAccessSecretKeyConfig struct {
 
 type _CredentialAccessSecretKeyConfig CredentialAccessSecretKeyConfig
 
-// NewCredentialAccessSecretKeyConfigWithDefaults instantiates a new CredentialAccessSecretKeyConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCredentialAccessSecretKeyConfigWithDefaults() *CredentialAccessSecretKeyConfig {
-	this := CredentialAccessSecretKeyConfig{}
-	var enabled bool = true
-	this.Enabled = &enabled
-	return &this
-}
-
 func (o CredentialAccessSecretKeyConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

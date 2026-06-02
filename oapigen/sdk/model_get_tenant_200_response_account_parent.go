@@ -28,14 +28,6 @@ type GetTenant200ResponseAccountParent struct {
 
 type _GetTenant200ResponseAccountParent GetTenant200ResponseAccountParent
 
-// NewGetTenant200ResponseAccountParentWithDefaults instantiates a new GetTenant200ResponseAccountParent object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetTenant200ResponseAccountParentWithDefaults() *GetTenant200ResponseAccountParent {
-	this := GetTenant200ResponseAccountParent{}
-	return &this
-}
-
 func (o GetTenant200ResponseAccountParent) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

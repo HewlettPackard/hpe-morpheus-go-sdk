@@ -26,14 +26,6 @@ type WorkflowPolicyTypeConfiguration2 struct {
 
 type _WorkflowPolicyTypeConfiguration2 WorkflowPolicyTypeConfiguration2
 
-// NewWorkflowPolicyTypeConfiguration2WithDefaults instantiates a new WorkflowPolicyTypeConfiguration2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWorkflowPolicyTypeConfiguration2WithDefaults() *WorkflowPolicyTypeConfiguration2 {
-	this := WorkflowPolicyTypeConfiguration2{}
-	return &this
-}
-
 func (o WorkflowPolicyTypeConfiguration2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

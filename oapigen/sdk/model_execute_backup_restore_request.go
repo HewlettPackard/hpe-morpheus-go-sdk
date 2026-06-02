@@ -26,14 +26,6 @@ type ExecuteBackupRestoreRequest struct {
 
 type _ExecuteBackupRestoreRequest ExecuteBackupRestoreRequest
 
-// NewExecuteBackupRestoreRequestWithDefaults instantiates a new ExecuteBackupRestoreRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewExecuteBackupRestoreRequestWithDefaults() *ExecuteBackupRestoreRequest {
-	this := ExecuteBackupRestoreRequest{}
-	return &this
-}
-
 func (o ExecuteBackupRestoreRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

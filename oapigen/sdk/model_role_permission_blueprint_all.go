@@ -29,14 +29,6 @@ type RolePermissionBlueprintAll struct {
 
 type _RolePermissionBlueprintAll RolePermissionBlueprintAll
 
-// NewRolePermissionBlueprintAllWithDefaults instantiates a new RolePermissionBlueprintAll object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRolePermissionBlueprintAllWithDefaults() *RolePermissionBlueprintAll {
-	this := RolePermissionBlueprintAll{}
-	return &this
-}
-
 func (o RolePermissionBlueprintAll) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

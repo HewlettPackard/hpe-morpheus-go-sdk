@@ -25,14 +25,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewWriteAttributesTaskConfig5WithDefaults
-
-`func NewWriteAttributesTaskConfig5WithDefaults() *WriteAttributesTaskConfig5`
-
-NewWriteAttributesTaskConfig5WithDefaults instantiates a new WriteAttributesTaskConfig5 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetHost
 
 `func (o *WriteAttributesTaskConfig5) GetHost() string`

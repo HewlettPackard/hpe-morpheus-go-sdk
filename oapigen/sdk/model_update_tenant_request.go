@@ -26,14 +26,6 @@ type UpdateTenantRequest struct {
 
 type _UpdateTenantRequest UpdateTenantRequest
 
-// NewUpdateTenantRequestWithDefaults instantiates a new UpdateTenantRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateTenantRequestWithDefaults() *UpdateTenantRequest {
-	this := UpdateTenantRequest{}
-	return &this
-}
-
 func (o UpdateTenantRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

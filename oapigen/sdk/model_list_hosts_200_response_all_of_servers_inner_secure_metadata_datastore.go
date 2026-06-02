@@ -27,14 +27,6 @@ type ListHosts200ResponseAllOfServersInnerSecureMetadataDatastore struct {
 
 type _ListHosts200ResponseAllOfServersInnerSecureMetadataDatastore ListHosts200ResponseAllOfServersInnerSecureMetadataDatastore
 
-// NewListHosts200ResponseAllOfServersInnerSecureMetadataDatastoreWithDefaults instantiates a new ListHosts200ResponseAllOfServersInnerSecureMetadataDatastore object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListHosts200ResponseAllOfServersInnerSecureMetadataDatastoreWithDefaults() *ListHosts200ResponseAllOfServersInnerSecureMetadataDatastore {
-	this := ListHosts200ResponseAllOfServersInnerSecureMetadataDatastore{}
-	return &this
-}
-
 func (o ListHosts200ResponseAllOfServersInnerSecureMetadataDatastore) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

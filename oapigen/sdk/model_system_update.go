@@ -42,14 +42,6 @@ type SystemUpdate struct {
 
 type _SystemUpdate SystemUpdate
 
-// NewSystemUpdateWithDefaults instantiates a new SystemUpdate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSystemUpdateWithDefaults() *SystemUpdate {
-	this := SystemUpdate{}
-	return &this
-}
-
 func (o SystemUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

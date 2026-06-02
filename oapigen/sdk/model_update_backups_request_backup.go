@@ -31,14 +31,6 @@ type UpdateBackupsRequestBackup struct {
 
 type _UpdateBackupsRequestBackup UpdateBackupsRequestBackup
 
-// NewUpdateBackupsRequestBackupWithDefaults instantiates a new UpdateBackupsRequestBackup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBackupsRequestBackupWithDefaults() *UpdateBackupsRequestBackup {
-	this := UpdateBackupsRequestBackup{}
-	return &this
-}
-
 func (o UpdateBackupsRequestBackup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

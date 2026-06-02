@@ -29,14 +29,6 @@ type RolePermissionDefaultInstanceType struct {
 
 type _RolePermissionDefaultInstanceType RolePermissionDefaultInstanceType
 
-// NewRolePermissionDefaultInstanceTypeWithDefaults instantiates a new RolePermissionDefaultInstanceType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRolePermissionDefaultInstanceTypeWithDefaults() *RolePermissionDefaultInstanceType {
-	this := RolePermissionDefaultInstanceType{}
-	return &this
-}
-
 func (o RolePermissionDefaultInstanceType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

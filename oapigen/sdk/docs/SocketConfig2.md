@@ -25,14 +25,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSocketConfig2WithDefaults
-
-`func NewSocketConfig2WithDefaults() *SocketConfig2`
-
-NewSocketConfig2WithDefaults instantiates a new SocketConfig2 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetHost
 
 `func (o *SocketConfig2) GetHost() string`

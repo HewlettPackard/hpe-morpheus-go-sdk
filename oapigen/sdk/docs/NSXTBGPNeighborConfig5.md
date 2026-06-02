@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewNSXTBGPNeighborConfig5WithDefaults
-
-`func NewNSXTBGPNeighborConfig5WithDefaults() *NSXTBGPNeighborConfig5`
-
-NewNSXTBGPNeighborConfig5WithDefaults instantiates a new NSXTBGPNeighborConfig5 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSourceAddresses
 
 `func (o *NSXTBGPNeighborConfig5) GetSourceAddresses() []string`

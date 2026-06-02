@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddBlueprintRequestOneOf5TerraformGitWithDefaults
-
-`func NewAddBlueprintRequestOneOf5TerraformGitWithDefaults() *AddBlueprintRequestOneOf5TerraformGit`
-
-NewAddBlueprintRequestOneOf5TerraformGitWithDefaults instantiates a new AddBlueprintRequestOneOf5TerraformGit object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetRepoId
 
 `func (o *AddBlueprintRequestOneOf5TerraformGit) GetRepoId() int64`

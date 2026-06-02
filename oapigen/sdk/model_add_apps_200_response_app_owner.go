@@ -27,14 +27,6 @@ type AddApps200ResponseAppOwner struct {
 
 type _AddApps200ResponseAppOwner AddApps200ResponseAppOwner
 
-// NewAddApps200ResponseAppOwnerWithDefaults instantiates a new AddApps200ResponseAppOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddApps200ResponseAppOwnerWithDefaults() *AddApps200ResponseAppOwner {
-	this := AddApps200ResponseAppOwner{}
-	return &this
-}
-
 func (o AddApps200ResponseAppOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

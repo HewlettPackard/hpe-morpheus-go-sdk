@@ -26,14 +26,6 @@ type CreateNetworkServerGroupRequestGroupAccount struct {
 
 type _CreateNetworkServerGroupRequestGroupAccount CreateNetworkServerGroupRequestGroupAccount
 
-// NewCreateNetworkServerGroupRequestGroupAccountWithDefaults instantiates a new CreateNetworkServerGroupRequestGroupAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkServerGroupRequestGroupAccountWithDefaults() *CreateNetworkServerGroupRequestGroupAccount {
-	this := CreateNetworkServerGroupRequestGroupAccount{}
-	return &this
-}
-
 func (o CreateNetworkServerGroupRequestGroupAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,14 +27,6 @@ type ListNetworks200ResponseAllOfNetworksInnerTenantsInner struct {
 
 type _ListNetworks200ResponseAllOfNetworksInnerTenantsInner ListNetworks200ResponseAllOfNetworksInnerTenantsInner
 
-// NewListNetworks200ResponseAllOfNetworksInnerTenantsInnerWithDefaults instantiates a new ListNetworks200ResponseAllOfNetworksInnerTenantsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListNetworks200ResponseAllOfNetworksInnerTenantsInnerWithDefaults() *ListNetworks200ResponseAllOfNetworksInnerTenantsInner {
-	this := ListNetworks200ResponseAllOfNetworksInnerTenantsInner{}
-	return &this
-}
-
 func (o ListNetworks200ResponseAllOfNetworksInnerTenantsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

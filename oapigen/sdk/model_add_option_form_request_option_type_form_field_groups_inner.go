@@ -34,14 +34,6 @@ type AddOptionFormRequestOptionTypeFormFieldGroupsInner struct {
 
 type _AddOptionFormRequestOptionTypeFormFieldGroupsInner AddOptionFormRequestOptionTypeFormFieldGroupsInner
 
-// NewAddOptionFormRequestOptionTypeFormFieldGroupsInnerWithDefaults instantiates a new AddOptionFormRequestOptionTypeFormFieldGroupsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddOptionFormRequestOptionTypeFormFieldGroupsInnerWithDefaults() *AddOptionFormRequestOptionTypeFormFieldGroupsInner {
-	this := AddOptionFormRequestOptionTypeFormFieldGroupsInner{}
-	return &this
-}
-
 func (o AddOptionFormRequestOptionTypeFormFieldGroupsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type ClusterLayoutUpdateTaskSetsInner struct {
 
 type _ClusterLayoutUpdateTaskSetsInner ClusterLayoutUpdateTaskSetsInner
 
-// NewClusterLayoutUpdateTaskSetsInnerWithDefaults instantiates a new ClusterLayoutUpdateTaskSetsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterLayoutUpdateTaskSetsInnerWithDefaults() *ClusterLayoutUpdateTaskSetsInner {
-	this := ClusterLayoutUpdateTaskSetsInner{}
-	return &this
-}
-
 func (o ClusterLayoutUpdateTaskSetsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

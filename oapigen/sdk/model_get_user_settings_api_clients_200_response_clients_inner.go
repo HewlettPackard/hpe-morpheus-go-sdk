@@ -26,14 +26,6 @@ type GetUserSettingsApiClients200ResponseClientsInner struct {
 
 type _GetUserSettingsApiClients200ResponseClientsInner GetUserSettingsApiClients200ResponseClientsInner
 
-// NewGetUserSettingsApiClients200ResponseClientsInnerWithDefaults instantiates a new GetUserSettingsApiClients200ResponseClientsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetUserSettingsApiClients200ResponseClientsInnerWithDefaults() *GetUserSettingsApiClients200ResponseClientsInner {
-	this := GetUserSettingsApiClients200ResponseClientsInner{}
-	return &this
-}
-
 func (o GetUserSettingsApiClients200ResponseClientsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

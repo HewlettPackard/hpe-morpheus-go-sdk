@@ -64,14 +64,6 @@ type ListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInner stru
 
 type _ListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInner ListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInner
 
-// NewListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInnerWithDefaults instantiates a new ListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInnerWithDefaults() *ListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInner {
-	this := ListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInner{}
-	return &this
-}
-
 func (o ListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

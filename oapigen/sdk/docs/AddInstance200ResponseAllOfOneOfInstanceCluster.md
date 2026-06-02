@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddInstance200ResponseAllOfOneOfInstanceClusterWithDefaults
-
-`func NewAddInstance200ResponseAllOfOneOfInstanceClusterWithDefaults() *AddInstance200ResponseAllOfOneOfInstanceCluster`
-
-NewAddInstance200ResponseAllOfOneOfInstanceClusterWithDefaults instantiates a new AddInstance200ResponseAllOfOneOfInstanceCluster object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceCluster) GetId() int64`

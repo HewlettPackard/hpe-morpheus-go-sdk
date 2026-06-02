@@ -51,20 +51,6 @@ type UpdateIdentitySourcesRequestUserSourceConfigOneOf5 struct {
 
 type _UpdateIdentitySourcesRequestUserSourceConfigOneOf5 UpdateIdentitySourcesRequestUserSourceConfigOneOf5
 
-// NewUpdateIdentitySourcesRequestUserSourceConfigOneOf5WithDefaults instantiates a new UpdateIdentitySourcesRequestUserSourceConfigOneOf5 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIdentitySourcesRequestUserSourceConfigOneOf5WithDefaults() *UpdateIdentitySourcesRequestUserSourceConfigOneOf5 {
-	this := UpdateIdentitySourcesRequestUserSourceConfigOneOf5{}
-	var doNotIncludeSAMLRequest bool = false
-	this.DoNotIncludeSAMLRequest = &doNotIncludeSAMLRequest
-	var sAMLSignatureMode string = "NoSignature"
-	this.SAMLSignatureMode = &sAMLSignatureMode
-	var doNotValidateSignature bool = true
-	this.DoNotValidateSignature = &doNotValidateSignature
-	return &this
-}
-
 func (o UpdateIdentitySourcesRequestUserSourceConfigOneOf5) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

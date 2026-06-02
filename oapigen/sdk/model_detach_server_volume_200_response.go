@@ -26,14 +26,6 @@ type DetachServerVolume200Response struct {
 
 type _DetachServerVolume200Response DetachServerVolume200Response
 
-// NewDetachServerVolume200ResponseWithDefaults instantiates a new DetachServerVolume200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDetachServerVolume200ResponseWithDefaults() *DetachServerVolume200Response {
-	this := DetachServerVolume200Response{}
-	return &this
-}
-
 func (o DetachServerVolume200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

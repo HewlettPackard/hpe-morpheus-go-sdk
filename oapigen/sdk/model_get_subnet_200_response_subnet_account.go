@@ -27,14 +27,6 @@ type GetSubnet200ResponseSubnetAccount struct {
 
 type _GetSubnet200ResponseSubnetAccount GetSubnet200ResponseSubnetAccount
 
-// NewGetSubnet200ResponseSubnetAccountWithDefaults instantiates a new GetSubnet200ResponseSubnetAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSubnet200ResponseSubnetAccountWithDefaults() *GetSubnet200ResponseSubnetAccount {
-	this := GetSubnet200ResponseSubnetAccount{}
-	return &this
-}
-
 func (o GetSubnet200ResponseSubnetAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type AppStateOutput struct {
 
 type _AppStateOutput AppStateOutput
 
-// NewAppStateOutputWithDefaults instantiates a new AppStateOutput object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppStateOutputWithDefaults() *AppStateOutput {
-	this := AppStateOutput{}
-	return &this
-}
-
 func (o AppStateOutput) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

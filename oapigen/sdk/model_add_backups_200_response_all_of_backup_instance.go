@@ -29,14 +29,6 @@ type AddBackups200ResponseAllOfBackupInstance struct {
 
 type _AddBackups200ResponseAllOfBackupInstance AddBackups200ResponseAllOfBackupInstance
 
-// NewAddBackups200ResponseAllOfBackupInstanceWithDefaults instantiates a new AddBackups200ResponseAllOfBackupInstance object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBackups200ResponseAllOfBackupInstanceWithDefaults() *AddBackups200ResponseAllOfBackupInstance {
-	this := AddBackups200ResponseAllOfBackupInstance{}
-	return &this
-}
-
 func (o AddBackups200ResponseAllOfBackupInstance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

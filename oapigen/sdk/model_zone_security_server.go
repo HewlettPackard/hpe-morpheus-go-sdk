@@ -27,14 +27,6 @@ type ZoneSecurityServer struct {
 
 type _ZoneSecurityServer ZoneSecurityServer
 
-// NewZoneSecurityServerWithDefaults instantiates a new ZoneSecurityServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneSecurityServerWithDefaults() *ZoneSecurityServer {
-	this := ZoneSecurityServer{}
-	return &this
-}
-
 func (o ZoneSecurityServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -19,14 +19,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPowerSchedulePolicyTypeConfiguration14WithDefaults
-
-`func NewPowerSchedulePolicyTypeConfiguration14WithDefaults() *PowerSchedulePolicyTypeConfiguration14`
-
-NewPowerSchedulePolicyTypeConfiguration14WithDefaults instantiates a new PowerSchedulePolicyTypeConfiguration14 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPowerScheduleType
 
 `func (o *PowerSchedulePolicyTypeConfiguration14) GetPowerScheduleType() string`

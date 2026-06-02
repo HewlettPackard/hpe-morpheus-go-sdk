@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListEmailTemplates200ResponseAllOfEmailTemplatesInnerAccountsInnerWithDefaults
-
-`func NewListEmailTemplates200ResponseAllOfEmailTemplatesInnerAccountsInnerWithDefaults() *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerAccountsInner`
-
-NewListEmailTemplates200ResponseAllOfEmailTemplatesInnerAccountsInnerWithDefaults instantiates a new ListEmailTemplates200ResponseAllOfEmailTemplatesInnerAccountsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetId
 
 `func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerAccountsInner) GetId() int64`

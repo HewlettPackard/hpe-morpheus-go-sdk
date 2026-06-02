@@ -27,14 +27,6 @@ type ResizeInstance200ResponseAllOfOneOfInstanceInstanceType struct {
 
 type _ResizeInstance200ResponseAllOfOneOfInstanceInstanceType ResizeInstance200ResponseAllOfOneOfInstanceInstanceType
 
-// NewResizeInstance200ResponseAllOfOneOfInstanceInstanceTypeWithDefaults instantiates a new ResizeInstance200ResponseAllOfOneOfInstanceInstanceType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewResizeInstance200ResponseAllOfOneOfInstanceInstanceTypeWithDefaults() *ResizeInstance200ResponseAllOfOneOfInstanceInstanceType {
-	this := ResizeInstance200ResponseAllOfOneOfInstanceInstanceType{}
-	return &this
-}
-
 func (o ResizeInstance200ResponseAllOfOneOfInstanceInstanceType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

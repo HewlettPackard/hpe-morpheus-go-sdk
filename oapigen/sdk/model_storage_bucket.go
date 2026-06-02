@@ -41,14 +41,6 @@ type StorageBucket struct {
 
 type _StorageBucket StorageBucket
 
-// NewStorageBucketWithDefaults instantiates a new StorageBucket object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewStorageBucketWithDefaults() *StorageBucket {
-	this := StorageBucket{}
-	return &this
-}
-
 func (o StorageBucket) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

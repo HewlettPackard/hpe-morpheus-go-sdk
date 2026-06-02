@@ -35,14 +35,6 @@ type ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner 
 
 type _ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner
 
-// NewListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerWithDefaults instantiates a new ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerWithDefaults() *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner {
-	this := ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner{}
-	return &this
-}
-
 func (o ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

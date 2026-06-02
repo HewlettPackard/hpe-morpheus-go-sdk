@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewExecuteContainerAction200ResponseWithDefaults
-
-`func NewExecuteContainerAction200ResponseWithDefaults() *ExecuteContainerAction200Response`
-
-NewExecuteContainerAction200ResponseWithDefaults instantiates a new ExecuteContainerAction200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *ExecuteContainerAction200Response) GetSuccess() bool`

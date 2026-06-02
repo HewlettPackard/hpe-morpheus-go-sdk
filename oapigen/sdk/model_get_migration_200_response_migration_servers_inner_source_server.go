@@ -31,14 +31,6 @@ type GetMigration200ResponseMigrationServersInnerSourceServer struct {
 
 type _GetMigration200ResponseMigrationServersInnerSourceServer GetMigration200ResponseMigrationServersInnerSourceServer
 
-// NewGetMigration200ResponseMigrationServersInnerSourceServerWithDefaults instantiates a new GetMigration200ResponseMigrationServersInnerSourceServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetMigration200ResponseMigrationServersInnerSourceServerWithDefaults() *GetMigration200ResponseMigrationServersInnerSourceServer {
-	this := GetMigration200ResponseMigrationServersInnerSourceServer{}
-	return &this
-}
-
 func (o GetMigration200ResponseMigrationServersInnerSourceServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -92,14 +92,6 @@ type InstallLicense200ResponseInstalledLicensesInner struct {
 
 type _InstallLicense200ResponseInstalledLicensesInner InstallLicense200ResponseInstalledLicensesInner
 
-// NewInstallLicense200ResponseInstalledLicensesInnerWithDefaults instantiates a new InstallLicense200ResponseInstalledLicensesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstallLicense200ResponseInstalledLicensesInnerWithDefaults() *InstallLicense200ResponseInstalledLicensesInner {
-	this := InstallLicense200ResponseInstalledLicensesInner{}
-	return &this
-}
-
 func (o InstallLicense200ResponseInstalledLicensesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

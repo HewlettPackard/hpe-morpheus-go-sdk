@@ -26,14 +26,6 @@ type GetNetworkRouterFirewallRule200Response struct {
 
 type _GetNetworkRouterFirewallRule200Response GetNetworkRouterFirewallRule200Response
 
-// NewGetNetworkRouterFirewallRule200ResponseWithDefaults instantiates a new GetNetworkRouterFirewallRule200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkRouterFirewallRule200ResponseWithDefaults() *GetNetworkRouterFirewallRule200Response {
-	this := GetNetworkRouterFirewallRule200Response{}
-	return &this
-}
-
 func (o GetNetworkRouterFirewallRule200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

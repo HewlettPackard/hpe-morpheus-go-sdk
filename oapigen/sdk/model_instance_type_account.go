@@ -27,14 +27,6 @@ type InstanceTypeAccount struct {
 
 type _InstanceTypeAccount InstanceTypeAccount
 
-// NewInstanceTypeAccountWithDefaults instantiates a new InstanceTypeAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceTypeAccountWithDefaults() *InstanceTypeAccount {
-	this := InstanceTypeAccount{}
-	return &this
-}
-
 func (o InstanceTypeAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

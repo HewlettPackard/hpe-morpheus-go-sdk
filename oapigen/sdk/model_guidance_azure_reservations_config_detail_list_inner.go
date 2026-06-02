@@ -45,14 +45,6 @@ type GuidanceAzureReservationsConfigDetailListInner struct {
 
 type _GuidanceAzureReservationsConfigDetailListInner GuidanceAzureReservationsConfigDetailListInner
 
-// NewGuidanceAzureReservationsConfigDetailListInnerWithDefaults instantiates a new GuidanceAzureReservationsConfigDetailListInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGuidanceAzureReservationsConfigDetailListInnerWithDefaults() *GuidanceAzureReservationsConfigDetailListInner {
-	this := GuidanceAzureReservationsConfigDetailListInner{}
-	return &this
-}
-
 func (o GuidanceAzureReservationsConfigDetailListInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

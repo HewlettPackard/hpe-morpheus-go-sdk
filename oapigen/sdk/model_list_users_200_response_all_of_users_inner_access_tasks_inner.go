@@ -29,14 +29,6 @@ type ListUsers200ResponseAllOfUsersInnerAccessTasksInner struct {
 
 type _ListUsers200ResponseAllOfUsersInnerAccessTasksInner ListUsers200ResponseAllOfUsersInnerAccessTasksInner
 
-// NewListUsers200ResponseAllOfUsersInnerAccessTasksInnerWithDefaults instantiates a new ListUsers200ResponseAllOfUsersInnerAccessTasksInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListUsers200ResponseAllOfUsersInnerAccessTasksInnerWithDefaults() *ListUsers200ResponseAllOfUsersInnerAccessTasksInner {
-	this := ListUsers200ResponseAllOfUsersInnerAccessTasksInner{}
-	return &this
-}
-
 func (o ListUsers200ResponseAllOfUsersInnerAccessTasksInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount stru
 
 type _ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount
 
-// NewListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccountWithDefaults instantiates a new ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccountWithDefaults() *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount {
-	this := ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount{}
-	return &this
-}
-
 func (o ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

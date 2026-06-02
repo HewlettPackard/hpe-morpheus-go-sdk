@@ -29,14 +29,6 @@ type UpdateRoleRequestRoleTaskSetPermissionsInner struct {
 
 type _UpdateRoleRequestRoleTaskSetPermissionsInner UpdateRoleRequestRoleTaskSetPermissionsInner
 
-// NewUpdateRoleRequestRoleTaskSetPermissionsInnerWithDefaults instantiates a new UpdateRoleRequestRoleTaskSetPermissionsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateRoleRequestRoleTaskSetPermissionsInnerWithDefaults() *UpdateRoleRequestRoleTaskSetPermissionsInner {
-	this := UpdateRoleRequestRoleTaskSetPermissionsInner{}
-	return &this
-}
-
 func (o UpdateRoleRequestRoleTaskSetPermissionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

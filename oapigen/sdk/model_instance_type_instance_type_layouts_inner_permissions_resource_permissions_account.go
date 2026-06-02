@@ -26,14 +26,6 @@ type InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount s
 
 type _InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount
 
-// NewInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccountWithDefaults instantiates a new InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccountWithDefaults() *InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount {
-	this := InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount{}
-	return &this
-}
-
 func (o InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissionsAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

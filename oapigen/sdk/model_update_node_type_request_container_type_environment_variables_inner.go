@@ -33,18 +33,6 @@ type UpdateNodeTypeRequestContainerTypeEnvironmentVariablesInner struct {
 
 type _UpdateNodeTypeRequestContainerTypeEnvironmentVariablesInner UpdateNodeTypeRequestContainerTypeEnvironmentVariablesInner
 
-// NewUpdateNodeTypeRequestContainerTypeEnvironmentVariablesInnerWithDefaults instantiates a new UpdateNodeTypeRequestContainerTypeEnvironmentVariablesInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNodeTypeRequestContainerTypeEnvironmentVariablesInnerWithDefaults() *UpdateNodeTypeRequestContainerTypeEnvironmentVariablesInner {
-	this := UpdateNodeTypeRequestContainerTypeEnvironmentVariablesInner{}
-	var masked bool = false
-	this.Masked = &masked
-	var export bool = false
-	this.Export = &export
-	return &this
-}
-
 func (o UpdateNodeTypeRequestContainerTypeEnvironmentVariablesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

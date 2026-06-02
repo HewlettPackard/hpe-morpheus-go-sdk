@@ -44,16 +44,6 @@ type ElasticCheck1AllOfConfig struct {
 
 type _ElasticCheck1AllOfConfig ElasticCheck1AllOfConfig
 
-// NewElasticCheck1AllOfConfigWithDefaults instantiates a new ElasticCheck1AllOfConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewElasticCheck1AllOfConfigWithDefaults() *ElasticCheck1AllOfConfig {
-	this := ElasticCheck1AllOfConfig{}
-	var tunnelOn string = "off"
-	this.TunnelOn = &tunnelOn
-	return &this
-}
-
 func (o ElasticCheck1AllOfConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

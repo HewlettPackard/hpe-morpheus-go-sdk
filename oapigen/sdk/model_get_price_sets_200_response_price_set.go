@@ -37,14 +37,6 @@ type GetPriceSets200ResponsePriceSet struct {
 
 type _GetPriceSets200ResponsePriceSet GetPriceSets200ResponsePriceSet
 
-// NewGetPriceSets200ResponsePriceSetWithDefaults instantiates a new GetPriceSets200ResponsePriceSet object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetPriceSets200ResponsePriceSetWithDefaults() *GetPriceSets200ResponsePriceSet {
-	this := GetPriceSets200ResponsePriceSet{}
-	return &this
-}
-
 func (o GetPriceSets200ResponsePriceSet) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

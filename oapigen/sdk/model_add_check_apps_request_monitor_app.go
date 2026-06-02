@@ -37,20 +37,6 @@ type AddCheckAppsRequestMonitorApp struct {
 
 type _AddCheckAppsRequestMonitorApp AddCheckAppsRequestMonitorApp
 
-// NewAddCheckAppsRequestMonitorAppWithDefaults instantiates a new AddCheckAppsRequestMonitorApp object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCheckAppsRequestMonitorAppWithDefaults() *AddCheckAppsRequestMonitorApp {
-	this := AddCheckAppsRequestMonitorApp{}
-	var inUptime bool = true
-	this.InUptime = &inUptime
-	var severity string = "critical"
-	this.Severity = &severity
-	var active bool = true
-	this.Active = &active
-	return &this
-}
-
 func (o AddCheckAppsRequestMonitorApp) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

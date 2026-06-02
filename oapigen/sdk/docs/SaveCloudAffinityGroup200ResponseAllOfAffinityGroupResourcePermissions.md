@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissionsWithDefaults
-
-`func NewSaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissionsWithDefaults() *SaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions`
-
-NewSaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissionsWithDefaults instantiates a new SaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetAll
 
 `func (o *SaveCloudAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions) GetAll() bool`

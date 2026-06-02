@@ -32,14 +32,6 @@ type HealthCpu struct {
 
 type _HealthCpu HealthCpu
 
-// NewHealthCpuWithDefaults instantiates a new HealthCpu object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewHealthCpuWithDefaults() *HealthCpu {
-	this := HealthCpu{}
-	return &this
-}
-
 func (o HealthCpu) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -18,14 +18,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewHostnamePolicyTypeConfiguration7WithDefaults
-
-`func NewHostnamePolicyTypeConfiguration7WithDefaults() *HostnamePolicyTypeConfiguration7`
-
-NewHostnamePolicyTypeConfiguration7WithDefaults instantiates a new HostnamePolicyTypeConfiguration7 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetHostNamingType
 
 `func (o *HostnamePolicyTypeConfiguration7) GetHostNamingType() string`

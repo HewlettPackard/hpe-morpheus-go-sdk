@@ -31,14 +31,6 @@ type UpdateServerNetworkInterface200Response struct {
 
 type _UpdateServerNetworkInterface200Response UpdateServerNetworkInterface200Response
 
-// NewUpdateServerNetworkInterface200ResponseWithDefaults instantiates a new UpdateServerNetworkInterface200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateServerNetworkInterface200ResponseWithDefaults() *UpdateServerNetworkInterface200Response {
-	this := UpdateServerNetworkInterface200Response{}
-	return &this
-}
-
 func (o UpdateServerNetworkInterface200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -66,16 +66,6 @@ type ClusterServerCreate struct {
 
 type _ClusterServerCreate ClusterServerCreate
 
-// NewClusterServerCreateWithDefaults instantiates a new ClusterServerCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterServerCreateWithDefaults() *ClusterServerCreate {
-	this := ClusterServerCreate{}
-	var visibility string = "private"
-	this.Visibility = &visibility
-	return &this
-}
-
 func (o ClusterServerCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

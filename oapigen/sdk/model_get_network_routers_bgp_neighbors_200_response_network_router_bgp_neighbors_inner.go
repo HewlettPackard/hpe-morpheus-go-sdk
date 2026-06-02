@@ -55,14 +55,6 @@ type GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner stru
 
 type _GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner
 
-// NewGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerWithDefaults instantiates a new GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerWithDefaults() *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner {
-	this := GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner{}
-	return &this
-}
-
 func (o GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

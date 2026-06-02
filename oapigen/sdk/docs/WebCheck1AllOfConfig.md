@@ -28,14 +28,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewWebCheck1AllOfConfigWithDefaults
-
-`func NewWebCheck1AllOfConfigWithDefaults() *WebCheck1AllOfConfig`
-
-NewWebCheck1AllOfConfigWithDefaults instantiates a new WebCheck1AllOfConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetWebMethod
 
 `func (o *WebCheck1AllOfConfig) GetWebMethod() string`

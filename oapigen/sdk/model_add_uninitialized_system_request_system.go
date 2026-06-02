@@ -39,14 +39,6 @@ type AddUninitializedSystemRequestSystem struct {
 
 type _AddUninitializedSystemRequestSystem AddUninitializedSystemRequestSystem
 
-// NewAddUninitializedSystemRequestSystemWithDefaults instantiates a new AddUninitializedSystemRequestSystem object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddUninitializedSystemRequestSystemWithDefaults() *AddUninitializedSystemRequestSystem {
-	this := AddUninitializedSystemRequestSystem{}
-	return &this
-}
-
 func (o AddUninitializedSystemRequestSystem) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

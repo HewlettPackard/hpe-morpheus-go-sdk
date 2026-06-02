@@ -36,14 +36,6 @@ type Log struct {
 
 type _Log Log
 
-// NewLogWithDefaults instantiates a new Log object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLogWithDefaults() *Log {
-	this := Log{}
-	return &this
-}
-
 func (o Log) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

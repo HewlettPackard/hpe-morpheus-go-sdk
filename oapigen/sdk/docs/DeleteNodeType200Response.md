@@ -17,14 +17,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewDeleteNodeType200ResponseWithDefaults
-
-`func NewDeleteNodeType200ResponseWithDefaults() *DeleteNodeType200Response`
-
-NewDeleteNodeType200ResponseWithDefaults instantiates a new DeleteNodeType200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetSuccess
 
 `func (o *DeleteNodeType200Response) GetSuccess() bool`

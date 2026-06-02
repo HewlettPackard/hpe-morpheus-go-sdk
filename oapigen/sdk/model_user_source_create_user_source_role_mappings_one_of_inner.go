@@ -30,14 +30,6 @@ type UserSourceCreateUserSourceRoleMappingsOneOfInner struct {
 
 type _UserSourceCreateUserSourceRoleMappingsOneOfInner UserSourceCreateUserSourceRoleMappingsOneOfInner
 
-// NewUserSourceCreateUserSourceRoleMappingsOneOfInnerWithDefaults instantiates a new UserSourceCreateUserSourceRoleMappingsOneOfInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserSourceCreateUserSourceRoleMappingsOneOfInnerWithDefaults() *UserSourceCreateUserSourceRoleMappingsOneOfInner {
-	this := UserSourceCreateUserSourceRoleMappingsOneOfInner{}
-	return &this
-}
-
 func (o UserSourceCreateUserSourceRoleMappingsOneOfInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

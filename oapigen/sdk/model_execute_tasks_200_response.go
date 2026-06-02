@@ -28,14 +28,6 @@ type ExecuteTasks200Response struct {
 
 type _ExecuteTasks200Response ExecuteTasks200Response
 
-// NewExecuteTasks200ResponseWithDefaults instantiates a new ExecuteTasks200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewExecuteTasks200ResponseWithDefaults() *ExecuteTasks200Response {
-	this := ExecuteTasks200Response{}
-	return &this
-}
-
 func (o ExecuteTasks200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

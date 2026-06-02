@@ -29,14 +29,6 @@ type NSXVBGPNeighborConfig2 struct {
 
 type _NSXVBGPNeighborConfig2 NSXVBGPNeighborConfig2
 
-// NewNSXVBGPNeighborConfig2WithDefaults instantiates a new NSXVBGPNeighborConfig2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNSXVBGPNeighborConfig2WithDefaults() *NSXVBGPNeighborConfig2 {
-	this := NSXVBGPNeighborConfig2{}
-	return &this
-}
-
 func (o NSXVBGPNeighborConfig2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

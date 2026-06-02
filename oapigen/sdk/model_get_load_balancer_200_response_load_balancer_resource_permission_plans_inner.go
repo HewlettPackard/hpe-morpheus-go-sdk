@@ -28,14 +28,6 @@ type GetLoadBalancer200ResponseLoadBalancerResourcePermissionPlansInner struct {
 
 type _GetLoadBalancer200ResponseLoadBalancerResourcePermissionPlansInner GetLoadBalancer200ResponseLoadBalancerResourcePermissionPlansInner
 
-// NewGetLoadBalancer200ResponseLoadBalancerResourcePermissionPlansInnerWithDefaults instantiates a new GetLoadBalancer200ResponseLoadBalancerResourcePermissionPlansInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetLoadBalancer200ResponseLoadBalancerResourcePermissionPlansInnerWithDefaults() *GetLoadBalancer200ResponseLoadBalancerResourcePermissionPlansInner {
-	this := GetLoadBalancer200ResponseLoadBalancerResourcePermissionPlansInner{}
-	return &this
-}
-
 func (o GetLoadBalancer200ResponseLoadBalancerResourcePermissionPlansInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

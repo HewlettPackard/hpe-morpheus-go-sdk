@@ -27,14 +27,6 @@ type AddInstanceRequestInstanceSite struct {
 
 type _AddInstanceRequestInstanceSite AddInstanceRequestInstanceSite
 
-// NewAddInstanceRequestInstanceSiteWithDefaults instantiates a new AddInstanceRequestInstanceSite object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstanceRequestInstanceSiteWithDefaults() *AddInstanceRequestInstanceSite {
-	this := AddInstanceRequestInstanceSite{}
-	return &this
-}
-
 func (o AddInstanceRequestInstanceSite) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

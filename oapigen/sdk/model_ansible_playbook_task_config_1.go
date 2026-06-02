@@ -39,14 +39,6 @@ type AnsiblePlaybookTaskConfig1 struct {
 
 type _AnsiblePlaybookTaskConfig1 AnsiblePlaybookTaskConfig1
 
-// NewAnsiblePlaybookTaskConfig1WithDefaults instantiates a new AnsiblePlaybookTaskConfig1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAnsiblePlaybookTaskConfig1WithDefaults() *AnsiblePlaybookTaskConfig1 {
-	this := AnsiblePlaybookTaskConfig1{}
-	return &this
-}
-
 func (o AnsiblePlaybookTaskConfig1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

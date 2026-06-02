@@ -27,14 +27,6 @@ type UpdateStaticRoute200Response struct {
 
 type _UpdateStaticRoute200Response UpdateStaticRoute200Response
 
-// NewUpdateStaticRoute200ResponseWithDefaults instantiates a new UpdateStaticRoute200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateStaticRoute200ResponseWithDefaults() *UpdateStaticRoute200Response {
-	this := UpdateStaticRoute200Response{}
-	return &this
-}
-
 func (o UpdateStaticRoute200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

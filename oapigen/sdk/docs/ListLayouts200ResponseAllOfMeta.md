@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListLayouts200ResponseAllOfMetaWithDefaults
-
-`func NewListLayouts200ResponseAllOfMetaWithDefaults() *ListLayouts200ResponseAllOfMeta`
-
-NewListLayouts200ResponseAllOfMetaWithDefaults instantiates a new ListLayouts200ResponseAllOfMeta object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetOffset
 
 `func (o *ListLayouts200ResponseAllOfMeta) GetOffset() int64`

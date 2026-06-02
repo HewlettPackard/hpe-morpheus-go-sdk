@@ -26,14 +26,6 @@ type UpdateDatastores200ResponseDatastoreAllOfOwner struct {
 
 type _UpdateDatastores200ResponseDatastoreAllOfOwner UpdateDatastores200ResponseDatastoreAllOfOwner
 
-// NewUpdateDatastores200ResponseDatastoreAllOfOwnerWithDefaults instantiates a new UpdateDatastores200ResponseDatastoreAllOfOwner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateDatastores200ResponseDatastoreAllOfOwnerWithDefaults() *UpdateDatastores200ResponseDatastoreAllOfOwner {
-	this := UpdateDatastores200ResponseDatastoreAllOfOwner{}
-	return &this
-}
-
 func (o UpdateDatastores200ResponseDatastoreAllOfOwner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

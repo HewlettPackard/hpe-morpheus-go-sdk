@@ -26,14 +26,6 @@ type GetHistory200Response struct {
 
 type _GetHistory200Response GetHistory200Response
 
-// NewGetHistory200ResponseWithDefaults instantiates a new GetHistory200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetHistory200ResponseWithDefaults() *GetHistory200Response {
-	this := GetHistory200Response{}
-	return &this
-}
-
 func (o GetHistory200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

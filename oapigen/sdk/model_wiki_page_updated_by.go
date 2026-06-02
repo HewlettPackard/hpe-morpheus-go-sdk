@@ -27,14 +27,6 @@ type WikiPageUpdatedBy struct {
 
 type _WikiPageUpdatedBy WikiPageUpdatedBy
 
-// NewWikiPageUpdatedByWithDefaults instantiates a new WikiPageUpdatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWikiPageUpdatedByWithDefaults() *WikiPageUpdatedBy {
-	this := WikiPageUpdatedBy{}
-	return &this
-}
-
 func (o WikiPageUpdatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

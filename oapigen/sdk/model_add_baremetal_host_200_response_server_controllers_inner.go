@@ -30,14 +30,6 @@ type AddBaremetalHost200ResponseServerControllersInner struct {
 
 type _AddBaremetalHost200ResponseServerControllersInner AddBaremetalHost200ResponseServerControllersInner
 
-// NewAddBaremetalHost200ResponseServerControllersInnerWithDefaults instantiates a new AddBaremetalHost200ResponseServerControllersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBaremetalHost200ResponseServerControllersInnerWithDefaults() *AddBaremetalHost200ResponseServerControllersInner {
-	this := AddBaremetalHost200ResponseServerControllersInner{}
-	return &this
-}
-
 func (o AddBaremetalHost200ResponseServerControllersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

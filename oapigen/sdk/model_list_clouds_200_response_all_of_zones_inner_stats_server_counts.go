@@ -32,14 +32,6 @@ type ListClouds200ResponseAllOfZonesInnerStatsServerCounts struct {
 
 type _ListClouds200ResponseAllOfZonesInnerStatsServerCounts ListClouds200ResponseAllOfZonesInnerStatsServerCounts
 
-// NewListClouds200ResponseAllOfZonesInnerStatsServerCountsWithDefaults instantiates a new ListClouds200ResponseAllOfZonesInnerStatsServerCounts object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClouds200ResponseAllOfZonesInnerStatsServerCountsWithDefaults() *ListClouds200ResponseAllOfZonesInnerStatsServerCounts {
-	this := ListClouds200ResponseAllOfZonesInnerStatsServerCounts{}
-	return &this
-}
-
 func (o ListClouds200ResponseAllOfZonesInnerStatsServerCounts) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

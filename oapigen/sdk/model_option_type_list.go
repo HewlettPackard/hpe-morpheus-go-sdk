@@ -44,14 +44,6 @@ type OptionTypeList struct {
 
 type _OptionTypeList OptionTypeList
 
-// NewOptionTypeListWithDefaults instantiates a new OptionTypeList object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOptionTypeListWithDefaults() *OptionTypeList {
-	this := OptionTypeList{}
-	return &this
-}
-
 func (o OptionTypeList) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,14 +26,6 @@ type GetJobs200ResponseAllOfJobAnyOf1CustomOptions struct {
 
 type _GetJobs200ResponseAllOfJobAnyOf1CustomOptions GetJobs200ResponseAllOfJobAnyOf1CustomOptions
 
-// NewGetJobs200ResponseAllOfJobAnyOf1CustomOptionsWithDefaults instantiates a new GetJobs200ResponseAllOfJobAnyOf1CustomOptions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetJobs200ResponseAllOfJobAnyOf1CustomOptionsWithDefaults() *GetJobs200ResponseAllOfJobAnyOf1CustomOptions {
-	this := GetJobs200ResponseAllOfJobAnyOf1CustomOptions{}
-	return &this
-}
-
 func (o GetJobs200ResponseAllOfJobAnyOf1CustomOptions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -20,14 +20,6 @@ This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListBillingAccount200ResponseAllOfBillingInfoZonesInnerSnapshotsWithDefaults
-
-`func NewListBillingAccount200ResponseAllOfBillingInfoZonesInnerSnapshotsWithDefaults() *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerSnapshots`
-
-NewListBillingAccount200ResponseAllOfBillingInfoZonesInnerSnapshotsWithDefaults instantiates a new ListBillingAccount200ResponseAllOfBillingInfoZonesInnerSnapshots object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
 ### GetPrice
 
 `func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerSnapshots) GetPrice() float32`
