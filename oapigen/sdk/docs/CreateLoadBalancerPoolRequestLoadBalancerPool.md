@@ -8,7 +8,11 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Description | [optional] 
 **VipBalance** | Pointer to **string** | Balance Algorithm | [optional] 
 **MinActive** | Pointer to **int64** | Min Active Members | [optional] 
-**Config** | Pointer to **map[string]interface{}** | Configuration object with parameters that vary by type. | [optional] 
+**Port** | Pointer to **int64** | Port number | [optional] 
+**VipSticky** | Pointer to **string** | Session persistence mode | [optional] 
+**VipClientIpMode** | Pointer to **string** | VIP client IP mode | [optional] 
+**Partition** | Pointer to **string** | Partition | [optional] 
+**Config** | Pointer to [**CreateLoadBalancerPoolRequestLoadBalancerPoolConfig**](CreateLoadBalancerPoolRequestLoadBalancerPoolConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -129,22 +133,122 @@ SetMinActive sets MinActive field to given value.
 
 HasMinActive returns a boolean if a field has been set.
 
+### GetPort
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetPort() int64`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetPortOk() (*int64, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPort
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetPort(v int64)`
+
+SetPort sets Port field to given value.
+
+### HasPort
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) HasPort() bool`
+
+HasPort returns a boolean if a field has been set.
+
+### GetVipSticky
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetVipSticky() string`
+
+GetVipSticky returns the VipSticky field if non-nil, zero value otherwise.
+
+### GetVipStickyOk
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetVipStickyOk() (*string, bool)`
+
+GetVipStickyOk returns a tuple with the VipSticky field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVipSticky
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetVipSticky(v string)`
+
+SetVipSticky sets VipSticky field to given value.
+
+### HasVipSticky
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) HasVipSticky() bool`
+
+HasVipSticky returns a boolean if a field has been set.
+
+### GetVipClientIpMode
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetVipClientIpMode() string`
+
+GetVipClientIpMode returns the VipClientIpMode field if non-nil, zero value otherwise.
+
+### GetVipClientIpModeOk
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetVipClientIpModeOk() (*string, bool)`
+
+GetVipClientIpModeOk returns a tuple with the VipClientIpMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVipClientIpMode
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetVipClientIpMode(v string)`
+
+SetVipClientIpMode sets VipClientIpMode field to given value.
+
+### HasVipClientIpMode
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) HasVipClientIpMode() bool`
+
+HasVipClientIpMode returns a boolean if a field has been set.
+
+### GetPartition
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetPartition() string`
+
+GetPartition returns the Partition field if non-nil, zero value otherwise.
+
+### GetPartitionOk
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetPartitionOk() (*string, bool)`
+
+GetPartitionOk returns a tuple with the Partition field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartition
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetPartition(v string)`
+
+SetPartition sets Partition field to given value.
+
+### HasPartition
+
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) HasPartition() bool`
+
+HasPartition returns a boolean if a field has been set.
+
 ### GetConfig
 
-`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetConfig() map[string]interface{}`
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetConfig() CreateLoadBalancerPoolRequestLoadBalancerPoolConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetConfigOk() (*CreateLoadBalancerPoolRequestLoadBalancerPoolConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetConfig(v map[string]interface{})`
+`func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetConfig(v CreateLoadBalancerPoolRequestLoadBalancerPoolConfig)`
 
 SetConfig sets Config field to given value.
 

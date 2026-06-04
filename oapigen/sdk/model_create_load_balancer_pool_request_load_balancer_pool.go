@@ -28,9 +28,16 @@ type CreateLoadBalancerPoolRequestLoadBalancerPool struct {
 	VipBalance *string `json:"vipBalance,omitempty"`
 	// Min Active Members
 	MinActive *int64 `json:"minActive,omitempty"`
-	// Configuration object with parameters that vary by type.
-	Config               map[string]interface{} `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	// Port number
+	Port *int64 `json:"port,omitempty"`
+	// Session persistence mode
+	VipSticky *string `json:"vipSticky,omitempty"`
+	// VIP client IP mode
+	VipClientIpMode *string `json:"vipClientIpMode,omitempty"`
+	// Partition
+	Partition            *string                                              `json:"partition,omitempty"`
+	Config               *CreateLoadBalancerPoolRequestLoadBalancerPoolConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _CreateLoadBalancerPoolRequestLoadBalancerPool CreateLoadBalancerPoolRequestLoadBalancerPool
@@ -180,20 +187,148 @@ func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetMinActive(v int64) {
 	o.MinActive = &v
 }
 
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
+// GetPort returns the Port field value if set, zero value otherwise.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetPort() int64 {
+	if o == nil || IsNil(o.Port) {
+		var ret int64
 		return ret
 	}
-	return o.Config
+	return *o.Port
+}
+
+// GetPortOk returns a tuple with the Port field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetPortOk() (*int64, bool) {
+	if o == nil || IsNil(o.Port) {
+		return nil, false
+	}
+	return o.Port, true
+}
+
+// IsSetPort returns a boolean if a field has been set.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) IsSetPort() bool {
+	if o != nil && !IsNil(o.Port) {
+		return true
+	}
+
+	return false
+}
+
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetPort(v int64) {
+	o.Port = &v
+}
+
+// GetVipSticky returns the VipSticky field value if set, zero value otherwise.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetVipSticky() string {
+	if o == nil || IsNil(o.VipSticky) {
+		var ret string
+		return ret
+	}
+	return *o.VipSticky
+}
+
+// GetVipStickyOk returns a tuple with the VipSticky field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetVipStickyOk() (*string, bool) {
+	if o == nil || IsNil(o.VipSticky) {
+		return nil, false
+	}
+	return o.VipSticky, true
+}
+
+// IsSetVipSticky returns a boolean if a field has been set.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) IsSetVipSticky() bool {
+	if o != nil && !IsNil(o.VipSticky) {
+		return true
+	}
+
+	return false
+}
+
+// SetVipSticky gets a reference to the given string and assigns it to the VipSticky field.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetVipSticky(v string) {
+	o.VipSticky = &v
+}
+
+// GetVipClientIpMode returns the VipClientIpMode field value if set, zero value otherwise.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetVipClientIpMode() string {
+	if o == nil || IsNil(o.VipClientIpMode) {
+		var ret string
+		return ret
+	}
+	return *o.VipClientIpMode
+}
+
+// GetVipClientIpModeOk returns a tuple with the VipClientIpMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetVipClientIpModeOk() (*string, bool) {
+	if o == nil || IsNil(o.VipClientIpMode) {
+		return nil, false
+	}
+	return o.VipClientIpMode, true
+}
+
+// IsSetVipClientIpMode returns a boolean if a field has been set.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) IsSetVipClientIpMode() bool {
+	if o != nil && !IsNil(o.VipClientIpMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetVipClientIpMode gets a reference to the given string and assigns it to the VipClientIpMode field.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetVipClientIpMode(v string) {
+	o.VipClientIpMode = &v
+}
+
+// GetPartition returns the Partition field value if set, zero value otherwise.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetPartition() string {
+	if o == nil || IsNil(o.Partition) {
+		var ret string
+		return ret
+	}
+	return *o.Partition
+}
+
+// GetPartitionOk returns a tuple with the Partition field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetPartitionOk() (*string, bool) {
+	if o == nil || IsNil(o.Partition) {
+		return nil, false
+	}
+	return o.Partition, true
+}
+
+// IsSetPartition returns a boolean if a field has been set.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) IsSetPartition() bool {
+	if o != nil && !IsNil(o.Partition) {
+		return true
+	}
+
+	return false
+}
+
+// SetPartition gets a reference to the given string and assigns it to the Partition field.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetPartition(v string) {
+	o.Partition = &v
+}
+
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetConfig() CreateLoadBalancerPoolRequestLoadBalancerPoolConfig {
+	if o == nil || IsNil(o.Config) {
+		var ret CreateLoadBalancerPoolRequestLoadBalancerPoolConfig
+		return ret
+	}
+	return *o.Config
 }
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetConfigOk() (map[string]interface{}, bool) {
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) GetConfigOk() (*CreateLoadBalancerPoolRequestLoadBalancerPoolConfig, bool) {
 	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Config, true
 }
@@ -207,9 +342,9 @@ func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetConfig(v map[string]interface{}) {
-	o.Config = v
+// SetConfig gets a reference to the given CreateLoadBalancerPoolRequestLoadBalancerPoolConfig and assigns it to the Config field.
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetConfig(v CreateLoadBalancerPoolRequestLoadBalancerPoolConfig) {
+	o.Config = &v
 }
 
 func (o CreateLoadBalancerPoolRequestLoadBalancerPool) MarshalJSON() ([]byte, error) {
@@ -233,6 +368,18 @@ func (o CreateLoadBalancerPoolRequestLoadBalancerPool) ToMap() (map[string]inter
 	}
 	if !IsNil(o.MinActive) {
 		toSerialize["minActive"] = o.MinActive
+	}
+	if !IsNil(o.Port) {
+		toSerialize["port"] = o.Port
+	}
+	if !IsNil(o.VipSticky) {
+		toSerialize["vipSticky"] = o.VipSticky
+	}
+	if !IsNil(o.VipClientIpMode) {
+		toSerialize["vipClientIpMode"] = o.VipClientIpMode
+	}
+	if !IsNil(o.Partition) {
+		toSerialize["partition"] = o.Partition
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
