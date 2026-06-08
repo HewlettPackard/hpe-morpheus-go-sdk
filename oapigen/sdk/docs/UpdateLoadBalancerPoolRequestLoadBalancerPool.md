@@ -8,7 +8,11 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Description | [optional] 
 **VipBalance** | Pointer to **string** | Balance Algorithm | [optional] 
 **MinActive** | Pointer to **int64** | Min Active Members | [optional] 
-**Config** | Pointer to **map[string]interface{}** | Configuration object with parameters that vary by type. | [optional] 
+**Port** | Pointer to **int64** | Port number | [optional] 
+**VipSticky** | Pointer to **string** | Session persistence mode | [optional] 
+**VipClientIpMode** | Pointer to **string** | VIP client IP mode | [optional] 
+**Partition** | Pointer to **string** | Partition | [optional] 
+**Config** | Pointer to [**UpdateLoadBalancerPoolRequestLoadBalancerPoolConfig**](UpdateLoadBalancerPoolRequestLoadBalancerPoolConfig.md) |  | [optional] 
 
 ## Usage
 

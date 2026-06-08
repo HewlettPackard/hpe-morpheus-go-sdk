@@ -28,9 +28,16 @@ type CreateLoadBalancerPoolRequestLoadBalancerPool struct {
 	VipBalance *string `json:"vipBalance,omitempty"`
 	// Min Active Members
 	MinActive *int64 `json:"minActive,omitempty"`
-	// Configuration object with parameters that vary by type.
-	Config               map[string]interface{} `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	// Port number
+	Port *int64 `json:"port,omitempty"`
+	// Session persistence mode
+	VipSticky *string `json:"vipSticky,omitempty"`
+	// VIP client IP mode
+	VipClientIpMode *string `json:"vipClientIpMode,omitempty"`
+	// Partition
+	Partition            *string                                              `json:"partition,omitempty"`
+	Config               *CreateLoadBalancerPoolRequestLoadBalancerPoolConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _CreateLoadBalancerPoolRequestLoadBalancerPool CreateLoadBalancerPoolRequestLoadBalancerPool
@@ -56,6 +63,18 @@ func (o CreateLoadBalancerPoolRequestLoadBalancerPool) ToMap() (map[string]inter
 	}
 	if !IsNil(o.MinActive) {
 		toSerialize["minActive"] = o.MinActive
+	}
+	if !IsNil(o.Port) {
+		toSerialize["port"] = o.Port
+	}
+	if !IsNil(o.VipSticky) {
+		toSerialize["vipSticky"] = o.VipSticky
+	}
+	if !IsNil(o.VipClientIpMode) {
+		toSerialize["vipClientIpMode"] = o.VipClientIpMode
+	}
+	if !IsNil(o.Partition) {
+		toSerialize["partition"] = o.Partition
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
