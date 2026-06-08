@@ -26,55 +26,6 @@ type GetStorageVolumeTypes200Response struct {
 
 type _GetStorageVolumeTypes200Response GetStorageVolumeTypes200Response
 
-// NewGetStorageVolumeTypes200Response instantiates a new GetStorageVolumeTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetStorageVolumeTypes200Response() *GetStorageVolumeTypes200Response {
-	this := GetStorageVolumeTypes200Response{}
-	return &this
-}
-
-// NewGetStorageVolumeTypes200ResponseWithDefaults instantiates a new GetStorageVolumeTypes200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetStorageVolumeTypes200ResponseWithDefaults() *GetStorageVolumeTypes200Response {
-	this := GetStorageVolumeTypes200Response{}
-	return &this
-}
-
-// GetStorageVolumeType returns the StorageVolumeType field value if set, zero value otherwise.
-func (o *GetStorageVolumeTypes200Response) GetStorageVolumeType() GetStorageVolumeTypes200ResponseStorageVolumeType {
-	if o == nil || IsNil(o.StorageVolumeType) {
-		var ret GetStorageVolumeTypes200ResponseStorageVolumeType
-		return ret
-	}
-	return *o.StorageVolumeType
-}
-
-// GetStorageVolumeTypeOk returns a tuple with the StorageVolumeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetStorageVolumeTypes200Response) GetStorageVolumeTypeOk() (*GetStorageVolumeTypes200ResponseStorageVolumeType, bool) {
-	if o == nil || IsNil(o.StorageVolumeType) {
-		return nil, false
-	}
-	return o.StorageVolumeType, true
-}
-
-// IsSetStorageVolumeType returns a boolean if a field has been set.
-func (o *GetStorageVolumeTypes200Response) IsSetStorageVolumeType() bool {
-	if o != nil && !IsNil(o.StorageVolumeType) {
-		return true
-	}
-
-	return false
-}
-
-// SetStorageVolumeType gets a reference to the given GetStorageVolumeTypes200ResponseStorageVolumeType and assigns it to the StorageVolumeType field.
-func (o *GetStorageVolumeTypes200Response) SetStorageVolumeType(v GetStorageVolumeTypes200ResponseStorageVolumeType) {
-	o.StorageVolumeType = &v
-}
-
 func (o GetStorageVolumeTypes200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -10,149 +10,15 @@ Name | Type | Description | Notes
 **ExternalId** | Pointer to **string** | External identifier for the component. | [optional] 
 **Config** | Pointer to **map[string]interface{}** | Arbitrary configuration data for the component. | [optional] 
 
-## Methods
-
-### NewSystemUninitializedCreateComponentsInner
-
-`func NewSystemUninitializedCreateComponentsInner() *SystemUninitializedCreateComponentsInner`
-
-NewSystemUninitializedCreateComponentsInner instantiates a new SystemUninitializedCreateComponentsInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewSystemUninitializedCreateComponentsInnerWithDefaults
-
-`func NewSystemUninitializedCreateComponentsInnerWithDefaults() *SystemUninitializedCreateComponentsInner`
-
-NewSystemUninitializedCreateComponentsInnerWithDefaults instantiates a new SystemUninitializedCreateComponentsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *SystemUninitializedCreateComponentsInner) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *SystemUninitializedCreateComponentsInner) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *SystemUninitializedCreateComponentsInner) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *SystemUninitializedCreateComponentsInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetTypeCode
-
-`func (o *SystemUninitializedCreateComponentsInner) GetTypeCode() string`
-
-GetTypeCode returns the TypeCode field if non-nil, zero value otherwise.
-
-### GetTypeCodeOk
-
-`func (o *SystemUninitializedCreateComponentsInner) GetTypeCodeOk() (*string, bool)`
-
-GetTypeCodeOk returns a tuple with the TypeCode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTypeCode
-
-`func (o *SystemUninitializedCreateComponentsInner) SetTypeCode(v string)`
-
-SetTypeCode sets TypeCode field to given value.
-
-### HasTypeCode
-
-`func (o *SystemUninitializedCreateComponentsInner) HasTypeCode() bool`
-
-HasTypeCode returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *SystemUninitializedCreateComponentsInner) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *SystemUninitializedCreateComponentsInner) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *SystemUninitializedCreateComponentsInner) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *SystemUninitializedCreateComponentsInner) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetExternalId
-
-`func (o *SystemUninitializedCreateComponentsInner) GetExternalId() string`
-
-GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
-
-### GetExternalIdOk
-
-`func (o *SystemUninitializedCreateComponentsInner) GetExternalIdOk() (*string, bool)`
-
-GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExternalId
-
-`func (o *SystemUninitializedCreateComponentsInner) SetExternalId(v string)`
-
-SetExternalId sets ExternalId field to given value.
-
-### HasExternalId
-
-`func (o *SystemUninitializedCreateComponentsInner) HasExternalId() bool`
-
-HasExternalId returns a boolean if a field has been set.
-
-### GetConfig
-
-`func (o *SystemUninitializedCreateComponentsInner) GetConfig() map[string]interface{}`
-
-GetConfig returns the Config field if non-nil, zero value otherwise.
-
-### GetConfigOk
-
-`func (o *SystemUninitializedCreateComponentsInner) GetConfigOk() (*map[string]interface{}, bool)`
-
-GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfig
-
-`func (o *SystemUninitializedCreateComponentsInner) SetConfig(v map[string]interface{})`
-
-SetConfig sets Config field to given value.
-
-### HasConfig
-
-`func (o *SystemUninitializedCreateComponentsInner) HasConfig() bool`
-
-HasConfig returns a boolean if a field has been set.
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &SystemUninitializedCreateComponentsInner{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

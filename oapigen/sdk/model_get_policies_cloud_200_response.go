@@ -26,55 +26,6 @@ type GetPoliciesCloud200Response struct {
 
 type _GetPoliciesCloud200Response GetPoliciesCloud200Response
 
-// NewGetPoliciesCloud200Response instantiates a new GetPoliciesCloud200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetPoliciesCloud200Response() *GetPoliciesCloud200Response {
-	this := GetPoliciesCloud200Response{}
-	return &this
-}
-
-// NewGetPoliciesCloud200ResponseWithDefaults instantiates a new GetPoliciesCloud200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetPoliciesCloud200ResponseWithDefaults() *GetPoliciesCloud200Response {
-	this := GetPoliciesCloud200Response{}
-	return &this
-}
-
-// GetPolicy returns the Policy field value if set, zero value otherwise.
-func (o *GetPoliciesCloud200Response) GetPolicy() GetPoliciesCloud200ResponseAllOfPolicy {
-	if o == nil || IsNil(o.Policy) {
-		var ret GetPoliciesCloud200ResponseAllOfPolicy
-		return ret
-	}
-	return *o.Policy
-}
-
-// GetPolicyOk returns a tuple with the Policy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPoliciesCloud200Response) GetPolicyOk() (*GetPoliciesCloud200ResponseAllOfPolicy, bool) {
-	if o == nil || IsNil(o.Policy) {
-		return nil, false
-	}
-	return o.Policy, true
-}
-
-// IsSetPolicy returns a boolean if a field has been set.
-func (o *GetPoliciesCloud200Response) IsSetPolicy() bool {
-	if o != nil && !IsNil(o.Policy) {
-		return true
-	}
-
-	return false
-}
-
-// SetPolicy gets a reference to the given GetPoliciesCloud200ResponseAllOfPolicy and assigns it to the Policy field.
-func (o *GetPoliciesCloud200Response) SetPolicy(v GetPoliciesCloud200ResponseAllOfPolicy) {
-	o.Policy = &v
-}
-
 func (o GetPoliciesCloud200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

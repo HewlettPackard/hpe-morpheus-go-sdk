@@ -6,49 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **VdiGateway** | Pointer to [**AddVDIGateways200ResponseAnyOfVdiGateway**](AddVDIGateways200ResponseAnyOfVdiGateway.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewAddVDIGateways200ResponseAnyOf
+Instantiate with a Go composite literal:
 
-`func NewAddVDIGateways200ResponseAnyOf() *AddVDIGateways200ResponseAnyOf`
-
-NewAddVDIGateways200ResponseAnyOf instantiates a new AddVDIGateways200ResponseAnyOf object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewAddVDIGateways200ResponseAnyOfWithDefaults
-
-`func NewAddVDIGateways200ResponseAnyOfWithDefaults() *AddVDIGateways200ResponseAnyOf`
-
-NewAddVDIGateways200ResponseAnyOfWithDefaults instantiates a new AddVDIGateways200ResponseAnyOf object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetVdiGateway
-
-`func (o *AddVDIGateways200ResponseAnyOf) GetVdiGateway() AddVDIGateways200ResponseAnyOfVdiGateway`
-
-GetVdiGateway returns the VdiGateway field if non-nil, zero value otherwise.
-
-### GetVdiGatewayOk
-
-`func (o *AddVDIGateways200ResponseAnyOf) GetVdiGatewayOk() (*AddVDIGateways200ResponseAnyOfVdiGateway, bool)`
-
-GetVdiGatewayOk returns a tuple with the VdiGateway field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVdiGateway
-
-`func (o *AddVDIGateways200ResponseAnyOf) SetVdiGateway(v AddVDIGateways200ResponseAnyOfVdiGateway)`
-
-SetVdiGateway sets VdiGateway field to given value.
-
-### HasVdiGateway
-
-`func (o *AddVDIGateways200ResponseAnyOf) HasVdiGateway() bool`
-
-HasVdiGateway returns a boolean if a field has been set.
+```go
+obj := &AddVDIGateways200ResponseAnyOf{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -26,55 +26,6 @@ type AddIntegrationsRequestOneOfIntegrationCredentialOneOf struct {
 
 type _AddIntegrationsRequestOneOfIntegrationCredentialOneOf AddIntegrationsRequestOneOfIntegrationCredentialOneOf
 
-// NewAddIntegrationsRequestOneOfIntegrationCredentialOneOf instantiates a new AddIntegrationsRequestOneOfIntegrationCredentialOneOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIntegrationsRequestOneOfIntegrationCredentialOneOf() *AddIntegrationsRequestOneOfIntegrationCredentialOneOf {
-	this := AddIntegrationsRequestOneOfIntegrationCredentialOneOf{}
-	return &this
-}
-
-// NewAddIntegrationsRequestOneOfIntegrationCredentialOneOfWithDefaults instantiates a new AddIntegrationsRequestOneOfIntegrationCredentialOneOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIntegrationsRequestOneOfIntegrationCredentialOneOfWithDefaults() *AddIntegrationsRequestOneOfIntegrationCredentialOneOf {
-	this := AddIntegrationsRequestOneOfIntegrationCredentialOneOf{}
-	return &this
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *AddIntegrationsRequestOneOfIntegrationCredentialOneOf) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIntegrationsRequestOneOfIntegrationCredentialOneOf) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOfIntegrationCredentialOneOf) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *AddIntegrationsRequestOneOfIntegrationCredentialOneOf) SetType(v string) {
-	o.Type = &v
-}
-
 func (o AddIntegrationsRequestOneOfIntegrationCredentialOneOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,55 +27,6 @@ type UpdateClusterRequestClusterConfig struct {
 
 type _UpdateClusterRequestClusterConfig UpdateClusterRequestClusterConfig
 
-// NewUpdateClusterRequestClusterConfig instantiates a new UpdateClusterRequestClusterConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterRequestClusterConfig() *UpdateClusterRequestClusterConfig {
-	this := UpdateClusterRequestClusterConfig{}
-	return &this
-}
-
-// NewUpdateClusterRequestClusterConfigWithDefaults instantiates a new UpdateClusterRequestClusterConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateClusterRequestClusterConfigWithDefaults() *UpdateClusterRequestClusterConfig {
-	this := UpdateClusterRequestClusterConfig{}
-	return &this
-}
-
-// GetDynamicPlacementMode returns the DynamicPlacementMode field value if set, zero value otherwise.
-func (o *UpdateClusterRequestClusterConfig) GetDynamicPlacementMode() string {
-	if o == nil || IsNil(o.DynamicPlacementMode) {
-		var ret string
-		return ret
-	}
-	return *o.DynamicPlacementMode
-}
-
-// GetDynamicPlacementModeOk returns a tuple with the DynamicPlacementMode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterRequestClusterConfig) GetDynamicPlacementModeOk() (*string, bool) {
-	if o == nil || IsNil(o.DynamicPlacementMode) {
-		return nil, false
-	}
-	return o.DynamicPlacementMode, true
-}
-
-// IsSetDynamicPlacementMode returns a boolean if a field has been set.
-func (o *UpdateClusterRequestClusterConfig) IsSetDynamicPlacementMode() bool {
-	if o != nil && !IsNil(o.DynamicPlacementMode) {
-		return true
-	}
-
-	return false
-}
-
-// SetDynamicPlacementMode gets a reference to the given string and assigns it to the DynamicPlacementMode field.
-func (o *UpdateClusterRequestClusterConfig) SetDynamicPlacementMode(v string) {
-	o.DynamicPlacementMode = &v
-}
-
 func (o UpdateClusterRequestClusterConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

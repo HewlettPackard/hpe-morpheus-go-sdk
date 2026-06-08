@@ -7,74 +7,15 @@ Name | Type | Description | Notes
 **UserGroup** | Pointer to [**ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup**](ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup.md) |  | [optional] 
 **NetworkDomain** | Pointer to [**ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceNetworkDomain**](ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceNetworkDomain.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance
+Instantiate with a Go composite literal:
 
-`func NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance`
-
-NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceWithDefaults
-
-`func NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceWithDefaults() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance`
-
-NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceWithDefaults instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetUserGroup
-
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroup() ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup`
-
-GetUserGroup returns the UserGroup field if non-nil, zero value otherwise.
-
-### GetUserGroupOk
-
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroupOk() (*ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup, bool)`
-
-GetUserGroupOk returns a tuple with the UserGroup field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserGroup
-
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) SetUserGroup(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup)`
-
-SetUserGroup sets UserGroup field to given value.
-
-### HasUserGroup
-
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) HasUserGroup() bool`
-
-HasUserGroup returns a boolean if a field has been set.
-
-### GetNetworkDomain
-
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetNetworkDomain() ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceNetworkDomain`
-
-GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
-
-### GetNetworkDomainOk
-
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetNetworkDomainOk() (*ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceNetworkDomain, bool)`
-
-GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkDomain
-
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) SetNetworkDomain(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceNetworkDomain)`
-
-SetNetworkDomain sets NetworkDomain field to given value.
-
-### HasNetworkDomain
-
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) HasNetworkDomain() bool`
-
-HasNetworkDomain returns a boolean if a field has been set.
+```go
+obj := &ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -26,48 +26,6 @@ type UpdateInstanceScheduleRequest struct {
 
 type _UpdateInstanceScheduleRequest UpdateInstanceScheduleRequest
 
-// NewUpdateInstanceScheduleRequest instantiates a new UpdateInstanceScheduleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateInstanceScheduleRequest(instanceSchedule UpdateInstanceScheduleRequestInstanceSchedule) *UpdateInstanceScheduleRequest {
-	this := UpdateInstanceScheduleRequest{}
-	this.InstanceSchedule = instanceSchedule
-	return &this
-}
-
-// NewUpdateInstanceScheduleRequestWithDefaults instantiates a new UpdateInstanceScheduleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstanceScheduleRequestWithDefaults() *UpdateInstanceScheduleRequest {
-	this := UpdateInstanceScheduleRequest{}
-	return &this
-}
-
-// GetInstanceSchedule returns the InstanceSchedule field value
-func (o *UpdateInstanceScheduleRequest) GetInstanceSchedule() UpdateInstanceScheduleRequestInstanceSchedule {
-	if o == nil {
-		var ret UpdateInstanceScheduleRequestInstanceSchedule
-		return ret
-	}
-
-	return o.InstanceSchedule
-}
-
-// GetInstanceScheduleOk returns a tuple with the InstanceSchedule field value
-// and a boolean to check if the value has been set.
-func (o *UpdateInstanceScheduleRequest) GetInstanceScheduleOk() (*UpdateInstanceScheduleRequestInstanceSchedule, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.InstanceSchedule, true
-}
-
-// SetInstanceSchedule sets field value
-func (o *UpdateInstanceScheduleRequest) SetInstanceSchedule(v UpdateInstanceScheduleRequestInstanceSchedule) {
-	o.InstanceSchedule = v
-}
-
 func (o UpdateInstanceScheduleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

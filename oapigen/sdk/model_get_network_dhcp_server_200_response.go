@@ -26,55 +26,6 @@ type GetNetworkDhcpServer200Response struct {
 
 type _GetNetworkDhcpServer200Response GetNetworkDhcpServer200Response
 
-// NewGetNetworkDhcpServer200Response instantiates a new GetNetworkDhcpServer200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkDhcpServer200Response() *GetNetworkDhcpServer200Response {
-	this := GetNetworkDhcpServer200Response{}
-	return &this
-}
-
-// NewGetNetworkDhcpServer200ResponseWithDefaults instantiates a new GetNetworkDhcpServer200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkDhcpServer200ResponseWithDefaults() *GetNetworkDhcpServer200Response {
-	this := GetNetworkDhcpServer200Response{}
-	return &this
-}
-
-// GetNetworkDhcpServer returns the NetworkDhcpServer field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200Response) GetNetworkDhcpServer() GetNetworkDhcpServer200ResponseNetworkDhcpServer {
-	if o == nil || IsNil(o.NetworkDhcpServer) {
-		var ret GetNetworkDhcpServer200ResponseNetworkDhcpServer
-		return ret
-	}
-	return *o.NetworkDhcpServer
-}
-
-// GetNetworkDhcpServerOk returns a tuple with the NetworkDhcpServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200Response) GetNetworkDhcpServerOk() (*GetNetworkDhcpServer200ResponseNetworkDhcpServer, bool) {
-	if o == nil || IsNil(o.NetworkDhcpServer) {
-		return nil, false
-	}
-	return o.NetworkDhcpServer, true
-}
-
-// IsSetNetworkDhcpServer returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200Response) IsSetNetworkDhcpServer() bool {
-	if o != nil && !IsNil(o.NetworkDhcpServer) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkDhcpServer gets a reference to the given GetNetworkDhcpServer200ResponseNetworkDhcpServer and assigns it to the NetworkDhcpServer field.
-func (o *GetNetworkDhcpServer200Response) SetNetworkDhcpServer(v GetNetworkDhcpServer200ResponseNetworkDhcpServer) {
-	o.NetworkDhcpServer = &v
-}
-
 func (o GetNetworkDhcpServer200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

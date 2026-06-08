@@ -27,55 +27,6 @@ type NetworkServerGroupCreatePermissionsTenantPermissions struct {
 
 type _NetworkServerGroupCreatePermissionsTenantPermissions NetworkServerGroupCreatePermissionsTenantPermissions
 
-// NewNetworkServerGroupCreatePermissionsTenantPermissions instantiates a new NetworkServerGroupCreatePermissionsTenantPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkServerGroupCreatePermissionsTenantPermissions() *NetworkServerGroupCreatePermissionsTenantPermissions {
-	this := NetworkServerGroupCreatePermissionsTenantPermissions{}
-	return &this
-}
-
-// NewNetworkServerGroupCreatePermissionsTenantPermissionsWithDefaults instantiates a new NetworkServerGroupCreatePermissionsTenantPermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkServerGroupCreatePermissionsTenantPermissionsWithDefaults() *NetworkServerGroupCreatePermissionsTenantPermissions {
-	this := NetworkServerGroupCreatePermissionsTenantPermissions{}
-	return &this
-}
-
-// GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *NetworkServerGroupCreatePermissionsTenantPermissions) GetAccounts() []int64 {
-	if o == nil || IsNil(o.Accounts) {
-		var ret []int64
-		return ret
-	}
-	return o.Accounts
-}
-
-// GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkServerGroupCreatePermissionsTenantPermissions) GetAccountsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.Accounts) {
-		return nil, false
-	}
-	return o.Accounts, true
-}
-
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *NetworkServerGroupCreatePermissionsTenantPermissions) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccounts gets a reference to the given []int64 and assigns it to the Accounts field.
-func (o *NetworkServerGroupCreatePermissionsTenantPermissions) SetAccounts(v []int64) {
-	o.Accounts = v
-}
-
 func (o NetworkServerGroupCreatePermissionsTenantPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

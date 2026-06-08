@@ -27,48 +27,6 @@ type UpdateClusterLayoutRequestLayoutGroupType struct {
 
 type _UpdateClusterLayoutRequestLayoutGroupType UpdateClusterLayoutRequestLayoutGroupType
 
-// NewUpdateClusterLayoutRequestLayoutGroupType instantiates a new UpdateClusterLayoutRequestLayoutGroupType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateClusterLayoutRequestLayoutGroupType(id int64) *UpdateClusterLayoutRequestLayoutGroupType {
-	this := UpdateClusterLayoutRequestLayoutGroupType{}
-	this.Id = id
-	return &this
-}
-
-// NewUpdateClusterLayoutRequestLayoutGroupTypeWithDefaults instantiates a new UpdateClusterLayoutRequestLayoutGroupType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateClusterLayoutRequestLayoutGroupTypeWithDefaults() *UpdateClusterLayoutRequestLayoutGroupType {
-	this := UpdateClusterLayoutRequestLayoutGroupType{}
-	return &this
-}
-
-// GetId returns the Id field value
-func (o *UpdateClusterLayoutRequestLayoutGroupType) GetId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *UpdateClusterLayoutRequestLayoutGroupType) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *UpdateClusterLayoutRequestLayoutGroupType) SetId(v int64) {
-	o.Id = v
-}
-
 func (o UpdateClusterLayoutRequestLayoutGroupType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

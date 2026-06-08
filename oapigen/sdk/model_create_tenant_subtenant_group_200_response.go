@@ -26,55 +26,6 @@ type CreateTenantSubtenantGroup200Response struct {
 
 type _CreateTenantSubtenantGroup200Response CreateTenantSubtenantGroup200Response
 
-// NewCreateTenantSubtenantGroup200Response instantiates a new CreateTenantSubtenantGroup200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateTenantSubtenantGroup200Response() *CreateTenantSubtenantGroup200Response {
-	this := CreateTenantSubtenantGroup200Response{}
-	return &this
-}
-
-// NewCreateTenantSubtenantGroup200ResponseWithDefaults instantiates a new CreateTenantSubtenantGroup200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateTenantSubtenantGroup200ResponseWithDefaults() *CreateTenantSubtenantGroup200Response {
-	this := CreateTenantSubtenantGroup200Response{}
-	return &this
-}
-
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *CreateTenantSubtenantGroup200Response) GetAccount() CreateTenantSubtenantGroup200ResponseAccount {
-	if o == nil || IsNil(o.Account) {
-		var ret CreateTenantSubtenantGroup200ResponseAccount
-		return ret
-	}
-	return *o.Account
-}
-
-// GetAccountOk returns a tuple with the Account field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateTenantSubtenantGroup200Response) GetAccountOk() (*CreateTenantSubtenantGroup200ResponseAccount, bool) {
-	if o == nil || IsNil(o.Account) {
-		return nil, false
-	}
-	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *CreateTenantSubtenantGroup200Response) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccount gets a reference to the given CreateTenantSubtenantGroup200ResponseAccount and assigns it to the Account field.
-func (o *CreateTenantSubtenantGroup200Response) SetAccount(v CreateTenantSubtenantGroup200ResponseAccount) {
-	o.Account = &v
-}
-
 func (o CreateTenantSubtenantGroup200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

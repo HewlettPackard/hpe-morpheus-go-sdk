@@ -26,48 +26,6 @@ type AddCloudsRequest struct {
 
 type _AddCloudsRequest AddCloudsRequest
 
-// NewAddCloudsRequest instantiates a new AddCloudsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCloudsRequest(zone AddCloudsRequestZone) *AddCloudsRequest {
-	this := AddCloudsRequest{}
-	this.Zone = zone
-	return &this
-}
-
-// NewAddCloudsRequestWithDefaults instantiates a new AddCloudsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCloudsRequestWithDefaults() *AddCloudsRequest {
-	this := AddCloudsRequest{}
-	return &this
-}
-
-// GetZone returns the Zone field value
-func (o *AddCloudsRequest) GetZone() AddCloudsRequestZone {
-	if o == nil {
-		var ret AddCloudsRequestZone
-		return ret
-	}
-
-	return o.Zone
-}
-
-// GetZoneOk returns a tuple with the Zone field value
-// and a boolean to check if the value has been set.
-func (o *AddCloudsRequest) GetZoneOk() (*AddCloudsRequestZone, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Zone, true
-}
-
-// SetZone sets field value
-func (o *AddCloudsRequest) SetZone(v AddCloudsRequestZone) {
-	o.Zone = v
-}
-
 func (o AddCloudsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type UpdateLogSettingsRequest struct {
 
 type _UpdateLogSettingsRequest UpdateLogSettingsRequest
 
-// NewUpdateLogSettingsRequest instantiates a new UpdateLogSettingsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateLogSettingsRequest() *UpdateLogSettingsRequest {
-	this := UpdateLogSettingsRequest{}
-	return &this
-}
-
-// NewUpdateLogSettingsRequestWithDefaults instantiates a new UpdateLogSettingsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateLogSettingsRequestWithDefaults() *UpdateLogSettingsRequest {
-	this := UpdateLogSettingsRequest{}
-	return &this
-}
-
-// GetLogSettings returns the LogSettings field value if set, zero value otherwise.
-func (o *UpdateLogSettingsRequest) GetLogSettings() UpdateLogSettingsRequestLogSettings {
-	if o == nil || IsNil(o.LogSettings) {
-		var ret UpdateLogSettingsRequestLogSettings
-		return ret
-	}
-	return *o.LogSettings
-}
-
-// GetLogSettingsOk returns a tuple with the LogSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateLogSettingsRequest) GetLogSettingsOk() (*UpdateLogSettingsRequestLogSettings, bool) {
-	if o == nil || IsNil(o.LogSettings) {
-		return nil, false
-	}
-	return o.LogSettings, true
-}
-
-// IsSetLogSettings returns a boolean if a field has been set.
-func (o *UpdateLogSettingsRequest) IsSetLogSettings() bool {
-	if o != nil && !IsNil(o.LogSettings) {
-		return true
-	}
-
-	return false
-}
-
-// SetLogSettings gets a reference to the given UpdateLogSettingsRequestLogSettings and assigns it to the LogSettings field.
-func (o *UpdateLogSettingsRequest) SetLogSettings(v UpdateLogSettingsRequestLogSettings) {
-	o.LogSettings = &v
-}
-
 func (o UpdateLogSettingsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

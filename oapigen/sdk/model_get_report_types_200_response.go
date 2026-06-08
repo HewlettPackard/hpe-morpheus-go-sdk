@@ -26,55 +26,6 @@ type GetReportTypes200Response struct {
 
 type _GetReportTypes200Response GetReportTypes200Response
 
-// NewGetReportTypes200Response instantiates a new GetReportTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetReportTypes200Response() *GetReportTypes200Response {
-	this := GetReportTypes200Response{}
-	return &this
-}
-
-// NewGetReportTypes200ResponseWithDefaults instantiates a new GetReportTypes200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetReportTypes200ResponseWithDefaults() *GetReportTypes200Response {
-	this := GetReportTypes200Response{}
-	return &this
-}
-
-// GetReportTypes returns the ReportTypes field value if set, zero value otherwise.
-func (o *GetReportTypes200Response) GetReportTypes() []GetReportTypes200ResponseReportTypesInner {
-	if o == nil || IsNil(o.ReportTypes) {
-		var ret []GetReportTypes200ResponseReportTypesInner
-		return ret
-	}
-	return o.ReportTypes
-}
-
-// GetReportTypesOk returns a tuple with the ReportTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetReportTypes200Response) GetReportTypesOk() ([]GetReportTypes200ResponseReportTypesInner, bool) {
-	if o == nil || IsNil(o.ReportTypes) {
-		return nil, false
-	}
-	return o.ReportTypes, true
-}
-
-// IsSetReportTypes returns a boolean if a field has been set.
-func (o *GetReportTypes200Response) IsSetReportTypes() bool {
-	if o != nil && !IsNil(o.ReportTypes) {
-		return true
-	}
-
-	return false
-}
-
-// SetReportTypes gets a reference to the given []GetReportTypes200ResponseReportTypesInner and assigns it to the ReportTypes field.
-func (o *GetReportTypes200Response) SetReportTypes(v []GetReportTypes200ResponseReportTypesInner) {
-	o.ReportTypes = v
-}
-
 func (o GetReportTypes200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

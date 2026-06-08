@@ -27,20 +27,6 @@ type AddVirtualImage200ResponseAllOfVirtualImageConfig struct {
 	MapmapOfStringAny                        *map[string]interface{}
 }
 
-// AzureReferenceVirtualImageConfiguration2AsAddVirtualImage200ResponseAllOfVirtualImageConfig is a convenience function that returns AzureReferenceVirtualImageConfiguration2 wrapped in AddVirtualImage200ResponseAllOfVirtualImageConfig
-func AzureReferenceVirtualImageConfiguration2AsAddVirtualImage200ResponseAllOfVirtualImageConfig(v *AzureReferenceVirtualImageConfiguration2) AddVirtualImage200ResponseAllOfVirtualImageConfig {
-	return AddVirtualImage200ResponseAllOfVirtualImageConfig{
-		AzureReferenceVirtualImageConfiguration2: v,
-	}
-}
-
-// map[string]interface{}AsAddVirtualImage200ResponseAllOfVirtualImageConfig is a convenience function that returns map[string]interface{} wrapped in AddVirtualImage200ResponseAllOfVirtualImageConfig
-func MapmapOfStringAnyAsAddVirtualImage200ResponseAllOfVirtualImageConfig(v *map[string]interface{}) AddVirtualImage200ResponseAllOfVirtualImageConfig {
-	return AddVirtualImage200ResponseAllOfVirtualImageConfig{
-		MapmapOfStringAny: v,
-	}
-}
-
 func (dst *AddVirtualImage200ResponseAllOfVirtualImageConfig) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddVirtualImage200ResponseAllOfVirtualImageConfig{}

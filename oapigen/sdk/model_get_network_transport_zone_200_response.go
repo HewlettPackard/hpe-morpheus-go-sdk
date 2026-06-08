@@ -26,55 +26,6 @@ type GetNetworkTransportZone200Response struct {
 
 type _GetNetworkTransportZone200Response GetNetworkTransportZone200Response
 
-// NewGetNetworkTransportZone200Response instantiates a new GetNetworkTransportZone200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkTransportZone200Response() *GetNetworkTransportZone200Response {
-	this := GetNetworkTransportZone200Response{}
-	return &this
-}
-
-// NewGetNetworkTransportZone200ResponseWithDefaults instantiates a new GetNetworkTransportZone200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkTransportZone200ResponseWithDefaults() *GetNetworkTransportZone200Response {
-	this := GetNetworkTransportZone200Response{}
-	return &this
-}
-
-// GetNetworkScope returns the NetworkScope field value if set, zero value otherwise.
-func (o *GetNetworkTransportZone200Response) GetNetworkScope() GetNetworkTransportZone200ResponseNetworkScope {
-	if o == nil || IsNil(o.NetworkScope) {
-		var ret GetNetworkTransportZone200ResponseNetworkScope
-		return ret
-	}
-	return *o.NetworkScope
-}
-
-// GetNetworkScopeOk returns a tuple with the NetworkScope field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkTransportZone200Response) GetNetworkScopeOk() (*GetNetworkTransportZone200ResponseNetworkScope, bool) {
-	if o == nil || IsNil(o.NetworkScope) {
-		return nil, false
-	}
-	return o.NetworkScope, true
-}
-
-// IsSetNetworkScope returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200Response) IsSetNetworkScope() bool {
-	if o != nil && !IsNil(o.NetworkScope) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkScope gets a reference to the given GetNetworkTransportZone200ResponseNetworkScope and assigns it to the NetworkScope field.
-func (o *GetNetworkTransportZone200Response) SetNetworkScope(v GetNetworkTransportZone200ResponseNetworkScope) {
-	o.NetworkScope = &v
-}
-
 func (o GetNetworkTransportZone200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

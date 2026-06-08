@@ -26,55 +26,6 @@ type ZoneCreateZoneTypeAnyOf struct {
 
 type _ZoneCreateZoneTypeAnyOf ZoneCreateZoneTypeAnyOf
 
-// NewZoneCreateZoneTypeAnyOf instantiates a new ZoneCreateZoneTypeAnyOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewZoneCreateZoneTypeAnyOf() *ZoneCreateZoneTypeAnyOf {
-	this := ZoneCreateZoneTypeAnyOf{}
-	return &this
-}
-
-// NewZoneCreateZoneTypeAnyOfWithDefaults instantiates a new ZoneCreateZoneTypeAnyOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewZoneCreateZoneTypeAnyOfWithDefaults() *ZoneCreateZoneTypeAnyOf {
-	this := ZoneCreateZoneTypeAnyOf{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ZoneCreateZoneTypeAnyOf) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ZoneCreateZoneTypeAnyOf) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *ZoneCreateZoneTypeAnyOf) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ZoneCreateZoneTypeAnyOf) SetId(v int64) {
-	o.Id = &v
-}
-
 func (o ZoneCreateZoneTypeAnyOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

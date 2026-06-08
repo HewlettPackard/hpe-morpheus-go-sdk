@@ -5,24 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
-## Methods
+## Usage
 
-### NewAddAppsRequestBlueprintId
+Instantiate with a Go composite literal:
 
-`func NewAddAppsRequestBlueprintId() *AddAppsRequestBlueprintId`
-
-NewAddAppsRequestBlueprintId instantiates a new AddAppsRequestBlueprintId object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewAddAppsRequestBlueprintIdWithDefaults
-
-`func NewAddAppsRequestBlueprintIdWithDefaults() *AddAppsRequestBlueprintId`
-
-NewAddAppsRequestBlueprintIdWithDefaults instantiates a new AddAppsRequestBlueprintId object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
+```go
+obj := &AddAppsRequestBlueprintId{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

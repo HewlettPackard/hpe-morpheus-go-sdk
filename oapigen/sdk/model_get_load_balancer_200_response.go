@@ -26,55 +26,6 @@ type GetLoadBalancer200Response struct {
 
 type _GetLoadBalancer200Response GetLoadBalancer200Response
 
-// NewGetLoadBalancer200Response instantiates a new GetLoadBalancer200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetLoadBalancer200Response() *GetLoadBalancer200Response {
-	this := GetLoadBalancer200Response{}
-	return &this
-}
-
-// NewGetLoadBalancer200ResponseWithDefaults instantiates a new GetLoadBalancer200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetLoadBalancer200ResponseWithDefaults() *GetLoadBalancer200Response {
-	this := GetLoadBalancer200Response{}
-	return &this
-}
-
-// GetLoadBalancer returns the LoadBalancer field value if set, zero value otherwise.
-func (o *GetLoadBalancer200Response) GetLoadBalancer() GetLoadBalancer200ResponseLoadBalancer {
-	if o == nil || IsNil(o.LoadBalancer) {
-		var ret GetLoadBalancer200ResponseLoadBalancer
-		return ret
-	}
-	return *o.LoadBalancer
-}
-
-// GetLoadBalancerOk returns a tuple with the LoadBalancer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLoadBalancer200Response) GetLoadBalancerOk() (*GetLoadBalancer200ResponseLoadBalancer, bool) {
-	if o == nil || IsNil(o.LoadBalancer) {
-		return nil, false
-	}
-	return o.LoadBalancer, true
-}
-
-// IsSetLoadBalancer returns a boolean if a field has been set.
-func (o *GetLoadBalancer200Response) IsSetLoadBalancer() bool {
-	if o != nil && !IsNil(o.LoadBalancer) {
-		return true
-	}
-
-	return false
-}
-
-// SetLoadBalancer gets a reference to the given GetLoadBalancer200ResponseLoadBalancer and assigns it to the LoadBalancer field.
-func (o *GetLoadBalancer200Response) SetLoadBalancer(v GetLoadBalancer200ResponseLoadBalancer) {
-	o.LoadBalancer = &v
-}
-
 func (o GetLoadBalancer200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

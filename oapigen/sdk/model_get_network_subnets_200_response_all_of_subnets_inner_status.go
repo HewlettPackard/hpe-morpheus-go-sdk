@@ -26,55 +26,6 @@ type GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus struct {
 
 type _GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus
 
-// NewGetNetworkSubnets200ResponseAllOfSubnetsInnerStatus instantiates a new GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkSubnets200ResponseAllOfSubnetsInnerStatus() *GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus {
-	this := GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus{}
-	return &this
-}
-
-// NewGetNetworkSubnets200ResponseAllOfSubnetsInnerStatusWithDefaults instantiates a new GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkSubnets200ResponseAllOfSubnetsInnerStatusWithDefaults() *GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus {
-	this := GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus{}
-	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus) SetName(v string) {
-	o.Name = &v
-}
-
 func (o GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

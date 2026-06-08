@@ -27,20 +27,6 @@ type ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId struct {
 	String *string
 }
 
-// int64AsListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId is a convenience function that returns int64 wrapped in ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId
-func Int64AsListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId(v *int64) ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId {
-	return ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId{
-		Int64: v,
-	}
-}
-
-// stringAsListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId is a convenience function that returns string wrapped in ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId
-func StringAsListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId(v *string) ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId {
-	return ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId{
-		String: v,
-	}
-}
-
 func (dst *ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId{}

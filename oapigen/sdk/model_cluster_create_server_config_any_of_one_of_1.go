@@ -26,55 +26,6 @@ type ClusterCreateServerConfigAnyOfOneOf1 struct {
 
 type _ClusterCreateServerConfigAnyOfOneOf1 ClusterCreateServerConfigAnyOfOneOf1
 
-// NewClusterCreateServerConfigAnyOfOneOf1 instantiates a new ClusterCreateServerConfigAnyOfOneOf1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterCreateServerConfigAnyOfOneOf1() *ClusterCreateServerConfigAnyOfOneOf1 {
-	this := ClusterCreateServerConfigAnyOfOneOf1{}
-	return &this
-}
-
-// NewClusterCreateServerConfigAnyOfOneOf1WithDefaults instantiates a new ClusterCreateServerConfigAnyOfOneOf1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterCreateServerConfigAnyOfOneOf1WithDefaults() *ClusterCreateServerConfigAnyOfOneOf1 {
-	this := ClusterCreateServerConfigAnyOfOneOf1{}
-	return &this
-}
-
-// GetCreateUser returns the CreateUser field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf1) GetCreateUser() bool {
-	if o == nil || IsNil(o.CreateUser) {
-		var ret bool
-		return ret
-	}
-	return *o.CreateUser
-}
-
-// GetCreateUserOk returns a tuple with the CreateUser field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf1) GetCreateUserOk() (*bool, bool) {
-	if o == nil || IsNil(o.CreateUser) {
-		return nil, false
-	}
-	return o.CreateUser, true
-}
-
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf1) IsSetCreateUser() bool {
-	if o != nil && !IsNil(o.CreateUser) {
-		return true
-	}
-
-	return false
-}
-
-// SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
-func (o *ClusterCreateServerConfigAnyOfOneOf1) SetCreateUser(v bool) {
-	o.CreateUser = &v
-}
-
 func (o ClusterCreateServerConfigAnyOfOneOf1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

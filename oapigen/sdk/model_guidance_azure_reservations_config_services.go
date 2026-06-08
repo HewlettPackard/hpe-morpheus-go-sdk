@@ -26,55 +26,6 @@ type GuidanceAzureReservationsConfigServices struct {
 
 type _GuidanceAzureReservationsConfigServices GuidanceAzureReservationsConfigServices
 
-// NewGuidanceAzureReservationsConfigServices instantiates a new GuidanceAzureReservationsConfigServices object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGuidanceAzureReservationsConfigServices() *GuidanceAzureReservationsConfigServices {
-	this := GuidanceAzureReservationsConfigServices{}
-	return &this
-}
-
-// NewGuidanceAzureReservationsConfigServicesWithDefaults instantiates a new GuidanceAzureReservationsConfigServices object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGuidanceAzureReservationsConfigServicesWithDefaults() *GuidanceAzureReservationsConfigServices {
-	this := GuidanceAzureReservationsConfigServices{}
-	return &this
-}
-
-// GetAzureVms returns the AzureVms field value if set, zero value otherwise.
-func (o *GuidanceAzureReservationsConfigServices) GetAzureVms() GuidanceAzureReservationsConfigServicesAzureVms {
-	if o == nil || IsNil(o.AzureVms) {
-		var ret GuidanceAzureReservationsConfigServicesAzureVms
-		return ret
-	}
-	return *o.AzureVms
-}
-
-// GetAzureVmsOk returns a tuple with the AzureVms field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GuidanceAzureReservationsConfigServices) GetAzureVmsOk() (*GuidanceAzureReservationsConfigServicesAzureVms, bool) {
-	if o == nil || IsNil(o.AzureVms) {
-		return nil, false
-	}
-	return o.AzureVms, true
-}
-
-// IsSetAzureVms returns a boolean if a field has been set.
-func (o *GuidanceAzureReservationsConfigServices) IsSetAzureVms() bool {
-	if o != nil && !IsNil(o.AzureVms) {
-		return true
-	}
-
-	return false
-}
-
-// SetAzureVms gets a reference to the given GuidanceAzureReservationsConfigServicesAzureVms and assigns it to the AzureVms field.
-func (o *GuidanceAzureReservationsConfigServices) SetAzureVms(v GuidanceAzureReservationsConfigServicesAzureVms) {
-	o.AzureVms = &v
-}
-
 func (o GuidanceAzureReservationsConfigServices) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type GetPlugin200Response struct {
 
 type _GetPlugin200Response GetPlugin200Response
 
-// NewGetPlugin200Response instantiates a new GetPlugin200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetPlugin200Response() *GetPlugin200Response {
-	this := GetPlugin200Response{}
-	return &this
-}
-
-// NewGetPlugin200ResponseWithDefaults instantiates a new GetPlugin200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetPlugin200ResponseWithDefaults() *GetPlugin200Response {
-	this := GetPlugin200Response{}
-	return &this
-}
-
-// GetPlugin returns the Plugin field value if set, zero value otherwise.
-func (o *GetPlugin200Response) GetPlugin() GetPlugin200ResponseAllOfPlugin {
-	if o == nil || IsNil(o.Plugin) {
-		var ret GetPlugin200ResponseAllOfPlugin
-		return ret
-	}
-	return *o.Plugin
-}
-
-// GetPluginOk returns a tuple with the Plugin field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPlugin200Response) GetPluginOk() (*GetPlugin200ResponseAllOfPlugin, bool) {
-	if o == nil || IsNil(o.Plugin) {
-		return nil, false
-	}
-	return o.Plugin, true
-}
-
-// IsSetPlugin returns a boolean if a field has been set.
-func (o *GetPlugin200Response) IsSetPlugin() bool {
-	if o != nil && !IsNil(o.Plugin) {
-		return true
-	}
-
-	return false
-}
-
-// SetPlugin gets a reference to the given GetPlugin200ResponseAllOfPlugin and assigns it to the Plugin field.
-func (o *GetPlugin200Response) SetPlugin(v GetPlugin200ResponseAllOfPlugin) {
-	o.Plugin = &v
-}
-
 func (o GetPlugin200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

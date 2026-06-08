@@ -26,55 +26,6 @@ type UpdateVDIPools200ResponseAnyOf struct {
 
 type _UpdateVDIPools200ResponseAnyOf UpdateVDIPools200ResponseAnyOf
 
-// NewUpdateVDIPools200ResponseAnyOf instantiates a new UpdateVDIPools200ResponseAnyOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateVDIPools200ResponseAnyOf() *UpdateVDIPools200ResponseAnyOf {
-	this := UpdateVDIPools200ResponseAnyOf{}
-	return &this
-}
-
-// NewUpdateVDIPools200ResponseAnyOfWithDefaults instantiates a new UpdateVDIPools200ResponseAnyOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateVDIPools200ResponseAnyOfWithDefaults() *UpdateVDIPools200ResponseAnyOf {
-	this := UpdateVDIPools200ResponseAnyOf{}
-	return &this
-}
-
-// GetVdiPool returns the VdiPool field value if set, zero value otherwise.
-func (o *UpdateVDIPools200ResponseAnyOf) GetVdiPool() UpdateVDIPools200ResponseAnyOfVdiPool {
-	if o == nil || IsNil(o.VdiPool) {
-		var ret UpdateVDIPools200ResponseAnyOfVdiPool
-		return ret
-	}
-	return *o.VdiPool
-}
-
-// GetVdiPoolOk returns a tuple with the VdiPool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIPools200ResponseAnyOf) GetVdiPoolOk() (*UpdateVDIPools200ResponseAnyOfVdiPool, bool) {
-	if o == nil || IsNil(o.VdiPool) {
-		return nil, false
-	}
-	return o.VdiPool, true
-}
-
-// IsSetVdiPool returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOf) IsSetVdiPool() bool {
-	if o != nil && !IsNil(o.VdiPool) {
-		return true
-	}
-
-	return false
-}
-
-// SetVdiPool gets a reference to the given UpdateVDIPools200ResponseAnyOfVdiPool and assigns it to the VdiPool field.
-func (o *UpdateVDIPools200ResponseAnyOf) SetVdiPool(v UpdateVDIPools200ResponseAnyOfVdiPool) {
-	o.VdiPool = &v
-}
-
 func (o UpdateVDIPools200ResponseAnyOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

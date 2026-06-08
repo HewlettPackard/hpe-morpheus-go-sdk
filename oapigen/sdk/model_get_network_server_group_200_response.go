@@ -26,55 +26,6 @@ type GetNetworkServerGroup200Response struct {
 
 type _GetNetworkServerGroup200Response GetNetworkServerGroup200Response
 
-// NewGetNetworkServerGroup200Response instantiates a new GetNetworkServerGroup200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkServerGroup200Response() *GetNetworkServerGroup200Response {
-	this := GetNetworkServerGroup200Response{}
-	return &this
-}
-
-// NewGetNetworkServerGroup200ResponseWithDefaults instantiates a new GetNetworkServerGroup200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkServerGroup200ResponseWithDefaults() *GetNetworkServerGroup200Response {
-	this := GetNetworkServerGroup200Response{}
-	return &this
-}
-
-// GetGroup returns the Group field value if set, zero value otherwise.
-func (o *GetNetworkServerGroup200Response) GetGroup() GetNetworkServerGroup200ResponseGroup {
-	if o == nil || IsNil(o.Group) {
-		var ret GetNetworkServerGroup200ResponseGroup
-		return ret
-	}
-	return *o.Group
-}
-
-// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkServerGroup200Response) GetGroupOk() (*GetNetworkServerGroup200ResponseGroup, bool) {
-	if o == nil || IsNil(o.Group) {
-		return nil, false
-	}
-	return o.Group, true
-}
-
-// IsSetGroup returns a boolean if a field has been set.
-func (o *GetNetworkServerGroup200Response) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
-}
-
-// SetGroup gets a reference to the given GetNetworkServerGroup200ResponseGroup and assigns it to the Group field.
-func (o *GetNetworkServerGroup200Response) SetGroup(v GetNetworkServerGroup200ResponseGroup) {
-	o.Group = &v
-}
-
 func (o GetNetworkServerGroup200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,48 +27,6 @@ type NetworkTypeAwsConfigZonePool struct {
 
 type _NetworkTypeAwsConfigZonePool NetworkTypeAwsConfigZonePool
 
-// NewNetworkTypeAwsConfigZonePool instantiates a new NetworkTypeAwsConfigZonePool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkTypeAwsConfigZonePool(id int32) *NetworkTypeAwsConfigZonePool {
-	this := NetworkTypeAwsConfigZonePool{}
-	this.Id = id
-	return &this
-}
-
-// NewNetworkTypeAwsConfigZonePoolWithDefaults instantiates a new NetworkTypeAwsConfigZonePool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkTypeAwsConfigZonePoolWithDefaults() *NetworkTypeAwsConfigZonePool {
-	this := NetworkTypeAwsConfigZonePool{}
-	return &this
-}
-
-// GetId returns the Id field value
-func (o *NetworkTypeAwsConfigZonePool) GetId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *NetworkTypeAwsConfigZonePool) GetIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *NetworkTypeAwsConfigZonePool) SetId(v int32) {
-	o.Id = v
-}
-
 func (o NetworkTypeAwsConfigZonePool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

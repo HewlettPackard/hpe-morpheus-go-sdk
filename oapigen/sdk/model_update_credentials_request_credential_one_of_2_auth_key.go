@@ -27,48 +27,6 @@ type UpdateCredentialsRequestCredentialOneOf2AuthKey struct {
 
 type _UpdateCredentialsRequestCredentialOneOf2AuthKey UpdateCredentialsRequestCredentialOneOf2AuthKey
 
-// NewUpdateCredentialsRequestCredentialOneOf2AuthKey instantiates a new UpdateCredentialsRequestCredentialOneOf2AuthKey object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCredentialsRequestCredentialOneOf2AuthKey(id int64) *UpdateCredentialsRequestCredentialOneOf2AuthKey {
-	this := UpdateCredentialsRequestCredentialOneOf2AuthKey{}
-	this.Id = id
-	return &this
-}
-
-// NewUpdateCredentialsRequestCredentialOneOf2AuthKeyWithDefaults instantiates a new UpdateCredentialsRequestCredentialOneOf2AuthKey object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCredentialsRequestCredentialOneOf2AuthKeyWithDefaults() *UpdateCredentialsRequestCredentialOneOf2AuthKey {
-	this := UpdateCredentialsRequestCredentialOneOf2AuthKey{}
-	return &this
-}
-
-// GetId returns the Id field value
-func (o *UpdateCredentialsRequestCredentialOneOf2AuthKey) GetId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *UpdateCredentialsRequestCredentialOneOf2AuthKey) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *UpdateCredentialsRequestCredentialOneOf2AuthKey) SetId(v int64) {
-	o.Id = v
-}
-
 func (o UpdateCredentialsRequestCredentialOneOf2AuthKey) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

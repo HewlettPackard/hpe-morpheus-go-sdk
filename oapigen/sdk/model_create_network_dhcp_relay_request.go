@@ -26,55 +26,6 @@ type CreateNetworkDhcpRelayRequest struct {
 
 type _CreateNetworkDhcpRelayRequest CreateNetworkDhcpRelayRequest
 
-// NewCreateNetworkDhcpRelayRequest instantiates a new CreateNetworkDhcpRelayRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkDhcpRelayRequest() *CreateNetworkDhcpRelayRequest {
-	this := CreateNetworkDhcpRelayRequest{}
-	return &this
-}
-
-// NewCreateNetworkDhcpRelayRequestWithDefaults instantiates a new CreateNetworkDhcpRelayRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkDhcpRelayRequestWithDefaults() *CreateNetworkDhcpRelayRequest {
-	this := CreateNetworkDhcpRelayRequest{}
-	return &this
-}
-
-// GetNetworkDhcpRelay returns the NetworkDhcpRelay field value if set, zero value otherwise.
-func (o *CreateNetworkDhcpRelayRequest) GetNetworkDhcpRelay() CreateNetworkDhcpRelayRequestNetworkDhcpRelay {
-	if o == nil || IsNil(o.NetworkDhcpRelay) {
-		var ret CreateNetworkDhcpRelayRequestNetworkDhcpRelay
-		return ret
-	}
-	return *o.NetworkDhcpRelay
-}
-
-// GetNetworkDhcpRelayOk returns a tuple with the NetworkDhcpRelay field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkDhcpRelayRequest) GetNetworkDhcpRelayOk() (*CreateNetworkDhcpRelayRequestNetworkDhcpRelay, bool) {
-	if o == nil || IsNil(o.NetworkDhcpRelay) {
-		return nil, false
-	}
-	return o.NetworkDhcpRelay, true
-}
-
-// IsSetNetworkDhcpRelay returns a boolean if a field has been set.
-func (o *CreateNetworkDhcpRelayRequest) IsSetNetworkDhcpRelay() bool {
-	if o != nil && !IsNil(o.NetworkDhcpRelay) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkDhcpRelay gets a reference to the given CreateNetworkDhcpRelayRequestNetworkDhcpRelay and assigns it to the NetworkDhcpRelay field.
-func (o *CreateNetworkDhcpRelayRequest) SetNetworkDhcpRelay(v CreateNetworkDhcpRelayRequestNetworkDhcpRelay) {
-	o.NetworkDhcpRelay = &v
-}
-
 func (o CreateNetworkDhcpRelayRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

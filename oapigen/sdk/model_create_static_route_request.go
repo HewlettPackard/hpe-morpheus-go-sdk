@@ -26,55 +26,6 @@ type CreateStaticRouteRequest struct {
 
 type _CreateStaticRouteRequest CreateStaticRouteRequest
 
-// NewCreateStaticRouteRequest instantiates a new CreateStaticRouteRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateStaticRouteRequest() *CreateStaticRouteRequest {
-	this := CreateStaticRouteRequest{}
-	return &this
-}
-
-// NewCreateStaticRouteRequestWithDefaults instantiates a new CreateStaticRouteRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateStaticRouteRequestWithDefaults() *CreateStaticRouteRequest {
-	this := CreateStaticRouteRequest{}
-	return &this
-}
-
-// GetNetworkRoute returns the NetworkRoute field value if set, zero value otherwise.
-func (o *CreateStaticRouteRequest) GetNetworkRoute() CreateStaticRouteRequestNetworkRoute {
-	if o == nil || IsNil(o.NetworkRoute) {
-		var ret CreateStaticRouteRequestNetworkRoute
-		return ret
-	}
-	return *o.NetworkRoute
-}
-
-// GetNetworkRouteOk returns a tuple with the NetworkRoute field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateStaticRouteRequest) GetNetworkRouteOk() (*CreateStaticRouteRequestNetworkRoute, bool) {
-	if o == nil || IsNil(o.NetworkRoute) {
-		return nil, false
-	}
-	return o.NetworkRoute, true
-}
-
-// IsSetNetworkRoute returns a boolean if a field has been set.
-func (o *CreateStaticRouteRequest) IsSetNetworkRoute() bool {
-	if o != nil && !IsNil(o.NetworkRoute) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkRoute gets a reference to the given CreateStaticRouteRequestNetworkRoute and assigns it to the NetworkRoute field.
-func (o *CreateStaticRouteRequest) SetNetworkRoute(v CreateStaticRouteRequestNetworkRoute) {
-	o.NetworkRoute = &v
-}
-
 func (o CreateStaticRouteRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

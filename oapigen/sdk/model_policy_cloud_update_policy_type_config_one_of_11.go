@@ -26,55 +26,6 @@ type PolicyCloudUpdatePolicyTypeConfigOneOf11 struct {
 
 type _PolicyCloudUpdatePolicyTypeConfigOneOf11 PolicyCloudUpdatePolicyTypeConfigOneOf11
 
-// NewPolicyCloudUpdatePolicyTypeConfigOneOf11 instantiates a new PolicyCloudUpdatePolicyTypeConfigOneOf11 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPolicyCloudUpdatePolicyTypeConfigOneOf11() *PolicyCloudUpdatePolicyTypeConfigOneOf11 {
-	this := PolicyCloudUpdatePolicyTypeConfigOneOf11{}
-	return &this
-}
-
-// NewPolicyCloudUpdatePolicyTypeConfigOneOf11WithDefaults instantiates a new PolicyCloudUpdatePolicyTypeConfigOneOf11 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPolicyCloudUpdatePolicyTypeConfigOneOf11WithDefaults() *PolicyCloudUpdatePolicyTypeConfigOneOf11 {
-	this := PolicyCloudUpdatePolicyTypeConfigOneOf11{}
-	return &this
-}
-
-// GetMaxContainers returns the MaxContainers field value if set, zero value otherwise.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf11) GetMaxContainers() string {
-	if o == nil || IsNil(o.MaxContainers) {
-		var ret string
-		return ret
-	}
-	return *o.MaxContainers
-}
-
-// GetMaxContainersOk returns a tuple with the MaxContainers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf11) GetMaxContainersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxContainers) {
-		return nil, false
-	}
-	return o.MaxContainers, true
-}
-
-// IsSetMaxContainers returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf11) IsSetMaxContainers() bool {
-	if o != nil && !IsNil(o.MaxContainers) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxContainers gets a reference to the given string and assigns it to the MaxContainers field.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf11) SetMaxContainers(v string) {
-	o.MaxContainers = &v
-}
-
 func (o PolicyCloudUpdatePolicyTypeConfigOneOf11) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

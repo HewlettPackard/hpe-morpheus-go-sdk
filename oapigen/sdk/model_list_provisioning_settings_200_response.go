@@ -26,55 +26,6 @@ type ListProvisioningSettings200Response struct {
 
 type _ListProvisioningSettings200Response ListProvisioningSettings200Response
 
-// NewListProvisioningSettings200Response instantiates a new ListProvisioningSettings200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListProvisioningSettings200Response() *ListProvisioningSettings200Response {
-	this := ListProvisioningSettings200Response{}
-	return &this
-}
-
-// NewListProvisioningSettings200ResponseWithDefaults instantiates a new ListProvisioningSettings200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListProvisioningSettings200ResponseWithDefaults() *ListProvisioningSettings200Response {
-	this := ListProvisioningSettings200Response{}
-	return &this
-}
-
-// GetProvisioningSettings returns the ProvisioningSettings field value if set, zero value otherwise.
-func (o *ListProvisioningSettings200Response) GetProvisioningSettings() ListProvisioningSettings200ResponseProvisioningSettings {
-	if o == nil || IsNil(o.ProvisioningSettings) {
-		var ret ListProvisioningSettings200ResponseProvisioningSettings
-		return ret
-	}
-	return *o.ProvisioningSettings
-}
-
-// GetProvisioningSettingsOk returns a tuple with the ProvisioningSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListProvisioningSettings200Response) GetProvisioningSettingsOk() (*ListProvisioningSettings200ResponseProvisioningSettings, bool) {
-	if o == nil || IsNil(o.ProvisioningSettings) {
-		return nil, false
-	}
-	return o.ProvisioningSettings, true
-}
-
-// IsSetProvisioningSettings returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200Response) IsSetProvisioningSettings() bool {
-	if o != nil && !IsNil(o.ProvisioningSettings) {
-		return true
-	}
-
-	return false
-}
-
-// SetProvisioningSettings gets a reference to the given ListProvisioningSettings200ResponseProvisioningSettings and assigns it to the ProvisioningSettings field.
-func (o *ListProvisioningSettings200Response) SetProvisioningSettings(v ListProvisioningSettings200ResponseProvisioningSettings) {
-	o.ProvisioningSettings = &v
-}
-
 func (o ListProvisioningSettings200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

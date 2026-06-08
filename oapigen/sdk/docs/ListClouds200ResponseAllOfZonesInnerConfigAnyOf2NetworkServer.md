@@ -6,49 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer
+Instantiate with a Go composite literal:
 
-`func NewListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer() *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer`
-
-NewListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer instantiates a new ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServerWithDefaults
-
-`func NewListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServerWithDefaults() *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer`
-
-NewListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServerWithDefaults instantiates a new ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer) HasId() bool`
-
-HasId returns a boolean if a field has been set.
+```go
+obj := &ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

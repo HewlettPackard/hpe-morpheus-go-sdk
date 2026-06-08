@@ -26,48 +26,6 @@ type RouterQuotaPolicyTypeConfiguration13 struct {
 
 type _RouterQuotaPolicyTypeConfiguration13 RouterQuotaPolicyTypeConfiguration13
 
-// NewRouterQuotaPolicyTypeConfiguration13 instantiates a new RouterQuotaPolicyTypeConfiguration13 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRouterQuotaPolicyTypeConfiguration13(maxRouters string) *RouterQuotaPolicyTypeConfiguration13 {
-	this := RouterQuotaPolicyTypeConfiguration13{}
-	this.MaxRouters = maxRouters
-	return &this
-}
-
-// NewRouterQuotaPolicyTypeConfiguration13WithDefaults instantiates a new RouterQuotaPolicyTypeConfiguration13 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRouterQuotaPolicyTypeConfiguration13WithDefaults() *RouterQuotaPolicyTypeConfiguration13 {
-	this := RouterQuotaPolicyTypeConfiguration13{}
-	return &this
-}
-
-// GetMaxRouters returns the MaxRouters field value
-func (o *RouterQuotaPolicyTypeConfiguration13) GetMaxRouters() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MaxRouters
-}
-
-// GetMaxRoutersOk returns a tuple with the MaxRouters field value
-// and a boolean to check if the value has been set.
-func (o *RouterQuotaPolicyTypeConfiguration13) GetMaxRoutersOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MaxRouters, true
-}
-
-// SetMaxRouters sets field value
-func (o *RouterQuotaPolicyTypeConfiguration13) SetMaxRouters(v string) {
-	o.MaxRouters = v
-}
-
 func (o RouterQuotaPolicyTypeConfiguration13) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

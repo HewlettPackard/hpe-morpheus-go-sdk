@@ -26,55 +26,6 @@ type GetDatastores200ResponseAllOfDatastoreZonePool struct {
 
 type _GetDatastores200ResponseAllOfDatastoreZonePool GetDatastores200ResponseAllOfDatastoreZonePool
 
-// NewGetDatastores200ResponseAllOfDatastoreZonePool instantiates a new GetDatastores200ResponseAllOfDatastoreZonePool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetDatastores200ResponseAllOfDatastoreZonePool() *GetDatastores200ResponseAllOfDatastoreZonePool {
-	this := GetDatastores200ResponseAllOfDatastoreZonePool{}
-	return &this
-}
-
-// NewGetDatastores200ResponseAllOfDatastoreZonePoolWithDefaults instantiates a new GetDatastores200ResponseAllOfDatastoreZonePool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetDatastores200ResponseAllOfDatastoreZonePoolWithDefaults() *GetDatastores200ResponseAllOfDatastoreZonePool {
-	this := GetDatastores200ResponseAllOfDatastoreZonePool{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetDatastores200ResponseAllOfDatastoreZonePool) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetDatastores200ResponseAllOfDatastoreZonePool) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *GetDatastores200ResponseAllOfDatastoreZonePool) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetDatastores200ResponseAllOfDatastoreZonePool) SetId(v int64) {
-	o.Id = &v
-}
-
 func (o GetDatastores200ResponseAllOfDatastoreZonePool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

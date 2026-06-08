@@ -26,55 +26,6 @@ type AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork 
 
 type _AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork
 
-// NewAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork instantiates a new AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork() *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork {
-	this := AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork{}
-	return &this
-}
-
-// NewAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetworkWithDefaults instantiates a new AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetworkWithDefaults() *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork {
-	this := AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork) SetId(v string) {
-	o.Id = &v
-}
-
 func (o AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

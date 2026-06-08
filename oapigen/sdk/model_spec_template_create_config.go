@@ -26,55 +26,6 @@ type SpecTemplateCreateConfig struct {
 
 type _SpecTemplateCreateConfig SpecTemplateCreateConfig
 
-// NewSpecTemplateCreateConfig instantiates a new SpecTemplateCreateConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSpecTemplateCreateConfig() *SpecTemplateCreateConfig {
-	this := SpecTemplateCreateConfig{}
-	return &this
-}
-
-// NewSpecTemplateCreateConfigWithDefaults instantiates a new SpecTemplateCreateConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSpecTemplateCreateConfigWithDefaults() *SpecTemplateCreateConfig {
-	this := SpecTemplateCreateConfig{}
-	return &this
-}
-
-// GetCloudformation returns the Cloudformation field value if set, zero value otherwise.
-func (o *SpecTemplateCreateConfig) GetCloudformation() SpecTemplateCreateConfigCloudformation {
-	if o == nil || IsNil(o.Cloudformation) {
-		var ret SpecTemplateCreateConfigCloudformation
-		return ret
-	}
-	return *o.Cloudformation
-}
-
-// GetCloudformationOk returns a tuple with the Cloudformation field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SpecTemplateCreateConfig) GetCloudformationOk() (*SpecTemplateCreateConfigCloudformation, bool) {
-	if o == nil || IsNil(o.Cloudformation) {
-		return nil, false
-	}
-	return o.Cloudformation, true
-}
-
-// IsSetCloudformation returns a boolean if a field has been set.
-func (o *SpecTemplateCreateConfig) IsSetCloudformation() bool {
-	if o != nil && !IsNil(o.Cloudformation) {
-		return true
-	}
-
-	return false
-}
-
-// SetCloudformation gets a reference to the given SpecTemplateCreateConfigCloudformation and assigns it to the Cloudformation field.
-func (o *SpecTemplateCreateConfig) SetCloudformation(v SpecTemplateCreateConfigCloudformation) {
-	o.Cloudformation = &v
-}
-
 func (o SpecTemplateCreateConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

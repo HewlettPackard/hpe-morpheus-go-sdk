@@ -26,55 +26,6 @@ type UpdateWikiAppRequest struct {
 
 type _UpdateWikiAppRequest UpdateWikiAppRequest
 
-// NewUpdateWikiAppRequest instantiates a new UpdateWikiAppRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateWikiAppRequest() *UpdateWikiAppRequest {
-	this := UpdateWikiAppRequest{}
-	return &this
-}
-
-// NewUpdateWikiAppRequestWithDefaults instantiates a new UpdateWikiAppRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateWikiAppRequestWithDefaults() *UpdateWikiAppRequest {
-	this := UpdateWikiAppRequest{}
-	return &this
-}
-
-// GetPage returns the Page field value if set, zero value otherwise.
-func (o *UpdateWikiAppRequest) GetPage() UpdateWikiAppRequestPage {
-	if o == nil || IsNil(o.Page) {
-		var ret UpdateWikiAppRequestPage
-		return ret
-	}
-	return *o.Page
-}
-
-// GetPageOk returns a tuple with the Page field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateWikiAppRequest) GetPageOk() (*UpdateWikiAppRequestPage, bool) {
-	if o == nil || IsNil(o.Page) {
-		return nil, false
-	}
-	return o.Page, true
-}
-
-// IsSetPage returns a boolean if a field has been set.
-func (o *UpdateWikiAppRequest) IsSetPage() bool {
-	if o != nil && !IsNil(o.Page) {
-		return true
-	}
-
-	return false
-}
-
-// SetPage gets a reference to the given UpdateWikiAppRequestPage and assigns it to the Page field.
-func (o *UpdateWikiAppRequest) SetPage(v UpdateWikiAppRequestPage) {
-	o.Page = &v
-}
-
 func (o UpdateWikiAppRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

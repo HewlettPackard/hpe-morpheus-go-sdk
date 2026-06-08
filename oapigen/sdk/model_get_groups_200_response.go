@@ -26,55 +26,6 @@ type GetGroups200Response struct {
 
 type _GetGroups200Response GetGroups200Response
 
-// NewGetGroups200Response instantiates a new GetGroups200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetGroups200Response() *GetGroups200Response {
-	this := GetGroups200Response{}
-	return &this
-}
-
-// NewGetGroups200ResponseWithDefaults instantiates a new GetGroups200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetGroups200ResponseWithDefaults() *GetGroups200Response {
-	this := GetGroups200Response{}
-	return &this
-}
-
-// GetGroup returns the Group field value if set, zero value otherwise.
-func (o *GetGroups200Response) GetGroup() GetGroups200ResponseGroup {
-	if o == nil || IsNil(o.Group) {
-		var ret GetGroups200ResponseGroup
-		return ret
-	}
-	return *o.Group
-}
-
-// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGroups200Response) GetGroupOk() (*GetGroups200ResponseGroup, bool) {
-	if o == nil || IsNil(o.Group) {
-		return nil, false
-	}
-	return o.Group, true
-}
-
-// IsSetGroup returns a boolean if a field has been set.
-func (o *GetGroups200Response) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
-}
-
-// SetGroup gets a reference to the given GetGroups200ResponseGroup and assigns it to the Group field.
-func (o *GetGroups200Response) SetGroup(v GetGroups200ResponseGroup) {
-	o.Group = &v
-}
-
 func (o GetGroups200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

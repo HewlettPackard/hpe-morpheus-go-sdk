@@ -26,55 +26,6 @@ type AddBootScriptRequest struct {
 
 type _AddBootScriptRequest AddBootScriptRequest
 
-// NewAddBootScriptRequest instantiates a new AddBootScriptRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBootScriptRequest() *AddBootScriptRequest {
-	this := AddBootScriptRequest{}
-	return &this
-}
-
-// NewAddBootScriptRequestWithDefaults instantiates a new AddBootScriptRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBootScriptRequestWithDefaults() *AddBootScriptRequest {
-	this := AddBootScriptRequest{}
-	return &this
-}
-
-// GetBootScript returns the BootScript field value if set, zero value otherwise.
-func (o *AddBootScriptRequest) GetBootScript() AddBootScriptRequestBootScript {
-	if o == nil || IsNil(o.BootScript) {
-		var ret AddBootScriptRequestBootScript
-		return ret
-	}
-	return *o.BootScript
-}
-
-// GetBootScriptOk returns a tuple with the BootScript field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBootScriptRequest) GetBootScriptOk() (*AddBootScriptRequestBootScript, bool) {
-	if o == nil || IsNil(o.BootScript) {
-		return nil, false
-	}
-	return o.BootScript, true
-}
-
-// IsSetBootScript returns a boolean if a field has been set.
-func (o *AddBootScriptRequest) IsSetBootScript() bool {
-	if o != nil && !IsNil(o.BootScript) {
-		return true
-	}
-
-	return false
-}
-
-// SetBootScript gets a reference to the given AddBootScriptRequestBootScript and assigns it to the BootScript field.
-func (o *AddBootScriptRequest) SetBootScript(v AddBootScriptRequestBootScript) {
-	o.BootScript = &v
-}
-
 func (o AddBootScriptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

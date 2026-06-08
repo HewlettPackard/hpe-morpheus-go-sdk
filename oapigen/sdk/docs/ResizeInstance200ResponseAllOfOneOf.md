@@ -7,64 +7,15 @@ Name | Type | Description | Notes
 **Instance** | [**ResizeInstance200ResponseAllOfOneOfInstance**](ResizeInstance200ResponseAllOfOneOfInstance.md) |  | 
 **ZoneId** | **int64** | The Cloud ID to provision the instance onto. | 
 
-## Methods
+## Usage
 
-### NewResizeInstance200ResponseAllOfOneOf
+Instantiate with a Go composite literal:
 
-`func NewResizeInstance200ResponseAllOfOneOf(instance ResizeInstance200ResponseAllOfOneOfInstance, zoneId int64, ) *ResizeInstance200ResponseAllOfOneOf`
-
-NewResizeInstance200ResponseAllOfOneOf instantiates a new ResizeInstance200ResponseAllOfOneOf object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewResizeInstance200ResponseAllOfOneOfWithDefaults
-
-`func NewResizeInstance200ResponseAllOfOneOfWithDefaults() *ResizeInstance200ResponseAllOfOneOf`
-
-NewResizeInstance200ResponseAllOfOneOfWithDefaults instantiates a new ResizeInstance200ResponseAllOfOneOf object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetInstance
-
-`func (o *ResizeInstance200ResponseAllOfOneOf) GetInstance() ResizeInstance200ResponseAllOfOneOfInstance`
-
-GetInstance returns the Instance field if non-nil, zero value otherwise.
-
-### GetInstanceOk
-
-`func (o *ResizeInstance200ResponseAllOfOneOf) GetInstanceOk() (*ResizeInstance200ResponseAllOfOneOfInstance, bool)`
-
-GetInstanceOk returns a tuple with the Instance field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInstance
-
-`func (o *ResizeInstance200ResponseAllOfOneOf) SetInstance(v ResizeInstance200ResponseAllOfOneOfInstance)`
-
-SetInstance sets Instance field to given value.
-
-
-### GetZoneId
-
-`func (o *ResizeInstance200ResponseAllOfOneOf) GetZoneId() int64`
-
-GetZoneId returns the ZoneId field if non-nil, zero value otherwise.
-
-### GetZoneIdOk
-
-`func (o *ResizeInstance200ResponseAllOfOneOf) GetZoneIdOk() (*int64, bool)`
-
-GetZoneIdOk returns a tuple with the ZoneId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetZoneId
-
-`func (o *ResizeInstance200ResponseAllOfOneOf) SetZoneId(v int64)`
-
-SetZoneId sets ZoneId field to given value.
-
+```go
+obj := &ResizeInstance200ResponseAllOfOneOf{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

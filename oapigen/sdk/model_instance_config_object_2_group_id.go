@@ -27,20 +27,6 @@ type InstanceConfigObject2GroupId struct {
 	String *string
 }
 
-// int64AsInstanceConfigObject2GroupId is a convenience function that returns int64 wrapped in InstanceConfigObject2GroupId
-func Int64AsInstanceConfigObject2GroupId(v *int64) InstanceConfigObject2GroupId {
-	return InstanceConfigObject2GroupId{
-		Int64: v,
-	}
-}
-
-// stringAsInstanceConfigObject2GroupId is a convenience function that returns string wrapped in InstanceConfigObject2GroupId
-func StringAsInstanceConfigObject2GroupId(v *string) InstanceConfigObject2GroupId {
-	return InstanceConfigObject2GroupId{
-		String: v,
-	}
-}
-
 func (dst *InstanceConfigObject2GroupId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &InstanceConfigObject2GroupId{}

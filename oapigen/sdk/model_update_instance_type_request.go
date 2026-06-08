@@ -26,55 +26,6 @@ type UpdateInstanceTypeRequest struct {
 
 type _UpdateInstanceTypeRequest UpdateInstanceTypeRequest
 
-// NewUpdateInstanceTypeRequest instantiates a new UpdateInstanceTypeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateInstanceTypeRequest() *UpdateInstanceTypeRequest {
-	this := UpdateInstanceTypeRequest{}
-	return &this
-}
-
-// NewUpdateInstanceTypeRequestWithDefaults instantiates a new UpdateInstanceTypeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstanceTypeRequestWithDefaults() *UpdateInstanceTypeRequest {
-	this := UpdateInstanceTypeRequest{}
-	return &this
-}
-
-// GetInstanceType returns the InstanceType field value if set, zero value otherwise.
-func (o *UpdateInstanceTypeRequest) GetInstanceType() UpdateInstanceTypeRequestInstanceType {
-	if o == nil || IsNil(o.InstanceType) {
-		var ret UpdateInstanceTypeRequestInstanceType
-		return ret
-	}
-	return *o.InstanceType
-}
-
-// GetInstanceTypeOk returns a tuple with the InstanceType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateInstanceTypeRequest) GetInstanceTypeOk() (*UpdateInstanceTypeRequestInstanceType, bool) {
-	if o == nil || IsNil(o.InstanceType) {
-		return nil, false
-	}
-	return o.InstanceType, true
-}
-
-// IsSetInstanceType returns a boolean if a field has been set.
-func (o *UpdateInstanceTypeRequest) IsSetInstanceType() bool {
-	if o != nil && !IsNil(o.InstanceType) {
-		return true
-	}
-
-	return false
-}
-
-// SetInstanceType gets a reference to the given UpdateInstanceTypeRequestInstanceType and assigns it to the InstanceType field.
-func (o *UpdateInstanceTypeRequest) SetInstanceType(v UpdateInstanceTypeRequestInstanceType) {
-	o.InstanceType = &v
-}
-
 func (o UpdateInstanceTypeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

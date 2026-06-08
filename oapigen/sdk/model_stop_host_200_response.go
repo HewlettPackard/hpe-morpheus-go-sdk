@@ -26,55 +26,6 @@ type StopHost200Response struct {
 
 type _StopHost200Response StopHost200Response
 
-// NewStopHost200Response instantiates a new StopHost200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewStopHost200Response() *StopHost200Response {
-	this := StopHost200Response{}
-	return &this
-}
-
-// NewStopHost200ResponseWithDefaults instantiates a new StopHost200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewStopHost200ResponseWithDefaults() *StopHost200Response {
-	this := StopHost200Response{}
-	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *StopHost200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *StopHost200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *StopHost200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *StopHost200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
 func (o StopHost200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

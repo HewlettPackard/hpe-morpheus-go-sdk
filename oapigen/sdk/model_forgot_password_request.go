@@ -27,48 +27,6 @@ type ForgotPasswordRequest struct {
 
 type _ForgotPasswordRequest ForgotPasswordRequest
 
-// NewForgotPasswordRequest instantiates a new ForgotPasswordRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewForgotPasswordRequest(username string) *ForgotPasswordRequest {
-	this := ForgotPasswordRequest{}
-	this.Username = username
-	return &this
-}
-
-// NewForgotPasswordRequestWithDefaults instantiates a new ForgotPasswordRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewForgotPasswordRequestWithDefaults() *ForgotPasswordRequest {
-	this := ForgotPasswordRequest{}
-	return &this
-}
-
-// GetUsername returns the Username field value
-func (o *ForgotPasswordRequest) GetUsername() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value
-// and a boolean to check if the value has been set.
-func (o *ForgotPasswordRequest) GetUsernameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Username, true
-}
-
-// SetUsername sets field value
-func (o *ForgotPasswordRequest) SetUsername(v string) {
-	o.Username = v
-}
-
 func (o ForgotPasswordRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

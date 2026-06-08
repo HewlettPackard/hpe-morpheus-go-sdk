@@ -27,55 +27,6 @@ type InstanceWorkflowTaskSet struct {
 
 type _InstanceWorkflowTaskSet InstanceWorkflowTaskSet
 
-// NewInstanceWorkflowTaskSet instantiates a new InstanceWorkflowTaskSet object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceWorkflowTaskSet() *InstanceWorkflowTaskSet {
-	this := InstanceWorkflowTaskSet{}
-	return &this
-}
-
-// NewInstanceWorkflowTaskSetWithDefaults instantiates a new InstanceWorkflowTaskSet object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceWorkflowTaskSetWithDefaults() *InstanceWorkflowTaskSet {
-	this := InstanceWorkflowTaskSet{}
-	return &this
-}
-
-// GetCustomOptions returns the CustomOptions field value if set, zero value otherwise.
-func (o *InstanceWorkflowTaskSet) GetCustomOptions() map[string]interface{} {
-	if o == nil || IsNil(o.CustomOptions) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.CustomOptions
-}
-
-// GetCustomOptionsOk returns a tuple with the CustomOptions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceWorkflowTaskSet) GetCustomOptionsOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.CustomOptions) {
-		return map[string]interface{}{}, false
-	}
-	return o.CustomOptions, true
-}
-
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *InstanceWorkflowTaskSet) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
-}
-
-// SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
-func (o *InstanceWorkflowTaskSet) SetCustomOptions(v map[string]interface{}) {
-	o.CustomOptions = v
-}
-
 func (o InstanceWorkflowTaskSet) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

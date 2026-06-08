@@ -27,55 +27,6 @@ type LeaseAgentToken200ResponseHeaders struct {
 
 type _LeaseAgentToken200ResponseHeaders LeaseAgentToken200ResponseHeaders
 
-// NewLeaseAgentToken200ResponseHeaders instantiates a new LeaseAgentToken200ResponseHeaders object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewLeaseAgentToken200ResponseHeaders() *LeaseAgentToken200ResponseHeaders {
-	this := LeaseAgentToken200ResponseHeaders{}
-	return &this
-}
-
-// NewLeaseAgentToken200ResponseHeadersWithDefaults instantiates a new LeaseAgentToken200ResponseHeaders object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLeaseAgentToken200ResponseHeadersWithDefaults() *LeaseAgentToken200ResponseHeaders {
-	this := LeaseAgentToken200ResponseHeaders{}
-	return &this
-}
-
-// GetX_LEASE_TOKEN returns the X_LEASE_TOKEN field value if set, zero value otherwise.
-func (o *LeaseAgentToken200ResponseHeaders) GetX_LEASE_TOKEN() string {
-	if o == nil || IsNil(o.X_LEASE_TOKEN) {
-		var ret string
-		return ret
-	}
-	return *o.X_LEASE_TOKEN
-}
-
-// GetX_LEASE_TOKENOk returns a tuple with the X_LEASE_TOKEN field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LeaseAgentToken200ResponseHeaders) GetX_LEASE_TOKENOk() (*string, bool) {
-	if o == nil || IsNil(o.X_LEASE_TOKEN) {
-		return nil, false
-	}
-	return o.X_LEASE_TOKEN, true
-}
-
-// IsSetX_LEASE_TOKEN returns a boolean if a field has been set.
-func (o *LeaseAgentToken200ResponseHeaders) IsSetX_LEASE_TOKEN() bool {
-	if o != nil && !IsNil(o.X_LEASE_TOKEN) {
-		return true
-	}
-
-	return false
-}
-
-// SetX_LEASE_TOKEN gets a reference to the given string and assigns it to the X_LEASE_TOKEN field.
-func (o *LeaseAgentToken200ResponseHeaders) SetX_LEASE_TOKEN(v string) {
-	o.X_LEASE_TOKEN = &v
-}
-
 func (o LeaseAgentToken200ResponseHeaders) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

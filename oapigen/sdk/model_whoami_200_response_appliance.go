@@ -26,55 +26,6 @@ type Whoami200ResponseAppliance struct {
 
 type _Whoami200ResponseAppliance Whoami200ResponseAppliance
 
-// NewWhoami200ResponseAppliance instantiates a new Whoami200ResponseAppliance object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewWhoami200ResponseAppliance() *Whoami200ResponseAppliance {
-	this := Whoami200ResponseAppliance{}
-	return &this
-}
-
-// NewWhoami200ResponseApplianceWithDefaults instantiates a new Whoami200ResponseAppliance object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWhoami200ResponseApplianceWithDefaults() *Whoami200ResponseAppliance {
-	this := Whoami200ResponseAppliance{}
-	return &this
-}
-
-// GetBuildVersion returns the BuildVersion field value if set, zero value otherwise.
-func (o *Whoami200ResponseAppliance) GetBuildVersion() string {
-	if o == nil || IsNil(o.BuildVersion) {
-		var ret string
-		return ret
-	}
-	return *o.BuildVersion
-}
-
-// GetBuildVersionOk returns a tuple with the BuildVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Whoami200ResponseAppliance) GetBuildVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.BuildVersion) {
-		return nil, false
-	}
-	return o.BuildVersion, true
-}
-
-// IsSetBuildVersion returns a boolean if a field has been set.
-func (o *Whoami200ResponseAppliance) IsSetBuildVersion() bool {
-	if o != nil && !IsNil(o.BuildVersion) {
-		return true
-	}
-
-	return false
-}
-
-// SetBuildVersion gets a reference to the given string and assigns it to the BuildVersion field.
-func (o *Whoami200ResponseAppliance) SetBuildVersion(v string) {
-	o.BuildVersion = &v
-}
-
 func (o Whoami200ResponseAppliance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,20 +27,6 @@ type GetHostIdParameter struct {
 	String *string
 }
 
-// int64AsGetHostIdParameter is a convenience function that returns int64 wrapped in GetHostIdParameter
-func Int64AsGetHostIdParameter(v *int64) GetHostIdParameter {
-	return GetHostIdParameter{
-		Int64: v,
-	}
-}
-
-// stringAsGetHostIdParameter is a convenience function that returns string wrapped in GetHostIdParameter
-func StringAsGetHostIdParameter(v *string) GetHostIdParameter {
-	return GetHostIdParameter{
-		String: v,
-	}
-}
-
 func (dst *GetHostIdParameter) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &GetHostIdParameter{}

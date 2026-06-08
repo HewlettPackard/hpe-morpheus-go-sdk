@@ -6,49 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LoadBalancerPool** | Pointer to [**GetLoadBalancerPool200ResponseLoadBalancerPool**](GetLoadBalancerPool200ResponseLoadBalancerPool.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetLoadBalancerPool200Response
+Instantiate with a Go composite literal:
 
-`func NewGetLoadBalancerPool200Response() *GetLoadBalancerPool200Response`
-
-NewGetLoadBalancerPool200Response instantiates a new GetLoadBalancerPool200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewGetLoadBalancerPool200ResponseWithDefaults
-
-`func NewGetLoadBalancerPool200ResponseWithDefaults() *GetLoadBalancerPool200Response`
-
-NewGetLoadBalancerPool200ResponseWithDefaults instantiates a new GetLoadBalancerPool200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetLoadBalancerPool
-
-`func (o *GetLoadBalancerPool200Response) GetLoadBalancerPool() GetLoadBalancerPool200ResponseLoadBalancerPool`
-
-GetLoadBalancerPool returns the LoadBalancerPool field if non-nil, zero value otherwise.
-
-### GetLoadBalancerPoolOk
-
-`func (o *GetLoadBalancerPool200Response) GetLoadBalancerPoolOk() (*GetLoadBalancerPool200ResponseLoadBalancerPool, bool)`
-
-GetLoadBalancerPoolOk returns a tuple with the LoadBalancerPool field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLoadBalancerPool
-
-`func (o *GetLoadBalancerPool200Response) SetLoadBalancerPool(v GetLoadBalancerPool200ResponseLoadBalancerPool)`
-
-SetLoadBalancerPool sets LoadBalancerPool field to given value.
-
-### HasLoadBalancerPool
-
-`func (o *GetLoadBalancerPool200Response) HasLoadBalancerPool() bool`
-
-HasLoadBalancerPool returns a boolean if a field has been set.
+```go
+obj := &GetLoadBalancerPool200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -27,55 +27,6 @@ type RunDeployRequestAppDeploy struct {
 
 type _RunDeployRequestAppDeploy RunDeployRequestAppDeploy
 
-// NewRunDeployRequestAppDeploy instantiates a new RunDeployRequestAppDeploy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRunDeployRequestAppDeploy() *RunDeployRequestAppDeploy {
-	this := RunDeployRequestAppDeploy{}
-	return &this
-}
-
-// NewRunDeployRequestAppDeployWithDefaults instantiates a new RunDeployRequestAppDeploy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRunDeployRequestAppDeployWithDefaults() *RunDeployRequestAppDeploy {
-	this := RunDeployRequestAppDeploy{}
-	return &this
-}
-
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *RunDeployRequestAppDeploy) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RunDeployRequestAppDeploy) GetConfigOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
-	}
-	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *RunDeployRequestAppDeploy) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *RunDeployRequestAppDeploy) SetConfig(v map[string]interface{}) {
-	o.Config = v
-}
-
 func (o RunDeployRequestAppDeploy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

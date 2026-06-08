@@ -8,130 +8,37 @@ Name | Type | Description | Notes
 **Code** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListHosts200ResponseAllOfServersInnerPlan
+Instantiate with a Go composite literal:
 
-`func NewListHosts200ResponseAllOfServersInnerPlan() *ListHosts200ResponseAllOfServersInnerPlan`
+```go
+obj := &ListHosts200ResponseAllOfServersInnerPlan{
+    // Set fields directly
+}
+```
 
-NewListHosts200ResponseAllOfServersInnerPlan instantiates a new ListHosts200ResponseAllOfServersInnerPlan object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### Id (Nullable)
 
-### NewListHosts200ResponseAllOfServersInnerPlanWithDefaults
+Use the Nullable wrapper methods:
+- `obj.Id.IsSet()` — check if set
+- `obj.Id.Get()` — get the inner value (returns pointer)
+- `obj.Id.Set(&val)` — set the value
+- `obj.Id.Unset()` — clear the value
+### Code (Nullable)
 
-`func NewListHosts200ResponseAllOfServersInnerPlanWithDefaults() *ListHosts200ResponseAllOfServersInnerPlan`
+Use the Nullable wrapper methods:
+- `obj.Code.IsSet()` — check if set
+- `obj.Code.Get()` — get the inner value (returns pointer)
+- `obj.Code.Set(&val)` — set the value
+- `obj.Code.Unset()` — clear the value
+### Name (Nullable)
 
-NewListHosts200ResponseAllOfServersInnerPlanWithDefaults instantiates a new ListHosts200ResponseAllOfServersInnerPlan object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### SetIdNil
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) SetIdNil(b bool)`
-
- SetIdNil sets the value for Id to be an explicit nil
-
-### UnsetId
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) UnsetId()`
-
-UnsetId ensures that no value is present for Id, not even an explicit nil
-### GetCode
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) GetCode() string`
-
-GetCode returns the Code field if non-nil, zero value otherwise.
-
-### GetCodeOk
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) GetCodeOk() (*string, bool)`
-
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCode
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) SetCode(v string)`
-
-SetCode sets Code field to given value.
-
-### HasCode
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) HasCode() bool`
-
-HasCode returns a boolean if a field has been set.
-
-### SetCodeNil
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) SetCodeNil(b bool)`
-
- SetCodeNil sets the value for Code to be an explicit nil
-
-### UnsetCode
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) UnsetCode()`
-
-UnsetCode ensures that no value is present for Code, not even an explicit nil
-### GetName
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### SetNameNil
-
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *ListHosts200ResponseAllOfServersInnerPlan) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
+Use the Nullable wrapper methods:
+- `obj.Name.IsSet()` — check if set
+- `obj.Name.Get()` — get the inner value (returns pointer)
+- `obj.Name.Set(&val)` — set the value
+- `obj.Name.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

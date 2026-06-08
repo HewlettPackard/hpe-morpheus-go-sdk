@@ -26,48 +26,6 @@ type UpdateVDIGatewaysRequest struct {
 
 type _UpdateVDIGatewaysRequest UpdateVDIGatewaysRequest
 
-// NewUpdateVDIGatewaysRequest instantiates a new UpdateVDIGatewaysRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateVDIGatewaysRequest(vdiGateway UpdateVDIGatewaysRequestVdiGateway) *UpdateVDIGatewaysRequest {
-	this := UpdateVDIGatewaysRequest{}
-	this.VdiGateway = vdiGateway
-	return &this
-}
-
-// NewUpdateVDIGatewaysRequestWithDefaults instantiates a new UpdateVDIGatewaysRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateVDIGatewaysRequestWithDefaults() *UpdateVDIGatewaysRequest {
-	this := UpdateVDIGatewaysRequest{}
-	return &this
-}
-
-// GetVdiGateway returns the VdiGateway field value
-func (o *UpdateVDIGatewaysRequest) GetVdiGateway() UpdateVDIGatewaysRequestVdiGateway {
-	if o == nil {
-		var ret UpdateVDIGatewaysRequestVdiGateway
-		return ret
-	}
-
-	return o.VdiGateway
-}
-
-// GetVdiGatewayOk returns a tuple with the VdiGateway field value
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIGatewaysRequest) GetVdiGatewayOk() (*UpdateVDIGatewaysRequestVdiGateway, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.VdiGateway, true
-}
-
-// SetVdiGateway sets field value
-func (o *UpdateVDIGatewaysRequest) SetVdiGateway(v UpdateVDIGatewaysRequestVdiGateway) {
-	o.VdiGateway = v
-}
-
 func (o UpdateVDIGatewaysRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

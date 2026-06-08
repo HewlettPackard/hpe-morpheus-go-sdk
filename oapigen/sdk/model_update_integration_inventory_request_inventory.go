@@ -27,55 +27,6 @@ type UpdateIntegrationInventoryRequestInventory struct {
 
 type _UpdateIntegrationInventoryRequestInventory UpdateIntegrationInventoryRequestInventory
 
-// NewUpdateIntegrationInventoryRequestInventory instantiates a new UpdateIntegrationInventoryRequestInventory object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIntegrationInventoryRequestInventory() *UpdateIntegrationInventoryRequestInventory {
-	this := UpdateIntegrationInventoryRequestInventory{}
-	return &this
-}
-
-// NewUpdateIntegrationInventoryRequestInventoryWithDefaults instantiates a new UpdateIntegrationInventoryRequestInventory object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIntegrationInventoryRequestInventoryWithDefaults() *UpdateIntegrationInventoryRequestInventory {
-	this := UpdateIntegrationInventoryRequestInventory{}
-	return &this
-}
-
-// GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *UpdateIntegrationInventoryRequestInventory) GetTenants() []UpdateIntegrationInventoryRequestInventoryTenantsInner {
-	if o == nil || IsNil(o.Tenants) {
-		var ret []UpdateIntegrationInventoryRequestInventoryTenantsInner
-		return ret
-	}
-	return o.Tenants
-}
-
-// GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateIntegrationInventoryRequestInventory) GetTenantsOk() ([]UpdateIntegrationInventoryRequestInventoryTenantsInner, bool) {
-	if o == nil || IsNil(o.Tenants) {
-		return nil, false
-	}
-	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *UpdateIntegrationInventoryRequestInventory) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
-// SetTenants gets a reference to the given []UpdateIntegrationInventoryRequestInventoryTenantsInner and assigns it to the Tenants field.
-func (o *UpdateIntegrationInventoryRequestInventory) SetTenants(v []UpdateIntegrationInventoryRequestInventoryTenantsInner) {
-	o.Tenants = v
-}
-
 func (o UpdateIntegrationInventoryRequestInventory) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 struct {
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6
 
-// NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 {
-	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6{}
-	return &this
-}
-
-// NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6WithDefaults instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6WithDefaults() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 {
-	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6{}
-	return &this
-}
-
-// GetRemovalAge returns the RemovalAge field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) GetRemovalAge() string {
-	if o == nil || IsNil(o.RemovalAge) {
-		var ret string
-		return ret
-	}
-	return *o.RemovalAge
-}
-
-// GetRemovalAgeOk returns a tuple with the RemovalAge field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) GetRemovalAgeOk() (*string, bool) {
-	if o == nil || IsNil(o.RemovalAge) {
-		return nil, false
-	}
-	return o.RemovalAge, true
-}
-
-// IsSetRemovalAge returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) IsSetRemovalAge() bool {
-	if o != nil && !IsNil(o.RemovalAge) {
-		return true
-	}
-
-	return false
-}
-
-// SetRemovalAge gets a reference to the given string and assigns it to the RemovalAge field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) SetRemovalAge(v string) {
-	o.RemovalAge = &v
-}
-
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

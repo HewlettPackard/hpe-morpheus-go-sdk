@@ -26,55 +26,6 @@ type GetOptionList200Response struct {
 
 type _GetOptionList200Response GetOptionList200Response
 
-// NewGetOptionList200Response instantiates a new GetOptionList200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetOptionList200Response() *GetOptionList200Response {
-	this := GetOptionList200Response{}
-	return &this
-}
-
-// NewGetOptionList200ResponseWithDefaults instantiates a new GetOptionList200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetOptionList200ResponseWithDefaults() *GetOptionList200Response {
-	this := GetOptionList200Response{}
-	return &this
-}
-
-// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
-func (o *GetOptionList200Response) GetOptionTypes() []GetOptionList200ResponseOptionTypesInner {
-	if o == nil || IsNil(o.OptionTypes) {
-		var ret []GetOptionList200ResponseOptionTypesInner
-		return ret
-	}
-	return o.OptionTypes
-}
-
-// GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetOptionList200Response) GetOptionTypesOk() ([]GetOptionList200ResponseOptionTypesInner, bool) {
-	if o == nil || IsNil(o.OptionTypes) {
-		return nil, false
-	}
-	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *GetOptionList200Response) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
-// SetOptionTypes gets a reference to the given []GetOptionList200ResponseOptionTypesInner and assigns it to the OptionTypes field.
-func (o *GetOptionList200Response) SetOptionTypes(v []GetOptionList200ResponseOptionTypesInner) {
-	o.OptionTypes = v
-}
-
 func (o GetOptionList200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type AddSpecTemplateRequestSpecTemplateConfig struct {
 
 type _AddSpecTemplateRequestSpecTemplateConfig AddSpecTemplateRequestSpecTemplateConfig
 
-// NewAddSpecTemplateRequestSpecTemplateConfig instantiates a new AddSpecTemplateRequestSpecTemplateConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddSpecTemplateRequestSpecTemplateConfig() *AddSpecTemplateRequestSpecTemplateConfig {
-	this := AddSpecTemplateRequestSpecTemplateConfig{}
-	return &this
-}
-
-// NewAddSpecTemplateRequestSpecTemplateConfigWithDefaults instantiates a new AddSpecTemplateRequestSpecTemplateConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddSpecTemplateRequestSpecTemplateConfigWithDefaults() *AddSpecTemplateRequestSpecTemplateConfig {
-	this := AddSpecTemplateRequestSpecTemplateConfig{}
-	return &this
-}
-
-// GetCloudformation returns the Cloudformation field value if set, zero value otherwise.
-func (o *AddSpecTemplateRequestSpecTemplateConfig) GetCloudformation() AddSpecTemplateRequestSpecTemplateConfigCloudformation {
-	if o == nil || IsNil(o.Cloudformation) {
-		var ret AddSpecTemplateRequestSpecTemplateConfigCloudformation
-		return ret
-	}
-	return *o.Cloudformation
-}
-
-// GetCloudformationOk returns a tuple with the Cloudformation field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSpecTemplateRequestSpecTemplateConfig) GetCloudformationOk() (*AddSpecTemplateRequestSpecTemplateConfigCloudformation, bool) {
-	if o == nil || IsNil(o.Cloudformation) {
-		return nil, false
-	}
-	return o.Cloudformation, true
-}
-
-// IsSetCloudformation returns a boolean if a field has been set.
-func (o *AddSpecTemplateRequestSpecTemplateConfig) IsSetCloudformation() bool {
-	if o != nil && !IsNil(o.Cloudformation) {
-		return true
-	}
-
-	return false
-}
-
-// SetCloudformation gets a reference to the given AddSpecTemplateRequestSpecTemplateConfigCloudformation and assigns it to the Cloudformation field.
-func (o *AddSpecTemplateRequestSpecTemplateConfig) SetCloudformation(v AddSpecTemplateRequestSpecTemplateConfigCloudformation) {
-	o.Cloudformation = &v
-}
-
 func (o AddSpecTemplateRequestSpecTemplateConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

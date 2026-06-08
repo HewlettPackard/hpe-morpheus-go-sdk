@@ -27,48 +27,6 @@ type UpdateInstance200ResponseAllOfOneOfInstanceSite struct {
 
 type _UpdateInstance200ResponseAllOfOneOfInstanceSite UpdateInstance200ResponseAllOfOneOfInstanceSite
 
-// NewUpdateInstance200ResponseAllOfOneOfInstanceSite instantiates a new UpdateInstance200ResponseAllOfOneOfInstanceSite object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateInstance200ResponseAllOfOneOfInstanceSite(id int64) *UpdateInstance200ResponseAllOfOneOfInstanceSite {
-	this := UpdateInstance200ResponseAllOfOneOfInstanceSite{}
-	this.Id = id
-	return &this
-}
-
-// NewUpdateInstance200ResponseAllOfOneOfInstanceSiteWithDefaults instantiates a new UpdateInstance200ResponseAllOfOneOfInstanceSite object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInstance200ResponseAllOfOneOfInstanceSiteWithDefaults() *UpdateInstance200ResponseAllOfOneOfInstanceSite {
-	this := UpdateInstance200ResponseAllOfOneOfInstanceSite{}
-	return &this
-}
-
-// GetId returns the Id field value
-func (o *UpdateInstance200ResponseAllOfOneOfInstanceSite) GetId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *UpdateInstance200ResponseAllOfOneOfInstanceSite) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *UpdateInstance200ResponseAllOfOneOfInstanceSite) SetId(v int64) {
-	o.Id = v
-}
-
 func (o UpdateInstance200ResponseAllOfOneOfInstanceSite) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

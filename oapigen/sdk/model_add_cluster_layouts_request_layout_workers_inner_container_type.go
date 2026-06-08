@@ -26,48 +26,6 @@ type AddClusterLayoutsRequestLayoutWorkersInnerContainerType struct {
 
 type _AddClusterLayoutsRequestLayoutWorkersInnerContainerType AddClusterLayoutsRequestLayoutWorkersInnerContainerType
 
-// NewAddClusterLayoutsRequestLayoutWorkersInnerContainerType instantiates a new AddClusterLayoutsRequestLayoutWorkersInnerContainerType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterLayoutsRequestLayoutWorkersInnerContainerType(id int64) *AddClusterLayoutsRequestLayoutWorkersInnerContainerType {
-	this := AddClusterLayoutsRequestLayoutWorkersInnerContainerType{}
-	this.Id = id
-	return &this
-}
-
-// NewAddClusterLayoutsRequestLayoutWorkersInnerContainerTypeWithDefaults instantiates a new AddClusterLayoutsRequestLayoutWorkersInnerContainerType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterLayoutsRequestLayoutWorkersInnerContainerTypeWithDefaults() *AddClusterLayoutsRequestLayoutWorkersInnerContainerType {
-	this := AddClusterLayoutsRequestLayoutWorkersInnerContainerType{}
-	return &this
-}
-
-// GetId returns the Id field value
-func (o *AddClusterLayoutsRequestLayoutWorkersInnerContainerType) GetId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AddClusterLayoutsRequestLayoutWorkersInnerContainerType) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AddClusterLayoutsRequestLayoutWorkersInnerContainerType) SetId(v int64) {
-	o.Id = v
-}
-
 func (o AddClusterLayoutsRequestLayoutWorkersInnerContainerType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

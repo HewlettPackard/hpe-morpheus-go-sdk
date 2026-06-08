@@ -26,55 +26,6 @@ type CreateNetworkPool200Response struct {
 
 type _CreateNetworkPool200Response CreateNetworkPool200Response
 
-// NewCreateNetworkPool200Response instantiates a new CreateNetworkPool200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkPool200Response() *CreateNetworkPool200Response {
-	this := CreateNetworkPool200Response{}
-	return &this
-}
-
-// NewCreateNetworkPool200ResponseWithDefaults instantiates a new CreateNetworkPool200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkPool200ResponseWithDefaults() *CreateNetworkPool200Response {
-	this := CreateNetworkPool200Response{}
-	return &this
-}
-
-// GetNetworkPool returns the NetworkPool field value if set, zero value otherwise.
-func (o *CreateNetworkPool200Response) GetNetworkPool() CreateNetworkPool200ResponseNetworkPool {
-	if o == nil || IsNil(o.NetworkPool) {
-		var ret CreateNetworkPool200ResponseNetworkPool
-		return ret
-	}
-	return *o.NetworkPool
-}
-
-// GetNetworkPoolOk returns a tuple with the NetworkPool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkPool200Response) GetNetworkPoolOk() (*CreateNetworkPool200ResponseNetworkPool, bool) {
-	if o == nil || IsNil(o.NetworkPool) {
-		return nil, false
-	}
-	return o.NetworkPool, true
-}
-
-// IsSetNetworkPool returns a boolean if a field has been set.
-func (o *CreateNetworkPool200Response) IsSetNetworkPool() bool {
-	if o != nil && !IsNil(o.NetworkPool) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkPool gets a reference to the given CreateNetworkPool200ResponseNetworkPool and assigns it to the NetworkPool field.
-func (o *CreateNetworkPool200Response) SetNetworkPool(v CreateNetworkPool200ResponseNetworkPool) {
-	o.NetworkPool = &v
-}
-
 func (o CreateNetworkPool200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

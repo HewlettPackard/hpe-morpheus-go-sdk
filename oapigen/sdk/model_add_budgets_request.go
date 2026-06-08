@@ -26,48 +26,6 @@ type AddBudgetsRequest struct {
 
 type _AddBudgetsRequest AddBudgetsRequest
 
-// NewAddBudgetsRequest instantiates a new AddBudgetsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBudgetsRequest(budget AddBudgetsRequestBudget) *AddBudgetsRequest {
-	this := AddBudgetsRequest{}
-	this.Budget = budget
-	return &this
-}
-
-// NewAddBudgetsRequestWithDefaults instantiates a new AddBudgetsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBudgetsRequestWithDefaults() *AddBudgetsRequest {
-	this := AddBudgetsRequest{}
-	return &this
-}
-
-// GetBudget returns the Budget field value
-func (o *AddBudgetsRequest) GetBudget() AddBudgetsRequestBudget {
-	if o == nil {
-		var ret AddBudgetsRequestBudget
-		return ret
-	}
-
-	return o.Budget
-}
-
-// GetBudgetOk returns a tuple with the Budget field value
-// and a boolean to check if the value has been set.
-func (o *AddBudgetsRequest) GetBudgetOk() (*AddBudgetsRequestBudget, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Budget, true
-}
-
-// SetBudget sets field value
-func (o *AddBudgetsRequest) SetBudget(v AddBudgetsRequestBudget) {
-	o.Budget = v
-}
-
 func (o AddBudgetsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

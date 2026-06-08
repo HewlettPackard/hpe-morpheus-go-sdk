@@ -26,55 +26,6 @@ type UpdateNodeTypeRequest struct {
 
 type _UpdateNodeTypeRequest UpdateNodeTypeRequest
 
-// NewUpdateNodeTypeRequest instantiates a new UpdateNodeTypeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNodeTypeRequest() *UpdateNodeTypeRequest {
-	this := UpdateNodeTypeRequest{}
-	return &this
-}
-
-// NewUpdateNodeTypeRequestWithDefaults instantiates a new UpdateNodeTypeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNodeTypeRequestWithDefaults() *UpdateNodeTypeRequest {
-	this := UpdateNodeTypeRequest{}
-	return &this
-}
-
-// GetContainerType returns the ContainerType field value if set, zero value otherwise.
-func (o *UpdateNodeTypeRequest) GetContainerType() UpdateNodeTypeRequestContainerType {
-	if o == nil || IsNil(o.ContainerType) {
-		var ret UpdateNodeTypeRequestContainerType
-		return ret
-	}
-	return *o.ContainerType
-}
-
-// GetContainerTypeOk returns a tuple with the ContainerType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNodeTypeRequest) GetContainerTypeOk() (*UpdateNodeTypeRequestContainerType, bool) {
-	if o == nil || IsNil(o.ContainerType) {
-		return nil, false
-	}
-	return o.ContainerType, true
-}
-
-// IsSetContainerType returns a boolean if a field has been set.
-func (o *UpdateNodeTypeRequest) IsSetContainerType() bool {
-	if o != nil && !IsNil(o.ContainerType) {
-		return true
-	}
-
-	return false
-}
-
-// SetContainerType gets a reference to the given UpdateNodeTypeRequestContainerType and assigns it to the ContainerType field.
-func (o *UpdateNodeTypeRequest) SetContainerType(v UpdateNodeTypeRequestContainerType) {
-	o.ContainerType = &v
-}
-
 func (o UpdateNodeTypeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

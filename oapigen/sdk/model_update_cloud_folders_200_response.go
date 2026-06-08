@@ -26,55 +26,6 @@ type UpdateCloudFolders200Response struct {
 
 type _UpdateCloudFolders200Response UpdateCloudFolders200Response
 
-// NewUpdateCloudFolders200Response instantiates a new UpdateCloudFolders200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCloudFolders200Response() *UpdateCloudFolders200Response {
-	this := UpdateCloudFolders200Response{}
-	return &this
-}
-
-// NewUpdateCloudFolders200ResponseWithDefaults instantiates a new UpdateCloudFolders200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCloudFolders200ResponseWithDefaults() *UpdateCloudFolders200Response {
-	this := UpdateCloudFolders200Response{}
-	return &this
-}
-
-// GetFolder returns the Folder field value if set, zero value otherwise.
-func (o *UpdateCloudFolders200Response) GetFolder() UpdateCloudFolders200ResponseFolder {
-	if o == nil || IsNil(o.Folder) {
-		var ret UpdateCloudFolders200ResponseFolder
-		return ret
-	}
-	return *o.Folder
-}
-
-// GetFolderOk returns a tuple with the Folder field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudFolders200Response) GetFolderOk() (*UpdateCloudFolders200ResponseFolder, bool) {
-	if o == nil || IsNil(o.Folder) {
-		return nil, false
-	}
-	return o.Folder, true
-}
-
-// IsSetFolder returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200Response) IsSetFolder() bool {
-	if o != nil && !IsNil(o.Folder) {
-		return true
-	}
-
-	return false
-}
-
-// SetFolder gets a reference to the given UpdateCloudFolders200ResponseFolder and assigns it to the Folder field.
-func (o *UpdateCloudFolders200Response) SetFolder(v UpdateCloudFolders200ResponseFolder) {
-	o.Folder = &v
-}
-
 func (o UpdateCloudFolders200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type AddPreseedScriptRequest struct {
 
 type _AddPreseedScriptRequest AddPreseedScriptRequest
 
-// NewAddPreseedScriptRequest instantiates a new AddPreseedScriptRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPreseedScriptRequest() *AddPreseedScriptRequest {
-	this := AddPreseedScriptRequest{}
-	return &this
-}
-
-// NewAddPreseedScriptRequestWithDefaults instantiates a new AddPreseedScriptRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPreseedScriptRequestWithDefaults() *AddPreseedScriptRequest {
-	this := AddPreseedScriptRequest{}
-	return &this
-}
-
-// GetPreseedScript returns the PreseedScript field value if set, zero value otherwise.
-func (o *AddPreseedScriptRequest) GetPreseedScript() AddPreseedScriptRequestPreseedScript {
-	if o == nil || IsNil(o.PreseedScript) {
-		var ret AddPreseedScriptRequestPreseedScript
-		return ret
-	}
-	return *o.PreseedScript
-}
-
-// GetPreseedScriptOk returns a tuple with the PreseedScript field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPreseedScriptRequest) GetPreseedScriptOk() (*AddPreseedScriptRequestPreseedScript, bool) {
-	if o == nil || IsNil(o.PreseedScript) {
-		return nil, false
-	}
-	return o.PreseedScript, true
-}
-
-// IsSetPreseedScript returns a boolean if a field has been set.
-func (o *AddPreseedScriptRequest) IsSetPreseedScript() bool {
-	if o != nil && !IsNil(o.PreseedScript) {
-		return true
-	}
-
-	return false
-}
-
-// SetPreseedScript gets a reference to the given AddPreseedScriptRequestPreseedScript and assigns it to the PreseedScript field.
-func (o *AddPreseedScriptRequest) SetPreseedScript(v AddPreseedScriptRequestPreseedScript) {
-	o.PreseedScript = &v
-}
-
 func (o AddPreseedScriptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

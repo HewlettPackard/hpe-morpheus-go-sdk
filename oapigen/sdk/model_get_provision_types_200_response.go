@@ -26,55 +26,6 @@ type GetProvisionTypes200Response struct {
 
 type _GetProvisionTypes200Response GetProvisionTypes200Response
 
-// NewGetProvisionTypes200Response instantiates a new GetProvisionTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetProvisionTypes200Response() *GetProvisionTypes200Response {
-	this := GetProvisionTypes200Response{}
-	return &this
-}
-
-// NewGetProvisionTypes200ResponseWithDefaults instantiates a new GetProvisionTypes200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetProvisionTypes200ResponseWithDefaults() *GetProvisionTypes200Response {
-	this := GetProvisionTypes200Response{}
-	return &this
-}
-
-// GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
-func (o *GetProvisionTypes200Response) GetProvisionType() GetProvisionTypes200ResponseProvisionType {
-	if o == nil || IsNil(o.ProvisionType) {
-		var ret GetProvisionTypes200ResponseProvisionType
-		return ret
-	}
-	return *o.ProvisionType
-}
-
-// GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetProvisionTypes200Response) GetProvisionTypeOk() (*GetProvisionTypes200ResponseProvisionType, bool) {
-	if o == nil || IsNil(o.ProvisionType) {
-		return nil, false
-	}
-	return o.ProvisionType, true
-}
-
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *GetProvisionTypes200Response) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
-		return true
-	}
-
-	return false
-}
-
-// SetProvisionType gets a reference to the given GetProvisionTypes200ResponseProvisionType and assigns it to the ProvisionType field.
-func (o *GetProvisionTypes200Response) SetProvisionType(v GetProvisionTypes200ResponseProvisionType) {
-	o.ProvisionType = &v
-}
-
 func (o GetProvisionTypes200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

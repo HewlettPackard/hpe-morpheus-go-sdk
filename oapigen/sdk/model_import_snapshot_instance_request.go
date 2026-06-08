@@ -27,66 +27,6 @@ type ImportSnapshotInstanceRequest struct {
 
 type _ImportSnapshotInstanceRequest ImportSnapshotInstanceRequest
 
-// NewImportSnapshotInstanceRequest instantiates a new ImportSnapshotInstanceRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewImportSnapshotInstanceRequest() *ImportSnapshotInstanceRequest {
-	this := ImportSnapshotInstanceRequest{}
-	return &this
-}
-
-// NewImportSnapshotInstanceRequestWithDefaults instantiates a new ImportSnapshotInstanceRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewImportSnapshotInstanceRequestWithDefaults() *ImportSnapshotInstanceRequest {
-	this := ImportSnapshotInstanceRequest{}
-	return &this
-}
-
-// GetStorageProviderId returns the StorageProviderId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ImportSnapshotInstanceRequest) GetStorageProviderId() int64 {
-	if o == nil || IsNil(o.StorageProviderId.Get()) {
-		var ret int64
-		return ret
-	}
-	return *o.StorageProviderId.Get()
-}
-
-// GetStorageProviderIdOk returns a tuple with the StorageProviderId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ImportSnapshotInstanceRequest) GetStorageProviderIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.StorageProviderId.Get(), o.StorageProviderId.IsSet()
-}
-
-// IsSetStorageProviderId returns a boolean if a field has been set.
-func (o *ImportSnapshotInstanceRequest) IsSetStorageProviderId() bool {
-	if o != nil && o.StorageProviderId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetStorageProviderId gets a reference to the given NullableInt64 and assigns it to the StorageProviderId field.
-func (o *ImportSnapshotInstanceRequest) SetStorageProviderId(v int64) {
-	o.StorageProviderId.Set(&v)
-}
-
-// SetStorageProviderIdNil sets the value for StorageProviderId to be an explicit nil
-func (o *ImportSnapshotInstanceRequest) SetStorageProviderIdNil() {
-	o.StorageProviderId.Set(nil)
-}
-
-// UnsetStorageProviderId ensures that no value is present for StorageProviderId, not even an explicit nil
-func (o *ImportSnapshotInstanceRequest) UnsetStorageProviderId() {
-	o.StorageProviderId.Unset()
-}
-
 func (o ImportSnapshotInstanceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

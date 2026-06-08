@@ -27,20 +27,6 @@ type BlueprintCFTCreateSuccessCloudFormationCloudInitEnabled struct {
 	String *string
 }
 
-// boolAsBlueprintCFTCreateSuccessCloudFormationCloudInitEnabled is a convenience function that returns bool wrapped in BlueprintCFTCreateSuccessCloudFormationCloudInitEnabled
-func BoolAsBlueprintCFTCreateSuccessCloudFormationCloudInitEnabled(v *bool) BlueprintCFTCreateSuccessCloudFormationCloudInitEnabled {
-	return BlueprintCFTCreateSuccessCloudFormationCloudInitEnabled{
-		Bool: v,
-	}
-}
-
-// stringAsBlueprintCFTCreateSuccessCloudFormationCloudInitEnabled is a convenience function that returns string wrapped in BlueprintCFTCreateSuccessCloudFormationCloudInitEnabled
-func StringAsBlueprintCFTCreateSuccessCloudFormationCloudInitEnabled(v *string) BlueprintCFTCreateSuccessCloudFormationCloudInitEnabled {
-	return BlueprintCFTCreateSuccessCloudFormationCloudInitEnabled{
-		String: v,
-	}
-}
-
 func (dst *BlueprintCFTCreateSuccessCloudFormationCloudInitEnabled) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &BlueprintCFTCreateSuccessCloudFormationCloudInitEnabled{}

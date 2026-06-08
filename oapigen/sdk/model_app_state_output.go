@@ -26,55 +26,6 @@ type AppStateOutput struct {
 
 type _AppStateOutput AppStateOutput
 
-// NewAppStateOutput instantiates a new AppStateOutput object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAppStateOutput() *AppStateOutput {
-	this := AppStateOutput{}
-	return &this
-}
-
-// NewAppStateOutputWithDefaults instantiates a new AppStateOutput object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppStateOutputWithDefaults() *AppStateOutput {
-	this := AppStateOutput{}
-	return &this
-}
-
-// GetOutputs returns the Outputs field value if set, zero value otherwise.
-func (o *AppStateOutput) GetOutputs() []map[string]interface{} {
-	if o == nil || IsNil(o.Outputs) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Outputs
-}
-
-// GetOutputsOk returns a tuple with the Outputs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppStateOutput) GetOutputsOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Outputs) {
-		return nil, false
-	}
-	return o.Outputs, true
-}
-
-// IsSetOutputs returns a boolean if a field has been set.
-func (o *AppStateOutput) IsSetOutputs() bool {
-	if o != nil && !IsNil(o.Outputs) {
-		return true
-	}
-
-	return false
-}
-
-// SetOutputs gets a reference to the given []map[string]interface{} and assigns it to the Outputs field.
-func (o *AppStateOutput) SetOutputs(v []map[string]interface{}) {
-	o.Outputs = v
-}
-
 func (o AppStateOutput) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

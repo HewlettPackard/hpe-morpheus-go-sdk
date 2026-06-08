@@ -27,20 +27,6 @@ type CatalogItemTypeInstanceCreateConfig struct {
 	String                *string
 }
 
-// InstanceConfigObject2AsCatalogItemTypeInstanceCreateConfig is a convenience function that returns InstanceConfigObject2 wrapped in CatalogItemTypeInstanceCreateConfig
-func InstanceConfigObject2AsCatalogItemTypeInstanceCreateConfig(v *InstanceConfigObject2) CatalogItemTypeInstanceCreateConfig {
-	return CatalogItemTypeInstanceCreateConfig{
-		InstanceConfigObject2: v,
-	}
-}
-
-// stringAsCatalogItemTypeInstanceCreateConfig is a convenience function that returns string wrapped in CatalogItemTypeInstanceCreateConfig
-func StringAsCatalogItemTypeInstanceCreateConfig(v *string) CatalogItemTypeInstanceCreateConfig {
-	return CatalogItemTypeInstanceCreateConfig{
-		String: v,
-	}
-}
-
 func (dst *CatalogItemTypeInstanceCreateConfig) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &CatalogItemTypeInstanceCreateConfig{}

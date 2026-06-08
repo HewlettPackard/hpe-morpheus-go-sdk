@@ -26,55 +26,6 @@ type UpdateEmailTemplateRequest struct {
 
 type _UpdateEmailTemplateRequest UpdateEmailTemplateRequest
 
-// NewUpdateEmailTemplateRequest instantiates a new UpdateEmailTemplateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateEmailTemplateRequest() *UpdateEmailTemplateRequest {
-	this := UpdateEmailTemplateRequest{}
-	return &this
-}
-
-// NewUpdateEmailTemplateRequestWithDefaults instantiates a new UpdateEmailTemplateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateEmailTemplateRequestWithDefaults() *UpdateEmailTemplateRequest {
-	this := UpdateEmailTemplateRequest{}
-	return &this
-}
-
-// GetPolicy returns the Policy field value if set, zero value otherwise.
-func (o *UpdateEmailTemplateRequest) GetPolicy() UpdateEmailTemplateRequestAllOfPolicy {
-	if o == nil || IsNil(o.Policy) {
-		var ret UpdateEmailTemplateRequestAllOfPolicy
-		return ret
-	}
-	return *o.Policy
-}
-
-// GetPolicyOk returns a tuple with the Policy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateEmailTemplateRequest) GetPolicyOk() (*UpdateEmailTemplateRequestAllOfPolicy, bool) {
-	if o == nil || IsNil(o.Policy) {
-		return nil, false
-	}
-	return o.Policy, true
-}
-
-// IsSetPolicy returns a boolean if a field has been set.
-func (o *UpdateEmailTemplateRequest) IsSetPolicy() bool {
-	if o != nil && !IsNil(o.Policy) {
-		return true
-	}
-
-	return false
-}
-
-// SetPolicy gets a reference to the given UpdateEmailTemplateRequestAllOfPolicy and assigns it to the Policy field.
-func (o *UpdateEmailTemplateRequest) SetPolicy(v UpdateEmailTemplateRequestAllOfPolicy) {
-	o.Policy = &v
-}
-
 func (o UpdateEmailTemplateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

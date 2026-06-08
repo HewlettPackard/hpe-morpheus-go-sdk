@@ -26,55 +26,6 @@ type GetStaticRoute200Response struct {
 
 type _GetStaticRoute200Response GetStaticRoute200Response
 
-// NewGetStaticRoute200Response instantiates a new GetStaticRoute200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetStaticRoute200Response() *GetStaticRoute200Response {
-	this := GetStaticRoute200Response{}
-	return &this
-}
-
-// NewGetStaticRoute200ResponseWithDefaults instantiates a new GetStaticRoute200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetStaticRoute200ResponseWithDefaults() *GetStaticRoute200Response {
-	this := GetStaticRoute200Response{}
-	return &this
-}
-
-// GetNetworkRoute returns the NetworkRoute field value if set, zero value otherwise.
-func (o *GetStaticRoute200Response) GetNetworkRoute() GetStaticRoute200ResponseNetworkRoute {
-	if o == nil || IsNil(o.NetworkRoute) {
-		var ret GetStaticRoute200ResponseNetworkRoute
-		return ret
-	}
-	return *o.NetworkRoute
-}
-
-// GetNetworkRouteOk returns a tuple with the NetworkRoute field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetStaticRoute200Response) GetNetworkRouteOk() (*GetStaticRoute200ResponseNetworkRoute, bool) {
-	if o == nil || IsNil(o.NetworkRoute) {
-		return nil, false
-	}
-	return o.NetworkRoute, true
-}
-
-// IsSetNetworkRoute returns a boolean if a field has been set.
-func (o *GetStaticRoute200Response) IsSetNetworkRoute() bool {
-	if o != nil && !IsNil(o.NetworkRoute) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkRoute gets a reference to the given GetStaticRoute200ResponseNetworkRoute and assigns it to the NetworkRoute field.
-func (o *GetStaticRoute200Response) SetNetworkRoute(v GetStaticRoute200ResponseNetworkRoute) {
-	o.NetworkRoute = &v
-}
-
 func (o GetStaticRoute200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type UpdateDeploymentVersionRequest struct {
 
 type _UpdateDeploymentVersionRequest UpdateDeploymentVersionRequest
 
-// NewUpdateDeploymentVersionRequest instantiates a new UpdateDeploymentVersionRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateDeploymentVersionRequest() *UpdateDeploymentVersionRequest {
-	this := UpdateDeploymentVersionRequest{}
-	return &this
-}
-
-// NewUpdateDeploymentVersionRequestWithDefaults instantiates a new UpdateDeploymentVersionRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateDeploymentVersionRequestWithDefaults() *UpdateDeploymentVersionRequest {
-	this := UpdateDeploymentVersionRequest{}
-	return &this
-}
-
-// GetVersion returns the Version field value if set, zero value otherwise.
-func (o *UpdateDeploymentVersionRequest) GetVersion() UpdateDeploymentVersionRequestVersion {
-	if o == nil || IsNil(o.Version) {
-		var ret UpdateDeploymentVersionRequestVersion
-		return ret
-	}
-	return *o.Version
-}
-
-// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDeploymentVersionRequest) GetVersionOk() (*UpdateDeploymentVersionRequestVersion, bool) {
-	if o == nil || IsNil(o.Version) {
-		return nil, false
-	}
-	return o.Version, true
-}
-
-// IsSetVersion returns a boolean if a field has been set.
-func (o *UpdateDeploymentVersionRequest) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
-}
-
-// SetVersion gets a reference to the given UpdateDeploymentVersionRequestVersion and assigns it to the Version field.
-func (o *UpdateDeploymentVersionRequest) SetVersion(v UpdateDeploymentVersionRequestVersion) {
-	o.Version = &v
-}
-
 func (o UpdateDeploymentVersionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

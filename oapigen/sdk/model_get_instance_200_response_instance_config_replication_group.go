@@ -26,55 +26,6 @@ type GetInstance200ResponseInstanceConfigReplicationGroup struct {
 
 type _GetInstance200ResponseInstanceConfigReplicationGroup GetInstance200ResponseInstanceConfigReplicationGroup
 
-// NewGetInstance200ResponseInstanceConfigReplicationGroup instantiates a new GetInstance200ResponseInstanceConfigReplicationGroup object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstance200ResponseInstanceConfigReplicationGroup() *GetInstance200ResponseInstanceConfigReplicationGroup {
-	this := GetInstance200ResponseInstanceConfigReplicationGroup{}
-	return &this
-}
-
-// NewGetInstance200ResponseInstanceConfigReplicationGroupWithDefaults instantiates a new GetInstance200ResponseInstanceConfigReplicationGroup object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstance200ResponseInstanceConfigReplicationGroupWithDefaults() *GetInstance200ResponseInstanceConfigReplicationGroup {
-	this := GetInstance200ResponseInstanceConfigReplicationGroup{}
-	return &this
-}
-
-// GetProviderMethod returns the ProviderMethod field value if set, zero value otherwise.
-func (o *GetInstance200ResponseInstanceConfigReplicationGroup) GetProviderMethod() string {
-	if o == nil || IsNil(o.ProviderMethod) {
-		var ret string
-		return ret
-	}
-	return *o.ProviderMethod
-}
-
-// GetProviderMethodOk returns a tuple with the ProviderMethod field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstance200ResponseInstanceConfigReplicationGroup) GetProviderMethodOk() (*string, bool) {
-	if o == nil || IsNil(o.ProviderMethod) {
-		return nil, false
-	}
-	return o.ProviderMethod, true
-}
-
-// IsSetProviderMethod returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceConfigReplicationGroup) IsSetProviderMethod() bool {
-	if o != nil && !IsNil(o.ProviderMethod) {
-		return true
-	}
-
-	return false
-}
-
-// SetProviderMethod gets a reference to the given string and assigns it to the ProviderMethod field.
-func (o *GetInstance200ResponseInstanceConfigReplicationGroup) SetProviderMethod(v string) {
-	o.ProviderMethod = &v
-}
-
 func (o GetInstance200ResponseInstanceConfigReplicationGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

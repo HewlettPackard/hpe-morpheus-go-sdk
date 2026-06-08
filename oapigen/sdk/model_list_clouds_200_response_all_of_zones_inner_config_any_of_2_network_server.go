@@ -26,55 +26,6 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer struct {
 
 type _ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer
 
-// NewListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer instantiates a new ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer() *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer {
-	this := ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer{}
-	return &this
-}
-
-// NewListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServerWithDefaults instantiates a new ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServerWithDefaults() *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer {
-	this := ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer) SetId(v string) {
-	o.Id = &v
-}
-
 func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf2NetworkServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

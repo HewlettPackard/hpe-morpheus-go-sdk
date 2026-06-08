@@ -26,48 +26,6 @@ type UpdateIntegrationsRequestOneOf4 struct {
 
 type _UpdateIntegrationsRequestOneOf4 UpdateIntegrationsRequestOneOf4
 
-// NewUpdateIntegrationsRequestOneOf4 instantiates a new UpdateIntegrationsRequestOneOf4 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIntegrationsRequestOneOf4(integration UpdateIntegrationsRequestOneOf4Integration) *UpdateIntegrationsRequestOneOf4 {
-	this := UpdateIntegrationsRequestOneOf4{}
-	this.Integration = integration
-	return &this
-}
-
-// NewUpdateIntegrationsRequestOneOf4WithDefaults instantiates a new UpdateIntegrationsRequestOneOf4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIntegrationsRequestOneOf4WithDefaults() *UpdateIntegrationsRequestOneOf4 {
-	this := UpdateIntegrationsRequestOneOf4{}
-	return &this
-}
-
-// GetIntegration returns the Integration field value
-func (o *UpdateIntegrationsRequestOneOf4) GetIntegration() UpdateIntegrationsRequestOneOf4Integration {
-	if o == nil {
-		var ret UpdateIntegrationsRequestOneOf4Integration
-		return ret
-	}
-
-	return o.Integration
-}
-
-// GetIntegrationOk returns a tuple with the Integration field value
-// and a boolean to check if the value has been set.
-func (o *UpdateIntegrationsRequestOneOf4) GetIntegrationOk() (*UpdateIntegrationsRequestOneOf4Integration, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Integration, true
-}
-
-// SetIntegration sets field value
-func (o *UpdateIntegrationsRequestOneOf4) SetIntegration(v UpdateIntegrationsRequestOneOf4Integration) {
-	o.Integration = v
-}
-
 func (o UpdateIntegrationsRequestOneOf4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

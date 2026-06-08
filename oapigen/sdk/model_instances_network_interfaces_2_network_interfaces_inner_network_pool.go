@@ -27,55 +27,6 @@ type InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool struct {
 
 type _InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool
 
-// NewInstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool instantiates a new InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool() *InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool {
-	this := InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool{}
-	return &this
-}
-
-// NewInstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPoolWithDefaults instantiates a new InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPoolWithDefaults() *InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool {
-	this := InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool) SetId(v int64) {
-	o.Id = &v
-}
-
 func (o InstancesNetworkInterfaces2NetworkInterfacesInnerNetworkPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

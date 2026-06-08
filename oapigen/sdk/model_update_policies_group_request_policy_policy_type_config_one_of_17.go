@@ -26,55 +26,6 @@ type UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 struct {
 
 type _UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17
 
-// NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 instantiates a new UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17() *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 {
-	this := UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17{}
-	return &this
-}
-
-// NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17WithDefaults instantiates a new UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17WithDefaults() *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 {
-	this := UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17{}
-	return &this
-}
-
-// GetMaxSnapshots returns the MaxSnapshots field value if set, zero value otherwise.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) GetMaxSnapshots() string {
-	if o == nil || IsNil(o.MaxSnapshots) {
-		var ret string
-		return ret
-	}
-	return *o.MaxSnapshots
-}
-
-// GetMaxSnapshotsOk returns a tuple with the MaxSnapshots field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) GetMaxSnapshotsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxSnapshots) {
-		return nil, false
-	}
-	return o.MaxSnapshots, true
-}
-
-// IsSetMaxSnapshots returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) IsSetMaxSnapshots() bool {
-	if o != nil && !IsNil(o.MaxSnapshots) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxSnapshots gets a reference to the given string and assigns it to the MaxSnapshots field.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) SetMaxSnapshots(v string) {
-	o.MaxSnapshots = &v
-}
-
 func (o UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

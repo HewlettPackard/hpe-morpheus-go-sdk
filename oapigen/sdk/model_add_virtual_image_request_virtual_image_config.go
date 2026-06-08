@@ -27,20 +27,6 @@ type AddVirtualImageRequestVirtualImageConfig struct {
 	MapmapOfStringAny                        *map[string]interface{}
 }
 
-// AzureReferenceVirtualImageConfiguration1AsAddVirtualImageRequestVirtualImageConfig is a convenience function that returns AzureReferenceVirtualImageConfiguration1 wrapped in AddVirtualImageRequestVirtualImageConfig
-func AzureReferenceVirtualImageConfiguration1AsAddVirtualImageRequestVirtualImageConfig(v *AzureReferenceVirtualImageConfiguration1) AddVirtualImageRequestVirtualImageConfig {
-	return AddVirtualImageRequestVirtualImageConfig{
-		AzureReferenceVirtualImageConfiguration1: v,
-	}
-}
-
-// map[string]interface{}AsAddVirtualImageRequestVirtualImageConfig is a convenience function that returns map[string]interface{} wrapped in AddVirtualImageRequestVirtualImageConfig
-func MapmapOfStringAnyAsAddVirtualImageRequestVirtualImageConfig(v *map[string]interface{}) AddVirtualImageRequestVirtualImageConfig {
-	return AddVirtualImageRequestVirtualImageConfig{
-		MapmapOfStringAny: v,
-	}
-}
-
 func (dst *AddVirtualImageRequestVirtualImageConfig) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddVirtualImageRequestVirtualImageConfig{}

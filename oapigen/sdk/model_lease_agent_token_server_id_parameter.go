@@ -27,20 +27,6 @@ type LeaseAgentTokenServerIdParameter struct {
 	String *string
 }
 
-// int64AsLeaseAgentTokenServerIdParameter is a convenience function that returns int64 wrapped in LeaseAgentTokenServerIdParameter
-func Int64AsLeaseAgentTokenServerIdParameter(v *int64) LeaseAgentTokenServerIdParameter {
-	return LeaseAgentTokenServerIdParameter{
-		Int64: v,
-	}
-}
-
-// stringAsLeaseAgentTokenServerIdParameter is a convenience function that returns string wrapped in LeaseAgentTokenServerIdParameter
-func StringAsLeaseAgentTokenServerIdParameter(v *string) LeaseAgentTokenServerIdParameter {
-	return LeaseAgentTokenServerIdParameter{
-		String: v,
-	}
-}
-
 func (dst *LeaseAgentTokenServerIdParameter) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &LeaseAgentTokenServerIdParameter{}

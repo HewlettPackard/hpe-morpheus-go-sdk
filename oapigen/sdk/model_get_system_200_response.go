@@ -26,55 +26,6 @@ type GetSystem200Response struct {
 
 type _GetSystem200Response GetSystem200Response
 
-// NewGetSystem200Response instantiates a new GetSystem200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetSystem200Response() *GetSystem200Response {
-	this := GetSystem200Response{}
-	return &this
-}
-
-// NewGetSystem200ResponseWithDefaults instantiates a new GetSystem200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSystem200ResponseWithDefaults() *GetSystem200Response {
-	this := GetSystem200Response{}
-	return &this
-}
-
-// GetSystem returns the System field value if set, zero value otherwise.
-func (o *GetSystem200Response) GetSystem() GetSystem200ResponseSystem {
-	if o == nil || IsNil(o.System) {
-		var ret GetSystem200ResponseSystem
-		return ret
-	}
-	return *o.System
-}
-
-// GetSystemOk returns a tuple with the System field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetSystem200Response) GetSystemOk() (*GetSystem200ResponseSystem, bool) {
-	if o == nil || IsNil(o.System) {
-		return nil, false
-	}
-	return o.System, true
-}
-
-// IsSetSystem returns a boolean if a field has been set.
-func (o *GetSystem200Response) IsSetSystem() bool {
-	if o != nil && !IsNil(o.System) {
-		return true
-	}
-
-	return false
-}
-
-// SetSystem gets a reference to the given GetSystem200ResponseSystem and assigns it to the System field.
-func (o *GetSystem200Response) SetSystem(v GetSystem200ResponseSystem) {
-	o.System = &v
-}
-
 func (o GetSystem200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

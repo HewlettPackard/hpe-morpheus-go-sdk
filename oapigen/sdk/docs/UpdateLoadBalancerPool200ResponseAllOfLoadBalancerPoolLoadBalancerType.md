@@ -8,99 +8,15 @@ Name | Type | Description | Notes
 **Code** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewUpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType
+Instantiate with a Go composite literal:
 
-`func NewUpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType() *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType`
-
-NewUpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType instantiates a new UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewUpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerTypeWithDefaults
-
-`func NewUpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerTypeWithDefaults() *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType`
-
-NewUpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerTypeWithDefaults instantiates a new UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetCode
-
-`func (o *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType) GetCode() string`
-
-GetCode returns the Code field if non-nil, zero value otherwise.
-
-### GetCodeOk
-
-`func (o *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType) GetCodeOk() (*string, bool)`
-
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCode
-
-`func (o *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType) SetCode(v string)`
-
-SetCode sets Code field to given value.
-
-### HasCode
-
-`func (o *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType) HasCode() bool`
-
-HasCode returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType) HasName() bool`
-
-HasName returns a boolean if a field has been set.
+```go
+obj := &UpdateLoadBalancerPool200ResponseAllOfLoadBalancerPoolLoadBalancerType{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

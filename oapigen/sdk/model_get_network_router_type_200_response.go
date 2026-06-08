@@ -26,55 +26,6 @@ type GetNetworkRouterType200Response struct {
 
 type _GetNetworkRouterType200Response GetNetworkRouterType200Response
 
-// NewGetNetworkRouterType200Response instantiates a new GetNetworkRouterType200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkRouterType200Response() *GetNetworkRouterType200Response {
-	this := GetNetworkRouterType200Response{}
-	return &this
-}
-
-// NewGetNetworkRouterType200ResponseWithDefaults instantiates a new GetNetworkRouterType200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkRouterType200ResponseWithDefaults() *GetNetworkRouterType200Response {
-	this := GetNetworkRouterType200Response{}
-	return &this
-}
-
-// GetNetworkRouterType returns the NetworkRouterType field value if set, zero value otherwise.
-func (o *GetNetworkRouterType200Response) GetNetworkRouterType() GetNetworkRouterType200ResponseNetworkRouterType {
-	if o == nil || IsNil(o.NetworkRouterType) {
-		var ret GetNetworkRouterType200ResponseNetworkRouterType
-		return ret
-	}
-	return *o.NetworkRouterType
-}
-
-// GetNetworkRouterTypeOk returns a tuple with the NetworkRouterType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkRouterType200Response) GetNetworkRouterTypeOk() (*GetNetworkRouterType200ResponseNetworkRouterType, bool) {
-	if o == nil || IsNil(o.NetworkRouterType) {
-		return nil, false
-	}
-	return o.NetworkRouterType, true
-}
-
-// IsSetNetworkRouterType returns a boolean if a field has been set.
-func (o *GetNetworkRouterType200Response) IsSetNetworkRouterType() bool {
-	if o != nil && !IsNil(o.NetworkRouterType) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkRouterType gets a reference to the given GetNetworkRouterType200ResponseNetworkRouterType and assigns it to the NetworkRouterType field.
-func (o *GetNetworkRouterType200Response) SetNetworkRouterType(v GetNetworkRouterType200ResponseNetworkRouterType) {
-	o.NetworkRouterType = &v
-}
-
 func (o GetNetworkRouterType200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

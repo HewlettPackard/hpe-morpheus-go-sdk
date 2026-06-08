@@ -27,20 +27,6 @@ type SecurityScanJobScheduleMode struct {
 	String *string
 }
 
-// int64AsSecurityScanJobScheduleMode is a convenience function that returns int64 wrapped in SecurityScanJobScheduleMode
-func Int64AsSecurityScanJobScheduleMode(v *int64) SecurityScanJobScheduleMode {
-	return SecurityScanJobScheduleMode{
-		Int64: v,
-	}
-}
-
-// stringAsSecurityScanJobScheduleMode is a convenience function that returns string wrapped in SecurityScanJobScheduleMode
-func StringAsSecurityScanJobScheduleMode(v *string) SecurityScanJobScheduleMode {
-	return SecurityScanJobScheduleMode{
-		String: v,
-	}
-}
-
 func (dst *SecurityScanJobScheduleMode) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &SecurityScanJobScheduleMode{}

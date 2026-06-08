@@ -26,48 +26,6 @@ type AddWikiRequest struct {
 
 type _AddWikiRequest AddWikiRequest
 
-// NewAddWikiRequest instantiates a new AddWikiRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddWikiRequest(page AddWikiRequestPage) *AddWikiRequest {
-	this := AddWikiRequest{}
-	this.Page = page
-	return &this
-}
-
-// NewAddWikiRequestWithDefaults instantiates a new AddWikiRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddWikiRequestWithDefaults() *AddWikiRequest {
-	this := AddWikiRequest{}
-	return &this
-}
-
-// GetPage returns the Page field value
-func (o *AddWikiRequest) GetPage() AddWikiRequestPage {
-	if o == nil {
-		var ret AddWikiRequestPage
-		return ret
-	}
-
-	return o.Page
-}
-
-// GetPageOk returns a tuple with the Page field value
-// and a boolean to check if the value has been set.
-func (o *AddWikiRequest) GetPageOk() (*AddWikiRequestPage, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Page, true
-}
-
-// SetPage sets field value
-func (o *AddWikiRequest) SetPage(v AddWikiRequestPage) {
-	o.Page = v
-}
-
 func (o AddWikiRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

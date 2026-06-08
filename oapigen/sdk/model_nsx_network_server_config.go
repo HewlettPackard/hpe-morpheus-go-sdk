@@ -27,66 +27,6 @@ type NSXNetworkServerConfig struct {
 
 type _NSXNetworkServerConfig NSXNetworkServerConfig
 
-// NewNSXNetworkServerConfig instantiates a new NSXNetworkServerConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNSXNetworkServerConfig() *NSXNetworkServerConfig {
-	this := NSXNetworkServerConfig{}
-	return &this
-}
-
-// NewNSXNetworkServerConfigWithDefaults instantiates a new NSXNetworkServerConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNSXNetworkServerConfigWithDefaults() *NSXNetworkServerConfig {
-	this := NSXNetworkServerConfig{}
-	return &this
-}
-
-// GetProject returns the Project field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NSXNetworkServerConfig) GetProject() string {
-	if o == nil || IsNil(o.Project.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Project.Get()
-}
-
-// GetProjectOk returns a tuple with the Project field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NSXNetworkServerConfig) GetProjectOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Project.Get(), o.Project.IsSet()
-}
-
-// IsSetProject returns a boolean if a field has been set.
-func (o *NSXNetworkServerConfig) IsSetProject() bool {
-	if o != nil && o.Project.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetProject gets a reference to the given NullableString and assigns it to the Project field.
-func (o *NSXNetworkServerConfig) SetProject(v string) {
-	o.Project.Set(&v)
-}
-
-// SetProjectNil sets the value for Project to be an explicit nil
-func (o *NSXNetworkServerConfig) SetProjectNil() {
-	o.Project.Set(nil)
-}
-
-// UnsetProject ensures that no value is present for Project, not even an explicit nil
-func (o *NSXNetworkServerConfig) UnsetProject() {
-	o.Project.Unset()
-}
-
 func (o NSXNetworkServerConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

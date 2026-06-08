@@ -27,20 +27,6 @@ type SpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM struct {
 	String *string
 }
 
-// boolAsSpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM is a convenience function that returns bool wrapped in SpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM
-func BoolAsSpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM(v *bool) SpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM {
-	return SpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM{
-		Bool: v,
-	}
-}
-
-// stringAsSpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM is a convenience function that returns string wrapped in SpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM
-func StringAsSpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM(v *string) SpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM {
-	return SpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM{
-		String: v,
-	}
-}
-
 func (dst *SpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &SpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM{}

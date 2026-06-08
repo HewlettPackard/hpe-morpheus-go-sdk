@@ -27,59 +27,6 @@ type NetworkPoolServerCreateSolarWindsConfig struct {
 
 type _NetworkPoolServerCreateSolarWindsConfig NetworkPoolServerCreateSolarWindsConfig
 
-// NewNetworkPoolServerCreateSolarWindsConfig instantiates a new NetworkPoolServerCreateSolarWindsConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkPoolServerCreateSolarWindsConfig() *NetworkPoolServerCreateSolarWindsConfig {
-	this := NetworkPoolServerCreateSolarWindsConfig{}
-	var inventoryExisting string = "off"
-	this.InventoryExisting = &inventoryExisting
-	return &this
-}
-
-// NewNetworkPoolServerCreateSolarWindsConfigWithDefaults instantiates a new NetworkPoolServerCreateSolarWindsConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkPoolServerCreateSolarWindsConfigWithDefaults() *NetworkPoolServerCreateSolarWindsConfig {
-	this := NetworkPoolServerCreateSolarWindsConfig{}
-	var inventoryExisting string = "off"
-	this.InventoryExisting = &inventoryExisting
-	return &this
-}
-
-// GetInventoryExisting returns the InventoryExisting field value if set, zero value otherwise.
-func (o *NetworkPoolServerCreateSolarWindsConfig) GetInventoryExisting() string {
-	if o == nil || IsNil(o.InventoryExisting) {
-		var ret string
-		return ret
-	}
-	return *o.InventoryExisting
-}
-
-// GetInventoryExistingOk returns a tuple with the InventoryExisting field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkPoolServerCreateSolarWindsConfig) GetInventoryExistingOk() (*string, bool) {
-	if o == nil || IsNil(o.InventoryExisting) {
-		return nil, false
-	}
-	return o.InventoryExisting, true
-}
-
-// IsSetInventoryExisting returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateSolarWindsConfig) IsSetInventoryExisting() bool {
-	if o != nil && !IsNil(o.InventoryExisting) {
-		return true
-	}
-
-	return false
-}
-
-// SetInventoryExisting gets a reference to the given string and assigns it to the InventoryExisting field.
-func (o *NetworkPoolServerCreateSolarWindsConfig) SetInventoryExisting(v string) {
-	o.InventoryExisting = &v
-}
-
 func (o NetworkPoolServerCreateSolarWindsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

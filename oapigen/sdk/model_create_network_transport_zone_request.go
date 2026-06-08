@@ -26,55 +26,6 @@ type CreateNetworkTransportZoneRequest struct {
 
 type _CreateNetworkTransportZoneRequest CreateNetworkTransportZoneRequest
 
-// NewCreateNetworkTransportZoneRequest instantiates a new CreateNetworkTransportZoneRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkTransportZoneRequest() *CreateNetworkTransportZoneRequest {
-	this := CreateNetworkTransportZoneRequest{}
-	return &this
-}
-
-// NewCreateNetworkTransportZoneRequestWithDefaults instantiates a new CreateNetworkTransportZoneRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkTransportZoneRequestWithDefaults() *CreateNetworkTransportZoneRequest {
-	this := CreateNetworkTransportZoneRequest{}
-	return &this
-}
-
-// GetNetworkScope returns the NetworkScope field value if set, zero value otherwise.
-func (o *CreateNetworkTransportZoneRequest) GetNetworkScope() CreateNetworkTransportZoneRequestNetworkScope {
-	if o == nil || IsNil(o.NetworkScope) {
-		var ret CreateNetworkTransportZoneRequestNetworkScope
-		return ret
-	}
-	return *o.NetworkScope
-}
-
-// GetNetworkScopeOk returns a tuple with the NetworkScope field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkTransportZoneRequest) GetNetworkScopeOk() (*CreateNetworkTransportZoneRequestNetworkScope, bool) {
-	if o == nil || IsNil(o.NetworkScope) {
-		return nil, false
-	}
-	return o.NetworkScope, true
-}
-
-// IsSetNetworkScope returns a boolean if a field has been set.
-func (o *CreateNetworkTransportZoneRequest) IsSetNetworkScope() bool {
-	if o != nil && !IsNil(o.NetworkScope) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkScope gets a reference to the given CreateNetworkTransportZoneRequestNetworkScope and assigns it to the NetworkScope field.
-func (o *CreateNetworkTransportZoneRequest) SetNetworkScope(v CreateNetworkTransportZoneRequestNetworkScope) {
-	o.NetworkScope = &v
-}
-
 func (o CreateNetworkTransportZoneRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

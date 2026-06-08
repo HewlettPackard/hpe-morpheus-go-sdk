@@ -26,55 +26,6 @@ type GetTaskTypes200Response struct {
 
 type _GetTaskTypes200Response GetTaskTypes200Response
 
-// NewGetTaskTypes200Response instantiates a new GetTaskTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetTaskTypes200Response() *GetTaskTypes200Response {
-	this := GetTaskTypes200Response{}
-	return &this
-}
-
-// NewGetTaskTypes200ResponseWithDefaults instantiates a new GetTaskTypes200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetTaskTypes200ResponseWithDefaults() *GetTaskTypes200Response {
-	this := GetTaskTypes200Response{}
-	return &this
-}
-
-// GetTaskType returns the TaskType field value if set, zero value otherwise.
-func (o *GetTaskTypes200Response) GetTaskType() GetTaskTypes200ResponseTaskType {
-	if o == nil || IsNil(o.TaskType) {
-		var ret GetTaskTypes200ResponseTaskType
-		return ret
-	}
-	return *o.TaskType
-}
-
-// GetTaskTypeOk returns a tuple with the TaskType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetTaskTypes200Response) GetTaskTypeOk() (*GetTaskTypes200ResponseTaskType, bool) {
-	if o == nil || IsNil(o.TaskType) {
-		return nil, false
-	}
-	return o.TaskType, true
-}
-
-// IsSetTaskType returns a boolean if a field has been set.
-func (o *GetTaskTypes200Response) IsSetTaskType() bool {
-	if o != nil && !IsNil(o.TaskType) {
-		return true
-	}
-
-	return false
-}
-
-// SetTaskType gets a reference to the given GetTaskTypes200ResponseTaskType and assigns it to the TaskType field.
-func (o *GetTaskTypes200Response) SetTaskType(v GetTaskTypes200ResponseTaskType) {
-	o.TaskType = &v
-}
-
 func (o GetTaskTypes200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

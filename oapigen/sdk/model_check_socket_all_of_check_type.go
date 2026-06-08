@@ -26,55 +26,6 @@ type CheckSocketAllOfCheckType struct {
 
 type _CheckSocketAllOfCheckType CheckSocketAllOfCheckType
 
-// NewCheckSocketAllOfCheckType instantiates a new CheckSocketAllOfCheckType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCheckSocketAllOfCheckType() *CheckSocketAllOfCheckType {
-	this := CheckSocketAllOfCheckType{}
-	return &this
-}
-
-// NewCheckSocketAllOfCheckTypeWithDefaults instantiates a new CheckSocketAllOfCheckType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCheckSocketAllOfCheckTypeWithDefaults() *CheckSocketAllOfCheckType {
-	this := CheckSocketAllOfCheckType{}
-	return &this
-}
-
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *CheckSocketAllOfCheckType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
-		var ret string
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckSocketAllOfCheckType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *CheckSocketAllOfCheckType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *CheckSocketAllOfCheckType) SetCode(v string) {
-	o.Code = &v
-}
-
 func (o CheckSocketAllOfCheckType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

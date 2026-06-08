@@ -48,32 +48,6 @@ func (v *Visibility) UnmarshalJSON(src []byte) error {
 	return NewResponseValidationError(fmt.Sprintf("%+v is not a valid Visibility", value))
 }
 
-// NewVisibilityFromValue returns a pointer to a valid Visibility
-// for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewVisibilityFromValue(v string) (*Visibility, error) {
-	ev := Visibility(v)
-	if ev.IsValid() {
-		return &ev, nil
-	} else {
-		return nil, fmt.Errorf("invalid value '%v' for Visibility: valid values are %v", v, AllowedVisibilityEnumValues)
-	}
-}
-
-// IsValid return true if the value is valid for the enum, false otherwise
-func (v Visibility) IsValid() bool {
-	for _, existing := range AllowedVisibilityEnumValues {
-		if existing == v {
-			return true
-		}
-	}
-	return false
-}
-
-// Ptr returns reference to visibility value
-func (v Visibility) Ptr() *Visibility {
-	return &v
-}
-
 type NullableVisibility struct {
 	value *Visibility
 	isSet bool

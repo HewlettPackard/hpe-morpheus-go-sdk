@@ -26,48 +26,6 @@ type UpdateSecurityPackagesRequest struct {
 
 type _UpdateSecurityPackagesRequest UpdateSecurityPackagesRequest
 
-// NewUpdateSecurityPackagesRequest instantiates a new UpdateSecurityPackagesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateSecurityPackagesRequest(securityPackage UpdateSecurityPackagesRequestSecurityPackage) *UpdateSecurityPackagesRequest {
-	this := UpdateSecurityPackagesRequest{}
-	this.SecurityPackage = securityPackage
-	return &this
-}
-
-// NewUpdateSecurityPackagesRequestWithDefaults instantiates a new UpdateSecurityPackagesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateSecurityPackagesRequestWithDefaults() *UpdateSecurityPackagesRequest {
-	this := UpdateSecurityPackagesRequest{}
-	return &this
-}
-
-// GetSecurityPackage returns the SecurityPackage field value
-func (o *UpdateSecurityPackagesRequest) GetSecurityPackage() UpdateSecurityPackagesRequestSecurityPackage {
-	if o == nil {
-		var ret UpdateSecurityPackagesRequestSecurityPackage
-		return ret
-	}
-
-	return o.SecurityPackage
-}
-
-// GetSecurityPackageOk returns a tuple with the SecurityPackage field value
-// and a boolean to check if the value has been set.
-func (o *UpdateSecurityPackagesRequest) GetSecurityPackageOk() (*UpdateSecurityPackagesRequestSecurityPackage, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SecurityPackage, true
-}
-
-// SetSecurityPackage sets field value
-func (o *UpdateSecurityPackagesRequest) SetSecurityPackage(v UpdateSecurityPackagesRequestSecurityPackage) {
-	o.SecurityPackage = v
-}
-
 func (o UpdateSecurityPackagesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,48 +26,6 @@ type CreateNetworkRouterRequestNetworkRouterSite struct {
 
 type _CreateNetworkRouterRequestNetworkRouterSite CreateNetworkRouterRequestNetworkRouterSite
 
-// NewCreateNetworkRouterRequestNetworkRouterSite instantiates a new CreateNetworkRouterRequestNetworkRouterSite object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkRouterRequestNetworkRouterSite(id CreateNetworkRouterRequestNetworkRouterSiteId) *CreateNetworkRouterRequestNetworkRouterSite {
-	this := CreateNetworkRouterRequestNetworkRouterSite{}
-	this.Id = id
-	return &this
-}
-
-// NewCreateNetworkRouterRequestNetworkRouterSiteWithDefaults instantiates a new CreateNetworkRouterRequestNetworkRouterSite object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkRouterRequestNetworkRouterSiteWithDefaults() *CreateNetworkRouterRequestNetworkRouterSite {
-	this := CreateNetworkRouterRequestNetworkRouterSite{}
-	return &this
-}
-
-// GetId returns the Id field value
-func (o *CreateNetworkRouterRequestNetworkRouterSite) GetId() CreateNetworkRouterRequestNetworkRouterSiteId {
-	if o == nil {
-		var ret CreateNetworkRouterRequestNetworkRouterSiteId
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterSite) GetIdOk() (*CreateNetworkRouterRequestNetworkRouterSiteId, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CreateNetworkRouterRequestNetworkRouterSite) SetId(v CreateNetworkRouterRequestNetworkRouterSiteId) {
-	o.Id = v
-}
-
 func (o CreateNetworkRouterRequestNetworkRouterSite) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

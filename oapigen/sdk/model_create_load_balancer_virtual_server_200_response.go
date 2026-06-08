@@ -26,55 +26,6 @@ type CreateLoadBalancerVirtualServer200Response struct {
 
 type _CreateLoadBalancerVirtualServer200Response CreateLoadBalancerVirtualServer200Response
 
-// NewCreateLoadBalancerVirtualServer200Response instantiates a new CreateLoadBalancerVirtualServer200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateLoadBalancerVirtualServer200Response() *CreateLoadBalancerVirtualServer200Response {
-	this := CreateLoadBalancerVirtualServer200Response{}
-	return &this
-}
-
-// NewCreateLoadBalancerVirtualServer200ResponseWithDefaults instantiates a new CreateLoadBalancerVirtualServer200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateLoadBalancerVirtualServer200ResponseWithDefaults() *CreateLoadBalancerVirtualServer200Response {
-	this := CreateLoadBalancerVirtualServer200Response{}
-	return &this
-}
-
-// GetLoadBalancerInstance returns the LoadBalancerInstance field value if set, zero value otherwise.
-func (o *CreateLoadBalancerVirtualServer200Response) GetLoadBalancerInstance() CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance {
-	if o == nil || IsNil(o.LoadBalancerInstance) {
-		var ret CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance
-		return ret
-	}
-	return *o.LoadBalancerInstance
-}
-
-// GetLoadBalancerInstanceOk returns a tuple with the LoadBalancerInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerVirtualServer200Response) GetLoadBalancerInstanceOk() (*CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance, bool) {
-	if o == nil || IsNil(o.LoadBalancerInstance) {
-		return nil, false
-	}
-	return o.LoadBalancerInstance, true
-}
-
-// IsSetLoadBalancerInstance returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200Response) IsSetLoadBalancerInstance() bool {
-	if o != nil && !IsNil(o.LoadBalancerInstance) {
-		return true
-	}
-
-	return false
-}
-
-// SetLoadBalancerInstance gets a reference to the given CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance and assigns it to the LoadBalancerInstance field.
-func (o *CreateLoadBalancerVirtualServer200Response) SetLoadBalancerInstance(v CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) {
-	o.LoadBalancerInstance = &v
-}
-
 func (o CreateLoadBalancerVirtualServer200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

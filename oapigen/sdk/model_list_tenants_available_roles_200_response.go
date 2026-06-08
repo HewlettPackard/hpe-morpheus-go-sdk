@@ -26,55 +26,6 @@ type ListTenantsAvailableRoles200Response struct {
 
 type _ListTenantsAvailableRoles200Response ListTenantsAvailableRoles200Response
 
-// NewListTenantsAvailableRoles200Response instantiates a new ListTenantsAvailableRoles200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListTenantsAvailableRoles200Response() *ListTenantsAvailableRoles200Response {
-	this := ListTenantsAvailableRoles200Response{}
-	return &this
-}
-
-// NewListTenantsAvailableRoles200ResponseWithDefaults instantiates a new ListTenantsAvailableRoles200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListTenantsAvailableRoles200ResponseWithDefaults() *ListTenantsAvailableRoles200Response {
-	this := ListTenantsAvailableRoles200Response{}
-	return &this
-}
-
-// GetRoles returns the Roles field value if set, zero value otherwise.
-func (o *ListTenantsAvailableRoles200Response) GetRoles() []ListTenantsAvailableRoles200ResponseRolesInner {
-	if o == nil || IsNil(o.Roles) {
-		var ret []ListTenantsAvailableRoles200ResponseRolesInner
-		return ret
-	}
-	return o.Roles
-}
-
-// GetRolesOk returns a tuple with the Roles field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListTenantsAvailableRoles200Response) GetRolesOk() ([]ListTenantsAvailableRoles200ResponseRolesInner, bool) {
-	if o == nil || IsNil(o.Roles) {
-		return nil, false
-	}
-	return o.Roles, true
-}
-
-// IsSetRoles returns a boolean if a field has been set.
-func (o *ListTenantsAvailableRoles200Response) IsSetRoles() bool {
-	if o != nil && !IsNil(o.Roles) {
-		return true
-	}
-
-	return false
-}
-
-// SetRoles gets a reference to the given []ListTenantsAvailableRoles200ResponseRolesInner and assigns it to the Roles field.
-func (o *ListTenantsAvailableRoles200Response) SetRoles(v []ListTenantsAvailableRoles200ResponseRolesInner) {
-	o.Roles = v
-}
-
 func (o ListTenantsAvailableRoles200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

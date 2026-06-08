@@ -8,99 +8,15 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Destination Server Name | [optional] 
 **Status** | Pointer to **string** | Destination Server Status | [optional] 
 
-## Methods
+## Usage
 
-### NewGetMigration200ResponseMigrationServersInnerDestinationServer
+Instantiate with a Go composite literal:
 
-`func NewGetMigration200ResponseMigrationServersInnerDestinationServer() *GetMigration200ResponseMigrationServersInnerDestinationServer`
-
-NewGetMigration200ResponseMigrationServersInnerDestinationServer instantiates a new GetMigration200ResponseMigrationServersInnerDestinationServer object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewGetMigration200ResponseMigrationServersInnerDestinationServerWithDefaults
-
-`func NewGetMigration200ResponseMigrationServersInnerDestinationServerWithDefaults() *GetMigration200ResponseMigrationServersInnerDestinationServer`
-
-NewGetMigration200ResponseMigrationServersInnerDestinationServerWithDefaults instantiates a new GetMigration200ResponseMigrationServersInnerDestinationServer object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *GetMigration200ResponseMigrationServersInnerDestinationServer) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GetMigration200ResponseMigrationServersInnerDestinationServer) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GetMigration200ResponseMigrationServersInnerDestinationServer) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GetMigration200ResponseMigrationServersInnerDestinationServer) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *GetMigration200ResponseMigrationServersInnerDestinationServer) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *GetMigration200ResponseMigrationServersInnerDestinationServer) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *GetMigration200ResponseMigrationServersInnerDestinationServer) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *GetMigration200ResponseMigrationServersInnerDestinationServer) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetStatus
-
-`func (o *GetMigration200ResponseMigrationServersInnerDestinationServer) GetStatus() string`
-
-GetStatus returns the Status field if non-nil, zero value otherwise.
-
-### GetStatusOk
-
-`func (o *GetMigration200ResponseMigrationServersInnerDestinationServer) GetStatusOk() (*string, bool)`
-
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatus
-
-`func (o *GetMigration200ResponseMigrationServersInnerDestinationServer) SetStatus(v string)`
-
-SetStatus sets Status field to given value.
-
-### HasStatus
-
-`func (o *GetMigration200ResponseMigrationServersInnerDestinationServer) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
+```go
+obj := &GetMigration200ResponseMigrationServersInnerDestinationServer{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

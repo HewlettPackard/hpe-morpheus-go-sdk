@@ -27,55 +27,6 @@ type ApplyAppStateRequest struct {
 
 type _ApplyAppStateRequest ApplyAppStateRequest
 
-// NewApplyAppStateRequest instantiates a new ApplyAppStateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApplyAppStateRequest() *ApplyAppStateRequest {
-	this := ApplyAppStateRequest{}
-	return &this
-}
-
-// NewApplyAppStateRequestWithDefaults instantiates a new ApplyAppStateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewApplyAppStateRequestWithDefaults() *ApplyAppStateRequest {
-	this := ApplyAppStateRequest{}
-	return &this
-}
-
-// GetTemplateParameter returns the TemplateParameter field value if set, zero value otherwise.
-func (o *ApplyAppStateRequest) GetTemplateParameter() map[string]interface{} {
-	if o == nil || IsNil(o.TemplateParameter) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.TemplateParameter
-}
-
-// GetTemplateParameterOk returns a tuple with the TemplateParameter field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApplyAppStateRequest) GetTemplateParameterOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.TemplateParameter) {
-		return map[string]interface{}{}, false
-	}
-	return o.TemplateParameter, true
-}
-
-// IsSetTemplateParameter returns a boolean if a field has been set.
-func (o *ApplyAppStateRequest) IsSetTemplateParameter() bool {
-	if o != nil && !IsNil(o.TemplateParameter) {
-		return true
-	}
-
-	return false
-}
-
-// SetTemplateParameter gets a reference to the given map[string]interface{} and assigns it to the TemplateParameter field.
-func (o *ApplyAppStateRequest) SetTemplateParameter(v map[string]interface{}) {
-	o.TemplateParameter = v
-}
-
 func (o ApplyAppStateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

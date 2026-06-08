@@ -26,55 +26,6 @@ type GetClouds200Response struct {
 
 type _GetClouds200Response GetClouds200Response
 
-// NewGetClouds200Response instantiates a new GetClouds200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetClouds200Response() *GetClouds200Response {
-	this := GetClouds200Response{}
-	return &this
-}
-
-// NewGetClouds200ResponseWithDefaults instantiates a new GetClouds200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClouds200ResponseWithDefaults() *GetClouds200Response {
-	this := GetClouds200Response{}
-	return &this
-}
-
-// GetZone returns the Zone field value if set, zero value otherwise.
-func (o *GetClouds200Response) GetZone() GetClouds200ResponseZone {
-	if o == nil || IsNil(o.Zone) {
-		var ret GetClouds200ResponseZone
-		return ret
-	}
-	return *o.Zone
-}
-
-// GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClouds200Response) GetZoneOk() (*GetClouds200ResponseZone, bool) {
-	if o == nil || IsNil(o.Zone) {
-		return nil, false
-	}
-	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *GetClouds200Response) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
-// SetZone gets a reference to the given GetClouds200ResponseZone and assigns it to the Zone field.
-func (o *GetClouds200Response) SetZone(v GetClouds200ResponseZone) {
-	o.Zone = &v
-}
-
 func (o GetClouds200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

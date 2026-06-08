@@ -26,55 +26,6 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy struct {
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy
 
-// NewListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy() *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy {
-	this := ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy{}
-	return &this
-}
-
-// NewListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedByWithDefaults instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedByWithDefaults() *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy {
-	this := ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy{}
-	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy) SetUsername(v string) {
-	o.Username = &v
-}
-
 func (o ListImageBuilds200ResponseAllOfImageBuildsInnerLastResultCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

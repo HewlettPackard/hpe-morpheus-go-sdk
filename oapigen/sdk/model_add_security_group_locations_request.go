@@ -26,48 +26,6 @@ type AddSecurityGroupLocationsRequest struct {
 
 type _AddSecurityGroupLocationsRequest AddSecurityGroupLocationsRequest
 
-// NewAddSecurityGroupLocationsRequest instantiates a new AddSecurityGroupLocationsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddSecurityGroupLocationsRequest(securityGroupLocation AddSecurityGroupLocationsRequestSecurityGroupLocation) *AddSecurityGroupLocationsRequest {
-	this := AddSecurityGroupLocationsRequest{}
-	this.SecurityGroupLocation = securityGroupLocation
-	return &this
-}
-
-// NewAddSecurityGroupLocationsRequestWithDefaults instantiates a new AddSecurityGroupLocationsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddSecurityGroupLocationsRequestWithDefaults() *AddSecurityGroupLocationsRequest {
-	this := AddSecurityGroupLocationsRequest{}
-	return &this
-}
-
-// GetSecurityGroupLocation returns the SecurityGroupLocation field value
-func (o *AddSecurityGroupLocationsRequest) GetSecurityGroupLocation() AddSecurityGroupLocationsRequestSecurityGroupLocation {
-	if o == nil {
-		var ret AddSecurityGroupLocationsRequestSecurityGroupLocation
-		return ret
-	}
-
-	return o.SecurityGroupLocation
-}
-
-// GetSecurityGroupLocationOk returns a tuple with the SecurityGroupLocation field value
-// and a boolean to check if the value has been set.
-func (o *AddSecurityGroupLocationsRequest) GetSecurityGroupLocationOk() (*AddSecurityGroupLocationsRequestSecurityGroupLocation, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SecurityGroupLocation, true
-}
-
-// SetSecurityGroupLocation sets field value
-func (o *AddSecurityGroupLocationsRequest) SetSecurityGroupLocation(v AddSecurityGroupLocationsRequestSecurityGroupLocation) {
-	o.SecurityGroupLocation = v
-}
-
 func (o AddSecurityGroupLocationsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

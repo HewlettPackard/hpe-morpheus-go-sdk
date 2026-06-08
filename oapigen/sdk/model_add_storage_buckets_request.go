@@ -26,48 +26,6 @@ type AddStorageBucketsRequest struct {
 
 type _AddStorageBucketsRequest AddStorageBucketsRequest
 
-// NewAddStorageBucketsRequest instantiates a new AddStorageBucketsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddStorageBucketsRequest(storageBucket AddStorageBucketsRequestStorageBucket) *AddStorageBucketsRequest {
-	this := AddStorageBucketsRequest{}
-	this.StorageBucket = storageBucket
-	return &this
-}
-
-// NewAddStorageBucketsRequestWithDefaults instantiates a new AddStorageBucketsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddStorageBucketsRequestWithDefaults() *AddStorageBucketsRequest {
-	this := AddStorageBucketsRequest{}
-	return &this
-}
-
-// GetStorageBucket returns the StorageBucket field value
-func (o *AddStorageBucketsRequest) GetStorageBucket() AddStorageBucketsRequestStorageBucket {
-	if o == nil {
-		var ret AddStorageBucketsRequestStorageBucket
-		return ret
-	}
-
-	return o.StorageBucket
-}
-
-// GetStorageBucketOk returns a tuple with the StorageBucket field value
-// and a boolean to check if the value has been set.
-func (o *AddStorageBucketsRequest) GetStorageBucketOk() (*AddStorageBucketsRequestStorageBucket, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.StorageBucket, true
-}
-
-// SetStorageBucket sets field value
-func (o *AddStorageBucketsRequest) SetStorageBucket(v AddStorageBucketsRequestStorageBucket) {
-	o.StorageBucket = v
-}
-
 func (o AddStorageBucketsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

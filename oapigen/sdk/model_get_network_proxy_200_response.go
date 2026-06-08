@@ -26,55 +26,6 @@ type GetNetworkProxy200Response struct {
 
 type _GetNetworkProxy200Response GetNetworkProxy200Response
 
-// NewGetNetworkProxy200Response instantiates a new GetNetworkProxy200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkProxy200Response() *GetNetworkProxy200Response {
-	this := GetNetworkProxy200Response{}
-	return &this
-}
-
-// NewGetNetworkProxy200ResponseWithDefaults instantiates a new GetNetworkProxy200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkProxy200ResponseWithDefaults() *GetNetworkProxy200Response {
-	this := GetNetworkProxy200Response{}
-	return &this
-}
-
-// GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise.
-func (o *GetNetworkProxy200Response) GetNetworkProxy() GetNetworkProxy200ResponseNetworkProxy {
-	if o == nil || IsNil(o.NetworkProxy) {
-		var ret GetNetworkProxy200ResponseNetworkProxy
-		return ret
-	}
-	return *o.NetworkProxy
-}
-
-// GetNetworkProxyOk returns a tuple with the NetworkProxy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkProxy200Response) GetNetworkProxyOk() (*GetNetworkProxy200ResponseNetworkProxy, bool) {
-	if o == nil || IsNil(o.NetworkProxy) {
-		return nil, false
-	}
-	return o.NetworkProxy, true
-}
-
-// IsSetNetworkProxy returns a boolean if a field has been set.
-func (o *GetNetworkProxy200Response) IsSetNetworkProxy() bool {
-	if o != nil && !IsNil(o.NetworkProxy) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkProxy gets a reference to the given GetNetworkProxy200ResponseNetworkProxy and assigns it to the NetworkProxy field.
-func (o *GetNetworkProxy200Response) SetNetworkProxy(v GetNetworkProxy200ResponseNetworkProxy) {
-	o.NetworkProxy = &v
-}
-
 func (o GetNetworkProxy200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

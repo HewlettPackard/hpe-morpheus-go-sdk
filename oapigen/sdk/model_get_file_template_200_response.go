@@ -26,55 +26,6 @@ type GetFileTemplate200Response struct {
 
 type _GetFileTemplate200Response GetFileTemplate200Response
 
-// NewGetFileTemplate200Response instantiates a new GetFileTemplate200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetFileTemplate200Response() *GetFileTemplate200Response {
-	this := GetFileTemplate200Response{}
-	return &this
-}
-
-// NewGetFileTemplate200ResponseWithDefaults instantiates a new GetFileTemplate200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetFileTemplate200ResponseWithDefaults() *GetFileTemplate200Response {
-	this := GetFileTemplate200Response{}
-	return &this
-}
-
-// GetContainerTemplate returns the ContainerTemplate field value if set, zero value otherwise.
-func (o *GetFileTemplate200Response) GetContainerTemplate() GetFileTemplate200ResponseContainerTemplate {
-	if o == nil || IsNil(o.ContainerTemplate) {
-		var ret GetFileTemplate200ResponseContainerTemplate
-		return ret
-	}
-	return *o.ContainerTemplate
-}
-
-// GetContainerTemplateOk returns a tuple with the ContainerTemplate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetFileTemplate200Response) GetContainerTemplateOk() (*GetFileTemplate200ResponseContainerTemplate, bool) {
-	if o == nil || IsNil(o.ContainerTemplate) {
-		return nil, false
-	}
-	return o.ContainerTemplate, true
-}
-
-// IsSetContainerTemplate returns a boolean if a field has been set.
-func (o *GetFileTemplate200Response) IsSetContainerTemplate() bool {
-	if o != nil && !IsNil(o.ContainerTemplate) {
-		return true
-	}
-
-	return false
-}
-
-// SetContainerTemplate gets a reference to the given GetFileTemplate200ResponseContainerTemplate and assigns it to the ContainerTemplate field.
-func (o *GetFileTemplate200Response) SetContainerTemplate(v GetFileTemplate200ResponseContainerTemplate) {
-	o.ContainerTemplate = &v
-}
-
 func (o GetFileTemplate200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

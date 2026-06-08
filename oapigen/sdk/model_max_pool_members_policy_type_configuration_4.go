@@ -26,55 +26,6 @@ type MaxPoolMembersPolicyTypeConfiguration4 struct {
 
 type _MaxPoolMembersPolicyTypeConfiguration4 MaxPoolMembersPolicyTypeConfiguration4
 
-// NewMaxPoolMembersPolicyTypeConfiguration4 instantiates a new MaxPoolMembersPolicyTypeConfiguration4 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMaxPoolMembersPolicyTypeConfiguration4() *MaxPoolMembersPolicyTypeConfiguration4 {
-	this := MaxPoolMembersPolicyTypeConfiguration4{}
-	return &this
-}
-
-// NewMaxPoolMembersPolicyTypeConfiguration4WithDefaults instantiates a new MaxPoolMembersPolicyTypeConfiguration4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxPoolMembersPolicyTypeConfiguration4WithDefaults() *MaxPoolMembersPolicyTypeConfiguration4 {
-	this := MaxPoolMembersPolicyTypeConfiguration4{}
-	return &this
-}
-
-// GetMaxPoolMembers returns the MaxPoolMembers field value if set, zero value otherwise.
-func (o *MaxPoolMembersPolicyTypeConfiguration4) GetMaxPoolMembers() string {
-	if o == nil || IsNil(o.MaxPoolMembers) {
-		var ret string
-		return ret
-	}
-	return *o.MaxPoolMembers
-}
-
-// GetMaxPoolMembersOk returns a tuple with the MaxPoolMembers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MaxPoolMembersPolicyTypeConfiguration4) GetMaxPoolMembersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxPoolMembers) {
-		return nil, false
-	}
-	return o.MaxPoolMembers, true
-}
-
-// IsSetMaxPoolMembers returns a boolean if a field has been set.
-func (o *MaxPoolMembersPolicyTypeConfiguration4) IsSetMaxPoolMembers() bool {
-	if o != nil && !IsNil(o.MaxPoolMembers) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxPoolMembers gets a reference to the given string and assigns it to the MaxPoolMembers field.
-func (o *MaxPoolMembersPolicyTypeConfiguration4) SetMaxPoolMembers(v string) {
-	o.MaxPoolMembers = &v
-}
-
 func (o MaxPoolMembersPolicyTypeConfiguration4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

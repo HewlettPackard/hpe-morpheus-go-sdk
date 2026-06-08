@@ -26,55 +26,6 @@ type LogSort struct {
 
 type _LogSort LogSort
 
-// NewLogSort instantiates a new LogSort object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewLogSort() *LogSort {
-	this := LogSort{}
-	return &this
-}
-
-// NewLogSortWithDefaults instantiates a new LogSort object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLogSortWithDefaults() *LogSort {
-	this := LogSort{}
-	return &this
-}
-
-// GetTs returns the Ts field value if set, zero value otherwise.
-func (o *LogSort) GetTs() string {
-	if o == nil || IsNil(o.Ts) {
-		var ret string
-		return ret
-	}
-	return *o.Ts
-}
-
-// GetTsOk returns a tuple with the Ts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LogSort) GetTsOk() (*string, bool) {
-	if o == nil || IsNil(o.Ts) {
-		return nil, false
-	}
-	return o.Ts, true
-}
-
-// IsSetTs returns a boolean if a field has been set.
-func (o *LogSort) IsSetTs() bool {
-	if o != nil && !IsNil(o.Ts) {
-		return true
-	}
-
-	return false
-}
-
-// SetTs gets a reference to the given string and assigns it to the Ts field.
-func (o *LogSort) SetTs(v string) {
-	o.Ts = &v
-}
-
 func (o LogSort) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

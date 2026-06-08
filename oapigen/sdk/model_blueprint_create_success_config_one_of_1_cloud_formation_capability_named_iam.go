@@ -27,20 +27,6 @@ type BlueprintCreateSuccessConfigOneOf1CloudFormationCAPABILITYNAMEDIAM struct {
 	String *string
 }
 
-// boolAsBlueprintCreateSuccessConfigOneOf1CloudFormationCAPABILITYNAMEDIAM is a convenience function that returns bool wrapped in BlueprintCreateSuccessConfigOneOf1CloudFormationCAPABILITYNAMEDIAM
-func BoolAsBlueprintCreateSuccessConfigOneOf1CloudFormationCAPABILITYNAMEDIAM(v *bool) BlueprintCreateSuccessConfigOneOf1CloudFormationCAPABILITYNAMEDIAM {
-	return BlueprintCreateSuccessConfigOneOf1CloudFormationCAPABILITYNAMEDIAM{
-		Bool: v,
-	}
-}
-
-// stringAsBlueprintCreateSuccessConfigOneOf1CloudFormationCAPABILITYNAMEDIAM is a convenience function that returns string wrapped in BlueprintCreateSuccessConfigOneOf1CloudFormationCAPABILITYNAMEDIAM
-func StringAsBlueprintCreateSuccessConfigOneOf1CloudFormationCAPABILITYNAMEDIAM(v *string) BlueprintCreateSuccessConfigOneOf1CloudFormationCAPABILITYNAMEDIAM {
-	return BlueprintCreateSuccessConfigOneOf1CloudFormationCAPABILITYNAMEDIAM{
-		String: v,
-	}
-}
-
 func (dst *BlueprintCreateSuccessConfigOneOf1CloudFormationCAPABILITYNAMEDIAM) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &BlueprintCreateSuccessConfigOneOf1CloudFormationCAPABILITYNAMEDIAM{}

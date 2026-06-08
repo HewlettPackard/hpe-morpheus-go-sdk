@@ -8,99 +8,15 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Default** | Pointer to **bool** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner
+Instantiate with a Go composite literal:
 
-`func NewGetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner() *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner`
-
-NewGetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner instantiates a new GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewGetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInnerWithDefaults
-
-`func NewGetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInnerWithDefaults() *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner`
-
-NewGetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInnerWithDefaults instantiates a new GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetDefault
-
-`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner) GetDefault() bool`
-
-GetDefault returns the Default field if non-nil, zero value otherwise.
-
-### GetDefaultOk
-
-`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner) GetDefaultOk() (*bool, bool)`
-
-GetDefaultOk returns a tuple with the Default field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefault
-
-`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner) SetDefault(v bool)`
-
-SetDefault sets Default field to given value.
-
-### HasDefault
-
-`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner) HasDefault() bool`
-
-HasDefault returns a boolean if a field has been set.
+```go
+obj := &GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

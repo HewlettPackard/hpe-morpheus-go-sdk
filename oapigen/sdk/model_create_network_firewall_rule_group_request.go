@@ -26,55 +26,6 @@ type CreateNetworkFirewallRuleGroupRequest struct {
 
 type _CreateNetworkFirewallRuleGroupRequest CreateNetworkFirewallRuleGroupRequest
 
-// NewCreateNetworkFirewallRuleGroupRequest instantiates a new CreateNetworkFirewallRuleGroupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkFirewallRuleGroupRequest() *CreateNetworkFirewallRuleGroupRequest {
-	this := CreateNetworkFirewallRuleGroupRequest{}
-	return &this
-}
-
-// NewCreateNetworkFirewallRuleGroupRequestWithDefaults instantiates a new CreateNetworkFirewallRuleGroupRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkFirewallRuleGroupRequestWithDefaults() *CreateNetworkFirewallRuleGroupRequest {
-	this := CreateNetworkFirewallRuleGroupRequest{}
-	return &this
-}
-
-// GetRuleGroup returns the RuleGroup field value if set, zero value otherwise.
-func (o *CreateNetworkFirewallRuleGroupRequest) GetRuleGroup() CreateNetworkFirewallRuleGroupRequestRuleGroup {
-	if o == nil || IsNil(o.RuleGroup) {
-		var ret CreateNetworkFirewallRuleGroupRequestRuleGroup
-		return ret
-	}
-	return *o.RuleGroup
-}
-
-// GetRuleGroupOk returns a tuple with the RuleGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkFirewallRuleGroupRequest) GetRuleGroupOk() (*CreateNetworkFirewallRuleGroupRequestRuleGroup, bool) {
-	if o == nil || IsNil(o.RuleGroup) {
-		return nil, false
-	}
-	return o.RuleGroup, true
-}
-
-// IsSetRuleGroup returns a boolean if a field has been set.
-func (o *CreateNetworkFirewallRuleGroupRequest) IsSetRuleGroup() bool {
-	if o != nil && !IsNil(o.RuleGroup) {
-		return true
-	}
-
-	return false
-}
-
-// SetRuleGroup gets a reference to the given CreateNetworkFirewallRuleGroupRequestRuleGroup and assigns it to the RuleGroup field.
-func (o *CreateNetworkFirewallRuleGroupRequest) SetRuleGroup(v CreateNetworkFirewallRuleGroupRequestRuleGroup) {
-	o.RuleGroup = &v
-}
-
 func (o CreateNetworkFirewallRuleGroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

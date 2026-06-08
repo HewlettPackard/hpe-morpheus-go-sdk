@@ -27,66 +27,6 @@ type HostUpdateConfig struct {
 
 type _HostUpdateConfig HostUpdateConfig
 
-// NewHostUpdateConfig instantiates a new HostUpdateConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewHostUpdateConfig() *HostUpdateConfig {
-	this := HostUpdateConfig{}
-	return &this
-}
-
-// NewHostUpdateConfigWithDefaults instantiates a new HostUpdateConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewHostUpdateConfigWithDefaults() *HostUpdateConfig {
-	this := HostUpdateConfig{}
-	return &this
-}
-
-// GetUserData returns the UserData field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *HostUpdateConfig) GetUserData() string {
-	if o == nil || IsNil(o.UserData.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.UserData.Get()
-}
-
-// GetUserDataOk returns a tuple with the UserData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *HostUpdateConfig) GetUserDataOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.UserData.Get(), o.UserData.IsSet()
-}
-
-// IsSetUserData returns a boolean if a field has been set.
-func (o *HostUpdateConfig) IsSetUserData() bool {
-	if o != nil && o.UserData.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetUserData gets a reference to the given NullableString and assigns it to the UserData field.
-func (o *HostUpdateConfig) SetUserData(v string) {
-	o.UserData.Set(&v)
-}
-
-// SetUserDataNil sets the value for UserData to be an explicit nil
-func (o *HostUpdateConfig) SetUserDataNil() {
-	o.UserData.Set(nil)
-}
-
-// UnsetUserData ensures that no value is present for UserData, not even an explicit nil
-func (o *HostUpdateConfig) UnsetUserData() {
-	o.UserData.Unset()
-}
-
 func (o HostUpdateConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type UpdateImageBuild200Response struct {
 
 type _UpdateImageBuild200Response UpdateImageBuild200Response
 
-// NewUpdateImageBuild200Response instantiates a new UpdateImageBuild200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateImageBuild200Response() *UpdateImageBuild200Response {
-	this := UpdateImageBuild200Response{}
-	return &this
-}
-
-// NewUpdateImageBuild200ResponseWithDefaults instantiates a new UpdateImageBuild200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateImageBuild200ResponseWithDefaults() *UpdateImageBuild200Response {
-	this := UpdateImageBuild200Response{}
-	return &this
-}
-
-// GetImageBuild returns the ImageBuild field value if set, zero value otherwise.
-func (o *UpdateImageBuild200Response) GetImageBuild() UpdateImageBuild200ResponseImageBuild {
-	if o == nil || IsNil(o.ImageBuild) {
-		var ret UpdateImageBuild200ResponseImageBuild
-		return ret
-	}
-	return *o.ImageBuild
-}
-
-// GetImageBuildOk returns a tuple with the ImageBuild field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateImageBuild200Response) GetImageBuildOk() (*UpdateImageBuild200ResponseImageBuild, bool) {
-	if o == nil || IsNil(o.ImageBuild) {
-		return nil, false
-	}
-	return o.ImageBuild, true
-}
-
-// IsSetImageBuild returns a boolean if a field has been set.
-func (o *UpdateImageBuild200Response) IsSetImageBuild() bool {
-	if o != nil && !IsNil(o.ImageBuild) {
-		return true
-	}
-
-	return false
-}
-
-// SetImageBuild gets a reference to the given UpdateImageBuild200ResponseImageBuild and assigns it to the ImageBuild field.
-func (o *UpdateImageBuild200Response) SetImageBuild(v UpdateImageBuild200ResponseImageBuild) {
-	o.ImageBuild = &v
-}
-
 func (o UpdateImageBuild200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

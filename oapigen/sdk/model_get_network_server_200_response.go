@@ -26,55 +26,6 @@ type GetNetworkServer200Response struct {
 
 type _GetNetworkServer200Response GetNetworkServer200Response
 
-// NewGetNetworkServer200Response instantiates a new GetNetworkServer200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkServer200Response() *GetNetworkServer200Response {
-	this := GetNetworkServer200Response{}
-	return &this
-}
-
-// NewGetNetworkServer200ResponseWithDefaults instantiates a new GetNetworkServer200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkServer200ResponseWithDefaults() *GetNetworkServer200Response {
-	this := GetNetworkServer200Response{}
-	return &this
-}
-
-// GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
-func (o *GetNetworkServer200Response) GetNetworkServer() GetNetworkServer200ResponseNetworkServer {
-	if o == nil || IsNil(o.NetworkServer) {
-		var ret GetNetworkServer200ResponseNetworkServer
-		return ret
-	}
-	return *o.NetworkServer
-}
-
-// GetNetworkServerOk returns a tuple with the NetworkServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkServer200Response) GetNetworkServerOk() (*GetNetworkServer200ResponseNetworkServer, bool) {
-	if o == nil || IsNil(o.NetworkServer) {
-		return nil, false
-	}
-	return o.NetworkServer, true
-}
-
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *GetNetworkServer200Response) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkServer gets a reference to the given GetNetworkServer200ResponseNetworkServer and assigns it to the NetworkServer field.
-func (o *GetNetworkServer200Response) SetNetworkServer(v GetNetworkServer200ResponseNetworkServer) {
-	o.NetworkServer = &v
-}
-
 func (o GetNetworkServer200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

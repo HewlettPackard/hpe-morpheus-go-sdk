@@ -26,48 +26,6 @@ type AddUserTenantRequest struct {
 
 type _AddUserTenantRequest AddUserTenantRequest
 
-// NewAddUserTenantRequest instantiates a new AddUserTenantRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddUserTenantRequest(user AddUserTenantRequestUser) *AddUserTenantRequest {
-	this := AddUserTenantRequest{}
-	this.User = user
-	return &this
-}
-
-// NewAddUserTenantRequestWithDefaults instantiates a new AddUserTenantRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddUserTenantRequestWithDefaults() *AddUserTenantRequest {
-	this := AddUserTenantRequest{}
-	return &this
-}
-
-// GetUser returns the User field value
-func (o *AddUserTenantRequest) GetUser() AddUserTenantRequestUser {
-	if o == nil {
-		var ret AddUserTenantRequestUser
-		return ret
-	}
-
-	return o.User
-}
-
-// GetUserOk returns a tuple with the User field value
-// and a boolean to check if the value has been set.
-func (o *AddUserTenantRequest) GetUserOk() (*AddUserTenantRequestUser, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.User, true
-}
-
-// SetUser sets field value
-func (o *AddUserTenantRequest) SetUser(v AddUserTenantRequestUser) {
-	o.User = v
-}
-
 func (o AddUserTenantRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

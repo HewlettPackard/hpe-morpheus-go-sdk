@@ -27,20 +27,6 @@ type AddBlueprintRequestOneOfArmCloudInitEnabled struct {
 	String *string
 }
 
-// boolAsAddBlueprintRequestOneOfArmCloudInitEnabled is a convenience function that returns bool wrapped in AddBlueprintRequestOneOfArmCloudInitEnabled
-func BoolAsAddBlueprintRequestOneOfArmCloudInitEnabled(v *bool) AddBlueprintRequestOneOfArmCloudInitEnabled {
-	return AddBlueprintRequestOneOfArmCloudInitEnabled{
-		Bool: v,
-	}
-}
-
-// stringAsAddBlueprintRequestOneOfArmCloudInitEnabled is a convenience function that returns string wrapped in AddBlueprintRequestOneOfArmCloudInitEnabled
-func StringAsAddBlueprintRequestOneOfArmCloudInitEnabled(v *string) AddBlueprintRequestOneOfArmCloudInitEnabled {
-	return AddBlueprintRequestOneOfArmCloudInitEnabled{
-		String: v,
-	}
-}
-
 func (dst *AddBlueprintRequestOneOfArmCloudInitEnabled) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddBlueprintRequestOneOfArmCloudInitEnabled{}

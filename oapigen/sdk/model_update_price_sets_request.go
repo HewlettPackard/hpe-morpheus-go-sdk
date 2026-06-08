@@ -26,48 +26,6 @@ type UpdatePriceSetsRequest struct {
 
 type _UpdatePriceSetsRequest UpdatePriceSetsRequest
 
-// NewUpdatePriceSetsRequest instantiates a new UpdatePriceSetsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePriceSetsRequest(priceSet UpdatePriceSetsRequestPriceSet) *UpdatePriceSetsRequest {
-	this := UpdatePriceSetsRequest{}
-	this.PriceSet = priceSet
-	return &this
-}
-
-// NewUpdatePriceSetsRequestWithDefaults instantiates a new UpdatePriceSetsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePriceSetsRequestWithDefaults() *UpdatePriceSetsRequest {
-	this := UpdatePriceSetsRequest{}
-	return &this
-}
-
-// GetPriceSet returns the PriceSet field value
-func (o *UpdatePriceSetsRequest) GetPriceSet() UpdatePriceSetsRequestPriceSet {
-	if o == nil {
-		var ret UpdatePriceSetsRequestPriceSet
-		return ret
-	}
-
-	return o.PriceSet
-}
-
-// GetPriceSetOk returns a tuple with the PriceSet field value
-// and a boolean to check if the value has been set.
-func (o *UpdatePriceSetsRequest) GetPriceSetOk() (*UpdatePriceSetsRequestPriceSet, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PriceSet, true
-}
-
-// SetPriceSet sets field value
-func (o *UpdatePriceSetsRequest) SetPriceSet(v UpdatePriceSetsRequestPriceSet) {
-	o.PriceSet = v
-}
-
 func (o UpdatePriceSetsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

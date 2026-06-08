@@ -11,235 +11,58 @@ Name | Type | Description | Notes
 **SslClientProfile** | Pointer to **NullableInt64** | The SSL client profile ID. Only applicable when &#x60;sslCert&#x60; is set to a non-zero value. The Options API &#x60;/api/options/nsxt/nsxtLBClientSSlProfiles?loadBalancerId&#x3D;42&#x60; can be used to see which options are available. | [optional] 
 **SslServerProfile** | Pointer to **NullableInt64** | The SSL server profile ID. Only applicable when &#x60;sslServerCert&#x60; is set to a non-zero value. The Options API &#x60;/api/options/nsxt/nsxtLBServerSSlProfiles?loadBalancerId&#x3D;42&#x60; can be used to see which options are available. | [optional] 
 
-## Methods
-
-### NewNSXVirtualServerConfigObject2
-
-`func NewNSXVirtualServerConfigObject2() *NSXVirtualServerConfigObject2`
-
-NewNSXVirtualServerConfigObject2 instantiates a new NSXVirtualServerConfigObject2 object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewNSXVirtualServerConfigObject2WithDefaults
-
-`func NewNSXVirtualServerConfigObject2WithDefaults() *NSXVirtualServerConfigObject2`
-
-NewNSXVirtualServerConfigObject2WithDefaults instantiates a new NSXVirtualServerConfigObject2 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetApplicationProfile
-
-`func (o *NSXVirtualServerConfigObject2) GetApplicationProfile() int64`
-
-GetApplicationProfile returns the ApplicationProfile field if non-nil, zero value otherwise.
-
-### GetApplicationProfileOk
-
-`func (o *NSXVirtualServerConfigObject2) GetApplicationProfileOk() (*int64, bool)`
-
-GetApplicationProfileOk returns a tuple with the ApplicationProfile field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApplicationProfile
-
-`func (o *NSXVirtualServerConfigObject2) SetApplicationProfile(v int64)`
-
-SetApplicationProfile sets ApplicationProfile field to given value.
-
-### HasApplicationProfile
-
-`func (o *NSXVirtualServerConfigObject2) HasApplicationProfile() bool`
-
-HasApplicationProfile returns a boolean if a field has been set.
-
-### SetApplicationProfileNil
-
-`func (o *NSXVirtualServerConfigObject2) SetApplicationProfileNil(b bool)`
-
- SetApplicationProfileNil sets the value for ApplicationProfile to be an explicit nil
-
-### UnsetApplicationProfile
-`func (o *NSXVirtualServerConfigObject2) UnsetApplicationProfile()`
-
-UnsetApplicationProfile ensures that no value is present for ApplicationProfile, not even an explicit nil
-### GetPool
-
-`func (o *NSXVirtualServerConfigObject2) GetPool() string`
-
-GetPool returns the Pool field if non-nil, zero value otherwise.
-
-### GetPoolOk
-
-`func (o *NSXVirtualServerConfigObject2) GetPoolOk() (*string, bool)`
-
-GetPoolOk returns a tuple with the Pool field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPool
-
-`func (o *NSXVirtualServerConfigObject2) SetPool(v string)`
-
-SetPool sets Pool field to given value.
-
-### HasPool
-
-`func (o *NSXVirtualServerConfigObject2) HasPool() bool`
-
-HasPool returns a boolean if a field has been set.
-
-### SetPoolNil
-
-`func (o *NSXVirtualServerConfigObject2) SetPoolNil(b bool)`
-
- SetPoolNil sets the value for Pool to be an explicit nil
-
-### UnsetPool
-`func (o *NSXVirtualServerConfigObject2) UnsetPool()`
-
-UnsetPool ensures that no value is present for Pool, not even an explicit nil
-### GetPersistence
-
-`func (o *NSXVirtualServerConfigObject2) GetPersistence() string`
-
-GetPersistence returns the Persistence field if non-nil, zero value otherwise.
-
-### GetPersistenceOk
-
-`func (o *NSXVirtualServerConfigObject2) GetPersistenceOk() (*string, bool)`
-
-GetPersistenceOk returns a tuple with the Persistence field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPersistence
-
-`func (o *NSXVirtualServerConfigObject2) SetPersistence(v string)`
-
-SetPersistence sets Persistence field to given value.
-
-### HasPersistence
-
-`func (o *NSXVirtualServerConfigObject2) HasPersistence() bool`
-
-HasPersistence returns a boolean if a field has been set.
-
-### SetPersistenceNil
-
-`func (o *NSXVirtualServerConfigObject2) SetPersistenceNil(b bool)`
-
- SetPersistenceNil sets the value for Persistence to be an explicit nil
-
-### UnsetPersistence
-`func (o *NSXVirtualServerConfigObject2) UnsetPersistence()`
-
-UnsetPersistence ensures that no value is present for Persistence, not even an explicit nil
-### GetPersistenceProfile
-
-`func (o *NSXVirtualServerConfigObject2) GetPersistenceProfile() int64`
-
-GetPersistenceProfile returns the PersistenceProfile field if non-nil, zero value otherwise.
-
-### GetPersistenceProfileOk
-
-`func (o *NSXVirtualServerConfigObject2) GetPersistenceProfileOk() (*int64, bool)`
-
-GetPersistenceProfileOk returns a tuple with the PersistenceProfile field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPersistenceProfile
-
-`func (o *NSXVirtualServerConfigObject2) SetPersistenceProfile(v int64)`
-
-SetPersistenceProfile sets PersistenceProfile field to given value.
-
-### HasPersistenceProfile
-
-`func (o *NSXVirtualServerConfigObject2) HasPersistenceProfile() bool`
-
-HasPersistenceProfile returns a boolean if a field has been set.
-
-### SetPersistenceProfileNil
-
-`func (o *NSXVirtualServerConfigObject2) SetPersistenceProfileNil(b bool)`
-
- SetPersistenceProfileNil sets the value for PersistenceProfile to be an explicit nil
-
-### UnsetPersistenceProfile
-`func (o *NSXVirtualServerConfigObject2) UnsetPersistenceProfile()`
-
-UnsetPersistenceProfile ensures that no value is present for PersistenceProfile, not even an explicit nil
-### GetSslClientProfile
-
-`func (o *NSXVirtualServerConfigObject2) GetSslClientProfile() int64`
-
-GetSslClientProfile returns the SslClientProfile field if non-nil, zero value otherwise.
-
-### GetSslClientProfileOk
-
-`func (o *NSXVirtualServerConfigObject2) GetSslClientProfileOk() (*int64, bool)`
-
-GetSslClientProfileOk returns a tuple with the SslClientProfile field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSslClientProfile
-
-`func (o *NSXVirtualServerConfigObject2) SetSslClientProfile(v int64)`
-
-SetSslClientProfile sets SslClientProfile field to given value.
-
-### HasSslClientProfile
-
-`func (o *NSXVirtualServerConfigObject2) HasSslClientProfile() bool`
-
-HasSslClientProfile returns a boolean if a field has been set.
-
-### SetSslClientProfileNil
-
-`func (o *NSXVirtualServerConfigObject2) SetSslClientProfileNil(b bool)`
-
- SetSslClientProfileNil sets the value for SslClientProfile to be an explicit nil
-
-### UnsetSslClientProfile
-`func (o *NSXVirtualServerConfigObject2) UnsetSslClientProfile()`
-
-UnsetSslClientProfile ensures that no value is present for SslClientProfile, not even an explicit nil
-### GetSslServerProfile
-
-`func (o *NSXVirtualServerConfigObject2) GetSslServerProfile() int64`
-
-GetSslServerProfile returns the SslServerProfile field if non-nil, zero value otherwise.
-
-### GetSslServerProfileOk
-
-`func (o *NSXVirtualServerConfigObject2) GetSslServerProfileOk() (*int64, bool)`
-
-GetSslServerProfileOk returns a tuple with the SslServerProfile field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSslServerProfile
-
-`func (o *NSXVirtualServerConfigObject2) SetSslServerProfile(v int64)`
-
-SetSslServerProfile sets SslServerProfile field to given value.
-
-### HasSslServerProfile
-
-`func (o *NSXVirtualServerConfigObject2) HasSslServerProfile() bool`
-
-HasSslServerProfile returns a boolean if a field has been set.
-
-### SetSslServerProfileNil
-
-`func (o *NSXVirtualServerConfigObject2) SetSslServerProfileNil(b bool)`
-
- SetSslServerProfileNil sets the value for SslServerProfile to be an explicit nil
-
-### UnsetSslServerProfile
-`func (o *NSXVirtualServerConfigObject2) UnsetSslServerProfile()`
-
-UnsetSslServerProfile ensures that no value is present for SslServerProfile, not even an explicit nil
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &NSXVirtualServerConfigObject2{
+    // Set fields directly
+}
+```
+
+### ApplicationProfile (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ApplicationProfile.IsSet()` — check if set
+- `obj.ApplicationProfile.Get()` — get the inner value (returns pointer)
+- `obj.ApplicationProfile.Set(&val)` — set the value
+- `obj.ApplicationProfile.Unset()` — clear the value
+### Pool (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Pool.IsSet()` — check if set
+- `obj.Pool.Get()` — get the inner value (returns pointer)
+- `obj.Pool.Set(&val)` — set the value
+- `obj.Pool.Unset()` — clear the value
+### Persistence (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Persistence.IsSet()` — check if set
+- `obj.Persistence.Get()` — get the inner value (returns pointer)
+- `obj.Persistence.Set(&val)` — set the value
+- `obj.Persistence.Unset()` — clear the value
+### PersistenceProfile (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.PersistenceProfile.IsSet()` — check if set
+- `obj.PersistenceProfile.Get()` — get the inner value (returns pointer)
+- `obj.PersistenceProfile.Set(&val)` — set the value
+- `obj.PersistenceProfile.Unset()` — clear the value
+### SslClientProfile (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SslClientProfile.IsSet()` — check if set
+- `obj.SslClientProfile.Get()` — get the inner value (returns pointer)
+- `obj.SslClientProfile.Set(&val)` — set the value
+- `obj.SslClientProfile.Unset()` — clear the value
+### SslServerProfile (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SslServerProfile.IsSet()` — check if set
+- `obj.SslServerProfile.Get()` — get the inner value (returns pointer)
+- `obj.SslServerProfile.Set(&val)` — set the value
+- `obj.SslServerProfile.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

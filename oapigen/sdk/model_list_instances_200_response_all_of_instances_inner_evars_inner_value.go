@@ -27,20 +27,6 @@ type ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue struct {
 	String  *string
 }
 
-// float32AsListInstances200ResponseAllOfInstancesInnerEvarsInnerValue is a convenience function that returns float32 wrapped in ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue
-func Float32AsListInstances200ResponseAllOfInstancesInnerEvarsInnerValue(v *float32) ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue {
-	return ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue{
-		Float32: v,
-	}
-}
-
-// stringAsListInstances200ResponseAllOfInstancesInnerEvarsInnerValue is a convenience function that returns string wrapped in ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue
-func StringAsListInstances200ResponseAllOfInstancesInnerEvarsInnerValue(v *string) ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue {
-	return ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue{
-		String: v,
-	}
-}
-
 func (dst *ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue{}

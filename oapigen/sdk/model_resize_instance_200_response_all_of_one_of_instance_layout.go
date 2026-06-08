@@ -27,48 +27,6 @@ type ResizeInstance200ResponseAllOfOneOfInstanceLayout struct {
 
 type _ResizeInstance200ResponseAllOfOneOfInstanceLayout ResizeInstance200ResponseAllOfOneOfInstanceLayout
 
-// NewResizeInstance200ResponseAllOfOneOfInstanceLayout instantiates a new ResizeInstance200ResponseAllOfOneOfInstanceLayout object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewResizeInstance200ResponseAllOfOneOfInstanceLayout(id int64) *ResizeInstance200ResponseAllOfOneOfInstanceLayout {
-	this := ResizeInstance200ResponseAllOfOneOfInstanceLayout{}
-	this.Id = id
-	return &this
-}
-
-// NewResizeInstance200ResponseAllOfOneOfInstanceLayoutWithDefaults instantiates a new ResizeInstance200ResponseAllOfOneOfInstanceLayout object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewResizeInstance200ResponseAllOfOneOfInstanceLayoutWithDefaults() *ResizeInstance200ResponseAllOfOneOfInstanceLayout {
-	this := ResizeInstance200ResponseAllOfOneOfInstanceLayout{}
-	return &this
-}
-
-// GetId returns the Id field value
-func (o *ResizeInstance200ResponseAllOfOneOfInstanceLayout) GetId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ResizeInstance200ResponseAllOfOneOfInstanceLayout) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ResizeInstance200ResponseAllOfOneOfInstanceLayout) SetId(v int64) {
-	o.Id = v
-}
-
 func (o ResizeInstance200ResponseAllOfOneOfInstanceLayout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

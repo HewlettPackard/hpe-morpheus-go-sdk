@@ -26,55 +26,6 @@ type UpdateDeployRequest struct {
 
 type _UpdateDeployRequest UpdateDeployRequest
 
-// NewUpdateDeployRequest instantiates a new UpdateDeployRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateDeployRequest() *UpdateDeployRequest {
-	this := UpdateDeployRequest{}
-	return &this
-}
-
-// NewUpdateDeployRequestWithDefaults instantiates a new UpdateDeployRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateDeployRequestWithDefaults() *UpdateDeployRequest {
-	this := UpdateDeployRequest{}
-	return &this
-}
-
-// GetAppDeploy returns the AppDeploy field value if set, zero value otherwise.
-func (o *UpdateDeployRequest) GetAppDeploy() UpdateDeployRequestAppDeploy {
-	if o == nil || IsNil(o.AppDeploy) {
-		var ret UpdateDeployRequestAppDeploy
-		return ret
-	}
-	return *o.AppDeploy
-}
-
-// GetAppDeployOk returns a tuple with the AppDeploy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDeployRequest) GetAppDeployOk() (*UpdateDeployRequestAppDeploy, bool) {
-	if o == nil || IsNil(o.AppDeploy) {
-		return nil, false
-	}
-	return o.AppDeploy, true
-}
-
-// IsSetAppDeploy returns a boolean if a field has been set.
-func (o *UpdateDeployRequest) IsSetAppDeploy() bool {
-	if o != nil && !IsNil(o.AppDeploy) {
-		return true
-	}
-
-	return false
-}
-
-// SetAppDeploy gets a reference to the given UpdateDeployRequestAppDeploy and assigns it to the AppDeploy field.
-func (o *UpdateDeployRequest) SetAppDeploy(v UpdateDeployRequestAppDeploy) {
-	o.AppDeploy = &v
-}
-
 func (o UpdateDeployRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

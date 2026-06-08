@@ -26,55 +26,6 @@ type WorkflowPolicyTypeConfiguration4 struct {
 
 type _WorkflowPolicyTypeConfiguration4 WorkflowPolicyTypeConfiguration4
 
-// NewWorkflowPolicyTypeConfiguration4 instantiates a new WorkflowPolicyTypeConfiguration4 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewWorkflowPolicyTypeConfiguration4() *WorkflowPolicyTypeConfiguration4 {
-	this := WorkflowPolicyTypeConfiguration4{}
-	return &this
-}
-
-// NewWorkflowPolicyTypeConfiguration4WithDefaults instantiates a new WorkflowPolicyTypeConfiguration4 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWorkflowPolicyTypeConfiguration4WithDefaults() *WorkflowPolicyTypeConfiguration4 {
-	this := WorkflowPolicyTypeConfiguration4{}
-	return &this
-}
-
-// GetWorkflowId returns the WorkflowId field value if set, zero value otherwise.
-func (o *WorkflowPolicyTypeConfiguration4) GetWorkflowId() string {
-	if o == nil || IsNil(o.WorkflowId) {
-		var ret string
-		return ret
-	}
-	return *o.WorkflowId
-}
-
-// GetWorkflowIdOk returns a tuple with the WorkflowId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *WorkflowPolicyTypeConfiguration4) GetWorkflowIdOk() (*string, bool) {
-	if o == nil || IsNil(o.WorkflowId) {
-		return nil, false
-	}
-	return o.WorkflowId, true
-}
-
-// IsSetWorkflowId returns a boolean if a field has been set.
-func (o *WorkflowPolicyTypeConfiguration4) IsSetWorkflowId() bool {
-	if o != nil && !IsNil(o.WorkflowId) {
-		return true
-	}
-
-	return false
-}
-
-// SetWorkflowId gets a reference to the given string and assigns it to the WorkflowId field.
-func (o *WorkflowPolicyTypeConfiguration4) SetWorkflowId(v string) {
-	o.WorkflowId = &v
-}
-
 func (o WorkflowPolicyTypeConfiguration4) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,20 +27,6 @@ type BlueprintARMCreateArmInstallAgent struct {
 	String *string
 }
 
-// boolAsBlueprintARMCreateArmInstallAgent is a convenience function that returns bool wrapped in BlueprintARMCreateArmInstallAgent
-func BoolAsBlueprintARMCreateArmInstallAgent(v *bool) BlueprintARMCreateArmInstallAgent {
-	return BlueprintARMCreateArmInstallAgent{
-		Bool: v,
-	}
-}
-
-// stringAsBlueprintARMCreateArmInstallAgent is a convenience function that returns string wrapped in BlueprintARMCreateArmInstallAgent
-func StringAsBlueprintARMCreateArmInstallAgent(v *string) BlueprintARMCreateArmInstallAgent {
-	return BlueprintARMCreateArmInstallAgent{
-		String: v,
-	}
-}
-
 func (dst *BlueprintARMCreateArmInstallAgent) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &BlueprintARMCreateArmInstallAgent{}

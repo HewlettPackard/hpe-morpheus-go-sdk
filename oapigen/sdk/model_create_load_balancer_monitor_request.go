@@ -26,55 +26,6 @@ type CreateLoadBalancerMonitorRequest struct {
 
 type _CreateLoadBalancerMonitorRequest CreateLoadBalancerMonitorRequest
 
-// NewCreateLoadBalancerMonitorRequest instantiates a new CreateLoadBalancerMonitorRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateLoadBalancerMonitorRequest() *CreateLoadBalancerMonitorRequest {
-	this := CreateLoadBalancerMonitorRequest{}
-	return &this
-}
-
-// NewCreateLoadBalancerMonitorRequestWithDefaults instantiates a new CreateLoadBalancerMonitorRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateLoadBalancerMonitorRequestWithDefaults() *CreateLoadBalancerMonitorRequest {
-	this := CreateLoadBalancerMonitorRequest{}
-	return &this
-}
-
-// GetLoadBalancerMonitor returns the LoadBalancerMonitor field value if set, zero value otherwise.
-func (o *CreateLoadBalancerMonitorRequest) GetLoadBalancerMonitor() CreateLoadBalancerMonitorRequestLoadBalancerMonitor {
-	if o == nil || IsNil(o.LoadBalancerMonitor) {
-		var ret CreateLoadBalancerMonitorRequestLoadBalancerMonitor
-		return ret
-	}
-	return *o.LoadBalancerMonitor
-}
-
-// GetLoadBalancerMonitorOk returns a tuple with the LoadBalancerMonitor field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerMonitorRequest) GetLoadBalancerMonitorOk() (*CreateLoadBalancerMonitorRequestLoadBalancerMonitor, bool) {
-	if o == nil || IsNil(o.LoadBalancerMonitor) {
-		return nil, false
-	}
-	return o.LoadBalancerMonitor, true
-}
-
-// IsSetLoadBalancerMonitor returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitorRequest) IsSetLoadBalancerMonitor() bool {
-	if o != nil && !IsNil(o.LoadBalancerMonitor) {
-		return true
-	}
-
-	return false
-}
-
-// SetLoadBalancerMonitor gets a reference to the given CreateLoadBalancerMonitorRequestLoadBalancerMonitor and assigns it to the LoadBalancerMonitor field.
-func (o *CreateLoadBalancerMonitorRequest) SetLoadBalancerMonitor(v CreateLoadBalancerMonitorRequestLoadBalancerMonitor) {
-	o.LoadBalancerMonitor = &v
-}
-
 func (o CreateLoadBalancerMonitorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type UpdateNetworkRouterRequest struct {
 
 type _UpdateNetworkRouterRequest UpdateNetworkRouterRequest
 
-// NewUpdateNetworkRouterRequest instantiates a new UpdateNetworkRouterRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkRouterRequest() *UpdateNetworkRouterRequest {
-	this := UpdateNetworkRouterRequest{}
-	return &this
-}
-
-// NewUpdateNetworkRouterRequestWithDefaults instantiates a new UpdateNetworkRouterRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkRouterRequestWithDefaults() *UpdateNetworkRouterRequest {
-	this := UpdateNetworkRouterRequest{}
-	return &this
-}
-
-// GetNetworkRouter returns the NetworkRouter field value if set, zero value otherwise.
-func (o *UpdateNetworkRouterRequest) GetNetworkRouter() UpdateNetworkRouterRequestNetworkRouter {
-	if o == nil || IsNil(o.NetworkRouter) {
-		var ret UpdateNetworkRouterRequestNetworkRouter
-		return ret
-	}
-	return *o.NetworkRouter
-}
-
-// GetNetworkRouterOk returns a tuple with the NetworkRouter field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkRouterRequest) GetNetworkRouterOk() (*UpdateNetworkRouterRequestNetworkRouter, bool) {
-	if o == nil || IsNil(o.NetworkRouter) {
-		return nil, false
-	}
-	return o.NetworkRouter, true
-}
-
-// IsSetNetworkRouter returns a boolean if a field has been set.
-func (o *UpdateNetworkRouterRequest) IsSetNetworkRouter() bool {
-	if o != nil && !IsNil(o.NetworkRouter) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkRouter gets a reference to the given UpdateNetworkRouterRequestNetworkRouter and assigns it to the NetworkRouter field.
-func (o *UpdateNetworkRouterRequest) SetNetworkRouter(v UpdateNetworkRouterRequestNetworkRouter) {
-	o.NetworkRouter = &v
-}
-
 func (o UpdateNetworkRouterRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

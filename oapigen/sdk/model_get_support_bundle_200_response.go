@@ -26,55 +26,6 @@ type GetSupportBundle200Response struct {
 
 type _GetSupportBundle200Response GetSupportBundle200Response
 
-// NewGetSupportBundle200Response instantiates a new GetSupportBundle200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetSupportBundle200Response() *GetSupportBundle200Response {
-	this := GetSupportBundle200Response{}
-	return &this
-}
-
-// NewGetSupportBundle200ResponseWithDefaults instantiates a new GetSupportBundle200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSupportBundle200ResponseWithDefaults() *GetSupportBundle200Response {
-	this := GetSupportBundle200Response{}
-	return &this
-}
-
-// GetSupportBundle returns the SupportBundle field value if set, zero value otherwise.
-func (o *GetSupportBundle200Response) GetSupportBundle() GetSupportBundle200ResponseSupportBundle {
-	if o == nil || IsNil(o.SupportBundle) {
-		var ret GetSupportBundle200ResponseSupportBundle
-		return ret
-	}
-	return *o.SupportBundle
-}
-
-// GetSupportBundleOk returns a tuple with the SupportBundle field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetSupportBundle200Response) GetSupportBundleOk() (*GetSupportBundle200ResponseSupportBundle, bool) {
-	if o == nil || IsNil(o.SupportBundle) {
-		return nil, false
-	}
-	return o.SupportBundle, true
-}
-
-// IsSetSupportBundle returns a boolean if a field has been set.
-func (o *GetSupportBundle200Response) IsSetSupportBundle() bool {
-	if o != nil && !IsNil(o.SupportBundle) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportBundle gets a reference to the given GetSupportBundle200ResponseSupportBundle and assigns it to the SupportBundle field.
-func (o *GetSupportBundle200Response) SetSupportBundle(v GetSupportBundle200ResponseSupportBundle) {
-	o.SupportBundle = &v
-}
-
 func (o GetSupportBundle200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

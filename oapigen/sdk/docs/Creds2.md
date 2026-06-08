@@ -8,120 +8,30 @@ Name | Type | Description | Notes
 **Name** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewCreds2
+Instantiate with a Go composite literal:
 
-`func NewCreds2() *Creds2`
+```go
+obj := &Creds2{
+    // Set fields directly
+}
+```
 
-NewCreds2 instantiates a new Creds2 object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### Id (Nullable)
 
-### NewCreds2WithDefaults
+Use the Nullable wrapper methods:
+- `obj.Id.IsSet()` — check if set
+- `obj.Id.Get()` — get the inner value (returns pointer)
+- `obj.Id.Set(&val)` — set the value
+- `obj.Id.Unset()` — clear the value
+### Name (Nullable)
 
-`func NewCreds2WithDefaults() *Creds2`
-
-NewCreds2WithDefaults instantiates a new Creds2 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *Creds2) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *Creds2) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *Creds2) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *Creds2) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### SetIdNil
-
-`func (o *Creds2) SetIdNil(b bool)`
-
- SetIdNil sets the value for Id to be an explicit nil
-
-### UnsetId
-`func (o *Creds2) UnsetId()`
-
-UnsetId ensures that no value is present for Id, not even an explicit nil
-### GetName
-
-`func (o *Creds2) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *Creds2) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *Creds2) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *Creds2) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### SetNameNil
-
-`func (o *Creds2) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *Creds2) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
-### GetType
-
-`func (o *Creds2) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *Creds2) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *Creds2) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *Creds2) HasType() bool`
-
-HasType returns a boolean if a field has been set.
-
+Use the Nullable wrapper methods:
+- `obj.Name.IsSet()` — check if set
+- `obj.Name.Get()` — get the inner value (returns pointer)
+- `obj.Name.Set(&val)` — set the value
+- `obj.Name.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

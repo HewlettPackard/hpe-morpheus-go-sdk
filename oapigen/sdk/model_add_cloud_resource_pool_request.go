@@ -26,48 +26,6 @@ type AddCloudResourcePoolRequest struct {
 
 type _AddCloudResourcePoolRequest AddCloudResourcePoolRequest
 
-// NewAddCloudResourcePoolRequest instantiates a new AddCloudResourcePoolRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCloudResourcePoolRequest(resourcePool AddCloudResourcePoolRequestResourcePool) *AddCloudResourcePoolRequest {
-	this := AddCloudResourcePoolRequest{}
-	this.ResourcePool = resourcePool
-	return &this
-}
-
-// NewAddCloudResourcePoolRequestWithDefaults instantiates a new AddCloudResourcePoolRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCloudResourcePoolRequestWithDefaults() *AddCloudResourcePoolRequest {
-	this := AddCloudResourcePoolRequest{}
-	return &this
-}
-
-// GetResourcePool returns the ResourcePool field value
-func (o *AddCloudResourcePoolRequest) GetResourcePool() AddCloudResourcePoolRequestResourcePool {
-	if o == nil {
-		var ret AddCloudResourcePoolRequestResourcePool
-		return ret
-	}
-
-	return o.ResourcePool
-}
-
-// GetResourcePoolOk returns a tuple with the ResourcePool field value
-// and a boolean to check if the value has been set.
-func (o *AddCloudResourcePoolRequest) GetResourcePoolOk() (*AddCloudResourcePoolRequestResourcePool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ResourcePool, true
-}
-
-// SetResourcePool sets field value
-func (o *AddCloudResourcePoolRequest) SetResourcePool(v AddCloudResourcePoolRequestResourcePool) {
-	o.ResourcePool = v
-}
-
 func (o AddCloudResourcePoolRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

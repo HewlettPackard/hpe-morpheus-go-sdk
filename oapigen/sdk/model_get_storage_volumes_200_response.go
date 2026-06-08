@@ -26,55 +26,6 @@ type GetStorageVolumes200Response struct {
 
 type _GetStorageVolumes200Response GetStorageVolumes200Response
 
-// NewGetStorageVolumes200Response instantiates a new GetStorageVolumes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetStorageVolumes200Response() *GetStorageVolumes200Response {
-	this := GetStorageVolumes200Response{}
-	return &this
-}
-
-// NewGetStorageVolumes200ResponseWithDefaults instantiates a new GetStorageVolumes200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetStorageVolumes200ResponseWithDefaults() *GetStorageVolumes200Response {
-	this := GetStorageVolumes200Response{}
-	return &this
-}
-
-// GetStorageVolume returns the StorageVolume field value if set, zero value otherwise.
-func (o *GetStorageVolumes200Response) GetStorageVolume() GetStorageVolumes200ResponseStorageVolume {
-	if o == nil || IsNil(o.StorageVolume) {
-		var ret GetStorageVolumes200ResponseStorageVolume
-		return ret
-	}
-	return *o.StorageVolume
-}
-
-// GetStorageVolumeOk returns a tuple with the StorageVolume field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetStorageVolumes200Response) GetStorageVolumeOk() (*GetStorageVolumes200ResponseStorageVolume, bool) {
-	if o == nil || IsNil(o.StorageVolume) {
-		return nil, false
-	}
-	return o.StorageVolume, true
-}
-
-// IsSetStorageVolume returns a boolean if a field has been set.
-func (o *GetStorageVolumes200Response) IsSetStorageVolume() bool {
-	if o != nil && !IsNil(o.StorageVolume) {
-		return true
-	}
-
-	return false
-}
-
-// SetStorageVolume gets a reference to the given GetStorageVolumes200ResponseStorageVolume and assigns it to the StorageVolume field.
-func (o *GetStorageVolumes200Response) SetStorageVolume(v GetStorageVolumes200ResponseStorageVolume) {
-	o.StorageVolume = &v
-}
-
 func (o GetStorageVolumes200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

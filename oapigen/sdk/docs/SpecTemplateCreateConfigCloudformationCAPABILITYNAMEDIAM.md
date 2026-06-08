@@ -5,24 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
-## Methods
+## Usage
 
-### NewSpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAM
+Instantiate with a Go composite literal:
 
-`func NewSpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAM() *SpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAM`
-
-NewSpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAM instantiates a new SpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAM object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewSpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAMWithDefaults
-
-`func NewSpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAMWithDefaults() *SpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAM`
-
-NewSpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAMWithDefaults instantiates a new SpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAM object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
+```go
+obj := &SpecTemplateCreateConfigCloudformationCAPABILITYNAMEDIAM{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

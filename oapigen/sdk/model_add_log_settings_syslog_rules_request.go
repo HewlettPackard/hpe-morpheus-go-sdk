@@ -26,48 +26,6 @@ type AddLogSettingsSyslogRulesRequest struct {
 
 type _AddLogSettingsSyslogRulesRequest AddLogSettingsSyslogRulesRequest
 
-// NewAddLogSettingsSyslogRulesRequest instantiates a new AddLogSettingsSyslogRulesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddLogSettingsSyslogRulesRequest(syslogRule AddLogSettingsSyslogRulesRequestSyslogRule) *AddLogSettingsSyslogRulesRequest {
-	this := AddLogSettingsSyslogRulesRequest{}
-	this.SyslogRule = syslogRule
-	return &this
-}
-
-// NewAddLogSettingsSyslogRulesRequestWithDefaults instantiates a new AddLogSettingsSyslogRulesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLogSettingsSyslogRulesRequestWithDefaults() *AddLogSettingsSyslogRulesRequest {
-	this := AddLogSettingsSyslogRulesRequest{}
-	return &this
-}
-
-// GetSyslogRule returns the SyslogRule field value
-func (o *AddLogSettingsSyslogRulesRequest) GetSyslogRule() AddLogSettingsSyslogRulesRequestSyslogRule {
-	if o == nil {
-		var ret AddLogSettingsSyslogRulesRequestSyslogRule
-		return ret
-	}
-
-	return o.SyslogRule
-}
-
-// GetSyslogRuleOk returns a tuple with the SyslogRule field value
-// and a boolean to check if the value has been set.
-func (o *AddLogSettingsSyslogRulesRequest) GetSyslogRuleOk() (*AddLogSettingsSyslogRulesRequestSyslogRule, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SyslogRule, true
-}
-
-// SetSyslogRule sets field value
-func (o *AddLogSettingsSyslogRulesRequest) SetSyslogRule(v AddLogSettingsSyslogRulesRequestSyslogRule) {
-	o.SyslogRule = v
-}
-
 func (o AddLogSettingsSyslogRulesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

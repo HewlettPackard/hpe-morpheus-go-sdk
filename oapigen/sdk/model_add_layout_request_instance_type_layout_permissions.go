@@ -26,55 +26,6 @@ type AddLayoutRequestInstanceTypeLayoutPermissions struct {
 
 type _AddLayoutRequestInstanceTypeLayoutPermissions AddLayoutRequestInstanceTypeLayoutPermissions
 
-// NewAddLayoutRequestInstanceTypeLayoutPermissions instantiates a new AddLayoutRequestInstanceTypeLayoutPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddLayoutRequestInstanceTypeLayoutPermissions() *AddLayoutRequestInstanceTypeLayoutPermissions {
-	this := AddLayoutRequestInstanceTypeLayoutPermissions{}
-	return &this
-}
-
-// NewAddLayoutRequestInstanceTypeLayoutPermissionsWithDefaults instantiates a new AddLayoutRequestInstanceTypeLayoutPermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddLayoutRequestInstanceTypeLayoutPermissionsWithDefaults() *AddLayoutRequestInstanceTypeLayoutPermissions {
-	this := AddLayoutRequestInstanceTypeLayoutPermissions{}
-	return &this
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *AddLayoutRequestInstanceTypeLayoutPermissions) GetResourcePermissions() AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddLayoutRequestInstanceTypeLayoutPermissions) GetResourcePermissionsOk() (*AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *AddLayoutRequestInstanceTypeLayoutPermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
-// SetResourcePermissions gets a reference to the given AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *AddLayoutRequestInstanceTypeLayoutPermissions) SetResourcePermissions(v AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) {
-	o.ResourcePermissions = &v
-}
-
 func (o AddLayoutRequestInstanceTypeLayoutPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type GetLayout200Response struct {
 
 type _GetLayout200Response GetLayout200Response
 
-// NewGetLayout200Response instantiates a new GetLayout200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetLayout200Response() *GetLayout200Response {
-	this := GetLayout200Response{}
-	return &this
-}
-
-// NewGetLayout200ResponseWithDefaults instantiates a new GetLayout200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetLayout200ResponseWithDefaults() *GetLayout200Response {
-	this := GetLayout200Response{}
-	return &this
-}
-
-// GetInstanceTypeLayout returns the InstanceTypeLayout field value if set, zero value otherwise.
-func (o *GetLayout200Response) GetInstanceTypeLayout() GetLayout200ResponseInstanceTypeLayout {
-	if o == nil || IsNil(o.InstanceTypeLayout) {
-		var ret GetLayout200ResponseInstanceTypeLayout
-		return ret
-	}
-	return *o.InstanceTypeLayout
-}
-
-// GetInstanceTypeLayoutOk returns a tuple with the InstanceTypeLayout field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLayout200Response) GetInstanceTypeLayoutOk() (*GetLayout200ResponseInstanceTypeLayout, bool) {
-	if o == nil || IsNil(o.InstanceTypeLayout) {
-		return nil, false
-	}
-	return o.InstanceTypeLayout, true
-}
-
-// IsSetInstanceTypeLayout returns a boolean if a field has been set.
-func (o *GetLayout200Response) IsSetInstanceTypeLayout() bool {
-	if o != nil && !IsNil(o.InstanceTypeLayout) {
-		return true
-	}
-
-	return false
-}
-
-// SetInstanceTypeLayout gets a reference to the given GetLayout200ResponseInstanceTypeLayout and assigns it to the InstanceTypeLayout field.
-func (o *GetLayout200Response) SetInstanceTypeLayout(v GetLayout200ResponseInstanceTypeLayout) {
-	o.InstanceTypeLayout = &v
-}
-
 func (o GetLayout200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

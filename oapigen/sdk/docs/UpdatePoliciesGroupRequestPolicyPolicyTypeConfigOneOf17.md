@@ -6,49 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MaxSnapshots** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17
+Instantiate with a Go composite literal:
 
-`func NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17() *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17`
-
-NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 instantiates a new UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17WithDefaults
-
-`func NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17WithDefaults() *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17`
-
-NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17WithDefaults instantiates a new UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetMaxSnapshots
-
-`func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) GetMaxSnapshots() string`
-
-GetMaxSnapshots returns the MaxSnapshots field if non-nil, zero value otherwise.
-
-### GetMaxSnapshotsOk
-
-`func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) GetMaxSnapshotsOk() (*string, bool)`
-
-GetMaxSnapshotsOk returns a tuple with the MaxSnapshots field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxSnapshots
-
-`func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) SetMaxSnapshots(v string)`
-
-SetMaxSnapshots sets MaxSnapshots field to given value.
-
-### HasMaxSnapshots
-
-`func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) HasMaxSnapshots() bool`
-
-HasMaxSnapshots returns a boolean if a field has been set.
+```go
+obj := &UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf17{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

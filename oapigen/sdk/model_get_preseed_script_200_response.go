@@ -26,55 +26,6 @@ type GetPreseedScript200Response struct {
 
 type _GetPreseedScript200Response GetPreseedScript200Response
 
-// NewGetPreseedScript200Response instantiates a new GetPreseedScript200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetPreseedScript200Response() *GetPreseedScript200Response {
-	this := GetPreseedScript200Response{}
-	return &this
-}
-
-// NewGetPreseedScript200ResponseWithDefaults instantiates a new GetPreseedScript200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetPreseedScript200ResponseWithDefaults() *GetPreseedScript200Response {
-	this := GetPreseedScript200Response{}
-	return &this
-}
-
-// GetPreseedScript returns the PreseedScript field value if set, zero value otherwise.
-func (o *GetPreseedScript200Response) GetPreseedScript() GetPreseedScript200ResponsePreseedScript {
-	if o == nil || IsNil(o.PreseedScript) {
-		var ret GetPreseedScript200ResponsePreseedScript
-		return ret
-	}
-	return *o.PreseedScript
-}
-
-// GetPreseedScriptOk returns a tuple with the PreseedScript field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPreseedScript200Response) GetPreseedScriptOk() (*GetPreseedScript200ResponsePreseedScript, bool) {
-	if o == nil || IsNil(o.PreseedScript) {
-		return nil, false
-	}
-	return o.PreseedScript, true
-}
-
-// IsSetPreseedScript returns a boolean if a field has been set.
-func (o *GetPreseedScript200Response) IsSetPreseedScript() bool {
-	if o != nil && !IsNil(o.PreseedScript) {
-		return true
-	}
-
-	return false
-}
-
-// SetPreseedScript gets a reference to the given GetPreseedScript200ResponsePreseedScript and assigns it to the PreseedScript field.
-func (o *GetPreseedScript200Response) SetPreseedScript(v GetPreseedScript200ResponsePreseedScript) {
-	o.PreseedScript = &v
-}
-
 func (o GetPreseedScript200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

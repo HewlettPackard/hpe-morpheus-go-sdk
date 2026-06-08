@@ -26,55 +26,6 @@ type GetNetworkRouterBgpNeighbor200Response struct {
 
 type _GetNetworkRouterBgpNeighbor200Response GetNetworkRouterBgpNeighbor200Response
 
-// NewGetNetworkRouterBgpNeighbor200Response instantiates a new GetNetworkRouterBgpNeighbor200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkRouterBgpNeighbor200Response() *GetNetworkRouterBgpNeighbor200Response {
-	this := GetNetworkRouterBgpNeighbor200Response{}
-	return &this
-}
-
-// NewGetNetworkRouterBgpNeighbor200ResponseWithDefaults instantiates a new GetNetworkRouterBgpNeighbor200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkRouterBgpNeighbor200ResponseWithDefaults() *GetNetworkRouterBgpNeighbor200Response {
-	this := GetNetworkRouterBgpNeighbor200Response{}
-	return &this
-}
-
-// GetNetworkRouterBgpNeighbor returns the NetworkRouterBgpNeighbor field value if set, zero value otherwise.
-func (o *GetNetworkRouterBgpNeighbor200Response) GetNetworkRouterBgpNeighbor() GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor {
-	if o == nil || IsNil(o.NetworkRouterBgpNeighbor) {
-		var ret GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor
-		return ret
-	}
-	return *o.NetworkRouterBgpNeighbor
-}
-
-// GetNetworkRouterBgpNeighborOk returns a tuple with the NetworkRouterBgpNeighbor field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkRouterBgpNeighbor200Response) GetNetworkRouterBgpNeighborOk() (*GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor, bool) {
-	if o == nil || IsNil(o.NetworkRouterBgpNeighbor) {
-		return nil, false
-	}
-	return o.NetworkRouterBgpNeighbor, true
-}
-
-// IsSetNetworkRouterBgpNeighbor returns a boolean if a field has been set.
-func (o *GetNetworkRouterBgpNeighbor200Response) IsSetNetworkRouterBgpNeighbor() bool {
-	if o != nil && !IsNil(o.NetworkRouterBgpNeighbor) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkRouterBgpNeighbor gets a reference to the given GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor and assigns it to the NetworkRouterBgpNeighbor field.
-func (o *GetNetworkRouterBgpNeighbor200Response) SetNetworkRouterBgpNeighbor(v GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) {
-	o.NetworkRouterBgpNeighbor = &v
-}
-
 func (o GetNetworkRouterBgpNeighbor200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

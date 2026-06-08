@@ -27,55 +27,6 @@ type GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm struct {
 
 type _GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm
 
-// NewGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm instantiates a new GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm() *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm {
-	this := GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm{}
-	return &this
-}
-
-// NewGetCatalogType200ResponseAllOfCatalogItemTypesInnerFormWithDefaults instantiates a new GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCatalogType200ResponseAllOfCatalogItemTypesInnerFormWithDefaults() *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm {
-	this := GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) SetId(v int64) {
-	o.Id = &v
-}
-
 func (o GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

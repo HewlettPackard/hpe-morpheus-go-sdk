@@ -26,55 +26,6 @@ type GetServicePlans200Response struct {
 
 type _GetServicePlans200Response GetServicePlans200Response
 
-// NewGetServicePlans200Response instantiates a new GetServicePlans200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetServicePlans200Response() *GetServicePlans200Response {
-	this := GetServicePlans200Response{}
-	return &this
-}
-
-// NewGetServicePlans200ResponseWithDefaults instantiates a new GetServicePlans200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetServicePlans200ResponseWithDefaults() *GetServicePlans200Response {
-	this := GetServicePlans200Response{}
-	return &this
-}
-
-// GetServicePlan returns the ServicePlan field value if set, zero value otherwise.
-func (o *GetServicePlans200Response) GetServicePlan() GetServicePlans200ResponseServicePlan {
-	if o == nil || IsNil(o.ServicePlan) {
-		var ret GetServicePlans200ResponseServicePlan
-		return ret
-	}
-	return *o.ServicePlan
-}
-
-// GetServicePlanOk returns a tuple with the ServicePlan field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetServicePlans200Response) GetServicePlanOk() (*GetServicePlans200ResponseServicePlan, bool) {
-	if o == nil || IsNil(o.ServicePlan) {
-		return nil, false
-	}
-	return o.ServicePlan, true
-}
-
-// IsSetServicePlan returns a boolean if a field has been set.
-func (o *GetServicePlans200Response) IsSetServicePlan() bool {
-	if o != nil && !IsNil(o.ServicePlan) {
-		return true
-	}
-
-	return false
-}
-
-// SetServicePlan gets a reference to the given GetServicePlans200ResponseServicePlan and assigns it to the ServicePlan field.
-func (o *GetServicePlans200Response) SetServicePlan(v GetServicePlans200ResponseServicePlan) {
-	o.ServicePlan = &v
-}
-
 func (o GetServicePlans200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,48 +26,6 @@ type AddRolesRequest struct {
 
 type _AddRolesRequest AddRolesRequest
 
-// NewAddRolesRequest instantiates a new AddRolesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddRolesRequest(role AddRolesRequestRole) *AddRolesRequest {
-	this := AddRolesRequest{}
-	this.Role = role
-	return &this
-}
-
-// NewAddRolesRequestWithDefaults instantiates a new AddRolesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddRolesRequestWithDefaults() *AddRolesRequest {
-	this := AddRolesRequest{}
-	return &this
-}
-
-// GetRole returns the Role field value
-func (o *AddRolesRequest) GetRole() AddRolesRequestRole {
-	if o == nil {
-		var ret AddRolesRequestRole
-		return ret
-	}
-
-	return o.Role
-}
-
-// GetRoleOk returns a tuple with the Role field value
-// and a boolean to check if the value has been set.
-func (o *AddRolesRequest) GetRoleOk() (*AddRolesRequestRole, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Role, true
-}
-
-// SetRole sets field value
-func (o *AddRolesRequest) SetRole(v AddRolesRequestRole) {
-	o.Role = v
-}
-
 func (o AddRolesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

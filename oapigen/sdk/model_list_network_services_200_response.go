@@ -26,55 +26,6 @@ type ListNetworkServices200Response struct {
 
 type _ListNetworkServices200Response ListNetworkServices200Response
 
-// NewListNetworkServices200Response instantiates a new ListNetworkServices200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListNetworkServices200Response() *ListNetworkServices200Response {
-	this := ListNetworkServices200Response{}
-	return &this
-}
-
-// NewListNetworkServices200ResponseWithDefaults instantiates a new ListNetworkServices200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListNetworkServices200ResponseWithDefaults() *ListNetworkServices200Response {
-	this := ListNetworkServices200Response{}
-	return &this
-}
-
-// GetNetworkServices returns the NetworkServices field value if set, zero value otherwise.
-func (o *ListNetworkServices200Response) GetNetworkServices() []ListNetworkServices200ResponseNetworkServicesInner {
-	if o == nil || IsNil(o.NetworkServices) {
-		var ret []ListNetworkServices200ResponseNetworkServicesInner
-		return ret
-	}
-	return o.NetworkServices
-}
-
-// GetNetworkServicesOk returns a tuple with the NetworkServices field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListNetworkServices200Response) GetNetworkServicesOk() ([]ListNetworkServices200ResponseNetworkServicesInner, bool) {
-	if o == nil || IsNil(o.NetworkServices) {
-		return nil, false
-	}
-	return o.NetworkServices, true
-}
-
-// IsSetNetworkServices returns a boolean if a field has been set.
-func (o *ListNetworkServices200Response) IsSetNetworkServices() bool {
-	if o != nil && !IsNil(o.NetworkServices) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkServices gets a reference to the given []ListNetworkServices200ResponseNetworkServicesInner and assigns it to the NetworkServices field.
-func (o *ListNetworkServices200Response) SetNetworkServices(v []ListNetworkServices200ResponseNetworkServicesInner) {
-	o.NetworkServices = v
-}
-
 func (o ListNetworkServices200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

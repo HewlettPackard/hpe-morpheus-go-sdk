@@ -26,55 +26,6 @@ type ListLogSettings200Response struct {
 
 type _ListLogSettings200Response ListLogSettings200Response
 
-// NewListLogSettings200Response instantiates a new ListLogSettings200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListLogSettings200Response() *ListLogSettings200Response {
-	this := ListLogSettings200Response{}
-	return &this
-}
-
-// NewListLogSettings200ResponseWithDefaults instantiates a new ListLogSettings200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListLogSettings200ResponseWithDefaults() *ListLogSettings200Response {
-	this := ListLogSettings200Response{}
-	return &this
-}
-
-// GetLogSettings returns the LogSettings field value if set, zero value otherwise.
-func (o *ListLogSettings200Response) GetLogSettings() ListLogSettings200ResponseLogSettings {
-	if o == nil || IsNil(o.LogSettings) {
-		var ret ListLogSettings200ResponseLogSettings
-		return ret
-	}
-	return *o.LogSettings
-}
-
-// GetLogSettingsOk returns a tuple with the LogSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListLogSettings200Response) GetLogSettingsOk() (*ListLogSettings200ResponseLogSettings, bool) {
-	if o == nil || IsNil(o.LogSettings) {
-		return nil, false
-	}
-	return o.LogSettings, true
-}
-
-// IsSetLogSettings returns a boolean if a field has been set.
-func (o *ListLogSettings200Response) IsSetLogSettings() bool {
-	if o != nil && !IsNil(o.LogSettings) {
-		return true
-	}
-
-	return false
-}
-
-// SetLogSettings gets a reference to the given ListLogSettings200ResponseLogSettings and assigns it to the LogSettings field.
-func (o *ListLogSettings200Response) SetLogSettings(v ListLogSettings200ResponseLogSettings) {
-	o.LogSettings = &v
-}
-
 func (o ListLogSettings200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

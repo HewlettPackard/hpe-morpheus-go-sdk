@@ -27,55 +27,6 @@ type InstanceConfigObject2SecurityGroupsInner struct {
 
 type _InstanceConfigObject2SecurityGroupsInner InstanceConfigObject2SecurityGroupsInner
 
-// NewInstanceConfigObject2SecurityGroupsInner instantiates a new InstanceConfigObject2SecurityGroupsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceConfigObject2SecurityGroupsInner() *InstanceConfigObject2SecurityGroupsInner {
-	this := InstanceConfigObject2SecurityGroupsInner{}
-	return &this
-}
-
-// NewInstanceConfigObject2SecurityGroupsInnerWithDefaults instantiates a new InstanceConfigObject2SecurityGroupsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigObject2SecurityGroupsInnerWithDefaults() *InstanceConfigObject2SecurityGroupsInner {
-	this := InstanceConfigObject2SecurityGroupsInner{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *InstanceConfigObject2SecurityGroupsInner) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstanceConfigObject2SecurityGroupsInner) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceConfigObject2SecurityGroupsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *InstanceConfigObject2SecurityGroupsInner) SetId(v string) {
-	o.Id = &v
-}
-
 func (o InstanceConfigObject2SecurityGroupsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

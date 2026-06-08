@@ -27,20 +27,6 @@ type SpecTemplateUpdateConfigCloudformationIAM struct {
 	String *string
 }
 
-// boolAsSpecTemplateUpdateConfigCloudformationIAM is a convenience function that returns bool wrapped in SpecTemplateUpdateConfigCloudformationIAM
-func BoolAsSpecTemplateUpdateConfigCloudformationIAM(v *bool) SpecTemplateUpdateConfigCloudformationIAM {
-	return SpecTemplateUpdateConfigCloudformationIAM{
-		Bool: v,
-	}
-}
-
-// stringAsSpecTemplateUpdateConfigCloudformationIAM is a convenience function that returns string wrapped in SpecTemplateUpdateConfigCloudformationIAM
-func StringAsSpecTemplateUpdateConfigCloudformationIAM(v *string) SpecTemplateUpdateConfigCloudformationIAM {
-	return SpecTemplateUpdateConfigCloudformationIAM{
-		String: v,
-	}
-}
-
 func (dst *SpecTemplateUpdateConfigCloudformationIAM) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &SpecTemplateUpdateConfigCloudformationIAM{}

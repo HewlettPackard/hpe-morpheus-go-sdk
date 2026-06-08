@@ -26,48 +26,6 @@ type UpdateStorageServersRequest struct {
 
 type _UpdateStorageServersRequest UpdateStorageServersRequest
 
-// NewUpdateStorageServersRequest instantiates a new UpdateStorageServersRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateStorageServersRequest(storageServer UpdateStorageServersRequestStorageServer) *UpdateStorageServersRequest {
-	this := UpdateStorageServersRequest{}
-	this.StorageServer = storageServer
-	return &this
-}
-
-// NewUpdateStorageServersRequestWithDefaults instantiates a new UpdateStorageServersRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateStorageServersRequestWithDefaults() *UpdateStorageServersRequest {
-	this := UpdateStorageServersRequest{}
-	return &this
-}
-
-// GetStorageServer returns the StorageServer field value
-func (o *UpdateStorageServersRequest) GetStorageServer() UpdateStorageServersRequestStorageServer {
-	if o == nil {
-		var ret UpdateStorageServersRequestStorageServer
-		return ret
-	}
-
-	return o.StorageServer
-}
-
-// GetStorageServerOk returns a tuple with the StorageServer field value
-// and a boolean to check if the value has been set.
-func (o *UpdateStorageServersRequest) GetStorageServerOk() (*UpdateStorageServersRequestStorageServer, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.StorageServer, true
-}
-
-// SetStorageServer sets field value
-func (o *UpdateStorageServersRequest) SetStorageServer(v UpdateStorageServersRequestStorageServer) {
-	o.StorageServer = v
-}
-
 func (o UpdateStorageServersRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

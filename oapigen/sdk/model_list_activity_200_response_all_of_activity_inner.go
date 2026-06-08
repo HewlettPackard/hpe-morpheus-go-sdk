@@ -26,55 +26,6 @@ type ListActivity200ResponseAllOfActivityInner struct {
 
 type _ListActivity200ResponseAllOfActivityInner ListActivity200ResponseAllOfActivityInner
 
-// NewListActivity200ResponseAllOfActivityInner instantiates a new ListActivity200ResponseAllOfActivityInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListActivity200ResponseAllOfActivityInner() *ListActivity200ResponseAllOfActivityInner {
-	this := ListActivity200ResponseAllOfActivityInner{}
-	return &this
-}
-
-// NewListActivity200ResponseAllOfActivityInnerWithDefaults instantiates a new ListActivity200ResponseAllOfActivityInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListActivity200ResponseAllOfActivityInnerWithDefaults() *ListActivity200ResponseAllOfActivityInner {
-	this := ListActivity200ResponseAllOfActivityInner{}
-	return &this
-}
-
-// GetActivity returns the Activity field value if set, zero value otherwise.
-func (o *ListActivity200ResponseAllOfActivityInner) GetActivity() []ListActivity200ResponseAllOfActivityInnerActivityInner {
-	if o == nil || IsNil(o.Activity) {
-		var ret []ListActivity200ResponseAllOfActivityInnerActivityInner
-		return ret
-	}
-	return o.Activity
-}
-
-// GetActivityOk returns a tuple with the Activity field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListActivity200ResponseAllOfActivityInner) GetActivityOk() ([]ListActivity200ResponseAllOfActivityInnerActivityInner, bool) {
-	if o == nil || IsNil(o.Activity) {
-		return nil, false
-	}
-	return o.Activity, true
-}
-
-// IsSetActivity returns a boolean if a field has been set.
-func (o *ListActivity200ResponseAllOfActivityInner) IsSetActivity() bool {
-	if o != nil && !IsNil(o.Activity) {
-		return true
-	}
-
-	return false
-}
-
-// SetActivity gets a reference to the given []ListActivity200ResponseAllOfActivityInnerActivityInner and assigns it to the Activity field.
-func (o *ListActivity200ResponseAllOfActivityInner) SetActivity(v []ListActivity200ResponseAllOfActivityInnerActivityInner) {
-	o.Activity = v
-}
-
 func (o ListActivity200ResponseAllOfActivityInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

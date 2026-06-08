@@ -26,55 +26,6 @@ type UpdateOptionListRequest struct {
 
 type _UpdateOptionListRequest UpdateOptionListRequest
 
-// NewUpdateOptionListRequest instantiates a new UpdateOptionListRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateOptionListRequest() *UpdateOptionListRequest {
-	this := UpdateOptionListRequest{}
-	return &this
-}
-
-// NewUpdateOptionListRequestWithDefaults instantiates a new UpdateOptionListRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateOptionListRequestWithDefaults() *UpdateOptionListRequest {
-	this := UpdateOptionListRequest{}
-	return &this
-}
-
-// GetOptionTypeList returns the OptionTypeList field value if set, zero value otherwise.
-func (o *UpdateOptionListRequest) GetOptionTypeList() UpdateOptionListRequestOptionTypeList {
-	if o == nil || IsNil(o.OptionTypeList) {
-		var ret UpdateOptionListRequestOptionTypeList
-		return ret
-	}
-	return *o.OptionTypeList
-}
-
-// GetOptionTypeListOk returns a tuple with the OptionTypeList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateOptionListRequest) GetOptionTypeListOk() (*UpdateOptionListRequestOptionTypeList, bool) {
-	if o == nil || IsNil(o.OptionTypeList) {
-		return nil, false
-	}
-	return o.OptionTypeList, true
-}
-
-// IsSetOptionTypeList returns a boolean if a field has been set.
-func (o *UpdateOptionListRequest) IsSetOptionTypeList() bool {
-	if o != nil && !IsNil(o.OptionTypeList) {
-		return true
-	}
-
-	return false
-}
-
-// SetOptionTypeList gets a reference to the given UpdateOptionListRequestOptionTypeList and assigns it to the OptionTypeList field.
-func (o *UpdateOptionListRequest) SetOptionTypeList(v UpdateOptionListRequestOptionTypeList) {
-	o.OptionTypeList = &v
-}
-
 func (o UpdateOptionListRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

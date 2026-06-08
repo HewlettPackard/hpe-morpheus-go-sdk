@@ -26,55 +26,6 @@ type GetToken200Response struct {
 
 type _GetToken200Response GetToken200Response
 
-// NewGetToken200Response instantiates a new GetToken200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetToken200Response() *GetToken200Response {
-	this := GetToken200Response{}
-	return &this
-}
-
-// NewGetToken200ResponseWithDefaults instantiates a new GetToken200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetToken200ResponseWithDefaults() *GetToken200Response {
-	this := GetToken200Response{}
-	return &this
-}
-
-// GetToken returns the Token field value if set, zero value otherwise.
-func (o *GetToken200Response) GetToken() GetToken200ResponseToken {
-	if o == nil || IsNil(o.Token) {
-		var ret GetToken200ResponseToken
-		return ret
-	}
-	return *o.Token
-}
-
-// GetTokenOk returns a tuple with the Token field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetToken200Response) GetTokenOk() (*GetToken200ResponseToken, bool) {
-	if o == nil || IsNil(o.Token) {
-		return nil, false
-	}
-	return o.Token, true
-}
-
-// IsSetToken returns a boolean if a field has been set.
-func (o *GetToken200Response) IsSetToken() bool {
-	if o != nil && !IsNil(o.Token) {
-		return true
-	}
-
-	return false
-}
-
-// SetToken gets a reference to the given GetToken200ResponseToken and assigns it to the Token field.
-func (o *GetToken200Response) SetToken(v GetToken200ResponseToken) {
-	o.Token = &v
-}
-
 func (o GetToken200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

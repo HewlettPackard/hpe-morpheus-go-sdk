@@ -26,55 +26,6 @@ type GetStateInstance200ResponseAllOfInstanceOutput struct {
 
 type _GetStateInstance200ResponseAllOfInstanceOutput GetStateInstance200ResponseAllOfInstanceOutput
 
-// NewGetStateInstance200ResponseAllOfInstanceOutput instantiates a new GetStateInstance200ResponseAllOfInstanceOutput object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetStateInstance200ResponseAllOfInstanceOutput() *GetStateInstance200ResponseAllOfInstanceOutput {
-	this := GetStateInstance200ResponseAllOfInstanceOutput{}
-	return &this
-}
-
-// NewGetStateInstance200ResponseAllOfInstanceOutputWithDefaults instantiates a new GetStateInstance200ResponseAllOfInstanceOutput object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetStateInstance200ResponseAllOfInstanceOutputWithDefaults() *GetStateInstance200ResponseAllOfInstanceOutput {
-	this := GetStateInstance200ResponseAllOfInstanceOutput{}
-	return &this
-}
-
-// GetOutputs returns the Outputs field value if set, zero value otherwise.
-func (o *GetStateInstance200ResponseAllOfInstanceOutput) GetOutputs() []map[string]interface{} {
-	if o == nil || IsNil(o.Outputs) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Outputs
-}
-
-// GetOutputsOk returns a tuple with the Outputs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetStateInstance200ResponseAllOfInstanceOutput) GetOutputsOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Outputs) {
-		return nil, false
-	}
-	return o.Outputs, true
-}
-
-// IsSetOutputs returns a boolean if a field has been set.
-func (o *GetStateInstance200ResponseAllOfInstanceOutput) IsSetOutputs() bool {
-	if o != nil && !IsNil(o.Outputs) {
-		return true
-	}
-
-	return false
-}
-
-// SetOutputs gets a reference to the given []map[string]interface{} and assigns it to the Outputs field.
-func (o *GetStateInstance200ResponseAllOfInstanceOutput) SetOutputs(v []map[string]interface{}) {
-	o.Outputs = v
-}
-
 func (o GetStateInstance200ResponseAllOfInstanceOutput) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

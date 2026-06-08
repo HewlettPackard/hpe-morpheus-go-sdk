@@ -26,55 +26,6 @@ type CreateResourcePoolGroup200Response struct {
 
 type _CreateResourcePoolGroup200Response CreateResourcePoolGroup200Response
 
-// NewCreateResourcePoolGroup200Response instantiates a new CreateResourcePoolGroup200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateResourcePoolGroup200Response() *CreateResourcePoolGroup200Response {
-	this := CreateResourcePoolGroup200Response{}
-	return &this
-}
-
-// NewCreateResourcePoolGroup200ResponseWithDefaults instantiates a new CreateResourcePoolGroup200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateResourcePoolGroup200ResponseWithDefaults() *CreateResourcePoolGroup200Response {
-	this := CreateResourcePoolGroup200Response{}
-	return &this
-}
-
-// GetResourcePoolGroup returns the ResourcePoolGroup field value if set, zero value otherwise.
-func (o *CreateResourcePoolGroup200Response) GetResourcePoolGroup() CreateResourcePoolGroup200ResponseResourcePoolGroup {
-	if o == nil || IsNil(o.ResourcePoolGroup) {
-		var ret CreateResourcePoolGroup200ResponseResourcePoolGroup
-		return ret
-	}
-	return *o.ResourcePoolGroup
-}
-
-// GetResourcePoolGroupOk returns a tuple with the ResourcePoolGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateResourcePoolGroup200Response) GetResourcePoolGroupOk() (*CreateResourcePoolGroup200ResponseResourcePoolGroup, bool) {
-	if o == nil || IsNil(o.ResourcePoolGroup) {
-		return nil, false
-	}
-	return o.ResourcePoolGroup, true
-}
-
-// IsSetResourcePoolGroup returns a boolean if a field has been set.
-func (o *CreateResourcePoolGroup200Response) IsSetResourcePoolGroup() bool {
-	if o != nil && !IsNil(o.ResourcePoolGroup) {
-		return true
-	}
-
-	return false
-}
-
-// SetResourcePoolGroup gets a reference to the given CreateResourcePoolGroup200ResponseResourcePoolGroup and assigns it to the ResourcePoolGroup field.
-func (o *CreateResourcePoolGroup200Response) SetResourcePoolGroup(v CreateResourcePoolGroup200ResponseResourcePoolGroup) {
-	o.ResourcePoolGroup = &v
-}
-
 func (o CreateResourcePoolGroup200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,55 +27,6 @@ type BlueprintKubernetesCreateSuccessConfig struct {
 
 type _BlueprintKubernetesCreateSuccessConfig BlueprintKubernetesCreateSuccessConfig
 
-// NewBlueprintKubernetesCreateSuccessConfig instantiates a new BlueprintKubernetesCreateSuccessConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBlueprintKubernetesCreateSuccessConfig() *BlueprintKubernetesCreateSuccessConfig {
-	this := BlueprintKubernetesCreateSuccessConfig{}
-	return &this
-}
-
-// NewBlueprintKubernetesCreateSuccessConfigWithDefaults instantiates a new BlueprintKubernetesCreateSuccessConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintKubernetesCreateSuccessConfigWithDefaults() *BlueprintKubernetesCreateSuccessConfig {
-	this := BlueprintKubernetesCreateSuccessConfig{}
-	return &this
-}
-
-// GetSpecs returns the Specs field value if set, zero value otherwise.
-func (o *BlueprintKubernetesCreateSuccessConfig) GetSpecs() []BlueprintKubernetesCreateSuccessConfigSpecsInner {
-	if o == nil || IsNil(o.Specs) {
-		var ret []BlueprintKubernetesCreateSuccessConfigSpecsInner
-		return ret
-	}
-	return o.Specs
-}
-
-// GetSpecsOk returns a tuple with the Specs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintKubernetesCreateSuccessConfig) GetSpecsOk() ([]BlueprintKubernetesCreateSuccessConfigSpecsInner, bool) {
-	if o == nil || IsNil(o.Specs) {
-		return nil, false
-	}
-	return o.Specs, true
-}
-
-// IsSetSpecs returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateSuccessConfig) IsSetSpecs() bool {
-	if o != nil && !IsNil(o.Specs) {
-		return true
-	}
-
-	return false
-}
-
-// SetSpecs gets a reference to the given []BlueprintKubernetesCreateSuccessConfigSpecsInner and assigns it to the Specs field.
-func (o *BlueprintKubernetesCreateSuccessConfig) SetSpecs(v []BlueprintKubernetesCreateSuccessConfigSpecsInner) {
-	o.Specs = v
-}
-
 func (o BlueprintKubernetesCreateSuccessConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

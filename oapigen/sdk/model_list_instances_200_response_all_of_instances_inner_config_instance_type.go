@@ -26,66 +26,6 @@ type ListInstances200ResponseAllOfInstancesInnerConfigInstanceType struct {
 
 type _ListInstances200ResponseAllOfInstancesInnerConfigInstanceType ListInstances200ResponseAllOfInstancesInnerConfigInstanceType
 
-// NewListInstances200ResponseAllOfInstancesInnerConfigInstanceType instantiates a new ListInstances200ResponseAllOfInstancesInnerConfigInstanceType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListInstances200ResponseAllOfInstancesInnerConfigInstanceType() *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType {
-	this := ListInstances200ResponseAllOfInstancesInnerConfigInstanceType{}
-	return &this
-}
-
-// NewListInstances200ResponseAllOfInstancesInnerConfigInstanceTypeWithDefaults instantiates a new ListInstances200ResponseAllOfInstancesInnerConfigInstanceType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListInstances200ResponseAllOfInstancesInnerConfigInstanceTypeWithDefaults() *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType {
-	this := ListInstances200ResponseAllOfInstancesInnerConfigInstanceType{}
-	return &this
-}
-
-// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType) GetCode() string {
-	if o == nil || IsNil(o.Code.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Code.Get()
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType) GetCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Code.Get(), o.Code.IsSet()
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetCode gets a reference to the given NullableString and assigns it to the Code field.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType) SetCode(v string) {
-	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType) UnsetCode() {
-	o.Code.Unset()
-}
-
 func (o ListInstances200ResponseAllOfInstancesInnerConfigInstanceType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

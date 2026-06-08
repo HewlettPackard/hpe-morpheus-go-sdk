@@ -26,55 +26,6 @@ type GetCloudFolders200Response struct {
 
 type _GetCloudFolders200Response GetCloudFolders200Response
 
-// NewGetCloudFolders200Response instantiates a new GetCloudFolders200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCloudFolders200Response() *GetCloudFolders200Response {
-	this := GetCloudFolders200Response{}
-	return &this
-}
-
-// NewGetCloudFolders200ResponseWithDefaults instantiates a new GetCloudFolders200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCloudFolders200ResponseWithDefaults() *GetCloudFolders200Response {
-	this := GetCloudFolders200Response{}
-	return &this
-}
-
-// GetFolder returns the Folder field value if set, zero value otherwise.
-func (o *GetCloudFolders200Response) GetFolder() GetCloudFolders200ResponseAllOfFolder {
-	if o == nil || IsNil(o.Folder) {
-		var ret GetCloudFolders200ResponseAllOfFolder
-		return ret
-	}
-	return *o.Folder
-}
-
-// GetFolderOk returns a tuple with the Folder field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCloudFolders200Response) GetFolderOk() (*GetCloudFolders200ResponseAllOfFolder, bool) {
-	if o == nil || IsNil(o.Folder) {
-		return nil, false
-	}
-	return o.Folder, true
-}
-
-// IsSetFolder returns a boolean if a field has been set.
-func (o *GetCloudFolders200Response) IsSetFolder() bool {
-	if o != nil && !IsNil(o.Folder) {
-		return true
-	}
-
-	return false
-}
-
-// SetFolder gets a reference to the given GetCloudFolders200ResponseAllOfFolder and assigns it to the Folder field.
-func (o *GetCloudFolders200Response) SetFolder(v GetCloudFolders200ResponseAllOfFolder) {
-	o.Folder = &v
-}
-
 func (o GetCloudFolders200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

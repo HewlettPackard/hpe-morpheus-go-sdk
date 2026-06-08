@@ -26,13 +26,6 @@ type CloudCreateConfigVsphereRpcMode struct {
 	String *string
 }
 
-// stringAsCloudCreateConfigVsphereRpcMode is a convenience function that returns string wrapped in CloudCreateConfigVsphereRpcMode
-func StringAsCloudCreateConfigVsphereRpcMode(v *string) CloudCreateConfigVsphereRpcMode {
-	return CloudCreateConfigVsphereRpcMode{
-		String: v,
-	}
-}
-
 func (dst *CloudCreateConfigVsphereRpcMode) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &CloudCreateConfigVsphereRpcMode{}

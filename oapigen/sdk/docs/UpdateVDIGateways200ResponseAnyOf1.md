@@ -6,49 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Success** | Pointer to **bool** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewUpdateVDIGateways200ResponseAnyOf1
+Instantiate with a Go composite literal:
 
-`func NewUpdateVDIGateways200ResponseAnyOf1() *UpdateVDIGateways200ResponseAnyOf1`
-
-NewUpdateVDIGateways200ResponseAnyOf1 instantiates a new UpdateVDIGateways200ResponseAnyOf1 object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewUpdateVDIGateways200ResponseAnyOf1WithDefaults
-
-`func NewUpdateVDIGateways200ResponseAnyOf1WithDefaults() *UpdateVDIGateways200ResponseAnyOf1`
-
-NewUpdateVDIGateways200ResponseAnyOf1WithDefaults instantiates a new UpdateVDIGateways200ResponseAnyOf1 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetSuccess
-
-`func (o *UpdateVDIGateways200ResponseAnyOf1) GetSuccess() bool`
-
-GetSuccess returns the Success field if non-nil, zero value otherwise.
-
-### GetSuccessOk
-
-`func (o *UpdateVDIGateways200ResponseAnyOf1) GetSuccessOk() (*bool, bool)`
-
-GetSuccessOk returns a tuple with the Success field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSuccess
-
-`func (o *UpdateVDIGateways200ResponseAnyOf1) SetSuccess(v bool)`
-
-SetSuccess sets Success field to given value.
-
-### HasSuccess
-
-`func (o *UpdateVDIGateways200ResponseAnyOf1) HasSuccess() bool`
-
-HasSuccess returns a boolean if a field has been set.
+```go
+obj := &UpdateVDIGateways200ResponseAnyOf1{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

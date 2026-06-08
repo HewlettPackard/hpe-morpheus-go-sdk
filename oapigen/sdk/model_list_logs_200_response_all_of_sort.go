@@ -26,55 +26,6 @@ type ListLogs200ResponseAllOfSort struct {
 
 type _ListLogs200ResponseAllOfSort ListLogs200ResponseAllOfSort
 
-// NewListLogs200ResponseAllOfSort instantiates a new ListLogs200ResponseAllOfSort object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListLogs200ResponseAllOfSort() *ListLogs200ResponseAllOfSort {
-	this := ListLogs200ResponseAllOfSort{}
-	return &this
-}
-
-// NewListLogs200ResponseAllOfSortWithDefaults instantiates a new ListLogs200ResponseAllOfSort object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListLogs200ResponseAllOfSortWithDefaults() *ListLogs200ResponseAllOfSort {
-	this := ListLogs200ResponseAllOfSort{}
-	return &this
-}
-
-// GetTs returns the Ts field value if set, zero value otherwise.
-func (o *ListLogs200ResponseAllOfSort) GetTs() string {
-	if o == nil || IsNil(o.Ts) {
-		var ret string
-		return ret
-	}
-	return *o.Ts
-}
-
-// GetTsOk returns a tuple with the Ts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListLogs200ResponseAllOfSort) GetTsOk() (*string, bool) {
-	if o == nil || IsNil(o.Ts) {
-		return nil, false
-	}
-	return o.Ts, true
-}
-
-// IsSetTs returns a boolean if a field has been set.
-func (o *ListLogs200ResponseAllOfSort) IsSetTs() bool {
-	if o != nil && !IsNil(o.Ts) {
-		return true
-	}
-
-	return false
-}
-
-// SetTs gets a reference to the given string and assigns it to the Ts field.
-func (o *ListLogs200ResponseAllOfSort) SetTs(v string) {
-	o.Ts = &v
-}
-
 func (o ListLogs200ResponseAllOfSort) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

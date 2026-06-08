@@ -27,55 +27,6 @@ type RemoveInstancesFromControlRequest struct {
 
 type _RemoveInstancesFromControlRequest RemoveInstancesFromControlRequest
 
-// NewRemoveInstancesFromControlRequest instantiates a new RemoveInstancesFromControlRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRemoveInstancesFromControlRequest() *RemoveInstancesFromControlRequest {
-	this := RemoveInstancesFromControlRequest{}
-	return &this
-}
-
-// NewRemoveInstancesFromControlRequestWithDefaults instantiates a new RemoveInstancesFromControlRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRemoveInstancesFromControlRequestWithDefaults() *RemoveInstancesFromControlRequest {
-	this := RemoveInstancesFromControlRequest{}
-	return &this
-}
-
-// GetIds returns the Ids field value if set, zero value otherwise.
-func (o *RemoveInstancesFromControlRequest) GetIds() []int64 {
-	if o == nil || IsNil(o.Ids) {
-		var ret []int64
-		return ret
-	}
-	return o.Ids
-}
-
-// GetIdsOk returns a tuple with the Ids field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RemoveInstancesFromControlRequest) GetIdsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.Ids) {
-		return nil, false
-	}
-	return o.Ids, true
-}
-
-// IsSetIds returns a boolean if a field has been set.
-func (o *RemoveInstancesFromControlRequest) IsSetIds() bool {
-	if o != nil && !IsNil(o.Ids) {
-		return true
-	}
-
-	return false
-}
-
-// SetIds gets a reference to the given []int64 and assigns it to the Ids field.
-func (o *RemoveInstancesFromControlRequest) SetIds(v []int64) {
-	o.Ids = v
-}
-
 func (o RemoveInstancesFromControlRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

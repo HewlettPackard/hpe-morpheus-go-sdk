@@ -10,180 +10,37 @@ Name | Type | Description | Notes
 **DefaultCheckInterval** | Pointer to **NullableInt32** | Default Check Interval. The number of minutes to use as the default interval to use when creating new checks. | [optional] 
 **ServiceNow** | Pointer to [**UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow**](UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow.md) |  | [optional] 
 
-## Methods
-
-### NewUpdateMonitoringSettingsRequestMonitoringSettings
-
-`func NewUpdateMonitoringSettingsRequestMonitoringSettings() *UpdateMonitoringSettingsRequestMonitoringSettings`
-
-NewUpdateMonitoringSettingsRequestMonitoringSettings instantiates a new UpdateMonitoringSettingsRequestMonitoringSettings object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewUpdateMonitoringSettingsRequestMonitoringSettingsWithDefaults
-
-`func NewUpdateMonitoringSettingsRequestMonitoringSettingsWithDefaults() *UpdateMonitoringSettingsRequestMonitoringSettings`
-
-NewUpdateMonitoringSettingsRequestMonitoringSettingsWithDefaults instantiates a new UpdateMonitoringSettingsRequestMonitoringSettings object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetAutoManageChecks
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) GetAutoManageChecks() bool`
-
-GetAutoManageChecks returns the AutoManageChecks field if non-nil, zero value otherwise.
-
-### GetAutoManageChecksOk
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) GetAutoManageChecksOk() (*bool, bool)`
-
-GetAutoManageChecksOk returns a tuple with the AutoManageChecks field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAutoManageChecks
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) SetAutoManageChecks(v bool)`
-
-SetAutoManageChecks sets AutoManageChecks field to given value.
-
-### HasAutoManageChecks
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) HasAutoManageChecks() bool`
-
-HasAutoManageChecks returns a boolean if a field has been set.
-
-### GetAvailabilityTimeFrame
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) GetAvailabilityTimeFrame() int32`
-
-GetAvailabilityTimeFrame returns the AvailabilityTimeFrame field if non-nil, zero value otherwise.
-
-### GetAvailabilityTimeFrameOk
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) GetAvailabilityTimeFrameOk() (*int32, bool)`
-
-GetAvailabilityTimeFrameOk returns a tuple with the AvailabilityTimeFrame field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAvailabilityTimeFrame
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) SetAvailabilityTimeFrame(v int32)`
-
-SetAvailabilityTimeFrame sets AvailabilityTimeFrame field to given value.
-
-### HasAvailabilityTimeFrame
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) HasAvailabilityTimeFrame() bool`
-
-HasAvailabilityTimeFrame returns a boolean if a field has been set.
-
-### SetAvailabilityTimeFrameNil
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) SetAvailabilityTimeFrameNil(b bool)`
-
- SetAvailabilityTimeFrameNil sets the value for AvailabilityTimeFrame to be an explicit nil
-
-### UnsetAvailabilityTimeFrame
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) UnsetAvailabilityTimeFrame()`
-
-UnsetAvailabilityTimeFrame ensures that no value is present for AvailabilityTimeFrame, not even an explicit nil
-### GetAvailabilityPrecision
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) GetAvailabilityPrecision() int32`
-
-GetAvailabilityPrecision returns the AvailabilityPrecision field if non-nil, zero value otherwise.
-
-### GetAvailabilityPrecisionOk
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) GetAvailabilityPrecisionOk() (*int32, bool)`
-
-GetAvailabilityPrecisionOk returns a tuple with the AvailabilityPrecision field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAvailabilityPrecision
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) SetAvailabilityPrecision(v int32)`
-
-SetAvailabilityPrecision sets AvailabilityPrecision field to given value.
-
-### HasAvailabilityPrecision
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) HasAvailabilityPrecision() bool`
-
-HasAvailabilityPrecision returns a boolean if a field has been set.
-
-### SetAvailabilityPrecisionNil
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) SetAvailabilityPrecisionNil(b bool)`
-
- SetAvailabilityPrecisionNil sets the value for AvailabilityPrecision to be an explicit nil
-
-### UnsetAvailabilityPrecision
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) UnsetAvailabilityPrecision()`
-
-UnsetAvailabilityPrecision ensures that no value is present for AvailabilityPrecision, not even an explicit nil
-### GetDefaultCheckInterval
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) GetDefaultCheckInterval() int32`
-
-GetDefaultCheckInterval returns the DefaultCheckInterval field if non-nil, zero value otherwise.
-
-### GetDefaultCheckIntervalOk
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) GetDefaultCheckIntervalOk() (*int32, bool)`
-
-GetDefaultCheckIntervalOk returns a tuple with the DefaultCheckInterval field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultCheckInterval
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) SetDefaultCheckInterval(v int32)`
-
-SetDefaultCheckInterval sets DefaultCheckInterval field to given value.
-
-### HasDefaultCheckInterval
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) HasDefaultCheckInterval() bool`
-
-HasDefaultCheckInterval returns a boolean if a field has been set.
-
-### SetDefaultCheckIntervalNil
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) SetDefaultCheckIntervalNil(b bool)`
-
- SetDefaultCheckIntervalNil sets the value for DefaultCheckInterval to be an explicit nil
-
-### UnsetDefaultCheckInterval
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) UnsetDefaultCheckInterval()`
-
-UnsetDefaultCheckInterval ensures that no value is present for DefaultCheckInterval, not even an explicit nil
-### GetServiceNow
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) GetServiceNow() UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow`
-
-GetServiceNow returns the ServiceNow field if non-nil, zero value otherwise.
-
-### GetServiceNowOk
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) GetServiceNowOk() (*UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow, bool)`
-
-GetServiceNowOk returns a tuple with the ServiceNow field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceNow
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) SetServiceNow(v UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow)`
-
-SetServiceNow sets ServiceNow field to given value.
-
-### HasServiceNow
-
-`func (o *UpdateMonitoringSettingsRequestMonitoringSettings) HasServiceNow() bool`
-
-HasServiceNow returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &UpdateMonitoringSettingsRequestMonitoringSettings{
+    // Set fields directly
+}
+```
+
+### AvailabilityTimeFrame (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.AvailabilityTimeFrame.IsSet()` — check if set
+- `obj.AvailabilityTimeFrame.Get()` — get the inner value (returns pointer)
+- `obj.AvailabilityTimeFrame.Set(&val)` — set the value
+- `obj.AvailabilityTimeFrame.Unset()` — clear the value
+### AvailabilityPrecision (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.AvailabilityPrecision.IsSet()` — check if set
+- `obj.AvailabilityPrecision.Get()` — get the inner value (returns pointer)
+- `obj.AvailabilityPrecision.Set(&val)` — set the value
+- `obj.AvailabilityPrecision.Unset()` — clear the value
+### DefaultCheckInterval (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.DefaultCheckInterval.IsSet()` — check if set
+- `obj.DefaultCheckInterval.Get()` — get the inner value (returns pointer)
+- `obj.DefaultCheckInterval.Set(&val)` — set the value
+- `obj.DefaultCheckInterval.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

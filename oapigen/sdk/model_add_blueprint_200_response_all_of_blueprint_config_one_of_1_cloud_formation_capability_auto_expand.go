@@ -27,20 +27,6 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAU
 	String *string
 }
 
-// boolAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND is a convenience function that returns bool wrapped in AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND
-func BoolAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND(v *bool) AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND {
-	return AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND{
-		Bool: v,
-	}
-}
-
-// stringAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND is a convenience function that returns string wrapped in AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND
-func StringAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND(v *string) AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND {
-	return AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND{
-		String: v,
-	}
-}
-
 func (dst *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND{}

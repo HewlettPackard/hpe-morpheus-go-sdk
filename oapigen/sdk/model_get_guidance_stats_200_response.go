@@ -26,55 +26,6 @@ type GetGuidanceStats200Response struct {
 
 type _GetGuidanceStats200Response GetGuidanceStats200Response
 
-// NewGetGuidanceStats200Response instantiates a new GetGuidanceStats200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetGuidanceStats200Response() *GetGuidanceStats200Response {
-	this := GetGuidanceStats200Response{}
-	return &this
-}
-
-// NewGetGuidanceStats200ResponseWithDefaults instantiates a new GetGuidanceStats200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetGuidanceStats200ResponseWithDefaults() *GetGuidanceStats200Response {
-	this := GetGuidanceStats200Response{}
-	return &this
-}
-
-// GetStats returns the Stats field value if set, zero value otherwise.
-func (o *GetGuidanceStats200Response) GetStats() GetGuidanceStats200ResponseStats {
-	if o == nil || IsNil(o.Stats) {
-		var ret GetGuidanceStats200ResponseStats
-		return ret
-	}
-	return *o.Stats
-}
-
-// GetStatsOk returns a tuple with the Stats field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidanceStats200Response) GetStatsOk() (*GetGuidanceStats200ResponseStats, bool) {
-	if o == nil || IsNil(o.Stats) {
-		return nil, false
-	}
-	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *GetGuidanceStats200Response) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
-}
-
-// SetStats gets a reference to the given GetGuidanceStats200ResponseStats and assigns it to the Stats field.
-func (o *GetGuidanceStats200Response) SetStats(v GetGuidanceStats200ResponseStats) {
-	o.Stats = &v
-}
-
 func (o GetGuidanceStats200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

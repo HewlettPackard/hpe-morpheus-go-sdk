@@ -7,74 +7,15 @@ Name | Type | Description | Notes
 **Amount** | Pointer to **float32** |  | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGuidanceAzureReservationsSavings
+Instantiate with a Go composite literal:
 
-`func NewGuidanceAzureReservationsSavings() *GuidanceAzureReservationsSavings`
-
-NewGuidanceAzureReservationsSavings instantiates a new GuidanceAzureReservationsSavings object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewGuidanceAzureReservationsSavingsWithDefaults
-
-`func NewGuidanceAzureReservationsSavingsWithDefaults() *GuidanceAzureReservationsSavings`
-
-NewGuidanceAzureReservationsSavingsWithDefaults instantiates a new GuidanceAzureReservationsSavings object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetAmount
-
-`func (o *GuidanceAzureReservationsSavings) GetAmount() float32`
-
-GetAmount returns the Amount field if non-nil, zero value otherwise.
-
-### GetAmountOk
-
-`func (o *GuidanceAzureReservationsSavings) GetAmountOk() (*float32, bool)`
-
-GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAmount
-
-`func (o *GuidanceAzureReservationsSavings) SetAmount(v float32)`
-
-SetAmount sets Amount field to given value.
-
-### HasAmount
-
-`func (o *GuidanceAzureReservationsSavings) HasAmount() bool`
-
-HasAmount returns a boolean if a field has been set.
-
-### GetCurrency
-
-`func (o *GuidanceAzureReservationsSavings) GetCurrency() string`
-
-GetCurrency returns the Currency field if non-nil, zero value otherwise.
-
-### GetCurrencyOk
-
-`func (o *GuidanceAzureReservationsSavings) GetCurrencyOk() (*string, bool)`
-
-GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCurrency
-
-`func (o *GuidanceAzureReservationsSavings) SetCurrency(v string)`
-
-SetCurrency sets Currency field to given value.
-
-### HasCurrency
-
-`func (o *GuidanceAzureReservationsSavings) HasCurrency() bool`
-
-HasCurrency returns a boolean if a field has been set.
+```go
+obj := &GuidanceAzureReservationsSavings{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

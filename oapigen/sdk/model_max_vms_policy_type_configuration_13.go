@@ -26,48 +26,6 @@ type MaxVMsPolicyTypeConfiguration13 struct {
 
 type _MaxVMsPolicyTypeConfiguration13 MaxVMsPolicyTypeConfiguration13
 
-// NewMaxVMsPolicyTypeConfiguration13 instantiates a new MaxVMsPolicyTypeConfiguration13 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMaxVMsPolicyTypeConfiguration13(maxVms string) *MaxVMsPolicyTypeConfiguration13 {
-	this := MaxVMsPolicyTypeConfiguration13{}
-	this.MaxVms = maxVms
-	return &this
-}
-
-// NewMaxVMsPolicyTypeConfiguration13WithDefaults instantiates a new MaxVMsPolicyTypeConfiguration13 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxVMsPolicyTypeConfiguration13WithDefaults() *MaxVMsPolicyTypeConfiguration13 {
-	this := MaxVMsPolicyTypeConfiguration13{}
-	return &this
-}
-
-// GetMaxVms returns the MaxVms field value
-func (o *MaxVMsPolicyTypeConfiguration13) GetMaxVms() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MaxVms
-}
-
-// GetMaxVmsOk returns a tuple with the MaxVms field value
-// and a boolean to check if the value has been set.
-func (o *MaxVMsPolicyTypeConfiguration13) GetMaxVmsOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MaxVms, true
-}
-
-// SetMaxVms sets field value
-func (o *MaxVMsPolicyTypeConfiguration13) SetMaxVms(v string) {
-	o.MaxVms = v
-}
-
 func (o MaxVMsPolicyTypeConfiguration13) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

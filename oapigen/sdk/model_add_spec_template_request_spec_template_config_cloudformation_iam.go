@@ -27,20 +27,6 @@ type AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM struct {
 	String *string
 }
 
-// boolAsAddSpecTemplateRequestSpecTemplateConfigCloudformationIAM is a convenience function that returns bool wrapped in AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM
-func BoolAsAddSpecTemplateRequestSpecTemplateConfigCloudformationIAM(v *bool) AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM {
-	return AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM{
-		Bool: v,
-	}
-}
-
-// stringAsAddSpecTemplateRequestSpecTemplateConfigCloudformationIAM is a convenience function that returns string wrapped in AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM
-func StringAsAddSpecTemplateRequestSpecTemplateConfigCloudformationIAM(v *string) AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM {
-	return AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM{
-		String: v,
-	}
-}
-
 func (dst *AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM{}

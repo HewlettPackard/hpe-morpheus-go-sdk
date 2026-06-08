@@ -26,55 +26,6 @@ type AddCatalogItemTypeRequest struct {
 
 type _AddCatalogItemTypeRequest AddCatalogItemTypeRequest
 
-// NewAddCatalogItemTypeRequest instantiates a new AddCatalogItemTypeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCatalogItemTypeRequest() *AddCatalogItemTypeRequest {
-	this := AddCatalogItemTypeRequest{}
-	return &this
-}
-
-// NewAddCatalogItemTypeRequestWithDefaults instantiates a new AddCatalogItemTypeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCatalogItemTypeRequestWithDefaults() *AddCatalogItemTypeRequest {
-	this := AddCatalogItemTypeRequest{}
-	return &this
-}
-
-// GetCatalogItemType returns the CatalogItemType field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequest) GetCatalogItemType() AddCatalogItemTypeRequestCatalogItemType {
-	if o == nil || IsNil(o.CatalogItemType) {
-		var ret AddCatalogItemTypeRequestCatalogItemType
-		return ret
-	}
-	return *o.CatalogItemType
-}
-
-// GetCatalogItemTypeOk returns a tuple with the CatalogItemType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequest) GetCatalogItemTypeOk() (*AddCatalogItemTypeRequestCatalogItemType, bool) {
-	if o == nil || IsNil(o.CatalogItemType) {
-		return nil, false
-	}
-	return o.CatalogItemType, true
-}
-
-// IsSetCatalogItemType returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequest) IsSetCatalogItemType() bool {
-	if o != nil && !IsNil(o.CatalogItemType) {
-		return true
-	}
-
-	return false
-}
-
-// SetCatalogItemType gets a reference to the given AddCatalogItemTypeRequestCatalogItemType and assigns it to the CatalogItemType field.
-func (o *AddCatalogItemTypeRequest) SetCatalogItemType(v AddCatalogItemTypeRequestCatalogItemType) {
-	o.CatalogItemType = &v
-}
-
 func (o AddCatalogItemTypeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

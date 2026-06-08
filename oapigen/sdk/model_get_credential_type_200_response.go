@@ -26,55 +26,6 @@ type GetCredentialType200Response struct {
 
 type _GetCredentialType200Response GetCredentialType200Response
 
-// NewGetCredentialType200Response instantiates a new GetCredentialType200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCredentialType200Response() *GetCredentialType200Response {
-	this := GetCredentialType200Response{}
-	return &this
-}
-
-// NewGetCredentialType200ResponseWithDefaults instantiates a new GetCredentialType200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCredentialType200ResponseWithDefaults() *GetCredentialType200Response {
-	this := GetCredentialType200Response{}
-	return &this
-}
-
-// GetCredentialType returns the CredentialType field value if set, zero value otherwise.
-func (o *GetCredentialType200Response) GetCredentialType() GetCredentialType200ResponseCredentialType {
-	if o == nil || IsNil(o.CredentialType) {
-		var ret GetCredentialType200ResponseCredentialType
-		return ret
-	}
-	return *o.CredentialType
-}
-
-// GetCredentialTypeOk returns a tuple with the CredentialType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCredentialType200Response) GetCredentialTypeOk() (*GetCredentialType200ResponseCredentialType, bool) {
-	if o == nil || IsNil(o.CredentialType) {
-		return nil, false
-	}
-	return o.CredentialType, true
-}
-
-// IsSetCredentialType returns a boolean if a field has been set.
-func (o *GetCredentialType200Response) IsSetCredentialType() bool {
-	if o != nil && !IsNil(o.CredentialType) {
-		return true
-	}
-
-	return false
-}
-
-// SetCredentialType gets a reference to the given GetCredentialType200ResponseCredentialType and assigns it to the CredentialType field.
-func (o *GetCredentialType200Response) SetCredentialType(v GetCredentialType200ResponseCredentialType) {
-	o.CredentialType = &v
-}
-
 func (o GetCredentialType200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

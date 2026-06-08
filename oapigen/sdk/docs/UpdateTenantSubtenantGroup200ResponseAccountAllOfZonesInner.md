@@ -7,74 +7,15 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewUpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner
+Instantiate with a Go composite literal:
 
-`func NewUpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner() *UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner`
-
-NewUpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner instantiates a new UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewUpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInnerWithDefaults
-
-`func NewUpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInnerWithDefaults() *UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner`
-
-NewUpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInnerWithDefaults instantiates a new UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner) HasName() bool`
-
-HasName returns a boolean if a field has been set.
+```go
+obj := &UpdateTenantSubtenantGroup200ResponseAccountAllOfZonesInner{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

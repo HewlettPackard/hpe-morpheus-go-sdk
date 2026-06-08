@@ -6,49 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AffinityGroup** | Pointer to [**GetCloudAffinityGroup200ResponseAffinityGroup**](GetCloudAffinityGroup200ResponseAffinityGroup.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetCloudAffinityGroup200Response
+Instantiate with a Go composite literal:
 
-`func NewGetCloudAffinityGroup200Response() *GetCloudAffinityGroup200Response`
-
-NewGetCloudAffinityGroup200Response instantiates a new GetCloudAffinityGroup200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewGetCloudAffinityGroup200ResponseWithDefaults
-
-`func NewGetCloudAffinityGroup200ResponseWithDefaults() *GetCloudAffinityGroup200Response`
-
-NewGetCloudAffinityGroup200ResponseWithDefaults instantiates a new GetCloudAffinityGroup200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetAffinityGroup
-
-`func (o *GetCloudAffinityGroup200Response) GetAffinityGroup() GetCloudAffinityGroup200ResponseAffinityGroup`
-
-GetAffinityGroup returns the AffinityGroup field if non-nil, zero value otherwise.
-
-### GetAffinityGroupOk
-
-`func (o *GetCloudAffinityGroup200Response) GetAffinityGroupOk() (*GetCloudAffinityGroup200ResponseAffinityGroup, bool)`
-
-GetAffinityGroupOk returns a tuple with the AffinityGroup field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAffinityGroup
-
-`func (o *GetCloudAffinityGroup200Response) SetAffinityGroup(v GetCloudAffinityGroup200ResponseAffinityGroup)`
-
-SetAffinityGroup sets AffinityGroup field to given value.
-
-### HasAffinityGroup
-
-`func (o *GetCloudAffinityGroup200Response) HasAffinityGroup() bool`
-
-HasAffinityGroup returns a boolean if a field has been set.
+```go
+obj := &GetCloudAffinityGroup200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

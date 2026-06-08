@@ -6,49 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **All** | Pointer to **int64** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts
+Instantiate with a Go composite literal:
 
-`func NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts() *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts`
-
-NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts instantiates a new UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCountsWithDefaults
-
-`func NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCountsWithDefaults() *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts`
-
-NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCountsWithDefaults instantiates a new UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetAll
-
-`func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts) GetAll() int64`
-
-GetAll returns the All field if non-nil, zero value otherwise.
-
-### GetAllOk
-
-`func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts) GetAllOk() (*int64, bool)`
-
-GetAllOk returns a tuple with the All field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAll
-
-`func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts) SetAll(v int64)`
-
-SetAll sets All field to given value.
-
-### HasAll
-
-`func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts) HasAll() bool`
-
-HasAll returns a boolean if a field has been set.
+```go
+obj := &UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

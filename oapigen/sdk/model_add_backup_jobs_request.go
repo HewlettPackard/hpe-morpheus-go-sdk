@@ -26,48 +26,6 @@ type AddBackupJobsRequest struct {
 
 type _AddBackupJobsRequest AddBackupJobsRequest
 
-// NewAddBackupJobsRequest instantiates a new AddBackupJobsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBackupJobsRequest(job AddBackupJobsRequestJob) *AddBackupJobsRequest {
-	this := AddBackupJobsRequest{}
-	this.Job = job
-	return &this
-}
-
-// NewAddBackupJobsRequestWithDefaults instantiates a new AddBackupJobsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBackupJobsRequestWithDefaults() *AddBackupJobsRequest {
-	this := AddBackupJobsRequest{}
-	return &this
-}
-
-// GetJob returns the Job field value
-func (o *AddBackupJobsRequest) GetJob() AddBackupJobsRequestJob {
-	if o == nil {
-		var ret AddBackupJobsRequestJob
-		return ret
-	}
-
-	return o.Job
-}
-
-// GetJobOk returns a tuple with the Job field value
-// and a boolean to check if the value has been set.
-func (o *AddBackupJobsRequest) GetJobOk() (*AddBackupJobsRequestJob, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Job, true
-}
-
-// SetJob sets field value
-func (o *AddBackupJobsRequest) SetJob(v AddBackupJobsRequestJob) {
-	o.Job = v
-}
-
 func (o AddBackupJobsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

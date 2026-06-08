@@ -27,20 +27,6 @@ type UpdateHostIdParameter struct {
 	String *string
 }
 
-// int64AsUpdateHostIdParameter is a convenience function that returns int64 wrapped in UpdateHostIdParameter
-func Int64AsUpdateHostIdParameter(v *int64) UpdateHostIdParameter {
-	return UpdateHostIdParameter{
-		Int64: v,
-	}
-}
-
-// stringAsUpdateHostIdParameter is a convenience function that returns string wrapped in UpdateHostIdParameter
-func StringAsUpdateHostIdParameter(v *string) UpdateHostIdParameter {
-	return UpdateHostIdParameter{
-		String: v,
-	}
-}
-
 func (dst *UpdateHostIdParameter) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateHostIdParameter{}

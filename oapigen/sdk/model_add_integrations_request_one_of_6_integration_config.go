@@ -27,55 +27,6 @@ type AddIntegrationsRequestOneOf6IntegrationConfig struct {
 
 type _AddIntegrationsRequestOneOf6IntegrationConfig AddIntegrationsRequestOneOf6IntegrationConfig
 
-// NewAddIntegrationsRequestOneOf6IntegrationConfig instantiates a new AddIntegrationsRequestOneOf6IntegrationConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIntegrationsRequestOneOf6IntegrationConfig() *AddIntegrationsRequestOneOf6IntegrationConfig {
-	this := AddIntegrationsRequestOneOf6IntegrationConfig{}
-	return &this
-}
-
-// NewAddIntegrationsRequestOneOf6IntegrationConfigWithDefaults instantiates a new AddIntegrationsRequestOneOf6IntegrationConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIntegrationsRequestOneOf6IntegrationConfigWithDefaults() *AddIntegrationsRequestOneOf6IntegrationConfig {
-	this := AddIntegrationsRequestOneOf6IntegrationConfig{}
-	return &this
-}
-
-// GetCacheEnabled returns the CacheEnabled field value if set, zero value otherwise.
-func (o *AddIntegrationsRequestOneOf6IntegrationConfig) GetCacheEnabled() bool {
-	if o == nil || IsNil(o.CacheEnabled) {
-		var ret bool
-		return ret
-	}
-	return *o.CacheEnabled
-}
-
-// GetCacheEnabledOk returns a tuple with the CacheEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIntegrationsRequestOneOf6IntegrationConfig) GetCacheEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.CacheEnabled) {
-		return nil, false
-	}
-	return o.CacheEnabled, true
-}
-
-// IsSetCacheEnabled returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf6IntegrationConfig) IsSetCacheEnabled() bool {
-	if o != nil && !IsNil(o.CacheEnabled) {
-		return true
-	}
-
-	return false
-}
-
-// SetCacheEnabled gets a reference to the given bool and assigns it to the CacheEnabled field.
-func (o *AddIntegrationsRequestOneOf6IntegrationConfig) SetCacheEnabled(v bool) {
-	o.CacheEnabled = &v
-}
-
 func (o AddIntegrationsRequestOneOf6IntegrationConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

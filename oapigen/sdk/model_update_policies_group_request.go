@@ -26,48 +26,6 @@ type UpdatePoliciesGroupRequest struct {
 
 type _UpdatePoliciesGroupRequest UpdatePoliciesGroupRequest
 
-// NewUpdatePoliciesGroupRequest instantiates a new UpdatePoliciesGroupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePoliciesGroupRequest(policy UpdatePoliciesGroupRequestPolicy) *UpdatePoliciesGroupRequest {
-	this := UpdatePoliciesGroupRequest{}
-	this.Policy = policy
-	return &this
-}
-
-// NewUpdatePoliciesGroupRequestWithDefaults instantiates a new UpdatePoliciesGroupRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePoliciesGroupRequestWithDefaults() *UpdatePoliciesGroupRequest {
-	this := UpdatePoliciesGroupRequest{}
-	return &this
-}
-
-// GetPolicy returns the Policy field value
-func (o *UpdatePoliciesGroupRequest) GetPolicy() UpdatePoliciesGroupRequestPolicy {
-	if o == nil {
-		var ret UpdatePoliciesGroupRequestPolicy
-		return ret
-	}
-
-	return o.Policy
-}
-
-// GetPolicyOk returns a tuple with the Policy field value
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesGroupRequest) GetPolicyOk() (*UpdatePoliciesGroupRequestPolicy, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Policy, true
-}
-
-// SetPolicy sets field value
-func (o *UpdatePoliciesGroupRequest) SetPolicy(v UpdatePoliciesGroupRequestPolicy) {
-	o.Policy = v
-}
-
 func (o UpdatePoliciesGroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

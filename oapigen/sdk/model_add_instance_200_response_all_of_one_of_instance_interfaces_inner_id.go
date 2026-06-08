@@ -27,20 +27,6 @@ type AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId struct {
 	String *string
 }
 
-// int64AsAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId is a convenience function that returns int64 wrapped in AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId
-func Int64AsAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId(v *int64) AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId {
-	return AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId{
-		Int64: v,
-	}
-}
-
-// stringAsAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId is a convenience function that returns string wrapped in AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId
-func StringAsAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId(v *string) AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId {
-	return AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId{
-		String: v,
-	}
-}
-
 func (dst *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId{}

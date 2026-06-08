@@ -27,20 +27,6 @@ type JobTaskScheduleMode struct {
 	String *string
 }
 
-// int64AsJobTaskScheduleMode is a convenience function that returns int64 wrapped in JobTaskScheduleMode
-func Int64AsJobTaskScheduleMode(v *int64) JobTaskScheduleMode {
-	return JobTaskScheduleMode{
-		Int64: v,
-	}
-}
-
-// stringAsJobTaskScheduleMode is a convenience function that returns string wrapped in JobTaskScheduleMode
-func StringAsJobTaskScheduleMode(v *string) JobTaskScheduleMode {
-	return JobTaskScheduleMode{
-		String: v,
-	}
-}
-
 func (dst *JobTaskScheduleMode) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &JobTaskScheduleMode{}

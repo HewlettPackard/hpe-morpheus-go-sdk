@@ -26,55 +26,6 @@ type UpdateBackupSettingsRequest struct {
 
 type _UpdateBackupSettingsRequest UpdateBackupSettingsRequest
 
-// NewUpdateBackupSettingsRequest instantiates a new UpdateBackupSettingsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateBackupSettingsRequest() *UpdateBackupSettingsRequest {
-	this := UpdateBackupSettingsRequest{}
-	return &this
-}
-
-// NewUpdateBackupSettingsRequestWithDefaults instantiates a new UpdateBackupSettingsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBackupSettingsRequestWithDefaults() *UpdateBackupSettingsRequest {
-	this := UpdateBackupSettingsRequest{}
-	return &this
-}
-
-// GetBackupSettings returns the BackupSettings field value if set, zero value otherwise.
-func (o *UpdateBackupSettingsRequest) GetBackupSettings() UpdateBackupSettingsRequestBackupSettings {
-	if o == nil || IsNil(o.BackupSettings) {
-		var ret UpdateBackupSettingsRequestBackupSettings
-		return ret
-	}
-	return *o.BackupSettings
-}
-
-// GetBackupSettingsOk returns a tuple with the BackupSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateBackupSettingsRequest) GetBackupSettingsOk() (*UpdateBackupSettingsRequestBackupSettings, bool) {
-	if o == nil || IsNil(o.BackupSettings) {
-		return nil, false
-	}
-	return o.BackupSettings, true
-}
-
-// IsSetBackupSettings returns a boolean if a field has been set.
-func (o *UpdateBackupSettingsRequest) IsSetBackupSettings() bool {
-	if o != nil && !IsNil(o.BackupSettings) {
-		return true
-	}
-
-	return false
-}
-
-// SetBackupSettings gets a reference to the given UpdateBackupSettingsRequestBackupSettings and assigns it to the BackupSettings field.
-func (o *UpdateBackupSettingsRequest) SetBackupSettings(v UpdateBackupSettingsRequestBackupSettings) {
-	o.BackupSettings = &v
-}
-
 func (o UpdateBackupSettingsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

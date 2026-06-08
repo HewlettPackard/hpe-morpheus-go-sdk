@@ -26,55 +26,6 @@ type Model503Error struct {
 
 type _Model503Error Model503Error
 
-// NewModel503Error instantiates a new Model503Error object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewModel503Error() *Model503Error {
-	this := Model503Error{}
-	return &this
-}
-
-// NewModel503ErrorWithDefaults instantiates a new Model503Error object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewModel503ErrorWithDefaults() *Model503Error {
-	this := Model503Error{}
-	return &this
-}
-
-// GetMsg returns the Msg field value if set, zero value otherwise.
-func (o *Model503Error) GetMsg() string {
-	if o == nil || IsNil(o.Msg) {
-		var ret string
-		return ret
-	}
-	return *o.Msg
-}
-
-// GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Model503Error) GetMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.Msg) {
-		return nil, false
-	}
-	return o.Msg, true
-}
-
-// IsSetMsg returns a boolean if a field has been set.
-func (o *Model503Error) IsSetMsg() bool {
-	if o != nil && !IsNil(o.Msg) {
-		return true
-	}
-
-	return false
-}
-
-// SetMsg gets a reference to the given string and assigns it to the Msg field.
-func (o *Model503Error) SetMsg(v string) {
-	o.Msg = &v
-}
-
 func (o Model503Error) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

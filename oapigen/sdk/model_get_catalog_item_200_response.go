@@ -26,55 +26,6 @@ type GetCatalogItem200Response struct {
 
 type _GetCatalogItem200Response GetCatalogItem200Response
 
-// NewGetCatalogItem200Response instantiates a new GetCatalogItem200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCatalogItem200Response() *GetCatalogItem200Response {
-	this := GetCatalogItem200Response{}
-	return &this
-}
-
-// NewGetCatalogItem200ResponseWithDefaults instantiates a new GetCatalogItem200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCatalogItem200ResponseWithDefaults() *GetCatalogItem200Response {
-	this := GetCatalogItem200Response{}
-	return &this
-}
-
-// GetItem returns the Item field value if set, zero value otherwise.
-func (o *GetCatalogItem200Response) GetItem() GetCatalogItem200ResponseItem {
-	if o == nil || IsNil(o.Item) {
-		var ret GetCatalogItem200ResponseItem
-		return ret
-	}
-	return *o.Item
-}
-
-// GetItemOk returns a tuple with the Item field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCatalogItem200Response) GetItemOk() (*GetCatalogItem200ResponseItem, bool) {
-	if o == nil || IsNil(o.Item) {
-		return nil, false
-	}
-	return o.Item, true
-}
-
-// IsSetItem returns a boolean if a field has been set.
-func (o *GetCatalogItem200Response) IsSetItem() bool {
-	if o != nil && !IsNil(o.Item) {
-		return true
-	}
-
-	return false
-}
-
-// SetItem gets a reference to the given GetCatalogItem200ResponseItem and assigns it to the Item field.
-func (o *GetCatalogItem200Response) SetItem(v GetCatalogItem200ResponseItem) {
-	o.Item = &v
-}
-
 func (o GetCatalogItem200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

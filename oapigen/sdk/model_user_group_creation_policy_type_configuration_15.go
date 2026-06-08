@@ -26,55 +26,6 @@ type UserGroupCreationPolicyTypeConfiguration15 struct {
 
 type _UserGroupCreationPolicyTypeConfiguration15 UserGroupCreationPolicyTypeConfiguration15
 
-// NewUserGroupCreationPolicyTypeConfiguration15 instantiates a new UserGroupCreationPolicyTypeConfiguration15 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserGroupCreationPolicyTypeConfiguration15() *UserGroupCreationPolicyTypeConfiguration15 {
-	this := UserGroupCreationPolicyTypeConfiguration15{}
-	return &this
-}
-
-// NewUserGroupCreationPolicyTypeConfiguration15WithDefaults instantiates a new UserGroupCreationPolicyTypeConfiguration15 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserGroupCreationPolicyTypeConfiguration15WithDefaults() *UserGroupCreationPolicyTypeConfiguration15 {
-	this := UserGroupCreationPolicyTypeConfiguration15{}
-	return &this
-}
-
-// GetUserGroup returns the UserGroup field value if set, zero value otherwise.
-func (o *UserGroupCreationPolicyTypeConfiguration15) GetUserGroup() string {
-	if o == nil || IsNil(o.UserGroup) {
-		var ret string
-		return ret
-	}
-	return *o.UserGroup
-}
-
-// GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserGroupCreationPolicyTypeConfiguration15) GetUserGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.UserGroup) {
-		return nil, false
-	}
-	return o.UserGroup, true
-}
-
-// IsSetUserGroup returns a boolean if a field has been set.
-func (o *UserGroupCreationPolicyTypeConfiguration15) IsSetUserGroup() bool {
-	if o != nil && !IsNil(o.UserGroup) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserGroup gets a reference to the given string and assigns it to the UserGroup field.
-func (o *UserGroupCreationPolicyTypeConfiguration15) SetUserGroup(v string) {
-	o.UserGroup = &v
-}
-
 func (o UserGroupCreationPolicyTypeConfiguration15) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

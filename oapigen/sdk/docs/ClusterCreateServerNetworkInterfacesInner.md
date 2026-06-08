@@ -9,119 +9,15 @@ Name | Type | Description | Notes
 **IpAddress** | Pointer to **string** | The ip address. Not applicable when using DHCP or IP Pools. | [optional] 
 **IpMode** | Pointer to **string** | The mode for determining ip address. Can be &#39;static&#39;, &#39;dhcp&#39; or empty string. | [optional] [default to ""]
 
-## Methods
+## Usage
 
-### NewClusterCreateServerNetworkInterfacesInner
+Instantiate with a Go composite literal:
 
-`func NewClusterCreateServerNetworkInterfacesInner(network ClusterCreateServerNetworkInterfacesInnerNetwork, ) *ClusterCreateServerNetworkInterfacesInner`
-
-NewClusterCreateServerNetworkInterfacesInner instantiates a new ClusterCreateServerNetworkInterfacesInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewClusterCreateServerNetworkInterfacesInnerWithDefaults
-
-`func NewClusterCreateServerNetworkInterfacesInnerWithDefaults() *ClusterCreateServerNetworkInterfacesInner`
-
-NewClusterCreateServerNetworkInterfacesInnerWithDefaults instantiates a new ClusterCreateServerNetworkInterfacesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetNetwork
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) GetNetwork() ClusterCreateServerNetworkInterfacesInnerNetwork`
-
-GetNetwork returns the Network field if non-nil, zero value otherwise.
-
-### GetNetworkOk
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) GetNetworkOk() (*ClusterCreateServerNetworkInterfacesInnerNetwork, bool)`
-
-GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetwork
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) SetNetwork(v ClusterCreateServerNetworkInterfacesInnerNetwork)`
-
-SetNetwork sets Network field to given value.
-
-
-### GetNetworkInterfaceTypeId
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) GetNetworkInterfaceTypeId() int64`
-
-GetNetworkInterfaceTypeId returns the NetworkInterfaceTypeId field if non-nil, zero value otherwise.
-
-### GetNetworkInterfaceTypeIdOk
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) GetNetworkInterfaceTypeIdOk() (*int64, bool)`
-
-GetNetworkInterfaceTypeIdOk returns a tuple with the NetworkInterfaceTypeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkInterfaceTypeId
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) SetNetworkInterfaceTypeId(v int64)`
-
-SetNetworkInterfaceTypeId sets NetworkInterfaceTypeId field to given value.
-
-### HasNetworkInterfaceTypeId
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) HasNetworkInterfaceTypeId() bool`
-
-HasNetworkInterfaceTypeId returns a boolean if a field has been set.
-
-### GetIpAddress
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) GetIpAddress() string`
-
-GetIpAddress returns the IpAddress field if non-nil, zero value otherwise.
-
-### GetIpAddressOk
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) GetIpAddressOk() (*string, bool)`
-
-GetIpAddressOk returns a tuple with the IpAddress field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIpAddress
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) SetIpAddress(v string)`
-
-SetIpAddress sets IpAddress field to given value.
-
-### HasIpAddress
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) HasIpAddress() bool`
-
-HasIpAddress returns a boolean if a field has been set.
-
-### GetIpMode
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) GetIpMode() string`
-
-GetIpMode returns the IpMode field if non-nil, zero value otherwise.
-
-### GetIpModeOk
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) GetIpModeOk() (*string, bool)`
-
-GetIpModeOk returns a tuple with the IpMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIpMode
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) SetIpMode(v string)`
-
-SetIpMode sets IpMode field to given value.
-
-### HasIpMode
-
-`func (o *ClusterCreateServerNetworkInterfacesInner) HasIpMode() bool`
-
-HasIpMode returns a boolean if a field has been set.
+```go
+obj := &ClusterCreateServerNetworkInterfacesInner{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

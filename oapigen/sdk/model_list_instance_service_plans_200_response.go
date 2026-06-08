@@ -26,55 +26,6 @@ type ListInstanceServicePlans200Response struct {
 
 type _ListInstanceServicePlans200Response ListInstanceServicePlans200Response
 
-// NewListInstanceServicePlans200Response instantiates a new ListInstanceServicePlans200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListInstanceServicePlans200Response() *ListInstanceServicePlans200Response {
-	this := ListInstanceServicePlans200Response{}
-	return &this
-}
-
-// NewListInstanceServicePlans200ResponseWithDefaults instantiates a new ListInstanceServicePlans200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListInstanceServicePlans200ResponseWithDefaults() *ListInstanceServicePlans200Response {
-	this := ListInstanceServicePlans200Response{}
-	return &this
-}
-
-// GetPlans returns the Plans field value if set, zero value otherwise.
-func (o *ListInstanceServicePlans200Response) GetPlans() []ListInstanceServicePlans200ResponsePlansInner {
-	if o == nil || IsNil(o.Plans) {
-		var ret []ListInstanceServicePlans200ResponsePlansInner
-		return ret
-	}
-	return o.Plans
-}
-
-// GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListInstanceServicePlans200Response) GetPlansOk() ([]ListInstanceServicePlans200ResponsePlansInner, bool) {
-	if o == nil || IsNil(o.Plans) {
-		return nil, false
-	}
-	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200Response) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
-}
-
-// SetPlans gets a reference to the given []ListInstanceServicePlans200ResponsePlansInner and assigns it to the Plans field.
-func (o *ListInstanceServicePlans200Response) SetPlans(v []ListInstanceServicePlans200ResponsePlansInner) {
-	o.Plans = v
-}
-
 func (o ListInstanceServicePlans200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

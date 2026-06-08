@@ -27,55 +27,6 @@ type NSXTBGPNeighborConfig1 struct {
 
 type _NSXTBGPNeighborConfig1 NSXTBGPNeighborConfig1
 
-// NewNSXTBGPNeighborConfig1 instantiates a new NSXTBGPNeighborConfig1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNSXTBGPNeighborConfig1() *NSXTBGPNeighborConfig1 {
-	this := NSXTBGPNeighborConfig1{}
-	return &this
-}
-
-// NewNSXTBGPNeighborConfig1WithDefaults instantiates a new NSXTBGPNeighborConfig1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNSXTBGPNeighborConfig1WithDefaults() *NSXTBGPNeighborConfig1 {
-	this := NSXTBGPNeighborConfig1{}
-	return &this
-}
-
-// GetSourceAddresses returns the SourceAddresses field value if set, zero value otherwise.
-func (o *NSXTBGPNeighborConfig1) GetSourceAddresses() []string {
-	if o == nil || IsNil(o.SourceAddresses) {
-		var ret []string
-		return ret
-	}
-	return o.SourceAddresses
-}
-
-// GetSourceAddressesOk returns a tuple with the SourceAddresses field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NSXTBGPNeighborConfig1) GetSourceAddressesOk() ([]string, bool) {
-	if o == nil || IsNil(o.SourceAddresses) {
-		return nil, false
-	}
-	return o.SourceAddresses, true
-}
-
-// IsSetSourceAddresses returns a boolean if a field has been set.
-func (o *NSXTBGPNeighborConfig1) IsSetSourceAddresses() bool {
-	if o != nil && !IsNil(o.SourceAddresses) {
-		return true
-	}
-
-	return false
-}
-
-// SetSourceAddresses gets a reference to the given []string and assigns it to the SourceAddresses field.
-func (o *NSXTBGPNeighborConfig1) SetSourceAddresses(v []string) {
-	o.SourceAddresses = v
-}
-
 func (o NSXTBGPNeighborConfig1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

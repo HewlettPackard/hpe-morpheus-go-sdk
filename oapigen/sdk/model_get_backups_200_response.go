@@ -26,55 +26,6 @@ type GetBackups200Response struct {
 
 type _GetBackups200Response GetBackups200Response
 
-// NewGetBackups200Response instantiates a new GetBackups200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetBackups200Response() *GetBackups200Response {
-	this := GetBackups200Response{}
-	return &this
-}
-
-// NewGetBackups200ResponseWithDefaults instantiates a new GetBackups200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetBackups200ResponseWithDefaults() *GetBackups200Response {
-	this := GetBackups200Response{}
-	return &this
-}
-
-// GetBackup returns the Backup field value if set, zero value otherwise.
-func (o *GetBackups200Response) GetBackup() GetBackups200ResponseBackup {
-	if o == nil || IsNil(o.Backup) {
-		var ret GetBackups200ResponseBackup
-		return ret
-	}
-	return *o.Backup
-}
-
-// GetBackupOk returns a tuple with the Backup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetBackups200Response) GetBackupOk() (*GetBackups200ResponseBackup, bool) {
-	if o == nil || IsNil(o.Backup) {
-		return nil, false
-	}
-	return o.Backup, true
-}
-
-// IsSetBackup returns a boolean if a field has been set.
-func (o *GetBackups200Response) IsSetBackup() bool {
-	if o != nil && !IsNil(o.Backup) {
-		return true
-	}
-
-	return false
-}
-
-// SetBackup gets a reference to the given GetBackups200ResponseBackup and assigns it to the Backup field.
-func (o *GetBackups200Response) SetBackup(v GetBackups200ResponseBackup) {
-	o.Backup = &v
-}
-
 func (o GetBackups200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

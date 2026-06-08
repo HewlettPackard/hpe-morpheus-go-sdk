@@ -27,55 +27,6 @@ type UpdateStorageBucketsRequestStorageBucketConfigOneOf3 struct {
 
 type _UpdateStorageBucketsRequestStorageBucketConfigOneOf3 UpdateStorageBucketsRequestStorageBucketConfigOneOf3
 
-// NewUpdateStorageBucketsRequestStorageBucketConfigOneOf3 instantiates a new UpdateStorageBucketsRequestStorageBucketConfigOneOf3 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateStorageBucketsRequestStorageBucketConfigOneOf3() *UpdateStorageBucketsRequestStorageBucketConfigOneOf3 {
-	this := UpdateStorageBucketsRequestStorageBucketConfigOneOf3{}
-	return &this
-}
-
-// NewUpdateStorageBucketsRequestStorageBucketConfigOneOf3WithDefaults instantiates a new UpdateStorageBucketsRequestStorageBucketConfigOneOf3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateStorageBucketsRequestStorageBucketConfigOneOf3WithDefaults() *UpdateStorageBucketsRequestStorageBucketConfigOneOf3 {
-	this := UpdateStorageBucketsRequestStorageBucketConfigOneOf3{}
-	return &this
-}
-
-// GetBasePath returns the BasePath field value if set, zero value otherwise.
-func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf3) GetBasePath() string {
-	if o == nil || IsNil(o.BasePath) {
-		var ret string
-		return ret
-	}
-	return *o.BasePath
-}
-
-// GetBasePathOk returns a tuple with the BasePath field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf3) GetBasePathOk() (*string, bool) {
-	if o == nil || IsNil(o.BasePath) {
-		return nil, false
-	}
-	return o.BasePath, true
-}
-
-// IsSetBasePath returns a boolean if a field has been set.
-func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf3) IsSetBasePath() bool {
-	if o != nil && !IsNil(o.BasePath) {
-		return true
-	}
-
-	return false
-}
-
-// SetBasePath gets a reference to the given string and assigns it to the BasePath field.
-func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf3) SetBasePath(v string) {
-	o.BasePath = &v
-}
-
 func (o UpdateStorageBucketsRequestStorageBucketConfigOneOf3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

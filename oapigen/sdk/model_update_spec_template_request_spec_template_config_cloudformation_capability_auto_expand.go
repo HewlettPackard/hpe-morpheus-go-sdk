@@ -27,20 +27,6 @@ type UpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPA
 	String *string
 }
 
-// boolAsUpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND is a convenience function that returns bool wrapped in UpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND
-func BoolAsUpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND(v *bool) UpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND {
-	return UpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND{
-		Bool: v,
-	}
-}
-
-// stringAsUpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND is a convenience function that returns string wrapped in UpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND
-func StringAsUpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND(v *string) UpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND {
-	return UpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND{
-		String: v,
-	}
-}
-
 func (dst *UpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND{}

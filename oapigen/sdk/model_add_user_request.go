@@ -26,48 +26,6 @@ type AddUserRequest struct {
 
 type _AddUserRequest AddUserRequest
 
-// NewAddUserRequest instantiates a new AddUserRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddUserRequest(user AddUserRequestUser) *AddUserRequest {
-	this := AddUserRequest{}
-	this.User = user
-	return &this
-}
-
-// NewAddUserRequestWithDefaults instantiates a new AddUserRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddUserRequestWithDefaults() *AddUserRequest {
-	this := AddUserRequest{}
-	return &this
-}
-
-// GetUser returns the User field value
-func (o *AddUserRequest) GetUser() AddUserRequestUser {
-	if o == nil {
-		var ret AddUserRequestUser
-		return ret
-	}
-
-	return o.User
-}
-
-// GetUserOk returns a tuple with the User field value
-// and a boolean to check if the value has been set.
-func (o *AddUserRequest) GetUserOk() (*AddUserRequestUser, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.User, true
-}
-
-// SetUser sets field value
-func (o *AddUserRequest) SetUser(v AddUserRequestUser) {
-	o.User = v
-}
-
 func (o AddUserRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

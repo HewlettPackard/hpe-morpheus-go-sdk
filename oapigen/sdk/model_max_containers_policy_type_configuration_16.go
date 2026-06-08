@@ -26,55 +26,6 @@ type MaxContainersPolicyTypeConfiguration16 struct {
 
 type _MaxContainersPolicyTypeConfiguration16 MaxContainersPolicyTypeConfiguration16
 
-// NewMaxContainersPolicyTypeConfiguration16 instantiates a new MaxContainersPolicyTypeConfiguration16 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMaxContainersPolicyTypeConfiguration16() *MaxContainersPolicyTypeConfiguration16 {
-	this := MaxContainersPolicyTypeConfiguration16{}
-	return &this
-}
-
-// NewMaxContainersPolicyTypeConfiguration16WithDefaults instantiates a new MaxContainersPolicyTypeConfiguration16 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxContainersPolicyTypeConfiguration16WithDefaults() *MaxContainersPolicyTypeConfiguration16 {
-	this := MaxContainersPolicyTypeConfiguration16{}
-	return &this
-}
-
-// GetMaxContainers returns the MaxContainers field value if set, zero value otherwise.
-func (o *MaxContainersPolicyTypeConfiguration16) GetMaxContainers() string {
-	if o == nil || IsNil(o.MaxContainers) {
-		var ret string
-		return ret
-	}
-	return *o.MaxContainers
-}
-
-// GetMaxContainersOk returns a tuple with the MaxContainers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MaxContainersPolicyTypeConfiguration16) GetMaxContainersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxContainers) {
-		return nil, false
-	}
-	return o.MaxContainers, true
-}
-
-// IsSetMaxContainers returns a boolean if a field has been set.
-func (o *MaxContainersPolicyTypeConfiguration16) IsSetMaxContainers() bool {
-	if o != nil && !IsNil(o.MaxContainers) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxContainers gets a reference to the given string and assigns it to the MaxContainers field.
-func (o *MaxContainersPolicyTypeConfiguration16) SetMaxContainers(v string) {
-	o.MaxContainers = &v
-}
-
 func (o MaxContainersPolicyTypeConfiguration16) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

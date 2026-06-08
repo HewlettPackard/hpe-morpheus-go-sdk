@@ -26,55 +26,6 @@ type UpdateNetworkServerRequest struct {
 
 type _UpdateNetworkServerRequest UpdateNetworkServerRequest
 
-// NewUpdateNetworkServerRequest instantiates a new UpdateNetworkServerRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkServerRequest() *UpdateNetworkServerRequest {
-	this := UpdateNetworkServerRequest{}
-	return &this
-}
-
-// NewUpdateNetworkServerRequestWithDefaults instantiates a new UpdateNetworkServerRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkServerRequestWithDefaults() *UpdateNetworkServerRequest {
-	this := UpdateNetworkServerRequest{}
-	return &this
-}
-
-// GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
-func (o *UpdateNetworkServerRequest) GetNetworkServer() UpdateNetworkServerRequestNetworkServer {
-	if o == nil || IsNil(o.NetworkServer) {
-		var ret UpdateNetworkServerRequestNetworkServer
-		return ret
-	}
-	return *o.NetworkServer
-}
-
-// GetNetworkServerOk returns a tuple with the NetworkServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkServerRequest) GetNetworkServerOk() (*UpdateNetworkServerRequestNetworkServer, bool) {
-	if o == nil || IsNil(o.NetworkServer) {
-		return nil, false
-	}
-	return o.NetworkServer, true
-}
-
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *UpdateNetworkServerRequest) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkServer gets a reference to the given UpdateNetworkServerRequestNetworkServer and assigns it to the NetworkServer field.
-func (o *UpdateNetworkServerRequest) SetNetworkServer(v UpdateNetworkServerRequestNetworkServer) {
-	o.NetworkServer = &v
-}
-
 func (o UpdateNetworkServerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

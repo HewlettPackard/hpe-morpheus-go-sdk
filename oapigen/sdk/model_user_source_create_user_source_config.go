@@ -33,62 +33,6 @@ type UserSourceCreateUserSourceConfig struct {
 	UserSourceCreateUserSourceConfigOneOf7 *UserSourceCreateUserSourceConfigOneOf7
 }
 
-// UserSourceCreateUserSourceConfigOneOfAsUserSourceCreateUserSourceConfig is a convenience function that returns UserSourceCreateUserSourceConfigOneOf wrapped in UserSourceCreateUserSourceConfig
-func UserSourceCreateUserSourceConfigOneOfAsUserSourceCreateUserSourceConfig(v *UserSourceCreateUserSourceConfigOneOf) UserSourceCreateUserSourceConfig {
-	return UserSourceCreateUserSourceConfig{
-		UserSourceCreateUserSourceConfigOneOf: v,
-	}
-}
-
-// UserSourceCreateUserSourceConfigOneOf1AsUserSourceCreateUserSourceConfig is a convenience function that returns UserSourceCreateUserSourceConfigOneOf1 wrapped in UserSourceCreateUserSourceConfig
-func UserSourceCreateUserSourceConfigOneOf1AsUserSourceCreateUserSourceConfig(v *UserSourceCreateUserSourceConfigOneOf1) UserSourceCreateUserSourceConfig {
-	return UserSourceCreateUserSourceConfig{
-		UserSourceCreateUserSourceConfigOneOf1: v,
-	}
-}
-
-// UserSourceCreateUserSourceConfigOneOf2AsUserSourceCreateUserSourceConfig is a convenience function that returns UserSourceCreateUserSourceConfigOneOf2 wrapped in UserSourceCreateUserSourceConfig
-func UserSourceCreateUserSourceConfigOneOf2AsUserSourceCreateUserSourceConfig(v *UserSourceCreateUserSourceConfigOneOf2) UserSourceCreateUserSourceConfig {
-	return UserSourceCreateUserSourceConfig{
-		UserSourceCreateUserSourceConfigOneOf2: v,
-	}
-}
-
-// UserSourceCreateUserSourceConfigOneOf3AsUserSourceCreateUserSourceConfig is a convenience function that returns UserSourceCreateUserSourceConfigOneOf3 wrapped in UserSourceCreateUserSourceConfig
-func UserSourceCreateUserSourceConfigOneOf3AsUserSourceCreateUserSourceConfig(v *UserSourceCreateUserSourceConfigOneOf3) UserSourceCreateUserSourceConfig {
-	return UserSourceCreateUserSourceConfig{
-		UserSourceCreateUserSourceConfigOneOf3: v,
-	}
-}
-
-// UserSourceCreateUserSourceConfigOneOf4AsUserSourceCreateUserSourceConfig is a convenience function that returns UserSourceCreateUserSourceConfigOneOf4 wrapped in UserSourceCreateUserSourceConfig
-func UserSourceCreateUserSourceConfigOneOf4AsUserSourceCreateUserSourceConfig(v *UserSourceCreateUserSourceConfigOneOf4) UserSourceCreateUserSourceConfig {
-	return UserSourceCreateUserSourceConfig{
-		UserSourceCreateUserSourceConfigOneOf4: v,
-	}
-}
-
-// UserSourceCreateUserSourceConfigOneOf5AsUserSourceCreateUserSourceConfig is a convenience function that returns UserSourceCreateUserSourceConfigOneOf5 wrapped in UserSourceCreateUserSourceConfig
-func UserSourceCreateUserSourceConfigOneOf5AsUserSourceCreateUserSourceConfig(v *UserSourceCreateUserSourceConfigOneOf5) UserSourceCreateUserSourceConfig {
-	return UserSourceCreateUserSourceConfig{
-		UserSourceCreateUserSourceConfigOneOf5: v,
-	}
-}
-
-// UserSourceCreateUserSourceConfigOneOf6AsUserSourceCreateUserSourceConfig is a convenience function that returns UserSourceCreateUserSourceConfigOneOf6 wrapped in UserSourceCreateUserSourceConfig
-func UserSourceCreateUserSourceConfigOneOf6AsUserSourceCreateUserSourceConfig(v *UserSourceCreateUserSourceConfigOneOf6) UserSourceCreateUserSourceConfig {
-	return UserSourceCreateUserSourceConfig{
-		UserSourceCreateUserSourceConfigOneOf6: v,
-	}
-}
-
-// UserSourceCreateUserSourceConfigOneOf7AsUserSourceCreateUserSourceConfig is a convenience function that returns UserSourceCreateUserSourceConfigOneOf7 wrapped in UserSourceCreateUserSourceConfig
-func UserSourceCreateUserSourceConfigOneOf7AsUserSourceCreateUserSourceConfig(v *UserSourceCreateUserSourceConfigOneOf7) UserSourceCreateUserSourceConfig {
-	return UserSourceCreateUserSourceConfig{
-		UserSourceCreateUserSourceConfigOneOf7: v,
-	}
-}
-
 func (dst *UserSourceCreateUserSourceConfig) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UserSourceCreateUserSourceConfig{}

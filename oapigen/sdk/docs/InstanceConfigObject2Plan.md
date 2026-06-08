@@ -6,44 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | [**InstanceConfigObject2PlanId**](InstanceConfigObject2PlanId.md) |  | 
 
-## Methods
+## Usage
 
-### NewInstanceConfigObject2Plan
+Instantiate with a Go composite literal:
 
-`func NewInstanceConfigObject2Plan(id InstanceConfigObject2PlanId, ) *InstanceConfigObject2Plan`
-
-NewInstanceConfigObject2Plan instantiates a new InstanceConfigObject2Plan object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewInstanceConfigObject2PlanWithDefaults
-
-`func NewInstanceConfigObject2PlanWithDefaults() *InstanceConfigObject2Plan`
-
-NewInstanceConfigObject2PlanWithDefaults instantiates a new InstanceConfigObject2Plan object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *InstanceConfigObject2Plan) GetId() InstanceConfigObject2PlanId`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *InstanceConfigObject2Plan) GetIdOk() (*InstanceConfigObject2PlanId, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *InstanceConfigObject2Plan) SetId(v InstanceConfigObject2PlanId)`
-
-SetId sets Id field to given value.
-
+```go
+obj := &InstanceConfigObject2Plan{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

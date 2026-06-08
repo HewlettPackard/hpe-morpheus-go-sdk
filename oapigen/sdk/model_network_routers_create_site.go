@@ -26,48 +26,6 @@ type NetworkRoutersCreateSite struct {
 
 type _NetworkRoutersCreateSite NetworkRoutersCreateSite
 
-// NewNetworkRoutersCreateSite instantiates a new NetworkRoutersCreateSite object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkRoutersCreateSite(id NetworkRoutersCreateSiteId) *NetworkRoutersCreateSite {
-	this := NetworkRoutersCreateSite{}
-	this.Id = id
-	return &this
-}
-
-// NewNetworkRoutersCreateSiteWithDefaults instantiates a new NetworkRoutersCreateSite object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkRoutersCreateSiteWithDefaults() *NetworkRoutersCreateSite {
-	this := NetworkRoutersCreateSite{}
-	return &this
-}
-
-// GetId returns the Id field value
-func (o *NetworkRoutersCreateSite) GetId() NetworkRoutersCreateSiteId {
-	if o == nil {
-		var ret NetworkRoutersCreateSiteId
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *NetworkRoutersCreateSite) GetIdOk() (*NetworkRoutersCreateSiteId, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *NetworkRoutersCreateSite) SetId(v NetworkRoutersCreateSiteId) {
-	o.Id = v
-}
-
 func (o NetworkRoutersCreateSite) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

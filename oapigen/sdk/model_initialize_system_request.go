@@ -26,55 +26,6 @@ type InitializeSystemRequest struct {
 
 type _InitializeSystemRequest InitializeSystemRequest
 
-// NewInitializeSystemRequest instantiates a new InitializeSystemRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInitializeSystemRequest() *InitializeSystemRequest {
-	this := InitializeSystemRequest{}
-	return &this
-}
-
-// NewInitializeSystemRequestWithDefaults instantiates a new InitializeSystemRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInitializeSystemRequestWithDefaults() *InitializeSystemRequest {
-	this := InitializeSystemRequest{}
-	return &this
-}
-
-// GetSystem returns the System field value if set, zero value otherwise.
-func (o *InitializeSystemRequest) GetSystem() InitializeSystemRequestSystem {
-	if o == nil || IsNil(o.System) {
-		var ret InitializeSystemRequestSystem
-		return ret
-	}
-	return *o.System
-}
-
-// GetSystemOk returns a tuple with the System field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InitializeSystemRequest) GetSystemOk() (*InitializeSystemRequestSystem, bool) {
-	if o == nil || IsNil(o.System) {
-		return nil, false
-	}
-	return o.System, true
-}
-
-// IsSetSystem returns a boolean if a field has been set.
-func (o *InitializeSystemRequest) IsSetSystem() bool {
-	if o != nil && !IsNil(o.System) {
-		return true
-	}
-
-	return false
-}
-
-// SetSystem gets a reference to the given InitializeSystemRequestSystem and assigns it to the System field.
-func (o *InitializeSystemRequest) SetSystem(v InitializeSystemRequestSystem) {
-	o.System = &v
-}
-
 func (o InitializeSystemRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

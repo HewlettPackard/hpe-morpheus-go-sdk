@@ -26,55 +26,6 @@ type AddOsTypesRequest struct {
 
 type _AddOsTypesRequest AddOsTypesRequest
 
-// NewAddOsTypesRequest instantiates a new AddOsTypesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddOsTypesRequest() *AddOsTypesRequest {
-	this := AddOsTypesRequest{}
-	return &this
-}
-
-// NewAddOsTypesRequestWithDefaults instantiates a new AddOsTypesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddOsTypesRequestWithDefaults() *AddOsTypesRequest {
-	this := AddOsTypesRequest{}
-	return &this
-}
-
-// GetOsType returns the OsType field value if set, zero value otherwise.
-func (o *AddOsTypesRequest) GetOsType() AddOsTypesRequestOsType {
-	if o == nil || IsNil(o.OsType) {
-		var ret AddOsTypesRequestOsType
-		return ret
-	}
-	return *o.OsType
-}
-
-// GetOsTypeOk returns a tuple with the OsType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddOsTypesRequest) GetOsTypeOk() (*AddOsTypesRequestOsType, bool) {
-	if o == nil || IsNil(o.OsType) {
-		return nil, false
-	}
-	return o.OsType, true
-}
-
-// IsSetOsType returns a boolean if a field has been set.
-func (o *AddOsTypesRequest) IsSetOsType() bool {
-	if o != nil && !IsNil(o.OsType) {
-		return true
-	}
-
-	return false
-}
-
-// SetOsType gets a reference to the given AddOsTypesRequestOsType and assigns it to the OsType field.
-func (o *AddOsTypesRequest) SetOsType(v AddOsTypesRequestOsType) {
-	o.OsType = &v
-}
-
 func (o AddOsTypesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

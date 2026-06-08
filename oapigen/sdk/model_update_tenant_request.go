@@ -26,48 +26,6 @@ type UpdateTenantRequest struct {
 
 type _UpdateTenantRequest UpdateTenantRequest
 
-// NewUpdateTenantRequest instantiates a new UpdateTenantRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateTenantRequest(account UpdateTenantRequestAccount) *UpdateTenantRequest {
-	this := UpdateTenantRequest{}
-	this.Account = account
-	return &this
-}
-
-// NewUpdateTenantRequestWithDefaults instantiates a new UpdateTenantRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateTenantRequestWithDefaults() *UpdateTenantRequest {
-	this := UpdateTenantRequest{}
-	return &this
-}
-
-// GetAccount returns the Account field value
-func (o *UpdateTenantRequest) GetAccount() UpdateTenantRequestAccount {
-	if o == nil {
-		var ret UpdateTenantRequestAccount
-		return ret
-	}
-
-	return o.Account
-}
-
-// GetAccountOk returns a tuple with the Account field value
-// and a boolean to check if the value has been set.
-func (o *UpdateTenantRequest) GetAccountOk() (*UpdateTenantRequestAccount, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Account, true
-}
-
-// SetAccount sets field value
-func (o *UpdateTenantRequest) SetAccount(v UpdateTenantRequestAccount) {
-	o.Account = v
-}
-
 func (o UpdateTenantRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

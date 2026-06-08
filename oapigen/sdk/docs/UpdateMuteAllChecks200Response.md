@@ -8,99 +8,15 @@ Name | Type | Description | Notes
 **Muted** | Pointer to **bool** |  | [optional] 
 **Updated** | Pointer to **int64** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewUpdateMuteAllChecks200Response
+Instantiate with a Go composite literal:
 
-`func NewUpdateMuteAllChecks200Response() *UpdateMuteAllChecks200Response`
-
-NewUpdateMuteAllChecks200Response instantiates a new UpdateMuteAllChecks200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewUpdateMuteAllChecks200ResponseWithDefaults
-
-`func NewUpdateMuteAllChecks200ResponseWithDefaults() *UpdateMuteAllChecks200Response`
-
-NewUpdateMuteAllChecks200ResponseWithDefaults instantiates a new UpdateMuteAllChecks200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetSuccess
-
-`func (o *UpdateMuteAllChecks200Response) GetSuccess() bool`
-
-GetSuccess returns the Success field if non-nil, zero value otherwise.
-
-### GetSuccessOk
-
-`func (o *UpdateMuteAllChecks200Response) GetSuccessOk() (*bool, bool)`
-
-GetSuccessOk returns a tuple with the Success field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSuccess
-
-`func (o *UpdateMuteAllChecks200Response) SetSuccess(v bool)`
-
-SetSuccess sets Success field to given value.
-
-### HasSuccess
-
-`func (o *UpdateMuteAllChecks200Response) HasSuccess() bool`
-
-HasSuccess returns a boolean if a field has been set.
-
-### GetMuted
-
-`func (o *UpdateMuteAllChecks200Response) GetMuted() bool`
-
-GetMuted returns the Muted field if non-nil, zero value otherwise.
-
-### GetMutedOk
-
-`func (o *UpdateMuteAllChecks200Response) GetMutedOk() (*bool, bool)`
-
-GetMutedOk returns a tuple with the Muted field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMuted
-
-`func (o *UpdateMuteAllChecks200Response) SetMuted(v bool)`
-
-SetMuted sets Muted field to given value.
-
-### HasMuted
-
-`func (o *UpdateMuteAllChecks200Response) HasMuted() bool`
-
-HasMuted returns a boolean if a field has been set.
-
-### GetUpdated
-
-`func (o *UpdateMuteAllChecks200Response) GetUpdated() int64`
-
-GetUpdated returns the Updated field if non-nil, zero value otherwise.
-
-### GetUpdatedOk
-
-`func (o *UpdateMuteAllChecks200Response) GetUpdatedOk() (*int64, bool)`
-
-GetUpdatedOk returns a tuple with the Updated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdated
-
-`func (o *UpdateMuteAllChecks200Response) SetUpdated(v int64)`
-
-SetUpdated sets Updated field to given value.
-
-### HasUpdated
-
-`func (o *UpdateMuteAllChecks200Response) HasUpdated() bool`
-
-HasUpdated returns a boolean if a field has been set.
+```go
+obj := &UpdateMuteAllChecks200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

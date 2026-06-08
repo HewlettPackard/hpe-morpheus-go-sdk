@@ -6,49 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **OptionType** | Pointer to [**GetInput200ResponseOptionType**](GetInput200ResponseOptionType.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetInput200Response
+Instantiate with a Go composite literal:
 
-`func NewGetInput200Response() *GetInput200Response`
-
-NewGetInput200Response instantiates a new GetInput200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewGetInput200ResponseWithDefaults
-
-`func NewGetInput200ResponseWithDefaults() *GetInput200Response`
-
-NewGetInput200ResponseWithDefaults instantiates a new GetInput200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetOptionType
-
-`func (o *GetInput200Response) GetOptionType() GetInput200ResponseOptionType`
-
-GetOptionType returns the OptionType field if non-nil, zero value otherwise.
-
-### GetOptionTypeOk
-
-`func (o *GetInput200Response) GetOptionTypeOk() (*GetInput200ResponseOptionType, bool)`
-
-GetOptionTypeOk returns a tuple with the OptionType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOptionType
-
-`func (o *GetInput200Response) SetOptionType(v GetInput200ResponseOptionType)`
-
-SetOptionType sets OptionType field to given value.
-
-### HasOptionType
-
-`func (o *GetInput200Response) HasOptionType() bool`
-
-HasOptionType returns a boolean if a field has been set.
+```go
+obj := &GetInput200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

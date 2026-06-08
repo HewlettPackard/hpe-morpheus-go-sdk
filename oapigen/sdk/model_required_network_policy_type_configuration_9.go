@@ -26,48 +26,6 @@ type RequiredNetworkPolicyTypeConfiguration9 struct {
 
 type _RequiredNetworkPolicyTypeConfiguration9 RequiredNetworkPolicyTypeConfiguration9
 
-// NewRequiredNetworkPolicyTypeConfiguration9 instantiates a new RequiredNetworkPolicyTypeConfiguration9 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRequiredNetworkPolicyTypeConfiguration9(requiredNetworks []int64) *RequiredNetworkPolicyTypeConfiguration9 {
-	this := RequiredNetworkPolicyTypeConfiguration9{}
-	this.RequiredNetworks = requiredNetworks
-	return &this
-}
-
-// NewRequiredNetworkPolicyTypeConfiguration9WithDefaults instantiates a new RequiredNetworkPolicyTypeConfiguration9 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRequiredNetworkPolicyTypeConfiguration9WithDefaults() *RequiredNetworkPolicyTypeConfiguration9 {
-	this := RequiredNetworkPolicyTypeConfiguration9{}
-	return &this
-}
-
-// GetRequiredNetworks returns the RequiredNetworks field value
-func (o *RequiredNetworkPolicyTypeConfiguration9) GetRequiredNetworks() []int64 {
-	if o == nil {
-		var ret []int64
-		return ret
-	}
-
-	return o.RequiredNetworks
-}
-
-// GetRequiredNetworksOk returns a tuple with the RequiredNetworks field value
-// and a boolean to check if the value has been set.
-func (o *RequiredNetworkPolicyTypeConfiguration9) GetRequiredNetworksOk() ([]int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.RequiredNetworks, true
-}
-
-// SetRequiredNetworks sets field value
-func (o *RequiredNetworkPolicyTypeConfiguration9) SetRequiredNetworks(v []int64) {
-	o.RequiredNetworks = v
-}
-
 func (o RequiredNetworkPolicyTypeConfiguration9) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

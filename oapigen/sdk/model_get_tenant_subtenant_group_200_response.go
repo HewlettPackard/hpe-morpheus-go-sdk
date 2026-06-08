@@ -26,55 +26,6 @@ type GetTenantSubtenantGroup200Response struct {
 
 type _GetTenantSubtenantGroup200Response GetTenantSubtenantGroup200Response
 
-// NewGetTenantSubtenantGroup200Response instantiates a new GetTenantSubtenantGroup200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetTenantSubtenantGroup200Response() *GetTenantSubtenantGroup200Response {
-	this := GetTenantSubtenantGroup200Response{}
-	return &this
-}
-
-// NewGetTenantSubtenantGroup200ResponseWithDefaults instantiates a new GetTenantSubtenantGroup200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetTenantSubtenantGroup200ResponseWithDefaults() *GetTenantSubtenantGroup200Response {
-	this := GetTenantSubtenantGroup200Response{}
-	return &this
-}
-
-// GetGroup returns the Group field value if set, zero value otherwise.
-func (o *GetTenantSubtenantGroup200Response) GetGroup() GetTenantSubtenantGroup200ResponseGroup {
-	if o == nil || IsNil(o.Group) {
-		var ret GetTenantSubtenantGroup200ResponseGroup
-		return ret
-	}
-	return *o.Group
-}
-
-// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetTenantSubtenantGroup200Response) GetGroupOk() (*GetTenantSubtenantGroup200ResponseGroup, bool) {
-	if o == nil || IsNil(o.Group) {
-		return nil, false
-	}
-	return o.Group, true
-}
-
-// IsSetGroup returns a boolean if a field has been set.
-func (o *GetTenantSubtenantGroup200Response) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
-}
-
-// SetGroup gets a reference to the given GetTenantSubtenantGroup200ResponseGroup and assigns it to the Group field.
-func (o *GetTenantSubtenantGroup200Response) SetGroup(v GetTenantSubtenantGroup200ResponseGroup) {
-	o.Group = &v
-}
-
 func (o GetTenantSubtenantGroup200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

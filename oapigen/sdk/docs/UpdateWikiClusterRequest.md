@@ -6,49 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Page** | Pointer to [**UpdateWikiClusterRequestPage**](UpdateWikiClusterRequestPage.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewUpdateWikiClusterRequest
+Instantiate with a Go composite literal:
 
-`func NewUpdateWikiClusterRequest() *UpdateWikiClusterRequest`
-
-NewUpdateWikiClusterRequest instantiates a new UpdateWikiClusterRequest object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewUpdateWikiClusterRequestWithDefaults
-
-`func NewUpdateWikiClusterRequestWithDefaults() *UpdateWikiClusterRequest`
-
-NewUpdateWikiClusterRequestWithDefaults instantiates a new UpdateWikiClusterRequest object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetPage
-
-`func (o *UpdateWikiClusterRequest) GetPage() UpdateWikiClusterRequestPage`
-
-GetPage returns the Page field if non-nil, zero value otherwise.
-
-### GetPageOk
-
-`func (o *UpdateWikiClusterRequest) GetPageOk() (*UpdateWikiClusterRequestPage, bool)`
-
-GetPageOk returns a tuple with the Page field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPage
-
-`func (o *UpdateWikiClusterRequest) SetPage(v UpdateWikiClusterRequestPage)`
-
-SetPage sets Page field to given value.
-
-### HasPage
-
-`func (o *UpdateWikiClusterRequest) HasPage() bool`
-
-HasPage returns a boolean if a field has been set.
+```go
+obj := &UpdateWikiClusterRequest{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

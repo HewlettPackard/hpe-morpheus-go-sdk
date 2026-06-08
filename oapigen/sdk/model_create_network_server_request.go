@@ -26,55 +26,6 @@ type CreateNetworkServerRequest struct {
 
 type _CreateNetworkServerRequest CreateNetworkServerRequest
 
-// NewCreateNetworkServerRequest instantiates a new CreateNetworkServerRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkServerRequest() *CreateNetworkServerRequest {
-	this := CreateNetworkServerRequest{}
-	return &this
-}
-
-// NewCreateNetworkServerRequestWithDefaults instantiates a new CreateNetworkServerRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkServerRequestWithDefaults() *CreateNetworkServerRequest {
-	this := CreateNetworkServerRequest{}
-	return &this
-}
-
-// GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
-func (o *CreateNetworkServerRequest) GetNetworkServer() NSXNetworkServer {
-	if o == nil || IsNil(o.NetworkServer) {
-		var ret NSXNetworkServer
-		return ret
-	}
-	return *o.NetworkServer
-}
-
-// GetNetworkServerOk returns a tuple with the NetworkServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkServerRequest) GetNetworkServerOk() (*NSXNetworkServer, bool) {
-	if o == nil || IsNil(o.NetworkServer) {
-		return nil, false
-	}
-	return o.NetworkServer, true
-}
-
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *CreateNetworkServerRequest) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkServer gets a reference to the given NSXNetworkServer and assigns it to the NetworkServer field.
-func (o *CreateNetworkServerRequest) SetNetworkServer(v NSXNetworkServer) {
-	o.NetworkServer = &v
-}
-
 func (o CreateNetworkServerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

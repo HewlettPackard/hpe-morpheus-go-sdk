@@ -6,44 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Integration** | [**UpdateIntegrationsRequestOneOf3Integration**](UpdateIntegrationsRequestOneOf3Integration.md) |  | 
 
-## Methods
+## Usage
 
-### NewUpdateIntegrationsRequestOneOf3
+Instantiate with a Go composite literal:
 
-`func NewUpdateIntegrationsRequestOneOf3(integration UpdateIntegrationsRequestOneOf3Integration, ) *UpdateIntegrationsRequestOneOf3`
-
-NewUpdateIntegrationsRequestOneOf3 instantiates a new UpdateIntegrationsRequestOneOf3 object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewUpdateIntegrationsRequestOneOf3WithDefaults
-
-`func NewUpdateIntegrationsRequestOneOf3WithDefaults() *UpdateIntegrationsRequestOneOf3`
-
-NewUpdateIntegrationsRequestOneOf3WithDefaults instantiates a new UpdateIntegrationsRequestOneOf3 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetIntegration
-
-`func (o *UpdateIntegrationsRequestOneOf3) GetIntegration() UpdateIntegrationsRequestOneOf3Integration`
-
-GetIntegration returns the Integration field if non-nil, zero value otherwise.
-
-### GetIntegrationOk
-
-`func (o *UpdateIntegrationsRequestOneOf3) GetIntegrationOk() (*UpdateIntegrationsRequestOneOf3Integration, bool)`
-
-GetIntegrationOk returns a tuple with the Integration field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIntegration
-
-`func (o *UpdateIntegrationsRequestOneOf3) SetIntegration(v UpdateIntegrationsRequestOneOf3Integration)`
-
-SetIntegration sets Integration field to given value.
-
+```go
+obj := &UpdateIntegrationsRequestOneOf3{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

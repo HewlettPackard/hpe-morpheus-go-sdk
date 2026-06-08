@@ -26,13 +26,6 @@ type MessageOfTheDayPolicyTypeConfiguration2MotdFullPage1 struct {
 	String *string
 }
 
-// stringAsMessageOfTheDayPolicyTypeConfiguration2MotdFullPage1 is a convenience function that returns string wrapped in MessageOfTheDayPolicyTypeConfiguration2MotdFullPage1
-func StringAsMessageOfTheDayPolicyTypeConfiguration2MotdFullPage1(v *string) MessageOfTheDayPolicyTypeConfiguration2MotdFullPage1 {
-	return MessageOfTheDayPolicyTypeConfiguration2MotdFullPage1{
-		String: v,
-	}
-}
-
 func (dst *MessageOfTheDayPolicyTypeConfiguration2MotdFullPage1) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &MessageOfTheDayPolicyTypeConfiguration2MotdFullPage1{}

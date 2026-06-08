@@ -27,55 +27,6 @@ type NetworkRouterBgpNeighborConfigNsxtCreate struct {
 
 type _NetworkRouterBgpNeighborConfigNsxtCreate NetworkRouterBgpNeighborConfigNsxtCreate
 
-// NewNetworkRouterBgpNeighborConfigNsxtCreate instantiates a new NetworkRouterBgpNeighborConfigNsxtCreate object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkRouterBgpNeighborConfigNsxtCreate() *NetworkRouterBgpNeighborConfigNsxtCreate {
-	this := NetworkRouterBgpNeighborConfigNsxtCreate{}
-	return &this
-}
-
-// NewNetworkRouterBgpNeighborConfigNsxtCreateWithDefaults instantiates a new NetworkRouterBgpNeighborConfigNsxtCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkRouterBgpNeighborConfigNsxtCreateWithDefaults() *NetworkRouterBgpNeighborConfigNsxtCreate {
-	this := NetworkRouterBgpNeighborConfigNsxtCreate{}
-	return &this
-}
-
-// GetSourceAddresses returns the SourceAddresses field value if set, zero value otherwise.
-func (o *NetworkRouterBgpNeighborConfigNsxtCreate) GetSourceAddresses() []string {
-	if o == nil || IsNil(o.SourceAddresses) {
-		var ret []string
-		return ret
-	}
-	return o.SourceAddresses
-}
-
-// GetSourceAddressesOk returns a tuple with the SourceAddresses field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkRouterBgpNeighborConfigNsxtCreate) GetSourceAddressesOk() ([]string, bool) {
-	if o == nil || IsNil(o.SourceAddresses) {
-		return nil, false
-	}
-	return o.SourceAddresses, true
-}
-
-// IsSetSourceAddresses returns a boolean if a field has been set.
-func (o *NetworkRouterBgpNeighborConfigNsxtCreate) IsSetSourceAddresses() bool {
-	if o != nil && !IsNil(o.SourceAddresses) {
-		return true
-	}
-
-	return false
-}
-
-// SetSourceAddresses gets a reference to the given []string and assigns it to the SourceAddresses field.
-func (o *NetworkRouterBgpNeighborConfigNsxtCreate) SetSourceAddresses(v []string) {
-	o.SourceAddresses = v
-}
-
 func (o NetworkRouterBgpNeighborConfigNsxtCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

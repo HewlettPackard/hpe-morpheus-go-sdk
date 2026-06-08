@@ -31,48 +31,6 @@ type BlueprintCreateSuccessConfig struct {
 	BlueprintCreateSuccessConfigOneOf5 *BlueprintCreateSuccessConfigOneOf5
 }
 
-// BlueprintCreateSuccessConfigOneOfAsBlueprintCreateSuccessConfig is a convenience function that returns BlueprintCreateSuccessConfigOneOf wrapped in BlueprintCreateSuccessConfig
-func BlueprintCreateSuccessConfigOneOfAsBlueprintCreateSuccessConfig(v *BlueprintCreateSuccessConfigOneOf) BlueprintCreateSuccessConfig {
-	return BlueprintCreateSuccessConfig{
-		BlueprintCreateSuccessConfigOneOf: v,
-	}
-}
-
-// BlueprintCreateSuccessConfigOneOf1AsBlueprintCreateSuccessConfig is a convenience function that returns BlueprintCreateSuccessConfigOneOf1 wrapped in BlueprintCreateSuccessConfig
-func BlueprintCreateSuccessConfigOneOf1AsBlueprintCreateSuccessConfig(v *BlueprintCreateSuccessConfigOneOf1) BlueprintCreateSuccessConfig {
-	return BlueprintCreateSuccessConfig{
-		BlueprintCreateSuccessConfigOneOf1: v,
-	}
-}
-
-// BlueprintCreateSuccessConfigOneOf2AsBlueprintCreateSuccessConfig is a convenience function that returns BlueprintCreateSuccessConfigOneOf2 wrapped in BlueprintCreateSuccessConfig
-func BlueprintCreateSuccessConfigOneOf2AsBlueprintCreateSuccessConfig(v *BlueprintCreateSuccessConfigOneOf2) BlueprintCreateSuccessConfig {
-	return BlueprintCreateSuccessConfig{
-		BlueprintCreateSuccessConfigOneOf2: v,
-	}
-}
-
-// BlueprintCreateSuccessConfigOneOf3AsBlueprintCreateSuccessConfig is a convenience function that returns BlueprintCreateSuccessConfigOneOf3 wrapped in BlueprintCreateSuccessConfig
-func BlueprintCreateSuccessConfigOneOf3AsBlueprintCreateSuccessConfig(v *BlueprintCreateSuccessConfigOneOf3) BlueprintCreateSuccessConfig {
-	return BlueprintCreateSuccessConfig{
-		BlueprintCreateSuccessConfigOneOf3: v,
-	}
-}
-
-// BlueprintCreateSuccessConfigOneOf4AsBlueprintCreateSuccessConfig is a convenience function that returns BlueprintCreateSuccessConfigOneOf4 wrapped in BlueprintCreateSuccessConfig
-func BlueprintCreateSuccessConfigOneOf4AsBlueprintCreateSuccessConfig(v *BlueprintCreateSuccessConfigOneOf4) BlueprintCreateSuccessConfig {
-	return BlueprintCreateSuccessConfig{
-		BlueprintCreateSuccessConfigOneOf4: v,
-	}
-}
-
-// BlueprintCreateSuccessConfigOneOf5AsBlueprintCreateSuccessConfig is a convenience function that returns BlueprintCreateSuccessConfigOneOf5 wrapped in BlueprintCreateSuccessConfig
-func BlueprintCreateSuccessConfigOneOf5AsBlueprintCreateSuccessConfig(v *BlueprintCreateSuccessConfigOneOf5) BlueprintCreateSuccessConfig {
-	return BlueprintCreateSuccessConfig{
-		BlueprintCreateSuccessConfigOneOf5: v,
-	}
-}
-
 func (dst *BlueprintCreateSuccessConfig) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &BlueprintCreateSuccessConfig{}

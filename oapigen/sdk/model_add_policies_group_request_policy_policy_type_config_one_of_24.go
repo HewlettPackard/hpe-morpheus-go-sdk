@@ -26,55 +26,6 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 struct {
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24
 
-// NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 {
-	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24{}
-	return &this
-}
-
-// NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24WithDefaults instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24WithDefaults() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 {
-	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24{}
-	return &this
-}
-
-// GetMaxRouters returns the MaxRouters field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) GetMaxRouters() string {
-	if o == nil || IsNil(o.MaxRouters) {
-		var ret string
-		return ret
-	}
-	return *o.MaxRouters
-}
-
-// GetMaxRoutersOk returns a tuple with the MaxRouters field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) GetMaxRoutersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxRouters) {
-		return nil, false
-	}
-	return o.MaxRouters, true
-}
-
-// IsSetMaxRouters returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) IsSetMaxRouters() bool {
-	if o != nil && !IsNil(o.MaxRouters) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxRouters gets a reference to the given string and assigns it to the MaxRouters field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) SetMaxRouters(v string) {
-	o.MaxRouters = &v
-}
-
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

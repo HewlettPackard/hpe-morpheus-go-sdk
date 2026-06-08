@@ -26,55 +26,6 @@ type UpdateHostInstallAgentRequest struct {
 
 type _UpdateHostInstallAgentRequest UpdateHostInstallAgentRequest
 
-// NewUpdateHostInstallAgentRequest instantiates a new UpdateHostInstallAgentRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateHostInstallAgentRequest() *UpdateHostInstallAgentRequest {
-	this := UpdateHostInstallAgentRequest{}
-	return &this
-}
-
-// NewUpdateHostInstallAgentRequestWithDefaults instantiates a new UpdateHostInstallAgentRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateHostInstallAgentRequestWithDefaults() *UpdateHostInstallAgentRequest {
-	this := UpdateHostInstallAgentRequest{}
-	return &this
-}
-
-// GetServer returns the Server field value if set, zero value otherwise.
-func (o *UpdateHostInstallAgentRequest) GetServer() UpdateHostInstallAgentRequestServer {
-	if o == nil || IsNil(o.Server) {
-		var ret UpdateHostInstallAgentRequestServer
-		return ret
-	}
-	return *o.Server
-}
-
-// GetServerOk returns a tuple with the Server field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostInstallAgentRequest) GetServerOk() (*UpdateHostInstallAgentRequestServer, bool) {
-	if o == nil || IsNil(o.Server) {
-		return nil, false
-	}
-	return o.Server, true
-}
-
-// IsSetServer returns a boolean if a field has been set.
-func (o *UpdateHostInstallAgentRequest) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
-}
-
-// SetServer gets a reference to the given UpdateHostInstallAgentRequestServer and assigns it to the Server field.
-func (o *UpdateHostInstallAgentRequest) SetServer(v UpdateHostInstallAgentRequestServer) {
-	o.Server = &v
-}
-
 func (o UpdateHostInstallAgentRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

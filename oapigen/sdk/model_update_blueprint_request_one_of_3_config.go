@@ -27,55 +27,6 @@ type UpdateBlueprintRequestOneOf3Config struct {
 
 type _UpdateBlueprintRequestOneOf3Config UpdateBlueprintRequestOneOf3Config
 
-// NewUpdateBlueprintRequestOneOf3Config instantiates a new UpdateBlueprintRequestOneOf3Config object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateBlueprintRequestOneOf3Config() *UpdateBlueprintRequestOneOf3Config {
-	this := UpdateBlueprintRequestOneOf3Config{}
-	return &this
-}
-
-// NewUpdateBlueprintRequestOneOf3ConfigWithDefaults instantiates a new UpdateBlueprintRequestOneOf3Config object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateBlueprintRequestOneOf3ConfigWithDefaults() *UpdateBlueprintRequestOneOf3Config {
-	this := UpdateBlueprintRequestOneOf3Config{}
-	return &this
-}
-
-// GetSpecs returns the Specs field value if set, zero value otherwise.
-func (o *UpdateBlueprintRequestOneOf3Config) GetSpecs() []UpdateBlueprintRequestOneOf3ConfigSpecsInner {
-	if o == nil || IsNil(o.Specs) {
-		var ret []UpdateBlueprintRequestOneOf3ConfigSpecsInner
-		return ret
-	}
-	return o.Specs
-}
-
-// GetSpecsOk returns a tuple with the Specs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateBlueprintRequestOneOf3Config) GetSpecsOk() ([]UpdateBlueprintRequestOneOf3ConfigSpecsInner, bool) {
-	if o == nil || IsNil(o.Specs) {
-		return nil, false
-	}
-	return o.Specs, true
-}
-
-// IsSetSpecs returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf3Config) IsSetSpecs() bool {
-	if o != nil && !IsNil(o.Specs) {
-		return true
-	}
-
-	return false
-}
-
-// SetSpecs gets a reference to the given []UpdateBlueprintRequestOneOf3ConfigSpecsInner and assigns it to the Specs field.
-func (o *UpdateBlueprintRequestOneOf3Config) SetSpecs(v []UpdateBlueprintRequestOneOf3ConfigSpecsInner) {
-	o.Specs = v
-}
-
 func (o UpdateBlueprintRequestOneOf3Config) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

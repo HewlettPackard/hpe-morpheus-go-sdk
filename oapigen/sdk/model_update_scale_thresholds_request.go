@@ -26,48 +26,6 @@ type UpdateScaleThresholdsRequest struct {
 
 type _UpdateScaleThresholdsRequest UpdateScaleThresholdsRequest
 
-// NewUpdateScaleThresholdsRequest instantiates a new UpdateScaleThresholdsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateScaleThresholdsRequest(scaleThreshold UpdateScaleThresholdsRequestScaleThreshold) *UpdateScaleThresholdsRequest {
-	this := UpdateScaleThresholdsRequest{}
-	this.ScaleThreshold = scaleThreshold
-	return &this
-}
-
-// NewUpdateScaleThresholdsRequestWithDefaults instantiates a new UpdateScaleThresholdsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateScaleThresholdsRequestWithDefaults() *UpdateScaleThresholdsRequest {
-	this := UpdateScaleThresholdsRequest{}
-	return &this
-}
-
-// GetScaleThreshold returns the ScaleThreshold field value
-func (o *UpdateScaleThresholdsRequest) GetScaleThreshold() UpdateScaleThresholdsRequestScaleThreshold {
-	if o == nil {
-		var ret UpdateScaleThresholdsRequestScaleThreshold
-		return ret
-	}
-
-	return o.ScaleThreshold
-}
-
-// GetScaleThresholdOk returns a tuple with the ScaleThreshold field value
-// and a boolean to check if the value has been set.
-func (o *UpdateScaleThresholdsRequest) GetScaleThresholdOk() (*UpdateScaleThresholdsRequestScaleThreshold, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ScaleThreshold, true
-}
-
-// SetScaleThreshold sets field value
-func (o *UpdateScaleThresholdsRequest) SetScaleThreshold(v UpdateScaleThresholdsRequestScaleThreshold) {
-	o.ScaleThreshold = v
-}
-
 func (o UpdateScaleThresholdsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

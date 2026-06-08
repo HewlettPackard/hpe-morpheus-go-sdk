@@ -26,55 +26,6 @@ type ListBackupSettings200Response struct {
 
 type _ListBackupSettings200Response ListBackupSettings200Response
 
-// NewListBackupSettings200Response instantiates a new ListBackupSettings200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListBackupSettings200Response() *ListBackupSettings200Response {
-	this := ListBackupSettings200Response{}
-	return &this
-}
-
-// NewListBackupSettings200ResponseWithDefaults instantiates a new ListBackupSettings200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListBackupSettings200ResponseWithDefaults() *ListBackupSettings200Response {
-	this := ListBackupSettings200Response{}
-	return &this
-}
-
-// GetBackupSettings returns the BackupSettings field value if set, zero value otherwise.
-func (o *ListBackupSettings200Response) GetBackupSettings() ListBackupSettings200ResponseBackupSettings {
-	if o == nil || IsNil(o.BackupSettings) {
-		var ret ListBackupSettings200ResponseBackupSettings
-		return ret
-	}
-	return *o.BackupSettings
-}
-
-// GetBackupSettingsOk returns a tuple with the BackupSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListBackupSettings200Response) GetBackupSettingsOk() (*ListBackupSettings200ResponseBackupSettings, bool) {
-	if o == nil || IsNil(o.BackupSettings) {
-		return nil, false
-	}
-	return o.BackupSettings, true
-}
-
-// IsSetBackupSettings returns a boolean if a field has been set.
-func (o *ListBackupSettings200Response) IsSetBackupSettings() bool {
-	if o != nil && !IsNil(o.BackupSettings) {
-		return true
-	}
-
-	return false
-}
-
-// SetBackupSettings gets a reference to the given ListBackupSettings200ResponseBackupSettings and assigns it to the BackupSettings field.
-func (o *ListBackupSettings200Response) SetBackupSettings(v ListBackupSettings200ResponseBackupSettings) {
-	o.BackupSettings = &v
-}
-
 func (o ListBackupSettings200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

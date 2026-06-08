@@ -7,74 +7,15 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** | Backup Job ID | [optional] 
 **Name** | Pointer to **string** | Backup Job Name | [optional] 
 
-## Methods
+## Usage
 
-### NewExecuteBackups200ResponseAllOfBackupJob
+Instantiate with a Go composite literal:
 
-`func NewExecuteBackups200ResponseAllOfBackupJob() *ExecuteBackups200ResponseAllOfBackupJob`
-
-NewExecuteBackups200ResponseAllOfBackupJob instantiates a new ExecuteBackups200ResponseAllOfBackupJob object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewExecuteBackups200ResponseAllOfBackupJobWithDefaults
-
-`func NewExecuteBackups200ResponseAllOfBackupJobWithDefaults() *ExecuteBackups200ResponseAllOfBackupJob`
-
-NewExecuteBackups200ResponseAllOfBackupJobWithDefaults instantiates a new ExecuteBackups200ResponseAllOfBackupJob object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ExecuteBackups200ResponseAllOfBackupJob) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ExecuteBackups200ResponseAllOfBackupJob) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ExecuteBackups200ResponseAllOfBackupJob) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *ExecuteBackups200ResponseAllOfBackupJob) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *ExecuteBackups200ResponseAllOfBackupJob) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *ExecuteBackups200ResponseAllOfBackupJob) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *ExecuteBackups200ResponseAllOfBackupJob) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *ExecuteBackups200ResponseAllOfBackupJob) HasName() bool`
-
-HasName returns a boolean if a field has been set.
+```go
+obj := &ExecuteBackups200ResponseAllOfBackupJob{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

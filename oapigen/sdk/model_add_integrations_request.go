@@ -32,55 +32,6 @@ type AddIntegrationsRequest struct {
 	AddIntegrationsRequestOneOf6 *AddIntegrationsRequestOneOf6
 }
 
-// AddIntegrationsRequestOneOfAsAddIntegrationsRequest is a convenience function that returns AddIntegrationsRequestOneOf wrapped in AddIntegrationsRequest
-func AddIntegrationsRequestOneOfAsAddIntegrationsRequest(v *AddIntegrationsRequestOneOf) AddIntegrationsRequest {
-	return AddIntegrationsRequest{
-		AddIntegrationsRequestOneOf: v,
-	}
-}
-
-// AddIntegrationsRequestOneOf1AsAddIntegrationsRequest is a convenience function that returns AddIntegrationsRequestOneOf1 wrapped in AddIntegrationsRequest
-func AddIntegrationsRequestOneOf1AsAddIntegrationsRequest(v *AddIntegrationsRequestOneOf1) AddIntegrationsRequest {
-	return AddIntegrationsRequest{
-		AddIntegrationsRequestOneOf1: v,
-	}
-}
-
-// AddIntegrationsRequestOneOf2AsAddIntegrationsRequest is a convenience function that returns AddIntegrationsRequestOneOf2 wrapped in AddIntegrationsRequest
-func AddIntegrationsRequestOneOf2AsAddIntegrationsRequest(v *AddIntegrationsRequestOneOf2) AddIntegrationsRequest {
-	return AddIntegrationsRequest{
-		AddIntegrationsRequestOneOf2: v,
-	}
-}
-
-// AddIntegrationsRequestOneOf3AsAddIntegrationsRequest is a convenience function that returns AddIntegrationsRequestOneOf3 wrapped in AddIntegrationsRequest
-func AddIntegrationsRequestOneOf3AsAddIntegrationsRequest(v *AddIntegrationsRequestOneOf3) AddIntegrationsRequest {
-	return AddIntegrationsRequest{
-		AddIntegrationsRequestOneOf3: v,
-	}
-}
-
-// AddIntegrationsRequestOneOf4AsAddIntegrationsRequest is a convenience function that returns AddIntegrationsRequestOneOf4 wrapped in AddIntegrationsRequest
-func AddIntegrationsRequestOneOf4AsAddIntegrationsRequest(v *AddIntegrationsRequestOneOf4) AddIntegrationsRequest {
-	return AddIntegrationsRequest{
-		AddIntegrationsRequestOneOf4: v,
-	}
-}
-
-// AddIntegrationsRequestOneOf5AsAddIntegrationsRequest is a convenience function that returns AddIntegrationsRequestOneOf5 wrapped in AddIntegrationsRequest
-func AddIntegrationsRequestOneOf5AsAddIntegrationsRequest(v *AddIntegrationsRequestOneOf5) AddIntegrationsRequest {
-	return AddIntegrationsRequest{
-		AddIntegrationsRequestOneOf5: v,
-	}
-}
-
-// AddIntegrationsRequestOneOf6AsAddIntegrationsRequest is a convenience function that returns AddIntegrationsRequestOneOf6 wrapped in AddIntegrationsRequest
-func AddIntegrationsRequestOneOf6AsAddIntegrationsRequest(v *AddIntegrationsRequestOneOf6) AddIntegrationsRequest {
-	return AddIntegrationsRequest{
-		AddIntegrationsRequestOneOf6: v,
-	}
-}
-
 func (dst *AddIntegrationsRequest) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddIntegrationsRequest{}

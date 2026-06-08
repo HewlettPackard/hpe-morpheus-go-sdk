@@ -26,55 +26,6 @@ type UpdateUserSettingsRequest struct {
 
 type _UpdateUserSettingsRequest UpdateUserSettingsRequest
 
-// NewUpdateUserSettingsRequest instantiates a new UpdateUserSettingsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateUserSettingsRequest() *UpdateUserSettingsRequest {
-	this := UpdateUserSettingsRequest{}
-	return &this
-}
-
-// NewUpdateUserSettingsRequestWithDefaults instantiates a new UpdateUserSettingsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateUserSettingsRequestWithDefaults() *UpdateUserSettingsRequest {
-	this := UpdateUserSettingsRequest{}
-	return &this
-}
-
-// GetUser returns the User field value if set, zero value otherwise.
-func (o *UpdateUserSettingsRequest) GetUser() UpdateUserSettingsRequestUser {
-	if o == nil || IsNil(o.User) {
-		var ret UpdateUserSettingsRequestUser
-		return ret
-	}
-	return *o.User
-}
-
-// GetUserOk returns a tuple with the User field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateUserSettingsRequest) GetUserOk() (*UpdateUserSettingsRequestUser, bool) {
-	if o == nil || IsNil(o.User) {
-		return nil, false
-	}
-	return o.User, true
-}
-
-// IsSetUser returns a boolean if a field has been set.
-func (o *UpdateUserSettingsRequest) IsSetUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
-// SetUser gets a reference to the given UpdateUserSettingsRequestUser and assigns it to the User field.
-func (o *UpdateUserSettingsRequest) SetUser(v UpdateUserSettingsRequestUser) {
-	o.User = &v
-}
-
 func (o UpdateUserSettingsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

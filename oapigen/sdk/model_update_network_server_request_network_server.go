@@ -26,13 +26,6 @@ type UpdateNetworkServerRequestNetworkServer struct {
 	NSXNetworkServerUpdate *NSXNetworkServerUpdate
 }
 
-// NSXNetworkServerUpdateAsUpdateNetworkServerRequestNetworkServer is a convenience function that returns NSXNetworkServerUpdate wrapped in UpdateNetworkServerRequestNetworkServer
-func NSXNetworkServerUpdateAsUpdateNetworkServerRequestNetworkServer(v *NSXNetworkServerUpdate) UpdateNetworkServerRequestNetworkServer {
-	return UpdateNetworkServerRequestNetworkServer{
-		NSXNetworkServerUpdate: v,
-	}
-}
-
 func (dst *UpdateNetworkServerRequestNetworkServer) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateNetworkServerRequestNetworkServer{}

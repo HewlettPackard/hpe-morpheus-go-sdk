@@ -26,55 +26,6 @@ type CreateLoadBalancerPoolNodeRequest struct {
 
 type _CreateLoadBalancerPoolNodeRequest CreateLoadBalancerPoolNodeRequest
 
-// NewCreateLoadBalancerPoolNodeRequest instantiates a new CreateLoadBalancerPoolNodeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateLoadBalancerPoolNodeRequest() *CreateLoadBalancerPoolNodeRequest {
-	this := CreateLoadBalancerPoolNodeRequest{}
-	return &this
-}
-
-// NewCreateLoadBalancerPoolNodeRequestWithDefaults instantiates a new CreateLoadBalancerPoolNodeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateLoadBalancerPoolNodeRequestWithDefaults() *CreateLoadBalancerPoolNodeRequest {
-	this := CreateLoadBalancerPoolNodeRequest{}
-	return &this
-}
-
-// GetLoadBalancerNode returns the LoadBalancerNode field value if set, zero value otherwise.
-func (o *CreateLoadBalancerPoolNodeRequest) GetLoadBalancerNode() CreateLoadBalancerPoolNodeRequestLoadBalancerNode {
-	if o == nil || IsNil(o.LoadBalancerNode) {
-		var ret CreateLoadBalancerPoolNodeRequestLoadBalancerNode
-		return ret
-	}
-	return *o.LoadBalancerNode
-}
-
-// GetLoadBalancerNodeOk returns a tuple with the LoadBalancerNode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerPoolNodeRequest) GetLoadBalancerNodeOk() (*CreateLoadBalancerPoolNodeRequestLoadBalancerNode, bool) {
-	if o == nil || IsNil(o.LoadBalancerNode) {
-		return nil, false
-	}
-	return o.LoadBalancerNode, true
-}
-
-// IsSetLoadBalancerNode returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNodeRequest) IsSetLoadBalancerNode() bool {
-	if o != nil && !IsNil(o.LoadBalancerNode) {
-		return true
-	}
-
-	return false
-}
-
-// SetLoadBalancerNode gets a reference to the given CreateLoadBalancerPoolNodeRequestLoadBalancerNode and assigns it to the LoadBalancerNode field.
-func (o *CreateLoadBalancerPoolNodeRequest) SetLoadBalancerNode(v CreateLoadBalancerPoolNodeRequestLoadBalancerNode) {
-	o.LoadBalancerNode = &v
-}
-
 func (o CreateLoadBalancerPoolNodeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

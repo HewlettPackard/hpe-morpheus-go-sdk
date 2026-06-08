@@ -27,20 +27,6 @@ type UpdateRoleClusterTypeAccessRequest struct {
 	UpdateRoleClusterTypeAccessRequestOneOf1 *UpdateRoleClusterTypeAccessRequestOneOf1
 }
 
-// UpdateRoleClusterTypeAccessRequestOneOfAsUpdateRoleClusterTypeAccessRequest is a convenience function that returns UpdateRoleClusterTypeAccessRequestOneOf wrapped in UpdateRoleClusterTypeAccessRequest
-func UpdateRoleClusterTypeAccessRequestOneOfAsUpdateRoleClusterTypeAccessRequest(v *UpdateRoleClusterTypeAccessRequestOneOf) UpdateRoleClusterTypeAccessRequest {
-	return UpdateRoleClusterTypeAccessRequest{
-		UpdateRoleClusterTypeAccessRequestOneOf: v,
-	}
-}
-
-// UpdateRoleClusterTypeAccessRequestOneOf1AsUpdateRoleClusterTypeAccessRequest is a convenience function that returns UpdateRoleClusterTypeAccessRequestOneOf1 wrapped in UpdateRoleClusterTypeAccessRequest
-func UpdateRoleClusterTypeAccessRequestOneOf1AsUpdateRoleClusterTypeAccessRequest(v *UpdateRoleClusterTypeAccessRequestOneOf1) UpdateRoleClusterTypeAccessRequest {
-	return UpdateRoleClusterTypeAccessRequest{
-		UpdateRoleClusterTypeAccessRequestOneOf1: v,
-	}
-}
-
 func (dst *UpdateRoleClusterTypeAccessRequest) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateRoleClusterTypeAccessRequest{}

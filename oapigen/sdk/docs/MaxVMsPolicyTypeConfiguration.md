@@ -6,44 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MaxVms** | **string** |  | 
 
-## Methods
+## Usage
 
-### NewMaxVMsPolicyTypeConfiguration
+Instantiate with a Go composite literal:
 
-`func NewMaxVMsPolicyTypeConfiguration(maxVms string, ) *MaxVMsPolicyTypeConfiguration`
-
-NewMaxVMsPolicyTypeConfiguration instantiates a new MaxVMsPolicyTypeConfiguration object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewMaxVMsPolicyTypeConfigurationWithDefaults
-
-`func NewMaxVMsPolicyTypeConfigurationWithDefaults() *MaxVMsPolicyTypeConfiguration`
-
-NewMaxVMsPolicyTypeConfigurationWithDefaults instantiates a new MaxVMsPolicyTypeConfiguration object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetMaxVms
-
-`func (o *MaxVMsPolicyTypeConfiguration) GetMaxVms() string`
-
-GetMaxVms returns the MaxVms field if non-nil, zero value otherwise.
-
-### GetMaxVmsOk
-
-`func (o *MaxVMsPolicyTypeConfiguration) GetMaxVmsOk() (*string, bool)`
-
-GetMaxVmsOk returns a tuple with the MaxVms field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxVms
-
-`func (o *MaxVMsPolicyTypeConfiguration) SetMaxVms(v string)`
-
-SetMaxVms sets MaxVms field to given value.
-
+```go
+obj := &MaxVMsPolicyTypeConfiguration{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

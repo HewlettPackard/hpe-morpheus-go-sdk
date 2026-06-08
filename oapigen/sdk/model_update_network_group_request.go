@@ -26,55 +26,6 @@ type UpdateNetworkGroupRequest struct {
 
 type _UpdateNetworkGroupRequest UpdateNetworkGroupRequest
 
-// NewUpdateNetworkGroupRequest instantiates a new UpdateNetworkGroupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkGroupRequest() *UpdateNetworkGroupRequest {
-	this := UpdateNetworkGroupRequest{}
-	return &this
-}
-
-// NewUpdateNetworkGroupRequestWithDefaults instantiates a new UpdateNetworkGroupRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkGroupRequestWithDefaults() *UpdateNetworkGroupRequest {
-	this := UpdateNetworkGroupRequest{}
-	return &this
-}
-
-// GetNetworkGroup returns the NetworkGroup field value if set, zero value otherwise.
-func (o *UpdateNetworkGroupRequest) GetNetworkGroup() UpdateNetworkGroupRequestNetworkGroup {
-	if o == nil || IsNil(o.NetworkGroup) {
-		var ret UpdateNetworkGroupRequestNetworkGroup
-		return ret
-	}
-	return *o.NetworkGroup
-}
-
-// GetNetworkGroupOk returns a tuple with the NetworkGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkGroupRequest) GetNetworkGroupOk() (*UpdateNetworkGroupRequestNetworkGroup, bool) {
-	if o == nil || IsNil(o.NetworkGroup) {
-		return nil, false
-	}
-	return o.NetworkGroup, true
-}
-
-// IsSetNetworkGroup returns a boolean if a field has been set.
-func (o *UpdateNetworkGroupRequest) IsSetNetworkGroup() bool {
-	if o != nil && !IsNil(o.NetworkGroup) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkGroup gets a reference to the given UpdateNetworkGroupRequestNetworkGroup and assigns it to the NetworkGroup field.
-func (o *UpdateNetworkGroupRequest) SetNetworkGroup(v UpdateNetworkGroupRequestNetworkGroup) {
-	o.NetworkGroup = &v
-}
-
 func (o UpdateNetworkGroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type ListApplianceSettings200Response struct {
 
 type _ListApplianceSettings200Response ListApplianceSettings200Response
 
-// NewListApplianceSettings200Response instantiates a new ListApplianceSettings200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListApplianceSettings200Response() *ListApplianceSettings200Response {
-	this := ListApplianceSettings200Response{}
-	return &this
-}
-
-// NewListApplianceSettings200ResponseWithDefaults instantiates a new ListApplianceSettings200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListApplianceSettings200ResponseWithDefaults() *ListApplianceSettings200Response {
-	this := ListApplianceSettings200Response{}
-	return &this
-}
-
-// GetApplianceSettings returns the ApplianceSettings field value if set, zero value otherwise.
-func (o *ListApplianceSettings200Response) GetApplianceSettings() ListApplianceSettings200ResponseApplianceSettings {
-	if o == nil || IsNil(o.ApplianceSettings) {
-		var ret ListApplianceSettings200ResponseApplianceSettings
-		return ret
-	}
-	return *o.ApplianceSettings
-}
-
-// GetApplianceSettingsOk returns a tuple with the ApplianceSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListApplianceSettings200Response) GetApplianceSettingsOk() (*ListApplianceSettings200ResponseApplianceSettings, bool) {
-	if o == nil || IsNil(o.ApplianceSettings) {
-		return nil, false
-	}
-	return o.ApplianceSettings, true
-}
-
-// IsSetApplianceSettings returns a boolean if a field has been set.
-func (o *ListApplianceSettings200Response) IsSetApplianceSettings() bool {
-	if o != nil && !IsNil(o.ApplianceSettings) {
-		return true
-	}
-
-	return false
-}
-
-// SetApplianceSettings gets a reference to the given ListApplianceSettings200ResponseApplianceSettings and assigns it to the ApplianceSettings field.
-func (o *ListApplianceSettings200Response) SetApplianceSettings(v ListApplianceSettings200ResponseApplianceSettings) {
-	o.ApplianceSettings = &v
-}
-
 func (o ListApplianceSettings200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy struct {
 
 type _AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy
 
-// NewAddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy instantiates a new AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy() *AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy {
-	this := AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy{}
-	return &this
-}
-
-// NewAddArchiveBucket200ResponseAllOfArchiveBucketCreatedByWithDefaults instantiates a new AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddArchiveBucket200ResponseAllOfArchiveBucketCreatedByWithDefaults() *AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy {
-	this := AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy{}
-	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy) SetUsername(v string) {
-	o.Username = &v
-}
-
 func (o AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -8,110 +8,23 @@ Name | Type | Description | Notes
 **Success** | Pointer to **bool** |  | [optional] 
 **Msg** | Pointer to **NullableString** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewCreateLoadBalancerProfile200Response
+Instantiate with a Go composite literal:
 
-`func NewCreateLoadBalancerProfile200Response() *CreateLoadBalancerProfile200Response`
+```go
+obj := &CreateLoadBalancerProfile200Response{
+    // Set fields directly
+}
+```
 
-NewCreateLoadBalancerProfile200Response instantiates a new CreateLoadBalancerProfile200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### Msg (Nullable)
 
-### NewCreateLoadBalancerProfile200ResponseWithDefaults
-
-`func NewCreateLoadBalancerProfile200ResponseWithDefaults() *CreateLoadBalancerProfile200Response`
-
-NewCreateLoadBalancerProfile200ResponseWithDefaults instantiates a new CreateLoadBalancerProfile200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetLoadBalancerProfile
-
-`func (o *CreateLoadBalancerProfile200Response) GetLoadBalancerProfile() CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile`
-
-GetLoadBalancerProfile returns the LoadBalancerProfile field if non-nil, zero value otherwise.
-
-### GetLoadBalancerProfileOk
-
-`func (o *CreateLoadBalancerProfile200Response) GetLoadBalancerProfileOk() (*CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile, bool)`
-
-GetLoadBalancerProfileOk returns a tuple with the LoadBalancerProfile field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLoadBalancerProfile
-
-`func (o *CreateLoadBalancerProfile200Response) SetLoadBalancerProfile(v CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile)`
-
-SetLoadBalancerProfile sets LoadBalancerProfile field to given value.
-
-### HasLoadBalancerProfile
-
-`func (o *CreateLoadBalancerProfile200Response) HasLoadBalancerProfile() bool`
-
-HasLoadBalancerProfile returns a boolean if a field has been set.
-
-### GetSuccess
-
-`func (o *CreateLoadBalancerProfile200Response) GetSuccess() bool`
-
-GetSuccess returns the Success field if non-nil, zero value otherwise.
-
-### GetSuccessOk
-
-`func (o *CreateLoadBalancerProfile200Response) GetSuccessOk() (*bool, bool)`
-
-GetSuccessOk returns a tuple with the Success field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSuccess
-
-`func (o *CreateLoadBalancerProfile200Response) SetSuccess(v bool)`
-
-SetSuccess sets Success field to given value.
-
-### HasSuccess
-
-`func (o *CreateLoadBalancerProfile200Response) HasSuccess() bool`
-
-HasSuccess returns a boolean if a field has been set.
-
-### GetMsg
-
-`func (o *CreateLoadBalancerProfile200Response) GetMsg() string`
-
-GetMsg returns the Msg field if non-nil, zero value otherwise.
-
-### GetMsgOk
-
-`func (o *CreateLoadBalancerProfile200Response) GetMsgOk() (*string, bool)`
-
-GetMsgOk returns a tuple with the Msg field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMsg
-
-`func (o *CreateLoadBalancerProfile200Response) SetMsg(v string)`
-
-SetMsg sets Msg field to given value.
-
-### HasMsg
-
-`func (o *CreateLoadBalancerProfile200Response) HasMsg() bool`
-
-HasMsg returns a boolean if a field has been set.
-
-### SetMsgNil
-
-`func (o *CreateLoadBalancerProfile200Response) SetMsgNil(b bool)`
-
- SetMsgNil sets the value for Msg to be an explicit nil
-
-### UnsetMsg
-`func (o *CreateLoadBalancerProfile200Response) UnsetMsg()`
-
-UnsetMsg ensures that no value is present for Msg, not even an explicit nil
+Use the Nullable wrapper methods:
+- `obj.Msg.IsSet()` — check if set
+- `obj.Msg.Get()` — get the inner value (returns pointer)
+- `obj.Msg.Set(&val)` — set the value
+- `obj.Msg.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

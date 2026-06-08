@@ -26,55 +26,6 @@ type AddSpecTemplateRequest struct {
 
 type _AddSpecTemplateRequest AddSpecTemplateRequest
 
-// NewAddSpecTemplateRequest instantiates a new AddSpecTemplateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddSpecTemplateRequest() *AddSpecTemplateRequest {
-	this := AddSpecTemplateRequest{}
-	return &this
-}
-
-// NewAddSpecTemplateRequestWithDefaults instantiates a new AddSpecTemplateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddSpecTemplateRequestWithDefaults() *AddSpecTemplateRequest {
-	this := AddSpecTemplateRequest{}
-	return &this
-}
-
-// GetSpecTemplate returns the SpecTemplate field value if set, zero value otherwise.
-func (o *AddSpecTemplateRequest) GetSpecTemplate() AddSpecTemplateRequestSpecTemplate {
-	if o == nil || IsNil(o.SpecTemplate) {
-		var ret AddSpecTemplateRequestSpecTemplate
-		return ret
-	}
-	return *o.SpecTemplate
-}
-
-// GetSpecTemplateOk returns a tuple with the SpecTemplate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddSpecTemplateRequest) GetSpecTemplateOk() (*AddSpecTemplateRequestSpecTemplate, bool) {
-	if o == nil || IsNil(o.SpecTemplate) {
-		return nil, false
-	}
-	return o.SpecTemplate, true
-}
-
-// IsSetSpecTemplate returns a boolean if a field has been set.
-func (o *AddSpecTemplateRequest) IsSetSpecTemplate() bool {
-	if o != nil && !IsNil(o.SpecTemplate) {
-		return true
-	}
-
-	return false
-}
-
-// SetSpecTemplate gets a reference to the given AddSpecTemplateRequestSpecTemplate and assigns it to the SpecTemplate field.
-func (o *AddSpecTemplateRequest) SetSpecTemplate(v AddSpecTemplateRequestSpecTemplate) {
-	o.SpecTemplate = &v
-}
-
 func (o AddSpecTemplateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

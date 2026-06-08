@@ -26,48 +26,6 @@ type InstanceConfigObjectPlan struct {
 
 type _InstanceConfigObjectPlan InstanceConfigObjectPlan
 
-// NewInstanceConfigObjectPlan instantiates a new InstanceConfigObjectPlan object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstanceConfigObjectPlan(id InstanceConfigObjectPlanId) *InstanceConfigObjectPlan {
-	this := InstanceConfigObjectPlan{}
-	this.Id = id
-	return &this
-}
-
-// NewInstanceConfigObjectPlanWithDefaults instantiates a new InstanceConfigObjectPlan object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstanceConfigObjectPlanWithDefaults() *InstanceConfigObjectPlan {
-	this := InstanceConfigObjectPlan{}
-	return &this
-}
-
-// GetId returns the Id field value
-func (o *InstanceConfigObjectPlan) GetId() InstanceConfigObjectPlanId {
-	if o == nil {
-		var ret InstanceConfigObjectPlanId
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *InstanceConfigObjectPlan) GetIdOk() (*InstanceConfigObjectPlanId, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *InstanceConfigObjectPlan) SetId(v InstanceConfigObjectPlanId) {
-	o.Id = v
-}
-
 func (o InstanceConfigObjectPlan) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

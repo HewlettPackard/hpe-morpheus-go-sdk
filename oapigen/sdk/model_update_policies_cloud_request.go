@@ -26,48 +26,6 @@ type UpdatePoliciesCloudRequest struct {
 
 type _UpdatePoliciesCloudRequest UpdatePoliciesCloudRequest
 
-// NewUpdatePoliciesCloudRequest instantiates a new UpdatePoliciesCloudRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePoliciesCloudRequest(policy UpdatePoliciesCloudRequestPolicy) *UpdatePoliciesCloudRequest {
-	this := UpdatePoliciesCloudRequest{}
-	this.Policy = policy
-	return &this
-}
-
-// NewUpdatePoliciesCloudRequestWithDefaults instantiates a new UpdatePoliciesCloudRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePoliciesCloudRequestWithDefaults() *UpdatePoliciesCloudRequest {
-	this := UpdatePoliciesCloudRequest{}
-	return &this
-}
-
-// GetPolicy returns the Policy field value
-func (o *UpdatePoliciesCloudRequest) GetPolicy() UpdatePoliciesCloudRequestPolicy {
-	if o == nil {
-		var ret UpdatePoliciesCloudRequestPolicy
-		return ret
-	}
-
-	return o.Policy
-}
-
-// GetPolicyOk returns a tuple with the Policy field value
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesCloudRequest) GetPolicyOk() (*UpdatePoliciesCloudRequestPolicy, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Policy, true
-}
-
-// SetPolicy sets field value
-func (o *UpdatePoliciesCloudRequest) SetPolicy(v UpdatePoliciesCloudRequestPolicy) {
-	o.Policy = v
-}
-
 func (o UpdatePoliciesCloudRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

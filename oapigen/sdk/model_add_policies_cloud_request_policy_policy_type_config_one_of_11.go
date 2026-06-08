@@ -26,55 +26,6 @@ type AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11 struct {
 
 type _AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11 AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11
 
-// NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11 instantiates a new AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11() *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11 {
-	this := AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11{}
-	return &this
-}
-
-// NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11WithDefaults instantiates a new AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11WithDefaults() *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11 {
-	this := AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11{}
-	return &this
-}
-
-// GetMaxContainers returns the MaxContainers field value if set, zero value otherwise.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11) GetMaxContainers() string {
-	if o == nil || IsNil(o.MaxContainers) {
-		var ret string
-		return ret
-	}
-	return *o.MaxContainers
-}
-
-// GetMaxContainersOk returns a tuple with the MaxContainers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11) GetMaxContainersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxContainers) {
-		return nil, false
-	}
-	return o.MaxContainers, true
-}
-
-// IsSetMaxContainers returns a boolean if a field has been set.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11) IsSetMaxContainers() bool {
-	if o != nil && !IsNil(o.MaxContainers) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxContainers gets a reference to the given string and assigns it to the MaxContainers field.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11) SetMaxContainers(v string) {
-	o.MaxContainers = &v
-}
-
 func (o AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf11) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type UpdateCertificate200Response struct {
 
 type _UpdateCertificate200Response UpdateCertificate200Response
 
-// NewUpdateCertificate200Response instantiates a new UpdateCertificate200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCertificate200Response() *UpdateCertificate200Response {
-	this := UpdateCertificate200Response{}
-	return &this
-}
-
-// NewUpdateCertificate200ResponseWithDefaults instantiates a new UpdateCertificate200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCertificate200ResponseWithDefaults() *UpdateCertificate200Response {
-	this := UpdateCertificate200Response{}
-	return &this
-}
-
-// GetCertificate returns the Certificate field value if set, zero value otherwise.
-func (o *UpdateCertificate200Response) GetCertificate() GetCertificate200ResponseCertificate {
-	if o == nil || IsNil(o.Certificate) {
-		var ret GetCertificate200ResponseCertificate
-		return ret
-	}
-	return *o.Certificate
-}
-
-// GetCertificateOk returns a tuple with the Certificate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCertificate200Response) GetCertificateOk() (*GetCertificate200ResponseCertificate, bool) {
-	if o == nil || IsNil(o.Certificate) {
-		return nil, false
-	}
-	return o.Certificate, true
-}
-
-// IsSetCertificate returns a boolean if a field has been set.
-func (o *UpdateCertificate200Response) IsSetCertificate() bool {
-	if o != nil && !IsNil(o.Certificate) {
-		return true
-	}
-
-	return false
-}
-
-// SetCertificate gets a reference to the given GetCertificate200ResponseCertificate and assigns it to the Certificate field.
-func (o *UpdateCertificate200Response) SetCertificate(v GetCertificate200ResponseCertificate) {
-	o.Certificate = &v
-}
-
 func (o UpdateCertificate200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

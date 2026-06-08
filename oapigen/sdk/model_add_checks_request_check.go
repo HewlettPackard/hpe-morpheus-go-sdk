@@ -33,62 +33,6 @@ type AddChecksRequestCheck struct {
 	WebCheck      *WebCheck
 }
 
-// CheckSocketAsAddChecksRequestCheck is a convenience function that returns CheckSocket wrapped in AddChecksRequestCheck
-func CheckSocketAsAddChecksRequestCheck(v *CheckSocket) AddChecksRequestCheck {
-	return AddChecksRequestCheck{
-		CheckSocket: v,
-	}
-}
-
-// ElasticCheckAsAddChecksRequestCheck is a convenience function that returns ElasticCheck wrapped in AddChecksRequestCheck
-func ElasticCheckAsAddChecksRequestCheck(v *ElasticCheck) AddChecksRequestCheck {
-	return AddChecksRequestCheck{
-		ElasticCheck: v,
-	}
-}
-
-// MySqlCheckAsAddChecksRequestCheck is a convenience function that returns MySqlCheck wrapped in AddChecksRequestCheck
-func MySqlCheckAsAddChecksRequestCheck(v *MySqlCheck) AddChecksRequestCheck {
-	return AddChecksRequestCheck{
-		MySqlCheck: v,
-	}
-}
-
-// PostgresCheckAsAddChecksRequestCheck is a convenience function that returns PostgresCheck wrapped in AddChecksRequestCheck
-func PostgresCheckAsAddChecksRequestCheck(v *PostgresCheck) AddChecksRequestCheck {
-	return AddChecksRequestCheck{
-		PostgresCheck: v,
-	}
-}
-
-// PushCheckAsAddChecksRequestCheck is a convenience function that returns PushCheck wrapped in AddChecksRequestCheck
-func PushCheckAsAddChecksRequestCheck(v *PushCheck) AddChecksRequestCheck {
-	return AddChecksRequestCheck{
-		PushCheck: v,
-	}
-}
-
-// SNMPCheckAsAddChecksRequestCheck is a convenience function that returns SNMPCheck wrapped in AddChecksRequestCheck
-func SNMPCheckAsAddChecksRequestCheck(v *SNMPCheck) AddChecksRequestCheck {
-	return AddChecksRequestCheck{
-		SNMPCheck: v,
-	}
-}
-
-// SqlCheckAsAddChecksRequestCheck is a convenience function that returns SqlCheck wrapped in AddChecksRequestCheck
-func SqlCheckAsAddChecksRequestCheck(v *SqlCheck) AddChecksRequestCheck {
-	return AddChecksRequestCheck{
-		SqlCheck: v,
-	}
-}
-
-// WebCheckAsAddChecksRequestCheck is a convenience function that returns WebCheck wrapped in AddChecksRequestCheck
-func WebCheckAsAddChecksRequestCheck(v *WebCheck) AddChecksRequestCheck {
-	return AddChecksRequestCheck{
-		WebCheck: v,
-	}
-}
-
 func (dst *AddChecksRequestCheck) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddChecksRequestCheck{}

@@ -26,55 +26,6 @@ type AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner struct {
 
 type _AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner
 
-// NewAddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner instantiates a new AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner() *AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner {
-	this := AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner{}
-	return &this
-}
-
-// NewAddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInnerWithDefaults instantiates a new AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInnerWithDefaults() *AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner {
-	this := AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) SetId(v string) {
-	o.Id = &v
-}
-
 func (o AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

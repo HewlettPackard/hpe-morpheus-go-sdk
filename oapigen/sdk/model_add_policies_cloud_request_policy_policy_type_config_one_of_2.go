@@ -26,55 +26,6 @@ type AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2 struct {
 
 type _AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2 AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2
 
-// NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2 instantiates a new AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2() *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2 {
-	this := AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2{}
-	return &this
-}
-
-// NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2WithDefaults instantiates a new AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2WithDefaults() *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2 {
-	this := AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2{}
-	return &this
-}
-
-// GetBackupStorageIds returns the BackupStorageIds field value if set, zero value otherwise.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2) GetBackupStorageIds() []int64 {
-	if o == nil || IsNil(o.BackupStorageIds) {
-		var ret []int64
-		return ret
-	}
-	return o.BackupStorageIds
-}
-
-// GetBackupStorageIdsOk returns a tuple with the BackupStorageIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2) GetBackupStorageIdsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.BackupStorageIds) {
-		return nil, false
-	}
-	return o.BackupStorageIds, true
-}
-
-// IsSetBackupStorageIds returns a boolean if a field has been set.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2) IsSetBackupStorageIds() bool {
-	if o != nil && !IsNil(o.BackupStorageIds) {
-		return true
-	}
-
-	return false
-}
-
-// SetBackupStorageIds gets a reference to the given []int64 and assigns it to the BackupStorageIds field.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2) SetBackupStorageIds(v []int64) {
-	o.BackupStorageIds = v
-}
-
 func (o AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

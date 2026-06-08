@@ -9,135 +9,23 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **FullPage** | Pointer to **NullableBool** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewPolicyGroupUpdatePolicyTypeConfigOneOf21Motd
+Instantiate with a Go composite literal:
 
-`func NewPolicyGroupUpdatePolicyTypeConfigOneOf21Motd() *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd`
+```go
+obj := &PolicyGroupUpdatePolicyTypeConfigOneOf21Motd{
+    // Set fields directly
+}
+```
 
-NewPolicyGroupUpdatePolicyTypeConfigOneOf21Motd instantiates a new PolicyGroupUpdatePolicyTypeConfigOneOf21Motd object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### FullPage (Nullable)
 
-### NewPolicyGroupUpdatePolicyTypeConfigOneOf21MotdWithDefaults
-
-`func NewPolicyGroupUpdatePolicyTypeConfigOneOf21MotdWithDefaults() *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd`
-
-NewPolicyGroupUpdatePolicyTypeConfigOneOf21MotdWithDefaults instantiates a new PolicyGroupUpdatePolicyTypeConfigOneOf21Motd object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetTitle
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) GetTitle() string`
-
-GetTitle returns the Title field if non-nil, zero value otherwise.
-
-### GetTitleOk
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) GetTitleOk() (*string, bool)`
-
-GetTitleOk returns a tuple with the Title field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTitle
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) SetTitle(v string)`
-
-SetTitle sets Title field to given value.
-
-### HasTitle
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) HasTitle() bool`
-
-HasTitle returns a boolean if a field has been set.
-
-### GetMessage
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) GetMessage() string`
-
-GetMessage returns the Message field if non-nil, zero value otherwise.
-
-### GetMessageOk
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) GetMessageOk() (*string, bool)`
-
-GetMessageOk returns a tuple with the Message field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMessage
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) SetMessage(v string)`
-
-SetMessage sets Message field to given value.
-
-### HasMessage
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) HasMessage() bool`
-
-HasMessage returns a boolean if a field has been set.
-
-### GetType
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) HasType() bool`
-
-HasType returns a boolean if a field has been set.
-
-### GetFullPage
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) GetFullPage() bool`
-
-GetFullPage returns the FullPage field if non-nil, zero value otherwise.
-
-### GetFullPageOk
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) GetFullPageOk() (*bool, bool)`
-
-GetFullPageOk returns a tuple with the FullPage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFullPage
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) SetFullPage(v bool)`
-
-SetFullPage sets FullPage field to given value.
-
-### HasFullPage
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) HasFullPage() bool`
-
-HasFullPage returns a boolean if a field has been set.
-
-### SetFullPageNil
-
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) SetFullPageNil(b bool)`
-
- SetFullPageNil sets the value for FullPage to be an explicit nil
-
-### UnsetFullPage
-`func (o *PolicyGroupUpdatePolicyTypeConfigOneOf21Motd) UnsetFullPage()`
-
-UnsetFullPage ensures that no value is present for FullPage, not even an explicit nil
+Use the Nullable wrapper methods:
+- `obj.FullPage.IsSet()` — check if set
+- `obj.FullPage.Get()` — get the inner value (returns pointer)
+- `obj.FullPage.Set(&val)` — set the value
+- `obj.FullPage.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

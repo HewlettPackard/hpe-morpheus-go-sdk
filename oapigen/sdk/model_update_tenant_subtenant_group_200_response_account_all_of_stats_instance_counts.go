@@ -26,55 +26,6 @@ type UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts struct
 
 type _UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts
 
-// NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts instantiates a new UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts() *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts {
-	this := UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts{}
-	return &this
-}
-
-// NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCountsWithDefaults instantiates a new UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCountsWithDefaults() *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts {
-	this := UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts{}
-	return &this
-}
-
-// GetAll returns the All field value if set, zero value otherwise.
-func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts) GetAll() int64 {
-	if o == nil || IsNil(o.All) {
-		var ret int64
-		return ret
-	}
-	return *o.All
-}
-
-// GetAllOk returns a tuple with the All field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts) GetAllOk() (*int64, bool) {
-	if o == nil || IsNil(o.All) {
-		return nil, false
-	}
-	return o.All, true
-}
-
-// IsSetAll returns a boolean if a field has been set.
-func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
-// SetAll gets a reference to the given int64 and assigns it to the All field.
-func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts) SetAll(v int64) {
-	o.All = &v
-}
-
 func (o UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

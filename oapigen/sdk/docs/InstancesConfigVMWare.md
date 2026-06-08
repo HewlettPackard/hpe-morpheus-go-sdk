@@ -13,245 +13,30 @@ Name | Type | Description | Notes
 **CreateUser** | Pointer to **NullableBool** | Create user | [optional] [default to false]
 **Template** | Pointer to **int64** | Image ID. This is the ID of a Virtual Image. | [optional] 
 
-## Methods
-
-### NewInstancesConfigVMWare
-
-`func NewInstancesConfigVMWare() *InstancesConfigVMWare`
-
-NewInstancesConfigVMWare instantiates a new InstancesConfigVMWare object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewInstancesConfigVMWareWithDefaults
-
-`func NewInstancesConfigVMWareWithDefaults() *InstancesConfigVMWare`
-
-NewInstancesConfigVMWareWithDefaults instantiates a new InstancesConfigVMWare object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetNoAgent
-
-`func (o *InstancesConfigVMWare) GetNoAgent() bool`
-
-GetNoAgent returns the NoAgent field if non-nil, zero value otherwise.
-
-### GetNoAgentOk
-
-`func (o *InstancesConfigVMWare) GetNoAgentOk() (*bool, bool)`
-
-GetNoAgentOk returns a tuple with the NoAgent field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNoAgent
-
-`func (o *InstancesConfigVMWare) SetNoAgent(v bool)`
-
-SetNoAgent sets NoAgent field to given value.
-
-### HasNoAgent
-
-`func (o *InstancesConfigVMWare) HasNoAgent() bool`
-
-HasNoAgent returns a boolean if a field has been set.
-
-### SetNoAgentNil
-
-`func (o *InstancesConfigVMWare) SetNoAgentNil(b bool)`
-
- SetNoAgentNil sets the value for NoAgent to be an explicit nil
-
-### UnsetNoAgent
-`func (o *InstancesConfigVMWare) UnsetNoAgent()`
-
-UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
-### GetResourcePoolId
-
-`func (o *InstancesConfigVMWare) GetResourcePoolId() string`
-
-GetResourcePoolId returns the ResourcePoolId field if non-nil, zero value otherwise.
-
-### GetResourcePoolIdOk
-
-`func (o *InstancesConfigVMWare) GetResourcePoolIdOk() (*string, bool)`
-
-GetResourcePoolIdOk returns a tuple with the ResourcePoolId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourcePoolId
-
-`func (o *InstancesConfigVMWare) SetResourcePoolId(v string)`
-
-SetResourcePoolId sets ResourcePoolId field to given value.
-
-### HasResourcePoolId
-
-`func (o *InstancesConfigVMWare) HasResourcePoolId() bool`
-
-HasResourcePoolId returns a boolean if a field has been set.
-
-### GetHostId
-
-`func (o *InstancesConfigVMWare) GetHostId() string`
-
-GetHostId returns the HostId field if non-nil, zero value otherwise.
-
-### GetHostIdOk
-
-`func (o *InstancesConfigVMWare) GetHostIdOk() (*string, bool)`
-
-GetHostIdOk returns a tuple with the HostId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHostId
-
-`func (o *InstancesConfigVMWare) SetHostId(v string)`
-
-SetHostId sets HostId field to given value.
-
-### HasHostId
-
-`func (o *InstancesConfigVMWare) HasHostId() bool`
-
-HasHostId returns a boolean if a field has been set.
-
-### GetSmbiosAssetTag
-
-`func (o *InstancesConfigVMWare) GetSmbiosAssetTag() string`
-
-GetSmbiosAssetTag returns the SmbiosAssetTag field if non-nil, zero value otherwise.
-
-### GetSmbiosAssetTagOk
-
-`func (o *InstancesConfigVMWare) GetSmbiosAssetTagOk() (*string, bool)`
-
-GetSmbiosAssetTagOk returns a tuple with the SmbiosAssetTag field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSmbiosAssetTag
-
-`func (o *InstancesConfigVMWare) SetSmbiosAssetTag(v string)`
-
-SetSmbiosAssetTag sets SmbiosAssetTag field to given value.
-
-### HasSmbiosAssetTag
-
-`func (o *InstancesConfigVMWare) HasSmbiosAssetTag() bool`
-
-HasSmbiosAssetTag returns a boolean if a field has been set.
-
-### GetNestedVirtualization
-
-`func (o *InstancesConfigVMWare) GetNestedVirtualization() string`
-
-GetNestedVirtualization returns the NestedVirtualization field if non-nil, zero value otherwise.
-
-### GetNestedVirtualizationOk
-
-`func (o *InstancesConfigVMWare) GetNestedVirtualizationOk() (*string, bool)`
-
-GetNestedVirtualizationOk returns a tuple with the NestedVirtualization field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNestedVirtualization
-
-`func (o *InstancesConfigVMWare) SetNestedVirtualization(v string)`
-
-SetNestedVirtualization sets NestedVirtualization field to given value.
-
-### HasNestedVirtualization
-
-`func (o *InstancesConfigVMWare) HasNestedVirtualization() bool`
-
-HasNestedVirtualization returns a boolean if a field has been set.
-
-### GetVmwareFolderId
-
-`func (o *InstancesConfigVMWare) GetVmwareFolderId() string`
-
-GetVmwareFolderId returns the VmwareFolderId field if non-nil, zero value otherwise.
-
-### GetVmwareFolderIdOk
-
-`func (o *InstancesConfigVMWare) GetVmwareFolderIdOk() (*string, bool)`
-
-GetVmwareFolderIdOk returns a tuple with the VmwareFolderId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVmwareFolderId
-
-`func (o *InstancesConfigVMWare) SetVmwareFolderId(v string)`
-
-SetVmwareFolderId sets VmwareFolderId field to given value.
-
-### HasVmwareFolderId
-
-`func (o *InstancesConfigVMWare) HasVmwareFolderId() bool`
-
-HasVmwareFolderId returns a boolean if a field has been set.
-
-### GetCreateUser
-
-`func (o *InstancesConfigVMWare) GetCreateUser() bool`
-
-GetCreateUser returns the CreateUser field if non-nil, zero value otherwise.
-
-### GetCreateUserOk
-
-`func (o *InstancesConfigVMWare) GetCreateUserOk() (*bool, bool)`
-
-GetCreateUserOk returns a tuple with the CreateUser field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreateUser
-
-`func (o *InstancesConfigVMWare) SetCreateUser(v bool)`
-
-SetCreateUser sets CreateUser field to given value.
-
-### HasCreateUser
-
-`func (o *InstancesConfigVMWare) HasCreateUser() bool`
-
-HasCreateUser returns a boolean if a field has been set.
-
-### SetCreateUserNil
-
-`func (o *InstancesConfigVMWare) SetCreateUserNil(b bool)`
-
- SetCreateUserNil sets the value for CreateUser to be an explicit nil
-
-### UnsetCreateUser
-`func (o *InstancesConfigVMWare) UnsetCreateUser()`
-
-UnsetCreateUser ensures that no value is present for CreateUser, not even an explicit nil
-### GetTemplate
-
-`func (o *InstancesConfigVMWare) GetTemplate() int64`
-
-GetTemplate returns the Template field if non-nil, zero value otherwise.
-
-### GetTemplateOk
-
-`func (o *InstancesConfigVMWare) GetTemplateOk() (*int64, bool)`
-
-GetTemplateOk returns a tuple with the Template field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTemplate
-
-`func (o *InstancesConfigVMWare) SetTemplate(v int64)`
-
-SetTemplate sets Template field to given value.
-
-### HasTemplate
-
-`func (o *InstancesConfigVMWare) HasTemplate() bool`
-
-HasTemplate returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &InstancesConfigVMWare{
+    // Set fields directly
+}
+```
+
+### NoAgent (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.NoAgent.IsSet()` — check if set
+- `obj.NoAgent.Get()` — get the inner value (returns pointer)
+- `obj.NoAgent.Set(&val)` — set the value
+- `obj.NoAgent.Unset()` — clear the value
+### CreateUser (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.CreateUser.IsSet()` — check if set
+- `obj.CreateUser.Get()` — get the inner value (returns pointer)
+- `obj.CreateUser.Set(&val)` — set the value
+- `obj.CreateUser.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

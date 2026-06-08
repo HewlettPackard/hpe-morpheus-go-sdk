@@ -26,55 +26,6 @@ type AppStateInputProvidersInner struct {
 
 type _AppStateInputProvidersInner AppStateInputProvidersInner
 
-// NewAppStateInputProvidersInner instantiates a new AppStateInputProvidersInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAppStateInputProvidersInner() *AppStateInputProvidersInner {
-	this := AppStateInputProvidersInner{}
-	return &this
-}
-
-// NewAppStateInputProvidersInnerWithDefaults instantiates a new AppStateInputProvidersInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppStateInputProvidersInnerWithDefaults() *AppStateInputProvidersInner {
-	this := AppStateInputProvidersInner{}
-	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AppStateInputProvidersInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppStateInputProvidersInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AppStateInputProvidersInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AppStateInputProvidersInner) SetName(v string) {
-	o.Name = &v
-}
-
 func (o AppStateInputProvidersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

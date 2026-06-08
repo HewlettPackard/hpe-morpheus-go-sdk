@@ -29,34 +29,6 @@ type UpdateNetworkPoolServerRequestNetworkPoolServer struct {
 	SolarWindsNetworkPoolServerUpdate *SolarWindsNetworkPoolServerUpdate
 }
 
-// BluecatNetworkPoolServerUpdateAsUpdateNetworkPoolServerRequestNetworkPoolServer is a convenience function that returns BluecatNetworkPoolServerUpdate wrapped in UpdateNetworkPoolServerRequestNetworkPoolServer
-func BluecatNetworkPoolServerUpdateAsUpdateNetworkPoolServerRequestNetworkPoolServer(v *BluecatNetworkPoolServerUpdate) UpdateNetworkPoolServerRequestNetworkPoolServer {
-	return UpdateNetworkPoolServerRequestNetworkPoolServer{
-		BluecatNetworkPoolServerUpdate: v,
-	}
-}
-
-// InfobloxNetworkPoolServerUpdateAsUpdateNetworkPoolServerRequestNetworkPoolServer is a convenience function that returns InfobloxNetworkPoolServerUpdate wrapped in UpdateNetworkPoolServerRequestNetworkPoolServer
-func InfobloxNetworkPoolServerUpdateAsUpdateNetworkPoolServerRequestNetworkPoolServer(v *InfobloxNetworkPoolServerUpdate) UpdateNetworkPoolServerRequestNetworkPoolServer {
-	return UpdateNetworkPoolServerRequestNetworkPoolServer{
-		InfobloxNetworkPoolServerUpdate: v,
-	}
-}
-
-// PhpIPAMNetworkPoolServerUpdateAsUpdateNetworkPoolServerRequestNetworkPoolServer is a convenience function that returns PhpIPAMNetworkPoolServerUpdate wrapped in UpdateNetworkPoolServerRequestNetworkPoolServer
-func PhpIPAMNetworkPoolServerUpdateAsUpdateNetworkPoolServerRequestNetworkPoolServer(v *PhpIPAMNetworkPoolServerUpdate) UpdateNetworkPoolServerRequestNetworkPoolServer {
-	return UpdateNetworkPoolServerRequestNetworkPoolServer{
-		PhpIPAMNetworkPoolServerUpdate: v,
-	}
-}
-
-// SolarWindsNetworkPoolServerUpdateAsUpdateNetworkPoolServerRequestNetworkPoolServer is a convenience function that returns SolarWindsNetworkPoolServerUpdate wrapped in UpdateNetworkPoolServerRequestNetworkPoolServer
-func SolarWindsNetworkPoolServerUpdateAsUpdateNetworkPoolServerRequestNetworkPoolServer(v *SolarWindsNetworkPoolServerUpdate) UpdateNetworkPoolServerRequestNetworkPoolServer {
-	return UpdateNetworkPoolServerRequestNetworkPoolServer{
-		SolarWindsNetworkPoolServerUpdate: v,
-	}
-}
-
 func (dst *UpdateNetworkPoolServerRequestNetworkPoolServer) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateNetworkPoolServerRequestNetworkPoolServer{}

@@ -26,55 +26,6 @@ type UpdateDeploy200Response struct {
 
 type _UpdateDeploy200Response UpdateDeploy200Response
 
-// NewUpdateDeploy200Response instantiates a new UpdateDeploy200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateDeploy200Response() *UpdateDeploy200Response {
-	this := UpdateDeploy200Response{}
-	return &this
-}
-
-// NewUpdateDeploy200ResponseWithDefaults instantiates a new UpdateDeploy200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateDeploy200ResponseWithDefaults() *UpdateDeploy200Response {
-	this := UpdateDeploy200Response{}
-	return &this
-}
-
-// GetAppDeploy returns the AppDeploy field value if set, zero value otherwise.
-func (o *UpdateDeploy200Response) GetAppDeploy() UpdateDeploy200ResponseAppDeploy {
-	if o == nil || IsNil(o.AppDeploy) {
-		var ret UpdateDeploy200ResponseAppDeploy
-		return ret
-	}
-	return *o.AppDeploy
-}
-
-// GetAppDeployOk returns a tuple with the AppDeploy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateDeploy200Response) GetAppDeployOk() (*UpdateDeploy200ResponseAppDeploy, bool) {
-	if o == nil || IsNil(o.AppDeploy) {
-		return nil, false
-	}
-	return o.AppDeploy, true
-}
-
-// IsSetAppDeploy returns a boolean if a field has been set.
-func (o *UpdateDeploy200Response) IsSetAppDeploy() bool {
-	if o != nil && !IsNil(o.AppDeploy) {
-		return true
-	}
-
-	return false
-}
-
-// SetAppDeploy gets a reference to the given UpdateDeploy200ResponseAppDeploy and assigns it to the AppDeploy field.
-func (o *UpdateDeploy200Response) SetAppDeploy(v UpdateDeploy200ResponseAppDeploy) {
-	o.AppDeploy = &v
-}
-
 func (o UpdateDeploy200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,48 +26,6 @@ type IntegrationAnsibleConfig struct {
 
 type _IntegrationAnsibleConfig IntegrationAnsibleConfig
 
-// NewIntegrationAnsibleConfig instantiates a new IntegrationAnsibleConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIntegrationAnsibleConfig(integration IntegrationAnsibleConfigIntegration) *IntegrationAnsibleConfig {
-	this := IntegrationAnsibleConfig{}
-	this.Integration = integration
-	return &this
-}
-
-// NewIntegrationAnsibleConfigWithDefaults instantiates a new IntegrationAnsibleConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationAnsibleConfigWithDefaults() *IntegrationAnsibleConfig {
-	this := IntegrationAnsibleConfig{}
-	return &this
-}
-
-// GetIntegration returns the Integration field value
-func (o *IntegrationAnsibleConfig) GetIntegration() IntegrationAnsibleConfigIntegration {
-	if o == nil {
-		var ret IntegrationAnsibleConfigIntegration
-		return ret
-	}
-
-	return o.Integration
-}
-
-// GetIntegrationOk returns a tuple with the Integration field value
-// and a boolean to check if the value has been set.
-func (o *IntegrationAnsibleConfig) GetIntegrationOk() (*IntegrationAnsibleConfigIntegration, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Integration, true
-}
-
-// SetIntegration sets field value
-func (o *IntegrationAnsibleConfig) SetIntegration(v IntegrationAnsibleConfigIntegration) {
-	o.Integration = v
-}
-
 func (o IntegrationAnsibleConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

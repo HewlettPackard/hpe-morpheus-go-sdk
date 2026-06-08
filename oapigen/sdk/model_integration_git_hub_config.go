@@ -26,48 +26,6 @@ type IntegrationGitHubConfig struct {
 
 type _IntegrationGitHubConfig IntegrationGitHubConfig
 
-// NewIntegrationGitHubConfig instantiates a new IntegrationGitHubConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIntegrationGitHubConfig(integration IntegrationGitHubConfigIntegration) *IntegrationGitHubConfig {
-	this := IntegrationGitHubConfig{}
-	this.Integration = integration
-	return &this
-}
-
-// NewIntegrationGitHubConfigWithDefaults instantiates a new IntegrationGitHubConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationGitHubConfigWithDefaults() *IntegrationGitHubConfig {
-	this := IntegrationGitHubConfig{}
-	return &this
-}
-
-// GetIntegration returns the Integration field value
-func (o *IntegrationGitHubConfig) GetIntegration() IntegrationGitHubConfigIntegration {
-	if o == nil {
-		var ret IntegrationGitHubConfigIntegration
-		return ret
-	}
-
-	return o.Integration
-}
-
-// GetIntegrationOk returns a tuple with the Integration field value
-// and a boolean to check if the value has been set.
-func (o *IntegrationGitHubConfig) GetIntegrationOk() (*IntegrationGitHubConfigIntegration, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Integration, true
-}
-
-// SetIntegration sets field value
-func (o *IntegrationGitHubConfig) SetIntegration(v IntegrationGitHubConfigIntegration) {
-	o.Integration = v
-}
-
 func (o IntegrationGitHubConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

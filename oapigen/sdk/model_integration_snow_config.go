@@ -26,48 +26,6 @@ type IntegrationSNOWConfig struct {
 
 type _IntegrationSNOWConfig IntegrationSNOWConfig
 
-// NewIntegrationSNOWConfig instantiates a new IntegrationSNOWConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIntegrationSNOWConfig(integration IntegrationSNOWConfigIntegration) *IntegrationSNOWConfig {
-	this := IntegrationSNOWConfig{}
-	this.Integration = integration
-	return &this
-}
-
-// NewIntegrationSNOWConfigWithDefaults instantiates a new IntegrationSNOWConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationSNOWConfigWithDefaults() *IntegrationSNOWConfig {
-	this := IntegrationSNOWConfig{}
-	return &this
-}
-
-// GetIntegration returns the Integration field value
-func (o *IntegrationSNOWConfig) GetIntegration() IntegrationSNOWConfigIntegration {
-	if o == nil {
-		var ret IntegrationSNOWConfigIntegration
-		return ret
-	}
-
-	return o.Integration
-}
-
-// GetIntegrationOk returns a tuple with the Integration field value
-// and a boolean to check if the value has been set.
-func (o *IntegrationSNOWConfig) GetIntegrationOk() (*IntegrationSNOWConfigIntegration, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Integration, true
-}
-
-// SetIntegration sets field value
-func (o *IntegrationSNOWConfig) SetIntegration(v IntegrationSNOWConfigIntegration) {
-	o.Integration = v
-}
-
 func (o IntegrationSNOWConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type JobWorkflowCustomOptions struct {
 
 type _JobWorkflowCustomOptions JobWorkflowCustomOptions
 
-// NewJobWorkflowCustomOptions instantiates a new JobWorkflowCustomOptions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewJobWorkflowCustomOptions() *JobWorkflowCustomOptions {
-	this := JobWorkflowCustomOptions{}
-	return &this
-}
-
-// NewJobWorkflowCustomOptionsWithDefaults instantiates a new JobWorkflowCustomOptions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewJobWorkflowCustomOptionsWithDefaults() *JobWorkflowCustomOptions {
-	this := JobWorkflowCustomOptions{}
-	return &this
-}
-
-// GetCheckTime returns the CheckTime field value if set, zero value otherwise.
-func (o *JobWorkflowCustomOptions) GetCheckTime() int64 {
-	if o == nil || IsNil(o.CheckTime) {
-		var ret int64
-		return ret
-	}
-	return *o.CheckTime
-}
-
-// GetCheckTimeOk returns a tuple with the CheckTime field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *JobWorkflowCustomOptions) GetCheckTimeOk() (*int64, bool) {
-	if o == nil || IsNil(o.CheckTime) {
-		return nil, false
-	}
-	return o.CheckTime, true
-}
-
-// IsSetCheckTime returns a boolean if a field has been set.
-func (o *JobWorkflowCustomOptions) IsSetCheckTime() bool {
-	if o != nil && !IsNil(o.CheckTime) {
-		return true
-	}
-
-	return false
-}
-
-// SetCheckTime gets a reference to the given int64 and assigns it to the CheckTime field.
-func (o *JobWorkflowCustomOptions) SetCheckTime(v int64) {
-	o.CheckTime = &v
-}
-
 func (o JobWorkflowCustomOptions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

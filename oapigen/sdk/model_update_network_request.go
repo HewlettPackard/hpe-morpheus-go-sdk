@@ -26,55 +26,6 @@ type UpdateNetworkRequest struct {
 
 type _UpdateNetworkRequest UpdateNetworkRequest
 
-// NewUpdateNetworkRequest instantiates a new UpdateNetworkRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkRequest() *UpdateNetworkRequest {
-	this := UpdateNetworkRequest{}
-	return &this
-}
-
-// NewUpdateNetworkRequestWithDefaults instantiates a new UpdateNetworkRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkRequestWithDefaults() *UpdateNetworkRequest {
-	this := UpdateNetworkRequest{}
-	return &this
-}
-
-// GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *UpdateNetworkRequest) GetNetwork() UpdateNetworkRequestNetwork {
-	if o == nil || IsNil(o.Network) {
-		var ret UpdateNetworkRequestNetwork
-		return ret
-	}
-	return *o.Network
-}
-
-// GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkRequest) GetNetworkOk() (*UpdateNetworkRequestNetwork, bool) {
-	if o == nil || IsNil(o.Network) {
-		return nil, false
-	}
-	return o.Network, true
-}
-
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *UpdateNetworkRequest) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetwork gets a reference to the given UpdateNetworkRequestNetwork and assigns it to the Network field.
-func (o *UpdateNetworkRequest) SetNetwork(v UpdateNetworkRequestNetwork) {
-	o.Network = &v
-}
-
 func (o UpdateNetworkRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type GetOsTypeImage200Response struct {
 
 type _GetOsTypeImage200Response GetOsTypeImage200Response
 
-// NewGetOsTypeImage200Response instantiates a new GetOsTypeImage200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetOsTypeImage200Response() *GetOsTypeImage200Response {
-	this := GetOsTypeImage200Response{}
-	return &this
-}
-
-// NewGetOsTypeImage200ResponseWithDefaults instantiates a new GetOsTypeImage200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetOsTypeImage200ResponseWithDefaults() *GetOsTypeImage200Response {
-	this := GetOsTypeImage200Response{}
-	return &this
-}
-
-// GetOsTypeImage returns the OsTypeImage field value if set, zero value otherwise.
-func (o *GetOsTypeImage200Response) GetOsTypeImage() GetOsTypeImage200ResponseOsTypeImage {
-	if o == nil || IsNil(o.OsTypeImage) {
-		var ret GetOsTypeImage200ResponseOsTypeImage
-		return ret
-	}
-	return *o.OsTypeImage
-}
-
-// GetOsTypeImageOk returns a tuple with the OsTypeImage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetOsTypeImage200Response) GetOsTypeImageOk() (*GetOsTypeImage200ResponseOsTypeImage, bool) {
-	if o == nil || IsNil(o.OsTypeImage) {
-		return nil, false
-	}
-	return o.OsTypeImage, true
-}
-
-// IsSetOsTypeImage returns a boolean if a field has been set.
-func (o *GetOsTypeImage200Response) IsSetOsTypeImage() bool {
-	if o != nil && !IsNil(o.OsTypeImage) {
-		return true
-	}
-
-	return false
-}
-
-// SetOsTypeImage gets a reference to the given GetOsTypeImage200ResponseOsTypeImage and assigns it to the OsTypeImage field.
-func (o *GetOsTypeImage200Response) SetOsTypeImage(v GetOsTypeImage200ResponseOsTypeImage) {
-	o.OsTypeImage = &v
-}
-
 func (o GetOsTypeImage200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,48 +26,6 @@ type UpdatePluginRequest struct {
 
 type _UpdatePluginRequest UpdatePluginRequest
 
-// NewUpdatePluginRequest instantiates a new UpdatePluginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePluginRequest(plugin UpdatePluginRequestPlugin) *UpdatePluginRequest {
-	this := UpdatePluginRequest{}
-	this.Plugin = plugin
-	return &this
-}
-
-// NewUpdatePluginRequestWithDefaults instantiates a new UpdatePluginRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePluginRequestWithDefaults() *UpdatePluginRequest {
-	this := UpdatePluginRequest{}
-	return &this
-}
-
-// GetPlugin returns the Plugin field value
-func (o *UpdatePluginRequest) GetPlugin() UpdatePluginRequestPlugin {
-	if o == nil {
-		var ret UpdatePluginRequestPlugin
-		return ret
-	}
-
-	return o.Plugin
-}
-
-// GetPluginOk returns a tuple with the Plugin field value
-// and a boolean to check if the value has been set.
-func (o *UpdatePluginRequest) GetPluginOk() (*UpdatePluginRequestPlugin, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Plugin, true
-}
-
-// SetPlugin sets field value
-func (o *UpdatePluginRequest) SetPlugin(v UpdatePluginRequestPlugin) {
-	o.Plugin = v
-}
-
 func (o UpdatePluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

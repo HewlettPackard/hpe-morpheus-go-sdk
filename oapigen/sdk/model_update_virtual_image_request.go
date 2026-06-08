@@ -26,48 +26,6 @@ type UpdateVirtualImageRequest struct {
 
 type _UpdateVirtualImageRequest UpdateVirtualImageRequest
 
-// NewUpdateVirtualImageRequest instantiates a new UpdateVirtualImageRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateVirtualImageRequest(virtualImage UpdateVirtualImageRequestVirtualImage) *UpdateVirtualImageRequest {
-	this := UpdateVirtualImageRequest{}
-	this.VirtualImage = virtualImage
-	return &this
-}
-
-// NewUpdateVirtualImageRequestWithDefaults instantiates a new UpdateVirtualImageRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateVirtualImageRequestWithDefaults() *UpdateVirtualImageRequest {
-	this := UpdateVirtualImageRequest{}
-	return &this
-}
-
-// GetVirtualImage returns the VirtualImage field value
-func (o *UpdateVirtualImageRequest) GetVirtualImage() UpdateVirtualImageRequestVirtualImage {
-	if o == nil {
-		var ret UpdateVirtualImageRequestVirtualImage
-		return ret
-	}
-
-	return o.VirtualImage
-}
-
-// GetVirtualImageOk returns a tuple with the VirtualImage field value
-// and a boolean to check if the value has been set.
-func (o *UpdateVirtualImageRequest) GetVirtualImageOk() (*UpdateVirtualImageRequestVirtualImage, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.VirtualImage, true
-}
-
-// SetVirtualImage sets field value
-func (o *UpdateVirtualImageRequest) SetVirtualImage(v UpdateVirtualImageRequestVirtualImage) {
-	o.VirtualImage = v
-}
-
 func (o UpdateVirtualImageRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

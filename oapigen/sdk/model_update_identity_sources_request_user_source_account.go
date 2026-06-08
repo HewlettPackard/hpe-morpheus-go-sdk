@@ -27,48 +27,6 @@ type UpdateIdentitySourcesRequestUserSourceAccount struct {
 
 type _UpdateIdentitySourcesRequestUserSourceAccount UpdateIdentitySourcesRequestUserSourceAccount
 
-// NewUpdateIdentitySourcesRequestUserSourceAccount instantiates a new UpdateIdentitySourcesRequestUserSourceAccount object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIdentitySourcesRequestUserSourceAccount(id int64) *UpdateIdentitySourcesRequestUserSourceAccount {
-	this := UpdateIdentitySourcesRequestUserSourceAccount{}
-	this.Id = id
-	return &this
-}
-
-// NewUpdateIdentitySourcesRequestUserSourceAccountWithDefaults instantiates a new UpdateIdentitySourcesRequestUserSourceAccount object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIdentitySourcesRequestUserSourceAccountWithDefaults() *UpdateIdentitySourcesRequestUserSourceAccount {
-	this := UpdateIdentitySourcesRequestUserSourceAccount{}
-	return &this
-}
-
-// GetId returns the Id field value
-func (o *UpdateIdentitySourcesRequestUserSourceAccount) GetId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourcesRequestUserSourceAccount) GetIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *UpdateIdentitySourcesRequestUserSourceAccount) SetId(v int64) {
-	o.Id = v
-}
-
 func (o UpdateIdentitySourcesRequestUserSourceAccount) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

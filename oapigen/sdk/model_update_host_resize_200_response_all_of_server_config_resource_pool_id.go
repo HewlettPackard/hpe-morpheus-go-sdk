@@ -27,20 +27,6 @@ type UpdateHostResize200ResponseAllOfServerConfigResourcePoolId struct {
 	String *string
 }
 
-// int64AsUpdateHostResize200ResponseAllOfServerConfigResourcePoolId is a convenience function that returns int64 wrapped in UpdateHostResize200ResponseAllOfServerConfigResourcePoolId
-func Int64AsUpdateHostResize200ResponseAllOfServerConfigResourcePoolId(v *int64) UpdateHostResize200ResponseAllOfServerConfigResourcePoolId {
-	return UpdateHostResize200ResponseAllOfServerConfigResourcePoolId{
-		Int64: v,
-	}
-}
-
-// stringAsUpdateHostResize200ResponseAllOfServerConfigResourcePoolId is a convenience function that returns string wrapped in UpdateHostResize200ResponseAllOfServerConfigResourcePoolId
-func StringAsUpdateHostResize200ResponseAllOfServerConfigResourcePoolId(v *string) UpdateHostResize200ResponseAllOfServerConfigResourcePoolId {
-	return UpdateHostResize200ResponseAllOfServerConfigResourcePoolId{
-		String: v,
-	}
-}
-
 func (dst *UpdateHostResize200ResponseAllOfServerConfigResourcePoolId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateHostResize200ResponseAllOfServerConfigResourcePoolId{}

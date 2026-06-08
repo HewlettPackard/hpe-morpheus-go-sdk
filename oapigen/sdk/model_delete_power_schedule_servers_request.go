@@ -26,48 +26,6 @@ type DeletePowerScheduleServersRequest struct {
 
 type _DeletePowerScheduleServersRequest DeletePowerScheduleServersRequest
 
-// NewDeletePowerScheduleServersRequest instantiates a new DeletePowerScheduleServersRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewDeletePowerScheduleServersRequest(servers []int64) *DeletePowerScheduleServersRequest {
-	this := DeletePowerScheduleServersRequest{}
-	this.Servers = servers
-	return &this
-}
-
-// NewDeletePowerScheduleServersRequestWithDefaults instantiates a new DeletePowerScheduleServersRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeletePowerScheduleServersRequestWithDefaults() *DeletePowerScheduleServersRequest {
-	this := DeletePowerScheduleServersRequest{}
-	return &this
-}
-
-// GetServers returns the Servers field value
-func (o *DeletePowerScheduleServersRequest) GetServers() []int64 {
-	if o == nil {
-		var ret []int64
-		return ret
-	}
-
-	return o.Servers
-}
-
-// GetServersOk returns a tuple with the Servers field value
-// and a boolean to check if the value has been set.
-func (o *DeletePowerScheduleServersRequest) GetServersOk() ([]int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Servers, true
-}
-
-// SetServers sets field value
-func (o *DeletePowerScheduleServersRequest) SetServers(v []int64) {
-	o.Servers = v
-}
-
 func (o DeletePowerScheduleServersRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

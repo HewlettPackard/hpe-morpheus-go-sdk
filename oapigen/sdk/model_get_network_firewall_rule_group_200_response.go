@@ -26,55 +26,6 @@ type GetNetworkFirewallRuleGroup200Response struct {
 
 type _GetNetworkFirewallRuleGroup200Response GetNetworkFirewallRuleGroup200Response
 
-// NewGetNetworkFirewallRuleGroup200Response instantiates a new GetNetworkFirewallRuleGroup200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkFirewallRuleGroup200Response() *GetNetworkFirewallRuleGroup200Response {
-	this := GetNetworkFirewallRuleGroup200Response{}
-	return &this
-}
-
-// NewGetNetworkFirewallRuleGroup200ResponseWithDefaults instantiates a new GetNetworkFirewallRuleGroup200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkFirewallRuleGroup200ResponseWithDefaults() *GetNetworkFirewallRuleGroup200Response {
-	this := GetNetworkFirewallRuleGroup200Response{}
-	return &this
-}
-
-// GetRuleGroup returns the RuleGroup field value if set, zero value otherwise.
-func (o *GetNetworkFirewallRuleGroup200Response) GetRuleGroup() GetNetworkFirewallRuleGroup200ResponseRuleGroup {
-	if o == nil || IsNil(o.RuleGroup) {
-		var ret GetNetworkFirewallRuleGroup200ResponseRuleGroup
-		return ret
-	}
-	return *o.RuleGroup
-}
-
-// GetRuleGroupOk returns a tuple with the RuleGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkFirewallRuleGroup200Response) GetRuleGroupOk() (*GetNetworkFirewallRuleGroup200ResponseRuleGroup, bool) {
-	if o == nil || IsNil(o.RuleGroup) {
-		return nil, false
-	}
-	return o.RuleGroup, true
-}
-
-// IsSetRuleGroup returns a boolean if a field has been set.
-func (o *GetNetworkFirewallRuleGroup200Response) IsSetRuleGroup() bool {
-	if o != nil && !IsNil(o.RuleGroup) {
-		return true
-	}
-
-	return false
-}
-
-// SetRuleGroup gets a reference to the given GetNetworkFirewallRuleGroup200ResponseRuleGroup and assigns it to the RuleGroup field.
-func (o *GetNetworkFirewallRuleGroup200Response) SetRuleGroup(v GetNetworkFirewallRuleGroup200ResponseRuleGroup) {
-	o.RuleGroup = &v
-}
-
 func (o GetNetworkFirewallRuleGroup200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

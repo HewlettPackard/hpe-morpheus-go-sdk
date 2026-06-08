@@ -26,55 +26,6 @@ type GetVDIPools200Response struct {
 
 type _GetVDIPools200Response GetVDIPools200Response
 
-// NewGetVDIPools200Response instantiates a new GetVDIPools200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetVDIPools200Response() *GetVDIPools200Response {
-	this := GetVDIPools200Response{}
-	return &this
-}
-
-// NewGetVDIPools200ResponseWithDefaults instantiates a new GetVDIPools200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetVDIPools200ResponseWithDefaults() *GetVDIPools200Response {
-	this := GetVDIPools200Response{}
-	return &this
-}
-
-// GetVdiPool returns the VdiPool field value if set, zero value otherwise.
-func (o *GetVDIPools200Response) GetVdiPool() GetVDIPools200ResponseVdiPool {
-	if o == nil || IsNil(o.VdiPool) {
-		var ret GetVDIPools200ResponseVdiPool
-		return ret
-	}
-	return *o.VdiPool
-}
-
-// GetVdiPoolOk returns a tuple with the VdiPool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetVDIPools200Response) GetVdiPoolOk() (*GetVDIPools200ResponseVdiPool, bool) {
-	if o == nil || IsNil(o.VdiPool) {
-		return nil, false
-	}
-	return o.VdiPool, true
-}
-
-// IsSetVdiPool returns a boolean if a field has been set.
-func (o *GetVDIPools200Response) IsSetVdiPool() bool {
-	if o != nil && !IsNil(o.VdiPool) {
-		return true
-	}
-
-	return false
-}
-
-// SetVdiPool gets a reference to the given GetVDIPools200ResponseVdiPool and assigns it to the VdiPool field.
-func (o *GetVDIPools200Response) SetVdiPool(v GetVDIPools200ResponseVdiPool) {
-	o.VdiPool = &v
-}
-
 func (o GetVDIPools200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

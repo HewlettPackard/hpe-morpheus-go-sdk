@@ -26,55 +26,6 @@ type AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork struct {
 
 type _AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork
 
-// NewAddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork instantiates a new AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork() *AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork {
-	this := AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork{}
-	return &this
-}
-
-// NewAddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetworkWithDefaults instantiates a new AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetworkWithDefaults() *AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork {
-	this := AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork) GetId() []string {
-	if o == nil || IsNil(o.Id) {
-		var ret []string
-		return ret
-	}
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork) GetIdOk() ([]string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given []string and assigns it to the Id field.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork) SetId(v []string) {
-	o.Id = v
-}
-
 func (o AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

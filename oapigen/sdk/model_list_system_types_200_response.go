@@ -26,55 +26,6 @@ type ListSystemTypes200Response struct {
 
 type _ListSystemTypes200Response ListSystemTypes200Response
 
-// NewListSystemTypes200Response instantiates a new ListSystemTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListSystemTypes200Response() *ListSystemTypes200Response {
-	this := ListSystemTypes200Response{}
-	return &this
-}
-
-// NewListSystemTypes200ResponseWithDefaults instantiates a new ListSystemTypes200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListSystemTypes200ResponseWithDefaults() *ListSystemTypes200Response {
-	this := ListSystemTypes200Response{}
-	return &this
-}
-
-// GetSystemTypes returns the SystemTypes field value if set, zero value otherwise.
-func (o *ListSystemTypes200Response) GetSystemTypes() []ListSystemTypes200ResponseSystemTypesInner {
-	if o == nil || IsNil(o.SystemTypes) {
-		var ret []ListSystemTypes200ResponseSystemTypesInner
-		return ret
-	}
-	return o.SystemTypes
-}
-
-// GetSystemTypesOk returns a tuple with the SystemTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListSystemTypes200Response) GetSystemTypesOk() ([]ListSystemTypes200ResponseSystemTypesInner, bool) {
-	if o == nil || IsNil(o.SystemTypes) {
-		return nil, false
-	}
-	return o.SystemTypes, true
-}
-
-// IsSetSystemTypes returns a boolean if a field has been set.
-func (o *ListSystemTypes200Response) IsSetSystemTypes() bool {
-	if o != nil && !IsNil(o.SystemTypes) {
-		return true
-	}
-
-	return false
-}
-
-// SetSystemTypes gets a reference to the given []ListSystemTypes200ResponseSystemTypesInner and assigns it to the SystemTypes field.
-func (o *ListSystemTypes200Response) SetSystemTypes(v []ListSystemTypes200ResponseSystemTypesInner) {
-	o.SystemTypes = v
-}
-
 func (o ListSystemTypes200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

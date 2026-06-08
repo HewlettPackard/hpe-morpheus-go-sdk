@@ -27,20 +27,6 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmInstallAgent struct {
 	String *string
 }
 
-// boolAsAddBlueprint200ResponseAllOfBlueprintConfigOneOfArmInstallAgent is a convenience function that returns bool wrapped in AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmInstallAgent
-func BoolAsAddBlueprint200ResponseAllOfBlueprintConfigOneOfArmInstallAgent(v *bool) AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmInstallAgent {
-	return AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmInstallAgent{
-		Bool: v,
-	}
-}
-
-// stringAsAddBlueprint200ResponseAllOfBlueprintConfigOneOfArmInstallAgent is a convenience function that returns string wrapped in AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmInstallAgent
-func StringAsAddBlueprint200ResponseAllOfBlueprintConfigOneOfArmInstallAgent(v *string) AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmInstallAgent {
-	return AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmInstallAgent{
-		String: v,
-	}
-}
-
 func (dst *AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmInstallAgent) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddBlueprint200ResponseAllOfBlueprintConfigOneOfArmInstallAgent{}

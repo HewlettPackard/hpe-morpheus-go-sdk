@@ -26,55 +26,6 @@ type GetSecurityPackages200Response struct {
 
 type _GetSecurityPackages200Response GetSecurityPackages200Response
 
-// NewGetSecurityPackages200Response instantiates a new GetSecurityPackages200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetSecurityPackages200Response() *GetSecurityPackages200Response {
-	this := GetSecurityPackages200Response{}
-	return &this
-}
-
-// NewGetSecurityPackages200ResponseWithDefaults instantiates a new GetSecurityPackages200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSecurityPackages200ResponseWithDefaults() *GetSecurityPackages200Response {
-	this := GetSecurityPackages200Response{}
-	return &this
-}
-
-// GetSecurityPackage returns the SecurityPackage field value if set, zero value otherwise.
-func (o *GetSecurityPackages200Response) GetSecurityPackage() GetSecurityPackages200ResponseAllOfSecurityPackage {
-	if o == nil || IsNil(o.SecurityPackage) {
-		var ret GetSecurityPackages200ResponseAllOfSecurityPackage
-		return ret
-	}
-	return *o.SecurityPackage
-}
-
-// GetSecurityPackageOk returns a tuple with the SecurityPackage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetSecurityPackages200Response) GetSecurityPackageOk() (*GetSecurityPackages200ResponseAllOfSecurityPackage, bool) {
-	if o == nil || IsNil(o.SecurityPackage) {
-		return nil, false
-	}
-	return o.SecurityPackage, true
-}
-
-// IsSetSecurityPackage returns a boolean if a field has been set.
-func (o *GetSecurityPackages200Response) IsSetSecurityPackage() bool {
-	if o != nil && !IsNil(o.SecurityPackage) {
-		return true
-	}
-
-	return false
-}
-
-// SetSecurityPackage gets a reference to the given GetSecurityPackages200ResponseAllOfSecurityPackage and assigns it to the SecurityPackage field.
-func (o *GetSecurityPackages200Response) SetSecurityPackage(v GetSecurityPackages200ResponseAllOfSecurityPackage) {
-	o.SecurityPackage = &v
-}
-
 func (o GetSecurityPackages200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

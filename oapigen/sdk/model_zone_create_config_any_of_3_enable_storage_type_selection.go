@@ -26,13 +26,6 @@ type ZoneCreateConfigAnyOf3EnableStorageTypeSelection struct {
 	String *string
 }
 
-// stringAsZoneCreateConfigAnyOf3EnableStorageTypeSelection is a convenience function that returns string wrapped in ZoneCreateConfigAnyOf3EnableStorageTypeSelection
-func StringAsZoneCreateConfigAnyOf3EnableStorageTypeSelection(v *string) ZoneCreateConfigAnyOf3EnableStorageTypeSelection {
-	return ZoneCreateConfigAnyOf3EnableStorageTypeSelection{
-		String: v,
-	}
-}
-
 func (dst *ZoneCreateConfigAnyOf3EnableStorageTypeSelection) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ZoneCreateConfigAnyOf3EnableStorageTypeSelection{}

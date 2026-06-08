@@ -26,48 +26,6 @@ type AddIdentitySourcesRequest struct {
 
 type _AddIdentitySourcesRequest AddIdentitySourcesRequest
 
-// NewAddIdentitySourcesRequest instantiates a new AddIdentitySourcesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIdentitySourcesRequest(userSource AddIdentitySourcesRequestUserSource) *AddIdentitySourcesRequest {
-	this := AddIdentitySourcesRequest{}
-	this.UserSource = userSource
-	return &this
-}
-
-// NewAddIdentitySourcesRequestWithDefaults instantiates a new AddIdentitySourcesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIdentitySourcesRequestWithDefaults() *AddIdentitySourcesRequest {
-	this := AddIdentitySourcesRequest{}
-	return &this
-}
-
-// GetUserSource returns the UserSource field value
-func (o *AddIdentitySourcesRequest) GetUserSource() AddIdentitySourcesRequestUserSource {
-	if o == nil {
-		var ret AddIdentitySourcesRequestUserSource
-		return ret
-	}
-
-	return o.UserSource
-}
-
-// GetUserSourceOk returns a tuple with the UserSource field value
-// and a boolean to check if the value has been set.
-func (o *AddIdentitySourcesRequest) GetUserSourceOk() (*AddIdentitySourcesRequestUserSource, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.UserSource, true
-}
-
-// SetUserSource sets field value
-func (o *AddIdentitySourcesRequest) SetUserSource(v AddIdentitySourcesRequestUserSource) {
-	o.UserSource = v
-}
-
 func (o AddIdentitySourcesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type AddClusterWorkerRequestServerConfigAnyOfOneOf1 struct {
 
 type _AddClusterWorkerRequestServerConfigAnyOfOneOf1 AddClusterWorkerRequestServerConfigAnyOfOneOf1
 
-// NewAddClusterWorkerRequestServerConfigAnyOfOneOf1 instantiates a new AddClusterWorkerRequestServerConfigAnyOfOneOf1 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterWorkerRequestServerConfigAnyOfOneOf1() *AddClusterWorkerRequestServerConfigAnyOfOneOf1 {
-	this := AddClusterWorkerRequestServerConfigAnyOfOneOf1{}
-	return &this
-}
-
-// NewAddClusterWorkerRequestServerConfigAnyOfOneOf1WithDefaults instantiates a new AddClusterWorkerRequestServerConfigAnyOfOneOf1 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterWorkerRequestServerConfigAnyOfOneOf1WithDefaults() *AddClusterWorkerRequestServerConfigAnyOfOneOf1 {
-	this := AddClusterWorkerRequestServerConfigAnyOfOneOf1{}
-	return &this
-}
-
-// GetCreateUser returns the CreateUser field value if set, zero value otherwise.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf1) GetCreateUser() bool {
-	if o == nil || IsNil(o.CreateUser) {
-		var ret bool
-		return ret
-	}
-	return *o.CreateUser
-}
-
-// GetCreateUserOk returns a tuple with the CreateUser field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf1) GetCreateUserOk() (*bool, bool) {
-	if o == nil || IsNil(o.CreateUser) {
-		return nil, false
-	}
-	return o.CreateUser, true
-}
-
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf1) IsSetCreateUser() bool {
-	if o != nil && !IsNil(o.CreateUser) {
-		return true
-	}
-
-	return false
-}
-
-// SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf1) SetCreateUser(v bool) {
-	o.CreateUser = &v
-}
-
 func (o AddClusterWorkerRequestServerConfigAnyOfOneOf1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

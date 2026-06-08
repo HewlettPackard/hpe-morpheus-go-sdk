@@ -27,20 +27,6 @@ type ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode struct {
 	String *string
 }
 
-// int64AsListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode is a convenience function that returns int64 wrapped in ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode
-func Int64AsListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode(v *int64) ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode {
-	return ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode{
-		Int64: v,
-	}
-}
-
-// stringAsListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode is a convenience function that returns string wrapped in ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode
-func StringAsListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode(v *string) ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode {
-	return ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode{
-		String: v,
-	}
-}
-
 func (dst *ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode{}

@@ -27,20 +27,6 @@ type AddJobs200ResponseAllOfJobScheduleMode struct {
 	String *string
 }
 
-// int64AsAddJobs200ResponseAllOfJobScheduleMode is a convenience function that returns int64 wrapped in AddJobs200ResponseAllOfJobScheduleMode
-func Int64AsAddJobs200ResponseAllOfJobScheduleMode(v *int64) AddJobs200ResponseAllOfJobScheduleMode {
-	return AddJobs200ResponseAllOfJobScheduleMode{
-		Int64: v,
-	}
-}
-
-// stringAsAddJobs200ResponseAllOfJobScheduleMode is a convenience function that returns string wrapped in AddJobs200ResponseAllOfJobScheduleMode
-func StringAsAddJobs200ResponseAllOfJobScheduleMode(v *string) AddJobs200ResponseAllOfJobScheduleMode {
-	return AddJobs200ResponseAllOfJobScheduleMode{
-		String: v,
-	}
-}
-
 func (dst *AddJobs200ResponseAllOfJobScheduleMode) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddJobs200ResponseAllOfJobScheduleMode{}

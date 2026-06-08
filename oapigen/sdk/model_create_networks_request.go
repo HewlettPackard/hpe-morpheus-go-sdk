@@ -26,55 +26,6 @@ type CreateNetworksRequest struct {
 
 type _CreateNetworksRequest CreateNetworksRequest
 
-// NewCreateNetworksRequest instantiates a new CreateNetworksRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworksRequest() *CreateNetworksRequest {
-	this := CreateNetworksRequest{}
-	return &this
-}
-
-// NewCreateNetworksRequestWithDefaults instantiates a new CreateNetworksRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworksRequestWithDefaults() *CreateNetworksRequest {
-	this := CreateNetworksRequest{}
-	return &this
-}
-
-// GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *CreateNetworksRequest) GetNetwork() CreateNetworksRequestNetwork {
-	if o == nil || IsNil(o.Network) {
-		var ret CreateNetworksRequestNetwork
-		return ret
-	}
-	return *o.Network
-}
-
-// GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworksRequest) GetNetworkOk() (*CreateNetworksRequestNetwork, bool) {
-	if o == nil || IsNil(o.Network) {
-		return nil, false
-	}
-	return o.Network, true
-}
-
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *CreateNetworksRequest) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetwork gets a reference to the given CreateNetworksRequestNetwork and assigns it to the Network field.
-func (o *CreateNetworksRequest) SetNetwork(v CreateNetworksRequestNetwork) {
-	o.Network = &v
-}
-
 func (o CreateNetworksRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

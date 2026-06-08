@@ -26,55 +26,6 @@ type UpdateInvoicesRequest struct {
 
 type _UpdateInvoicesRequest UpdateInvoicesRequest
 
-// NewUpdateInvoicesRequest instantiates a new UpdateInvoicesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateInvoicesRequest() *UpdateInvoicesRequest {
-	this := UpdateInvoicesRequest{}
-	return &this
-}
-
-// NewUpdateInvoicesRequestWithDefaults instantiates a new UpdateInvoicesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateInvoicesRequestWithDefaults() *UpdateInvoicesRequest {
-	this := UpdateInvoicesRequest{}
-	return &this
-}
-
-// GetInvoice returns the Invoice field value if set, zero value otherwise.
-func (o *UpdateInvoicesRequest) GetInvoice() UpdateInvoicesRequestInvoice {
-	if o == nil || IsNil(o.Invoice) {
-		var ret UpdateInvoicesRequestInvoice
-		return ret
-	}
-	return *o.Invoice
-}
-
-// GetInvoiceOk returns a tuple with the Invoice field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateInvoicesRequest) GetInvoiceOk() (*UpdateInvoicesRequestInvoice, bool) {
-	if o == nil || IsNil(o.Invoice) {
-		return nil, false
-	}
-	return o.Invoice, true
-}
-
-// IsSetInvoice returns a boolean if a field has been set.
-func (o *UpdateInvoicesRequest) IsSetInvoice() bool {
-	if o != nil && !IsNil(o.Invoice) {
-		return true
-	}
-
-	return false
-}
-
-// SetInvoice gets a reference to the given UpdateInvoicesRequestInvoice and assigns it to the Invoice field.
-func (o *UpdateInvoicesRequest) SetInvoice(v UpdateInvoicesRequestInvoice) {
-	o.Invoice = &v
-}
-
 func (o UpdateInvoicesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

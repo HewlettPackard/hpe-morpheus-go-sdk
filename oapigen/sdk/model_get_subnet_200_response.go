@@ -26,55 +26,6 @@ type GetSubnet200Response struct {
 
 type _GetSubnet200Response GetSubnet200Response
 
-// NewGetSubnet200Response instantiates a new GetSubnet200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetSubnet200Response() *GetSubnet200Response {
-	this := GetSubnet200Response{}
-	return &this
-}
-
-// NewGetSubnet200ResponseWithDefaults instantiates a new GetSubnet200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSubnet200ResponseWithDefaults() *GetSubnet200Response {
-	this := GetSubnet200Response{}
-	return &this
-}
-
-// GetSubnet returns the Subnet field value if set, zero value otherwise.
-func (o *GetSubnet200Response) GetSubnet() GetSubnet200ResponseSubnet {
-	if o == nil || IsNil(o.Subnet) {
-		var ret GetSubnet200ResponseSubnet
-		return ret
-	}
-	return *o.Subnet
-}
-
-// GetSubnetOk returns a tuple with the Subnet field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetSubnet200Response) GetSubnetOk() (*GetSubnet200ResponseSubnet, bool) {
-	if o == nil || IsNil(o.Subnet) {
-		return nil, false
-	}
-	return o.Subnet, true
-}
-
-// IsSetSubnet returns a boolean if a field has been set.
-func (o *GetSubnet200Response) IsSetSubnet() bool {
-	if o != nil && !IsNil(o.Subnet) {
-		return true
-	}
-
-	return false
-}
-
-// SetSubnet gets a reference to the given GetSubnet200ResponseSubnet and assigns it to the Subnet field.
-func (o *GetSubnet200Response) SetSubnet(v GetSubnet200ResponseSubnet) {
-	o.Subnet = &v
-}
-
 func (o GetSubnet200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

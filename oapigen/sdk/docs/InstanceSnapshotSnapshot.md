@@ -9,124 +9,15 @@ Name | Type | Description | Notes
 **MemorySnapshot** | Pointer to **bool** | Whether to include the memory state in the snapshot. Only supported by certain provision types such as VMware | [optional] [default to false]
 **ForExport** | Pointer to **bool** | For Export? Indicates the snapshot is intended for export to storage. | [optional] [default to false]
 
-## Methods
+## Usage
 
-### NewInstanceSnapshotSnapshot
+Instantiate with a Go composite literal:
 
-`func NewInstanceSnapshotSnapshot() *InstanceSnapshotSnapshot`
-
-NewInstanceSnapshotSnapshot instantiates a new InstanceSnapshotSnapshot object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewInstanceSnapshotSnapshotWithDefaults
-
-`func NewInstanceSnapshotSnapshotWithDefaults() *InstanceSnapshotSnapshot`
-
-NewInstanceSnapshotSnapshotWithDefaults instantiates a new InstanceSnapshotSnapshot object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetName
-
-`func (o *InstanceSnapshotSnapshot) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *InstanceSnapshotSnapshot) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *InstanceSnapshotSnapshot) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *InstanceSnapshotSnapshot) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *InstanceSnapshotSnapshot) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *InstanceSnapshotSnapshot) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *InstanceSnapshotSnapshot) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *InstanceSnapshotSnapshot) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### GetMemorySnapshot
-
-`func (o *InstanceSnapshotSnapshot) GetMemorySnapshot() bool`
-
-GetMemorySnapshot returns the MemorySnapshot field if non-nil, zero value otherwise.
-
-### GetMemorySnapshotOk
-
-`func (o *InstanceSnapshotSnapshot) GetMemorySnapshotOk() (*bool, bool)`
-
-GetMemorySnapshotOk returns a tuple with the MemorySnapshot field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMemorySnapshot
-
-`func (o *InstanceSnapshotSnapshot) SetMemorySnapshot(v bool)`
-
-SetMemorySnapshot sets MemorySnapshot field to given value.
-
-### HasMemorySnapshot
-
-`func (o *InstanceSnapshotSnapshot) HasMemorySnapshot() bool`
-
-HasMemorySnapshot returns a boolean if a field has been set.
-
-### GetForExport
-
-`func (o *InstanceSnapshotSnapshot) GetForExport() bool`
-
-GetForExport returns the ForExport field if non-nil, zero value otherwise.
-
-### GetForExportOk
-
-`func (o *InstanceSnapshotSnapshot) GetForExportOk() (*bool, bool)`
-
-GetForExportOk returns a tuple with the ForExport field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetForExport
-
-`func (o *InstanceSnapshotSnapshot) SetForExport(v bool)`
-
-SetForExport sets ForExport field to given value.
-
-### HasForExport
-
-`func (o *InstanceSnapshotSnapshot) HasForExport() bool`
-
-HasForExport returns a boolean if a field has been set.
+```go
+obj := &InstanceSnapshotSnapshot{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

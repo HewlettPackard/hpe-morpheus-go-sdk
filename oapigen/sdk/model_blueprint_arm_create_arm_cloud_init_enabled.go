@@ -27,20 +27,6 @@ type BlueprintARMCreateArmCloudInitEnabled struct {
 	String *string
 }
 
-// boolAsBlueprintARMCreateArmCloudInitEnabled is a convenience function that returns bool wrapped in BlueprintARMCreateArmCloudInitEnabled
-func BoolAsBlueprintARMCreateArmCloudInitEnabled(v *bool) BlueprintARMCreateArmCloudInitEnabled {
-	return BlueprintARMCreateArmCloudInitEnabled{
-		Bool: v,
-	}
-}
-
-// stringAsBlueprintARMCreateArmCloudInitEnabled is a convenience function that returns string wrapped in BlueprintARMCreateArmCloudInitEnabled
-func StringAsBlueprintARMCreateArmCloudInitEnabled(v *string) BlueprintARMCreateArmCloudInitEnabled {
-	return BlueprintARMCreateArmCloudInitEnabled{
-		String: v,
-	}
-}
-
 func (dst *BlueprintARMCreateArmCloudInitEnabled) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &BlueprintARMCreateArmCloudInitEnabled{}

@@ -7,74 +7,15 @@ Name | Type | Description | Notes
 **EmailTemplates** | Pointer to [**[]ListEmailTemplates200ResponseAllOfEmailTemplatesInner**](ListEmailTemplates200ResponseAllOfEmailTemplatesInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListEmailTemplates200Response
+Instantiate with a Go composite literal:
 
-`func NewListEmailTemplates200Response() *ListEmailTemplates200Response`
-
-NewListEmailTemplates200Response instantiates a new ListEmailTemplates200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewListEmailTemplates200ResponseWithDefaults
-
-`func NewListEmailTemplates200ResponseWithDefaults() *ListEmailTemplates200Response`
-
-NewListEmailTemplates200ResponseWithDefaults instantiates a new ListEmailTemplates200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetEmailTemplates
-
-`func (o *ListEmailTemplates200Response) GetEmailTemplates() []ListEmailTemplates200ResponseAllOfEmailTemplatesInner`
-
-GetEmailTemplates returns the EmailTemplates field if non-nil, zero value otherwise.
-
-### GetEmailTemplatesOk
-
-`func (o *ListEmailTemplates200Response) GetEmailTemplatesOk() (*[]ListEmailTemplates200ResponseAllOfEmailTemplatesInner, bool)`
-
-GetEmailTemplatesOk returns a tuple with the EmailTemplates field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEmailTemplates
-
-`func (o *ListEmailTemplates200Response) SetEmailTemplates(v []ListEmailTemplates200ResponseAllOfEmailTemplatesInner)`
-
-SetEmailTemplates sets EmailTemplates field to given value.
-
-### HasEmailTemplates
-
-`func (o *ListEmailTemplates200Response) HasEmailTemplates() bool`
-
-HasEmailTemplates returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *ListEmailTemplates200Response) GetMeta() ListApprovals200ResponseAllOfMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *ListEmailTemplates200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *ListEmailTemplates200Response) SetMeta(v ListApprovals200ResponseAllOfMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *ListEmailTemplates200Response) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
+```go
+obj := &ListEmailTemplates200Response{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

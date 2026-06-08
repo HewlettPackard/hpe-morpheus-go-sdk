@@ -26,55 +26,6 @@ type PolicyGroupCreatePolicyTypeConfigOneOf24 struct {
 
 type _PolicyGroupCreatePolicyTypeConfigOneOf24 PolicyGroupCreatePolicyTypeConfigOneOf24
 
-// NewPolicyGroupCreatePolicyTypeConfigOneOf24 instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf24 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPolicyGroupCreatePolicyTypeConfigOneOf24() *PolicyGroupCreatePolicyTypeConfigOneOf24 {
-	this := PolicyGroupCreatePolicyTypeConfigOneOf24{}
-	return &this
-}
-
-// NewPolicyGroupCreatePolicyTypeConfigOneOf24WithDefaults instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf24 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPolicyGroupCreatePolicyTypeConfigOneOf24WithDefaults() *PolicyGroupCreatePolicyTypeConfigOneOf24 {
-	this := PolicyGroupCreatePolicyTypeConfigOneOf24{}
-	return &this
-}
-
-// GetMaxRouters returns the MaxRouters field value if set, zero value otherwise.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf24) GetMaxRouters() string {
-	if o == nil || IsNil(o.MaxRouters) {
-		var ret string
-		return ret
-	}
-	return *o.MaxRouters
-}
-
-// GetMaxRoutersOk returns a tuple with the MaxRouters field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf24) GetMaxRoutersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxRouters) {
-		return nil, false
-	}
-	return o.MaxRouters, true
-}
-
-// IsSetMaxRouters returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf24) IsSetMaxRouters() bool {
-	if o != nil && !IsNil(o.MaxRouters) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxRouters gets a reference to the given string and assigns it to the MaxRouters field.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf24) SetMaxRouters(v string) {
-	o.MaxRouters = &v
-}
-
 func (o PolicyGroupCreatePolicyTypeConfigOneOf24) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

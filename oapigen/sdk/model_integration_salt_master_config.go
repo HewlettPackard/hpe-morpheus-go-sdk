@@ -26,48 +26,6 @@ type IntegrationSaltMasterConfig struct {
 
 type _IntegrationSaltMasterConfig IntegrationSaltMasterConfig
 
-// NewIntegrationSaltMasterConfig instantiates a new IntegrationSaltMasterConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIntegrationSaltMasterConfig(integration IntegrationSaltMasterConfigIntegration) *IntegrationSaltMasterConfig {
-	this := IntegrationSaltMasterConfig{}
-	this.Integration = integration
-	return &this
-}
-
-// NewIntegrationSaltMasterConfigWithDefaults instantiates a new IntegrationSaltMasterConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewIntegrationSaltMasterConfigWithDefaults() *IntegrationSaltMasterConfig {
-	this := IntegrationSaltMasterConfig{}
-	return &this
-}
-
-// GetIntegration returns the Integration field value
-func (o *IntegrationSaltMasterConfig) GetIntegration() IntegrationSaltMasterConfigIntegration {
-	if o == nil {
-		var ret IntegrationSaltMasterConfigIntegration
-		return ret
-	}
-
-	return o.Integration
-}
-
-// GetIntegrationOk returns a tuple with the Integration field value
-// and a boolean to check if the value has been set.
-func (o *IntegrationSaltMasterConfig) GetIntegrationOk() (*IntegrationSaltMasterConfigIntegration, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Integration, true
-}
-
-// SetIntegration sets field value
-func (o *IntegrationSaltMasterConfig) SetIntegration(v IntegrationSaltMasterConfigIntegration) {
-	o.Integration = v
-}
-
 func (o IntegrationSaltMasterConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

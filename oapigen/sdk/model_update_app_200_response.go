@@ -26,55 +26,6 @@ type UpdateApp200Response struct {
 
 type _UpdateApp200Response UpdateApp200Response
 
-// NewUpdateApp200Response instantiates a new UpdateApp200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateApp200Response() *UpdateApp200Response {
-	this := UpdateApp200Response{}
-	return &this
-}
-
-// NewUpdateApp200ResponseWithDefaults instantiates a new UpdateApp200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateApp200ResponseWithDefaults() *UpdateApp200Response {
-	this := UpdateApp200Response{}
-	return &this
-}
-
-// GetApp returns the App field value if set, zero value otherwise.
-func (o *UpdateApp200Response) GetApp() UpdateApp200ResponseApp {
-	if o == nil || IsNil(o.App) {
-		var ret UpdateApp200ResponseApp
-		return ret
-	}
-	return *o.App
-}
-
-// GetAppOk returns a tuple with the App field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateApp200Response) GetAppOk() (*UpdateApp200ResponseApp, bool) {
-	if o == nil || IsNil(o.App) {
-		return nil, false
-	}
-	return o.App, true
-}
-
-// IsSetApp returns a boolean if a field has been set.
-func (o *UpdateApp200Response) IsSetApp() bool {
-	if o != nil && !IsNil(o.App) {
-		return true
-	}
-
-	return false
-}
-
-// SetApp gets a reference to the given UpdateApp200ResponseApp and assigns it to the App field.
-func (o *UpdateApp200Response) SetApp(v UpdateApp200ResponseApp) {
-	o.App = &v
-}
-
 func (o UpdateApp200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

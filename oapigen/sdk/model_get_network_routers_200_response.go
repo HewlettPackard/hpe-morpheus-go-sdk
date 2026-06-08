@@ -26,55 +26,6 @@ type GetNetworkRouters200Response struct {
 
 type _GetNetworkRouters200Response GetNetworkRouters200Response
 
-// NewGetNetworkRouters200Response instantiates a new GetNetworkRouters200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkRouters200Response() *GetNetworkRouters200Response {
-	this := GetNetworkRouters200Response{}
-	return &this
-}
-
-// NewGetNetworkRouters200ResponseWithDefaults instantiates a new GetNetworkRouters200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkRouters200ResponseWithDefaults() *GetNetworkRouters200Response {
-	this := GetNetworkRouters200Response{}
-	return &this
-}
-
-// GetNetworkRouters returns the NetworkRouters field value if set, zero value otherwise.
-func (o *GetNetworkRouters200Response) GetNetworkRouters() []GetNetworkRouters200ResponseNetworkRoutersInner {
-	if o == nil || IsNil(o.NetworkRouters) {
-		var ret []GetNetworkRouters200ResponseNetworkRoutersInner
-		return ret
-	}
-	return o.NetworkRouters
-}
-
-// GetNetworkRoutersOk returns a tuple with the NetworkRouters field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkRouters200Response) GetNetworkRoutersOk() ([]GetNetworkRouters200ResponseNetworkRoutersInner, bool) {
-	if o == nil || IsNil(o.NetworkRouters) {
-		return nil, false
-	}
-	return o.NetworkRouters, true
-}
-
-// IsSetNetworkRouters returns a boolean if a field has been set.
-func (o *GetNetworkRouters200Response) IsSetNetworkRouters() bool {
-	if o != nil && !IsNil(o.NetworkRouters) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkRouters gets a reference to the given []GetNetworkRouters200ResponseNetworkRoutersInner and assigns it to the NetworkRouters field.
-func (o *GetNetworkRouters200Response) SetNetworkRouters(v []GetNetworkRouters200ResponseNetworkRoutersInner) {
-	o.NetworkRouters = v
-}
-
 func (o GetNetworkRouters200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

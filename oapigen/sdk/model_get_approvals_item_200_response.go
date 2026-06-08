@@ -26,55 +26,6 @@ type GetApprovalsItem200Response struct {
 
 type _GetApprovalsItem200Response GetApprovalsItem200Response
 
-// NewGetApprovalsItem200Response instantiates a new GetApprovalsItem200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetApprovalsItem200Response() *GetApprovalsItem200Response {
-	this := GetApprovalsItem200Response{}
-	return &this
-}
-
-// NewGetApprovalsItem200ResponseWithDefaults instantiates a new GetApprovalsItem200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetApprovalsItem200ResponseWithDefaults() *GetApprovalsItem200Response {
-	this := GetApprovalsItem200Response{}
-	return &this
-}
-
-// GetApprovalItem returns the ApprovalItem field value if set, zero value otherwise.
-func (o *GetApprovalsItem200Response) GetApprovalItem() GetApprovalsItem200ResponseApprovalItem {
-	if o == nil || IsNil(o.ApprovalItem) {
-		var ret GetApprovalsItem200ResponseApprovalItem
-		return ret
-	}
-	return *o.ApprovalItem
-}
-
-// GetApprovalItemOk returns a tuple with the ApprovalItem field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetApprovalsItem200Response) GetApprovalItemOk() (*GetApprovalsItem200ResponseApprovalItem, bool) {
-	if o == nil || IsNil(o.ApprovalItem) {
-		return nil, false
-	}
-	return o.ApprovalItem, true
-}
-
-// IsSetApprovalItem returns a boolean if a field has been set.
-func (o *GetApprovalsItem200Response) IsSetApprovalItem() bool {
-	if o != nil && !IsNil(o.ApprovalItem) {
-		return true
-	}
-
-	return false
-}
-
-// SetApprovalItem gets a reference to the given GetApprovalsItem200ResponseApprovalItem and assigns it to the ApprovalItem field.
-func (o *GetApprovalsItem200Response) SetApprovalItem(v GetApprovalsItem200ResponseApprovalItem) {
-	o.ApprovalItem = &v
-}
-
 func (o GetApprovalsItem200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

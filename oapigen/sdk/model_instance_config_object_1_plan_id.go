@@ -27,20 +27,6 @@ type InstanceConfigObject1PlanId struct {
 	String *string
 }
 
-// int64AsInstanceConfigObject1PlanId is a convenience function that returns int64 wrapped in InstanceConfigObject1PlanId
-func Int64AsInstanceConfigObject1PlanId(v *int64) InstanceConfigObject1PlanId {
-	return InstanceConfigObject1PlanId{
-		Int64: v,
-	}
-}
-
-// stringAsInstanceConfigObject1PlanId is a convenience function that returns string wrapped in InstanceConfigObject1PlanId
-func StringAsInstanceConfigObject1PlanId(v *string) InstanceConfigObject1PlanId {
-	return InstanceConfigObject1PlanId{
-		String: v,
-	}
-}
-
 func (dst *InstanceConfigObject1PlanId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &InstanceConfigObject1PlanId{}

@@ -26,55 +26,6 @@ type GetLayout200ResponseInstanceTypeLayoutPermissions struct {
 
 type _GetLayout200ResponseInstanceTypeLayoutPermissions GetLayout200ResponseInstanceTypeLayoutPermissions
 
-// NewGetLayout200ResponseInstanceTypeLayoutPermissions instantiates a new GetLayout200ResponseInstanceTypeLayoutPermissions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetLayout200ResponseInstanceTypeLayoutPermissions() *GetLayout200ResponseInstanceTypeLayoutPermissions {
-	this := GetLayout200ResponseInstanceTypeLayoutPermissions{}
-	return &this
-}
-
-// NewGetLayout200ResponseInstanceTypeLayoutPermissionsWithDefaults instantiates a new GetLayout200ResponseInstanceTypeLayoutPermissions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetLayout200ResponseInstanceTypeLayoutPermissionsWithDefaults() *GetLayout200ResponseInstanceTypeLayoutPermissions {
-	this := GetLayout200ResponseInstanceTypeLayoutPermissions{}
-	return &this
-}
-
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissions) GetResourcePermissions() GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions
-		return ret
-	}
-	return *o.ResourcePermissions
-}
-
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissions) GetResourcePermissionsOk() (*GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		return nil, false
-	}
-	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
-// SetResourcePermissions gets a reference to the given GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissions) SetResourcePermissions(v GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) {
-	o.ResourcePermissions = &v
-}
-
 func (o GetLayout200ResponseInstanceTypeLayoutPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

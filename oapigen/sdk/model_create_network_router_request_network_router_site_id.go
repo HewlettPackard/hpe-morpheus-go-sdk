@@ -27,20 +27,6 @@ type CreateNetworkRouterRequestNetworkRouterSiteId struct {
 	String *string
 }
 
-// int64AsCreateNetworkRouterRequestNetworkRouterSiteId is a convenience function that returns int64 wrapped in CreateNetworkRouterRequestNetworkRouterSiteId
-func Int64AsCreateNetworkRouterRequestNetworkRouterSiteId(v *int64) CreateNetworkRouterRequestNetworkRouterSiteId {
-	return CreateNetworkRouterRequestNetworkRouterSiteId{
-		Int64: v,
-	}
-}
-
-// stringAsCreateNetworkRouterRequestNetworkRouterSiteId is a convenience function that returns string wrapped in CreateNetworkRouterRequestNetworkRouterSiteId
-func StringAsCreateNetworkRouterRequestNetworkRouterSiteId(v *string) CreateNetworkRouterRequestNetworkRouterSiteId {
-	return CreateNetworkRouterRequestNetworkRouterSiteId{
-		String: v,
-	}
-}
-
 func (dst *CreateNetworkRouterRequestNetworkRouterSiteId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &CreateNetworkRouterRequestNetworkRouterSiteId{}

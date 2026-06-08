@@ -26,55 +26,6 @@ type AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19 struct {
 
 type _AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19 AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19
 
-// NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19 instantiates a new AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19() *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19 {
-	this := AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19{}
-	return &this
-}
-
-// NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19WithDefaults instantiates a new AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19WithDefaults() *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19 {
-	this := AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19{}
-	return &this
-}
-
-// GetMaxVirtualServers returns the MaxVirtualServers field value if set, zero value otherwise.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19) GetMaxVirtualServers() string {
-	if o == nil || IsNil(o.MaxVirtualServers) {
-		var ret string
-		return ret
-	}
-	return *o.MaxVirtualServers
-}
-
-// GetMaxVirtualServersOk returns a tuple with the MaxVirtualServers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19) GetMaxVirtualServersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxVirtualServers) {
-		return nil, false
-	}
-	return o.MaxVirtualServers, true
-}
-
-// IsSetMaxVirtualServers returns a boolean if a field has been set.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19) IsSetMaxVirtualServers() bool {
-	if o != nil && !IsNil(o.MaxVirtualServers) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxVirtualServers gets a reference to the given string and assigns it to the MaxVirtualServers field.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19) SetMaxVirtualServers(v string) {
-	o.MaxVirtualServers = &v
-}
-
 func (o AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf19) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

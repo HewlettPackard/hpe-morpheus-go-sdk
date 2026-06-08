@@ -26,55 +26,6 @@ type GetIntegrationTypeOptionTypes200Response struct {
 
 type _GetIntegrationTypeOptionTypes200Response GetIntegrationTypeOptionTypes200Response
 
-// NewGetIntegrationTypeOptionTypes200Response instantiates a new GetIntegrationTypeOptionTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetIntegrationTypeOptionTypes200Response() *GetIntegrationTypeOptionTypes200Response {
-	this := GetIntegrationTypeOptionTypes200Response{}
-	return &this
-}
-
-// NewGetIntegrationTypeOptionTypes200ResponseWithDefaults instantiates a new GetIntegrationTypeOptionTypes200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetIntegrationTypeOptionTypes200ResponseWithDefaults() *GetIntegrationTypeOptionTypes200Response {
-	this := GetIntegrationTypeOptionTypes200Response{}
-	return &this
-}
-
-// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
-func (o *GetIntegrationTypeOptionTypes200Response) GetOptionTypes() []GetIntegrationTypeOptionTypes200ResponseOptionTypesInner {
-	if o == nil || IsNil(o.OptionTypes) {
-		var ret []GetIntegrationTypeOptionTypes200ResponseOptionTypesInner
-		return ret
-	}
-	return o.OptionTypes
-}
-
-// GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetIntegrationTypeOptionTypes200Response) GetOptionTypesOk() ([]GetIntegrationTypeOptionTypes200ResponseOptionTypesInner, bool) {
-	if o == nil || IsNil(o.OptionTypes) {
-		return nil, false
-	}
-	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *GetIntegrationTypeOptionTypes200Response) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
-// SetOptionTypes gets a reference to the given []GetIntegrationTypeOptionTypes200ResponseOptionTypesInner and assigns it to the OptionTypes field.
-func (o *GetIntegrationTypeOptionTypes200Response) SetOptionTypes(v []GetIntegrationTypeOptionTypes200ResponseOptionTypesInner) {
-	o.OptionTypes = v
-}
-
 func (o GetIntegrationTypeOptionTypes200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

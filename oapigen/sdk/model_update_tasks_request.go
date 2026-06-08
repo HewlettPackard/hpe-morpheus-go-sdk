@@ -26,48 +26,6 @@ type UpdateTasksRequest struct {
 
 type _UpdateTasksRequest UpdateTasksRequest
 
-// NewUpdateTasksRequest instantiates a new UpdateTasksRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateTasksRequest(task UpdateTasksRequestTask) *UpdateTasksRequest {
-	this := UpdateTasksRequest{}
-	this.Task = task
-	return &this
-}
-
-// NewUpdateTasksRequestWithDefaults instantiates a new UpdateTasksRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateTasksRequestWithDefaults() *UpdateTasksRequest {
-	this := UpdateTasksRequest{}
-	return &this
-}
-
-// GetTask returns the Task field value
-func (o *UpdateTasksRequest) GetTask() UpdateTasksRequestTask {
-	if o == nil {
-		var ret UpdateTasksRequestTask
-		return ret
-	}
-
-	return o.Task
-}
-
-// GetTaskOk returns a tuple with the Task field value
-// and a boolean to check if the value has been set.
-func (o *UpdateTasksRequest) GetTaskOk() (*UpdateTasksRequestTask, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Task, true
-}
-
-// SetTask sets field value
-func (o *UpdateTasksRequest) SetTask(v UpdateTasksRequestTask) {
-	o.Task = v
-}
-
 func (o UpdateTasksRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

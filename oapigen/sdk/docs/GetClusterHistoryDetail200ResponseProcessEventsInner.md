@@ -36,930 +36,107 @@ Name | Type | Description | Notes
 **CreatedBy** | Pointer to [**GetClusterHistoryDetail200ResponseProcessEventsInnerCreatedBy**](GetClusterHistoryDetail200ResponseProcessEventsInnerCreatedBy.md) |  | [optional] 
 **UpdatedBy** | Pointer to [**GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy**](GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy.md) |  | [optional] 
 
-## Methods
-
-### NewGetClusterHistoryDetail200ResponseProcessEventsInner
-
-`func NewGetClusterHistoryDetail200ResponseProcessEventsInner() *GetClusterHistoryDetail200ResponseProcessEventsInner`
-
-NewGetClusterHistoryDetail200ResponseProcessEventsInner instantiates a new GetClusterHistoryDetail200ResponseProcessEventsInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewGetClusterHistoryDetail200ResponseProcessEventsInnerWithDefaults
-
-`func NewGetClusterHistoryDetail200ResponseProcessEventsInnerWithDefaults() *GetClusterHistoryDetail200ResponseProcessEventsInner`
-
-NewGetClusterHistoryDetail200ResponseProcessEventsInnerWithDefaults instantiates a new GetClusterHistoryDetail200ResponseProcessEventsInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetProcessId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetProcessId() int64`
-
-GetProcessId returns the ProcessId field if non-nil, zero value otherwise.
-
-### GetProcessIdOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetProcessIdOk() (*int64, bool)`
-
-GetProcessIdOk returns a tuple with the ProcessId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProcessId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetProcessId(v int64)`
-
-SetProcessId sets ProcessId field to given value.
-
-### HasProcessId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasProcessId() bool`
-
-HasProcessId returns a boolean if a field has been set.
-
-### GetAccountId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetAccountId() int64`
-
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
-
-### GetAccountIdOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetAccountIdOk() (*int64, bool)`
-
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccountId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetAccountId(v int64)`
-
-SetAccountId sets AccountId field to given value.
-
-### HasAccountId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasAccountId() bool`
-
-HasAccountId returns a boolean if a field has been set.
-
-### GetUniqueId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetUniqueId() string`
-
-GetUniqueId returns the UniqueId field if non-nil, zero value otherwise.
-
-### GetUniqueIdOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetUniqueIdOk() (*string, bool)`
-
-GetUniqueIdOk returns a tuple with the UniqueId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUniqueId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetUniqueId(v string)`
-
-SetUniqueId sets UniqueId field to given value.
-
-### HasUniqueId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasUniqueId() bool`
-
-HasUniqueId returns a boolean if a field has been set.
-
-### GetProcessType
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetProcessType() GetClusterHistoryDetail200ResponseProcessEventsInnerProcessType`
-
-GetProcessType returns the ProcessType field if non-nil, zero value otherwise.
-
-### GetProcessTypeOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetProcessTypeOk() (*GetClusterHistoryDetail200ResponseProcessEventsInnerProcessType, bool)`
-
-GetProcessTypeOk returns a tuple with the ProcessType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProcessType
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetProcessType(v GetClusterHistoryDetail200ResponseProcessEventsInnerProcessType)`
-
-SetProcessType sets ProcessType field to given value.
-
-### HasProcessType
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasProcessType() bool`
-
-HasProcessType returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### SetDescriptionNil
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetRefType
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetRefType() string`
-
-GetRefType returns the RefType field if non-nil, zero value otherwise.
-
-### GetRefTypeOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetRefTypeOk() (*string, bool)`
-
-GetRefTypeOk returns a tuple with the RefType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRefType
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetRefType(v string)`
-
-SetRefType sets RefType field to given value.
-
-### HasRefType
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasRefType() bool`
-
-HasRefType returns a boolean if a field has been set.
-
-### GetRefId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetRefId() int64`
-
-GetRefId returns the RefId field if non-nil, zero value otherwise.
-
-### GetRefIdOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetRefIdOk() (*int64, bool)`
-
-GetRefIdOk returns a tuple with the RefId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRefId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetRefId(v int64)`
-
-SetRefId sets RefId field to given value.
-
-### HasRefId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasRefId() bool`
-
-HasRefId returns a boolean if a field has been set.
-
-### GetSubType
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetSubType() string`
-
-GetSubType returns the SubType field if non-nil, zero value otherwise.
-
-### GetSubTypeOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetSubTypeOk() (*string, bool)`
-
-GetSubTypeOk returns a tuple with the SubType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubType
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetSubType(v string)`
-
-SetSubType sets SubType field to given value.
-
-### HasSubType
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasSubType() bool`
-
-HasSubType returns a boolean if a field has been set.
-
-### SetSubTypeNil
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetSubTypeNil(b bool)`
-
- SetSubTypeNil sets the value for SubType to be an explicit nil
-
-### UnsetSubType
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) UnsetSubType()`
-
-UnsetSubType ensures that no value is present for SubType, not even an explicit nil
-### GetSubId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetSubId() int64`
-
-GetSubId returns the SubId field if non-nil, zero value otherwise.
-
-### GetSubIdOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetSubIdOk() (*int64, bool)`
-
-GetSubIdOk returns a tuple with the SubId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetSubId(v int64)`
-
-SetSubId sets SubId field to given value.
-
-### HasSubId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasSubId() bool`
-
-HasSubId returns a boolean if a field has been set.
-
-### SetSubIdNil
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetSubIdNil(b bool)`
-
- SetSubIdNil sets the value for SubId to be an explicit nil
-
-### UnsetSubId
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) UnsetSubId()`
-
-UnsetSubId ensures that no value is present for SubId, not even an explicit nil
-### GetZoneId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetZoneId() int64`
-
-GetZoneId returns the ZoneId field if non-nil, zero value otherwise.
-
-### GetZoneIdOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetZoneIdOk() (*int64, bool)`
-
-GetZoneIdOk returns a tuple with the ZoneId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetZoneId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetZoneId(v int64)`
-
-SetZoneId sets ZoneId field to given value.
-
-### HasZoneId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasZoneId() bool`
-
-HasZoneId returns a boolean if a field has been set.
-
-### SetZoneIdNil
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetZoneIdNil(b bool)`
-
- SetZoneIdNil sets the value for ZoneId to be an explicit nil
-
-### UnsetZoneId
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) UnsetZoneId()`
-
-UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
-### GetIntegrationId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetIntegrationId() int64`
-
-GetIntegrationId returns the IntegrationId field if non-nil, zero value otherwise.
-
-### GetIntegrationIdOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetIntegrationIdOk() (*int64, bool)`
-
-GetIntegrationIdOk returns a tuple with the IntegrationId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIntegrationId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetIntegrationId(v int64)`
-
-SetIntegrationId sets IntegrationId field to given value.
-
-### HasIntegrationId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasIntegrationId() bool`
-
-HasIntegrationId returns a boolean if a field has been set.
-
-### SetIntegrationIdNil
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetIntegrationIdNil(b bool)`
-
- SetIntegrationIdNil sets the value for IntegrationId to be an explicit nil
-
-### UnsetIntegrationId
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) UnsetIntegrationId()`
-
-UnsetIntegrationId ensures that no value is present for IntegrationId, not even an explicit nil
-### GetInstanceId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetInstanceId() int64`
-
-GetInstanceId returns the InstanceId field if non-nil, zero value otherwise.
-
-### GetInstanceIdOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetInstanceIdOk() (*int64, bool)`
-
-GetInstanceIdOk returns a tuple with the InstanceId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInstanceId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetInstanceId(v int64)`
-
-SetInstanceId sets InstanceId field to given value.
-
-### HasInstanceId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasInstanceId() bool`
-
-HasInstanceId returns a boolean if a field has been set.
-
-### SetInstanceIdNil
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetInstanceIdNil(b bool)`
-
- SetInstanceIdNil sets the value for InstanceId to be an explicit nil
-
-### UnsetInstanceId
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) UnsetInstanceId()`
-
-UnsetInstanceId ensures that no value is present for InstanceId, not even an explicit nil
-### GetContainerId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetContainerId() int64`
-
-GetContainerId returns the ContainerId field if non-nil, zero value otherwise.
-
-### GetContainerIdOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetContainerIdOk() (*int64, bool)`
-
-GetContainerIdOk returns a tuple with the ContainerId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContainerId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetContainerId(v int64)`
-
-SetContainerId sets ContainerId field to given value.
-
-### HasContainerId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasContainerId() bool`
-
-HasContainerId returns a boolean if a field has been set.
-
-### SetContainerIdNil
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetContainerIdNil(b bool)`
-
- SetContainerIdNil sets the value for ContainerId to be an explicit nil
-
-### UnsetContainerId
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) UnsetContainerId()`
-
-UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
-### GetServerId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetServerId() int64`
-
-GetServerId returns the ServerId field if non-nil, zero value otherwise.
-
-### GetServerIdOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetServerIdOk() (*int64, bool)`
-
-GetServerIdOk returns a tuple with the ServerId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetServerId(v int64)`
-
-SetServerId sets ServerId field to given value.
-
-### HasServerId
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasServerId() bool`
-
-HasServerId returns a boolean if a field has been set.
-
-### SetServerIdNil
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetServerIdNil(b bool)`
-
- SetServerIdNil sets the value for ServerId to be an explicit nil
-
-### UnsetServerId
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) UnsetServerId()`
-
-UnsetServerId ensures that no value is present for ServerId, not even an explicit nil
-### GetContainerName
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetContainerName() string`
-
-GetContainerName returns the ContainerName field if non-nil, zero value otherwise.
-
-### GetContainerNameOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetContainerNameOk() (*string, bool)`
-
-GetContainerNameOk returns a tuple with the ContainerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContainerName
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetContainerName(v string)`
-
-SetContainerName sets ContainerName field to given value.
-
-### HasContainerName
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasContainerName() bool`
-
-HasContainerName returns a boolean if a field has been set.
-
-### SetContainerNameNil
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetContainerNameNil(b bool)`
-
- SetContainerNameNil sets the value for ContainerName to be an explicit nil
-
-### UnsetContainerName
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) UnsetContainerName()`
-
-UnsetContainerName ensures that no value is present for ContainerName, not even an explicit nil
-### GetDisplayName
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetDisplayName() string`
-
-GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
-
-### GetDisplayNameOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetDisplayNameOk() (*string, bool)`
-
-GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplayName
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetDisplayName(v string)`
-
-SetDisplayName sets DisplayName field to given value.
-
-### HasDisplayName
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasDisplayName() bool`
-
-HasDisplayName returns a boolean if a field has been set.
-
-### GetStatus
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetStatus() string`
-
-GetStatus returns the Status field if non-nil, zero value otherwise.
-
-### GetStatusOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetStatusOk() (*string, bool)`
-
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatus
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetStatus(v string)`
-
-SetStatus sets Status field to given value.
-
-### HasStatus
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
-
-### GetReason
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetReason() string`
-
-GetReason returns the Reason field if non-nil, zero value otherwise.
-
-### GetReasonOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetReasonOk() (*string, bool)`
-
-GetReasonOk returns a tuple with the Reason field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReason
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetReason(v string)`
-
-SetReason sets Reason field to given value.
-
-### HasReason
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasReason() bool`
-
-HasReason returns a boolean if a field has been set.
-
-### SetReasonNil
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetReasonNil(b bool)`
-
- SetReasonNil sets the value for Reason to be an explicit nil
-
-### UnsetReason
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) UnsetReason()`
-
-UnsetReason ensures that no value is present for Reason, not even an explicit nil
-### GetPercent
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetPercent() float64`
-
-GetPercent returns the Percent field if non-nil, zero value otherwise.
-
-### GetPercentOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetPercentOk() (*float64, bool)`
-
-GetPercentOk returns a tuple with the Percent field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPercent
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetPercent(v float64)`
-
-SetPercent sets Percent field to given value.
-
-### HasPercent
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasPercent() bool`
-
-HasPercent returns a boolean if a field has been set.
-
-### GetStatusEta
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetStatusEta() int64`
-
-GetStatusEta returns the StatusEta field if non-nil, zero value otherwise.
-
-### GetStatusEtaOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetStatusEtaOk() (*int64, bool)`
-
-GetStatusEtaOk returns a tuple with the StatusEta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatusEta
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetStatusEta(v int64)`
-
-SetStatusEta sets StatusEta field to given value.
-
-### HasStatusEta
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasStatusEta() bool`
-
-HasStatusEta returns a boolean if a field has been set.
-
-### GetMessage
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetMessage() string`
-
-GetMessage returns the Message field if non-nil, zero value otherwise.
-
-### GetMessageOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetMessageOk() (*string, bool)`
-
-GetMessageOk returns a tuple with the Message field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMessage
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetMessage(v string)`
-
-SetMessage sets Message field to given value.
-
-### HasMessage
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasMessage() bool`
-
-HasMessage returns a boolean if a field has been set.
-
-### SetMessageNil
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetMessageNil(b bool)`
-
- SetMessageNil sets the value for Message to be an explicit nil
-
-### UnsetMessage
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) UnsetMessage()`
-
-UnsetMessage ensures that no value is present for Message, not even an explicit nil
-### GetOutput
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetOutput() string`
-
-GetOutput returns the Output field if non-nil, zero value otherwise.
-
-### GetOutputOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetOutputOk() (*string, bool)`
-
-GetOutputOk returns a tuple with the Output field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOutput
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetOutput(v string)`
-
-SetOutput sets Output field to given value.
-
-### HasOutput
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasOutput() bool`
-
-HasOutput returns a boolean if a field has been set.
-
-### SetOutputNil
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetOutputNil(b bool)`
-
- SetOutputNil sets the value for Output to be an explicit nil
-
-### UnsetOutput
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) UnsetOutput()`
-
-UnsetOutput ensures that no value is present for Output, not even an explicit nil
-### GetError
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetError() string`
-
-GetError returns the Error field if non-nil, zero value otherwise.
-
-### GetErrorOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetErrorOk() (*string, bool)`
-
-GetErrorOk returns a tuple with the Error field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetError
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetError(v string)`
-
-SetError sets Error field to given value.
-
-### HasError
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasError() bool`
-
-HasError returns a boolean if a field has been set.
-
-### SetErrorNil
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetErrorNil(b bool)`
-
- SetErrorNil sets the value for Error to be an explicit nil
-
-### UnsetError
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) UnsetError()`
-
-UnsetError ensures that no value is present for Error, not even an explicit nil
-### GetStartDate
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetStartDate() time.Time`
-
-GetStartDate returns the StartDate field if non-nil, zero value otherwise.
-
-### GetStartDateOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetStartDateOk() (*time.Time, bool)`
-
-GetStartDateOk returns a tuple with the StartDate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStartDate
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetStartDate(v time.Time)`
-
-SetStartDate sets StartDate field to given value.
-
-### HasStartDate
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasStartDate() bool`
-
-HasStartDate returns a boolean if a field has been set.
-
-### GetEndDate
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetEndDate() time.Time`
-
-GetEndDate returns the EndDate field if non-nil, zero value otherwise.
-
-### GetEndDateOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetEndDateOk() (*time.Time, bool)`
-
-GetEndDateOk returns a tuple with the EndDate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEndDate
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetEndDate(v time.Time)`
-
-SetEndDate sets EndDate field to given value.
-
-### HasEndDate
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasEndDate() bool`
-
-HasEndDate returns a boolean if a field has been set.
-
-### GetDuration
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetDuration() int64`
-
-GetDuration returns the Duration field if non-nil, zero value otherwise.
-
-### GetDurationOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetDurationOk() (*int64, bool)`
-
-GetDurationOk returns a tuple with the Duration field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDuration
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetDuration(v int64)`
-
-SetDuration sets Duration field to given value.
-
-### HasDuration
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasDuration() bool`
-
-HasDuration returns a boolean if a field has been set.
-
-### GetDateCreated
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
-### GetCreatedBy
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetCreatedBy() GetClusterHistoryDetail200ResponseProcessEventsInnerCreatedBy`
-
-GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
-
-### GetCreatedByOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetCreatedByOk() (*GetClusterHistoryDetail200ResponseProcessEventsInnerCreatedBy, bool)`
-
-GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedBy
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetCreatedBy(v GetClusterHistoryDetail200ResponseProcessEventsInnerCreatedBy)`
-
-SetCreatedBy sets CreatedBy field to given value.
-
-### HasCreatedBy
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasCreatedBy() bool`
-
-HasCreatedBy returns a boolean if a field has been set.
-
-### GetUpdatedBy
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetUpdatedBy() GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy`
-
-GetUpdatedBy returns the UpdatedBy field if non-nil, zero value otherwise.
-
-### GetUpdatedByOk
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) GetUpdatedByOk() (*GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy, bool)`
-
-GetUpdatedByOk returns a tuple with the UpdatedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedBy
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) SetUpdatedBy(v GetClusterHistoryDetail200ResponseProcessEventsInnerUpdatedBy)`
-
-SetUpdatedBy sets UpdatedBy field to given value.
-
-### HasUpdatedBy
-
-`func (o *GetClusterHistoryDetail200ResponseProcessEventsInner) HasUpdatedBy() bool`
-
-HasUpdatedBy returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &GetClusterHistoryDetail200ResponseProcessEventsInner{
+    // Set fields directly
+}
+```
+
+### Description (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Description.IsSet()` — check if set
+- `obj.Description.Get()` — get the inner value (returns pointer)
+- `obj.Description.Set(&val)` — set the value
+- `obj.Description.Unset()` — clear the value
+### SubType (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SubType.IsSet()` — check if set
+- `obj.SubType.Get()` — get the inner value (returns pointer)
+- `obj.SubType.Set(&val)` — set the value
+- `obj.SubType.Unset()` — clear the value
+### SubId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SubId.IsSet()` — check if set
+- `obj.SubId.Get()` — get the inner value (returns pointer)
+- `obj.SubId.Set(&val)` — set the value
+- `obj.SubId.Unset()` — clear the value
+### ZoneId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ZoneId.IsSet()` — check if set
+- `obj.ZoneId.Get()` — get the inner value (returns pointer)
+- `obj.ZoneId.Set(&val)` — set the value
+- `obj.ZoneId.Unset()` — clear the value
+### IntegrationId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.IntegrationId.IsSet()` — check if set
+- `obj.IntegrationId.Get()` — get the inner value (returns pointer)
+- `obj.IntegrationId.Set(&val)` — set the value
+- `obj.IntegrationId.Unset()` — clear the value
+### InstanceId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.InstanceId.IsSet()` — check if set
+- `obj.InstanceId.Get()` — get the inner value (returns pointer)
+- `obj.InstanceId.Set(&val)` — set the value
+- `obj.InstanceId.Unset()` — clear the value
+### ContainerId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ContainerId.IsSet()` — check if set
+- `obj.ContainerId.Get()` — get the inner value (returns pointer)
+- `obj.ContainerId.Set(&val)` — set the value
+- `obj.ContainerId.Unset()` — clear the value
+### ServerId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServerId.IsSet()` — check if set
+- `obj.ServerId.Get()` — get the inner value (returns pointer)
+- `obj.ServerId.Set(&val)` — set the value
+- `obj.ServerId.Unset()` — clear the value
+### ContainerName (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ContainerName.IsSet()` — check if set
+- `obj.ContainerName.Get()` — get the inner value (returns pointer)
+- `obj.ContainerName.Set(&val)` — set the value
+- `obj.ContainerName.Unset()` — clear the value
+### Reason (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Reason.IsSet()` — check if set
+- `obj.Reason.Get()` — get the inner value (returns pointer)
+- `obj.Reason.Set(&val)` — set the value
+- `obj.Reason.Unset()` — clear the value
+### Message (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Message.IsSet()` — check if set
+- `obj.Message.Get()` — get the inner value (returns pointer)
+- `obj.Message.Set(&val)` — set the value
+- `obj.Message.Unset()` — clear the value
+### Output (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Output.IsSet()` — check if set
+- `obj.Output.Get()` — get the inner value (returns pointer)
+- `obj.Output.Set(&val)` — set the value
+- `obj.Output.Unset()` — clear the value
+### Error (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Error.IsSet()` — check if set
+- `obj.Error.Get()` — get the inner value (returns pointer)
+- `obj.Error.Set(&val)` — set the value
+- `obj.Error.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

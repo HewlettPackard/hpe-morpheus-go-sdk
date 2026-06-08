@@ -26,55 +26,6 @@ type ExecuteTasks200ResponseAllOfJob struct {
 
 type _ExecuteTasks200ResponseAllOfJob ExecuteTasks200ResponseAllOfJob
 
-// NewExecuteTasks200ResponseAllOfJob instantiates a new ExecuteTasks200ResponseAllOfJob object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewExecuteTasks200ResponseAllOfJob() *ExecuteTasks200ResponseAllOfJob {
-	this := ExecuteTasks200ResponseAllOfJob{}
-	return &this
-}
-
-// NewExecuteTasks200ResponseAllOfJobWithDefaults instantiates a new ExecuteTasks200ResponseAllOfJob object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewExecuteTasks200ResponseAllOfJobWithDefaults() *ExecuteTasks200ResponseAllOfJob {
-	this := ExecuteTasks200ResponseAllOfJob{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ExecuteTasks200ResponseAllOfJob) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExecuteTasks200ResponseAllOfJob) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *ExecuteTasks200ResponseAllOfJob) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ExecuteTasks200ResponseAllOfJob) SetId(v int64) {
-	o.Id = &v
-}
-
 func (o ExecuteTasks200ResponseAllOfJob) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

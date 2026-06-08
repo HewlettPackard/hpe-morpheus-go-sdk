@@ -27,20 +27,6 @@ type BlueprintCreateSuccessConfigOneOfArmInstallAgent struct {
 	String *string
 }
 
-// boolAsBlueprintCreateSuccessConfigOneOfArmInstallAgent is a convenience function that returns bool wrapped in BlueprintCreateSuccessConfigOneOfArmInstallAgent
-func BoolAsBlueprintCreateSuccessConfigOneOfArmInstallAgent(v *bool) BlueprintCreateSuccessConfigOneOfArmInstallAgent {
-	return BlueprintCreateSuccessConfigOneOfArmInstallAgent{
-		Bool: v,
-	}
-}
-
-// stringAsBlueprintCreateSuccessConfigOneOfArmInstallAgent is a convenience function that returns string wrapped in BlueprintCreateSuccessConfigOneOfArmInstallAgent
-func StringAsBlueprintCreateSuccessConfigOneOfArmInstallAgent(v *string) BlueprintCreateSuccessConfigOneOfArmInstallAgent {
-	return BlueprintCreateSuccessConfigOneOfArmInstallAgent{
-		String: v,
-	}
-}
-
 func (dst *BlueprintCreateSuccessConfigOneOfArmInstallAgent) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &BlueprintCreateSuccessConfigOneOfArmInstallAgent{}

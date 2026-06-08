@@ -26,55 +26,6 @@ type GetInstanceSchedules200Response struct {
 
 type _GetInstanceSchedules200Response GetInstanceSchedules200Response
 
-// NewGetInstanceSchedules200Response instantiates a new GetInstanceSchedules200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetInstanceSchedules200Response() *GetInstanceSchedules200Response {
-	this := GetInstanceSchedules200Response{}
-	return &this
-}
-
-// NewGetInstanceSchedules200ResponseWithDefaults instantiates a new GetInstanceSchedules200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetInstanceSchedules200ResponseWithDefaults() *GetInstanceSchedules200Response {
-	this := GetInstanceSchedules200Response{}
-	return &this
-}
-
-// GetInstanceSchedules returns the InstanceSchedules field value if set, zero value otherwise.
-func (o *GetInstanceSchedules200Response) GetInstanceSchedules() []GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner {
-	if o == nil || IsNil(o.InstanceSchedules) {
-		var ret []GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner
-		return ret
-	}
-	return o.InstanceSchedules
-}
-
-// GetInstanceSchedulesOk returns a tuple with the InstanceSchedules field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstanceSchedules200Response) GetInstanceSchedulesOk() ([]GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner, bool) {
-	if o == nil || IsNil(o.InstanceSchedules) {
-		return nil, false
-	}
-	return o.InstanceSchedules, true
-}
-
-// IsSetInstanceSchedules returns a boolean if a field has been set.
-func (o *GetInstanceSchedules200Response) IsSetInstanceSchedules() bool {
-	if o != nil && !IsNil(o.InstanceSchedules) {
-		return true
-	}
-
-	return false
-}
-
-// SetInstanceSchedules gets a reference to the given []GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner and assigns it to the InstanceSchedules field.
-func (o *GetInstanceSchedules200Response) SetInstanceSchedules(v []GetInstanceSchedules200ResponseAllOfInstanceSchedulesInner) {
-	o.InstanceSchedules = v
-}
-
 func (o GetInstanceSchedules200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

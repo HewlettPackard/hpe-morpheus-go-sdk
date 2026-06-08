@@ -26,55 +26,6 @@ type DeleteNetworkFirewallRuleGroup200Response struct {
 
 type _DeleteNetworkFirewallRuleGroup200Response DeleteNetworkFirewallRuleGroup200Response
 
-// NewDeleteNetworkFirewallRuleGroup200Response instantiates a new DeleteNetworkFirewallRuleGroup200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewDeleteNetworkFirewallRuleGroup200Response() *DeleteNetworkFirewallRuleGroup200Response {
-	this := DeleteNetworkFirewallRuleGroup200Response{}
-	return &this
-}
-
-// NewDeleteNetworkFirewallRuleGroup200ResponseWithDefaults instantiates a new DeleteNetworkFirewallRuleGroup200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDeleteNetworkFirewallRuleGroup200ResponseWithDefaults() *DeleteNetworkFirewallRuleGroup200Response {
-	this := DeleteNetworkFirewallRuleGroup200Response{}
-	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *DeleteNetworkFirewallRuleGroup200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeleteNetworkFirewallRuleGroup200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *DeleteNetworkFirewallRuleGroup200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *DeleteNetworkFirewallRuleGroup200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
 func (o DeleteNetworkFirewallRuleGroup200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

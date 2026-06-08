@@ -6,49 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetIncidents200ResponseIncidentAccount
+Instantiate with a Go composite literal:
 
-`func NewGetIncidents200ResponseIncidentAccount() *GetIncidents200ResponseIncidentAccount`
-
-NewGetIncidents200ResponseIncidentAccount instantiates a new GetIncidents200ResponseIncidentAccount object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewGetIncidents200ResponseIncidentAccountWithDefaults
-
-`func NewGetIncidents200ResponseIncidentAccountWithDefaults() *GetIncidents200ResponseIncidentAccount`
-
-NewGetIncidents200ResponseIncidentAccountWithDefaults instantiates a new GetIncidents200ResponseIncidentAccount object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *GetIncidents200ResponseIncidentAccount) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GetIncidents200ResponseIncidentAccount) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GetIncidents200ResponseIncidentAccount) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GetIncidents200ResponseIncidentAccount) HasId() bool`
-
-HasId returns a boolean if a field has been set.
+```go
+obj := &GetIncidents200ResponseIncidentAccount{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

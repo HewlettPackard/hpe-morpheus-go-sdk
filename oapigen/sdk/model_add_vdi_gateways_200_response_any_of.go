@@ -26,55 +26,6 @@ type AddVDIGateways200ResponseAnyOf struct {
 
 type _AddVDIGateways200ResponseAnyOf AddVDIGateways200ResponseAnyOf
 
-// NewAddVDIGateways200ResponseAnyOf instantiates a new AddVDIGateways200ResponseAnyOf object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddVDIGateways200ResponseAnyOf() *AddVDIGateways200ResponseAnyOf {
-	this := AddVDIGateways200ResponseAnyOf{}
-	return &this
-}
-
-// NewAddVDIGateways200ResponseAnyOfWithDefaults instantiates a new AddVDIGateways200ResponseAnyOf object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddVDIGateways200ResponseAnyOfWithDefaults() *AddVDIGateways200ResponseAnyOf {
-	this := AddVDIGateways200ResponseAnyOf{}
-	return &this
-}
-
-// GetVdiGateway returns the VdiGateway field value if set, zero value otherwise.
-func (o *AddVDIGateways200ResponseAnyOf) GetVdiGateway() AddVDIGateways200ResponseAnyOfVdiGateway {
-	if o == nil || IsNil(o.VdiGateway) {
-		var ret AddVDIGateways200ResponseAnyOfVdiGateway
-		return ret
-	}
-	return *o.VdiGateway
-}
-
-// GetVdiGatewayOk returns a tuple with the VdiGateway field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddVDIGateways200ResponseAnyOf) GetVdiGatewayOk() (*AddVDIGateways200ResponseAnyOfVdiGateway, bool) {
-	if o == nil || IsNil(o.VdiGateway) {
-		return nil, false
-	}
-	return o.VdiGateway, true
-}
-
-// IsSetVdiGateway returns a boolean if a field has been set.
-func (o *AddVDIGateways200ResponseAnyOf) IsSetVdiGateway() bool {
-	if o != nil && !IsNil(o.VdiGateway) {
-		return true
-	}
-
-	return false
-}
-
-// SetVdiGateway gets a reference to the given AddVDIGateways200ResponseAnyOfVdiGateway and assigns it to the VdiGateway field.
-func (o *AddVDIGateways200ResponseAnyOf) SetVdiGateway(v AddVDIGateways200ResponseAnyOfVdiGateway) {
-	o.VdiGateway = &v
-}
-
 func (o AddVDIGateways200ResponseAnyOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

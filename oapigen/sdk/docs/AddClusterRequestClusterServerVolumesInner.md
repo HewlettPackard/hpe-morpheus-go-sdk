@@ -12,210 +12,30 @@ Name | Type | Description | Notes
 **StorageType** | Pointer to **int64** | Identifier for LV type | [optional] 
 **DatastoreId** | **NullableString** | The ID of the specific datastore. Auto selection can be specified as auto or &#x60;autoCluster&#x60; (for clusters). | 
 
-## Methods
-
-### NewAddClusterRequestClusterServerVolumesInner
-
-`func NewAddClusterRequestClusterServerVolumesInner(name string, datastoreId NullableString, ) *AddClusterRequestClusterServerVolumesInner`
-
-NewAddClusterRequestClusterServerVolumesInner instantiates a new AddClusterRequestClusterServerVolumesInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewAddClusterRequestClusterServerVolumesInnerWithDefaults
-
-`func NewAddClusterRequestClusterServerVolumesInnerWithDefaults() *AddClusterRequestClusterServerVolumesInner`
-
-NewAddClusterRequestClusterServerVolumesInnerWithDefaults instantiates a new AddClusterRequestClusterServerVolumesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *AddClusterRequestClusterServerVolumesInner) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *AddClusterRequestClusterServerVolumesInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetRootVolume
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetRootVolume() bool`
-
-GetRootVolume returns the RootVolume field if non-nil, zero value otherwise.
-
-### GetRootVolumeOk
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetRootVolumeOk() (*bool, bool)`
-
-GetRootVolumeOk returns a tuple with the RootVolume field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRootVolume
-
-`func (o *AddClusterRequestClusterServerVolumesInner) SetRootVolume(v bool)`
-
-SetRootVolume sets RootVolume field to given value.
-
-### HasRootVolume
-
-`func (o *AddClusterRequestClusterServerVolumesInner) HasRootVolume() bool`
-
-HasRootVolume returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *AddClusterRequestClusterServerVolumesInner) SetName(v string)`
-
-SetName sets Name field to given value.
-
-
-### GetSize
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetSize() int64`
-
-GetSize returns the Size field if non-nil, zero value otherwise.
-
-### GetSizeOk
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetSizeOk() (*int64, bool)`
-
-GetSizeOk returns a tuple with the Size field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSize
-
-`func (o *AddClusterRequestClusterServerVolumesInner) SetSize(v int64)`
-
-SetSize sets Size field to given value.
-
-### HasSize
-
-`func (o *AddClusterRequestClusterServerVolumesInner) HasSize() bool`
-
-HasSize returns a boolean if a field has been set.
-
-### GetSizeId
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetSizeId() string`
-
-GetSizeId returns the SizeId field if non-nil, zero value otherwise.
-
-### GetSizeIdOk
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetSizeIdOk() (*string, bool)`
-
-GetSizeIdOk returns a tuple with the SizeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSizeId
-
-`func (o *AddClusterRequestClusterServerVolumesInner) SetSizeId(v string)`
-
-SetSizeId sets SizeId field to given value.
-
-### HasSizeId
-
-`func (o *AddClusterRequestClusterServerVolumesInner) HasSizeId() bool`
-
-HasSizeId returns a boolean if a field has been set.
-
-### SetSizeIdNil
-
-`func (o *AddClusterRequestClusterServerVolumesInner) SetSizeIdNil(b bool)`
-
- SetSizeIdNil sets the value for SizeId to be an explicit nil
-
-### UnsetSizeId
-`func (o *AddClusterRequestClusterServerVolumesInner) UnsetSizeId()`
-
-UnsetSizeId ensures that no value is present for SizeId, not even an explicit nil
-### GetStorageType
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetStorageType() int64`
-
-GetStorageType returns the StorageType field if non-nil, zero value otherwise.
-
-### GetStorageTypeOk
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetStorageTypeOk() (*int64, bool)`
-
-GetStorageTypeOk returns a tuple with the StorageType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStorageType
-
-`func (o *AddClusterRequestClusterServerVolumesInner) SetStorageType(v int64)`
-
-SetStorageType sets StorageType field to given value.
-
-### HasStorageType
-
-`func (o *AddClusterRequestClusterServerVolumesInner) HasStorageType() bool`
-
-HasStorageType returns a boolean if a field has been set.
-
-### GetDatastoreId
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetDatastoreId() string`
-
-GetDatastoreId returns the DatastoreId field if non-nil, zero value otherwise.
-
-### GetDatastoreIdOk
-
-`func (o *AddClusterRequestClusterServerVolumesInner) GetDatastoreIdOk() (*string, bool)`
-
-GetDatastoreIdOk returns a tuple with the DatastoreId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDatastoreId
-
-`func (o *AddClusterRequestClusterServerVolumesInner) SetDatastoreId(v string)`
-
-SetDatastoreId sets DatastoreId field to given value.
-
-
-### SetDatastoreIdNil
-
-`func (o *AddClusterRequestClusterServerVolumesInner) SetDatastoreIdNil(b bool)`
-
- SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
-
-### UnsetDatastoreId
-`func (o *AddClusterRequestClusterServerVolumesInner) UnsetDatastoreId()`
-
-UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &AddClusterRequestClusterServerVolumesInner{
+    // Set fields directly
+}
+```
+
+### SizeId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SizeId.IsSet()` — check if set
+- `obj.SizeId.Get()` — get the inner value (returns pointer)
+- `obj.SizeId.Set(&val)` — set the value
+- `obj.SizeId.Unset()` — clear the value
+### DatastoreId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.DatastoreId.IsSet()` — check if set
+- `obj.DatastoreId.Get()` — get the inner value (returns pointer)
+- `obj.DatastoreId.Set(&val)` — set the value
+- `obj.DatastoreId.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

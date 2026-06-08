@@ -26,55 +26,6 @@ type GetGuidanceSettings200Response struct {
 
 type _GetGuidanceSettings200Response GetGuidanceSettings200Response
 
-// NewGetGuidanceSettings200Response instantiates a new GetGuidanceSettings200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetGuidanceSettings200Response() *GetGuidanceSettings200Response {
-	this := GetGuidanceSettings200Response{}
-	return &this
-}
-
-// NewGetGuidanceSettings200ResponseWithDefaults instantiates a new GetGuidanceSettings200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetGuidanceSettings200ResponseWithDefaults() *GetGuidanceSettings200Response {
-	this := GetGuidanceSettings200Response{}
-	return &this
-}
-
-// GetGuidanceSettings returns the GuidanceSettings field value if set, zero value otherwise.
-func (o *GetGuidanceSettings200Response) GetGuidanceSettings() GetGuidanceSettings200ResponseGuidanceSettings {
-	if o == nil || IsNil(o.GuidanceSettings) {
-		var ret GetGuidanceSettings200ResponseGuidanceSettings
-		return ret
-	}
-	return *o.GuidanceSettings
-}
-
-// GetGuidanceSettingsOk returns a tuple with the GuidanceSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetGuidanceSettings200Response) GetGuidanceSettingsOk() (*GetGuidanceSettings200ResponseGuidanceSettings, bool) {
-	if o == nil || IsNil(o.GuidanceSettings) {
-		return nil, false
-	}
-	return o.GuidanceSettings, true
-}
-
-// IsSetGuidanceSettings returns a boolean if a field has been set.
-func (o *GetGuidanceSettings200Response) IsSetGuidanceSettings() bool {
-	if o != nil && !IsNil(o.GuidanceSettings) {
-		return true
-	}
-
-	return false
-}
-
-// SetGuidanceSettings gets a reference to the given GetGuidanceSettings200ResponseGuidanceSettings and assigns it to the GuidanceSettings field.
-func (o *GetGuidanceSettings200Response) SetGuidanceSettings(v GetGuidanceSettings200ResponseGuidanceSettings) {
-	o.GuidanceSettings = &v
-}
-
 func (o GetGuidanceSettings200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,13 +26,6 @@ type ZoneCreateConfigAnyOf3EnableVnc struct {
 	String *string
 }
 
-// stringAsZoneCreateConfigAnyOf3EnableVnc is a convenience function that returns string wrapped in ZoneCreateConfigAnyOf3EnableVnc
-func StringAsZoneCreateConfigAnyOf3EnableVnc(v *string) ZoneCreateConfigAnyOf3EnableVnc {
-	return ZoneCreateConfigAnyOf3EnableVnc{
-		String: v,
-	}
-}
-
 func (dst *ZoneCreateConfigAnyOf3EnableVnc) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ZoneCreateConfigAnyOf3EnableVnc{}

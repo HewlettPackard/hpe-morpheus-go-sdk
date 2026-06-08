@@ -7,74 +7,15 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Authority** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetPoliciesCloud200ResponseAllOfPolicyRole
+Instantiate with a Go composite literal:
 
-`func NewGetPoliciesCloud200ResponseAllOfPolicyRole() *GetPoliciesCloud200ResponseAllOfPolicyRole`
-
-NewGetPoliciesCloud200ResponseAllOfPolicyRole instantiates a new GetPoliciesCloud200ResponseAllOfPolicyRole object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewGetPoliciesCloud200ResponseAllOfPolicyRoleWithDefaults
-
-`func NewGetPoliciesCloud200ResponseAllOfPolicyRoleWithDefaults() *GetPoliciesCloud200ResponseAllOfPolicyRole`
-
-NewGetPoliciesCloud200ResponseAllOfPolicyRoleWithDefaults instantiates a new GetPoliciesCloud200ResponseAllOfPolicyRole object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *GetPoliciesCloud200ResponseAllOfPolicyRole) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GetPoliciesCloud200ResponseAllOfPolicyRole) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GetPoliciesCloud200ResponseAllOfPolicyRole) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GetPoliciesCloud200ResponseAllOfPolicyRole) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetAuthority
-
-`func (o *GetPoliciesCloud200ResponseAllOfPolicyRole) GetAuthority() string`
-
-GetAuthority returns the Authority field if non-nil, zero value otherwise.
-
-### GetAuthorityOk
-
-`func (o *GetPoliciesCloud200ResponseAllOfPolicyRole) GetAuthorityOk() (*string, bool)`
-
-GetAuthorityOk returns a tuple with the Authority field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuthority
-
-`func (o *GetPoliciesCloud200ResponseAllOfPolicyRole) SetAuthority(v string)`
-
-SetAuthority sets Authority field to given value.
-
-### HasAuthority
-
-`func (o *GetPoliciesCloud200ResponseAllOfPolicyRole) HasAuthority() bool`
-
-HasAuthority returns a boolean if a field has been set.
+```go
+obj := &GetPoliciesCloud200ResponseAllOfPolicyRole{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

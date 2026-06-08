@@ -6,44 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MaxVirtualServers** | **string** |  | 
 
-## Methods
+## Usage
 
-### NewMaxVirtualServersPolicyTypeConfiguration12
+Instantiate with a Go composite literal:
 
-`func NewMaxVirtualServersPolicyTypeConfiguration12(maxVirtualServers string, ) *MaxVirtualServersPolicyTypeConfiguration12`
-
-NewMaxVirtualServersPolicyTypeConfiguration12 instantiates a new MaxVirtualServersPolicyTypeConfiguration12 object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewMaxVirtualServersPolicyTypeConfiguration12WithDefaults
-
-`func NewMaxVirtualServersPolicyTypeConfiguration12WithDefaults() *MaxVirtualServersPolicyTypeConfiguration12`
-
-NewMaxVirtualServersPolicyTypeConfiguration12WithDefaults instantiates a new MaxVirtualServersPolicyTypeConfiguration12 object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetMaxVirtualServers
-
-`func (o *MaxVirtualServersPolicyTypeConfiguration12) GetMaxVirtualServers() string`
-
-GetMaxVirtualServers returns the MaxVirtualServers field if non-nil, zero value otherwise.
-
-### GetMaxVirtualServersOk
-
-`func (o *MaxVirtualServersPolicyTypeConfiguration12) GetMaxVirtualServersOk() (*string, bool)`
-
-GetMaxVirtualServersOk returns a tuple with the MaxVirtualServers field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxVirtualServers
-
-`func (o *MaxVirtualServersPolicyTypeConfiguration12) SetMaxVirtualServers(v string)`
-
-SetMaxVirtualServers sets MaxVirtualServers field to given value.
-
+```go
+obj := &MaxVirtualServersPolicyTypeConfiguration12{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

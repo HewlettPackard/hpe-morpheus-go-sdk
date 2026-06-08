@@ -26,55 +26,6 @@ type GetClusterHistoryDetail200Response struct {
 
 type _GetClusterHistoryDetail200Response GetClusterHistoryDetail200Response
 
-// NewGetClusterHistoryDetail200Response instantiates a new GetClusterHistoryDetail200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetClusterHistoryDetail200Response() *GetClusterHistoryDetail200Response {
-	this := GetClusterHistoryDetail200Response{}
-	return &this
-}
-
-// NewGetClusterHistoryDetail200ResponseWithDefaults instantiates a new GetClusterHistoryDetail200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterHistoryDetail200ResponseWithDefaults() *GetClusterHistoryDetail200Response {
-	this := GetClusterHistoryDetail200Response{}
-	return &this
-}
-
-// GetProcess returns the Process field value if set, zero value otherwise.
-func (o *GetClusterHistoryDetail200Response) GetProcess() GetClusterHistoryDetail200ResponseProcess {
-	if o == nil || IsNil(o.Process) {
-		var ret GetClusterHistoryDetail200ResponseProcess
-		return ret
-	}
-	return *o.Process
-}
-
-// GetProcessOk returns a tuple with the Process field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClusterHistoryDetail200Response) GetProcessOk() (*GetClusterHistoryDetail200ResponseProcess, bool) {
-	if o == nil || IsNil(o.Process) {
-		return nil, false
-	}
-	return o.Process, true
-}
-
-// IsSetProcess returns a boolean if a field has been set.
-func (o *GetClusterHistoryDetail200Response) IsSetProcess() bool {
-	if o != nil && !IsNil(o.Process) {
-		return true
-	}
-
-	return false
-}
-
-// SetProcess gets a reference to the given GetClusterHistoryDetail200ResponseProcess and assigns it to the Process field.
-func (o *GetClusterHistoryDetail200Response) SetProcess(v GetClusterHistoryDetail200ResponseProcess) {
-	o.Process = &v
-}
-
 func (o GetClusterHistoryDetail200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

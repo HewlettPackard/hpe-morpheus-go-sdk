@@ -26,55 +26,6 @@ type AddOsTypeImageRequest struct {
 
 type _AddOsTypeImageRequest AddOsTypeImageRequest
 
-// NewAddOsTypeImageRequest instantiates a new AddOsTypeImageRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddOsTypeImageRequest() *AddOsTypeImageRequest {
-	this := AddOsTypeImageRequest{}
-	return &this
-}
-
-// NewAddOsTypeImageRequestWithDefaults instantiates a new AddOsTypeImageRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddOsTypeImageRequestWithDefaults() *AddOsTypeImageRequest {
-	this := AddOsTypeImageRequest{}
-	return &this
-}
-
-// GetOsTypeImage returns the OsTypeImage field value if set, zero value otherwise.
-func (o *AddOsTypeImageRequest) GetOsTypeImage() AddOsTypeImageRequestOsTypeImage {
-	if o == nil || IsNil(o.OsTypeImage) {
-		var ret AddOsTypeImageRequestOsTypeImage
-		return ret
-	}
-	return *o.OsTypeImage
-}
-
-// GetOsTypeImageOk returns a tuple with the OsTypeImage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddOsTypeImageRequest) GetOsTypeImageOk() (*AddOsTypeImageRequestOsTypeImage, bool) {
-	if o == nil || IsNil(o.OsTypeImage) {
-		return nil, false
-	}
-	return o.OsTypeImage, true
-}
-
-// IsSetOsTypeImage returns a boolean if a field has been set.
-func (o *AddOsTypeImageRequest) IsSetOsTypeImage() bool {
-	if o != nil && !IsNil(o.OsTypeImage) {
-		return true
-	}
-
-	return false
-}
-
-// SetOsTypeImage gets a reference to the given AddOsTypeImageRequestOsTypeImage and assigns it to the OsTypeImage field.
-func (o *AddOsTypeImageRequest) SetOsTypeImage(v AddOsTypeImageRequestOsTypeImage) {
-	o.OsTypeImage = &v
-}
-
 func (o AddOsTypeImageRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -27,55 +27,6 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config struct {
 
 type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config
 
-// NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config {
-	this := AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config{}
-	return &this
-}
-
-// NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigWithDefaults instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigWithDefaults() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config {
-	this := AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config{}
-	return &this
-}
-
-// GetSpecs returns the Specs field value if set, zero value otherwise.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config) GetSpecs() []AddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInner {
-	if o == nil || IsNil(o.Specs) {
-		var ret []AddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInner
-		return ret
-	}
-	return o.Specs
-}
-
-// GetSpecsOk returns a tuple with the Specs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config) GetSpecsOk() ([]AddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInner, bool) {
-	if o == nil || IsNil(o.Specs) {
-		return nil, false
-	}
-	return o.Specs, true
-}
-
-// IsSetSpecs returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config) IsSetSpecs() bool {
-	if o != nil && !IsNil(o.Specs) {
-		return true
-	}
-
-	return false
-}
-
-// SetSpecs gets a reference to the given []AddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInner and assigns it to the Specs field.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config) SetSpecs(v []AddBlueprint200ResponseAllOfBlueprintConfigOneOf3ConfigSpecsInner) {
-	o.Specs = v
-}
-
 func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf3Config) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

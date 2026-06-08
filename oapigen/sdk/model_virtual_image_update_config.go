@@ -27,20 +27,6 @@ type VirtualImageUpdateConfig struct {
 	MapmapOfStringAny             *map[string]interface{}
 }
 
-// VirtualImageUpdateConfigOneOfAsVirtualImageUpdateConfig is a convenience function that returns VirtualImageUpdateConfigOneOf wrapped in VirtualImageUpdateConfig
-func VirtualImageUpdateConfigOneOfAsVirtualImageUpdateConfig(v *VirtualImageUpdateConfigOneOf) VirtualImageUpdateConfig {
-	return VirtualImageUpdateConfig{
-		VirtualImageUpdateConfigOneOf: v,
-	}
-}
-
-// map[string]interface{}AsVirtualImageUpdateConfig is a convenience function that returns map[string]interface{} wrapped in VirtualImageUpdateConfig
-func MapmapOfStringAnyAsVirtualImageUpdateConfig(v *map[string]interface{}) VirtualImageUpdateConfig {
-	return VirtualImageUpdateConfig{
-		MapmapOfStringAny: v,
-	}
-}
-
 func (dst *VirtualImageUpdateConfig) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &VirtualImageUpdateConfig{}

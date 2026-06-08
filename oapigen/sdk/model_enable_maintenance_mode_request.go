@@ -26,55 +26,6 @@ type EnableMaintenanceModeRequest struct {
 
 type _EnableMaintenanceModeRequest EnableMaintenanceModeRequest
 
-// NewEnableMaintenanceModeRequest instantiates a new EnableMaintenanceModeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewEnableMaintenanceModeRequest() *EnableMaintenanceModeRequest {
-	this := EnableMaintenanceModeRequest{}
-	return &this
-}
-
-// NewEnableMaintenanceModeRequestWithDefaults instantiates a new EnableMaintenanceModeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewEnableMaintenanceModeRequestWithDefaults() *EnableMaintenanceModeRequest {
-	this := EnableMaintenanceModeRequest{}
-	return &this
-}
-
-// GetServer returns the Server field value if set, zero value otherwise.
-func (o *EnableMaintenanceModeRequest) GetServer() EnableMaintenanceModeRequestServer {
-	if o == nil || IsNil(o.Server) {
-		var ret EnableMaintenanceModeRequestServer
-		return ret
-	}
-	return *o.Server
-}
-
-// GetServerOk returns a tuple with the Server field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EnableMaintenanceModeRequest) GetServerOk() (*EnableMaintenanceModeRequestServer, bool) {
-	if o == nil || IsNil(o.Server) {
-		return nil, false
-	}
-	return o.Server, true
-}
-
-// IsSetServer returns a boolean if a field has been set.
-func (o *EnableMaintenanceModeRequest) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
-}
-
-// SetServer gets a reference to the given EnableMaintenanceModeRequestServer and assigns it to the Server field.
-func (o *EnableMaintenanceModeRequest) SetServer(v EnableMaintenanceModeRequestServer) {
-	o.Server = &v
-}
-
 func (o EnableMaintenanceModeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

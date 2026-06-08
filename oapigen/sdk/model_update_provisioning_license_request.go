@@ -26,55 +26,6 @@ type UpdateProvisioningLicenseRequest struct {
 
 type _UpdateProvisioningLicenseRequest UpdateProvisioningLicenseRequest
 
-// NewUpdateProvisioningLicenseRequest instantiates a new UpdateProvisioningLicenseRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateProvisioningLicenseRequest() *UpdateProvisioningLicenseRequest {
-	this := UpdateProvisioningLicenseRequest{}
-	return &this
-}
-
-// NewUpdateProvisioningLicenseRequestWithDefaults instantiates a new UpdateProvisioningLicenseRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateProvisioningLicenseRequestWithDefaults() *UpdateProvisioningLicenseRequest {
-	this := UpdateProvisioningLicenseRequest{}
-	return &this
-}
-
-// GetLicense returns the License field value if set, zero value otherwise.
-func (o *UpdateProvisioningLicenseRequest) GetLicense() UpdateProvisioningLicenseRequestLicense {
-	if o == nil || IsNil(o.License) {
-		var ret UpdateProvisioningLicenseRequestLicense
-		return ret
-	}
-	return *o.License
-}
-
-// GetLicenseOk returns a tuple with the License field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateProvisioningLicenseRequest) GetLicenseOk() (*UpdateProvisioningLicenseRequestLicense, bool) {
-	if o == nil || IsNil(o.License) {
-		return nil, false
-	}
-	return o.License, true
-}
-
-// IsSetLicense returns a boolean if a field has been set.
-func (o *UpdateProvisioningLicenseRequest) IsSetLicense() bool {
-	if o != nil && !IsNil(o.License) {
-		return true
-	}
-
-	return false
-}
-
-// SetLicense gets a reference to the given UpdateProvisioningLicenseRequestLicense and assigns it to the License field.
-func (o *UpdateProvisioningLicenseRequest) SetLicense(v UpdateProvisioningLicenseRequestLicense) {
-	o.License = &v
-}
-
 func (o UpdateProvisioningLicenseRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

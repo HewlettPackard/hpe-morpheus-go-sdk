@@ -26,55 +26,6 @@ type GetSnapshotInstance200Response struct {
 
 type _GetSnapshotInstance200Response GetSnapshotInstance200Response
 
-// NewGetSnapshotInstance200Response instantiates a new GetSnapshotInstance200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetSnapshotInstance200Response() *GetSnapshotInstance200Response {
-	this := GetSnapshotInstance200Response{}
-	return &this
-}
-
-// NewGetSnapshotInstance200ResponseWithDefaults instantiates a new GetSnapshotInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSnapshotInstance200ResponseWithDefaults() *GetSnapshotInstance200Response {
-	this := GetSnapshotInstance200Response{}
-	return &this
-}
-
-// GetSnapshot returns the Snapshot field value if set, zero value otherwise.
-func (o *GetSnapshotInstance200Response) GetSnapshot() GetSnapshotInstance200ResponseSnapshot {
-	if o == nil || IsNil(o.Snapshot) {
-		var ret GetSnapshotInstance200ResponseSnapshot
-		return ret
-	}
-	return *o.Snapshot
-}
-
-// GetSnapshotOk returns a tuple with the Snapshot field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetSnapshotInstance200Response) GetSnapshotOk() (*GetSnapshotInstance200ResponseSnapshot, bool) {
-	if o == nil || IsNil(o.Snapshot) {
-		return nil, false
-	}
-	return o.Snapshot, true
-}
-
-// IsSetSnapshot returns a boolean if a field has been set.
-func (o *GetSnapshotInstance200Response) IsSetSnapshot() bool {
-	if o != nil && !IsNil(o.Snapshot) {
-		return true
-	}
-
-	return false
-}
-
-// SetSnapshot gets a reference to the given GetSnapshotInstance200ResponseSnapshot and assigns it to the Snapshot field.
-func (o *GetSnapshotInstance200Response) SetSnapshot(v GetSnapshotInstance200ResponseSnapshot) {
-	o.Snapshot = &v
-}
-
 func (o GetSnapshotInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,48 +26,6 @@ type UpdateIntegrationInventoryRequest struct {
 
 type _UpdateIntegrationInventoryRequest UpdateIntegrationInventoryRequest
 
-// NewUpdateIntegrationInventoryRequest instantiates a new UpdateIntegrationInventoryRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateIntegrationInventoryRequest(inventory UpdateIntegrationInventoryRequestInventory) *UpdateIntegrationInventoryRequest {
-	this := UpdateIntegrationInventoryRequest{}
-	this.Inventory = inventory
-	return &this
-}
-
-// NewUpdateIntegrationInventoryRequestWithDefaults instantiates a new UpdateIntegrationInventoryRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateIntegrationInventoryRequestWithDefaults() *UpdateIntegrationInventoryRequest {
-	this := UpdateIntegrationInventoryRequest{}
-	return &this
-}
-
-// GetInventory returns the Inventory field value
-func (o *UpdateIntegrationInventoryRequest) GetInventory() UpdateIntegrationInventoryRequestInventory {
-	if o == nil {
-		var ret UpdateIntegrationInventoryRequestInventory
-		return ret
-	}
-
-	return o.Inventory
-}
-
-// GetInventoryOk returns a tuple with the Inventory field value
-// and a boolean to check if the value has been set.
-func (o *UpdateIntegrationInventoryRequest) GetInventoryOk() (*UpdateIntegrationInventoryRequestInventory, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Inventory, true
-}
-
-// SetInventory sets field value
-func (o *UpdateIntegrationInventoryRequest) SetInventory(v UpdateIntegrationInventoryRequestInventory) {
-	o.Inventory = v
-}
-
 func (o UpdateIntegrationInventoryRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

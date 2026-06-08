@@ -26,55 +26,6 @@ type GetExecutionRequest200Response struct {
 
 type _GetExecutionRequest200Response GetExecutionRequest200Response
 
-// NewGetExecutionRequest200Response instantiates a new GetExecutionRequest200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetExecutionRequest200Response() *GetExecutionRequest200Response {
-	this := GetExecutionRequest200Response{}
-	return &this
-}
-
-// NewGetExecutionRequest200ResponseWithDefaults instantiates a new GetExecutionRequest200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetExecutionRequest200ResponseWithDefaults() *GetExecutionRequest200Response {
-	this := GetExecutionRequest200Response{}
-	return &this
-}
-
-// GetExecutionRequest returns the ExecutionRequest field value if set, zero value otherwise.
-func (o *GetExecutionRequest200Response) GetExecutionRequest() GetExecutionRequest200ResponseAllOfExecutionRequest {
-	if o == nil || IsNil(o.ExecutionRequest) {
-		var ret GetExecutionRequest200ResponseAllOfExecutionRequest
-		return ret
-	}
-	return *o.ExecutionRequest
-}
-
-// GetExecutionRequestOk returns a tuple with the ExecutionRequest field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetExecutionRequest200Response) GetExecutionRequestOk() (*GetExecutionRequest200ResponseAllOfExecutionRequest, bool) {
-	if o == nil || IsNil(o.ExecutionRequest) {
-		return nil, false
-	}
-	return o.ExecutionRequest, true
-}
-
-// IsSetExecutionRequest returns a boolean if a field has been set.
-func (o *GetExecutionRequest200Response) IsSetExecutionRequest() bool {
-	if o != nil && !IsNil(o.ExecutionRequest) {
-		return true
-	}
-
-	return false
-}
-
-// SetExecutionRequest gets a reference to the given GetExecutionRequest200ResponseAllOfExecutionRequest and assigns it to the ExecutionRequest field.
-func (o *GetExecutionRequest200Response) SetExecutionRequest(v GetExecutionRequest200ResponseAllOfExecutionRequest) {
-	o.ExecutionRequest = &v
-}
-
 func (o GetExecutionRequest200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

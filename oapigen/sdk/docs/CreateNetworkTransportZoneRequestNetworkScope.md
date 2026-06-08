@@ -9,130 +9,23 @@ Name | Type | Description | Notes
 **Visibility** | Pointer to **string** | private or public | [optional] 
 **Tenants** | Pointer to [**[]CreateNetworkTransportZoneRequestNetworkScopeTenantsInner**](CreateNetworkTransportZoneRequestNetworkScopeTenantsInner.md) | Array of tenant account ids that are allowed access | [optional] 
 
-## Methods
+## Usage
 
-### NewCreateNetworkTransportZoneRequestNetworkScope
+Instantiate with a Go composite literal:
 
-`func NewCreateNetworkTransportZoneRequestNetworkScope(name string, ) *CreateNetworkTransportZoneRequestNetworkScope`
+```go
+obj := &CreateNetworkTransportZoneRequestNetworkScope{
+    // Set fields directly
+}
+```
 
-NewCreateNetworkTransportZoneRequestNetworkScope instantiates a new CreateNetworkTransportZoneRequestNetworkScope object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### Description (Nullable)
 
-### NewCreateNetworkTransportZoneRequestNetworkScopeWithDefaults
-
-`func NewCreateNetworkTransportZoneRequestNetworkScopeWithDefaults() *CreateNetworkTransportZoneRequestNetworkScope`
-
-NewCreateNetworkTransportZoneRequestNetworkScopeWithDefaults instantiates a new CreateNetworkTransportZoneRequestNetworkScope object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetName
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) SetName(v string)`
-
-SetName sets Name field to given value.
-
-
-### GetDescription
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### SetDescriptionNil
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetVisibility
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) GetVisibility() string`
-
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
-
-### GetVisibilityOk
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) GetVisibilityOk() (*string, bool)`
-
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVisibility
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) SetVisibility(v string)`
-
-SetVisibility sets Visibility field to given value.
-
-### HasVisibility
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) HasVisibility() bool`
-
-HasVisibility returns a boolean if a field has been set.
-
-### GetTenants
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) GetTenants() []CreateNetworkTransportZoneRequestNetworkScopeTenantsInner`
-
-GetTenants returns the Tenants field if non-nil, zero value otherwise.
-
-### GetTenantsOk
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) GetTenantsOk() (*[]CreateNetworkTransportZoneRequestNetworkScopeTenantsInner, bool)`
-
-GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTenants
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) SetTenants(v []CreateNetworkTransportZoneRequestNetworkScopeTenantsInner)`
-
-SetTenants sets Tenants field to given value.
-
-### HasTenants
-
-`func (o *CreateNetworkTransportZoneRequestNetworkScope) HasTenants() bool`
-
-HasTenants returns a boolean if a field has been set.
-
+Use the Nullable wrapper methods:
+- `obj.Description.IsSet()` — check if set
+- `obj.Description.Get()` — get the inner value (returns pointer)
+- `obj.Description.Set(&val)` — set the value
+- `obj.Description.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

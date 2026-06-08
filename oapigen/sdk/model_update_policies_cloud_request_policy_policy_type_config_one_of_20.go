@@ -26,55 +26,6 @@ type UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20 struct {
 
 type _UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20 UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20
 
-// NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20 instantiates a new UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20() *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20 {
-	this := UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20{}
-	return &this
-}
-
-// NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20WithDefaults instantiates a new UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20WithDefaults() *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20 {
-	this := UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20{}
-	return &this
-}
-
-// GetMaxVms returns the MaxVms field value if set, zero value otherwise.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20) GetMaxVms() string {
-	if o == nil || IsNil(o.MaxVms) {
-		var ret string
-		return ret
-	}
-	return *o.MaxVms
-}
-
-// GetMaxVmsOk returns a tuple with the MaxVms field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20) GetMaxVmsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxVms) {
-		return nil, false
-	}
-	return o.MaxVms, true
-}
-
-// IsSetMaxVms returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20) IsSetMaxVms() bool {
-	if o != nil && !IsNil(o.MaxVms) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxVms gets a reference to the given string and assigns it to the MaxVms field.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20) SetMaxVms(v string) {
-	o.MaxVms = &v
-}
-
 func (o UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf20) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

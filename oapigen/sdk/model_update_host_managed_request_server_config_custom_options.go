@@ -26,55 +26,6 @@ type UpdateHostManagedRequestServerConfigCustomOptions struct {
 
 type _UpdateHostManagedRequestServerConfigCustomOptions UpdateHostManagedRequestServerConfigCustomOptions
 
-// NewUpdateHostManagedRequestServerConfigCustomOptions instantiates a new UpdateHostManagedRequestServerConfigCustomOptions object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateHostManagedRequestServerConfigCustomOptions() *UpdateHostManagedRequestServerConfigCustomOptions {
-	this := UpdateHostManagedRequestServerConfigCustomOptions{}
-	return &this
-}
-
-// NewUpdateHostManagedRequestServerConfigCustomOptionsWithDefaults instantiates a new UpdateHostManagedRequestServerConfigCustomOptions object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateHostManagedRequestServerConfigCustomOptionsWithDefaults() *UpdateHostManagedRequestServerConfigCustomOptions {
-	this := UpdateHostManagedRequestServerConfigCustomOptions{}
-	return &this
-}
-
-// GetDbfoldername returns the Dbfoldername field value if set, zero value otherwise.
-func (o *UpdateHostManagedRequestServerConfigCustomOptions) GetDbfoldername() string {
-	if o == nil || IsNil(o.Dbfoldername) {
-		var ret string
-		return ret
-	}
-	return *o.Dbfoldername
-}
-
-// GetDbfoldernameOk returns a tuple with the Dbfoldername field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateHostManagedRequestServerConfigCustomOptions) GetDbfoldernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Dbfoldername) {
-		return nil, false
-	}
-	return o.Dbfoldername, true
-}
-
-// IsSetDbfoldername returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequestServerConfigCustomOptions) IsSetDbfoldername() bool {
-	if o != nil && !IsNil(o.Dbfoldername) {
-		return true
-	}
-
-	return false
-}
-
-// SetDbfoldername gets a reference to the given string and assigns it to the Dbfoldername field.
-func (o *UpdateHostManagedRequestServerConfigCustomOptions) SetDbfoldername(v string) {
-	o.Dbfoldername = &v
-}
-
 func (o UpdateHostManagedRequestServerConfigCustomOptions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

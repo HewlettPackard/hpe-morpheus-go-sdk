@@ -26,55 +26,6 @@ type GetDeploymentVersion200Response struct {
 
 type _GetDeploymentVersion200Response GetDeploymentVersion200Response
 
-// NewGetDeploymentVersion200Response instantiates a new GetDeploymentVersion200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetDeploymentVersion200Response() *GetDeploymentVersion200Response {
-	this := GetDeploymentVersion200Response{}
-	return &this
-}
-
-// NewGetDeploymentVersion200ResponseWithDefaults instantiates a new GetDeploymentVersion200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetDeploymentVersion200ResponseWithDefaults() *GetDeploymentVersion200Response {
-	this := GetDeploymentVersion200Response{}
-	return &this
-}
-
-// GetVersion returns the Version field value if set, zero value otherwise.
-func (o *GetDeploymentVersion200Response) GetVersion() GetDeploymentVersion200ResponseVersion {
-	if o == nil || IsNil(o.Version) {
-		var ret GetDeploymentVersion200ResponseVersion
-		return ret
-	}
-	return *o.Version
-}
-
-// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetDeploymentVersion200Response) GetVersionOk() (*GetDeploymentVersion200ResponseVersion, bool) {
-	if o == nil || IsNil(o.Version) {
-		return nil, false
-	}
-	return o.Version, true
-}
-
-// IsSetVersion returns a boolean if a field has been set.
-func (o *GetDeploymentVersion200Response) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
-}
-
-// SetVersion gets a reference to the given GetDeploymentVersion200ResponseVersion and assigns it to the Version field.
-func (o *GetDeploymentVersion200Response) SetVersion(v GetDeploymentVersion200ResponseVersion) {
-	o.Version = &v
-}
-
 func (o GetDeploymentVersion200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

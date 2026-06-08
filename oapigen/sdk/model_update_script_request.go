@@ -26,55 +26,6 @@ type UpdateScriptRequest struct {
 
 type _UpdateScriptRequest UpdateScriptRequest
 
-// NewUpdateScriptRequest instantiates a new UpdateScriptRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateScriptRequest() *UpdateScriptRequest {
-	this := UpdateScriptRequest{}
-	return &this
-}
-
-// NewUpdateScriptRequestWithDefaults instantiates a new UpdateScriptRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateScriptRequestWithDefaults() *UpdateScriptRequest {
-	this := UpdateScriptRequest{}
-	return &this
-}
-
-// GetContainerScript returns the ContainerScript field value if set, zero value otherwise.
-func (o *UpdateScriptRequest) GetContainerScript() UpdateScriptRequestContainerScript {
-	if o == nil || IsNil(o.ContainerScript) {
-		var ret UpdateScriptRequestContainerScript
-		return ret
-	}
-	return *o.ContainerScript
-}
-
-// GetContainerScriptOk returns a tuple with the ContainerScript field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateScriptRequest) GetContainerScriptOk() (*UpdateScriptRequestContainerScript, bool) {
-	if o == nil || IsNil(o.ContainerScript) {
-		return nil, false
-	}
-	return o.ContainerScript, true
-}
-
-// IsSetContainerScript returns a boolean if a field has been set.
-func (o *UpdateScriptRequest) IsSetContainerScript() bool {
-	if o != nil && !IsNil(o.ContainerScript) {
-		return true
-	}
-
-	return false
-}
-
-// SetContainerScript gets a reference to the given UpdateScriptRequestContainerScript and assigns it to the ContainerScript field.
-func (o *UpdateScriptRequest) SetContainerScript(v UpdateScriptRequestContainerScript) {
-	o.ContainerScript = &v
-}
-
 func (o UpdateScriptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

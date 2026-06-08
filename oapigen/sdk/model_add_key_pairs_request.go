@@ -26,48 +26,6 @@ type AddKeyPairsRequest struct {
 
 type _AddKeyPairsRequest AddKeyPairsRequest
 
-// NewAddKeyPairsRequest instantiates a new AddKeyPairsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddKeyPairsRequest(keyPair AddKeyPairsRequestKeyPair) *AddKeyPairsRequest {
-	this := AddKeyPairsRequest{}
-	this.KeyPair = keyPair
-	return &this
-}
-
-// NewAddKeyPairsRequestWithDefaults instantiates a new AddKeyPairsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddKeyPairsRequestWithDefaults() *AddKeyPairsRequest {
-	this := AddKeyPairsRequest{}
-	return &this
-}
-
-// GetKeyPair returns the KeyPair field value
-func (o *AddKeyPairsRequest) GetKeyPair() AddKeyPairsRequestKeyPair {
-	if o == nil {
-		var ret AddKeyPairsRequestKeyPair
-		return ret
-	}
-
-	return o.KeyPair
-}
-
-// GetKeyPairOk returns a tuple with the KeyPair field value
-// and a boolean to check if the value has been set.
-func (o *AddKeyPairsRequest) GetKeyPairOk() (*AddKeyPairsRequestKeyPair, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.KeyPair, true
-}
-
-// SetKeyPair sets field value
-func (o *AddKeyPairsRequest) SetKeyPair(v AddKeyPairsRequestKeyPair) {
-	o.KeyPair = v
-}
-
 func (o AddKeyPairsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

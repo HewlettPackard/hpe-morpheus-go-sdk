@@ -26,48 +26,6 @@ type AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork struct {
 
 type _AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork
 
-// NewAddClusterWorkerRequestServerNetworkInterfacesInnerNetwork instantiates a new AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterWorkerRequestServerNetworkInterfacesInnerNetwork(id AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId) *AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork {
-	this := AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork{}
-	this.Id = id
-	return &this
-}
-
-// NewAddClusterWorkerRequestServerNetworkInterfacesInnerNetworkWithDefaults instantiates a new AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterWorkerRequestServerNetworkInterfacesInnerNetworkWithDefaults() *AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork {
-	this := AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork{}
-	return &this
-}
-
-// GetId returns the Id field value
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork) GetId() AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId {
-	if o == nil {
-		var ret AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork) GetIdOk() (*AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork) SetId(v AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId) {
-	o.Id = v
-}
-
 func (o AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

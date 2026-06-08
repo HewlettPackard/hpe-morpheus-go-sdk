@@ -26,55 +26,6 @@ type GetUserSettingsApiClients200ResponseClientsInner struct {
 
 type _GetUserSettingsApiClients200ResponseClientsInner GetUserSettingsApiClients200ResponseClientsInner
 
-// NewGetUserSettingsApiClients200ResponseClientsInner instantiates a new GetUserSettingsApiClients200ResponseClientsInner object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetUserSettingsApiClients200ResponseClientsInner() *GetUserSettingsApiClients200ResponseClientsInner {
-	this := GetUserSettingsApiClients200ResponseClientsInner{}
-	return &this
-}
-
-// NewGetUserSettingsApiClients200ResponseClientsInnerWithDefaults instantiates a new GetUserSettingsApiClients200ResponseClientsInner object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetUserSettingsApiClients200ResponseClientsInnerWithDefaults() *GetUserSettingsApiClients200ResponseClientsInner {
-	this := GetUserSettingsApiClients200ResponseClientsInner{}
-	return &this
-}
-
-// GetClientId returns the ClientId field value if set, zero value otherwise.
-func (o *GetUserSettingsApiClients200ResponseClientsInner) GetClientId() string {
-	if o == nil || IsNil(o.ClientId) {
-		var ret string
-		return ret
-	}
-	return *o.ClientId
-}
-
-// GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetUserSettingsApiClients200ResponseClientsInner) GetClientIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ClientId) {
-		return nil, false
-	}
-	return o.ClientId, true
-}
-
-// IsSetClientId returns a boolean if a field has been set.
-func (o *GetUserSettingsApiClients200ResponseClientsInner) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
-}
-
-// SetClientId gets a reference to the given string and assigns it to the ClientId field.
-func (o *GetUserSettingsApiClients200ResponseClientsInner) SetClientId(v string) {
-	o.ClientId = &v
-}
-
 func (o GetUserSettingsApiClients200ResponseClientsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

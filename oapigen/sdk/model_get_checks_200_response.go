@@ -26,55 +26,6 @@ type GetChecks200Response struct {
 
 type _GetChecks200Response GetChecks200Response
 
-// NewGetChecks200Response instantiates a new GetChecks200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetChecks200Response() *GetChecks200Response {
-	this := GetChecks200Response{}
-	return &this
-}
-
-// NewGetChecks200ResponseWithDefaults instantiates a new GetChecks200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetChecks200ResponseWithDefaults() *GetChecks200Response {
-	this := GetChecks200Response{}
-	return &this
-}
-
-// GetCheck returns the Check field value if set, zero value otherwise.
-func (o *GetChecks200Response) GetCheck() GetChecks200ResponseCheck {
-	if o == nil || IsNil(o.Check) {
-		var ret GetChecks200ResponseCheck
-		return ret
-	}
-	return *o.Check
-}
-
-// GetCheckOk returns a tuple with the Check field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetChecks200Response) GetCheckOk() (*GetChecks200ResponseCheck, bool) {
-	if o == nil || IsNil(o.Check) {
-		return nil, false
-	}
-	return o.Check, true
-}
-
-// IsSetCheck returns a boolean if a field has been set.
-func (o *GetChecks200Response) IsSetCheck() bool {
-	if o != nil && !IsNil(o.Check) {
-		return true
-	}
-
-	return false
-}
-
-// SetCheck gets a reference to the given GetChecks200ResponseCheck and assigns it to the Check field.
-func (o *GetChecks200Response) SetCheck(v GetChecks200ResponseCheck) {
-	o.Check = &v
-}
-
 func (o GetChecks200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

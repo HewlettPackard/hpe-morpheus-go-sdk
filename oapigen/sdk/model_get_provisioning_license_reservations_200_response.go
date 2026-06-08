@@ -26,55 +26,6 @@ type GetProvisioningLicenseReservations200Response struct {
 
 type _GetProvisioningLicenseReservations200Response GetProvisioningLicenseReservations200Response
 
-// NewGetProvisioningLicenseReservations200Response instantiates a new GetProvisioningLicenseReservations200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetProvisioningLicenseReservations200Response() *GetProvisioningLicenseReservations200Response {
-	this := GetProvisioningLicenseReservations200Response{}
-	return &this
-}
-
-// NewGetProvisioningLicenseReservations200ResponseWithDefaults instantiates a new GetProvisioningLicenseReservations200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetProvisioningLicenseReservations200ResponseWithDefaults() *GetProvisioningLicenseReservations200Response {
-	this := GetProvisioningLicenseReservations200Response{}
-	return &this
-}
-
-// GetLicenses returns the Licenses field value if set, zero value otherwise.
-func (o *GetProvisioningLicenseReservations200Response) GetLicenses() []GetProvisioningLicenseReservations200ResponseLicensesInner {
-	if o == nil || IsNil(o.Licenses) {
-		var ret []GetProvisioningLicenseReservations200ResponseLicensesInner
-		return ret
-	}
-	return o.Licenses
-}
-
-// GetLicensesOk returns a tuple with the Licenses field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetProvisioningLicenseReservations200Response) GetLicensesOk() ([]GetProvisioningLicenseReservations200ResponseLicensesInner, bool) {
-	if o == nil || IsNil(o.Licenses) {
-		return nil, false
-	}
-	return o.Licenses, true
-}
-
-// IsSetLicenses returns a boolean if a field has been set.
-func (o *GetProvisioningLicenseReservations200Response) IsSetLicenses() bool {
-	if o != nil && !IsNil(o.Licenses) {
-		return true
-	}
-
-	return false
-}
-
-// SetLicenses gets a reference to the given []GetProvisioningLicenseReservations200ResponseLicensesInner and assigns it to the Licenses field.
-func (o *GetProvisioningLicenseReservations200Response) SetLicenses(v []GetProvisioningLicenseReservations200ResponseLicensesInner) {
-	o.Licenses = v
-}
-
 func (o GetProvisioningLicenseReservations200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type GetSecurityGroups200Response struct {
 
 type _GetSecurityGroups200Response GetSecurityGroups200Response
 
-// NewGetSecurityGroups200Response instantiates a new GetSecurityGroups200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetSecurityGroups200Response() *GetSecurityGroups200Response {
-	this := GetSecurityGroups200Response{}
-	return &this
-}
-
-// NewGetSecurityGroups200ResponseWithDefaults instantiates a new GetSecurityGroups200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSecurityGroups200ResponseWithDefaults() *GetSecurityGroups200Response {
-	this := GetSecurityGroups200Response{}
-	return &this
-}
-
-// GetSecurityGroup returns the SecurityGroup field value if set, zero value otherwise.
-func (o *GetSecurityGroups200Response) GetSecurityGroup() GetSecurityGroups200ResponseSecurityGroup {
-	if o == nil || IsNil(o.SecurityGroup) {
-		var ret GetSecurityGroups200ResponseSecurityGroup
-		return ret
-	}
-	return *o.SecurityGroup
-}
-
-// GetSecurityGroupOk returns a tuple with the SecurityGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetSecurityGroups200Response) GetSecurityGroupOk() (*GetSecurityGroups200ResponseSecurityGroup, bool) {
-	if o == nil || IsNil(o.SecurityGroup) {
-		return nil, false
-	}
-	return o.SecurityGroup, true
-}
-
-// IsSetSecurityGroup returns a boolean if a field has been set.
-func (o *GetSecurityGroups200Response) IsSetSecurityGroup() bool {
-	if o != nil && !IsNil(o.SecurityGroup) {
-		return true
-	}
-
-	return false
-}
-
-// SetSecurityGroup gets a reference to the given GetSecurityGroups200ResponseSecurityGroup and assigns it to the SecurityGroup field.
-func (o *GetSecurityGroups200Response) SetSecurityGroup(v GetSecurityGroups200ResponseSecurityGroup) {
-	o.SecurityGroup = &v
-}
-
 func (o GetSecurityGroups200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

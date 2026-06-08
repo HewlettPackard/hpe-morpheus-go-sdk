@@ -42,1180 +42,177 @@ Name | Type | Description | Notes
 **Credential** | Pointer to [**CreateNetworkServer200ResponseAllOfNetworkServerCredential**](CreateNetworkServer200ResponseAllOfNetworkServerCredential.md) |  | [optional] 
 **Tenants** | Pointer to [**[]CreateNetworkServer200ResponseAllOfNetworkServerTenantsInner**](CreateNetworkServer200ResponseAllOfNetworkServerTenantsInner.md) |  | [optional] 
 
-## Methods
-
-### NewNetworkServer
-
-`func NewNetworkServer() *NetworkServer`
-
-NewNetworkServer instantiates a new NetworkServer object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewNetworkServerWithDefaults
-
-`func NewNetworkServerWithDefaults() *NetworkServer`
-
-NewNetworkServerWithDefaults instantiates a new NetworkServer object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *NetworkServer) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *NetworkServer) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *NetworkServer) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *NetworkServer) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *NetworkServer) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *NetworkServer) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *NetworkServer) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *NetworkServer) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *NetworkServer) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *NetworkServer) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *NetworkServer) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *NetworkServer) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### SetDescriptionNil
-
-`func (o *NetworkServer) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *NetworkServer) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetType
-
-`func (o *NetworkServer) GetType() CreateNetworkServer200ResponseAllOfNetworkServerType`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *NetworkServer) GetTypeOk() (*CreateNetworkServer200ResponseAllOfNetworkServerType, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *NetworkServer) SetType(v CreateNetworkServer200ResponseAllOfNetworkServerType)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *NetworkServer) HasType() bool`
-
-HasType returns a boolean if a field has been set.
-
-### GetIntegration
-
-`func (o *NetworkServer) GetIntegration() CreateNetworkServer200ResponseAllOfNetworkServerIntegration`
-
-GetIntegration returns the Integration field if non-nil, zero value otherwise.
-
-### GetIntegrationOk
-
-`func (o *NetworkServer) GetIntegrationOk() (*CreateNetworkServer200ResponseAllOfNetworkServerIntegration, bool)`
-
-GetIntegrationOk returns a tuple with the Integration field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIntegration
-
-`func (o *NetworkServer) SetIntegration(v CreateNetworkServer200ResponseAllOfNetworkServerIntegration)`
-
-SetIntegration sets Integration field to given value.
-
-### HasIntegration
-
-`func (o *NetworkServer) HasIntegration() bool`
-
-HasIntegration returns a boolean if a field has been set.
-
-### GetAccount
-
-`func (o *NetworkServer) GetAccount() CreateNetworkServer200ResponseAllOfNetworkServerAccount`
-
-GetAccount returns the Account field if non-nil, zero value otherwise.
-
-### GetAccountOk
-
-`func (o *NetworkServer) GetAccountOk() (*CreateNetworkServer200ResponseAllOfNetworkServerAccount, bool)`
-
-GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccount
-
-`func (o *NetworkServer) SetAccount(v CreateNetworkServer200ResponseAllOfNetworkServerAccount)`
-
-SetAccount sets Account field to given value.
-
-### HasAccount
-
-`func (o *NetworkServer) HasAccount() bool`
-
-HasAccount returns a boolean if a field has been set.
-
-### GetVisibility
-
-`func (o *NetworkServer) GetVisibility() string`
-
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
-
-### GetVisibilityOk
-
-`func (o *NetworkServer) GetVisibilityOk() (*string, bool)`
-
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVisibility
-
-`func (o *NetworkServer) SetVisibility(v string)`
-
-SetVisibility sets Visibility field to given value.
-
-### HasVisibility
-
-`func (o *NetworkServer) HasVisibility() bool`
-
-HasVisibility returns a boolean if a field has been set.
-
-### GetInternalId
-
-`func (o *NetworkServer) GetInternalId() string`
-
-GetInternalId returns the InternalId field if non-nil, zero value otherwise.
-
-### GetInternalIdOk
-
-`func (o *NetworkServer) GetInternalIdOk() (*string, bool)`
-
-GetInternalIdOk returns a tuple with the InternalId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInternalId
-
-`func (o *NetworkServer) SetInternalId(v string)`
-
-SetInternalId sets InternalId field to given value.
-
-### HasInternalId
-
-`func (o *NetworkServer) HasInternalId() bool`
-
-HasInternalId returns a boolean if a field has been set.
-
-### SetInternalIdNil
-
-`func (o *NetworkServer) SetInternalIdNil(b bool)`
-
- SetInternalIdNil sets the value for InternalId to be an explicit nil
-
-### UnsetInternalId
-`func (o *NetworkServer) UnsetInternalId()`
-
-UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-### GetExternalId
-
-`func (o *NetworkServer) GetExternalId() string`
-
-GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
-
-### GetExternalIdOk
-
-`func (o *NetworkServer) GetExternalIdOk() (*string, bool)`
-
-GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExternalId
-
-`func (o *NetworkServer) SetExternalId(v string)`
-
-SetExternalId sets ExternalId field to given value.
-
-### HasExternalId
-
-`func (o *NetworkServer) HasExternalId() bool`
-
-HasExternalId returns a boolean if a field has been set.
-
-### SetExternalIdNil
-
-`func (o *NetworkServer) SetExternalIdNil(b bool)`
-
- SetExternalIdNil sets the value for ExternalId to be an explicit nil
-
-### UnsetExternalId
-`func (o *NetworkServer) UnsetExternalId()`
-
-UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-### GetServiceUrl
-
-`func (o *NetworkServer) GetServiceUrl() string`
-
-GetServiceUrl returns the ServiceUrl field if non-nil, zero value otherwise.
-
-### GetServiceUrlOk
-
-`func (o *NetworkServer) GetServiceUrlOk() (*string, bool)`
-
-GetServiceUrlOk returns a tuple with the ServiceUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceUrl
-
-`func (o *NetworkServer) SetServiceUrl(v string)`
-
-SetServiceUrl sets ServiceUrl field to given value.
-
-### HasServiceUrl
-
-`func (o *NetworkServer) HasServiceUrl() bool`
-
-HasServiceUrl returns a boolean if a field has been set.
-
-### SetServiceUrlNil
-
-`func (o *NetworkServer) SetServiceUrlNil(b bool)`
-
- SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
-
-### UnsetServiceUrl
-`func (o *NetworkServer) UnsetServiceUrl()`
-
-UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
-### GetServiceHost
-
-`func (o *NetworkServer) GetServiceHost() string`
-
-GetServiceHost returns the ServiceHost field if non-nil, zero value otherwise.
-
-### GetServiceHostOk
-
-`func (o *NetworkServer) GetServiceHostOk() (*string, bool)`
-
-GetServiceHostOk returns a tuple with the ServiceHost field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceHost
-
-`func (o *NetworkServer) SetServiceHost(v string)`
-
-SetServiceHost sets ServiceHost field to given value.
-
-### HasServiceHost
-
-`func (o *NetworkServer) HasServiceHost() bool`
-
-HasServiceHost returns a boolean if a field has been set.
-
-### SetServiceHostNil
-
-`func (o *NetworkServer) SetServiceHostNil(b bool)`
-
- SetServiceHostNil sets the value for ServiceHost to be an explicit nil
-
-### UnsetServiceHost
-`func (o *NetworkServer) UnsetServiceHost()`
-
-UnsetServiceHost ensures that no value is present for ServiceHost, not even an explicit nil
-### GetServicePort
-
-`func (o *NetworkServer) GetServicePort() int32`
-
-GetServicePort returns the ServicePort field if non-nil, zero value otherwise.
-
-### GetServicePortOk
-
-`func (o *NetworkServer) GetServicePortOk() (*int32, bool)`
-
-GetServicePortOk returns a tuple with the ServicePort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServicePort
-
-`func (o *NetworkServer) SetServicePort(v int32)`
-
-SetServicePort sets ServicePort field to given value.
-
-### HasServicePort
-
-`func (o *NetworkServer) HasServicePort() bool`
-
-HasServicePort returns a boolean if a field has been set.
-
-### SetServicePortNil
-
-`func (o *NetworkServer) SetServicePortNil(b bool)`
-
- SetServicePortNil sets the value for ServicePort to be an explicit nil
-
-### UnsetServicePort
-`func (o *NetworkServer) UnsetServicePort()`
-
-UnsetServicePort ensures that no value is present for ServicePort, not even an explicit nil
-### GetServiceMode
-
-`func (o *NetworkServer) GetServiceMode() string`
-
-GetServiceMode returns the ServiceMode field if non-nil, zero value otherwise.
-
-### GetServiceModeOk
-
-`func (o *NetworkServer) GetServiceModeOk() (*string, bool)`
-
-GetServiceModeOk returns a tuple with the ServiceMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceMode
-
-`func (o *NetworkServer) SetServiceMode(v string)`
-
-SetServiceMode sets ServiceMode field to given value.
-
-### HasServiceMode
-
-`func (o *NetworkServer) HasServiceMode() bool`
-
-HasServiceMode returns a boolean if a field has been set.
-
-### SetServiceModeNil
-
-`func (o *NetworkServer) SetServiceModeNil(b bool)`
-
- SetServiceModeNil sets the value for ServiceMode to be an explicit nil
-
-### UnsetServiceMode
-`func (o *NetworkServer) UnsetServiceMode()`
-
-UnsetServiceMode ensures that no value is present for ServiceMode, not even an explicit nil
-### GetServicePath
-
-`func (o *NetworkServer) GetServicePath() string`
-
-GetServicePath returns the ServicePath field if non-nil, zero value otherwise.
-
-### GetServicePathOk
-
-`func (o *NetworkServer) GetServicePathOk() (*string, bool)`
-
-GetServicePathOk returns a tuple with the ServicePath field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServicePath
-
-`func (o *NetworkServer) SetServicePath(v string)`
-
-SetServicePath sets ServicePath field to given value.
-
-### HasServicePath
-
-`func (o *NetworkServer) HasServicePath() bool`
-
-HasServicePath returns a boolean if a field has been set.
-
-### SetServicePathNil
-
-`func (o *NetworkServer) SetServicePathNil(b bool)`
-
- SetServicePathNil sets the value for ServicePath to be an explicit nil
-
-### UnsetServicePath
-`func (o *NetworkServer) UnsetServicePath()`
-
-UnsetServicePath ensures that no value is present for ServicePath, not even an explicit nil
-### GetServiceUsername
-
-`func (o *NetworkServer) GetServiceUsername() string`
-
-GetServiceUsername returns the ServiceUsername field if non-nil, zero value otherwise.
-
-### GetServiceUsernameOk
-
-`func (o *NetworkServer) GetServiceUsernameOk() (*string, bool)`
-
-GetServiceUsernameOk returns a tuple with the ServiceUsername field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceUsername
-
-`func (o *NetworkServer) SetServiceUsername(v string)`
-
-SetServiceUsername sets ServiceUsername field to given value.
-
-### HasServiceUsername
-
-`func (o *NetworkServer) HasServiceUsername() bool`
-
-HasServiceUsername returns a boolean if a field has been set.
-
-### SetServiceUsernameNil
-
-`func (o *NetworkServer) SetServiceUsernameNil(b bool)`
-
- SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
-
-### UnsetServiceUsername
-`func (o *NetworkServer) UnsetServiceUsername()`
-
-UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
-### GetServicePassword
-
-`func (o *NetworkServer) GetServicePassword() string`
-
-GetServicePassword returns the ServicePassword field if non-nil, zero value otherwise.
-
-### GetServicePasswordOk
-
-`func (o *NetworkServer) GetServicePasswordOk() (*string, bool)`
-
-GetServicePasswordOk returns a tuple with the ServicePassword field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServicePassword
-
-`func (o *NetworkServer) SetServicePassword(v string)`
-
-SetServicePassword sets ServicePassword field to given value.
-
-### HasServicePassword
-
-`func (o *NetworkServer) HasServicePassword() bool`
-
-HasServicePassword returns a boolean if a field has been set.
-
-### SetServicePasswordNil
-
-`func (o *NetworkServer) SetServicePasswordNil(b bool)`
-
- SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
-
-### UnsetServicePassword
-`func (o *NetworkServer) UnsetServicePassword()`
-
-UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
-### GetServicePasswordHash
-
-`func (o *NetworkServer) GetServicePasswordHash() string`
-
-GetServicePasswordHash returns the ServicePasswordHash field if non-nil, zero value otherwise.
-
-### GetServicePasswordHashOk
-
-`func (o *NetworkServer) GetServicePasswordHashOk() (*string, bool)`
-
-GetServicePasswordHashOk returns a tuple with the ServicePasswordHash field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServicePasswordHash
-
-`func (o *NetworkServer) SetServicePasswordHash(v string)`
-
-SetServicePasswordHash sets ServicePasswordHash field to given value.
-
-### HasServicePasswordHash
-
-`func (o *NetworkServer) HasServicePasswordHash() bool`
-
-HasServicePasswordHash returns a boolean if a field has been set.
-
-### SetServicePasswordHashNil
-
-`func (o *NetworkServer) SetServicePasswordHashNil(b bool)`
-
- SetServicePasswordHashNil sets the value for ServicePasswordHash to be an explicit nil
-
-### UnsetServicePasswordHash
-`func (o *NetworkServer) UnsetServicePasswordHash()`
-
-UnsetServicePasswordHash ensures that no value is present for ServicePasswordHash, not even an explicit nil
-### GetServiceToken
-
-`func (o *NetworkServer) GetServiceToken() string`
-
-GetServiceToken returns the ServiceToken field if non-nil, zero value otherwise.
-
-### GetServiceTokenOk
-
-`func (o *NetworkServer) GetServiceTokenOk() (*string, bool)`
-
-GetServiceTokenOk returns a tuple with the ServiceToken field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceToken
-
-`func (o *NetworkServer) SetServiceToken(v string)`
-
-SetServiceToken sets ServiceToken field to given value.
-
-### HasServiceToken
-
-`func (o *NetworkServer) HasServiceToken() bool`
-
-HasServiceToken returns a boolean if a field has been set.
-
-### SetServiceTokenNil
-
-`func (o *NetworkServer) SetServiceTokenNil(b bool)`
-
- SetServiceTokenNil sets the value for ServiceToken to be an explicit nil
-
-### UnsetServiceToken
-`func (o *NetworkServer) UnsetServiceToken()`
-
-UnsetServiceToken ensures that no value is present for ServiceToken, not even an explicit nil
-### GetServiceTokenHash
-
-`func (o *NetworkServer) GetServiceTokenHash() string`
-
-GetServiceTokenHash returns the ServiceTokenHash field if non-nil, zero value otherwise.
-
-### GetServiceTokenHashOk
-
-`func (o *NetworkServer) GetServiceTokenHashOk() (*string, bool)`
-
-GetServiceTokenHashOk returns a tuple with the ServiceTokenHash field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceTokenHash
-
-`func (o *NetworkServer) SetServiceTokenHash(v string)`
-
-SetServiceTokenHash sets ServiceTokenHash field to given value.
-
-### HasServiceTokenHash
-
-`func (o *NetworkServer) HasServiceTokenHash() bool`
-
-HasServiceTokenHash returns a boolean if a field has been set.
-
-### SetServiceTokenHashNil
-
-`func (o *NetworkServer) SetServiceTokenHashNil(b bool)`
-
- SetServiceTokenHashNil sets the value for ServiceTokenHash to be an explicit nil
-
-### UnsetServiceTokenHash
-`func (o *NetworkServer) UnsetServiceTokenHash()`
-
-UnsetServiceTokenHash ensures that no value is present for ServiceTokenHash, not even an explicit nil
-### GetApiPort
-
-`func (o *NetworkServer) GetApiPort() int32`
-
-GetApiPort returns the ApiPort field if non-nil, zero value otherwise.
-
-### GetApiPortOk
-
-`func (o *NetworkServer) GetApiPortOk() (*int32, bool)`
-
-GetApiPortOk returns a tuple with the ApiPort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApiPort
-
-`func (o *NetworkServer) SetApiPort(v int32)`
-
-SetApiPort sets ApiPort field to given value.
-
-### HasApiPort
-
-`func (o *NetworkServer) HasApiPort() bool`
-
-HasApiPort returns a boolean if a field has been set.
-
-### SetApiPortNil
-
-`func (o *NetworkServer) SetApiPortNil(b bool)`
-
- SetApiPortNil sets the value for ApiPort to be an explicit nil
-
-### UnsetApiPort
-`func (o *NetworkServer) UnsetApiPort()`
-
-UnsetApiPort ensures that no value is present for ApiPort, not even an explicit nil
-### GetAdminPort
-
-`func (o *NetworkServer) GetAdminPort() int32`
-
-GetAdminPort returns the AdminPort field if non-nil, zero value otherwise.
-
-### GetAdminPortOk
-
-`func (o *NetworkServer) GetAdminPortOk() (*int32, bool)`
-
-GetAdminPortOk returns a tuple with the AdminPort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAdminPort
-
-`func (o *NetworkServer) SetAdminPort(v int32)`
-
-SetAdminPort sets AdminPort field to given value.
-
-### HasAdminPort
-
-`func (o *NetworkServer) HasAdminPort() bool`
-
-HasAdminPort returns a boolean if a field has been set.
-
-### SetAdminPortNil
-
-`func (o *NetworkServer) SetAdminPortNil(b bool)`
-
- SetAdminPortNil sets the value for AdminPort to be an explicit nil
-
-### UnsetAdminPort
-`func (o *NetworkServer) UnsetAdminPort()`
-
-UnsetAdminPort ensures that no value is present for AdminPort, not even an explicit nil
-### GetStatus
-
-`func (o *NetworkServer) GetStatus() string`
-
-GetStatus returns the Status field if non-nil, zero value otherwise.
-
-### GetStatusOk
-
-`func (o *NetworkServer) GetStatusOk() (*string, bool)`
-
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatus
-
-`func (o *NetworkServer) SetStatus(v string)`
-
-SetStatus sets Status field to given value.
-
-### HasStatus
-
-`func (o *NetworkServer) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
-
-### GetStatusMessage
-
-`func (o *NetworkServer) GetStatusMessage() string`
-
-GetStatusMessage returns the StatusMessage field if non-nil, zero value otherwise.
-
-### GetStatusMessageOk
-
-`func (o *NetworkServer) GetStatusMessageOk() (*string, bool)`
-
-GetStatusMessageOk returns a tuple with the StatusMessage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatusMessage
-
-`func (o *NetworkServer) SetStatusMessage(v string)`
-
-SetStatusMessage sets StatusMessage field to given value.
-
-### HasStatusMessage
-
-`func (o *NetworkServer) HasStatusMessage() bool`
-
-HasStatusMessage returns a boolean if a field has been set.
-
-### SetStatusMessageNil
-
-`func (o *NetworkServer) SetStatusMessageNil(b bool)`
-
- SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-
-### UnsetStatusMessage
-`func (o *NetworkServer) UnsetStatusMessage()`
-
-UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-### GetStatusDate
-
-`func (o *NetworkServer) GetStatusDate() time.Time`
-
-GetStatusDate returns the StatusDate field if non-nil, zero value otherwise.
-
-### GetStatusDateOk
-
-`func (o *NetworkServer) GetStatusDateOk() (*time.Time, bool)`
-
-GetStatusDateOk returns a tuple with the StatusDate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatusDate
-
-`func (o *NetworkServer) SetStatusDate(v time.Time)`
-
-SetStatusDate sets StatusDate field to given value.
-
-### HasStatusDate
-
-`func (o *NetworkServer) HasStatusDate() bool`
-
-HasStatusDate returns a boolean if a field has been set.
-
-### SetStatusDateNil
-
-`func (o *NetworkServer) SetStatusDateNil(b bool)`
-
- SetStatusDateNil sets the value for StatusDate to be an explicit nil
-
-### UnsetStatusDate
-`func (o *NetworkServer) UnsetStatusDate()`
-
-UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
-### GetLastSync
-
-`func (o *NetworkServer) GetLastSync() time.Time`
-
-GetLastSync returns the LastSync field if non-nil, zero value otherwise.
-
-### GetLastSyncOk
-
-`func (o *NetworkServer) GetLastSyncOk() (*time.Time, bool)`
-
-GetLastSyncOk returns a tuple with the LastSync field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastSync
-
-`func (o *NetworkServer) SetLastSync(v time.Time)`
-
-SetLastSync sets LastSync field to given value.
-
-### HasLastSync
-
-`func (o *NetworkServer) HasLastSync() bool`
-
-HasLastSync returns a boolean if a field has been set.
-
-### SetLastSyncNil
-
-`func (o *NetworkServer) SetLastSyncNil(b bool)`
-
- SetLastSyncNil sets the value for LastSync to be an explicit nil
-
-### UnsetLastSync
-`func (o *NetworkServer) UnsetLastSync()`
-
-UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
-### GetNextRunDate
-
-`func (o *NetworkServer) GetNextRunDate() time.Time`
-
-GetNextRunDate returns the NextRunDate field if non-nil, zero value otherwise.
-
-### GetNextRunDateOk
-
-`func (o *NetworkServer) GetNextRunDateOk() (*time.Time, bool)`
-
-GetNextRunDateOk returns a tuple with the NextRunDate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNextRunDate
-
-`func (o *NetworkServer) SetNextRunDate(v time.Time)`
-
-SetNextRunDate sets NextRunDate field to given value.
-
-### HasNextRunDate
-
-`func (o *NetworkServer) HasNextRunDate() bool`
-
-HasNextRunDate returns a boolean if a field has been set.
-
-### SetNextRunDateNil
-
-`func (o *NetworkServer) SetNextRunDateNil(b bool)`
-
- SetNextRunDateNil sets the value for NextRunDate to be an explicit nil
-
-### UnsetNextRunDate
-`func (o *NetworkServer) UnsetNextRunDate()`
-
-UnsetNextRunDate ensures that no value is present for NextRunDate, not even an explicit nil
-### GetLastSyncDuration
-
-`func (o *NetworkServer) GetLastSyncDuration() int64`
-
-GetLastSyncDuration returns the LastSyncDuration field if non-nil, zero value otherwise.
-
-### GetLastSyncDurationOk
-
-`func (o *NetworkServer) GetLastSyncDurationOk() (*int64, bool)`
-
-GetLastSyncDurationOk returns a tuple with the LastSyncDuration field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastSyncDuration
-
-`func (o *NetworkServer) SetLastSyncDuration(v int64)`
-
-SetLastSyncDuration sets LastSyncDuration field to given value.
-
-### HasLastSyncDuration
-
-`func (o *NetworkServer) HasLastSyncDuration() bool`
-
-HasLastSyncDuration returns a boolean if a field has been set.
-
-### SetLastSyncDurationNil
-
-`func (o *NetworkServer) SetLastSyncDurationNil(b bool)`
-
- SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
-
-### UnsetLastSyncDuration
-`func (o *NetworkServer) UnsetLastSyncDuration()`
-
-UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
-### GetConfig
-
-`func (o *NetworkServer) GetConfig() map[string]interface{}`
-
-GetConfig returns the Config field if non-nil, zero value otherwise.
-
-### GetConfigOk
-
-`func (o *NetworkServer) GetConfigOk() (*map[string]interface{}, bool)`
-
-GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfig
-
-`func (o *NetworkServer) SetConfig(v map[string]interface{})`
-
-SetConfig sets Config field to given value.
-
-### HasConfig
-
-`func (o *NetworkServer) HasConfig() bool`
-
-HasConfig returns a boolean if a field has been set.
-
-### GetNetworkFilter
-
-`func (o *NetworkServer) GetNetworkFilter() string`
-
-GetNetworkFilter returns the NetworkFilter field if non-nil, zero value otherwise.
-
-### GetNetworkFilterOk
-
-`func (o *NetworkServer) GetNetworkFilterOk() (*string, bool)`
-
-GetNetworkFilterOk returns a tuple with the NetworkFilter field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkFilter
-
-`func (o *NetworkServer) SetNetworkFilter(v string)`
-
-SetNetworkFilter sets NetworkFilter field to given value.
-
-### HasNetworkFilter
-
-`func (o *NetworkServer) HasNetworkFilter() bool`
-
-HasNetworkFilter returns a boolean if a field has been set.
-
-### SetNetworkFilterNil
-
-`func (o *NetworkServer) SetNetworkFilterNil(b bool)`
-
- SetNetworkFilterNil sets the value for NetworkFilter to be an explicit nil
-
-### UnsetNetworkFilter
-`func (o *NetworkServer) UnsetNetworkFilter()`
-
-UnsetNetworkFilter ensures that no value is present for NetworkFilter, not even an explicit nil
-### GetTenantMatch
-
-`func (o *NetworkServer) GetTenantMatch() string`
-
-GetTenantMatch returns the TenantMatch field if non-nil, zero value otherwise.
-
-### GetTenantMatchOk
-
-`func (o *NetworkServer) GetTenantMatchOk() (*string, bool)`
-
-GetTenantMatchOk returns a tuple with the TenantMatch field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTenantMatch
-
-`func (o *NetworkServer) SetTenantMatch(v string)`
-
-SetTenantMatch sets TenantMatch field to given value.
-
-### HasTenantMatch
-
-`func (o *NetworkServer) HasTenantMatch() bool`
-
-HasTenantMatch returns a boolean if a field has been set.
-
-### SetTenantMatchNil
-
-`func (o *NetworkServer) SetTenantMatchNil(b bool)`
-
- SetTenantMatchNil sets the value for TenantMatch to be an explicit nil
-
-### UnsetTenantMatch
-`func (o *NetworkServer) UnsetTenantMatch()`
-
-UnsetTenantMatch ensures that no value is present for TenantMatch, not even an explicit nil
-### GetZoneId
-
-`func (o *NetworkServer) GetZoneId() int64`
-
-GetZoneId returns the ZoneId field if non-nil, zero value otherwise.
-
-### GetZoneIdOk
-
-`func (o *NetworkServer) GetZoneIdOk() (*int64, bool)`
-
-GetZoneIdOk returns a tuple with the ZoneId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetZoneId
-
-`func (o *NetworkServer) SetZoneId(v int64)`
-
-SetZoneId sets ZoneId field to given value.
-
-### HasZoneId
-
-`func (o *NetworkServer) HasZoneId() bool`
-
-HasZoneId returns a boolean if a field has been set.
-
-### SetZoneIdNil
-
-`func (o *NetworkServer) SetZoneIdNil(b bool)`
-
- SetZoneIdNil sets the value for ZoneId to be an explicit nil
-
-### UnsetZoneId
-`func (o *NetworkServer) UnsetZoneId()`
-
-UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
-### GetDateCreated
-
-`func (o *NetworkServer) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *NetworkServer) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *NetworkServer) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *NetworkServer) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *NetworkServer) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *NetworkServer) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *NetworkServer) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *NetworkServer) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
-### GetEnabled
-
-`func (o *NetworkServer) GetEnabled() bool`
-
-GetEnabled returns the Enabled field if non-nil, zero value otherwise.
-
-### GetEnabledOk
-
-`func (o *NetworkServer) GetEnabledOk() (*bool, bool)`
-
-GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnabled
-
-`func (o *NetworkServer) SetEnabled(v bool)`
-
-SetEnabled sets Enabled field to given value.
-
-### HasEnabled
-
-`func (o *NetworkServer) HasEnabled() bool`
-
-HasEnabled returns a boolean if a field has been set.
-
-### GetVisible
-
-`func (o *NetworkServer) GetVisible() bool`
-
-GetVisible returns the Visible field if non-nil, zero value otherwise.
-
-### GetVisibleOk
-
-`func (o *NetworkServer) GetVisibleOk() (*bool, bool)`
-
-GetVisibleOk returns a tuple with the Visible field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVisible
-
-`func (o *NetworkServer) SetVisible(v bool)`
-
-SetVisible sets Visible field to given value.
-
-### HasVisible
-
-`func (o *NetworkServer) HasVisible() bool`
-
-HasVisible returns a boolean if a field has been set.
-
-### GetCredential
-
-`func (o *NetworkServer) GetCredential() CreateNetworkServer200ResponseAllOfNetworkServerCredential`
-
-GetCredential returns the Credential field if non-nil, zero value otherwise.
-
-### GetCredentialOk
-
-`func (o *NetworkServer) GetCredentialOk() (*CreateNetworkServer200ResponseAllOfNetworkServerCredential, bool)`
-
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredential
-
-`func (o *NetworkServer) SetCredential(v CreateNetworkServer200ResponseAllOfNetworkServerCredential)`
-
-SetCredential sets Credential field to given value.
-
-### HasCredential
-
-`func (o *NetworkServer) HasCredential() bool`
-
-HasCredential returns a boolean if a field has been set.
-
-### GetTenants
-
-`func (o *NetworkServer) GetTenants() []CreateNetworkServer200ResponseAllOfNetworkServerTenantsInner`
-
-GetTenants returns the Tenants field if non-nil, zero value otherwise.
-
-### GetTenantsOk
-
-`func (o *NetworkServer) GetTenantsOk() (*[]CreateNetworkServer200ResponseAllOfNetworkServerTenantsInner, bool)`
-
-GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTenants
-
-`func (o *NetworkServer) SetTenants(v []CreateNetworkServer200ResponseAllOfNetworkServerTenantsInner)`
-
-SetTenants sets Tenants field to given value.
-
-### HasTenants
-
-`func (o *NetworkServer) HasTenants() bool`
-
-HasTenants returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &NetworkServer{
+    // Set fields directly
+}
+```
+
+### Description (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Description.IsSet()` — check if set
+- `obj.Description.Get()` — get the inner value (returns pointer)
+- `obj.Description.Set(&val)` — set the value
+- `obj.Description.Unset()` — clear the value
+### InternalId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.InternalId.IsSet()` — check if set
+- `obj.InternalId.Get()` — get the inner value (returns pointer)
+- `obj.InternalId.Set(&val)` — set the value
+- `obj.InternalId.Unset()` — clear the value
+### ExternalId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ExternalId.IsSet()` — check if set
+- `obj.ExternalId.Get()` — get the inner value (returns pointer)
+- `obj.ExternalId.Set(&val)` — set the value
+- `obj.ExternalId.Unset()` — clear the value
+### ServiceUrl (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceUrl.IsSet()` — check if set
+- `obj.ServiceUrl.Get()` — get the inner value (returns pointer)
+- `obj.ServiceUrl.Set(&val)` — set the value
+- `obj.ServiceUrl.Unset()` — clear the value
+### ServiceHost (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceHost.IsSet()` — check if set
+- `obj.ServiceHost.Get()` — get the inner value (returns pointer)
+- `obj.ServiceHost.Set(&val)` — set the value
+- `obj.ServiceHost.Unset()` — clear the value
+### ServicePort (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServicePort.IsSet()` — check if set
+- `obj.ServicePort.Get()` — get the inner value (returns pointer)
+- `obj.ServicePort.Set(&val)` — set the value
+- `obj.ServicePort.Unset()` — clear the value
+### ServiceMode (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceMode.IsSet()` — check if set
+- `obj.ServiceMode.Get()` — get the inner value (returns pointer)
+- `obj.ServiceMode.Set(&val)` — set the value
+- `obj.ServiceMode.Unset()` — clear the value
+### ServicePath (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServicePath.IsSet()` — check if set
+- `obj.ServicePath.Get()` — get the inner value (returns pointer)
+- `obj.ServicePath.Set(&val)` — set the value
+- `obj.ServicePath.Unset()` — clear the value
+### ServiceUsername (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceUsername.IsSet()` — check if set
+- `obj.ServiceUsername.Get()` — get the inner value (returns pointer)
+- `obj.ServiceUsername.Set(&val)` — set the value
+- `obj.ServiceUsername.Unset()` — clear the value
+### ServicePassword (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServicePassword.IsSet()` — check if set
+- `obj.ServicePassword.Get()` — get the inner value (returns pointer)
+- `obj.ServicePassword.Set(&val)` — set the value
+- `obj.ServicePassword.Unset()` — clear the value
+### ServicePasswordHash (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServicePasswordHash.IsSet()` — check if set
+- `obj.ServicePasswordHash.Get()` — get the inner value (returns pointer)
+- `obj.ServicePasswordHash.Set(&val)` — set the value
+- `obj.ServicePasswordHash.Unset()` — clear the value
+### ServiceToken (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceToken.IsSet()` — check if set
+- `obj.ServiceToken.Get()` — get the inner value (returns pointer)
+- `obj.ServiceToken.Set(&val)` — set the value
+- `obj.ServiceToken.Unset()` — clear the value
+### ServiceTokenHash (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceTokenHash.IsSet()` — check if set
+- `obj.ServiceTokenHash.Get()` — get the inner value (returns pointer)
+- `obj.ServiceTokenHash.Set(&val)` — set the value
+- `obj.ServiceTokenHash.Unset()` — clear the value
+### ApiPort (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ApiPort.IsSet()` — check if set
+- `obj.ApiPort.Get()` — get the inner value (returns pointer)
+- `obj.ApiPort.Set(&val)` — set the value
+- `obj.ApiPort.Unset()` — clear the value
+### AdminPort (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.AdminPort.IsSet()` — check if set
+- `obj.AdminPort.Get()` — get the inner value (returns pointer)
+- `obj.AdminPort.Set(&val)` — set the value
+- `obj.AdminPort.Unset()` — clear the value
+### StatusMessage (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.StatusMessage.IsSet()` — check if set
+- `obj.StatusMessage.Get()` — get the inner value (returns pointer)
+- `obj.StatusMessage.Set(&val)` — set the value
+- `obj.StatusMessage.Unset()` — clear the value
+### StatusDate (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.StatusDate.IsSet()` — check if set
+- `obj.StatusDate.Get()` — get the inner value (returns pointer)
+- `obj.StatusDate.Set(&val)` — set the value
+- `obj.StatusDate.Unset()` — clear the value
+### LastSync (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.LastSync.IsSet()` — check if set
+- `obj.LastSync.Get()` — get the inner value (returns pointer)
+- `obj.LastSync.Set(&val)` — set the value
+- `obj.LastSync.Unset()` — clear the value
+### NextRunDate (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.NextRunDate.IsSet()` — check if set
+- `obj.NextRunDate.Get()` — get the inner value (returns pointer)
+- `obj.NextRunDate.Set(&val)` — set the value
+- `obj.NextRunDate.Unset()` — clear the value
+### LastSyncDuration (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.LastSyncDuration.IsSet()` — check if set
+- `obj.LastSyncDuration.Get()` — get the inner value (returns pointer)
+- `obj.LastSyncDuration.Set(&val)` — set the value
+- `obj.LastSyncDuration.Unset()` — clear the value
+### NetworkFilter (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.NetworkFilter.IsSet()` — check if set
+- `obj.NetworkFilter.Get()` — get the inner value (returns pointer)
+- `obj.NetworkFilter.Set(&val)` — set the value
+- `obj.NetworkFilter.Unset()` — clear the value
+### TenantMatch (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.TenantMatch.IsSet()` — check if set
+- `obj.TenantMatch.Get()` — get the inner value (returns pointer)
+- `obj.TenantMatch.Set(&val)` — set the value
+- `obj.TenantMatch.Unset()` — clear the value
+### ZoneId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ZoneId.IsSet()` — check if set
+- `obj.ZoneId.Get()` — get the inner value (returns pointer)
+- `obj.ZoneId.Set(&val)` — set the value
+- `obj.ZoneId.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

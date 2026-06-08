@@ -26,48 +26,6 @@ type AddVDIAppsRequest struct {
 
 type _AddVDIAppsRequest AddVDIAppsRequest
 
-// NewAddVDIAppsRequest instantiates a new AddVDIAppsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddVDIAppsRequest(vdiApp AddVDIAppsRequestVdiApp) *AddVDIAppsRequest {
-	this := AddVDIAppsRequest{}
-	this.VdiApp = vdiApp
-	return &this
-}
-
-// NewAddVDIAppsRequestWithDefaults instantiates a new AddVDIAppsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddVDIAppsRequestWithDefaults() *AddVDIAppsRequest {
-	this := AddVDIAppsRequest{}
-	return &this
-}
-
-// GetVdiApp returns the VdiApp field value
-func (o *AddVDIAppsRequest) GetVdiApp() AddVDIAppsRequestVdiApp {
-	if o == nil {
-		var ret AddVDIAppsRequestVdiApp
-		return ret
-	}
-
-	return o.VdiApp
-}
-
-// GetVdiAppOk returns a tuple with the VdiApp field value
-// and a boolean to check if the value has been set.
-func (o *AddVDIAppsRequest) GetVdiAppOk() (*AddVDIAppsRequestVdiApp, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.VdiApp, true
-}
-
-// SetVdiApp sets field value
-func (o *AddVDIAppsRequest) SetVdiApp(v AddVDIAppsRequestVdiApp) {
-	o.VdiApp = v
-}
-
 func (o AddVDIAppsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

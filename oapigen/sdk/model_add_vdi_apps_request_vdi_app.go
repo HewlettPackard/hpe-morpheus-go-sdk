@@ -26,13 +26,6 @@ type AddVDIAppsRequestVdiApp struct {
 	AddVDIAppsRequestVdiAppOneOf *AddVDIAppsRequestVdiAppOneOf
 }
 
-// AddVDIAppsRequestVdiAppOneOfAsAddVDIAppsRequestVdiApp is a convenience function that returns AddVDIAppsRequestVdiAppOneOf wrapped in AddVDIAppsRequestVdiApp
-func AddVDIAppsRequestVdiAppOneOfAsAddVDIAppsRequestVdiApp(v *AddVDIAppsRequestVdiAppOneOf) AddVDIAppsRequestVdiApp {
-	return AddVDIAppsRequestVdiApp{
-		AddVDIAppsRequestVdiAppOneOf: v,
-	}
-}
-
 func (dst *AddVDIAppsRequestVdiApp) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddVDIAppsRequestVdiApp{}

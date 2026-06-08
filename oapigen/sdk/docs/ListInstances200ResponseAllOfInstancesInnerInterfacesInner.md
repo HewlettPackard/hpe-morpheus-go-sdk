@@ -11,205 +11,37 @@ Name | Type | Description | Notes
 **IpMode** | Pointer to **NullableString** |  | [optional] 
 **NetworkInterfaces** | Pointer to [**[]InstanceInterfacesNetworkInterfacesInner**](InstanceInterfacesNetworkInterfacesInner.md) |  | [optional] 
 
-## Methods
-
-### NewListInstances200ResponseAllOfInstancesInnerInterfacesInner
-
-`func NewListInstances200ResponseAllOfInstancesInnerInterfacesInner() *ListInstances200ResponseAllOfInstancesInnerInterfacesInner`
-
-NewListInstances200ResponseAllOfInstancesInnerInterfacesInner instantiates a new ListInstances200ResponseAllOfInstancesInnerInterfacesInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewListInstances200ResponseAllOfInstancesInnerInterfacesInnerWithDefaults
-
-`func NewListInstances200ResponseAllOfInstancesInnerInterfacesInnerWithDefaults() *ListInstances200ResponseAllOfInstancesInnerInterfacesInner`
-
-NewListInstances200ResponseAllOfInstancesInnerInterfacesInnerWithDefaults instantiates a new ListInstances200ResponseAllOfInstancesInnerInterfacesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetId() ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetIdOk() (*ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetId(v ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetNetwork
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetwork() ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork`
-
-GetNetwork returns the Network field if non-nil, zero value otherwise.
-
-### GetNetworkOk
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetworkOk() (*ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork, bool)`
-
-GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetwork
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetNetwork(v ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork)`
-
-SetNetwork sets Network field to given value.
-
-### HasNetwork
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) HasNetwork() bool`
-
-HasNetwork returns a boolean if a field has been set.
-
-### GetIpAddress
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetIpAddress() string`
-
-GetIpAddress returns the IpAddress field if non-nil, zero value otherwise.
-
-### GetIpAddressOk
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetIpAddressOk() (*string, bool)`
-
-GetIpAddressOk returns a tuple with the IpAddress field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIpAddress
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIpAddress(v string)`
-
-SetIpAddress sets IpAddress field to given value.
-
-### HasIpAddress
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) HasIpAddress() bool`
-
-HasIpAddress returns a boolean if a field has been set.
-
-### SetIpAddressNil
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIpAddressNil(b bool)`
-
- SetIpAddressNil sets the value for IpAddress to be an explicit nil
-
-### UnsetIpAddress
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetIpAddress()`
-
-UnsetIpAddress ensures that no value is present for IpAddress, not even an explicit nil
-### GetNetworkInterfaceTypeId
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetworkInterfaceTypeId() int64`
-
-GetNetworkInterfaceTypeId returns the NetworkInterfaceTypeId field if non-nil, zero value otherwise.
-
-### GetNetworkInterfaceTypeIdOk
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetworkInterfaceTypeIdOk() (*int64, bool)`
-
-GetNetworkInterfaceTypeIdOk returns a tuple with the NetworkInterfaceTypeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkInterfaceTypeId
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetNetworkInterfaceTypeId(v int64)`
-
-SetNetworkInterfaceTypeId sets NetworkInterfaceTypeId field to given value.
-
-### HasNetworkInterfaceTypeId
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) HasNetworkInterfaceTypeId() bool`
-
-HasNetworkInterfaceTypeId returns a boolean if a field has been set.
-
-### SetNetworkInterfaceTypeIdNil
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetNetworkInterfaceTypeIdNil(b bool)`
-
- SetNetworkInterfaceTypeIdNil sets the value for NetworkInterfaceTypeId to be an explicit nil
-
-### UnsetNetworkInterfaceTypeId
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetNetworkInterfaceTypeId()`
-
-UnsetNetworkInterfaceTypeId ensures that no value is present for NetworkInterfaceTypeId, not even an explicit nil
-### GetIpMode
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetIpMode() string`
-
-GetIpMode returns the IpMode field if non-nil, zero value otherwise.
-
-### GetIpModeOk
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetIpModeOk() (*string, bool)`
-
-GetIpModeOk returns a tuple with the IpMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIpMode
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIpMode(v string)`
-
-SetIpMode sets IpMode field to given value.
-
-### HasIpMode
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) HasIpMode() bool`
-
-HasIpMode returns a boolean if a field has been set.
-
-### SetIpModeNil
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIpModeNil(b bool)`
-
- SetIpModeNil sets the value for IpMode to be an explicit nil
-
-### UnsetIpMode
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetIpMode()`
-
-UnsetIpMode ensures that no value is present for IpMode, not even an explicit nil
-### GetNetworkInterfaces
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetworkInterfaces() []InstanceInterfacesNetworkInterfacesInner`
-
-GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
-
-### GetNetworkInterfacesOk
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetworkInterfacesOk() (*[]InstanceInterfacesNetworkInterfacesInner, bool)`
-
-GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkInterfaces
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetNetworkInterfaces(v []InstanceInterfacesNetworkInterfacesInner)`
-
-SetNetworkInterfaces sets NetworkInterfaces field to given value.
-
-### HasNetworkInterfaces
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) HasNetworkInterfaces() bool`
-
-HasNetworkInterfaces returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &ListInstances200ResponseAllOfInstancesInnerInterfacesInner{
+    // Set fields directly
+}
+```
+
+### IpAddress (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.IpAddress.IsSet()` — check if set
+- `obj.IpAddress.Get()` — get the inner value (returns pointer)
+- `obj.IpAddress.Set(&val)` — set the value
+- `obj.IpAddress.Unset()` — clear the value
+### NetworkInterfaceTypeId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.NetworkInterfaceTypeId.IsSet()` — check if set
+- `obj.NetworkInterfaceTypeId.Get()` — get the inner value (returns pointer)
+- `obj.NetworkInterfaceTypeId.Set(&val)` — set the value
+- `obj.NetworkInterfaceTypeId.Unset()` — clear the value
+### IpMode (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.IpMode.IsSet()` — check if set
+- `obj.IpMode.Get()` — get the inner value (returns pointer)
+- `obj.IpMode.Set(&val)` — set the value
+- `obj.IpMode.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

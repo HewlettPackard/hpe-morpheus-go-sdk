@@ -26,55 +26,6 @@ type ListClusterDatastores200ResponseAllOfDatastoresInnerZone struct {
 
 type _ListClusterDatastores200ResponseAllOfDatastoresInnerZone ListClusterDatastores200ResponseAllOfDatastoresInnerZone
 
-// NewListClusterDatastores200ResponseAllOfDatastoresInnerZone instantiates a new ListClusterDatastores200ResponseAllOfDatastoresInnerZone object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListClusterDatastores200ResponseAllOfDatastoresInnerZone() *ListClusterDatastores200ResponseAllOfDatastoresInnerZone {
-	this := ListClusterDatastores200ResponseAllOfDatastoresInnerZone{}
-	return &this
-}
-
-// NewListClusterDatastores200ResponseAllOfDatastoresInnerZoneWithDefaults instantiates a new ListClusterDatastores200ResponseAllOfDatastoresInnerZone object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClusterDatastores200ResponseAllOfDatastoresInnerZoneWithDefaults() *ListClusterDatastores200ResponseAllOfDatastoresInnerZone {
-	this := ListClusterDatastores200ResponseAllOfDatastoresInnerZone{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerZone) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerZone) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerZone) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerZone) SetId(v int64) {
-	o.Id = &v
-}
-
 func (o ListClusterDatastores200ResponseAllOfDatastoresInnerZone) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

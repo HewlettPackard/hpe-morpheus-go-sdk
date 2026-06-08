@@ -26,55 +26,6 @@ type CancelShutdownInstance200Response struct {
 
 type _CancelShutdownInstance200Response CancelShutdownInstance200Response
 
-// NewCancelShutdownInstance200Response instantiates a new CancelShutdownInstance200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCancelShutdownInstance200Response() *CancelShutdownInstance200Response {
-	this := CancelShutdownInstance200Response{}
-	return &this
-}
-
-// NewCancelShutdownInstance200ResponseWithDefaults instantiates a new CancelShutdownInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCancelShutdownInstance200ResponseWithDefaults() *CancelShutdownInstance200Response {
-	this := CancelShutdownInstance200Response{}
-	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *CancelShutdownInstance200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CancelShutdownInstance200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *CancelShutdownInstance200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *CancelShutdownInstance200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
 func (o CancelShutdownInstance200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type GetUserPermissions200Response struct {
 
 type _GetUserPermissions200Response GetUserPermissions200Response
 
-// NewGetUserPermissions200Response instantiates a new GetUserPermissions200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetUserPermissions200Response() *GetUserPermissions200Response {
-	this := GetUserPermissions200Response{}
-	return &this
-}
-
-// NewGetUserPermissions200ResponseWithDefaults instantiates a new GetUserPermissions200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetUserPermissions200ResponseWithDefaults() *GetUserPermissions200Response {
-	this := GetUserPermissions200Response{}
-	return &this
-}
-
-// GetAccess returns the Access field value if set, zero value otherwise.
-func (o *GetUserPermissions200Response) GetAccess() GetUserPermissions200ResponseAccess {
-	if o == nil || IsNil(o.Access) {
-		var ret GetUserPermissions200ResponseAccess
-		return ret
-	}
-	return *o.Access
-}
-
-// GetAccessOk returns a tuple with the Access field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetUserPermissions200Response) GetAccessOk() (*GetUserPermissions200ResponseAccess, bool) {
-	if o == nil || IsNil(o.Access) {
-		return nil, false
-	}
-	return o.Access, true
-}
-
-// IsSetAccess returns a boolean if a field has been set.
-func (o *GetUserPermissions200Response) IsSetAccess() bool {
-	if o != nil && !IsNil(o.Access) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccess gets a reference to the given GetUserPermissions200ResponseAccess and assigns it to the Access field.
-func (o *GetUserPermissions200Response) SetAccess(v GetUserPermissions200ResponseAccess) {
-	o.Access = &v
-}
-
 func (o GetUserPermissions200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

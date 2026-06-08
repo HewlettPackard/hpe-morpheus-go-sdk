@@ -27,20 +27,6 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent
 	String *string
 }
 
-// boolAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent is a convenience function that returns bool wrapped in AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent
-func BoolAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent(v *bool) AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent {
-	return AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent{
-		Bool: v,
-	}
-}
-
-// stringAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent is a convenience function that returns string wrapped in AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent
-func StringAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent(v *string) AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent {
-	return AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent{
-		String: v,
-	}
-}
-
 func (dst *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent{}

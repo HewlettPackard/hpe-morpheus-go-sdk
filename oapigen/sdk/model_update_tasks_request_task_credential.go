@@ -27,20 +27,6 @@ type UpdateTasksRequestTaskCredential struct {
 	UpdateTasksRequestTaskCredentialOneOf1 *UpdateTasksRequestTaskCredentialOneOf1
 }
 
-// UpdateTasksRequestTaskCredentialOneOfAsUpdateTasksRequestTaskCredential is a convenience function that returns UpdateTasksRequestTaskCredentialOneOf wrapped in UpdateTasksRequestTaskCredential
-func UpdateTasksRequestTaskCredentialOneOfAsUpdateTasksRequestTaskCredential(v *UpdateTasksRequestTaskCredentialOneOf) UpdateTasksRequestTaskCredential {
-	return UpdateTasksRequestTaskCredential{
-		UpdateTasksRequestTaskCredentialOneOf: v,
-	}
-}
-
-// UpdateTasksRequestTaskCredentialOneOf1AsUpdateTasksRequestTaskCredential is a convenience function that returns UpdateTasksRequestTaskCredentialOneOf1 wrapped in UpdateTasksRequestTaskCredential
-func UpdateTasksRequestTaskCredentialOneOf1AsUpdateTasksRequestTaskCredential(v *UpdateTasksRequestTaskCredentialOneOf1) UpdateTasksRequestTaskCredential {
-	return UpdateTasksRequestTaskCredential{
-		UpdateTasksRequestTaskCredentialOneOf1: v,
-	}
-}
-
 func (dst *UpdateTasksRequestTaskCredential) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateTasksRequestTaskCredential{}

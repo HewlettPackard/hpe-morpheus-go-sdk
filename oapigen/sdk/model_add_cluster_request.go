@@ -26,55 +26,6 @@ type AddClusterRequest struct {
 
 type _AddClusterRequest AddClusterRequest
 
-// NewAddClusterRequest instantiates a new AddClusterRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterRequest() *AddClusterRequest {
-	this := AddClusterRequest{}
-	return &this
-}
-
-// NewAddClusterRequestWithDefaults instantiates a new AddClusterRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterRequestWithDefaults() *AddClusterRequest {
-	this := AddClusterRequest{}
-	return &this
-}
-
-// GetCluster returns the Cluster field value if set, zero value otherwise.
-func (o *AddClusterRequest) GetCluster() AddClusterRequestCluster {
-	if o == nil || IsNil(o.Cluster) {
-		var ret AddClusterRequestCluster
-		return ret
-	}
-	return *o.Cluster
-}
-
-// GetClusterOk returns a tuple with the Cluster field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterRequest) GetClusterOk() (*AddClusterRequestCluster, bool) {
-	if o == nil || IsNil(o.Cluster) {
-		return nil, false
-	}
-	return o.Cluster, true
-}
-
-// IsSetCluster returns a boolean if a field has been set.
-func (o *AddClusterRequest) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
-		return true
-	}
-
-	return false
-}
-
-// SetCluster gets a reference to the given AddClusterRequestCluster and assigns it to the Cluster field.
-func (o *AddClusterRequest) SetCluster(v AddClusterRequestCluster) {
-	o.Cluster = &v
-}
-
 func (o AddClusterRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

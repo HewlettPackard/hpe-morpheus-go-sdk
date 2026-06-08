@@ -26,55 +26,6 @@ type UpdateNetworkFirewallRuleGroup200Response struct {
 
 type _UpdateNetworkFirewallRuleGroup200Response UpdateNetworkFirewallRuleGroup200Response
 
-// NewUpdateNetworkFirewallRuleGroup200Response instantiates a new UpdateNetworkFirewallRuleGroup200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkFirewallRuleGroup200Response() *UpdateNetworkFirewallRuleGroup200Response {
-	this := UpdateNetworkFirewallRuleGroup200Response{}
-	return &this
-}
-
-// NewUpdateNetworkFirewallRuleGroup200ResponseWithDefaults instantiates a new UpdateNetworkFirewallRuleGroup200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkFirewallRuleGroup200ResponseWithDefaults() *UpdateNetworkFirewallRuleGroup200Response {
-	this := UpdateNetworkFirewallRuleGroup200Response{}
-	return &this
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *UpdateNetworkFirewallRuleGroup200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkFirewallRuleGroup200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateNetworkFirewallRuleGroup200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *UpdateNetworkFirewallRuleGroup200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
 func (o UpdateNetworkFirewallRuleGroup200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

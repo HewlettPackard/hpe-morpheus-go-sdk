@@ -9,104 +9,15 @@ Name | Type | Description | Notes
 **Sku** | **string** | The name of the sku in the Azure Marketplace | 
 **Version** | **string** | The name of the version in the Azure Marketplace | 
 
-## Methods
+## Usage
 
-### NewUpdateVirtualImageRequestVirtualImageConfig
+Instantiate with a Go composite literal:
 
-`func NewUpdateVirtualImageRequestVirtualImageConfig(publisher string, offer string, sku string, version string, ) *UpdateVirtualImageRequestVirtualImageConfig`
-
-NewUpdateVirtualImageRequestVirtualImageConfig instantiates a new UpdateVirtualImageRequestVirtualImageConfig object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewUpdateVirtualImageRequestVirtualImageConfigWithDefaults
-
-`func NewUpdateVirtualImageRequestVirtualImageConfigWithDefaults() *UpdateVirtualImageRequestVirtualImageConfig`
-
-NewUpdateVirtualImageRequestVirtualImageConfigWithDefaults instantiates a new UpdateVirtualImageRequestVirtualImageConfig object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetPublisher
-
-`func (o *UpdateVirtualImageRequestVirtualImageConfig) GetPublisher() string`
-
-GetPublisher returns the Publisher field if non-nil, zero value otherwise.
-
-### GetPublisherOk
-
-`func (o *UpdateVirtualImageRequestVirtualImageConfig) GetPublisherOk() (*string, bool)`
-
-GetPublisherOk returns a tuple with the Publisher field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublisher
-
-`func (o *UpdateVirtualImageRequestVirtualImageConfig) SetPublisher(v string)`
-
-SetPublisher sets Publisher field to given value.
-
-
-### GetOffer
-
-`func (o *UpdateVirtualImageRequestVirtualImageConfig) GetOffer() string`
-
-GetOffer returns the Offer field if non-nil, zero value otherwise.
-
-### GetOfferOk
-
-`func (o *UpdateVirtualImageRequestVirtualImageConfig) GetOfferOk() (*string, bool)`
-
-GetOfferOk returns a tuple with the Offer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOffer
-
-`func (o *UpdateVirtualImageRequestVirtualImageConfig) SetOffer(v string)`
-
-SetOffer sets Offer field to given value.
-
-
-### GetSku
-
-`func (o *UpdateVirtualImageRequestVirtualImageConfig) GetSku() string`
-
-GetSku returns the Sku field if non-nil, zero value otherwise.
-
-### GetSkuOk
-
-`func (o *UpdateVirtualImageRequestVirtualImageConfig) GetSkuOk() (*string, bool)`
-
-GetSkuOk returns a tuple with the Sku field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSku
-
-`func (o *UpdateVirtualImageRequestVirtualImageConfig) SetSku(v string)`
-
-SetSku sets Sku field to given value.
-
-
-### GetVersion
-
-`func (o *UpdateVirtualImageRequestVirtualImageConfig) GetVersion() string`
-
-GetVersion returns the Version field if non-nil, zero value otherwise.
-
-### GetVersionOk
-
-`func (o *UpdateVirtualImageRequestVirtualImageConfig) GetVersionOk() (*string, bool)`
-
-GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVersion
-
-`func (o *UpdateVirtualImageRequestVirtualImageConfig) SetVersion(v string)`
-
-SetVersion sets Version field to given value.
-
+```go
+obj := &UpdateVirtualImageRequestVirtualImageConfig{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -26,55 +26,6 @@ type GetNetworkPoolIps410Response struct {
 
 type _GetNetworkPoolIps410Response GetNetworkPoolIps410Response
 
-// NewGetNetworkPoolIps410Response instantiates a new GetNetworkPoolIps410Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkPoolIps410Response() *GetNetworkPoolIps410Response {
-	this := GetNetworkPoolIps410Response{}
-	return &this
-}
-
-// NewGetNetworkPoolIps410ResponseWithDefaults instantiates a new GetNetworkPoolIps410Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkPoolIps410ResponseWithDefaults() *GetNetworkPoolIps410Response {
-	this := GetNetworkPoolIps410Response{}
-	return &this
-}
-
-// GetMsg returns the Msg field value if set, zero value otherwise.
-func (o *GetNetworkPoolIps410Response) GetMsg() string {
-	if o == nil || IsNil(o.Msg) {
-		var ret string
-		return ret
-	}
-	return *o.Msg
-}
-
-// GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkPoolIps410Response) GetMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.Msg) {
-		return nil, false
-	}
-	return o.Msg, true
-}
-
-// IsSetMsg returns a boolean if a field has been set.
-func (o *GetNetworkPoolIps410Response) IsSetMsg() bool {
-	if o != nil && !IsNil(o.Msg) {
-		return true
-	}
-
-	return false
-}
-
-// SetMsg gets a reference to the given string and assigns it to the Msg field.
-func (o *GetNetworkPoolIps410Response) SetMsg(v string) {
-	o.Msg = &v
-}
-
 func (o GetNetworkPoolIps410Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

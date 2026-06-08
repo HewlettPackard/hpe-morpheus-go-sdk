@@ -26,55 +26,6 @@ type GenerateKeyPairs200Response struct {
 
 type _GenerateKeyPairs200Response GenerateKeyPairs200Response
 
-// NewGenerateKeyPairs200Response instantiates a new GenerateKeyPairs200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGenerateKeyPairs200Response() *GenerateKeyPairs200Response {
-	this := GenerateKeyPairs200Response{}
-	return &this
-}
-
-// NewGenerateKeyPairs200ResponseWithDefaults instantiates a new GenerateKeyPairs200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGenerateKeyPairs200ResponseWithDefaults() *GenerateKeyPairs200Response {
-	this := GenerateKeyPairs200Response{}
-	return &this
-}
-
-// GetKeyPair returns the KeyPair field value if set, zero value otherwise.
-func (o *GenerateKeyPairs200Response) GetKeyPair() GenerateKeyPairs200ResponseKeyPair {
-	if o == nil || IsNil(o.KeyPair) {
-		var ret GenerateKeyPairs200ResponseKeyPair
-		return ret
-	}
-	return *o.KeyPair
-}
-
-// GetKeyPairOk returns a tuple with the KeyPair field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GenerateKeyPairs200Response) GetKeyPairOk() (*GenerateKeyPairs200ResponseKeyPair, bool) {
-	if o == nil || IsNil(o.KeyPair) {
-		return nil, false
-	}
-	return o.KeyPair, true
-}
-
-// IsSetKeyPair returns a boolean if a field has been set.
-func (o *GenerateKeyPairs200Response) IsSetKeyPair() bool {
-	if o != nil && !IsNil(o.KeyPair) {
-		return true
-	}
-
-	return false
-}
-
-// SetKeyPair gets a reference to the given GenerateKeyPairs200ResponseKeyPair and assigns it to the KeyPair field.
-func (o *GenerateKeyPairs200Response) SetKeyPair(v GenerateKeyPairs200ResponseKeyPair) {
-	o.KeyPair = &v
-}
-
 func (o GenerateKeyPairs200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type AddApps200Response struct {
 
 type _AddApps200Response AddApps200Response
 
-// NewAddApps200Response instantiates a new AddApps200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddApps200Response() *AddApps200Response {
-	this := AddApps200Response{}
-	return &this
-}
-
-// NewAddApps200ResponseWithDefaults instantiates a new AddApps200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddApps200ResponseWithDefaults() *AddApps200Response {
-	this := AddApps200Response{}
-	return &this
-}
-
-// GetApp returns the App field value if set, zero value otherwise.
-func (o *AddApps200Response) GetApp() AddApps200ResponseApp {
-	if o == nil || IsNil(o.App) {
-		var ret AddApps200ResponseApp
-		return ret
-	}
-	return *o.App
-}
-
-// GetAppOk returns a tuple with the App field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddApps200Response) GetAppOk() (*AddApps200ResponseApp, bool) {
-	if o == nil || IsNil(o.App) {
-		return nil, false
-	}
-	return o.App, true
-}
-
-// IsSetApp returns a boolean if a field has been set.
-func (o *AddApps200Response) IsSetApp() bool {
-	if o != nil && !IsNil(o.App) {
-		return true
-	}
-
-	return false
-}
-
-// SetApp gets a reference to the given AddApps200ResponseApp and assigns it to the App field.
-func (o *AddApps200Response) SetApp(v AddApps200ResponseApp) {
-	o.App = &v
-}
-
 func (o AddApps200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

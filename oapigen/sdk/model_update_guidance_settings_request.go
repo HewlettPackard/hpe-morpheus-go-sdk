@@ -26,55 +26,6 @@ type UpdateGuidanceSettingsRequest struct {
 
 type _UpdateGuidanceSettingsRequest UpdateGuidanceSettingsRequest
 
-// NewUpdateGuidanceSettingsRequest instantiates a new UpdateGuidanceSettingsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateGuidanceSettingsRequest() *UpdateGuidanceSettingsRequest {
-	this := UpdateGuidanceSettingsRequest{}
-	return &this
-}
-
-// NewUpdateGuidanceSettingsRequestWithDefaults instantiates a new UpdateGuidanceSettingsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateGuidanceSettingsRequestWithDefaults() *UpdateGuidanceSettingsRequest {
-	this := UpdateGuidanceSettingsRequest{}
-	return &this
-}
-
-// GetGuidanceSettings returns the GuidanceSettings field value if set, zero value otherwise.
-func (o *UpdateGuidanceSettingsRequest) GetGuidanceSettings() UpdateGuidanceSettingsRequestGuidanceSettings {
-	if o == nil || IsNil(o.GuidanceSettings) {
-		var ret UpdateGuidanceSettingsRequestGuidanceSettings
-		return ret
-	}
-	return *o.GuidanceSettings
-}
-
-// GetGuidanceSettingsOk returns a tuple with the GuidanceSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateGuidanceSettingsRequest) GetGuidanceSettingsOk() (*UpdateGuidanceSettingsRequestGuidanceSettings, bool) {
-	if o == nil || IsNil(o.GuidanceSettings) {
-		return nil, false
-	}
-	return o.GuidanceSettings, true
-}
-
-// IsSetGuidanceSettings returns a boolean if a field has been set.
-func (o *UpdateGuidanceSettingsRequest) IsSetGuidanceSettings() bool {
-	if o != nil && !IsNil(o.GuidanceSettings) {
-		return true
-	}
-
-	return false
-}
-
-// SetGuidanceSettings gets a reference to the given UpdateGuidanceSettingsRequestGuidanceSettings and assigns it to the GuidanceSettings field.
-func (o *UpdateGuidanceSettingsRequest) SetGuidanceSettings(v UpdateGuidanceSettingsRequestGuidanceSettings) {
-	o.GuidanceSettings = &v
-}
-
 func (o UpdateGuidanceSettingsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

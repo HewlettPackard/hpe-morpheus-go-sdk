@@ -26,55 +26,6 @@ type GetCheckTypes200Response struct {
 
 type _GetCheckTypes200Response GetCheckTypes200Response
 
-// NewGetCheckTypes200Response instantiates a new GetCheckTypes200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetCheckTypes200Response() *GetCheckTypes200Response {
-	this := GetCheckTypes200Response{}
-	return &this
-}
-
-// NewGetCheckTypes200ResponseWithDefaults instantiates a new GetCheckTypes200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetCheckTypes200ResponseWithDefaults() *GetCheckTypes200Response {
-	this := GetCheckTypes200Response{}
-	return &this
-}
-
-// GetCheckType returns the CheckType field value if set, zero value otherwise.
-func (o *GetCheckTypes200Response) GetCheckType() GetCheckTypes200ResponseCheckType {
-	if o == nil || IsNil(o.CheckType) {
-		var ret GetCheckTypes200ResponseCheckType
-		return ret
-	}
-	return *o.CheckType
-}
-
-// GetCheckTypeOk returns a tuple with the CheckType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetCheckTypes200Response) GetCheckTypeOk() (*GetCheckTypes200ResponseCheckType, bool) {
-	if o == nil || IsNil(o.CheckType) {
-		return nil, false
-	}
-	return o.CheckType, true
-}
-
-// IsSetCheckType returns a boolean if a field has been set.
-func (o *GetCheckTypes200Response) IsSetCheckType() bool {
-	if o != nil && !IsNil(o.CheckType) {
-		return true
-	}
-
-	return false
-}
-
-// SetCheckType gets a reference to the given GetCheckTypes200ResponseCheckType and assigns it to the CheckType field.
-func (o *GetCheckTypes200Response) SetCheckType(v GetCheckTypes200ResponseCheckType) {
-	o.CheckType = &v
-}
-
 func (o GetCheckTypes200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

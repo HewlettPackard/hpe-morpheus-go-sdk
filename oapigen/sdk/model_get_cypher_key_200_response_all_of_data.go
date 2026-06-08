@@ -27,20 +27,6 @@ type GetCypherKey200ResponseAllOfData struct {
 	String            *string
 }
 
-// map[string]interface{}AsGetCypherKey200ResponseAllOfData is a convenience function that returns map[string]interface{} wrapped in GetCypherKey200ResponseAllOfData
-func MapmapOfStringAnyAsGetCypherKey200ResponseAllOfData(v *map[string]interface{}) GetCypherKey200ResponseAllOfData {
-	return GetCypherKey200ResponseAllOfData{
-		MapmapOfStringAny: v,
-	}
-}
-
-// stringAsGetCypherKey200ResponseAllOfData is a convenience function that returns string wrapped in GetCypherKey200ResponseAllOfData
-func StringAsGetCypherKey200ResponseAllOfData(v *string) GetCypherKey200ResponseAllOfData {
-	return GetCypherKey200ResponseAllOfData{
-		String: v,
-	}
-}
-
 func (dst *GetCypherKey200ResponseAllOfData) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &GetCypherKey200ResponseAllOfData{}

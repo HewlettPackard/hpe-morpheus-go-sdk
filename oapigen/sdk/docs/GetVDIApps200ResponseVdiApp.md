@@ -13,255 +13,37 @@ Name | Type | Description | Notes
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
-## Methods
-
-### NewGetVDIApps200ResponseVdiApp
-
-`func NewGetVDIApps200ResponseVdiApp() *GetVDIApps200ResponseVdiApp`
-
-NewGetVDIApps200ResponseVdiApp instantiates a new GetVDIApps200ResponseVdiApp object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewGetVDIApps200ResponseVdiAppWithDefaults
-
-`func NewGetVDIApps200ResponseVdiAppWithDefaults() *GetVDIApps200ResponseVdiApp`
-
-NewGetVDIApps200ResponseVdiAppWithDefaults instantiates a new GetVDIApps200ResponseVdiApp object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *GetVDIApps200ResponseVdiApp) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GetVDIApps200ResponseVdiApp) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GetVDIApps200ResponseVdiApp) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GetVDIApps200ResponseVdiApp) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *GetVDIApps200ResponseVdiApp) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *GetVDIApps200ResponseVdiApp) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *GetVDIApps200ResponseVdiApp) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *GetVDIApps200ResponseVdiApp) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *GetVDIApps200ResponseVdiApp) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *GetVDIApps200ResponseVdiApp) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *GetVDIApps200ResponseVdiApp) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *GetVDIApps200ResponseVdiApp) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### SetDescriptionNil
-
-`func (o *GetVDIApps200ResponseVdiApp) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *GetVDIApps200ResponseVdiApp) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetLaunchPrefix
-
-`func (o *GetVDIApps200ResponseVdiApp) GetLaunchPrefix() string`
-
-GetLaunchPrefix returns the LaunchPrefix field if non-nil, zero value otherwise.
-
-### GetLaunchPrefixOk
-
-`func (o *GetVDIApps200ResponseVdiApp) GetLaunchPrefixOk() (*string, bool)`
-
-GetLaunchPrefixOk returns a tuple with the LaunchPrefix field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLaunchPrefix
-
-`func (o *GetVDIApps200ResponseVdiApp) SetLaunchPrefix(v string)`
-
-SetLaunchPrefix sets LaunchPrefix field to given value.
-
-### HasLaunchPrefix
-
-`func (o *GetVDIApps200ResponseVdiApp) HasLaunchPrefix() bool`
-
-HasLaunchPrefix returns a boolean if a field has been set.
-
-### GetIconPath
-
-`func (o *GetVDIApps200ResponseVdiApp) GetIconPath() string`
-
-GetIconPath returns the IconPath field if non-nil, zero value otherwise.
-
-### GetIconPathOk
-
-`func (o *GetVDIApps200ResponseVdiApp) GetIconPathOk() (*string, bool)`
-
-GetIconPathOk returns a tuple with the IconPath field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIconPath
-
-`func (o *GetVDIApps200ResponseVdiApp) SetIconPath(v string)`
-
-SetIconPath sets IconPath field to given value.
-
-### HasIconPath
-
-`func (o *GetVDIApps200ResponseVdiApp) HasIconPath() bool`
-
-HasIconPath returns a boolean if a field has been set.
-
-### SetIconPathNil
-
-`func (o *GetVDIApps200ResponseVdiApp) SetIconPathNil(b bool)`
-
- SetIconPathNil sets the value for IconPath to be an explicit nil
-
-### UnsetIconPath
-`func (o *GetVDIApps200ResponseVdiApp) UnsetIconPath()`
-
-UnsetIconPath ensures that no value is present for IconPath, not even an explicit nil
-### GetLogo
-
-`func (o *GetVDIApps200ResponseVdiApp) GetLogo() string`
-
-GetLogo returns the Logo field if non-nil, zero value otherwise.
-
-### GetLogoOk
-
-`func (o *GetVDIApps200ResponseVdiApp) GetLogoOk() (*string, bool)`
-
-GetLogoOk returns a tuple with the Logo field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLogo
-
-`func (o *GetVDIApps200ResponseVdiApp) SetLogo(v string)`
-
-SetLogo sets Logo field to given value.
-
-### HasLogo
-
-`func (o *GetVDIApps200ResponseVdiApp) HasLogo() bool`
-
-HasLogo returns a boolean if a field has been set.
-
-### SetLogoNil
-
-`func (o *GetVDIApps200ResponseVdiApp) SetLogoNil(b bool)`
-
- SetLogoNil sets the value for Logo to be an explicit nil
-
-### UnsetLogo
-`func (o *GetVDIApps200ResponseVdiApp) UnsetLogo()`
-
-UnsetLogo ensures that no value is present for Logo, not even an explicit nil
-### GetDateCreated
-
-`func (o *GetVDIApps200ResponseVdiApp) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *GetVDIApps200ResponseVdiApp) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *GetVDIApps200ResponseVdiApp) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *GetVDIApps200ResponseVdiApp) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *GetVDIApps200ResponseVdiApp) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *GetVDIApps200ResponseVdiApp) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *GetVDIApps200ResponseVdiApp) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *GetVDIApps200ResponseVdiApp) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &GetVDIApps200ResponseVdiApp{
+    // Set fields directly
+}
+```
+
+### Description (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Description.IsSet()` — check if set
+- `obj.Description.Get()` — get the inner value (returns pointer)
+- `obj.Description.Set(&val)` — set the value
+- `obj.Description.Unset()` — clear the value
+### IconPath (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.IconPath.IsSet()` — check if set
+- `obj.IconPath.Get()` — get the inner value (returns pointer)
+- `obj.IconPath.Set(&val)` — set the value
+- `obj.IconPath.Unset()` — clear the value
+### Logo (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Logo.IsSet()` — check if set
+- `obj.Logo.Get()` — get the inner value (returns pointer)
+- `obj.Logo.Set(&val)` — set the value
+- `obj.Logo.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

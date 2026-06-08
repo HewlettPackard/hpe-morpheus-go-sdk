@@ -26,55 +26,6 @@ type CreateNetworkRouterNatRequest struct {
 
 type _CreateNetworkRouterNatRequest CreateNetworkRouterNatRequest
 
-// NewCreateNetworkRouterNatRequest instantiates a new CreateNetworkRouterNatRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateNetworkRouterNatRequest() *CreateNetworkRouterNatRequest {
-	this := CreateNetworkRouterNatRequest{}
-	return &this
-}
-
-// NewCreateNetworkRouterNatRequestWithDefaults instantiates a new CreateNetworkRouterNatRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateNetworkRouterNatRequestWithDefaults() *CreateNetworkRouterNatRequest {
-	this := CreateNetworkRouterNatRequest{}
-	return &this
-}
-
-// GetNetworkRouterNAT returns the NetworkRouterNAT field value if set, zero value otherwise.
-func (o *CreateNetworkRouterNatRequest) GetNetworkRouterNAT() CreateNetworkRouterNatRequestNetworkRouterNAT {
-	if o == nil || IsNil(o.NetworkRouterNAT) {
-		var ret CreateNetworkRouterNatRequestNetworkRouterNAT
-		return ret
-	}
-	return *o.NetworkRouterNAT
-}
-
-// GetNetworkRouterNATOk returns a tuple with the NetworkRouterNAT field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateNetworkRouterNatRequest) GetNetworkRouterNATOk() (*CreateNetworkRouterNatRequestNetworkRouterNAT, bool) {
-	if o == nil || IsNil(o.NetworkRouterNAT) {
-		return nil, false
-	}
-	return o.NetworkRouterNAT, true
-}
-
-// IsSetNetworkRouterNAT returns a boolean if a field has been set.
-func (o *CreateNetworkRouterNatRequest) IsSetNetworkRouterNAT() bool {
-	if o != nil && !IsNil(o.NetworkRouterNAT) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkRouterNAT gets a reference to the given CreateNetworkRouterNatRequestNetworkRouterNAT and assigns it to the NetworkRouterNAT field.
-func (o *CreateNetworkRouterNatRequest) SetNetworkRouterNAT(v CreateNetworkRouterNatRequestNetworkRouterNAT) {
-	o.NetworkRouterNAT = &v
-}
-
 func (o CreateNetworkRouterNatRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

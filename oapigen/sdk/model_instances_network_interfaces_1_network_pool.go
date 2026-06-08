@@ -27,55 +27,6 @@ type InstancesNetworkInterfaces1NetworkPool struct {
 
 type _InstancesNetworkInterfaces1NetworkPool InstancesNetworkInterfaces1NetworkPool
 
-// NewInstancesNetworkInterfaces1NetworkPool instantiates a new InstancesNetworkInterfaces1NetworkPool object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewInstancesNetworkInterfaces1NetworkPool() *InstancesNetworkInterfaces1NetworkPool {
-	this := InstancesNetworkInterfaces1NetworkPool{}
-	return &this
-}
-
-// NewInstancesNetworkInterfaces1NetworkPoolWithDefaults instantiates a new InstancesNetworkInterfaces1NetworkPool object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInstancesNetworkInterfaces1NetworkPoolWithDefaults() *InstancesNetworkInterfaces1NetworkPool {
-	this := InstancesNetworkInterfaces1NetworkPool{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *InstancesNetworkInterfaces1NetworkPool) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InstancesNetworkInterfaces1NetworkPool) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *InstancesNetworkInterfaces1NetworkPool) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *InstancesNetworkInterfaces1NetworkPool) SetId(v int64) {
-	o.Id = &v
-}
-
 func (o InstancesNetworkInterfaces1NetworkPool) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

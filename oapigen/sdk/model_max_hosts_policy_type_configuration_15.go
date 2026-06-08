@@ -26,55 +26,6 @@ type MaxHostsPolicyTypeConfiguration15 struct {
 
 type _MaxHostsPolicyTypeConfiguration15 MaxHostsPolicyTypeConfiguration15
 
-// NewMaxHostsPolicyTypeConfiguration15 instantiates a new MaxHostsPolicyTypeConfiguration15 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMaxHostsPolicyTypeConfiguration15() *MaxHostsPolicyTypeConfiguration15 {
-	this := MaxHostsPolicyTypeConfiguration15{}
-	return &this
-}
-
-// NewMaxHostsPolicyTypeConfiguration15WithDefaults instantiates a new MaxHostsPolicyTypeConfiguration15 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxHostsPolicyTypeConfiguration15WithDefaults() *MaxHostsPolicyTypeConfiguration15 {
-	this := MaxHostsPolicyTypeConfiguration15{}
-	return &this
-}
-
-// GetMaxHosts returns the MaxHosts field value if set, zero value otherwise.
-func (o *MaxHostsPolicyTypeConfiguration15) GetMaxHosts() string {
-	if o == nil || IsNil(o.MaxHosts) {
-		var ret string
-		return ret
-	}
-	return *o.MaxHosts
-}
-
-// GetMaxHostsOk returns a tuple with the MaxHosts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MaxHostsPolicyTypeConfiguration15) GetMaxHostsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxHosts) {
-		return nil, false
-	}
-	return o.MaxHosts, true
-}
-
-// IsSetMaxHosts returns a boolean if a field has been set.
-func (o *MaxHostsPolicyTypeConfiguration15) IsSetMaxHosts() bool {
-	if o != nil && !IsNil(o.MaxHosts) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxHosts gets a reference to the given string and assigns it to the MaxHosts field.
-func (o *MaxHostsPolicyTypeConfiguration15) SetMaxHosts(v string) {
-	o.MaxHosts = &v
-}
-
 func (o MaxHostsPolicyTypeConfiguration15) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type ListSystemTypeLayouts200Response struct {
 
 type _ListSystemTypeLayouts200Response ListSystemTypeLayouts200Response
 
-// NewListSystemTypeLayouts200Response instantiates a new ListSystemTypeLayouts200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListSystemTypeLayouts200Response() *ListSystemTypeLayouts200Response {
-	this := ListSystemTypeLayouts200Response{}
-	return &this
-}
-
-// NewListSystemTypeLayouts200ResponseWithDefaults instantiates a new ListSystemTypeLayouts200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListSystemTypeLayouts200ResponseWithDefaults() *ListSystemTypeLayouts200Response {
-	this := ListSystemTypeLayouts200Response{}
-	return &this
-}
-
-// GetSystemTypeLayouts returns the SystemTypeLayouts field value if set, zero value otherwise.
-func (o *ListSystemTypeLayouts200Response) GetSystemTypeLayouts() []ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner {
-	if o == nil || IsNil(o.SystemTypeLayouts) {
-		var ret []ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner
-		return ret
-	}
-	return o.SystemTypeLayouts
-}
-
-// GetSystemTypeLayoutsOk returns a tuple with the SystemTypeLayouts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListSystemTypeLayouts200Response) GetSystemTypeLayoutsOk() ([]ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner, bool) {
-	if o == nil || IsNil(o.SystemTypeLayouts) {
-		return nil, false
-	}
-	return o.SystemTypeLayouts, true
-}
-
-// IsSetSystemTypeLayouts returns a boolean if a field has been set.
-func (o *ListSystemTypeLayouts200Response) IsSetSystemTypeLayouts() bool {
-	if o != nil && !IsNil(o.SystemTypeLayouts) {
-		return true
-	}
-
-	return false
-}
-
-// SetSystemTypeLayouts gets a reference to the given []ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner and assigns it to the SystemTypeLayouts field.
-func (o *ListSystemTypeLayouts200Response) SetSystemTypeLayouts(v []ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) {
-	o.SystemTypeLayouts = v
-}
-
 func (o ListSystemTypeLayouts200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

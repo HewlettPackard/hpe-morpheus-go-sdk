@@ -27,55 +27,6 @@ type BlueprintKubernetesCreateConfig struct {
 
 type _BlueprintKubernetesCreateConfig BlueprintKubernetesCreateConfig
 
-// NewBlueprintKubernetesCreateConfig instantiates a new BlueprintKubernetesCreateConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewBlueprintKubernetesCreateConfig() *BlueprintKubernetesCreateConfig {
-	this := BlueprintKubernetesCreateConfig{}
-	return &this
-}
-
-// NewBlueprintKubernetesCreateConfigWithDefaults instantiates a new BlueprintKubernetesCreateConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewBlueprintKubernetesCreateConfigWithDefaults() *BlueprintKubernetesCreateConfig {
-	this := BlueprintKubernetesCreateConfig{}
-	return &this
-}
-
-// GetSpecs returns the Specs field value if set, zero value otherwise.
-func (o *BlueprintKubernetesCreateConfig) GetSpecs() []BlueprintKubernetesCreateConfigSpecsInner {
-	if o == nil || IsNil(o.Specs) {
-		var ret []BlueprintKubernetesCreateConfigSpecsInner
-		return ret
-	}
-	return o.Specs
-}
-
-// GetSpecsOk returns a tuple with the Specs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintKubernetesCreateConfig) GetSpecsOk() ([]BlueprintKubernetesCreateConfigSpecsInner, bool) {
-	if o == nil || IsNil(o.Specs) {
-		return nil, false
-	}
-	return o.Specs, true
-}
-
-// IsSetSpecs returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateConfig) IsSetSpecs() bool {
-	if o != nil && !IsNil(o.Specs) {
-		return true
-	}
-
-	return false
-}
-
-// SetSpecs gets a reference to the given []BlueprintKubernetesCreateConfigSpecsInner and assigns it to the Specs field.
-func (o *BlueprintKubernetesCreateConfig) SetSpecs(v []BlueprintKubernetesCreateConfigSpecsInner) {
-	o.Specs = v
-}
-
 func (o BlueprintKubernetesCreateConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type UpdateCloudResourcePool200Response struct {
 
 type _UpdateCloudResourcePool200Response UpdateCloudResourcePool200Response
 
-// NewUpdateCloudResourcePool200Response instantiates a new UpdateCloudResourcePool200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCloudResourcePool200Response() *UpdateCloudResourcePool200Response {
-	this := UpdateCloudResourcePool200Response{}
-	return &this
-}
-
-// NewUpdateCloudResourcePool200ResponseWithDefaults instantiates a new UpdateCloudResourcePool200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCloudResourcePool200ResponseWithDefaults() *UpdateCloudResourcePool200Response {
-	this := UpdateCloudResourcePool200Response{}
-	return &this
-}
-
-// GetResourcePool returns the ResourcePool field value if set, zero value otherwise.
-func (o *UpdateCloudResourcePool200Response) GetResourcePool() UpdateCloudResourcePool200ResponseResourcePool {
-	if o == nil || IsNil(o.ResourcePool) {
-		var ret UpdateCloudResourcePool200ResponseResourcePool
-		return ret
-	}
-	return *o.ResourcePool
-}
-
-// GetResourcePoolOk returns a tuple with the ResourcePool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudResourcePool200Response) GetResourcePoolOk() (*UpdateCloudResourcePool200ResponseResourcePool, bool) {
-	if o == nil || IsNil(o.ResourcePool) {
-		return nil, false
-	}
-	return o.ResourcePool, true
-}
-
-// IsSetResourcePool returns a boolean if a field has been set.
-func (o *UpdateCloudResourcePool200Response) IsSetResourcePool() bool {
-	if o != nil && !IsNil(o.ResourcePool) {
-		return true
-	}
-
-	return false
-}
-
-// SetResourcePool gets a reference to the given UpdateCloudResourcePool200ResponseResourcePool and assigns it to the ResourcePool field.
-func (o *UpdateCloudResourcePool200Response) SetResourcePool(v UpdateCloudResourcePool200ResponseResourcePool) {
-	o.ResourcePool = &v
-}
-
 func (o UpdateCloudResourcePool200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

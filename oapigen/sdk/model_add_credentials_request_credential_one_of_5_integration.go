@@ -26,55 +26,6 @@ type AddCredentialsRequestCredentialOneOf5Integration struct {
 
 type _AddCredentialsRequestCredentialOneOf5Integration AddCredentialsRequestCredentialOneOf5Integration
 
-// NewAddCredentialsRequestCredentialOneOf5Integration instantiates a new AddCredentialsRequestCredentialOneOf5Integration object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCredentialsRequestCredentialOneOf5Integration() *AddCredentialsRequestCredentialOneOf5Integration {
-	this := AddCredentialsRequestCredentialOneOf5Integration{}
-	return &this
-}
-
-// NewAddCredentialsRequestCredentialOneOf5IntegrationWithDefaults instantiates a new AddCredentialsRequestCredentialOneOf5Integration object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCredentialsRequestCredentialOneOf5IntegrationWithDefaults() *AddCredentialsRequestCredentialOneOf5Integration {
-	this := AddCredentialsRequestCredentialOneOf5Integration{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddCredentialsRequestCredentialOneOf5Integration) GetId() AddCredentialsRequestCredentialOneOf1IntegrationId {
-	if o == nil || IsNil(o.Id) {
-		var ret AddCredentialsRequestCredentialOneOf1IntegrationId
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCredentialsRequestCredentialOneOf5Integration) GetIdOk() (*AddCredentialsRequestCredentialOneOf1IntegrationId, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *AddCredentialsRequestCredentialOneOf5Integration) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given AddCredentialsRequestCredentialOneOf1IntegrationId and assigns it to the Id field.
-func (o *AddCredentialsRequestCredentialOneOf5Integration) SetId(v AddCredentialsRequestCredentialOneOf1IntegrationId) {
-	o.Id = &v
-}
-
 func (o AddCredentialsRequestCredentialOneOf5Integration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

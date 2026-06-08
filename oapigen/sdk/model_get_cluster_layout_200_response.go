@@ -26,55 +26,6 @@ type GetClusterLayout200Response struct {
 
 type _GetClusterLayout200Response GetClusterLayout200Response
 
-// NewGetClusterLayout200Response instantiates a new GetClusterLayout200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetClusterLayout200Response() *GetClusterLayout200Response {
-	this := GetClusterLayout200Response{}
-	return &this
-}
-
-// NewGetClusterLayout200ResponseWithDefaults instantiates a new GetClusterLayout200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterLayout200ResponseWithDefaults() *GetClusterLayout200Response {
-	this := GetClusterLayout200Response{}
-	return &this
-}
-
-// GetLayout returns the Layout field value if set, zero value otherwise.
-func (o *GetClusterLayout200Response) GetLayout() GetClusterLayout200ResponseLayout {
-	if o == nil || IsNil(o.Layout) {
-		var ret GetClusterLayout200ResponseLayout
-		return ret
-	}
-	return *o.Layout
-}
-
-// GetLayoutOk returns a tuple with the Layout field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClusterLayout200Response) GetLayoutOk() (*GetClusterLayout200ResponseLayout, bool) {
-	if o == nil || IsNil(o.Layout) {
-		return nil, false
-	}
-	return o.Layout, true
-}
-
-// IsSetLayout returns a boolean if a field has been set.
-func (o *GetClusterLayout200Response) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
-}
-
-// SetLayout gets a reference to the given GetClusterLayout200ResponseLayout and assigns it to the Layout field.
-func (o *GetClusterLayout200Response) SetLayout(v GetClusterLayout200ResponseLayout) {
-	o.Layout = &v
-}
-
 func (o GetClusterLayout200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

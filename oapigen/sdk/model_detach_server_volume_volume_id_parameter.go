@@ -27,20 +27,6 @@ type DetachServerVolumeVolumeIdParameter struct {
 	String *string
 }
 
-// int64AsDetachServerVolumeVolumeIdParameter is a convenience function that returns int64 wrapped in DetachServerVolumeVolumeIdParameter
-func Int64AsDetachServerVolumeVolumeIdParameter(v *int64) DetachServerVolumeVolumeIdParameter {
-	return DetachServerVolumeVolumeIdParameter{
-		Int64: v,
-	}
-}
-
-// stringAsDetachServerVolumeVolumeIdParameter is a convenience function that returns string wrapped in DetachServerVolumeVolumeIdParameter
-func StringAsDetachServerVolumeVolumeIdParameter(v *string) DetachServerVolumeVolumeIdParameter {
-	return DetachServerVolumeVolumeIdParameter{
-		String: v,
-	}
-}
-
 func (dst *DetachServerVolumeVolumeIdParameter) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &DetachServerVolumeVolumeIdParameter{}

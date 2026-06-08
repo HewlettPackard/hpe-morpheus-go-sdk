@@ -26,55 +26,6 @@ type AppStats struct {
 
 type _AppStats AppStats
 
-// NewAppStats instantiates a new AppStats object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAppStats() *AppStats {
-	this := AppStats{}
-	return &this
-}
-
-// NewAppStatsWithDefaults instantiates a new AppStats object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppStatsWithDefaults() *AppStats {
-	this := AppStats{}
-	return &this
-}
-
-// GetStats returns the Stats field value if set, zero value otherwise.
-func (o *AppStats) GetStats() AppStatsStats {
-	if o == nil || IsNil(o.Stats) {
-		var ret AppStatsStats
-		return ret
-	}
-	return *o.Stats
-}
-
-// GetStatsOk returns a tuple with the Stats field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppStats) GetStatsOk() (*AppStatsStats, bool) {
-	if o == nil || IsNil(o.Stats) {
-		return nil, false
-	}
-	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *AppStats) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
-}
-
-// SetStats gets a reference to the given AppStatsStats and assigns it to the Stats field.
-func (o *AppStats) SetStats(v AppStatsStats) {
-	o.Stats = &v
-}
-
 func (o AppStats) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

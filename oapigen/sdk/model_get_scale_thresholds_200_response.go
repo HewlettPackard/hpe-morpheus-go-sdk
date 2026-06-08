@@ -26,55 +26,6 @@ type GetScaleThresholds200Response struct {
 
 type _GetScaleThresholds200Response GetScaleThresholds200Response
 
-// NewGetScaleThresholds200Response instantiates a new GetScaleThresholds200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetScaleThresholds200Response() *GetScaleThresholds200Response {
-	this := GetScaleThresholds200Response{}
-	return &this
-}
-
-// NewGetScaleThresholds200ResponseWithDefaults instantiates a new GetScaleThresholds200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetScaleThresholds200ResponseWithDefaults() *GetScaleThresholds200Response {
-	this := GetScaleThresholds200Response{}
-	return &this
-}
-
-// GetScaleThreshold returns the ScaleThreshold field value if set, zero value otherwise.
-func (o *GetScaleThresholds200Response) GetScaleThreshold() GetScaleThresholds200ResponseAllOfScaleThreshold {
-	if o == nil || IsNil(o.ScaleThreshold) {
-		var ret GetScaleThresholds200ResponseAllOfScaleThreshold
-		return ret
-	}
-	return *o.ScaleThreshold
-}
-
-// GetScaleThresholdOk returns a tuple with the ScaleThreshold field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetScaleThresholds200Response) GetScaleThresholdOk() (*GetScaleThresholds200ResponseAllOfScaleThreshold, bool) {
-	if o == nil || IsNil(o.ScaleThreshold) {
-		return nil, false
-	}
-	return o.ScaleThreshold, true
-}
-
-// IsSetScaleThreshold returns a boolean if a field has been set.
-func (o *GetScaleThresholds200Response) IsSetScaleThreshold() bool {
-	if o != nil && !IsNil(o.ScaleThreshold) {
-		return true
-	}
-
-	return false
-}
-
-// SetScaleThreshold gets a reference to the given GetScaleThresholds200ResponseAllOfScaleThreshold and assigns it to the ScaleThreshold field.
-func (o *GetScaleThresholds200Response) SetScaleThreshold(v GetScaleThresholds200ResponseAllOfScaleThreshold) {
-	o.ScaleThreshold = &v
-}
-
 func (o GetScaleThresholds200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,48 +26,6 @@ type UpdateContactsRequest struct {
 
 type _UpdateContactsRequest UpdateContactsRequest
 
-// NewUpdateContactsRequest instantiates a new UpdateContactsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateContactsRequest(contact UpdateContactsRequestContact) *UpdateContactsRequest {
-	this := UpdateContactsRequest{}
-	this.Contact = contact
-	return &this
-}
-
-// NewUpdateContactsRequestWithDefaults instantiates a new UpdateContactsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateContactsRequestWithDefaults() *UpdateContactsRequest {
-	this := UpdateContactsRequest{}
-	return &this
-}
-
-// GetContact returns the Contact field value
-func (o *UpdateContactsRequest) GetContact() UpdateContactsRequestContact {
-	if o == nil {
-		var ret UpdateContactsRequestContact
-		return ret
-	}
-
-	return o.Contact
-}
-
-// GetContactOk returns a tuple with the Contact field value
-// and a boolean to check if the value has been set.
-func (o *UpdateContactsRequest) GetContactOk() (*UpdateContactsRequestContact, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Contact, true
-}
-
-// SetContact sets field value
-func (o *UpdateContactsRequest) SetContact(v UpdateContactsRequestContact) {
-	o.Contact = v
-}
-
 func (o UpdateContactsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

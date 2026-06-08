@@ -27,55 +27,6 @@ type ImportContainerActionRequest struct {
 
 type _ImportContainerActionRequest ImportContainerActionRequest
 
-// NewImportContainerActionRequest instantiates a new ImportContainerActionRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewImportContainerActionRequest() *ImportContainerActionRequest {
-	this := ImportContainerActionRequest{}
-	return &this
-}
-
-// NewImportContainerActionRequestWithDefaults instantiates a new ImportContainerActionRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewImportContainerActionRequestWithDefaults() *ImportContainerActionRequest {
-	this := ImportContainerActionRequest{}
-	return &this
-}
-
-// GetStorageProviderId returns the StorageProviderId field value if set, zero value otherwise.
-func (o *ImportContainerActionRequest) GetStorageProviderId() int64 {
-	if o == nil || IsNil(o.StorageProviderId) {
-		var ret int64
-		return ret
-	}
-	return *o.StorageProviderId
-}
-
-// GetStorageProviderIdOk returns a tuple with the StorageProviderId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ImportContainerActionRequest) GetStorageProviderIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.StorageProviderId) {
-		return nil, false
-	}
-	return o.StorageProviderId, true
-}
-
-// IsSetStorageProviderId returns a boolean if a field has been set.
-func (o *ImportContainerActionRequest) IsSetStorageProviderId() bool {
-	if o != nil && !IsNil(o.StorageProviderId) {
-		return true
-	}
-
-	return false
-}
-
-// SetStorageProviderId gets a reference to the given int64 and assigns it to the StorageProviderId field.
-func (o *ImportContainerActionRequest) SetStorageProviderId(v int64) {
-	o.StorageProviderId = &v
-}
-
 func (o ImportContainerActionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

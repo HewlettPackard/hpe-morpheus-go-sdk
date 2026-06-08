@@ -26,55 +26,6 @@ type UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 struct {
 
 type _UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19
 
-// NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 instantiates a new UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19() *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 {
-	this := UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19{}
-	return &this
-}
-
-// NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19WithDefaults instantiates a new UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19WithDefaults() *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 {
-	this := UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19{}
-	return &this
-}
-
-// GetMaxVirtualServers returns the MaxVirtualServers field value if set, zero value otherwise.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) GetMaxVirtualServers() string {
-	if o == nil || IsNil(o.MaxVirtualServers) {
-		var ret string
-		return ret
-	}
-	return *o.MaxVirtualServers
-}
-
-// GetMaxVirtualServersOk returns a tuple with the MaxVirtualServers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) GetMaxVirtualServersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxVirtualServers) {
-		return nil, false
-	}
-	return o.MaxVirtualServers, true
-}
-
-// IsSetMaxVirtualServers returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) IsSetMaxVirtualServers() bool {
-	if o != nil && !IsNil(o.MaxVirtualServers) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxVirtualServers gets a reference to the given string and assigns it to the MaxVirtualServers field.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) SetMaxVirtualServers(v string) {
-	o.MaxVirtualServers = &v
-}
-
 func (o UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

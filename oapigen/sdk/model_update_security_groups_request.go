@@ -26,48 +26,6 @@ type UpdateSecurityGroupsRequest struct {
 
 type _UpdateSecurityGroupsRequest UpdateSecurityGroupsRequest
 
-// NewUpdateSecurityGroupsRequest instantiates a new UpdateSecurityGroupsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateSecurityGroupsRequest(securityGroup UpdateSecurityGroupsRequestSecurityGroup) *UpdateSecurityGroupsRequest {
-	this := UpdateSecurityGroupsRequest{}
-	this.SecurityGroup = securityGroup
-	return &this
-}
-
-// NewUpdateSecurityGroupsRequestWithDefaults instantiates a new UpdateSecurityGroupsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateSecurityGroupsRequestWithDefaults() *UpdateSecurityGroupsRequest {
-	this := UpdateSecurityGroupsRequest{}
-	return &this
-}
-
-// GetSecurityGroup returns the SecurityGroup field value
-func (o *UpdateSecurityGroupsRequest) GetSecurityGroup() UpdateSecurityGroupsRequestSecurityGroup {
-	if o == nil {
-		var ret UpdateSecurityGroupsRequestSecurityGroup
-		return ret
-	}
-
-	return o.SecurityGroup
-}
-
-// GetSecurityGroupOk returns a tuple with the SecurityGroup field value
-// and a boolean to check if the value has been set.
-func (o *UpdateSecurityGroupsRequest) GetSecurityGroupOk() (*UpdateSecurityGroupsRequestSecurityGroup, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SecurityGroup, true
-}
-
-// SetSecurityGroup sets field value
-func (o *UpdateSecurityGroupsRequest) SetSecurityGroup(v UpdateSecurityGroupsRequestSecurityGroup) {
-	o.SecurityGroup = v
-}
-
 func (o UpdateSecurityGroupsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

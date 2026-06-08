@@ -26,55 +26,6 @@ type WorkflowPolicyTypeConfiguration16 struct {
 
 type _WorkflowPolicyTypeConfiguration16 WorkflowPolicyTypeConfiguration16
 
-// NewWorkflowPolicyTypeConfiguration16 instantiates a new WorkflowPolicyTypeConfiguration16 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewWorkflowPolicyTypeConfiguration16() *WorkflowPolicyTypeConfiguration16 {
-	this := WorkflowPolicyTypeConfiguration16{}
-	return &this
-}
-
-// NewWorkflowPolicyTypeConfiguration16WithDefaults instantiates a new WorkflowPolicyTypeConfiguration16 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewWorkflowPolicyTypeConfiguration16WithDefaults() *WorkflowPolicyTypeConfiguration16 {
-	this := WorkflowPolicyTypeConfiguration16{}
-	return &this
-}
-
-// GetWorkflowId returns the WorkflowId field value if set, zero value otherwise.
-func (o *WorkflowPolicyTypeConfiguration16) GetWorkflowId() string {
-	if o == nil || IsNil(o.WorkflowId) {
-		var ret string
-		return ret
-	}
-	return *o.WorkflowId
-}
-
-// GetWorkflowIdOk returns a tuple with the WorkflowId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *WorkflowPolicyTypeConfiguration16) GetWorkflowIdOk() (*string, bool) {
-	if o == nil || IsNil(o.WorkflowId) {
-		return nil, false
-	}
-	return o.WorkflowId, true
-}
-
-// IsSetWorkflowId returns a boolean if a field has been set.
-func (o *WorkflowPolicyTypeConfiguration16) IsSetWorkflowId() bool {
-	if o != nil && !IsNil(o.WorkflowId) {
-		return true
-	}
-
-	return false
-}
-
-// SetWorkflowId gets a reference to the given string and assigns it to the WorkflowId field.
-func (o *WorkflowPolicyTypeConfiguration16) SetWorkflowId(v string) {
-	o.WorkflowId = &v
-}
-
 func (o WorkflowPolicyTypeConfiguration16) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

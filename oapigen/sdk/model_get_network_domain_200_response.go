@@ -26,55 +26,6 @@ type GetNetworkDomain200Response struct {
 
 type _GetNetworkDomain200Response GetNetworkDomain200Response
 
-// NewGetNetworkDomain200Response instantiates a new GetNetworkDomain200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkDomain200Response() *GetNetworkDomain200Response {
-	this := GetNetworkDomain200Response{}
-	return &this
-}
-
-// NewGetNetworkDomain200ResponseWithDefaults instantiates a new GetNetworkDomain200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkDomain200ResponseWithDefaults() *GetNetworkDomain200Response {
-	this := GetNetworkDomain200Response{}
-	return &this
-}
-
-// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
-func (o *GetNetworkDomain200Response) GetNetworkDomain() GetNetworkDomain200ResponseNetworkDomain {
-	if o == nil || IsNil(o.NetworkDomain) {
-		var ret GetNetworkDomain200ResponseNetworkDomain
-		return ret
-	}
-	return *o.NetworkDomain
-}
-
-// GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkDomain200Response) GetNetworkDomainOk() (*GetNetworkDomain200ResponseNetworkDomain, bool) {
-	if o == nil || IsNil(o.NetworkDomain) {
-		return nil, false
-	}
-	return o.NetworkDomain, true
-}
-
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *GetNetworkDomain200Response) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkDomain gets a reference to the given GetNetworkDomain200ResponseNetworkDomain and assigns it to the NetworkDomain field.
-func (o *GetNetworkDomain200Response) SetNetworkDomain(v GetNetworkDomain200ResponseNetworkDomain) {
-	o.NetworkDomain = &v
-}
-
 func (o GetNetworkDomain200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

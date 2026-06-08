@@ -26,48 +26,6 @@ type UserSourceCreate struct {
 
 type _UserSourceCreate UserSourceCreate
 
-// NewUserSourceCreate instantiates a new UserSourceCreate object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserSourceCreate(userSource UserSourceCreateUserSource) *UserSourceCreate {
-	this := UserSourceCreate{}
-	this.UserSource = userSource
-	return &this
-}
-
-// NewUserSourceCreateWithDefaults instantiates a new UserSourceCreate object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserSourceCreateWithDefaults() *UserSourceCreate {
-	this := UserSourceCreate{}
-	return &this
-}
-
-// GetUserSource returns the UserSource field value
-func (o *UserSourceCreate) GetUserSource() UserSourceCreateUserSource {
-	if o == nil {
-		var ret UserSourceCreateUserSource
-		return ret
-	}
-
-	return o.UserSource
-}
-
-// GetUserSourceOk returns a tuple with the UserSource field value
-// and a boolean to check if the value has been set.
-func (o *UserSourceCreate) GetUserSourceOk() (*UserSourceCreateUserSource, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.UserSource, true
-}
-
-// SetUserSource sets field value
-func (o *UserSourceCreate) SetUserSource(v UserSourceCreateUserSource) {
-	o.UserSource = v
-}
-
 func (o UserSourceCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -7,69 +7,15 @@ Name | Type | Description | Notes
 **MaxMemory** | **string** |  | 
 **ExcludeContainers** | Pointer to **string** |  | [optional] [default to "off"]
 
-## Methods
+## Usage
 
-### NewMaxMemoryPolicyTypeConfiguration
+Instantiate with a Go composite literal:
 
-`func NewMaxMemoryPolicyTypeConfiguration(maxMemory string, ) *MaxMemoryPolicyTypeConfiguration`
-
-NewMaxMemoryPolicyTypeConfiguration instantiates a new MaxMemoryPolicyTypeConfiguration object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewMaxMemoryPolicyTypeConfigurationWithDefaults
-
-`func NewMaxMemoryPolicyTypeConfigurationWithDefaults() *MaxMemoryPolicyTypeConfiguration`
-
-NewMaxMemoryPolicyTypeConfigurationWithDefaults instantiates a new MaxMemoryPolicyTypeConfiguration object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetMaxMemory
-
-`func (o *MaxMemoryPolicyTypeConfiguration) GetMaxMemory() string`
-
-GetMaxMemory returns the MaxMemory field if non-nil, zero value otherwise.
-
-### GetMaxMemoryOk
-
-`func (o *MaxMemoryPolicyTypeConfiguration) GetMaxMemoryOk() (*string, bool)`
-
-GetMaxMemoryOk returns a tuple with the MaxMemory field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxMemory
-
-`func (o *MaxMemoryPolicyTypeConfiguration) SetMaxMemory(v string)`
-
-SetMaxMemory sets MaxMemory field to given value.
-
-
-### GetExcludeContainers
-
-`func (o *MaxMemoryPolicyTypeConfiguration) GetExcludeContainers() string`
-
-GetExcludeContainers returns the ExcludeContainers field if non-nil, zero value otherwise.
-
-### GetExcludeContainersOk
-
-`func (o *MaxMemoryPolicyTypeConfiguration) GetExcludeContainersOk() (*string, bool)`
-
-GetExcludeContainersOk returns a tuple with the ExcludeContainers field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExcludeContainers
-
-`func (o *MaxMemoryPolicyTypeConfiguration) SetExcludeContainers(v string)`
-
-SetExcludeContainers sets ExcludeContainers field to given value.
-
-### HasExcludeContainers
-
-`func (o *MaxMemoryPolicyTypeConfiguration) HasExcludeContainers() bool`
-
-HasExcludeContainers returns a boolean if a field has been set.
+```go
+obj := &MaxMemoryPolicyTypeConfiguration{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

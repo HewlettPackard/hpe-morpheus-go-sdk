@@ -26,55 +26,6 @@ type GetClusterMasters200Response struct {
 
 type _GetClusterMasters200Response GetClusterMasters200Response
 
-// NewGetClusterMasters200Response instantiates a new GetClusterMasters200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetClusterMasters200Response() *GetClusterMasters200Response {
-	this := GetClusterMasters200Response{}
-	return &this
-}
-
-// NewGetClusterMasters200ResponseWithDefaults instantiates a new GetClusterMasters200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetClusterMasters200ResponseWithDefaults() *GetClusterMasters200Response {
-	this := GetClusterMasters200Response{}
-	return &this
-}
-
-// GetMasters returns the Masters field value if set, zero value otherwise.
-func (o *GetClusterMasters200Response) GetMasters() []GetClusterMasters200ResponseMastersInner {
-	if o == nil || IsNil(o.Masters) {
-		var ret []GetClusterMasters200ResponseMastersInner
-		return ret
-	}
-	return o.Masters
-}
-
-// GetMastersOk returns a tuple with the Masters field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetClusterMasters200Response) GetMastersOk() ([]GetClusterMasters200ResponseMastersInner, bool) {
-	if o == nil || IsNil(o.Masters) {
-		return nil, false
-	}
-	return o.Masters, true
-}
-
-// IsSetMasters returns a boolean if a field has been set.
-func (o *GetClusterMasters200Response) IsSetMasters() bool {
-	if o != nil && !IsNil(o.Masters) {
-		return true
-	}
-
-	return false
-}
-
-// SetMasters gets a reference to the given []GetClusterMasters200ResponseMastersInner and assigns it to the Masters field.
-func (o *GetClusterMasters200Response) SetMasters(v []GetClusterMasters200ResponseMastersInner) {
-	o.Masters = v
-}
-
 func (o GetClusterMasters200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

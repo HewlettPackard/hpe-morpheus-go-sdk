@@ -26,55 +26,6 @@ type AddMigrationRequest struct {
 
 type _AddMigrationRequest AddMigrationRequest
 
-// NewAddMigrationRequest instantiates a new AddMigrationRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddMigrationRequest() *AddMigrationRequest {
-	this := AddMigrationRequest{}
-	return &this
-}
-
-// NewAddMigrationRequestWithDefaults instantiates a new AddMigrationRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddMigrationRequestWithDefaults() *AddMigrationRequest {
-	this := AddMigrationRequest{}
-	return &this
-}
-
-// GetMigration returns the Migration field value if set, zero value otherwise.
-func (o *AddMigrationRequest) GetMigration() AddMigrationRequestMigration {
-	if o == nil || IsNil(o.Migration) {
-		var ret AddMigrationRequestMigration
-		return ret
-	}
-	return *o.Migration
-}
-
-// GetMigrationOk returns a tuple with the Migration field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddMigrationRequest) GetMigrationOk() (*AddMigrationRequestMigration, bool) {
-	if o == nil || IsNil(o.Migration) {
-		return nil, false
-	}
-	return o.Migration, true
-}
-
-// IsSetMigration returns a boolean if a field has been set.
-func (o *AddMigrationRequest) IsSetMigration() bool {
-	if o != nil && !IsNil(o.Migration) {
-		return true
-	}
-
-	return false
-}
-
-// SetMigration gets a reference to the given AddMigrationRequestMigration and assigns it to the Migration field.
-func (o *AddMigrationRequest) SetMigration(v AddMigrationRequestMigration) {
-	o.Migration = &v
-}
-
 func (o AddMigrationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer s
 
 type _GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer
 
-// NewGetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer instantiates a new GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer() *GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer {
-	this := GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer{}
-	return &this
-}
-
-// NewGetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServerWithDefaults instantiates a new GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServerWithDefaults() *GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer {
-	this := GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer) SetId(v int64) {
-	o.Id = &v
-}
-
 func (o GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInnerNetworkServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -26,55 +26,6 @@ type AddCatalogOrderRequestOrder struct {
 
 type _AddCatalogOrderRequestOrder AddCatalogOrderRequestOrder
 
-// NewAddCatalogOrderRequestOrder instantiates a new AddCatalogOrderRequestOrder object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddCatalogOrderRequestOrder() *AddCatalogOrderRequestOrder {
-	this := AddCatalogOrderRequestOrder{}
-	return &this
-}
-
-// NewAddCatalogOrderRequestOrderWithDefaults instantiates a new AddCatalogOrderRequestOrder object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddCatalogOrderRequestOrderWithDefaults() *AddCatalogOrderRequestOrder {
-	this := AddCatalogOrderRequestOrder{}
-	return &this
-}
-
-// GetItems returns the Items field value if set, zero value otherwise.
-func (o *AddCatalogOrderRequestOrder) GetItems() []AddCatalogOrderRequestOrderItemsInner {
-	if o == nil || IsNil(o.Items) {
-		var ret []AddCatalogOrderRequestOrderItemsInner
-		return ret
-	}
-	return o.Items
-}
-
-// GetItemsOk returns a tuple with the Items field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCatalogOrderRequestOrder) GetItemsOk() ([]AddCatalogOrderRequestOrderItemsInner, bool) {
-	if o == nil || IsNil(o.Items) {
-		return nil, false
-	}
-	return o.Items, true
-}
-
-// IsSetItems returns a boolean if a field has been set.
-func (o *AddCatalogOrderRequestOrder) IsSetItems() bool {
-	if o != nil && !IsNil(o.Items) {
-		return true
-	}
-
-	return false
-}
-
-// SetItems gets a reference to the given []AddCatalogOrderRequestOrderItemsInner and assigns it to the Items field.
-func (o *AddCatalogOrderRequestOrder) SetItems(v []AddCatalogOrderRequestOrderItemsInner) {
-	o.Items = v
-}
-
 func (o AddCatalogOrderRequestOrder) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

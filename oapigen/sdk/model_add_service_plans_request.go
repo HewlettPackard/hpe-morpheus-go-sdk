@@ -26,48 +26,6 @@ type AddServicePlansRequest struct {
 
 type _AddServicePlansRequest AddServicePlansRequest
 
-// NewAddServicePlansRequest instantiates a new AddServicePlansRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddServicePlansRequest(servicePlan AddServicePlansRequestServicePlan) *AddServicePlansRequest {
-	this := AddServicePlansRequest{}
-	this.ServicePlan = servicePlan
-	return &this
-}
-
-// NewAddServicePlansRequestWithDefaults instantiates a new AddServicePlansRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddServicePlansRequestWithDefaults() *AddServicePlansRequest {
-	this := AddServicePlansRequest{}
-	return &this
-}
-
-// GetServicePlan returns the ServicePlan field value
-func (o *AddServicePlansRequest) GetServicePlan() AddServicePlansRequestServicePlan {
-	if o == nil {
-		var ret AddServicePlansRequestServicePlan
-		return ret
-	}
-
-	return o.ServicePlan
-}
-
-// GetServicePlanOk returns a tuple with the ServicePlan field value
-// and a boolean to check if the value has been set.
-func (o *AddServicePlansRequest) GetServicePlanOk() (*AddServicePlansRequestServicePlan, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ServicePlan, true
-}
-
-// SetServicePlan sets field value
-func (o *AddServicePlansRequest) SetServicePlan(v AddServicePlansRequestServicePlan) {
-	o.ServicePlan = v
-}
-
 func (o AddServicePlansRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

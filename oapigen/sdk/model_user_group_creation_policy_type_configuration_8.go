@@ -26,48 +26,6 @@ type UserGroupCreationPolicyTypeConfiguration8 struct {
 
 type _UserGroupCreationPolicyTypeConfiguration8 UserGroupCreationPolicyTypeConfiguration8
 
-// NewUserGroupCreationPolicyTypeConfiguration8 instantiates a new UserGroupCreationPolicyTypeConfiguration8 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserGroupCreationPolicyTypeConfiguration8(userGroup string) *UserGroupCreationPolicyTypeConfiguration8 {
-	this := UserGroupCreationPolicyTypeConfiguration8{}
-	this.UserGroup = userGroup
-	return &this
-}
-
-// NewUserGroupCreationPolicyTypeConfiguration8WithDefaults instantiates a new UserGroupCreationPolicyTypeConfiguration8 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserGroupCreationPolicyTypeConfiguration8WithDefaults() *UserGroupCreationPolicyTypeConfiguration8 {
-	this := UserGroupCreationPolicyTypeConfiguration8{}
-	return &this
-}
-
-// GetUserGroup returns the UserGroup field value
-func (o *UserGroupCreationPolicyTypeConfiguration8) GetUserGroup() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.UserGroup
-}
-
-// GetUserGroupOk returns a tuple with the UserGroup field value
-// and a boolean to check if the value has been set.
-func (o *UserGroupCreationPolicyTypeConfiguration8) GetUserGroupOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.UserGroup, true
-}
-
-// SetUserGroup sets field value
-func (o *UserGroupCreationPolicyTypeConfiguration8) SetUserGroup(v string) {
-	o.UserGroup = v
-}
-
 func (o UserGroupCreationPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

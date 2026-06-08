@@ -26,55 +26,6 @@ type FileShareStorageQuotaPolicyTypeConfiguration3 struct {
 
 type _FileShareStorageQuotaPolicyTypeConfiguration3 FileShareStorageQuotaPolicyTypeConfiguration3
 
-// NewFileShareStorageQuotaPolicyTypeConfiguration3 instantiates a new FileShareStorageQuotaPolicyTypeConfiguration3 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewFileShareStorageQuotaPolicyTypeConfiguration3() *FileShareStorageQuotaPolicyTypeConfiguration3 {
-	this := FileShareStorageQuotaPolicyTypeConfiguration3{}
-	return &this
-}
-
-// NewFileShareStorageQuotaPolicyTypeConfiguration3WithDefaults instantiates a new FileShareStorageQuotaPolicyTypeConfiguration3 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewFileShareStorageQuotaPolicyTypeConfiguration3WithDefaults() *FileShareStorageQuotaPolicyTypeConfiguration3 {
-	this := FileShareStorageQuotaPolicyTypeConfiguration3{}
-	return &this
-}
-
-// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
-func (o *FileShareStorageQuotaPolicyTypeConfiguration3) GetMaxStorage() string {
-	if o == nil || IsNil(o.MaxStorage) {
-		var ret string
-		return ret
-	}
-	return *o.MaxStorage
-}
-
-// GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *FileShareStorageQuotaPolicyTypeConfiguration3) GetMaxStorageOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxStorage) {
-		return nil, false
-	}
-	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *FileShareStorageQuotaPolicyTypeConfiguration3) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
-func (o *FileShareStorageQuotaPolicyTypeConfiguration3) SetMaxStorage(v string) {
-	o.MaxStorage = &v
-}
-
 func (o FileShareStorageQuotaPolicyTypeConfiguration3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

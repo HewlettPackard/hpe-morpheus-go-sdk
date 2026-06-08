@@ -26,55 +26,6 @@ type UpdateNetworkDhcpRelayRequest struct {
 
 type _UpdateNetworkDhcpRelayRequest UpdateNetworkDhcpRelayRequest
 
-// NewUpdateNetworkDhcpRelayRequest instantiates a new UpdateNetworkDhcpRelayRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkDhcpRelayRequest() *UpdateNetworkDhcpRelayRequest {
-	this := UpdateNetworkDhcpRelayRequest{}
-	return &this
-}
-
-// NewUpdateNetworkDhcpRelayRequestWithDefaults instantiates a new UpdateNetworkDhcpRelayRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkDhcpRelayRequestWithDefaults() *UpdateNetworkDhcpRelayRequest {
-	this := UpdateNetworkDhcpRelayRequest{}
-	return &this
-}
-
-// GetNetworkDhcpRelay returns the NetworkDhcpRelay field value if set, zero value otherwise.
-func (o *UpdateNetworkDhcpRelayRequest) GetNetworkDhcpRelay() map[string]interface{} {
-	if o == nil || IsNil(o.NetworkDhcpRelay) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.NetworkDhcpRelay
-}
-
-// GetNetworkDhcpRelayOk returns a tuple with the NetworkDhcpRelay field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkDhcpRelayRequest) GetNetworkDhcpRelayOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.NetworkDhcpRelay) {
-		return map[string]interface{}{}, false
-	}
-	return o.NetworkDhcpRelay, true
-}
-
-// IsSetNetworkDhcpRelay returns a boolean if a field has been set.
-func (o *UpdateNetworkDhcpRelayRequest) IsSetNetworkDhcpRelay() bool {
-	if o != nil && !IsNil(o.NetworkDhcpRelay) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkDhcpRelay gets a reference to the given map[string]interface{} and assigns it to the NetworkDhcpRelay field.
-func (o *UpdateNetworkDhcpRelayRequest) SetNetworkDhcpRelay(v map[string]interface{}) {
-	o.NetworkDhcpRelay = v
-}
-
 func (o UpdateNetworkDhcpRelayRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

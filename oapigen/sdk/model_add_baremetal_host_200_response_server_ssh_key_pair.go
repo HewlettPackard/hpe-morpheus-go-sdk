@@ -26,55 +26,6 @@ type AddBaremetalHost200ResponseServerSshKeyPair struct {
 
 type _AddBaremetalHost200ResponseServerSshKeyPair AddBaremetalHost200ResponseServerSshKeyPair
 
-// NewAddBaremetalHost200ResponseServerSshKeyPair instantiates a new AddBaremetalHost200ResponseServerSshKeyPair object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddBaremetalHost200ResponseServerSshKeyPair() *AddBaremetalHost200ResponseServerSshKeyPair {
-	this := AddBaremetalHost200ResponseServerSshKeyPair{}
-	return &this
-}
-
-// NewAddBaremetalHost200ResponseServerSshKeyPairWithDefaults instantiates a new AddBaremetalHost200ResponseServerSshKeyPair object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddBaremetalHost200ResponseServerSshKeyPairWithDefaults() *AddBaremetalHost200ResponseServerSshKeyPair {
-	this := AddBaremetalHost200ResponseServerSshKeyPair{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AddBaremetalHost200ResponseServerSshKeyPair) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddBaremetalHost200ResponseServerSshKeyPair) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerSshKeyPair) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddBaremetalHost200ResponseServerSshKeyPair) SetId(v int64) {
-	o.Id = &v
-}
-
 func (o AddBaremetalHost200ResponseServerSshKeyPair) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

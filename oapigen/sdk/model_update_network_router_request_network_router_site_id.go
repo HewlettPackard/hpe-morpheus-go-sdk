@@ -27,20 +27,6 @@ type UpdateNetworkRouterRequestNetworkRouterSiteId struct {
 	String *string
 }
 
-// int64AsUpdateNetworkRouterRequestNetworkRouterSiteId is a convenience function that returns int64 wrapped in UpdateNetworkRouterRequestNetworkRouterSiteId
-func Int64AsUpdateNetworkRouterRequestNetworkRouterSiteId(v *int64) UpdateNetworkRouterRequestNetworkRouterSiteId {
-	return UpdateNetworkRouterRequestNetworkRouterSiteId{
-		Int64: v,
-	}
-}
-
-// stringAsUpdateNetworkRouterRequestNetworkRouterSiteId is a convenience function that returns string wrapped in UpdateNetworkRouterRequestNetworkRouterSiteId
-func StringAsUpdateNetworkRouterRequestNetworkRouterSiteId(v *string) UpdateNetworkRouterRequestNetworkRouterSiteId {
-	return UpdateNetworkRouterRequestNetworkRouterSiteId{
-		String: v,
-	}
-}
-
 func (dst *UpdateNetworkRouterRequestNetworkRouterSiteId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateNetworkRouterRequestNetworkRouterSiteId{}

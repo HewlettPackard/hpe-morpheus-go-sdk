@@ -31,805 +31,107 @@ Name | Type | Description | Notes
 **CustomConfig** | Pointer to **NullableString** |  | [optional] 
 **CustomOptions** | Pointer to [**AddJobs200ResponseAllOfJobCustomOptions**](AddJobs200ResponseAllOfJobCustomOptions.md) |  | [optional] 
 
-## Methods
-
-### NewJob
-
-`func NewJob() *Job`
-
-NewJob instantiates a new Job object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewJobWithDefaults
-
-`func NewJobWithDefaults() *Job`
-
-NewJobWithDefaults instantiates a new Job object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *Job) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *Job) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *Job) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *Job) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *Job) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *Job) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *Job) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *Job) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetLabels
-
-`func (o *Job) GetLabels() []string`
-
-GetLabels returns the Labels field if non-nil, zero value otherwise.
-
-### GetLabelsOk
-
-`func (o *Job) GetLabelsOk() (*[]string, bool)`
-
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLabels
-
-`func (o *Job) SetLabels(v []string)`
-
-SetLabels sets Labels field to given value.
-
-### HasLabels
-
-`func (o *Job) HasLabels() bool`
-
-HasLabels returns a boolean if a field has been set.
-
-### SetLabelsNil
-
-`func (o *Job) SetLabelsNil(b bool)`
-
- SetLabelsNil sets the value for Labels to be an explicit nil
-
-### UnsetLabels
-`func (o *Job) UnsetLabels()`
-
-UnsetLabels ensures that no value is present for Labels, not even an explicit nil
-### GetType
-
-`func (o *Job) GetType() AddJobs200ResponseAllOfJobType`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *Job) GetTypeOk() (*AddJobs200ResponseAllOfJobType, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *Job) SetType(v AddJobs200ResponseAllOfJobType)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *Job) HasType() bool`
-
-HasType returns a boolean if a field has been set.
-
-### GetWorkflow
-
-`func (o *Job) GetWorkflow() AddJobs200ResponseAllOfJobWorkflow`
-
-GetWorkflow returns the Workflow field if non-nil, zero value otherwise.
-
-### GetWorkflowOk
-
-`func (o *Job) GetWorkflowOk() (*AddJobs200ResponseAllOfJobWorkflow, bool)`
-
-GetWorkflowOk returns a tuple with the Workflow field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWorkflow
-
-`func (o *Job) SetWorkflow(v AddJobs200ResponseAllOfJobWorkflow)`
-
-SetWorkflow sets Workflow field to given value.
-
-### HasWorkflow
-
-`func (o *Job) HasWorkflow() bool`
-
-HasWorkflow returns a boolean if a field has been set.
-
-### GetTask
-
-`func (o *Job) GetTask() AddJobs200ResponseAllOfJobTask`
-
-GetTask returns the Task field if non-nil, zero value otherwise.
-
-### GetTaskOk
-
-`func (o *Job) GetTaskOk() (*AddJobs200ResponseAllOfJobTask, bool)`
-
-GetTaskOk returns a tuple with the Task field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTask
-
-`func (o *Job) SetTask(v AddJobs200ResponseAllOfJobTask)`
-
-SetTask sets Task field to given value.
-
-### HasTask
-
-`func (o *Job) HasTask() bool`
-
-HasTask returns a boolean if a field has been set.
-
-### GetSecurityPackage
-
-`func (o *Job) GetSecurityPackage() AddJobs200ResponseAllOfJobSecurityPackage`
-
-GetSecurityPackage returns the SecurityPackage field if non-nil, zero value otherwise.
-
-### GetSecurityPackageOk
-
-`func (o *Job) GetSecurityPackageOk() (*AddJobs200ResponseAllOfJobSecurityPackage, bool)`
-
-GetSecurityPackageOk returns a tuple with the SecurityPackage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSecurityPackage
-
-`func (o *Job) SetSecurityPackage(v AddJobs200ResponseAllOfJobSecurityPackage)`
-
-SetSecurityPackage sets SecurityPackage field to given value.
-
-### HasSecurityPackage
-
-`func (o *Job) HasSecurityPackage() bool`
-
-HasSecurityPackage returns a boolean if a field has been set.
-
-### GetJobSummary
-
-`func (o *Job) GetJobSummary() string`
-
-GetJobSummary returns the JobSummary field if non-nil, zero value otherwise.
-
-### GetJobSummaryOk
-
-`func (o *Job) GetJobSummaryOk() (*string, bool)`
-
-GetJobSummaryOk returns a tuple with the JobSummary field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetJobSummary
-
-`func (o *Job) SetJobSummary(v string)`
-
-SetJobSummary sets JobSummary field to given value.
-
-### HasJobSummary
-
-`func (o *Job) HasJobSummary() bool`
-
-HasJobSummary returns a boolean if a field has been set.
-
-### SetJobSummaryNil
-
-`func (o *Job) SetJobSummaryNil(b bool)`
-
- SetJobSummaryNil sets the value for JobSummary to be an explicit nil
-
-### UnsetJobSummary
-`func (o *Job) UnsetJobSummary()`
-
-UnsetJobSummary ensures that no value is present for JobSummary, not even an explicit nil
-### GetScheduleMode
-
-`func (o *Job) GetScheduleMode() AddJobs200ResponseAllOfJobScheduleMode`
-
-GetScheduleMode returns the ScheduleMode field if non-nil, zero value otherwise.
-
-### GetScheduleModeOk
-
-`func (o *Job) GetScheduleModeOk() (*AddJobs200ResponseAllOfJobScheduleMode, bool)`
-
-GetScheduleModeOk returns a tuple with the ScheduleMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetScheduleMode
-
-`func (o *Job) SetScheduleMode(v AddJobs200ResponseAllOfJobScheduleMode)`
-
-SetScheduleMode sets ScheduleMode field to given value.
-
-### HasScheduleMode
-
-`func (o *Job) HasScheduleMode() bool`
-
-HasScheduleMode returns a boolean if a field has been set.
-
-### GetDateTime
-
-`func (o *Job) GetDateTime() string`
-
-GetDateTime returns the DateTime field if non-nil, zero value otherwise.
-
-### GetDateTimeOk
-
-`func (o *Job) GetDateTimeOk() (*string, bool)`
-
-GetDateTimeOk returns a tuple with the DateTime field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateTime
-
-`func (o *Job) SetDateTime(v string)`
-
-SetDateTime sets DateTime field to given value.
-
-### HasDateTime
-
-`func (o *Job) HasDateTime() bool`
-
-HasDateTime returns a boolean if a field has been set.
-
-### SetDateTimeNil
-
-`func (o *Job) SetDateTimeNil(b bool)`
-
- SetDateTimeNil sets the value for DateTime to be an explicit nil
-
-### UnsetDateTime
-`func (o *Job) UnsetDateTime()`
-
-UnsetDateTime ensures that no value is present for DateTime, not even an explicit nil
-### GetStatus
-
-`func (o *Job) GetStatus() string`
-
-GetStatus returns the Status field if non-nil, zero value otherwise.
-
-### GetStatusOk
-
-`func (o *Job) GetStatusOk() (*string, bool)`
-
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatus
-
-`func (o *Job) SetStatus(v string)`
-
-SetStatus sets Status field to given value.
-
-### HasStatus
-
-`func (o *Job) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
-
-### SetStatusNil
-
-`func (o *Job) SetStatusNil(b bool)`
-
- SetStatusNil sets the value for Status to be an explicit nil
-
-### UnsetStatus
-`func (o *Job) UnsetStatus()`
-
-UnsetStatus ensures that no value is present for Status, not even an explicit nil
-### GetNamespace
-
-`func (o *Job) GetNamespace() string`
-
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
-
-### GetNamespaceOk
-
-`func (o *Job) GetNamespaceOk() (*string, bool)`
-
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNamespace
-
-`func (o *Job) SetNamespace(v string)`
-
-SetNamespace sets Namespace field to given value.
-
-### HasNamespace
-
-`func (o *Job) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
-
-### SetNamespaceNil
-
-`func (o *Job) SetNamespaceNil(b bool)`
-
- SetNamespaceNil sets the value for Namespace to be an explicit nil
-
-### UnsetNamespace
-`func (o *Job) UnsetNamespace()`
-
-UnsetNamespace ensures that no value is present for Namespace, not even an explicit nil
-### GetCategory
-
-`func (o *Job) GetCategory() string`
-
-GetCategory returns the Category field if non-nil, zero value otherwise.
-
-### GetCategoryOk
-
-`func (o *Job) GetCategoryOk() (*string, bool)`
-
-GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCategory
-
-`func (o *Job) SetCategory(v string)`
-
-SetCategory sets Category field to given value.
-
-### HasCategory
-
-`func (o *Job) HasCategory() bool`
-
-HasCategory returns a boolean if a field has been set.
-
-### SetCategoryNil
-
-`func (o *Job) SetCategoryNil(b bool)`
-
- SetCategoryNil sets the value for Category to be an explicit nil
-
-### UnsetCategory
-`func (o *Job) UnsetCategory()`
-
-UnsetCategory ensures that no value is present for Category, not even an explicit nil
-### GetDescription
-
-`func (o *Job) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *Job) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *Job) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *Job) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### SetDescriptionNil
-
-`func (o *Job) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *Job) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetEnabled
-
-`func (o *Job) GetEnabled() bool`
-
-GetEnabled returns the Enabled field if non-nil, zero value otherwise.
-
-### GetEnabledOk
-
-`func (o *Job) GetEnabledOk() (*bool, bool)`
-
-GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnabled
-
-`func (o *Job) SetEnabled(v bool)`
-
-SetEnabled sets Enabled field to given value.
-
-### HasEnabled
-
-`func (o *Job) HasEnabled() bool`
-
-HasEnabled returns a boolean if a field has been set.
-
-### GetDateCreated
-
-`func (o *Job) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *Job) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *Job) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *Job) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *Job) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *Job) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *Job) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *Job) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
-### GetLastRun
-
-`func (o *Job) GetLastRun() time.Time`
-
-GetLastRun returns the LastRun field if non-nil, zero value otherwise.
-
-### GetLastRunOk
-
-`func (o *Job) GetLastRunOk() (*time.Time, bool)`
-
-GetLastRunOk returns a tuple with the LastRun field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastRun
-
-`func (o *Job) SetLastRun(v time.Time)`
-
-SetLastRun sets LastRun field to given value.
-
-### HasLastRun
-
-`func (o *Job) HasLastRun() bool`
-
-HasLastRun returns a boolean if a field has been set.
-
-### GetLastResult
-
-`func (o *Job) GetLastResult() string`
-
-GetLastResult returns the LastResult field if non-nil, zero value otherwise.
-
-### GetLastResultOk
-
-`func (o *Job) GetLastResultOk() (*string, bool)`
-
-GetLastResultOk returns a tuple with the LastResult field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastResult
-
-`func (o *Job) SetLastResult(v string)`
-
-SetLastResult sets LastResult field to given value.
-
-### HasLastResult
-
-`func (o *Job) HasLastResult() bool`
-
-HasLastResult returns a boolean if a field has been set.
-
-### SetLastResultNil
-
-`func (o *Job) SetLastResultNil(b bool)`
-
- SetLastResultNil sets the value for LastResult to be an explicit nil
-
-### UnsetLastResult
-`func (o *Job) UnsetLastResult()`
-
-UnsetLastResult ensures that no value is present for LastResult, not even an explicit nil
-### GetCreatedBy
-
-`func (o *Job) GetCreatedBy() AddJobs200ResponseAllOfJobCreatedBy`
-
-GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
-
-### GetCreatedByOk
-
-`func (o *Job) GetCreatedByOk() (*AddJobs200ResponseAllOfJobCreatedBy, bool)`
-
-GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedBy
-
-`func (o *Job) SetCreatedBy(v AddJobs200ResponseAllOfJobCreatedBy)`
-
-SetCreatedBy sets CreatedBy field to given value.
-
-### HasCreatedBy
-
-`func (o *Job) HasCreatedBy() bool`
-
-HasCreatedBy returns a boolean if a field has been set.
-
-### GetTargetType
-
-`func (o *Job) GetTargetType() string`
-
-GetTargetType returns the TargetType field if non-nil, zero value otherwise.
-
-### GetTargetTypeOk
-
-`func (o *Job) GetTargetTypeOk() (*string, bool)`
-
-GetTargetTypeOk returns a tuple with the TargetType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTargetType
-
-`func (o *Job) SetTargetType(v string)`
-
-SetTargetType sets TargetType field to given value.
-
-### HasTargetType
-
-`func (o *Job) HasTargetType() bool`
-
-HasTargetType returns a boolean if a field has been set.
-
-### SetTargetTypeNil
-
-`func (o *Job) SetTargetTypeNil(b bool)`
-
- SetTargetTypeNil sets the value for TargetType to be an explicit nil
-
-### UnsetTargetType
-`func (o *Job) UnsetTargetType()`
-
-UnsetTargetType ensures that no value is present for TargetType, not even an explicit nil
-### GetTargets
-
-`func (o *Job) GetTargets() []AddJobs200ResponseAllOfJobTargetsInner`
-
-GetTargets returns the Targets field if non-nil, zero value otherwise.
-
-### GetTargetsOk
-
-`func (o *Job) GetTargetsOk() (*[]AddJobs200ResponseAllOfJobTargetsInner, bool)`
-
-GetTargetsOk returns a tuple with the Targets field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTargets
-
-`func (o *Job) SetTargets(v []AddJobs200ResponseAllOfJobTargetsInner)`
-
-SetTargets sets Targets field to given value.
-
-### HasTargets
-
-`func (o *Job) HasTargets() bool`
-
-HasTargets returns a boolean if a field has been set.
-
-### SetTargetsNil
-
-`func (o *Job) SetTargetsNil(b bool)`
-
- SetTargetsNil sets the value for Targets to be an explicit nil
-
-### UnsetTargets
-`func (o *Job) UnsetTargets()`
-
-UnsetTargets ensures that no value is present for Targets, not even an explicit nil
-### GetScanPath
-
-`func (o *Job) GetScanPath() string`
-
-GetScanPath returns the ScanPath field if non-nil, zero value otherwise.
-
-### GetScanPathOk
-
-`func (o *Job) GetScanPathOk() (*string, bool)`
-
-GetScanPathOk returns a tuple with the ScanPath field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetScanPath
-
-`func (o *Job) SetScanPath(v string)`
-
-SetScanPath sets ScanPath field to given value.
-
-### HasScanPath
-
-`func (o *Job) HasScanPath() bool`
-
-HasScanPath returns a boolean if a field has been set.
-
-### SetScanPathNil
-
-`func (o *Job) SetScanPathNil(b bool)`
-
- SetScanPathNil sets the value for ScanPath to be an explicit nil
-
-### UnsetScanPath
-`func (o *Job) UnsetScanPath()`
-
-UnsetScanPath ensures that no value is present for ScanPath, not even an explicit nil
-### GetSecurityProfile
-
-`func (o *Job) GetSecurityProfile() string`
-
-GetSecurityProfile returns the SecurityProfile field if non-nil, zero value otherwise.
-
-### GetSecurityProfileOk
-
-`func (o *Job) GetSecurityProfileOk() (*string, bool)`
-
-GetSecurityProfileOk returns a tuple with the SecurityProfile field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSecurityProfile
-
-`func (o *Job) SetSecurityProfile(v string)`
-
-SetSecurityProfile sets SecurityProfile field to given value.
-
-### HasSecurityProfile
-
-`func (o *Job) HasSecurityProfile() bool`
-
-HasSecurityProfile returns a boolean if a field has been set.
-
-### SetSecurityProfileNil
-
-`func (o *Job) SetSecurityProfileNil(b bool)`
-
- SetSecurityProfileNil sets the value for SecurityProfile to be an explicit nil
-
-### UnsetSecurityProfile
-`func (o *Job) UnsetSecurityProfile()`
-
-UnsetSecurityProfile ensures that no value is present for SecurityProfile, not even an explicit nil
-### GetCustomConfig
-
-`func (o *Job) GetCustomConfig() string`
-
-GetCustomConfig returns the CustomConfig field if non-nil, zero value otherwise.
-
-### GetCustomConfigOk
-
-`func (o *Job) GetCustomConfigOk() (*string, bool)`
-
-GetCustomConfigOk returns a tuple with the CustomConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomConfig
-
-`func (o *Job) SetCustomConfig(v string)`
-
-SetCustomConfig sets CustomConfig field to given value.
-
-### HasCustomConfig
-
-`func (o *Job) HasCustomConfig() bool`
-
-HasCustomConfig returns a boolean if a field has been set.
-
-### SetCustomConfigNil
-
-`func (o *Job) SetCustomConfigNil(b bool)`
-
- SetCustomConfigNil sets the value for CustomConfig to be an explicit nil
-
-### UnsetCustomConfig
-`func (o *Job) UnsetCustomConfig()`
-
-UnsetCustomConfig ensures that no value is present for CustomConfig, not even an explicit nil
-### GetCustomOptions
-
-`func (o *Job) GetCustomOptions() AddJobs200ResponseAllOfJobCustomOptions`
-
-GetCustomOptions returns the CustomOptions field if non-nil, zero value otherwise.
-
-### GetCustomOptionsOk
-
-`func (o *Job) GetCustomOptionsOk() (*AddJobs200ResponseAllOfJobCustomOptions, bool)`
-
-GetCustomOptionsOk returns a tuple with the CustomOptions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomOptions
-
-`func (o *Job) SetCustomOptions(v AddJobs200ResponseAllOfJobCustomOptions)`
-
-SetCustomOptions sets CustomOptions field to given value.
-
-### HasCustomOptions
-
-`func (o *Job) HasCustomOptions() bool`
-
-HasCustomOptions returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &Job{
+    // Set fields directly
+}
+```
+
+### Labels (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Labels.IsSet()` — check if set
+- `obj.Labels.Get()` — get the inner value (returns pointer)
+- `obj.Labels.Set(&val)` — set the value
+- `obj.Labels.Unset()` — clear the value
+### JobSummary (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.JobSummary.IsSet()` — check if set
+- `obj.JobSummary.Get()` — get the inner value (returns pointer)
+- `obj.JobSummary.Set(&val)` — set the value
+- `obj.JobSummary.Unset()` — clear the value
+### DateTime (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.DateTime.IsSet()` — check if set
+- `obj.DateTime.Get()` — get the inner value (returns pointer)
+- `obj.DateTime.Set(&val)` — set the value
+- `obj.DateTime.Unset()` — clear the value
+### Status (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Status.IsSet()` — check if set
+- `obj.Status.Get()` — get the inner value (returns pointer)
+- `obj.Status.Set(&val)` — set the value
+- `obj.Status.Unset()` — clear the value
+### Namespace (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Namespace.IsSet()` — check if set
+- `obj.Namespace.Get()` — get the inner value (returns pointer)
+- `obj.Namespace.Set(&val)` — set the value
+- `obj.Namespace.Unset()` — clear the value
+### Category (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Category.IsSet()` — check if set
+- `obj.Category.Get()` — get the inner value (returns pointer)
+- `obj.Category.Set(&val)` — set the value
+- `obj.Category.Unset()` — clear the value
+### Description (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Description.IsSet()` — check if set
+- `obj.Description.Get()` — get the inner value (returns pointer)
+- `obj.Description.Set(&val)` — set the value
+- `obj.Description.Unset()` — clear the value
+### LastResult (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.LastResult.IsSet()` — check if set
+- `obj.LastResult.Get()` — get the inner value (returns pointer)
+- `obj.LastResult.Set(&val)` — set the value
+- `obj.LastResult.Unset()` — clear the value
+### TargetType (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.TargetType.IsSet()` — check if set
+- `obj.TargetType.Get()` — get the inner value (returns pointer)
+- `obj.TargetType.Set(&val)` — set the value
+- `obj.TargetType.Unset()` — clear the value
+### Targets (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Targets.IsSet()` — check if set
+- `obj.Targets.Get()` — get the inner value (returns pointer)
+- `obj.Targets.Set(&val)` — set the value
+- `obj.Targets.Unset()` — clear the value
+### ScanPath (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ScanPath.IsSet()` — check if set
+- `obj.ScanPath.Get()` — get the inner value (returns pointer)
+- `obj.ScanPath.Set(&val)` — set the value
+- `obj.ScanPath.Unset()` — clear the value
+### SecurityProfile (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SecurityProfile.IsSet()` — check if set
+- `obj.SecurityProfile.Get()` — get the inner value (returns pointer)
+- `obj.SecurityProfile.Set(&val)` — set the value
+- `obj.SecurityProfile.Unset()` — clear the value
+### CustomConfig (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.CustomConfig.IsSet()` — check if set
+- `obj.CustomConfig.Get()` — get the inner value (returns pointer)
+- `obj.CustomConfig.Set(&val)` — set the value
+- `obj.CustomConfig.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

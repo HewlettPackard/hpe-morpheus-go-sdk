@@ -26,55 +26,6 @@ type GetPriceSets200Response struct {
 
 type _GetPriceSets200Response GetPriceSets200Response
 
-// NewGetPriceSets200Response instantiates a new GetPriceSets200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetPriceSets200Response() *GetPriceSets200Response {
-	this := GetPriceSets200Response{}
-	return &this
-}
-
-// NewGetPriceSets200ResponseWithDefaults instantiates a new GetPriceSets200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetPriceSets200ResponseWithDefaults() *GetPriceSets200Response {
-	this := GetPriceSets200Response{}
-	return &this
-}
-
-// GetPriceSet returns the PriceSet field value if set, zero value otherwise.
-func (o *GetPriceSets200Response) GetPriceSet() GetPriceSets200ResponsePriceSet {
-	if o == nil || IsNil(o.PriceSet) {
-		var ret GetPriceSets200ResponsePriceSet
-		return ret
-	}
-	return *o.PriceSet
-}
-
-// GetPriceSetOk returns a tuple with the PriceSet field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPriceSets200Response) GetPriceSetOk() (*GetPriceSets200ResponsePriceSet, bool) {
-	if o == nil || IsNil(o.PriceSet) {
-		return nil, false
-	}
-	return o.PriceSet, true
-}
-
-// IsSetPriceSet returns a boolean if a field has been set.
-func (o *GetPriceSets200Response) IsSetPriceSet() bool {
-	if o != nil && !IsNil(o.PriceSet) {
-		return true
-	}
-
-	return false
-}
-
-// SetPriceSet gets a reference to the given GetPriceSets200ResponsePriceSet and assigns it to the PriceSet field.
-func (o *GetPriceSets200Response) SetPriceSet(v GetPriceSets200ResponsePriceSet) {
-	o.PriceSet = &v
-}
-
 func (o GetPriceSets200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

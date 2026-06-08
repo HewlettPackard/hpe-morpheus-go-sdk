@@ -26,55 +26,6 @@ type GetExecuteSchedules200Response struct {
 
 type _GetExecuteSchedules200Response GetExecuteSchedules200Response
 
-// NewGetExecuteSchedules200Response instantiates a new GetExecuteSchedules200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetExecuteSchedules200Response() *GetExecuteSchedules200Response {
-	this := GetExecuteSchedules200Response{}
-	return &this
-}
-
-// NewGetExecuteSchedules200ResponseWithDefaults instantiates a new GetExecuteSchedules200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetExecuteSchedules200ResponseWithDefaults() *GetExecuteSchedules200Response {
-	this := GetExecuteSchedules200Response{}
-	return &this
-}
-
-// GetSchedule returns the Schedule field value if set, zero value otherwise.
-func (o *GetExecuteSchedules200Response) GetSchedule() GetExecuteSchedules200ResponseAllOfSchedule {
-	if o == nil || IsNil(o.Schedule) {
-		var ret GetExecuteSchedules200ResponseAllOfSchedule
-		return ret
-	}
-	return *o.Schedule
-}
-
-// GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetExecuteSchedules200Response) GetScheduleOk() (*GetExecuteSchedules200ResponseAllOfSchedule, bool) {
-	if o == nil || IsNil(o.Schedule) {
-		return nil, false
-	}
-	return o.Schedule, true
-}
-
-// IsSetSchedule returns a boolean if a field has been set.
-func (o *GetExecuteSchedules200Response) IsSetSchedule() bool {
-	if o != nil && !IsNil(o.Schedule) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchedule gets a reference to the given GetExecuteSchedules200ResponseAllOfSchedule and assigns it to the Schedule field.
-func (o *GetExecuteSchedules200Response) SetSchedule(v GetExecuteSchedules200ResponseAllOfSchedule) {
-	o.Schedule = &v
-}
-
 func (o GetExecuteSchedules200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

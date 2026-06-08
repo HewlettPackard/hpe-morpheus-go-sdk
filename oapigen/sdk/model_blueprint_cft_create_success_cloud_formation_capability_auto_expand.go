@@ -27,20 +27,6 @@ type BlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND struct {
 	String *string
 }
 
-// boolAsBlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND is a convenience function that returns bool wrapped in BlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND
-func BoolAsBlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND(v *bool) BlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND {
-	return BlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND{
-		Bool: v,
-	}
-}
-
-// stringAsBlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND is a convenience function that returns string wrapped in BlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND
-func StringAsBlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND(v *string) BlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND {
-	return BlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND{
-		String: v,
-	}
-}
-
 func (dst *BlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &BlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND{}

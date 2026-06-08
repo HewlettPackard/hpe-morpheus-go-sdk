@@ -27,48 +27,6 @@ type AddSpecTemplateRequestSpecTemplateType struct {
 
 type _AddSpecTemplateRequestSpecTemplateType AddSpecTemplateRequestSpecTemplateType
 
-// NewAddSpecTemplateRequestSpecTemplateType instantiates a new AddSpecTemplateRequestSpecTemplateType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddSpecTemplateRequestSpecTemplateType(code string) *AddSpecTemplateRequestSpecTemplateType {
-	this := AddSpecTemplateRequestSpecTemplateType{}
-	this.Code = code
-	return &this
-}
-
-// NewAddSpecTemplateRequestSpecTemplateTypeWithDefaults instantiates a new AddSpecTemplateRequestSpecTemplateType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddSpecTemplateRequestSpecTemplateTypeWithDefaults() *AddSpecTemplateRequestSpecTemplateType {
-	this := AddSpecTemplateRequestSpecTemplateType{}
-	return &this
-}
-
-// GetCode returns the Code field value
-func (o *AddSpecTemplateRequestSpecTemplateType) GetCode() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value
-// and a boolean to check if the value has been set.
-func (o *AddSpecTemplateRequestSpecTemplateType) GetCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Code, true
-}
-
-// SetCode sets field value
-func (o *AddSpecTemplateRequestSpecTemplateType) SetCode(v string) {
-	o.Code = v
-}
-
 func (o AddSpecTemplateRequestSpecTemplateType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

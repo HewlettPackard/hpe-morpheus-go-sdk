@@ -26,55 +26,6 @@ type GetBackupRestores200Response struct {
 
 type _GetBackupRestores200Response GetBackupRestores200Response
 
-// NewGetBackupRestores200Response instantiates a new GetBackupRestores200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetBackupRestores200Response() *GetBackupRestores200Response {
-	this := GetBackupRestores200Response{}
-	return &this
-}
-
-// NewGetBackupRestores200ResponseWithDefaults instantiates a new GetBackupRestores200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetBackupRestores200ResponseWithDefaults() *GetBackupRestores200Response {
-	this := GetBackupRestores200Response{}
-	return &this
-}
-
-// GetRestore returns the Restore field value if set, zero value otherwise.
-func (o *GetBackupRestores200Response) GetRestore() GetBackupRestores200ResponseRestore {
-	if o == nil || IsNil(o.Restore) {
-		var ret GetBackupRestores200ResponseRestore
-		return ret
-	}
-	return *o.Restore
-}
-
-// GetRestoreOk returns a tuple with the Restore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetBackupRestores200Response) GetRestoreOk() (*GetBackupRestores200ResponseRestore, bool) {
-	if o == nil || IsNil(o.Restore) {
-		return nil, false
-	}
-	return o.Restore, true
-}
-
-// IsSetRestore returns a boolean if a field has been set.
-func (o *GetBackupRestores200Response) IsSetRestore() bool {
-	if o != nil && !IsNil(o.Restore) {
-		return true
-	}
-
-	return false
-}
-
-// SetRestore gets a reference to the given GetBackupRestores200ResponseRestore and assigns it to the Restore field.
-func (o *GetBackupRestores200Response) SetRestore(v GetBackupRestores200ResponseRestore) {
-	o.Restore = &v
-}
-
 func (o GetBackupRestores200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

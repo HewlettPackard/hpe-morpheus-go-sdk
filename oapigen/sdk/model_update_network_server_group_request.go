@@ -26,55 +26,6 @@ type UpdateNetworkServerGroupRequest struct {
 
 type _UpdateNetworkServerGroupRequest UpdateNetworkServerGroupRequest
 
-// NewUpdateNetworkServerGroupRequest instantiates a new UpdateNetworkServerGroupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkServerGroupRequest() *UpdateNetworkServerGroupRequest {
-	this := UpdateNetworkServerGroupRequest{}
-	return &this
-}
-
-// NewUpdateNetworkServerGroupRequestWithDefaults instantiates a new UpdateNetworkServerGroupRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkServerGroupRequestWithDefaults() *UpdateNetworkServerGroupRequest {
-	this := UpdateNetworkServerGroupRequest{}
-	return &this
-}
-
-// GetGroup returns the Group field value if set, zero value otherwise.
-func (o *UpdateNetworkServerGroupRequest) GetGroup() map[string]interface{} {
-	if o == nil || IsNil(o.Group) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Group
-}
-
-// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateNetworkServerGroupRequest) GetGroupOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Group) {
-		return map[string]interface{}{}, false
-	}
-	return o.Group, true
-}
-
-// IsSetGroup returns a boolean if a field has been set.
-func (o *UpdateNetworkServerGroupRequest) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
-}
-
-// SetGroup gets a reference to the given map[string]interface{} and assigns it to the Group field.
-func (o *UpdateNetworkServerGroupRequest) SetGroup(v map[string]interface{}) {
-	o.Group = v
-}
-
 func (o UpdateNetworkServerGroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

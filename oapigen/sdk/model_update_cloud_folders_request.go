@@ -26,48 +26,6 @@ type UpdateCloudFoldersRequest struct {
 
 type _UpdateCloudFoldersRequest UpdateCloudFoldersRequest
 
-// NewUpdateCloudFoldersRequest instantiates a new UpdateCloudFoldersRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCloudFoldersRequest(folder UpdateCloudFoldersRequestFolder) *UpdateCloudFoldersRequest {
-	this := UpdateCloudFoldersRequest{}
-	this.Folder = folder
-	return &this
-}
-
-// NewUpdateCloudFoldersRequestWithDefaults instantiates a new UpdateCloudFoldersRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCloudFoldersRequestWithDefaults() *UpdateCloudFoldersRequest {
-	this := UpdateCloudFoldersRequest{}
-	return &this
-}
-
-// GetFolder returns the Folder field value
-func (o *UpdateCloudFoldersRequest) GetFolder() UpdateCloudFoldersRequestFolder {
-	if o == nil {
-		var ret UpdateCloudFoldersRequestFolder
-		return ret
-	}
-
-	return o.Folder
-}
-
-// GetFolderOk returns a tuple with the Folder field value
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudFoldersRequest) GetFolderOk() (*UpdateCloudFoldersRequestFolder, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Folder, true
-}
-
-// SetFolder sets field value
-func (o *UpdateCloudFoldersRequest) SetFolder(v UpdateCloudFoldersRequestFolder) {
-	o.Folder = v
-}
-
 func (o UpdateCloudFoldersRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

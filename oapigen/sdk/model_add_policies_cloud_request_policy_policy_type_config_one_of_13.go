@@ -26,55 +26,6 @@ type AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 struct {
 
 type _AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13
 
-// NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 instantiates a new AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13() *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 {
-	this := AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13{}
-	return &this
-}
-
-// NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13WithDefaults instantiates a new AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13WithDefaults() *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13 {
-	this := AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13{}
-	return &this
-}
-
-// GetMaxHosts returns the MaxHosts field value if set, zero value otherwise.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13) GetMaxHosts() string {
-	if o == nil || IsNil(o.MaxHosts) {
-		var ret string
-		return ret
-	}
-	return *o.MaxHosts
-}
-
-// GetMaxHostsOk returns a tuple with the MaxHosts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13) GetMaxHostsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxHosts) {
-		return nil, false
-	}
-	return o.MaxHosts, true
-}
-
-// IsSetMaxHosts returns a boolean if a field has been set.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13) IsSetMaxHosts() bool {
-	if o != nil && !IsNil(o.MaxHosts) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxHosts gets a reference to the given string and assigns it to the MaxHosts field.
-func (o *AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13) SetMaxHosts(v string) {
-	o.MaxHosts = &v
-}
-
 func (o AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf13) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

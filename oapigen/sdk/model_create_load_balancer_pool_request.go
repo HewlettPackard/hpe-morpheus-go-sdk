@@ -26,55 +26,6 @@ type CreateLoadBalancerPoolRequest struct {
 
 type _CreateLoadBalancerPoolRequest CreateLoadBalancerPoolRequest
 
-// NewCreateLoadBalancerPoolRequest instantiates a new CreateLoadBalancerPoolRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCreateLoadBalancerPoolRequest() *CreateLoadBalancerPoolRequest {
-	this := CreateLoadBalancerPoolRequest{}
-	return &this
-}
-
-// NewCreateLoadBalancerPoolRequestWithDefaults instantiates a new CreateLoadBalancerPoolRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCreateLoadBalancerPoolRequestWithDefaults() *CreateLoadBalancerPoolRequest {
-	this := CreateLoadBalancerPoolRequest{}
-	return &this
-}
-
-// GetLoadBalancerPool returns the LoadBalancerPool field value if set, zero value otherwise.
-func (o *CreateLoadBalancerPoolRequest) GetLoadBalancerPool() CreateLoadBalancerPoolRequestLoadBalancerPool {
-	if o == nil || IsNil(o.LoadBalancerPool) {
-		var ret CreateLoadBalancerPoolRequestLoadBalancerPool
-		return ret
-	}
-	return *o.LoadBalancerPool
-}
-
-// GetLoadBalancerPoolOk returns a tuple with the LoadBalancerPool field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerPoolRequest) GetLoadBalancerPoolOk() (*CreateLoadBalancerPoolRequestLoadBalancerPool, bool) {
-	if o == nil || IsNil(o.LoadBalancerPool) {
-		return nil, false
-	}
-	return o.LoadBalancerPool, true
-}
-
-// IsSetLoadBalancerPool returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolRequest) IsSetLoadBalancerPool() bool {
-	if o != nil && !IsNil(o.LoadBalancerPool) {
-		return true
-	}
-
-	return false
-}
-
-// SetLoadBalancerPool gets a reference to the given CreateLoadBalancerPoolRequestLoadBalancerPool and assigns it to the LoadBalancerPool field.
-func (o *CreateLoadBalancerPoolRequest) SetLoadBalancerPool(v CreateLoadBalancerPoolRequestLoadBalancerPool) {
-	o.LoadBalancerPool = &v
-}
-
 func (o CreateLoadBalancerPoolRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

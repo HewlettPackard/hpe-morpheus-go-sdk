@@ -26,55 +26,6 @@ type UpdateFileTemplateRequest struct {
 
 type _UpdateFileTemplateRequest UpdateFileTemplateRequest
 
-// NewUpdateFileTemplateRequest instantiates a new UpdateFileTemplateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateFileTemplateRequest() *UpdateFileTemplateRequest {
-	this := UpdateFileTemplateRequest{}
-	return &this
-}
-
-// NewUpdateFileTemplateRequestWithDefaults instantiates a new UpdateFileTemplateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateFileTemplateRequestWithDefaults() *UpdateFileTemplateRequest {
-	this := UpdateFileTemplateRequest{}
-	return &this
-}
-
-// GetContainerTemplate returns the ContainerTemplate field value if set, zero value otherwise.
-func (o *UpdateFileTemplateRequest) GetContainerTemplate() UpdateFileTemplateRequestContainerTemplate {
-	if o == nil || IsNil(o.ContainerTemplate) {
-		var ret UpdateFileTemplateRequestContainerTemplate
-		return ret
-	}
-	return *o.ContainerTemplate
-}
-
-// GetContainerTemplateOk returns a tuple with the ContainerTemplate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateFileTemplateRequest) GetContainerTemplateOk() (*UpdateFileTemplateRequestContainerTemplate, bool) {
-	if o == nil || IsNil(o.ContainerTemplate) {
-		return nil, false
-	}
-	return o.ContainerTemplate, true
-}
-
-// IsSetContainerTemplate returns a boolean if a field has been set.
-func (o *UpdateFileTemplateRequest) IsSetContainerTemplate() bool {
-	if o != nil && !IsNil(o.ContainerTemplate) {
-		return true
-	}
-
-	return false
-}
-
-// SetContainerTemplate gets a reference to the given UpdateFileTemplateRequestContainerTemplate and assigns it to the ContainerTemplate field.
-func (o *UpdateFileTemplateRequest) SetContainerTemplate(v UpdateFileTemplateRequestContainerTemplate) {
-	o.ContainerTemplate = &v
-}
-
 func (o UpdateFileTemplateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

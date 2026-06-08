@@ -26,48 +26,6 @@ type AddClientRequest struct {
 
 type _AddClientRequest AddClientRequest
 
-// NewAddClientRequest instantiates a new AddClientRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClientRequest(client AddClientRequestClient) *AddClientRequest {
-	this := AddClientRequest{}
-	this.Client = client
-	return &this
-}
-
-// NewAddClientRequestWithDefaults instantiates a new AddClientRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClientRequestWithDefaults() *AddClientRequest {
-	this := AddClientRequest{}
-	return &this
-}
-
-// GetClient returns the Client field value
-func (o *AddClientRequest) GetClient() AddClientRequestClient {
-	if o == nil {
-		var ret AddClientRequestClient
-		return ret
-	}
-
-	return o.Client
-}
-
-// GetClientOk returns a tuple with the Client field value
-// and a boolean to check if the value has been set.
-func (o *AddClientRequest) GetClientOk() (*AddClientRequestClient, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Client, true
-}
-
-// SetClient sets field value
-func (o *AddClientRequest) SetClient(v AddClientRequestClient) {
-	o.Client = v
-}
-
 func (o AddClientRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

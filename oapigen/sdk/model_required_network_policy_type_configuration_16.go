@@ -27,55 +27,6 @@ type RequiredNetworkPolicyTypeConfiguration16 struct {
 
 type _RequiredNetworkPolicyTypeConfiguration16 RequiredNetworkPolicyTypeConfiguration16
 
-// NewRequiredNetworkPolicyTypeConfiguration16 instantiates a new RequiredNetworkPolicyTypeConfiguration16 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRequiredNetworkPolicyTypeConfiguration16() *RequiredNetworkPolicyTypeConfiguration16 {
-	this := RequiredNetworkPolicyTypeConfiguration16{}
-	return &this
-}
-
-// NewRequiredNetworkPolicyTypeConfiguration16WithDefaults instantiates a new RequiredNetworkPolicyTypeConfiguration16 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRequiredNetworkPolicyTypeConfiguration16WithDefaults() *RequiredNetworkPolicyTypeConfiguration16 {
-	this := RequiredNetworkPolicyTypeConfiguration16{}
-	return &this
-}
-
-// GetRequiredNetworks returns the RequiredNetworks field value if set, zero value otherwise.
-func (o *RequiredNetworkPolicyTypeConfiguration16) GetRequiredNetworks() []int64 {
-	if o == nil || IsNil(o.RequiredNetworks) {
-		var ret []int64
-		return ret
-	}
-	return o.RequiredNetworks
-}
-
-// GetRequiredNetworksOk returns a tuple with the RequiredNetworks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RequiredNetworkPolicyTypeConfiguration16) GetRequiredNetworksOk() ([]int64, bool) {
-	if o == nil || IsNil(o.RequiredNetworks) {
-		return nil, false
-	}
-	return o.RequiredNetworks, true
-}
-
-// IsSetRequiredNetworks returns a boolean if a field has been set.
-func (o *RequiredNetworkPolicyTypeConfiguration16) IsSetRequiredNetworks() bool {
-	if o != nil && !IsNil(o.RequiredNetworks) {
-		return true
-	}
-
-	return false
-}
-
-// SetRequiredNetworks gets a reference to the given []int64 and assigns it to the RequiredNetworks field.
-func (o *RequiredNetworkPolicyTypeConfiguration16) SetRequiredNetworks(v []int64) {
-	o.RequiredNetworks = v
-}
-
 func (o RequiredNetworkPolicyTypeConfiguration16) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

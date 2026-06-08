@@ -9,124 +9,15 @@ Name | Type | Description | Notes
 **Code** | Pointer to **string** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
 
-## Methods
+## Usage
 
-### NewListClusterPolicies200ResponseAllOfPoliciesInner
+Instantiate with a Go composite literal:
 
-`func NewListClusterPolicies200ResponseAllOfPoliciesInner() *ListClusterPolicies200ResponseAllOfPoliciesInner`
-
-NewListClusterPolicies200ResponseAllOfPoliciesInner instantiates a new ListClusterPolicies200ResponseAllOfPoliciesInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewListClusterPolicies200ResponseAllOfPoliciesInnerWithDefaults
-
-`func NewListClusterPolicies200ResponseAllOfPoliciesInnerWithDefaults() *ListClusterPolicies200ResponseAllOfPoliciesInner`
-
-NewListClusterPolicies200ResponseAllOfPoliciesInnerWithDefaults instantiates a new ListClusterPolicies200ResponseAllOfPoliciesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetCode
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) GetCode() string`
-
-GetCode returns the Code field if non-nil, zero value otherwise.
-
-### GetCodeOk
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) GetCodeOk() (*string, bool)`
-
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCode
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) SetCode(v string)`
-
-SetCode sets Code field to given value.
-
-### HasCode
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) HasCode() bool`
-
-HasCode returns a boolean if a field has been set.
-
-### GetCategory
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) GetCategory() string`
-
-GetCategory returns the Category field if non-nil, zero value otherwise.
-
-### GetCategoryOk
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) GetCategoryOk() (*string, bool)`
-
-GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCategory
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) SetCategory(v string)`
-
-SetCategory sets Category field to given value.
-
-### HasCategory
-
-`func (o *ListClusterPolicies200ResponseAllOfPoliciesInner) HasCategory() bool`
-
-HasCategory returns a boolean if a field has been set.
+```go
+obj := &ListClusterPolicies200ResponseAllOfPoliciesInner{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -26,55 +26,6 @@ type RouterQuotaPolicyTypeConfiguration16 struct {
 
 type _RouterQuotaPolicyTypeConfiguration16 RouterQuotaPolicyTypeConfiguration16
 
-// NewRouterQuotaPolicyTypeConfiguration16 instantiates a new RouterQuotaPolicyTypeConfiguration16 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRouterQuotaPolicyTypeConfiguration16() *RouterQuotaPolicyTypeConfiguration16 {
-	this := RouterQuotaPolicyTypeConfiguration16{}
-	return &this
-}
-
-// NewRouterQuotaPolicyTypeConfiguration16WithDefaults instantiates a new RouterQuotaPolicyTypeConfiguration16 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRouterQuotaPolicyTypeConfiguration16WithDefaults() *RouterQuotaPolicyTypeConfiguration16 {
-	this := RouterQuotaPolicyTypeConfiguration16{}
-	return &this
-}
-
-// GetMaxRouters returns the MaxRouters field value if set, zero value otherwise.
-func (o *RouterQuotaPolicyTypeConfiguration16) GetMaxRouters() string {
-	if o == nil || IsNil(o.MaxRouters) {
-		var ret string
-		return ret
-	}
-	return *o.MaxRouters
-}
-
-// GetMaxRoutersOk returns a tuple with the MaxRouters field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RouterQuotaPolicyTypeConfiguration16) GetMaxRoutersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxRouters) {
-		return nil, false
-	}
-	return o.MaxRouters, true
-}
-
-// IsSetMaxRouters returns a boolean if a field has been set.
-func (o *RouterQuotaPolicyTypeConfiguration16) IsSetMaxRouters() bool {
-	if o != nil && !IsNil(o.MaxRouters) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxRouters gets a reference to the given string and assigns it to the MaxRouters field.
-func (o *RouterQuotaPolicyTypeConfiguration16) SetMaxRouters(v string) {
-	o.MaxRouters = &v
-}
-
 func (o RouterQuotaPolicyTypeConfiguration16) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

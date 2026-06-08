@@ -27,66 +27,6 @@ type GenericInstanceConfiguration2 struct {
 
 type _GenericInstanceConfiguration2 GenericInstanceConfiguration2
 
-// NewGenericInstanceConfiguration2 instantiates a new GenericInstanceConfiguration2 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGenericInstanceConfiguration2() *GenericInstanceConfiguration2 {
-	this := GenericInstanceConfiguration2{}
-	return &this
-}
-
-// NewGenericInstanceConfiguration2WithDefaults instantiates a new GenericInstanceConfiguration2 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGenericInstanceConfiguration2WithDefaults() *GenericInstanceConfiguration2 {
-	this := GenericInstanceConfiguration2{}
-	return &this
-}
-
-// GetUserData returns the UserData field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GenericInstanceConfiguration2) GetUserData() string {
-	if o == nil || IsNil(o.UserData.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.UserData.Get()
-}
-
-// GetUserDataOk returns a tuple with the UserData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GenericInstanceConfiguration2) GetUserDataOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.UserData.Get(), o.UserData.IsSet()
-}
-
-// IsSetUserData returns a boolean if a field has been set.
-func (o *GenericInstanceConfiguration2) IsSetUserData() bool {
-	if o != nil && o.UserData.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetUserData gets a reference to the given NullableString and assigns it to the UserData field.
-func (o *GenericInstanceConfiguration2) SetUserData(v string) {
-	o.UserData.Set(&v)
-}
-
-// SetUserDataNil sets the value for UserData to be an explicit nil
-func (o *GenericInstanceConfiguration2) SetUserDataNil() {
-	o.UserData.Set(nil)
-}
-
-// UnsetUserData ensures that no value is present for UserData, not even an explicit nil
-func (o *GenericInstanceConfiguration2) UnsetUserData() {
-	o.UserData.Unset()
-}
-
 func (o GenericInstanceConfiguration2) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

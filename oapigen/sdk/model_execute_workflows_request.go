@@ -26,48 +26,6 @@ type ExecuteWorkflowsRequest struct {
 
 type _ExecuteWorkflowsRequest ExecuteWorkflowsRequest
 
-// NewExecuteWorkflowsRequest instantiates a new ExecuteWorkflowsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewExecuteWorkflowsRequest(job ExecuteWorkflowsRequestJob) *ExecuteWorkflowsRequest {
-	this := ExecuteWorkflowsRequest{}
-	this.Job = job
-	return &this
-}
-
-// NewExecuteWorkflowsRequestWithDefaults instantiates a new ExecuteWorkflowsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewExecuteWorkflowsRequestWithDefaults() *ExecuteWorkflowsRequest {
-	this := ExecuteWorkflowsRequest{}
-	return &this
-}
-
-// GetJob returns the Job field value
-func (o *ExecuteWorkflowsRequest) GetJob() ExecuteWorkflowsRequestJob {
-	if o == nil {
-		var ret ExecuteWorkflowsRequestJob
-		return ret
-	}
-
-	return o.Job
-}
-
-// GetJobOk returns a tuple with the Job field value
-// and a boolean to check if the value has been set.
-func (o *ExecuteWorkflowsRequest) GetJobOk() (*ExecuteWorkflowsRequestJob, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Job, true
-}
-
-// SetJob sets field value
-func (o *ExecuteWorkflowsRequest) SetJob(v ExecuteWorkflowsRequestJob) {
-	o.Job = v
-}
-
 func (o ExecuteWorkflowsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

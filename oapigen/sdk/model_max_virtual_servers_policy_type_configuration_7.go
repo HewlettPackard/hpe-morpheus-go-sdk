@@ -26,48 +26,6 @@ type MaxVirtualServersPolicyTypeConfiguration7 struct {
 
 type _MaxVirtualServersPolicyTypeConfiguration7 MaxVirtualServersPolicyTypeConfiguration7
 
-// NewMaxVirtualServersPolicyTypeConfiguration7 instantiates a new MaxVirtualServersPolicyTypeConfiguration7 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMaxVirtualServersPolicyTypeConfiguration7(maxVirtualServers string) *MaxVirtualServersPolicyTypeConfiguration7 {
-	this := MaxVirtualServersPolicyTypeConfiguration7{}
-	this.MaxVirtualServers = maxVirtualServers
-	return &this
-}
-
-// NewMaxVirtualServersPolicyTypeConfiguration7WithDefaults instantiates a new MaxVirtualServersPolicyTypeConfiguration7 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMaxVirtualServersPolicyTypeConfiguration7WithDefaults() *MaxVirtualServersPolicyTypeConfiguration7 {
-	this := MaxVirtualServersPolicyTypeConfiguration7{}
-	return &this
-}
-
-// GetMaxVirtualServers returns the MaxVirtualServers field value
-func (o *MaxVirtualServersPolicyTypeConfiguration7) GetMaxVirtualServers() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MaxVirtualServers
-}
-
-// GetMaxVirtualServersOk returns a tuple with the MaxVirtualServers field value
-// and a boolean to check if the value has been set.
-func (o *MaxVirtualServersPolicyTypeConfiguration7) GetMaxVirtualServersOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MaxVirtualServers, true
-}
-
-// SetMaxVirtualServers sets field value
-func (o *MaxVirtualServersPolicyTypeConfiguration7) SetMaxVirtualServers(v string) {
-	o.MaxVirtualServers = v
-}
-
 func (o MaxVirtualServersPolicyTypeConfiguration7) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

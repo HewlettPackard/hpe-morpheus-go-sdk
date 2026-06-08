@@ -26,55 +26,6 @@ type PolicyCloudUpdatePolicyTypeConfigOneOf6 struct {
 
 type _PolicyCloudUpdatePolicyTypeConfigOneOf6 PolicyCloudUpdatePolicyTypeConfigOneOf6
 
-// NewPolicyCloudUpdatePolicyTypeConfigOneOf6 instantiates a new PolicyCloudUpdatePolicyTypeConfigOneOf6 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPolicyCloudUpdatePolicyTypeConfigOneOf6() *PolicyCloudUpdatePolicyTypeConfigOneOf6 {
-	this := PolicyCloudUpdatePolicyTypeConfigOneOf6{}
-	return &this
-}
-
-// NewPolicyCloudUpdatePolicyTypeConfigOneOf6WithDefaults instantiates a new PolicyCloudUpdatePolicyTypeConfigOneOf6 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPolicyCloudUpdatePolicyTypeConfigOneOf6WithDefaults() *PolicyCloudUpdatePolicyTypeConfigOneOf6 {
-	this := PolicyCloudUpdatePolicyTypeConfigOneOf6{}
-	return &this
-}
-
-// GetRemovalAge returns the RemovalAge field value if set, zero value otherwise.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf6) GetRemovalAge() string {
-	if o == nil || IsNil(o.RemovalAge) {
-		var ret string
-		return ret
-	}
-	return *o.RemovalAge
-}
-
-// GetRemovalAgeOk returns a tuple with the RemovalAge field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf6) GetRemovalAgeOk() (*string, bool) {
-	if o == nil || IsNil(o.RemovalAge) {
-		return nil, false
-	}
-	return o.RemovalAge, true
-}
-
-// IsSetRemovalAge returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf6) IsSetRemovalAge() bool {
-	if o != nil && !IsNil(o.RemovalAge) {
-		return true
-	}
-
-	return false
-}
-
-// SetRemovalAge gets a reference to the given string and assigns it to the RemovalAge field.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf6) SetRemovalAge(v string) {
-	o.RemovalAge = &v
-}
-
 func (o PolicyCloudUpdatePolicyTypeConfigOneOf6) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

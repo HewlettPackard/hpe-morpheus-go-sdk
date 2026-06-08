@@ -27,48 +27,6 @@ type AcknowledgeHealthAlarmRequestAlarm struct {
 
 type _AcknowledgeHealthAlarmRequestAlarm AcknowledgeHealthAlarmRequestAlarm
 
-// NewAcknowledgeHealthAlarmRequestAlarm instantiates a new AcknowledgeHealthAlarmRequestAlarm object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAcknowledgeHealthAlarmRequestAlarm(acknowledged bool) *AcknowledgeHealthAlarmRequestAlarm {
-	this := AcknowledgeHealthAlarmRequestAlarm{}
-	this.Acknowledged = acknowledged
-	return &this
-}
-
-// NewAcknowledgeHealthAlarmRequestAlarmWithDefaults instantiates a new AcknowledgeHealthAlarmRequestAlarm object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAcknowledgeHealthAlarmRequestAlarmWithDefaults() *AcknowledgeHealthAlarmRequestAlarm {
-	this := AcknowledgeHealthAlarmRequestAlarm{}
-	return &this
-}
-
-// GetAcknowledged returns the Acknowledged field value
-func (o *AcknowledgeHealthAlarmRequestAlarm) GetAcknowledged() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.Acknowledged
-}
-
-// GetAcknowledgedOk returns a tuple with the Acknowledged field value
-// and a boolean to check if the value has been set.
-func (o *AcknowledgeHealthAlarmRequestAlarm) GetAcknowledgedOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Acknowledged, true
-}
-
-// SetAcknowledged sets field value
-func (o *AcknowledgeHealthAlarmRequestAlarm) SetAcknowledged(v bool) {
-	o.Acknowledged = v
-}
-
 func (o AcknowledgeHealthAlarmRequestAlarm) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

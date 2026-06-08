@@ -27,20 +27,6 @@ type AddBaremetalHost200ResponseServerConfigCreateUser struct {
 	String *string
 }
 
-// boolAsAddBaremetalHost200ResponseServerConfigCreateUser is a convenience function that returns bool wrapped in AddBaremetalHost200ResponseServerConfigCreateUser
-func BoolAsAddBaremetalHost200ResponseServerConfigCreateUser(v *bool) AddBaremetalHost200ResponseServerConfigCreateUser {
-	return AddBaremetalHost200ResponseServerConfigCreateUser{
-		Bool: v,
-	}
-}
-
-// stringAsAddBaremetalHost200ResponseServerConfigCreateUser is a convenience function that returns string wrapped in AddBaremetalHost200ResponseServerConfigCreateUser
-func StringAsAddBaremetalHost200ResponseServerConfigCreateUser(v *string) AddBaremetalHost200ResponseServerConfigCreateUser {
-	return AddBaremetalHost200ResponseServerConfigCreateUser{
-		String: v,
-	}
-}
-
 func (dst *AddBaremetalHost200ResponseServerConfigCreateUser) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddBaremetalHost200ResponseServerConfigCreateUser{}

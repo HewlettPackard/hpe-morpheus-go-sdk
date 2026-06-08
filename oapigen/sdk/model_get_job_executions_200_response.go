@@ -26,55 +26,6 @@ type GetJobExecutions200Response struct {
 
 type _GetJobExecutions200Response GetJobExecutions200Response
 
-// NewGetJobExecutions200Response instantiates a new GetJobExecutions200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetJobExecutions200Response() *GetJobExecutions200Response {
-	this := GetJobExecutions200Response{}
-	return &this
-}
-
-// NewGetJobExecutions200ResponseWithDefaults instantiates a new GetJobExecutions200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetJobExecutions200ResponseWithDefaults() *GetJobExecutions200Response {
-	this := GetJobExecutions200Response{}
-	return &this
-}
-
-// GetJobExecution returns the JobExecution field value if set, zero value otherwise.
-func (o *GetJobExecutions200Response) GetJobExecution() GetJobExecutions200ResponseAllOfJobExecution {
-	if o == nil || IsNil(o.JobExecution) {
-		var ret GetJobExecutions200ResponseAllOfJobExecution
-		return ret
-	}
-	return *o.JobExecution
-}
-
-// GetJobExecutionOk returns a tuple with the JobExecution field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetJobExecutions200Response) GetJobExecutionOk() (*GetJobExecutions200ResponseAllOfJobExecution, bool) {
-	if o == nil || IsNil(o.JobExecution) {
-		return nil, false
-	}
-	return o.JobExecution, true
-}
-
-// IsSetJobExecution returns a boolean if a field has been set.
-func (o *GetJobExecutions200Response) IsSetJobExecution() bool {
-	if o != nil && !IsNil(o.JobExecution) {
-		return true
-	}
-
-	return false
-}
-
-// SetJobExecution gets a reference to the given GetJobExecutions200ResponseAllOfJobExecution and assigns it to the JobExecution field.
-func (o *GetJobExecutions200Response) SetJobExecution(v GetJobExecutions200ResponseAllOfJobExecution) {
-	o.JobExecution = &v
-}
-
 func (o GetJobExecutions200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

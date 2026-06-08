@@ -7,85 +7,23 @@ Name | Type | Description | Notes
 **CustomOptions** | Pointer to **map[string]interface{}** | Custom Option Type settings object containing name value pairs. | [optional] 
 **UserData** | Pointer to **NullableString** | User Data. Allows for override of cloud-init based user-data yaml or custom scripts | [optional] 
 
-## Methods
+## Usage
 
-### NewInstancesConfigCustomOptions
+Instantiate with a Go composite literal:
 
-`func NewInstancesConfigCustomOptions() *InstancesConfigCustomOptions`
+```go
+obj := &InstancesConfigCustomOptions{
+    // Set fields directly
+}
+```
 
-NewInstancesConfigCustomOptions instantiates a new InstancesConfigCustomOptions object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### UserData (Nullable)
 
-### NewInstancesConfigCustomOptionsWithDefaults
-
-`func NewInstancesConfigCustomOptionsWithDefaults() *InstancesConfigCustomOptions`
-
-NewInstancesConfigCustomOptionsWithDefaults instantiates a new InstancesConfigCustomOptions object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetCustomOptions
-
-`func (o *InstancesConfigCustomOptions) GetCustomOptions() map[string]interface{}`
-
-GetCustomOptions returns the CustomOptions field if non-nil, zero value otherwise.
-
-### GetCustomOptionsOk
-
-`func (o *InstancesConfigCustomOptions) GetCustomOptionsOk() (*map[string]interface{}, bool)`
-
-GetCustomOptionsOk returns a tuple with the CustomOptions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomOptions
-
-`func (o *InstancesConfigCustomOptions) SetCustomOptions(v map[string]interface{})`
-
-SetCustomOptions sets CustomOptions field to given value.
-
-### HasCustomOptions
-
-`func (o *InstancesConfigCustomOptions) HasCustomOptions() bool`
-
-HasCustomOptions returns a boolean if a field has been set.
-
-### GetUserData
-
-`func (o *InstancesConfigCustomOptions) GetUserData() string`
-
-GetUserData returns the UserData field if non-nil, zero value otherwise.
-
-### GetUserDataOk
-
-`func (o *InstancesConfigCustomOptions) GetUserDataOk() (*string, bool)`
-
-GetUserDataOk returns a tuple with the UserData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserData
-
-`func (o *InstancesConfigCustomOptions) SetUserData(v string)`
-
-SetUserData sets UserData field to given value.
-
-### HasUserData
-
-`func (o *InstancesConfigCustomOptions) HasUserData() bool`
-
-HasUserData returns a boolean if a field has been set.
-
-### SetUserDataNil
-
-`func (o *InstancesConfigCustomOptions) SetUserDataNil(b bool)`
-
- SetUserDataNil sets the value for UserData to be an explicit nil
-
-### UnsetUserData
-`func (o *InstancesConfigCustomOptions) UnsetUserData()`
-
-UnsetUserData ensures that no value is present for UserData, not even an explicit nil
+Use the Nullable wrapper methods:
+- `obj.UserData.IsSet()` — check if set
+- `obj.UserData.Get()` — get the inner value (returns pointer)
+- `obj.UserData.Set(&val)` — set the value
+- `obj.UserData.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

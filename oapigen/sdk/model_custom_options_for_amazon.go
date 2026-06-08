@@ -27,55 +27,6 @@ type CustomOptionsForAmazon struct {
 
 type _CustomOptionsForAmazon CustomOptionsForAmazon
 
-// NewCustomOptionsForAmazon instantiates a new CustomOptionsForAmazon object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCustomOptionsForAmazon() *CustomOptionsForAmazon {
-	this := CustomOptionsForAmazon{}
-	return &this
-}
-
-// NewCustomOptionsForAmazonWithDefaults instantiates a new CustomOptionsForAmazon object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCustomOptionsForAmazonWithDefaults() *CustomOptionsForAmazon {
-	this := CustomOptionsForAmazon{}
-	return &this
-}
-
-// GetVpc returns the Vpc field value if set, zero value otherwise.
-func (o *CustomOptionsForAmazon) GetVpc() string {
-	if o == nil || IsNil(o.Vpc) {
-		var ret string
-		return ret
-	}
-	return *o.Vpc
-}
-
-// GetVpcOk returns a tuple with the Vpc field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CustomOptionsForAmazon) GetVpcOk() (*string, bool) {
-	if o == nil || IsNil(o.Vpc) {
-		return nil, false
-	}
-	return o.Vpc, true
-}
-
-// IsSetVpc returns a boolean if a field has been set.
-func (o *CustomOptionsForAmazon) IsSetVpc() bool {
-	if o != nil && !IsNil(o.Vpc) {
-		return true
-	}
-
-	return false
-}
-
-// SetVpc gets a reference to the given string and assigns it to the Vpc field.
-func (o *CustomOptionsForAmazon) SetVpc(v string) {
-	o.Vpc = &v
-}
-
 func (o CustomOptionsForAmazon) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

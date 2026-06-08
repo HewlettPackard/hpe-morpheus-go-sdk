@@ -7,74 +7,15 @@ Name | Type | Description | Notes
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
 **Network** | Pointer to [**AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork**](AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner
+Instantiate with a Go composite literal:
 
-`func NewAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner() *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner`
-
-NewAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner instantiates a new AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerWithDefaults
-
-`func NewAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerWithDefaults() *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner`
-
-NewAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerWithDefaults instantiates a new AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetPrimaryInterface
-
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) GetPrimaryInterface() bool`
-
-GetPrimaryInterface returns the PrimaryInterface field if non-nil, zero value otherwise.
-
-### GetPrimaryInterfaceOk
-
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) GetPrimaryInterfaceOk() (*bool, bool)`
-
-GetPrimaryInterfaceOk returns a tuple with the PrimaryInterface field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPrimaryInterface
-
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) SetPrimaryInterface(v bool)`
-
-SetPrimaryInterface sets PrimaryInterface field to given value.
-
-### HasPrimaryInterface
-
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) HasPrimaryInterface() bool`
-
-HasPrimaryInterface returns a boolean if a field has been set.
-
-### GetNetwork
-
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) GetNetwork() AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork`
-
-GetNetwork returns the Network field if non-nil, zero value otherwise.
-
-### GetNetworkOk
-
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) GetNetworkOk() (*AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork, bool)`
-
-GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetwork
-
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) SetNetwork(v AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork)`
-
-SetNetwork sets Network field to given value.
-
-### HasNetwork
-
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) HasNetwork() bool`
-
-HasNetwork returns a boolean if a field has been set.
+```go
+obj := &AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner{
+    // Set fields directly
+}
+```
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

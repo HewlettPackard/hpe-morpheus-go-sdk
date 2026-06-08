@@ -26,55 +26,6 @@ type UpdateResourcePoolGroupRequest struct {
 
 type _UpdateResourcePoolGroupRequest UpdateResourcePoolGroupRequest
 
-// NewUpdateResourcePoolGroupRequest instantiates a new UpdateResourcePoolGroupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateResourcePoolGroupRequest() *UpdateResourcePoolGroupRequest {
-	this := UpdateResourcePoolGroupRequest{}
-	return &this
-}
-
-// NewUpdateResourcePoolGroupRequestWithDefaults instantiates a new UpdateResourcePoolGroupRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateResourcePoolGroupRequestWithDefaults() *UpdateResourcePoolGroupRequest {
-	this := UpdateResourcePoolGroupRequest{}
-	return &this
-}
-
-// GetResourcePoolGroup returns the ResourcePoolGroup field value if set, zero value otherwise.
-func (o *UpdateResourcePoolGroupRequest) GetResourcePoolGroup() UpdateResourcePoolGroupRequestResourcePoolGroup {
-	if o == nil || IsNil(o.ResourcePoolGroup) {
-		var ret UpdateResourcePoolGroupRequestResourcePoolGroup
-		return ret
-	}
-	return *o.ResourcePoolGroup
-}
-
-// GetResourcePoolGroupOk returns a tuple with the ResourcePoolGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateResourcePoolGroupRequest) GetResourcePoolGroupOk() (*UpdateResourcePoolGroupRequestResourcePoolGroup, bool) {
-	if o == nil || IsNil(o.ResourcePoolGroup) {
-		return nil, false
-	}
-	return o.ResourcePoolGroup, true
-}
-
-// IsSetResourcePoolGroup returns a boolean if a field has been set.
-func (o *UpdateResourcePoolGroupRequest) IsSetResourcePoolGroup() bool {
-	if o != nil && !IsNil(o.ResourcePoolGroup) {
-		return true
-	}
-
-	return false
-}
-
-// SetResourcePoolGroup gets a reference to the given UpdateResourcePoolGroupRequestResourcePoolGroup and assigns it to the ResourcePoolGroup field.
-func (o *UpdateResourcePoolGroupRequest) SetResourcePoolGroup(v UpdateResourcePoolGroupRequestResourcePoolGroup) {
-	o.ResourcePoolGroup = &v
-}
-
 func (o UpdateResourcePoolGroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

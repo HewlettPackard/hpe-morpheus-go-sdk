@@ -26,55 +26,6 @@ type GetSecurityPackageType200Response struct {
 
 type _GetSecurityPackageType200Response GetSecurityPackageType200Response
 
-// NewGetSecurityPackageType200Response instantiates a new GetSecurityPackageType200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetSecurityPackageType200Response() *GetSecurityPackageType200Response {
-	this := GetSecurityPackageType200Response{}
-	return &this
-}
-
-// NewGetSecurityPackageType200ResponseWithDefaults instantiates a new GetSecurityPackageType200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetSecurityPackageType200ResponseWithDefaults() *GetSecurityPackageType200Response {
-	this := GetSecurityPackageType200Response{}
-	return &this
-}
-
-// GetSecurityPackageType returns the SecurityPackageType field value if set, zero value otherwise.
-func (o *GetSecurityPackageType200Response) GetSecurityPackageType() GetSecurityPackageType200ResponseSecurityPackageType {
-	if o == nil || IsNil(o.SecurityPackageType) {
-		var ret GetSecurityPackageType200ResponseSecurityPackageType
-		return ret
-	}
-	return *o.SecurityPackageType
-}
-
-// GetSecurityPackageTypeOk returns a tuple with the SecurityPackageType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetSecurityPackageType200Response) GetSecurityPackageTypeOk() (*GetSecurityPackageType200ResponseSecurityPackageType, bool) {
-	if o == nil || IsNil(o.SecurityPackageType) {
-		return nil, false
-	}
-	return o.SecurityPackageType, true
-}
-
-// IsSetSecurityPackageType returns a boolean if a field has been set.
-func (o *GetSecurityPackageType200Response) IsSetSecurityPackageType() bool {
-	if o != nil && !IsNil(o.SecurityPackageType) {
-		return true
-	}
-
-	return false
-}
-
-// SetSecurityPackageType gets a reference to the given GetSecurityPackageType200ResponseSecurityPackageType and assigns it to the SecurityPackageType field.
-func (o *GetSecurityPackageType200Response) SetSecurityPackageType(v GetSecurityPackageType200ResponseSecurityPackageType) {
-	o.SecurityPackageType = &v
-}
-
 func (o GetSecurityPackageType200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

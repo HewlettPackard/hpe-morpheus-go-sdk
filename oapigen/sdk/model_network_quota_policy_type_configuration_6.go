@@ -26,48 +26,6 @@ type NetworkQuotaPolicyTypeConfiguration6 struct {
 
 type _NetworkQuotaPolicyTypeConfiguration6 NetworkQuotaPolicyTypeConfiguration6
 
-// NewNetworkQuotaPolicyTypeConfiguration6 instantiates a new NetworkQuotaPolicyTypeConfiguration6 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNetworkQuotaPolicyTypeConfiguration6(maxNetworks string) *NetworkQuotaPolicyTypeConfiguration6 {
-	this := NetworkQuotaPolicyTypeConfiguration6{}
-	this.MaxNetworks = maxNetworks
-	return &this
-}
-
-// NewNetworkQuotaPolicyTypeConfiguration6WithDefaults instantiates a new NetworkQuotaPolicyTypeConfiguration6 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNetworkQuotaPolicyTypeConfiguration6WithDefaults() *NetworkQuotaPolicyTypeConfiguration6 {
-	this := NetworkQuotaPolicyTypeConfiguration6{}
-	return &this
-}
-
-// GetMaxNetworks returns the MaxNetworks field value
-func (o *NetworkQuotaPolicyTypeConfiguration6) GetMaxNetworks() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MaxNetworks
-}
-
-// GetMaxNetworksOk returns a tuple with the MaxNetworks field value
-// and a boolean to check if the value has been set.
-func (o *NetworkQuotaPolicyTypeConfiguration6) GetMaxNetworksOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MaxNetworks, true
-}
-
-// SetMaxNetworks sets field value
-func (o *NetworkQuotaPolicyTypeConfiguration6) SetMaxNetworks(v string) {
-	o.MaxNetworks = v
-}
-
 func (o NetworkQuotaPolicyTypeConfiguration6) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

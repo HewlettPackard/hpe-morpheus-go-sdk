@@ -26,55 +26,6 @@ type UpdateCloudAffinityGroupRequest struct {
 
 type _UpdateCloudAffinityGroupRequest UpdateCloudAffinityGroupRequest
 
-// NewUpdateCloudAffinityGroupRequest instantiates a new UpdateCloudAffinityGroupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateCloudAffinityGroupRequest() *UpdateCloudAffinityGroupRequest {
-	this := UpdateCloudAffinityGroupRequest{}
-	return &this
-}
-
-// NewUpdateCloudAffinityGroupRequestWithDefaults instantiates a new UpdateCloudAffinityGroupRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateCloudAffinityGroupRequestWithDefaults() *UpdateCloudAffinityGroupRequest {
-	this := UpdateCloudAffinityGroupRequest{}
-	return &this
-}
-
-// GetAffinityGroup returns the AffinityGroup field value if set, zero value otherwise.
-func (o *UpdateCloudAffinityGroupRequest) GetAffinityGroup() UpdateCloudAffinityGroupRequestAffinityGroup {
-	if o == nil || IsNil(o.AffinityGroup) {
-		var ret UpdateCloudAffinityGroupRequestAffinityGroup
-		return ret
-	}
-	return *o.AffinityGroup
-}
-
-// GetAffinityGroupOk returns a tuple with the AffinityGroup field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateCloudAffinityGroupRequest) GetAffinityGroupOk() (*UpdateCloudAffinityGroupRequestAffinityGroup, bool) {
-	if o == nil || IsNil(o.AffinityGroup) {
-		return nil, false
-	}
-	return o.AffinityGroup, true
-}
-
-// IsSetAffinityGroup returns a boolean if a field has been set.
-func (o *UpdateCloudAffinityGroupRequest) IsSetAffinityGroup() bool {
-	if o != nil && !IsNil(o.AffinityGroup) {
-		return true
-	}
-
-	return false
-}
-
-// SetAffinityGroup gets a reference to the given UpdateCloudAffinityGroupRequestAffinityGroup and assigns it to the AffinityGroup field.
-func (o *UpdateCloudAffinityGroupRequest) SetAffinityGroup(v UpdateCloudAffinityGroupRequestAffinityGroup) {
-	o.AffinityGroup = &v
-}
-
 func (o UpdateCloudAffinityGroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

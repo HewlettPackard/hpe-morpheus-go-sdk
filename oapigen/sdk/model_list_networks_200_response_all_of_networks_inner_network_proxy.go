@@ -27,55 +27,6 @@ type ListNetworks200ResponseAllOfNetworksInnerNetworkProxy struct {
 
 type _ListNetworks200ResponseAllOfNetworksInnerNetworkProxy ListNetworks200ResponseAllOfNetworksInnerNetworkProxy
 
-// NewListNetworks200ResponseAllOfNetworksInnerNetworkProxy instantiates a new ListNetworks200ResponseAllOfNetworksInnerNetworkProxy object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListNetworks200ResponseAllOfNetworksInnerNetworkProxy() *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy {
-	this := ListNetworks200ResponseAllOfNetworksInnerNetworkProxy{}
-	return &this
-}
-
-// NewListNetworks200ResponseAllOfNetworksInnerNetworkProxyWithDefaults instantiates a new ListNetworks200ResponseAllOfNetworksInnerNetworkProxy object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListNetworks200ResponseAllOfNetworksInnerNetworkProxyWithDefaults() *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy {
-	this := ListNetworks200ResponseAllOfNetworksInnerNetworkProxy{}
-	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy) SetId(v int64) {
-	o.Id = &v
-}
-
 func (o ListNetworks200ResponseAllOfNetworksInnerNetworkProxy) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

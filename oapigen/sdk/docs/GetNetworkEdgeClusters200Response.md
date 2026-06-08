@@ -7,85 +7,23 @@ Name | Type | Description | Notes
 **NetworkEdgeClusters** | Pointer to **interface{}** |  | [optional] 
 **Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 
-## Methods
+## Usage
 
-### NewGetNetworkEdgeClusters200Response
+Instantiate with a Go composite literal:
 
-`func NewGetNetworkEdgeClusters200Response() *GetNetworkEdgeClusters200Response`
+```go
+obj := &GetNetworkEdgeClusters200Response{
+    // Set fields directly
+}
+```
 
-NewGetNetworkEdgeClusters200Response instantiates a new GetNetworkEdgeClusters200Response object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
+### NetworkEdgeClusters (Nullable)
 
-### NewGetNetworkEdgeClusters200ResponseWithDefaults
-
-`func NewGetNetworkEdgeClusters200ResponseWithDefaults() *GetNetworkEdgeClusters200Response`
-
-NewGetNetworkEdgeClusters200ResponseWithDefaults instantiates a new GetNetworkEdgeClusters200Response object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetNetworkEdgeClusters
-
-`func (o *GetNetworkEdgeClusters200Response) GetNetworkEdgeClusters() interface{}`
-
-GetNetworkEdgeClusters returns the NetworkEdgeClusters field if non-nil, zero value otherwise.
-
-### GetNetworkEdgeClustersOk
-
-`func (o *GetNetworkEdgeClusters200Response) GetNetworkEdgeClustersOk() (*interface{}, bool)`
-
-GetNetworkEdgeClustersOk returns a tuple with the NetworkEdgeClusters field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkEdgeClusters
-
-`func (o *GetNetworkEdgeClusters200Response) SetNetworkEdgeClusters(v interface{})`
-
-SetNetworkEdgeClusters sets NetworkEdgeClusters field to given value.
-
-### HasNetworkEdgeClusters
-
-`func (o *GetNetworkEdgeClusters200Response) HasNetworkEdgeClusters() bool`
-
-HasNetworkEdgeClusters returns a boolean if a field has been set.
-
-### SetNetworkEdgeClustersNil
-
-`func (o *GetNetworkEdgeClusters200Response) SetNetworkEdgeClustersNil(b bool)`
-
- SetNetworkEdgeClustersNil sets the value for NetworkEdgeClusters to be an explicit nil
-
-### UnsetNetworkEdgeClusters
-`func (o *GetNetworkEdgeClusters200Response) UnsetNetworkEdgeClusters()`
-
-UnsetNetworkEdgeClusters ensures that no value is present for NetworkEdgeClusters, not even an explicit nil
-### GetMeta
-
-`func (o *GetNetworkEdgeClusters200Response) GetMeta() ListApprovals200ResponseAllOfMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *GetNetworkEdgeClusters200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *GetNetworkEdgeClusters200Response) SetMeta(v ListApprovals200ResponseAllOfMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *GetNetworkEdgeClusters200Response) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
+Use the Nullable wrapper methods:
+- `obj.NetworkEdgeClusters.IsSet()` — check if set
+- `obj.NetworkEdgeClusters.Get()` — get the inner value (returns pointer)
+- `obj.NetworkEdgeClusters.Set(&val)` — set the value
+- `obj.NetworkEdgeClusters.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

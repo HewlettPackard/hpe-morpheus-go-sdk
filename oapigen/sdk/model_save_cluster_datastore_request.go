@@ -26,55 +26,6 @@ type SaveClusterDatastoreRequest struct {
 
 type _SaveClusterDatastoreRequest SaveClusterDatastoreRequest
 
-// NewSaveClusterDatastoreRequest instantiates a new SaveClusterDatastoreRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSaveClusterDatastoreRequest() *SaveClusterDatastoreRequest {
-	this := SaveClusterDatastoreRequest{}
-	return &this
-}
-
-// NewSaveClusterDatastoreRequestWithDefaults instantiates a new SaveClusterDatastoreRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSaveClusterDatastoreRequestWithDefaults() *SaveClusterDatastoreRequest {
-	this := SaveClusterDatastoreRequest{}
-	return &this
-}
-
-// GetDatastore returns the Datastore field value if set, zero value otherwise.
-func (o *SaveClusterDatastoreRequest) GetDatastore() SaveClusterDatastoreRequestDatastore {
-	if o == nil || IsNil(o.Datastore) {
-		var ret SaveClusterDatastoreRequestDatastore
-		return ret
-	}
-	return *o.Datastore
-}
-
-// GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SaveClusterDatastoreRequest) GetDatastoreOk() (*SaveClusterDatastoreRequestDatastore, bool) {
-	if o == nil || IsNil(o.Datastore) {
-		return nil, false
-	}
-	return o.Datastore, true
-}
-
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequest) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
-}
-
-// SetDatastore gets a reference to the given SaveClusterDatastoreRequestDatastore and assigns it to the Datastore field.
-func (o *SaveClusterDatastoreRequest) SetDatastore(v SaveClusterDatastoreRequestDatastore) {
-	o.Datastore = &v
-}
-
 func (o SaveClusterDatastoreRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

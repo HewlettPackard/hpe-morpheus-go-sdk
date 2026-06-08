@@ -27,20 +27,6 @@ type UpdateBlueprintRequestOneOfArmInstallAgent struct {
 	String *string
 }
 
-// boolAsUpdateBlueprintRequestOneOfArmInstallAgent is a convenience function that returns bool wrapped in UpdateBlueprintRequestOneOfArmInstallAgent
-func BoolAsUpdateBlueprintRequestOneOfArmInstallAgent(v *bool) UpdateBlueprintRequestOneOfArmInstallAgent {
-	return UpdateBlueprintRequestOneOfArmInstallAgent{
-		Bool: v,
-	}
-}
-
-// stringAsUpdateBlueprintRequestOneOfArmInstallAgent is a convenience function that returns string wrapped in UpdateBlueprintRequestOneOfArmInstallAgent
-func StringAsUpdateBlueprintRequestOneOfArmInstallAgent(v *string) UpdateBlueprintRequestOneOfArmInstallAgent {
-	return UpdateBlueprintRequestOneOfArmInstallAgent{
-		String: v,
-	}
-}
-
 func (dst *UpdateBlueprintRequestOneOfArmInstallAgent) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateBlueprintRequestOneOfArmInstallAgent{}

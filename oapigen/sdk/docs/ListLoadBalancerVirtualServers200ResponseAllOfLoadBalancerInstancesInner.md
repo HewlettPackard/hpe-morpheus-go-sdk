@@ -50,1380 +50,177 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** |  | [optional] 
 **VipStatus** | Pointer to **string** |  | [optional] 
 
-## Methods
-
-### NewListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner
-
-`func NewListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner() *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner`
-
-NewListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner instantiates a new ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner object
-This constructor will assign default values to properties that have it defined,
-and makes sure properties required by API are set, but the set of arguments
-will change when the set of required properties is changed
-
-### NewListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerWithDefaults
-
-`func NewListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerWithDefaults() *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner`
-
-NewListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerWithDefaults instantiates a new ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner object
-This constructor will only assign default values to properties that have it defined,
-but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetId() int64`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetIdOk() (*int64, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetId(v int64)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetLoadBalancer
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetLoadBalancer() ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerLoadBalancer`
-
-GetLoadBalancer returns the LoadBalancer field if non-nil, zero value otherwise.
-
-### GetLoadBalancerOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetLoadBalancerOk() (*ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerLoadBalancer, bool)`
-
-GetLoadBalancerOk returns a tuple with the LoadBalancer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLoadBalancer
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetLoadBalancer(v ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerLoadBalancer)`
-
-SetLoadBalancer sets LoadBalancer field to given value.
-
-### HasLoadBalancer
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasLoadBalancer() bool`
-
-HasLoadBalancer returns a boolean if a field has been set.
-
-### GetInstance
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetInstance() string`
-
-GetInstance returns the Instance field if non-nil, zero value otherwise.
-
-### GetInstanceOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetInstanceOk() (*string, bool)`
-
-GetInstanceOk returns a tuple with the Instance field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInstance
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetInstance(v string)`
-
-SetInstance sets Instance field to given value.
-
-### HasInstance
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasInstance() bool`
-
-HasInstance returns a boolean if a field has been set.
-
-### SetInstanceNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetInstanceNil(b bool)`
-
- SetInstanceNil sets the value for Instance to be an explicit nil
-
-### UnsetInstance
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetInstance()`
-
-UnsetInstance ensures that no value is present for Instance, not even an explicit nil
-### GetConfig
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetConfig() map[string]interface{}`
-
-GetConfig returns the Config field if non-nil, zero value otherwise.
-
-### GetConfigOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetConfigOk() (*map[string]interface{}, bool)`
-
-GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfig
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetConfig(v map[string]interface{})`
-
-SetConfig sets Config field to given value.
-
-### HasConfig
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasConfig() bool`
-
-HasConfig returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### SetDescriptionNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetInternalId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetInternalId() string`
-
-GetInternalId returns the InternalId field if non-nil, zero value otherwise.
-
-### GetInternalIdOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetInternalIdOk() (*string, bool)`
-
-GetInternalIdOk returns a tuple with the InternalId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInternalId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetInternalId(v string)`
-
-SetInternalId sets InternalId field to given value.
-
-### HasInternalId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasInternalId() bool`
-
-HasInternalId returns a boolean if a field has been set.
-
-### GetExternalId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetExternalId() string`
-
-GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
-
-### GetExternalIdOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetExternalIdOk() (*string, bool)`
-
-GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExternalId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetExternalId(v string)`
-
-SetExternalId sets ExternalId field to given value.
-
-### HasExternalId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasExternalId() bool`
-
-HasExternalId returns a boolean if a field has been set.
-
-### GetDateCreated
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
-### GetActive
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetActive() bool`
-
-GetActive returns the Active field if non-nil, zero value otherwise.
-
-### GetActiveOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetActiveOk() (*bool, bool)`
-
-GetActiveOk returns a tuple with the Active field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActive
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetActive(v bool)`
-
-SetActive sets Active field to given value.
-
-### HasActive
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasActive() bool`
-
-HasActive returns a boolean if a field has been set.
-
-### GetSticky
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSticky() bool`
-
-GetSticky returns the Sticky field if non-nil, zero value otherwise.
-
-### GetStickyOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetStickyOk() (*bool, bool)`
-
-GetStickyOk returns a tuple with the Sticky field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSticky
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetSticky(v bool)`
-
-SetSticky sets Sticky field to given value.
-
-### HasSticky
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasSticky() bool`
-
-HasSticky returns a boolean if a field has been set.
-
-### GetSslEnabled
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSslEnabled() string`
-
-GetSslEnabled returns the SslEnabled field if non-nil, zero value otherwise.
-
-### GetSslEnabledOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSslEnabledOk() (*string, bool)`
-
-GetSslEnabledOk returns a tuple with the SslEnabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSslEnabled
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetSslEnabled(v string)`
-
-SetSslEnabled sets SslEnabled field to given value.
-
-### HasSslEnabled
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasSslEnabled() bool`
-
-HasSslEnabled returns a boolean if a field has been set.
-
-### SetSslEnabledNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetSslEnabledNil(b bool)`
-
- SetSslEnabledNil sets the value for SslEnabled to be an explicit nil
-
-### UnsetSslEnabled
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetSslEnabled()`
-
-UnsetSslEnabled ensures that no value is present for SslEnabled, not even an explicit nil
-### GetExternalAddress
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetExternalAddress() bool`
-
-GetExternalAddress returns the ExternalAddress field if non-nil, zero value otherwise.
-
-### GetExternalAddressOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetExternalAddressOk() (*bool, bool)`
-
-GetExternalAddressOk returns a tuple with the ExternalAddress field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExternalAddress
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetExternalAddress(v bool)`
-
-SetExternalAddress sets ExternalAddress field to given value.
-
-### HasExternalAddress
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasExternalAddress() bool`
-
-HasExternalAddress returns a boolean if a field has been set.
-
-### GetBackendPort
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetBackendPort() string`
-
-GetBackendPort returns the BackendPort field if non-nil, zero value otherwise.
-
-### GetBackendPortOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetBackendPortOk() (*string, bool)`
-
-GetBackendPortOk returns a tuple with the BackendPort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBackendPort
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetBackendPort(v string)`
-
-SetBackendPort sets BackendPort field to given value.
-
-### HasBackendPort
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasBackendPort() bool`
-
-HasBackendPort returns a boolean if a field has been set.
-
-### SetBackendPortNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetBackendPortNil(b bool)`
-
- SetBackendPortNil sets the value for BackendPort to be an explicit nil
-
-### UnsetBackendPort
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetBackendPort()`
-
-UnsetBackendPort ensures that no value is present for BackendPort, not even an explicit nil
-### GetVipType
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipType() string`
-
-GetVipType returns the VipType field if non-nil, zero value otherwise.
-
-### GetVipTypeOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipTypeOk() (*string, bool)`
-
-GetVipTypeOk returns a tuple with the VipType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipType
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipType(v string)`
-
-SetVipType sets VipType field to given value.
-
-### HasVipType
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipType() bool`
-
-HasVipType returns a boolean if a field has been set.
-
-### SetVipTypeNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipTypeNil(b bool)`
-
- SetVipTypeNil sets the value for VipType to be an explicit nil
-
-### UnsetVipType
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetVipType()`
-
-UnsetVipType ensures that no value is present for VipType, not even an explicit nil
-### GetVipAddress
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipAddress() string`
-
-GetVipAddress returns the VipAddress field if non-nil, zero value otherwise.
-
-### GetVipAddressOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipAddressOk() (*string, bool)`
-
-GetVipAddressOk returns a tuple with the VipAddress field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipAddress
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipAddress(v string)`
-
-SetVipAddress sets VipAddress field to given value.
-
-### HasVipAddress
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipAddress() bool`
-
-HasVipAddress returns a boolean if a field has been set.
-
-### GetVipHostname
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipHostname() string`
-
-GetVipHostname returns the VipHostname field if non-nil, zero value otherwise.
-
-### GetVipHostnameOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipHostnameOk() (*string, bool)`
-
-GetVipHostnameOk returns a tuple with the VipHostname field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipHostname
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipHostname(v string)`
-
-SetVipHostname sets VipHostname field to given value.
-
-### HasVipHostname
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipHostname() bool`
-
-HasVipHostname returns a boolean if a field has been set.
-
-### SetVipHostnameNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipHostnameNil(b bool)`
-
- SetVipHostnameNil sets the value for VipHostname to be an explicit nil
-
-### UnsetVipHostname
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetVipHostname()`
-
-UnsetVipHostname ensures that no value is present for VipHostname, not even an explicit nil
-### GetVipProtocol
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipProtocol() string`
-
-GetVipProtocol returns the VipProtocol field if non-nil, zero value otherwise.
-
-### GetVipProtocolOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipProtocolOk() (*string, bool)`
-
-GetVipProtocolOk returns a tuple with the VipProtocol field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipProtocol
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipProtocol(v string)`
-
-SetVipProtocol sets VipProtocol field to given value.
-
-### HasVipProtocol
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipProtocol() bool`
-
-HasVipProtocol returns a boolean if a field has been set.
-
-### GetVipScheme
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipScheme() string`
-
-GetVipScheme returns the VipScheme field if non-nil, zero value otherwise.
-
-### GetVipSchemeOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipSchemeOk() (*string, bool)`
-
-GetVipSchemeOk returns a tuple with the VipScheme field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipScheme
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipScheme(v string)`
-
-SetVipScheme sets VipScheme field to given value.
-
-### HasVipScheme
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipScheme() bool`
-
-HasVipScheme returns a boolean if a field has been set.
-
-### SetVipSchemeNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipSchemeNil(b bool)`
-
- SetVipSchemeNil sets the value for VipScheme to be an explicit nil
-
-### UnsetVipScheme
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetVipScheme()`
-
-UnsetVipScheme ensures that no value is present for VipScheme, not even an explicit nil
-### GetVipMode
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipMode() string`
-
-GetVipMode returns the VipMode field if non-nil, zero value otherwise.
-
-### GetVipModeOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipModeOk() (*string, bool)`
-
-GetVipModeOk returns a tuple with the VipMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipMode
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipMode(v string)`
-
-SetVipMode sets VipMode field to given value.
-
-### HasVipMode
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipMode() bool`
-
-HasVipMode returns a boolean if a field has been set.
-
-### SetVipModeNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipModeNil(b bool)`
-
- SetVipModeNil sets the value for VipMode to be an explicit nil
-
-### UnsetVipMode
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetVipMode()`
-
-UnsetVipMode ensures that no value is present for VipMode, not even an explicit nil
-### GetVipName
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipName() string`
-
-GetVipName returns the VipName field if non-nil, zero value otherwise.
-
-### GetVipNameOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipNameOk() (*string, bool)`
-
-GetVipNameOk returns a tuple with the VipName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipName
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipName(v string)`
-
-SetVipName sets VipName field to given value.
-
-### HasVipName
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipName() bool`
-
-HasVipName returns a boolean if a field has been set.
-
-### GetVipPort
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipPort() int64`
-
-GetVipPort returns the VipPort field if non-nil, zero value otherwise.
-
-### GetVipPortOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipPortOk() (*int64, bool)`
-
-GetVipPortOk returns a tuple with the VipPort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipPort
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipPort(v int64)`
-
-SetVipPort sets VipPort field to given value.
-
-### HasVipPort
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipPort() bool`
-
-HasVipPort returns a boolean if a field has been set.
-
-### GetVipPool
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipPool() map[string]interface{}`
-
-GetVipPool returns the VipPool field if non-nil, zero value otherwise.
-
-### GetVipPoolOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipPoolOk() (*map[string]interface{}, bool)`
-
-GetVipPoolOk returns a tuple with the VipPool field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipPool
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipPool(v map[string]interface{})`
-
-SetVipPool sets VipPool field to given value.
-
-### HasVipPool
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipPool() bool`
-
-HasVipPool returns a boolean if a field has been set.
-
-### SetVipPoolNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipPoolNil(b bool)`
-
- SetVipPoolNil sets the value for VipPool to be an explicit nil
-
-### UnsetVipPool
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetVipPool()`
-
-UnsetVipPool ensures that no value is present for VipPool, not even an explicit nil
-### GetVipSticky
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipSticky() string`
-
-GetVipSticky returns the VipSticky field if non-nil, zero value otherwise.
-
-### GetVipStickyOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipStickyOk() (*string, bool)`
-
-GetVipStickyOk returns a tuple with the VipSticky field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipSticky
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipSticky(v string)`
-
-SetVipSticky sets VipSticky field to given value.
-
-### HasVipSticky
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipSticky() bool`
-
-HasVipSticky returns a boolean if a field has been set.
-
-### SetVipStickyNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipStickyNil(b bool)`
-
- SetVipStickyNil sets the value for VipSticky to be an explicit nil
-
-### UnsetVipSticky
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetVipSticky()`
-
-UnsetVipSticky ensures that no value is present for VipSticky, not even an explicit nil
-### GetVipBalance
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipBalance() string`
-
-GetVipBalance returns the VipBalance field if non-nil, zero value otherwise.
-
-### GetVipBalanceOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipBalanceOk() (*string, bool)`
-
-GetVipBalanceOk returns a tuple with the VipBalance field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipBalance
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipBalance(v string)`
-
-SetVipBalance sets VipBalance field to given value.
-
-### HasVipBalance
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipBalance() bool`
-
-HasVipBalance returns a boolean if a field has been set.
-
-### SetVipBalanceNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipBalanceNil(b bool)`
-
- SetVipBalanceNil sets the value for VipBalance to be an explicit nil
-
-### UnsetVipBalance
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetVipBalance()`
-
-UnsetVipBalance ensures that no value is present for VipBalance, not even an explicit nil
-### GetServicePort
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetServicePort() string`
-
-GetServicePort returns the ServicePort field if non-nil, zero value otherwise.
-
-### GetServicePortOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetServicePortOk() (*string, bool)`
-
-GetServicePortOk returns a tuple with the ServicePort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServicePort
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetServicePort(v string)`
-
-SetServicePort sets ServicePort field to given value.
-
-### HasServicePort
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasServicePort() bool`
-
-HasServicePort returns a boolean if a field has been set.
-
-### SetServicePortNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetServicePortNil(b bool)`
-
- SetServicePortNil sets the value for ServicePort to be an explicit nil
-
-### UnsetServicePort
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetServicePort()`
-
-UnsetServicePort ensures that no value is present for ServicePort, not even an explicit nil
-### GetSourceAddress
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSourceAddress() string`
-
-GetSourceAddress returns the SourceAddress field if non-nil, zero value otherwise.
-
-### GetSourceAddressOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSourceAddressOk() (*string, bool)`
-
-GetSourceAddressOk returns a tuple with the SourceAddress field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSourceAddress
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetSourceAddress(v string)`
-
-SetSourceAddress sets SourceAddress field to given value.
-
-### HasSourceAddress
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasSourceAddress() bool`
-
-HasSourceAddress returns a boolean if a field has been set.
-
-### SetSourceAddressNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetSourceAddressNil(b bool)`
-
- SetSourceAddressNil sets the value for SourceAddress to be an explicit nil
-
-### UnsetSourceAddress
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetSourceAddress()`
-
-UnsetSourceAddress ensures that no value is present for SourceAddress, not even an explicit nil
-### GetSslCert
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSslCert() ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslCert`
-
-GetSslCert returns the SslCert field if non-nil, zero value otherwise.
-
-### GetSslCertOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSslCertOk() (*ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslCert, bool)`
-
-GetSslCertOk returns a tuple with the SslCert field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSslCert
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetSslCert(v ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslCert)`
-
-SetSslCert sets SslCert field to given value.
-
-### HasSslCert
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasSslCert() bool`
-
-HasSslCert returns a boolean if a field has been set.
-
-### GetSslServerCert
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSslServerCert() ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslServerCert`
-
-GetSslServerCert returns the SslServerCert field if non-nil, zero value otherwise.
-
-### GetSslServerCertOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSslServerCertOk() (*ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslServerCert, bool)`
-
-GetSslServerCertOk returns a tuple with the SslServerCert field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSslServerCert
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetSslServerCert(v ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerSslServerCert)`
-
-SetSslServerCert sets SslServerCert field to given value.
-
-### HasSslServerCert
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasSslServerCert() bool`
-
-HasSslServerCert returns a boolean if a field has been set.
-
-### GetSslMode
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSslMode() string`
-
-GetSslMode returns the SslMode field if non-nil, zero value otherwise.
-
-### GetSslModeOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSslModeOk() (*string, bool)`
-
-GetSslModeOk returns a tuple with the SslMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSslMode
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetSslMode(v string)`
-
-SetSslMode sets SslMode field to given value.
-
-### HasSslMode
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasSslMode() bool`
-
-HasSslMode returns a boolean if a field has been set.
-
-### SetSslModeNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetSslModeNil(b bool)`
-
- SetSslModeNil sets the value for SslMode to be an explicit nil
-
-### UnsetSslMode
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetSslMode()`
-
-UnsetSslMode ensures that no value is present for SslMode, not even an explicit nil
-### GetSslRedirectMode
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSslRedirectMode() string`
-
-GetSslRedirectMode returns the SslRedirectMode field if non-nil, zero value otherwise.
-
-### GetSslRedirectModeOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSslRedirectModeOk() (*string, bool)`
-
-GetSslRedirectModeOk returns a tuple with the SslRedirectMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSslRedirectMode
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetSslRedirectMode(v string)`
-
-SetSslRedirectMode sets SslRedirectMode field to given value.
-
-### HasSslRedirectMode
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasSslRedirectMode() bool`
-
-HasSslRedirectMode returns a boolean if a field has been set.
-
-### SetSslRedirectModeNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetSslRedirectModeNil(b bool)`
-
- SetSslRedirectModeNil sets the value for SslRedirectMode to be an explicit nil
-
-### UnsetSslRedirectMode
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetSslRedirectMode()`
-
-UnsetSslRedirectMode ensures that no value is present for SslRedirectMode, not even an explicit nil
-### GetVipShared
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipShared() bool`
-
-GetVipShared returns the VipShared field if non-nil, zero value otherwise.
-
-### GetVipSharedOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipSharedOk() (*bool, bool)`
-
-GetVipSharedOk returns a tuple with the VipShared field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipShared
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipShared(v bool)`
-
-SetVipShared sets VipShared field to given value.
-
-### HasVipShared
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipShared() bool`
-
-HasVipShared returns a boolean if a field has been set.
-
-### GetVipDirectAddress
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipDirectAddress() string`
-
-GetVipDirectAddress returns the VipDirectAddress field if non-nil, zero value otherwise.
-
-### GetVipDirectAddressOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipDirectAddressOk() (*string, bool)`
-
-GetVipDirectAddressOk returns a tuple with the VipDirectAddress field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipDirectAddress
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipDirectAddress(v string)`
-
-SetVipDirectAddress sets VipDirectAddress field to given value.
-
-### HasVipDirectAddress
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipDirectAddress() bool`
-
-HasVipDirectAddress returns a boolean if a field has been set.
-
-### SetVipDirectAddressNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipDirectAddressNil(b bool)`
-
- SetVipDirectAddressNil sets the value for VipDirectAddress to be an explicit nil
-
-### UnsetVipDirectAddress
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetVipDirectAddress()`
-
-UnsetVipDirectAddress ensures that no value is present for VipDirectAddress, not even an explicit nil
-### GetServerName
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetServerName() string`
-
-GetServerName returns the ServerName field if non-nil, zero value otherwise.
-
-### GetServerNameOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetServerNameOk() (*string, bool)`
-
-GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerName
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetServerName(v string)`
-
-SetServerName sets ServerName field to given value.
-
-### HasServerName
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasServerName() bool`
-
-HasServerName returns a boolean if a field has been set.
-
-### SetServerNameNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetServerNameNil(b bool)`
-
- SetServerNameNil sets the value for ServerName to be an explicit nil
-
-### UnsetServerName
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetServerName()`
-
-UnsetServerName ensures that no value is present for ServerName, not even an explicit nil
-### GetPoolName
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetPoolName() string`
-
-GetPoolName returns the PoolName field if non-nil, zero value otherwise.
-
-### GetPoolNameOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetPoolNameOk() (*string, bool)`
-
-GetPoolNameOk returns a tuple with the PoolName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPoolName
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetPoolName(v string)`
-
-SetPoolName sets PoolName field to given value.
-
-### HasPoolName
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasPoolName() bool`
-
-HasPoolName returns a boolean if a field has been set.
-
-### SetPoolNameNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetPoolNameNil(b bool)`
-
- SetPoolNameNil sets the value for PoolName to be an explicit nil
-
-### UnsetPoolName
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetPoolName()`
-
-UnsetPoolName ensures that no value is present for PoolName, not even an explicit nil
-### GetRemoving
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetRemoving() bool`
-
-GetRemoving returns the Removing field if non-nil, zero value otherwise.
-
-### GetRemovingOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetRemovingOk() (*bool, bool)`
-
-GetRemovingOk returns a tuple with the Removing field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRemoving
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetRemoving(v bool)`
-
-SetRemoving sets Removing field to given value.
-
-### HasRemoving
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasRemoving() bool`
-
-HasRemoving returns a boolean if a field has been set.
-
-### GetPool
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetPool() ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerPool`
-
-GetPool returns the Pool field if non-nil, zero value otherwise.
-
-### GetPoolOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetPoolOk() (*ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerPool, bool)`
-
-GetPoolOk returns a tuple with the Pool field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPool
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetPool(v ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerPool)`
-
-SetPool sets Pool field to given value.
-
-### HasPool
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasPool() bool`
-
-HasPool returns a boolean if a field has been set.
-
-### GetVipSource
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipSource() string`
-
-GetVipSource returns the VipSource field if non-nil, zero value otherwise.
-
-### GetVipSourceOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipSourceOk() (*string, bool)`
-
-GetVipSourceOk returns a tuple with the VipSource field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipSource
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipSource(v string)`
-
-SetVipSource sets VipSource field to given value.
-
-### HasVipSource
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipSource() bool`
-
-HasVipSource returns a boolean if a field has been set.
-
-### GetExtraConfig
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetExtraConfig() string`
-
-GetExtraConfig returns the ExtraConfig field if non-nil, zero value otherwise.
-
-### GetExtraConfigOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetExtraConfigOk() (*string, bool)`
-
-GetExtraConfigOk returns a tuple with the ExtraConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExtraConfig
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetExtraConfig(v string)`
-
-SetExtraConfig sets ExtraConfig field to given value.
-
-### HasExtraConfig
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasExtraConfig() bool`
-
-HasExtraConfig returns a boolean if a field has been set.
-
-### SetExtraConfigNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetExtraConfigNil(b bool)`
-
- SetExtraConfigNil sets the value for ExtraConfig to be an explicit nil
-
-### UnsetExtraConfig
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetExtraConfig()`
-
-UnsetExtraConfig ensures that no value is present for ExtraConfig, not even an explicit nil
-### GetServiceAccess
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetServiceAccess() string`
-
-GetServiceAccess returns the ServiceAccess field if non-nil, zero value otherwise.
-
-### GetServiceAccessOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetServiceAccessOk() (*string, bool)`
-
-GetServiceAccessOk returns a tuple with the ServiceAccess field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceAccess
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetServiceAccess(v string)`
-
-SetServiceAccess sets ServiceAccess field to given value.
-
-### HasServiceAccess
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasServiceAccess() bool`
-
-HasServiceAccess returns a boolean if a field has been set.
-
-### SetServiceAccessNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetServiceAccessNil(b bool)`
-
- SetServiceAccessNil sets the value for ServiceAccess to be an explicit nil
-
-### UnsetServiceAccess
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetServiceAccess()`
-
-UnsetServiceAccess ensures that no value is present for ServiceAccess, not even an explicit nil
-### GetNetworkId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetNetworkId() string`
-
-GetNetworkId returns the NetworkId field if non-nil, zero value otherwise.
-
-### GetNetworkIdOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetNetworkIdOk() (*string, bool)`
-
-GetNetworkIdOk returns a tuple with the NetworkId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetNetworkId(v string)`
-
-SetNetworkId sets NetworkId field to given value.
-
-### HasNetworkId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasNetworkId() bool`
-
-HasNetworkId returns a boolean if a field has been set.
-
-### SetNetworkIdNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetNetworkIdNil(b bool)`
-
- SetNetworkIdNil sets the value for NetworkId to be an explicit nil
-
-### UnsetNetworkId
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetNetworkId()`
-
-UnsetNetworkId ensures that no value is present for NetworkId, not even an explicit nil
-### GetSubnetId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSubnetId() string`
-
-GetSubnetId returns the SubnetId field if non-nil, zero value otherwise.
-
-### GetSubnetIdOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetSubnetIdOk() (*string, bool)`
-
-GetSubnetIdOk returns a tuple with the SubnetId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubnetId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetSubnetId(v string)`
-
-SetSubnetId sets SubnetId field to given value.
-
-### HasSubnetId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasSubnetId() bool`
-
-HasSubnetId returns a boolean if a field has been set.
-
-### SetSubnetIdNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetSubnetIdNil(b bool)`
-
- SetSubnetIdNil sets the value for SubnetId to be an explicit nil
-
-### UnsetSubnetId
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetSubnetId()`
-
-UnsetSubnetId ensures that no value is present for SubnetId, not even an explicit nil
-### GetExternalPortId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetExternalPortId() string`
-
-GetExternalPortId returns the ExternalPortId field if non-nil, zero value otherwise.
-
-### GetExternalPortIdOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetExternalPortIdOk() (*string, bool)`
-
-GetExternalPortIdOk returns a tuple with the ExternalPortId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExternalPortId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetExternalPortId(v string)`
-
-SetExternalPortId sets ExternalPortId field to given value.
-
-### HasExternalPortId
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasExternalPortId() bool`
-
-HasExternalPortId returns a boolean if a field has been set.
-
-### SetExternalPortIdNil
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetExternalPortIdNil(b bool)`
-
- SetExternalPortIdNil sets the value for ExternalPortId to be an explicit nil
-
-### UnsetExternalPortId
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetExternalPortId()`
-
-UnsetExternalPortId ensures that no value is present for ExternalPortId, not even an explicit nil
-### GetStatus
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetStatus() string`
-
-GetStatus returns the Status field if non-nil, zero value otherwise.
-
-### GetStatusOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetStatusOk() (*string, bool)`
-
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatus
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetStatus(v string)`
-
-SetStatus sets Status field to given value.
-
-### HasStatus
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
-
-### GetVipStatus
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipStatus() string`
-
-GetVipStatus returns the VipStatus field if non-nil, zero value otherwise.
-
-### GetVipStatusOk
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetVipStatusOk() (*string, bool)`
-
-GetVipStatusOk returns a tuple with the VipStatus field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVipStatus
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetVipStatus(v string)`
-
-SetVipStatus sets VipStatus field to given value.
-
-### HasVipStatus
-
-`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasVipStatus() bool`
-
-HasVipStatus returns a boolean if a field has been set.
-
+## Usage
+
+Instantiate with a Go composite literal:
+
+```go
+obj := &ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner{
+    // Set fields directly
+}
+```
+
+### Instance (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Instance.IsSet()` — check if set
+- `obj.Instance.Get()` — get the inner value (returns pointer)
+- `obj.Instance.Set(&val)` — set the value
+- `obj.Instance.Unset()` — clear the value
+### Description (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Description.IsSet()` — check if set
+- `obj.Description.Get()` — get the inner value (returns pointer)
+- `obj.Description.Set(&val)` — set the value
+- `obj.Description.Unset()` — clear the value
+### SslEnabled (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SslEnabled.IsSet()` — check if set
+- `obj.SslEnabled.Get()` — get the inner value (returns pointer)
+- `obj.SslEnabled.Set(&val)` — set the value
+- `obj.SslEnabled.Unset()` — clear the value
+### BackendPort (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.BackendPort.IsSet()` — check if set
+- `obj.BackendPort.Get()` — get the inner value (returns pointer)
+- `obj.BackendPort.Set(&val)` — set the value
+- `obj.BackendPort.Unset()` — clear the value
+### VipType (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.VipType.IsSet()` — check if set
+- `obj.VipType.Get()` — get the inner value (returns pointer)
+- `obj.VipType.Set(&val)` — set the value
+- `obj.VipType.Unset()` — clear the value
+### VipHostname (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.VipHostname.IsSet()` — check if set
+- `obj.VipHostname.Get()` — get the inner value (returns pointer)
+- `obj.VipHostname.Set(&val)` — set the value
+- `obj.VipHostname.Unset()` — clear the value
+### VipScheme (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.VipScheme.IsSet()` — check if set
+- `obj.VipScheme.Get()` — get the inner value (returns pointer)
+- `obj.VipScheme.Set(&val)` — set the value
+- `obj.VipScheme.Unset()` — clear the value
+### VipMode (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.VipMode.IsSet()` — check if set
+- `obj.VipMode.Get()` — get the inner value (returns pointer)
+- `obj.VipMode.Set(&val)` — set the value
+- `obj.VipMode.Unset()` — clear the value
+### VipPool (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.VipPool.IsSet()` — check if set
+- `obj.VipPool.Get()` — get the inner value (returns pointer)
+- `obj.VipPool.Set(&val)` — set the value
+- `obj.VipPool.Unset()` — clear the value
+### VipSticky (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.VipSticky.IsSet()` — check if set
+- `obj.VipSticky.Get()` — get the inner value (returns pointer)
+- `obj.VipSticky.Set(&val)` — set the value
+- `obj.VipSticky.Unset()` — clear the value
+### VipBalance (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.VipBalance.IsSet()` — check if set
+- `obj.VipBalance.Get()` — get the inner value (returns pointer)
+- `obj.VipBalance.Set(&val)` — set the value
+- `obj.VipBalance.Unset()` — clear the value
+### ServicePort (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServicePort.IsSet()` — check if set
+- `obj.ServicePort.Get()` — get the inner value (returns pointer)
+- `obj.ServicePort.Set(&val)` — set the value
+- `obj.ServicePort.Unset()` — clear the value
+### SourceAddress (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SourceAddress.IsSet()` — check if set
+- `obj.SourceAddress.Get()` — get the inner value (returns pointer)
+- `obj.SourceAddress.Set(&val)` — set the value
+- `obj.SourceAddress.Unset()` — clear the value
+### SslMode (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SslMode.IsSet()` — check if set
+- `obj.SslMode.Get()` — get the inner value (returns pointer)
+- `obj.SslMode.Set(&val)` — set the value
+- `obj.SslMode.Unset()` — clear the value
+### SslRedirectMode (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SslRedirectMode.IsSet()` — check if set
+- `obj.SslRedirectMode.Get()` — get the inner value (returns pointer)
+- `obj.SslRedirectMode.Set(&val)` — set the value
+- `obj.SslRedirectMode.Unset()` — clear the value
+### VipDirectAddress (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.VipDirectAddress.IsSet()` — check if set
+- `obj.VipDirectAddress.Get()` — get the inner value (returns pointer)
+- `obj.VipDirectAddress.Set(&val)` — set the value
+- `obj.VipDirectAddress.Unset()` — clear the value
+### ServerName (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServerName.IsSet()` — check if set
+- `obj.ServerName.Get()` — get the inner value (returns pointer)
+- `obj.ServerName.Set(&val)` — set the value
+- `obj.ServerName.Unset()` — clear the value
+### PoolName (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.PoolName.IsSet()` — check if set
+- `obj.PoolName.Get()` — get the inner value (returns pointer)
+- `obj.PoolName.Set(&val)` — set the value
+- `obj.PoolName.Unset()` — clear the value
+### ExtraConfig (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ExtraConfig.IsSet()` — check if set
+- `obj.ExtraConfig.Get()` — get the inner value (returns pointer)
+- `obj.ExtraConfig.Set(&val)` — set the value
+- `obj.ExtraConfig.Unset()` — clear the value
+### ServiceAccess (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ServiceAccess.IsSet()` — check if set
+- `obj.ServiceAccess.Get()` — get the inner value (returns pointer)
+- `obj.ServiceAccess.Set(&val)` — set the value
+- `obj.ServiceAccess.Unset()` — clear the value
+### NetworkId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.NetworkId.IsSet()` — check if set
+- `obj.NetworkId.Get()` — get the inner value (returns pointer)
+- `obj.NetworkId.Set(&val)` — set the value
+- `obj.NetworkId.Unset()` — clear the value
+### SubnetId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.SubnetId.IsSet()` — check if set
+- `obj.SubnetId.Get()` — get the inner value (returns pointer)
+- `obj.SubnetId.Set(&val)` — set the value
+- `obj.SubnetId.Unset()` — clear the value
+### ExternalPortId (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.ExternalPortId.IsSet()` — check if set
+- `obj.ExternalPortId.Get()` — get the inner value (returns pointer)
+- `obj.ExternalPortId.Set(&val)` — set the value
+- `obj.ExternalPortId.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

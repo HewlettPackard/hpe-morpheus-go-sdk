@@ -26,55 +26,6 @@ type GetNetwork200Response struct {
 
 type _GetNetwork200Response GetNetwork200Response
 
-// NewGetNetwork200Response instantiates a new GetNetwork200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetwork200Response() *GetNetwork200Response {
-	this := GetNetwork200Response{}
-	return &this
-}
-
-// NewGetNetwork200ResponseWithDefaults instantiates a new GetNetwork200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetwork200ResponseWithDefaults() *GetNetwork200Response {
-	this := GetNetwork200Response{}
-	return &this
-}
-
-// GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *GetNetwork200Response) GetNetwork() GetNetwork200ResponseNetwork {
-	if o == nil || IsNil(o.Network) {
-		var ret GetNetwork200ResponseNetwork
-		return ret
-	}
-	return *o.Network
-}
-
-// GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetwork200Response) GetNetworkOk() (*GetNetwork200ResponseNetwork, bool) {
-	if o == nil || IsNil(o.Network) {
-		return nil, false
-	}
-	return o.Network, true
-}
-
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *GetNetwork200Response) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetwork gets a reference to the given GetNetwork200ResponseNetwork and assigns it to the Network field.
-func (o *GetNetwork200Response) SetNetwork(v GetNetwork200ResponseNetwork) {
-	o.Network = &v
-}
-
 func (o GetNetwork200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

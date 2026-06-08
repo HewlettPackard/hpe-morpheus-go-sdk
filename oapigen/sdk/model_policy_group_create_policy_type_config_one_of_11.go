@@ -26,55 +26,6 @@ type PolicyGroupCreatePolicyTypeConfigOneOf11 struct {
 
 type _PolicyGroupCreatePolicyTypeConfigOneOf11 PolicyGroupCreatePolicyTypeConfigOneOf11
 
-// NewPolicyGroupCreatePolicyTypeConfigOneOf11 instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf11 object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPolicyGroupCreatePolicyTypeConfigOneOf11() *PolicyGroupCreatePolicyTypeConfigOneOf11 {
-	this := PolicyGroupCreatePolicyTypeConfigOneOf11{}
-	return &this
-}
-
-// NewPolicyGroupCreatePolicyTypeConfigOneOf11WithDefaults instantiates a new PolicyGroupCreatePolicyTypeConfigOneOf11 object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPolicyGroupCreatePolicyTypeConfigOneOf11WithDefaults() *PolicyGroupCreatePolicyTypeConfigOneOf11 {
-	this := PolicyGroupCreatePolicyTypeConfigOneOf11{}
-	return &this
-}
-
-// GetMaxContainers returns the MaxContainers field value if set, zero value otherwise.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf11) GetMaxContainers() string {
-	if o == nil || IsNil(o.MaxContainers) {
-		var ret string
-		return ret
-	}
-	return *o.MaxContainers
-}
-
-// GetMaxContainersOk returns a tuple with the MaxContainers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf11) GetMaxContainersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxContainers) {
-		return nil, false
-	}
-	return o.MaxContainers, true
-}
-
-// IsSetMaxContainers returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf11) IsSetMaxContainers() bool {
-	if o != nil && !IsNil(o.MaxContainers) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxContainers gets a reference to the given string and assigns it to the MaxContainers field.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf11) SetMaxContainers(v string) {
-	o.MaxContainers = &v
-}
-
 func (o PolicyGroupCreatePolicyTypeConfigOneOf11) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

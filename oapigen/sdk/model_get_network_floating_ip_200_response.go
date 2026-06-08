@@ -26,55 +26,6 @@ type GetNetworkFloatingIp200Response struct {
 
 type _GetNetworkFloatingIp200Response GetNetworkFloatingIp200Response
 
-// NewGetNetworkFloatingIp200Response instantiates a new GetNetworkFloatingIp200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkFloatingIp200Response() *GetNetworkFloatingIp200Response {
-	this := GetNetworkFloatingIp200Response{}
-	return &this
-}
-
-// NewGetNetworkFloatingIp200ResponseWithDefaults instantiates a new GetNetworkFloatingIp200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkFloatingIp200ResponseWithDefaults() *GetNetworkFloatingIp200Response {
-	this := GetNetworkFloatingIp200Response{}
-	return &this
-}
-
-// GetNetworkFloatingIp returns the NetworkFloatingIp field value if set, zero value otherwise.
-func (o *GetNetworkFloatingIp200Response) GetNetworkFloatingIp() GetNetworkFloatingIp200ResponseNetworkFloatingIp {
-	if o == nil || IsNil(o.NetworkFloatingIp) {
-		var ret GetNetworkFloatingIp200ResponseNetworkFloatingIp
-		return ret
-	}
-	return *o.NetworkFloatingIp
-}
-
-// GetNetworkFloatingIpOk returns a tuple with the NetworkFloatingIp field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkFloatingIp200Response) GetNetworkFloatingIpOk() (*GetNetworkFloatingIp200ResponseNetworkFloatingIp, bool) {
-	if o == nil || IsNil(o.NetworkFloatingIp) {
-		return nil, false
-	}
-	return o.NetworkFloatingIp, true
-}
-
-// IsSetNetworkFloatingIp returns a boolean if a field has been set.
-func (o *GetNetworkFloatingIp200Response) IsSetNetworkFloatingIp() bool {
-	if o != nil && !IsNil(o.NetworkFloatingIp) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkFloatingIp gets a reference to the given GetNetworkFloatingIp200ResponseNetworkFloatingIp and assigns it to the NetworkFloatingIp field.
-func (o *GetNetworkFloatingIp200Response) SetNetworkFloatingIp(v GetNetworkFloatingIp200ResponseNetworkFloatingIp) {
-	o.NetworkFloatingIp = &v
-}
-
 func (o GetNetworkFloatingIp200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

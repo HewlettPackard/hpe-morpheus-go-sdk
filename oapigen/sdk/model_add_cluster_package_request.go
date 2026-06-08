@@ -26,55 +26,6 @@ type AddClusterPackageRequest struct {
 
 type _AddClusterPackageRequest AddClusterPackageRequest
 
-// NewAddClusterPackageRequest instantiates a new AddClusterPackageRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterPackageRequest() *AddClusterPackageRequest {
-	this := AddClusterPackageRequest{}
-	return &this
-}
-
-// NewAddClusterPackageRequestWithDefaults instantiates a new AddClusterPackageRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterPackageRequestWithDefaults() *AddClusterPackageRequest {
-	this := AddClusterPackageRequest{}
-	return &this
-}
-
-// GetClusterPackage returns the ClusterPackage field value if set, zero value otherwise.
-func (o *AddClusterPackageRequest) GetClusterPackage() AddClusterPackageRequestClusterPackage {
-	if o == nil || IsNil(o.ClusterPackage) {
-		var ret AddClusterPackageRequestClusterPackage
-		return ret
-	}
-	return *o.ClusterPackage
-}
-
-// GetClusterPackageOk returns a tuple with the ClusterPackage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterPackageRequest) GetClusterPackageOk() (*AddClusterPackageRequestClusterPackage, bool) {
-	if o == nil || IsNil(o.ClusterPackage) {
-		return nil, false
-	}
-	return o.ClusterPackage, true
-}
-
-// IsSetClusterPackage returns a boolean if a field has been set.
-func (o *AddClusterPackageRequest) IsSetClusterPackage() bool {
-	if o != nil && !IsNil(o.ClusterPackage) {
-		return true
-	}
-
-	return false
-}
-
-// SetClusterPackage gets a reference to the given AddClusterPackageRequestClusterPackage and assigns it to the ClusterPackage field.
-func (o *AddClusterPackageRequest) SetClusterPackage(v AddClusterPackageRequestClusterPackage) {
-	o.ClusterPackage = &v
-}
-
 func (o AddClusterPackageRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

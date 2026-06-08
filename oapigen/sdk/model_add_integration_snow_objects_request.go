@@ -26,55 +26,6 @@ type AddIntegrationSnowObjectsRequest struct {
 
 type _AddIntegrationSnowObjectsRequest AddIntegrationSnowObjectsRequest
 
-// NewAddIntegrationSnowObjectsRequest instantiates a new AddIntegrationSnowObjectsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddIntegrationSnowObjectsRequest() *AddIntegrationSnowObjectsRequest {
-	this := AddIntegrationSnowObjectsRequest{}
-	return &this
-}
-
-// NewAddIntegrationSnowObjectsRequestWithDefaults instantiates a new AddIntegrationSnowObjectsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddIntegrationSnowObjectsRequestWithDefaults() *AddIntegrationSnowObjectsRequest {
-	this := AddIntegrationSnowObjectsRequest{}
-	return &this
-}
-
-// GetObject returns the Object field value if set, zero value otherwise.
-func (o *AddIntegrationSnowObjectsRequest) GetObject() AddIntegrationSnowObjectsRequestObject {
-	if o == nil || IsNil(o.Object) {
-		var ret AddIntegrationSnowObjectsRequestObject
-		return ret
-	}
-	return *o.Object
-}
-
-// GetObjectOk returns a tuple with the Object field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIntegrationSnowObjectsRequest) GetObjectOk() (*AddIntegrationSnowObjectsRequestObject, bool) {
-	if o == nil || IsNil(o.Object) {
-		return nil, false
-	}
-	return o.Object, true
-}
-
-// IsSetObject returns a boolean if a field has been set.
-func (o *AddIntegrationSnowObjectsRequest) IsSetObject() bool {
-	if o != nil && !IsNil(o.Object) {
-		return true
-	}
-
-	return false
-}
-
-// SetObject gets a reference to the given AddIntegrationSnowObjectsRequestObject and assigns it to the Object field.
-func (o *AddIntegrationSnowObjectsRequest) SetObject(v AddIntegrationSnowObjectsRequestObject) {
-	o.Object = &v
-}
-
 func (o AddIntegrationSnowObjectsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

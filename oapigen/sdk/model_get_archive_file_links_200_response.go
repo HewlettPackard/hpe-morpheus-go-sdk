@@ -26,55 +26,6 @@ type GetArchiveFileLinks200Response struct {
 
 type _GetArchiveFileLinks200Response GetArchiveFileLinks200Response
 
-// NewGetArchiveFileLinks200Response instantiates a new GetArchiveFileLinks200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetArchiveFileLinks200Response() *GetArchiveFileLinks200Response {
-	this := GetArchiveFileLinks200Response{}
-	return &this
-}
-
-// NewGetArchiveFileLinks200ResponseWithDefaults instantiates a new GetArchiveFileLinks200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetArchiveFileLinks200ResponseWithDefaults() *GetArchiveFileLinks200Response {
-	this := GetArchiveFileLinks200Response{}
-	return &this
-}
-
-// GetArchiveFileLinks returns the ArchiveFileLinks field value if set, zero value otherwise.
-func (o *GetArchiveFileLinks200Response) GetArchiveFileLinks() []GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner {
-	if o == nil || IsNil(o.ArchiveFileLinks) {
-		var ret []GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner
-		return ret
-	}
-	return o.ArchiveFileLinks
-}
-
-// GetArchiveFileLinksOk returns a tuple with the ArchiveFileLinks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetArchiveFileLinks200Response) GetArchiveFileLinksOk() ([]GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner, bool) {
-	if o == nil || IsNil(o.ArchiveFileLinks) {
-		return nil, false
-	}
-	return o.ArchiveFileLinks, true
-}
-
-// IsSetArchiveFileLinks returns a boolean if a field has been set.
-func (o *GetArchiveFileLinks200Response) IsSetArchiveFileLinks() bool {
-	if o != nil && !IsNil(o.ArchiveFileLinks) {
-		return true
-	}
-
-	return false
-}
-
-// SetArchiveFileLinks gets a reference to the given []GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner and assigns it to the ArchiveFileLinks field.
-func (o *GetArchiveFileLinks200Response) SetArchiveFileLinks(v []GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) {
-	o.ArchiveFileLinks = v
-}
-
 func (o GetArchiveFileLinks200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

@@ -33,62 +33,6 @@ type ClusterCreateServerConfigAnyOf struct {
 	ClusterCreateServerConfigAnyOfOneOf7 *ClusterCreateServerConfigAnyOfOneOf7
 }
 
-// ClusterCreateServerConfigAnyOfOneOfAsClusterCreateServerConfigAnyOf is a convenience function that returns ClusterCreateServerConfigAnyOfOneOf wrapped in ClusterCreateServerConfigAnyOf
-func ClusterCreateServerConfigAnyOfOneOfAsClusterCreateServerConfigAnyOf(v *ClusterCreateServerConfigAnyOfOneOf) ClusterCreateServerConfigAnyOf {
-	return ClusterCreateServerConfigAnyOf{
-		ClusterCreateServerConfigAnyOfOneOf: v,
-	}
-}
-
-// ClusterCreateServerConfigAnyOfOneOf1AsClusterCreateServerConfigAnyOf is a convenience function that returns ClusterCreateServerConfigAnyOfOneOf1 wrapped in ClusterCreateServerConfigAnyOf
-func ClusterCreateServerConfigAnyOfOneOf1AsClusterCreateServerConfigAnyOf(v *ClusterCreateServerConfigAnyOfOneOf1) ClusterCreateServerConfigAnyOf {
-	return ClusterCreateServerConfigAnyOf{
-		ClusterCreateServerConfigAnyOfOneOf1: v,
-	}
-}
-
-// ClusterCreateServerConfigAnyOfOneOf2AsClusterCreateServerConfigAnyOf is a convenience function that returns ClusterCreateServerConfigAnyOfOneOf2 wrapped in ClusterCreateServerConfigAnyOf
-func ClusterCreateServerConfigAnyOfOneOf2AsClusterCreateServerConfigAnyOf(v *ClusterCreateServerConfigAnyOfOneOf2) ClusterCreateServerConfigAnyOf {
-	return ClusterCreateServerConfigAnyOf{
-		ClusterCreateServerConfigAnyOfOneOf2: v,
-	}
-}
-
-// ClusterCreateServerConfigAnyOfOneOf3AsClusterCreateServerConfigAnyOf is a convenience function that returns ClusterCreateServerConfigAnyOfOneOf3 wrapped in ClusterCreateServerConfigAnyOf
-func ClusterCreateServerConfigAnyOfOneOf3AsClusterCreateServerConfigAnyOf(v *ClusterCreateServerConfigAnyOfOneOf3) ClusterCreateServerConfigAnyOf {
-	return ClusterCreateServerConfigAnyOf{
-		ClusterCreateServerConfigAnyOfOneOf3: v,
-	}
-}
-
-// ClusterCreateServerConfigAnyOfOneOf4AsClusterCreateServerConfigAnyOf is a convenience function that returns ClusterCreateServerConfigAnyOfOneOf4 wrapped in ClusterCreateServerConfigAnyOf
-func ClusterCreateServerConfigAnyOfOneOf4AsClusterCreateServerConfigAnyOf(v *ClusterCreateServerConfigAnyOfOneOf4) ClusterCreateServerConfigAnyOf {
-	return ClusterCreateServerConfigAnyOf{
-		ClusterCreateServerConfigAnyOfOneOf4: v,
-	}
-}
-
-// ClusterCreateServerConfigAnyOfOneOf5AsClusterCreateServerConfigAnyOf is a convenience function that returns ClusterCreateServerConfigAnyOfOneOf5 wrapped in ClusterCreateServerConfigAnyOf
-func ClusterCreateServerConfigAnyOfOneOf5AsClusterCreateServerConfigAnyOf(v *ClusterCreateServerConfigAnyOfOneOf5) ClusterCreateServerConfigAnyOf {
-	return ClusterCreateServerConfigAnyOf{
-		ClusterCreateServerConfigAnyOfOneOf5: v,
-	}
-}
-
-// ClusterCreateServerConfigAnyOfOneOf6AsClusterCreateServerConfigAnyOf is a convenience function that returns ClusterCreateServerConfigAnyOfOneOf6 wrapped in ClusterCreateServerConfigAnyOf
-func ClusterCreateServerConfigAnyOfOneOf6AsClusterCreateServerConfigAnyOf(v *ClusterCreateServerConfigAnyOfOneOf6) ClusterCreateServerConfigAnyOf {
-	return ClusterCreateServerConfigAnyOf{
-		ClusterCreateServerConfigAnyOfOneOf6: v,
-	}
-}
-
-// ClusterCreateServerConfigAnyOfOneOf7AsClusterCreateServerConfigAnyOf is a convenience function that returns ClusterCreateServerConfigAnyOfOneOf7 wrapped in ClusterCreateServerConfigAnyOf
-func ClusterCreateServerConfigAnyOfOneOf7AsClusterCreateServerConfigAnyOf(v *ClusterCreateServerConfigAnyOfOneOf7) ClusterCreateServerConfigAnyOf {
-	return ClusterCreateServerConfigAnyOf{
-		ClusterCreateServerConfigAnyOfOneOf7: v,
-	}
-}
-
 func (dst *ClusterCreateServerConfigAnyOf) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ClusterCreateServerConfigAnyOf{}

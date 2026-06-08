@@ -26,55 +26,6 @@ type ClusterServerCreateConfigGKEWorker struct {
 
 type _ClusterServerCreateConfigGKEWorker ClusterServerCreateConfigGKEWorker
 
-// NewClusterServerCreateConfigGKEWorker instantiates a new ClusterServerCreateConfigGKEWorker object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewClusterServerCreateConfigGKEWorker() *ClusterServerCreateConfigGKEWorker {
-	this := ClusterServerCreateConfigGKEWorker{}
-	return &this
-}
-
-// NewClusterServerCreateConfigGKEWorkerWithDefaults instantiates a new ClusterServerCreateConfigGKEWorker object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewClusterServerCreateConfigGKEWorkerWithDefaults() *ClusterServerCreateConfigGKEWorker {
-	this := ClusterServerCreateConfigGKEWorker{}
-	return &this
-}
-
-// GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *ClusterServerCreateConfigGKEWorker) GetPlan() ClusterServerCreateConfigGKEWorkerPlan {
-	if o == nil || IsNil(o.Plan) {
-		var ret ClusterServerCreateConfigGKEWorkerPlan
-		return ret
-	}
-	return *o.Plan
-}
-
-// GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterServerCreateConfigGKEWorker) GetPlanOk() (*ClusterServerCreateConfigGKEWorkerPlan, bool) {
-	if o == nil || IsNil(o.Plan) {
-		return nil, false
-	}
-	return o.Plan, true
-}
-
-// IsSetPlan returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigGKEWorker) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
-}
-
-// SetPlan gets a reference to the given ClusterServerCreateConfigGKEWorkerPlan and assigns it to the Plan field.
-func (o *ClusterServerCreateConfigGKEWorker) SetPlan(v ClusterServerCreateConfigGKEWorkerPlan) {
-	o.Plan = &v
-}
-
 func (o ClusterServerCreateConfigGKEWorker) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

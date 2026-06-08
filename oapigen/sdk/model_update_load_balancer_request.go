@@ -26,55 +26,6 @@ type UpdateLoadBalancerRequest struct {
 
 type _UpdateLoadBalancerRequest UpdateLoadBalancerRequest
 
-// NewUpdateLoadBalancerRequest instantiates a new UpdateLoadBalancerRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateLoadBalancerRequest() *UpdateLoadBalancerRequest {
-	this := UpdateLoadBalancerRequest{}
-	return &this
-}
-
-// NewUpdateLoadBalancerRequestWithDefaults instantiates a new UpdateLoadBalancerRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateLoadBalancerRequestWithDefaults() *UpdateLoadBalancerRequest {
-	this := UpdateLoadBalancerRequest{}
-	return &this
-}
-
-// GetLoadBalancer returns the LoadBalancer field value if set, zero value otherwise.
-func (o *UpdateLoadBalancerRequest) GetLoadBalancer() UpdateLoadBalancerRequestLoadBalancer {
-	if o == nil || IsNil(o.LoadBalancer) {
-		var ret UpdateLoadBalancerRequestLoadBalancer
-		return ret
-	}
-	return *o.LoadBalancer
-}
-
-// GetLoadBalancerOk returns a tuple with the LoadBalancer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateLoadBalancerRequest) GetLoadBalancerOk() (*UpdateLoadBalancerRequestLoadBalancer, bool) {
-	if o == nil || IsNil(o.LoadBalancer) {
-		return nil, false
-	}
-	return o.LoadBalancer, true
-}
-
-// IsSetLoadBalancer returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerRequest) IsSetLoadBalancer() bool {
-	if o != nil && !IsNil(o.LoadBalancer) {
-		return true
-	}
-
-	return false
-}
-
-// SetLoadBalancer gets a reference to the given UpdateLoadBalancerRequestLoadBalancer and assigns it to the LoadBalancer field.
-func (o *UpdateLoadBalancerRequest) SetLoadBalancer(v UpdateLoadBalancerRequestLoadBalancer) {
-	o.LoadBalancer = &v
-}
-
 func (o UpdateLoadBalancerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

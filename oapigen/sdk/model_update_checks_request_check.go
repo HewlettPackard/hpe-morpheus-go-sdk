@@ -33,62 +33,6 @@ type UpdateChecksRequestCheck struct {
 	WebCheck1      *WebCheck1
 }
 
-// CheckSocket1AsUpdateChecksRequestCheck is a convenience function that returns CheckSocket1 wrapped in UpdateChecksRequestCheck
-func CheckSocket1AsUpdateChecksRequestCheck(v *CheckSocket1) UpdateChecksRequestCheck {
-	return UpdateChecksRequestCheck{
-		CheckSocket1: v,
-	}
-}
-
-// ElasticCheck1AsUpdateChecksRequestCheck is a convenience function that returns ElasticCheck1 wrapped in UpdateChecksRequestCheck
-func ElasticCheck1AsUpdateChecksRequestCheck(v *ElasticCheck1) UpdateChecksRequestCheck {
-	return UpdateChecksRequestCheck{
-		ElasticCheck1: v,
-	}
-}
-
-// MySqlCheck1AsUpdateChecksRequestCheck is a convenience function that returns MySqlCheck1 wrapped in UpdateChecksRequestCheck
-func MySqlCheck1AsUpdateChecksRequestCheck(v *MySqlCheck1) UpdateChecksRequestCheck {
-	return UpdateChecksRequestCheck{
-		MySqlCheck1: v,
-	}
-}
-
-// PostgresCheck1AsUpdateChecksRequestCheck is a convenience function that returns PostgresCheck1 wrapped in UpdateChecksRequestCheck
-func PostgresCheck1AsUpdateChecksRequestCheck(v *PostgresCheck1) UpdateChecksRequestCheck {
-	return UpdateChecksRequestCheck{
-		PostgresCheck1: v,
-	}
-}
-
-// PushCheck1AsUpdateChecksRequestCheck is a convenience function that returns PushCheck1 wrapped in UpdateChecksRequestCheck
-func PushCheck1AsUpdateChecksRequestCheck(v *PushCheck1) UpdateChecksRequestCheck {
-	return UpdateChecksRequestCheck{
-		PushCheck1: v,
-	}
-}
-
-// SNMPCheck1AsUpdateChecksRequestCheck is a convenience function that returns SNMPCheck1 wrapped in UpdateChecksRequestCheck
-func SNMPCheck1AsUpdateChecksRequestCheck(v *SNMPCheck1) UpdateChecksRequestCheck {
-	return UpdateChecksRequestCheck{
-		SNMPCheck1: v,
-	}
-}
-
-// SqlCheck1AsUpdateChecksRequestCheck is a convenience function that returns SqlCheck1 wrapped in UpdateChecksRequestCheck
-func SqlCheck1AsUpdateChecksRequestCheck(v *SqlCheck1) UpdateChecksRequestCheck {
-	return UpdateChecksRequestCheck{
-		SqlCheck1: v,
-	}
-}
-
-// WebCheck1AsUpdateChecksRequestCheck is a convenience function that returns WebCheck1 wrapped in UpdateChecksRequestCheck
-func WebCheck1AsUpdateChecksRequestCheck(v *WebCheck1) UpdateChecksRequestCheck {
-	return UpdateChecksRequestCheck{
-		WebCheck1: v,
-	}
-}
-
 func (dst *UpdateChecksRequestCheck) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &UpdateChecksRequestCheck{}

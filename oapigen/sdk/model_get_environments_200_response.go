@@ -26,55 +26,6 @@ type GetEnvironments200Response struct {
 
 type _GetEnvironments200Response GetEnvironments200Response
 
-// NewGetEnvironments200Response instantiates a new GetEnvironments200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetEnvironments200Response() *GetEnvironments200Response {
-	this := GetEnvironments200Response{}
-	return &this
-}
-
-// NewGetEnvironments200ResponseWithDefaults instantiates a new GetEnvironments200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetEnvironments200ResponseWithDefaults() *GetEnvironments200Response {
-	this := GetEnvironments200Response{}
-	return &this
-}
-
-// GetEnvironment returns the Environment field value if set, zero value otherwise.
-func (o *GetEnvironments200Response) GetEnvironment() GetEnvironments200ResponseEnvironment {
-	if o == nil || IsNil(o.Environment) {
-		var ret GetEnvironments200ResponseEnvironment
-		return ret
-	}
-	return *o.Environment
-}
-
-// GetEnvironmentOk returns a tuple with the Environment field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetEnvironments200Response) GetEnvironmentOk() (*GetEnvironments200ResponseEnvironment, bool) {
-	if o == nil || IsNil(o.Environment) {
-		return nil, false
-	}
-	return o.Environment, true
-}
-
-// IsSetEnvironment returns a boolean if a field has been set.
-func (o *GetEnvironments200Response) IsSetEnvironment() bool {
-	if o != nil && !IsNil(o.Environment) {
-		return true
-	}
-
-	return false
-}
-
-// SetEnvironment gets a reference to the given GetEnvironments200ResponseEnvironment and assigns it to the Environment field.
-func (o *GetEnvironments200Response) SetEnvironment(v GetEnvironments200ResponseEnvironment) {
-	o.Environment = &v
-}
-
 func (o GetEnvironments200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {

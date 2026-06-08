@@ -26,56 +26,6 @@ type UpdateNetworkPoolRequestNetworkPoolType struct {
 
 type _UpdateNetworkPoolRequestNetworkPoolType UpdateNetworkPoolRequestNetworkPoolType
 
-// NewUpdateNetworkPoolRequestNetworkPoolType instantiates a new UpdateNetworkPoolRequestNetworkPoolType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateNetworkPoolRequestNetworkPoolType() *UpdateNetworkPoolRequestNetworkPoolType {
-	this := UpdateNetworkPoolRequestNetworkPoolType{}
-	return &this
-}
-
-// NewUpdateNetworkPoolRequestNetworkPoolTypeWithDefaults instantiates a new UpdateNetworkPoolRequestNetworkPoolType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateNetworkPoolRequestNetworkPoolTypeWithDefaults() *UpdateNetworkPoolRequestNetworkPoolType {
-	this := UpdateNetworkPoolRequestNetworkPoolType{}
-	return &this
-}
-
-// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateNetworkPoolRequestNetworkPoolType) GetCode() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateNetworkPoolRequestNetworkPoolType) GetCodeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return &o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdateNetworkPoolRequestNetworkPoolType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
-// SetCode gets a reference to the given interface{} and assigns it to the Code field.
-func (o *UpdateNetworkPoolRequestNetworkPoolType) SetCode(v interface{}) {
-	o.Code = v
-}
-
 func (o UpdateNetworkPoolRequestNetworkPoolType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
