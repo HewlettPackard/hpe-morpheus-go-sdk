@@ -22,8 +22,6 @@ var _ MappedNullable = &UpdateNetworkRouterNatRequestNetworkRouterNAT{}
 type UpdateNetworkRouterNatRequestNetworkRouterNAT struct {
 	// Sets name of NAT
 	Name *string `json:"name,omitempty"`
-	// The NAT action (e.g. SNAT, DNAT, REFLEXIVE).
-	Action *string `json:"action,omitempty"`
 	// Description of the NAT rule.
 	Description *string `json:"description,omitempty"`
 	// Whether the NAT rule is enabled.
@@ -37,8 +35,9 @@ type UpdateNetworkRouterNatRequestNetworkRouterNAT struct {
 	// Priority of the NAT rule.
 	Priority *int64 `json:"priority,omitempty"`
 	// Protocol for the NAT rule.
-	Protocol             *string                `json:"protocol,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Protocol             *string                                              `json:"protocol,omitempty"`
+	Config               *UpdateNetworkRouterNatRequestNetworkRouterNATConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _UpdateNetworkRouterNatRequestNetworkRouterNAT UpdateNetworkRouterNatRequestNetworkRouterNAT
@@ -55,9 +54,6 @@ func (o UpdateNetworkRouterNatRequestNetworkRouterNAT) ToMap() (map[string]inter
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
-	}
-	if !IsNil(o.Action) {
-		toSerialize["action"] = o.Action
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -79,6 +75,9 @@ func (o UpdateNetworkRouterNatRequestNetworkRouterNAT) ToMap() (map[string]inter
 	}
 	if !IsNil(o.Protocol) {
 		toSerialize["protocol"] = o.Protocol
+	}
+	if !IsNil(o.Config) {
+		toSerialize["config"] = o.Config
 	}
 
 	for key, value := range o.AdditionalProperties {
