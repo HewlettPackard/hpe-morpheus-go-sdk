@@ -20,7 +20,24 @@ var _ MappedNullable = &CreateNetworkRouterNatRequestNetworkRouterNAT{}
 
 // CreateNetworkRouterNatRequestNetworkRouterNAT For a full list of available NAT options, see natOptionTypes in the specific Network Router Type
 type CreateNetworkRouterNatRequestNetworkRouterNAT struct {
-	Name                 interface{}            `json:"name"`
+	// NAT name
+	Name string `json:"name"`
+	// The NAT action (e.g. SNAT, DNAT, REFLEXIVE).
+	Action string `json:"action"`
+	// Description of the NAT rule.
+	Description *string `json:"description,omitempty"`
+	// Whether the NAT rule is enabled.
+	Enabled *bool `json:"enabled,omitempty"`
+	// Source network for the NAT rule.
+	SourceNetwork *string `json:"sourceNetwork,omitempty"`
+	// Destination network for the NAT rule.
+	DestinationNetwork *string `json:"destinationNetwork,omitempty"`
+	// Translated network for the NAT rule.
+	TranslatedNetwork *string `json:"translatedNetwork,omitempty"`
+	// Priority of the NAT rule.
+	Priority *int64 `json:"priority,omitempty"`
+	// Protocol for the NAT rule.
+	Protocol             *string                `json:"protocol,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -36,8 +53,28 @@ func (o CreateNetworkRouterNatRequestNetworkRouterNAT) MarshalJSON() ([]byte, er
 
 func (o CreateNetworkRouterNatRequestNetworkRouterNAT) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
+	toSerialize["name"] = o.Name
+	toSerialize["action"] = o.Action
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.SourceNetwork) {
+		toSerialize["sourceNetwork"] = o.SourceNetwork
+	}
+	if !IsNil(o.DestinationNetwork) {
+		toSerialize["destinationNetwork"] = o.DestinationNetwork
+	}
+	if !IsNil(o.TranslatedNetwork) {
+		toSerialize["translatedNetwork"] = o.TranslatedNetwork
+	}
+	if !IsNil(o.Priority) {
+		toSerialize["priority"] = o.Priority
+	}
+	if !IsNil(o.Protocol) {
+		toSerialize["protocol"] = o.Protocol
 	}
 
 	for key, value := range o.AdditionalProperties {

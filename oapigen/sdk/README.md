@@ -4772,6 +4772,7 @@ Class | Method | HTTP request | Description
  - [GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork](docs/GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork.md)
  - [GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner](docs/GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner.md)
  - [GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInnerNetwork](docs/GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInnerNetwork.md)
+ - [GetNetworkRouters200ResponseNetworkRoutersInnerNetworkServer](docs/GetNetworkRouters200ResponseNetworkRoutersInnerNetworkServer.md)
  - [GetNetworkRouters200ResponseNetworkRoutersInnerSite](docs/GetNetworkRouters200ResponseNetworkRoutersInnerSite.md)
  - [GetNetworkRouters200ResponseNetworkRoutersInnerType](docs/GetNetworkRouters200ResponseNetworkRoutersInnerType.md)
  - [GetNetworkRouters200ResponseNetworkRoutersInnerZone](docs/GetNetworkRouters200ResponseNetworkRoutersInnerZone.md)

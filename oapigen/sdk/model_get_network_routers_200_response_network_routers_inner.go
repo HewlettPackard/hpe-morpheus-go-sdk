@@ -21,29 +21,29 @@ var _ MappedNullable = &GetNetworkRouters200ResponseNetworkRoutersInner{}
 
 // GetNetworkRouters200ResponseNetworkRoutersInner struct for GetNetworkRouters200ResponseNetworkRoutersInner
 type GetNetworkRouters200ResponseNetworkRoutersInner struct {
-	Id                   *int64                                                           `json:"id,omitempty"`
-	Code                 *string                                                          `json:"code,omitempty"`
-	Name                 *string                                                          `json:"name,omitempty"`
-	Description          NullableString                                                   `json:"description,omitempty"`
-	Category             *string                                                          `json:"category,omitempty"`
-	DateCreated          *time.Time                                                       `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                       `json:"lastUpdated,omitempty"`
-	RouterType           *string                                                          `json:"routerType,omitempty"`
-	Status               *string                                                          `json:"status,omitempty"`
-	Enabled              *bool                                                            `json:"enabled,omitempty"`
-	EnableBgp            *bool                                                            `json:"enableBgp,omitempty"`
-	ExternalIp           NullableString                                                   `json:"externalIp,omitempty"`
-	ExternalId           *string                                                          `json:"externalId,omitempty"`
-	ProviderId           NullableString                                                   `json:"providerId,omitempty"`
-	Type                 *GetNetworkRouters200ResponseNetworkRoutersInnerType             `json:"type,omitempty"`
-	NetworkServer        NullableString                                                   `json:"networkServer,omitempty"`
-	Zone                 *GetNetworkRouters200ResponseNetworkRoutersInnerZone             `json:"zone,omitempty"`
-	Instance             NullableString                                                   `json:"instance,omitempty"`
-	ExternalNetwork      *GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork  `json:"externalNetwork,omitempty"`
-	Site                 *GetNetworkRouters200ResponseNetworkRoutersInnerSite             `json:"site,omitempty"`
-	Interfaces           []GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner `json:"interfaces,omitempty"`
-	Config               map[string]interface{}                                           `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}                                           `json:",remain"`
+	Id                   *int64                                                               `json:"id,omitempty"`
+	Code                 *string                                                              `json:"code,omitempty"`
+	Name                 *string                                                              `json:"name,omitempty"`
+	Description          NullableString                                                       `json:"description,omitempty"`
+	Category             *string                                                              `json:"category,omitempty"`
+	DateCreated          *time.Time                                                           `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                           `json:"lastUpdated,omitempty"`
+	RouterType           *string                                                              `json:"routerType,omitempty"`
+	Status               *string                                                              `json:"status,omitempty"`
+	Enabled              *bool                                                                `json:"enabled,omitempty"`
+	EnableBgp            *bool                                                                `json:"enableBgp,omitempty"`
+	ExternalIp           NullableString                                                       `json:"externalIp,omitempty"`
+	ExternalId           *string                                                              `json:"externalId,omitempty"`
+	ProviderId           NullableString                                                       `json:"providerId,omitempty"`
+	Type                 *GetNetworkRouters200ResponseNetworkRoutersInnerType                 `json:"type,omitempty"`
+	NetworkServer        NullableGetNetworkRouters200ResponseNetworkRoutersInnerNetworkServer `json:"networkServer,omitempty"`
+	Zone                 *GetNetworkRouters200ResponseNetworkRoutersInnerZone                 `json:"zone,omitempty"`
+	Instance             NullableString                                                       `json:"instance,omitempty"`
+	ExternalNetwork      *GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork      `json:"externalNetwork,omitempty"`
+	Site                 *GetNetworkRouters200ResponseNetworkRoutersInnerSite                 `json:"site,omitempty"`
+	Interfaces           []GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner     `json:"interfaces,omitempty"`
+	Config               map[string]interface{}                                               `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                                               `json:",remain"`
 }
 
 type _GetNetworkRouters200ResponseNetworkRoutersInner GetNetworkRouters200ResponseNetworkRoutersInner

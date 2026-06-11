@@ -23,6 +23,7 @@ var _ MappedNullable = &GetNetworkRoutersNats200ResponseNetworkRouterNATsInner{}
 type GetNetworkRoutersNats200ResponseNetworkRouterNATsInner struct {
 	Id                         *int32                 `json:"id,omitempty"`
 	Name                       *string                `json:"name,omitempty"`
+	Action                     *string                `json:"action,omitempty"`
 	Description                *string                `json:"description,omitempty"`
 	Enabled                    *bool                  `json:"enabled,omitempty"`
 	SourceNetwork              *string                `json:"sourceNetwork,omitempty"`
@@ -63,6 +64,9 @@ func (o GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) ToMap() (map[str
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Action) {
+		toSerialize["action"] = o.Action
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

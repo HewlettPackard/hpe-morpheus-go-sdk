@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **ExternalId** | Pointer to **string** |  | [optional] 
 **ProviderId** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to [**GetNetworkRouters200ResponseNetworkRoutersInnerType**](GetNetworkRouters200ResponseNetworkRoutersInnerType.md) |  | [optional] 
-**NetworkServer** | Pointer to **NullableString** |  | [optional] 
+**NetworkServer** | Pointer to [**NullableGetNetworkRouters200ResponseNetworkRoutersInnerNetworkServer**](GetNetworkRouters200ResponseNetworkRoutersInnerNetworkServer.md) |  | [optional] 
 **Zone** | Pointer to [**GetNetworkRouters200ResponseNetworkRoutersInnerZone**](GetNetworkRouters200ResponseNetworkRoutersInnerZone.md) |  | [optional] 
 **Instance** | Pointer to **NullableString** |  | [optional] 
 **ExternalNetwork** | Pointer to [**GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork**](GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork.md) |  | [optional] 
