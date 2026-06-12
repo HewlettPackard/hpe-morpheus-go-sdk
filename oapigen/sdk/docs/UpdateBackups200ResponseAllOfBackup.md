@@ -7,15 +7,26 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** | Backup ID | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
 **LocationType** | Pointer to **string** | Source Type (instance, server, storage) | [optional] 
+**Location** | Pointer to **NullableString** | Location label, typically the storage provider name | [optional] 
 **Instance** | Pointer to [**UpdateBackups200ResponseAllOfBackupInstance**](UpdateBackups200ResponseAllOfBackupInstance.md) |  | [optional] 
-**ContainerId** | Pointer to **NullableInt64** |  | [optional] 
+**ContainerId** | Pointer to **NullableInt64** | Present when locationType is &#x60;instance&#x60; | [optional] 
+**Server** | Pointer to [**UpdateBackups200ResponseAllOfBackupServer**](UpdateBackups200ResponseAllOfBackupServer.md) |  | [optional] 
+**VolumePath** | Pointer to **NullableString** | Volume path. Present when backupType is &#x60;lvmSnapshot&#x60;. | [optional] 
+**TargetPath** | Pointer to **NullableString** | The file or directory path on the target host. Present when backupType is &#x60;fileBackup&#x60;, &#x60;directoryBackup&#x60;, or &#x60;tarDirectoryBackup&#x60;. | [optional] 
+**TargetHost** | Pointer to **NullableString** | Target host. Present when backupType is a database type (MySQL, SqlServer, Postgres, MongoDB) or lvmSnapshot. | [optional] 
+**TargetPort** | Pointer to **NullableInt32** | Target port. Present when backupType is a database type (MySQL, SqlServer, Postgres, MongoDB). | [optional] 
+**TargetAll** | Pointer to **NullableBool** | Whether to backup all databases. Present when backupType is a database type. | [optional] 
+**TargetName** | Pointer to **NullableString** | Target database name. Present when backupType is a database type and &#x60;targetAll&#x60; is false. | [optional] 
+**TargetUsername** | Pointer to **NullableString** | Target username. Present when backupType is a database type. | [optional] 
+**TargetPassword** | Pointer to **NullableString** | Target password (masked). Present when backupType is a database type. | [optional] 
+**TargetPasswordHash** | Pointer to **NullableString** | Target password hash. Present when backupType is a database type. | [optional] 
 **Job** | Pointer to [**UpdateBackups200ResponseAllOfBackupJob**](UpdateBackups200ResponseAllOfBackupJob.md) |  | [optional] 
 **Schedule** | Pointer to [**UpdateBackups200ResponseAllOfBackupSchedule**](UpdateBackups200ResponseAllOfBackupSchedule.md) |  | [optional] 
 **RetentionCount** | Pointer to **NullableInt64** |  | [optional] 
 **BackupType** | Pointer to [**UpdateBackups200ResponseAllOfBackupBackupType**](UpdateBackups200ResponseAllOfBackupBackupType.md) |  | [optional] 
-**StorageProvider** | Pointer to [**UpdateBackups200ResponseAllOfBackupStorageProvider**](UpdateBackups200ResponseAllOfBackupStorageProvider.md) |  | [optional] 
 **BackupProvider** | Pointer to [**UpdateBackups200ResponseAllOfBackupBackupProvider**](UpdateBackups200ResponseAllOfBackupBackupProvider.md) |  | [optional] 
-**BackupRespository** | Pointer to [**UpdateBackups200ResponseAllOfBackupBackupRespository**](UpdateBackups200ResponseAllOfBackupBackupRespository.md) |  | [optional] 
+**StorageProvider** | Pointer to [**UpdateBackups200ResponseAllOfBackupStorageProvider**](UpdateBackups200ResponseAllOfBackupStorageProvider.md) |  | [optional] 
+**BackupRepository** | Pointer to [**UpdateBackups200ResponseAllOfBackupBackupRepository**](UpdateBackups200ResponseAllOfBackupBackupRepository.md) |  | [optional] 
 **CronExpression** | Pointer to **NullableString** | Cron Expression | [optional] 
 **NextFire** | Pointer to **NullableTime** | Next Fire | [optional] 
 **LastStatus** | Pointer to **NullableString** | Last Status | [optional] 
@@ -35,6 +46,13 @@ obj := &UpdateBackups200ResponseAllOfBackup{
 }
 ```
 
+### Location (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Location.IsSet()` — check if set
+- `obj.Location.Get()` — get the inner value (returns pointer)
+- `obj.Location.Set(&val)` — set the value
+- `obj.Location.Unset()` — clear the value
 ### ContainerId (Nullable)
 
 Use the Nullable wrapper methods:
@@ -42,6 +60,69 @@ Use the Nullable wrapper methods:
 - `obj.ContainerId.Get()` — get the inner value (returns pointer)
 - `obj.ContainerId.Set(&val)` — set the value
 - `obj.ContainerId.Unset()` — clear the value
+### VolumePath (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.VolumePath.IsSet()` — check if set
+- `obj.VolumePath.Get()` — get the inner value (returns pointer)
+- `obj.VolumePath.Set(&val)` — set the value
+- `obj.VolumePath.Unset()` — clear the value
+### TargetPath (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.TargetPath.IsSet()` — check if set
+- `obj.TargetPath.Get()` — get the inner value (returns pointer)
+- `obj.TargetPath.Set(&val)` — set the value
+- `obj.TargetPath.Unset()` — clear the value
+### TargetHost (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.TargetHost.IsSet()` — check if set
+- `obj.TargetHost.Get()` — get the inner value (returns pointer)
+- `obj.TargetHost.Set(&val)` — set the value
+- `obj.TargetHost.Unset()` — clear the value
+### TargetPort (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.TargetPort.IsSet()` — check if set
+- `obj.TargetPort.Get()` — get the inner value (returns pointer)
+- `obj.TargetPort.Set(&val)` — set the value
+- `obj.TargetPort.Unset()` — clear the value
+### TargetAll (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.TargetAll.IsSet()` — check if set
+- `obj.TargetAll.Get()` — get the inner value (returns pointer)
+- `obj.TargetAll.Set(&val)` — set the value
+- `obj.TargetAll.Unset()` — clear the value
+### TargetName (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.TargetName.IsSet()` — check if set
+- `obj.TargetName.Get()` — get the inner value (returns pointer)
+- `obj.TargetName.Set(&val)` — set the value
+- `obj.TargetName.Unset()` — clear the value
+### TargetUsername (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.TargetUsername.IsSet()` — check if set
+- `obj.TargetUsername.Get()` — get the inner value (returns pointer)
+- `obj.TargetUsername.Set(&val)` — set the value
+- `obj.TargetUsername.Unset()` — clear the value
+### TargetPassword (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.TargetPassword.IsSet()` — check if set
+- `obj.TargetPassword.Get()` — get the inner value (returns pointer)
+- `obj.TargetPassword.Set(&val)` — set the value
+- `obj.TargetPassword.Unset()` — clear the value
+### TargetPasswordHash (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.TargetPasswordHash.IsSet()` — check if set
+- `obj.TargetPasswordHash.Get()` — get the inner value (returns pointer)
+- `obj.TargetPasswordHash.Set(&val)` — set the value
+- `obj.TargetPasswordHash.Unset()` — clear the value
 ### RetentionCount (Nullable)
 
 Use the Nullable wrapper methods:

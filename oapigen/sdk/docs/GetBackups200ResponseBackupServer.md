@@ -1,18 +1,18 @@
-# ListBackups200ResponseAllOfBackupsInnerBackupRespository
+# GetBackups200ResponseBackupServer
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** | Backup Respository ID | [optional] 
-**Name** | Pointer to **string** | Backup Respository Name | [optional] 
+**Id** | Pointer to **int64** | Server ID | [optional] 
+**Name** | Pointer to **string** | Server Name | [optional] 
 
 ## Usage
 
 Instantiate with a Go composite literal:
 
 ```go
-obj := &ListBackups200ResponseAllOfBackupsInnerBackupRespository{
+obj := &GetBackups200ResponseBackupServer{
     // Set fields directly
 }
 ```

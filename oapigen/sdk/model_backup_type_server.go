@@ -24,14 +24,22 @@ type BackupTypeServer struct {
 	// A name for the backup
 	Name string `json:"name"`
 	// The ID of the server to backup
-	ServerId *int64 `json:"serverId,omitempty"`
-	// The backup type code, options vary by the type of cloud and source
+	ServerId int64 `json:"serverId"`
+	// The backup type code for server backups
 	BackupType string `json:"backupType"`
-	// Create a new backup job, clone an existing job or add the new backup to an existing job
+	// The file or directory path on the target host to back up.
+	TargetPath *string `json:"targetPath,omitempty"`
+	// SSH username for connecting to the server.
+	SshUsername *string `json:"sshUsername,omitempty"`
+	// SSH password for connecting to the server.
+	SshPassword *string `json:"sshPassword,omitempty"`
+	// The ID of the storage bucket to store the backup in.
+	Target *int64 `json:"target,omitempty"`
+	// Create a new backup job, clone an existing job or add the new backup to an existing job. If not specified, defaults to `new`.
 	JobAction string `json:"jobAction"`
 	// The ID of the job to clone or add to. Only applies to jobAction `clone` and `addTo`.
 	JobId *int64 `json:"jobId,omitempty"`
-	// Name for new job. Only applies to jobAction `new` and `clone`.
+	// Name for new job. Only applies to jobAction `new` and `clone`. Defaults to the backup name if not specified.
 	JobName *string `json:"jobName,omitempty"`
 	// The ID of the execute schedule for new job. See Execute Schedules. Only applies to jobAction `new` and `clone`.
 	JobSchedule *int64 `json:"jobSchedule,omitempty"`
@@ -54,10 +62,20 @@ func (o BackupTypeServer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["locationType"] = o.LocationType
 	toSerialize["name"] = o.Name
-	if !IsNil(o.ServerId) {
-		toSerialize["serverId"] = o.ServerId
-	}
+	toSerialize["serverId"] = o.ServerId
 	toSerialize["backupType"] = o.BackupType
+	if !IsNil(o.TargetPath) {
+		toSerialize["targetPath"] = o.TargetPath
+	}
+	if !IsNil(o.SshUsername) {
+		toSerialize["sshUsername"] = o.SshUsername
+	}
+	if !IsNil(o.SshPassword) {
+		toSerialize["sshPassword"] = o.SshPassword
+	}
+	if !IsNil(o.Target) {
+		toSerialize["target"] = o.Target
+	}
 	toSerialize["jobAction"] = o.JobAction
 	if !IsNil(o.JobId) {
 		toSerialize["jobId"] = o.JobId
