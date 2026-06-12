@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **PoolAssigned** | Pointer to **bool** |  | [optional] 
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
 **Network** | Pointer to [**NullableInstanceContainerServerInterfacesInnerNetwork**](InstanceContainerServerInterfacesInnerNetwork.md) |  | [optional] 
+**Subnet** | Pointer to [**NullableInstanceContainerServerInterfacesInnerSubnet**](InstanceContainerServerInterfacesInnerSubnet.md) |  | [optional] 
 **NetworkGroup** | Pointer to [**NullableInstanceContainerServerInterfacesInnerNetworkGroup**](InstanceContainerServerInterfacesInnerNetworkGroup.md) |  | [optional] 
 **NetworkPool** | Pointer to [**NullableInstanceContainerServerInterfacesInnerNetworkPool**](InstanceContainerServerInterfacesInnerNetworkPool.md) |  | [optional] 
 **IpMode** | Pointer to **string** |  | [optional] 
@@ -37,6 +38,13 @@ Use the Nullable wrapper methods:
 - `obj.Network.Get()` — get the inner value (returns pointer)
 - `obj.Network.Set(&val)` — set the value
 - `obj.Network.Unset()` — clear the value
+### Subnet (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Subnet.IsSet()` — check if set
+- `obj.Subnet.Get()` — get the inner value (returns pointer)
+- `obj.Subnet.Set(&val)` — set the value
+- `obj.Subnet.Unset()` — clear the value
 ### NetworkGroup (Nullable)
 
 Use the Nullable wrapper methods:
