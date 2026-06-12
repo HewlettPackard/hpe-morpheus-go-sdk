@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** | Last Result ID | [optional] 
-**Name** | Pointer to **string** | Last Result Status | [optional] 
+**Status** | Pointer to **string** | Last Result Status | [optional] 
 **DateCreated** | Pointer to **time.Time** | Last Result Date Created | [optional] 
 
 ## Usage

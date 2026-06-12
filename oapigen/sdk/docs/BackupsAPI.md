@@ -113,7 +113,7 @@ import (
 )
 
 func main() {
-	addBackupsRequest := *openapiclient.NewAddBackupsRequest(*openapiclient.NewAddBackupsRequestBackup("LocationType_example", "Name_example", int64(123), int64(123), "BackupType_example", "JobAction_example")) // AddBackupsRequest |  (optional)
+	addBackupsRequest := *openapiclient.NewAddBackupsRequest(*openapiclient.NewAddBackupsRequestBackup("LocationType_example", "Name_example", int64(123), int64(123), "BackupType_example", "JobAction_example", int64(123))) // AddBackupsRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

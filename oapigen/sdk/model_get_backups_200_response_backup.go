@@ -26,16 +26,38 @@ type GetBackups200ResponseBackup struct {
 	// Name
 	Name *string `json:"name,omitempty"`
 	// Source Type (instance, server, storage)
-	LocationType      *string                                       `json:"locationType,omitempty"`
-	Instance          *GetBackups200ResponseBackupInstance          `json:"instance,omitempty"`
-	ContainerId       NullableInt64                                 `json:"containerId,omitempty"`
-	Job               *GetBackups200ResponseBackupJob               `json:"job,omitempty"`
-	Schedule          *GetBackups200ResponseBackupSchedule          `json:"schedule,omitempty"`
-	RetentionCount    NullableInt64                                 `json:"retentionCount,omitempty"`
-	BackupType        *GetBackups200ResponseBackupBackupType        `json:"backupType,omitempty"`
-	StorageProvider   *GetBackups200ResponseBackupStorageProvider   `json:"storageProvider,omitempty"`
-	BackupProvider    *GetBackups200ResponseBackupBackupProvider    `json:"backupProvider,omitempty"`
-	BackupRespository *GetBackups200ResponseBackupBackupRespository `json:"backupRespository,omitempty"`
+	LocationType *string `json:"locationType,omitempty"`
+	// Location label, typically the storage provider name
+	Location NullableString                       `json:"location,omitempty"`
+	Instance *GetBackups200ResponseBackupInstance `json:"instance,omitempty"`
+	// Present when locationType is `instance`
+	ContainerId NullableInt64                      `json:"containerId,omitempty"`
+	Server      *GetBackups200ResponseBackupServer `json:"server,omitempty"`
+	// Volume path. Present when backupType is `lvmSnapshot`.
+	VolumePath NullableString `json:"volumePath,omitempty"`
+	// The file or directory path on the target host. Present when backupType is `fileBackup`, `directoryBackup`, or `tarDirectoryBackup`.
+	TargetPath NullableString `json:"targetPath,omitempty"`
+	// Target host. Present when backupType is a database type (MySQL, SqlServer, Postgres, MongoDB) or lvmSnapshot.
+	TargetHost NullableString `json:"targetHost,omitempty"`
+	// Target port. Present when backupType is a database type (MySQL, SqlServer, Postgres, MongoDB).
+	TargetPort NullableInt32 `json:"targetPort,omitempty"`
+	// Whether to backup all databases. Present when backupType is a database type.
+	TargetAll NullableBool `json:"targetAll,omitempty"`
+	// Target database name. Present when backupType is a database type and `targetAll` is false.
+	TargetName NullableString `json:"targetName,omitempty"`
+	// Target username. Present when backupType is a database type.
+	TargetUsername NullableString `json:"targetUsername,omitempty"`
+	// Target password (masked). Present when backupType is a database type.
+	TargetPassword NullableString `json:"targetPassword,omitempty"`
+	// Target password hash. Present when backupType is a database type.
+	TargetPasswordHash NullableString                               `json:"targetPasswordHash,omitempty"`
+	Job                *GetBackups200ResponseBackupJob              `json:"job,omitempty"`
+	Schedule           *GetBackups200ResponseBackupSchedule         `json:"schedule,omitempty"`
+	RetentionCount     NullableInt64                                `json:"retentionCount,omitempty"`
+	BackupType         *GetBackups200ResponseBackupBackupType       `json:"backupType,omitempty"`
+	BackupProvider     *GetBackups200ResponseBackupBackupProvider   `json:"backupProvider,omitempty"`
+	StorageProvider    *GetBackups200ResponseBackupStorageProvider  `json:"storageProvider,omitempty"`
+	BackupRepository   *GetBackups200ResponseBackupBackupRepository `json:"backupRepository,omitempty"`
 	// Cron Expression
 	CronExpression NullableString `json:"cronExpression,omitempty"`
 	// Next Fire
@@ -74,11 +96,44 @@ func (o GetBackups200ResponseBackup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LocationType) {
 		toSerialize["locationType"] = o.LocationType
 	}
+	if o.Location.IsSet() {
+		toSerialize["location"] = o.Location.Get()
+	}
 	if !IsNil(o.Instance) {
 		toSerialize["instance"] = o.Instance
 	}
 	if o.ContainerId.IsSet() {
 		toSerialize["containerId"] = o.ContainerId.Get()
+	}
+	if !IsNil(o.Server) {
+		toSerialize["server"] = o.Server
+	}
+	if o.VolumePath.IsSet() {
+		toSerialize["volumePath"] = o.VolumePath.Get()
+	}
+	if o.TargetPath.IsSet() {
+		toSerialize["targetPath"] = o.TargetPath.Get()
+	}
+	if o.TargetHost.IsSet() {
+		toSerialize["targetHost"] = o.TargetHost.Get()
+	}
+	if o.TargetPort.IsSet() {
+		toSerialize["targetPort"] = o.TargetPort.Get()
+	}
+	if o.TargetAll.IsSet() {
+		toSerialize["targetAll"] = o.TargetAll.Get()
+	}
+	if o.TargetName.IsSet() {
+		toSerialize["targetName"] = o.TargetName.Get()
+	}
+	if o.TargetUsername.IsSet() {
+		toSerialize["targetUsername"] = o.TargetUsername.Get()
+	}
+	if o.TargetPassword.IsSet() {
+		toSerialize["targetPassword"] = o.TargetPassword.Get()
+	}
+	if o.TargetPasswordHash.IsSet() {
+		toSerialize["targetPasswordHash"] = o.TargetPasswordHash.Get()
 	}
 	if !IsNil(o.Job) {
 		toSerialize["job"] = o.Job
@@ -92,14 +147,14 @@ func (o GetBackups200ResponseBackup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BackupType) {
 		toSerialize["backupType"] = o.BackupType
 	}
-	if !IsNil(o.StorageProvider) {
-		toSerialize["storageProvider"] = o.StorageProvider
-	}
 	if !IsNil(o.BackupProvider) {
 		toSerialize["backupProvider"] = o.BackupProvider
 	}
-	if !IsNil(o.BackupRespository) {
-		toSerialize["backupRespository"] = o.BackupRespository
+	if !IsNil(o.StorageProvider) {
+		toSerialize["storageProvider"] = o.StorageProvider
+	}
+	if !IsNil(o.BackupRepository) {
+		toSerialize["backupRepository"] = o.BackupRepository
 	}
 	if o.CronExpression.IsSet() {
 		toSerialize["cronExpression"] = o.CronExpression.Get()

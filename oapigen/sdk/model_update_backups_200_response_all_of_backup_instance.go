@@ -18,7 +18,7 @@ import (
 // checks if the UpdateBackups200ResponseAllOfBackupInstance type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UpdateBackups200ResponseAllOfBackupInstance{}
 
-// UpdateBackups200ResponseAllOfBackupInstance struct for UpdateBackups200ResponseAllOfBackupInstance
+// UpdateBackups200ResponseAllOfBackupInstance Present when locationType is `instance`
 type UpdateBackups200ResponseAllOfBackupInstance struct {
 	// Instance ID
 	Id *int64 `json:"id,omitempty"`

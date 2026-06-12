@@ -20,9 +20,9 @@ var _ MappedNullable = &BackupInstanceBackupJob{}
 
 // BackupInstanceBackupJob struct for BackupInstanceBackupJob
 type BackupInstanceBackupJob struct {
-	// Enable synthetic full backups on this backup jobAction. Only applies to `kvm` backup type.
+	// Enable synthetic full backups on this backup job. Only applies to backup types whose job type supports synthetic full backups.
 	SyntheticFullEnabled *bool `json:"syntheticFullEnabled,omitempty"`
-	// the ID of the execute schedule for the synthetic full backup to be created. Only applies to `kvm` backup type.
+	// The ID of the execute schedule for the synthetic full backup. Required when `syntheticFullEnabled` is true.
 	SyntheticFullSchedule *int64                 `json:"syntheticFullSchedule,omitempty"`
 	AdditionalProperties  map[string]interface{} `json:",remain"`
 }

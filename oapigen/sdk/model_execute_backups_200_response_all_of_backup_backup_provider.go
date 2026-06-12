@@ -22,6 +22,8 @@ var _ MappedNullable = &ExecuteBackups200ResponseAllOfBackupBackupProvider{}
 type ExecuteBackups200ResponseAllOfBackupBackupProvider struct {
 	// Backup Provider ID
 	Id *int64 `json:"id,omitempty"`
+	// Backup Provider Code
+	Code *string `json:"code,omitempty"`
 	// Backup Provider Name
 	Name                 *string                `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -41,6 +43,9 @@ func (o ExecuteBackups200ResponseAllOfBackupBackupProvider) ToMap() (map[string]
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.Code) {
+		toSerialize["code"] = o.Code
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

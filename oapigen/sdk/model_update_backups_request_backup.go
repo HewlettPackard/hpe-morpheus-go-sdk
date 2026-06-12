@@ -22,10 +22,28 @@ var _ MappedNullable = &UpdateBackupsRequestBackup{}
 type UpdateBackupsRequestBackup struct {
 	// A name for the backup
 	Name *string `json:"name,omitempty"`
-	// The Backup Job ID to assign the backup to. This determines when the backup is run.
-	JobId *int64 `json:"jobId,omitempty"`
 	// Can be used to enable or disable the backup
-	Enabled              *bool                  `json:"enabled,omitempty"`
+	Enabled *bool `json:"enabled,omitempty"`
+	// The ID of the storage bucket. Set to null to clear.
+	StorageProviderId NullableInt64 `json:"storageProviderId,omitempty"`
+	// The Backup Job ID to assign the backup to. This determines when the backup is run.
+	BackupJobId *int64 `json:"backupJobId,omitempty"`
+	// Cron expression for custom schedule (overrides job schedule).
+	CronExpression *string `json:"cronExpression,omitempty"`
+	// The file or directory path on the target host. Applies to server/host backups (fileBackup, directoryBackup).
+	TargetPath *string `json:"targetPath,omitempty"`
+	// Target host address. Applies to server/host and database backups.
+	TargetHost *string `json:"targetHost,omitempty"`
+	// Target port. Applies to server/host and database backups.
+	TargetPort *int32 `json:"targetPort,omitempty"`
+	// Target username for connecting to the backup target.
+	TargetUsername *string `json:"targetUsername,omitempty"`
+	// Target password for connecting to the backup target.
+	TargetPassword *string `json:"targetPassword,omitempty"`
+	// Whether to backup all databases. Applies to database backup types.
+	TargetAll *bool `json:"targetAll,omitempty"`
+	// Target database name. Applies when targetAll is false.
+	TargetName           *string                `json:"targetName,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -44,11 +62,38 @@ func (o UpdateBackupsRequestBackup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.JobId) {
-		toSerialize["jobId"] = o.JobId
-	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
+	}
+	if o.StorageProviderId.IsSet() {
+		toSerialize["storageProviderId"] = o.StorageProviderId.Get()
+	}
+	if !IsNil(o.BackupJobId) {
+		toSerialize["backupJobId"] = o.BackupJobId
+	}
+	if !IsNil(o.CronExpression) {
+		toSerialize["cronExpression"] = o.CronExpression
+	}
+	if !IsNil(o.TargetPath) {
+		toSerialize["targetPath"] = o.TargetPath
+	}
+	if !IsNil(o.TargetHost) {
+		toSerialize["targetHost"] = o.TargetHost
+	}
+	if !IsNil(o.TargetPort) {
+		toSerialize["targetPort"] = o.TargetPort
+	}
+	if !IsNil(o.TargetUsername) {
+		toSerialize["targetUsername"] = o.TargetUsername
+	}
+	if !IsNil(o.TargetPassword) {
+		toSerialize["targetPassword"] = o.TargetPassword
+	}
+	if !IsNil(o.TargetAll) {
+		toSerialize["targetAll"] = o.TargetAll
+	}
+	if !IsNil(o.TargetName) {
+		toSerialize["targetName"] = o.TargetName
 	}
 
 	for key, value := range o.AdditionalProperties {

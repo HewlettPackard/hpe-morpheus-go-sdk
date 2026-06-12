@@ -24,7 +24,7 @@ type ExecuteBackups200ResponseAllOfBackupLastResult struct {
 	// Last Result ID
 	Id *int64 `json:"id,omitempty"`
 	// Last Result Status
-	Name *string `json:"name,omitempty"`
+	Status *string `json:"status,omitempty"`
 	// Last Result Date Created
 	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -45,8 +45,8 @@ func (o ExecuteBackups200ResponseAllOfBackupLastResult) ToMap() (map[string]inte
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
+	if !IsNil(o.Status) {
+		toSerialize["status"] = o.Status
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

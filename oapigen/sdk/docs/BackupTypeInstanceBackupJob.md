@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SyntheticFullEnabled** | Pointer to **bool** | Enable synthetic full backups on this backup jobAction. Only applies to &#x60;kvm&#x60; backup type. | [optional] 
-**SyntheticFullSchedule** | Pointer to **int64** | the ID of the execute schedule for the synthetic full backup to be created. Only applies to &#x60;kvm&#x60; backup type. | [optional] 
+**SyntheticFullEnabled** | Pointer to **bool** | Enable synthetic full backups on this backup job. Only applies to backup types whose job type supports synthetic full backups. | [optional] 
+**SyntheticFullSchedule** | Pointer to **int64** | The ID of the execute schedule for the synthetic full backup. Required when &#x60;syntheticFullEnabled&#x60; is true. | [optional] 
 
 ## Usage
 
