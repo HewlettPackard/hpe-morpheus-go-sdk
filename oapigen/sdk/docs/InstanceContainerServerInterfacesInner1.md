@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **PoolAssigned** | Pointer to **bool** |  | [optional] 
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
 **Network** | Pointer to [**InstanceContainerServerInterfacesInner1Network**](InstanceContainerServerInterfacesInner1Network.md) |  | [optional] 
+**Subnet** | Pointer to [**InstanceContainerServerInterfacesInner1Subnet**](InstanceContainerServerInterfacesInner1Subnet.md) |  | [optional] 
 **NetworkGroup** | Pointer to [**InstanceContainerServerInterfacesInner1NetworkGroup**](InstanceContainerServerInterfacesInner1NetworkGroup.md) |  | [optional] 
 **NetworkPool** | Pointer to [**InstanceContainerServerInterfacesInner1NetworkPool**](InstanceContainerServerInterfacesInner1NetworkPool.md) |  | [optional] 
 **IpMode** | Pointer to **string** |  | [optional] 

@@ -77677,6 +77677,14 @@ paths:
                                                   format: int64
                                                 name:
                                                   type: string
+                                            subnet:
+                                              type: object
+                                              properties:
+                                                id:
+                                                  type: integer
+                                                  format: int64
+                                                name:
+                                                  type: string
                                             networkGroup:
                                               type: object
                                               properties:
@@ -79991,7 +79999,9 @@ paths:
                                 network:
                                   id: 57802
                                   name: labs_public_1a (subnet-25a65d40)
-                                subnet: null
+                                subnet:
+                                  id: 245
+                                  name: labs_public_1a
                                 networkGroup:
                                   id: 2
                                   name: Demo Preferred

@@ -30,6 +30,7 @@ type InstanceContainerServerInterfacesInner1 struct {
 	PoolAssigned         *bool                                                `json:"poolAssigned,omitempty"`
 	PrimaryInterface     *bool                                                `json:"primaryInterface,omitempty"`
 	Network              *InstanceContainerServerInterfacesInner1Network      `json:"network,omitempty"`
+	Subnet               *InstanceContainerServerInterfacesInner1Subnet       `json:"subnet,omitempty"`
 	NetworkGroup         *InstanceContainerServerInterfacesInner1NetworkGroup `json:"networkGroup,omitempty"`
 	NetworkPool          *InstanceContainerServerInterfacesInner1NetworkPool  `json:"networkPool,omitempty"`
 	IpMode               *string                                              `json:"ipMode,omitempty"`
@@ -79,6 +80,9 @@ func (o InstanceContainerServerInterfacesInner1) ToMap() (map[string]interface{}
 	}
 	if !IsNil(o.Network) {
 		toSerialize["network"] = o.Network
+	}
+	if !IsNil(o.Subnet) {
+		toSerialize["subnet"] = o.Subnet
 	}
 	if !IsNil(o.NetworkGroup) {
 		toSerialize["networkGroup"] = o.NetworkGroup
