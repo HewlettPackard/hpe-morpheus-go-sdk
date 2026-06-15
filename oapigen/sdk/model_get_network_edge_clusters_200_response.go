@@ -20,9 +20,9 @@ var _ MappedNullable = &GetNetworkEdgeClusters200Response{}
 
 // GetNetworkEdgeClusters200Response struct for GetNetworkEdgeClusters200Response
 type GetNetworkEdgeClusters200Response struct {
-	NetworkEdgeClusters  interface{}                        `json:"networkEdgeClusters,omitempty"`
-	Meta                 *ListApprovals200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}             `json:",remain"`
+	NetworkEdgeClusters  []GetNetworkEdgeClusters200ResponseAllOfNetworkEdgeClustersInner `json:"networkEdgeClusters,omitempty"`
+	Meta                 *ListApprovals200ResponseAllOfMeta                               `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _GetNetworkEdgeClusters200Response GetNetworkEdgeClusters200Response
@@ -37,7 +37,7 @@ func (o GetNetworkEdgeClusters200Response) MarshalJSON() ([]byte, error) {
 
 func (o GetNetworkEdgeClusters200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.NetworkEdgeClusters != nil {
+	if !IsNil(o.NetworkEdgeClusters) {
 		toSerialize["networkEdgeClusters"] = o.NetworkEdgeClusters
 	}
 	if !IsNil(o.Meta) {

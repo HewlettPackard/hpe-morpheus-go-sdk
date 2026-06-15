@@ -1,4 +1,4 @@
-# GetNetworkTransportZone200ResponseNetworkScope
+# GetNetworkTransportZones200ResponseAllOfNetworkScopesInner
 
 ## Properties
 
@@ -18,18 +18,18 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
-**Config** | Pointer to [**GetNetworkTransportZone200ResponseNetworkScopeConfig**](GetNetworkTransportZone200ResponseNetworkScopeConfig.md) |  | [optional] 
-**Owner** | Pointer to [**GetNetworkTransportZone200ResponseNetworkScopeOwner**](GetNetworkTransportZone200ResponseNetworkScopeOwner.md) |  | [optional] 
-**NetworkServer** | Pointer to [**GetNetworkTransportZone200ResponseNetworkScopeNetworkServer**](GetNetworkTransportZone200ResponseNetworkScopeNetworkServer.md) |  | [optional] 
-**Zone** | Pointer to [**GetNetworkTransportZone200ResponseNetworkScopeZone**](GetNetworkTransportZone200ResponseNetworkScopeZone.md) |  | [optional] 
-**Tenants** | Pointer to [**[]GetNetworkTransportZone200ResponseNetworkScopeTenantsInner**](GetNetworkTransportZone200ResponseNetworkScopeTenantsInner.md) |  | [optional] 
+**Config** | Pointer to [**GetNetworkTransportZones200ResponseAllOfNetworkScopesInnerConfig**](GetNetworkTransportZones200ResponseAllOfNetworkScopesInnerConfig.md) |  | [optional] 
+**Owner** | Pointer to [**GetNetworkTransportZones200ResponseAllOfNetworkScopesInnerOwner**](GetNetworkTransportZones200ResponseAllOfNetworkScopesInnerOwner.md) |  | [optional] 
+**NetworkServer** | Pointer to [**GetNetworkTransportZones200ResponseAllOfNetworkScopesInnerNetworkServer**](GetNetworkTransportZones200ResponseAllOfNetworkScopesInnerNetworkServer.md) |  | [optional] 
+**Zone** | Pointer to [**GetNetworkTransportZones200ResponseAllOfNetworkScopesInnerZone**](GetNetworkTransportZones200ResponseAllOfNetworkScopesInnerZone.md) |  | [optional] 
+**Tenants** | Pointer to [**[]GetNetworkTransportZones200ResponseAllOfNetworkScopesInnerTenantsInner**](GetNetworkTransportZones200ResponseAllOfNetworkScopesInnerTenantsInner.md) |  | [optional] 
 
 ## Usage
 
 Instantiate with a Go composite literal:
 
 ```go
-obj := &GetNetworkTransportZone200ResponseNetworkScope{
+obj := &GetNetworkTransportZones200ResponseAllOfNetworkScopesInner{
     // Set fields directly
 }
 ```

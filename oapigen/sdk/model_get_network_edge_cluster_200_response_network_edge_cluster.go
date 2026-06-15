@@ -21,7 +21,7 @@ var _ MappedNullable = &GetNetworkEdgeCluster200ResponseNetworkEdgeCluster{}
 
 // GetNetworkEdgeCluster200ResponseNetworkEdgeCluster struct for GetNetworkEdgeCluster200ResponseNetworkEdgeCluster
 type GetNetworkEdgeCluster200ResponseNetworkEdgeCluster struct {
-	Id                   *int32                                                           `json:"id,omitempty"`
+	Id                   *int64                                                           `json:"id,omitempty"`
 	InternalId           *string                                                          `json:"internalId,omitempty"`
 	Visibility           *string                                                          `json:"visibility,omitempty"`
 	DateCreated          *time.Time                                                       `json:"dateCreated,omitempty"`
@@ -30,6 +30,7 @@ type GetNetworkEdgeCluster200ResponseNetworkEdgeCluster struct {
 	Active               *bool                                                            `json:"active,omitempty"`
 	DisplayName          *string                                                          `json:"displayName,omitempty"`
 	Name                 *string                                                          `json:"name,omitempty"`
+	Description          *string                                                          `json:"description,omitempty"`
 	Enabled              *bool                                                            `json:"enabled,omitempty"`
 	ExternalId           *string                                                          `json:"externalId,omitempty"`
 	Config               *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig        `json:"config,omitempty"`
@@ -78,6 +79,9 @@ func (o GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) ToMap() (map[string]
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled

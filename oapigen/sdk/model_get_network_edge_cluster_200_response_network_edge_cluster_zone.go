@@ -20,7 +20,7 @@ var _ MappedNullable = &GetNetworkEdgeCluster200ResponseNetworkEdgeClusterZone{}
 
 // GetNetworkEdgeCluster200ResponseNetworkEdgeClusterZone struct for GetNetworkEdgeCluster200ResponseNetworkEdgeClusterZone
 type GetNetworkEdgeCluster200ResponseNetworkEdgeClusterZone struct {
-	Id                   *int32                 `json:"id,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 

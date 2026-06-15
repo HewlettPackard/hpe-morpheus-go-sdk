@@ -1,18 +1,17 @@
-# GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner
+# GetNetworkEdgeClusters200ResponseAllOfNetworkEdgeClustersInnerOwner
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
 
 ## Usage
 
 Instantiate with a Go composite literal:
 
 ```go
-obj := &GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner{
+obj := &GetNetworkEdgeClusters200ResponseAllOfNetworkEdgeClustersInnerOwner{
     // Set fields directly
 }
 ```
