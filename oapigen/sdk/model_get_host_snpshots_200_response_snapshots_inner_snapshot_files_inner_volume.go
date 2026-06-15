@@ -20,7 +20,7 @@ var _ MappedNullable = &GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInn
 
 // GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInnerVolume struct for GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInnerVolume
 type GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInnerVolume struct {
-	Id                   *int32                 `json:"id,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 

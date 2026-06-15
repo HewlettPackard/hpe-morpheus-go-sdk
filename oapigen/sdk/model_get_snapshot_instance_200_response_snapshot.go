@@ -21,7 +21,7 @@ var _ MappedNullable = &GetSnapshotInstance200ResponseSnapshot{}
 
 // GetSnapshotInstance200ResponseSnapshot struct for GetSnapshotInstance200ResponseSnapshot
 type GetSnapshotInstance200ResponseSnapshot struct {
-	Id                   *int32                                                       `json:"id,omitempty"`
+	Id                   *int64                                                       `json:"id,omitempty"`
 	Name                 *string                                                      `json:"name,omitempty"`
 	Description          NullableString                                               `json:"description,omitempty"`
 	ExternalId           NullableString                                               `json:"externalId,omitempty"`

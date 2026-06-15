@@ -21,7 +21,7 @@ var _ MappedNullable = &SnapshotsInstance200ResponseSnapshotsInner{}
 
 // SnapshotsInstance200ResponseSnapshotsInner struct for SnapshotsInstance200ResponseSnapshotsInner
 type SnapshotsInstance200ResponseSnapshotsInner struct {
-	Id                   *int32                                                         `json:"id,omitempty"`
+	Id                   *int64                                                         `json:"id,omitempty"`
 	Name                 *string                                                        `json:"name,omitempty"`
 	Description          NullableString                                                 `json:"description,omitempty"`
 	ExternalId           NullableString                                                 `json:"externalId,omitempty"`
@@ -29,7 +29,7 @@ type SnapshotsInstance200ResponseSnapshotsInner struct {
 	State                NullableString                                                 `json:"state,omitempty"`
 	SnapshotType         *string                                                        `json:"snapshotType,omitempty"`
 	SnapshotCreated      NullableTime                                                   `json:"snapshotCreated,omitempty"`
-	Zone                 *SnapshotsInstance200ResponseSnapshotsInnerZone                `json:"zone,omitempty"`
+	Zone                 NullableSnapshotsInstance200ResponseSnapshotsInnerZone         `json:"zone,omitempty"`
 	Datastore            NullableString                                                 `json:"datastore,omitempty"`
 	ParentSnapshot       NullableString                                                 `json:"parentSnapshot,omitempty"`
 	SnapshotFiles        []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner `json:"snapshotFiles,omitempty"`
@@ -77,8 +77,8 @@ func (o SnapshotsInstance200ResponseSnapshotsInner) ToMap() (map[string]interfac
 	if o.SnapshotCreated.IsSet() {
 		toSerialize["snapshotCreated"] = o.SnapshotCreated.Get()
 	}
-	if !IsNil(o.Zone) {
-		toSerialize["zone"] = o.Zone
+	if o.Zone.IsSet() {
+		toSerialize["zone"] = o.Zone.Get()
 	}
 	if o.Datastore.IsSet() {
 		toSerialize["datastore"] = o.Datastore.Get()

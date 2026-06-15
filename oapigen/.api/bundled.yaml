@@ -83486,7 +83486,7 @@ paths:
                       properties: &ref_1180
                         id:
                           type: integer
-                          format: int32
+                          format: int64
                         name:
                           type: string
                         description:
@@ -83515,7 +83515,7 @@ paths:
                           properties:
                             id:
                               type: integer
-                              format: int32
+                              format: int64
                             name:
                               type: string
                         datastore:
@@ -83533,7 +83533,7 @@ paths:
                             properties:
                               id:
                                 type: integer
-                                format: int32
+                                format: int64
                               name:
                                 type: string
                               type:
@@ -83551,7 +83551,7 @@ paths:
                                 properties:
                                   id:
                                     type: integer
-                                    format: int32
+                                    format: int64
                               diskIndex:
                                 type: integer
                         currentlyActive:
@@ -110260,8 +110260,14 @@ paths:
                                 type: object
                         networkServer:
                           type:
-                            - string
+                            - object
                             - 'null'
+                          properties:
+                            id:
+                              type: integer
+                              format: int64
+                            name:
+                              type: string
                         zone:
                           type: object
                           properties:
@@ -112998,6 +113004,8 @@ paths:
                           format: int32
                         name:
                           type: string
+                        action:
+                          type: string
                         description:
                           type: string
                         enabled:
@@ -113117,16 +113125,49 @@ paths:
                   description: For a full list of available NAT options, see natOptionTypes in the specific Network Router Type
                   required:
                     - name
+                    - config
                   properties:
                     name:
+                      type: string
                       description: NAT name
+                    description:
+                      type: string
+                      description: Description of the NAT rule.
+                    enabled:
+                      type: boolean
+                      description: Whether the NAT rule is enabled.
+                    sourceNetwork:
+                      type: string
+                      description: Source network for the NAT rule.
+                    destinationNetwork:
+                      type: string
+                      description: Destination network for the NAT rule.
+                    translatedNetwork:
+                      type: string
+                      description: Translated network for the NAT rule.
+                    priority:
+                      type: integer
+                      format: int64
+                      description: Priority of the NAT rule.
+                    protocol:
+                      type: string
+                      description: Protocol for the NAT rule.
+                    config:
+                      type: object
+                      description: NAT config-context options (bound to the NAT's config map).
+                      required:
+                        - action
+                      properties:
+                        action:
+                          type: string
+                          description: The NAT action (e.g. SNAT, DNAT, REFLEXIVE).
             examples:
               Network Router NAT Request:
                 value:
                   networkRouterNAT:
                     name: Name of NAT
                     description: Description of NAT
-                    enabled: 'on'
+                    enabled: true
                     config:
                       action: SNAT
                       service: /infra/services/TELNET
@@ -113251,7 +113292,37 @@ paths:
                   description: For a full list of available NAT options, see natOptionTypes in the specific Network Router Type
                   properties:
                     name:
+                      type: string
                       description: Sets name of NAT
+                    description:
+                      type: string
+                      description: Description of the NAT rule.
+                    enabled:
+                      type: boolean
+                      description: Whether the NAT rule is enabled.
+                    sourceNetwork:
+                      type: string
+                      description: Source network for the NAT rule.
+                    destinationNetwork:
+                      type: string
+                      description: Destination network for the NAT rule.
+                    translatedNetwork:
+                      type: string
+                      description: Translated network for the NAT rule.
+                    priority:
+                      type: integer
+                      format: int64
+                      description: Priority of the NAT rule.
+                    protocol:
+                      type: string
+                      description: Protocol for the NAT rule.
+                    config:
+                      type: object
+                      description: NAT config-context options (bound to the NAT's config map).
+                      properties:
+                        action:
+                          type: string
+                          description: The NAT action (e.g. SNAT, DNAT, REFLEXIVE).
             examples:
               Network Router NAT Request:
                 value:

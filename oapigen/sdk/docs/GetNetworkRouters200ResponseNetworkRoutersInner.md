@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **ExternalId** | Pointer to **string** |  | [optional] 
 **ProviderId** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to [**GetNetworkRouters200ResponseNetworkRoutersInnerType**](GetNetworkRouters200ResponseNetworkRoutersInnerType.md) |  | [optional] 
-**NetworkServer** | Pointer to **NullableString** |  | [optional] 
+**NetworkServer** | Pointer to [**GetNetworkRouters200ResponseNetworkRoutersInnerNetworkServer**](GetNetworkRouters200ResponseNetworkRoutersInnerNetworkServer.md) |  | [optional] 
 **Zone** | Pointer to [**GetNetworkRouters200ResponseNetworkRoutersInnerZone**](GetNetworkRouters200ResponseNetworkRoutersInnerZone.md) |  | [optional] 
 **Instance** | Pointer to **NullableString** |  | [optional] 
 **ExternalNetwork** | Pointer to [**GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork**](GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork.md) |  | [optional] 
@@ -58,13 +58,6 @@ Use the Nullable wrapper methods:
 - `obj.ProviderId.Get()` — get the inner value (returns pointer)
 - `obj.ProviderId.Set(&val)` — set the value
 - `obj.ProviderId.Unset()` — clear the value
-### NetworkServer (Nullable)
-
-Use the Nullable wrapper methods:
-- `obj.NetworkServer.IsSet()` — check if set
-- `obj.NetworkServer.Get()` — get the inner value (returns pointer)
-- `obj.NetworkServer.Set(&val)` — set the value
-- `obj.NetworkServer.Unset()` — clear the value
 ### Instance (Nullable)
 
 Use the Nullable wrapper methods:

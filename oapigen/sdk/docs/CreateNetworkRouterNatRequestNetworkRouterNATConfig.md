@@ -1,17 +1,17 @@
-# GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInnerVolume
+# CreateNetworkRouterNatRequestNetworkRouterNATConfig
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
+**Action** | **string** | The NAT action (e.g. SNAT, DNAT, REFLEXIVE). | 
 
 ## Usage
 
 Instantiate with a Go composite literal:
 
 ```go
-obj := &GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInnerVolume{
+obj := &CreateNetworkRouterNatRequestNetworkRouterNATConfig{
     // Set fields directly
 }
 ```

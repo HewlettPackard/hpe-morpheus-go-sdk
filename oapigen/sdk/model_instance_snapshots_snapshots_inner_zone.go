@@ -20,7 +20,7 @@ var _ MappedNullable = &InstanceSnapshotsSnapshotsInnerZone{}
 
 // InstanceSnapshotsSnapshotsInnerZone struct for InstanceSnapshotsSnapshotsInnerZone
 type InstanceSnapshotsSnapshotsInnerZone struct {
-	Id                   *int32                 `json:"id,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
