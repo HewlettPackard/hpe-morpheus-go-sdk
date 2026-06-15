@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **InternalId** | Pointer to **string** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to [**GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig**](GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig.md) |  | [optional] 

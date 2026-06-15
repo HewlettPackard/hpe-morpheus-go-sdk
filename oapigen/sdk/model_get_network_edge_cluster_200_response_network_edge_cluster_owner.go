@@ -20,7 +20,7 @@ var _ MappedNullable = &GetNetworkEdgeCluster200ResponseNetworkEdgeClusterOwner{
 
 // GetNetworkEdgeCluster200ResponseNetworkEdgeClusterOwner struct for GetNetworkEdgeCluster200ResponseNetworkEdgeClusterOwner
 type GetNetworkEdgeCluster200ResponseNetworkEdgeClusterOwner struct {
-	Id                   *int32                 `json:"id,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 

@@ -20,9 +20,9 @@ var _ MappedNullable = &GetNetworkTransportZones200Response{}
 
 // GetNetworkTransportZones200Response struct for GetNetworkTransportZones200Response
 type GetNetworkTransportZones200Response struct {
-	NetworkScopes        interface{}                        `json:"networkScopes,omitempty"`
-	Meta                 *ListApprovals200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}             `json:",remain"`
+	NetworkScopes        []GetNetworkTransportZones200ResponseAllOfNetworkScopesInner `json:"networkScopes,omitempty"`
+	Meta                 *ListApprovals200ResponseAllOfMeta                           `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                                       `json:",remain"`
 }
 
 type _GetNetworkTransportZones200Response GetNetworkTransportZones200Response
@@ -37,7 +37,7 @@ func (o GetNetworkTransportZones200Response) MarshalJSON() ([]byte, error) {
 
 func (o GetNetworkTransportZones200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.NetworkScopes != nil {
+	if !IsNil(o.NetworkScopes) {
 		toSerialize["networkScopes"] = o.NetworkScopes
 	}
 	if !IsNil(o.Meta) {

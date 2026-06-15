@@ -31,6 +31,7 @@ type GetNetworkTransportZone200ResponseNetworkScope struct {
 	StreamType           *string                                                      `json:"streamType,omitempty"`
 	DisplayName          *string                                                      `json:"displayName,omitempty"`
 	Name                 *string                                                      `json:"name,omitempty"`
+	Description          *string                                                      `json:"description,omitempty"`
 	Status               *string                                                      `json:"status,omitempty"`
 	Enabled              *bool                                                        `json:"enabled,omitempty"`
 	ExternalId           *string                                                      `json:"externalId,omitempty"`
@@ -83,6 +84,9 @@ func (o GetNetworkTransportZone200ResponseNetworkScope) ToMap() (map[string]inte
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

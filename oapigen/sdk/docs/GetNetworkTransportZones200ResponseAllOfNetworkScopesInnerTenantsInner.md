@@ -1,4 +1,4 @@
-# GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner
+# GetNetworkTransportZones200ResponseAllOfNetworkScopesInnerTenantsInner
 
 ## Properties
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 Instantiate with a Go composite literal:
 
 ```go
-obj := &GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner{
+obj := &GetNetworkTransportZones200ResponseAllOfNetworkScopesInnerTenantsInner{
     // Set fields directly
 }
 ```
