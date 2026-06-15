@@ -21,11 +21,11 @@ var _ fmt.Stringer
 
 // InstanceConfigObject2Config struct for InstanceConfigObject2Config
 type InstanceConfigObject2Config struct {
-	AmazonInstanceConfiguration3      *AmazonInstanceConfiguration3
-	AzureInstanceConfiguration3       *AzureInstanceConfiguration3
-	GenericInstanceConfiguration3     *GenericInstanceConfiguration3
-	GoogleCloudInstanceConfiguration3 *GoogleCloudInstanceConfiguration3
-	VMWareInstanceConfiguration3      *VMWareInstanceConfiguration3
+	AmazonInstanceConfiguration4      *AmazonInstanceConfiguration4
+	AzureInstanceConfiguration4       *AzureInstanceConfiguration4
+	GenericInstanceConfiguration4     *GenericInstanceConfiguration4
+	GoogleCloudInstanceConfiguration4 *GoogleCloudInstanceConfiguration4
+	VMWareInstanceConfiguration4      *VMWareInstanceConfiguration4
 }
 
 func (dst *InstanceConfigObject2Config) UnmarshalMapstructure(data any) (any, error) {
@@ -33,34 +33,34 @@ func (dst *InstanceConfigObject2Config) UnmarshalMapstructure(data any) (any, er
 		dst = &InstanceConfigObject2Config{}
 	}
 
-	mapstructDecode(data, &dst.AmazonInstanceConfiguration3)
+	mapstructDecode(data, &dst.AmazonInstanceConfiguration4)
 
-	if IsEmpty(dst.AmazonInstanceConfiguration3) {
-		dst.AmazonInstanceConfiguration3 = nil
+	if IsEmpty(dst.AmazonInstanceConfiguration4) {
+		dst.AmazonInstanceConfiguration4 = nil
 	}
 
-	mapstructDecode(data, &dst.AzureInstanceConfiguration3)
+	mapstructDecode(data, &dst.AzureInstanceConfiguration4)
 
-	if IsEmpty(dst.AzureInstanceConfiguration3) {
-		dst.AzureInstanceConfiguration3 = nil
+	if IsEmpty(dst.AzureInstanceConfiguration4) {
+		dst.AzureInstanceConfiguration4 = nil
 	}
 
-	mapstructDecode(data, &dst.GenericInstanceConfiguration3)
+	mapstructDecode(data, &dst.GenericInstanceConfiguration4)
 
-	if IsEmpty(dst.GenericInstanceConfiguration3) {
-		dst.GenericInstanceConfiguration3 = nil
+	if IsEmpty(dst.GenericInstanceConfiguration4) {
+		dst.GenericInstanceConfiguration4 = nil
 	}
 
-	mapstructDecode(data, &dst.GoogleCloudInstanceConfiguration3)
+	mapstructDecode(data, &dst.GoogleCloudInstanceConfiguration4)
 
-	if IsEmpty(dst.GoogleCloudInstanceConfiguration3) {
-		dst.GoogleCloudInstanceConfiguration3 = nil
+	if IsEmpty(dst.GoogleCloudInstanceConfiguration4) {
+		dst.GoogleCloudInstanceConfiguration4 = nil
 	}
 
-	mapstructDecode(data, &dst.VMWareInstanceConfiguration3)
+	mapstructDecode(data, &dst.VMWareInstanceConfiguration4)
 
-	if IsEmpty(dst.VMWareInstanceConfiguration3) {
-		dst.VMWareInstanceConfiguration3 = nil
+	if IsEmpty(dst.VMWareInstanceConfiguration4) {
+		dst.VMWareInstanceConfiguration4 = nil
 	}
 
 	return dst, nil
@@ -69,69 +69,69 @@ func (dst *InstanceConfigObject2Config) UnmarshalMapstructure(data any) (any, er
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *InstanceConfigObject2Config) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AmazonInstanceConfiguration3
-	err = json.Unmarshal(data, &dst.AmazonInstanceConfiguration3)
+	// try to unmarshal JSON data into AmazonInstanceConfiguration4
+	err = json.Unmarshal(data, &dst.AmazonInstanceConfiguration4)
 	if err == nil {
-		jsonAmazonInstanceConfiguration3, _ := json.Marshal(dst.AmazonInstanceConfiguration3)
-		if string(jsonAmazonInstanceConfiguration3) == "{}" { // empty struct
-			dst.AmazonInstanceConfiguration3 = nil
+		jsonAmazonInstanceConfiguration4, _ := json.Marshal(dst.AmazonInstanceConfiguration4)
+		if string(jsonAmazonInstanceConfiguration4) == "{}" { // empty struct
+			dst.AmazonInstanceConfiguration4 = nil
 		} else {
-			return nil // data stored in dst.AmazonInstanceConfiguration3, return on the first match
+			return nil // data stored in dst.AmazonInstanceConfiguration4, return on the first match
 		}
 	} else {
-		dst.AmazonInstanceConfiguration3 = nil
+		dst.AmazonInstanceConfiguration4 = nil
 	}
 
-	// try to unmarshal JSON data into AzureInstanceConfiguration3
-	err = json.Unmarshal(data, &dst.AzureInstanceConfiguration3)
+	// try to unmarshal JSON data into AzureInstanceConfiguration4
+	err = json.Unmarshal(data, &dst.AzureInstanceConfiguration4)
 	if err == nil {
-		jsonAzureInstanceConfiguration3, _ := json.Marshal(dst.AzureInstanceConfiguration3)
-		if string(jsonAzureInstanceConfiguration3) == "{}" { // empty struct
-			dst.AzureInstanceConfiguration3 = nil
+		jsonAzureInstanceConfiguration4, _ := json.Marshal(dst.AzureInstanceConfiguration4)
+		if string(jsonAzureInstanceConfiguration4) == "{}" { // empty struct
+			dst.AzureInstanceConfiguration4 = nil
 		} else {
-			return nil // data stored in dst.AzureInstanceConfiguration3, return on the first match
+			return nil // data stored in dst.AzureInstanceConfiguration4, return on the first match
 		}
 	} else {
-		dst.AzureInstanceConfiguration3 = nil
+		dst.AzureInstanceConfiguration4 = nil
 	}
 
-	// try to unmarshal JSON data into GenericInstanceConfiguration3
-	err = json.Unmarshal(data, &dst.GenericInstanceConfiguration3)
+	// try to unmarshal JSON data into GenericInstanceConfiguration4
+	err = json.Unmarshal(data, &dst.GenericInstanceConfiguration4)
 	if err == nil {
-		jsonGenericInstanceConfiguration3, _ := json.Marshal(dst.GenericInstanceConfiguration3)
-		if string(jsonGenericInstanceConfiguration3) == "{}" { // empty struct
-			dst.GenericInstanceConfiguration3 = nil
+		jsonGenericInstanceConfiguration4, _ := json.Marshal(dst.GenericInstanceConfiguration4)
+		if string(jsonGenericInstanceConfiguration4) == "{}" { // empty struct
+			dst.GenericInstanceConfiguration4 = nil
 		} else {
-			return nil // data stored in dst.GenericInstanceConfiguration3, return on the first match
+			return nil // data stored in dst.GenericInstanceConfiguration4, return on the first match
 		}
 	} else {
-		dst.GenericInstanceConfiguration3 = nil
+		dst.GenericInstanceConfiguration4 = nil
 	}
 
-	// try to unmarshal JSON data into GoogleCloudInstanceConfiguration3
-	err = json.Unmarshal(data, &dst.GoogleCloudInstanceConfiguration3)
+	// try to unmarshal JSON data into GoogleCloudInstanceConfiguration4
+	err = json.Unmarshal(data, &dst.GoogleCloudInstanceConfiguration4)
 	if err == nil {
-		jsonGoogleCloudInstanceConfiguration3, _ := json.Marshal(dst.GoogleCloudInstanceConfiguration3)
-		if string(jsonGoogleCloudInstanceConfiguration3) == "{}" { // empty struct
-			dst.GoogleCloudInstanceConfiguration3 = nil
+		jsonGoogleCloudInstanceConfiguration4, _ := json.Marshal(dst.GoogleCloudInstanceConfiguration4)
+		if string(jsonGoogleCloudInstanceConfiguration4) == "{}" { // empty struct
+			dst.GoogleCloudInstanceConfiguration4 = nil
 		} else {
-			return nil // data stored in dst.GoogleCloudInstanceConfiguration3, return on the first match
+			return nil // data stored in dst.GoogleCloudInstanceConfiguration4, return on the first match
 		}
 	} else {
-		dst.GoogleCloudInstanceConfiguration3 = nil
+		dst.GoogleCloudInstanceConfiguration4 = nil
 	}
 
-	// try to unmarshal JSON data into VMWareInstanceConfiguration3
-	err = json.Unmarshal(data, &dst.VMWareInstanceConfiguration3)
+	// try to unmarshal JSON data into VMWareInstanceConfiguration4
+	err = json.Unmarshal(data, &dst.VMWareInstanceConfiguration4)
 	if err == nil {
-		jsonVMWareInstanceConfiguration3, _ := json.Marshal(dst.VMWareInstanceConfiguration3)
-		if string(jsonVMWareInstanceConfiguration3) == "{}" { // empty struct
-			dst.VMWareInstanceConfiguration3 = nil
+		jsonVMWareInstanceConfiguration4, _ := json.Marshal(dst.VMWareInstanceConfiguration4)
+		if string(jsonVMWareInstanceConfiguration4) == "{}" { // empty struct
+			dst.VMWareInstanceConfiguration4 = nil
 		} else {
-			return nil // data stored in dst.VMWareInstanceConfiguration3, return on the first match
+			return nil // data stored in dst.VMWareInstanceConfiguration4, return on the first match
 		}
 	} else {
-		dst.VMWareInstanceConfiguration3 = nil
+		dst.VMWareInstanceConfiguration4 = nil
 	}
 
 	return NewResponseValidationError("data failed to match schemas in anyOf(InstanceConfigObject2Config)")
@@ -139,24 +139,24 @@ func (dst *InstanceConfigObject2Config) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src InstanceConfigObject2Config) MarshalJSON() ([]byte, error) {
-	if src.AmazonInstanceConfiguration3 != nil {
-		return json.Marshal(&src.AmazonInstanceConfiguration3)
+	if src.AmazonInstanceConfiguration4 != nil {
+		return json.Marshal(&src.AmazonInstanceConfiguration4)
 	}
 
-	if src.AzureInstanceConfiguration3 != nil {
-		return json.Marshal(&src.AzureInstanceConfiguration3)
+	if src.AzureInstanceConfiguration4 != nil {
+		return json.Marshal(&src.AzureInstanceConfiguration4)
 	}
 
-	if src.GenericInstanceConfiguration3 != nil {
-		return json.Marshal(&src.GenericInstanceConfiguration3)
+	if src.GenericInstanceConfiguration4 != nil {
+		return json.Marshal(&src.GenericInstanceConfiguration4)
 	}
 
-	if src.GoogleCloudInstanceConfiguration3 != nil {
-		return json.Marshal(&src.GoogleCloudInstanceConfiguration3)
+	if src.GoogleCloudInstanceConfiguration4 != nil {
+		return json.Marshal(&src.GoogleCloudInstanceConfiguration4)
 	}
 
-	if src.VMWareInstanceConfiguration3 != nil {
-		return json.Marshal(&src.VMWareInstanceConfiguration3)
+	if src.VMWareInstanceConfiguration4 != nil {
+		return json.Marshal(&src.VMWareInstanceConfiguration4)
 	}
 
 	return nil, nil // no data in anyOf schemas

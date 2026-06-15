@@ -35,7 +35,7 @@ type InstanceCreate struct {
 	// The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of
 	Volumes []InstanceCreateVolumesInner `json:"volumes,omitempty"`
 	// The networkInterfaces parameter is for network configuration.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
-	NetworkInterfaces []InstancesNetworkInterfaces6 `json:"networkInterfaces,omitempty"`
+	NetworkInterfaces []InstancesNetworkInterfaces8 `json:"networkInterfaces,omitempty"`
 	Config            InstanceCreateConfig          `json:"config"`
 	// Array of strings (keywords).
 	Labels []string `json:"labels,omitempty"`

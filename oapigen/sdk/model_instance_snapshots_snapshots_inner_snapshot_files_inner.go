@@ -20,7 +20,7 @@ var _ MappedNullable = &InstanceSnapshotsSnapshotsInnerSnapshotFilesInner{}
 
 // InstanceSnapshotsSnapshotsInnerSnapshotFilesInner struct for InstanceSnapshotsSnapshotsInnerSnapshotFilesInner
 type InstanceSnapshotsSnapshotsInnerSnapshotFilesInner struct {
-	Id                   *int32                                                   `json:"id,omitempty"`
+	Id                   *int64                                                   `json:"id,omitempty"`
 	Name                 *string                                                  `json:"name,omitempty"`
 	Type                 *string                                                  `json:"type,omitempty"`
 	ExternalId           *string                                                  `json:"externalId,omitempty"`

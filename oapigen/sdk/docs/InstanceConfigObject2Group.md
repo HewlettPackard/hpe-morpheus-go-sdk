@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | [**InstanceConfigObject2GroupId**](InstanceConfigObject2GroupId.md) |  | 
+**Id** | [**InstanceConfigObject1GroupId**](InstanceConfigObject1GroupId.md) |  | 
 **Name** | Pointer to **string** | The group name | [optional] 
 
 ## Usage

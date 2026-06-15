@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **NullableString** |  | [optional] 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **State** | Pointer to **NullableString** |  | [optional] 
 **SnapshotType** | Pointer to **string** |  | [optional] 
 **SnapshotCreated** | Pointer to **NullableTime** |  | [optional] 
-**Zone** | Pointer to [**SnapshotsInstance200ResponseSnapshotsInnerZone**](SnapshotsInstance200ResponseSnapshotsInnerZone.md) |  | [optional] 
+**Zone** | Pointer to [**NullableSnapshotsInstance200ResponseSnapshotsInnerZone**](SnapshotsInstance200ResponseSnapshotsInnerZone.md) |  | [optional] 
 **Datastore** | Pointer to **NullableString** |  | [optional] 
 **ParentSnapshot** | Pointer to **NullableString** |  | [optional] 
 **SnapshotFiles** | Pointer to [**[]SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner**](SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner.md) |  | [optional] 
@@ -60,6 +60,13 @@ Use the Nullable wrapper methods:
 - `obj.SnapshotCreated.Get()` — get the inner value (returns pointer)
 - `obj.SnapshotCreated.Set(&val)` — set the value
 - `obj.SnapshotCreated.Unset()` — clear the value
+### Zone (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Zone.IsSet()` — check if set
+- `obj.Zone.Get()` — get the inner value (returns pointer)
+- `obj.Zone.Set(&val)` — set the value
+- `obj.Zone.Unset()` — clear the value
 ### Datastore (Nullable)
 
 Use the Nullable wrapper methods:

@@ -27,7 +27,7 @@ type InstanceResize struct {
 	// Delete the original volumes after resizing. (Amazon only)
 	DeleteOriginalVolumes *bool `json:"deleteOriginalVolumes,omitempty"`
 	// Key for network configuration. Include id to update an existing interface. The existing interfaces and their id can be retrieved with the hosts API.
-	NetworkInterfaces    []InstancesNetworkInterfaces7 `json:"networkInterfaces,omitempty"`
+	NetworkInterfaces    []InstancesNetworkInterfaces9 `json:"networkInterfaces,omitempty"`
 	AdditionalProperties map[string]interface{}        `json:",remain"`
 }
 

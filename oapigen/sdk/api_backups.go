@@ -2792,3 +2792,133 @@ func (a *BackupsAPIService) UpdateBackupsExecute(r ApiUpdateBackupsRequest) (*Up
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
+type ApiValidateBackupCreateRequest struct {
+	ctx                         context.Context
+	ApiService                  *BackupsAPIService
+	validateBackupCreateRequest *ValidateBackupCreateRequest
+}
+
+func (r ApiValidateBackupCreateRequest) ValidateBackupCreateRequest(validateBackupCreateRequest ValidateBackupCreateRequest) ApiValidateBackupCreateRequest {
+	r.validateBackupCreateRequest = &validateBackupCreateRequest
+	return r
+}
+
+func (r ApiValidateBackupCreateRequest) Execute() (*ValidateBackupCreate200Response, *http.Response, error) {
+	return r.ApiService.ValidateBackupCreateExecute(r)
+}
+
+/*
+ValidateBackupCreate Validates a Backup Configuration
+
+This endpoint validates a backup configuration and returns contextual information
+needed to create a backup, such as available backup types, containers, and default settings.
+It does not persist anything. Use this as a pre-flight check before calling `POST /api/backups`.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiValidateBackupCreateRequest
+*/
+func (a *BackupsAPIService) ValidateBackupCreate(ctx context.Context) ApiValidateBackupCreateRequest {
+	return ApiValidateBackupCreateRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+//
+//	@return ValidateBackupCreate200Response
+func (a *BackupsAPIService) ValidateBackupCreateExecute(r ApiValidateBackupCreateRequest) (*ValidateBackupCreate200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ValidateBackupCreate200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ValidateBackupCreate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
+	}
+
+	localVarPath := localBasePath + "/api/backups/create"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.validateBackupCreateRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+		}
+		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
+			var v ListApplianceSettings4XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode >= 500 {
+			var v ListApplianceSettings5XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+			err:  err,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
