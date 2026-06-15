@@ -20,8 +20,24 @@ var _ MappedNullable = &UpdateNetworkRouterNatRequestNetworkRouterNAT{}
 
 // UpdateNetworkRouterNatRequestNetworkRouterNAT For a full list of available NAT options, see natOptionTypes in the specific Network Router Type
 type UpdateNetworkRouterNatRequestNetworkRouterNAT struct {
-	Name                 interface{}            `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	// Sets name of NAT
+	Name *string `json:"name,omitempty"`
+	// Description of the NAT rule.
+	Description *string `json:"description,omitempty"`
+	// Whether the NAT rule is enabled.
+	Enabled *bool `json:"enabled,omitempty"`
+	// Source network for the NAT rule.
+	SourceNetwork *string `json:"sourceNetwork,omitempty"`
+	// Destination network for the NAT rule.
+	DestinationNetwork *string `json:"destinationNetwork,omitempty"`
+	// Translated network for the NAT rule.
+	TranslatedNetwork *string `json:"translatedNetwork,omitempty"`
+	// Priority of the NAT rule.
+	Priority *int64 `json:"priority,omitempty"`
+	// Protocol for the NAT rule.
+	Protocol             *string                                              `json:"protocol,omitempty"`
+	Config               *UpdateNetworkRouterNatRequestNetworkRouterNATConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _UpdateNetworkRouterNatRequestNetworkRouterNAT UpdateNetworkRouterNatRequestNetworkRouterNAT
@@ -36,8 +52,32 @@ func (o UpdateNetworkRouterNatRequestNetworkRouterNAT) MarshalJSON() ([]byte, er
 
 func (o UpdateNetworkRouterNatRequestNetworkRouterNAT) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Name != nil {
+	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.SourceNetwork) {
+		toSerialize["sourceNetwork"] = o.SourceNetwork
+	}
+	if !IsNil(o.DestinationNetwork) {
+		toSerialize["destinationNetwork"] = o.DestinationNetwork
+	}
+	if !IsNil(o.TranslatedNetwork) {
+		toSerialize["translatedNetwork"] = o.TranslatedNetwork
+	}
+	if !IsNil(o.Priority) {
+		toSerialize["priority"] = o.Priority
+	}
+	if !IsNil(o.Protocol) {
+		toSerialize["protocol"] = o.Protocol
+	}
+	if !IsNil(o.Config) {
+		toSerialize["config"] = o.Config
 	}
 
 	for key, value := range o.AdditionalProperties {

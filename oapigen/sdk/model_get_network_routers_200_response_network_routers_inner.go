@@ -36,7 +36,7 @@ type GetNetworkRouters200ResponseNetworkRoutersInner struct {
 	ExternalId           *string                                                          `json:"externalId,omitempty"`
 	ProviderId           NullableString                                                   `json:"providerId,omitempty"`
 	Type                 *GetNetworkRouters200ResponseNetworkRoutersInnerType             `json:"type,omitempty"`
-	NetworkServer        NullableString                                                   `json:"networkServer,omitempty"`
+	NetworkServer        *GetNetworkRouters200ResponseNetworkRoutersInnerNetworkServer    `json:"networkServer,omitempty"`
 	Zone                 *GetNetworkRouters200ResponseNetworkRoutersInnerZone             `json:"zone,omitempty"`
 	Instance             NullableString                                                   `json:"instance,omitempty"`
 	ExternalNetwork      *GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork  `json:"externalNetwork,omitempty"`
@@ -103,8 +103,8 @@ func (o GetNetworkRouters200ResponseNetworkRoutersInner) ToMap() (map[string]int
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if o.NetworkServer.IsSet() {
-		toSerialize["networkServer"] = o.NetworkServer.Get()
+	if !IsNil(o.NetworkServer) {
+		toSerialize["networkServer"] = o.NetworkServer
 	}
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone

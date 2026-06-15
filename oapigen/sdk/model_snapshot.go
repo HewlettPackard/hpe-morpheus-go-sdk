@@ -21,7 +21,7 @@ var _ MappedNullable = &Snapshot{}
 
 // Snapshot struct for Snapshot
 type Snapshot struct {
-	Id                   *int32                                                       `json:"id,omitempty"`
+	Id                   *int64                                                       `json:"id,omitempty"`
 	Name                 *string                                                      `json:"name,omitempty"`
 	Description          NullableString                                               `json:"description,omitempty"`
 	ExternalId           NullableString                                               `json:"externalId,omitempty"`
