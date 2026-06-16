@@ -19,15 +19,15 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-// ResizeInstanceRequestVolumesInnerDatastoreId The ID of the specific datastore. Auto selection can be specified as auto or autoCluster (for clusters).
-type ResizeInstanceRequestVolumesInnerDatastoreId struct {
+// InstanceCloneVolumesInnerDatastoreId The ID of the specific datastore. Auto selection can be specified as auto or autoCluster (for clusters).
+type InstanceCloneVolumesInnerDatastoreId struct {
 	Int64  *int64
 	String *string
 }
 
-func (dst *ResizeInstanceRequestVolumesInnerDatastoreId) UnmarshalMapstructure(data any) (any, error) {
+func (dst *InstanceCloneVolumesInnerDatastoreId) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
-		dst = &ResizeInstanceRequestVolumesInnerDatastoreId{}
+		dst = &InstanceCloneVolumesInnerDatastoreId{}
 	}
 
 	mapstructDecode(data, &dst.Int64)
@@ -46,7 +46,7 @@ func (dst *ResizeInstanceRequestVolumesInnerDatastoreId) UnmarshalMapstructure(d
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
-func (dst *ResizeInstanceRequestVolumesInnerDatastoreId) UnmarshalJSON(data []byte) error {
+func (dst *InstanceCloneVolumesInnerDatastoreId) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into Int64
 	err = json.Unmarshal(data, &dst.Int64)
@@ -74,11 +74,11 @@ func (dst *ResizeInstanceRequestVolumesInnerDatastoreId) UnmarshalJSON(data []by
 		dst.String = nil
 	}
 
-	return NewResponseValidationError("data failed to match schemas in anyOf(ResizeInstanceRequestVolumesInnerDatastoreId)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(InstanceCloneVolumesInnerDatastoreId)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
-func (src ResizeInstanceRequestVolumesInnerDatastoreId) MarshalJSON() ([]byte, error) {
+func (src InstanceCloneVolumesInnerDatastoreId) MarshalJSON() ([]byte, error) {
 	if src.Int64 != nil {
 		return json.Marshal(&src.Int64)
 	}
@@ -90,43 +90,43 @@ func (src ResizeInstanceRequestVolumesInnerDatastoreId) MarshalJSON() ([]byte, e
 	return nil, nil // no data in anyOf schemas
 }
 
-type NullableResizeInstanceRequestVolumesInnerDatastoreId struct {
-	value *ResizeInstanceRequestVolumesInnerDatastoreId
+type NullableInstanceCloneVolumesInnerDatastoreId struct {
+	value *InstanceCloneVolumesInnerDatastoreId
 	isSet bool
 }
 
-func (v NullableResizeInstanceRequestVolumesInnerDatastoreId) Get() *ResizeInstanceRequestVolumesInnerDatastoreId {
+func (v NullableInstanceCloneVolumesInnerDatastoreId) Get() *InstanceCloneVolumesInnerDatastoreId {
 	return v.value
 }
 
-func (v *NullableResizeInstanceRequestVolumesInnerDatastoreId) Set(val *ResizeInstanceRequestVolumesInnerDatastoreId) {
+func (v *NullableInstanceCloneVolumesInnerDatastoreId) Set(val *InstanceCloneVolumesInnerDatastoreId) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableResizeInstanceRequestVolumesInnerDatastoreId) IsSet() bool {
+func (v NullableInstanceCloneVolumesInnerDatastoreId) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableResizeInstanceRequestVolumesInnerDatastoreId) Unset() {
+func (v *NullableInstanceCloneVolumesInnerDatastoreId) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableResizeInstanceRequestVolumesInnerDatastoreId(val *ResizeInstanceRequestVolumesInnerDatastoreId) *NullableResizeInstanceRequestVolumesInnerDatastoreId {
-	return &NullableResizeInstanceRequestVolumesInnerDatastoreId{value: val, isSet: true}
+func NewNullableInstanceCloneVolumesInnerDatastoreId(val *InstanceCloneVolumesInnerDatastoreId) *NullableInstanceCloneVolumesInnerDatastoreId {
+	return &NullableInstanceCloneVolumesInnerDatastoreId{value: val, isSet: true}
 }
 
-func (v NullableResizeInstanceRequestVolumesInnerDatastoreId) MarshalJSON() ([]byte, error) {
+func (v NullableInstanceCloneVolumesInnerDatastoreId) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableResizeInstanceRequestVolumesInnerDatastoreId) UnmarshalJSON(src []byte) error {
+func (v *NullableInstanceCloneVolumesInnerDatastoreId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableResizeInstanceRequestVolumesInnerDatastoreId) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableInstanceCloneVolumesInnerDatastoreId) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}

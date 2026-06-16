@@ -18,7 +18,7 @@ import (
 // checks if the CloneInstanceRequestGroup type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CloneInstanceRequestGroup{}
 
-// CloneInstanceRequestGroup The map containing the id of the server group you would like to clone into.
+// CloneInstanceRequestGroup The map containing the id of the server group you would like to clone into. Defaults to the source instance's group.
 type CloneInstanceRequestGroup struct {
 	// The id of the server group you would like to clone into.
 	Id                   *int64                 `json:"id,omitempty"`

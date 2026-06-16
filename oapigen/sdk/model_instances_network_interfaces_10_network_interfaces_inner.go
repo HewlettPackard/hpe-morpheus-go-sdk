@@ -15,12 +15,12 @@ import (
 	"encoding/json"
 )
 
-// checks if the InstancesNetworkInterfaces9NetworkInterfacesInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &InstancesNetworkInterfaces9NetworkInterfacesInner{}
+// checks if the InstancesNetworkInterfaces10NetworkInterfacesInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InstancesNetworkInterfaces10NetworkInterfacesInner{}
 
-// InstancesNetworkInterfaces9NetworkInterfacesInner struct for InstancesNetworkInterfaces9NetworkInterfacesInner
-type InstancesNetworkInterfaces9NetworkInterfacesInner struct {
-	Network InstancesNetworkInterfaces9NetworkInterfacesInnerNetwork `json:"network"`
+// InstancesNetworkInterfaces10NetworkInterfacesInner struct for InstancesNetworkInterfaces10NetworkInterfacesInner
+type InstancesNetworkInterfaces10NetworkInterfacesInner struct {
+	Network InstancesNetworkInterfaces10NetworkInterfacesInnerNetwork `json:"network"`
 	// The id of type of the network interface.
 	NetworkInterfaceTypeId *int64 `json:"networkInterfaceTypeId,omitempty"`
 	// The mode for determining ip address. Can be 'static', 'dhcp' or empty string.
@@ -34,9 +34,9 @@ type InstancesNetworkInterfaces9NetworkInterfacesInner struct {
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-type _InstancesNetworkInterfaces9NetworkInterfacesInner InstancesNetworkInterfaces9NetworkInterfacesInner
+type _InstancesNetworkInterfaces10NetworkInterfacesInner InstancesNetworkInterfaces10NetworkInterfacesInner
 
-func (o InstancesNetworkInterfaces9NetworkInterfacesInner) MarshalJSON() ([]byte, error) {
+func (o InstancesNetworkInterfaces10NetworkInterfacesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -44,7 +44,7 @@ func (o InstancesNetworkInterfaces9NetworkInterfacesInner) MarshalJSON() ([]byte
 	return json.Marshal(toSerialize)
 }
 
-func (o InstancesNetworkInterfaces9NetworkInterfacesInner) ToMap() (map[string]interface{}, error) {
+func (o InstancesNetworkInterfaces10NetworkInterfacesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["network"] = o.Network
 	if !IsNil(o.NetworkInterfaceTypeId) {
@@ -70,43 +70,43 @@ func (o InstancesNetworkInterfaces9NetworkInterfacesInner) ToMap() (map[string]i
 	return toSerialize, nil
 }
 
-type NullableInstancesNetworkInterfaces9NetworkInterfacesInner struct {
-	value *InstancesNetworkInterfaces9NetworkInterfacesInner
+type NullableInstancesNetworkInterfaces10NetworkInterfacesInner struct {
+	value *InstancesNetworkInterfaces10NetworkInterfacesInner
 	isSet bool
 }
 
-func (v NullableInstancesNetworkInterfaces9NetworkInterfacesInner) Get() *InstancesNetworkInterfaces9NetworkInterfacesInner {
+func (v NullableInstancesNetworkInterfaces10NetworkInterfacesInner) Get() *InstancesNetworkInterfaces10NetworkInterfacesInner {
 	return v.value
 }
 
-func (v *NullableInstancesNetworkInterfaces9NetworkInterfacesInner) Set(val *InstancesNetworkInterfaces9NetworkInterfacesInner) {
+func (v *NullableInstancesNetworkInterfaces10NetworkInterfacesInner) Set(val *InstancesNetworkInterfaces10NetworkInterfacesInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableInstancesNetworkInterfaces9NetworkInterfacesInner) IsSet() bool {
+func (v NullableInstancesNetworkInterfaces10NetworkInterfacesInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableInstancesNetworkInterfaces9NetworkInterfacesInner) Unset() {
+func (v *NullableInstancesNetworkInterfaces10NetworkInterfacesInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableInstancesNetworkInterfaces9NetworkInterfacesInner(val *InstancesNetworkInterfaces9NetworkInterfacesInner) *NullableInstancesNetworkInterfaces9NetworkInterfacesInner {
-	return &NullableInstancesNetworkInterfaces9NetworkInterfacesInner{value: val, isSet: true}
+func NewNullableInstancesNetworkInterfaces10NetworkInterfacesInner(val *InstancesNetworkInterfaces10NetworkInterfacesInner) *NullableInstancesNetworkInterfaces10NetworkInterfacesInner {
+	return &NullableInstancesNetworkInterfaces10NetworkInterfacesInner{value: val, isSet: true}
 }
 
-func (v NullableInstancesNetworkInterfaces9NetworkInterfacesInner) MarshalJSON() ([]byte, error) {
+func (v NullableInstancesNetworkInterfaces10NetworkInterfacesInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableInstancesNetworkInterfaces9NetworkInterfacesInner) UnmarshalJSON(src []byte) error {
+func (v *NullableInstancesNetworkInterfaces10NetworkInterfacesInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableInstancesNetworkInterfaces9NetworkInterfacesInner) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableInstancesNetworkInterfaces10NetworkInterfacesInner) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
@@ -115,7 +115,7 @@ func (v NullableInstancesNetworkInterfaces9NetworkInterfacesInner) UnmarshalMaps
 	return v, nil
 }
 
-func (o *InstancesNetworkInterfaces9NetworkInterfacesInner) UnmarshalJSON(data []byte) (err error) {
+func (o *InstancesNetworkInterfaces10NetworkInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 

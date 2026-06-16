@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Evars** | Pointer to [**[]InstanceConfigObject2EvarsInner**](InstanceConfigObject2EvarsInner.md) | Environment Variables, an array of objects that have name and value. | [optional] 
 **ServicePlanOptions** | Pointer to [**InstanceConfigObject2ServicePlanOptions**](InstanceConfigObject2ServicePlanOptions.md) |  | [optional] 
 **SecurityGroups** | Pointer to [**[]InstanceConfigObject2SecurityGroupsInner**](InstanceConfigObject2SecurityGroupsInner.md) | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
-**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces6**](InstancesNetworkInterfaces6.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces7**](InstancesNetworkInterfaces7.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). | [optional] 
 **Tags** | Pointer to [**[]InstanceConfigObject2TagsInner**](InstanceConfigObject2TagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
 **Metadata** | Pointer to [**[]InstanceConfigObject2MetadataInner**](InstanceConfigObject2MetadataInner.md) | Alias for &#x60;tags&#x60;. | [optional] 

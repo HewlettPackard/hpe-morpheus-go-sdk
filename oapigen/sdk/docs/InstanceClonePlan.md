@@ -1,17 +1,17 @@
-# InstancesNetworkInterfaces9NetworkInterfacesInnerNetworkPool
+# InstanceClonePlan
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** | id of the ip pool to be used with this network | [optional] 
+**Id** | Pointer to **int64** | The id of the service plan (the pre-configured memory and storage option) for the clone. | [optional] 
 
 ## Usage
 
 Instantiate with a Go composite literal:
 
 ```go
-obj := &InstancesNetworkInterfaces9NetworkInterfacesInnerNetworkPool{
+obj := &InstanceClonePlan{
     // Set fields directly
 }
 ```
