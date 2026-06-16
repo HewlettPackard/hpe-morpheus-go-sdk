@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**RemoveBackups**](BackupsAPI.md#RemoveBackups) | **Delete** /api/backups/{id} | Deletes a Backup
 [**UpdateBackupJobs**](BackupsAPI.md#UpdateBackupJobs) | **Put** /api/backups/jobs/{id} | Updates a Backup Job
 [**UpdateBackups**](BackupsAPI.md#UpdateBackups) | **Put** /api/backups/{id} | Updates a Backup
+[**ValidateBackupCreate**](BackupsAPI.md#ValidateBackupCreate) | **Post** /api/backups/create | Validates a Backup Configuration
 
 
 
@@ -1381,6 +1382,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateBackups200Response**](UpdateBackups200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ValidateBackupCreate
+
+> ValidateBackupCreate200Response ValidateBackupCreate(ctx).ValidateBackupCreateRequest(validateBackupCreateRequest).Execute()
+
+Validates a Backup Configuration
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	validateBackupCreateRequest := *openapiclient.NewValidateBackupCreateRequest(*openapiclient.NewValidateBackupCreateRequestBackup("LocationType_example", "Name_example", int64(123), int64(123), "BackupType_example", "JobAction_example", int64(123))) // ValidateBackupCreateRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BackupsAPI.ValidateBackupCreate(context.Background()).ValidateBackupCreateRequest(validateBackupCreateRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.ValidateBackupCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ValidateBackupCreate`: ValidateBackupCreate200Response
+	fmt.Fprintf(os.Stdout, "Response from `BackupsAPI.ValidateBackupCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiValidateBackupCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **validateBackupCreateRequest** | [**ValidateBackupCreateRequest**](ValidateBackupCreateRequest.md) |  | 
+
+### Return type
+
+[**ValidateBackupCreate200Response**](ValidateBackupCreate200Response.md)
 
 ### Authorization
 

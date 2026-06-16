@@ -20,38 +20,38 @@ var _ MappedNullable = &InstanceConfigObject3{}
 
 // InstanceConfigObject3 struct for InstanceConfigObject3
 type InstanceConfigObject3 struct {
-	Group InstanceConfigObject1Group `json:"group"`
-	Cloud InstanceConfigObject1Cloud `json:"cloud"`
+	Group InstanceConfigObject3Group `json:"group"`
+	Cloud InstanceConfigObject3Cloud `json:"cloud"`
 	// The type of instance by code we want to fetch.
 	Type string `json:"type"`
 	// Name of the instance to be created.
 	Name   string                      `json:"name"`
-	Config InstanceConfigObject1Config `json:"config"`
+	Config InstanceConfigObject3Config `json:"config"`
 	// The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of
-	Volumes []InstanceConfigObject1VolumesInner `json:"volumes"`
+	Volumes []InstanceConfigObject3VolumesInner `json:"volumes"`
 	// Hostname of the instance to be created.  Can be the same as the instance name.
 	HostName *string `json:"hostName,omitempty"`
 	// Environment code
 	Environment *string                     `json:"environment,omitempty"`
-	Layout      InstanceConfigObject1Layout `json:"layout"`
-	Plan        InstanceConfigObject1Plan   `json:"plan"`
+	Layout      InstanceConfigObject3Layout `json:"layout"`
+	Plan        InstanceConfigObject3Plan   `json:"plan"`
 	// Version of the layout to create.
 	Version *string `json:"version,omitempty"`
 	// Environment Variables, an array of objects that have name and value.
-	Evars              []InstanceConfigObject1EvarsInner        `json:"evars,omitempty"`
-	ServicePlanOptions *InstanceConfigObject1ServicePlanOptions `json:"servicePlanOptions,omitempty"`
+	Evars              []InstanceConfigObject3EvarsInner        `json:"evars,omitempty"`
+	ServicePlanOptions *InstanceConfigObject3ServicePlanOptions `json:"servicePlanOptions,omitempty"`
 	// Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to.
-	SecurityGroups []InstanceConfigObject1SecurityGroupsInner `json:"securityGroups,omitempty"`
+	SecurityGroups []InstanceConfigObject3SecurityGroupsInner `json:"securityGroups,omitempty"`
 	// The networkInterfaces parameter is for network configuration.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
-	NetworkInterfaces []InstancesNetworkInterfaces1 `json:"networkInterfaces,omitempty"`
+	NetworkInterfaces []InstancesNetworkInterfaces7 `json:"networkInterfaces,omitempty"`
 	// Array of strings (keywords).
 	Labels []string `json:"labels,omitempty"`
 	// Metadata tags, Array of objects having a name and value.
-	Tags []InstanceConfigObject1TagsInner `json:"tags,omitempty"`
+	Tags []InstanceConfigObject3TagsInner `json:"tags,omitempty"`
 	// Alias for `tags`.
-	Metadata []InstanceConfigObject1MetadataInner `json:"metadata,omitempty"`
+	Metadata []InstanceConfigObject3MetadataInner `json:"metadata,omitempty"`
 	// The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.
-	Ports []InstanceConfigObject1PortsInner `json:"ports,omitempty"`
+	Ports []InstanceConfigObject3PortsInner `json:"ports,omitempty"`
 	// The Workflow ID to execute.
 	TaskSetId *int64 `json:"taskSetId,omitempty"`
 	// The Workflow Name to execute.

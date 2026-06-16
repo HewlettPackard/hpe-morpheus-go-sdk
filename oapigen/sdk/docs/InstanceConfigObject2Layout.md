@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | [**InstanceConfigObject2LayoutId**](InstanceConfigObject2LayoutId.md) |  | 
+**Id** | [**InstanceConfigObject1LayoutId**](InstanceConfigObject1LayoutId.md) |  | 
 
 ## Usage
 

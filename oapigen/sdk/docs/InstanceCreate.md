@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ServicePlanOptions** | Pointer to [**InstanceCreateServicePlanOptions**](InstanceCreateServicePlanOptions.md) |  | [optional] 
 **SecurityGroups** | Pointer to [**[]InstanceCreateSecurityGroupsInner**](InstanceCreateSecurityGroupsInner.md) | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
 **Volumes** | Pointer to [**[]InstanceCreateVolumesInner**](InstanceCreateVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of | [optional] 
-**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces6**](InstancesNetworkInterfaces6.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces8**](InstancesNetworkInterfaces8.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
 **Config** | [**InstanceCreateConfig**](InstanceCreateConfig.md) |  | 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). | [optional] 
 **Tags** | Pointer to [**[]InstanceCreateTagsInner**](InstanceCreateTagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
