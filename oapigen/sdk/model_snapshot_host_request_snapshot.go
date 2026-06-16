@@ -20,7 +20,7 @@ var _ MappedNullable = &SnapshotHostRequestSnapshot{}
 
 // SnapshotHostRequestSnapshot struct for SnapshotHostRequestSnapshot
 type SnapshotHostRequestSnapshot struct {
-	// Optional name for the snapshot being created.
+	// Optional name for the snapshot being created. If omitted, the server generates one from the server name and a timestamp.
 	Name *string `json:"name,omitempty"`
 	// Optional description for the snapshot
 	Description *string `json:"description,omitempty"`
