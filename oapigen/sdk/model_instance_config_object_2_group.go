@@ -20,7 +20,7 @@ var _ MappedNullable = &InstanceConfigObject2Group{}
 
 // InstanceConfigObject2Group struct for InstanceConfigObject2Group
 type InstanceConfigObject2Group struct {
-	Id InstanceConfigObject2GroupId `json:"id"`
+	Id InstanceConfigObject1GroupId `json:"id"`
 	// The group name
 	Name                 *string                `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | [**InstanceConfigObject2CloudId**](InstanceConfigObject2CloudId.md) |  | 
+**Id** | [**InstanceConfigObject1CloudId**](InstanceConfigObject1CloudId.md) |  | 
 **Name** | Pointer to **string** | The cloud name | [optional] 
 
 ## Usage

@@ -20,7 +20,7 @@ var _ MappedNullable = &InstanceConfigObject2Cloud{}
 
 // InstanceConfigObject2Cloud struct for InstanceConfigObject2Cloud
 type InstanceConfigObject2Cloud struct {
-	Id InstanceConfigObject2CloudId `json:"id"`
+	Id InstanceConfigObject1CloudId `json:"id"`
 	// The cloud name
 	Name                 *string                `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`

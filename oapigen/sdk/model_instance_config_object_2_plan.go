@@ -20,7 +20,7 @@ var _ MappedNullable = &InstanceConfigObject2Plan{}
 
 // InstanceConfigObject2Plan struct for InstanceConfigObject2Plan
 type InstanceConfigObject2Plan struct {
-	Id                   InstanceConfigObject2PlanId `json:"id"`
+	Id                   InstanceConfigObject1PlanId `json:"id"`
 	AdditionalProperties map[string]interface{}      `json:",remain"`
 }
 

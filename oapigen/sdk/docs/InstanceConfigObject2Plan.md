@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | [**InstanceConfigObject2PlanId**](InstanceConfigObject2PlanId.md) |  | 
+**Id** | [**InstanceConfigObject1PlanId**](InstanceConfigObject1PlanId.md) |  | 
 
 ## Usage
 
