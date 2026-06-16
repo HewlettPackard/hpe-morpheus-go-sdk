@@ -12,10 +12,12 @@ Method | HTTP request | Description
 [**GetBackupJobs**](BackupsAPI.md#GetBackupJobs) | **Get** /api/backups/jobs/{id} | Retrieves a Specific Backup Job
 [**GetBackupRestores**](BackupsAPI.md#GetBackupRestores) | **Get** /api/backups/restores/{id} | Retrieves a Specific Backup Restore
 [**GetBackupResults**](BackupsAPI.md#GetBackupResults) | **Get** /api/backups/results/{id} | Retrieves a Specific Backup Result
+[**GetBackupType**](BackupsAPI.md#GetBackupType) | **Get** /api/backups/types/{id} | Retrieves a Specific Backup Type
 [**GetBackups**](BackupsAPI.md#GetBackups) | **Get** /api/backups/{id} | Retrieves a Specific Backup
 [**ListBackupJobs**](BackupsAPI.md#ListBackupJobs) | **Get** /api/backups/jobs | Retrieves all Backup Jobs
 [**ListBackupRestores**](BackupsAPI.md#ListBackupRestores) | **Get** /api/backups/restores | Retrieves all Backup Restores
 [**ListBackupResults**](BackupsAPI.md#ListBackupResults) | **Get** /api/backups/results | Retrieves all Backup Results
+[**ListBackupTypes**](BackupsAPI.md#ListBackupTypes) | **Get** /api/backups/types | Retrieves all Backup Types
 [**ListBackups**](BackupsAPI.md#ListBackups) | **Get** /api/backups | Retrieves all Backups
 [**RemoveBackupJobs**](BackupsAPI.md#RemoveBackupJobs) | **Delete** /api/backups/jobs/{id} | Deletes a Backup Job
 [**RemoveBackupRestores**](BackupsAPI.md#RemoveBackupRestores) | **Delete** /api/backups/restores/{id} | Deletes a Backup Restore
@@ -579,6 +581,76 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetBackupType
+
+> GetBackupType200Response GetBackupType(ctx, id).Execute()
+
+Retrieves a Specific Backup Type
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BackupsAPI.GetBackupType(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.GetBackupType``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBackupType`: GetBackupType200Response
+	fmt.Fprintf(os.Stdout, "Response from `BackupsAPI.GetBackupType`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int64** | Morpheus ID of the Object being referenced | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBackupTypeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetBackupType200Response**](GetBackupType200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetBackups
 
 > GetBackups200Response GetBackups(ctx, id).Execute()
@@ -882,6 +954,88 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListBackupResults200Response**](ListBackupResults200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListBackupTypes
+
+> ListBackupTypes200Response ListBackupTypes(ctx).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Code(code).ProviderCode(providerCode).Active(active).Execute()
+
+Retrieves all Backup Types
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
+	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
+	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
+	direction := "asc" // string | Sort direction, use 'desc' to reverse sort (optional) (default to "asc")
+	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
+	name := "example" // string | Filter by name (optional)
+	code := "code_example" // string | Filter by backup type code (optional)
+	providerCode := "providerCode_example" // string | Filter by provider code (e.g., `commvault`, `veeam`) (optional)
+	active := true // bool | Filter by active status. Defaults to true if not specified. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BackupsAPI.ListBackupTypes(context.Background()).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Code(code).ProviderCode(providerCode).Active(active).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.ListBackupTypes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListBackupTypes`: ListBackupTypes200Response
+	fmt.Fprintf(os.Stdout, "Response from `BackupsAPI.ListBackupTypes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListBackupTypesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **max** | **int64** | Maximum number of records to return | [default to 25]
+ **offset** | **int64** | Offset records, the number of records to skip, for paginating requests | [default to 0]
+ **sort** | **string** | Sort order, the name of the property to sort by | [default to &quot;name&quot;]
+ **direction** | **string** | Sort direction, use &#39;desc&#39; to reverse sort | [default to &quot;asc&quot;]
+ **phrase** | **string** | Search phrase for partial matches on name or description | 
+ **name** | **string** | Filter by name | 
+ **code** | **string** | Filter by backup type code | 
+ **providerCode** | **string** | Filter by provider code (e.g., &#x60;commvault&#x60;, &#x60;veeam&#x60;) | 
+ **active** | **bool** | Filter by active status. Defaults to true if not specified. | 
+
+### Return type
+
+[**ListBackupTypes200Response**](ListBackupTypes200Response.md)
 
 ### Authorization
 

@@ -173,10 +173,12 @@ Class | Method | HTTP request | Description
 *BackupsAPI* | [**GetBackupJobs**](docs/BackupsAPI.md#getbackupjobs) | **Get** /api/backups/jobs/{id} | Retrieves a Specific Backup Job
 *BackupsAPI* | [**GetBackupRestores**](docs/BackupsAPI.md#getbackuprestores) | **Get** /api/backups/restores/{id} | Retrieves a Specific Backup Restore
 *BackupsAPI* | [**GetBackupResults**](docs/BackupsAPI.md#getbackupresults) | **Get** /api/backups/results/{id} | Retrieves a Specific Backup Result
+*BackupsAPI* | [**GetBackupType**](docs/BackupsAPI.md#getbackuptype) | **Get** /api/backups/types/{id} | Retrieves a Specific Backup Type
 *BackupsAPI* | [**GetBackups**](docs/BackupsAPI.md#getbackups) | **Get** /api/backups/{id} | Retrieves a Specific Backup
 *BackupsAPI* | [**ListBackupJobs**](docs/BackupsAPI.md#listbackupjobs) | **Get** /api/backups/jobs | Retrieves all Backup Jobs
 *BackupsAPI* | [**ListBackupRestores**](docs/BackupsAPI.md#listbackuprestores) | **Get** /api/backups/restores | Retrieves all Backup Restores
 *BackupsAPI* | [**ListBackupResults**](docs/BackupsAPI.md#listbackupresults) | **Get** /api/backups/results | Retrieves all Backup Results
+*BackupsAPI* | [**ListBackupTypes**](docs/BackupsAPI.md#listbackuptypes) | **Get** /api/backups/types | Retrieves all Backup Types
 *BackupsAPI* | [**ListBackups**](docs/BackupsAPI.md#listbackups) | **Get** /api/backups | Retrieves all Backups
 *BackupsAPI* | [**RemoveBackupJobs**](docs/BackupsAPI.md#removebackupjobs) | **Delete** /api/backups/jobs/{id} | Deletes a Backup Job
 *BackupsAPI* | [**RemoveBackupRestores**](docs/BackupsAPI.md#removebackuprestores) | **Delete** /api/backups/restores/{id} | Deletes a Backup Restore
@@ -2598,6 +2600,7 @@ Class | Method | HTTP request | Description
  - [BackupTargetsPolicyTypeConfiguration7](docs/BackupTargetsPolicyTypeConfiguration7.md)
  - [BackupTargetsPolicyTypeConfiguration8](docs/BackupTargetsPolicyTypeConfiguration8.md)
  - [BackupTargetsPolicyTypeConfiguration9](docs/BackupTargetsPolicyTypeConfiguration9.md)
+ - [BackupTypeDetail](docs/BackupTypeDetail.md)
  - [BackupTypeInstance](docs/BackupTypeInstance.md)
  - [BackupTypeInstanceBackupJob](docs/BackupTypeInstanceBackupJob.md)
  - [BackupTypeProvider](docs/BackupTypeProvider.md)
@@ -3788,6 +3791,8 @@ Class | Method | HTTP request | Description
  - [GetBackupResults200ResponseResult](docs/GetBackupResults200ResponseResult.md)
  - [GetBackupResults200ResponseResultBackup](docs/GetBackupResults200ResponseResultBackup.md)
  - [GetBackupResults200ResponseResultCreatedBy](docs/GetBackupResults200ResponseResultCreatedBy.md)
+ - [GetBackupType200Response](docs/GetBackupType200Response.md)
+ - [GetBackupType200ResponseBackupType](docs/GetBackupType200ResponseBackupType.md)
  - [GetBackups200Response](docs/GetBackups200Response.md)
  - [GetBackups200ResponseBackup](docs/GetBackups200ResponseBackup.md)
  - [GetBackups200ResponseBackupBackupProvider](docs/GetBackups200ResponseBackupBackupProvider.md)
@@ -5954,6 +5959,8 @@ Class | Method | HTTP request | Description
  - [ListBackupSettings200ResponseBackupSettings](docs/ListBackupSettings200ResponseBackupSettings.md)
  - [ListBackupSettings200ResponseBackupSettingsDefaultSchedule](docs/ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md)
  - [ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket](docs/ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket.md)
+ - [ListBackupTypes200Response](docs/ListBackupTypes200Response.md)
+ - [ListBackupTypes200ResponseAllOfBackupTypesInner](docs/ListBackupTypes200ResponseAllOfBackupTypesInner.md)
  - [ListBackups200Response](docs/ListBackups200Response.md)
  - [ListBackups200ResponseAllOfBackupsInner](docs/ListBackups200ResponseAllOfBackupsInner.md)
  - [ListBackups200ResponseAllOfBackupsInnerBackupProvider](docs/ListBackups200ResponseAllOfBackupsInnerBackupProvider.md)
