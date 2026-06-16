@@ -31,8 +31,8 @@ type InstanceCreateVolume struct {
 	// Can be used to select pre-existing LV choices from Morpheus.
 	SizeId NullableInt64 `json:"sizeId,omitempty"`
 	// Identifier for LV type
-	StorageType NullableInt64                                 `json:"storageType,omitempty"`
-	DatastoreId *ResizeInstanceRequestVolumesInnerDatastoreId `json:"datastoreId,omitempty"`
+	StorageType NullableInt64                                `json:"storageType,omitempty"`
+	DatastoreId *CloneInstanceRequestVolumesInnerDatastoreId `json:"datastoreId,omitempty"`
 	// The controller mount point specification for this volume in the format: `\"id:busNumber:typeId:unitNumber\"` For new storage controllers the id is passed as -1, so an example value would be: `\"-1:1:6:0\"` which translates to id: -1 (new), busNumber: 1, storage controller type id: 6 (SCSI VMware Paravirtual), unit number: 0. The current list of storage controllers is returned for instances and servers for determining existing id values. Use `/api/provision-types?code=vmware` to see the available `controllerTypes` for vmware.
 	ControllerMountPoint *string `json:"controllerMountPoint,omitempty"`
 	// Storage Profile Code for the volume storage profile assignment. eg. `\"kvm-cache-none\"` or `\"kvm-cache-directsync\"`. Use `/api/provision-types?code=kvm` to see the available `storageProfiles` for HVM and KVM.

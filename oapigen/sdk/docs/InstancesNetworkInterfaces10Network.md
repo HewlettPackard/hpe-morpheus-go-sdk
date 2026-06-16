@@ -1,18 +1,18 @@
-# InstancesNetworkInterfaces9NetworkInterfacesInnerNetwork
+# InstancesNetworkInterfaces10Network
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | id of the network to be used. A network group can be specified instead by prefixing its ID with &#x60;networkGroup-&#x60;. | 
-**Pool** | Pointer to [**InstancesNetworkInterfaces9NetworkInterfacesInnerNetworkPool**](InstancesNetworkInterfaces9NetworkInterfacesInnerNetworkPool.md) |  | [optional] 
+**Pool** | Pointer to [**InstancesNetworkInterfaces10NetworkPool**](InstancesNetworkInterfaces10NetworkPool.md) |  | [optional] 
 
 ## Usage
 
 Instantiate with a Go composite literal:
 
 ```go
-obj := &InstancesNetworkInterfaces9NetworkInterfacesInnerNetwork{
+obj := &InstancesNetworkInterfaces10Network{
     // Set fields directly
 }
 ```

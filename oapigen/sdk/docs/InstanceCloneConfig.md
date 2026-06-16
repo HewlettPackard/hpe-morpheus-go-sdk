@@ -1,17 +1,17 @@
-# InstancesNetworkInterfaces9NetworkPool
+# InstanceCloneConfig
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** | id of the ip pool to be used with this network | [optional] 
+**ResourcePoolId** | Pointer to **string** | id of the resource pool to clone into, can be prefixed with &#x60;pool-&#x60;. A resource pool group can be specified instead by prefixing its ID with &#x60;poolGroup-&#x60;. | [optional] 
 
 ## Usage
 
 Instantiate with a Go composite literal:
 
 ```go
-obj := &InstancesNetworkInterfaces9NetworkPool{
+obj := &InstanceCloneConfig{
     // Set fields directly
 }
 ```

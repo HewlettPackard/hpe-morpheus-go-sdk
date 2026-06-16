@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ServicePlanOptions** | Pointer to [**UpdateHostResizeRequestServicePlanOptions**](UpdateHostResizeRequestServicePlanOptions.md) |  | [optional] 
 **Volumes** | Pointer to [**[]UpdateHostResizeRequestVolumesInner**](UpdateHostResizeRequestVolumesInner.md) | List of volumes with their new sizes. | [optional] 
 **DeleteOriginalVolumes** | Pointer to **bool** | Delete the original volumes after resizing. (Amazon only) | [optional] [default to false]
-**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces4**](InstancesNetworkInterfaces4.md) | Key for network configurations. Include id to update an existing interface. | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces5**](InstancesNetworkInterfaces5.md) | Key for network configurations. Include id to update an existing interface. | [optional] 
 
 ## Usage
 

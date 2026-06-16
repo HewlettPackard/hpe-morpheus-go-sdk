@@ -20,7 +20,7 @@ var _ MappedNullable = &InstancesNetworkInterfaces5{}
 
 // InstancesNetworkInterfaces5 struct for InstancesNetworkInterfaces5
 type InstancesNetworkInterfaces5 struct {
-	Network InstancesNetworkInterfaces1Network `json:"network"`
+	Network InstancesNetworkInterfaces3Network `json:"network"`
 	// The id of type of the network interface.
 	NetworkInterfaceTypeId *int64 `json:"networkInterfaceTypeId,omitempty"`
 	// The mode for determining ip address. Can be 'static', 'dhcp' or empty string.
@@ -32,7 +32,7 @@ type InstancesNetworkInterfaces5 struct {
 	// The interface id. Applicable when resizing and you want to identify an interface to update that already exists.
 	Id *int64 `json:"id,omitempty"`
 	// The nested networkInterfaces can be used to define child virtual network interfaces. The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which types support this (`hasVirtualInvirtualInterfaces = true` and list of available `virtualInterfaces` will be defined.
-	NetworkInterfaces    []InstancesNetworkInterfaces1NetworkInterfacesInner `json:"networkInterfaces,omitempty"`
+	NetworkInterfaces    []InstancesNetworkInterfaces3NetworkInterfacesInner `json:"networkInterfaces,omitempty"`
 	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 

@@ -21,9 +21,16 @@ var _ MappedNullable = &CloneInstanceRequest{}
 // CloneInstanceRequest struct for CloneInstanceRequest
 type CloneInstanceRequest struct {
 	// A name for the new cloned instance. If none is specified the existing name will be duplicated with the 'clone' suffix added.
-	Name                 *string                    `json:"name,omitempty"`
-	Group                *CloneInstanceRequestGroup `json:"group,omitempty"`
-	AdditionalProperties map[string]interface{}     `json:",remain"`
+	Name  *string                    `json:"name,omitempty"`
+	Group *CloneInstanceRequestGroup `json:"group,omitempty"`
+	Cloud *CloneInstanceRequestCloud `json:"cloud,omitempty"`
+	Plan  *CloneInstanceRequestPlan  `json:"plan,omitempty"`
+	// The complete set of volumes for the clone. When provided, this replaces (does not merge with) the source instance's volumes.  Volume specifications define infrastructure parameters (size, datastore, type) only - the disk contents are always copied from the source instance.
+	Volumes []CloneInstanceRequestVolumesInner `json:"volumes,omitempty"`
+	// The complete set of network interfaces for the clone. When provided, this replaces (does not merge with) the source instance's network interfaces.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
+	NetworkInterfaces    []InstancesNetworkInterfaces3 `json:"networkInterfaces,omitempty"`
+	Config               *CloneInstanceRequestConfig   `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}        `json:",remain"`
 }
 
 type _CloneInstanceRequest CloneInstanceRequest
@@ -43,6 +50,21 @@ func (o CloneInstanceRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Group) {
 		toSerialize["group"] = o.Group
+	}
+	if !IsNil(o.Cloud) {
+		toSerialize["cloud"] = o.Cloud
+	}
+	if !IsNil(o.Plan) {
+		toSerialize["plan"] = o.Plan
+	}
+	if !IsNil(o.Volumes) {
+		toSerialize["volumes"] = o.Volumes
+	}
+	if !IsNil(o.NetworkInterfaces) {
+		toSerialize["networkInterfaces"] = o.NetworkInterfaces
+	}
+	if !IsNil(o.Config) {
+		toSerialize["config"] = o.Config
 	}
 
 	for key, value := range o.AdditionalProperties {

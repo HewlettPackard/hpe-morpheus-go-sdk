@@ -43,7 +43,7 @@ type CatalogItemTypeInstanceScribe struct {
 	// Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to.
 	SecurityGroups []CatalogItemTypeInstanceScribeSecurityGroupsInner `json:"securityGroups,omitempty"`
 	// The networkInterfaces parameter is for network configuration.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
-	NetworkInterfaces []InstancesNetworkInterfaces5 `json:"networkInterfaces,omitempty"`
+	NetworkInterfaces []InstancesNetworkInterfaces6 `json:"networkInterfaces,omitempty"`
 	// Array of strings (keywords).
 	Labels []string `json:"labels,omitempty"`
 	// Metadata tags, Array of objects having a name and value.

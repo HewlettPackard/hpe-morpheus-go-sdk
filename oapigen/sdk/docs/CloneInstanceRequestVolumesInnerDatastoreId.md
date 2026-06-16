@@ -1,4 +1,4 @@
-# ResizeInstanceRequestVolumesInnerDatastoreId
+# CloneInstanceRequestVolumesInnerDatastoreId
 
 ## Properties
 
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 Instantiate with a Go composite literal:
 
 ```go
-obj := &ResizeInstanceRequestVolumesInnerDatastoreId{
+obj := &CloneInstanceRequestVolumesInnerDatastoreId{
     // Set fields directly
 }
 ```
