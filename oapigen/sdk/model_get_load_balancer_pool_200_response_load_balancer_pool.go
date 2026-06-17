@@ -58,7 +58,7 @@ type GetLoadBalancerPool200ResponseLoadBalancerPool struct {
 	Monitors             []GetLoadBalancerPool200ResponseLoadBalancerPoolMonitorsInner `json:"monitors,omitempty"`
 	Members              []map[string]interface{}                                      `json:"members,omitempty"`
 	Config               map[string]interface{}                                        `json:"config,omitempty"`
-	CreatedBy            NullableString                                                `json:"createdBy,omitempty"`
+	CreatedBy            *GetLoadBalancerPool200ResponseLoadBalancerPoolCreatedBy      `json:"createdBy,omitempty"`
 	DateCreated          *time.Time                                                    `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                    `json:"lastUpdated,omitempty"`
 	AdditionalProperties map[string]interface{}                                        `json:",remain"`
@@ -187,8 +187,8 @@ func (o GetLoadBalancerPool200ResponseLoadBalancerPool) ToMap() (map[string]inte
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
-	if o.CreatedBy.IsSet() {
-		toSerialize["createdBy"] = o.CreatedBy.Get()
+	if !IsNil(o.CreatedBy) {
+		toSerialize["createdBy"] = o.CreatedBy
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated
