@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **NoAgent** | Pointer to [**InstanceCreateSuccessInstanceConfigNoAgent**](InstanceCreateSuccessInstanceConfigNoAgent.md) |  | [optional] 
 **SecurityGroups** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner**](AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner.md) |  | [optional] 
 **KvmHostId** | Pointer to **NullableInt64** |  | [optional] 
+**CloneInstanceId** | Pointer to **int64** | The ID of the source instance this instance was cloned from. Set by Morpheus when the instance is created via the clone endpoint; absent for instances that were not cloned. | [optional] 
 **SmbiosAssetTag** | Pointer to **NullableString** |  | [optional] 
 **NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
 **VmwareFolderId** | Pointer to **string** |  | [optional] 
