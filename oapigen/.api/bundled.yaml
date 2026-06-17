@@ -102516,8 +102516,14 @@ paths:
                               type: object
                             createdBy: &ref_602
                               type:
-                                - string
+                                - object
                                 - 'null'
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                username:
+                                  type: string
                             dateCreated: &ref_603
                               type: string
                               format: date-time

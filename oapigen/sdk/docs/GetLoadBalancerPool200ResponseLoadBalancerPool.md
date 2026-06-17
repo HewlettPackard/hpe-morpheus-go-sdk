@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 **Monitors** | Pointer to [**[]GetLoadBalancerPool200ResponseLoadBalancerPoolMonitorsInner**](GetLoadBalancerPool200ResponseLoadBalancerPoolMonitorsInner.md) |  | [optional] 
 **Members** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
-**CreatedBy** | Pointer to **NullableString** |  | [optional] 
+**CreatedBy** | Pointer to [**GetLoadBalancerPool200ResponseLoadBalancerPoolCreatedBy**](GetLoadBalancerPool200ResponseLoadBalancerPoolCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -167,13 +167,6 @@ Use the Nullable wrapper methods:
 - `obj.PortType.Get()` — get the inner value (returns pointer)
 - `obj.PortType.Set(&val)` — set the value
 - `obj.PortType.Unset()` — clear the value
-### CreatedBy (Nullable)
-
-Use the Nullable wrapper methods:
-- `obj.CreatedBy.IsSet()` — check if set
-- `obj.CreatedBy.Get()` — get the inner value (returns pointer)
-- `obj.CreatedBy.Set(&val)` — set the value
-- `obj.CreatedBy.Unset()` — clear the value
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
