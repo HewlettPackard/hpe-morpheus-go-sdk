@@ -20,42 +20,44 @@ var _ MappedNullable = &InstanceCreateSuccessInstanceConfig{}
 
 // InstanceCreateSuccessInstanceConfig struct for InstanceCreateSuccessInstanceConfig
 type InstanceCreateSuccessInstanceConfig struct {
-	CreateUser           *bool                                                               `json:"createUser,omitempty"`
-	IsEC2                *string                                                             `json:"isEC2,omitempty"`
-	IsVpcSelectable      *bool                                                               `json:"isVpcSelectable,omitempty"`
-	NoAgent              *InstanceCreateSuccessInstanceConfigNoAgent                         `json:"noAgent,omitempty"`
-	SecurityGroups       []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
-	KvmHostId            NullableInt64                                                       `json:"kvmHostId,omitempty"`
-	SmbiosAssetTag       NullableString                                                      `json:"smbiosAssetTag,omitempty"`
-	NestedVirtualization NullableString                                                      `json:"nestedVirtualization,omitempty"`
-	VmwareFolderId       *string                                                             `json:"vmwareFolderId,omitempty"`
-	CustomOptions        map[string]interface{}                                              `json:"customOptions,omitempty"`
-	ResourcePoolId       *InstanceCreateSuccessInstanceConfigResourcePoolId                  `json:"resourcePoolId,omitempty"`
-	PoolProviderType     NullableString                                                      `json:"poolProviderType,omitempty"`
-	UserGroup            *InstanceCreateSuccessInstanceConfigUserGroup                       `json:"userGroup,omitempty"`
-	ExpireDays           *string                                                             `json:"expireDays,omitempty"`
-	ShutdownDays         *string                                                             `json:"shutdownDays,omitempty"`
-	Name                 *string                                                             `json:"name,omitempty"`
-	HostName             *string                                                             `json:"hostName,omitempty"`
-	InstanceType         *InstanceCreateSuccessInstanceConfigInstanceType                    `json:"instanceType,omitempty"`
-	Site                 *InstanceCreateSuccessInstanceConfigSite                            `json:"site,omitempty"`
-	EnvironmentPrefix    NullableString                                                      `json:"environmentPrefix,omitempty"`
-	Layout               *InstanceCreateSuccessInstanceConfigLayout                          `json:"layout,omitempty"`
-	Type                 *string                                                             `json:"type,omitempty"`
-	KmsKeyId             NullableString                                                      `json:"kmsKeyId,omitempty"`
-	InstanceProfile      NullableString                                                      `json:"instanceProfile,omitempty"`
-	AvailabilityId       NullableString                                                      `json:"availabilityId,omitempty"`
-	PublicIpType         NullableString                                                      `json:"publicIpType,omitempty"`
-	InstanceContext      *string                                                             `json:"instanceContext,omitempty"`
-	MemoryDisplay        *string                                                             `json:"memoryDisplay,omitempty"`
-	Expose               []int64                                                             `json:"expose,omitempty"`
-	CreateBackup         *bool                                                               `json:"createBackup,omitempty"`
-	Backup               *InstanceCreateSuccessInstanceConfigBackup                          `json:"backup,omitempty"`
-	ReplicationGroup     *InstanceCreateSuccessInstanceConfigReplicationGroup                `json:"replicationGroup,omitempty"`
-	LayoutSize           *int64                                                              `json:"layoutSize,omitempty"`
-	LbInstances          []map[string]interface{}                                            `json:"lbInstances,omitempty"`
-	NetworkDomain        *InstanceCreateSuccessInstanceConfigNetworkDomain                   `json:"networkDomain,omitempty"`
-	AdditionalProperties map[string]interface{}                                              `json:",remain"`
+	CreateUser      *bool                                                               `json:"createUser,omitempty"`
+	IsEC2           *string                                                             `json:"isEC2,omitempty"`
+	IsVpcSelectable *bool                                                               `json:"isVpcSelectable,omitempty"`
+	NoAgent         *InstanceCreateSuccessInstanceConfigNoAgent                         `json:"noAgent,omitempty"`
+	SecurityGroups  []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
+	KvmHostId       NullableInt64                                                       `json:"kvmHostId,omitempty"`
+	// The ID of the source instance this instance was cloned from. Set by Morpheus when the instance is created via the clone endpoint; absent for instances that were not cloned.
+	CloneInstanceId      *int64                                               `json:"cloneInstanceId,omitempty"`
+	SmbiosAssetTag       NullableString                                       `json:"smbiosAssetTag,omitempty"`
+	NestedVirtualization NullableString                                       `json:"nestedVirtualization,omitempty"`
+	VmwareFolderId       *string                                              `json:"vmwareFolderId,omitempty"`
+	CustomOptions        map[string]interface{}                               `json:"customOptions,omitempty"`
+	ResourcePoolId       *InstanceCreateSuccessInstanceConfigResourcePoolId   `json:"resourcePoolId,omitempty"`
+	PoolProviderType     NullableString                                       `json:"poolProviderType,omitempty"`
+	UserGroup            *InstanceCreateSuccessInstanceConfigUserGroup        `json:"userGroup,omitempty"`
+	ExpireDays           *string                                              `json:"expireDays,omitempty"`
+	ShutdownDays         *string                                              `json:"shutdownDays,omitempty"`
+	Name                 *string                                              `json:"name,omitempty"`
+	HostName             *string                                              `json:"hostName,omitempty"`
+	InstanceType         *InstanceCreateSuccessInstanceConfigInstanceType     `json:"instanceType,omitempty"`
+	Site                 *InstanceCreateSuccessInstanceConfigSite             `json:"site,omitempty"`
+	EnvironmentPrefix    NullableString                                       `json:"environmentPrefix,omitempty"`
+	Layout               *InstanceCreateSuccessInstanceConfigLayout           `json:"layout,omitempty"`
+	Type                 *string                                              `json:"type,omitempty"`
+	KmsKeyId             NullableString                                       `json:"kmsKeyId,omitempty"`
+	InstanceProfile      NullableString                                       `json:"instanceProfile,omitempty"`
+	AvailabilityId       NullableString                                       `json:"availabilityId,omitempty"`
+	PublicIpType         NullableString                                       `json:"publicIpType,omitempty"`
+	InstanceContext      *string                                              `json:"instanceContext,omitempty"`
+	MemoryDisplay        *string                                              `json:"memoryDisplay,omitempty"`
+	Expose               []int64                                              `json:"expose,omitempty"`
+	CreateBackup         *bool                                                `json:"createBackup,omitempty"`
+	Backup               *InstanceCreateSuccessInstanceConfigBackup           `json:"backup,omitempty"`
+	ReplicationGroup     *InstanceCreateSuccessInstanceConfigReplicationGroup `json:"replicationGroup,omitempty"`
+	LayoutSize           *int64                                               `json:"layoutSize,omitempty"`
+	LbInstances          []map[string]interface{}                             `json:"lbInstances,omitempty"`
+	NetworkDomain        *InstanceCreateSuccessInstanceConfigNetworkDomain    `json:"networkDomain,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _InstanceCreateSuccessInstanceConfig InstanceCreateSuccessInstanceConfig
@@ -87,6 +89,9 @@ func (o InstanceCreateSuccessInstanceConfig) ToMap() (map[string]interface{}, er
 	}
 	if o.KvmHostId.IsSet() {
 		toSerialize["kvmHostId"] = o.KvmHostId.Get()
+	}
+	if !IsNil(o.CloneInstanceId) {
+		toSerialize["cloneInstanceId"] = o.CloneInstanceId
 	}
 	if o.SmbiosAssetTag.IsSet() {
 		toSerialize["smbiosAssetTag"] = o.SmbiosAssetTag.Get()

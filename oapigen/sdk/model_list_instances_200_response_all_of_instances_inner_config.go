@@ -20,42 +20,44 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerConfig{}
 
 // ListInstances200ResponseAllOfInstancesInnerConfig struct for ListInstances200ResponseAllOfInstancesInnerConfig
 type ListInstances200ResponseAllOfInstancesInnerConfig struct {
-	CreateUser           *bool                                                                  `json:"createUser,omitempty"`
-	IsEC2                *string                                                                `json:"isEC2,omitempty"`
-	IsVpcSelectable      *bool                                                                  `json:"isVpcSelectable,omitempty"`
-	NoAgent              *ListInstances200ResponseAllOfInstancesInnerConfigNoAgent              `json:"noAgent,omitempty"`
-	SecurityGroups       []ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
-	KvmHostId            NullableInt64                                                          `json:"kvmHostId,omitempty"`
-	SmbiosAssetTag       NullableString                                                         `json:"smbiosAssetTag,omitempty"`
-	NestedVirtualization NullableString                                                         `json:"nestedVirtualization,omitempty"`
-	VmwareFolderId       *string                                                                `json:"vmwareFolderId,omitempty"`
-	CustomOptions        map[string]interface{}                                                 `json:"customOptions,omitempty"`
-	ResourcePoolId       *ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId       `json:"resourcePoolId,omitempty"`
-	PoolProviderType     NullableString                                                         `json:"poolProviderType,omitempty"`
-	UserGroup            *ListInstances200ResponseAllOfInstancesInnerConfigUserGroup            `json:"userGroup,omitempty"`
-	ExpireDays           *string                                                                `json:"expireDays,omitempty"`
-	ShutdownDays         *string                                                                `json:"shutdownDays,omitempty"`
-	Name                 *string                                                                `json:"name,omitempty"`
-	HostName             *string                                                                `json:"hostName,omitempty"`
-	InstanceType         *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType         `json:"instanceType,omitempty"`
-	Site                 *ListInstances200ResponseAllOfInstancesInnerConfigSite                 `json:"site,omitempty"`
-	EnvironmentPrefix    NullableString                                                         `json:"environmentPrefix,omitempty"`
-	Layout               *ListInstances200ResponseAllOfInstancesInnerConfigLayout               `json:"layout,omitempty"`
-	Type                 *string                                                                `json:"type,omitempty"`
-	KmsKeyId             NullableString                                                         `json:"kmsKeyId,omitempty"`
-	InstanceProfile      NullableString                                                         `json:"instanceProfile,omitempty"`
-	AvailabilityId       NullableString                                                         `json:"availabilityId,omitempty"`
-	PublicIpType         NullableString                                                         `json:"publicIpType,omitempty"`
-	InstanceContext      *string                                                                `json:"instanceContext,omitempty"`
-	MemoryDisplay        *string                                                                `json:"memoryDisplay,omitempty"`
-	Expose               []int64                                                                `json:"expose,omitempty"`
-	CreateBackup         *bool                                                                  `json:"createBackup,omitempty"`
-	Backup               *ListInstances200ResponseAllOfInstancesInnerConfigBackup               `json:"backup,omitempty"`
-	ReplicationGroup     *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup     `json:"replicationGroup,omitempty"`
-	LayoutSize           *int64                                                                 `json:"layoutSize,omitempty"`
-	LbInstances          []map[string]interface{}                                               `json:"lbInstances,omitempty"`
-	NetworkDomain        *ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain        `json:"networkDomain,omitempty"`
-	AdditionalProperties map[string]interface{}                                                 `json:",remain"`
+	CreateUser      *bool                                                                  `json:"createUser,omitempty"`
+	IsEC2           *string                                                                `json:"isEC2,omitempty"`
+	IsVpcSelectable *bool                                                                  `json:"isVpcSelectable,omitempty"`
+	NoAgent         *ListInstances200ResponseAllOfInstancesInnerConfigNoAgent              `json:"noAgent,omitempty"`
+	SecurityGroups  []ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
+	KvmHostId       NullableInt64                                                          `json:"kvmHostId,omitempty"`
+	// The ID of the source instance this instance was cloned from. Set by Morpheus when the instance is created via the clone endpoint; absent for instances that were not cloned.
+	CloneInstanceId      *int64                                                             `json:"cloneInstanceId,omitempty"`
+	SmbiosAssetTag       NullableString                                                     `json:"smbiosAssetTag,omitempty"`
+	NestedVirtualization NullableString                                                     `json:"nestedVirtualization,omitempty"`
+	VmwareFolderId       *string                                                            `json:"vmwareFolderId,omitempty"`
+	CustomOptions        map[string]interface{}                                             `json:"customOptions,omitempty"`
+	ResourcePoolId       *ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId   `json:"resourcePoolId,omitempty"`
+	PoolProviderType     NullableString                                                     `json:"poolProviderType,omitempty"`
+	UserGroup            *ListInstances200ResponseAllOfInstancesInnerConfigUserGroup        `json:"userGroup,omitempty"`
+	ExpireDays           *string                                                            `json:"expireDays,omitempty"`
+	ShutdownDays         *string                                                            `json:"shutdownDays,omitempty"`
+	Name                 *string                                                            `json:"name,omitempty"`
+	HostName             *string                                                            `json:"hostName,omitempty"`
+	InstanceType         *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType     `json:"instanceType,omitempty"`
+	Site                 *ListInstances200ResponseAllOfInstancesInnerConfigSite             `json:"site,omitempty"`
+	EnvironmentPrefix    NullableString                                                     `json:"environmentPrefix,omitempty"`
+	Layout               *ListInstances200ResponseAllOfInstancesInnerConfigLayout           `json:"layout,omitempty"`
+	Type                 *string                                                            `json:"type,omitempty"`
+	KmsKeyId             NullableString                                                     `json:"kmsKeyId,omitempty"`
+	InstanceProfile      NullableString                                                     `json:"instanceProfile,omitempty"`
+	AvailabilityId       NullableString                                                     `json:"availabilityId,omitempty"`
+	PublicIpType         NullableString                                                     `json:"publicIpType,omitempty"`
+	InstanceContext      *string                                                            `json:"instanceContext,omitempty"`
+	MemoryDisplay        *string                                                            `json:"memoryDisplay,omitempty"`
+	Expose               []int64                                                            `json:"expose,omitempty"`
+	CreateBackup         *bool                                                              `json:"createBackup,omitempty"`
+	Backup               *ListInstances200ResponseAllOfInstancesInnerConfigBackup           `json:"backup,omitempty"`
+	ReplicationGroup     *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup `json:"replicationGroup,omitempty"`
+	LayoutSize           *int64                                                             `json:"layoutSize,omitempty"`
+	LbInstances          []map[string]interface{}                                           `json:"lbInstances,omitempty"`
+	NetworkDomain        *ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain    `json:"networkDomain,omitempty"`
+	AdditionalProperties map[string]interface{}                                             `json:",remain"`
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerConfig ListInstances200ResponseAllOfInstancesInnerConfig
@@ -87,6 +89,9 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfig) ToMap() (map[string]i
 	}
 	if o.KvmHostId.IsSet() {
 		toSerialize["kvmHostId"] = o.KvmHostId.Get()
+	}
+	if !IsNil(o.CloneInstanceId) {
+		toSerialize["cloneInstanceId"] = o.CloneInstanceId
 	}
 	if o.SmbiosAssetTag.IsSet() {
 		toSerialize["smbiosAssetTag"] = o.SmbiosAssetTag.Get()
