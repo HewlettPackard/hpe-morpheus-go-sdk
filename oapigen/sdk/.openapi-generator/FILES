@@ -1423,6 +1423,8 @@ docs/AmazonInstanceConfiguration3.md
 docs/AmazonInstanceConfiguration4.md
 docs/AmazonInstanceConfiguration5.md
 docs/AmazonInstanceConfiguration6.md
+docs/AmazonInstanceConfiguration7.md
+docs/AmazonInstanceConfiguration8.md
 docs/AnsiblePlaybookTaskConfig.md
 docs/AnsiblePlaybookTaskConfig1.md
 docs/AnsiblePlaybookTaskConfig2.md
@@ -1535,6 +1537,8 @@ docs/AzureInstanceConfiguration3.md
 docs/AzureInstanceConfiguration4.md
 docs/AzureInstanceConfiguration5.md
 docs/AzureInstanceConfiguration6.md
+docs/AzureInstanceConfiguration7.md
+docs/AzureInstanceConfiguration8.md
 docs/AzureReferenceVirtualImageConfiguration.md
 docs/AzureReferenceVirtualImageConfiguration1.md
 docs/AzureReferenceVirtualImageConfiguration2.md
@@ -2740,6 +2744,8 @@ docs/GenericInstanceConfiguration3.md
 docs/GenericInstanceConfiguration4.md
 docs/GenericInstanceConfiguration5.md
 docs/GenericInstanceConfiguration6.md
+docs/GenericInstanceConfiguration7.md
+docs/GenericInstanceConfiguration8.md
 docs/GetAccessToken200Response.md
 docs/GetAlerts200Response.md
 docs/GetAlerts200ResponseAllOfAlert.md
@@ -4257,6 +4263,8 @@ docs/GoogleCloudInstanceConfiguration3.md
 docs/GoogleCloudInstanceConfiguration4.md
 docs/GoogleCloudInstanceConfiguration5.md
 docs/GoogleCloudInstanceConfiguration6.md
+docs/GoogleCloudInstanceConfiguration7.md
+docs/GoogleCloudInstanceConfiguration8.md
 docs/GroovyTaskConfig.md
 docs/GroovyTaskConfig1.md
 docs/GroovyTaskConfig2.md
@@ -4340,6 +4348,8 @@ docs/HTTPTaskConfig5.md
 docs/HTTPTaskConfig6.md
 docs/HVMInstanceConfiguration.md
 docs/HVMInstanceConfiguration1.md
+docs/HVMInstanceConfiguration2.md
+docs/HVMInstanceConfiguration3.md
 docs/Health.md
 docs/HealthAPI.md
 docs/HealthCpu.md
@@ -9164,6 +9174,8 @@ docs/VMWareInstanceConfiguration3.md
 docs/VMWareInstanceConfiguration4.md
 docs/VMWareInstanceConfiguration5.md
 docs/VMWareInstanceConfiguration6.md
+docs/VMWareInstanceConfiguration7.md
+docs/VMWareInstanceConfiguration8.md
 docs/VRealizeOrchestratorTaskConfig.md
 docs/VRealizeOrchestratorTaskConfig1.md
 docs/VRealizeOrchestratorTaskConfig2.md
@@ -10685,6 +10697,8 @@ model_amazon_instance_configuration_3.go
 model_amazon_instance_configuration_4.go
 model_amazon_instance_configuration_5.go
 model_amazon_instance_configuration_6.go
+model_amazon_instance_configuration_7.go
+model_amazon_instance_configuration_8.go
 model_ansible_playbook_task_config.go
 model_ansible_playbook_task_config_1.go
 model_ansible_playbook_task_config_2.go
@@ -10791,6 +10805,8 @@ model_azure_instance_configuration_3.go
 model_azure_instance_configuration_4.go
 model_azure_instance_configuration_5.go
 model_azure_instance_configuration_6.go
+model_azure_instance_configuration_7.go
+model_azure_instance_configuration_8.go
 model_azure_reference_virtual_image_configuration.go
 model_azure_reference_virtual_image_configuration_1.go
 model_azure_reference_virtual_image_configuration_2.go
@@ -11971,6 +11987,8 @@ model_generic_instance_configuration_3.go
 model_generic_instance_configuration_4.go
 model_generic_instance_configuration_5.go
 model_generic_instance_configuration_6.go
+model_generic_instance_configuration_7.go
+model_generic_instance_configuration_8.go
 model_get_access_token_200_response.go
 model_get_alerts_200_response.go
 model_get_alerts_200_response_all_of_alert.go
@@ -13492,6 +13510,8 @@ model_google_cloud_instance_configuration_3.go
 model_google_cloud_instance_configuration_4.go
 model_google_cloud_instance_configuration_5.go
 model_google_cloud_instance_configuration_6.go
+model_google_cloud_instance_configuration_7.go
+model_google_cloud_instance_configuration_8.go
 model_groovy_task_config.go
 model_groovy_task_config_1.go
 model_groovy_task_config_2.go
@@ -13613,6 +13633,8 @@ model_http_task_config_5.go
 model_http_task_config_6.go
 model_hvm_instance_configuration.go
 model_hvm_instance_configuration_1.go
+model_hvm_instance_configuration_2.go
+model_hvm_instance_configuration_3.go
 model_identity_sources_ad_config.go
 model_identity_sources_azure_ad_config.go
 model_identity_sources_custom_sso_config.go
@@ -18376,6 +18398,8 @@ model_vm_ware_instance_configuration_3.go
 model_vm_ware_instance_configuration_4.go
 model_vm_ware_instance_configuration_5.go
 model_vm_ware_instance_configuration_6.go
+model_vm_ware_instance_configuration_7.go
+model_vm_ware_instance_configuration_8.go
 model_web_check.go
 model_web_check_1.go
 model_web_check_1_all_of_check_type.go

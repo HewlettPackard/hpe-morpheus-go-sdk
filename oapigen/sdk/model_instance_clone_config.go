@@ -13,39 +13,177 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
-// checks if the InstanceCloneConfig type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &InstanceCloneConfig{}
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
 
-// InstanceCloneConfig Additional configuration overrides merged into the source instance's configuration when provisioning the clone.
+// InstanceCloneConfig Configuration overrides applied when provisioning the clone. Unlike `volumes` and `networkInterfaces` (which replace the source set when provided), `config` is **merged** key-by-key over the source instance's existing configuration: keys you set here override the source value, and keys you omit are inherited from the source instance.  This does not modify the source instance in any way - the merge happens only on the new clone's configuration at provision time.  The shape mirrors instance creation, so the same per-cloud configuration options can be supplied. Provide the variant that matches the target cloud type.
 type InstanceCloneConfig struct {
-	// id of the resource pool to clone into, can be prefixed with `pool-`. A resource pool group can be specified instead by prefixing its ID with `poolGroup-`.
-	ResourcePoolId       *string                `json:"resourcePoolId,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AmazonInstanceConfiguration8      *AmazonInstanceConfiguration8
+	AzureInstanceConfiguration8       *AzureInstanceConfiguration8
+	GenericInstanceConfiguration8     *GenericInstanceConfiguration8
+	GoogleCloudInstanceConfiguration8 *GoogleCloudInstanceConfiguration8
+	HVMInstanceConfiguration3         *HVMInstanceConfiguration3
+	VMWareInstanceConfiguration8      *VMWareInstanceConfiguration8
 }
 
-type _InstanceCloneConfig InstanceCloneConfig
-
-func (o InstanceCloneConfig) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+func (dst *InstanceCloneConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &InstanceCloneConfig{}
 	}
-	return json.Marshal(toSerialize)
+
+	mapstructDecode(data, &dst.AmazonInstanceConfiguration8)
+
+	if IsEmpty(dst.AmazonInstanceConfiguration8) {
+		dst.AmazonInstanceConfiguration8 = nil
+	}
+
+	mapstructDecode(data, &dst.AzureInstanceConfiguration8)
+
+	if IsEmpty(dst.AzureInstanceConfiguration8) {
+		dst.AzureInstanceConfiguration8 = nil
+	}
+
+	mapstructDecode(data, &dst.GenericInstanceConfiguration8)
+
+	if IsEmpty(dst.GenericInstanceConfiguration8) {
+		dst.GenericInstanceConfiguration8 = nil
+	}
+
+	mapstructDecode(data, &dst.GoogleCloudInstanceConfiguration8)
+
+	if IsEmpty(dst.GoogleCloudInstanceConfiguration8) {
+		dst.GoogleCloudInstanceConfiguration8 = nil
+	}
+
+	mapstructDecode(data, &dst.HVMInstanceConfiguration3)
+
+	if IsEmpty(dst.HVMInstanceConfiguration3) {
+		dst.HVMInstanceConfiguration3 = nil
+	}
+
+	mapstructDecode(data, &dst.VMWareInstanceConfiguration8)
+
+	if IsEmpty(dst.VMWareInstanceConfiguration8) {
+		dst.VMWareInstanceConfiguration8 = nil
+	}
+
+	return dst, nil
 }
 
-func (o InstanceCloneConfig) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ResourcePoolId) {
-		toSerialize["resourcePoolId"] = o.ResourcePoolId
+// Unmarshal JSON data into any of the pointers in the struct
+func (dst *InstanceCloneConfig) UnmarshalJSON(data []byte) error {
+	var err error
+	// try to unmarshal JSON data into AmazonInstanceConfiguration8
+	err = json.Unmarshal(data, &dst.AmazonInstanceConfiguration8)
+	if err == nil {
+		jsonAmazonInstanceConfiguration8, _ := json.Marshal(dst.AmazonInstanceConfiguration8)
+		if string(jsonAmazonInstanceConfiguration8) == "{}" { // empty struct
+			dst.AmazonInstanceConfiguration8 = nil
+		} else {
+			return nil // data stored in dst.AmazonInstanceConfiguration8, return on the first match
+		}
+	} else {
+		dst.AmazonInstanceConfiguration8 = nil
 	}
 
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
+	// try to unmarshal JSON data into AzureInstanceConfiguration8
+	err = json.Unmarshal(data, &dst.AzureInstanceConfiguration8)
+	if err == nil {
+		jsonAzureInstanceConfiguration8, _ := json.Marshal(dst.AzureInstanceConfiguration8)
+		if string(jsonAzureInstanceConfiguration8) == "{}" { // empty struct
+			dst.AzureInstanceConfiguration8 = nil
+		} else {
+			return nil // data stored in dst.AzureInstanceConfiguration8, return on the first match
+		}
+	} else {
+		dst.AzureInstanceConfiguration8 = nil
 	}
 
-	return toSerialize, nil
+	// try to unmarshal JSON data into GenericInstanceConfiguration8
+	err = json.Unmarshal(data, &dst.GenericInstanceConfiguration8)
+	if err == nil {
+		jsonGenericInstanceConfiguration8, _ := json.Marshal(dst.GenericInstanceConfiguration8)
+		if string(jsonGenericInstanceConfiguration8) == "{}" { // empty struct
+			dst.GenericInstanceConfiguration8 = nil
+		} else {
+			return nil // data stored in dst.GenericInstanceConfiguration8, return on the first match
+		}
+	} else {
+		dst.GenericInstanceConfiguration8 = nil
+	}
+
+	// try to unmarshal JSON data into GoogleCloudInstanceConfiguration8
+	err = json.Unmarshal(data, &dst.GoogleCloudInstanceConfiguration8)
+	if err == nil {
+		jsonGoogleCloudInstanceConfiguration8, _ := json.Marshal(dst.GoogleCloudInstanceConfiguration8)
+		if string(jsonGoogleCloudInstanceConfiguration8) == "{}" { // empty struct
+			dst.GoogleCloudInstanceConfiguration8 = nil
+		} else {
+			return nil // data stored in dst.GoogleCloudInstanceConfiguration8, return on the first match
+		}
+	} else {
+		dst.GoogleCloudInstanceConfiguration8 = nil
+	}
+
+	// try to unmarshal JSON data into HVMInstanceConfiguration3
+	err = json.Unmarshal(data, &dst.HVMInstanceConfiguration3)
+	if err == nil {
+		jsonHVMInstanceConfiguration3, _ := json.Marshal(dst.HVMInstanceConfiguration3)
+		if string(jsonHVMInstanceConfiguration3) == "{}" { // empty struct
+			dst.HVMInstanceConfiguration3 = nil
+		} else {
+			return nil // data stored in dst.HVMInstanceConfiguration3, return on the first match
+		}
+	} else {
+		dst.HVMInstanceConfiguration3 = nil
+	}
+
+	// try to unmarshal JSON data into VMWareInstanceConfiguration8
+	err = json.Unmarshal(data, &dst.VMWareInstanceConfiguration8)
+	if err == nil {
+		jsonVMWareInstanceConfiguration8, _ := json.Marshal(dst.VMWareInstanceConfiguration8)
+		if string(jsonVMWareInstanceConfiguration8) == "{}" { // empty struct
+			dst.VMWareInstanceConfiguration8 = nil
+		} else {
+			return nil // data stored in dst.VMWareInstanceConfiguration8, return on the first match
+		}
+	} else {
+		dst.VMWareInstanceConfiguration8 = nil
+	}
+
+	return NewResponseValidationError("data failed to match schemas in anyOf(InstanceCloneConfig)")
+}
+
+// Marshal data from the first non-nil pointers in the struct to JSON
+func (src InstanceCloneConfig) MarshalJSON() ([]byte, error) {
+	if src.AmazonInstanceConfiguration8 != nil {
+		return json.Marshal(&src.AmazonInstanceConfiguration8)
+	}
+
+	if src.AzureInstanceConfiguration8 != nil {
+		return json.Marshal(&src.AzureInstanceConfiguration8)
+	}
+
+	if src.GenericInstanceConfiguration8 != nil {
+		return json.Marshal(&src.GenericInstanceConfiguration8)
+	}
+
+	if src.GoogleCloudInstanceConfiguration8 != nil {
+		return json.Marshal(&src.GoogleCloudInstanceConfiguration8)
+	}
+
+	if src.HVMInstanceConfiguration3 != nil {
+		return json.Marshal(&src.HVMInstanceConfiguration3)
+	}
+
+	if src.VMWareInstanceConfiguration8 != nil {
+		return json.Marshal(&src.VMWareInstanceConfiguration8)
+	}
+
+	return nil, nil // no data in anyOf schemas
 }
 
 type NullableInstanceCloneConfig struct {
@@ -92,9 +230,3 @@ func (v NullableInstanceCloneConfig) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
-
-func (o *InstanceCloneConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
-}
-
-// - model_simple.mustache
