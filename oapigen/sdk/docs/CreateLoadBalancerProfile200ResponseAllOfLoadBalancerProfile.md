@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **PersistenceCookieName** | Pointer to **NullableString** |  | [optional] 
 **PersistenceExpiresIn** | Pointer to **NullableString** |  | [optional] 
 **Editable** | Pointer to **bool** |  | [optional] 
-**Config** | Pointer to **map[string]interface{}** |  | [optional] 
+**Config** | Pointer to [**CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileConfig**](CreateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileConfig.md) |  | [optional] 
 **CreatedBy** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 

@@ -43,7 +43,7 @@ type GetLoadBalancerProfile200ResponseLoadBalancerProfile struct {
 	PersistenceCookieName NullableString                                                    `json:"persistenceCookieName,omitempty"`
 	PersistenceExpiresIn  NullableString                                                    `json:"persistenceExpiresIn,omitempty"`
 	Editable              *bool                                                             `json:"editable,omitempty"`
-	Config                map[string]interface{}                                            `json:"config,omitempty"`
+	Config                *GetLoadBalancerProfile200ResponseLoadBalancerProfileConfig       `json:"config,omitempty"`
 	CreatedBy             NullableString                                                    `json:"createdBy,omitempty"`
 	DateCreated           *time.Time                                                        `json:"dateCreated,omitempty"`
 	LastUpdated           *time.Time                                                        `json:"lastUpdated,omitempty"`

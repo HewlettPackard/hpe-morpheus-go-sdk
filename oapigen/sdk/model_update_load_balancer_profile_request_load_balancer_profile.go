@@ -25,10 +25,9 @@ type UpdateLoadBalancerProfileRequestLoadBalancerProfile struct {
 	// Description
 	Description *string `json:"description,omitempty"`
 	// Service Type
-	ServiceType *string `json:"serviceType,omitempty"`
-	// Configuration object with parameters that vary by type.
-	Config               map[string]interface{} `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	ServiceType          *string                                                    `json:"serviceType,omitempty"`
+	Config               *UpdateLoadBalancerProfileRequestLoadBalancerProfileConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _UpdateLoadBalancerProfileRequestLoadBalancerProfile UpdateLoadBalancerProfileRequestLoadBalancerProfile

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Name | [optional] 
 **Description** | Pointer to **string** | Description | [optional] 
 **ServiceType** | Pointer to **string** | Service Type | [optional] 
-**Config** | Pointer to **map[string]interface{}** | Configuration object with parameters that vary by type. | [optional] 
+**Config** | Pointer to [**CreateLoadBalancerProfileRequestLoadBalancerProfileConfig**](CreateLoadBalancerProfileRequestLoadBalancerProfileConfig.md) |  | [optional] 
 
 ## Usage
 
