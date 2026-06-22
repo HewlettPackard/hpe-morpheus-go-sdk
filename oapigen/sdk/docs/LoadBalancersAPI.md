@@ -271,7 +271,7 @@ import (
 )
 
 func main() {
-	loadBalancerPoolId := float32(4) // float32 | Load Balancer Pool ID
+	loadBalancerPoolId := int64(4) // int64 | Load Balancer Pool ID
 	createLoadBalancerPoolNodeRequest := *openapiclient.NewCreateLoadBalancerPoolNodeRequest() // CreateLoadBalancerPoolNodeRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -292,7 +292,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerPoolId** | **float32** | Load Balancer Pool ID | 
+**loadBalancerPoolId** | **int64** | Load Balancer Pool ID | 
 
 ### Other Parameters
 
@@ -703,7 +703,7 @@ import (
 )
 
 func main() {
-	loadBalancerPoolId := float32(4) // float32 | Load Balancer Pool ID
+	loadBalancerPoolId := int64(4) // int64 | Load Balancer Pool ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -724,7 +724,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerPoolId** | **float32** | Load Balancer Pool ID | 
+**loadBalancerPoolId** | **int64** | Load Balancer Pool ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1138,7 +1138,7 @@ import (
 )
 
 func main() {
-	loadBalancerPoolId := float32(4) // float32 | Load Balancer Pool ID
+	loadBalancerPoolId := int64(4) // int64 | Load Balancer Pool ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1159,7 +1159,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerPoolId** | **float32** | Load Balancer Pool ID | 
+**loadBalancerPoolId** | **int64** | Load Balancer Pool ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1509,7 +1509,7 @@ import (
 )
 
 func main() {
-	loadBalancerPoolId := float32(4) // float32 | Load Balancer Pool ID
+	loadBalancerPoolId := int64(4) // int64 | Load Balancer Pool ID
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -1534,7 +1534,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerPoolId** | **float32** | Load Balancer Pool ID | 
+**loadBalancerPoolId** | **int64** | Load Balancer Pool ID | 
 
 ### Other Parameters
 
@@ -2287,7 +2287,7 @@ import (
 )
 
 func main() {
-	loadBalancerPoolId := float32(4) // float32 | Load Balancer Pool ID
+	loadBalancerPoolId := int64(4) // int64 | Load Balancer Pool ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	updateLoadBalancerPoolNodeRequest := *openapiclient.NewUpdateLoadBalancerPoolNodeRequest() // UpdateLoadBalancerPoolNodeRequest |  (optional)
 
@@ -2309,7 +2309,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerPoolId** | **float32** | Load Balancer Pool ID | 
+**loadBalancerPoolId** | **int64** | Load Balancer Pool ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters

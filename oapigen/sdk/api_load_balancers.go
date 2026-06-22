@@ -423,7 +423,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolExecute(r ApiCreateLoadB
 type ApiCreateLoadBalancerPoolNodeRequest struct {
 	ctx                               context.Context
 	ApiService                        *LoadBalancersAPIService
-	loadBalancerPoolId                float32
+	loadBalancerPoolId                int64
 	createLoadBalancerPoolNodeRequest *CreateLoadBalancerPoolNodeRequest
 }
 
@@ -447,7 +447,7 @@ This endpoint allows creating a Load Balancer Pool Node. Configuration options v
 	@param loadBalancerPoolId Load Balancer Pool ID
 	@return ApiCreateLoadBalancerPoolNodeRequest
 */
-func (a *LoadBalancersAPIService) CreateLoadBalancerPoolNode(ctx context.Context, loadBalancerPoolId float32) ApiCreateLoadBalancerPoolNodeRequest {
+func (a *LoadBalancersAPIService) CreateLoadBalancerPoolNode(ctx context.Context, loadBalancerPoolId int64) ApiCreateLoadBalancerPoolNodeRequest {
 	return ApiCreateLoadBalancerPoolNodeRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -1205,7 +1205,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolExecute(r ApiDeleteLoadB
 type ApiDeleteLoadBalancerPoolNodeRequest struct {
 	ctx                context.Context
 	ApiService         *LoadBalancersAPIService
-	loadBalancerPoolId float32
+	loadBalancerPoolId int64
 	id                 int64
 }
 
@@ -1223,7 +1223,7 @@ Will delete a Load Balancer Pool Node from the system and make it no longer usab
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteLoadBalancerPoolNodeRequest
 */
-func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolNode(ctx context.Context, loadBalancerPoolId float32, id int64) ApiDeleteLoadBalancerPoolNodeRequest {
+func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolNode(ctx context.Context, loadBalancerPoolId int64, id int64) ApiDeleteLoadBalancerPoolNodeRequest {
 	return ApiDeleteLoadBalancerPoolNodeRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -1969,7 +1969,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolExecute(r ApiGetLoadBalance
 type ApiGetLoadBalancerPoolNodeRequest struct {
 	ctx                context.Context
 	ApiService         *LoadBalancersAPIService
-	loadBalancerPoolId float32
+	loadBalancerPoolId int64
 	id                 int64
 }
 
@@ -1987,7 +1987,7 @@ This endpoint retrieves a specific Load Balancer Pool Node.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetLoadBalancerPoolNodeRequest
 */
-func (a *LoadBalancersAPIService) GetLoadBalancerPoolNode(ctx context.Context, loadBalancerPoolId float32, id int64) ApiGetLoadBalancerPoolNodeRequest {
+func (a *LoadBalancersAPIService) GetLoadBalancerPoolNode(ctx context.Context, loadBalancerPoolId int64, id int64) ApiGetLoadBalancerPoolNodeRequest {
 	return ApiGetLoadBalancerPoolNodeRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -2673,7 +2673,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerMonitorsExecute(r ApiListLoadB
 type ApiListLoadBalancerPoolNodesRequest struct {
 	ctx                context.Context
 	ApiService         *LoadBalancersAPIService
-	loadBalancerPoolId float32
+	loadBalancerPoolId int64
 	max                *int64
 	offset             *int64
 	sort               *string
@@ -2724,7 +2724,7 @@ This endpoint retrieves all load balancer pool nodes associated with a specified
 	@param loadBalancerPoolId Load Balancer Pool ID
 	@return ApiListLoadBalancerPoolNodesRequest
 */
-func (a *LoadBalancersAPIService) ListLoadBalancerPoolNodes(ctx context.Context, loadBalancerPoolId float32) ApiListLoadBalancerPoolNodesRequest {
+func (a *LoadBalancersAPIService) ListLoadBalancerPoolNodes(ctx context.Context, loadBalancerPoolId int64) ApiListLoadBalancerPoolNodesRequest {
 	return ApiListLoadBalancerPoolNodesRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -4404,7 +4404,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolExecute(r ApiUpdateLoadB
 type ApiUpdateLoadBalancerPoolNodeRequest struct {
 	ctx                               context.Context
 	ApiService                        *LoadBalancersAPIService
-	loadBalancerPoolId                float32
+	loadBalancerPoolId                int64
 	id                                int64
 	updateLoadBalancerPoolNodeRequest *UpdateLoadBalancerPoolNodeRequest
 }
@@ -4428,7 +4428,7 @@ Use this command to update an existing load balancer pool node.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiUpdateLoadBalancerPoolNodeRequest
 */
-func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolNode(ctx context.Context, loadBalancerPoolId float32, id int64) ApiUpdateLoadBalancerPoolNodeRequest {
+func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolNode(ctx context.Context, loadBalancerPoolId int64, id int64) ApiUpdateLoadBalancerPoolNodeRequest {
 	return ApiUpdateLoadBalancerPoolNodeRequest{
 		ApiService:         a,
 		ctx:                ctx,
