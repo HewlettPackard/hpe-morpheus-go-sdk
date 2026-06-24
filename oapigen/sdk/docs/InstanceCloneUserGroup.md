@@ -1,17 +1,17 @@
-# InstanceConfigUserGroup
+# InstanceCloneUserGroup
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
+**Id** | Pointer to **int64** | The user group id. | [optional] 
 
 ## Usage
 
 Instantiate with a Go composite literal:
 
 ```go
-obj := &InstanceConfigUserGroup{
+obj := &InstanceCloneUserGroup{
     // Set fields directly
 }
 ```
