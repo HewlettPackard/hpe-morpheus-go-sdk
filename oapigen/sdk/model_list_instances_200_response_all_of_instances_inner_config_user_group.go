@@ -20,7 +20,7 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerConfigUserGro
 
 // ListInstances200ResponseAllOfInstancesInnerConfigUserGroup struct for ListInstances200ResponseAllOfInstancesInnerConfigUserGroup
 type ListInstances200ResponseAllOfInstancesInnerConfigUserGroup struct {
-	Id                   *string                `json:"id,omitempty"`
+	Id                   NullableInt64          `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -36,8 +36,8 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfigUserGroup) MarshalJSON(
 
 func (o ListInstances200ResponseAllOfInstancesInnerConfigUserGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
+	if o.Id.IsSet() {
+		toSerialize["id"] = o.Id.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

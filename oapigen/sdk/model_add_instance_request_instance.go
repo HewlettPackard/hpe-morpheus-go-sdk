@@ -35,6 +35,7 @@ type AddInstanceRequestInstance struct {
 	// Hostname of the instance to be created.  Can be the same as the instance name.
 	HostName             *string                                  `json:"hostName,omitempty"`
 	NetworkDomain        *AddInstanceRequestInstanceNetworkDomain `json:"networkDomain,omitempty"`
+	UserGroup            *AddInstanceRequestInstanceUserGroup     `json:"userGroup,omitempty"`
 	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
@@ -69,6 +70,9 @@ func (o AddInstanceRequestInstance) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.NetworkDomain) {
 		toSerialize["networkDomain"] = o.NetworkDomain
+	}
+	if !IsNil(o.UserGroup) {
+		toSerialize["userGroup"] = o.UserGroup
 	}
 
 	for key, value := range o.AdditionalProperties {

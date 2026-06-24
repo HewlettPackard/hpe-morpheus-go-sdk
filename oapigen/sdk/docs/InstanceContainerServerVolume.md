@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **DiskMode** | Pointer to **NullableString** |  | [optional] 
 **DiskType** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to **NullableString** |  | [optional] 
+**StorageProfile** | Pointer to **string** | Storage Profile Code for the volume storage profile assignment. eg. &#x60;\&quot;kvm-cache-none\&quot;&#x60; or &#x60;\&quot;kvm-cache-directsync\&quot;&#x60;. Use &#x60;/api/provision-types?code&#x3D;kvm&#x60; to see the available &#x60;storageProfiles&#x60; for HVM and KVM. | [optional] 
 **StorageServer** | Pointer to [**InstanceContainerServerVolumeStorageServer**](InstanceContainerServerVolumeStorageServer.md) |  | [optional] 
 **ZoneId** | Pointer to **NullableInt64** |  | [optional] 
 **Zone** | Pointer to [**InstanceContainerServerVolumeZone**](InstanceContainerServerVolumeZone.md) |  | [optional] 

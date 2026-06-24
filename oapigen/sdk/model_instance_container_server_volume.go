@@ -20,17 +20,19 @@ var _ MappedNullable = &InstanceContainerServerVolume{}
 
 // InstanceContainerServerVolume struct for InstanceContainerServerVolume
 type InstanceContainerServerVolume struct {
-	Id                   *int64                                      `json:"id,omitempty"`
-	Name                 *string                                     `json:"name,omitempty"`
-	ControllerId         NullableInt64                               `json:"controllerId,omitempty"`
-	ControllerMountPoint NullableString                              `json:"controllerMountPoint,omitempty"`
-	Resizeable           *bool                                       `json:"resizeable,omitempty"`
-	RootVolume           *bool                                       `json:"rootVolume,omitempty"`
-	DeviceName           *string                                     `json:"deviceName,omitempty"`
-	DeviceDisplayName    *string                                     `json:"deviceDisplayName,omitempty"`
-	DiskMode             NullableString                              `json:"diskMode,omitempty"`
-	DiskType             NullableString                              `json:"diskType,omitempty"`
-	Category             NullableString                              `json:"category,omitempty"`
+	Id                   *int64         `json:"id,omitempty"`
+	Name                 *string        `json:"name,omitempty"`
+	ControllerId         NullableInt64  `json:"controllerId,omitempty"`
+	ControllerMountPoint NullableString `json:"controllerMountPoint,omitempty"`
+	Resizeable           *bool          `json:"resizeable,omitempty"`
+	RootVolume           *bool          `json:"rootVolume,omitempty"`
+	DeviceName           *string        `json:"deviceName,omitempty"`
+	DeviceDisplayName    *string        `json:"deviceDisplayName,omitempty"`
+	DiskMode             NullableString `json:"diskMode,omitempty"`
+	DiskType             NullableString `json:"diskType,omitempty"`
+	Category             NullableString `json:"category,omitempty"`
+	// Storage Profile Code for the volume storage profile assignment. eg. `\"kvm-cache-none\"` or `\"kvm-cache-directsync\"`. Use `/api/provision-types?code=kvm` to see the available `storageProfiles` for HVM and KVM.
+	StorageProfile       *string                                     `json:"storageProfile,omitempty"`
 	StorageServer        *InstanceContainerServerVolumeStorageServer `json:"storageServer,omitempty"`
 	ZoneId               NullableInt64                               `json:"zoneId,omitempty"`
 	Zone                 *InstanceContainerServerVolumeZone          `json:"zone,omitempty"`
@@ -92,6 +94,9 @@ func (o InstanceContainerServerVolume) ToMap() (map[string]interface{}, error) {
 	}
 	if o.Category.IsSet() {
 		toSerialize["category"] = o.Category.Get()
+	}
+	if !IsNil(o.StorageProfile) {
+		toSerialize["storageProfile"] = o.StorageProfile
 	}
 	if !IsNil(o.StorageServer) {
 		toSerialize["storageServer"] = o.StorageServer

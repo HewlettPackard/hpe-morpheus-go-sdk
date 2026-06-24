@@ -21,10 +21,11 @@ var _ MappedNullable = &CloneInstanceRequest{}
 // CloneInstanceRequest struct for CloneInstanceRequest
 type CloneInstanceRequest struct {
 	// A name for the new cloned instance. If none is specified the existing name will be duplicated with the 'clone' suffix added.
-	Name  *string                    `json:"name,omitempty"`
-	Group *CloneInstanceRequestGroup `json:"group,omitempty"`
-	Cloud *CloneInstanceRequestCloud `json:"cloud,omitempty"`
-	Plan  *CloneInstanceRequestPlan  `json:"plan,omitempty"`
+	Name      *string                        `json:"name,omitempty"`
+	Group     *CloneInstanceRequestGroup     `json:"group,omitempty"`
+	Cloud     *CloneInstanceRequestCloud     `json:"cloud,omitempty"`
+	Plan      *CloneInstanceRequestPlan      `json:"plan,omitempty"`
+	UserGroup *CloneInstanceRequestUserGroup `json:"userGroup,omitempty"`
 	// The complete set of volumes for the clone. When provided, this replaces (does not merge with) the source instance's volumes.  Volume specifications define infrastructure parameters (size, datastore, type) only - the disk contents are always copied from the source instance.
 	Volumes []CloneInstanceRequestVolumesInner `json:"volumes,omitempty"`
 	// The complete set of network interfaces for the clone. When provided, this replaces (does not merge with) the source instance's network interfaces.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
@@ -56,6 +57,9 @@ func (o CloneInstanceRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Plan) {
 		toSerialize["plan"] = o.Plan
+	}
+	if !IsNil(o.UserGroup) {
+		toSerialize["userGroup"] = o.UserGroup
 	}
 	if !IsNil(o.Volumes) {
 		toSerialize["volumes"] = o.Volumes

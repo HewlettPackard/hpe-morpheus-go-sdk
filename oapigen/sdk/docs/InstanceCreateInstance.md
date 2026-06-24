@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **InstanceContext** | Pointer to **string** | Environment | [optional] 
 **HostName** | Pointer to **string** | Hostname of the instance to be created.  Can be the same as the instance name. | [optional] 
 **NetworkDomain** | Pointer to [**InstanceCreateInstanceNetworkDomain**](InstanceCreateInstanceNetworkDomain.md) |  | [optional] 
+**UserGroup** | Pointer to [**InstanceCreateInstanceUserGroup**](InstanceCreateInstanceUserGroup.md) |  | [optional] 
 
 ## Usage
 

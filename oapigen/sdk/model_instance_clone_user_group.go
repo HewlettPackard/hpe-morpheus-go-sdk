@@ -15,18 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the InstanceConfigUserGroup type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &InstanceConfigUserGroup{}
+// checks if the InstanceCloneUserGroup type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InstanceCloneUserGroup{}
 
-// InstanceConfigUserGroup struct for InstanceConfigUserGroup
-type InstanceConfigUserGroup struct {
+// InstanceCloneUserGroup Optional user group reference for the clone. Provide the user group id.
+type InstanceCloneUserGroup struct {
+	// The user group id.
 	Id                   *int64                 `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-type _InstanceConfigUserGroup InstanceConfigUserGroup
+type _InstanceCloneUserGroup InstanceCloneUserGroup
 
-func (o InstanceConfigUserGroup) MarshalJSON() ([]byte, error) {
+func (o InstanceCloneUserGroup) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -34,7 +35,7 @@ func (o InstanceConfigUserGroup) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o InstanceConfigUserGroup) ToMap() (map[string]interface{}, error) {
+func (o InstanceCloneUserGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
@@ -47,43 +48,43 @@ func (o InstanceConfigUserGroup) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableInstanceConfigUserGroup struct {
-	value *InstanceConfigUserGroup
+type NullableInstanceCloneUserGroup struct {
+	value *InstanceCloneUserGroup
 	isSet bool
 }
 
-func (v NullableInstanceConfigUserGroup) Get() *InstanceConfigUserGroup {
+func (v NullableInstanceCloneUserGroup) Get() *InstanceCloneUserGroup {
 	return v.value
 }
 
-func (v *NullableInstanceConfigUserGroup) Set(val *InstanceConfigUserGroup) {
+func (v *NullableInstanceCloneUserGroup) Set(val *InstanceCloneUserGroup) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableInstanceConfigUserGroup) IsSet() bool {
+func (v NullableInstanceCloneUserGroup) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableInstanceConfigUserGroup) Unset() {
+func (v *NullableInstanceCloneUserGroup) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableInstanceConfigUserGroup(val *InstanceConfigUserGroup) *NullableInstanceConfigUserGroup {
-	return &NullableInstanceConfigUserGroup{value: val, isSet: true}
+func NewNullableInstanceCloneUserGroup(val *InstanceCloneUserGroup) *NullableInstanceCloneUserGroup {
+	return &NullableInstanceCloneUserGroup{value: val, isSet: true}
 }
 
-func (v NullableInstanceConfigUserGroup) MarshalJSON() ([]byte, error) {
+func (v NullableInstanceCloneUserGroup) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableInstanceConfigUserGroup) UnmarshalJSON(src []byte) error {
+func (v *NullableInstanceCloneUserGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableInstanceConfigUserGroup) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableInstanceCloneUserGroup) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
@@ -92,7 +93,7 @@ func (v NullableInstanceConfigUserGroup) UnmarshalMapstructure(data any) (any, e
 	return v, nil
 }
 
-func (o *InstanceConfigUserGroup) UnmarshalJSON(data []byte) (err error) {
+func (o *InstanceCloneUserGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 

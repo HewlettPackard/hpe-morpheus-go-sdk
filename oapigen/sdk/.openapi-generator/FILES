@@ -724,6 +724,7 @@ docs/AddInstanceRequestInstanceLayout.md
 docs/AddInstanceRequestInstanceNetworkDomain.md
 docs/AddInstanceRequestInstancePlan.md
 docs/AddInstanceRequestInstanceSite.md
+docs/AddInstanceRequestInstanceUserGroup.md
 docs/AddInstanceRequestMetadataInner.md
 docs/AddInstanceRequestPortsInner.md
 docs/AddInstanceRequestSecurityGroupsInner.md
@@ -1893,6 +1894,7 @@ docs/CloneInstanceRequestCloud.md
 docs/CloneInstanceRequestConfig.md
 docs/CloneInstanceRequestGroup.md
 docs/CloneInstanceRequestPlan.md
+docs/CloneInstanceRequestUserGroup.md
 docs/CloneInstanceRequestVolumesInner.md
 docs/CloneInstanceRequestVolumesInnerDatastoreId.md
 docs/CloudCreateConfigAWS.md
@@ -4510,6 +4512,7 @@ docs/InstanceCloneCloud.md
 docs/InstanceCloneConfig.md
 docs/InstanceCloneGroup.md
 docs/InstanceClonePlan.md
+docs/InstanceCloneUserGroup.md
 docs/InstanceCloneVolumesInner.md
 docs/InstanceCloneVolumesInnerDatastoreId.md
 docs/InstanceCloud.md
@@ -4692,6 +4695,7 @@ docs/InstanceCreateInstanceLayout.md
 docs/InstanceCreateInstanceNetworkDomain.md
 docs/InstanceCreateInstancePlan.md
 docs/InstanceCreateInstanceSite.md
+docs/InstanceCreateInstanceUserGroup.md
 docs/InstanceCreateMetadataInner.md
 docs/InstanceCreateNetwork.md
 docs/InstanceCreatePortsInner.md
@@ -10118,6 +10122,7 @@ model_add_instance_request_instance_layout.go
 model_add_instance_request_instance_network_domain.go
 model_add_instance_request_instance_plan.go
 model_add_instance_request_instance_site.go
+model_add_instance_request_instance_user_group.go
 model_add_instance_request_metadata_inner.go
 model_add_instance_request_ports_inner.go
 model_add_instance_request_security_groups_inner.go
@@ -11272,6 +11277,7 @@ model_clone_instance_request_cloud.go
 model_clone_instance_request_config.go
 model_clone_instance_request_group.go
 model_clone_instance_request_plan.go
+model_clone_instance_request_user_group.go
 model_clone_instance_request_volumes_inner.go
 model_clone_instance_request_volumes_inner_datastore_id.go
 model_cloud_create_config_aws.go
@@ -13867,6 +13873,7 @@ model_instance_clone_cloud.go
 model_instance_clone_config.go
 model_instance_clone_group.go
 model_instance_clone_plan.go
+model_instance_clone_user_group.go
 model_instance_clone_volumes_inner.go
 model_instance_clone_volumes_inner_datastore_id.go
 model_instance_cloud.go
@@ -14049,6 +14056,7 @@ model_instance_create_instance_layout.go
 model_instance_create_instance_network_domain.go
 model_instance_create_instance_plan.go
 model_instance_create_instance_site.go
+model_instance_create_instance_user_group.go
 model_instance_create_metadata_inner.go
 model_instance_create_network.go
 model_instance_create_ports_inner.go

@@ -20,17 +20,19 @@ var _ MappedNullable = &InstanceContainerServerVolume1{}
 
 // InstanceContainerServerVolume1 struct for InstanceContainerServerVolume1
 type InstanceContainerServerVolume1 struct {
-	Id                   *int64                                       `json:"id,omitempty"`
-	Name                 *string                                      `json:"name,omitempty"`
-	ControllerId         *int64                                       `json:"controllerId,omitempty"`
-	ControllerMountPoint *string                                      `json:"controllerMountPoint,omitempty"`
-	Resizeable           *bool                                        `json:"resizeable,omitempty"`
-	RootVolume           *bool                                        `json:"rootVolume,omitempty"`
-	DeviceName           *string                                      `json:"deviceName,omitempty"`
-	DeviceDisplayName    *string                                      `json:"deviceDisplayName,omitempty"`
-	DiskMode             *string                                      `json:"diskMode,omitempty"`
-	DiskType             *string                                      `json:"diskType,omitempty"`
-	Category             *string                                      `json:"category,omitempty"`
+	Id                   *int64  `json:"id,omitempty"`
+	Name                 *string `json:"name,omitempty"`
+	ControllerId         *int64  `json:"controllerId,omitempty"`
+	ControllerMountPoint *string `json:"controllerMountPoint,omitempty"`
+	Resizeable           *bool   `json:"resizeable,omitempty"`
+	RootVolume           *bool   `json:"rootVolume,omitempty"`
+	DeviceName           *string `json:"deviceName,omitempty"`
+	DeviceDisplayName    *string `json:"deviceDisplayName,omitempty"`
+	DiskMode             *string `json:"diskMode,omitempty"`
+	DiskType             *string `json:"diskType,omitempty"`
+	Category             *string `json:"category,omitempty"`
+	// Storage Profile Code for the volume storage profile assignment. eg. `\"kvm-cache-none\"` or `\"kvm-cache-directsync\"`. Use `/api/provision-types?code=kvm` to see the available `storageProfiles` for HVM and KVM.
+	StorageProfile       *string                                      `json:"storageProfile,omitempty"`
 	StorageServer        *InstanceContainerServerVolumeStorageServer1 `json:"storageServer,omitempty"`
 	ZoneId               *int64                                       `json:"zoneId,omitempty"`
 	Zone                 *InstanceContainerServerVolumeZone1          `json:"zone,omitempty"`
@@ -92,6 +94,9 @@ func (o InstanceContainerServerVolume1) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
+	}
+	if !IsNil(o.StorageProfile) {
+		toSerialize["storageProfile"] = o.StorageProfile
 	}
 	if !IsNil(o.StorageServer) {
 		toSerialize["storageServer"] = o.StorageServer

@@ -20,7 +20,7 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup{
 
 // AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup struct for AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup
 type AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup struct {
-	Id                   *string                `json:"id,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 

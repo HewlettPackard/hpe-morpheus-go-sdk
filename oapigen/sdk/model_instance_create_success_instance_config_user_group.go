@@ -20,7 +20,7 @@ var _ MappedNullable = &InstanceCreateSuccessInstanceConfigUserGroup{}
 
 // InstanceCreateSuccessInstanceConfigUserGroup struct for InstanceCreateSuccessInstanceConfigUserGroup
 type InstanceCreateSuccessInstanceConfigUserGroup struct {
-	Id                   *string                `json:"id,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 

@@ -20,7 +20,7 @@ var _ MappedNullable = &GetInstance200ResponseInstanceConfigUserGroup{}
 
 // GetInstance200ResponseInstanceConfigUserGroup struct for GetInstance200ResponseInstanceConfigUserGroup
 type GetInstance200ResponseInstanceConfigUserGroup struct {
-	Id                   *string                `json:"id,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
