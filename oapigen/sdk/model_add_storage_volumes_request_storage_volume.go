@@ -23,9 +23,10 @@ type AddStorageVolumesRequestStorageVolume struct {
 	// A unique name scoped to your account for the storage volume
 	Name string `json:"name"`
 	// Storage Type Code or ID
-	Type string `json:"type"`
-	// Configuration object with parameters that vary by `type`.
-	Config               map[string]interface{}                             `json:"config,omitempty"`
+	Type   string                                       `json:"type"`
+	Config *AddStorageVolumesRequestStorageVolumeConfig `json:"config,omitempty"`
+	// Provision type for storage volume types that support it (for example 3Par - FULL, TPVV, SNP, PEER, TDVV).
+	ProvisionType        *string                                            `json:"provisionType,omitempty"`
 	StorageServer        AddStorageVolumesRequestStorageVolumeStorageServer `json:"storageServer"`
 	StorageGroup         *AddStorageVolumesRequestStorageVolumeStorageGroup `json:"storageGroup,omitempty"`
 	AdditionalProperties map[string]interface{}                             `json:",remain"`
@@ -47,6 +48,9 @@ func (o AddStorageVolumesRequestStorageVolume) ToMap() (map[string]interface{}, 
 	toSerialize["type"] = o.Type
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
+	}
+	if !IsNil(o.ProvisionType) {
+		toSerialize["provisionType"] = o.ProvisionType
 	}
 	toSerialize["storageServer"] = o.StorageServer
 	if !IsNil(o.StorageGroup) {
