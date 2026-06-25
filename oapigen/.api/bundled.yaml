@@ -1205,7 +1205,7 @@ paths:
               examples:
                 Search Response:
                   summary: Approval Items Response
-                  value: &ref_1865
+                  value: &ref_1867
                     approvalItem:
                       id: 13
                       name: ITEM-0000013
@@ -1391,7 +1391,7 @@ paths:
               examples:
                 Search Response:
                   summary: Approvals Response
-                  value: &ref_1866
+                  value: &ref_1868
                     approvals:
                       - id: 45
                         name: APPROVAL-0000045
@@ -164905,8 +164905,59 @@ paths:
                       type: string
                       description: Storage Type Code or ID
                     config:
-                      type: object
                       description: Configuration object with parameters that vary by `type`.
+                      anyOf:
+                        - title: Generic Storage Volume Configuration
+                          description: Generic configuration options for the storage volume, varies based on the storage volume type.
+                          type: object
+                        - type: object
+                          title: Alletra MP BMaaS Volume Configuration
+                          description: |
+                            Configuration for creating an HPE Alletra Storage MP block storage volume on a Bare Metal (BMaaS) storage server. Property names are the Alletra MP plugin's native config keys.
+                          properties: &ref_1822
+                            hpe_storage_datastore:
+                              type: integer
+                              format: int64
+                              description: ID of the Alletra MP BMaaS data store (pool) in which to create the volume.
+                            hpe_storage_volume_shared:
+                              type: string
+                              description: |
+                                Whether the volume is shared (multi-attach). When 'off' the volume may be exported to a single compute server; when 'on' it may be exported to one or more instances.
+                              enum:
+                                - 'on'
+                                - 'off'
+                            hpe_storage_compute_server:
+                              type: string
+                              description: |
+                                Compute server to export a non-shared volume to, in the form "[id: <computeServerId>]". Mutually exclusive with hpe_storage_instances.
+                            hpe_storage_instances:
+                              type: array
+                              items:
+                                type: string
+                              description: |
+                                Instances to export a shared volume to, each in the form "[id: <instanceId>]". Mutually exclusive with hpe_storage_compute_server.
+                            hpe_storage_remotecopytarget_id:
+                              type: string
+                              description: |
+                                Remote copy (replication) target ID. Required for replicated LUN volume types (Peer Persistence: Active or Classic).
+                            hpe_storage_existing_volume_set:
+                              type: string
+                              description: Whether to add the volume to an existing, exported volume set rather than creating a new one.
+                              enum:
+                                - 'on'
+                                - 'off'
+                            hpe_storage_volumeset_id:
+                              type: string
+                              description: ID of an existing volume set to add the volume to (when using an existing volume set).
+                            hpe_storage_volume_set_name:
+                              type: string
+                              description: |
+                                Base name for a new volume set (a unique suffix is always appended). Used when not using an existing volume set.
+                          required: &ref_1823
+                            - hpe_storage_datastore
+                    provisionType:
+                      type: string
+                      description: Provision type for storage volume types that support it (for example 3Par - FULL, TPVV, SNP, PEER, TDVV).
                     storageServer:
                       type: object
                       required:
@@ -165574,7 +165625,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_1822
+                properties: &ref_1824
                   roles:
                     type: array
                     items:
@@ -166934,7 +166985,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_1823
+                          properties: &ref_1825
                             id:
                               type: integer
                               format: int64
@@ -168393,7 +168444,7 @@ paths:
                     Request body for creating a provider-backed system.
                     Standard create supports optional `components[]`. When supplied, component entries are
                     processed after the parent system is created and provider lifecycle begins.
-                  properties: &ref_1824
+                  properties: &ref_1826
                     name:
                       type: string
                       description: The name of the system.
@@ -168466,7 +168517,7 @@ paths:
                             type: object
                             description: Arbitrary configuration data for the component.
                             additionalProperties: true
-                  required: &ref_1825
+                  required: &ref_1827
                     - name
                     - type
                     - layout
@@ -168542,7 +168593,7 @@ paths:
                     Unlike the standard create endpoint, this does **not** invoke any provider plugin logic.
                     Components are created directly from the layout's component type definitions and set to
                     `uninitialized` status. The system can later be initialized via `PUT /systems/{id}/initialize`.
-                  properties: &ref_1826
+                  properties: &ref_1828
                     name:
                       type: string
                       description: The name of the system.
@@ -168593,7 +168644,7 @@ paths:
                           Components can be matched by `id` or `typeCode`, depending on the endpoint behavior.
                           For create or new-component creation flows, `typeCode` identifies the component type to create.
                         properties: *ref_1259
-                  required: &ref_1827
+                  required: &ref_1829
                     - name
                     - type
                     - layout
@@ -168750,7 +168801,7 @@ paths:
                     If `components` is omitted, the existing component set is left unchanged.
                     If `components` is present, it is authoritative: the submitted array is treated as the
                     desired final component set, and existing components omitted from the array are removed.
-                  properties: &ref_1828
+                  properties: &ref_1830
                     name:
                       type: string
                       description: New name for the system.
@@ -168959,7 +169010,7 @@ paths:
                     All fields are optional — fields provided here are applied to the system before the
                     provider's initialize lifecycle is invoked. The system must currently be in
                     `uninitialized` or `failed` status.
-                  properties: &ref_1829
+                  properties: &ref_1831
                     name:
                       type: string
                       description: Override the system name.
@@ -169059,7 +169110,7 @@ paths:
                     items:
                       type: object
                       description: A summary representation of a system type.
-                      properties: &ref_1830
+                      properties: &ref_1832
                         id:
                           type: integer
                           format: int64
@@ -169127,7 +169178,7 @@ paths:
                     items:
                       type: object
                       description: A summary representation of a system type layout, including its component type definitions.
-                      properties: &ref_1831
+                      properties: &ref_1833
                         id:
                           type: integer
                           format: int64
@@ -174545,12 +174596,12 @@ paths:
               properties:
                 osType:
                   type: object
-                  required: &ref_1832
+                  required: &ref_1834
                     - platform
                     - name
                     - bitCount
                     - code
-                  properties: &ref_1833
+                  properties: &ref_1835
                     name:
                       type: string
                       description: |
@@ -174739,7 +174790,7 @@ paths:
               properties:
                 osType:
                   type: object
-                  properties: &ref_1834
+                  properties: &ref_1836
                     name:
                       type: string
                       description: |
@@ -174883,7 +174934,7 @@ paths:
                 properties:
                   osTypeImage:
                     type: object
-                    properties: &ref_1835
+                    properties: &ref_1837
                       id:
                         type: integer
                         format: int64
@@ -174986,10 +175037,10 @@ paths:
               properties:
                 osTypeImage:
                   type: object
-                  required: &ref_1836
+                  required: &ref_1838
                     - osType
                     - virtualImage
-                  properties: &ref_1837
+                  properties: &ref_1839
                     osType:
                       type: integer
                       format: int64
@@ -178371,7 +178422,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_1839
+                properties: &ref_1841
                   activity:
                     type: array
                     items:
@@ -178411,7 +178462,7 @@ paths:
                         description: Metadata about the returned array of results, provides pagination information.
                         properties: *ref_1306
                       - type: object
-                        properties: &ref_1838
+                        properties: &ref_1840
                           startDate:
                             type: string
                             format: date-time
@@ -178836,7 +178887,7 @@ paths:
               properties:
                 userGroup:
                   type: object
-                  properties: &ref_1840
+                  properties: &ref_1842
                     name:
                       type: string
                     description:
@@ -178974,7 +179025,7 @@ paths:
               properties:
                 userGroup:
                   type: object
-                  properties: &ref_1841
+                  properties: &ref_1843
                     name:
                       type: string
                     description:
@@ -179078,7 +179129,7 @@ paths:
               schema:
                 allOf:
                   - type: object
-                    properties: &ref_1842
+                    properties: &ref_1844
                       user:
                         type: object
                         properties:
@@ -179241,7 +179292,7 @@ paths:
               properties:
                 user:
                   type: object
-                  properties: &ref_1843
+                  properties: &ref_1845
                     username:
                       type: string
                       description: Username
@@ -179364,7 +179415,7 @@ paths:
                 properties:
                   clients:
                     type: array
-                    items: &ref_1844
+                    items: &ref_1846
                       type: object
                       properties:
                         clientId:
@@ -179598,7 +179649,7 @@ paths:
               schema:
                 allOf:
                   - type: object
-                    properties: &ref_1845
+                    properties: &ref_1847
                       token:
                         type: string
                   - type: object
@@ -179697,7 +179748,7 @@ paths:
                   - type: object
                     properties: *ref_9
                   - type: object
-                    properties: &ref_1846
+                    properties: &ref_1848
                       global:
                         type: boolean
                         description: Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
@@ -180036,7 +180087,7 @@ paths:
                       items:
                         type: object
                         description: A simple object to represent a specific resource, typically an id and name.
-                        properties: &ref_1847
+                        properties: &ref_1849
                           id:
                             type: integer
                             format: int64
@@ -180047,7 +180098,7 @@ paths:
                           code:
                             type: string
                             description: Resource code
-                        required: &ref_1848
+                        required: &ref_1850
                           - id
                     receiveNotifications:
                       type: boolean
@@ -180131,10 +180182,10 @@ paths:
                 type: object
                 properties:
                   access:
-                    type: &ref_1849
+                    type: &ref_1851
                       - object
                       - 'null'
-                    properties: &ref_1850
+                    properties: &ref_1852
                       features:
                         type: array
                         items:
@@ -182846,7 +182897,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_1851
+                properties: &ref_1853
                   roles:
                     type: array
                     items:
@@ -184243,7 +184294,7 @@ paths:
               properties:
                 virtualImage:
                   type: object
-                  properties: &ref_1852
+                  properties: &ref_1854
                     name:
                       type: string
                       description: A name for the virtual image
@@ -184638,7 +184689,7 @@ paths:
               properties:
                 virtualImage:
                   type: object
-                  properties: &ref_1853
+                  properties: &ref_1855
                     name:
                       type: string
                       description: A name for the virtual image
@@ -184997,7 +185048,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_1854
+                          properties: &ref_1856
                             id:
                               type: integer
                               format: int64
@@ -185267,7 +185318,7 @@ paths:
                 properties:
                   whitelabelSettings:
                     type: object
-                    properties: &ref_1855
+                    properties: &ref_1857
                       enabled:
                         type: boolean
                       applianceName:
@@ -185376,7 +185427,7 @@ paths:
               properties:
                 whitelabelSettings:
                   type: object
-                  properties: &ref_1856
+                  properties: &ref_1858
                     enabled:
                       type: boolean
                       description: Can be used to enable / disable whitelabel feature
@@ -186473,7 +186524,7 @@ paths:
                 properties:
                   categories:
                     type: array
-                    items: &ref_1857
+                    items: &ref_1859
                       type: object
                       properties:
                         name:
@@ -186821,13 +186872,13 @@ paths:
               oneOf:
                 - title: Get Token Request (Username and Password)
                   type: object
-                  required: &ref_1858
+                  required: &ref_1860
                     - client_id
                     - grant_type
                     - scope
                     - username
                     - password
-                  properties: &ref_1859
+                  properties: &ref_1861
                     client_id:
                       type: string
                       description: Client ID
@@ -186854,11 +186905,11 @@ paths:
                       format: password
                 - title: Get Token Request (Refresh Token)
                   type: object
-                  required: &ref_1860
+                  required: &ref_1862
                     - client_id
                     - grant_type
                     - refresh_token
-                  properties: &ref_1861
+                  properties: &ref_1863
                     client_id:
                       type: string
                       description: Client ID
@@ -186875,12 +186926,12 @@ paths:
                       format: password
                 - title: Get Token Request (Authorization Code)
                   type: object
-                  required: &ref_1862
+                  required: &ref_1864
                     - client_id
                     - client_secret
                     - grant_type
                     - authorization_code
-                  properties: &ref_1863
+                  properties: &ref_1865
                     client_id:
                       type: string
                       description: Client ID
@@ -186905,7 +186956,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_1864
+                properties: &ref_1866
                   access_token:
                     type: string
                     description: Access token that is used as a bearer token in the Authorization header of API requests to protected resources
@@ -190366,6 +190417,17 @@ components:
     storageVolumeType:
       type: object
       properties: *ref_1241
+    storageVolumeConfigGeneric:
+      title: Generic Storage Volume Configuration
+      description: Generic configuration options for the storage volume, varies based on the storage volume type.
+      type: object
+    storageVolumeConfigAlletraMPBmaas:
+      type: object
+      title: Alletra MP BMaaS Volume Configuration
+      description: |
+        Configuration for creating an HPE Alletra Storage MP block storage volume on a Bare Metal (BMaaS) storage server. Property names are the Alletra MP plugin's native config keys.
+      properties: *ref_1822
+      required: *ref_1823
     tenant:
       type: object
       properties: *ref_1246
@@ -190376,7 +190438,7 @@ components:
       default: USD
     tenantsAvailableRoles:
       type: object
-      properties: *ref_1822
+      properties: *ref_1824
     tenantGroup:
       type: object
       properties: *ref_1250
@@ -190390,7 +190452,7 @@ components:
       properties: *ref_1311
     subnet-type:
       type: object
-      properties: *ref_1823
+      properties: *ref_1825
     supportBundle:
       type: object
       properties: *ref_1258
@@ -190410,8 +190472,8 @@ components:
         Request body for creating a provider-backed system.
         Standard create supports optional `components[]`. When supplied, component entries are
         processed after the parent system is created and provider lifecycle begins.
-      properties: *ref_1824
-      required: *ref_1825
+      properties: *ref_1826
+      required: *ref_1827
     systemUninitializedCreate:
       type: object
       description: |
@@ -190419,8 +190481,8 @@ components:
         Unlike the standard create endpoint, this does **not** invoke any provider plugin logic.
         Components are created directly from the layout's component type definitions and set to
         `uninitialized` status. The system can later be initialized via `PUT /systems/{id}/initialize`.
-      properties: *ref_1826
-      required: *ref_1827
+      properties: *ref_1828
+      required: *ref_1829
     systemUpdate:
       type: object
       description: |
@@ -190429,7 +190491,7 @@ components:
         If `components` is omitted, the existing component set is left unchanged.
         If `components` is present, it is authoritative: the submitted array is treated as the
         desired final component set, and existing components omitted from the array are removed.
-      properties: *ref_1828
+      properties: *ref_1830
     systemInitialize:
       type: object
       description: |
@@ -190437,15 +190499,15 @@ components:
         All fields are optional — fields provided here are applied to the system before the
         provider's initialize lifecycle is invoked. The system must currently be in
         `uninitialized` or `failed` status.
-      properties: *ref_1829
+      properties: *ref_1831
     systemTypeSummary:
       type: object
       description: A summary representation of a system type.
-      properties: *ref_1830
+      properties: *ref_1832
     systemTypeLayoutSummary:
       type: object
       description: A summary representation of a system type layout, including its component type definitions.
-      properties: *ref_1831
+      properties: *ref_1833
     taskAnsiblePlaybookConfig:
       type: object
       properties: *ref_1261
@@ -190547,18 +190609,18 @@ components:
       properties: *ref_1303
     osTypeCreate:
       type: object
-      required: *ref_1832
-      properties: *ref_1833
+      required: *ref_1834
+      properties: *ref_1835
     osTypeUpdate:
       type: object
-      properties: *ref_1834
+      properties: *ref_1836
     osTypeImage:
       type: object
-      properties: *ref_1835
+      properties: *ref_1837
     createOsTypeImage:
       type: object
-      required: *ref_1836
-      properties: *ref_1837
+      required: *ref_1838
+      properties: *ref_1839
     taskType:
       type: object
       properties: *ref_1304
@@ -190567,42 +190629,42 @@ components:
       properties: *ref_1305
     MetaObjectDates:
       type: object
-      properties: *ref_1838
+      properties: *ref_1840
     usages:
       type: object
-      properties: *ref_1839
+      properties: *ref_1841
     userGroup:
       type: object
       properties: *ref_1307
     userGroupCreate:
       type: object
-      properties: *ref_1840
+      properties: *ref_1842
     userGroupUpdate:
       type: object
-      properties: *ref_1841
+      properties: *ref_1843
     userSettings:
       type: object
-      properties: *ref_1842
+      properties: *ref_1844
     userSettingsUpdate:
       type: object
-      properties: *ref_1843
+      properties: *ref_1845
     userSettingsApiClients:
       type: array
-      items: *ref_1844
+      items: *ref_1846
     userSettingsRegenerateAccessToken:
       type: object
-      properties: *ref_1845
+      properties: *ref_1847
     global:
       type: object
-      properties: *ref_1846
+      properties: *ref_1848
     ReferenceObject:
       type: object
       description: A simple object to represent a specific resource, typically an id and name.
-      properties: *ref_1847
-      required: *ref_1848
+      properties: *ref_1849
+      required: *ref_1850
     userPermissions:
-      type: *ref_1849
-      properties: *ref_1850
+      type: *ref_1851
+      properties: *ref_1852
     vdiApp:
       type: object
       properties: *ref_1315
@@ -190614,7 +190676,7 @@ components:
       properties: *ref_1319
     usersAvailableRoles:
       type: object
-      properties: *ref_1851
+      properties: *ref_1853
     vdiAllocation:
       type: object
       properties: *ref_1321
@@ -190626,43 +190688,43 @@ components:
       properties: *ref_1323
     virtualImageCreate:
       type: object
-      properties: *ref_1852
+      properties: *ref_1854
     virtualImageUpdate:
       type: object
-      properties: *ref_1853
+      properties: *ref_1855
     virtualImageLocation:
       type: object
-      properties: *ref_1854
+      properties: *ref_1856
     whitelabelSettings:
       type: object
-      properties: *ref_1855
+      properties: *ref_1857
     whitelabelSettingsUpdate:
       type: object
-      properties: *ref_1856
+      properties: *ref_1858
     wikiPage:
       type: object
       properties: *ref_1330
     wikiCategories:
       type: array
-      items: *ref_1857
+      items: *ref_1859
     tokenPasswordRequest:
       title: Get Token Request (Username and Password)
       type: object
-      required: *ref_1858
-      properties: *ref_1859
+      required: *ref_1860
+      properties: *ref_1861
     tokenRefreshTokenRequest:
       title: Get Token Request (Refresh Token)
       type: object
-      required: *ref_1860
-      properties: *ref_1861
+      required: *ref_1862
+      properties: *ref_1863
     tokenAuthorizationCodeRequest:
       title: Get Token Request (Authorization Code)
       type: object
-      required: *ref_1862
-      properties: *ref_1863
+      required: *ref_1864
+      properties: *ref_1865
     accessToken:
       type: object
-      properties: *ref_1864
+      properties: *ref_1866
   responses:
     '400':
       description: Bad Request.
@@ -190703,10 +190765,10 @@ components:
   examples:
     approvalItem:
       summary: Approval Items Response
-      value: *ref_1865
+      value: *ref_1867
     approvals:
       summary: Approvals Response
-      value: *ref_1866
+      value: *ref_1868
     connected:
       value: connected
       summary: Connected status

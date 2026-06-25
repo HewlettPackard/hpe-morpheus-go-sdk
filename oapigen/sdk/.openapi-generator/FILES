@@ -1219,6 +1219,7 @@ docs/AddStorageVolumes200ResponseAllOfStorageVolumeType.md
 docs/AddStorageVolumes200ResponseAllOfStorageVolumeZone.md
 docs/AddStorageVolumesRequest.md
 docs/AddStorageVolumesRequestStorageVolume.md
+docs/AddStorageVolumesRequestStorageVolumeConfig.md
 docs/AddStorageVolumesRequestStorageVolumeStorageGroup.md
 docs/AddStorageVolumesRequestStorageVolumeStorageServer.md
 docs/AddSystem200Response.md
@@ -1406,6 +1407,7 @@ docs/AddWorkflowsRequestTaskSetTasksInner.md
 docs/Alarm.md
 docs/Alert.md
 docs/AlertsAPI.md
+docs/AlletraMPBMaaSVolumeConfiguration.md
 docs/AlletraMPHVMDatastoreConfiguration.md
 docs/AlletraMPHVMDatastoreConfiguration1.md
 docs/AlletraMPHVMDatastoreConfiguration2.md
@@ -7680,6 +7682,7 @@ docs/StorageServerStorageQuotaPolicyTypeConfiguration9.md
 docs/StorageServerType.md
 docs/StorageType.md
 docs/StorageVolume.md
+docs/StorageVolumeConfigAlletraMPBmaas.md
 docs/StorageVolumeType.md
 docs/Subnet.md
 docs/SubnetType.md
@@ -10617,6 +10620,7 @@ model_add_storage_volumes_200_response_all_of_storage_volume_type.go
 model_add_storage_volumes_200_response_all_of_storage_volume_zone.go
 model_add_storage_volumes_request.go
 model_add_storage_volumes_request_storage_volume.go
+model_add_storage_volumes_request_storage_volume_config.go
 model_add_storage_volumes_request_storage_volume_storage_group.go
 model_add_storage_volumes_request_storage_volume_storage_server.go
 model_add_system_200_response.go
@@ -10803,6 +10807,7 @@ model_add_workflows_request_task_set.go
 model_add_workflows_request_task_set_tasks_inner.go
 model_alarm.go
 model_alert.go
+model_alletra_mp_b_maa_s_volume_configuration.go
 model_alletra_mp_hvm_datastore_configuration.go
 model_alletra_mp_hvm_datastore_configuration_1.go
 model_alletra_mp_hvm_datastore_configuration_2.go
@@ -16995,6 +17000,7 @@ model_storage_server_storage_quota_policy_type_configuration_9.go
 model_storage_server_type.go
 model_storage_type.go
 model_storage_volume.go
+model_storage_volume_config_alletra_mp_bmaas.go
 model_storage_volume_type.go
 model_subnet.go
 model_subnet_type.go
