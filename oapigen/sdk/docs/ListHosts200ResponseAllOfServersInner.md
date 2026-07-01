@@ -70,7 +70,7 @@ Name | Type | Description | Notes
 **Volumes** | Pointer to [**[]ListHosts200ResponseAllOfServersInnerVolumesInner**](ListHosts200ResponseAllOfServersInnerVolumesInner.md) |  | [optional] 
 **Controllers** | Pointer to [**[]ListHosts200ResponseAllOfServersInnerControllersInner**](ListHosts200ResponseAllOfServersInnerControllersInner.md) |  | [optional] 
 **Interfaces** | Pointer to [**[]ListHosts200ResponseAllOfServersInnerInterfacesInner**](ListHosts200ResponseAllOfServersInnerInterfacesInner.md) |  | [optional] 
-**Labels** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Labels** | Pointer to **[]string** |  | [optional] 
 **Tags** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **TagCompliant** | Pointer to **NullableBool** |  | [optional] 

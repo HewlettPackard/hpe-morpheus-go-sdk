@@ -70,7 +70,7 @@ Name | Type | Description | Notes
 **Volumes** | Pointer to [**[]AddBaremetalHost200ResponseServerVolumesInner**](AddBaremetalHost200ResponseServerVolumesInner.md) |  | [optional] 
 **Controllers** | Pointer to [**[]AddBaremetalHost200ResponseServerControllersInner**](AddBaremetalHost200ResponseServerControllersInner.md) |  | [optional] 
 **Interfaces** | Pointer to [**[]AddBaremetalHost200ResponseServerInterfacesInner**](AddBaremetalHost200ResponseServerInterfacesInner.md) |  | [optional] 
-**Labels** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Labels** | Pointer to **[]string** |  | [optional] 
 **Tags** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **TagCompliant** | Pointer to **NullableBool** |  | [optional] 

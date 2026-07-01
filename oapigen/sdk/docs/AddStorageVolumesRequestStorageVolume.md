@@ -6,9 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | A unique name scoped to your account for the storage volume | 
 **Type** | **string** | Storage Type Code or ID | 
+**MaxStorage** | Pointer to **int64** | The size of the storage volume in bytes. | [optional] 
 **Config** | Pointer to [**AddStorageVolumesRequestStorageVolumeConfig**](AddStorageVolumesRequestStorageVolumeConfig.md) |  | [optional] 
 **ProvisionType** | Pointer to **string** | Provision type for storage volume types that support it (for example 3Par - FULL, TPVV, SNP, PEER, TDVV). | [optional] 
-**StorageServer** | [**AddStorageVolumesRequestStorageVolumeStorageServer**](AddStorageVolumesRequestStorageVolumeStorageServer.md) |  | 
+**StorageServer** | Pointer to [**AddStorageVolumesRequestStorageVolumeStorageServer**](AddStorageVolumesRequestStorageVolumeStorageServer.md) |  | [optional] 
 **StorageGroup** | Pointer to [**AddStorageVolumesRequestStorageVolumeStorageGroup**](AddStorageVolumesRequestStorageVolumeStorageGroup.md) |  | [optional] 
 
 ## Usage

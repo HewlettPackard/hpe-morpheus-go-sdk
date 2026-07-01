@@ -51192,8 +51192,9 @@ paths:
                               type: string
                             storageGroup:
                               type:
-                                - string
+                                - object
                                 - 'null'
+                              description: The storage group the volume belongs to (id and name).
                             namespace:
                               type:
                                 - string
@@ -51221,6 +51222,10 @@ paths:
                                 - string
                                 - 'null'
                             fiberWwn:
+                              type:
+                                - string
+                                - 'null'
+                            wwn:
                               type:
                                 - string
                                 - 'null'
@@ -151540,7 +151545,7 @@ paths:
                                 - array
                                 - 'null'
                               items:
-                                type: object
+                                type: string
                             tags:
                               type:
                                 - array
@@ -164896,7 +164901,6 @@ paths:
                   required:
                     - name
                     - type
-                    - storageServer
                   properties:
                     name:
                       type: string
@@ -164904,6 +164908,10 @@ paths:
                     type:
                       type: string
                       description: Storage Type Code or ID
+                    maxStorage:
+                      type: integer
+                      format: int64
+                      description: The size of the storage volume in bytes.
                     config:
                       description: Configuration object with parameters that vary by `type`.
                       anyOf:
@@ -165209,6 +165217,10 @@ paths:
                     type:
                       type: string
                       description: Storage Type Code or ID
+                    maxStorage:
+                      type: integer
+                      format: int64
+                      description: The size of the storage volume in bytes.
                     config:
                       type: object
                       description: Configuration object with parameters that vary by `type`.
