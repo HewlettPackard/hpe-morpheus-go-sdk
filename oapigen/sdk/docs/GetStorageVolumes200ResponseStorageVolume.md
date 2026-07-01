@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 **Datastore** | Pointer to [**GetStorageVolumes200ResponseStorageVolumeDatastore**](GetStorageVolumes200ResponseStorageVolumeDatastore.md) |  | [optional] 
 **DatastoreId** | Pointer to **NullableInt64** |  | [optional] 
 **DatastoreOption** | Pointer to **string** |  | [optional] 
-**StorageGroup** | Pointer to **NullableString** |  | [optional] 
+**StorageGroup** | Pointer to **map[string]interface{}** | The storage group the volume belongs to (id and name). | [optional] 
 **Namespace** | Pointer to **NullableString** |  | [optional] 
 **StorageServer** | Pointer to **map[string]interface{}** |  | [optional] 
 **Source** | Pointer to **string** |  | [optional] 
@@ -52,6 +52,7 @@ Name | Type | Description | Notes
 **ProvisionType** | Pointer to **NullableString** |  | [optional] 
 **CopyType** | Pointer to **NullableString** |  | [optional] 
 **FiberWwn** | Pointer to **NullableString** |  | [optional] 
+**Wwn** | Pointer to **NullableString** |  | [optional] 
 **FileName** | Pointer to **NullableString** |  | [optional] 
 **ClaimName** | Pointer to **NullableString** |  | [optional] 
 **SharePath** | Pointer to **NullableString** |  | [optional] 
@@ -181,6 +182,13 @@ Use the Nullable wrapper methods:
 - `obj.FiberWwn.Get()` — get the inner value (returns pointer)
 - `obj.FiberWwn.Set(&val)` — set the value
 - `obj.FiberWwn.Unset()` — clear the value
+### Wwn (Nullable)
+
+Use the Nullable wrapper methods:
+- `obj.Wwn.IsSet()` — check if set
+- `obj.Wwn.Get()` — get the inner value (returns pointer)
+- `obj.Wwn.Set(&val)` — set the value
+- `obj.Wwn.Unset()` — clear the value
 ### FileName (Nullable)
 
 Use the Nullable wrapper methods:

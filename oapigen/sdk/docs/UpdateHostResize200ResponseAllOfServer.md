@@ -70,7 +70,7 @@ Name | Type | Description | Notes
 **Volumes** | Pointer to [**[]UpdateHostResize200ResponseAllOfServerVolumesInner**](UpdateHostResize200ResponseAllOfServerVolumesInner.md) |  | [optional] 
 **Controllers** | Pointer to [**[]UpdateHostResize200ResponseAllOfServerControllersInner**](UpdateHostResize200ResponseAllOfServerControllersInner.md) |  | [optional] 
 **Interfaces** | Pointer to [**[]UpdateHostResize200ResponseAllOfServerInterfacesInner**](UpdateHostResize200ResponseAllOfServerInterfacesInner.md) |  | [optional] 
-**Labels** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Labels** | Pointer to **[]string** |  | [optional] 
 **Tags** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **TagCompliant** | Pointer to **NullableBool** |  | [optional] 
